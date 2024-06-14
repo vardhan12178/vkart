@@ -29,7 +29,7 @@ const Login = () => {
         password: password
       });
 
-const jwtToken=response.data.token
+      const jwtToken = response.data.token;
       Cookies.set('jwt_token', jwtToken, { expires: 30 }); // Expires in 30 days
 
       // Redirect to home page using navigate('/')
@@ -43,7 +43,7 @@ const jwtToken=response.data.token
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <h2 className="text-2xl font-bold mb-4">Login to Vkart</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="userId" className="block text-gray-700">User ID</label>

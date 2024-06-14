@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import './App.css'; 
 import Error from './components/Error';
 import Cookies from 'js-cookie';
+import Products from './components/Products';
+import Cart from './components/Cart';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,7 +18,6 @@ const App = () => {
 
   useEffect(() => {
     const token = Cookies.get("jwt_token");
-    console.log('Token:', token); 
     if (token) {
       setIsLoggedIn(true);
     } else {
@@ -31,7 +32,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
           <Route path="/login" element={!isLoggedIn ? <Login /> : <Navigate to="/" />} />
+          <Route path="/products" element={!isLoggedIn ? <Products /> : <Navigate to="/products" />} />
           <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
+          <Route path="/cart" element={!isLoggedIn ? <Cart /> : <Navigate to="/cart" />} />
           <Route path="/contact" element={isLoggedIn ? <Contact /> : <Navigate to="/login" />} />
           <Route path="*" element={<Error />} />
         </Routes>
