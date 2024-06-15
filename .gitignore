@@ -1,23 +1,43 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# Node modules
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
-
-# production
+# Build directory
 /build
 
-# misc
-.DS_Store
+# Environment variables
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Editor directories
+.vscode
+.idea
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# macOS-specific
+.DS_Store
+
+# Compiled Python bytecode
+*.pyc
+
+# Compiled TypeScript
+*.js
+
+# Dependency directory
+/.pnp
+.pnp.js
+
+# Coverage directory
+/coverage
+
+# Ignore node runtime environment
+/node

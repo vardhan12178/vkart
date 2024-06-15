@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState, useEffect } from 'react';
 import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
@@ -31,7 +32,8 @@ const Login = ({ setIsLoggedIn }) => {
       });
 
       const jwtToken = response.data.token;
-      Cookies.set('jwt_token', jwtToken, { expires: 30 }); 
+      Cookies.set('jwt_token', jwtToken, { expires: 30 });
+
       setIsLoggedIn(true);
       navigate('/');
     } catch (error) {

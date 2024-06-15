@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true })); 
+
+// CORS configuration
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://vkartshop.netlify.app'],
+  credentials: true
+}));
+
 const users = [
   { id: 1, username: 'vardhan975', password: 'vardhan2181' },
   { id: 2, username: 'testuser', password: 'test@2024' }
@@ -16,10 +22,8 @@ const users = [
 
 const JWT_SECRET = 'my_secret_key';
 
-
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
-
 
   const user = users.find(u => u.username === username && u.password === password);
 
@@ -28,19 +32,18 @@ app.post('/api/login', (req, res) => {
   }
 
   const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: '30d' });
-  res.cookie('jwt', token, {
+  res.cookie('jwt_token', token, {
     httpOnly: true,
-    maxAge: 30 * 24 * 60 * 60 * 1000, 
-    secure: false, 
-    sameSite: 'strict' 
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    secure: false, // Set to false because your frontend is not on HTTPS locally
+    sameSite: 'strict'
   });
-
 
   res.json({ token });
 });
 
 app.get('/api/verify', (req, res) => {
-  const token = req.cookies.jwt;
+  const token = req.cookies.jwt_token;
 
   if (!token) {
     return res.status(401).json({ message: 'Unauthorized' });
