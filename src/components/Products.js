@@ -90,7 +90,7 @@ const Products = () => {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="max-h-48 object-contain"
+                  className="max-h-48 object-contain" loading='lazy'
                 />
               </div>
               <h2 className="text-lg font-semibold mb-2 text-center">{product.title}</h2>
