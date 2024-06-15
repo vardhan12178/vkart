@@ -29,7 +29,6 @@ const Cart = () => {
       <div className="flex justify-center items-center h-screen">
         <div className="bg-white p-8 rounded-lg shadow-lg text-center">
           <FontAwesomeIcon icon={faShoppingCart} size="3x" className="text-gray-500 mb-4" />
-          <h1 className="text-2xl font-bold mb-4">Cart</h1>
           <p>Your cart is empty.</p>
         </div>
       </div>
@@ -37,7 +36,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen">
       <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
         <ul>
           {cartItems.map((item) => (

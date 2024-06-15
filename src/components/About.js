@@ -10,7 +10,7 @@ const About = () => {
             <img
               className="w-64 h-64 object-cover rounded-lg"
               src="https://img.freepik.com/premium-vector/final-choice-female-character-is-preparing-pay-online-order-application-that-takes-into-account-product-rating-price-color-delivery-address-woman-adds-items-shopping-cart_776652-2226.jpg?w=740"
-              alt="About Us Image" loading='lazy'
+              alt="About Us" loading='lazy'
             />
           </div>
           <div className="flex flex-col justify-center">

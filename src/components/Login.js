@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState, useEffect } from 'react';
 import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
@@ -32,12 +31,8 @@ const Login = ({ setIsLoggedIn }) => {
       });
 
       const jwtToken = response.data.token;
-      Cookies.set('jwt_token', jwtToken, { expires: 30 }); // Expires in 30 days
-
-      // Update login status
+      Cookies.set('jwt_token', jwtToken, { expires: 30 }); 
       setIsLoggedIn(true);
-
-      // Redirect to home page
       navigate('/');
     } catch (error) {
       console.error('Login API Error:', error);
@@ -48,7 +43,7 @@ const Login = ({ setIsLoggedIn }) => {
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center md:items-start">
-        {/* Login image */}
+      
         <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"

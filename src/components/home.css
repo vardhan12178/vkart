@@ -19,41 +19,36 @@
 .card1 {
     padding: 20px;
 
-/* Soft shadow for depth */
-  
-    /* Optional: Add margin to create space around the card */
     margin: 20px;
   }
   
   .card1 h1 {
-    color: #3768fa; /* Blue color for heading */
-    font-size: 2.5rem; /* Larger font size */
+    color: #3768fa; 
+    font-size: 2.5rem; 
     font-weight: bold;
-    margin-bottom: 10px; /* Space below heading */
+    margin-bottom: 10px; 
   }
   
   .card1 p {
-    color: #666666; /* Dark gray text color */
-    font-size: 1.2rem; /* Medium font size */
-    line-height: 1.6; /* Increased line height for readability */
-    margin-bottom: 20px; /* Space below paragraph */
+    color: #666666;
+    font-size: 1.2rem;
+    line-height: 1.6; 
+    margin-bottom: 20px; 
   }
   
   .card1 button {
-    background-color: #3768fa; /* Blue button background */
-    color: #ffffff; /* White button text */
+    background-color: #3768fa; 
+    color: #ffffff; 
     border: none;
-    padding: 7px 15px; /* Padding inside button */
-    font-size: 1rem; /* Button text size */
+    padding: 7px 15px; 
+    font-size: 1rem; 
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    border-radius: 15px; /* Rounded button corners */
-  
-    /* Optional: Add margin to create space around the button */
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
     margin-top: 10px;
   }
   
   .card1 button:hover {
-    background-color: #1e4ba0; /* Darker blue on hover */
+    background-color: #1e4ba0; 
   }
   

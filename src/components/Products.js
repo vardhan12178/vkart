@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
@@ -7,11 +7,7 @@ const Products = () => {
   const [category, setCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    fetchProducts();
-  }, [sortOption, category, searchTerm]);
-
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     let url = 'https://fakestoreapi.com/products';
     if (category) {
       url += `/category/${category}`;
@@ -29,7 +25,11 @@ const Products = () => {
     }
 
     setProducts(sortedData);
-  };
+  }, [sortOption, category]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   const handleSortChange = (e) => {
     setSortOption(e.target.value);
