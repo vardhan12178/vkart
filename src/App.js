@@ -1,3 +1,4 @@
+// App.js
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -30,7 +31,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
-            <Route path="/login" element={!isLoggedIn ? <Login /> : <Navigate to="/" />} />
+            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
             <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
             <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />

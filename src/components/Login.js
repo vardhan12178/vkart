@@ -1,9 +1,10 @@
+// Login.js
 import React, { useState, useEffect } from 'react';
 import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,9 +13,10 @@ const Login = () => {
   useEffect(() => {
     const token = Cookies.get('jwt_token');
     if (token) {
+      setIsLoggedIn(true);
       navigate('/');
     }
-  }, [navigate]);
+  }, [navigate, setIsLoggedIn]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,13 +28,16 @@ const Login = () => {
     try {
       const response = await axios.post('/api/login', {
         username: userId,
-        password: password
+        password: password,
       });
 
       const jwtToken = response.data.token;
       Cookies.set('jwt_token', jwtToken, { expires: 30 }); // Expires in 30 days
 
-      // Redirect to home page using navigate('/')
+      // Update login status
+      setIsLoggedIn(true);
+
+      // Redirect to home page
       navigate('/');
     } catch (error) {
       console.error('Login API Error:', error);
@@ -41,18 +46,17 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="max-w-md w-full bg-white shadow-md rounded-lg p-6">
-       
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+      <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center md:items-start">
         {/* Login image */}
-        <div className="mb-8">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
             className="w-full rounded-md"
             alt="website login"
           />
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="w-full md:w-1/2">
           <div className="mb-4">
             <label htmlFor="userId" className="block text-gray-700">
               User ID
@@ -87,7 +91,6 @@ const Login = () => {
             Login
           </button>
         </form>
-      
       </div>
     </div>
   );

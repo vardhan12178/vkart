@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { incrementQuantity, decrementQuantity } from '../redux/cartSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -24,42 +27,46 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="container mx-auto mt-4">
-        <h1 className="text-2xl font-bold mb-4">Cart</h1>
-        <p>Your cart is empty.</p>
+      <div className="flex justify-center items-center h-screen">
+        <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+          <FontAwesomeIcon icon={faShoppingCart} size="3x" className="text-gray-500 mb-4" />
+          <h1 className="text-2xl font-bold mb-4">Cart</h1>
+          <p>Your cart is empty.</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto mt-4">
-      <h1 className="text-2xl font-bold mb-4">Cart</h1>
-      <ul>
-        {cartItems.map((item) => (
-          <li key={item.id} className="border p-4 rounded-lg shadow-md mb-4 flex justify-between items-center">
-            <img src={item.image} alt={item.name} className="w-24 h-24 object-cover mr-4 rounded-lg" />
-            <div className="flex-1">
-              <h2 className="text-lg font-semibold">{item.name}</h2>
-              <p className="text-gray-600">₹{(item.price * 75).toFixed(2)} x {item.quantity}</p>
-              <div className="flex items-center mt-2">
-                <button onClick={() => handleDecrement(item.id)} className="bg-red-500 text-white px-2 py-1 rounded">-</button>
-                <span className="mx-2">{item.quantity}</span>
-                <button onClick={() => handleIncrement(item.id)} className="bg-blue-500 text-white px-2 py-1 rounded">+</button>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
+        <ul>
+          {cartItems.map((item) => (
+            <li key={item.id} className="border p-4 rounded-lg shadow-md mb-4 flex justify-between items-center">
+              <img src={item.image} alt={item.name} className="w-24 h-24 object-cover mr-4 rounded-lg" />
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">{item.name}</h2>
+                <p className="text-gray-600">₹{(item.price * 75).toFixed(2)} x {item.quantity}</p>
+                <div className="flex items-center mt-2">
+                  <button onClick={() => handleDecrement(item.id)} className="bg-red-500 text-white px-2 py-1 rounded">-</button>
+                  <span className="mx-2">{item.quantity}</span>
+                  <button onClick={() => handleIncrement(item.id)} className="bg-blue-500 text-white px-2 py-1 rounded">+</button>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-4">
-        <h2 className="text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-4">
+          <h2 className="text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2>
+        </div>
+        <button
+          onClick={handleBuyNow}
+          className="bg-green-500 text-white px-4 py-2 rounded mt-4"
+        >
+          Buy Now
+        </button>
+        {showForm && <CheckoutForm />}
       </div>
-      <button
-        onClick={handleBuyNow}
-        className="bg-green-500 text-white px-4 py-2 rounded mt-4"
-      >
-        Buy Now
-      </button>
-      {showForm && <CheckoutForm />}
     </div>
   );
 };
