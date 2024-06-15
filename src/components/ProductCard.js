@@ -10,6 +10,19 @@ const ProductCard = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const dispatch = useDispatch();
 
+  const fetchRelatedProducts = useCallback(async (category) => {
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch related products');
+      }
+      const data = await response.json();
+      setRelatedProducts(data.filter(item => item.id !== parseInt(id)));
+    } catch (error) {
+      console.error('Error fetching related products:', error);
+    }
+  }, [id]);
+
   const fetchProduct = useCallback(async () => {
     try {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -22,20 +35,7 @@ const ProductCard = () => {
     } catch (error) {
       console.error('Error fetching product:', error);
     }
-  }, [id]);
-
-  const fetchRelatedProducts = async (category) => {
-    try {
-      const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch related products');
-      }
-      const data = await response.json();
-      setRelatedProducts(data.filter(item => item.id !== parseInt(id)));
-    } catch (error) {
-      console.error('Error fetching related products:', error);
-    }
-  };
+  }, [id, fetchRelatedProducts]);
 
   useEffect(() => {
     fetchProduct();
