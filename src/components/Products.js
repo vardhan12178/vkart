@@ -48,9 +48,9 @@ const Products = () => {
   );
 
   return (
-    <div className="container mx-auto mt-4 mb-20">
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <div className="flex justify-center mb-4">
+    <div className="container mx-auto px-4 mt-8 mb-20">
+      <h1 className="text-3xl font-bold mb-8 text-center">Products</h1>
+      <div className="flex justify-center mb-8">
         <div className="max-w-lg w-full">
           <input
             type="text"
@@ -61,9 +61,9 @@ const Products = () => {
           />
         </div>
       </div>
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between mb-8">
         <div>
-          <label className="mr-2">Sort by:</label>
+          <label className="mr-2 font-semibold">Sort by:</label>
           <select onChange={handleSortChange} value={sortOption} className="border rounded p-2">
             <option value="">None</option>
             <option value="price">Price</option>
@@ -72,7 +72,7 @@ const Products = () => {
           </select>
         </div>
         <div>
-          <label className="mr-2">Category:</label>
+          <label className="mr-2 font-semibold">Category:</label>
           <select onChange={handleCategoryChange} value={category} className="border rounded p-2">
             <option value="">All</option>
             <option value="electronics">Electronics</option>
@@ -82,17 +82,19 @@ const Products = () => {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="border p-4 rounded-lg shadow-md">
+          <div key={product.id} className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <Link to={`/product/${product.id}`}>
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-48 object-cover mb-2 rounded-lg"
-              />
-              <h2 className="text-lg font-semibold">{product.title}</h2>
-              <p className="text-gray-600">₹{(product.price * 75).toFixed(2)}</p>
+              <div className="flex justify-center items-center mb-4">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="max-h-48 object-contain"
+                />
+              </div>
+              <h2 className="text-lg font-semibold mb-2 text-center">{product.title}</h2>
+              <p className="text-gray-600 text-center">₹{(product.price * 75).toFixed(2)}</p>
             </Link>
           </div>
         ))}
