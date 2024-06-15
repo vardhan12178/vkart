@@ -1,21 +1,21 @@
+// Header.js
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ShoppingCartIcon, LogoutIcon } from '@heroicons/react/outline'; // Import icons from Heroicons
-import Cookies from 'js-cookie'; // Import Cookies for token management
+import { useSelector } from 'react-redux';
+import { ShoppingCartIcon, LogoutIcon, ShoppingBagIcon } from '@heroicons/react/outline'; // Assuming ShoppingBagIcon is relevant
+import Cookies from 'js-cookie';
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const cartItems = useSelector((state) => state.cart);
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
-  // Function to handle logout
   const handleLogout = () => {
-    // Remove JWT token
     Cookies.remove('jwt_token');
-    // Navigate to login page
     navigate('/login');
   };
 
-  // Hide header on login page
   if (location.pathname === '/login') {
     return null;
   }
@@ -23,7 +23,10 @@ const Header = () => {
   return (
     <header className="bg-blue-500 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-xl font-bold">Vkart</Link> {/* Changed title to Vkart */}
+        <Link to="/" className="flex items-center text-white text-xl font-bold">
+          <ShoppingBagIcon className="w-8 h-8 mr-2" /> {/* Replace with appropriate icon */}
+          Vkart
+        </Link>
         <nav>
           <ul className="flex justify-end items-center space-x-4">
             <li>
@@ -41,14 +44,11 @@ const Header = () => {
             <li>
               <Link to="/cart" className="text-white flex items-center hover:underline">
                 <ShoppingCartIcon className="w-6 h-6 mr-1" />
-                Cart
+                Cart {cartCount > 0 && <span className="bg-red-500 text-white rounded-full px-2 py-1 text-xs">{cartCount}</span>}
               </Link>
             </li>
             <li>
-              <button
-                onClick={handleLogout}
-                className="text-white hover:underline flex items-center"
-              >
+              <button onClick={handleLogout} className="text-white hover:underline flex items-center">
                 <LogoutIcon className="w-6 h-6 mr-1" />
                 Logout
               </button>

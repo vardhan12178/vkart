@@ -12,7 +12,8 @@ app.use(cors({ origin: 'http://localhost:3000', credentials: true })); // Adjust
 
 // In-memory database for simplicity (replace with your actual database)
 const users = [
-  { id: 1, username: 'vardhan975', password: 'vardhan2181' }
+  { id: 1, username: 'vardhan975', password: 'vardhan2181' },
+  { id: 2, username: 'testuser', password: 'test@2024' }
 ];
 
 // Secret key for JWT (replace with a secure random string)
