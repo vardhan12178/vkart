@@ -30,7 +30,6 @@ const Contact = () => {
     <div className="p-4 mb-20">
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
         <h2 className="text-xl font-bold mb-4">Contact Us</h2>
-        <p className="text-lg">You can reach us via email, phone, or fill out the form below.</p>
         <form onSubmit={handleSubmit} className="mt-4">
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">Name</label>
