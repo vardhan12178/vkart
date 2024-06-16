@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline'; // Assuming you have heroicons installed
+import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 
 const Login = ({ setIsLoggedIn }) => {
   const [userId, setUserId] = useState('');
@@ -33,7 +33,7 @@ const Login = ({ setIsLoggedIn }) => {
       });
 
       const jwtToken = response.data.token;
-      Cookies.set('jwt_token', jwtToken, { expires: 30 });
+      Cookies.set('jwt_token', jwtToken, { expires: 30, secure: true, sameSite: 'None' });
 
       setIsLoggedIn(true);
       navigate('/');

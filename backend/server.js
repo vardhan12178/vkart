@@ -35,8 +35,8 @@ app.post('/api/login', (req, res) => {
   res.cookie('jwt_token', token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-    secure: true, // Set to true because your frontend is on HTTPS
-    sameSite: 'None'
+    secure: process.env.NODE_ENV === 'production', // Secure in production
+    sameSite: 'None' // None for cross-site cookie sharing
   });
 
   res.json({ token });
