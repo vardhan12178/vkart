@@ -20,7 +20,7 @@ const users = [
   { id: 2, username: 'testuser', password: 'test@2024' }
 ];
 
-const JWT_SECRET = process.env.JWT_SECRET || 'my_fallback_secret';
+const JWT_SECRET = 'my_secret_key';
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
