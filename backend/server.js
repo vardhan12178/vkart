@@ -12,8 +12,7 @@ app.use(cookieParser());
 // CORS configuration
 app.use(cors({
   origin: ['http://localhost:3000', 'https://vkartshop.netlify.app'],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  credentials: true
 }));
 
 const users = [
@@ -33,10 +32,11 @@ app.post('/api/login', (req, res) => {
   }
 
   const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: '30d' });
+
   res.cookie('jwt_token', token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-    secure: true, // Ensure this is true for HTTPS
+    secure: process.env.NODE_ENV === 'production', // Secure in production
     sameSite: 'None'
   });
 
