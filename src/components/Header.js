@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { ShoppingCartIcon, LogoutIcon, MenuIcon, XIcon } from '@heroicons/react/outline'; // Assuming these are the correct icons needed
 import Cookies from 'js-cookie';
 
-const Header = () => {
+const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart);
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -12,6 +12,7 @@ const Header = () => {
 
   const handleLogout = () => {
     Cookies.remove('jwt_token');
+    setIsLoggedIn(false);  // Update the logged-in state
     navigate('/login');
   };
 
@@ -22,6 +23,10 @@ const Header = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  if (!isLoggedIn) {
+    return null; // Do not render Header if not logged in
+  }
 
   return (
     <header className="bg-blue-500 p-4">

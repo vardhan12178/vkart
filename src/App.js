@@ -26,7 +26,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div id="root">
-        {isLoggedIn && <Header />}
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <main>
           <Routes>
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
