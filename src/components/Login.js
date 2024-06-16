@@ -27,7 +27,7 @@ const Login = ({ setIsLoggedIn }) => {
     }
 
     try {
-      const response = await axios.post('http://[2409:40f0:1043:8c98:28e7:6fbb:9c45:9be6]:5000/api/login', {
+      const response = await axios.post('/api/login', {
         username: userId,
         password: password,
       });

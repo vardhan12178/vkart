@@ -11,8 +11,9 @@ app.use(cookieParser());
 
 // CORS configuration
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://vkartshop.netlify.app', 'http://[2409:40f0:1043:8c98:28e7:6fbb:9c45:9be6]', 'https://[2409:40f0:1043:8c98:28e7:6fbb:9c45:9be6]'],
-  credentials: true
+  origin: ['http://localhost:3000', 'https://vkartshop.netlify.app'],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 
 const users = [
@@ -57,6 +58,6 @@ app.get('/api/verify', (req, res) => {
   }
 });
 
-app.listen(PORT, '2409:40f0:1043:8c98:28e7:6fbb:9c45:9be6', () => {
-  console.log(`Server is running on http://[2409:40f0:1043:8c98:28e7:6fbb:9c45:9be6]:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
