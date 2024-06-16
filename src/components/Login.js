@@ -53,7 +53,7 @@ const Login = ({ setIsLoggedIn }) => {
       
         <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
           <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
+            src="https://img.freepik.com/premium-vector/concept-purchase-online-store-online-shopping-concept-internet-shop-online-credit-card_143808-130.jpg?w=740"
             className="w-full rounded-md"
             alt="website login"
           />
