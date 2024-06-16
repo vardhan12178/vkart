@@ -28,7 +28,7 @@ const Contact = () => {
   return (
     <div className="p-4 mb-20">
       <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
+        <h2 className="text-blue-500 text-3xl font-bold mb-4 text-center">Contact Us</h2>
         <form onSubmit={handleSubmit} className="mt-4">
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">Name</label>

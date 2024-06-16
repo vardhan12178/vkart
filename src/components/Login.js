@@ -33,7 +33,7 @@ const Login = ({ setIsLoggedIn }) => {
       });
 
       const jwtToken = response.data.token;
-      Cookies.set('jwt_token', jwtToken, { expires: 30, secure: true, sameSite: 'None' });
+      Cookies.set('jwt_token', jwtToken, { expires: 30 });
 
       setIsLoggedIn(true);
       navigate('/');
@@ -50,10 +50,9 @@ const Login = ({ setIsLoggedIn }) => {
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center md:items-start">
-      
         <div className="w-full md:w-1/2 mb-8 md:mb-0 md:mr-8">
           <img
-            src="https://img.freepik.com/premium-vector/concept-purchase-online-store-online-shopping-concept-internet-shop-online-credit-card_143808-130.jpg?w=740"
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
             className="w-full rounded-md"
             alt="website login"
           />
@@ -82,14 +81,14 @@ const Login = ({ setIsLoggedIn }) => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 pr-10" // Added padding to the right
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 pr-10"
                 required
               />
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 focus:outline-none"
-                style={{ right: '10px' }} // Adjusted positioning
+                style={{ right: '10px' }}
               >
                 {showPassword ? (
                   <EyeOffIcon className="w-6 h-6" />

@@ -20,7 +20,7 @@ const users = [
   { id: 2, username: 'testuser', password: 'test@2024' }
 ];
 
-const JWT_SECRET = 'my_secret_key';
+const JWT_SECRET = process.env.JWT_SECRET || 'my_fallback_secret';
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
@@ -35,8 +35,8 @@ app.post('/api/login', (req, res) => {
   res.cookie('jwt_token', token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-    secure: process.env.NODE_ENV === 'production', // Secure in production
-    sameSite: 'None' // None for cross-site cookie sharing
+    secure: true, // Ensure this is true for HTTPS
+    sameSite: 'None'
   });
 
   res.json({ token });
