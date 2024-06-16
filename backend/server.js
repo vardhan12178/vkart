@@ -35,8 +35,8 @@ app.post('/api/login', (req, res) => {
   res.cookie('jwt_token', token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-    secure: false, // Set to false because your frontend is not on HTTPS locally
-    sameSite: 'strict'
+    secure: true, // Set to true because your frontend is on HTTPS
+    sameSite: 'None'
   });
 
   res.json({ token });
