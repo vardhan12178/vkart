@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Home from './components/Home';
-import Login from './components/Login';
 import About from './components/About';
 import Contact from './components/Contact';
 import Header from './components/Header';
@@ -13,33 +12,24 @@ import Error from './components/Error';
 import Products from './components/Products';
 import ProductCard from './components/ProductCard';
 import Cart from './components/Cart';
-import Cookies from 'js-cookie';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = Cookies.get("jwt_token");
-    setIsLoggedIn(!!token);
-  }, []);
-
   return (
     <Provider store={store}>
       <div id="root">
-        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <Header />
         <main>
           <Routes>
-            <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
-            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
-            <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
-            <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
-            <Route path="/cart" element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />
-            <Route path="/contact" element={isLoggedIn ? <Contact /> : <Navigate to="/login" />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductCard />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
-        {isLoggedIn && <Footer />}
+        <Footer />
       </div>
     </Provider>
   );
