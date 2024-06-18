@@ -45,6 +45,24 @@ const ProductCard = () => {
     dispatch(addToCart(product));
   };
 
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - halfStar;
+
+    return (
+      <div className="flex items-center">
+        {[...Array(fullStars)].map((_, index) => (
+          <span key={index} className="text-yellow-500">★</span>
+        ))}
+        {halfStar === 1 && <span className="text-yellow-500">☆</span>}
+        {[...Array(emptyStars)].map((_, index) => (
+          <span key={index} className="text-gray-300">★</span>
+        ))}
+      </div>
+    );
+  };
+
   if (!product) {
     return <div className="container mx-auto mt-4">Loading...</div>;
   }
@@ -83,10 +101,14 @@ const ProductCard = () => {
             src={product.image}
             alt={product.title}
             className="w-full md:w-48 h-64 object-cover rounded-lg"
+            loading="lazy"
           />
         </div>
         <div className="flex-1">
           <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
+          <div className="flex items-center mb-4">
+            {renderStars(product.rating.rate)}
+          </div>
           <p className="text-gray-600 mb-4">{product.description}</p>
           <div className="flex items-center">
             <p className="text-lg font-bold text-gray-800 mr-4">₹{(product.price * 75).toFixed(2)}</p>
@@ -109,9 +131,13 @@ const ProductCard = () => {
                   src={relatedProduct.image}
                   alt={relatedProduct.title}
                   className="w-full h-40 object-contain mb-2"
+                  loading="lazy"
                 />
                 <h3 className="text-sm font-semibold">{relatedProduct.title}</h3>
-                <p className="text-sm text-gray-600">₹{(relatedProduct.price * 75).toFixed(2)}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <p className="text-sm text-gray-600">₹{(relatedProduct.price * 75).toFixed(2)}</p>
+                  {renderStars(relatedProduct.rating.rate)}
+                </div>
               </Link>
             </div>
           ))}
