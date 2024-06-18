@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid';
+import { Bars } from 'react-loading-icons';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -8,35 +9,45 @@ const Products = () => {
   const [category, setCategory] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
+  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
 
   const fetchProducts = useCallback(async () => {
     let url = 'https://fakestoreapi.com/products';
     if (category) {
       url += `/category/${category}`;
     }
-    const response = await fetch(url);
-    const data = await response.json();
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Failed to fetch products');
+      }
+      const data = await response.json();
 
-    let sortedData = [...data];
-    if (sortOption) {
-      sortedData.sort((a, b) => {
-        let compareA = a[sortOption];
-        let compareB = b[sortOption];
-        if (sortOption === 'title') {
-          compareA = compareA.toLowerCase();
-          compareB = compareB.toLowerCase();
-        } else if (sortOption === 'rating') {
-          compareA = a.rating.rate;
-          compareB = b.rating.rate;
-        }
+      let sortedData = [...data];
+      if (sortOption) {
+        sortedData.sort((a, b) => {
+          let compareA = a[sortOption];
+          let compareB = b[sortOption];
+          if (sortOption === 'title') {
+            compareA = compareA.toLowerCase();
+            compareB = compareB.toLowerCase();
+          } else if (sortOption === 'rating') {
+            compareA = a.rating.rate;
+            compareB = b.rating.rate;
+          }
 
-        if (compareA < compareB) return sortOrder === 'asc' ? -1 : 1;
-        if (compareA > compareB) return sortOrder === 'asc' ? 1 : -1;
-        return 0;
-      });
+          if (compareA < compareB) return sortOrder === 'asc' ? -1 : 1;
+          if (compareA > compareB) return sortOrder === 'asc' ? 1 : -1;
+          return 0;
+        });
+      }
+
+      setProducts(sortedData);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setIsLoadingProducts(false);
     }
-
-    setProducts(sortedData);
   }, [sortOption, category, sortOrder]);
 
   useEffect(() => {
@@ -124,24 +135,31 @@ const Products = () => {
         </button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProducts.map((product) => (
-          <div key={product.id} className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <Link to={`/product/${product.id}`}>
-              <div className="flex justify-center items-center mb-4">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="max-h-48 object-contain" loading='lazy'
-                />
-              </div>
-              <h2 className="text-lg font-semibold mb-2 text-center">{product.title}</h2>
-              <p className="text-gray-600 text-center">₹{(product.price * 75).toFixed(2)}</p>
-              <div className="flex justify-center">
-                {renderStars(product.rating.rate)}
-              </div>
-            </Link>
+        {isLoadingProducts ? (
+          <div className="flex justify-center items-center col-span-3 h-64">
+            <Bars stroke="#1a202c" className="w-12 h-12" />
           </div>
-        ))}
+        ) : (
+          filteredProducts.map((product) => (
+            <div key={product.id} className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <Link to={`/product/${product.id}`}>
+                <div className="flex justify-center items-center mb-4">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="max-h-48 object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <h2 className="text-lg font-semibold mb-2 text-center">{product.title}</h2>
+                <p className="text-gray-600 text-center">₹{(product.price * 75).toFixed(2)}</p>
+                <div className="flex justify-center">
+                  {renderStars(product.rating.rate)}
+                </div>
+              </Link>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

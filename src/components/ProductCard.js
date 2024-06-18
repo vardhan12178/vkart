@@ -3,11 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import Slider from 'react-slick';
+import { Bars } from 'react-loading-icons'; // Import the loading icon
 
 const ProductCard = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // State to track loading
   const dispatch = useDispatch();
 
   const fetchRelatedProducts = useCallback(async (category) => {
@@ -32,6 +34,7 @@ const ProductCard = () => {
       const data = await response.json();
       setProduct(data);
       fetchRelatedProducts(data.category);
+      setIsLoading(false); // Set loading to false after data is fetched
     } catch (error) {
       console.error('Error fetching product:', error);
     }
@@ -63,8 +66,12 @@ const ProductCard = () => {
     );
   };
 
-  if (!product) {
-    return <div className="container mx-auto mt-4">Loading...</div>;
+  if (isLoading) {
+    return (
+      <div className="container mx-auto mt-4 flex justify-center items-center h-screen">
+        <Bars stroke="#1a202c" className="w-12 h-12" />
+      </div>
+    );
   }
 
   const settings = {
