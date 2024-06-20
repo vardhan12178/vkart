@@ -25,7 +25,7 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen p-4">
         <div className="bg-white p-8 rounded-lg shadow-lg text-center">
           <FontAwesomeIcon icon={faShoppingCart} size="3x" className="text-gray-500 mb-4" />
           <p>Your cart is empty.</p>
@@ -35,8 +35,9 @@ const Cart = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen p-4">
       <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
+        <h1 className="text-3xl text-blue-500 font-bold mb-4 text-center">Your Shopping Cart</h1>
         <ul>
           {cartItems.map((item) => (
             <li key={item.id} className="border p-4 rounded-lg shadow-md mb-4 flex flex-col md:flex-row items-center md:items-start">
@@ -73,7 +74,7 @@ const CheckoutForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Order placed successfully!');
-    // Here you can handle the form submission, e.g., send the data to an API
+    
   };
 
   return (

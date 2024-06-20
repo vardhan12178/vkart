@@ -23,7 +23,7 @@ const Header = () => {
           <ShoppingCartIcon className="w-8 h-8 mr-2" />
           Vkart
         </Link>
-        {/* Hamburger Menu Icon for Mobile */}
+    
         <div className="block lg:hidden relative">
           <button
             onClick={toggleMobileMenu}
@@ -42,7 +42,7 @@ const Header = () => {
             )}
           </button>
         </div>
-        {/* Desktop Menu */}
+  
         <nav className="hidden lg:flex">
           <ul className="flex justify-end items-center space-x-4">
             <li>
@@ -66,7 +66,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      {/* Mobile Menu */}
+  
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-blue-700 py-4 px-8 absolute top-full left-0 right-0">
           <ul className="flex flex-col items-center space-y-4">
