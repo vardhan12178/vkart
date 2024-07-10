@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OrderStages from './OrderStages';
+
 
 const CheckoutForm = ({ onOrderPlaced }) => {
   const [paymentMethod, setPaymentMethod] = useState('creditCard');
