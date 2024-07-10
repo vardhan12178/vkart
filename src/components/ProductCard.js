@@ -3,13 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import Slider from 'react-slick';
-import { Bars } from 'react-loading-icons'; // Import the loading icon
+import { Bars } from 'react-loading-icons'; 
 
 const ProductCard = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // State to track loading
+  const [isLoading, setIsLoading] = useState(true); 
   const dispatch = useDispatch();
 
   const fetchRelatedProducts = useCallback(async (category) => {
@@ -34,7 +34,7 @@ const ProductCard = () => {
       const data = await response.json();
       setProduct(data);
       fetchRelatedProducts(data.category);
-      setIsLoading(false); // Set loading to false after data is fetched
+      setIsLoading(false); 
     } catch (error) {
       console.error('Error fetching product:', error);
     }
@@ -107,17 +107,17 @@ const ProductCard = () => {
           <img
             src={product.image}
             alt={product.title}
-            className="w-full md:w-48 h-64 object-cover rounded-lg"
+            className="w-48 md:w-48 h-64 object-cover rounded-lg mx-auto md:mx-0"
             loading="lazy"
           />
         </div>
-        <div className="flex-1">
-          <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-          <div className="flex items-center mb-4">
+        <div className="flex-1 flex flex-col justify-center">
+          <h1 className="text-2xl font-bold mb-2 text-center md:text-left">{product.title}</h1>
+          <div className="flex items-center justify-center md:justify-start mb-4">
             {renderStars(product.rating.rate)}
           </div>
-          <p className="text-gray-600 mb-4">{product.description}</p>
-          <div className="flex items-center">
+          <p className="text-gray-600 mb-4 text-center md:text-left">{product.description}</p>
+          <div className="flex items-center justify-center md:justify-start">
             <p className="text-lg font-bold text-gray-800 mr-4">₹{(product.price * 75).toFixed(2)}</p>
             <button
               onClick={handleAddToCart}
@@ -137,11 +137,11 @@ const ProductCard = () => {
                 <img
                   src={relatedProduct.image}
                   alt={relatedProduct.title}
-                  className="w-full h-40 object-contain mb-2"
+                  className="w-full h-40 object-contain mb-2 mx-auto"
                   loading="lazy"
                 />
-                <h3 className="text-sm font-semibold">{relatedProduct.title}</h3>
-                <div className="flex justify-between items-center mb-2">
+                <h3 className="text-sm font-semibold text-center">{relatedProduct.title}</h3>
+                <div className="flex justify-center md:justify-between items-center mb-2">
                   <p className="text-sm text-gray-600">₹{(relatedProduct.price * 75).toFixed(2)}</p>
                   {renderStars(relatedProduct.rating.rate)}
                 </div>
