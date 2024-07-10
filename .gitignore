@@ -41,3 +41,5 @@ yarn.lock
 
 # Ignore node runtime environment
 /node
+!server.js
+!login.js
