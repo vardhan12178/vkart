@@ -45,3 +45,6 @@ yarn.lock
 !server.js
 !login.js
 !axiosInstance.js
+!checkOutForm.js
+!orderstages.js
+!.env

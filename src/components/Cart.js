@@ -3,11 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { incrementQuantity, decrementQuantity } from '../redux/cartSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import CheckoutForm from './CheckoutForm';
+import OrderStages from './OrderStages';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart);
-  const [showForm, setShowForm] = useState(false);
+  const [showPaymentDetails, setShowPaymentDetails] = useState(false);
+  const [orderPlaced, setOrderPlaced] = useState(false);
 
   const handleIncrement = (id) => {
     dispatch(incrementQuantity(id));
@@ -18,7 +21,11 @@ const Cart = () => {
   };
 
   const handleBuyNow = () => {
-    setShowForm(true);
+    setShowPaymentDetails(true);
+  };
+
+  const handleOrderPlaced = () => {
+    setOrderPlaced(true);
   };
 
   const totalCost = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -57,99 +64,23 @@ const Cart = () => {
         <div className="mt-4">
           <h2 className="text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2>
         </div>
-        <button
-          onClick={handleBuyNow}
-          className="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full md:w-auto"
-        >
-          Buy Now
-        </button>
-        {showForm && <CheckoutForm />}
+        {!showPaymentDetails && !orderPlaced && (
+          <button
+            onClick={handleBuyNow}
+            className="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full md:w-auto"
+          >
+            Buy Now
+          </button>
+        )}
+        {showPaymentDetails && !orderPlaced && <CheckoutForm onOrderPlaced={handleOrderPlaced} />}
+        {orderPlaced && (
+          <div className="mt-8">
+            <h2 className="text-xl font-bold mb-4">Order Status</h2>
+            <OrderStages currentStage="Shipping" />
+          </div>
+        )}
       </div>
     </div>
-  );
-};
-
-const CheckoutForm = () => {
-  const [paymentMethod, setPaymentMethod] = useState('creditCard');
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Order placed successfully!');
-    
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="mt-4 bg-white p-6 rounded-lg shadow-md mb-10">
-      <h2 className="text-xl font-bold mb-4">Shipping Details</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block mb-2">First Name</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-        <div>
-          <label className="block mb-2">Last Name</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-        <div>
-          <label className="block mb-2">Address</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-        <div>
-          <label className="block mb-2">Pincode</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-        <div>
-          <label className="block mb-2">Country</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-        <div>
-          <label className="block mb-2">State</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-      </div>
-
-      <h2 className="text-xl font-bold mb-4 mt-4">Payment Method</h2>
-      <div className="mb-4">
-        <label className="block mb-2">Payment Method</label>
-        <select 
-          value={paymentMethod}
-          onChange={(e) => setPaymentMethod(e.target.value)}
-          className="border rounded p-2 w-full"
-        >
-          <option value="creditCard">Credit Card</option>
-          <option value="paypal">PayPal</option>
-          <option value="phonepe">PhonePe</option>
-          <option value="gpay">GPay</option>
-          <option value="paytm">Paytm</option>
-          <option value="cred">Cred</option>
-        </select>
-      </div>
-
-      {paymentMethod === 'creditCard' && (
-        <>
-          <div className="mb-4">
-            <label className="block mb-2">Credit Card Number</label>
-            <input type="text" className="border rounded p-2 w-full" required />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Expiry Date</label>
-            <input type="text" className="border rounded p-2 w-full" required />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">CVV</label>
-            <input type="text" className="border rounded p-2 w-full" required />
-          </div>
-        </>
-      )}
-
-      {(paymentMethod === 'phonepe' || paymentMethod === 'gpay' || paymentMethod === 'paytm' || paymentMethod === 'cred') && (
-        <div className="mb-4">
-          <label className="block mb-2">UPI ID</label>
-          <input type="text" className="border rounded p-2 w-full" required />
-        </div>
-      )}
-
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Place Order</button>
-    </form>
   );
 };
 
