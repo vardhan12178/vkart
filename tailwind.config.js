@@ -1,10 +1,10 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this path to your project structure
+    "./src/**/*.{js,jsx,ts,tsx}", // Ensure this path matches your project structure
   ],
-  darkMode: 'class', // Enable dark mode class
+  darkMode: 'class', // Enable dark mode if needed
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
