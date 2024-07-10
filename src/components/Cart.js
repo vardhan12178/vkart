@@ -11,7 +11,7 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const [totalItemsOrdered, setTotalItemsOrdered] = useState(0); // State to hold total items ordered
+  const [totalItemsOrdered, setTotalItemsOrdered] = useState(0); 
 
   const handleIncrement = (id) => {
     dispatch(incrementQuantity(id));
@@ -27,7 +27,7 @@ const Cart = () => {
 
   const handleOrderPlaced = () => {
     const itemsOrdered = cartItems.reduce((total, item) => total + item.quantity, 0);
-    setTotalItemsOrdered(itemsOrdered); // Update total items ordered
+    setTotalItemsOrdered(itemsOrdered); 
     setOrderPlaced(true);
     dispatch(clearCart());
   };
@@ -60,7 +60,7 @@ const Cart = () => {
                     <p className="text-gray-600 mb-2">₹{(item.price * 75).toFixed(2)} x {item.quantity}</p>
                     <div className="flex items-center">
                       <button onClick={() => handleDecrement(item.id)} className="bg-red-500 text-white px-2 py-1 rounded mr-2">-</button>
-                      <span>{item.quantity}</span>
+                      <span className="text-base md:text-lg">{item.quantity}</span> {/* Decreased font size for mobile */}
                       <button onClick={() => handleIncrement(item.id)} className="bg-blue-500 text-white px-2 py-1 rounded ml-2">+</button>
                     </div>
                   </div>
@@ -68,7 +68,7 @@ const Cart = () => {
               ))}
             </ul>
             <div className="mt-4">
-              <h2 className="text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2>
+              <h2 className="text-lg md:text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2> {/* Decreased font size for mobile */}
             </div>
             {!showPaymentDetails && (
               <button
@@ -82,9 +82,11 @@ const Cart = () => {
           </>
         ) : (
           <div className="text-center">
-            <FontAwesomeIcon icon={faCheckCircle} size="3x" className="text-green-500 mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Order placed successfully!</h2>
-            <p className="text-lg mb-4">You have placed an order for {totalItemsOrdered} {totalItemsOrdered > 1 ? 'items' : 'item'}.</p>
+            <FontAwesomeIcon icon={faCheckCircle} size="3x" className="text-green-500 mb-2 md:mb-4" />
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Order placed successfully!</h2> {/* Decreased font size for mobile */}
+            <p className="text-base md:text-lg mb-4">
+              You have placed an order for {totalItemsOrdered} {totalItemsOrdered > 1 ? 'items' : 'item'}.
+            </p> 
             <OrderStages currentStage="Shipping" />
           </div>
         )}

@@ -11,13 +11,13 @@ const OrderStages = ({ currentStage }) => {
   const stageIndex = stages.findIndex(stage => stage.name === currentStage);
 
   return (
-    <div className="flex items-center justify-between mb-4">
+    <div className="flex flex-col md:flex-row items-center justify-between mb-4">
       {stages.map((stage, index) => (
-        <div key={index} className={`flex items-center ${index <= stageIndex ? 'text-blue-500' : 'text-gray-300'}`}>
-          <div className="rounded-full bg-blue-500 text-white flex items-center justify-center w-8 h-8 mr-2">
+        <div key={index} className={`flex items-center ${index <= stageIndex ? 'text-blue-500' : 'text-gray-300'} mb-2 md:mb-0`} style={{ maxWidth: 'calc(100% / 4)' }}>
+          <div className="rounded-full bg-blue-500 text-white flex items-center justify-center w-8 h-8 mr-2 md:mr-4">
             {stage.icon}
           </div>
-          <span>{stage.name}</span>
+          <span className="md:block text-center">{stage.name}</span>
         </div>
       ))}
     </div>
