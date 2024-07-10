@@ -41,5 +41,7 @@ yarn.lock
 
 # Ignore node runtime environment
 /node
+!backend
 !server.js
 !login.js
+!axiosInstance.js
