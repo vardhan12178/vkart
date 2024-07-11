@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from './axiosInstance';
+import axios from './axiosInstance'; 
 import { useNavigate } from 'react-router-dom';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 
@@ -27,13 +27,15 @@ const Register = () => {
     }
 
     try {
+        
       const response = await axios.post('/api/register', {
         username: userId,
         email: email,
         password: password,
+        confirmPassword:confirmPassword
       });
 
-      setSuccess(response.data.message);
+      setSuccess(response.data.message); 
       setError('');
       setTimeout(() => {
         navigate('/login');
