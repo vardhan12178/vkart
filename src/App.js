@@ -1,26 +1,14 @@
-import Login from './components/Login';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import store from './redux/store';
-import './App.css';
-import Error from './components/Error';
-import Products from './components/Products';
-import ProductCard from './components/ProductCard';
-import Cart from './components/Cart';
-import Cookies from 'js-cookie';
-import { useEffect, useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
+
+import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Login,Register,Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart} from './imports';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     const token = Cookies.get("jwt_token");
     setIsLoggedIn(!!token);
   }, []);
+
   return (
     <Provider store={store}>
       <div id="root">
@@ -29,6 +17,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
             <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
             <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
@@ -42,4 +31,5 @@ const App = () => {
     </Provider>
   );
 };
+
 export default App;
