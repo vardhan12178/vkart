@@ -50,7 +50,7 @@ const Cart = () => {
       <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
         {!orderPlaced ? (
           <>
-            <h1 className="text-3xl text-gray-900 font-bold mb-4 text-center">Your Shopping Cart</h1>
+            <h1 className="text-2xl text-gray-900 font-bold mb-4 text-center">Your Shopping Cart</h1>
             <ul>
               {cartItems.map((item) => (
                 <li key={item.id} className="border p-4 rounded-lg shadow-md mb-4 flex flex-col md:flex-row items-center md:items-start">
