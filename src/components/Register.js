@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from './axiosInstance'; 
 import { useNavigate } from 'react-router-dom';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
+import '../styles.css'; 
 
 const Register = () => {
   const [userId, setUserId] = useState('');
@@ -11,7 +12,16 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [passwordMatch, setPasswordMatch] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (password && confirmPassword) {
+      setPasswordMatch(password === confirmPassword);
+    } else {
+      setPasswordMatch(true); // reset to true if one of the fields is empty
+    }
+  }, [password, confirmPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,12 +37,11 @@ const Register = () => {
     }
 
     try {
-        
       const response = await axios.post('/api/register', {
         username: userId,
         email: email,
         password: password,
-        confirmPassword:confirmPassword
+        confirmPassword: confirmPassword,
       });
 
       setSuccess(response.data.message); 
@@ -52,15 +61,8 @@ const Register = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
-      <div className="max-w-4xl w-full bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center md:items-start">
-        <div className="w-350 md:w-1/2 mb-8 md:mb-0 md:mr-8 flex justify-center">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
-            className="w-full max-w-xs rounded-md"
-            alt="website register"
-          />
-        </div>
-        <form onSubmit={handleSubmit} className="w-full md:w-1/2">
+      <div className="max-w-md w-full bg-white shadow-md rounded-lg p-6">
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="userId" className="block text-gray-700 font-bold mb-2">
               User ID
@@ -70,7 +72,7 @@ const Register = () => {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-900"
             />
           </div>
           <div className="mb-4">
@@ -82,7 +84,7 @@ const Register = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-900"
             />
           </div>
           <div className="mb-4">
@@ -95,7 +97,7 @@ const Register = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-900"
               />
               <button
                 type="button"
@@ -116,7 +118,7 @@ const Register = () => {
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                className={`w-full px-3 py-2 border rounded-md focus:outline-none ${passwordMatch ? 'focus:border-gray-900' : 'border-red-500 focus:border-red-500'}`}
               />
               <button
                 type="button"
@@ -126,17 +128,18 @@ const Register = () => {
                 {showPassword ? <EyeOffIcon className="h-5 w-5 text-gray-500" /> : <EyeIcon className="h-5 w-5 text-gray-500" />}
               </button>
             </div>
+            
           </div>
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
           {success && <p className="text-green-500 text-sm mb-4">{success}</p>}
           <button
             type="submit"
-            className="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
+            className="w-full bg-gray-900 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-700 transition duration-300"
           >
             Register
           </button>
           <p className="mt-4">
-            Already have an account? <button onClick={() => navigate('/login')} className="text-blue-500 hover:underline">Login</button>
+            Already have an account? <button onClick={() => navigate('/login')} className="text-gray-900 hover:underline">Login</button>
           </p>
         </form>
       </div>

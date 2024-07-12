@@ -50,7 +50,7 @@ const Cart = () => {
       <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
         {!orderPlaced ? (
           <>
-            <h1 className="text-3xl text-blue-500 font-bold mb-4 text-center">Your Shopping Cart</h1>
+            <h1 className="text-3xl text-gray-900 font-bold mb-4 text-center">Your Shopping Cart</h1>
             <ul>
               {cartItems.map((item) => (
                 <li key={item.id} className="border p-4 rounded-lg shadow-md mb-4 flex flex-col md:flex-row items-center md:items-start">
@@ -59,21 +59,21 @@ const Cart = () => {
                     <h2 className="text-lg font-semibold mb-2">{item.name}</h2>
                     <p className="text-gray-600 mb-2">₹{(item.price * 75).toFixed(2)} x {item.quantity}</p>
                     <div className="flex items-center">
-                      <button onClick={() => handleDecrement(item.id)} className="bg-red-500 text-white px-2 py-1 rounded mr-2">-</button>
-                      <span className="text-base md:text-lg">{item.quantity}</span> {/* Decreased font size for mobile */}
-                      <button onClick={() => handleIncrement(item.id)} className="bg-blue-500 text-white px-2 py-1 rounded ml-2">+</button>
+                      <button onClick={() => handleDecrement(item.id)} className="bg-gray-700 text-white px-2 py-1 rounded mr-2">-</button>
+                      <span className="text-base md:text-lg">{item.quantity}</span> 
+                      <button onClick={() => handleIncrement(item.id)} className="bg-gray-700 text-white px-2 py-1 rounded ml-2">+</button>
                     </div>
                   </div>
                 </li>
               ))}
             </ul>
             <div className="mt-4">
-              <h2 className="text-lg md:text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2> {/* Decreased font size for mobile */}
+              <h2 className="text-lg text-gray-800 md:text-xl font-bold">Total: ₹{(totalCost * 75).toFixed(2)}</h2> 
             </div>
             {!showPaymentDetails && (
               <button
                 onClick={handleBuyNow}
-                className="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full md:w-auto"
+                className="bg-gray-900 text-white px-4 py-2 rounded mt-4 w-full md:w-auto"
               >
                 Buy Now
               </button>
@@ -82,8 +82,8 @@ const Cart = () => {
           </>
         ) : (
           <div className="text-center">
-            <FontAwesomeIcon icon={faCheckCircle} size="3x" className="text-green-500 mb-2 md:mb-4" />
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Order placed successfully!</h2> {/* Decreased font size for mobile */}
+            <FontAwesomeIcon icon={faCheckCircle} size="3x" className="text-gray-900 mb-2 md:mb-4" />
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Order placed successfully!</h2> 
             <p className="text-base md:text-lg mb-4">
               You have placed an order for {totalItemsOrdered} {totalItemsOrdered > 1 ? 'items' : 'item'}.
             </p> 

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className="bg-white h-4/5 md:h-80 flex items-center justify-center">
-      <div className="flex flex-col  md:flex-row items-center justify-between w-full max-w-6xl p-4">
+      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl p-4">
         <div className="md:w-1/2 p-6 text-center">
-          <h1 className="text-blue-600 text-4xl font-bold mb-4">Vkart</h1>
-          <p className="text-gray-600 text-lg mb-6">Shop with us we have the best products available online</p>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition duration-300">
+          <h1 className="text-gray-900 text-4xl font-bold mb-4">Vkart</h1>
+          <p className="text-gray-700 text-lg mb-6">Shop with us, we have the best products available online.</p>
+          <button className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition duration-300">
             <Link to="/products">Shop now</Link>
           </button>
         </div>

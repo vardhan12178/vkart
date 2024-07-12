@@ -3,13 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import Slider from 'react-slick';
-import { Bars } from 'react-loading-icons'; 
+import { Bars } from 'react-loading-icons';
 
 const ProductCard = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
   const fetchRelatedProducts = useCallback(async (category) => {
@@ -34,7 +34,7 @@ const ProductCard = () => {
       const data = await response.json();
       setProduct(data);
       fetchRelatedProducts(data.category);
-      setIsLoading(false); 
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching product:', error);
     }
@@ -121,7 +121,7 @@ const ProductCard = () => {
             <p className="text-lg font-bold text-gray-800 mr-4">₹{(product.price * 75).toFixed(2)}</p>
             <button
               onClick={handleAddToCart}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-gray-900 text-white px-4 py-2 rounded"
             >
               Add to Cart
             </button>

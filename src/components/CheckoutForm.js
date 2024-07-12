@@ -14,14 +14,12 @@ const CheckoutForm = ({ onOrderPlaced }) => {
   const simulateOrderProgress = () => {
     setTimeout(() => {
       onOrderPlaced();
-    }, 2000); // Simulate order placing delay
+    }, 2000); 
   };
 
   return (
     <form onSubmit={handleSubmit} className="mt-4 bg-white p-6 rounded-lg shadow-md mb-10">
-      <h2 className="text-xl font-bold mb-4">Payment Details</h2>
-
-      <h2 className="text-xl font-bold mb-4 mt-8">Payment Method</h2>
+      <h2 className="text-xl text-gray-800 font-bold mb-4">Payment Details</h2>
       <div className="mb-4">
         <label className="block mb-2">Payment Method</label>
         <select 
@@ -55,7 +53,7 @@ const CheckoutForm = ({ onOrderPlaced }) => {
         </>
       )}
 
-      {(paymentMethod === 'phonepe' || paymentMethod === 'gpay' || paymentMethod === 'paytm' || paymentMethod === 'cred') && (
+      {(paymentMethod === 'phonepe' || paymentMethod === 'paypal' || paymentMethod === 'gpay' || paymentMethod === 'paytm' || paymentMethod === 'cred') && (
         <div className="mb-4">
           <label className="block mb-2">UPI ID</label>
           <input type="text" className="border rounded p-2 w-full" required />
@@ -63,11 +61,11 @@ const CheckoutForm = ({ onOrderPlaced }) => {
       )}
 
       {!formSubmitted && (
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Place Order</button>
+        <button type="submit" className="bg-gray-900 text-white px-4 py-2 rounded">Place Order</button>
       )}
       {formSubmitted && (
         <div className="text-center mt-4">
-          <p className="text-green-500 text-xl font-bold">Order placed successfully!</p>
+          <p className="text-gray-900 text-xl font-bold">Order placed successfully!</p>
         </div>
       )}
     </form>

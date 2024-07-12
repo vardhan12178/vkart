@@ -94,7 +94,7 @@ const Products = () => {
 
   return (
     <div className="container mx-auto px-4 mt-8 mb-20">
-      <h1 className="text-blue-500 text-3xl font-bold mb-8 text-center">Products</h1>
+      <h1 className="text-gray-900 text-3xl font-bold mb-8 text-center">Products</h1>
       <div className="flex justify-center mb-8">
         <div className="max-w-lg w-full">
           <input
@@ -151,7 +151,7 @@ const Products = () => {
                     loading="lazy"
                   />
                 </div>
-                <h2 className="text-lg font-semibold mb-2 text-center">{product.title}</h2>
+                <h2 className="text-lg font-semibold mb-2 text-center text-gray-900">{product.title}</h2>
                 <p className="text-gray-600 text-center">₹{(product.price * 75).toFixed(2)}</p>
                 <div className="flex justify-center">
                   {renderStars(product.rating.rate)}

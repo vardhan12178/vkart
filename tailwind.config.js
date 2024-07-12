@@ -1,10 +1,14 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Ensure this path matches your project structure
+    "./src/**/*.{js,jsx,ts,tsx}", 
   ],
-  darkMode: 'class', // Enable dark mode if needed
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Lato', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
