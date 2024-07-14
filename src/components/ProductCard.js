@@ -104,12 +104,12 @@ const ProductCard = () => {
     <div className="container mx-auto mt-4 mb-20 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <div className="flex-shrink-0">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="w-48 md:w-48 h-64 object-cover rounded-lg mx-auto md:mx-0"
-            loading="lazy"
-          />
+        <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-40 object-contain mb-2 mx-auto"
+                  loading="lazy"
+                />
         </div>
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="text-2xl font-bold mb-2 text-center md:text-left">{product.title}</h1>
