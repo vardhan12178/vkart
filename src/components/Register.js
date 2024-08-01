@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from './axiosInstance'; 
+import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
-import '../styles.css'; 
+import '../styles.css';
 
 const Register = () => {
   const [userId, setUserId] = useState('');
@@ -19,7 +19,7 @@ const Register = () => {
     if (password && confirmPassword) {
       setPasswordMatch(password === confirmPassword);
     } else {
-      setPasswordMatch(true); 
+      setPasswordMatch(true);
     }
   }, [password, confirmPassword]);
 
@@ -44,7 +44,7 @@ const Register = () => {
         confirmPassword: confirmPassword,
       });
 
-      setSuccess(response.data.message); 
+      setSuccess(response.data.message);
       setError('');
       setTimeout(() => {
         navigate('/login');
@@ -60,10 +60,10 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-green-200 to-green-400 min-h-screen flex items-center justify-center p-6">
-      <div className="w-full max-w-md bg-white shadow-2xl rounded-lg p-8 space-y-6 border border-gray-200">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-4 text-center">Create an Account</h1>
-        <p className="text-gray-600 text-center mb-6 text-lg">Join us and start exploring!</p>
+    <div className="bg-gradient-to-br from-green-200 to-green-400 min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white shadow-2xl rounded-lg p-6 sm:p-8 space-y-6 border border-gray-200">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4 text-center">Create an Account</h1>
+        <p className="text-gray-600 text-center mb-6 text-base sm:text-lg">Join us and start exploring!</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="userId" className="block text-gray-700 font-semibold mb-2 text-sm">
@@ -143,7 +143,7 @@ const Register = () => {
           >
             Register
           </button>
-          <p className="text-center">
+          <p className="text-center text-sm">
             Already have an account? <button onClick={() => navigate('/login')} className="text-green-600 hover:underline">Login</button>
           </p>
         </form>

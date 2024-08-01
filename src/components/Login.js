@@ -3,7 +3,7 @@ import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
-import '../styles.css'; 
+import '../styles.css';
 
 const Login = ({ setIsLoggedIn }) => {
   const [userId, setUserId] = useState('');
@@ -49,10 +49,10 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-purple-200 to-indigo-400 min-h-screen flex items-center justify-center p-6">
-      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8 space-y-6 border border-gray-200">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-4 text-center">Welcome Back</h1>
-        <p className="text-gray-600 text-center mb-6 text-lg">Sign in to your account</p>
+    <div className="bg-gradient-to-br from-purple-200 to-indigo-400 min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 sm:p-8 space-y-6 border border-gray-200">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4 text-center">Welcome Back</h1>
+        <p className="text-gray-600 text-center mb-6 text-base sm:text-lg">Sign in to your account</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="userId" className="block text-gray-700 font-semibold mb-2 text-sm">
@@ -92,7 +92,7 @@ const Login = ({ setIsLoggedIn }) => {
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md"
+            className="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300"
           >
             Login
           </button>
