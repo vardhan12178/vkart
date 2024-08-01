@@ -47,25 +47,27 @@ const Cart = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 bg-gray-50 mt-16">
-      <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-xl">
+      <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-xl">
         {!orderPlaced ? (
           <>
-            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Your Shopping Cart</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center md:text-center">Your Shopping Cart</h1>
             <ul className="space-y-4">
               {cartItems.map((item) => (
                 <li key={item.id} className="flex flex-col md:flex-row items-center md:items-start border-b last:border-b-0 p-4">
-                  <div className="w-32 h-32 flex items-center justify-center overflow-hidden rounded-lg mb-4 md:mb-0">
+                  <div className="w-24 h-24 flex items-center justify-center overflow-hidden rounded-lg mb-4 mr-4 md:mb-0">
                     <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                   </div>
                   <div className="flex-1 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
                     <div className="md:mr-4 mb-4 md:mb-0">
                       <h2 className="text-xl font-semibold">{item.name}</h2>
-                      <p className="text-gray-600 text-lg mt-2">₹{(item.price * 75).toFixed(2)} x {item.quantity}</p>
-                    </div>
-                    <div className="flex items-center mt-4 md:mt-0">
-                      <button onClick={() => handleDecrement(item.id)} className="bg-gray-800 text-white px-3 py-1 rounded-full mr-2">-</button>
-                      <span className="text-lg font-medium">{item.quantity}</span> 
-                      <button onClick={() => handleIncrement(item.id)} className="bg-gray-800 text-white px-3 py-1 rounded-full ml-2">+</button>
+                      <p className="text-gray-600 text-lg mt-2">₹{(item.price * 75).toFixed(2)}</p>
+                      <div className="flex flex-col md:flex-row items-center md:items-start mt-4 md:mt-2">
+                        <div className="flex items-center">
+                          <button onClick={() => handleDecrement(item.id)} className="bg-gray-800 text-white px-3 py-1 rounded-full mr-2">-</button>
+                          <span className="text-lg font-medium">{item.quantity}</span>
+                          <button onClick={() => handleIncrement(item.id)} className="bg-gray-800 text-white px-3 py-1 rounded-full ml-2">+</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </li>

@@ -129,7 +129,7 @@ const ProductCard = () => {
   }
 
   return (
-    <div className="container mx-auto mt-16 mb-20 px-4">
+    <div className="container mx-auto mt-16 mb-20 px-4 py-12">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <div className="flex-shrink-0">
           <img
