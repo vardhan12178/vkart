@@ -3,7 +3,7 @@ import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
-import '../styles.css';
+import '../styles.css'; 
 
 const Login = ({ setIsLoggedIn }) => {
   const [userId, setUserId] = useState('');
@@ -49,18 +49,13 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
-      <div className="max-w-3xl w-full bg-white shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center md:items-start">
-        <div className="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center items-center md:pt-12">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
-            className="w-full max-w-xs rounded-md"
-            alt="website login"
-          />
-        </div>
-        <form onSubmit={handleSubmit} className="w-full md:w-1/2">
-          <div className="mb-4">
-            <label htmlFor="userId" className="block text-gray-700 font-bold mb-2">
+    <div className="bg-gradient-to-br from-purple-200 to-indigo-400 min-h-screen flex items-center justify-center p-6">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-8 space-y-6 border border-gray-200">
+        <h1 className="text-4xl font-extrabold text-gray-800 mb-4 text-center">Welcome Back</h1>
+        <p className="text-gray-600 text-center mb-6 text-lg">Sign in to your account</p>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="userId" className="block text-gray-700 font-semibold mb-2 text-sm">
               User ID
             </label>
             <input
@@ -68,11 +63,12 @@ const Login = ({ setIsLoggedIn }) => {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-900"
+              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-indigo-500 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
+              placeholder="Enter your User ID"
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+          <div>
+            <label htmlFor="password" className="block text-gray-700 font-semibold mb-2 text-sm">
               Password
             </label>
             <div className="relative">
@@ -81,26 +77,27 @@ const Login = ({ setIsLoggedIn }) => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-gray-900"
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-indigo-500 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
+                placeholder="Enter your password"
               />
               <button
                 type="button"
                 className="absolute inset-y-0 right-0 px-3 flex items-center"
                 onClick={togglePasswordVisibility}
               >
-                {showPassword ? <EyeOffIcon className="h-5 w-5 text-gray-500" /> : <EyeIcon className="h-5 w-5 text-gray-500" />}
+                {showPassword ? <EyeOffIcon className="h-5 w-5 text-gray-600" /> : <EyeIcon className="h-5 w-5 text-gray-600" />}
               </button>
             </div>
           </div>
-          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <button
             type="submit"
-            className="w-full bg-gray-900 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-700 transition duration-300"
+            className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md"
           >
             Login
           </button>
-          <p className="mt-4">
-            Don't have an account? <button onClick={() => navigate('/register')} className="text-gray-900 hover:underline">Register</button>
+          <p className="text-center text-sm">
+            Don’t have an account? <button onClick={() => navigate('/register')} className="text-indigo-600 hover:underline font-medium">Register</button>
           </p>
         </form>
       </div>

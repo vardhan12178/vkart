@@ -41,12 +41,10 @@ const Products = () => {
           return 0;
         });
       }
-
       setProducts(sortedData);
+      setIsLoadingProducts(false);
     } catch (error) {
       console.error('Error fetching products:', error);
-    } finally {
-      setIsLoadingProducts(false);
     }
   }, [sortOption, category, sortOrder]);
 
@@ -54,20 +52,20 @@ const Products = () => {
     fetchProducts();
   }, [fetchProducts]);
 
-  const handleSortChange = (e) => {
-    setSortOption(e.target.value);
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
   };
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
+  const handleSortChange = (event) => {
+    setSortOption(event.target.value);
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
   };
 
   const toggleSortOrder = () => {
-    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
   };
 
   const filteredProducts = products.filter((product) =>
@@ -80,21 +78,21 @@ const Products = () => {
     const emptyStars = 5 - fullStars - halfStar;
 
     return (
-      <>
+      <div className="flex items-center">
         {[...Array(fullStars)].map((_, index) => (
           <span key={index} className="text-yellow-500">★</span>
         ))}
-        {halfStar === 1 && <span className="text-yellow-500">★</span>}
+        {halfStar === 1 && <span className="text-yellow-500">☆</span>}
         {[...Array(emptyStars)].map((_, index) => (
           <span key={index} className="text-gray-300">★</span>
         ))}
-      </>
+      </div>
     );
   };
 
   return (
     <div className="container mx-auto px-4 mt-8 mb-20">
-      <h1 className="text-gray-900 text-3xl font-bold mb-8 text-center">Products</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center text-gray-900">Products</h1>
       <div className="flex justify-center mb-8">
         <div className="max-w-lg w-full">
           <input
@@ -126,7 +124,7 @@ const Products = () => {
             <option value="women's clothing">Women's Clothing</option>
           </select>
         </div>
-        <button onClick={toggleSortOrder} className="flex items-center text-blue-500">
+        <button onClick={toggleSortOrder} className="flex items-center text-gray-900">
           {sortOrder === 'asc' ? (
             <ArrowUpIcon className="w-6 h-6" />
           ) : (

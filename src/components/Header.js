@@ -29,18 +29,22 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   }
 
   return (
-    <header className="bg-gray-900 p-4">
+    <header className="bg-gradient-to-r from-purple-500 to-indigo-600 p-4 fixed top-0 left-0 right-0 z-50 ">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center text-white text-xl font-bold">
           <ShoppingCartIcon className="w-8 h-8 mr-2" />
           Vkart
         </Link>
-        <button className="text-white md:hidden relative" onClick={toggleMobileMenu}>
+        <button
+          className="text-white md:hidden relative"
+          aria-label="Toggle mobile menu"
+          onClick={toggleMobileMenu}
+        >
           {isMobileMenuOpen ? (
-            <XIcon className="w-8 h-8" />
+            <XIcon className="w-8 h-8 transform rotate-90 transition-transform duration-300" />
           ) : (
             <>
-              <MenuIcon className="w-8 h-8" />
+              <MenuIcon className="w-8 h-8 transform rotate-0 transition-transform duration-300" />
               {cartCount > 0 && (
                 <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full px-2 py-1 text-xs">
                   {cartCount}
@@ -52,17 +56,17 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         <nav className="hidden md:flex items-center">
           <ul className="md:flex md:space-x-6 space-y-2 md:space-y-0">
             <li>
-              <Link to="/products" className="text-white hover:underline">
+              <Link to="/products" className="text-white hover:text-gray-200 transition duration-300">
                 Products
               </Link>
             </li>
             <li>
-              <Link to="/about" className="text-white hover:underline">
+              <Link to="/about" className="text-white hover:text-gray-200 transition duration-300">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="text-white hover:underline">
+              <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300">
                 Contact
               </Link>
             </li>
@@ -73,7 +77,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </li>
             <li>
-              <button onClick={handleLogout} className="text-white hover:underline flex items-center">
+              <button onClick={handleLogout} className="text-white hover:text-gray-200 transition duration-300 flex items-center">
                 <LogoutIcon className="w-6 h-6 mr-1" />
                 Logout
               </button>
@@ -82,20 +86,20 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </nav>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-900 p-4 absolute top-16 left-0 right-0 z-50">
+        <div className="md:hidden bg-gradient-to-r from-purple-500 to-indigo-600 p-4 absolute top-16 left-0 right-0 z-50">
           <ul className="space-y-2">
             <li>
-              <Link to="/products" className="text-white hover:underline" onClick={closeMobileMenu}>
+              <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
                 Products
               </Link>
             </li>
             <li>
-              <Link to="/about" className="text-white hover:underline" onClick={closeMobileMenu}>
+              <Link to="/about" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
                 About
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="text-white hover:underline" onClick={closeMobileMenu}>
+              <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
                 Contact
               </Link>
             </li>
@@ -106,7 +110,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </li>
             <li>
-              <button onClick={() => { handleLogout(); closeMobileMenu(); }} className="text-white hover:underline flex items-center">
+              <button onClick={() => { handleLogout(); closeMobileMenu(); }} className="text-white hover:text-gray-200 transition duration-300 flex items-center">
                 <LogoutIcon className="w-6 h-6 mr-1" />
                 Logout
               </button>
