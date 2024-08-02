@@ -49,13 +49,39 @@ const Home = () => {
           <form className="flex justify-center">
             <input
               type="email"
-              className="px-4 py-2 w-1/2 rounded-l-lg focus:outline-none"
+              className="px-4 py-2 w-1/2 rounded-l-lg focus:outline-none bg-white text-black"
               placeholder="Enter your email"
             />
             <button className="bg-white text-indigo-700 px-4 py-2 rounded-r-lg hover:bg-gray-100 transition duration-300">
               Subscribe
             </button>
           </form>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-8">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8 text-gray-900">What Our Customers Say</h2>
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full md:w-1/3 px-4 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">John Doe</h3>
+                <p className="text-gray-700">"Great products and amazing service. Highly recommend!"</p>
+              </div>
+            </div>
+            <div className="w-full md:w-1/3 px-4 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Jane Smith</h3>
+                <p className="text-gray-700">"Quick delivery and excellent customer support. Will shop again!"</p>
+              </div>
+            </div>
+            <div className="w-full md:w-1/3 px-4 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Alex Johnson</h3>
+                <p className="text-gray-700">"Top-notch quality and free shipping. What more could you ask for?"</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

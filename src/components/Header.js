@@ -29,7 +29,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   }
 
   return (
-    <header className="bg-gradient-to-r from-purple-500 to-indigo-600 p-4 fixed top-0 left-0 right-0 z-50 ">
+    <header className="bg-gradient-to-r from-purple-500 to-indigo-600 p-4 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center text-white text-xl font-bold">
           <ShoppingCartIcon className="w-8 h-8 mr-2" />
@@ -86,7 +86,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </nav>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-purple-500 to-indigo-600 p-4 absolute top-16 left-0 right-0 z-50">
+        <div className="md:hidden bg-gradient-to-r from-purple-500 to-indigo-600 p-4 absolute top-16 right-0 z-50 w-3/4">
           <ul className="space-y-2">
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
