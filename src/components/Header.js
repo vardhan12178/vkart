@@ -24,8 +24,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
     setIsMobileMenuOpen(false);
   };
 
-
-
   if (!isLoggedIn) {
     return null;
   }
@@ -83,7 +81,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                 Cart {cartCount > 0 && <span className="bg-red-500 text-white rounded-full px-2 py-1 text-xs">{cartCount}</span>}
               </Link>
             </li>
-            
             <li>
               <button onClick={handleLogout} className="text-white hover:text-gray-200 transition duration-300 flex items-center">
                 <LogoutIcon className="w-6 h-6 mr-1" />
@@ -94,7 +91,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </nav>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-purple-500 to-indigo-600 p-4 absolute top-16 right-0 z-50 w-3/4">
+        <div className="md:hidden bg-gradient-to-r from-purple-500 to-indigo-600 p-4 absolute top-16 right-0 z-50 inline-block">
           <ul className="space-y-2">
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
