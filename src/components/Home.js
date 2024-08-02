@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 const Home = () => {
   return (
@@ -65,19 +66,34 @@ const Home = () => {
           <div className="flex flex-wrap justify-center">
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">John Doe</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Amit</h3>
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((star, index) => (
+                    <FaStar key={index} className="text-yellow-500" />
+                  ))}
+                </div>
                 <p className="text-gray-700">"Great products and amazing service. Highly recommend!"</p>
               </div>
             </div>
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Jane Smith</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Priya </h3>
+                <div className="flex justify-center mb-4">
+                  {[...Array(4)].map((star, index) => (
+                    <FaStar key={index} className="text-yellow-500" />
+                  ))}
+                </div>
                 <p className="text-gray-700">"Quick delivery and excellent customer support. Will shop again!"</p>
               </div>
             </div>
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Alex Johnson</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Rohit </h3>
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((star, index) => (
+                    <FaStar key={index} className="text-yellow-500" />
+                  ))}
+                </div>
                 <p className="text-gray-700">"Top-notch quality and free shipping. What more could you ask for?"</p>
               </div>
             </div>
