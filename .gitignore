@@ -49,5 +49,6 @@ yarn.lock
 !orderstages.js
 !imports.js
 !Register.js
+!Profile.js
 !_redirects
 !.env

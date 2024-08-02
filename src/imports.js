@@ -15,6 +15,7 @@ import Error from './components/Error';
 import Products from './components/Products';
 import ProductCard from './components/ProductCard';
 import Cart from './components/Cart';
+import Profile from './components/Profile';
 
 export {
   React,
@@ -36,5 +37,6 @@ export {
   Error,
   Products,
   ProductCard,
-  Cart
+  Cart,
+  Profile
 };

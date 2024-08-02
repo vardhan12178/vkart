@@ -24,6 +24,8 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
     setIsMobileMenuOpen(false);
   };
 
+
+
   if (!isLoggedIn) {
     return null;
   }
@@ -61,6 +63,11 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </li>
             <li>
+              <Link to="/profile" className="text-white hover:text-gray-200 transition duration-300">
+                Profile
+              </Link>
+            </li>
+            <li>
               <Link to="/about" className="text-white hover:text-gray-200 transition duration-300">
                 About
               </Link>
@@ -76,6 +83,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                 Cart {cartCount > 0 && <span className="bg-red-500 text-white rounded-full px-2 py-1 text-xs">{cartCount}</span>}
               </Link>
             </li>
+            
             <li>
               <button onClick={handleLogout} className="text-white hover:text-gray-200 transition duration-300 flex items-center">
                 <LogoutIcon className="w-6 h-6 mr-1" />
@@ -91,6 +99,11 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
                 Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/profile" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
+                Profile
               </Link>
             </li>
             <li>

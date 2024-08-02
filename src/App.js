@@ -1,5 +1,5 @@
 
-import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Login,Register,Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart} from './imports';
+import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Profile,Login,Register,Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart} from './imports';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +22,7 @@ const App = () => {
             <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
             <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
             <Route path="/cart" element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />
+            <Route path="/profile" element={isLoggedIn ? <Profile setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/login" />} />
             <Route path="/contact" element={isLoggedIn ? <Contact /> : <Navigate to="/login" />} />
             <Route path="*" element={<Error />} />
           </Routes>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from './axiosInstance';
 import { useNavigate } from 'react-router-dom';
+
+import axios from './axiosInstance'; 
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
+import { Link } from 'react-router-dom';
 import '../styles.css';
 
 const Register = () => {
@@ -11,23 +13,15 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [image, setImage] = useState(null);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (password && confirmPassword) {
-      setPasswordMatch(password === confirmPassword);
-    } else {
-      setPasswordMatch(true);
-    }
+    setPasswordMatch(password === confirmPassword);
   }, [password, confirmPassword]);
-
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,25 +31,23 @@ const Register = () => {
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (!passwordMatch) {
       setError('Passwords do not match.');
       return;
     }
 
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('username', userId);
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('confirmPassword', confirmPassword);
-    if (image) {
-      formData.append('image', image);
-    }
+    const userData = {
+      name,
+      username: userId,
+      email,
+      password,
+      confirmPassword
+    };
 
     try {
-      const response = await axios.post('/api/register', formData, {
+      const response = await axios.post('https://vkart-t64z.onrender.com/api/register', userData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
       });
 
@@ -64,6 +56,12 @@ const Register = () => {
       setTimeout(() => {
         navigate('/login');
       }, 3000);
+
+      setName('');
+      setUserId('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
     } catch (error) {
       console.error('Registration API Error:', error);
       setError('Registration failed. Please try again.');
@@ -74,6 +72,10 @@ const Register = () => {
     setShowPassword(!showPassword);
   };
 
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <div className="bg-gradient-to-br from-green-200 to-green-400 min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white shadow-2xl rounded-lg p-6 sm:p-8 space-y-6 border border-gray-200">
@@ -81,9 +83,7 @@ const Register = () => {
         <p className="text-gray-600 text-center mb-6 text-base sm:text-lg">Join us and start exploring!</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-sm">
-              Name
-            </label>
+            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-sm">Name</label>
             <input
               type="text"
               id="name"
@@ -94,9 +94,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label htmlFor="userId" className="block text-gray-700 font-semibold mb-2 text-sm">
-              User ID
-            </label>
+            <label htmlFor="userId" className="block text-gray-700 font-semibold mb-2 text-sm">User ID</label>
             <input
               type="text"
               id="userId"
@@ -107,9 +105,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2 text-sm">
-              Email
-            </label>
+            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2 text-sm">Email</label>
             <input
               type="email"
               id="email"
@@ -120,9 +116,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-gray-700 font-semibold mb-2 text-sm">
-              Password
-            </label>
+            <label htmlFor="password" className="block text-gray-700 font-semibold mb-2 text-sm">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -134,58 +128,49 @@ const Register = () => {
               />
               <button
                 type="button"
-                className="absolute inset-y-0 right-0 px-3 flex items-center"
                 onClick={togglePasswordVisibility}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
               >
-                {showPassword ? <EyeOffIcon className="h-5 w-5 text-gray-500" /> : <EyeIcon className="h-5 w-5 text-gray-500" />}
+                {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
               </button>
             </div>
           </div>
           <div>
-            <label htmlFor="confirmPassword" className="block text-gray-700 font-semibold mb-2 text-sm">
-              Confirm Password
-            </label>
+            <label htmlFor="confirmPassword" className="block text-gray-700 font-semibold mb-2 text-sm">Confirm Password</label>
             <div className="relative">
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showConfirmPassword ? 'text' : 'password'}
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none shadow-sm transition duration-300 text-gray-700 placeholder-gray-400 ${passwordMatch ? 'focus:border-green-600' : 'border-red-500 focus:border-red-500'}`}
-                placeholder="Re-enter your password"
+                className={`w-full px-4 py-3 border rounded-lg focus:outline-none transition duration-300 placeholder-gray-400 ${passwordMatch ? 'border-green-600' : 'border-red-600'}`}
+                placeholder="Confirm your password"
               />
               <button
                 type="button"
-                className="absolute inset-y-0 right-0 px-3 flex items-center"
-                onClick={togglePasswordVisibility}
+                onClick={toggleConfirmPasswordVisibility}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
               >
-                {showPassword ? <EyeOffIcon className="h-5 w-5 text-gray-500" /> : <EyeIcon className="h-5 w-5 text-gray-500" />}
+                {showConfirmPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
               </button>
             </div>
           </div>
-          <div>
-            <label htmlFor="image" className="block text-gray-700 font-semibold mb-2 text-sm">
-              Profile Image
-            </label>
-            <input
-              type="file"
-              id="image"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
-            />
-          </div>
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-          {success && <p className="text-green-500 text-sm text-center">{success}</p>}
+          {error && <p className="text-red-600 text-sm text-center">{error}</p>}
+          {success && <p className="text-green-600 text-sm text-center">{success}</p>}
           <button
             type="submit"
-            className="w-full bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
           >
             Register
           </button>
-          <p className="text-center text-sm">
-            Already have an account? <button onClick={() => navigate('/login')} className="text-green-600 hover:underline">Login</button>
-          </p>
+          <div className="text-center">
+            <p className="text-gray-600 text-sm">
+              Already have an account?{' '}
+              <Link to="/login" className="text-green-600 hover:underline">
+                Login here
+              </Link>
+            </p>
+          </div>
         </form>
       </div>
     </div>
