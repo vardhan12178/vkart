@@ -104,16 +104,15 @@ const Profile = ({ setIsLoggedIn }) => {
           <p className="text-xl font-semibold mb-2">Name: {user.name}</p>
           <p className="text-xl font-semibold mb-2">Username: {user.username}</p>
           <p className="text-lg mb-2">Email: {user.email}</p>
-          <p className="text-lg mb-4">User ID: {user._id}</p>
           <button
             onClick={handleLogout}
-            className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mt-4"
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mt-4"
           >
             Logout
           </button>
         </div>
       ) : (
-        <p className="text-center text-lg">No user data available.</p>
+        <p className="text-center text-lg">No user found</p>
       )}
     </div>
   );

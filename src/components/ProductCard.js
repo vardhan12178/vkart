@@ -73,7 +73,7 @@ const ProductCard = () => {
     const isTruncated = lines.length > 4;
     return (
       <div>
-        {visibleLines.join('\n')}
+        <p>{visibleLines.join('\n')}</p>
         {isTruncated && !isDescriptionExpanded && (
           <span
             onClick={() => setIsDescriptionExpanded(true)}
@@ -144,9 +144,9 @@ const ProductCard = () => {
           <div className="flex items-center justify-center md:justify-start mb-4">
             {renderStars(product.rating.rate)}
           </div>
-          <p className="text-gray-700 mb-4 text-center md:text-left">
+          <div className="text-gray-700 mb-4 text-center md:text-left">
             {truncatedDescription(product.description)}
-          </p>
+          </div>
           <div className="flex items-center justify-center md:justify-start">
             <p className="text-lg font-bold text-gray-800 mr-4">₹{(product.price * 75).toFixed(2)}</p>
             <button
