@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from './axiosInstance'; 
+import axios from './axiosInstance'; // Ensure axiosInstance is correctly configured
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import AvatarEditor from 'react-avatar-editor';
@@ -39,7 +39,7 @@ const Profile = ({ setIsLoggedIn }) => {
   };
 
   const handleUpload = async () => {
-    if (!editor) return;
+    if (!editor || !selectedFile) return;
 
     const canvas = editor.getImage();
     canvas.toBlob(async (blob) => {
@@ -53,6 +53,7 @@ const Profile = ({ setIsLoggedIn }) => {
           },
         });
         setUser(response.data);
+        setSelectedFile(null); // Clear the selected file after upload
       } catch (err) {
         setError('Failed to upload profile image');
       }
@@ -97,22 +98,24 @@ const Profile = ({ setIsLoggedIn }) => {
                 onClick={handleUpload}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mt-4"
               >
-                Upload Profile Picture
+                Upload
               </button>
             </>
           )}
-          <p className="text-xl font-semibold mb-2">Name: {user.name}</p>
-          <p className="text-xl font-semibold mb-2">Username: {user.username}</p>
-          <p className="text-lg mb-2">Email: {user.email}</p>
+          <div className="mt-4">
+            <p><strong>Name:</strong> {user.name}</p>
+            <p><strong>Username:</strong> {user.username}</p>
+            <p><strong>Email:</strong> {user.email}</p>
+          </div>
           <button
             onClick={handleLogout}
-            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mt-4"
+            className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mt-4"
           >
-            Logout
+            Log Out
           </button>
         </div>
       ) : (
-        <p className="text-center text-lg">No user found</p>
+        <p className="text-center text-lg text-red-500">Failed to load profile</p>
       )}
     </div>
   );
