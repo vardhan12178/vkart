@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import AvatarEditor from 'react-avatar-editor';
 import { FaCamera, FaPen } from 'react-icons/fa';
+import OrderCard from './OrderCard';
 
 const Profile = ({ setIsLoggedIn }) => {
   const [user, setUser] = useState(null);
@@ -11,21 +12,25 @@ const Profile = ({ setIsLoggedIn }) => {
   const [error, setError] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [editor, setEditor] = useState(null);
+  const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProfile = async () => {
+    const fetchProfileAndOrders = async () => {
       try {
-        const response = await axios.get('/api/profile');
-        setUser(response.data);
+        const profileResponse = await axios.get('/api/profile');
+        setUser(profileResponse.data);
+        
+        const ordersResponse = await axios.get('/api/profile/orders');
+        setOrders(ordersResponse.data);
       } catch (err) {
-        setError('Failed to fetch profile');
+        setError('Failed to fetch profile or orders');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProfile();
+    fetchProfileAndOrders();
   }, []);
 
   const handleLogout = () => {
@@ -65,7 +70,6 @@ const Profile = ({ setIsLoggedIn }) => {
 
   return (
     <div className="profile-container mt-16 p-8 max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg">
-    
       {user ? (
         <div className="profile-info bg-white p-8 shadow-md rounded-lg relative">
           <div className="relative w-32 h-32 mx-auto mb-6">
@@ -120,11 +124,19 @@ const Profile = ({ setIsLoggedIn }) => {
             onClick={handleLogout}
             className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
           >
-            Log Out
+            Logout
           </button>
+          <h2 className="text-2xl font-semibold mt-8 mb-4">Order History</h2>
+          {orders.length === 0 ? (
+            <p className="text-center text-lg text-gray-600">You have no orders yet.</p>
+          ) : (
+            orders.map(order => (
+              <OrderCard key={order._id} order={order} />
+            ))
+          )}
         </div>
       ) : (
-        <p className="text-center text-lg text-red-500">Failed to load profile</p>
+        <p className="text-center text-lg">No user data found.</p>
       )}
     </div>
   );
