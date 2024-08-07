@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import Slider from 'react-slick';
 import { Bars } from 'react-loading-icons';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -73,21 +74,39 @@ const Home = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
         <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-6xl px-4 py-8 text-center">
           
-        <h1 className="text-white text-3xl sm:text-5xl font-extrabold mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>
-        Discover the Best Products
-          </h1>
-         
-          <p className="text-white text-lg mb-6">
+          <motion.h1 
+            className="hero-title text-white text-3xl sm:text-5xl font-extrabold mb-4" 
+            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}
+            initial={{ opacity: 0, y: -50 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 1 }}
+          >
+            Discover the Best Products
+          </motion.h1>
+          
+          <motion.p 
+            className="text-white text-lg mb-6" 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 1, delay: 0.5 }}
+          >
             Shop the latest trends and deals at unbeatable prices.
-          </p>
-          <Link to="/products">
-            <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg hover:bg-white hover:text-black transition duration-300 transform hover:scale-105">
-              Shop Now
-            </button>
-          </Link>
+          </motion.p>
+          
+          <motion.div 
+            className="flex justify-center" 
+            initial={{ opacity: 0, scale: 0.8 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <Link to="/products">
+              <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg hover:bg-white hover:text-black transition duration-300 transform hover:scale-105">
+                Shop Now
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </div>
-
       <section className="bg-gray-50 py-8 px-4 sm:px-6">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">Why Shop With Us?</h2>
