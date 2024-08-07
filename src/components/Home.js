@@ -64,7 +64,7 @@ const Home = () => {
     <>
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
         <video
-          src="/hero-video.mp4" 
+          src="/hero-video.mp4"
           autoPlay
           loop
           muted
@@ -72,14 +72,16 @@ const Home = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
         <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-6xl px-4 py-8 text-center">
-          <h1 className="text-white text-3xl sm:text-5xl font-extrabold mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>
-            Vkart
+          
+        <h1 className="text-white text-3xl sm:text-5xl font-extrabold mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}>
+        Discover the Best Products
           </h1>
-          <p className="text-white text-base sm:text-xl mb-6" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 1)' }}>
-            Shop with us, we have the best products available online.
+         
+          <p className="text-white text-lg mb-6">
+            Shop the latest trends and deals at unbeatable prices.
           </p>
           <Link to="/products">
-            <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg hover:bg-white hover:text-indigo-700 transition duration-300 transform hover:scale-105">
+            <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg hover:bg-white hover:text-black transition duration-300 transform hover:scale-105">
               Shop Now
             </button>
           </Link>

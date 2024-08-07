@@ -70,7 +70,7 @@ const Profile = ({ setIsLoggedIn }) => {
   if (error) return <p className="text-center text-lg text-red-500">{error}</p>;
 
   return (
-    <div className="profile-container  p-8 max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg">
+    <div className="profile-container p-8 max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg">
       {user ? (
         <div className="profile-info bg-white p-8 shadow-md rounded-lg relative mt-20">
           <div className="relative w-32 h-32 mx-auto mb-6">
