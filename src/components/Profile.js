@@ -70,14 +70,19 @@ const Profile = ({ setIsLoggedIn }) => {
   if (error) return <p className="text-center text-lg text-red-500">{error}</p>;
 
   return (
-    <div className="profile-container mt-16 p-8 max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg">
+    <div className="profile-container  p-8 max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg">
       {user ? (
-        <div className="profile-info bg-white p-8 shadow-md rounded-lg relative">
+        <div className="profile-info bg-white p-8 shadow-md rounded-lg relative mt-20">
           <div className="relative w-32 h-32 mx-auto mb-6">
             <img
               src={user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}
+              srcSet={`
+                ${user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} 1x,
+                ${user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} 2x
+              `}
               alt="Profile"
               className="w-full h-full rounded-full object-cover border-4 border-gray-300 shadow-md"
+              loading="lazy"
             />
             <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-blue-600 p-2 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-110">
               <FaCamera className="text-white text-lg" />
