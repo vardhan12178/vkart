@@ -100,7 +100,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
           <ul className="space-y-2">
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
-                Products
+                All Products
               </Link>
             </li>
             <li>
