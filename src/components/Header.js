@@ -29,7 +29,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   }
 
   return (
-    <header className="bg-gradient-to-r from-purple-500 to-indigo-600 p-4 fixed top-0 left-0 right-0 z-50">
+    <header className="bg-gradient-to-r from-purple-700 to-indigo-700 p-4 fixed top-0 left-0 right-0 z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center text-white text-xl font-bold">
           <ShoppingCartIcon className="w-8 h-8 mr-2" />
@@ -41,7 +41,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
           onClick={toggleMobileMenu}
         >
           {isMobileMenuOpen ? (
-            <XIcon className="w-8 h-8 transform rotate-90 transition-transform duration-300" />
+            <XIcon className="w-8 h-8 transform rotate-0 transition-transform duration-300" />
           ) : (
             <>
               <MenuIcon className="w-8 h-8 transform rotate-0 transition-transform duration-300" />
@@ -54,25 +54,30 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
           )}
         </button>
         <nav className="hidden md:flex items-center">
-          <ul className="md:flex md:space-x-6 space-y-2 md:space-y-0">
+          <ul className="flex space-x-6">
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300">
-                Products
+                All Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/electronics" className="text-white hover:text-gray-200 transition duration-300">
+                Electronics
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/men" className="text-white hover:text-gray-200 transition duration-300">
+                Men's Clothing
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/women" className="text-white hover:text-gray-200 transition duration-300">
+                Women's Clothing
               </Link>
             </li>
             <li>
               <Link to="/profile" className="text-white hover:text-gray-200 transition duration-300">
                 Profile
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="text-white hover:text-gray-200 transition duration-300">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300">
-                Contact
               </Link>
             </li>
             <li>
@@ -91,7 +96,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </nav>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-purple-500 to-indigo-600 p-4 absolute top-16 right-0 z-50 inline-block">
+        <div className="md:hidden bg-gradient-to-r from-purple-700 to-indigo-700 p-4 absolute top-16 right-0 z-50 shadow-lg">
           <ul className="space-y-2">
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
@@ -99,18 +104,23 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </li>
             <li>
+              <Link to="/products/electronics" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
+                Electronics
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/men" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
+                Men's Clothing
+              </Link>
+            </li>
+            <li>
+              <Link to="/products/women" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
+                Women's Clothing
+              </Link>
+            </li>
+            <li>
               <Link to="/profile" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
                 Profile
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>
-                Contact
               </Link>
             </li>
             <li>

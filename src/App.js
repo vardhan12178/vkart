@@ -1,5 +1,23 @@
-
-import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Profile,Login,Register,Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart} from './imports';
+import React, { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import store from './redux/store';
+import './App.css';
+import Login from './components/Login';
+import Electronics from './components/Electronics';
+import { MenClothing, WomenClothing } from './components/Clothing';
+import Register from './components/Register';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Error from './components/Error';
+import Products from './components/Products';
+import ProductCard from './components/ProductCard';
+import Cart from './components/Cart';
+import Profile from './components/Profile';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +37,9 @@ const App = () => {
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
+            <Route path="/products/electronics" element={isLoggedIn ? <Electronics /> : <Navigate to="/login" />} />
+            <Route path="/products/men" element={isLoggedIn ? <MenClothing /> : <Navigate to="/login" />} />
+            <Route path="/products/women" element={isLoggedIn ? <WomenClothing /> : <Navigate to="/login" />} />
             <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
             <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
             <Route path="/cart" element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />

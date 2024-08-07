@@ -5,6 +5,9 @@ import Cookies from 'js-cookie';
 import store from './redux/store';
 import './App.css';
 import Login from './components/Login';
+import Electronics from './components/Electronics';
+import { MenClothing } from './components/Clothing';
+import { WomenClothing } from './components/Clothing';
 import Register from './components/Register';
 import Home from './components/Home';
 import About from './components/About';
@@ -20,6 +23,9 @@ import Profile from './components/Profile';
 export {
   React,
   useEffect,
+  Electronics,
+ MenClothing,
+ WomenClothing,
   useState,
   Provider,
   Navigate,

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from './axiosInstance';
+import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import AvatarEditor from 'react-avatar-editor';
-import { FaCamera, FaPen } from 'react-icons/fa';
+import { FaCamera, FaPen, FaEnvelope, FaInfoCircle } from 'react-icons/fa';
 import OrderCard from './OrderCard';
 
 const Profile = ({ setIsLoggedIn }) => {
@@ -126,6 +127,18 @@ const Profile = ({ setIsLoggedIn }) => {
           >
             Logout
           </button>
+          <div className="text-center mt-8">
+            <Link to="/contact" className="flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+              <FaEnvelope className="mr-2" />
+              Contact Us
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/about" className="flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+              <FaInfoCircle className="mr-2" />
+              About Us
+            </Link>
+          </div>
           <h2 className="text-2xl font-semibold mt-8 mb-4">Order History</h2>
           {orders.length === 0 ? (
             <p className="text-center text-lg text-gray-600">You have no orders yet.</p>

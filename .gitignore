@@ -43,6 +43,8 @@ yarn.lock
 /node
 !backend
 !OrderCard.js
+!Electronics.js
+!Clothing.js
 !server.js
 !login.js
 !axiosInstance.js
