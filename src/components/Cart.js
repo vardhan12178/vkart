@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import CheckoutForm from './CheckoutForm';
 import OrderStages from './OrderStages';
+import axios from './axiosInstance';  
+const mongoose = require('mongoose');
+
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -24,12 +27,33 @@ const Cart = () => {
   const handleBuyNow = () => {
     setShowPaymentDetails(true);
   };
+  const generateObjectId = () => new mongoose.Types.ObjectId();
+  const handleOrderPlaced = async (orderDetails) => {
+    try {
+      const itemsOrdered = cartItems.reduce((total, item) => total + item.quantity, 0);
+      setTotalItemsOrdered(itemsOrdered);
 
-  const handleOrderPlaced = () => {
-    const itemsOrdered = cartItems.reduce((total, item) => total + item.quantity, 0);
-    setTotalItemsOrdered(itemsOrdered);
-    setOrderPlaced(true);
-    dispatch(clearCart());
+      const orderData = {
+        products: cartItems.map(item => ({
+          productId: generateObjectId(),
+          name: item.title,
+          image: item.image,
+          quantity: item.quantity,
+          price: item.price*75,
+        })),
+        totalPrice: cartItems.reduce((total, item) => total + item.price*75 * item.quantity, 0),
+        stage: 'Pending',
+        shippingAddress: orderDetails.address
+      };
+
+    await axios.post('/api/orders', orderData);
+
+    
+      dispatch(clearCart());
+      setOrderPlaced(true);
+    } catch (error) {
+      console.error('Order placement error:', error);
+    }
   };
 
   const totalCost = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);

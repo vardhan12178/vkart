@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { Bars } from 'react-loading-icons';
 
 const Clothing = ({ category }) => {
   const [products, setProducts] = useState([]);
@@ -53,7 +52,6 @@ const Clothing = ({ category }) => {
 
   return (
     <div className="container mx-auto px-4 py-16 mt-8 mb-20">
-     
       <div className="flex justify-center mb-8">
         <div className="max-w-lg w-full">
           <input
@@ -68,7 +66,11 @@ const Clothing = ({ category }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoading ? (
           <div className="flex justify-center items-center col-span-3 h-64">
-            <Bars stroke="#1a202c" className="w-12 h-12" />
+            <div className="bars-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         ) : (
           filteredProducts.map((product) => (

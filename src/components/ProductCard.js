@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import Slider from 'react-slick';
-import { Bars } from 'react-loading-icons';
+
 
 const ProductCard = () => {
   const { id } = useParams();
@@ -57,9 +57,9 @@ const ProductCard = () => {
     return (
       <div className="flex items-center">
         {[...Array(fullStars)].map((_, index) => (
-          <span key={index} className="text-yellow-400">★</span>
+          <span key={index} className="text-yellow-500">★</span>
         ))}
-        {halfStar === 1 && <span className="text-yellow-400">☆</span>}
+        {halfStar === 1 && <span className="text-yellow-500">☆</span>}
         {[...Array(emptyStars)].map((_, index) => (
           <span key={index} className="text-gray-300">★</span>
         ))}
@@ -123,7 +123,11 @@ const ProductCard = () => {
   if (isLoading) {
     return (
       <div className="container mx-auto mt-4 flex justify-center items-center h-screen">
-        <Bars stroke="#4a4a4a" className="w-12 h-12" />
+        <div className="bars-spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     );
   }

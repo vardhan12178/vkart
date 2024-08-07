@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { Bars } from 'react-loading-icons';
 
 const Electronics = () => {
   const [products, setProducts] = useState([]);
@@ -67,7 +66,11 @@ const Electronics = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoading ? (
           <div className="flex justify-center items-center col-span-3 h-64">
-            <Bars stroke="#1a202c" className="w-12 h-12" />
+            <div className="bars-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         ) : (
           filteredProducts.map((product) => (

@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid';
-import { Bars } from 'react-loading-icons';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -135,7 +134,11 @@ const Products = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoadingProducts ? (
           <div className="flex justify-center items-center col-span-3 h-64">
-            <Bars stroke="#1a202c" className="w-12 h-12" />
+            <div className="bars-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         ) : (
           filteredProducts.map((product) => (

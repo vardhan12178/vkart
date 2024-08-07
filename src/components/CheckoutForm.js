@@ -27,7 +27,7 @@ const CheckoutForm = ({ onOrderPlaced }) => {
       if (!formData.creditCardNumber) newErrors.creditCardNumber = 'Credit card number is required';
       if (!formData.expiryDate) newErrors.expiryDate = 'Expiry date is required';
       if (!formData.cvv) newErrors.cvv = 'CVV is required';
-    } else if (paymentMethod === 'phonepe' || paymentMethod === 'paypal' || paymentMethod === 'gpay' || paymentMethod === 'paytm' || paymentMethod === 'cred') {
+    } else if (['phonepe', 'paypal', 'gpay', 'paytm', 'cred'].includes(paymentMethod)) {
       if (!formData.upiId) newErrors.upiId = 'UPI ID is required';
     }
 
@@ -47,7 +47,7 @@ const CheckoutForm = ({ onOrderPlaced }) => {
 
   const simulateOrderProgress = () => {
     setTimeout(() => {
-      onOrderPlaced();
+      onOrderPlaced(formData); 
     }, 2000);
   };
 
@@ -63,99 +63,92 @@ const CheckoutForm = ({ onOrderPlaced }) => {
           className="border rounded-lg p-3 w-full"
         >
           <option value="creditCard">Credit Card</option>
-          <option value="paypal">PayPal</option>
           <option value="phonepe">PhonePe</option>
-          <option value="gpay">GPay</option>
+          <option value="paypal">PayPal</option>
+          <option value="gpay">Google Pay</option>
           <option value="paytm">Paytm</option>
-          <option value="cred">Cred</option>
+          <option value="cred">CRED</option>
         </select>
       </div>
-
       {paymentMethod === 'creditCard' && (
         <>
           <div className="mb-4">
             <label className="block text-lg font-medium mb-2">Credit Card Number</label>
-            <input
+            <input 
               type="text"
               name="creditCardNumber"
               value={formData.creditCardNumber}
               onChange={handleChange}
               className="border rounded-lg p-3 w-full"
             />
-            {errors.creditCardNumber && <p className="text-red-500 text-sm">{errors.creditCardNumber}</p>}
+            {errors.creditCardNumber && <p className="text-red-500">{errors.creditCardNumber}</p>}
           </div>
           <div className="mb-4">
             <label className="block text-lg font-medium mb-2">Expiry Date</label>
-            <input
+            <input 
               type="text"
               name="expiryDate"
               value={formData.expiryDate}
               onChange={handleChange}
               className="border rounded-lg p-3 w-full"
             />
-            {errors.expiryDate && <p className="text-red-500 text-sm">{errors.expiryDate}</p>}
+            {errors.expiryDate && <p className="text-red-500">{errors.expiryDate}</p>}
           </div>
           <div className="mb-4">
             <label className="block text-lg font-medium mb-2">CVV</label>
-            <input
+            <input 
               type="text"
               name="cvv"
               value={formData.cvv}
               onChange={handleChange}
               className="border rounded-lg p-3 w-full"
             />
-            {errors.cvv && <p className="text-red-500 text-sm">{errors.cvv}</p>}
+            {errors.cvv && <p className="text-red-500">{errors.cvv}</p>}
           </div>
         </>
       )}
-
-      {(paymentMethod === 'phonepe' || paymentMethod === 'paypal' || paymentMethod === 'gpay' || paymentMethod === 'paytm' || paymentMethod === 'cred') && (
+      {['phonepe', 'paypal', 'gpay', 'paytm', 'cred'].includes(paymentMethod) && (
         <div className="mb-4">
           <label className="block text-lg font-medium mb-2">UPI ID</label>
-          <input
+          <input 
             type="text"
             name="upiId"
             value={formData.upiId}
             onChange={handleChange}
             className="border rounded-lg p-3 w-full"
           />
-          {errors.upid && <p className="text-red-500 text-sm">{errors.upid}</p>}
+          {errors.upiId && <p className="text-red-500">{errors.upiId}</p>}
         </div>
       )}
-
       <div className="mb-4">
         <label className="block text-lg font-medium mb-2">Mobile Number</label>
-        <input
+        <input 
           type="text"
           name="mobileNumber"
           value={formData.mobileNumber}
           onChange={handleChange}
           className="border rounded-lg p-3 w-full"
         />
-        {errors.mobileNumber && <p className="text-red-500 text-sm">{errors.mobileNumber}</p>}
+        {errors.mobileNumber && <p className="text-red-500">{errors.mobileNumber}</p>}
       </div>
-
       <div className="mb-4">
-        <label className="block text-lg font-medium mb-2">Address</label>
-        <input
+        <label className="block text-lg font-medium mb-2">Shipping Address</label>
+        <input 
           type="text"
           name="address"
           value={formData.address}
           onChange={handleChange}
-          placeholder="Enter your address"
           className="border rounded-lg p-3 w-full"
         />
-        {errors.address && <p className="text-red-500 text-sm">{errors.address}</p>}
+        {errors.address && <p className="text-red-500">{errors.address}</p>}
       </div>
-
-      {!formSubmitted && (
-        <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Place Order</button>
-      )}
-      {formSubmitted && (
-        <div className="text-center mt-4">
-          <p className="text-green-600 text-xl font-bold">Order placed successfully!</p>
-        </div>
-      )}
+      <button 
+        type="submit"
+        className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300 w-full"
+      >
+        Place Order
+      </button>
+      {formSubmitted && <p className="text-green-500 mt-4">Order is being processed...</p>}
     </form>
   );
 };
