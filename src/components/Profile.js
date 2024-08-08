@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import axios from './axiosInstance';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import AvatarEditor from 'react-avatar-editor';
 import { FaCamera, FaPen, FaEnvelope, FaInfoCircle } from 'react-icons/fa';
-import OrderCard from './OrderCard';
+
+
+const OrderCard = lazy(() => import('./OrderCard'));
 
 const Profile = ({ setIsLoggedIn }) => {
   const [user, setUser] = useState(null);
@@ -19,10 +21,11 @@ const Profile = ({ setIsLoggedIn }) => {
   useEffect(() => {
     const fetchProfileAndOrders = async () => {
       try {
-        const profileResponse = await axios.get('/api/profile');
+        const [profileResponse, ordersResponse] = await Promise.all([
+          axios.get('/api/profile'),
+          axios.get('/api/profile/orders'),
+        ]);
         setUser(profileResponse.data);
-        
-        const ordersResponse = await axios.get('/api/profile/orders');
         setOrders(ordersResponse.data);
       } catch (err) {
         setError('Failed to fetch profile or orders');
@@ -138,13 +141,15 @@ const Profile = ({ setIsLoggedIn }) => {
             <p className="text-sm sm:text-lg text-gray-700 mb-4 break-words"><strong>Email:</strong> {user.email}</p>
           </div>
           <h2 className="text-gray-800 text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-4">Order History</h2>
-          {orders.length === 0 ? (
-            <p className="text-center text-lg text-gray-600">You have no orders yet.</p>
-          ) : (
-            orders.map(order => (
-              <OrderCard key={order._id} order={order} />
-            ))
-          )}
+          <Suspense fallback={<p className="text-center text-lg text-gray-600">Loading orders...</p>}>
+            {orders.length === 0 ? (
+              <p className="text-center text-lg text-gray-600">You have no orders yet.</p>
+            ) : (
+              orders.map(order => (
+                <OrderCard key={order._id} order={order} />
+              ))
+            )}
+          </Suspense>
           <div className="text-center mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link to="/about" className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 hover:bg-gradient-to-l hover:from-green-600 hover:to-green-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
               <FaInfoCircle className="mr-2 text-sm sm:text-lg" />

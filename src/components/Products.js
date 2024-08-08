@@ -90,47 +90,65 @@ const Products = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 mt-8 mb-20">
-      <h1 className="text-3xl font-bold mb-8 text-center text-gray-900">Products</h1>
-      <div className="flex justify-center mb-8">
-        <div className="max-w-lg w-full">
+    <div className="container mx-auto px-4 py-8 mt-12">
+      <h1 className="text-4xl font-extrabold mb-6 text-center text-gray-800">Products</h1>
+      
+      <div className="flex flex-col items-center mb-8">
+        <div className="max-w-lg w-full mb-4">
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search products..."
-            className="border rounded p-2 w-full"
+            className="border border-gray-300 rounded-lg p-4 w-full max-w-md shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+        <div className="flex flex-wrap items-center justify-between w-full mb-4 gap-4">
+  <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2">
+    <label className="text-xs md:text-sm font-semibold text-gray-700">Sort by:</label>
+    <select
+      onChange={handleSortChange}
+      value={sortOption}
+      className="border border-gray-300 rounded-lg p-1 text-xs md:p-2 md:text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <option value="">None</option>
+      <option value="price">Price</option>
+      <option value="title">Name</option>
+      <option value="rating">Rating</option>
+    </select>
+  </div>
+
+  <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-center gap-2">
+    <label className="text-xs md:text-sm font-semibold text-gray-700">Category:</label>
+    <select
+      onChange={handleCategoryChange}
+      value={category}
+      className="border border-gray-300 rounded-lg p-1 text-xs md:p-2 md:text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <option value="">All</option>
+      <option value="electronics">Electronics</option>
+      <option value="jewelery">Jewelry</option>
+      <option value="men's clothing">Men's Clothing</option>
+      <option value="women's clothing">Women's Clothing</option>
+    </select>
+  </div>
+
+  <div className="flex items-center flex-grow md:justify-end gap-2">
+    <button
+      onClick={toggleSortOrder}
+      className="flex items-center p-1 text-xs md:p-2 md:text-sm text-gray-900 hover:bg-gray-100 rounded-md"
+    >
+      {sortOrder === 'asc' ? (
+        <ArrowUpIcon className="w-5 h-5" />
+      ) : (
+        <ArrowDownIcon className="w-5 h-5" />
+      )}
+    </button>
+  </div>
+</div>
+
       </div>
-      <div className="flex justify-between mb-8">
-        <div>
-          <label className="mr-2 font-semibold">Sort by:</label>
-          <select onChange={handleSortChange} value={sortOption} className="border rounded p-2">
-            <option value="">None</option>
-            <option value="price">Price</option>
-            <option value="title">Name</option>
-            <option value="rating">Rating</option>
-          </select>
-        </div>
-        <div>
-          <label className="mr-2 font-semibold">Category:</label>
-          <select onChange={handleCategoryChange} value={category} className="border rounded p-2">
-            <option value="">All</option>
-            <option value="electronics">Electronics</option>
-            <option value="jewelery">Jewelery</option>
-            <option value="men's clothing">Men's Clothing</option>
-            <option value="women's clothing">Women's Clothing</option>
-          </select>
-        </div>
-        <button onClick={toggleSortOrder} className="flex items-center text-gray-900">
-          {sortOrder === 'asc' ? (
-            <ArrowUpIcon className="w-6 h-6" />
-          ) : (
-            <ArrowDownIcon className="w-6 h-6" />
-          )}
-        </button>
-      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoadingProducts ? (
           <div className="flex justify-center items-center col-span-3 h-64">
