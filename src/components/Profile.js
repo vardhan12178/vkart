@@ -81,10 +81,10 @@ const Profile = ({ setIsLoggedIn }) => {
   if (error) return <p className="text-center text-lg text-red-500">{error}</p>;
 
   return (
-    <div className="profile-container mt-12 p-8 max-w-5xl mx-auto bg-white rounded-lg shadow-2xl">
+    <div className="profile-container mt-12 p-4 sm:p-8 max-w-5xl mx-auto bg-white rounded-lg shadow-2xl">
       {user ? (
-        <div className="profile-info p-8 bg-gray-100 rounded-lg shadow-lg relative">
-          <div className="relative w-40 h-40 mx-auto mb-8">
+        <div className="profile-info p-4 sm:p-8 bg-gray-100 rounded-lg shadow-lg relative">
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6">
             <img
               src={user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}
               srcSet={`
@@ -95,8 +95,8 @@ const Profile = ({ setIsLoggedIn }) => {
               className="w-full h-full rounded-full object-cover border-4 border-gray-200 shadow-lg"
               loading="lazy"
             />
-            <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-gradient-to-r from-blue-500 to-teal-500 p-3 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-110">
-              <FaCamera className="text-white text-lg" />
+            <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-gradient-to-r from-blue-500 to-teal-500 p-2 sm:p-3 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-110">
+              <FaCamera className="text-white text-sm sm:text-lg" />
               <input
                 id="file-upload"
                 type="file"
@@ -107,9 +107,9 @@ const Profile = ({ setIsLoggedIn }) => {
             {selectedFile && (
               <button
                 onClick={handleUpload}
-                className="absolute top-2 right-2 bg-green-500 p-3 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-110"
+                className="absolute top-2 right-2 bg-green-500 p-2 sm:p-3 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-110"
               >
-                <FaPen />
+                <FaPen className="text-sm sm:text-lg" />
               </button>
             )}
           </div>
@@ -122,22 +122,22 @@ const Profile = ({ setIsLoggedIn }) => {
                 height={320}
                 border={50}
                 scale={1.2}
-                className="mb-6 mx-auto"
+                className="mb-4 sm:mb-6 mx-auto"
               />
               <button
                 onClick={handleUpload}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-3 px-5 rounded-lg transition duration-300"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300"
               >
                 Upload
               </button>
             </>
           )}
-          <div className="mt-8 text-center">
-            <p className="text-2xl font-bold text-gray-800 mb-2"><strong>Name:</strong> {user.name}</p>
-            <p className="text-lg text-gray-700 mb-2"><strong>Username:</strong> {user.username}</p>
-            <p className="text-lg text-gray-700 mb-6"><strong>Email:</strong> {user.email}</p>
+          <div className="mt-6 sm:mt-8 text-center">
+            <p className="text-lg sm:text-2xl font-bold text-gray-800 mb-2 break-words"><strong>Name:</strong> {user.name}</p>
+            <p className="text-sm sm:text-lg text-gray-700 mb-2 break-words"><strong>Username:</strong> {user.username}</p>
+            <p className="text-sm sm:text-lg text-gray-700 mb-4 break-words"><strong>Email:</strong> {user.email}</p>
           </div>
-          <h2 className="text-gray-800 text-2xl font-bold mt-8 mb-4">Order History</h2>
+          <h2 className="text-gray-800 text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-4">Order History</h2>
           {orders.length === 0 ? (
             <p className="text-center text-lg text-gray-600">You have no orders yet.</p>
           ) : (
@@ -145,18 +145,18 @@ const Profile = ({ setIsLoggedIn }) => {
               <OrderCard key={order._id} order={order} />
             ))
           )}
-          <div className="text-center mt-8 flex justify-center space-x-4">
-           <Link to="/about" className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 hover:bg-gradient-to-l hover:from-green-600 hover:to-green-500 text-white font-semibold py-3 px-5 rounded-lg transition duration-300">
-              <FaInfoCircle className="mr-2 text-lg" />
+          <div className="text-center mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <Link to="/about" className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 hover:bg-gradient-to-l hover:from-green-600 hover:to-green-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
+              <FaInfoCircle className="mr-2 text-sm sm:text-lg" />
               About Us
             </Link>
-            <Link to="/contact" className="flex items-center justify-center bg-gradient-to-r from-indigo-500 to-indigo-600 hover:bg-gradient-to-l hover:from-indigo-600 hover:to-indigo-500 text-white font-semibold py-3 px-5 rounded-lg transition duration-300">
-              <FaEnvelope className="mr-2 text-lg" />
+            <Link to="/contact" className="flex items-center justify-center bg-gradient-to-r from-indigo-500 to-indigo-600 hover:bg-gradient-to-l hover:from-indigo-600 hover:to-indigo-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
+              <FaEnvelope className="mr-2 text-sm sm:text-lg" />
               Contact Us
             </Link>
             <button
               onClick={handleLogout}
-              className="bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-l hover:from-red-600 hover:to-red-500 text-white font-semibold py-3 px-5 rounded-lg transition duration-300"
+              className="bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-l hover:from-red-600 hover:to-red-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300"
             >
               Logout
             </button>

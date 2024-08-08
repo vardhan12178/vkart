@@ -17,7 +17,7 @@ const OrderCard = ({ order }) => {
           style={{ objectFit: 'contain' }} 
         />
         <div className="flex-1">
-          <h3 className="text-md sm:text-xl font-semibold mb-1">Order #{order._id}</h3>
+          <h3 className="text-sm sm:text-lg font-semibold mb-1">Order #{order._id}</h3>
           <p className="text-base sm:text-lg">Items: {order.products.length}</p>
           <p className="text-base sm:text-lg">Total Price: ₹{(order.totalPrice).toFixed(2)}</p>
           <p className="text-base sm:text-lg">Status: {order.stage}</p>
