@@ -181,10 +181,46 @@ const Home = () => {
               placeholder="Enter your email"
               className="p-2 sm:p-3 rounded-l-md border border-gray-300"
             />
-            <button className="bg-yellow-500 text-black px-4 sm:px-6 py-2 sm:py-3 rounded-r-md border border-yellow-500 hover:bg-yellow-600 transition duration-300">
+            <button className="bg-yellow-300 text-black px-4 sm:px-6 py-2 sm:py-3 rounded-r-md border border-yellow-400 hover:bg-yellow-500 transition duration-300">
               Subscribe
             </button>
           </form>
+        </div>
+      </section>
+      <section className="bg-gray-50 py-8">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-gray-900">What Our Customers Say</h2>
+          <div className="flex flex-wrap justify-center">
+            {[{
+              name: "Amit",
+              rating: 5,
+              text: '"Great products and amazing service. Highly recommend!"',
+              image: "Amit.png"
+            }, {
+              name: "Priya",
+              rating: 4,
+              text: '"Quick delivery and excellent customer support. Will shop again!"',
+              image: "priya.png"
+            }, {
+              name: "Rohit",
+              rating: 5,
+              text: '"Top-notch quality and free shipping. What more could you ask for?"',
+              image: "Rohit.png"
+            }].map((testimonial, index) => (
+              <div key={index} className="w-full sm:w-1/3 px-4 mb-8">
+                <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
+                  <img src={testimonial.image} alt={testimonial.name} className="w-12 sm:w-16 h-12 sm:h-16 rounded-full mx-auto mb-4" />
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">{testimonial.name}</h3>
+                  <div className="flex justify-center mb-4">
+                    {[...Array(testimonial.rating)].map((star, idx) => (
+                      <FaStar key={idx} className="text-yellow-500" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 text-sm sm:text-base">{testimonial.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
