@@ -105,7 +105,7 @@ const Products = () => {
         </div>
         <div className="flex flex-wrap items-center justify-between w-full mb-4 gap-4">
   <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2">
-    <label className="text-xs md:text-sm font-semibold text-gray-700">Sort by:</label>
+    <label className="text-md ml-2 md:text-lg font-medium text-gray-700">Sort by:</label>
     <select
       onChange={handleSortChange}
       value={sortOption}
@@ -119,7 +119,7 @@ const Products = () => {
   </div>
 
   <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-center gap-2">
-    <label className="text-xs md:text-sm font-semibold text-gray-700">Category:</label>
+    <label className="text-md ml-6 md:text-lg font-medium text-gray-700">Category:</label>
     <select
       onChange={handleCategoryChange}
       value={category}

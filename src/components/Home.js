@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false); // New state for video loading
 
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
@@ -52,6 +53,15 @@ const Home = () => {
     ],
   };
 
+  const handleVideoLoad = () => {
+    setVideoLoaded(true); // Video has finished loading
+  };
+
+  const handleVideoError = () => {
+    console.error('Failed to load video');
+    setVideoLoaded(false); // Handle video loading error
+  };
+
   if (isLoading) {
     return (
       <div className="container mx-auto mt-4 flex justify-center items-center h-screen">
@@ -69,12 +79,20 @@ const Home = () => {
   return (
     <>
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
+        {!videoLoaded && (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(/hero-image.jpg)' }}
+          />
+        )}
         <video
           src="/hero-video.mp4"
           autoPlay
           loop
           muted
-          className="absolute inset-0 object-cover w-full h-full z-0"
+          className={`absolute inset-0 object-cover w-full h-full z-0 ${videoLoaded ? '' : 'hidden'}`}
+          onLoadedData={handleVideoLoad}
+          onError={handleVideoError}
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
         <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-6xl px-4 py-8 text-center">
@@ -171,22 +189,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-indigo-700 py-12 px-4 sm:px-6">
-        <div className="container mx-auto text-center text-white">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Join Our Newsletter</h2>
-          <p className="mb-6">Stay updated with the latest news, offers, and trends.</p>
-          <form className="flex justify-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-2 sm:p-3 rounded-l-md border border-gray-300"
-            />
-            <button className="bg-yellow-300 text-black px-4 sm:px-6 py-2 sm:py-3 rounded-r-md border border-yellow-400 hover:bg-yellow-500 transition duration-300">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
       <section className="bg-gray-50 py-8">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-gray-900">What Our Customers Say</h2>
