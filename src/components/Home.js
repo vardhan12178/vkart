@@ -7,8 +7,7 @@ import { motion } from 'framer-motion';
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [videoLoaded, setVideoLoaded] = useState(false); // New state for video loading
-
+  const [videoLoaded, setVideoLoaded] = useState(false); 
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
       try {
@@ -54,12 +53,12 @@ const Home = () => {
   };
 
   const handleVideoLoad = () => {
-    setVideoLoaded(true); // Video has finished loading
+    setVideoLoaded(true); 
   };
 
   const handleVideoError = () => {
     console.error('Failed to load video');
-    setVideoLoaded(false); // Handle video loading error
+    setVideoLoaded(false); 
   };
 
   if (isLoading) {
