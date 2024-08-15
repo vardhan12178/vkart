@@ -11,9 +11,14 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    Cookies.remove('jwt_token');
-    setIsLoggedIn(false);
-    navigate('/login');
+    try {
+      Cookies.remove('jwt_token');
+      setIsLoggedIn(false);
+      navigate('/login');
+    } catch (error) {
+      console.error('Logout failed', error);
+      alert('Failed to log out. Please try again.');
+    }
   };
 
   const toggleMobileMenu = () => {
@@ -29,15 +34,15 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   }
 
   return (
-    <header className="bg-gradient-to-r from-purple-700 to-indigo-700 p-4 fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <header className="bg-gradient-to-r from-purple-700 to-indigo-700 p-4 fixed top-0 left-0 right-0 z-50 shadow-md shadow-indigo-500/50">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center text-white text-xl font-bold">
-          <ShoppingCartIcon className="w-8 h-8 mr-2" />
+          <ShoppingCartIcon className="w-8 h-8 mr-2" loading="lazy" />
           Vkart
         </Link>
         <button
           className="text-white md:hidden relative"
-          aria-label="Toggle mobile menu"
+          aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
           onClick={toggleMobileMenu}
         >
           {isMobileMenuOpen ? (
@@ -96,7 +101,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </nav>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-purple-700 to-indigo-700 p-4 absolute top-16 right-0 z-50 shadow-lg">
+        <div className="md:hidden bg-gradient-to-r from-purple-700 to-indigo-700 p-4 absolute top-16 right-0 z-50 shadow-md shadow-indigo-500/50">
           <ul className="space-y-2">
             <li>
               <Link to="/products" className="text-white hover:text-gray-200 transition duration-300" onClick={closeMobileMenu}>

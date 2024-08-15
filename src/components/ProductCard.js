@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import Slider from 'react-slick';
 
-
 const ProductCard = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -135,27 +134,40 @@ const ProductCard = () => {
   return (
     <div className="container mx-auto mt-16 mb-20 px-4 py-12">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
           <img
             src={product.image}
             alt={product.title}
-            className="w-full max-h-60 object-contain mb-2 mx-auto"
+            className="w-full max-h-60 object-contain mb-2 mx-auto transform hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="text-2xl font-bold mb-2 text-center md:text-left text-gray-900">{product.title}</h1>
-          <div className="flex items-center justify-center md:justify-start mb-4">
-            {renderStars(product.rating.rate)}
+          <div className="flex items-center justify-center md:justify-start mb-4 space-x-4">
+            <div className="flex items-center space-x-1">
+              {renderStars(product.rating.rate)}
+              <p className="text-gray-700 text-sm font-semibold">
+                {product.rating.rate.toFixed(1)}
+              </p>
+              <span className="text-yellow-500">★</span>
+            </div>
+            <div className="text-gray-400">|</div>
+            <p className="text-gray-500 text-sm">
+              {product.rating.count} Reviews
+            </p>
           </div>
           <div className="text-gray-700 mb-4 text-center md:text-left">
             {truncatedDescription(product.description)}
           </div>
-          <div className="flex items-center justify-center md:justify-start">
-            <p className="text-lg font-bold text-gray-800 mr-4">₹{(product.price * 75).toFixed(2)}</p>
+          <div className="flex items-center justify-center md:justify-start mb-4 space-x-4">
+            <div className="flex flex-col md:flex-row items-center space-x-2">
+              <p className="text-lg font-bold text-gray-800">₹{new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(product.price * 75)}</p>
+              <p className="text-sm text-gray-500 line-through">₹{new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(product.price * 75 * 1.2)}</p>
+            </div>
             <button
               onClick={handleAddToCart}
-              className="bg-indigo-700 text-white px-4 py-2 rounded-lg hover:bg-indigo-800 transition duration-300"
+              className="bg-indigo-700 text-white px-4 py-2 rounded-lg hover:bg-indigo-800 transition duration-300 text-sm font-semibold tracking-wide"
             >
               Add to Cart
             </button>

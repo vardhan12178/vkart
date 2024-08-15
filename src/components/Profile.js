@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import AvatarEditor from 'react-avatar-editor';
 import { FaCamera, FaPen, FaEnvelope, FaInfoCircle } from 'react-icons/fa';
-
+import imageCompression from 'browser-image-compression';
 
 const OrderCard = lazy(() => import('./OrderCard'));
 
@@ -52,19 +52,31 @@ const Profile = ({ setIsLoggedIn }) => {
 
     const canvas = editor.getImage();
     canvas.toBlob(async (blob) => {
-      const formData = new FormData();
-      formData.append('profileImage', blob, selectedFile.name);
+      if (!blob) return;
 
       try {
-        const response = await axios.post('/api/profile/upload', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
+        const compressedImage = await imageCompression(blob, {
+          maxSizeMB: 1,
+          maxWidthOrHeight: 1920,
+          useWebWorker: true,
         });
-        setUser(response.data);
-        setSelectedFile(null); 
-      } catch (err) {
-        setError('Failed to upload profile image');
+
+        const formData = new FormData();
+        formData.append('profileImage', compressedImage, selectedFile.name);
+
+        try {
+          const response = await axios.post('/api/profile/upload', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
+          setUser(response.data);
+          setSelectedFile(null); 
+        } catch (err) {
+          setError('Failed to upload profile image');
+        }
+      } catch (compressionError) {
+        setError('Failed to compress image');
       }
     });
   };
