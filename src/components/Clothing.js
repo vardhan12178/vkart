@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid';
+import { ArrowUpIcon, ArrowDownIcon, ChevronDownIcon } from '@heroicons/react/solid';
 
 const Clothing = ({ category }) => {
   const [products, setProducts] = useState([]);
@@ -8,6 +8,8 @@ const Clothing = ({ category }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownValue, setDropdownValue] = useState('None');
 
   const fetchProducts = useCallback(async () => {
     try {
@@ -16,6 +18,8 @@ const Clothing = ({ category }) => {
         throw new Error('Failed to fetch products');
       }
       const data = await response.json();
+
+      console.log('Fetched data:', data);
 
       let sortedData = [...data];
       if (sortOption) {
@@ -46,12 +50,28 @@ const Clothing = ({ category }) => {
     fetchProducts();
   }, [fetchProducts]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (event.target.closest('.dropdown-container') === null) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSortChange = (event) => {
-    setSortOption(event.target.value);
+  const handleSortChange = (option) => {
+    setSortOption(option.value);
+    setDropdownValue(option.label);
+    setDropdownOpen(false);
   };
 
   const toggleSortOrder = () => {
@@ -85,27 +105,47 @@ const Clothing = ({ category }) => {
       <h1 className="text-3xl font-extrabold mb-8 text-center text-gray-800">
         {category === "men's clothing" ? "Men's Clothing" : "Women's Clothing"}
       </h1>
+      
       <div className="flex justify-center mb-8">
-        <div className="max-w-lg w-full">
+        <div className="max-w-lg w-full relative">
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearch}
-            placeholder={`Search ${category}...`}
-            className="border border-gray-300 rounded-lg p-4 w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Search clothing..."
+            className="border border-gray-300 rounded-lg p-4 w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition-colors duration-300"
           />
         </div>
       </div>
-      <div className="flex items-center justify-between mb-8 m-2">
-        <div className="flex-1 flex items-center gap-4">
-          <label className="font-medium text-gray-700">Sort by:</label>
-          <select onChange={handleSortChange} value={sortOption} className="border border-gray-300 rounded-lg p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">None</option>
-            <option value="price">Price</option>
-            <option value="title">Name</option>
-            <option value="rating">Rating</option>
-          </select>
+      
+      <div className="flex flex-wrap items-center justify-between w-full mb-4 gap-4">
+        <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2 dropdown-container">
+          <label className="text-md ml-2 md:text-lg font-medium text-gray-700">Sort by:</label>
+          
+          <div className="relative">
+            <button
+              className={`bg-white border border-gray-300 rounded-lg px-4 py-2 w-full text-left shadow-md focus:outline-none flex items-center justify-between transition-colors duration-300 ${dropdownOpen ? 'focus:ring-2 focus:ring-orange-300' : ''}`}
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              {dropdownValue}
+              <ChevronDownIcon className="w-5 h-5 text-gray-500 ml-2" />
+            </button>
+            {dropdownOpen && (
+              <ul className="absolute mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+                {[{ value: '', label: 'None' }, { value: 'price', label: 'Price' }, { value: 'title', label: 'Name' }, { value: 'rating', label: 'Rating' }].map((option) => (
+                  <li
+                    key={option.value}
+                    className={`p-2 cursor-pointer ${dropdownValue === option.label ? 'bg-orange-400 text-white' : 'hover:bg-orange-300'}`}
+                    onClick={() => handleSortChange(option)}
+                  >
+                    {option.label}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
+
         <button onClick={toggleSortOrder} className="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-md">
           {sortOrder === 'asc' ? (
             <ArrowUpIcon className="w-6 h-6" />
@@ -114,6 +154,7 @@ const Clothing = ({ category }) => {
           )}
         </button>
       </div>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoading ? (
           <div className="flex justify-center items-center col-span-3 h-64">
@@ -124,25 +165,29 @@ const Clothing = ({ category }) => {
             </div>
           </div>
         ) : (
-          filteredProducts.map((product) => (
-            <div key={product.id} className="border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
-              <Link to={`/product/${product.id}`}>
-                <div className="flex justify-center items-center mb-4">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="max-h-48 object-contain rounded-lg"
-                    loading="lazy"
-                  />
-                </div>
-                <h2 className="text-lg font-semibold mb-2 text-center text-gray-900">{product.title}</h2>
-                <p className="text-gray-600 text-center text-xl font-bold">₹{(product.price * 75).toFixed(2)}</p>
-                <div className="flex justify-center mt-2">
-                  {renderStars(product.rating.rate)}
-                </div>
-              </Link>
-            </div>
-          ))
+          filteredProducts.length === 0 ? (
+            <div className="flex justify-center items-center col-span-3 h-64 text-gray-600">No products found</div>
+          ) : (
+            filteredProducts.map((product) => (
+              <div key={product.id} className="border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+                <Link to={`/product/${product.id}`}>
+                  <div className="flex justify-center items-center mb-4">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="max-h-48 object-contain rounded-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h2 className="text-lg font-semibold mb-2 text-center text-gray-900">{product.title}</h2>
+                  <p className="text-gray-600 text-center text-xl font-bold">₹{(product.price * 75).toFixed(2)}</p>
+                  <div className="flex justify-center mt-2">
+                    {renderStars(product.rating.rate)}
+                  </div>
+                </Link>
+              </div>
+            ))
+          )
         )}
       </div>
     </div>

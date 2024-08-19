@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import axios from './axiosInstance'; 
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
@@ -77,10 +76,10 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-green-200 to-green-400 min-h-screen flex items-center justify-center p-4">
+    <div className="bg-gradient-to-br from-green-200 to-green-300 min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white shadow-2xl rounded-lg p-6 sm:p-8 space-y-6 border border-gray-200">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4 text-center">Create an Account</h1>
-        <p className="text-gray-600 text-center mb-6 text-base sm:text-lg">Join us and start exploring!</p>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 text-center">Create an Account</h1>
+        <p className="text-gray-700 text-center mb-6 text-base sm:text-lg">Join us and start exploring!</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-sm">Name</label>
@@ -89,7 +88,7 @@ const Register = () => {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-800 placeholder-gray-500"
               placeholder="Enter your name"
             />
           </div>
@@ -100,7 +99,7 @@ const Register = () => {
               id="userId"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-800 placeholder-gray-500"
               placeholder="Enter your User ID"
             />
           </div>
@@ -111,7 +110,7 @@ const Register = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-800 placeholder-gray-500"
               placeholder="Enter your email address"
             />
           </div>
@@ -123,15 +122,15 @@ const Register = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-700 placeholder-gray-400"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-600 shadow-sm transition duration-300 text-gray-800 placeholder-gray-500"
                 placeholder="Enter your password"
               />
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
+                className="absolute inset-y-0 right-0 px-3 flex items-center"
               >
-                {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                {showPassword ? <EyeOffIcon className="h-5 w-5 text-gray-600" /> : <EyeIcon className="h-5 w-5 text-gray-600" />}
               </button>
             </div>
           </div>
@@ -143,15 +142,15 @@ const Register = () => {
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none transition duration-300 placeholder-gray-400 ${passwordMatch ? 'border-green-600' : 'border-red-600'}`}
+                className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none transition duration-300 placeholder-gray-500 ${passwordMatch ? 'border-green-600' : 'border-red-600'}`}
                 placeholder="Confirm your password"
               />
               <button
                 type="button"
                 onClick={toggleConfirmPasswordVisibility}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
+                className="absolute inset-y-0 right-0 px-3 flex items-center"
               >
-                {showConfirmPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                {showConfirmPassword ? <EyeOffIcon className="h-5 w-5 text-gray-600" /> : <EyeIcon className="h-5 w-5 text-gray-600" />}
               </button>
             </div>
           </div>
@@ -159,12 +158,12 @@ const Register = () => {
           {success && <p className="text-green-600 text-sm text-center">{success}</p>}
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
+            className="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 transition duration-300"
           >
             Register
           </button>
           <div className="text-center">
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-700 text-sm">
               Already have an account?{' '}
               <Link to="/login" className="text-green-600 hover:underline">
                 Login here

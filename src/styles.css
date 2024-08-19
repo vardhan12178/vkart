@@ -9,6 +9,7 @@ body {
   min-height: 100vh;
 }
 
+
 .hero-title {
   font-family: 'Poppins', sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
@@ -24,7 +25,7 @@ body {
   width: 8px;
   height: 50px;
   margin: 0 4px;
-  background-color: #3498db;
+  background-color: #f7b772;
   animation: bars 1.2s infinite ease-in-out;
 }
 
@@ -90,6 +91,7 @@ nav ul li a:hover {
   font-size: 2rem;
   color: white;
 }
+
 
 @media (max-width: 768px) {
   nav ul {

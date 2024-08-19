@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid';
+import CustomDropdown from './CustomDropdown';
 
 const Electronics = () => {
   const [products, setProducts] = useState([]);
@@ -50,8 +51,8 @@ const Electronics = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSortChange = (event) => {
-    setSortOption(event.target.value);
+  const handleSortChange = (option) => {
+    setSortOption(option.value);
   };
 
   const toggleSortOrder = () => {
@@ -99,12 +100,16 @@ const Electronics = () => {
       <div className="flex items-center justify-between mb-8 m-2">
         <div className="flex-1 flex items-center gap-4">
           <label className="font-medium text-gray-700">Sort by:</label>
-          <select onChange={handleSortChange} value={sortOption} className="border border-gray-300 rounded-lg p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">None</option>
-            <option value="price">Price</option>
-            <option value="title">Name</option>
-            <option value="rating">Rating</option>
-          </select>
+          <CustomDropdown
+            options={[
+              { value: '', label: 'None' },
+              { value: 'price', label: 'Price' },
+              { value: 'title', label: 'Name' },
+              { value: 'rating', label: 'Rating' }
+            ]}
+            value={sortOption}
+            onChange={handleSortChange}
+          />
         </div>
         <button onClick={toggleSortOrder} className="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-md">
           {sortOrder === 'asc' ? (

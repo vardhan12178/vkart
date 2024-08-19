@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [videoLoaded, setVideoLoaded] = useState(false); 
+
   useEffect(() => {
     const fetchFeaturedProducts = async () => {
       try {
@@ -52,15 +52,6 @@ const Home = () => {
     ],
   };
 
-  const handleVideoLoad = () => {
-    setVideoLoaded(true); 
-  };
-
-  const handleVideoError = () => {
-    console.error('Failed to load video');
-    setVideoLoaded(false); 
-  };
-
   if (isLoading) {
     return (
       <div className="container mx-auto mt-4 flex justify-center items-center h-screen">
@@ -78,43 +69,29 @@ const Home = () => {
   return (
     <>
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
-        {!videoLoaded && (
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/hero-image.jpg)' }}
-          />
-        )}
-        <video
-          src="/hero-video.mp4"
-          autoPlay
-          loop
-          muted
-          className={`absolute inset-0 object-cover w-full h-full z-0 ${videoLoaded ? '' : 'hidden'}`}
-          onLoadedData={handleVideoLoad}
-          onError={handleVideoError}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/hero-images1.jpeg)' }}
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
         <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-6xl px-4 py-8 text-center">
-          
           <motion.h1 
-            className="hero-title text-white text-3xl sm:text-5xl font-extrabold mb-4" 
-            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 1)' }}
+            className="hero-title text-orange-100 text-3xl sm:text-5xl font-extrabold mb-4" 
+            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
             initial={{ opacity: 0, y: -50 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1 }}
           >
             Discover the Best Products
           </motion.h1>
-          
           <motion.p 
-            className="text-white text-lg mb-6" 
+            className="text-orange-100 text-lg mb-6" 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, delay: 0.5 }}
           >
             Shop the latest trends and deals at unbeatable prices.
           </motion.p>
-          
           <motion.div 
             className="flex justify-center" 
             initial={{ opacity: 0, scale: 0.8 }} 
@@ -122,14 +99,14 @@ const Home = () => {
             transition={{ duration: 1, delay: 1 }}
           >
             <Link to="/products">
-              <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg hover:bg-white hover:text-black transition duration-300 transform hover:scale-105">
+              <button className="bg-transparent border-2 border-orange-100 text-orange-100 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg hover:bg-orange-400 hover:text-white transition duration-300 transform hover:scale-105">
                 Shop Now
               </button>
             </Link>
           </motion.div>
         </div>
       </div>
-      <section className="bg-gray-50 py-8 px-4 sm:px-6">
+      <section className="bg-gray-100 py-8 px-4 sm:px-6">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">Why Shop With Us?</h2>
           <p className="text-gray-700 mb-6 text-sm sm:text-base">Discover the benefits of shopping with us: quality products, exceptional customer service, and great deals.</p>
@@ -188,7 +165,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-8">
+      <section className="bg-gray-100 py-8">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-gray-900">What Our Customers Say</h2>
           <div className="flex flex-wrap justify-center">
@@ -208,20 +185,40 @@ const Home = () => {
               text: '"Top-notch quality and free shipping. What more could you ask for?"',
               image: "Rohit.png"
             }].map((testimonial, index) => (
-              <div key={index} className="w-full sm:w-1/3 px-4 mb-8">
-                <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-12 sm:w-16 h-12 sm:h-16 rounded-full mx-auto mb-4" />
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">{testimonial.name}</h3>
-                  <div className="flex justify-center mb-4">
-                    {[...Array(testimonial.rating)].map((star, idx) => (
-                      <FaStar key={idx} className="text-yellow-500" />
+              <div key={index} className="w-full sm:w-1/3 px-4 mb-6">
+                <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+                  <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full mb-4" />
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{testimonial.name}</h3>
+                  <div className="flex mb-2">
+                    {[...Array(5)].map((_, index) => (
+                      <FaStar key={index} className={index < testimonial.rating ? "text-yellow-500" : "text-gray-300"} />
                     ))}
                   </div>
-                  <p className="text-gray-700 text-sm sm:text-base">{testimonial.text}</p>
+                  <p className="text-gray-700 text-center">{testimonial.text}</p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-8 px-4 sm:px-6 text-center">
+        <div className="container mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-900">Join Our Newsletter</h2>
+          <p className="text-gray-700 mb-6">Subscribe to our newsletter and stay updated with the latest news, offers, and promotions.</p>
+          <form className="flex flex-col sm:flex-row items-center justify-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full sm:w-1/2 px-4 py-2 mb-4 sm:mb-0 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-200"
+            />
+            <button
+              type="submit"
+              className="bg-orange-500 text-white px-4 py-2 rounded-r-md shadow-lg hover:bg-orange-300 transition duration-300"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
     </>

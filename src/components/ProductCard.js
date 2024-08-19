@@ -56,9 +56,9 @@ const ProductCard = () => {
     return (
       <div className="flex items-center">
         {[...Array(fullStars)].map((_, index) => (
-          <span key={index} className="text-yellow-500">★</span>
+          <span key={index} className="text-yellow-400">★</span>
         ))}
-        {halfStar === 1 && <span className="text-yellow-500">☆</span>}
+        {halfStar === 1 && <span className="text-yellow-400">☆</span>}
         {[...Array(emptyStars)].map((_, index) => (
           <span key={index} className="text-gray-300">★</span>
         ))}
@@ -76,7 +76,7 @@ const ProductCard = () => {
         {isTruncated && !isDescriptionExpanded && (
           <span
             onClick={() => setIsDescriptionExpanded(true)}
-            className="text-indigo-500 cursor-pointer"
+            className="text-blue-500 cursor-pointer"
           >
             ... Read more
           </span>
@@ -84,7 +84,7 @@ const ProductCard = () => {
         {isTruncated && isDescriptionExpanded && (
           <span
             onClick={() => setIsDescriptionExpanded(false)}
-            className="text-indigo-500 cursor-pointer"
+            className="text-blue-500 cursor-pointer"
           >
             ... Read less
           </span>
@@ -134,7 +134,7 @@ const ProductCard = () => {
   return (
     <div className="container mx-auto mt-16 mb-20 px-4 py-12">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-        <div className="flex-shrink-0 overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div className="flex-shrink-0 overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
           <img
             src={product.image}
             alt={product.title}
@@ -143,7 +143,7 @@ const ProductCard = () => {
           />
         </div>
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-2xl font-bold mb-2 text-center md:text-left text-gray-900">{product.title}</h1>
+          <h1 className="text-3xl font-bold mb-2 text-center md:text-left text-gray-900">{product.title}</h1>
           <div className="flex items-center justify-center md:justify-start mb-4 space-x-4">
             <div className="flex items-center space-x-1">
               {renderStars(product.rating.rate)}
@@ -167,7 +167,7 @@ const ProductCard = () => {
             </div>
             <button
               onClick={handleAddToCart}
-              className="bg-indigo-700 text-white px-4 py-2 rounded-lg hover:bg-indigo-800 transition duration-300 text-sm font-semibold tracking-wide"
+              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition duration-300 text-sm font-semibold tracking-wide"
             >
               Add to Cart
             </button>

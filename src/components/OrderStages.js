@@ -15,17 +15,17 @@ const OrderStages = ({ currentStage }) => {
       {stages.map((stage, index) => (
         <div
           key={index}
-          className={`flex flex-col items-center ${index <= stageIndex ? 'text-green-600' : 'text-gray-400'} mb-4 md:mb-0`}
+          className={`flex flex-col items-center ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'} mb-4 md:mb-0`}
           style={{ width: '100%', maxWidth: '120px' }}
         >
           <div
-            className={`rounded-full flex items-center justify-center w-12 h-12 md:w-16 md:h-16 mb-2 md:mb-2 ${index <= stageIndex ? 'bg-green-600' : 'bg-gray-300'} text-white`}
+            className={`rounded-full flex items-center justify-center w-12 h-12 md:w-16 md:h-16 mb-2 md:mb-2 ${index < stageIndex ? 'bg-orange-500' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} text-white`}
           >
             {stage.icon}
           </div>
-          <span className="text-sm md:text-base font-medium">{stage.name}</span>
-          {index < stages.length - 1 && (
-            <div className={`w-1 md:w-2 h-12 md:h-16 ${index < stageIndex ? 'bg-green-600' : 'bg-gray-300'} md:mx-2`} />
+          <span className={`text-sm md:text-base font-medium ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'}`}>{stage.name}</span>
+          {index < stages.length && (
+            <div className={`w-1 md:w-2 h-12 md:h-16 ${index < stageIndex ? 'bg-green-600' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} md:mx-2`} />
           )}
         </div>
       ))}

@@ -23,7 +23,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="p-6 mt-20 ">
+    <div className="p-6 mt-20 bg-gray-100">
       <div className="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8">
         <h2 className="text-gray-900 text-4xl font-bold mb-6 text-center">Contact Us</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -35,7 +35,7 @@ const Contact = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="border rounded-lg p-3 w-full"
+              className="border border-gray-300 rounded-lg p-3 w-full"
               required
             />
           </div>
@@ -47,7 +47,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="border rounded-lg p-3 w-full"
+              className="border border-gray-300 rounded-lg p-3 w-full"
               required
             />
           </div>
@@ -58,13 +58,13 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="border rounded-lg p-3 w-full h-40"
+              className="border border-gray-300 rounded-lg p-3 w-full h-40"
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            className="bg-purple-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-purple-700 transition duration-300"
+            className="bg-orange-400 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-600 transition duration-300"
           >
             Send Message
           </button>

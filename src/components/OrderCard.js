@@ -14,7 +14,8 @@ const OrderCard = ({ order }) => {
           src={order.products[0].image} 
           alt="Product" 
           className="w-16 h-16 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4"
-          style={{ objectFit: 'contain' }} 
+          style={{ objectFit: 'contain' }}
+          loading="lazy"
         />
         <div className="flex-1">
           <h3 className="text-sm sm:text-lg font-semibold mb-1">Order #{order._id}</h3>
@@ -24,7 +25,7 @@ const OrderCard = ({ order }) => {
         </div>
         <button 
           onClick={handleClick} 
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-4 sm:mt-0"
+          className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 mt-4 sm:mt-0"
         >
           {showDetails ? 'Hide Details' : 'View Details'}
         </button>
@@ -40,7 +41,8 @@ const OrderCard = ({ order }) => {
                 src={product.image} 
                 alt="Product" 
                 className="w-12 h-12 mt-4 object-cover rounded-lg mb-2 sm:mb-0 sm:mr-4"
-                style={{ objectFit: 'contain' }} 
+                style={{ objectFit: 'contain' }}
+                loading="lazy"
               />
               <div>
                 <p><strong>{product.name}</strong></p>

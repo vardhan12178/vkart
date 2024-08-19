@@ -8,7 +8,6 @@ import OrderStages from './OrderStages';
 import axios from './axiosInstance';  
 const mongoose = require('mongoose');
 
-
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart);
@@ -27,7 +26,9 @@ const Cart = () => {
   const handleBuyNow = () => {
     setShowPaymentDetails(true);
   };
+
   const generateObjectId = () => new mongoose.Types.ObjectId();
+  
   const handleOrderPlaced = async (orderDetails) => {
     try {
       const itemsOrdered = cartItems.reduce((total, item) => total + item.quantity, 0);
@@ -39,16 +40,14 @@ const Cart = () => {
           name: item.title,
           image: item.image,
           quantity: item.quantity,
-          price: item.price*75,
+          price: item.price * 75,
         })),
-        totalPrice: cartItems.reduce((total, item) => total + item.price*75 * item.quantity, 0),
+        totalPrice: cartItems.reduce((total, item) => total + item.price * 75 * item.quantity, 0),
         stage: 'Pending',
         shippingAddress: orderDetails.address
       };
 
-    await axios.post('/api/orders', orderData);
-
-    
+      await axios.post('/api/orders', orderData);
       dispatch(clearCart());
       setOrderPlaced(true);
     } catch (error) {
@@ -60,9 +59,9 @@ const Cart = () => {
 
   if (cartItems.length === 0 && !orderPlaced) {
     return (
-      <div className="flex justify-center items-center min-h-screen p-4 bg-gray-50 mt-16">
+      <div className="flex justify-center items-center min-h-screen p-4 bg-orange-100 mt-16">
         <div className="bg-white p-8 rounded-lg shadow-xl text-center">
-          <FontAwesomeIcon icon={faShoppingCart} size="3x" className="text-gray-400 mb-4" />
+          <FontAwesomeIcon icon={faShoppingCart} size="3x" className="text-orange-400 mb-4" />
           <p className="text-lg text-gray-600">Your cart is empty.</p>
         </div>
       </div>
@@ -70,11 +69,11 @@ const Cart = () => {
   }
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-4 bg-gray-50 mt-16">
+    <div className="flex flex-col items-center min-h-screen p-4 bg-orange-100 mt-16">
       <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-xl">
         {!orderPlaced ? (
           <>
-            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center md:text-center">Your Shopping Cart</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Your Shopping Cart</h1>
             <ul className="space-y-4">
               {cartItems.map((item) => (
                 <li key={item.id} className="flex flex-col md:flex-row items-center md:items-start border-b last:border-b-0 p-4">
@@ -87,9 +86,9 @@ const Cart = () => {
                       <p className="text-gray-600 text-lg mt-2">₹{(item.price * 75).toFixed(2)}</p>
                       <div className="flex flex-col md:flex-row items-center md:items-start mt-4 md:mt-2">
                         <div className="flex items-center">
-                          <button onClick={() => handleDecrement(item.id)} className="bg-gray-800 text-white px-3 py-1 rounded-full mr-2">-</button>
+                          <button onClick={() => handleDecrement(item.id)} className="bg-orange-600 text-white px-3 py-1 rounded-full mr-2 hover:bg-orange-700">-</button>
                           <span className="text-lg font-medium">{item.quantity}</span>
-                          <button onClick={() => handleIncrement(item.id)} className="bg-gray-800 text-white px-3 py-1 rounded-full ml-2">+</button>
+                          <button onClick={() => handleIncrement(item.id)} className="bg-orange-600 text-white px-3 py-1 rounded-full ml-2 hover:bg-orange-700">+</button>
                         </div>
                       </div>
                     </div>
@@ -103,7 +102,7 @@ const Cart = () => {
             {!showPaymentDetails && (
               <button
                 onClick={handleBuyNow}
-                className="bg-green-600 text-white px-6 py-3 rounded-full mt-6 w-full md:w-auto hover:bg-green-700 transition duration-300"
+                className="bg-orange-600 text-white px-6 py-3 rounded-full mt-6 w-full md:w-auto hover:bg-orange-700 transition duration-300"
               >
                 Buy Now
               </button>
@@ -112,7 +111,7 @@ const Cart = () => {
           </>
         ) : (
           <div className="text-center">
-            <FontAwesomeIcon icon={faCheckCircle} size="3x" className="text-green-600 mb-4" />
+            <FontAwesomeIcon icon={faCheckCircle} size="3x" className="text-orange-600 mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Order placed successfully!</h2>
             <p className="text-lg text-gray-700 mb-4">
               You have placed an order for {totalItemsOrdered} {totalItemsOrdered > 1 ? 'items' : 'item'}.

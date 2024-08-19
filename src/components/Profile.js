@@ -83,7 +83,7 @@ const Profile = ({ setIsLoggedIn }) => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen bg-orange-300">
         <div className="bars-spinner">
           <div></div>
           <div></div>
@@ -96,21 +96,17 @@ const Profile = ({ setIsLoggedIn }) => {
   if (error) return <p className="text-center text-lg text-red-500">{error}</p>;
 
   return (
-    <div className="profile-container mt-12 p-4 sm:p-8 max-w-5xl mx-auto bg-white rounded-lg shadow-2xl">
+    <div className="profile-container mt-12 p-4 sm:p-8 max-w-5xl mx-auto bg-white rounded-lg shadow-lg">
       {user ? (
-        <div className="profile-info p-4 sm:p-8 bg-gray-100 rounded-lg shadow-lg relative">
+        <div className="profile-info p-4 sm:p-8 bg-gray-50 rounded-lg shadow-md relative">
           <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6">
             <img
               src={user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}
-              srcSet={`
-                ${user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} 1x,
-                ${user.profileImage || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} 2x
-              `}
               alt="Profile"
               className="w-full h-full rounded-full object-cover border-4 border-gray-200 shadow-lg"
               loading="lazy"
             />
-            <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-gradient-to-r from-blue-500 to-teal-500 p-2 sm:p-3 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-110">
+            <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-gradient-to-r from-orange-500 to-orange-600 p-2 sm:p-3 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-105">
               <FaCamera className="text-white text-sm sm:text-lg" />
               <input
                 id="file-upload"
@@ -122,7 +118,7 @@ const Profile = ({ setIsLoggedIn }) => {
             {selectedFile && (
               <button
                 onClick={handleUpload}
-                className="absolute top-2 right-2 bg-green-500 p-2 sm:p-3 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-110"
+                className="absolute top-2 right-2 bg-gradient-to-r from-green-500 to-green-600 p-2 sm:p-3 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-105"
               >
                 <FaPen className="text-sm sm:text-lg" />
               </button>
@@ -141,7 +137,7 @@ const Profile = ({ setIsLoggedIn }) => {
               />
               <button
                 onClick={handleUpload}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300"
               >
                 Upload
               </button>
@@ -163,11 +159,11 @@ const Profile = ({ setIsLoggedIn }) => {
             )}
           </Suspense>
           <div className="text-center mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link to="/about" className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 hover:bg-gradient-to-l hover:from-green-600 hover:to-green-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
+            <Link to="/about" className="flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
               <FaInfoCircle className="mr-2 text-sm sm:text-lg" />
               About Us
             </Link>
-            <Link to="/contact" className="flex items-center justify-center bg-gradient-to-r from-indigo-500 to-indigo-600 hover:bg-gradient-to-l hover:from-indigo-600 hover:to-indigo-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
+            <Link to="/contact" className="flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
               <FaEnvelope className="mr-2 text-sm sm:text-lg" />
               Contact Us
             </Link>

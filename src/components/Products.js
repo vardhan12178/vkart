@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid';
+import CustomDropdown from './CustomDropdown';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -55,12 +56,12 @@ const Products = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSortChange = (event) => {
-    setSortOption(event.target.value);
+  const handleSortChange = (option) => {
+    setSortOption(option.value);
   };
 
-  const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
+  const handleCategoryChange = (option) => {
+    setCategory(option.value);
   };
 
   const toggleSortOrder = () => {
@@ -100,53 +101,54 @@ const Products = () => {
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search products..."
-            className="border border-gray-300 rounded-lg p-4 w-full max-w-md shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg p-4 w-full max-w-md shadow-md focus:outline-none focus:ring-2 focus:ring-orange-300"
           />
         </div>
         <div className="flex flex-wrap items-center justify-between w-full mb-4 gap-4">
-  <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2">
-    <label className="text-md ml-2 md:text-lg font-medium text-gray-700">Sort by:</label>
-    <select
-      onChange={handleSortChange}
-      value={sortOption}
-      className="border border-gray-300 rounded-lg p-1 text-xs md:p-2 md:text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-    >
-      <option value="">None</option>
-      <option value="price">Price</option>
-      <option value="title">Name</option>
-      <option value="rating">Rating</option>
-    </select>
-  </div>
+          <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2">
+            <label className="text-md ml-2 md:text-lg font-medium text-gray-700">Sort by:</label>
+            <CustomDropdown
+              options={[
+                { value: '', label: 'None' },
+                { value: 'price', label: 'Price' },
+                { value: 'title', label: 'Name' },
+                { value: 'rating', label: 'Rating' },
+              ]}
+              value={sortOption}
+              onChange={handleSortChange}
+              label="Sort by"
+            />
+          </div>
 
-  <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-center gap-2">
-    <label className="text-md ml-6 md:text-lg font-medium text-gray-700">Category:</label>
-    <select
-      onChange={handleCategoryChange}
-      value={category}
-      className="border border-gray-300 rounded-lg p-1 text-xs md:p-2 md:text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-    >
-      <option value="">All</option>
-      <option value="electronics">Electronics</option>
-      <option value="jewelery">Jewelry</option>
-      <option value="men's clothing">Men's Clothing</option>
-      <option value="women's clothing">Women's Clothing</option>
-    </select>
-  </div>
+          <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-center gap-2">
+            <label className="text-md ml-6 md:text-lg font-medium  text-gray-700">Category:</label>
+            <CustomDropdown 
+              options={[
+                { value: '', label: 'All' },
+                { value: 'electronics', label: 'Electronics' },
+                { value: 'jewelery', label: 'Jewelry' },
+                { value: "men's clothing", label: "Men's Clothing" },
+                { value: "women's clothing", label: "Women's Clothing" },
+              ]}
+              value={category}
+              onChange={handleCategoryChange}
+              label="Category"
+            />
+          </div>
 
-  <div className="flex items-center flex-grow md:justify-end gap-2">
-    <button
-      onClick={toggleSortOrder}
-      className="flex items-center p-1 text-xs md:p-2 md:text-sm text-gray-900 hover:bg-gray-100 rounded-md"
-    >
-      {sortOrder === 'asc' ? (
-        <ArrowUpIcon className="w-5 h-5" />
-      ) : (
-        <ArrowDownIcon className="w-5 h-5" />
-      )}
-    </button>
-  </div>
-</div>
-
+          <div className="flex items-center flex-grow md:justify-end gap-2">
+            <button
+              onClick={toggleSortOrder}
+              className="flex items-center p-1 text-xs md:p-2 md:text-sm text-gray-900 hover:bg-gray-100 rounded-md"
+            >
+              {sortOrder === 'asc' ? (
+                <ArrowUpIcon className="w-5 h-5" />
+              ) : (
+                <ArrowDownIcon className="w-5 h-5" />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,7 +162,7 @@ const Products = () => {
           </div>
         ) : (
           filteredProducts.map((product) => (
-            <div key={product.id} className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div key={product.id} className="border border-gray-300 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <Link to={`/product/${product.id}`}>
                 <div className="flex justify-center items-center mb-4">
                   <img

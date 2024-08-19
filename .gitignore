@@ -52,6 +52,8 @@ yarn.lock
 !orderstages.js
 !imports.js
 !Register.js
+!CustomDropdown.js
+!Dropdown.js
 !Profile.js
 !_redirects
 !.env
