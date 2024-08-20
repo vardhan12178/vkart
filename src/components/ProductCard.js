@@ -48,24 +48,6 @@ const ProductCard = () => {
     dispatch(addToCart(product));
   };
 
-  const renderStars = (rating) => {
-    const fullStars = Math.floor(rating);
-    const halfStar = rating % 1 >= 0.5 ? 1 : 0;
-    const emptyStars = 5 - fullStars - halfStar;
-
-    return (
-      <div className="flex items-center">
-        {[...Array(fullStars)].map((_, index) => (
-          <span key={index} className="text-yellow-400">★</span>
-        ))}
-        {halfStar === 1 && <span className="text-yellow-400">☆</span>}
-        {[...Array(emptyStars)].map((_, index) => (
-          <span key={index} className="text-gray-300">★</span>
-        ))}
-      </div>
-    );
-  };
-
   const truncatedDescription = (description) => {
     const lines = description.split('\n');
     const visibleLines = isDescriptionExpanded ? lines : lines.slice(0, 4);
@@ -89,6 +71,24 @@ const ProductCard = () => {
             ... Read less
           </span>
         )}
+      </div>
+    );
+  };
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - halfStar;
+
+    return (
+      <div className="flex items-center">
+        {[...Array(fullStars)].map((_, index) => (
+          <span key={index} className="text-yellow-500 text-lg">★</span>
+        ))}
+        {halfStar === 1 && <span className="text-yellow-500 text-lg">☆</span>}
+        {[...Array(emptyStars)].map((_, index) => (
+          <span key={index} className="text-gray-300 text-lg">★</span>
+        ))}
       </div>
     );
   };
@@ -121,12 +121,8 @@ const ProductCard = () => {
 
   if (isLoading) {
     return (
-      <div className="container mx-auto mt-4 flex justify-center items-center h-screen">
-        <div className="bars-spinner">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-orange-500"></div>
       </div>
     );
   }
@@ -143,21 +139,18 @@ const ProductCard = () => {
           />
         </div>
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-3xl font-bold mb-2 text-center md:text-left text-gray-900">{product.title}</h1>
-          <div className="flex items-center justify-center md:justify-start mb-4 space-x-4">
+          <h1 className="text-3xl font-bold mb-4 text-gray-900">{product.title}</h1>
+          <div className="flex items-center justify-start mb-4 space-x-4">
             <div className="flex items-center space-x-1">
               {renderStars(product.rating.rate)}
-              <p className="text-gray-700 text-sm font-semibold">
-                {product.rating.rate.toFixed(1)}
-              </p>
-              <span className="text-yellow-500">★</span>
+              <p className="text-gray-700 text-sm font-semibold ml-2">{product.rating.rate.toFixed(1)}</p>
             </div>
             <div className="text-gray-400">|</div>
             <p className="text-gray-500 text-sm">
               {product.rating.count} Reviews
             </p>
           </div>
-          <div className="text-gray-700 mb-4 text-center md:text-left">
+          <div className="text-gray-700 mb-4">
             {truncatedDescription(product.description)}
           </div>
           <div className="flex items-center justify-center md:justify-start mb-4 space-x-4">
@@ -180,15 +173,17 @@ const ProductCard = () => {
           {relatedProducts.map((relatedProduct) => (
             <div key={relatedProduct.id} className="p-2">
               <Link to={`/product/${relatedProduct.id}`} className="block bg-white rounded-lg shadow-lg p-4">
-                <img
-                  src={relatedProduct.image}
-                  alt={relatedProduct.title}
-                  className="w-full max-h-40 object-contain mb-2 mx-auto"
-                  loading="lazy"
-                />
+                <div className="flex justify-center items-center mb-4">
+                  <img
+                    src={relatedProduct.image}
+                    alt={relatedProduct.title}
+                    className="w-full max-h-40 object-contain mb-2 mx-auto"
+                    loading="lazy"
+                  />
+                </div>
                 <h3 className="text-sm font-semibold text-center text-gray-900">{relatedProduct.title}</h3>
-                <div className="flex justify-center md:justify-between items-center mb-2">
-                  <p className="text-sm text-gray-700">₹{(relatedProduct.price * 75).toFixed(2)}</p>
+                <p className="text-sm text-gray-600 text-center">₹{(relatedProduct.price * 75).toFixed(2)}</p>
+                <div className="flex justify-center mt-2">
                   {renderStars(relatedProduct.rating.rate)}
                 </div>
               </Link>

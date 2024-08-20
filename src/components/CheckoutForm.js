@@ -19,12 +19,19 @@ const CheckoutForm = ({ onOrderPlaced }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+ 
+    setErrors((prevErrors) => {
+      const updatedErrors = { ...prevErrors };
+      if (updatedErrors[name]) {
+        delete updatedErrors[name];
+      }
+      return updatedErrors;
+    });
   };
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.mobileNumber) newErrors.mobileNumber = 'Mobile number is required';
-    if (!formData.address) newErrors.address = 'Address is required';
 
     if (paymentMethod === 'Credit Card') {
       if (!formData.creditCardNumber) newErrors.creditCardNumber = 'Credit card number is required';
@@ -33,6 +40,9 @@ const CheckoutForm = ({ onOrderPlaced }) => {
     } else if (['PhonePe', 'PayPal', 'Google Pay', 'Paytm', 'CRED'].includes(paymentMethod)) {
       if (!formData.upiId) newErrors.upiId = 'UPI ID is required';
     }
+
+    if (!formData.mobileNumber) newErrors.mobileNumber = 'Mobile number is required';
+    if (!formData.address) newErrors.address = 'Address is required';
 
     return newErrors;
   };
@@ -50,10 +60,9 @@ const CheckoutForm = ({ onOrderPlaced }) => {
 
   const simulateOrderProgress = () => {
     setTimeout(() => {
-      onOrderPlaced(formData); 
+      onOrderPlaced(formData);
     }, 2000);
   };
-
   return (
     <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg mb-10">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Payment Details</h2>

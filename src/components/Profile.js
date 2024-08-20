@@ -87,10 +87,8 @@ const Profile = ({ setIsLoggedIn }) => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <div className="bars-spinner">
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className="flex justify-center items-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-orange-500"></div>
         </div>
       </div>
     );
@@ -109,8 +107,8 @@ const Profile = ({ setIsLoggedIn }) => {
               className="w-full h-full rounded-full object-cover border-4 border-gray-200 shadow-lg"
               loading="lazy"
             />
-            <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-gradient-to-r from-orange-500 to-orange-600 p-1 sm:p-2 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-105">
-              <FaCamera className="text-white text-xs sm:text-sm" />
+            <label htmlFor="file-upload" className="absolute bottom-2 right-2 bg-gradient-to-r from-orange-500 to-orange-600 p-2 rounded-full cursor-pointer flex items-center justify-center transition-transform transform hover:scale-110">
+              <FaCamera className="text-white text-lg" />
               <input
                 id="file-upload"
                 type="file"
@@ -121,9 +119,9 @@ const Profile = ({ setIsLoggedIn }) => {
             {selectedFile && (
               <button
                 onClick={handleUpload}
-                className="absolute top-2 right-2 bg-gradient-to-r from-green-500 to-green-600 p-1 sm:p-2 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-105"
+                className="absolute top-2 right-2 bg-gradient-to-r from-green-500 to-green-600 p-2 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-110"
               >
-                <FaPen className="text-xs sm:text-sm" />
+                <FaPen className="text-lg" />
               </button>
             )}
           </div>
@@ -163,11 +161,11 @@ const Profile = ({ setIsLoggedIn }) => {
           </Suspense>
           <div className="text-center mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link to="/about" className="flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
-              <FaInfoCircle className="mr-1 sm:mr-2 text-xs sm:text-sm" />
+              <FaInfoCircle className="mr-1 sm:mr-2 text-sm sm:text-base" />
               About Us
             </Link>
             <Link to="/contact" className="flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-2 sm:py-3 px-4 sm:px-5 rounded-lg transition duration-300">
-              <FaEnvelope className="mr-1 sm:mr-2 text-xs sm:text-sm" />
+              <FaEnvelope className="mr-1 sm:mr-2 text-sm sm:text-base" />
               Contact Us
             </Link>
             <button

@@ -85,53 +85,52 @@ const Electronics = () => {
     <div className="container mx-auto px-4 py-16 mt-8 mb-20">
       <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-800">Electronics</h1>
       
-      <div className="flex justify-center mb-8">
-        <div className="max-w-lg w-full">
+      <div className="flex flex-col items-center mb-8">
+        <div className="max-w-lg w-full mb-4">
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search electronics..."
-            className="border border-gray-300 rounded-lg p-4 w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded-lg p-4 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-      </div>
-      
-      <div className="flex items-center justify-between mb-8 m-2">
-        <div className="flex-1 flex items-center gap-4">
-          <label className="font-medium text-gray-700">Sort by:</label>
-          <CustomDropdown
-            options={[
-              { value: '', label: 'None' },
-              { value: 'price', label: 'Price' },
-              { value: 'title', label: 'Name' },
-              { value: 'rating', label: 'Rating' }
-            ]}
-            value={sortOption}
-            onChange={handleSortChange}
-          />
+        <div className="flex flex-wrap items-center justify-between w-full gap-4 mb-4">
+          <div className="flex items-center flex-grow md:justify-start gap-2">
+            <label className="text-md md:text-lg font-medium text-gray-700">Sort by:</label>
+            <CustomDropdown
+              options={[
+                { value: '', label: 'None' },
+                { value: 'price', label: 'Price' },
+                { value: 'title', label: 'Name' },
+                { value: 'rating', label: 'Rating' }
+              ]}
+              value={sortOption}
+              onChange={handleSortChange}
+              label="Sort by"
+            />
+          </div>
+          <button
+            onClick={toggleSortOrder}
+            className="flex items-center p-1 text-xs md:p-2 md:text-sm text-gray-900 hover:bg-gray-100 rounded-md"
+          >
+            {sortOrder === 'asc' ? (
+              <ArrowUpIcon className="w-5 h-5" />
+            ) : (
+              <ArrowDownIcon className="w-5 h-5" />
+            )}
+          </button>
         </div>
-        <button onClick={toggleSortOrder} className="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-md">
-          {sortOrder === 'asc' ? (
-            <ArrowUpIcon className="w-6 h-6" />
-          ) : (
-            <ArrowDownIcon className="w-6 h-6" />
-          )}
-        </button>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoading ? (
           <div className="flex justify-center items-center col-span-3 h-64">
-            <div className="bars-spinner">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-orange-500"></div>
           </div>
         ) : (
           filteredProducts.map((product) => (
-            <div key={product.id} className="border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+            <div key={product.id} className="border border-gray-200 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <Link to={`/product/${product.id}`}>
                 <div className="flex justify-center items-center mb-4">
                   <img

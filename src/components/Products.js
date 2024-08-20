@@ -80,11 +80,11 @@ const Products = () => {
     return (
       <div className="flex items-center">
         {[...Array(fullStars)].map((_, index) => (
-          <span key={index} className="text-yellow-500">★</span>
+          <span key={index} className="text-yellow-500 text-lg">★</span>
         ))}
-        {halfStar === 1 && <span className="text-yellow-500">☆</span>}
+        {halfStar === 1 && <span className="text-yellow-500 text-lg">☆</span>}
         {[...Array(emptyStars)].map((_, index) => (
-          <span key={index} className="text-gray-300">★</span>
+          <span key={index} className="text-gray-300 text-lg">★</span>
         ))}
       </div>
     );
@@ -92,7 +92,7 @@ const Products = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 mt-12">
-      <h1 className="text-4xl font-extrabold mb-6 text-center text-gray-800">Products</h1>
+      <h1 className="text-5xl font-extrabold mb-6 text-center text-gray-900">Products</h1>
       
       <div className="flex flex-col items-center mb-8">
         <div className="max-w-lg w-full mb-4">
@@ -101,12 +101,12 @@ const Products = () => {
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search products..."
-            className="border border-gray-300 rounded-lg p-4 w-full max-w-md shadow-md focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="border border-gray-300 rounded-lg p-4 w-full max-w-md shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
         </div>
         <div className="flex flex-wrap items-center justify-between w-full mb-4 gap-4">
           <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2">
-            <label className="text-md ml-2 md:text-lg font-medium text-gray-700">Sort by:</label>
+            <label className="text-lg font-medium text-gray-800">Sort by:</label>
             <CustomDropdown
               options={[
                 { value: '', label: 'None' },
@@ -121,7 +121,7 @@ const Products = () => {
           </div>
 
           <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-center gap-2">
-            <label className="text-md ml-6 md:text-lg font-medium  text-gray-700">Category:</label>
+            <label className="text-lg font-medium text-gray-800">Category:</label>
             <CustomDropdown 
               options={[
                 { value: '', label: 'All' },
@@ -139,12 +139,12 @@ const Products = () => {
           <div className="flex items-center flex-grow md:justify-end gap-2">
             <button
               onClick={toggleSortOrder}
-              className="flex items-center p-1 text-xs md:p-2 md:text-sm text-gray-900 hover:bg-gray-100 rounded-md"
+              className="flex items-center p-2 text-sm text-gray-900 hover:bg-gray-200 rounded-md transition-colors duration-300"
             >
               {sortOrder === 'asc' ? (
-                <ArrowUpIcon className="w-5 h-5" />
+                <ArrowUpIcon className="w-6 h-6" />
               ) : (
-                <ArrowDownIcon className="w-5 h-5" />
+                <ArrowDownIcon className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -154,15 +154,11 @@ const Products = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoadingProducts ? (
           <div className="flex justify-center items-center col-span-3 h-64">
-            <div className="bars-spinner">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-orange-500"></div>
           </div>
         ) : (
           filteredProducts.map((product) => (
-            <div key={product.id} className="border border-gray-300 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div key={product.id} className="border border-gray-300 bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
               <Link to={`/product/${product.id}`}>
                 <div className="flex justify-center items-center mb-4">
                   <img
@@ -172,7 +168,7 @@ const Products = () => {
                     loading="lazy"
                   />
                 </div>
-                <h2 className="text-lg font-semibold mb-2 text-center text-gray-900">{product.title}</h2>
+                <h2 className="text-xl font-semibold mb-2 text-center text-gray-900">{product.title}</h2>
                 <p className="text-gray-600 text-center">₹{(product.price * 75).toFixed(2)}</p>
                 <div className="flex justify-center">
                   {renderStars(product.rating.rate)}

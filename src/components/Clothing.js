@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpIcon, ArrowDownIcon, ChevronDownIcon } from '@heroicons/react/solid';
+import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/solid';
+import CustomDropdown from './CustomDropdown'; // Import CustomDropdown
 
 const Clothing = ({ category }) => {
   const [products, setProducts] = useState([]);
@@ -8,8 +9,6 @@ const Clothing = ({ category }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [dropdownValue, setDropdownValue] = useState('None');
 
   const fetchProducts = useCallback(async () => {
     try {
@@ -18,8 +17,6 @@ const Clothing = ({ category }) => {
         throw new Error('Failed to fetch products');
       }
       const data = await response.json();
-
-      console.log('Fetched data:', data);
 
       let sortedData = [...data];
       if (sortOption) {
@@ -50,28 +47,12 @@ const Clothing = ({ category }) => {
     fetchProducts();
   }, [fetchProducts]);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (event.target.closest('.dropdown-container') === null) {
-        setDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const handleSortChange = (option) => {
     setSortOption(option.value);
-    setDropdownValue(option.label);
-    setDropdownOpen(false);
   };
 
   const toggleSortOrder = () => {
@@ -102,67 +83,52 @@ const Clothing = ({ category }) => {
 
   return (
     <div className="container mx-auto px-4 py-16 mt-8 mb-20">
-      <h1 className="text-3xl font-extrabold mb-8 text-center text-gray-800">
+      <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-800">
         {category === "men's clothing" ? "Men's Clothing" : "Women's Clothing"}
       </h1>
       
-      <div className="flex justify-center mb-8">
-        <div className="max-w-lg w-full relative">
+      <div className="flex flex-col items-center mb-8">
+        <div className="max-w-lg w-full mb-4">
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearch}
             placeholder="Search clothing..."
-            className="border border-gray-300 rounded-lg p-4 w-full shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition-colors duration-300"
+            className="border border-gray-300 rounded-lg p-4 w-full shadow-md focus:outline-none focus:ring-2 focus:ring-orange-300"
           />
         </div>
-      </div>
-      
-      <div className="flex flex-wrap items-center justify-between w-full mb-4 gap-4">
-        <div className="flex flex-col items-start flex-grow md:flex-row md:items-center md:justify-start gap-2 dropdown-container">
-          <label className="text-md ml-2 md:text-lg font-medium text-gray-700">Sort by:</label>
-          
-          <div className="relative">
-            <button
-              className={`bg-white border border-gray-300 rounded-lg px-4 py-2 w-full text-left shadow-md focus:outline-none flex items-center justify-between transition-colors duration-300 ${dropdownOpen ? 'focus:ring-2 focus:ring-orange-300' : ''}`}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              {dropdownValue}
-              <ChevronDownIcon className="w-5 h-5 text-gray-500 ml-2" />
-            </button>
-            {dropdownOpen && (
-              <ul className="absolute mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-10">
-                {[{ value: '', label: 'None' }, { value: 'price', label: 'Price' }, { value: 'title', label: 'Name' }, { value: 'rating', label: 'Rating' }].map((option) => (
-                  <li
-                    key={option.value}
-                    className={`p-2 cursor-pointer ${dropdownValue === option.label ? 'bg-orange-400 text-white' : 'hover:bg-orange-300'}`}
-                    onClick={() => handleSortChange(option)}
-                  >
-                    {option.label}
-                  </li>
-                ))}
-              </ul>
-            )}
+        <div className="flex flex-wrap items-center justify-between w-full gap-4 mb-4">
+          <div className="flex items-center flex-grow md:justify-start gap-2">
+            <label className="text-md md:text-lg font-medium text-gray-700">Sort by:</label>
+            <CustomDropdown
+              options={[
+                { value: '', label: 'None' },
+                { value: 'price', label: 'Price' },
+                { value: 'title', label: 'Name' },
+                { value: 'rating', label: 'Rating' }
+              ]}
+              value={sortOption}
+              onChange={handleSortChange}
+              label="Sort by"
+            />
           </div>
+          <button
+            onClick={toggleSortOrder}
+            className="flex items-center p-1 text-xs md:p-2 md:text-sm text-gray-900 hover:bg-gray-100 rounded-md"
+          >
+            {sortOrder === 'asc' ? (
+              <ArrowUpIcon className="w-5 h-5" />
+            ) : (
+              <ArrowDownIcon className="w-5 h-5" />
+            )}
+          </button>
         </div>
-
-        <button onClick={toggleSortOrder} className="flex items-center p-2 text-gray-900 hover:bg-gray-100 rounded-md">
-          {sortOrder === 'asc' ? (
-            <ArrowUpIcon className="w-6 h-6" />
-          ) : (
-            <ArrowDownIcon className="w-6 h-6" />
-          )}
-        </button>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {isLoading ? (
           <div className="flex justify-center items-center col-span-3 h-64">
-            <div className="bars-spinner">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-orange-500"></div>
           </div>
         ) : (
           filteredProducts.length === 0 ? (
