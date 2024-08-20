@@ -210,11 +210,11 @@ const Home = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full sm:w-1/2 px-4 py-2 mb-4 sm:mb-0 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-200"
+              className="w-full mr-4 sm:w-1/2 px-4 py-2 mb-4 sm:mb-0 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-200"
             />
             <button
               type="submit"
-              className="bg-orange-500 text-white px-4 py-2 rounded-r-md shadow-lg hover:bg-orange-300 transition duration-300"
+              className="bg-orange-500 text-white px-4 py-2 rounded-l-md rounded-r-md shadow-lg hover:bg-orange-300 transition duration-300"
             >
               Subscribe
             </button>
