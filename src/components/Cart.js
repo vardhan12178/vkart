@@ -30,66 +30,43 @@ const Cart = () => {
   };
 
   const handleBuyNow = () => {
-
     setShowPaymentDetails(true);
-
   };
-
-
 
   const generateObjectId = () => new mongoose.Types.ObjectId();
 
-  
-
   const handleOrderPlaced = async (orderDetails) => {
+    setIsLoading(true);
+    setError(null);
 
     try {
-
       const itemsOrdered = cartItems.reduce((total, item) => total + item.quantity, 0);
-
       setTotalItemsOrdered(itemsOrdered);
 
-
-
       const orderData = {
-
         products: cartItems.map(item => ({
-
           productId: generateObjectId(),
-
           name: item.title,
-
           image: item.image,
-
           quantity: item.quantity,
-
           price: item.price * 75,
-
         })),
-
         totalPrice: cartItems.reduce((total, item) => total + item.price * 75 * item.quantity, 0),
-
         stage: 'Pending',
-
         shippingAddress: orderDetails.address
-
       };
 
-
-
       await axios.post('/api/orders', orderData);
-
       dispatch(clearCart());
-
       setOrderPlaced(true);
-
     } catch (error) {
-
       console.error('Order placement error:', error);
-
+      setError('Failed to place the order. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
-
   };
+
   const totalCost = cartItems.reduce((total, item) => total + item.price * 75 * item.quantity, 0);
 
   if (cartItems.length === 0 && !orderPlaced) {
@@ -195,7 +172,11 @@ const Cart = () => {
               </div>
             </div>
             {showPaymentDetails && <CheckoutForm onOrderPlaced={handleOrderPlaced} />}
-            {isLoading && <p className="text-center mt-4">Placing your order...</p>}
+            {isLoading && (
+              <div className="flex items-center justify-center mt-4">
+                <p className="text-gray-700">Placing your order...</p>
+              </div>
+            )}
             {error && (
               <div className="flex items-center justify-center mt-4 text-red-600">
                 <FontAwesomeIcon icon={faTimesCircle} className="mr-2" />
