@@ -44,7 +44,7 @@ const OrderCard = ({ order }) => {
           loading="lazy"
         />
         <div className="flex-1">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Order #{order._id}</h3>
+          <h3 className="text-xl sm:text-xl font-bold text-gray-900 mb-2">Order #{order._id}</h3>
           <p className="text-base text-gray-600 mb-1">Items: {order.products.length}</p>
           <p className="text-base text-gray-600 mb-1">Total Price: ₹{(order.totalPrice).toFixed(2)}</p>
           <p className="text-base text-gray-600">Status: <span className={`font-semibold ${getStatusColor(currentStatus)}`}>{currentStatus}</span></p>
