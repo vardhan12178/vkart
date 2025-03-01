@@ -19,14 +19,14 @@ const OrderStages = ({ currentStage }) => {
           style={{ flex: '1 0 auto', maxWidth: '120px' }}
         >
           <div
-            className={`rounded-full flex items-center justify-center ${index < stageIndex ? 'bg-orange-500' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} text-white mb-1 transition-transform duration-300`}
-            style={{ width: '40px', height: '40px', fontSize: '18px' }}
+            className={`rounded-full flex items-center justify-center ${index < stageIndex ? 'bg-orange-500' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} text-white mb-2 transition-all duration-300 transform hover:scale-110`}
+            style={{ width: '48px', height: '48px', fontSize: '20px' }}
           >
             {stage.icon}
           </div>
-          <span className={`text-xs md:text-sm font-medium ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'} transition-colors duration-300`}>{stage.name}</span>
-          {index < stages.length && (
-            <div className={`w-1 md:w-2 h-4 md:h-6 ${index < stageIndex ? 'bg-orange-600' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} mx-2 transition-colors duration-300`} />
+          <span className={`text-sm font-medium ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'} transition-colors duration-300`}>{stage.name}</span>
+          {index < stages.length - 1 && (
+            <div className={`w-1 md:w-2 h-6 md:h-8 ${index < stageIndex ? 'bg-orange-600' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} mx-2 transition-colors duration-300`} />
           )}
         </div>
       ))}
