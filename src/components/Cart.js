@@ -14,8 +14,8 @@ const Cart = () => {
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [totalItemsOrdered, setTotalItemsOrdered] = useState(0);
-
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleIncrement = (id) => {
     dispatch(incrementQuantity(id));
