@@ -62,6 +62,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@heroicons/react": "^1.0.6",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
