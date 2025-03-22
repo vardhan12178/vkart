@@ -44,7 +44,7 @@ const OrderCard = ({ order }) => {
           loading="lazy"
         />
         <div className="flex-1">
-          <h3 className="text-xl sm:text-xl font-bold text-gray-900 mb-2">Order #{order._id}</h3>
+          <h3 className="text-md sm:text-lg font-bold text-gray-900 mb-2">Order #{order._id}</h3>
           <p className="text-base text-gray-600 mb-1">Items: {order.products.length}</p>
           <p className="text-base text-gray-600 mb-1">Total Price: ₹{(order.totalPrice).toFixed(2)}</p>
           <p className="text-base text-gray-600">Status: <span className={`font-semibold ${getStatusColor(currentStatus)}`}>{currentStatus}</span></p>
@@ -67,12 +67,12 @@ const OrderCard = ({ order }) => {
                 <img 
                   src={product.image} 
                   alt="Product" 
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-6 border border-gray-200 shadow-sm"
+                  className="w-20 h-20 sm:w-20 sm:h-20 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-6 border border-gray-200 shadow-sm"
                   style={{ objectFit: 'contain' }}
                   loading="lazy"
                 />
                 <div>
-                  <p className="text-lg font-semibold text-gray-900">{product.name}</p>
+                  <p className="text-md font-semibold text-gray-900">{product.name}</p>
                   <p className="text-sm text-gray-600">Quantity: {product.quantity}</p>
                   <p className="text-sm text-gray-600">Price: ₹{(product.price).toFixed(2)}</p>
                 </div>

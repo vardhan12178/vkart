@@ -55,5 +55,7 @@ yarn.lock
 !CustomDropdown.js
 !Dropdown.js
 !Profile.js
+!ProductModal.js
+!Sidebar.js
 !_redirects
 !.env

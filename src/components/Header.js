@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom'; // Add useLocation
 import { useSelector } from 'react-redux';
 import { ShoppingCartIcon, LogoutIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import Cookies from 'js-cookie';
 
 const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
+  const location = useLocation(); // Get current location
   const cartItems = useSelector((state) => state.cart);
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,6 +33,9 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   if (!isLoggedIn) {
     return null;
   }
+
+  // Define a function to check if the link is active
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="bg-white bg-gradient-to-r from-white to-orange-50 shadow-sm fixed top-0 left-0 right-0 z-50 border-b-2 border-gradient-to-r from-orange-100 to-orange-300 sticky">
@@ -62,38 +66,71 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
           <nav className="hidden md:flex items-center">
             <ul className="flex space-x-8">
               <li>
-                <Link to="/products" className="text-gray-700 hover:text-orange-500 transition duration-300">
+                <Link
+                  to="/products"
+                  className={`transition duration-300 ${
+                    isActive('/products') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                  }`}
+                >
                   All Products
                 </Link>
               </li>
               <li>
-                <Link to="/products/electronics" className="text-gray-700 hover:text-orange-500 transition duration-300">
+                <Link
+                  to="/products/electronics"
+                  className={`transition duration-300 ${
+                    isActive('/products/electronics') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                  }`}
+                >
                   Electronics
                 </Link>
               </li>
               <li>
-                <Link to="/products/men" className="text-gray-700 hover:text-orange-500 transition duration-300">
+                <Link
+                  to="/products/men"
+                  className={`transition duration-300 ${
+                    isActive('/products/men') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                  }`}
+                >
                   Men's Clothing
                 </Link>
               </li>
               <li>
-                <Link to="/products/women" className="text-gray-700 hover:text-orange-500 transition duration-300">
+                <Link
+                  to="/products/women"
+                  className={`transition duration-300 ${
+                    isActive('/products/women') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                  }`}
+                >
                   Women's Clothing
                 </Link>
               </li>
               <li>
-                <Link to="/profile" className="text-gray-700 hover:text-orange-500 transition duration-300">
+                <Link
+                  to="/profile"
+                  className={`transition duration-300 ${
+                    isActive('/profile') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                  }`}
+                >
                   Profile
                 </Link>
               </li>
               <li>
-                <Link to="/cart" className="text-gray-700 flex items-center hover:text-orange-500 transition duration-300 transform hover:scale-105">
+                <Link
+                  to="/cart"
+                  className={`flex items-center transition duration-300 transform hover:scale-105 ${
+                    isActive('/cart') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                  }`}
+                >
                   <ShoppingCartIcon className="w-6 h-6 mr-1" />
                   Cart {cartCount > 0 && <span className="bg-red-500 text-white rounded-full px-2 py-1 text-xs">{cartCount}</span>}
                 </Link>
               </li>
               <li>
-                <button onClick={handleLogout} className="text-gray-700 hover:text-orange-500 transition duration-300 flex items-center">
+                <button
+                  onClick={handleLogout}
+                  className="text-gray-700 hover:text-orange-500 transition duration-300 flex items-center"
+                >
                   <LogoutIcon className="w-6 h-6 mr-1" />
                   Logout
                 </button>
@@ -103,41 +140,87 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className={`md:hidden bg-white shadow-lg absolute top-16 right-0 left-0 z-50 transform ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-300 ease-in-out`}>
+        <div
+          className={`md:hidden bg-white shadow-lg absolute top-16 right-0 left-0 z-50 transform ${
+            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          } transition-transform duration-300 ease-in-out`}
+        >
           <ul className="space-y-4 p-4">
             <li>
-              <Link to="/products" className="text-gray-700 hover:text-orange-500 transition duration-300" onClick={closeMobileMenu}>
+              <Link
+                to="/products"
+                className={`transition duration-300 ${
+                  isActive('/products') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                }`}
+                onClick={closeMobileMenu}
+              >
                 All Products
               </Link>
             </li>
             <li>
-              <Link to="/products/electronics" className="text-gray-700 hover:text-orange-500 transition duration-300" onClick={closeMobileMenu}>
+              <Link
+                to="/products/electronics"
+                className={`transition duration-300 ${
+                  isActive('/products/electronics') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                }`}
+                onClick={closeMobileMenu}
+              >
                 Electronics
               </Link>
             </li>
             <li>
-              <Link to="/products/men" className="text-gray-700 hover:text-orange-500 transition duration-300" onClick={closeMobileMenu}>
+              <Link
+                to="/products/men"
+                className={`transition duration-300 ${
+                  isActive('/products/men') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                }`}
+                onClick={closeMobileMenu}
+              >
                 Men's Clothing
               </Link>
             </li>
             <li>
-              <Link to="/products/women" className="text-gray-700 hover:text-orange-500 transition duration-300" onClick={closeMobileMenu}>
+              <Link
+                to="/products/women"
+                className={`transition duration-300 ${
+                  isActive('/products/women') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                }`}
+                onClick={closeMobileMenu}
+              >
                 Women's Clothing
               </Link>
             </li>
             <li>
-              <Link to="/profile" className="text-gray-700 hover:text-orange-500 transition duration-300" onClick={closeMobileMenu}>
+              <Link
+                to="/profile"
+                className={`transition duration-300 ${
+                  isActive('/profile') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                }`}
+                onClick={closeMobileMenu}
+              >
                 Profile
               </Link>
             </li>
             <li>
-              <Link to="/cart" className="text-gray-700 flex items-center hover:text-orange-500 transition duration-300" onClick={closeMobileMenu}>
+              <Link
+                to="/cart"
+                className={`flex items-center transition duration-300 ${
+                  isActive('/cart') ? 'text-orange-500 font-bold' : 'text-gray-700 hover:text-orange-500'
+                }`}
+                onClick={closeMobileMenu}
+              >
                 <ShoppingCartIcon className="w-6 h-6 mr-1" />
                 Cart {cartCount > 0 && <span className="bg-red-500 text-white rounded-full px-2 py-1 text-xs">{cartCount}</span>}
               </Link>
             </li>
             <li>
-              <button onClick={() => { handleLogout(); closeMobileMenu(); }} className="text-gray-700 hover:text-orange-500 transition duration-300 flex items-center">
+              <button
+                onClick={() => {
+                  handleLogout();
+                  closeMobileMenu();
+                }}
+                className="text-gray-700 hover:text-orange-500 transition duration-300 flex items-center"
+              >
                 <LogoutIcon className="w-6 h-6 mr-1" />
                 Logout
               </button>

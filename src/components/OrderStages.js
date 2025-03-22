@@ -25,7 +25,7 @@ const OrderStages = ({ currentStage }) => {
             {stage.icon}
           </div>
           <span className={`text-sm font-medium ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'} transition-colors duration-300`}>{stage.name}</span>
-          {index < stages.length - 1 && (
+          {index < stages.length && (
             <div className={`w-1 md:w-2 h-6 md:h-8 ${index < stageIndex ? 'bg-orange-600' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} mx-2 transition-colors duration-300`} />
           )}
         </div>
