@@ -1,5 +1,10 @@
 import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Compare,Login,Electronics,MenClothing,WomenClothing,Register,
   Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart,Profile} from './imports';
+  import Blog from "./components/Blog";
+import Careers from "./components/Careers";
+import Terms from "./components/Terms";
+import Privacy from "./components/Privacy";
+import License from "./components/License";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +24,11 @@ const App = () => {
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/compare" element={<Compare />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/license" element={<License />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
             <Route path="/products/electronics" element={isLoggedIn ? <Electronics /> : <Navigate to="/login" />} />
             <Route path="/products/men" element={isLoggedIn ? <MenClothing /> : <Navigate to="/login" />} />

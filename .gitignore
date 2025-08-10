@@ -58,6 +58,11 @@ yarn.lock
 !ProductModal.js
 !Sidebar.js
 !Compare.js
+!Terms.js
+!Privacy.js
+!License.js
+!Careers.js
+!Blog.js
 !_redirects
 
 !.env
