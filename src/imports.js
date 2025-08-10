@@ -19,6 +19,9 @@ import Products from './components/Products';
 import ProductCard from './components/ProductCard';
 import Cart from './components/Cart';
 import Profile from './components/Profile';
+import Compare from "./components/Compare";
+
+
 
 export {
   React,
@@ -44,5 +47,6 @@ export {
   Products,
   ProductCard,
   Cart,
+  Compare,
   Profile
 };

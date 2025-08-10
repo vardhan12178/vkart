@@ -1,4 +1,4 @@
-import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Login,Electronics,MenClothing,WomenClothing,Register,
+import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Compare,Login,Electronics,MenClothing,WomenClothing,Register,
   Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart,Profile} from './imports';
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/compare" element={<Compare />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
             <Route path="/products/electronics" element={isLoggedIn ? <Electronics /> : <Navigate to="/login" />} />
             <Route path="/products/men" element={isLoggedIn ? <MenClothing /> : <Navigate to="/login" />} />

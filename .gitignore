@@ -57,5 +57,7 @@ yarn.lock
 !Profile.js
 !ProductModal.js
 !Sidebar.js
+!Compare.js
 !_redirects
+
 !.env
