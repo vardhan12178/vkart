@@ -151,9 +151,9 @@ const Login = ({ setIsLoggedIn }) => {
 
               {/* Optional hero image (put /public/left-hero.png) */}
               <img
-                src="login.png"
+                src="login.webp"
                 alt=""
-                className="pointer-events-none absolute right-[-40px] bottom-[-20px] w-[520px] opacity-90 mix-blend-luminosity"
+                className="pointer-events-none absolute right-[-40px] bottom-[-20px] w-[520px] opacity-90 mix-blend-luminosity" loading="lazy"
                 onError={(e) => {
                   // Hide if image is missing
                   e.currentTarget.style.display = "none";

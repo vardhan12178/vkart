@@ -234,105 +234,120 @@ const Home = () => {
 
   return (
     <>
-      {/* HERO */}
-    <section className="relative overflow-hidden">
-  {/* gradient blobs – only show on md+ so they don’t crowd mobile */}
+     {/* HERO */}
+<section className="relative overflow-hidden">
   <div className="hidden md:block pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200 blur-3xl opacity-50" />
   <div className="hidden md:block pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-orange-100 blur-3xl opacity-60" />
 
-  <div className="container mx-auto px-4 pt-12 pb-6 md:pt-4 md:pb-20">
-    <div className="grid items-center gap-8 md:gap-10 md:grid-cols-2">
+  <div className="container mx-auto px-4 pt-8 pb-8 md:pt-4 md:pb-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-10">
+
       {/* TEXT BLOCK */}
-      <div>
+      <div className="max-w-2xl">
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900"
+          className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
         >
           Discover Top Picks at{" "}
-          <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">VKart</span>
+          <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+            VKart
+          </span>
         </motion.h1>
 
-        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700">
+        <p
+          className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-gray-700"
+          style={{ whiteSpace: "normal", overflowWrap: "break-word", wordWrap: "break-word", hyphens: "auto", maxWidth: "100%" }}
+        >
           From electronics to fashion—curated deals, fast delivery, and a seamless experience.
         </p>
 
         <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 rounded-xl bg-orange-600 px-5 py-3 sm:px-6 text-white font-semibold hover:bg-orange-700"
+            className="inline-flex items-center gap-2 rounded-xl bg-orange-600 px-4 py-2.5 sm:px-6 sm:py-3 text-white text-sm sm:text-base font-semibold hover:bg-orange-700"
           >
             Shop Collection <FaArrowRight />
           </Link>
           <a
             href="#featured"
-            className="inline-flex items-center rounded-xl px-5 py-3 sm:px-6 ring-1 ring-gray-300 hover:bg-gray-50"
+            className="inline-flex items-center rounded-xl px-4 py-2.5 sm:px-6 sm:py-3 ring-1 ring-gray-300 text-sm sm:text-base hover:bg-gray-50"
           >
             Explore Featured
           </a>
           <p className="w-full text-xs text-gray-500">Free shipping over ₹3,999 · Secure payments</p>
         </div>
 
-        {/* category chips – horizontal scroll with safe gutters */}
-        <div className="mt-6 sm:mt-8 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1">
-          {categories.map((c) => (
-            <Link
-              key={c.slug}
-              to={`/products?category=${encodeURIComponent(c.slug)}`}
-              className="whitespace-nowrap rounded-full bg-orange-50 px-4 py-2 text-sm font-medium text-orange-700 hover:bg-orange-100"
-            >
-              {c.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-
-    <motion.div
-  initial={{ opacity: 0, y: 12 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.1 }}
-  className="relative md:mx-auto w-full md:max-w-lg"
+       <div
+  className="mt-5 sm:mt-7 -mx-4 px-4 flex gap-2 overflow-x-auto pb-1"
+  style={{
+    scrollbarWidth: "none",       // Firefox
+    msOverflowStyle: "none",      // IE/Edge
+  }}
 >
-  {/* Mobile: smaller, centered image */}
-  {/* <img
-    src="hero11.png"
-    alt="Shopping"
-    width={800}
-    height={800}
-    className="block md:w-full md:h-auto object-contain mx-auto max-h-64 md:max-h-none px-4 md:px-0"
-    loading="eager"
-    fetchpriority="high"
-  /> */}
+  {categories.map((c) => (
+    <Link
+      key={c.slug}
+      to={`/products?category=${encodeURIComponent(c.slug)}`}
+      className="whitespace-nowrap rounded-full bg-orange-50 px-4 py-2 text-sm font-medium text-orange-700 hover:bg-orange-100"
+    >
+      {c.label}
+    </Link>
+  ))}
+  <style>{`
+    div::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+  `}</style>
+</div>
 
-  <img
-    src="hero11.png"
-    alt="Shopping"
-    width={800}
-    height={800}
-    className="hidden md:block w-full h-auto object-cover"
-    loading="eager"
-    fetchpriority="high"
-  />
- 
+      </div>
 
-  {/* Floating badge — desktop only */}
-  <div className="hidden md:block absolute -bottom-4 -right-4 rounded-2xl bg-white p-3 shadow ring-1 ring-gray-100">
-    <div className="flex items-center gap-3">
-      <div className="rounded-lg bg-orange-100 p-2 text-orange-700">
-        <FaTruck />
-      </div>
-      <div>
-        <p className="text-sm font-semibold text-gray-900">3-day Delivery</p>
-        <p className="text-xs text-gray-500">Across major cities</p>
-      </div>
-    </div>
-  </div>
-</motion.div>
+      {/* IMAGE BLOCK */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="relative md:mx-auto w-full md:max-w-lg"
+      >
+        {/* Mobile image */}
+        <img
+          src="hero11.webp"
+          alt="Shopping"
+          className="block md:hidden w-full max-h-64 object-contain mx-auto"
+          loading="eager"
+          fetchpriority="high"
+          sizes="(max-width: 768px) 100vw, 70vw"
+        />
+
+        {/* Desktop image */}
+        <img
+          src="hero11.webp"
+          alt="Shopping"
+          width={800}
+          height={800}
+          className="hidden md:block w-full h-auto object-cover rounded-2xl"
+          loading="eager"
+          fetchpriority="high"
+          sizes="50vw"
+        />
+
+        <div className="hidden md:block absolute -bottom-4 -right-4 rounded-2xl bg-white p-3 shadow ring-1 ring-gray-100">
+          <div className="flex items-center gap-3">
+            <div className="rounded-lg bg-orange-100 p-2 text-orange-700">
+              <FaTruck />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-900">3-day Delivery</p>
+              <p className="text-xs text-gray-500">Across major cities</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
     </div>
   </div>
 </section>
+
 
       {/* BRANDS MARQUEE */}
       {brands.length > 0 && (
@@ -359,7 +374,7 @@ const Home = () => {
               100% { transform: translateX(-50%); }
             }
             @media (prefers-reduced-motion: reduce) {
-              .motion-safe\\:animate-\[marquee_20s_linear_infinite\] { animation: none !important; }
+              .motion-safe\\:animate-[marquee_20s_linear_infinite] { animation: none !important; }
             }
           `}</style>
         </section>
@@ -439,7 +454,7 @@ const Home = () => {
       <div className="order-first md:order-none">
         <div className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-none">
           <img
-            src="hero3.png"
+            src="hero3.webp"
             alt="Sale 50% banner"
             width={900}
             height={600}
