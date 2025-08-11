@@ -1,51 +1,61 @@
-import { createSlice } from '@reduxjs/toolkit';
+// redux/cartSlice.js
+import { createSlice } from "@reduxjs/toolkit";
+
+// Prefer Mongo _id, else productId, else externalId, else id (DummyJSON)
+const getKey = (it) => it?._id || it?.productId || it?.externalId || it?.id;
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState: [],
   reducers: {
     addToCart: (state, action) => {
-      const { id, quantity } = action.payload;
-      const existingProduct = state.find((item) => item.id === id);
+      const item = action.payload;
+      const qty = Math.max(1, item.quantity || 1);
+      const key = getKey(item);
+      if (!key) return; // can't index without any id
 
-      if (existingProduct) {
-        // If the product already exists, update the quantity
-        existingProduct.quantity += quantity;
+      const existing = state.find((s) => getKey(s) === key);
+      if (existing) {
+        existing.quantity += qty;
       } else {
-        // If the product is new, add it to the cart with the specified quantity
-        state.push({ ...action.payload, quantity });
+        state.push({ ...item, quantity: qty });
       }
     },
+
     incrementQuantity: (state, action) => {
-      const id = action.payload;
-      const product = state.find((item) => item.id === id);
-      if (product) {
-        product.quantity += 1;
-      }
+      const key = action.payload;
+      const found = state.find((s) => getKey(s) === key);
+      if (found) found.quantity += 1;
     },
+
     decrementQuantity: (state, action) => {
-      const id = action.payload;
-      const productIndex = state.findIndex((item) => item.id === id);
-      if (productIndex !== -1) {
-        const product = state[productIndex];
-        if (product.quantity > 1) {
-          product.quantity -= 1;
-        } else {
-          // Remove the product if the quantity is 1
-          state.splice(productIndex, 1);
-        }
+      const key = action.payload;
+      const idx = state.findIndex((s) => getKey(s) === key);
+      if (idx !== -1) {
+        const it = state[idx];
+        if (it.quantity > 1) it.quantity -= 1;
+        else state.splice(idx, 1);
       }
     },
+
     removeFromCart: (state, action) => {
-      const id = action.payload;
-      // Filter out the item with the matching id
-      return state.filter((item) => item.id !== id);
+      const key = action.payload;
+      return state.filter((s) => getKey(s) !== key);
     },
-    clearCart: (state) => {
-      return []; // Return a new empty array to ensure immutability
-    },
+
+    clearCart: () => [],
   },
 });
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeFromCart, clearCart } = cartSlice.actions;
+export const {
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+  removeFromCart,
+  clearCart,
+} = cartSlice.actions;
+
 export default cartSlice.reducer;
+
+// (optional) export helper so UI can use the same key logic
+export const cartItemKey = getKey;

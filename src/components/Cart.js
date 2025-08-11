@@ -28,6 +28,9 @@ const INR = (n) =>
   }).format(Math.round(n));
 
 const TAX_RATE = 0.18;
+const isValidObjectId = (v) => typeof v === "string" && /^[a-fA-F0-9]{24}$/.test(v);
+// single source of truth for cart keys
+const cartKey = (it) => it._id || it.productId || it.externalId || it.id;
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -45,30 +48,18 @@ const Cart = () => {
   // derived money values
   const calc = useMemo(() => {
     if (!cartItems?.length) {
-      return {
-        mrp: 0,
-        subtotal: 0,
-        savings: 0,
-        tax: 0,
-        total: 0,
-      };
+      return { mrp: 0, subtotal: 0, savings: 0, tax: 0, total: 0 };
     }
-
     const lines = cartItems.map((it) => {
-      const unitSell = it.price * 83; // selling INR
+      const unitSell = it.price * 83;
       const unitMrp = it.discountPercentage
         ? (it.price / (1 - it.discountPercentage / 100)) * 83
         : unitSell;
-      return {
-        mrp: unitMrp * it.quantity,
-        sell: unitSell * it.quantity,
-      };
+      return { mrp: unitMrp * it.quantity, sell: unitSell * it.quantity };
     });
-
     const mrp = lines.reduce((a, b) => a + b.mrp, 0);
     let subtotal = lines.reduce((a, b) => a + b.sell, 0);
 
-    // promo (example: SAVE10 -> 10% off)
     let promoOff = 0;
     if (promoApplied?.pct) {
       promoOff = subtotal * (promoApplied.pct / 100);
@@ -77,20 +68,13 @@ const Cart = () => {
 
     const tax = subtotal * TAX_RATE;
     const total = subtotal + tax;
-
-    return {
-      mrp,
-      subtotal,
-      promoOff,
-      tax,
-      total,
-      savings: Math.max(0, mrp - (subtotal + promoOff)), // savings shown from MRP before tax
-    };
+    return { mrp, subtotal, promoOff, tax, total, savings: Math.max(0, mrp - (subtotal + promoOff)) };
   }, [cartItems, promoApplied]);
 
-  const handleIncrement = (id) => dispatch(incrementQuantity(id));
-  const handleDecrement = (id) => dispatch(decrementQuantity(id));
-  const handleRemove = (id) => dispatch(removeFromCart(id));
+  // pass the composite key to reducers
+  const handleIncrement = (item) => dispatch(incrementQuantity(cartKey(item)));
+  const handleDecrement = (item) => dispatch(decrementQuantity(cartKey(item)));
+  const handleRemove    = (item) => dispatch(removeFromCart(cartKey(item)));
 
   const applyPromo = () => {
     const code = promo.trim().toUpperCase();
@@ -109,14 +93,30 @@ const Cart = () => {
       const itemsOrdered = cartItems.reduce((t, i) => t + i.quantity, 0);
       setTotalItemsOrdered(itemsOrdered);
 
-      const orderData = {
-        products: cartItems.map((it) => ({
-          productId: String(it.id), // don’t fabricate ObjectIds on client
+      const productsPayload = cartItems.map((it) => {
+        const mongoId = it._id || it.productId || null;                         // prefer Mongo
+        const extId   = it.externalId || (it.id != null ? String(it.id) : null); // DummyJSON fallback
+
+        // only validate if we intend to send a Mongo id
+        if (mongoId && !isValidObjectId(String(mongoId))) {
+          throw new Error(`Invalid Mongo product _id for "${it.title}": "${mongoId}"`);
+        }
+
+        // include fields conditionally so backend can accept either
+        const payload = {
           name: it.title,
           image: it.thumbnail || it.images?.[0],
           quantity: it.quantity,
           price: it.price * 83, // per unit INR
-        })),
+        };
+        if (mongoId) payload.productId = String(mongoId);
+        if (!mongoId && extId) payload.externalId = extId;
+
+        return payload;
+      });
+
+      const orderData = {
+        products: productsPayload,
         subtotal: calc.subtotal,
         tax: calc.tax,
         totalPrice: calc.total,
@@ -130,7 +130,8 @@ const Cart = () => {
       setOrderPlaced(true);
     } catch (e) {
       console.error("Order placement error:", e);
-      setError("Failed to place the order. Please try again.");
+      const msg = e?.response?.data?.message || e?.message || "Failed to place the order. Please try again.";
+      setError(msg);
     } finally {
       setIsLoading(false);
     }
@@ -141,21 +142,10 @@ const Cart = () => {
     return (
       <div className="flex justify-center items-center min-h-[60vh] p-4 mt-16">
         <div className="bg-white p-10 rounded-2xl shadow-lg text-center max-w-md w-full">
-          <FontAwesomeIcon
-            icon={faShoppingCart}
-            size="2x"
-            className="text-orange-500 mb-4"
-          />
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
-            Your cart is empty
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Looks like you haven’t added anything yet.
-          </p>
-          <Link
-            to="/products"
-            className="inline-block bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700"
-          >
+          <FontAwesomeIcon icon={faShoppingCart} size="2x" className="text-orange-500 mb-4" />
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Your cart is empty</h2>
+          <p className="text-gray-600 mb-6">Looks like you haven’t added anything yet.</p>
+          <Link to="/products" className="inline-block bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700">
             Continue shopping
           </Link>
         </div>
@@ -165,9 +155,7 @@ const Cart = () => {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-        Your Shopping Cart
-      </h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Your Shopping Cart</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Items */}
@@ -175,33 +163,24 @@ const Cart = () => {
           {cartItems.map((item) => {
             const unitSell = item.price * 83;
             const unitMrp = item.discountPercentage
-              ? (item.price / (item.discountPercentage ? 1 - item.discountPercentage / 100 : 1)) *
-                83
+              ? (item.price / (item.discountPercentage ? 1 - item.discountPercentage / 100 : 1)) * 83
               : unitSell;
             const lineSell = unitSell * item.quantity;
             const lineMrp = unitMrp * item.quantity;
+            const key = cartKey(item);
 
             return (
-              <div
-                key={item.id}
-                className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 p-4 md:p-6"
-              >
+              <div key={key} className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 p-4 md:p-6">
                 <div className="flex items-start gap-4 md:gap-6">
                   <div className="w-24 h-24 md:w-28 md:h-28 flex items-center justify-center bg-white rounded-xl overflow-hidden ring-1 ring-gray-100">
-                    <img
-                      src={item.thumbnail || item.images?.[0]}
-                      alt={item.title}
-                      className="object-contain w-full h-full"
-                    />
+                    <img src={item.thumbnail || item.images?.[0]} alt={item.title} className="object-contain w-full h-full" />
                   </div>
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">
-                        {item.title}
-                      </h3>
+                      <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">{item.title}</h3>
                       <button
-                        onClick={() => setConfirmRemoveId(item.id)}
+                        onClick={() => setConfirmRemoveId(key)}
                         className="text-gray-400 hover:text-red-600"
                         aria-label="Remove item"
                       >
@@ -216,24 +195,18 @@ const Cart = () => {
 
                     <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
                       {/* stepper */}
-                      <div
-                        className="flex items-center border border-gray-200 rounded-xl overflow-hidden"
-                        role="group"
-                        aria-label="Quantity selector"
-                      >
+                      <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden" role="group" aria-label="Quantity selector">
                         <button
-                          onClick={() => handleDecrement(item.id)}
+                          onClick={() => handleDecrement(item)}
                           className="px-3 py-2 hover:bg-gray-50 disabled:opacity-50"
                           disabled={item.quantity <= 1}
                           aria-label="Decrease quantity"
                         >
                           –
                         </button>
-                        <span className="px-4 py-2 text-lg font-medium">
-                          {item.quantity}
-                        </span>
+                        <span className="px-4 py-2 text-lg font-medium">{item.quantity}</span>
                         <button
-                          onClick={() => handleIncrement(item.id)}
+                          onClick={() => handleIncrement(item)}
                           className="px-3 py-2 hover:bg-gray-50"
                           aria-label="Increase quantity"
                         >
@@ -243,13 +216,9 @@ const Cart = () => {
 
                       {/* prices */}
                       <div className="text-right ml-auto">
-                        <div className="text-base md:text-lg font-semibold text-gray-900">
-                          {INR(lineSell)}
-                        </div>
+                        <div className="text-base md:text-lg font-semibold text-gray-900">{INR(lineSell)}</div>
                         {lineMrp > lineSell ? (
-                          <div className="text-sm text-gray-500 line-through">
-                            {INR(lineMrp)}
-                          </div>
+                          <div className="text-sm text-gray-500 line-through">{INR(lineMrp)}</div>
                         ) : null}
                       </div>
                     </div>
@@ -264,14 +233,14 @@ const Cart = () => {
                 </div>
 
                 {/* confirm remove */}
-                {confirmRemoveId === item.id && (
+                {confirmRemoveId === key && (
                   <div className="mt-4 flex items-center justify-end gap-3 text-sm">
                     <span className="text-gray-600">
                       Remove <strong>{item.title}</strong>?
                     </span>
                     <button
                       onClick={() => {
-                        handleRemove(item.id);
+                        handleRemove(item);
                         setConfirmRemoveId(null);
                       }}
                       className="px-3 py-1.5 rounded-lg bg-red-50 text-red-700 hover:bg-red-100"
@@ -294,9 +263,7 @@ const Cart = () => {
         {/* Summary */}
         <aside className="lg:sticky lg:top-24 self-start">
           <div className="bg-orange-50/70 rounded-2xl shadow-sm ring-1 ring-orange-100 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">
-              Order Summary
-            </h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Order Summary</h2>
 
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
@@ -400,24 +367,14 @@ const Cart = () => {
 
       {orderPlaced && (
         <div className="mt-12 bg-white p-8 rounded-2xl shadow text-center">
-          <FontAwesomeIcon
-            icon={faCheckCircle}
-            size="2x"
-            className="text-green-500 mb-3"
-          />
-          <h2 className="text-2xl font-bold mb-2">
-            Order placed successfully!
-          </h2>
+          <FontAwesomeIcon icon={faCheckCircle} size="2x" className="text-green-500 mb-3" />
+          <h2 className="text-2xl font-bold mb-2">Order placed successfully!</h2>
           <p className="text-gray-700 mb-6">
-            You placed an order for {totalItemsOrdered}{" "}
-            {totalItemsOrdered > 1 ? "items" : "item"}.
+            You placed an order for {totalItemsOrdered} {totalItemsOrdered > 1 ? "items" : "item"}.
           </p>
           <OrderStages currentStage="Shipping" />
           <div className="mt-6">
-            <Link
-              to="/products"
-              className="inline-block text-sm px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-50"
-            >
+            <Link to="/products" className="inline-block text-sm px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-50">
               Keep shopping
             </Link>
           </div>

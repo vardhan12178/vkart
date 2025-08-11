@@ -1,17 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback, memo } from "react";
 import { FaMoneyBillWave, FaRegCreditCard } from "react-icons/fa";
 import {
-  SiVisa,
-  SiMastercard,
-  SiAmericanexpress,
-  SiDiscover,
-  SiPaypal,
-  SiGooglepay,
-  SiPaytm,
-  SiPhonepe,
+  SiVisa, SiMastercard, SiAmericanexpress, SiDiscover,
+  SiPaypal, SiGooglepay, SiPaytm, SiPhonepe
 } from "react-icons/si";
 
-// Tiny fallback badge for brands without an icon in react-icons
+/* ---------- Tiny helpers ---------- */
 const Badge = ({ text }) => (
   <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold bg-gray-100 text-gray-700">
     {text}
@@ -19,35 +13,20 @@ const Badge = ({ text }) => (
 );
 
 const METHODS = [
-  {
-    key: "card",
-    label: "Credit / Debit Card",
-    icon: () => (
+  { key: "card",   label: "Credit / Debit Card", icon: () => (
       <div className="flex items-center gap-2 text-gray-600">
-        <SiVisa />
-        <SiMastercard />
-        <SiAmericanexpress />
-        <SiDiscover />
+        <SiVisa /><SiMastercard /><SiAmericanexpress /><SiDiscover />
       </div>
-    ),
-  },
-  {
-    key: "upi",
-    label: "UPI",
-    icon: () => (
+  )},
+  { key: "upi",    label: "UPI", icon: () => (
       <div className="flex items-center gap-2 text-gray-600">
-        <SiPhonepe />
-        <SiGooglepay />
-        <SiPaytm />
-        <Badge text="CRED" />
+        <SiPhonepe /><SiGooglepay /><SiPaytm /><Badge text="CRED" />
       </div>
-    ),
-  },
+  )},
   { key: "paypal", label: "PayPal", icon: () => <SiPaypal className="text-[#00457C]" /> },
-  { key: "cod", label: "Cash on Delivery", icon: () => <FaMoneyBillWave className="text-green-600" /> },
+  { key: "cod",    label: "Cash on Delivery", icon: () => <FaMoneyBillWave className="text-green-600" /> },
 ];
 
-// helpers
 const onlyDigits = (s) => s.replace(/\D/g, "");
 const luhn = (num) => {
   let sum = 0, dbl = false;
@@ -68,12 +47,69 @@ const detectBrand = (d) => {
 
 const UPI_PROVIDERS = [
   { name: "PhonePe", icon: SiPhonepe, domain: "@ybl" },
-  { name: "GPay", icon: SiGooglepay, domain: "@okaxis" },
-  { name: "Paytm", icon: SiPaytm, domain: "@paytm" },
-  // CRED has no react-icon – use Badge
-  { name: "CRED", icon: null, domain: "@icici" },
+  { name: "GPay",    icon: SiGooglepay, domain: "@okaxis" },
+  { name: "Paytm",   icon: SiPaytm, domain: "@paytm" },
+  { name: "CRED",    icon: null, domain: "@icici" },
 ];
 
+/* ---------- Memo Field to prevent remounts ---------- */
+const Field = memo(function Field({ label, name, children, hint, touched, error }) {
+  return (
+    <div className="mb-4">
+      <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-1">
+        {label}
+      </label>
+      {children}
+      {hint ? <p className="text-xs text-gray-400 mt-1">{hint}</p> : null}
+      {touched && error ? (
+        <p className="text-xs text-red-600 mt-1">{error}</p>
+      ) : null}
+    </div>
+  );
+});
+
+/* ---------- Memo PaymentMethodSelector ---------- */
+const PaymentMethodSelector = memo(function PaymentMethodSelector({ method, onChange }) {
+  return (
+    <div className="mb-6">
+      <p className="text-sm font-medium text-gray-700 mb-2">Payment Method</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {METHODS.map((m) => {
+          const ActiveIcon = m.icon;
+          const active = method === m.key;
+          return (
+            <label
+              key={m.key}
+              className={`cursor-pointer rounded-2xl border p-3 flex items-center justify-between gap-3 transition
+                ${active ? "border-orange-400 bg-gradient-to-br from-orange-50 to-orange-100 ring-1 ring-orange-300" : "border-gray-200 hover:bg-gray-50"}`}
+            >
+              <div className="flex items-center gap-3">
+                {m.key === "card" ? (
+                  <FaRegCreditCard className="text-gray-700" />
+                ) : m.key === "cod" ? (
+                  <FaMoneyBillWave className="text-green-600" />
+                ) : (
+                  <ActiveIcon />
+                )}
+                <span className="text-sm font-semibold text-gray-800">{m.label}</span>
+              </div>
+              <input
+                type="radio"
+                name="method"
+                value={m.key}
+                checked={active}
+                onChange={() => onChange(m.key)}
+                className="hidden"
+              />
+            </label>
+          );
+        })}
+      </div>
+    </div>
+  );
+});
+
+/* =================== MAIN =================== */
 const CheckoutForm = ({ onOrderPlaced }) => {
   const [method, setMethod] = useState(() => localStorage.getItem("payMethod") || "card");
   const [busy, setBusy] = useState(false);
@@ -82,62 +118,61 @@ const CheckoutForm = ({ onOrderPlaced }) => {
   const [status, setStatus] = useState("");
 
   const [data, setData] = useState({
-    // card
-    cardNumber: "",
-    cardName: "",
-    expiry: "",
-    cvv: "",
-    // upi/paypal
-    upi: "",
-    paypalEmail: "",
-    // shipping
-    fullName: "",
-    phone: "",
-    pincode: "",
-    city: "",
-    state: "",
-    address1: "",
-    address2: "",
+    cardNumber: "", cardName: "", expiry: "", cvv: "",
+    upi: "", paypalEmail: "",
+    fullName: "", phone: "", pincode: "",
+    city: "", state: "", address1: "", address2: "",
   });
 
   useEffect(() => localStorage.setItem("payMethod", method), [method]);
 
-  const brand = useMemo(() => detectBrand(onlyDigits(data.cardNumber)), [data.cardNumber]);
+  const brand = useMemo(
+    () => detectBrand(onlyDigits(data.cardNumber)),
+    [data.cardNumber]
+  );
 
-  const setField = (name, value) => {
-    setData((d) => ({ ...d, [name]: value }));
-    if (errors[name]) setErrors((e) => ({ ...e, [name]: undefined }));
-  };
+  /* ---------- stable setters ---------- */
+  const setField = useCallback((name, value) => {
+    setData((d) => (d[name] === value ? d : { ...d, [name]: value }));
+    setErrors((e) => (e[name] ? { ...e, [name]: undefined } : e));
+  }, []);
 
-  // masks
-  const onCardNumber = (e) => {
+  const markTouched = useCallback((name) => {
+    setTouched((t) => (t[name] ? t : { ...t, [name]: true }));
+  }, []);
+
+  /* ---------- masks ---------- */
+  const onCardNumber = useCallback((e) => {
     const digits = onlyDigits(e.target.value).slice(0, 19);
     const groups = digits.match(/.{1,4}/g) || [];
     setField("cardNumber", groups.join(" "));
-  };
-  const onExpiry = (e) => {
+  }, [setField]);
+
+  const onExpiry = useCallback((e) => {
     const digits = onlyDigits(e.target.value).slice(0, 4);
     const mm = digits.slice(0, 2);
     const yy = digits.slice(2, 4);
     setField("expiry", mm + (yy ? "/" + yy : ""));
-  };
-  const onCVV = (e) => {
+  }, [setField]);
+
+  const onCVV = useCallback((e) => {
     const max = brand === "Amex" ? 4 : 3;
     setField("cvv", onlyDigits(e.target.value).slice(0, max));
-  };
+  }, [brand, setField]);
 
-  const applyUPISuffix = (suffix) => {
-    setField("upi", (prev) => {
-      if (!prev) return "yourname" + suffix;
-      const parts = prev.split("@");
-      if (parts.length === 1) return prev + suffix;
-      return parts[0] + suffix;
-    });
-    setTouched((t) => ({ ...t, upi: true }));
-  };
+  const applyUPISuffix = useCallback((suffix) => {
+    setField("upi", (prev => {
+      const current = typeof prev === "function" ? prev("") : prev;
+      const cur = typeof current === "string" ? current : "";
+      if (!cur) return "yourname" + suffix;
+      const parts = cur.split("@");
+      return (parts.length === 1 ? cur : parts[0]) + suffix;
+    })(data.upi));
+    markTouched("upi");
+  }, [data.upi, setField, markTouched]);
 
-  // validation
-  const validate = () => {
+  /* ---------- validation ---------- */
+  const validate = useCallback(() => {
     const v = {};
     if (!data.fullName.trim()) v.fullName = "Name is required";
     if (!/^[6-9]\d{9}$/.test(onlyDigits(data.phone))) v.phone = "Enter a valid 10-digit mobile";
@@ -158,17 +193,23 @@ const CheckoutForm = ({ onOrderPlaced }) => {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.paypalEmail)) v.paypalEmail = "Enter a valid email";
     }
     return v;
-  };
+  }, [data, method, brand]);
 
-  const onSubmit = (e) => {
+  /* ---------- submit ---------- */
+  const onSubmit = useCallback((e) => {
     e.preventDefault();
     const v = validate();
     setErrors(v);
-    setTouched(Object.fromEntries(Object.keys({ ...data }).map((k) => [k, true])));
+    setTouched((t) => {
+      const all = {};
+      Object.keys(data).forEach((k) => (all[k] = true));
+      return { ...t, ...all };
+    });
     if (Object.keys(v).length) return;
 
     setBusy(true);
     setStatus("Placing your order…");
+    // Fake wait -> parent onOrderPlaced
     setTimeout(() => {
       setBusy(false);
       setStatus("");
@@ -177,75 +218,32 @@ const CheckoutForm = ({ onOrderPlaced }) => {
         method,
       });
     }, 1200);
-  };
+  }, [data, method, onOrderPlaced, validate]);
 
-  const Field = ({ label, name, children, hint }) => (
-    <div className="mb-4">
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-1">
-        {label}
-      </label>
-      {children}
-      {hint ? <p className="text-xs text-gray-400 mt-1">{hint}</p> : null}
-      {touched[name] && errors[name] ? (
-        <p className="text-xs text-red-600 mt-1">{errors[name]}</p>
-      ) : null}
-    </div>
-  );
-
+  /* ---------- UI ---------- */
   return (
     <form onSubmit={onSubmit} className="bg-white p-6 md:p-8 rounded-2xl shadow-md">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Checkout</h2>
 
-      {/* Payment selector */}
-      <div className="mb-6">
-        <p className="text-sm font-medium text-gray-700 mb-2">Payment Method</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {METHODS.map((m) => {
-            const ActiveIcon = m.icon;
-            const active = method === m.key;
-            return (
-              <label
-                key={m.key}
-                className={`cursor-pointer rounded-2xl border p-3 flex items-center justify-between gap-3 transition
-                ${active ? "border-orange-400 bg-gradient-to-br from-orange-50 to-orange-100 ring-1 ring-orange-300" : "border-gray-200 hover:bg-gray-50"}`}
-              >
-                <div className="flex items-center gap-3">
-                  {m.key === "card" ? (
-                    <FaRegCreditCard className="text-gray-700" />
-                  ) : m.key === "cod" ? (
-                    <FaMoneyBillWave className="text-green-600" />
-                  ) : (
-                    <ActiveIcon />
-                  )}
-                  <span className="text-sm font-semibold text-gray-800">{m.label}</span>
-                </div>
-                <input
-                  type="radio"
-                  name="method"
-                  value={m.key}
-                  checked={active}
-                  onChange={() => setMethod(m.key)}
-                  className="hidden"
-                />
-              </label>
-            );
-          })}
-        </div>
-      </div>
+      <PaymentMethodSelector method={method} onChange={setMethod} />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left: payment details */}
         <div>
           {method === "card" && (
             <div className="rounded-2xl ring-1 ring-gray-200 p-4">
-              <Field label="Card Number" name="cardNumber" hint={brand ? `Detected: ${brand}` : ""}>
+              <Field
+                label="Card Number" name="cardNumber"
+                hint={brand ? `Detected: ${brand}` : ""}
+                touched={touched.cardNumber} error={errors.cardNumber}
+              >
                 <div className="relative">
                   <input
-                    id="cardNumber"
+                    id="cardNumber" name="cardNumber"
                     value={data.cardNumber}
                     onChange={onCardNumber}
-                    onBlur={() => setTouched((t) => ({ ...t, cardNumber: true }))}
-                    inputMode="numeric"
+                    onBlur={() => markTouched("cardNumber")}
+                    inputMode="numeric" autoComplete="cc-number"
                     placeholder="1234 5678 9012 3456"
                     className="w-full rounded-xl border border-gray-300 px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
@@ -257,35 +255,39 @@ const CheckoutForm = ({ onOrderPlaced }) => {
                   </div>
                 </div>
               </Field>
-              <Field label="Name on Card" name="cardName">
+
+              <Field label="Name on Card" name="cardName" touched={touched.cardName} error={errors.cardName}>
                 <input
-                  id="cardName"
+                  id="cardName" name="cardName"
                   value={data.cardName}
                   onChange={(e) => setField("cardName", e.target.value)}
-                  onBlur={() => setTouched((t) => ({ ...t, cardName: true }))}
+                  onBlur={() => markTouched("cardName")}
+                  autoComplete="cc-name"
                   placeholder="As printed on card"
                   className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 />
               </Field>
+
               <div className="grid grid-cols-2 gap-4">
-                <Field label="Expiry (MM/YY)" name="expiry">
+                <Field label="Expiry (MM/YY)" name="expiry" touched={touched.expiry} error={errors.expiry}>
                   <input
-                    id="expiry"
+                    id="expiry" name="expiry"
                     value={data.expiry}
                     onChange={onExpiry}
-                    onBlur={() => setTouched((t) => ({ ...t, expiry: true }))}
-                    inputMode="numeric"
+                    onBlur={() => markTouched("expiry")}
+                    inputMode="numeric" autoComplete="cc-exp"
                     placeholder="MM/YY"
                     className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
                 </Field>
-                <Field label={`CVV${brand === "Amex" ? " (4-digit)" : ""}`} name="cvv">
+
+                <Field label={`CVV${brand === "Amex" ? " (4-digit)" : ""}`} name="cvv" touched={touched.cvv} error={errors.cvv}>
                   <input
-                    id="cvv"
+                    id="cvv" name="cvv"
                     value={data.cvv}
                     onChange={onCVV}
-                    onBlur={() => setTouched((t) => ({ ...t, cvv: true }))}
-                    inputMode="numeric"
+                    onBlur={() => markTouched("cvv")}
+                    inputMode="numeric" autoComplete="cc-csc"
                     placeholder="123"
                     className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
@@ -296,21 +298,21 @@ const CheckoutForm = ({ onOrderPlaced }) => {
 
           {method === "upi" && (
             <div className="rounded-2xl ring-1 ring-gray-200 p-4">
-              <Field label="UPI ID" name="upi" hint="Example: name@bank">
+              <Field label="UPI ID" name="upi" touched={touched.upi} error={errors.upi} hint="Example: name@bank">
                 <input
-                  id="upi"
+                  id="upi" name="upi"
                   value={data.upi}
                   onChange={(e) => setField("upi", e.target.value)}
-                  onBlur={() => setTouched((t) => ({ ...t, upi: true }))}
+                  onBlur={() => markTouched("upi")}
                   placeholder="yourname@bank"
+                  autoComplete="off" inputMode="text"
                   className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 />
               </Field>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {UPI_PROVIDERS.map((p) => (
                   <button
-                    key={p.name}
-                    type="button"
+                    key={p.name} type="button"
                     onClick={() => applyUPISuffix(p.domain)}
                     className="flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 hover:bg-gray-50"
                     title={p.name}
@@ -325,14 +327,13 @@ const CheckoutForm = ({ onOrderPlaced }) => {
 
           {method === "paypal" && (
             <div className="rounded-2xl ring-1 ring-gray-200 p-4">
-              <Field label="PayPal Email" name="paypalEmail">
+              <Field label="PayPal Email" name="paypalEmail" touched={touched.paypalEmail} error={errors.paypalEmail}>
                 <input
-                  id="paypalEmail"
-                  type="email"
+                  id="paypalEmail" name="paypalEmail" type="email"
                   value={data.paypalEmail}
                   onChange={(e) => setField("paypalEmail", e.target.value)}
-                  onBlur={() => setTouched((t) => ({ ...t, paypalEmail: true }))}
-                  placeholder="you@example.com"
+                  onBlur={() => markTouched("paypalEmail")}
+                  placeholder="you@example.com" autoComplete="email"
                   className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 />
               </Field>
@@ -350,74 +351,86 @@ const CheckoutForm = ({ onOrderPlaced }) => {
         {/* Right: shipping */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-3">Shipping Address</h3>
-          <Field label="Full Name" name="fullName">
+
+          <Field label="Full Name" name="fullName" touched={touched.fullName} error={errors.fullName}>
             <input
-              id="fullName"
+              id="fullName" name="fullName"
               value={data.fullName}
               onChange={(e) => setField("fullName", e.target.value)}
-              onBlur={() => setTouched((t) => ({ ...t, fullName: true }))}
+              onBlur={() => markTouched("fullName")}
+              autoComplete="name"
               className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
             />
           </Field>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Field label="Mobile Number" name="phone">
+            <Field label="Mobile Number" name="phone" touched={touched.phone} error={errors.phone}>
               <input
-                id="phone"
-                inputMode="numeric"
+                id="phone" name="phone"
+                inputMode="numeric" autoComplete="tel"
                 value={data.phone}
                 onChange={(e) => setField("phone", e.target.value)}
-                onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+                onBlur={() => markTouched("phone")}
                 placeholder="10-digit mobile"
                 className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
               />
             </Field>
-            <Field label="Pincode" name="pincode">
+
+            <Field label="Pincode" name="pincode" touched={touched.pincode} error={errors.pincode}>
               <input
-                id="pincode"
-                inputMode="numeric"
+                id="pincode" name="pincode"
+                inputMode="numeric" autoComplete="postal-code"
                 value={data.pincode}
                 onChange={(e) => setField("pincode", e.target.value)}
-                onBlur={() => setTouched((t) => ({ ...t, pincode: true }))}
+                onBlur={() => markTouched("pincode")}
                 placeholder="6-digit"
                 className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
               />
             </Field>
           </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Field label="City" name="city">
+            <Field label="City" name="city" touched={touched.city} error={errors.city}>
               <input
-                id="city"
+                id="city" name="city"
                 value={data.city}
                 onChange={(e) => setField("city", e.target.value)}
-                onBlur={() => setTouched((t) => ({ ...t, city: true }))}
+                onBlur={() => markTouched("city")}
+                autoComplete="address-level2"
                 className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
               />
             </Field>
-            <Field label="State" name="state">
+
+            <Field label="State" name="state" touched={touched.state} error={errors.state}>
               <input
-                id="state"
+                id="state" name="state"
                 value={data.state}
                 onChange={(e) => setField("state", e.target.value)}
-                onBlur={() => setTouched((t) => ({ ...t, state: true }))}
+                onBlur={() => markTouched("state")}
+                autoComplete="address-level1"
                 className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
               />
             </Field>
           </div>
-          <Field label="Address line 1" name="address1">
+
+          <Field label="Address line 1" name="address1" touched={touched.address1} error={errors.address1}>
             <input
-              id="address1"
+              id="address1" name="address1"
               value={data.address1}
               onChange={(e) => setField("address1", e.target.value)}
-              onBlur={() => setTouched((t) => ({ ...t, address1: true }))}
+              onBlur={() => markTouched("address1")}
+              autoComplete="address-line1"
               placeholder="House no, street, area"
               className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
             />
           </Field>
-          <Field label="Address line 2 (optional)" name="address2">
+
+          <Field label="Address line 2 (optional)" name="address2" touched={touched.address2} error={errors.address2}>
             <input
-              id="address2"
+              id="address2" name="address2"
               value={data.address2}
               onChange={(e) => setField("address2", e.target.value)}
+              autoComplete="address-line2"
               placeholder="Landmark, etc."
               className="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
             />
@@ -433,7 +446,7 @@ const CheckoutForm = ({ onOrderPlaced }) => {
         type="submit"
         disabled={busy}
         className={`mt-6 w-full md:w-auto px-6 py-3 rounded-xl text-white font-semibold transition
-        ${busy ? "bg-orange-400 cursor-not-allowed" : "bg-orange-600 hover:bg-orange-700"}`}
+          ${busy ? "bg-orange-400 cursor-not-allowed" : "bg-orange-600 hover:bg-orange-700"}`}
       >
         {busy ? (
           <span className="inline-flex items-center gap-2">
