@@ -75,11 +75,12 @@ const Login = ({ setIsLoggedIn }) => {
     setLoading(true);
     const start = performance.now();
     try {
-      await axios.post(
+      const res = await axios.post(
         "/api/login",
         { username: userId.trim(), password, remember },
         { withCredentials: true }
       );
+      if (res?.data?.token) localStorage.setItem("auth_token", res.data.token);
       setIsLoggedIn?.(true);
       navigate("/");
     } catch (err) {
@@ -96,11 +97,12 @@ const Login = ({ setIsLoggedIn }) => {
     setFormError("");
     setGoogleLoading(true);
     try {
-      await axios.post(
+      const res = await axios.post(
         "/auth/google",
         { idToken: cred?.credential, remember },
         { withCredentials: true }
       );
+      if (res?.data?.token) localStorage.setItem("auth_token", res.data.token);
       setIsLoggedIn?.(true);
       navigate("/");
     } catch (err) {
@@ -119,7 +121,7 @@ const Login = ({ setIsLoggedIn }) => {
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-white">
       <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-orange-200/50 blur-3xl" />
       <div className="pointer-events-none absolute bottom-[-6rem] right-[-6rem] h-80 w-80 rounded-full bg-amber-200/50 blur-3xl" />
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 opacity-[0.08]" style={{ backgroundImage: "url('/noise.png')" }} />
+      {/* <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 opacity-[0.08]" style={{ backgroundImage: "url('/noise.png')" }} /> */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10" style={{ background: "radial-gradient(1200px 600px at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,0.06))" }} />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl items-center justify-center px-6 py-12">

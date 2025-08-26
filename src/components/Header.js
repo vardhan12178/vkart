@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {
-  ShoppingCartIcon,
-  LogoutIcon,
-  MenuIcon,
-  XIcon,
-} from "@heroicons/react/outline";
-import Cookies from "js-cookie";
+import { ShoppingCartIcon, LogoutIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import axios from "./axiosInstance";
 
 const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
@@ -19,7 +14,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Header opacity/shadow on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -27,7 +21,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile sheet is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       const prev = document.body.style.overflow;
@@ -36,24 +29,21 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
     }
   }, [isMobileMenuOpen]);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     try {
-      Cookies.remove("jwt_token");
-      setIsLoggedIn(false);
-      navigate("/login");
-    } catch (e) {
-      console.error("Logout failed", e);
-      alert("Failed to log out. Please try again.");
-    }
+      await axios.post("/api/logout", {}, { withCredentials: true });
+    } catch {}
+    setIsLoggedIn(false);
+    navigate("/login");
   };
 
-  // Active if current path starts with the nav path (so /products/123 is active)
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/";
     return location.pathname.startsWith(path);
   };
 
-  if (!isLoggedIn) return null;
+  const authPaths = ["/login", "/register", "/forgot-password", "/reset-password"];
+  if (!isLoggedIn || authPaths.includes(location.pathname)) return null;
 
   const nav = [
     { label: "Products", to: "/products" },
@@ -66,20 +56,14 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
       role="banner"
       className={[
         "sticky top-0 z-50 transition-all",
-        // glass background, slightly stronger when scrolled
-        scrolled
-          ? "bg-white/80 backdrop-blur-md"
-          : "bg-white/60 backdrop-blur supports-[backdrop-filter]:backdrop-blur",
+        scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white/60 backdrop-blur supports-[backdrop-filter]:backdrop-blur",
         "ring-1 ring-inset ring-gray-200",
         scrolled ? "shadow-[0_8px_20px_-12px_rgba(0,0,0,0.25)]" : "shadow-sm",
       ].join(" ")}
     >
-      {/* gradient hairline */}
       <div className="h-[2px] w-full bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500" />
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Brand */}
           <Link to="/" className="group flex items-center gap-2">
             <span className="relative">
               <ShoppingCartIcon className="h-7 w-7 text-orange-500 transition-transform duration-300 group-hover:-rotate-6" />
@@ -92,7 +76,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
             </span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden items-center gap-8 md:flex">
             {nav.map((item) => {
               const active = isActive(item.to);
@@ -103,9 +86,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                   to={item.to}
                   className={[
                     "group relative inline-flex items-center gap-1.5 text-sm font-medium outline-none transition-colors",
-                    active
-                      ? "text-slate-900"
-                      : "text-slate-600 hover:text-slate-900",
+                    active ? "text-slate-900" : "text-slate-600 hover:text-slate-900",
                     "focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:rounded-md",
                   ].join(" ")}
                 >
@@ -120,7 +101,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                     </span>
                   ) : null}
                   <span>{item.label}</span>
-                  {/* animated underline */}
                   <span
                     className={[
                       "pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 rounded-full",
@@ -142,7 +122,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
             </button>
           </nav>
 
-          {/* Mobile toggler */}
           <button
             className="relative rounded-lg p-1.5 text-slate-700 hover:bg-slate-100 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
             aria-expanded={isMobileMenuOpen}
@@ -165,7 +144,6 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         </div>
       </div>
 
-      {/* Mobile backdrop */}
       <div
         className={[
           "fixed inset-0 z-40 bg-black/20 transition-opacity md:hidden",
@@ -175,13 +153,10 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         aria-hidden={!isMobileMenuOpen}
       />
 
-      {/* Mobile sheet */}
       <div
         className={[
           "md:hidden fixed left-0 right-0 top-[66px] z-50 origin-top rounded-b-2xl bg-white shadow-xl ring-1 ring-gray-200 transition-all",
-          isMobileMenuOpen
-            ? "scale-y-100 opacity-100"
-            : "pointer-events-none scale-y-95 opacity-0",
+          isMobileMenuOpen ? "scale-y-100 opacity-100" : "pointer-events-none scale-y-95 opacity-0",
         ].join(" ")}
         style={{ transformOrigin: "top" }}
       >
@@ -196,9 +171,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={[
                     "flex items-center gap-3 px-4 py-3 text-sm font-medium",
-                    active
-                      ? "bg-orange-50/70 text-slate-900"
-                      : "text-slate-700 hover:bg-slate-50",
+                    active ? "bg-orange-50/70 text-slate-900" : "text-slate-700 hover:bg-slate-50",
                   ].join(" ")}
                 >
                   {Icon ? (

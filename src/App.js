@@ -1,20 +1,33 @@
-import {React,useEffect,useState,Provider,Navigate,Route,Routes,Cookies,store,Compare,Login,Electronics,MenClothing,WomenClothing,Register,
-  Home,About,Contact,Header,Footer,Error,Products,ProductCard,Cart,Profile} from './imports';
-  import Blog from "./components/Blog";
+import { React, useEffect, useState, Provider, Navigate, Route, Routes, store, Compare, Login, Electronics, MenClothing, WomenClothing, Register, Home, About, Contact, Header, Footer, Error, Products, ProductCard, Cart, Profile } from './imports';
+import Blog from "./components/Blog";
 import Careers from "./components/Careers";
 import Terms from "./components/Terms";
 import Privacy from "./components/Privacy";
 import License from "./components/License";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
+import axios from "./components/axiosInstance";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authReady, setAuthReady] = useState(false);
 
   useEffect(() => {
-    const token = Cookies.get("jwt_token");
-    setIsLoggedIn(!!token);
+    let mounted = true;
+    (async () => {
+      try {
+        await axios.get("/api/profile");
+        if (mounted) setIsLoggedIn(true);
+      } catch {
+        if (mounted) setIsLoggedIn(false);
+      } finally {
+        if (mounted) setAuthReady(true);
+      }
+    })();
+    return () => { mounted = false; };
   }, []);
+
+  if (!authReady) return null;
 
   return (
     <Provider store={store}>

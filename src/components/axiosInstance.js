@@ -1,27 +1,21 @@
 import axios from "axios";
 
-const ENV_URL =
-  (typeof import.meta !== "undefined" ? import.meta.env?.VITE_API_BASE_URL : "") ||
-  process.env.REACT_APP_API_URL ||
-  "";
-
-const isDev = process.env.NODE_ENV === "development";
-// Dev: "" (use CRA proxy). Prod: REACT_APP_API_URL
-const baseURL = isDev ? "" : ENV_URL.replace(/\/+$/, "");
-
 const instance = axios.create({
-  baseURL,
+  baseURL: "", 
   withCredentials: true,
   timeout: 25000,
   validateStatus: (s) => s >= 200 && s < 300,
-  headers: {
-    Accept: "application/json",
-    "X-Requested-With": "XMLHttpRequest",
-  },
+  headers: { Accept: "application/json", "X-Requested-With": "XMLHttpRequest" },
 });
 
-// Only set Content-Type for JSON, never for FormData
 instance.interceptors.request.use((config) => {
+
+  const t = localStorage.getItem("auth_token");
+  if (t) {
+    config.headers = { ...(config.headers || {}), Authorization: `Bearer ${t}` };
+  }
+
+
   const isForm = typeof FormData !== "undefined" && config.data instanceof FormData;
   if (isForm) {
     if (config.headers?.["Content-Type"]) delete config.headers["Content-Type"];
