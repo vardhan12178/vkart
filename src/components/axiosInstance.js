@@ -5,20 +5,33 @@ const ENV_URL =
   process.env.REACT_APP_API_URL ||
   "";
 
-const baseURL =
-  (ENV_URL && ENV_URL.replace(/\/+$/, "")) ||
-  (process.env.NODE_ENV === "development" ? "http://localhost:5000" : "");
+const isDev = process.env.NODE_ENV === "development";
+// Dev: "" (use CRA proxy). Prod: REACT_APP_API_URL
+const baseURL = isDev ? "" : ENV_URL.replace(/\/+$/, "");
 
 const instance = axios.create({
   baseURL,
   withCredentials: true,
   timeout: 25000,
+  validateStatus: (s) => s >= 200 && s < 300,
   headers: {
-    "Content-Type": "application/json",
     Accept: "application/json",
     "X-Requested-With": "XMLHttpRequest",
   },
-  validateStatus: (s) => s >= 200 && s < 300,
+});
+
+// Only set Content-Type for JSON, never for FormData
+instance.interceptors.request.use((config) => {
+  const isForm = typeof FormData !== "undefined" && config.data instanceof FormData;
+  if (isForm) {
+    if (config.headers?.["Content-Type"]) delete config.headers["Content-Type"];
+  } else {
+    const m = (config.method || "get").toLowerCase();
+    if (!["get", "head"].includes(m)) {
+      config.headers = { ...(config.headers || {}), "Content-Type": "application/json" };
+    }
+  }
+  return config;
 });
 
 instance.interceptors.response.use(
@@ -45,7 +58,6 @@ instance.interceptors.response.use(
       await new Promise((r) => setTimeout(r, 1200));
       return instance(cfg);
     }
-
     return Promise.reject(error);
   }
 );
