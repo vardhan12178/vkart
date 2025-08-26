@@ -5,6 +5,8 @@ import Careers from "./components/Careers";
 import Terms from "./components/Terms";
 import Privacy from "./components/Privacy";
 import License from "./components/License";
+import ForgotPassword from "./components/ForgotPassword";
+import ResetPassword from "./components/ResetPassword";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/compare" element={<Compare />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/license" element={<License />} />

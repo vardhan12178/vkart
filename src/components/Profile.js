@@ -1,7 +1,6 @@
-import React, { useEffect, useState, Suspense, lazy } from "react";
+import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import axios from "./axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import AvatarEditor from "react-avatar-editor";
 import imageCompression from "browser-image-compression";
 import {
@@ -18,21 +17,19 @@ import {
 
 const OrderCard = lazy(() => import("./OrderCard"));
 
-/* ---------------- UI bits ---------------- */
 const Toast = ({ kind = "success", message }) => {
   if (!message) return null;
-  const isOk = kind === "success";
+  const ok = kind === "success";
   return (
     <div
       role="status"
+      aria-live="polite"
       className={`fixed top-5 left-1/2 z-50 -translate-x-1/2 rounded-xl px-4 py-2 text-sm shadow-lg ring-1 ${
-        isOk
-          ? "bg-emerald-50 text-emerald-800 ring-emerald-200"
-          : "bg-red-50 text-red-800 ring-red-200"
+        ok ? "bg-emerald-50 text-emerald-800 ring-emerald-200" : "bg-red-50 text-red-800 ring-red-200"
       }`}
     >
       <div className="flex items-center gap-2">
-        {isOk ? <FaCheckCircle /> : <FaTimesCircle />}
+        {ok ? <FaCheckCircle /> : <FaTimesCircle />}
         <span>{message}</span>
       </div>
     </div>
@@ -57,66 +54,74 @@ const Skeleton = () => (
   </div>
 );
 
-/* ---------------- Component ---------------- */
 const Profile = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
-
-  // data
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
-
-  // ui
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("overview"); // 'overview' | 'orders'
+  const [activeTab, setActiveTab] = useState("overview");
   const [error, setError] = useState("");
   const [toast, setToast] = useState({ kind: "success", message: "" });
+  const toastTimer = useRef(null);
 
-  // avatar editing
   const [selectedFile, setSelectedFile] = useState(null);
-  const [editorRef, setEditorRef] = useState(null);
+  const editorRef = useRef(null);
   const [scale, setScale] = useState(1.2);
 
+  const showToast = (kind, message, ms = 1800) => {
+    setToast({ kind, message });
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast({ kind, message: "" }), ms);
+  };
+
   useEffect(() => {
-    const fetchProfileAndOrders = async () => {
+    const load = async () => {
       try {
         setLoading(true);
-        const [profileResponse, ordersResponse] = await Promise.all([
-          axios.get("/api/profile"),
-          axios.get("/api/profile/orders"),
-        ]);
-        setUser(profileResponse.data);
-
-        const sortedOrders = (ordersResponse.data || []).sort(
-          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-        );
-        setOrders(sortedOrders);
-      } catch (err) {
+        const [p, o] = await Promise.all([axios.get("/api/profile"), axios.get("/api/profile/orders")]);
+        setUser(p.data);
+        setOrders((o.data || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+      } catch (e) {
+        if (e?.response?.status === 401) {
+          setIsLoggedIn?.(false);
+          navigate("/login");
+          return;
+        }
         setError("Failed to fetch profile or orders");
       } finally {
         setLoading(false);
       }
     };
-    fetchProfileAndOrders();
-  }, []);
+    load();
+    return () => {
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+    };
+  }, [navigate, setIsLoggedIn]);
 
-  const handleLogout = () => {
-    Cookies.remove("jwt_token");
-    setIsLoggedIn(false);
+  const handleLogout = async () => {
+    try {
+      await axios.post("/api/logout");
+    } catch {}
+    setIsLoggedIn?.(false);
     navigate("/login");
   };
 
   const handleFileChange = (e) => {
     const f = e.target.files?.[0];
     if (!f) return;
+    const okType = /^image\/(png|jpe?g|webp)$/i.test(f.type);
+    if (!okType || f.size > 8 * 1024 * 1024) {
+      showToast("error", "Use PNG/JPG/WEBP under 8MB.");
+      return;
+    }
     setSelectedFile(f);
   };
 
   const handleUpload = async () => {
-    if (!editorRef || !selectedFile) return;
+    if (!editorRef.current || !selectedFile) return;
     try {
-      // get cropped canvas
-      const canvas = editorRef.getImageScaledToCanvas();
-      const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png", 0.92));
+      const canvas = editorRef.current.getImageScaledToCanvas();
+      const blob = await new Promise((r) => canvas.toBlob(r, "image/jpeg", 0.92));
       if (!blob) return;
 
       const compressed = await imageCompression(blob, {
@@ -126,20 +131,22 @@ const Profile = ({ setIsLoggedIn }) => {
       });
 
       const formData = new FormData();
-      formData.append("profileImage", compressed, selectedFile.name);
+      formData.append("profileImage", compressed, `profile-${Date.now()}.jpg`);
+      const res = await axios.post("/api/profile/upload", formData);
 
-      const response = await axios.post("/api/profile/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
 
-      setUser(response.data);
+      setUser(res.data);
       setSelectedFile(null);
       setScale(1.2);
-      setToast({ kind: "success", message: "Profile photo updated!" });
-      setTimeout(() => setToast({ message: "" }), 1800);
-    } catch (err) {
-      setToast({ kind: "error", message: "Failed to upload profile image." });
-      setTimeout(() => setToast({ message: "" }), 2000);
+      showToast("success", "Profile photo updated!", 1600);
+    } catch (e) {
+      if (e?.response?.status === 401) {
+        setIsLoggedIn?.(false);
+        navigate("/login");
+        return;
+      }
+      const msg = e?.response?.data?.message || "Failed to upload profile image.";
+      showToast("error", msg, 2200);
     }
   };
 
@@ -150,7 +157,6 @@ const Profile = ({ setIsLoggedIn }) => {
     <>
       <Toast kind={toast.kind} message={toast.message} />
 
-      {/* ambient gradient background */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-amber-200/40 blur-3xl" />
@@ -158,7 +164,6 @@ const Profile = ({ setIsLoggedIn }) => {
 
       <div className="mt-12 p-4 sm:p-8 max-w-6xl mx-auto">
         <div className="rounded-3xl bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 ring-1 ring-gray-200 shadow-xl overflow-hidden">
-          {/* Header / avatar */}
           <div className="relative bg-gradient-to-r from-orange-50 to-amber-50 p-8 sm:p-10">
             <div className="mx-auto flex flex-col items-center">
               <div className="relative h-36 w-36 sm:h-40 sm:w-40">
@@ -170,6 +175,10 @@ const Profile = ({ setIsLoggedIn }) => {
                   alt="Profile"
                   className="h-full w-full rounded-full object-cover ring-4 ring-white shadow-xl"
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+                  }}
                 />
                 <label
                   htmlFor="file-upload"
@@ -177,19 +186,25 @@ const Profile = ({ setIsLoggedIn }) => {
                   title="Change photo"
                 >
                   <FaCamera />
-                  <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} />
+                  <input
+                    id="file-upload"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    className="hidden"
+                    onChange={handleFileChange}
+                  />
                 </label>
               </div>
 
               <h1 className="mt-4 text-2xl sm:text-3xl font-extrabold text-gray-900">
                 {user?.name || "Guest"}
               </h1>
-              <p className="mt-1 text-sm text-gray-600">@{user?.username}</p>
+              <p className="mt-1 text-sm text-gray-600">{user?.username ? `@${user.username}` : ""}</p>
               <p className="text-sm text-gray-600">{user?.email}</p>
 
-              {/* Tabs */}
               <div className="mt-6 flex gap-2 rounded-full bg-white ring-1 ring-gray-200 p-1">
                 <button
+                  type="button"
                   onClick={() => setActiveTab("overview")}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                     activeTab === "overview"
@@ -200,6 +215,7 @@ const Profile = ({ setIsLoggedIn }) => {
                   Overview
                 </button>
                 <button
+                  type="button"
                   onClick={() => setActiveTab("orders")}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                     activeTab === "orders"
@@ -212,14 +228,13 @@ const Profile = ({ setIsLoggedIn }) => {
               </div>
             </div>
 
-            {/* Avatar editor modal-like block */}
             {selectedFile && (
               <div className="mt-8 mx-auto max-w-md">
                 <div className="rounded-2xl bg-white ring-1 ring-gray-200 shadow p-4">
                   <p className="mb-3 text-sm font-medium text-gray-700">Adjust & upload</p>
                   <div className="flex flex-col items-center">
                     <AvatarEditor
-                      ref={(ref) => setEditorRef(ref)}
+                      ref={editorRef}
                       image={selectedFile}
                       width={260}
                       height={260}
@@ -236,9 +251,11 @@ const Profile = ({ setIsLoggedIn }) => {
                       value={scale}
                       onChange={(e) => setScale(Number(e.target.value))}
                       className="mt-3 w-full"
+                      aria-label="Zoom profile photo"
                     />
                     <div className="mt-3 flex gap-2">
                       <button
+                        type="button"
                         onClick={() => {
                           setSelectedFile(null);
                           setScale(1.2);
@@ -248,6 +265,7 @@ const Profile = ({ setIsLoggedIn }) => {
                         Cancel
                       </button>
                       <button
+                        type="button"
                         onClick={handleUpload}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:opacity-95 shadow"
                       >
@@ -260,11 +278,9 @@ const Profile = ({ setIsLoggedIn }) => {
             )}
           </div>
 
-          {/* Content */}
           <div className="p-6 sm:p-8">
             {activeTab === "overview" ? (
               <>
-                {/* Quick cards */}
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="rounded-2xl ring-1 ring-gray-200 bg-white p-4 shadow-sm">
                     <div className="flex items-center gap-3">
@@ -295,13 +311,14 @@ const Profile = ({ setIsLoggedIn }) => {
                       </div>
                       <div>
                         <p className="text-xs text-gray-500">Username</p>
-                        <p className="font-semibold text-gray-900">@{user?.username}</p>
+                        <p className="font-semibold text-gray-900">
+                          {user?.username ? `@${user.username}` : ""}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Actions */}
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
                   <Link
                     to="/about"
@@ -316,6 +333,7 @@ const Profile = ({ setIsLoggedIn }) => {
                     <FaEnvelope /> Contact Us
                   </Link>
                   <button
+                    type="button"
                     onClick={handleLogout}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 text-white font-semibold shadow hover:opacity-95"
                   >
@@ -326,11 +344,7 @@ const Profile = ({ setIsLoggedIn }) => {
             ) : (
               <>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Order History</h2>
-                <Suspense
-                  fallback={
-                    <p className="text-center text-gray-600 py-8">Loading your orders…</p>
-                  }
-                >
+                <Suspense fallback={<p className="text-center text-gray-600 py-8">Loading your orders…</p>}>
                   {orders.length === 0 ? (
                     <div className="rounded-2xl ring-1 ring-gray-200 bg-white p-8 text-center">
                       <p className="text-gray-700">You haven’t placed any orders yet.</p>
@@ -343,8 +357,8 @@ const Profile = ({ setIsLoggedIn }) => {
                     </div>
                   ) : (
                     <div className="grid gap-4">
-                      {orders.map((order) => (
-                        <OrderCard key={order._id} order={order} />
+                      {orders.map((o) => (
+                        <OrderCard key={o._id} order={o} />
                       ))}
                     </div>
                   )}

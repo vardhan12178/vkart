@@ -1,0 +1,8 @@
+{
+    "name": "VKart",
+    "short_name": "VKart",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": []
+  }
+  

@@ -19,7 +19,6 @@ import CheckoutForm from "./CheckoutForm";
 import OrderStages from "./OrderStages";
 import axios from "./axiosInstance";
 
-// helpers
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -28,8 +27,8 @@ const INR = (n) =>
   }).format(Math.round(n));
 
 const TAX_RATE = 0.18;
+const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
 const isValidObjectId = (v) => typeof v === "string" && /^[a-fA-F0-9]{24}$/.test(v);
-// single source of truth for cart keys
 const cartKey = (it) => it._id || it.productId || it.externalId || it.id;
 
 const Cart = () => {
@@ -43,38 +42,53 @@ const Cart = () => {
   const [error, setError] = useState(null);
   const [confirmRemoveId, setConfirmRemoveId] = useState(null);
   const [promo, setPromo] = useState("");
-  const [promoApplied, setPromoApplied] = useState(null); // {code, pct}
+  const [promoApplied, setPromoApplied] = useState(null);
 
-  // derived money values
   const calc = useMemo(() => {
     if (!cartItems?.length) {
-      return { mrp: 0, subtotal: 0, savings: 0, tax: 0, total: 0 };
+      return {
+        mrp: 0,
+        rawSell: 0,
+        subtotal: 0,
+        promoOff: 0,
+        tax: 0,
+        total: 0,
+        savingsMrpVsSell: 0,
+        shipping: 0,
+      };
     }
+
     const lines = cartItems.map((it) => {
-      const unitSell = it.price * 83;
+      const unitSell = round2(it.price * 83);
       const unitMrp = it.discountPercentage
-        ? (it.price / (1 - it.discountPercentage / 100)) * 83
+        ? round2((it.price / (1 - it.discountPercentage / 100)) * 83)
         : unitSell;
-      return { mrp: unitMrp * it.quantity, sell: unitSell * it.quantity };
+      return {
+        mrp: round2(unitMrp * it.quantity),
+        sell: round2(unitSell * it.quantity),
+      };
     });
-    const mrp = lines.reduce((a, b) => a + b.mrp, 0);
-    let subtotal = lines.reduce((a, b) => a + b.sell, 0);
+
+    const mrp = round2(lines.reduce((a, b) => a + b.mrp, 0));
+    const rawSell = round2(lines.reduce((a, b) => a + b.sell, 0));
 
     let promoOff = 0;
     if (promoApplied?.pct) {
-      promoOff = subtotal * (promoApplied.pct / 100);
-      subtotal -= promoOff;
+      promoOff = round2(rawSell * (promoApplied.pct / 100));
     }
 
-    const tax = subtotal * TAX_RATE;
-    const total = subtotal + tax;
-    return { mrp, subtotal, promoOff, tax, total, savings: Math.max(0, mrp - (subtotal + promoOff)) };
+    const subtotal = round2(rawSell - promoOff);
+    const shipping = 0;
+    const tax = round2(subtotal * TAX_RATE);
+    const total = round2(subtotal + tax + shipping);
+    const savingsMrpVsSell = Math.max(0, round2(mrp - rawSell));
+
+    return { mrp, rawSell, subtotal, promoOff, tax, total, savingsMrpVsSell, shipping };
   }, [cartItems, promoApplied]);
 
-  // pass the composite key to reducers
   const handleIncrement = (item) => dispatch(incrementQuantity(cartKey(item)));
   const handleDecrement = (item) => dispatch(decrementQuantity(cartKey(item)));
-  const handleRemove    = (item) => dispatch(removeFromCart(cartKey(item)));
+  const handleRemove = (item) => dispatch(removeFromCart(cartKey(item)));
 
   const applyPromo = () => {
     const code = promo.trim().toUpperCase();
@@ -94,20 +108,23 @@ const Cart = () => {
       setTotalItemsOrdered(itemsOrdered);
 
       const productsPayload = cartItems.map((it) => {
-        const mongoId = it._id || it.productId || null;                         // prefer Mongo
-        const extId   = it.externalId || (it.id != null ? String(it.id) : null); // DummyJSON fallback
+        const mongoId = it._id || it.productId || null;
+        const extId = it.externalId || (it.id != null ? String(it.id) : null);
 
-        // only validate if we intend to send a Mongo id
         if (mongoId && !isValidObjectId(String(mongoId))) {
           throw new Error(`Invalid Mongo product _id for "${it.title}": "${mongoId}"`);
         }
 
-        // include fields conditionally so backend can accept either
+        const unitPrice = round2(it.price * 83);
+        const lineTotal = round2(unitPrice * it.quantity);
+
         const payload = {
           name: it.title,
           image: it.thumbnail || it.images?.[0],
           quantity: it.quantity,
-          price: it.price * 83, // per unit INR
+          price: unitPrice,
+          lineTotal,
+          currency: "INR",
         };
         if (mongoId) payload.productId = String(mongoId);
         if (!mongoId && extId) payload.externalId = extId;
@@ -117,19 +134,20 @@ const Cart = () => {
 
       const orderData = {
         products: productsPayload,
-        subtotal: calc.subtotal,
-        tax: calc.tax,
-        totalPrice: calc.total,
-        stage: "Pending",
+        subtotal: round2(calc.subtotal),
+        discount: round2(calc.promoOff),
+        tax: round2(calc.tax),
+        shipping: round2(calc.shipping),
+        totalPrice: round2(calc.total),
+        currency: "INR",
         shippingAddress: orderDetails.address,
-        promo: promoApplied?.code || null,
+        promo: promoApplied?.code || undefined,
       };
 
       await axios.post("/api/orders", orderData);
       dispatch(clearCart());
       setOrderPlaced(true);
     } catch (e) {
-      console.error("Order placement error:", e);
       const msg = e?.response?.data?.message || e?.message || "Failed to place the order. Please try again.";
       setError(msg);
     } finally {
@@ -137,7 +155,6 @@ const Cart = () => {
     }
   };
 
-  // empty state
   if (cartItems.length === 0 && !orderPlaced) {
     return (
       <div className="flex justify-center items-center min-h-[60vh] p-4 mt-16">
@@ -158,15 +175,14 @@ const Cart = () => {
       <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Your Shopping Cart</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Items */}
         <div className="lg:col-span-2 space-y-6">
           {cartItems.map((item) => {
-            const unitSell = item.price * 83;
+            const unitSell = round2(item.price * 83);
             const unitMrp = item.discountPercentage
-              ? (item.price / (item.discountPercentage ? 1 - item.discountPercentage / 100 : 1)) * 83
+              ? round2((item.price / (1 - item.discountPercentage / 100)) * 83)
               : unitSell;
-            const lineSell = unitSell * item.quantity;
-            const lineMrp = unitMrp * item.quantity;
+            const lineSell = round2(unitSell * item.quantity);
+            const lineMrp = round2(unitMrp * item.quantity);
             const key = cartKey(item);
 
             return (
@@ -194,7 +210,6 @@ const Cart = () => {
                     </div>
 
                     <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
-                      {/* stepper */}
                       <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden" role="group" aria-label="Quantity selector">
                         <button
                           onClick={() => handleDecrement(item)}
@@ -214,7 +229,6 @@ const Cart = () => {
                         </button>
                       </div>
 
-                      {/* prices */}
                       <div className="text-right ml-auto">
                         <div className="text-base md:text-lg font-semibold text-gray-900">{INR(lineSell)}</div>
                         {lineMrp > lineSell ? (
@@ -223,7 +237,6 @@ const Cart = () => {
                       </div>
                     </div>
 
-                    {/* actions row */}
                     <div className="mt-3 flex items-center gap-4 text-sm">
                       <button className="text-gray-500 hover:text-gray-800 inline-flex items-center gap-2">
                         <FontAwesomeIcon icon={faHeart} /> Save for later
@@ -232,7 +245,6 @@ const Cart = () => {
                   </div>
                 </div>
 
-                {/* confirm remove */}
                 {confirmRemoveId === key && (
                   <div className="mt-4 flex items-center justify-end gap-3 text-sm">
                     <span className="text-gray-600">
@@ -260,7 +272,6 @@ const Cart = () => {
           })}
         </div>
 
-        {/* Summary */}
         <aside className="lg:sticky lg:top-24 self-start">
           <div className="bg-orange-50/70 rounded-2xl shadow-sm ring-1 ring-orange-100 p-6">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Order Summary</h2>
@@ -270,18 +281,21 @@ const Cart = () => {
                 <span className="text-gray-600">MRP</span>
                 <span className="text-gray-900">{INR(calc.mrp)}</span>
               </div>
-              {calc.mrp > calc.subtotal && (
+
+              {calc.savingsMrpVsSell > 0 && (
                 <div className="flex justify-between text-green-700">
                   <span>You save</span>
-                  <span>-{INR(calc.mrp - calc.subtotal)}</span>
+                  <span>-{INR(calc.savingsMrpVsSell)}</span>
                 </div>
               )}
+
               {calc.promoOff ? (
                 <div className="flex justify-between text-green-700">
-                  <span>Promo ({promoApplied.code})</span>
+                  <span>Promo {promoApplied?.code ? `(${promoApplied.code})` : ""}</span>
                   <span>-{INR(calc.promoOff)}</span>
                 </div>
               ) : null}
+
               <div className="flex justify-between pt-2 border-t">
                 <span className="text-gray-600">Subtotal</span>
                 <span className="text-gray-900">{INR(calc.subtotal)}</span>
@@ -300,7 +314,6 @@ const Cart = () => {
               </div>
             </div>
 
-            {/* promo code */}
             <div className="mt-4">
               <label className="text-sm text-gray-600">Have a promo?</label>
               <div className="mt-2 flex gap-2">
@@ -346,7 +359,6 @@ const Cart = () => {
         </aside>
       </div>
 
-      {/* checkout + order states */}
       {showPaymentDetails && (
         <div className="mt-8">
           <CheckoutForm onOrderPlaced={handleOrderPlaced} />
