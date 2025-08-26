@@ -5,36 +5,20 @@ const ENV_URL =
   process.env.REACT_APP_API_URL ||
   "";
 
-const isDev = process.env.NODE_ENV === "development";
-
-// Dev: empty baseURL so "/api/*" hits CRA proxy (same-origin cookies)
-// Prod: use REACT_APP_API_URL (or VITE_API_BASE_URL) if set
-const baseURL = ENV_URL ? ENV_URL.replace(/\/+$/, "") : (isDev ? "" : "");
+const baseURL =
+  (ENV_URL && ENV_URL.replace(/\/+$/, "")) ||
+  (process.env.NODE_ENV === "development" ? "http://localhost:5000" : "");
 
 const instance = axios.create({
   baseURL,
   withCredentials: true,
   timeout: 25000,
-  validateStatus: (s) => s >= 200 && s < 300,
   headers: {
+    "Content-Type": "application/json",
     Accept: "application/json",
     "X-Requested-With": "XMLHttpRequest",
   },
-});
-
-instance.interceptors.request.use((config) => {
-  const isForm = typeof FormData !== "undefined" && config.data instanceof FormData;
-  if (isForm) {
-    if (config.headers && config.headers["Content-Type"]) {
-      delete config.headers["Content-Type"];
-    }
-  } else {
-    const method = (config.method || "get").toLowerCase();
-    if (!["get", "head"].includes(method)) {
-      config.headers = { ...(config.headers || {}), "Content-Type": "application/json" };
-    }
-  }
-  return config;
+  validateStatus: (s) => s >= 200 && s < 300,
 });
 
 instance.interceptors.response.use(
