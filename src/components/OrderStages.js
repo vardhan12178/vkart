@@ -1,37 +1,66 @@
-import React from 'react';
+import React, { useMemo } from "react";
 
-const OrderStages = ({ currentStage }) => {
+export default function OrderStages({ currentStage = "Pending" }) {
   const stages = [
-    { name: 'Shipping', icon: '📦' },
-    { name: 'Shipped', icon: '✈️' },
-    { name: 'Out for Delivery', icon: '🚚' },
-    { name: 'Delivered', icon: '🎉' }
+    { name: "Shipping", icon: "📦" },
+    { name: "Shipped", icon: "✈️" },
+    { name: "Out for Delivery", icon: "🚚" },
+    { name: "Delivered", icon: "🎉" },
   ];
 
-  const stageIndex = stages.findIndex(stage => stage.name === currentStage);
+  const idx = useMemo(
+    () => Math.max(0, stages.findIndex((s) => s.name === currentStage)),
+    [currentStage]
+  );
+  const pct = useMemo(
+    () => (stages.length > 1 ? (idx / (stages.length - 1)) * 100 : 0),
+    [idx, stages.length]
+  );
 
   return (
-    <div className="flex flex-row flex-wrap items-center justify-between w-full px-2">
-      {stages.map((stage, index) => (
+    <div className="relative w-full">
+      <div
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(pct)}
+        className="relative h-2 rounded-full bg-gray-200/70 overflow-hidden"
+      >
         <div
-          key={index}
-          className={`flex flex-col items-center ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'} mb-4`}
-          style={{ flex: '1 0 auto', maxWidth: '120px' }}
-        >
-          <div
-            className={`rounded-full flex items-center justify-center ${index < stageIndex ? 'bg-orange-500' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} text-white mb-2 transition-all duration-300 transform hover:scale-110`}
-            style={{ width: '48px', height: '48px', fontSize: '20px' }}
-          >
-            {stage.icon}
-          </div>
-          <span className={`text-sm font-medium ${index <= stageIndex ? 'text-orange-600' : 'text-gray-400'} transition-colors duration-300`}>{stage.name}</span>
-          {index < stages.length && (
-            <div className={`w-1 md:w-2 h-6 md:h-8 ${index < stageIndex ? 'bg-orange-600' : index === stageIndex ? 'bg-orange-600' : 'bg-gray-300'} mx-2 transition-colors duration-300`} />
-          )}
-        </div>
-      ))}
+          className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 shadow-[0_0_20px_rgba(251,146,60,0.45)] transition-[width] duration-500"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+
+      <div className="mt-4 grid grid-cols-4 gap-2">
+        {stages.map((s, i) => {
+          const active = i <= idx;
+          const now = i === idx;
+          return (
+            <div key={s.name} className="flex flex-col items-center text-center">
+              <div
+                className={[
+                  "w-12 h-12 rounded-2xl grid place-items-center text-lg font-semibold transition transform",
+                  active
+                    ? "bg-gradient-to-br from-orange-500 to-amber-500 text-white shadow-lg"
+                    : "bg-white ring-1 ring-gray-200 text-gray-500",
+                  now ? "scale-105" : "scale-100",
+                ].join(" ")}
+              >
+                <span>{s.icon}</span>
+              </div>
+              <div
+                className={[
+                  "mt-2 text-xs font-semibold tracking-wide",
+                  active ? "text-orange-600" : "text-gray-500",
+                ].join(" ")}
+              >
+                {s.name}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
-};
-
-export default OrderStages;
+}

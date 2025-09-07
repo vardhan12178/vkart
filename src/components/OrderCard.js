@@ -1,108 +1,122 @@
-import React, { useState, useEffect } from 'react';
-import moment from 'moment';
-import OrderStages from './OrderStages';
+import React, { useState, useEffect, useMemo } from "react";
+import moment from "moment";
+import OrderStages from "./OrderStages";
 
-const OrderCard = ({ order }) => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [currentStatus, setCurrentStatus] = useState('');
+const INR = (n) =>
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(Math.round(Number(n) || 0));
+
+const statusMeta = {
+  Delivered: { cls: "bg-emerald-50 text-emerald-700 ring-emerald-200", dot: "bg-emerald-500" },
+  "Out for Delivery": { cls: "bg-amber-50 text-amber-700 ring-amber-200", dot: "bg-amber-500" },
+  Shipped: { cls: "bg-blue-50 text-blue-700 ring-blue-200", dot: "bg-blue-500" },
+  Shipping: { cls: "bg-orange-50 text-orange-700 ring-orange-200", dot: "bg-orange-500" },
+  Pending: { cls: "bg-gray-50 text-gray-700 ring-gray-200", dot: "bg-gray-500" },
+};
+
+export default function OrderCard({ order }) {
+  const [open, setOpen] = useState(false);
+  const [currentStatus, setCurrentStatus] = useState("Pending");
 
   useEffect(() => {
-    const calculateStatus = () => {
-      const createdAt = moment(order.createdAt);
-      const now = moment();
-      const hoursSinceCreation = now.diff(createdAt, 'hours');
-      const daysSinceCreation = now.diff(createdAt, 'days');
-
-      if (hoursSinceCreation >= 72) {
-        setCurrentStatus('Delivered');
-      } else if (daysSinceCreation >= 2) {
-        setCurrentStatus('Out for Delivery');
-      } else if (daysSinceCreation >= 1) {
-        setCurrentStatus('Shipped');
-      } else if (hoursSinceCreation >= 4) {
-        setCurrentStatus('Shipping');
-      } else {
-        setCurrentStatus('Pending');
-      }
-    };
-
-    calculateStatus();
+    const createdAt = moment(order.createdAt);
+    const hours = moment().diff(createdAt, "hours");
+    const days = moment().diff(createdAt, "days");
+    if (hours >= 72) setCurrentStatus("Delivered");
+    else if (days >= 2) setCurrentStatus("Out for Delivery");
+    else if (days >= 1) setCurrentStatus("Shipped");
+    else if (hours >= 4) setCurrentStatus("Shipping");
+    else setCurrentStatus("Pending");
   }, [order.createdAt]);
 
-  const handleClick = () => {
-    setShowDetails(!showDetails);
-  };
+  const first = order.products?.[0] || {};
+  const meta = statusMeta[currentStatus] || statusMeta.Pending;
+  const orderDate = useMemo(() => moment(order.createdAt).format("MMM D, YYYY • h:mm A"), [order.createdAt]);
 
   return (
-    <div className="order-card bg-white p-6 rounded-xl shadow-lg mb-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
-        <img 
-          src={order.products[0].image} 
-          alt="Product" 
-          className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-6 border border-gray-200 shadow-sm"
-          style={{ objectFit: 'contain' }}
-          loading="lazy"
-        />
-        <div className="flex-1">
-          <h3 className="text-md sm:text-lg font-bold text-gray-900 mb-2">Order #{order._id}</h3>
-          <p className="text-base text-gray-600 mb-1">Items: {order.products.length}</p>
-          <p className="text-base text-gray-600 mb-1">Total Price: ₹{(order.totalPrice).toFixed(2)}</p>
-          <p className="text-base text-gray-600">Status: <span className={`font-semibold ${getStatusColor(currentStatus)}`}>{currentStatus}</span></p>
+    <div className="rounded-3xl bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 ring-1 ring-gray-200 shadow-xl hover:shadow-2xl transition overflow-hidden">
+      <div className="bg-gradient-to-r from-orange-50 to-amber-50 px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
+        <div className="flex items-center gap-4 min-w-0">
+          <div className="p-[1px] rounded-2xl bg-gradient-to-br from-orange-200 via-amber-200 to-white">
+            <div className="size-16 grid place-items-center bg-white rounded-[14px] overflow-hidden">
+              <img
+                src={first.image}
+                alt="Order thumbnail"
+                className="object-contain w-full h-full"
+                loading="lazy"
+                onError={(e) => (e.currentTarget.src = "https://via.placeholder.com/80?text=Item")}
+              />
+            </div>
+          </div>
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="text-base sm:text-lg font-extrabold text-gray-900 truncate">Order #{order._id}</h3>
+              <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ring-1 ${meta.cls}`}>
+                <span className={`size-1.5 rounded-full ${meta.dot}`} />
+                {currentStatus}
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-gray-600 mt-0.5">{orderDate}</p>
+          </div>
         </div>
-        <button 
-          onClick={handleClick} 
-          className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg hover:bg-gradient-to-l hover:from-orange-600 hover:to-orange-500 mt-4 sm:mt-0 transition-all duration-300 transform hover:scale-105"
-        >
-          {showDetails ? 'Hide Details' : 'View Details'}
-        </button>
+
+        <div className="sm:ml-auto flex flex-wrap items-center gap-2">
+          <InfoPill label="Items" value={order.products?.length || 0} />
+          <InfoPill label="Total" value={INR(order.totalPrice)} />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-2 text-white text-sm font-semibold shadow hover:opacity-95 active:scale-[0.98] transition"
+            aria-expanded={open}
+          >
+            {open ? "Hide Details" : "View Details"}
+          </button>
+        </div>
       </div>
-      {showDetails && (
-        <>
-          <div className="order-details mt-6">
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">Order Details</h4>
-            <p className="text-base text-gray-700 mb-4"><strong>Shipping Address:</strong> {order.shippingAddress}</p>
-            <h5 className="text-lg font-semibold mb-4 text-gray-900">Products:</h5>
-            {order.products.map((product, index) => (
-              <div key={index} className="flex flex-col sm:flex-row items-start mb-4">
-                <img 
-                  src={product.image} 
-                  alt="Product" 
-                  className="w-20 h-20 sm:w-20 sm:h-20 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-6 border border-gray-200 shadow-sm"
-                  style={{ objectFit: 'contain' }}
-                  loading="lazy"
-                />
-                <div>
-                  <p className="text-md font-semibold text-gray-900">{product.name}</p>
-                  <p className="text-sm text-gray-600">Quantity: {product.quantity}</p>
-                  <p className="text-sm text-gray-600">Price: ₹{(product.price).toFixed(2)}</p>
+
+      <div className={`px-5 pb-5 ${open ? "block" : "hidden"}`}>
+        <div className="mt-5 rounded-2xl ring-1 ring-gray-200 p-5 bg-white">
+          <h4 className="text-lg font-extrabold text-gray-900">Order Details</h4>
+          <p className="mt-2 text-sm text-gray-700 leading-relaxed">{order.shippingAddress}</p>
+          <h5 className="mt-5 text-sm font-semibold text-gray-900">Products</h5>
+          <div className="mt-3 grid gap-3">
+            {order.products.map((p, i) => (
+              <div key={i} className="flex items-start gap-4 rounded-xl ring-1 ring-gray-100 p-3">
+                <div className="size-16 grid place-items-center rounded-lg bg-white ring-1 ring-gray-100 overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="object-contain w-full h-full"
+                    loading="lazy"
+                    onError={(e) => (e.currentTarget.src = "https://via.placeholder.com/64?text=Img")}
+                  />
                 </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-900 truncate">{p.name}</p>
+                  <div className="mt-0.5 text-xs text-gray-600">Qty: {p.quantity}</div>
+                </div>
+                <div className="text-sm font-bold text-gray-900">{INR(p.price)}</div>
               </div>
             ))}
           </div>
-          <div className="order-stages mt-8">
-            <OrderStages currentStage={currentStatus} />
-          </div>
-        </>
-      )}
+        </div>
+
+        <div className="mt-6">
+          <OrderStages currentStage={currentStatus} />
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-const getStatusColor = (status) => {
-  switch(status) {
-    case 'Delivered':
-      return 'text-green-600';
-    case 'Out for Delivery':
-      return 'text-yellow-600';
-    case 'Shipped':
-      return 'text-blue-600';
-    case 'Shipping':
-      return 'text-orange-600';
-    case 'Pending':
-      return 'text-gray-600';
-    default:
-      return 'text-gray-600';
-  }
-};
-
-export default OrderCard;
+function InfoPill({ label, value }) {
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-white/60 backdrop-blur ring-1 ring-gray-200 text-gray-800 shadow-sm">
+      <span className="text-[11px] uppercase tracking-wide text-gray-500">{label}</span>
+      <span className="text-sm font-extrabold">{value}</span>
+    </div>
+  );
+}

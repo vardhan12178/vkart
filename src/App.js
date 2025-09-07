@@ -1,4 +1,4 @@
-import { React, useEffect, useState, Provider, Navigate, Route, Routes, store, Compare, Login, Electronics, MenClothing, WomenClothing, Register, Home, About, Contact, Header, Footer, Error, Products, ProductCard, Cart, Profile } from './imports';
+import { React, useEffect, useState, Provider, Navigate, Route, Routes, store, Compare, Login, Register, Home, About, Contact, Header, Footer, Error, Products, ProductCard, Cart, Profile } from './imports';
 import Blog from "./components/Blog";
 import Careers from "./components/Careers";
 import Terms from "./components/Terms";
@@ -7,6 +7,8 @@ import License from "./components/License";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import axios from "./components/axiosInstance";
+import BlogIndex from "./components/blog/BlogIndex";
+import PostPage from "./components/blog/PostPage";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,6 +42,8 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/compare" element={<Compare />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:id" element={<PostPage />} />     
             <Route path="/careers" element={<Careers />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
@@ -47,9 +51,6 @@ const App = () => {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/license" element={<License />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
-            <Route path="/products/electronics" element={isLoggedIn ? <Electronics /> : <Navigate to="/login" />} />
-            <Route path="/products/men" element={isLoggedIn ? <MenClothing /> : <Navigate to="/login" />} />
-            <Route path="/products/women" element={isLoggedIn ? <WomenClothing /> : <Navigate to="/login" />} />
             <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
             <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
             <Route path="/cart" element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />
