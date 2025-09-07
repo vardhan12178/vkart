@@ -16,6 +16,7 @@ import {
   FaCheck,
 } from "react-icons/fa";
 import Sidebar from "./Sidebar";
+import CustomDropdown from "./CustomDropdown";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -134,7 +135,7 @@ const QuickView = ({ product, onClose, onAdd }) => {
               </div>
             )}
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0">
             <h3 className="text-xl font-semibold text-gray-900">{product.title}</h3>
             <p className="mt-1 text-sm text-gray-500 capitalize">{product.category}</p>
             <div className="mt-3 flex items-center justify-between">
@@ -290,49 +291,69 @@ export default function Products() {
   const visibleItems = filteredProducts.slice(0, visible);
   const total = filteredProducts.length;
 
+  const sortOptions = [
+    { value: "relevance", label: "Relevance" },
+    { value: "price-asc", label: "Price: Low to High" },
+    { value: "price-desc", label: "Price: High to Low" },
+    { value: "rating-desc", label: "Rating" },
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-baseline gap-3">
-          <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">Products</h1>
-          <span className="rounded-full bg-gray-100 px-2.5 py-[2px] text-sm text-gray-600 ring-1 ring-gray-200">{total} items</span>
-        </div>
-        <div className="flex w-full items-center gap-3 sm:w-auto">
-          <button
-            onClick={() => setShowFilters(true)}
-            className="inline-flex items-center gap-2 rounded-2xl bg-orange-50 px-4 py-2 text-orange-700 ring-1 ring-orange-100 sm:hidden"
-          >
-            <FaFilter /> Filters
-          </button>
-          <div className="relative w-full sm:w-72">
-            <FaSearch className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search products"
-              className="w-full rounded-2xl border border-gray-200 bg-white px-10 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <label htmlFor="sort" className="hidden text-sm text-gray-500 sm:block">
-              Sort
-            </label>
-            <select
-              id="sort"
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="rounded-2xl border border-gray-200 px-3 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
-            >
-              <option value="relevance">Relevance</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="rating-desc">Rating</option>
-            </select>
-          </div>
+    <div className="container mx-auto px-4 py-8 overflow-x-clip">
+
+<div className="mb-5 flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+
+  <div className="flex min-w-0 items-baseline gap-3">
+    <h1 className="truncate text-3xl font-extrabold tracking-tight text-gray-900">Products</h1>
+    <span className="shrink-0 rounded-full bg-gray-100 px-2.5 py-[2px] text-sm text-gray-600 ring-1 ring-gray-200">
+      {total} items
+    </span>
+  </div>
+
+
+  <div className="flex w-full min-w-0 flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+
+    <div className="order-1 flex w-full min-w-0 items-center gap-3 sm:order-2 sm:w-auto">
+      <button
+        onClick={() => setShowFilters(true)}
+        className="inline-flex items-center gap-2 rounded-2xl bg-orange-50 px-4 py-2 text-orange-700 ring-1 ring-orange-100 sm:hidden"
+      >
+        <FaFilter /> Filters
+      </button>
+
+      <div className="flex w-full min-w-0 items-center gap-2 sm:w-auto">
+        <span className="hidden text-sm text-gray-500 sm:block">Sort</span>
+        <div className="min-w-0 flex-1 sm:flex-none">
+          <CustomDropdown
+            options={[
+              { value: "relevance", label: "Relevance" },
+              { value: "price-asc", label: "Price: Low to High" },
+              { value: "price-desc", label: "Price: High to Low" },
+              { value: "rating-desc", label: "Rating" },
+            ]}
+            value={sortBy}
+            onChange={(v) => setSortBy(v)}
+            label="Relevance"
+          />
         </div>
       </div>
+    </div>
 
-      <div className="flex gap-8">
+
+    <div className="order-2 relative w-full min-w-0 sm:order-1 sm:w-72">
+      <FaSearch className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+      <input
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search products"
+        className="w-full flex-1 min-w-0 rounded-2xl border border-gray-200 bg-white px-10 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+      />
+    </div>
+  </div>
+</div>
+
+
+      <div className="flex gap-8 min-w-0">
         <div className="hidden lg:block lg:w-72">
           <div className="sticky top-24">
             <Sidebar
@@ -344,7 +365,7 @@ export default function Products() {
           </div>
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           {(searchTerm || categoryFilter || priceRange.min > 0 || priceRange.max < 100000) && (
             <div className="mb-6 flex flex-wrap items-center gap-2">
               {searchTerm && <Chip onClear={() => setSearchTerm("")}>Search: {searchTerm}</Chip>}

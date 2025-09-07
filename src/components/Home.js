@@ -232,9 +232,9 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="hidden md:block pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200 blur-3xl opacity-50" />
         <div className="hidden md:block pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-orange-100 blur-3xl opacity-60" />
-        <div className="container mx-auto px-4 pt-8 pb-8 md:pt-6 md:pb-20">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8 pb-8 md:pt-6 md:pb-20">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-10">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl order-2 md:order-1">
               <motion.h1
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -249,6 +249,14 @@ export default function Home() {
               <p className="mt-3 text-[15px] md:text-lg text-gray-700">
                 From electronics to fashion—curated deals, fast delivery, and a seamless experience.
               </p>
+              <img
+                src="hero11.webp"
+                alt="Shopping"
+                className="mt-5 block md:hidden w-full max-h-64 object-contain mx-auto"
+                loading="eager"
+                fetchpriority="high"
+                sizes="(max-width: 768px) 100vw, 70vw"
+              />
               <div className="mt-5 flex flex-wrap items-center gap-3">
                 <Link
                   to="/products"
@@ -281,16 +289,8 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative md:mx-auto w-full md:max-w-lg"
+              className="relative md:mx-auto w-full md:max-w-lg order-1 md:order-2"
             >
-              <img
-                src="hero11.webp"
-                alt="Shopping"
-                className="block md:hidden w-full max-h-64 object-contain mx-auto"
-                loading="eager"
-                fetchpriority="high"
-                sizes="(max-width: 768px) 100vw, 70vw"
-              />
               <img
                 src="hero11.webp"
                 alt="Shopping"
@@ -319,7 +319,7 @@ export default function Home() {
 
       {brands.length > 0 && (
         <section className="bg-white border-y border-gray-100">
-          <div className="container mx-auto px-4 py-6">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6">
             <div className="relative overflow-hidden group">
               <div className="flex gap-8 whitespace-nowrap motion-safe:animate-[marquee_20s_linear_infinite] group-hover:[animation-play-state:paused]">
                 {[...brands, ...brands].map((b, i) => (
@@ -339,7 +339,7 @@ export default function Home() {
       )}
 
       <section id="featured" className="bg-white py-12 md:py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Featured Products</h2>
             <Link to="/products" className="text-orange-600 hover:underline text-sm">
@@ -353,41 +353,69 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <Slider {...productSlider} className="premium-products">
-              {featured.map((p) => (
-                <div key={p.id} className="px-2">
-                  <ProductCard p={p} />
-                </div>
-              ))}
-            </Slider>
+            <div className="relative">
+              <Slider {...productSlider} className="premium-products">
+                {featured.map((p) => (
+                  <div key={p.id} className="px-2">
+                    <ProductCard p={p} />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           )}
         </div>
-        <style>{`.premium-products .slick-prev:before,.premium-products .slick-next:before{color:#94a3b8;font-size:24px}.premium-products .slick-prev:hover:before,.premium-products .slick-next:hover:before{color:#fb923c}`}</style>
+        <style>{`
+          .premium-products { overflow: visible; }
+          .premium-products .slick-list { overflow: visible; }
+          .premium-products .slick-prev,
+          .premium-products .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 10px rgba(0,0,0,.06);
+            z-index: 5;
+          }
+          .premium-products .slick-prev { left: -0.75rem; }
+          .premium-products .slick-next { right: -0.75rem; }
+          @media (min-width:768px){
+            .premium-products .slick-prev { left: -1.25rem; }
+            .premium-products .slick-next { right: -1.25rem; }
+          }
+          @media (min-width:1024px){
+            .premium-products .slick-prev { left: -1.5rem; }
+            .premium-products .slick-next { right: -1.5rem; }
+          }
+          .premium-products .slick-prev:before,
+          .premium-products .slick-next:before{
+            color:#64748b;
+            font-size:18px;
+            line-height:36px;
+            opacity:1;
+          }
+          .premium-products .slick-prev:hover:before,
+          .premium-products .slick-next:hover:before{ color:#fb923c; }
+        `}</style>
       </section>
 
       <section className="relative overflow-hidden bg-gradient-to-r from-orange-100 to-orange-200">
-        <div className="container mx-auto px-4 py-8 md:py-14">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-14">
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-10">
             <div className="order-last text-center md:order-none md:text-left">
               <h3 className="text-2xl leading-tight sm:text-3xl md:text-4xl font-extrabold text-gray-900">
                 Limited Time Offer — Up to 50% OFF
               </h3>
               <p className="mt-2 text-gray-700 text-base md:text-lg">Don’t wait — popular items are selling out fast.</p>
-              <div
-                className="mt-4 md:mt-5 flex flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-2 text-gray-900"
-                aria-live="polite"
-              >
-                <span className="rounded-lg bg-white px-2.5 py-1.5 text-base md:text-lg font-bold tabular-nums">
-                  {hours}
-                </span>
+              <div className="mt-4 md:mt-5 flex flex-wrap items-center justify-center md:justify-start gap-1.5 md:gap-2 text-gray-900" aria-live="polite">
+                <span className="rounded-lg bg-white px-2.5 py-1.5 text-base md:text-lg font-bold tabular-nums">{hours}</span>
                 <span className="px-1 md:px-1.5">:</span>
-                <span className="rounded-lg bg-white px-2.5 py-1.5 text-base md:text-lg font-bold tabular-nums">
-                  {minutes}
-                </span>
+                <span className="rounded-lg bg-white px-2.5 py-1.5 text-base md:text-lg font-bold tabular-nums">{minutes}</span>
                 <span className="px-1 md:px-1.5">:</span>
-                <span className="rounded-lg bg-white px-2.5 py-1.5 text-base md:text-lg font-bold tabular-nums">
-                  {seconds}
-                </span>
+                <span className="rounded-lg bg-white px-2.5 py-1.5 text-base md:text-lg font-bold tabular-nums">{seconds}</span>
               </div>
               <Link
                 to="/products"
@@ -414,7 +442,7 @@ export default function Home() {
       </section>
 
       <section className="bg-white py-12 md:py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">New Arrivals</h2>
           </div>
@@ -437,7 +465,7 @@ export default function Home() {
       <section className="relative bg-gray-50 py-14">
         <div className="pointer-events-none absolute -top-24 left-6 h-44 w-44 rounded-full bg-orange-200/50 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-24 right-6 h-56 w-56 rounded-full bg-orange-100/70 blur-3xl" />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             <TrustCard icon={<FaTruck className="text-xl" />} title="Free Shipping" text="On orders over ₹3,999" />
             <TrustCard icon={<FaShieldAlt className="text-xl" />} title="Secure Payments" text="UPI • Cards • Netbanking" />
@@ -448,7 +476,7 @@ export default function Home() {
 
       <section className="relative bg-white py-16">
         <div className="pointer-events-none absolute -top-24 right-0 h-56 w-56 rounded-full bg-orange-100/70 blur-3xl" />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <Slider
             dots
             arrows
@@ -494,13 +522,40 @@ export default function Home() {
             ))}
           </Slider>
         </div>
-        <style>{`.testimonial-slider .slick-dots li button:before{font-size:10px;color:#cbd5e1;opacity:1}.testimonial-slider .slick-dots li.slick-active button:before{color:#fb923c}.testimonial-slider .slick-prev:before,.testimonial-slider .slick-next:before{color:#94a3b8;font-size:24px}.testimonial-slider .slick-prev:hover:before,.testimonial-slider .slick-next:hover:before{color:#fb923c}`}</style>
+        <style>{`
+          .testimonial-slider { overflow: visible; }
+          .testimonial-slider .slick-list { overflow: visible; }
+          .testimonial-slider .slick-dots li button:before{font-size:10px;color:#cbd5e1;opacity:1}
+          .testimonial-slider .slick-dots li.slick-active button:before{color:#fb923c}
+          .testimonial-slider .slick-prev,
+          .testimonial-slider .slick-next{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            width:36px;height:36px;border-radius:9999px;background:#fff;border:1px solid #e5e7eb;
+            box-shadow:0 4px 10px rgba(0,0,0,.06); z-index:5;
+          }
+          .testimonial-slider .slick-prev{left:-0.75rem}
+          .testimonial-slider .slick-next{right:-0.75rem}
+          @media (min-width:768px){
+            .testimonial-slider .slick-prev{left:-1.25rem}
+            .testimonial-slider .slick-next{right:-1.25rem}
+          }
+          @media (min-width:1024px){
+            .testimonial-slider .slick-prev{left:-1.5rem}
+            .testimonial-slider .slick-next{right:-1.5rem}
+          }
+          .testimonial-slider .slick-prev:before,
+          .testimonial-slider .slick-next:before{color:#64748b;font-size:18px;line-height:36px;opacity:1}
+          .testimonial-slider .slick-prev:hover:before,
+          .testimonial-slider .slick-next:hover:before{color:#fb923c}
+        `}</style>
       </section>
 
       <section className="relative bg-gray-50 py-16">
         <div className="pointer-events-none absolute -top-24 left-10 h-52 w-52 rounded-full bg-orange-200/60 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-28 right-10 h-60 w-60 rounded-full bg-orange-100/80 blur-3xl" />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-white/70 backdrop-blur-md shadow-lg ring-1 ring-gray-200">
             <div className="p-8 text-center">
               <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-tr from-orange-600 to-amber-400 text-white shadow ring-4 ring-orange-100">
