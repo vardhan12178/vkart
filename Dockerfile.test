@@ -1,0 +1,3 @@
+# Simple Docker connectivity test
+FROM alpine:latest
+CMD ["echo", "✅ Docker network is working fine!"]

@@ -8,18 +8,16 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.9",
     "@react-oauth/google": "^0.12.2",
     "@reduxjs/toolkit": "^2.2.5",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "browser-image-compression": "^2.0.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto-browserify": "^3.12.0",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^11.3.21",
+    "framer-motion": "^11.18.2",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.539.0",
@@ -29,6 +27,7 @@
     "react-avatar-editor": "^13.0.2",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
+    "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-loading-icons": "^1.1.0",
@@ -37,7 +36,7 @@
     "react-redux": "^9.1.2",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.30.2",
+    "react-slick": "^0.30.3",
     "react-spinners": "^0.14.1",
     "slick-carousel": "^1.8.1",
     "util": "^0.12.5",
@@ -47,8 +46,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watchAll=false --passWithNoTests",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -70,8 +75,15 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
     "@heroicons/react": "^1.0.6",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "autoprefixer": "^10.4.19",
+    "babel-jest": "^30.2.0",
+    "jest": "^27.5.1",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4"
   }

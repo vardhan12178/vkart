@@ -57,7 +57,7 @@ function ProductCard({ p }) {
       itemScope
       itemType="https://schema.org/Product"
     >
-      <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white">
+      <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50 via-amber-50 to-white">
         <picture>
           <source srcSet={src} type="image/webp" />
           <img
@@ -229,7 +229,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50 via-amber-50 to-white">
         <div className="hidden md:block pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200 blur-3xl opacity-50" />
         <div className="hidden md:block pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-orange-100 blur-3xl opacity-60" />
         <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8 pb-8 md:pt-6 md:pb-20">
@@ -338,7 +338,7 @@ export default function Home() {
         </section>
       )}
 
-      <section id="featured" className="bg-white py-12 md:py-16">
+      <section id="featured" className="bg-white py-12 md:py-16 ">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Featured Products</h2>

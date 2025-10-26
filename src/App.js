@@ -10,6 +10,7 @@ import axios from "./components/axiosInstance";
 import BlogIndex from "./components/blog/BlogIndex";
 import PostPage from "./components/blog/PostPage";
 import { Helmet } from "react-helmet-async";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -57,7 +58,9 @@ const App = () => {
       <div id="root">
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <main>
+          <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
           <Routes>
+            
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
