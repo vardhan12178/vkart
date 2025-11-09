@@ -74,8 +74,8 @@ export default function Register() {
       e.username = "Use 3-64 chars: letters, numbers, . _ -";
     if (!form.email.trim())
       e.email = "Email is required.";
-    else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(form.email.trim()))
-      e.email = "Enter a valid email.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()))
+  e.email = "Enter a valid email.";
     if (!form.password)
       e.password = "Password is required.";
     else if (form.password.length < 8)
