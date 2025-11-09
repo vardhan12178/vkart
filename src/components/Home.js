@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import axios from "./axiosInstance";
 import {
   FaStar,
   FaRegStar,
@@ -11,6 +12,7 @@ import {
   FaHeadset,
   FaArrowRight,
   FaCheckCircle,
+  FaTimes,
 } from "react-icons/fa";
 
 const INR = (n) =>
@@ -160,11 +162,24 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [dealEndsAt] = useState(() => Date.now() + 1000 * 60 * 60 * 18);
   const [nowTick, setNowTick] = useState(Date.now());
+  // 2FA nudge
+const [profile, setProfile] = useState(null);
+const [hide2faNudge, setHide2faNudge] = useState(false);
+
 
   useEffect(() => {
     const t = setInterval(() => setNowTick(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  useEffect(() => {
+  (async () => {
+    try {
+      const res = await axios.get("/api/profile", { withCredentials: true });
+      setProfile(res.data);
+    } catch (e) {}
+  })();
+}, []);
 
   useEffect(() => {
     const ac = new AbortController();
@@ -222,6 +237,21 @@ export default function Home() {
     []
   );
 
+  const show2faNudge =
+  profile &&
+  !profile.twoFactorEnabled &&
+  !profile.suppress2faPrompt &&
+  !hide2faNudge;
+
+const dismiss2fa = async () => {
+  setHide2faNudge(true);
+  try {
+    await axios.post("/api/2fa/suppress", null, { withCredentials: true });
+  } catch (e) {
+    // ignore
+  }
+};
+
   const timeLeft = Math.max(0, Math.floor((dealEndsAt - nowTick) / 1000));
   const hours = String(Math.floor(timeLeft / 3600)).padStart(2, "0");
   const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, "0");
@@ -229,6 +259,42 @@ export default function Home() {
 
   return (
     <>
+    {show2faNudge && (
+  <div className="fixed bottom-4 right-4 z-50 w-[min(100%-1.5rem,360px)] rounded-2xl bg-white/95 backdrop-blur border border-orange-100 shadow-2xl p-4 flex gap-3 items-start animate-[fadeIn_.2s_ease]">
+    <div className="mt-1 grid h-9 w-9 place-items-center rounded-full bg-orange-100 text-orange-600">
+      <FaShieldAlt className="h-4 w-4" />
+    </div>
+    <div className="flex-1">
+      <p className="text-sm font-semibold text-gray-900">Secure your account</p>
+      <p className="mt-1 text-xs text-gray-500">
+        Enable two-factor authentication to protect your VKart account.
+      </p>
+      <div className="mt-3 flex gap-2">
+        <Link
+          to="/profile"
+          className="inline-flex items-center gap-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 px-3 py-1.5 text-xs font-semibold text-white shadow hover:brightness-105"
+        >
+          Enable 2FA
+        </Link>
+        <button
+          type="button"
+          onClick={dismiss2fa}
+          className="text-xs text-gray-500 hover:text-gray-700"
+        >
+          Not now
+        </button>
+      </div>
+    </div>
+    <button
+      onClick={dismiss2fa}
+      className="ml-1 text-gray-300 hover:text-gray-500"
+      aria-label="Dismiss"
+    >
+      <FaTimes className="h-4 w-4" />
+    </button>
+  </div>
+)}
+
       <section className="relative overflow-hidden  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-50 via-amber-50 to-white">
         <div className="hidden md:block pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200 blur-3xl opacity-50" />
         <div className="hidden md:block pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-orange-100 blur-3xl opacity-60" />

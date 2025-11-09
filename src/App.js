@@ -8,6 +8,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import axios from "./components/axiosInstance";
 import BlogIndex from "./components/blog/BlogIndex";
+import OrderStages from "./components/OrderStages";
 import PostPage from "./components/blog/PostPage";
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/orderstages" element={<OrderStages />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/license" element={<License />} />
             <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />

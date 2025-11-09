@@ -1,4 +1,3 @@
-// src/pages/Profile.jsx
 import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import axios from "./axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,13 +14,14 @@ import {
   FaCheckCircle,
   FaTimesCircle,
   FaBoxOpen,
+  FaShieldAlt,
+  FaLock,
+  FaQrcode,
+  FaKey,
 } from "react-icons/fa";
 
 const OrderCard = lazy(() => import("./OrderCard"));
 
-/** --------------------------------------------------------------------------
- *  Skeleton (friendly loading state)
- * -------------------------------------------------------------------------- */
 const Skeleton = () => (
   <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
     <div className="rounded-3xl bg-white/75 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-2xl overflow-hidden">
@@ -45,9 +45,6 @@ const Skeleton = () => (
   </div>
 );
 
-/** --------------------------------------------------------------------------
- *  Toast (inline, lightweight)
- * -------------------------------------------------------------------------- */
 const Toast = ({ kind = "success", message }) => {
   if (!message) return null;
   const ok = kind === "success";
@@ -67,9 +64,6 @@ const Toast = ({ kind = "success", message }) => {
   );
 };
 
-/** --------------------------------------------------------------------------
- *  Profile (premium SaaS look)
- * -------------------------------------------------------------------------- */
 export default function Profile({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
@@ -77,19 +71,28 @@ export default function Profile({ setIsLoggedIn }) {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [activeTab, setActiveTab] = useState("overview"); // 'overview' | 'orders'
+  const [activeTab, setActiveTab] = useState("overview");
   const [error, setError] = useState("");
 
   const [toast, setToast] = useState({ kind: "success", message: "" });
   const toastTimer = useRef(null);
 
-  // Avatar editing
+  // Avatar
   const [selectedFile, setSelectedFile] = useState(null);
   const editorRef = useRef(null);
   const [scale, setScale] = useState(1.2);
   const [showEditor, setShowEditor] = useState(false);
 
-  // toast helper
+  // 2FA
+  const [twoFAOpen, setTwoFAOpen] = useState(false);
+  const [twoFAState, setTwoFAState] = useState({
+    qr: "",
+    secret: "",
+    code: "",
+    loading: false,
+    disabling: false,
+  });
+
   const showToast = (kind, message, ms = 1800) => {
     setToast({ kind, message });
     if (toastTimer.current) clearTimeout(toastTimer.current);
@@ -100,8 +103,19 @@ export default function Profile({ setIsLoggedIn }) {
     const load = async () => {
       try {
         setLoading(true);
-        const [p, o] = await Promise.all([axios.get("/api/profile"), axios.get("/api/profile/orders")]);
-        setUser(p.data);
+        const [p, o] = await Promise.all([
+          axios.get("/api/profile"),
+          axios.get("/api/profile/orders"),
+        ]);
+
+        // ✅ force booleans so UI doesn't flicker
+        const profile = {
+          ...p.data,
+          twoFactorEnabled: !!p.data.twoFactorEnabled,
+          suppress2faPrompt: !!p.data.suppress2faPrompt,
+        };
+
+        setUser(profile);
         setOrders((o.data || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
       } catch (e) {
         if (e?.response?.status === 401) {
@@ -154,7 +168,10 @@ export default function Profile({ setIsLoggedIn }) {
       const formData = new FormData();
       formData.append("profileImage", compressed, `profile-${Date.now()}.jpg`);
       const res = await axios.post("/api/profile/upload", formData);
-      setUser(res.data);
+
+      // ✅ merge so we don't lose twoFactorEnabled etc.
+      setUser((prev) => ({ ...(prev || {}), ...res.data }));
+
       setSelectedFile(null);
       setScale(1.2);
       setShowEditor(false);
@@ -170,344 +187,325 @@ export default function Profile({ setIsLoggedIn }) {
     }
   };
 
+  const startTwoFASetup = async () => {
+    try {
+      setTwoFAState((s) => ({ ...s, loading: true, code: "" }));
+      const res = await axios.post("/api/2fa/setup");
+      setTwoFAState((s) => ({
+        ...s,
+        loading: false,
+        qr: res.data?.qr || "",
+        secret: res.data?.manualEntryKey || "",
+      }));
+      setTwoFAOpen(true);
+    } catch (e) {
+      const msg = e?.response?.data?.message || "Failed to start 2FA setup.";
+      showToast("error", msg);
+      setTwoFAState((s) => ({ ...s, loading: false }));
+    }
+  };
+
+  const confirmTwoFAEnable = async () => {
+    const code = String(twoFAState.code || "").trim();
+    if (!/^\d{6}$/.test(code)) {
+      showToast("error", "Enter a valid 6-digit code.");
+      return;
+    }
+    try {
+      setTwoFAState((s) => ({ ...s, loading: true }));
+      await axios.post("/api/2fa/enable", { token: code, secret: twoFAState.secret });
+      setUser((u) => ({ ...u, twoFactorEnabled: true }));
+      setTwoFAOpen(false);
+      setTwoFAState({ qr: "", secret: "", code: "", loading: false, disabling: false });
+      showToast("success", "Two-factor authentication enabled.");
+    } catch (e) {
+      const msg = e?.response?.data?.message || "Invalid code. Try again.";
+      showToast("error", msg);
+      setTwoFAState((s) => ({ ...s, loading: false }));
+    }
+  };
+
+  const disableTwoFA = async () => {
+    try {
+      setTwoFAState((s) => ({ ...s, disabling: true }));
+      await axios.post("/api/2fa/disable");
+      setUser((u) => ({ ...u, twoFactorEnabled: false }));
+      showToast("success", "Two-factor authentication disabled.");
+    } catch (e) {
+      const msg = e?.response?.data?.message || "Failed to disable 2FA.";
+      showToast("error", msg);
+    } finally {
+      setTwoFAState((s) => ({ ...s, disabling: false }));
+    }
+  };
+
   if (loading) return <Skeleton />;
   if (error) return <p className="text-center text-base sm:text-lg text-red-600 mt-8 sm:mt-10">{error}</p>;
 
   const ordersCount = orders.length;
 
-  return (
-    <>
-      <Toast kind={toast.kind} message={toast.message} />
+return (
+  <>
+    <Toast kind={toast.kind} message={toast.message} />
 
-      {/* Ambient blobs (hidden on mobile for perf) */}
-      <div className="pointer-events-none fixed inset-0 -z-10 hidden sm:block">
-        <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-amber-200/40 blur-3xl" />
-      </div>
-
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10">
-        <div className="rounded-3xl bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-2xl overflow-hidden">
-          {/* Header / Identity */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-100 to-amber-100" />
-            <div className="relative p-4 sm:p-6 md:p-8">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-6">
-                <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-                  <div className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 shrink-0">
-                    <img
-                      src={
-                        user?.profileImage ||
-                        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                      }
-                      alt="Profile"
-                      className="h-full w-full rounded-full object-cover ring-4 ring-white shadow-xl"
-                      loading="lazy"
-                      decoding="async"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
-                      }}
-                    />
-                    <label
-                      htmlFor="file-upload"
-                      className="absolute bottom-1.5 right-1.5 grid h-9 w-9 place-items-center rounded-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white shadow-lg cursor-pointer transition active:scale-95 hover:scale-105"
-                      title="Change photo"
-                    >
-                      <FaCamera />
-                      <input
-                        id="file-upload"
-                        type="file"
-                        accept="image/png,image/jpeg,image/webp"
-                        className="hidden"
-                        onChange={handleFileChange}
-                      />
-                    </label>
-                  </div>
-
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 truncate">
-                        {user?.name || "Guest"}
-                      </h1>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] sm:text-xs font-semibold text-emerald-700">
-                        <FaCheckCircle /> Member
-                      </span>
-                    </div>
-                    <p className="mt-0.5 text-xs sm:text-sm text-gray-600 break-all">
-                      {user?.username ? `@${user.username}` : ""}
-                    </p>
-                    <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-white px-2.5 sm:px-3 py-1 text-xs sm:text-sm text-gray-700 shadow">
-                      <FaEnvelope className="text-orange-600 shrink-0" />
-                      <span className="break-all">{user?.email}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Compact stats */}
-                <div className="grid grid-cols-3 divide-x divide-gray-100 rounded-2xl bg-white shadow-sm w-full sm:w-auto">
-                  <div className="px-4 sm:px-5 py-2.5 sm:py-3 text-center">
-                    <div className="text-[11px] sm:text-xs text-gray-500">Orders</div>
-                    <div className="text-lg sm:text-xl font-bold text-gray-900">{ordersCount}</div>
-                  </div>
-                  <div className="px-4 sm:px-5 py-2.5 sm:py-3 text-center">
-                    <div className="text-[11px] sm:text-xs text-gray-500">Wishlist</div>
-                    <div className="text-lg sm:text-xl font-bold text-gray-900">—</div>
-                  </div>
-                  <div className="px-4 sm:px-5 py-2.5 sm:py-3 text-center">
-                    <div className="text-[11px] sm:text-xs text-gray-500">Coupons</div>
-                    <div className="text-lg sm:text-xl font-bold text-gray-900">—</div>
-                  </div>
-                </div>
+    <div className="min-h-screen bg-[#f9fafb] py-8 sm:py-12 px-3 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+        {/* Header */}
+        <div className="p-6 sm:p-8 border-b border-gray-100 bg-white">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            {/* Profile Info */}
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+              <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0">
+                <img
+                  src={
+                    user?.profileImage ||
+                    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                  }
+                  alt="Profile"
+                  className="h-full w-full rounded-full object-cover ring-4 ring-white shadow-md"
+                  onError={(e) =>
+                    (e.currentTarget.src =
+                      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
+                  }
+                />
+                <label
+                  htmlFor="file-upload"
+                  className="absolute bottom-1 right-1 grid h-8 w-8 place-items-center rounded-full bg-orange-500 text-white shadow-md cursor-pointer hover:bg-orange-600 transition"
+                  title="Change photo"
+                >
+                  <FaCamera />
+                  <input
+                    id="file-upload"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    className="hidden"
+                    onChange={handleFileChange}
+                  />
+                </label>
               </div>
 
-              {/* Tabs (proper a11y) */}
-              <div className="mt-4 sm:mt-6 sticky top-[env(safe-area-inset-top)] z-10">
-                <div
-                  role="tablist"
-                  aria-label="Profile sections"
-                  className="flex flex-wrap gap-1.5 sm:gap-2 rounded-full bg-white p-1 w-full md:w-max shadow"
-                >
-                  <button
-                    role="tab"
-                    aria-selected={activeTab === "overview"}
-                    aria-controls="panel-overview"
-                    id="tab-overview"
-                    type="button"
-                    onClick={() => setActiveTab("overview")}
-                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm font-medium transition ${
-                      activeTab === "overview"
-                        ? "bg-gradient-to-r from-orange-600 to-yellow-600 text-white shadow"
-                        : "text-gray-700 hover:bg-gray-50"
-                    }`}
-                  >
-                    Overview
-                  </button>
-                  <button
-                    role="tab"
-                    aria-selected={activeTab === "orders"}
-                    aria-controls="panel-orders"
-                    id="tab-orders"
-                    type="button"
-                    onClick={() => setActiveTab("orders")}
-                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm font-medium transition ${
-                      activeTab === "orders"
-                        ? "bg-gradient-to-r from-orange-600 to-yellow-600 text-white shadow"
-                        : "text-gray-700 hover:bg-gray-50"
-                    }`}
-                  >
-                    Orders
-                  </button>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h1 className="text-xl sm:text-2xl font-bold text-gray-900">{user?.name || "Guest"}</h1>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+                    <FaCheckCircle /> Member
+                  </span>
+                </div>
+                <p className="text-sm text-gray-600 mt-0.5 truncate">{user?.username ? `@${user.username}` : ""}</p>
+                <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-gray-50 px-3 py-1 text-sm text-gray-700 border border-gray-200 max-w-full overflow-hidden">
+                  <FaEnvelope className="text-orange-500 shrink-0" />
+                  <span className="truncate">{user?.email}</span>
                 </div>
               </div>
             </div>
+
+            {/* Stats + Logout */}
+            <div className="flex flex-col sm:flex-row sm:items-center md:flex-col md:items-end gap-3 w-full md:w-auto">
+              <div className="grid grid-cols-3 divide-x divide-gray-100 border border-gray-100 rounded-2xl bg-gray-50 shadow-sm w-full sm:w-auto text-center">
+                <div className="px-4 py-2 sm:py-3">
+                  <div className="text-xs text-gray-500">Orders</div>
+                  <div className="text-lg font-semibold text-gray-900">{ordersCount}</div>
+                </div>
+                <div className="px-4 py-2 sm:py-3">
+                  <div className="text-xs text-gray-500">Wishlist</div>
+                  <div className="text-lg font-semibold text-gray-900">—</div>
+                </div>
+                <div className="px-4 py-2 sm:py-3">
+                  <div className="text-xs text-gray-500">Coupons</div>
+                  <div className="text-lg font-semibold text-gray-900">—</div>
+                </div>
+              </div>
+
+              <button
+                onClick={handleLogout}
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-orange-500 text-orange-600 px-5 py-2.5 text-sm font-semibold hover:bg-orange-50 transition w-full sm:w-auto"
+              >
+                <FaSignOutAlt /> Logout
+              </button>
+            </div>
           </div>
 
-          {/* Panels */}
-          <div className="p-4 sm:p-6 md:p-8">
-            {activeTab === "overview" ? (
-              <section
-                role="tabpanel"
-                id="panel-overview"
-                aria-labelledby="tab-overview"
-              >
-                {/* Key info cards */}
-                <div className="grid gap-3 sm:gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3">
-                  <div className="rounded-2xl bg-white p-3 sm:p-4 shadow hover:shadow-md transition">
+          {/* Tabs */}
+          <div className="mt-6 flex flex-wrap gap-2 border-t border-gray-100 pt-4">
+            <button
+              onClick={() => setActiveTab("overview")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                activeTab === "overview"
+                  ? "bg-orange-500 text-white shadow"
+                  : "border border-gray-200 text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              Overview
+            </button>
+            <button
+              onClick={() => setActiveTab("orders")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                activeTab === "orders"
+                  ? "bg-orange-500 text-white shadow"
+                  : "border border-gray-200 text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              Orders
+            </button>
+          </div>
+        </div>
+
+        {/* Panels */}
+        <div className="p-5 sm:p-8 bg-white">
+          {activeTab === "overview" ? (
+            <>
+              {/* Identity */}
+              <div className="grid gap-3 sm:gap-4 sm:grid-cols-3">
+                {[
+                  { icon: <FaUser />, label: "Name", value: user?.name },
+                  { icon: <FaEnvelope />, label: "Email", value: user?.email },
+                  {
+                    icon: <FaPen />,
+                    label: "Username",
+                    value: user?.username ? `@${user.username}` : "—",
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl bg-white border border-gray-100 p-4 shadow-sm hover:shadow-md transition"
+                  >
                     <div className="flex items-center gap-3">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-600">
-                        <FaUser />
+                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-50 text-orange-600">
+                        {item.icon}
                       </div>
                       <div className="min-w-0">
-                        <p className="text-[11px] sm:text-xs text-gray-500">Name</p>
-                        <p className="font-medium text-gray-900 truncate">{user?.name}</p>
+                        <p className="text-xs text-gray-500">{item.label}</p>
+                        <p className="font-medium text-gray-900 truncate break-all">{item.value}</p>
                       </div>
                     </div>
                   </div>
+                ))}
+              </div>
 
-                  <div className="rounded-2xl bg-white p-3 sm:p-4 shadow hover:shadow-md transition">
-                    <div className="flex items-center gap-3">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-600">
-                        <FaEnvelope />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-[11px] sm:text-xs text-gray-500">Email</p>
-                        <p className="font-medium text-gray-900 break-all">{user?.email}</p>
-                      </div>
+              {/* Security */}
+              <div className="mt-8 rounded-2xl bg-white border border-gray-100 p-5 sm:p-6 shadow-sm">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-50 text-orange-600">
+                      <FaShieldAlt />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900">Security</h3>
+                      <p className="text-xs sm:text-sm text-gray-600">
+                        Protect your account with two-factor authentication.
+                      </p>
                     </div>
                   </div>
 
-                  <div className="rounded-2xl bg-white p-3 sm:p-4 shadow hover:shadow-md transition">
-                    <div className="flex items-center gap-3">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-600">
-                        <FaPen />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-[11px] sm:text-xs text-gray-500">Username</p>
-                        <p className="font-medium text-gray-900 truncate">
-                          {user?.username ? `@${user.username}` : "—"}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quick actions */}
-                <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3">
-                  <Link
-                    to="/products"
-                    className="group rounded-2xl bg-white p-4 sm:p-5 shadow hover:shadow-lg transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-600">
-                        <FaBoxOpen />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900">Browse Products</p>
-                        <p className="text-[11px] sm:text-xs text-gray-500">Shop the latest arrivals</p>
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/about"
-                    className="group rounded-2xl bg-white p-4 sm:p-5 shadow hover:shadow-lg transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-600">
-                        <FaInfoCircle />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900">About Us</p>
-                        <p className="text-[11px] sm:text-xs text-gray-500">Know more about VKart</p>
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to="/contact"
-                    className="group rounded-2xl bg-white p-4 sm:p-5 shadow hover:shadow-lg transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-600">
-                        <FaEnvelope />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900">Contact Support</p>
-                        <p className="text-[11px] sm:text-xs text-gray-500">We’re here to help</p>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-
-                {/* Logout */}
-                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
-                  <button
-                    type="button"
-                    onClick={handleLogout}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 px-5 sm:px-6 py-2.5 sm:py-3 text-white text-sm sm:text-base font-semibold shadow hover:opacity-95 w-full sm:w-auto"
-                  >
-                    <FaSignOutAlt /> Logout
-                  </button>
-                </div>
-              </section>
-            ) : (
-              <section
-                role="tabpanel"
-                id="panel-orders"
-                aria-labelledby="tab-orders"
-              >
-                <div className="mb-3 sm:mb-4 flex items-center justify-between gap-2">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">Order History</h2>
-                  <div className="rounded-full bg-orange-50 px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-semibold text-orange-700">
-                    {ordersCount} orders
-                  </div>
-                </div>
-
-                <Suspense fallback={<p className="text-center text-gray-600 py-6 sm:py-8">Loading your orders…</p>}>
-                  {orders.length === 0 ? (
-                    <div className="rounded-2xl bg-white p-6 sm:p-8 text-center shadow">
-                      <p className="text-gray-700">You haven’t placed any orders yet.</p>
-                      <Link
-                        to="/products"
-                        className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-yellow-600 px-5 py-2.5 text-white font-semibold shadow hover:opacity-95"
+                  {user?.twoFactorEnabled ? (
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+                        <FaCheckCircle /> Enabled
+                      </span>
+                      <button
+                        onClick={disableTwoFA}
+                        disabled={twoFAState.disabling}
+                        className="border border-gray-200 text-gray-700 rounded-xl px-4 py-2 text-sm hover:bg-gray-50"
                       >
-                        Browse Products
-                      </Link>
+                        <FaLock /> {twoFAState.disabling ? "Disabling…" : "Disable 2FA"}
+                      </button>
                     </div>
                   ) : (
-                    <div className="grid gap-3 sm:gap-4">
-                      {orders.map((o) => (
-                        <OrderCard key={o._id} order={o} />
-                      ))}
-                    </div>
+                    <button
+                      onClick={startTwoFASetup}
+                      disabled={twoFAState.loading}
+                      className="inline-flex items-center gap-2 rounded-xl bg-orange-500 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-orange-600 disabled:opacity-70"
+                    >
+                      <FaQrcode /> {twoFAState.loading ? "Preparing…" : "Enable 2FA"}
+                    </button>
                   )}
-                </Suspense>
-              </section>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Avatar editor modal */}
-      {showEditor && (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => {
-              setShowEditor(false);
-              setSelectedFile(null);
-            }}
-          />
-          {/* Full-height on mobile with internal scroll */}
-          <div className="relative z-10 mx-3 w-full max-w-md rounded-2xl bg-white shadow-2xl max-h-[90vh] overflow-auto">
-            <div className="p-4 sm:p-5">
-              <p className="mb-3 text-sm font-medium text-gray-800">Adjust & upload</p>
-              <div className="flex flex-col items-center">
-                <AvatarEditor
-                  ref={editorRef}
-                  image={selectedFile}
-                  width={240}
-                  height={240}
-                  border={16}
-                  borderRadius={140}
-                  scale={scale}
-                  className="rounded-lg max-w-full"
-                />
-                <input
-                  min={1}
-                  max={2.5}
-                  step={0.05}
-                  type="range"
-                  value={scale}
-                  onChange={(e) => setScale(Number(e.target.value))}
-                  className="mt-3 w-full"
-                  aria-label="Zoom profile photo"
-                />
-                <div className="mt-4 flex w-full flex-col sm:flex-row justify-end gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShowEditor(false);
-                      setSelectedFile(null);
-                      setScale(1.2);
-                    }}
-                    className="px-4 py-2 rounded-xl text-sm border border-gray-200 hover:bg-gray-50 w-full sm:w-auto"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleUpload}
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm text-white bg-gradient-to-r from-orange-600 to-yellow-600 hover:opacity-95 shadow w-full sm:w-auto"
-                  >
-                    <FaCloudUploadAlt /> Upload
-                  </button>
                 </div>
               </div>
-            </div>
-          </div>
+
+              {/* Quick Actions */}
+              <div className="mt-8 grid gap-3 sm:gap-4 sm:grid-cols-3">
+                <Link
+                  to="/products"
+                  className="group rounded-2xl bg-white border border-gray-100 p-4 sm:p-5 shadow-sm hover:shadow-md transition"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-50 text-orange-600">
+                      <FaBoxOpen />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm sm:text-base">Browse Products</p>
+                      <p className="text-xs text-gray-500">Shop the latest arrivals</p>
+                    </div>
+                  </div>
+                </Link>
+
+                <Link
+                  to="/about"
+                  className="group rounded-2xl bg-white border border-gray-100 p-4 sm:p-5 shadow-sm hover:shadow-md transition"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-50 text-orange-600">
+                      <FaInfoCircle />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm sm:text-base">About Us</p>
+                      <p className="text-xs text-gray-500">Know more about VKart</p>
+                    </div>
+                  </div>
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="group rounded-2xl bg-white border border-gray-100 p-4 sm:p-5 shadow-sm hover:shadow-md transition"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-orange-50 text-orange-600">
+                      <FaEnvelope />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-sm sm:text-base">Contact Support</p>
+                      <p className="text-xs text-gray-500">We’re here to help</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Orders */}
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">Order History</h2>
+                <div className="rounded-full bg-orange-50 px-3 py-1 text-xs sm:text-sm font-semibold text-orange-700">
+                  {ordersCount} orders
+                </div>
+              </div>
+
+              <Suspense fallback={<p className="text-center text-gray-500 py-8">Loading your orders…</p>}>
+                {orders.length === 0 ? (
+                  <div className="rounded-2xl bg-white border border-gray-100 p-6 sm:p-8 text-center shadow-sm">
+                    <p className="text-gray-600">You haven’t placed any orders yet.</p>
+                    <Link
+                      to="/products"
+                      className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 text-white px-5 py-2.5 font-semibold shadow hover:bg-orange-600 transition"
+                    >
+                      Browse Products
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="grid gap-3 sm:gap-4">
+                    {orders.map((o) => (
+                      <OrderCard key={o._id} order={o} />
+                    ))}
+                  </div>
+                )}
+              </Suspense>
+            </>
+          )}
         </div>
-      )}
-    </>
-  );
+      </div>
+    </div>
+  </>
+);
+
+
 }
