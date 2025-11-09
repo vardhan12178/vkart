@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+🛒 VKart — MERN E-Commerce Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+VKart is a full-stack e-commerce web app built with React, Node.js/Express, and MongoDB.
+It supports secure authentication, cart & wishlist management, order tracking, and test-mode payments via Razorpay.
 
-## Available Scripts
+🚀 Tech Stack
 
-In the project directory, you can run:
+Frontend: React, Tailwind CSS, Framer Motion, React Router
+Backend: Node.js, Express, MongoDB (Mongoose)
+Payments: Razorpay (Test Mode)
+Authentication: JWT + Google OAuth + Two-Factor Authentication (2FA)
+Deployment: Netlify (frontend) + Render (backend API)
 
-### `npm start`
+⚙️ Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone both repos:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone https://github.com/vardhan12178/vkart.git
+git clone https://github.com/vardhan12178/backend.git
 
-### `npm test`
+Frontend
+cd vkart
+npm install
+npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend
+cd backend
+npm install
+npm run dev
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app runs locally at http://localhost:3000
+.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🧩 Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🔐 Secure login & signup with JWT
 
-### `npm run eject`
+🔑 Two-Factor Authentication (2FA)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🛍️ Product listing, search & filters
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🛒 Cart, wishlist, and order management
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+💳 Razorpay test payments
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📦 Order tracking with stage indicators
 
-## Learn More
+🎨 Responsive, modern UI (Tailwind + Framer Motion)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🧠 Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create .env in both frontend and backend:
 
-### Code Splitting
+Frontend (vkart/.env)
+REACT_APP_API_URL=https://your-api-url.onrender.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Backend (backend/.env)
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+RAZORPAY_KEY_ID=your_test_key
+RAZORPAY_KEY_SECRET=your_test_secret
 
-### Analyzing the Bundle Size
+🖥️ Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Frontend: Netlify
 
-### Making a Progressive Web App
+Backend: Render
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Database: MongoDB Atlas
