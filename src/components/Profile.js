@@ -135,12 +135,18 @@ export default function Profile({ setIsLoggedIn }) {
   }, [navigate, setIsLoggedIn]);
 
   const handleLogout = async () => {
-    try {
-      await axios.post("/api/logout");
-    } catch {}
+  try {
+    await axios.post("/api/logout", {}, { withCredentials: true });
+  } catch (err) {
+    console.error("Logout failed:", err);
+  } finally {
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("admin_token");
     setIsLoggedIn?.(false);
     navigate("/login");
-  };
+  }
+};
+
 
   const handleFileChange = (e) => {
     const f = e.target.files?.[0];

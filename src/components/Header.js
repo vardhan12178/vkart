@@ -51,12 +51,20 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   }, [location.pathname]);
 
   const handleLogout = async () => {
-    try {
-      await axios.post("/api/logout", {}, { withCredentials: true });
-    } catch {}
+  try {
+    await axios.post("/api/logout", {}, { withCredentials: true });
+  } catch (err) {
+    console.error("Logout failed:", err);
+  } finally {
+    // Remove all auth tokens from localStorage
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("admin_token");
+
+    // Reset auth state and redirect to login
     setIsLoggedIn(false);
     navigate("/login");
-  };
+  }
+};
 
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/";
