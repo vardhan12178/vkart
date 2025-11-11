@@ -9,6 +9,8 @@ import ResetPassword from "./components/ResetPassword";
 import axios from "./components/axiosInstance";
 import BlogIndex from "./components/blog/BlogIndex";
 import OrderStages from "./components/OrderStages";
+import AdminLogin from "./components/AdminLogin";
+import AdminDashboard from "./components/AdminDashboard";
 import PostPage from "./components/blog/PostPage";
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
@@ -16,6 +18,8 @@ import { Toaster } from "react-hot-toast";
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authReady, setAuthReady] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
 
   useEffect(() => {
     let mounted = true;
@@ -63,6 +67,8 @@ const App = () => {
           <Routes>
             
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
+            <Route path="/admin/login" element={isAdmin ? <Navigate to="/admin/dashboard" /> : <AdminLogin setIsAdmin={setIsAdmin} />} />
+            <Route path="/admin/dashboard" element={isAdmin ? <AdminDashboard /> : <Navigate to="/admin/login" />} />
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/compare" element={<Compare />} />
