@@ -43,7 +43,7 @@ export default function ForgotPassword() {
     }
     setLoading(true);
     try {
-      const { data } = await axios.post("/auth/forgot", { emailOrUsername: v });
+      const { data } = await axios.post("/forgot", { emailOrUsername: v });
       setOkMsg(data?.message || "If an account exists, a reset link was sent.");
     } catch (err) {
       const msg = err?.response?.data?.message || "Something went wrong. Try again.";
