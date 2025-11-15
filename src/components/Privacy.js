@@ -1,206 +1,176 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   HiOutlineShieldCheck,
-  HiOutlineEyeOff,
-  HiOutlineCake,
   HiOutlineInformationCircle,
+  HiOutlineDatabase,
+  HiOutlineGlobeAlt,
   HiOutlineAdjustments,
 } from "react-icons/hi";
 
-const IconBadge = ({ children }) => (
-  <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-700">
-    {children}
-  </span>
-);
-
-const Row = ({ title, icon, children }) => (
-  <section className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/60 via-amber-200/60 to-white shadow">
-    <div className="rounded-3xl bg-white/90 ring-1 ring-gray-200 p-6">
-      <div className="mb-3 flex items-center gap-3">
-        <IconBadge>{icon}</IconBadge>
-        <h2 className="text-lg font-extrabold text-gray-900">{title}</h2>
-      </div>
-      <div className="text-sm leading-relaxed text-gray-700">{children}</div>
-    </div>
+const Section = ({ number, title, icon: Icon, children }) => (
+  <section className="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+    <h2 className="flex items-center gap-2 text-base font-semibold text-gray-900">
+      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-xs font-bold text-orange-700">
+        {number}
+      </span>
+      {title}
+      {Icon ? <Icon className="ml-1 h-4 w-4 text-gray-400" /> : null}
+    </h2>
+    <div className="mt-3 text-sm leading-relaxed text-gray-700">{children}</div>
   </section>
 );
 
-const Switch = ({ checked, disabled, onChange, label, hint }) => (
-  <label className={`flex items-start justify-between gap-3 rounded-2xl border p-4 ${disabled ? "opacity-90" : ""} bg-white/80 border-gray-200`}>
-    <div className="min-w-0">
-      <div className="font-semibold text-gray-900">{label}</div>
-      {hint ? <div className="text-sm text-gray-600">{hint}</div> : null}
-    </div>
-    <button
-      type="button"
-      onClick={!disabled ? onChange : undefined}
-      aria-pressed={checked}
-      aria-disabled={disabled}
-      className={`relative h-7 w-12 rounded-full transition outline-none ring-1 ${
-        checked ? "bg-orange-600 ring-orange-500" : "bg-gray-200 ring-gray-300"
-      } ${disabled ? "cursor-not-allowed" : "cursor-pointer"}`}
-    >
-      <span
-        className={`absolute top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-white shadow transition ${
-          checked ? "right-1" : "left-1"
-        }`}
-      />
-    </button>
-  </label>
-);
-
 export default function Privacy() {
-  const [prefs, setPrefs] = useState({ essential: true, analytics: false, marketing: false });
-  const [toast, setToast] = useState("");
-
-  const toggle = (k) => setPrefs((p) => ({ ...p, [k]: !p[k] }));
-  const clearDemoData = () => {
-    try {
-      localStorage.clear();
-      sessionStorage.clear();
-      setToast("Local demo data cleared");
-      setTimeout(() => setToast(""), 2500);
-    } catch {
-      setToast("Could not clear storage");
-      setTimeout(() => setToast(""), 2500);
-    }
-  };
+  const lastUpdated = new Date().toLocaleDateString();
 
   return (
-    <main className="relative min-h-[70vh] bg-gradient-to-br from-orange-50 via-white to-amber-50">
-      <div aria-hidden className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200/50 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl" />
-
+    <main className="min-h-[70vh] bg-[#f9fafb]">
       <div className="container mx-auto px-6 lg:px-10 py-10 lg:py-14">
-        {/* LIGHT hero card (replaces dark block) */}
-        <header className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-orange-700 ring-1 ring-orange-200">
+        {/* simple hero, no global <header> styling issues */}
+        <div className="max-w-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-orange-700 ring-1 ring-orange-200">
             <span className="h-2 w-2 rounded-full bg-orange-500" />
-            Transparency first
+            Sample privacy notice for a demo project
           </div>
 
-          <div className="mt-3 rounded-3xl bg-white/80 ring-1 ring-gray-200 p-6 md:p-8 backdrop-blur">
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">Privacy Policy</h1>
-            <p className="mt-3 text-lg text-gray-700">
-              This portfolio doesn’t collect real personal data. Any info you enter is used only to demonstrate app flows.
+          <div className="mt-3 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Privacy Policy
+            </h1>
+            <p className="mt-3 text-sm md:text-base text-gray-700">
+              VKart is a <strong>non-commercial portfolio demonstration</strong>{" "}
+              created to showcase full-stack e-commerce features. This Privacy
+              Policy explains what information is handled in the demo and how
+              you should treat any data you choose to enter.
+            </p>
+            <p className="mt-2 text-xs text-gray-500">
+              Last updated: {lastUpdated}
             </p>
           </div>
-        </header>
-
-        {toast ? (
-          <div
-            role="status"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 ring-1 ring-emerald-200"
-          >
-            {toast}
-          </div>
-        ) : null}
-
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          <Row title="What We Actually Collect" icon={<HiOutlineShieldCheck className="h-5 w-5" />}>
-            <p>
-              <strong>Nothing sensitive.</strong> There’s no real sign-up, payment, or analytics running here. If you see a
-              profile, order, or address — it’s <em>mock data</em> for demo purposes.
-            </p>
-          </Row>
-
-          <Row title="Data We Simulate" icon={<HiOutlineInformationCircle className="h-5 w-5" />}>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Profile details (name, email) generated or typed locally during the demo.</li>
-              <li>Orders and cart items that illustrate checkout flows.</li>
-              <li>Support messages as sample threads, not sent to a real backend.</li>
-            </ul>
-          </Row>
-
-          <Row title="Cookies & Preferences" icon={<HiOutlineCake className="h-5 w-5" />}>
-            <p>
-              A temporary token may be set to simulate authentication or remember cart state during the session. It has no tracking
-              purpose and expires quickly.
-            </p>
-            <div className="mt-4 grid gap-3">
-              <Switch
-                checked={prefs.essential}
-                disabled
-                onChange={() => toggle("essential")}
-                label="Essential (required)"
-                hint="Needed for basic features like staying signed in."
-              />
-              <Switch
-                checked={prefs.analytics}
-                onChange={() => toggle("analytics")}
-                label="Analytics"
-                hint="Anonymous stats to improve UX (not active in this portfolio)."
-              />
-              <Switch
-                checked={prefs.marketing}
-                onChange={() => toggle("marketing")}
-                label="Marketing"
-                hint="Personalized offers/ads (not used here)."
-              />
-            </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={clearDemoData}
-                className="rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-4 py-2 text-sm font-semibold text-white shadow hover:opacity-95 active:scale-[0.98]"
-              >
-                Clear Local Demo Data
-              </button>
-              <button
-                type="button"
-                className="rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50"
-                onClick={() => {
-                  setToast("Preferences updated");
-                  setTimeout(() => setToast(""), 2000);
-                }}
-              >
-                Save Preferences
-              </button>
-            </div>
-          </Row>
-
-          <Row title="Third-party Services" icon={<HiOutlineEyeOff className="h-5 w-5" />}>
-            <p>
-              When sample product data is fetched from public demo APIs (like DummyJSON), requests are made from your browser.
-              No personal identifiers are attached.
-            </p>
-          </Row>
-
-          <Row title="Your Controls" icon={<HiOutlineAdjustments className="h-5 w-5" />}>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Clear your browser storage (LocalStorage/SessionStorage) to remove demo data.</li>
-              <li>Disable cookies in your browser if you prefer a stateless demo.</li>
-              <li>Use the mock toggles above to preview how a real app would expose choices.</li>
-            </ul>
-          </Row>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xs text-gray-500">Last updated: {new Date().toLocaleDateString()}</p>
-          <div className="flex items-center gap-2">
-            <a
-              href="#"
-              className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-gray-900 ring-1 ring-gray-200 hover:bg-gray-50"
-              onClick={(e) => {
-                e.preventDefault();
-                setToast("Download started");
-                setTimeout(() => setToast(""), 1800);
-              }}
-            >
-              Download Policy
-            </a>
-            <a
-              href="#"
-              className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-gray-900 ring-1 ring-gray-200 hover:bg-gray-50"
-              onClick={(e) => {
-                e.preventDefault();
-                setToast("Policy emailed");
-                setTimeout(() => setToast(""), 1800);
-              }}
-            >
-              Email Me This
-            </a>
-          </div>
+        <div className="mt-8 grid gap-5">
+          <Section
+            number="1"
+            title="Overview"
+            icon={HiOutlineShieldCheck}
+          >
+            <p>
+              This demo is intended for learning, portfolio, and recruitment
+              purposes only. It is not an operating online store and is not
+              designed to process real customer data, real payments, or real
+              orders.
+            </p>
+          </Section>
+
+          <Section
+            number="2"
+            title="Information You May Enter"
+            icon={HiOutlineInformationCircle}
+          >
+            <p>
+              Some screens allow you to type details such as a name, email
+              address, shipping address, or support message. This information is
+              used purely to demonstrate typical e-commerce flows (for example,
+              filling a checkout form or sending a contact request).
+            </p>
+            <p className="mt-2">
+              You should treat all fields as <strong>test inputs</strong>. Do
+              not submit:
+            </p>
+            <ul className="mt-2 list-disc pl-5 space-y-1">
+              <li>Real payment card or banking information.</li>
+              <li>
+                Government-issued IDs or other highly sensitive personal data.
+              </li>
+              <li>
+                Anything you would not normally share in a public demo
+                environment.
+              </li>
+            </ul>
+          </Section>
+
+          <Section
+            number="3"
+            title="Local Storage, Cookies & Session Data"
+            icon={HiOutlineDatabase}
+          >
+            <p>
+              The demo may use browser technologies such as{" "}
+              <strong>localStorage</strong>, <strong>sessionStorage</strong>, or
+              simple cookies to:
+            </p>
+            <ul className="mt-2 list-disc pl-5 space-y-1">
+              <li>Keep items in your cart while you browse.</li>
+              <li>Remember filters or view preferences.</li>
+              <li>Simulate a logged-in session.</li>
+            </ul>
+            <p className="mt-2">
+              This data is stored only in your browser and can be cleared at any
+              time using your browser settings (clear site data / cookies).
+            </p>
+          </Section>
+
+          <Section
+            number="4"
+            title="Analytics & Tracking"
+            icon={HiOutlineGlobeAlt}
+          >
+            <p>
+              The hosted portfolio version of VKart does{" "}
+              <strong>not</strong> include third-party analytics such as Google
+              Analytics, advertising trackers, or remarketing pixels.
+            </p>
+            <p className="mt-2">
+              If you reuse this codebase in your own project and add analytics
+              or marketing tools, you should update this section to reflect your
+              actual data collection and obtain any required consent.
+            </p>
+          </Section>
+
+          <Section
+            number="5"
+            title="Third-party APIs & Demo Data"
+            icon={HiOutlineGlobeAlt}
+          >
+            <p>
+              Product listings and other sample content may be sourced from
+              public demo APIs or static JSON files. These calls generally
+              include only technical request information (such as your IP
+              address, as part of normal web traffic) and do not attach
+              additional identifiers from this demo.
+            </p>
+          </Section>
+
+          <Section
+            number="6"
+            title="Your Choices"
+            icon={HiOutlineAdjustments}
+          >
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                Avoid using real personal or payment details while exploring the
+                demo.
+              </li>
+              <li>
+                Clear your browser’s cookies and storage if you want to remove
+                any locally stored demo data (cart contents, forms, or mock
+                sessions).
+              </li>
+              <li>
+                You may stop using the demo at any time; data may be reset
+                without notice as part of development.
+              </li>
+            </ul>
+          </Section>
+
+          <Section number="7" title="Contact" icon={HiOutlineInformationCircle}>
+            <p>
+              If you have questions about how this portfolio demo works or
+              would like more technical details for evaluation or recruitment,
+              please use the Contact page provided in the site navigation.
+            </p>
+          </Section>
         </div>
       </div>
     </main>

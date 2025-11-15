@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import Slider from "react-slick";
+import axios from "./axiosInstance";
+
 import {
   FaStar,
   FaStarHalfAlt,
@@ -78,38 +80,48 @@ export default function ProductCard() {
 
   const buyBoxRef = useRef(null);
 
-  const fetchProduct = useCallback(
-    async (signal) => {
-      try {
-        setError("");
-        setLoading(true);
+    const fetchProduct = useCallback(
+      async (signal) => {
+        try {
+          setError("");
+          setLoading(true);
 
-        const res = await fetch(`https://dummyjson.com/products/${id}`, { signal });
-        if (!res.ok) throw new Error(`Failed to load product (${res.status})`);
-        const data = await res.json();
-        setProduct(data);
+          // 1. Fetch main product
+          const res = await axios.get(`/api/products/${id}`, { signal });
+          const data = res.data;
 
-        const relRes = await fetch(
-          `https://dummyjson.com/products/category/${encodeURIComponent(data.category)}?limit=8`,
-          { signal }
-        );
-        if (relRes.ok) {
-          const rel = await relRes.json();
-          setRelated((rel.products || []).filter((p) => p.id !== +id));
-        } else {
-          setRelated([]);
+          setProduct(data);
+
+          // 2. Fetch related products by same category
+          let relatedList = [];
+
+          try {
+            const relRes = await axios.get("/api/products", {
+              params: {
+                category: data.category,
+                limit: 8,
+              },
+              signal,
+            });
+
+            relatedList = relRes.data.products || [];
+          } catch {
+            relatedList = [];
+          }
+
+          // 3. Remove the current product from related list
+          setRelated(relatedList.filter((p) => p._id !== data._id));
+        } catch (e) {
+          if (e.name !== "AbortError") {
+            console.error(e);
+            setError("Could not load this product. Please try again.");
+          }
+        } finally {
+          setLoading(false);
         }
-      } catch (e) {
-        if (e.name !== "AbortError") {
-          console.error(e);
-          setError("Could not load this product. Please try again.");
-        }
-      } finally {
-        setLoading(false);
-      }
-    },
-    [id]
-  );
+      },
+      [id]
+    );
 
   useEffect(() => {
     const ac = new AbortController();
@@ -387,9 +399,9 @@ export default function ProductCard() {
             ]}
           >
             {related.map((rp) => (
-              <div key={rp.id} className="px-4">
+              <div key={rp._id} className="px-4">
                 <Link
-                  to={`/product/${rp.id}`}
+                  to={`/product/${rp._id}`}
                   className={`group block rounded-2xl bg-white p-4 shadow-sm hover:shadow-lg transition relative h-full ${
                     (rp.stock || 0) === 0 ? "opacity-60 pointer-events-none" : ""
                   }`}

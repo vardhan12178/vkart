@@ -1,176 +1,95 @@
 import React from "react";
-import {
-  DocumentTextIcon,
-  ExclamationCircleIcon,
-  RefreshIcon,
-  MailIcon,
-  ShieldCheckIcon,
-  ExternalLinkIcon,
-  InformationCircleIcon,
-} from "@heroicons/react/outline";
-
-const Card = ({ title, icon: Icon, children, id }) => (
-  <section
-    id={id}
-    className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/60 via-amber-200/60 to-white shadow"
-  >
-    <div className="rounded-3xl bg-white/90 ring-1 ring-gray-200 p-6">
-      <div className="mb-3 flex items-center gap-3">
-        {Icon ? (
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-700">
-            <Icon className="h-5 w-5" />
-          </span>
-        ) : null}
-        <h2 className="text-lg font-extrabold text-gray-900">{title}</h2>
-      </div>
-      <div className="text-sm leading-relaxed text-gray-700">{children}</div>
-    </div>
-  </section>
-);
 
 export default function Terms() {
   const lastUpdated = new Date().toLocaleDateString();
 
-  const sections = [
-    {
-      id: "introduction",
-      title: "1. Introduction",
-      icon: ShieldCheckIcon,
-      body: (
-        <p>
-          By accessing Vkart (the “Site”), you agree to these sample Terms. The Site is for <em>portfolio demonstration only</em>.
-          Features such as authentication, cart, orders, and support are illustrative.
-        </p>
-      ),
-    },
-    {
-      id: "use-of-service",
-      title: "2. Use of Service",
-      icon: ExclamationCircleIcon,
-      body: (
-        <p>
-          Don’t attempt to disrupt, reverse-engineer, or abuse the Site. Avoid uploading sensitive information; any data you enter
-          is treated as <em>test data</em> and may be reset at any time.
-        </p>
-      ),
-    },
-    {
-      id: "accounts-content",
-      title: "3. Accounts & Content",
-      icon: InformationCircleIcon,
-      body: (
-        <ul className="list-disc pl-5 space-y-1">
-          <li>Accounts may be mocked; sessions can be cleared without notice.</li>
-          <li>Uploaded images/files (if any) should be non-sensitive and license-compliant.</li>
-          <li>Demo content that is offensive or infringes third-party rights may be removed.</li>
-        </ul>
-      ),
-    },
-    {
-      id: "payments-simulated",
-      title: "4. Payments (Simulated)",
-      icon: DocumentTextIcon,
-      body: (
-        <p>
-          Checkout and payments are <strong>not real</strong>. No actual processing occurs and no charges are made. Any order
-          confirmations are placeholders.
-        </p>
-      ),
-    },
-    {
-      id: "third-party-services",
-      title: "5. Third-party Services",
-      icon: ShieldCheckIcon,
-      body: (
-        <p>
-          Sample product data may be fetched from public demo APIs (e.g., DummyJSON). External services retain their own terms and
-          privacy policies. Review those before reuse.
-        </p>
-      ),
-    },
-    {
-      id: "limitation-of-liability",
-      title: "6. Limitation of Liability",
-      icon: ExclamationCircleIcon,
-      body: (
-        <p>
-          The Site is provided “as-is”, without warranties of any kind. To the maximum extent permitted by law, the creator shall
-          not be liable for any damages arising from your use of this demo.
-        </p>
-      ),
-    },
-    {
-      id: "changes",
-      title: "7. Changes",
-      icon: RefreshIcon,
-      body: (
-        <p>
-          We may update these Terms to reflect new demo features. Updates take effect when posted. The current revision date is
-          shown below.
-        </p>
-      ),
-    },
-    {
-      id: "contact",
-      title: "8. Contact",
-      icon: MailIcon,
-      body: (
-        <p>
-          Questions about this demo? Reach out via the Contact page. For third-party licenses, see the License page.
-        </p>
-      ),
-    },
-  ];
-
   return (
-    <main className="relative min-h-[70vh] bg-gradient-to-br from-orange-50 via-white to-amber-50">
-      <div aria-hidden className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200/50 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl" />
+    <main className="min-h-[70vh] bg-white">
+      <div className="container mx-auto px-6 lg:px-10 py-12">
+        
+        {/* Header */}
+        <div className="max-w-4xl">
+          <h1 className="text-4xl font-bold text-gray-900">Terms of Service</h1>
+          <p className="mt-2 text-gray-600 text-base">
+            These Terms govern your use of VKart, a portfolio demonstration project created for 
+            showcasing full-stack e-commerce functionality. No real commercial activity occurs on this site.
+          </p>
+          <p className="mt-1 text-xs text-gray-500">Last updated: {lastUpdated}</p>
+        </div>
 
-      <div className="container mx-auto px-6 lg:px-10 py-10 lg:py-14">
-        <header id="top" className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-orange-700 ring-1 ring-orange-200">
-            <span className="h-2 w-2 rounded-full bg-orange-500" />
-            Sample legal copy for a portfolio
-          </div>
-
-          <div className="mt-3 rounded-3xl bg-white/80 ring-1 ring-gray-200 p-6 md:p-8 backdrop-blur">
-            <h1 className="flex items-center gap-3 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-              <DocumentTextIcon className="h-10 w-10 text-orange-600" />
-              Terms of Service
-            </h1>
-            <p className="mt-3 text-lg text-gray-700">
-              Vkart is a <strong>demonstration</strong> project. These terms are sample content to mimic a real app and are not
-              legally binding.
+        {/* Content */}
+        <section className="mt-10 max-w-4xl space-y-8 text-gray-800 text-[15px] leading-relaxed">
+          
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">1. Overview</h2>
+            <p className="mt-1">
+              VKart (“the Site”) is a non-commercial demo project built solely for learning,
+              portfolio display, and recruitment purposes. All products, orders, accounts, payments,
+              or data interactions shown on this platform are simulated.
             </p>
           </div>
-        </header>
 
-        <div className="mt-8 grid gap-5">
-          {sections.map((s) => (
-            <Card key={s.id} id={s.id} title={s.title} icon={s.icon}>
-              {s.body}
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-3xl bg-white/80 p-4 ring-1 ring-gray-200">
-          <span className="text-xs text-gray-600">Last updated: {lastUpdated}</span>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => window.print()}
-              className="inline-flex items-center gap-1 rounded-xl border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900 hover:bg-gray-50"
-            >
-              Print <ExternalLinkIcon className="h-4 w-4" />
-            </button>
-            <a
-              href="#top"
-              className="inline-flex items-center gap-1 rounded-xl border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900 hover:bg-gray-50"
-            >
-              Back to top
-            </a>
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">2. Use of the Demo</h2>
+            <p className="mt-1">
+              You may explore the Site for educational or demonstrative purposes. However:
+            </p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Do not submit personal, financial, or sensitive information.</li>
+              <li>Any entered data may be cleared at any time without notice.</li>
+              <li>Do not attempt to hack, exploit, or reverse-engineer the system.</li>
+            </ul>
           </div>
-        </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">3. Accounts & Uploaded Content</h2>
+            <p className="mt-1">
+              Account creation, login flows, and uploaded content are purely illustrative.  
+              Uploaded images or text should be non-sensitive and safe for public display.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">4. Payments & Orders (Simulated)</h2>
+            <p className="mt-1">
+              Checkout, orders, and payments on VKart are <strong>not real</strong>.  
+              No transactions are processed, and no charges are made under any circumstances.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">5. Third-Party Services</h2>
+            <p className="mt-1">
+              Some product data may be fetched from public demo APIs. These external services maintain
+              their own Terms and Privacy Policies. VKart does not control their content or guarantees.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">6. Limitation of Liability</h2>
+            <p className="mt-1">
+              The Site is provided “as-is” for demonstration purposes only. The creator is not liable
+              for any loss, damage, or issues arising from your use of this demo platform.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">7. Changes to These Terms</h2>
+            <p className="mt-1">
+              These Terms may be updated to reflect improvements or additions to the demo.  
+              Any changes become effective once published on this page.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">8. Contact Information</h2>
+            <p className="mt-1">
+              For questions about this demo project, please use the Contact page.  
+              For attribution of open-source assets, refer to the License page.
+            </p>
+          </div>
+
+        </section>
       </div>
     </main>
   );

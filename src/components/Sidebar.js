@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import axios from "./axiosInstance";
 import {
   FaFilter,
   FaChevronDown,
@@ -14,27 +15,38 @@ export default function Sidebar({ categoryFilter, onCategoryChange, onSearch }) 
   const [expanded, setExpanded] = useState("categories");
   const [selectedRating, setSelectedRating] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        setLoadingCats(true);
-        const res = await fetch("https://dummyjson.com/products/categories");
-        const data = await res.json();
-        const normalized = Array.isArray(data)
-          ? data.map((c) =>
-              typeof c === "string"
-                ? { slug: c, label: c.charAt(0).toUpperCase() + c.slice(1) }
-                : { slug: c.slug, label: c.name || c.slug }
-            )
-          : [];
-        setCategories(normalized);
-      } catch {
-        setCatError("Failed to load categories");
-      } finally {
-        setLoadingCats(false);
-      }
-    })();
-  }, []);
+useEffect(() => {
+  (async () => {
+    try {
+      setLoadingCats(true);
+
+      // Fetch all products (same as other components)
+      const res = await axios.get("/api/products", {
+        params: { limit: 500 },
+      });
+
+      const products = res.data.products || [];
+
+      // Extract unique categories
+      const unique = Array.from(new Set(products.map((p) => p.category)));
+
+      const normalized = unique.map((c) => ({
+        slug: c.toLowerCase().replace(/\s+/g, "-"),
+        label: c
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (ch) => ch.toUpperCase()),
+      }));
+
+      setCategories(normalized);
+    } catch (e) {
+      console.error(e);
+      setCatError("Failed to load categories");
+    } finally {
+      setLoadingCats(false);
+    }
+  })();
+}, []);
+
 
   const visibleCats = useMemo(
     () => (showAllCats ? categories : categories.slice(0, 16)),

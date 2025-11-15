@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { toggleWishlist } from "../redux/wishlistSlice";
 import { showToast } from "../utils/toast";
+import axios from "./axiosInstance";
 
 import {
   FaCartPlus,
@@ -254,8 +255,9 @@ export default function Products() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch("https://dummyjson.com/products?limit=500");
-        const { products } = await res.json();
+       const res = await axios.get("/api/products", { params: { limit: 500 } });
+
+       const { products } = res.data; 
         setProducts(products || []);
       } catch {
         setProducts([]);
@@ -333,13 +335,14 @@ export default function Products() {
     [dispatch]
   );
 
-  const toggleCompare = useCallback((id) => {
-    setCompare((prev) => {
-      if (prev.includes(id)) return prev.filter((x) => x !== id);
-      if (prev.length >= 4) return prev;
-      return [...prev, id];
-    });
-  }, []);
+  const toggleCompare = useCallback((_id) => {
+  setCompare((prev) => {
+    if (prev.includes(_id)) return prev.filter((x) => x !== _id);
+    if (prev.length >= 4) return prev;
+    return [...prev, _id];
+  });
+}, []);
+
 
   const clearAll = () => {
     setSearchTerm("");
@@ -456,8 +459,8 @@ export default function Products() {
               <>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {visibleItems.map((p) => {
-                    const inWishlist = isInWishlist(p.id);
-                    const inCompare = compare.includes(p.id);
+                    const inWishlist = isInWishlist(p._id);
+                    const inCompare = compare.includes(p._id);
                     const priceINR = p.price * 83;
                     const mrpINR = p.discountPercentage
                       ? priceINR / (1 - p.discountPercentage / 100)
@@ -465,7 +468,7 @@ export default function Products() {
 
                     return (
                       <div
-                        key={p.id}
+                        key={p._id}
                         className="group relative flex flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white/90 p-3 backdrop-blur-sm shadow-[0_4px_14px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_26px_rgba(0,0,0,0.08)] hover:ring-1 hover:ring-orange-100 animate-slideUp"
                       >
                         {/* Discount badge */}
@@ -488,17 +491,18 @@ export default function Products() {
 
                         {/* Compare checkbox */}
                         <label className="absolute left-3 top-10 z-10 inline-flex items-center gap-2 rounded-full bg-white/85 px-2 py-1 text-xs text-gray-700 backdrop-blur-sm">
-                          <input
-                            type="checkbox"
-                            className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
-                            checked={inCompare}
-                            onChange={() => toggleCompare(p.id)}
-                          />
-                          Compare
-                        </label>
+                        <input
+                          type="checkbox"
+                          className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                          checked={compare.includes(p._id)}
+                          onChange={() => toggleCompare(p._id)}
+                        />
+                        Compare
+                      </label>
+
 
                         {/* Image */}
-                        <Link to={`/product/${p.id}`} className="relative block overflow-hidden rounded-2xl">
+                        <Link to={`/product/${p._id}`} className="relative block overflow-hidden rounded-2xl">
                           <img
                             src={p.thumbnail}
                             alt={p.title}
@@ -512,7 +516,7 @@ export default function Products() {
                         <div className="mt-3 flex flex-1 flex-col gap-2 px-1">
                           <span className="text-[11px] uppercase tracking-wide text-gray-400">{p.category}</span>
                           <Link
-                            to={`/product/${p.id}`}
+                            to={`/product/${p._id}`}
                             className="line-clamp-2 text-[15px] font-semibold text-gray-900 hover:text-orange-700"
                           >
                             {p.title}

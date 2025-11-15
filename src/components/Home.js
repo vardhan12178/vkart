@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import axios from "./axiosInstance";
+
 import {
   FaStar,
   FaRegStar,
@@ -54,7 +55,7 @@ function ProductCard({ p }) {
   const [src, setSrc] = useState(img);
   return (
     <Link
-      to={`/product/${p.id}`}
+      to={`/product/${p._id}`}
       className="group relative block rounded-3xl bg-white p-4 ring-1 ring-gray-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
       itemScope
       itemType="https://schema.org/Product"
@@ -156,6 +157,100 @@ function TestimonialCard({ t }) {
   );
 }
 
+function NewsletterBox() {
+  const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const subscribe = (e) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      setSuccess(true);
+      setEmail("");
+    }, 1000);
+  };
+
+  return (
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-white/70 backdrop-blur-md shadow-lg ring-1 ring-gray-200 p-8">
+
+        {/* SUCCESS STATE */}
+        {success ? (
+          <div className="flex flex-col items-center text-center py-10 animate-[fadeIn_.35s_ease]">
+            <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-tr from-orange-600 to-amber-400 text-white shadow ring-4 ring-orange-100">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+              You're Subscribed!
+            </h3>
+
+            <p className="mt-2 text-gray-600 max-w-md">
+              Thank you for joining VKart. You'll now receive updates about new drops, deals, and exclusive offers.
+            </p>
+
+            <button
+              onClick={() => setSuccess(false)}
+              className="mt-6 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-500 px-6 py-3 text-white font-semibold shadow hover:opacity-90 transition"
+            >
+              Back
+            </button>
+          </div>
+        ) : (
+          /* DEFAULT NEWSLETTER FORM */
+          <div className="text-center">
+            <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-tr from-orange-600 to-amber-400 text-white shadow ring-4 ring-orange-100">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m0 0l4-4m-4 4l4 4" />
+              </svg>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">
+              Join Our Newsletter
+            </h3>
+
+            <p className="mt-2 text-gray-600">
+              Get the latest drops, deals, and insider tips — straight to your inbox.
+            </p>
+
+            <form onSubmit={subscribe} className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <input
+                type="email"
+                required
+                placeholder="you@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="rounded-2xl bg-gradient-to-r from-orange-600 to-amber-500 px-6 py-3 text-white font-semibold shadow hover:opacity-90 transition disabled:opacity-60"
+              >
+                {loading ? "Subscribing…" : "Subscribe"}
+              </button>
+            </form>
+
+            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-gray-400">
+              <input type="checkbox" defaultChecked className="h-3.5 w-3.5 rounded border-gray-300" />
+              <span>I agree to receive emails and accept the Privacy Policy.</span>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
 export default function Home() {
   const [featured, setFeatured] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
@@ -181,38 +276,66 @@ const [hide2faNudge, setHide2faNudge] = useState(false);
   })();
 }, []);
 
-  useEffect(() => {
-    const ac = new AbortController();
-    (async () => {
-      try {
-        setLoading(true);
-        const catFetches = ["beauty", "fragrances", "smartphones", "laptops"].map((c) =>
-          fetch(`https://dummyjson.com/products/category/${c}?limit=5`, { signal: ac.signal }).then(
-            (r) => r.json()
-          )
-        );
-        const latest = fetch(
-          "https://dummyjson.com/products?limit=12&select=id,title,price,rating,thumbnail,images,brand,category",
-          { signal: ac.signal }
-        ).then((r) => r.json());
-        const results = await Promise.allSettled([...catFetches, latest]);
-        const [c1, c2, c3, c4, latestRes] = results.map((res) =>
-          res.status === "fulfilled" ? res.value : { products: [] }
-        );
-        const f = [
-          ...(c1.products || []),
-          ...(c2.products || []),
-          ...(c3.products || []),
-          ...(c4.products || []),
-        ].slice(0, 16);
-        setFeatured(f);
-        setNewArrivals((latestRes.products || []).sort((a, b) => b.id - a.id).slice(0, 8));
-      } finally {
-        setLoading(false);
-      }
-    })();
-    return () => ac.abort();
-  }, []);
+ useEffect(() => {
+  const ac = new AbortController();
+
+  (async () => {
+    try {
+      setLoading(true);
+
+      // Fetch categories in parallel from VKart API
+      const categoryPromises = ["beauty", "fragrances", "smartphones", "laptops"].map((cat) =>
+        axios
+          .get("/api/products", {
+            params: { category: cat, limit: 5 },
+            signal: ac.signal,
+          })
+          .then((res) => res.data)
+      );
+
+      // Fetch latest products (sorted by createdAt DESC)
+      const latestPromise = axios
+        .get("/api/products", {
+          params: {
+            limit: 12,
+            sort: "-createdAt",
+          },
+          signal: ac.signal,
+        })
+        .then((res) => res.data);
+
+      const results = await Promise.allSettled([...categoryPromises, latestPromise]);
+
+      const [c1, c2, c3, c4, latestRes] = results.map((r) =>
+        r.status === "fulfilled" ? r.value : { products: [] }
+      );
+
+      // Featured products (first 16 from 4 categories)
+      const featuredList = [
+        ...(c1.products || []),
+        ...(c2.products || []),
+        ...(c3.products || []),
+        ...(c4.products || []),
+      ].slice(0, 16);
+
+      setFeatured(featuredList);
+
+      // Latest products (first 8 from latest fetch)
+      const latestList = (latestRes.products || []).slice(0, 8);
+
+      setNewArrivals(latestList);
+    } catch (err) {
+      console.error(err);
+      setFeatured([]);
+      setNewArrivals([]);
+    } finally {
+      setLoading(false);
+    }
+  })();
+
+  return () => ac.abort();
+}, []);
+
 
   const brands = useMemo(() => {
     const setB = new Set((featured || []).map((p) => p.brand).filter(Boolean));
@@ -422,10 +545,11 @@ const dismiss2fa = async () => {
             <div className="relative">
               <Slider {...productSlider} className="premium-products">
                 {featured.map((p) => (
-                  <div key={p.id} className="px-2">
-                    <ProductCard p={p} />
-                  </div>
-                ))}
+                <div key={p._id} className="px-2">
+                  <ProductCard p={p} />
+                </div>
+              ))}
+
               </Slider>
             </div>
           )}
@@ -521,8 +645,9 @@ const dismiss2fa = async () => {
           ) : (
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {newArrivals.map((p) => (
-                <ProductCard p={p} key={p.id} />
-              ))}
+              <ProductCard p={p} key={p._id} />
+            ))}
+
             </div>
           )}
         </div>
@@ -619,42 +744,12 @@ const dismiss2fa = async () => {
       </section>
 
       <section className="relative bg-gray-50 py-16">
-        <div className="pointer-events-none absolute -top-24 left-10 h-52 w-52 rounded-full bg-orange-200/60 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-28 right-10 h-60 w-60 rounded-full bg-orange-100/80 blur-3xl" />
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-white/70 backdrop-blur-md shadow-lg ring-1 ring-gray-200">
-            <div className="p-8 text-center">
-              <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-tr from-orange-600 to-amber-400 text-white shadow ring-4 ring-orange-100">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12H8m0 0l4-4m-4 4l4 4" />
-                </svg>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">Join Our Newsletter</h3>
-              <p className="mt-2 text-gray-600">Get the latest drops, deals, and insider tips — straight to your inbox.</p>
-              <form onSubmit={(e) => e.preventDefault()} className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <label className="sr-only" htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  placeholder="you@email.com"
-                  className="flex-1 rounded-2xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                />
-                <button
-                  type="submit"
-                  className="rounded-2xl bg-gradient-to-r from-orange-600 to-amber-500 px-6 py-3 text-white font-semibold shadow hover:opacity-90 transition"
-                >
-                  Subscribe
-                </button>
-              </form>
-              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-gray-400">
-                <input id="consent" type="checkbox" className="h-3.5 w-3.5 rounded border-gray-300" defaultChecked />
-                <label htmlFor="consent">I agree to receive emails and accept the Privacy Policy.</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="pointer-events-none absolute -top-24 left-10 h-52 w-52 rounded-full bg-orange-200/60 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 right-10 h-60 w-60 rounded-full bg-orange-100/80 blur-3xl" />
+
+      <NewsletterBox />
+    </section>
+
     </>
   );
 }

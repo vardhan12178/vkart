@@ -10,7 +10,13 @@ import axios from "./components/axiosInstance";
 import BlogIndex from "./components/blog/BlogIndex";
 import OrderStages from "./components/OrderStages";
 import AdminLogin from "./components/AdminLogin";
+import AdminLayout from "./components/AdminLayout";
+import AdminSettings from "./components/AdminSettings";
+import AdminUsers from "./components/AdminUsers";
 import AdminDashboard from "./components/AdminDashboard";
+import AdminProducts from "./components/AdminProducts";
+import AdminOrders from "./components/AdminOrders";
+import AdminOrderDetails from "./components/AdminOrderDetails";
 import PostPage from "./components/blog/PostPage";
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
@@ -20,8 +26,21 @@ const App = () => {
   const [authReady, setAuthReady] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
+  const isAdminRoute = window.location.pathname.startsWith("/admin");
+
+  // Restore admin session on refresh
+  useEffect(() => {
+    const token = localStorage.getItem("admin_token");
+    if (token) setIsAdmin(true);
+  }, []);
 
   useEffect(() => {
+    // Skip profile check on admin routes
+    if (isAdminRoute) {
+      setAuthReady(true);
+      return;
+    }
+
     let mounted = true;
     (async () => {
       try {
@@ -33,8 +52,9 @@ const App = () => {
         if (mounted) setAuthReady(true);
       }
     })();
+
     return () => { mounted = false; };
-  }, []);
+  }, [isAdminRoute]);
 
   if (!authReady) return null;
 
@@ -61,18 +81,27 @@ const App = () => {
       </Helmet>
       
       <div id="root">
+       {!isAdminRoute && (
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      )}
         <main>
           <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
           <Routes>
             
             <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
             <Route path="/admin/login" element={isAdmin ? <Navigate to="/admin/dashboard" /> : <AdminLogin setIsAdmin={setIsAdmin} />} />
-            <Route path="/admin/dashboard" element={isAdmin ? <AdminDashboard /> : <Navigate to="/admin/login" />} />
+            <Route path="/admin" element={isAdmin ? <AdminLayout /> : <Navigate to="/admin/login" />}>
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="products" element={<AdminProducts />} />
+              <Route path="orders" element={<AdminOrders />} />
+              <Route path="orders/:id" element={<AdminOrderDetails />} />
+              <Route path="users" element={<AdminUsers />} />
+              <Route path="settings" element={<AdminSettings />} />
+            </Route>
+
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/compare" element={<Compare />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:id" element={<PostPage />} />     
             <Route path="/careers" element={<Careers />} />
@@ -91,7 +120,7 @@ const App = () => {
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
-        {isLoggedIn && <Footer />}
+       {isLoggedIn && !isAdminRoute && <Footer />}
       </div>
     </Provider>
   );

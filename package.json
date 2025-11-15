@@ -40,6 +40,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.3",
     "react-spinners": "^0.14.1",
+    "recharts": "^3.4.1",
     "slick-carousel": "^1.8.1",
     "util": "^0.12.5",
     "uuid": "^10.0.0",
