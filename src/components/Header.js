@@ -56,15 +56,13 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   } catch (err) {
     console.error("Logout failed:", err);
   } finally {
-    // Remove all auth tokens from localStorage
     localStorage.removeItem("auth_token");
     localStorage.removeItem("admin_token");
-
-    // Reset auth state and redirect to login
     setIsLoggedIn(false);
-    navigate("/login");
+    navigate("/", { replace: true }); // send to Home
   }
 };
+
 
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/";
@@ -72,7 +70,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   };
 
   const authPaths = ["/login", "/register", "/forgot-password", "/reset-password"];
-  if (!isLoggedIn || authPaths.includes(location.pathname)) return null;
+if (authPaths.includes(location.pathname)) return null;
 
   const nav = [
     { label: "Home", to: "/", icon: HomeIcon },

@@ -258,8 +258,8 @@ export default function Home() {
   const [dealEndsAt] = useState(() => Date.now() + 1000 * 60 * 60 * 18);
   const [nowTick, setNowTick] = useState(Date.now());
   // 2FA nudge
-const [profile, setProfile] = useState(null);
-const [hide2faNudge, setHide2faNudge] = useState(false);
+  const [profile, setProfile] = useState(null);
+  const [hide2faNudge, setHide2faNudge] = useState(false);
 
 
   useEffect(() => {
@@ -267,14 +267,26 @@ const [hide2faNudge, setHide2faNudge] = useState(false);
     return () => clearInterval(t);
   }, []);
 
-  useEffect(() => {
-  (async () => {
-    try {
-      const res = await axios.get("/api/profile", { withCredentials: true });
-      setProfile(res.data);
-    } catch (e) {}
-  })();
-}, []);
+   useEffect(() => {
+    // Only try to load profile if we have a user token
+    const token = localStorage.getItem("auth_token");
+    if (!token) return; // guest user → skip call, avoid 401 redirect
+
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const res = await axios.get("/api/profile", { withCredentials: true });
+        if (!cancelled) setProfile(res.data);
+      } catch (e) {
+        if (!cancelled) setProfile(null);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
  useEffect(() => {
   const ac = new AbortController();

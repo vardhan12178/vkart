@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import axios from "./axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
-import AvatarEditor from "react-avatar-editor";
 import imageCompression from "browser-image-compression";
+import ProfilePreview from "./ProfilePreview";
+
 import {
   FaCamera,
   FaPen,
   FaEnvelope,
   FaInfoCircle,
   FaSignOutAlt,
-  FaCloudUploadAlt,
   FaUser,
   FaCheckCircle,
   FaTimesCircle,
@@ -17,7 +17,6 @@ import {
   FaShieldAlt,
   FaLock,
   FaQrcode,
-  FaKey,
 } from "react-icons/fa";
 
 const OrderCard = lazy(() => import("./OrderCard"));
@@ -99,40 +98,51 @@ export default function Profile({ setIsLoggedIn }) {
     toastTimer.current = setTimeout(() => setToast({ kind, message: "" }), ms);
   };
 
-  useEffect(() => {
-    const load = async () => {
-      try {
-        setLoading(true);
-        const [p, o] = await Promise.all([
-          axios.get("/api/profile"),
-          axios.get("/api/profile/orders"),
-        ]);
+useEffect(() => {
+  const token = localStorage.getItem("auth_token");
 
-        // ✅ force booleans so UI doesn't flicker
-        const profile = {
-          ...p.data,
-          twoFactorEnabled: !!p.data.twoFactorEnabled,
-          suppress2faPrompt: !!p.data.suppress2faPrompt,
-        };
-
-        setUser(profile);
-        setOrders((o.data || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
-      } catch (e) {
-        if (e?.response?.status === 401) {
-          setIsLoggedIn?.(false);
-          navigate("/login");
-          return;
-        }
-        setError("Failed to fetch profile or orders");
-      } finally {
-        setLoading(false);
-      }
-    };
-    load();
+  // Not logged in → don't call profile APIs, just show ProfilePreview
+  if (!token) {
+    setLoading(false);
+    setUser(null);
     return () => {
       if (toastTimer.current) clearTimeout(toastTimer.current);
     };
-  }, [navigate, setIsLoggedIn]);
+  }
+
+  const load = async () => {
+    try {
+      setLoading(true);
+      const [p, o] = await Promise.all([
+        axios.get("/api/profile"),
+        axios.get("/api/profile/orders"),
+      ]);
+
+      const profile = {
+        ...p.data,
+        twoFactorEnabled: !!p.data.twoFactorEnabled,
+        suppress2faPrompt: !!p.data.suppress2faPrompt,
+      };
+
+      setUser(profile);
+      setOrders(
+        (o.data || []).sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        )
+      );
+    } catch (e) {
+      setError("Failed to fetch profile or orders");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  load();
+
+  return () => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+  };
+}, [navigate, setIsLoggedIn]);
 
   const handleLogout = async () => {
   try {
@@ -175,7 +185,6 @@ export default function Profile({ setIsLoggedIn }) {
       formData.append("profileImage", compressed, `profile-${Date.now()}.jpg`);
       const res = await axios.post("/api/profile/upload", formData);
 
-      // ✅ merge so we don't lose twoFactorEnabled etc.
       setUser((prev) => ({ ...(prev || {}), ...res.data }));
 
       setSelectedFile(null);
@@ -185,7 +194,6 @@ export default function Profile({ setIsLoggedIn }) {
     } catch (e) {
       if (e?.response?.status === 401) {
         setIsLoggedIn?.(false);
-        navigate("/login");
         return;
       }
       const msg = e?.response?.data?.message || "Failed to upload profile image.";
@@ -247,6 +255,7 @@ export default function Profile({ setIsLoggedIn }) {
 
   if (loading) return <Skeleton />;
   if (error) return <p className="text-center text-base sm:text-lg text-red-600 mt-8 sm:mt-10">{error}</p>;
+  if (!user) return <ProfilePreview />;
 
   const ordersCount = orders.length;
 

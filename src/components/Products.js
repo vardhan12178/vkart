@@ -203,13 +203,20 @@ const QuickView = ({ product, onClose, onAdd }) => {
             <p className="mt-4 line-clamp-4 text-sm text-gray-700">{product.description}</p>
 
             <div className="mt-auto pt-6">
-              <button
-                onClick={() => onAdd(product)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 px-4 py-2 font-bold text-white shadow-[0_4px_14px_rgba(249,115,22,0.28)] transition-all duration-200 hover:brightness-110 hover:-translate-y-[1px]"
-              >
-                <FaCartPlus /> Add to Cart
-              </button>
-            </div>
+            <button
+              onClick={() => onAdd(product)}
+              className="inline-flex w-full items-center justify-center gap-2
+                        rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white
+                        shadow-md shadow-orange-500/20
+                        transition-all duration-150
+                        hover:bg-orange-600 hover:-translate-y-0.5
+                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/80"
+            >
+              <FaCartPlus className="text-base" />
+              <span>Add to Cart</span>
+            </button>
+          </div>
+
           </div>
         </div>
       </div>
@@ -311,21 +318,31 @@ export default function Products() {
   useEffect(() => setVisible(PAGE_SIZE), [searchTerm, categoryFilter, priceRange, sortBy]);
 
   /* Robust wishlist check for either IDs or objects */
+   /* Robust wishlist check for either IDs or objects */
   const isInWishlist = useCallback(
     (id) => {
-      if (!Array.isArray(wishlist)) return false;
-      if (wishlist.length === 0) return false;
-      const first = wishlist[0];
-      return typeof first === "object" ? wishlist.some((x) => x?.id === id) : wishlist.includes(id);
+      if (!Array.isArray(wishlist) || !wishlist.length) return false;
+
+      return wishlist.some((item) => {
+        if (typeof item === "object" && item !== null) {
+          return item._id === id || item.id === id;
+        }
+        // if wishlist stores plain IDs (strings)
+        return item === id;
+      });
     },
     [wishlist]
   );
 
   const toggleWishlistItem = (product) => {
-    const exists = isInWishlist(product.id);
+    const exists = isInWishlist(product._id);      
     dispatch(toggleWishlist(product));
-    showToast(exists ? "Removed from Wishlist 💔" : "Added to Wishlist ❤️", exists ? "error" : "success");
+    showToast(
+      exists ? "Removed from Wishlist 💔" : "Added to Wishlist ❤️",
+      exists ? "error" : "success"
+    );
   };
+
 
   const handleAddToCart = useCallback(
     (product) => {
@@ -359,7 +376,7 @@ export default function Products() {
       <AnimStyles />
 
       {/* Top bar */}
-      <div className="sticky top-0 z-30 backdrop-blur-md bg-white/70 border-b border-gray-100">
+      <div className="sticky top-0 z-30 backdrop-blur-md bg-white/80 border-b border-gray-100">
         <div className="container mx-auto px-4 py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex min-w-0 items-baseline gap-3">
             <h1 className="truncate text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900">
@@ -374,7 +391,7 @@ export default function Products() {
             {/* Mobile filter toggle */}
             <button
               onClick={() => setShowFilters(true)}
-              className="inline-flex sm:hidden items-center gap-2 rounded-xl bg-white/80 backdrop-blur px-4 py-2 text-gray-700 ring-1 ring-gray-200 hover:ring-orange-200"
+              className="inline-flex sm:hidden items-center gap-2 rounded-xl bg-white/90 backdrop-blur px-4 py-2 text-gray-700 ring-1 ring-gray-200 hover:ring-orange-200"
             >
               <FaFilter /> Filters
             </button>
@@ -404,7 +421,7 @@ export default function Products() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search 1000+ curated products"
-                className="w-full flex-1 min-w-0 rounded-xl border border-gray-200 bg-white/90 px-10 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                className="w-full flex-1 min-w-0 rounded-xl border border-gray-200 bg-white/95 px-10 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
               />
             </div>
           </div>
@@ -420,7 +437,7 @@ export default function Products() {
           {/* Desktop Sidebar */}
           <div className="hidden lg:block lg:w-72">
             <div className="sticky top-24">
-              <div className="rounded-2xl border border-gray-100 bg-white/70 backdrop-blur p-4 shadow-sm">
+              <div className="rounded-2xl border border-gray-100 bg-white/80 backdrop-blur p-4 shadow-sm">
                 <Sidebar
                   categoryFilter={categoryFilter}
                   onCategoryChange={setCategoryFilter}
@@ -445,12 +462,12 @@ export default function Products() {
                 ))}
               </div>
             ) : filteredProducts.length === 0 ? (
-              <div className="mx-auto mt-16 w-full max-w-md rounded-3xl border border-dashed border-gray-300 bg-white/80 backdrop-blur p-10 text-center animate-fadeIn">
+              <div className="mx-auto mt-16 w-full max-w-md rounded-3xl border border-dashed border-gray-300 bg-white/85 backdrop-blur p-10 text-center animate-fadeIn">
                 <p className="text-lg font-semibold text-gray-800">No products found</p>
                 <p className="mt-1 text-sm text-gray-500">Try adjusting your search or filters.</p>
                 <button
                   onClick={clearAll}
-                  className="mt-4 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 px-4 py-2 text-white shadow-[0_4px_14px_rgba(249,115,22,0.25)] hover:brightness-110"
+                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/80"
                 >
                   Reset filters
                 </button>
@@ -469,7 +486,7 @@ export default function Products() {
                     return (
                       <div
                         key={p._id}
-                        className="group relative flex flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white/90 p-3 backdrop-blur-sm shadow-[0_4px_14px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_26px_rgba(0,0,0,0.08)] hover:ring-1 hover:ring-orange-100 animate-slideUp"
+                        className="group relative flex flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white/95 p-3 backdrop-blur-sm shadow-[0_4px_14px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_26px_rgba(0,0,0,0.08)] hover:ring-1 hover:ring-orange-100 animate-slideUp"
                       >
                         {/* Discount badge */}
                         {p.discountPercentage && (
@@ -491,15 +508,14 @@ export default function Products() {
 
                         {/* Compare checkbox */}
                         <label className="absolute left-3 top-10 z-10 inline-flex items-center gap-2 rounded-full bg-white/85 px-2 py-1 text-xs text-gray-700 backdrop-blur-sm">
-                        <input
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
-                          checked={compare.includes(p._id)}
-                          onChange={() => toggleCompare(p._id)}
-                        />
-                        Compare
-                      </label>
-
+                          <input
+                            type="checkbox"
+                            className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                            checked={inCompare}
+                            onChange={() => toggleCompare(p._id)}
+                          />
+                          Compare
+                        </label>
 
                         {/* Image */}
                         <Link to={`/product/${p._id}`} className="relative block overflow-hidden rounded-2xl">
@@ -514,7 +530,9 @@ export default function Products() {
 
                         {/* Meta */}
                         <div className="mt-3 flex flex-1 flex-col gap-2 px-1">
-                          <span className="text-[11px] uppercase tracking-wide text-gray-400">{p.category}</span>
+                          <span className="text-[11px] uppercase tracking-wide text-gray-400">
+                            {p.category}
+                          </span>
                           <Link
                             to={`/product/${p._id}`}
                             className="line-clamp-2 text-[15px] font-semibold text-gray-900 hover:text-orange-700"
@@ -524,29 +542,42 @@ export default function Products() {
 
                           <div className="mt-1 border-t border-gray-100 pt-2 flex items-center justify-between">
                             <div className="flex items-baseline gap-2">
-                              <span className="text-xl font-extrabold text-orange-600">{INR(priceINR)}</span>
-                              <span className="text-xs text-gray-400 line-through">{INR(mrpINR)}</span>
+                              <span className="text-xl font-extrabold text-orange-600">
+                                {INR(priceINR)}
+                              </span>
+                              <span className="text-xs text-gray-400 line-through">
+                                {INR(mrpINR)}
+                              </span>
                             </div>
                             <Stars value={p.rating} />
                           </div>
                         </div>
 
                         {/* Actions */}
-                        <div className="mt-3 flex items-center gap-2">
-                          <button
-                            onClick={() => handleAddToCart(p)}
-                            className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 px-4 py-2 font-bold text-white shadow-[0_4px_14px_rgba(249,115,22,0.25)] transition-all duration-200 hover:brightness-110 hover:-translate-y-[1px]"
-                          >
-                            <FaCartPlus /> Add to Cart
-                          </button>
-                          <button
-                            onClick={() => setQuickView(p)}
-                            className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-sm text-gray-700 transition-all duration-150 hover:border-orange-300 hover:text-orange-700 hover:shadow-sm"
-                            title="Quick View"
-                          >
-                            <FaExpand />
-                          </button>
-                        </div>
+                        <div className="mt-3 flex items-center gap-2 px-1 pb-1">
+                      <button
+                        onClick={() => handleAddToCart(p)}
+                        className="inline-flex flex-1 items-center justify-center gap-2
+                                  rounded-xl bg-orange-500 px-4 py-2.5 text-sm font-semibold text-white
+                                  shadow-sm transition-all duration-150
+                                  hover:bg-orange-600 hover:-translate-y-0.5
+                                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/80"
+                      >
+                        <FaCartPlus className="text-base" />
+                        <span>Add to Cart</span>
+                      </button>
+
+                      <button
+                        onClick={() => setQuickView(p)}
+                        className="inline-flex items-center justify-center rounded-xl border border-gray-200
+                                  px-3 py-2 text-sm text-gray-700 transition-all duration-150
+                                  hover:border-orange-300 hover:text-orange-700 hover:shadow-sm"
+                        title="Quick View"
+                      >
+                        <FaExpand />
+                      </button>
+                    </div>
+
                       </div>
                     );
                   })}
@@ -556,7 +587,7 @@ export default function Products() {
                   <div className="mt-10 flex justify-center">
                     <button
                       onClick={() => setVisible((v) => v + PAGE_SIZE)}
-                      className="rounded-full border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:border-orange-300 hover:text-orange-600 transition-all bg-white/80 backdrop-blur"
+                      className="rounded-full border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:border-orange-300 hover:text-orange-600 transition-all bg-white/90 backdrop-blur"
                     >
                       Load more
                     </button>
@@ -570,10 +601,11 @@ export default function Products() {
 
       {/* Floating AI Assistant Button */}
       <button
-        className="fixed bottom-6 right-6 flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 px-5 py-3 text-white font-semibold shadow-[0_6px_20px_rgba(249,115,22,0.35)] backdrop-blur-lg hover:brightness-110 hover:scale-105 transition-all duration-300 animate-bounce-slow z-50"
-        onClick={() => alert('AI Assistant feature coming soon!')}
+        className="fixed bottom-6 right-6 flex items-center gap-2 rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 backdrop-blur-md hover:bg-orange-600 hover:shadow-xl transition-all duration-200 z-50"
+        onClick={() => alert("AI Assistant feature coming soon!")}
       >
-        <FaMagic className="text-lg" /> Ask VKart AI
+        <FaMagic className="text-lg" />
+        <span>Ask VKart AI</span>
       </button>
 
       {/* Quick View */}
@@ -590,7 +622,7 @@ export default function Products() {
 
       {/* Compare bar (frosted) */}
       {compare.length > 0 && (
-        <div className="fixed inset-x-0 bottom-4 z-40 mx-auto w-[min(1100px,92%)] rounded-2xl bg-white/70 p-3 shadow-2xl ring-1 ring-gray-200 backdrop-blur animate-slideUp">
+        <div className="fixed inset-x-0 bottom-4 z-40 mx-auto w-[min(1100px,92%)] rounded-2xl bg-white/80 p-3 shadow-2xl ring-1 ring-gray-200 backdrop-blur animate-slideUp">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <span className="rounded-full bg-orange-100 px-2 py-[2px] text-sm font-semibold text-orange-700">
@@ -608,12 +640,15 @@ export default function Products() {
                   <FaCheck className="text-green-600" /> #{id}
                 </button>
               ))}
-              <button onClick={() => setCompare([])} className="rounded-full px-3 py-1 text-sm text-gray-500 underline">
+              <button
+                onClick={() => setCompare([])}
+                className="rounded-full px-3 py-1 text-sm text-gray-500 underline"
+              >
                 Clear
               </button>
               <button
                 onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
-                className="rounded-full bg-gradient-to-r from-orange-500 to-amber-400 px-4 py-2 text-sm font-bold text-white shadow-[0_4px_14px_rgba(249,115,22,0.25)] hover:brightness-110 hover:-translate-y-[1px] transition-all"
+                className="rounded-xl bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/80"
               >
                 Compare
               </button>
@@ -635,7 +670,7 @@ export default function Products() {
           role="button"
           tabIndex={-1}
         />
-        <div className="relative h-full bg-white/90 backdrop-blur-md border-r border-gray-100 p-5 shadow-2xl">
+        <div className="relative h-full bg-white/95 backdrop-blur-md border-r border-gray-100 p-5 shadow-2xl">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-base font-semibold text-gray-900">Filters</h3>
             <button
@@ -666,4 +701,5 @@ export default function Products() {
       </div>
     </div>
   );
+
 }

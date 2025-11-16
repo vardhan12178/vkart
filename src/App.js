@@ -1,23 +1,6 @@
 import { React, useEffect, useState, Provider, Navigate, Route, Routes, store, Compare, Login, Register, Home, About, Contact, Header, Footer, Error, Products, ProductCard, Cart, Profile } from './imports';
-import Blog from "./components/Blog";
-import Careers from "./components/Careers";
-import Terms from "./components/Terms";
-import Privacy from "./components/Privacy";
-import License from "./components/License";
-import ForgotPassword from "./components/ForgotPassword";
-import ResetPassword from "./components/ResetPassword";
-import axios from "./components/axiosInstance";
-import BlogIndex from "./components/blog/BlogIndex";
-import OrderStages from "./components/OrderStages";
-import AdminLogin from "./components/AdminLogin";
-import AdminLayout from "./components/AdminLayout";
-import AdminSettings from "./components/AdminSettings";
-import AdminUsers from "./components/AdminUsers";
-import AdminDashboard from "./components/AdminDashboard";
-import AdminProducts from "./components/AdminProducts";
-import AdminOrders from "./components/AdminOrders";
-import AdminOrderDetails from "./components/AdminOrderDetails";
-import PostPage from "./components/blog/PostPage";
+import { Blog, Careers, Terms, Privacy, License, ForgotPassword, ResetPassword, axios, BlogIndex, OrderStages, AdminLogin, AdminLayout, AdminSettings, AdminUsers, AdminDashboard, AdminProducts, AdminOrders, AdminOrderDetails, PostPage } from "./imports";
+
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 
@@ -34,27 +17,17 @@ const App = () => {
     if (token) setIsAdmin(true);
   }, []);
 
-  useEffect(() => {
-    // Skip profile check on admin routes
-    if (isAdminRoute) {
-      setAuthReady(true);
-      return;
-    }
+useEffect(() => {
+  // For admin routes, skip everything and mark ready
+  if (isAdminRoute) {
+    setAuthReady(true);
+    return;
+  }
 
-    let mounted = true;
-    (async () => {
-      try {
-        await axios.get("/api/profile");
-        if (mounted) setIsLoggedIn(true);
-      } catch {
-        if (mounted) setIsLoggedIn(false);
-      } finally {
-        if (mounted) setAuthReady(true);
-      }
-    })();
+  // Storefront is fully public → no profile check here
+  setAuthReady(true);
+}, [isAdminRoute]);
 
-    return () => { mounted = false; };
-  }, [isAdminRoute]);
 
   if (!authReady) return null;
 
@@ -81,15 +54,42 @@ const App = () => {
       </Helmet>
       
       <div id="root">
-       {!isAdminRoute && (
+       {/* ✅ Header behaves like Footer: always on non-admin routes */}
+      {!isAdminRoute && (
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       )}
         <main>
           <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
           <Routes>
-            
-            <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
+            {/* Public Storefront Pages */}
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductCard />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/compare" element={<Compare />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:id" element={<PostPage />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/license" element={<License />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+
+            {/* User Auth Pages */}
+            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/register" element={<Register />} />
+
+            {/* Protected by Component-Level Guard (CartPreview / ProfilePreview) */}
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/orderstages" element={<OrderStages />} />
+
+            {/* Admin Login */}
             <Route path="/admin/login" element={isAdmin ? <Navigate to="/admin/dashboard" /> : <AdminLogin setIsAdmin={setIsAdmin} />} />
+
+            {/* Admin Protected Routes */}
             <Route path="/admin" element={isAdmin ? <AdminLayout /> : <Navigate to="/admin/login" />}>
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="products" element={<AdminProducts />} />
@@ -99,28 +99,13 @@ const App = () => {
               <Route path="settings" element={<AdminSettings />} />
             </Route>
 
-            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/compare" element={<Compare />} />
-            <Route path="/blog" element={<BlogIndex />} />
-            <Route path="/blog/:id" element={<PostPage />} />     
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/orderstages" element={<OrderStages />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/license" element={<License />} />
-            <Route path="/products" element={isLoggedIn ? <Products /> : <Navigate to="/login" />} />
-            <Route path="/product/:id" element={isLoggedIn ? <ProductCard /> : <Navigate to="/login" />} />
-            <Route path="/about" element={isLoggedIn ? <About /> : <Navigate to="/login" />} />
-            <Route path="/cart" element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />
-            <Route path="/profile" element={isLoggedIn ? <Profile setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/login" />} />
-            <Route path="/contact" element={isLoggedIn ? <Contact /> : <Navigate to="/login" />} />
+            {/* Error / 404 */}
             <Route path="*" element={<Error />} />
+
           </Routes>
+
         </main>
-       {isLoggedIn && !isAdminRoute && <Footer />}
+      {!isAdminRoute && <Footer />}
       </div>
     </Provider>
   );

@@ -1,6 +1,7 @@
 // src/pages/Cart.jsx
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import CartPreview from "./CartPreview";
 import {
   incrementQuantity,
   decrementQuantity,
@@ -43,7 +44,6 @@ const isValidObjectId = (v) => typeof v === "string" && /^[a-fA-F0-9]{24}$/.test
 const keyOf = (it) => it?._id || it?.productId || it?.externalId || it?.id;
 
 /* -------------------------------------------------------------------------- */
-
 export default function Cart() {
   const dispatch = useDispatch();
   const cartItems = useSelector((s) => s.cart);
@@ -91,6 +91,12 @@ export default function Cart() {
     const savingsMrpVsSell = Math.max(0, round2(mrp - rawSell));
     return { mrp, rawSell, subtotal, promoOff, tax, total, savingsMrpVsSell, shipping };
   }, [cartItems, promoApplied]);
+
+
+  const isLoggedIn = !!localStorage.getItem("auth_token");
+  if (!isLoggedIn) return <CartPreview />;
+
+
 
   const applyPromo = () => {
     const code = promo.trim().toUpperCase();

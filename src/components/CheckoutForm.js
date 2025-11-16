@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "./axiosInstance";
+import CheckoutPreview from "./CheckoutPreview";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -95,6 +96,9 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     )}`;
   }, [data]);
 
+
+ 
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const v = validate();
@@ -172,6 +176,9 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     window.addEventListener("popstate", handlePop);
     return () => window.removeEventListener("popstate", handlePop);
   }, [navigate]);
+
+  const isLoggedIn = !!localStorage.getItem("auth_token");
+  if (!isLoggedIn) return <CheckoutPreview />;
 
   return (
     <div className="w-full bg-[#f9fafb] py-10">
