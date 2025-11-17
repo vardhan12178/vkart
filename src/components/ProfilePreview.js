@@ -33,7 +33,7 @@ export default function ProfilePreview() {
             </p>
 
             <Link
-              to="/login"
+             to="/login?redirect=/profile"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 text-white px-6 py-3 text-sm sm:text-base font-semibold shadow hover:bg-orange-600 transition"
             >
               <FaLock /> Sign In to Continue

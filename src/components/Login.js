@@ -1,10 +1,11 @@
 // src/pages/Login.jsx
 import React, { useRef, useState } from "react";
 import axios from "./axiosInstance";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+
 import {
   EyeIcon,
   EyeOffIcon,
@@ -46,6 +47,9 @@ const Toast = ({ show, kind = "error", children }) => {
 
 export default function Login({ setIsLoggedIn }) {
   const navigate = useNavigate();
+  const location = useLocation();
+const redirect = new URLSearchParams(location.search).get("redirect") || "/";
+
 
   // base login state
   const [userId, setUserId] = useState("");
@@ -110,7 +114,7 @@ export default function Login({ setIsLoggedIn }) {
       // normal login
       if (res.data?.token) localStorage.setItem("auth_token", res.data.token);
       setIsLoggedIn?.(true);
-      navigate("/");
+      navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;
       setFormError(apiMsg || "Invalid credentials. Please try again.");
@@ -145,7 +149,7 @@ export default function Login({ setIsLoggedIn }) {
       setIsLoggedIn?.(true);
       setShow2fa(false);
       setPendingLogin(null);
-      navigate("/");
+      navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;
       setTwofaError(apiMsg || "Invalid or expired code. Try again.");
@@ -173,7 +177,7 @@ export default function Login({ setIsLoggedIn }) {
       );
       if (res?.data?.token) localStorage.setItem("auth_token", res.data.token);
       setIsLoggedIn?.(true);
-      navigate("/");
+      navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;
       setFormError(apiMsg || "Google sign-in failed. Try again.");

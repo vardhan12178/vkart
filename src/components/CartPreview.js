@@ -33,7 +33,7 @@ export default function CartPreview() {
           </p>
 
           <Link
-            to="/login"
+            to="/login?redirect=/cart"
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 text-white px-6 py-3 text-sm sm:text-base font-semibold shadow hover:bg-orange-700 transition"
           >
             <FontAwesomeIcon icon={faLock} /> Sign In to Access Cart

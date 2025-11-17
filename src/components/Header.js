@@ -169,13 +169,25 @@ if (authPaths.includes(location.pathname)) return null;
             </div>
 
             {/* Logout */}
-            <button
-              onClick={handleLogout}
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-zinc-400 transition hover:bg-red-500/10 hover:text-red-400"
-            >
-              <LogoutIcon className="h-5 w-5" />
-              Logout
-            </button>
+           {/* Auth button */}
+            {isLoggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-zinc-400 transition hover:bg-red-500/10 hover:text-red-400"
+              >
+                <LogoutIcon className="h-5 w-5" />
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-orange-400 transition hover:bg-white/10 hover:text-white"
+              >
+                <UserIcon className="h-5 w-5" />
+                Sign In
+              </Link>
+            )}
+
           </nav>
 
           {/* Mobile Menu */}
@@ -242,18 +254,30 @@ if (authPaths.includes(location.pathname)) return null;
                   </li>
                 );
               })}
-              <li>
-                <button
-                  onClick={() => {
-                    handleLogout();
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-red-400 hover:bg-red-500/10"
-                >
-                  <LogoutIcon className="h-5 w-5" />
-                  Logout
-                </button>
-              </li>
+             <li>
+            {isLoggedIn ? (
+              <button
+                onClick={() => {
+                  handleLogout();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-red-400 hover:bg-red-500/10"
+              >
+                <LogoutIcon className="h-5 w-5" />
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-orange-400 hover:bg-white/10"
+              >
+                <UserIcon className="h-5 w-5" />
+                Sign In
+              </Link>
+            )}
+          </li>
+
             </ul>
           </motion.div>
         )}
