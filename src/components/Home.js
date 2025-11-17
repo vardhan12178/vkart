@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import axios from "./axiosInstance";
+import { SiMongodb, SiExpress, SiReact, SiNodedotjs } from "react-icons/si";
 
 import {
   FaStar,
@@ -13,7 +14,7 @@ import {
   FaHeadset,
   FaArrowRight,
   FaCheckCircle,
-  FaTimes,
+  FaTimes,FaCreditCard,FaTools
 } from "react-icons/fa";
 
 const INR = (n) =>
@@ -471,7 +472,7 @@ const dismiss2fa = async () => {
                 >
                   Explore Featured
                 </a>
-                <p className="w-full text-xs text-gray-500">Free shipping over ₹3,999 · Secure payments</p>
+                <p className="w-full text-xs text-gray-500">Free shipping over ₹1000 · Secure payments</p>
               </div>
               <div className="mt-5 -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [-ms-overflow-style:none]">
                 {categories.map((c) => (
@@ -670,90 +671,130 @@ const dismiss2fa = async () => {
         <div className="pointer-events-none absolute -bottom-24 right-6 h-56 w-56 rounded-full bg-orange-100/70 blur-3xl" />
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-            <TrustCard icon={<FaTruck className="text-xl" />} title="Free Shipping" text="On orders over ₹3,999" />
+            <TrustCard icon={<FaTruck className="text-xl" />} title="Free Shipping" text="On orders over ₹1000" />
             <TrustCard icon={<FaShieldAlt className="text-xl" />} title="Secure Payments" text="UPI • Cards • Netbanking" />
             <TrustCard icon={<FaHeadset className="text-xl" />} title="24/7 Support" text="We’re here to help" />
           </div>
         </div>
       </section>
 
-      <section className="relative bg-white py-16">
-        <div className="pointer-events-none absolute -top-24 right-0 h-56 w-56 rounded-full bg-orange-100/70 blur-3xl" />
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <Slider
-            dots
-            arrows
-            infinite
-            speed={500}
-            slidesToShow={2}
-            slidesToScroll={2}
-            responsive={[
-              { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-              { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-            ]}
-            className="testimonial-slider"
-          >
-            {[
-              {
-                text: "Amazing experience! Quality exceeded expectations.",
-                name: "Alice Johnson",
-                role: "Verified Buyer",
-                image: "https://randomuser.me/api/portraits/women/1.jpg",
-              },
-              {
-                text: "Great selection and super fast delivery.",
-                name: "Michael Smith",
-                role: "Verified Buyer",
-                image: "https://randomuser.me/api/portraits/men/2.jpg",
-              },
-              {
-                text: "Site is so easy to use. Love the variety.",
-                name: "Sarah Lee",
-                role: "Verified Buyer",
-                image: "https://randomuser.me/api/portraits/women/2.jpg",
-              },
-              {
-                text: "Prices are solid and support is helpful.",
-                name: "Vikram Rao",
-                role: "Verified Buyer",
-                image: "https://randomuser.me/api/portraits/men/3.jpg",
-              },
-            ].map((t, i) => (
-              <div key={i} className="px-3">
-                <TestimonialCard t={t} />
-              </div>
-            ))}
-          </Slider>
+<section className="relative bg-white py-16">
+  <div className="pointer-events-none absolute -top-24 right-0 h-56 w-56 rounded-full bg-orange-100/70 blur-3xl" />
+
+  <div className="container mx-auto px-4 md:px-6 lg:px-8">
+
+    <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
+      Project Highlights
+    </h2>
+
+    <Slider
+      dots
+      arrows
+      infinite
+      speed={500}
+      slidesToShow={2}
+      slidesToScroll={2}
+      responsive={[
+        { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+        { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      ]}
+      className="testimonial-slider"
+    >
+      {[
+        {
+          icon: <FaTools className="text-orange-500 text-4xl mb-4" />,
+          title: "Full-Stack Admin Panel",
+          text:
+            "A separate, secure React SPA to manage products, orders, and users with complete CRUD functionality.",
+        },
+        {
+          icon: <FaShieldAlt className="text-orange-500 text-4xl mb-4" />,
+          title: "Advanced Security",
+          text:
+            "Multi-layer authentication with JWT, Google OAuth 2.0, role-based access, and optional 2FA.",
+        },
+        {
+          icon: <FaCreditCard className="text-orange-500 text-4xl mb-4" />,
+          title: "Real Payment Integration",
+          text:
+            "Razorpay-powered checkout flow supporting live payment capture and order tracking.",
+        },
+        {
+          icon: (
+            <div className="flex items-center gap-2 text-orange-500 text-4xl mb-4">
+              <SiMongodb />
+              <SiExpress />
+              <SiReact />
+              <SiNodedotjs />
+            </div>
+          ),
+          title: "Modern MERN Architecture",
+          text:
+            "Custom Node.js API, MongoDB, Express, React, and Redux Toolkit powering a fast responsive UI.",
+        },
+      ].map((t, i) => (
+        <div key={i} className="px-3">
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md">
+            <div className="flex flex-col items-center text-center">
+              {t.icon}
+              <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                {t.title}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {t.text}
+              </p>
+            </div>
+          </div>
         </div>
-        <style>{`
-          .testimonial-slider { overflow: visible; }
-          .testimonial-slider .slick-list { overflow: visible; }
-          .testimonial-slider .slick-dots li button:before{font-size:10px;color:#cbd5e1;opacity:1}
-          .testimonial-slider .slick-dots li.slick-active button:before{color:#fb923c}
-          .testimonial-slider .slick-prev,
-          .testimonial-slider .slick-next{
-            position:absolute;
-            top:50%;
-            transform:translateY(-50%);
-            width:36px;height:36px;border-radius:9999px;background:#fff;border:1px solid #e5e7eb;
-            box-shadow:0 4px 10px rgba(0,0,0,.06); z-index:5;
-          }
-          .testimonial-slider .slick-prev{left:-0.75rem}
-          .testimonial-slider .slick-next{right:-0.75rem}
-          @media (min-width:768px){
-            .testimonial-slider .slick-prev{left:-1.25rem}
-            .testimonial-slider .slick-next{right:-1.25rem}
-          }
-          @media (min-width:1024px){
-            .testimonial-slider .slick-prev{left:-1.5rem}
-            .testimonial-slider .slick-next{right:-1.5rem}
-          }
-          .testimonial-slider .slick-prev:before,
-          .testimonial-slider .slick-next:before{color:#64748b;font-size:18px;line-height:36px;opacity:1}
-          .testimonial-slider .slick-prev:hover:before,
-          .testimonial-slider .slick-next:hover:before{color:#fb923c}
-        `}</style>
-      </section>
+      ))}
+    </Slider>
+  </div>
+
+  <style>{`
+    .testimonial-slider { overflow: visible; }
+    .testimonial-slider .slick-list { overflow: visible; }
+    .testimonial-slider .slick-dots li button:before {
+      font-size: 10px;
+      color: #cbd5e1;
+      opacity: 1;
+    }
+    .testimonial-slider .slick-dots li.slick-active button:before {
+      color: #fb923c;
+    }
+    .testimonial-slider .slick-prev,
+    .testimonial-slider .slick-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+      z-index: 5;
+    }
+    .testimonial-slider .slick-prev { left: -1rem; }
+    .testimonial-slider .slick-next { right: -1rem; }
+
+    @media (min-width: 1024px) {
+      .testimonial-slider .slick-prev { left: -1.25rem; }
+      .testimonial-slider .slick-next { right: -1.25rem; }
+    }
+
+    .testimonial-slider .slick-prev:before,
+    .testimonial-slider .slick-next:before {
+      color: #64748b;
+      font-size: 18px;
+      line-height: 36px;
+      opacity: 1;
+    }
+    .testimonial-slider .slick-prev:hover:before,
+    .testimonial-slider .slick-next:hover:before {
+      color: #fb923c;
+    }
+  `}</style>
+</section>
 
       <section className="relative bg-gray-50 py-16">
       <div className="pointer-events-none absolute -top-24 left-10 h-52 w-52 rounded-full bg-orange-200/60 blur-3xl" />

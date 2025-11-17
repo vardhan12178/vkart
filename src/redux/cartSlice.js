@@ -1,18 +1,35 @@
 // redux/cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-// Prefer Mongo _id, else productId, else externalId, else id (DummyJSON)
-const getKey = (it) => it?._id || it?.productId || it?.externalId || it?.id;
+const CART_KEY = "vkart_cart";
+
+const loadCart = () => {
+  try {
+    const data = localStorage.getItem(CART_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch {
+    return [];
+  }
+};
+
+const saveCart = (state) => {
+  try {
+    localStorage.setItem(CART_KEY, JSON.stringify(state));
+  } catch {}
+};
+
+const getKey = (it) =>
+  it?._id || it?.productId || it?.externalId || it?.id;
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState: loadCart(),
   reducers: {
     addToCart: (state, action) => {
       const item = action.payload;
       const qty = Math.max(1, item.quantity || 1);
       const key = getKey(item);
-      if (!key) return; // can't index without any id
+      if (!key) return;
 
       const existing = state.find((s) => getKey(s) === key);
       if (existing) {
@@ -20,12 +37,16 @@ const cartSlice = createSlice({
       } else {
         state.push({ ...item, quantity: qty });
       }
+
+      saveCart(state);
     },
 
     incrementQuantity: (state, action) => {
       const key = action.payload;
       const found = state.find((s) => getKey(s) === key);
       if (found) found.quantity += 1;
+
+      saveCart(state);
     },
 
     decrementQuantity: (state, action) => {
@@ -36,14 +57,21 @@ const cartSlice = createSlice({
         if (it.quantity > 1) it.quantity -= 1;
         else state.splice(idx, 1);
       }
+
+      saveCart(state);
     },
 
     removeFromCart: (state, action) => {
       const key = action.payload;
-      return state.filter((s) => getKey(s) !== key);
+      const newState = state.filter((s) => getKey(s) !== key);
+      saveCart(newState);
+      return newState;
     },
 
-    clearCart: () => [],
+    clearCart: () => {
+      saveCart([]);
+      return [];
+    },
   },
 });
 
@@ -57,5 +85,4 @@ export const {
 
 export default cartSlice.reducer;
 
-// (optional) export helper so UI can use the same key logic
 export const cartItemKey = getKey;

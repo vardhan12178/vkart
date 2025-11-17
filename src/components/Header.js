@@ -14,6 +14,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from "./axiosInstance";
 
 const Header = ({ isLoggedIn, setIsLoggedIn }) => {
+  const loggedIn = isLoggedIn || !!localStorage.getItem("auth_token");
   const navigate = useNavigate();
   const location = useLocation();
   const cartItems = useSelector((state) => state.cart);
@@ -170,7 +171,7 @@ if (authPaths.includes(location.pathname)) return null;
 
             {/* Logout */}
            {/* Auth button */}
-            {isLoggedIn ? (
+            {loggedIn ? (
               <button
                 onClick={handleLogout}
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-zinc-400 transition hover:bg-red-500/10 hover:text-red-400"
@@ -255,7 +256,7 @@ if (authPaths.includes(location.pathname)) return null;
                 );
               })}
              <li>
-            {isLoggedIn ? (
+            {loggedIn ? (
               <button
                 onClick={() => {
                   handleLogout();
