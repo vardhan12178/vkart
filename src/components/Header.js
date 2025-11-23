@@ -9,6 +9,8 @@ import {
   UserIcon,
   HomeIcon,
   SparklesIcon,
+  CubeIcon,
+  SearchIcon
 } from "@heroicons/react/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "./axiosInstance";
@@ -22,264 +24,282 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const hdrRef = useRef(null);
-  const [menuTop, setMenuTop] = useState(66);
   const [aiMenuOpen, setAiMenuOpen] = useState(false);
+  const aiRef = useRef(null);
 
-  // Scroll glow
+  // --- Effects ---
+
+  // 1. Handle Scroll styling
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Dynamic height for mobile dropdown
-  useEffect(() => {
-    const updateTop = () => {
-      if (hdrRef.current) {
-        const rect = hdrRef.current.getBoundingClientRect();
-        setMenuTop(rect.height);
-      }
-    };
-    updateTop();
-    window.addEventListener("resize", updateTop);
-    return () => window.removeEventListener("resize", updateTop);
-  }, []);
-
+  // 2. Close menus on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setAiMenuOpen(false);
   }, [location.pathname]);
 
-  const handleLogout = async () => {
-  try {
-    await axios.post("/api/logout", {}, { withCredentials: true });
-  } catch (err) {
-    console.error("Logout failed:", err);
-  } finally {
-    localStorage.removeItem("auth_token");
-    localStorage.removeItem("admin_token");
-    setIsLoggedIn(false);
-    navigate("/", { replace: true }); // send to Home
-  }
-};
+  // 3. Close AI menu on click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (aiRef.current && !aiRef.current.contains(event.target)) {
+        setAiMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
+  const handleLogout = async () => {
+    try {
+      await axios.post("/api/logout", {}, { withCredentials: true });
+    } catch (err) {
+      console.error("Logout failed:", err);
+    } finally {
+      localStorage.removeItem("auth_token");
+      localStorage.removeItem("admin_token");
+      setIsLoggedIn(false);
+      navigate("/", { replace: true });
+    }
+  };
 
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/";
     return location.pathname.startsWith(path);
   };
 
+  // Hide header on auth pages
   const authPaths = ["/login", "/register", "/forgot-password", "/reset-password"];
-if (authPaths.includes(location.pathname)) return null;
+  if (authPaths.includes(location.pathname)) return null;
 
-  const nav = [
+  const navLinks = [
     { label: "Home", to: "/", icon: HomeIcon },
-    { label: "Products", to: "/products" },
-    { label: "Profile", to: "/profile", icon: UserIcon },
-    { label: "Cart", to: "/cart", icon: ShoppingCartIcon },
+    { label: "Collection", to: "/products", icon: CubeIcon },
   ];
 
   return (
     <header
-      ref={hdrRef}
-      className={`sticky top-0 z-50 transition-all duration-500 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-gradient-to-r from-[#0a0a0a]/95 via-[#111]/90 to-[#0a0a0a]/95 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.8)] ring-1 ring-white/10"
-          : "bg-gradient-to-r from-[#0a0a0a]/80 via-[#111]/75 to-[#0a0a0a]/80 ring-1 ring-white/5"
+          ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-200/50"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
-      {/* top brand line */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500" />
+      {/* Premium Gradient Top Line */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Brand */}
-          <Link to="/" className="group flex items-center gap-2">
-            <motion.span
-              whileHover={{ scale: 0.93 }}
-              className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-orange-500 to-amber-400 text-white shadow-lg"
-            >
-              <ShoppingCartIcon className="h-5 w-5" />
-            </motion.span>
-            <span className="text-xl font-extrabold tracking-tight text-white">
-              VKart
-            </span>
-          </Link>
+        <div className="flex h-20 items-center justify-between">
+          
+          {/* --- LEFT: BRAND --- */}
+          <div className="flex items-center gap-8">
+            <Link to="/" className="group flex items-center gap-2.5">
+              <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gray-900 text-white shadow-lg shadow-gray-900/20 transition-transform group-hover:scale-95">
+                <ShoppingCartIcon className="h-5 w-5" />
+                {/* Decorative dot */}
+                <div className="absolute top-0 right-0 -mt-1 -mr-1 h-3 w-3 rounded-full bg-orange-500 border-2 border-white" />
+              </div>
+              <span className="text-xl font-black tracking-tight text-gray-900">
+                VKart
+              </span>
+            </Link>
 
-          {/* Desktop navigation */}
-          <nav className="hidden items-center gap-2 md:flex">
-            {nav.map((item) => {
-              const active = isActive(item.to);
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                    active
-                      ? "bg-gradient-to-r from-orange-500 to-amber-400 text-white shadow-md"
-                      : "text-zinc-300 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  {Icon && <Icon className="h-5 w-5" />}
-                  {item.label}
-                  {item.to === "/cart" && cartCount > 0 && (
-                    <motion.span
-                      layout
-                      className="ml-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white shadow"
-                    >
-                      {cartCount}
-                    </motion.span>
-                  )}
-                </Link>
-              );
-            })}
+            {/* Desktop Nav Links (Left Aligned) */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map((item) => {
+                const active = isActive(item.to);
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className={`relative px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
+                      active
+                        ? "text-gray-900 bg-gray-100"
+                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
 
-            {/* Ask AI dropdown */}
-            <div className="relative">
+          {/* --- RIGHT: ACTIONS --- */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            
+            {/* 1. Ask AI Dropdown */}
+            {/* <div className="relative hidden sm:block" ref={aiRef}>
               <button
-                onClick={() => setAiMenuOpen((v) => !v)}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-orange-400 transition hover:text-white hover:bg-white/10"
+                onClick={() => setAiMenuOpen(!aiMenuOpen)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 ${
+                  aiMenuOpen 
+                    ? "bg-orange-50 border-orange-200 text-orange-600" 
+                    : "bg-white border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600"
+                }`}
               >
-                <SparklesIcon className="h-5 w-5" />
-                Ask AI
+                <SparklesIcon className={`h-4 w-4 ${aiMenuOpen ? "animate-pulse" : ""}`} />
+                <span className="text-sm font-bold">Ask AI</span>
               </button>
 
               <AnimatePresence>
                 {aiMenuOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-56 rounded-xl bg-zinc-900/95 ring-1 ring-white/10 shadow-lg backdrop-blur-md p-3 space-y-1"
+                    className="absolute right-0 mt-3 w-64 rounded-2xl bg-white shadow-xl shadow-orange-500/10 ring-1 ring-black/5 p-2 z-50"
                   >
-                    <button className="w-full rounded-lg px-3 py-2 text-left text-sm text-zinc-300 hover:bg-white/10">
-                      🧠 Smart Product Recommender
-                    </button>
-                    <button className="w-full rounded-lg px-3 py-2 text-left text-sm text-zinc-300 hover:bg-white/10">
-                      💰 Cart Value Insights
-                    </button>
-                    <button className="w-full rounded-lg px-3 py-2 text-left text-sm text-zinc-300 hover:bg-white/10">
-                      🔍 Find Similar Items
-                    </button>
+                    <div className="px-4 py-3 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl mb-2">
+                        <p className="text-xs font-bold text-orange-800 uppercase tracking-wide">AI Assistant</p>
+                        <p className="text-[10px] text-orange-600 mt-0.5">What can I help you find?</p>
+                    </div>
+                    <div className="space-y-1">
+                        {['Gift Ideas', 'Trending Tech', 'Under ₹5000'].map((txt) => (
+                            <button key={txt} className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors flex items-center gap-2">
+                                <SearchIcon className="w-3.5 h-3.5 text-gray-400" /> {txt}
+                            </button>
+                        ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </div> */}
 
-            {/* Logout */}
-           {/* Auth button */}
+            {/* 2. Cart Icon */}
+            <Link
+              to="/cart"
+              className="relative group p-2.5 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-all"
+            >
+              <ShoppingCartIcon className="h-6 w-6" />
+              <AnimatePresence>
+                {cartCount > 0 && (
+                  <motion.span
+                    key="cart-badge"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                    className="absolute top-1 right-0.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gray-900 px-1 text-[10px] font-bold text-white ring-2 ring-white"
+                  >
+                    {cartCount}
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </Link>
+
+            {/* 3. Profile / Auth */}
             {loggedIn ? (
-              <button
-                onClick={handleLogout}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-zinc-400 transition hover:bg-red-500/10 hover:text-red-400"
-              >
-                <LogoutIcon className="h-5 w-5" />
-                Logout
-              </button>
+              <div className="hidden md:flex items-center gap-2 pl-2 border-l border-gray-200">
+                 <Link to="/profile" className="p-2.5 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-all">
+                    <UserIcon className="h-6 w-6" />
+                 </Link>
+                 <button
+                    onClick={handleLogout}
+                    className="p-2.5 rounded-full text-gray-400 hover:bg-red-50 hover:text-red-500 transition-all"
+                    title="Logout"
+                 >
+                    <LogoutIcon className="h-6 w-6" />
+                 </button>
+              </div>
             ) : (
               <Link
                 to="/login"
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-orange-400 transition hover:bg-white/10 hover:text-white"
+                className="hidden md:inline-flex items-center justify-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-gray-900/20 transition-all hover:bg-black hover:shadow-gray-900/30 hover:-translate-y-0.5"
               >
-                <UserIcon className="h-5 w-5" />
                 Sign In
               </Link>
             )}
 
-          </nav>
-
-          {/* Mobile Menu */}
-          <div className="flex items-center gap-1 md:hidden">
-            <Link
-              to="/cart"
-              className="relative rounded-lg p-2 text-white hover:bg-white/10"
-            >
-              <ShoppingCartIcon className="h-6 w-6" />
-              {cartCount > 0 && (
-                <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-[1.15rem] items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white shadow ring-2 ring-zinc-900">
-                  {cartCount}
-                </span>
-              )}
-            </Link>
+            {/* 4. Mobile Menu Button */}
             <button
-              className="rounded-lg p-2 text-white hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen((v) => !v)}
+              className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? (
-                <XIcon className="h-7 w-7" />
-              ) : (
-                <MenuIcon className="h-7 w-7" />
-              )}
+              {isMobileMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* --- MOBILE DRAWER --- */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 z-40 bg-zinc-950/95 ring-1 ring-white/10 backdrop-blur-md"
-            style={{ top: menuTop }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl overflow-hidden shadow-2xl"
           >
-            <ul className="px-4 py-4 space-y-2">
-              {nav.map((item) => {
-                const Icon = item.icon;
-                const active = isActive(item.to);
-                return (
-                  <li key={item.to}>
-                    <Link
-                      to={item.to}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium ${
-                        active
-                          ? "bg-gradient-to-r from-orange-600 to-amber-500 text-white"
-                          : "text-zinc-300 hover:bg-white/10 hover:text-white"
-                      }`}
-                    >
-                      {Icon && <Icon className="h-5 w-5" />}
-                      {item.label}
-                      {item.to === "/cart" && cartCount > 0 && (
-                        <span className="ml-auto inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-semibold text-white">
-                          {cartCount}
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
-             <li>
-            {loggedIn ? (
-              <button
-                onClick={() => {
-                  handleLogout();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-red-400 hover:bg-red-500/10"
-              >
-                <LogoutIcon className="h-5 w-5" />
-                Logout
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-orange-400 hover:bg-white/10"
-              >
-                <UserIcon className="h-5 w-5" />
-                Sign In
-              </Link>
-            )}
-          </li>
+            <div className="px-4 py-6 space-y-4">
+              
+              {/* Mobile Nav Links */}
+              <div className="space-y-1">
+                {navLinks.map((item) => {
+                    const active = isActive(item.to);
+                    const Icon = item.icon;
+                    return (
+                        <Link
+                        key={item.to}
+                        to={item.to}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${
+                            active 
+                            ? "bg-gray-100 text-gray-900" 
+                            : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                        }`}
+                        >
+                        <Icon className="h-5 w-5" />
+                        {item.label}
+                        </Link>
+                    );
+                })}
+                <Link
+                    to="/profile"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${
+                        isActive("/profile") 
+                        ? "bg-gray-100 text-gray-900" 
+                        : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                    }`}
+                >
+                    <UserIcon className="h-5 w-5" />
+                    Profile
+                </Link>
+              </div>
 
-            </ul>
+              {/* Mobile Actions */}
+              <div className="pt-4 border-t border-gray-100 grid grid-cols-2 gap-3">
+                 <button 
+                    onClick={() => { setIsMobileMenuOpen(false); setAiMenuOpen(true); }} // Note: In real mobile app, better to navigate to a dedicated AI page or modal
+                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-orange-50 text-orange-700 text-sm font-bold border border-orange-100"
+                 >
+                    <SparklesIcon className="h-4 w-4" /> Ask AI
+                 </button>
+                 
+                 {loggedIn ? (
+                    <button
+                        onClick={() => { setIsMobileMenuOpen(false); handleLogout(); }}
+                        className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-red-50 text-red-600 text-sm font-bold border border-red-100"
+                    >
+                        <LogoutIcon className="h-4 w-4" /> Logout
+                    </button>
+                 ) : (
+                    <Link
+                        to="/login"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-sm font-bold shadow-lg"
+                    >
+                        Sign In
+                    </Link>
+                 )}
+              </div>
+
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -3,6 +3,7 @@ import { Blog, Careers, Terms, Privacy, License, ForgotPassword, ResetPassword, 
 
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
+import CookieBanner from './components/CookieBanner';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,7 +55,7 @@ useEffect(() => {
       </Helmet>
       
       <div id="root">
-       {/* ✅ Header behaves like Footer: always on non-admin routes */}
+       {/*  Header behaves like Footer: always on non-admin routes */}
       {!isAdminRoute && (
         <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       )}
@@ -90,7 +91,7 @@ useEffect(() => {
             <Route path="/admin/login" element={isAdmin ? <Navigate to="/admin/dashboard" /> : <AdminLogin setIsAdmin={setIsAdmin} />} />
 
             {/* Admin Protected Routes */}
-            <Route path="/admin" element={isAdmin ? <AdminLayout /> : <Navigate to="/admin/login" />}>
+            <Route path="/admin" element={isAdmin ? <AdminLayout setIsAdmin={setIsAdmin} /> : <Navigate to="/admin/login" />}>
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="products" element={<AdminProducts />} />
               <Route path="orders" element={<AdminOrders />} />
@@ -103,7 +104,7 @@ useEffect(() => {
             <Route path="*" element={<Error />} />
 
           </Routes>
-
+         <CookieBanner />
         </main>
       {!isAdminRoute && <Footer />}
       </div>

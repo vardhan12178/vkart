@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "./axiosInstance";
 import {
   ArrowLeftIcon,
   LocationMarkerIcon,
@@ -9,6 +8,17 @@ import {
   PhoneIcon,
   ClockIcon,
   RefreshIcon,
+  CheckCircleIcon,
+  XCircleIcon,
+  TruckIcon,
+  ClipboardCheckIcon,
+  CubeIcon,
+  CreditCardIcon,
+  PrinterIcon,
+  DuplicateIcon,
+  ChevronRightIcon,
+  ShieldCheckIcon,
+  ArchiveIcon
 } from "@heroicons/react/outline";
 
 const STAGES = [
@@ -22,48 +32,23 @@ const STAGES = [
   "CANCELLED",
 ];
 
-const stageBadges = {
-  PLACED: "bg-gray-100 text-gray-700",
-  CONFIRMED: "bg-blue-100 text-blue-700",
-  PROCESSING: "bg-indigo-100 text-indigo-700",
-  PACKED: "bg-amber-100 text-amber-700",
-  SHIPPED: "bg-purple-100 text-purple-700",
-  OUT_FOR_DELIVERY: "bg-sky-100 text-sky-700",
-  DELIVERED: "bg-green-100 text-green-700",
-  CANCELLED: "bg-red-100 text-red-700",
-};
-
-const stageDotColors = {
-  PLACED: "bg-gray-400",
-  CONFIRMED: "bg-blue-500",
-  PROCESSING: "bg-indigo-500",
-  PACKED: "bg-amber-500",
-  SHIPPED: "bg-purple-500",
-  OUT_FOR_DELIVERY: "bg-sky-500",
-  DELIVERED: "bg-green-500",
-  CANCELLED: "bg-red-500",
-};
-
-const stageLineColors = {
-  PLACED: "border-gray-300",
-  CONFIRMED: "border-blue-400",
-  PROCESSING: "border-indigo-400",
-  PACKED: "border-amber-400",
-  SHIPPED: "border-purple-400",
-  OUT_FOR_DELIVERY: "border-sky-400",
-  DELIVERED: "border-green-400",
-  CANCELLED: "border-red-400",
+const stageStyles = {
+  PLACED: { bg: "bg-slate-100", text: "text-slate-600", border: "border-slate-200", icon: ClipboardCheckIcon },
+  CONFIRMED: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200", icon: ShieldCheckIcon },
+  PROCESSING: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-200", icon: RefreshIcon },
+  PACKED: { bg: "bg-amber-50", text: "text-amber-600", border: "border-amber-200", icon: ArchiveIcon },
+  SHIPPED: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200", icon: TruckIcon },
+  OUT_FOR_DELIVERY: { bg: "bg-sky-50", text: "text-sky-600", border: "border-sky-200", icon: TruckIcon },
+  DELIVERED: { bg: "bg-emerald-50", text: "text-emerald-600", border: "border-emerald-200", icon: CheckCircleIcon },
+  CANCELLED: { bg: "bg-red-50", text: "text-red-600", border: "border-red-200", icon: XCircleIcon },
 };
 
 function formatDateTime(isoStr) {
   if (!isoStr) return "-";
   const d = new Date(isoStr);
   return d.toLocaleString("en-IN", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
+    day: "2-digit", month: "short", year: "numeric",
+    hour: "2-digit", minute: "2-digit",
   });
 }
 
@@ -74,26 +59,37 @@ export default function AdminOrderDetails() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
-
   const [toast, setToast] = useState({ type: "", message: "" });
 
-  const showToast = (type, message, ms = 2200) => {
+  const showToast = (type, message, ms = 3000) => {
     setToast({ type, message });
-    if (ms > 0) {
-      setTimeout(() => setToast({ type: "", message: "" }), ms);
-    }
+    setTimeout(() => setToast({ type: "", message: "" }), ms);
+  };
+
+  // --- Function to copy Order ID ---
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    showToast("success", "Order ID copied to clipboard!");
   };
 
   const loadOrder = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`/api/admin/orders/${id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("admin_token")}` },
+      const token = localStorage.getItem("admin_token");
+      const res = await fetch(`/api/admin/orders/${id}`, {
+        headers: { 
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json" 
+        },
       });
-      setOrder(res.data);
+      
+      if (!res.ok) throw new Error("Failed to fetch order");
+      
+      const data = await res.json();
+      setOrder(data);
     } catch (err) {
       console.error("Order load error:", err);
-      showToast("error", "Failed to load order.");
+      showToast("error", "Failed to load order details.");
     } finally {
       setLoading(false);
     }
@@ -101,455 +97,466 @@ export default function AdminOrderDetails() {
 
   useEffect(() => {
     loadOrder();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const updateStage = async (stage) => {
     if (!order) return;
-
-    // Guard on client also – DELIVERED/CANCELLED should not move
     if (["DELIVERED", "CANCELLED"].includes(order.stage)) {
-      showToast("error", "Order is already completed or cancelled.");
+      showToast("error", "Order is closed and cannot be modified.");
       return;
     }
-
     if (stage === order.stage) return;
 
     try {
       setUpdating(true);
-      const res = await axios.patch(
-        `/api/admin/orders/${id}/stage`,
-        { stage },
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("admin_token")}` },
-        }
-      );
+      const token = localStorage.getItem("admin_token");
+      const res = await fetch(`/api/admin/orders/${id}/stage`, {
+        method: "PATCH",
+        headers: { 
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ stage }),
+      });
 
-      if (res.data?.order) {
-        setOrder(res.data.order);
-        showToast("success", "Order status updated.");
+      const data = await res.json();
+
+      if (res.ok) {
+        setOrder(data.order || { ...order, stage });
+        showToast("success", `Status updated to ${stage.replace(/_/g, " ")}`);
       } else {
-        // fallback
-        setOrder((prev) => (prev ? { ...prev, stage } : prev));
-        showToast("success", "Order status updated.");
+        throw new Error(data.message || "Update failed");
       }
     } catch (err) {
-      console.error("Stage update error:", err);
-      const msg =
-        err?.response?.data?.message ||
-        err?.response?.data?.errors?.[0]?.msg ||
-        "Failed to update status.";
-      showToast("error", msg);
+      showToast("error", err.message || "Failed to update status.");
     } finally {
       setUpdating(false);
     }
   };
 
-  const stageIndex = useMemo(() => {
-    if (!order?.stage) return 0;
-    const idx = STAGES.indexOf(order.stage);
-    return idx === -1 ? 0 : idx;
-  }, [order?.stage]);
-
   const timeline = useMemo(() => {
     if (!order) return [];
-    const history = Array.isArray(order.statusHistory)
-      ? order.statusHistory
-      : [];
-
+    const history = Array.isArray(order.statusHistory) ? order.statusHistory : [];
     if (history.length === 0 && order.stage) {
-      return [
-        {
-          stage: order.stage,
-          date: order.updatedAt || order.createdAt || new Date().toISOString(),
-          note: "",
-        },
-      ];
+      return [{
+        stage: order.stage,
+        date: order.updatedAt || order.createdAt || new Date().toISOString(),
+        note: "Initial Status",
+      }];
     }
-
-    const cleaned = history
+    return history
       .filter((h) => h && h.stage)
       .map((h) => ({
         stage: h.stage,
         date: h.date || order.createdAt,
         note: h.note || "",
       }))
-      .sort((a, b) => new Date(a.date) - new Date(b.date));
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+  }, [order]);
 
-    return cleaned;
+  // --- Logic to determine the NEXT logical step ---
+  const nextLogicalStage = useMemo(() => {
+    if (!order) return null;
+    const currentIndex = STAGES.indexOf(order.stage);
+    if (currentIndex === -1 || currentIndex === STAGES.length - 1) return null; // End of line
+    if (order.stage === 'CANCELLED') return null;
+    return STAGES[currentIndex + 1];
   }, [order]);
 
   if (loading) {
     return (
-      <div className="p-8 text-center text-gray-500">
-        Loading order…
+      <div className="min-h-screen bg-slate-50/50 flex items-center justify-center p-6">
+        <div className="flex flex-col items-center gap-4 animate-pulse">
+          <div className="h-12 w-12 bg-slate-200 rounded-xl"></div>
+          <div className="h-4 w-32 bg-slate-200 rounded-lg"></div>
+        </div>
       </div>
     );
   }
 
-  if (!order) {
-    return (
-      <div className="p-8 text-center text-gray-500">
-        Order not found.
-      </div>
-    );
-  }
+  if (!order) return null;
 
   const customer = order.customer || {};
-  const orderLabel = order.orderId || `#${order._id}`;
   const terminal = ["DELIVERED", "CANCELLED"].includes(order.stage);
+  const currentStageStyle = stageStyles[order.stage] || stageStyles.PLACED;
+  const StatusIcon = currentStageStyle.icon;
 
   return (
-    <div className="space-y-6 relative">
-      {/* Toast */}
+    <div className="min-h-screen bg-slate-50/50 p-4 sm:p-8 font-sans text-slate-800">
+      
+      {/* Toast Notification */}
       {toast.message && (
-        <div
-          className={`fixed top-4 right-4 z-50 rounded-lg px-4 py-2 text-sm shadow-lg border
-          ${
-            toast.type === "success"
-              ? "bg-emerald-50 text-emerald-800 border-emerald-200"
-              : "bg-red-50 text-red-800 border-red-200"
-          }`}
-        >
-          {toast.message}
+        <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${
+          toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
+        }`}>
+          {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500"/> : <XCircleIcon className="h-5 w-5 text-red-500"/>}
+          <span className="text-sm font-semibold">{toast.message}</span>
         </div>
       )}
 
-      {/* Top Bar */}
-      <div className="flex items-center justify-between gap-3">
-        <button
-          onClick={() => navigate("/admin/orders")}
-          className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-orange-600"
-        >
-          <ArrowLeftIcon className="h-5 w-5" />
-          Back to Orders
-        </button>
-
-        <div className="flex items-center gap-3 text-xs text-gray-500">
-          <ClockIcon className="h-4 w-4" />
-          <span>Created: {formatDateTime(order.createdAt)}</span>
-          <span className="mx-1">•</span>
-          <span>Last updated: {formatDateTime(order.updatedAt)}</span>
+      <div className="max-w-7xl mx-auto space-y-6">
+        
+        {/* Top Navigation & Actions */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <button
-            onClick={loadOrder}
-            className="ml-3 inline-flex items-center gap-1 rounded-full border border-gray-200 bg-white px-2.5 py-1 hover:bg-gray-50 text-xs"
+            onClick={() => navigate("/admin/orders")}
+            className="group inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors"
           >
-            <RefreshIcon className="h-4 w-4" />
-            Refresh
+            <ArrowLeftIcon className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Back to Orders
           </button>
-        </div>
-      </div>
 
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">
-            Order{" "}
-            <span className="text-orange-600">
-              {orderLabel}
-            </span>
-          </h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Manage status, review items and track this order’s journey.
-          </p>
+          <div className="flex items-center gap-3">
+             <button
+               onClick={() => window.print()} // Simple print trigger
+               className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-all active:scale-95"
+             >
+               <PrinterIcon className="h-4 w-4" />
+               Invoice
+             </button>
+             <button
+               onClick={loadOrder}
+               className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-all active:scale-95"
+             >
+               <RefreshIcon className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+               Refresh
+             </button>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <span
-            className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide ${
-              stageBadges[order.stage] || "bg-gray-100 text-gray-700"
-            }`}
-          >
-            {order.stage.replace(/_/g, " ")}
-          </span>
-          <span className="text-xs text-gray-500 border rounded-full px-3 py-1 bg-white">
-            Total: <span className="font-semibold text-gray-800">₹{order.totalPrice}</span>
-          </span>
-        </div>
-      </div>
+        {/* Hero Section */}
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className={`absolute top-0 right-0 w-64 h-64 opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl ${currentStageStyle.bg.replace('bg-', 'bg-gradient-to-br from-transparent to-')}`}></div>
 
-      {/* Stage Stepper + Timeline + Summary */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-        {/* LEFT: Stepper + Timeline */}
-        <div className="xl:col-span-2 space-y-6">
-          {/* Stepper */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-sm font-semibold text-gray-800">
-                Order Progress
-              </h2>
-              {terminal && (
-                <span className="text-xs text-gray-500">
-                  This order is now{" "}
-                  <span className="font-semibold text-gray-800">
-                    {order.stage.replace(/_/g, " ").toLowerCase()}
-                  </span>
-                  .
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 relative z-10">
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <h1 className="text-3xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                  Order #{order._id.slice(-6).toUpperCase()}
+                  <button 
+                    onClick={() => copyToClipboard(order._id)}
+                    className="text-slate-300 hover:text-orange-500 transition-colors p-1" title="Copy Full ID"
+                  >
+                    <DuplicateIcon className="h-5 w-5" />
+                  </button>
+                </h1>
+              </div>
+              <p className="text-slate-500 text-sm flex items-center gap-2">
+                Placed on <span className="font-medium text-slate-700">{formatDateTime(order.createdAt)}</span>
+                <span className="text-slate-300">•</span>
+                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold border ${currentStageStyle.bg} ${currentStageStyle.text} ${currentStageStyle.border}`}>
+                   <StatusIcon className="h-3 w-3" />
+                   {order.stage.replace(/_/g, " ")}
                 </span>
+              </p>
+            </div>
+            
+            <div className="text-left md:text-right">
+               <p className="text-sm font-medium text-slate-500">Total Amount</p>
+               <p className="text-4xl font-bold text-slate-900 tracking-tight">
+                 ₹{order.totalPrice?.toLocaleString('en-IN')}
+               </p>
+            </div>
+          </div>
+
+          {/* Enhanced Stepper */}
+          <div className="mt-12 mb-4 hidden lg:block">
+             <div className="relative flex items-center justify-between w-full">
+                {/* Background Line */}
+                <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1.5 bg-slate-100 rounded-full"></div>
+                
+                {/* Progress Fill */}
+                <div 
+                  className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-1.5 transition-all duration-700 ease-out rounded-full shadow-sm
+                    ${order.stage === 'CANCELLED' ? 'bg-red-500' : 'bg-gradient-to-r from-orange-400 to-orange-600'}
+                  `}
+                  style={{ width: `${(Math.max(0, STAGES.indexOf(order.stage)) / (STAGES.length - 1)) * 100}%` }}
+                ></div>
+
+                {STAGES.map((stage, idx) => {
+                  const isCompleted = STAGES.indexOf(order.stage) >= idx;
+                  const isCurrent = order.stage === stage;
+                  const isCancelled = order.stage === "CANCELLED";
+                  
+                  let dotClass = "bg-white border-2 border-slate-200 text-slate-300";
+                  let textClass = "text-slate-400 font-medium";
+                  
+                  if (isCancelled && stage === "CANCELLED") {
+                    dotClass = "bg-red-500 border-red-500 text-white shadow-md shadow-red-200";
+                    textClass = "text-red-600 font-bold";
+                  } else if (isCurrent) {
+                    dotClass = "bg-orange-600 border-orange-600 text-white shadow-md shadow-orange-200 scale-110";
+                    textClass = "text-orange-700 font-bold";
+                  } else if (isCompleted) {
+                    dotClass = "bg-orange-500 border-orange-500 text-white";
+                    textClass = "text-slate-600 font-semibold";
+                  }
+
+                  return (
+                    <div key={stage} className="relative z-10 flex flex-col items-center group">
+                       <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${dotClass}`}>
+                          {isCompleted || isCancelled ? <CheckCircleIcon className="h-5 w-5" /> : <div className="h-2.5 w-2.5 bg-current rounded-full opacity-50"/>}
+                       </div>
+                       <span className={`absolute top-10 text-[10px] uppercase tracking-wider whitespace-nowrap transition-colors ${textClass}`}>
+                         {stage.replace(/_/g, " ")}
+                       </span>
+                    </div>
+                  )
+                })}
+             </div>
+          </div>
+        </div>
+
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          
+          {/* LEFT COLUMN */}
+          <div className="xl:col-span-2 space-y-6">
+            
+            {/* Action Center (The Workflow Engine) */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                  <ClipboardCheckIcon className="h-4 w-4 text-orange-500" />
+                  Manage Order Status
+                </h3>
+              </div>
+              
+              {!terminal ? (
+                <div className="flex flex-col sm:flex-row gap-4">
+                   {/* Primary Action: The Next Logical Step */}
+                   {nextLogicalStage && (
+                     <button
+                       disabled={updating}
+                       onClick={() => updateStage(nextLogicalStage)}
+                       className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-800 hover:scale-[1.02] transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                     >
+                        <span>Mark as {nextLogicalStage.replace(/_/g, " ")}</span>
+                        <ChevronRightIcon className="h-4 w-4" />
+                     </button>
+                   )}
+
+                   {/* Secondary Actions: Dropdown or List */}
+                   <div className="flex flex-wrap gap-2 flex-1">
+                      {STAGES.filter(s => s !== "CANCELLED" && s !== nextLogicalStage && s !== order.stage).map((s) => (
+                        <button
+                          key={s}
+                          disabled={updating}
+                          onClick={() => updateStage(s)}
+                          className="px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-white hover:border-orange-200 hover:text-orange-600 transition-all"
+                        >
+                          {s.replace(/_/g, " ")}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => updateStage("CANCELLED")}
+                        className="px-3 py-2 rounded-lg bg-red-50 border border-red-100 text-red-600 text-xs font-semibold hover:bg-red-100 transition-all ml-auto"
+                      >
+                        Cancel Order
+                      </button>
+                   </div>
+                </div>
+              ) : (
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                  <p className="text-slate-500 font-medium text-sm">
+                    This order is closed ({order.stage.replace(/_/g, " ")}) and requires no further action.
+                  </p>
+                </div>
               )}
             </div>
 
-            <div className="relative flex items-center justify-between">
-              <div className="absolute left-4 right-4 top-1/2 h-px bg-gray-200 -z-10" />
+            {/* Products Table */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div className="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/30">
+                 <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                    <CubeIcon className="h-4 w-4 text-orange-500" />
+                    Order Items
+                 </h3>
+                 <span className="text-xs font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded-md">
+                   {order.products?.length} Items
+                 </span>
+              </div>
 
-              {STAGES.map((stage, index) => {
-                const activeIndex = stageIndex;
-                const isCompleted = index < activeIndex;
-                const isCurrent = index === activeIndex;
-                const isCancelled = order.stage === "CANCELLED";
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-slate-100">
+                  <thead className="bg-slate-50 text-slate-500 text-xs uppercase font-semibold">
+                    <tr>
+                      <th className="px-6 py-3 text-left">Product</th>
+                      <th className="px-6 py-3 text-center">Price</th>
+                      <th className="px-6 py-3 text-center">Qty</th>
+                      <th className="px-6 py-3 text-right">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {order.products?.map((p, idx) => (
+                      <tr key={idx} className="group hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-4">
+                          <div className="flex items-center gap-4">
+                            <div className="h-14 w-14 flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 group-hover:border-orange-200 transition-colors">
+                              {p.image ? (
+                                <img src={p.image} alt={p.name} className="h-full w-full object-cover" />
+                              ) : (
+                                <div className="h-full w-full flex items-center justify-center text-slate-300">
+                                  <CubeIcon className="h-6 w-6" />
+                                </div>
+                              )}
+                            </div>
+                            <div>
+                              <p className="text-sm font-medium text-slate-900 line-clamp-1">{p.name}</p>
+                              <p className="text-xs text-slate-500 mt-0.5">SKU: VK-{idx + 1024}</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-center text-sm text-slate-600">₹{p.price?.toLocaleString()}</td>
+                        <td className="px-6 py-4 text-center text-sm font-medium text-slate-900">{p.quantity}</td>
+                        <td className="px-6 py-4 text-right text-sm font-bold text-slate-800">
+                          ₹{((p.price || 0) * (p.quantity || 0)).toLocaleString()}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-                // For cancelled, color all up to CANCELLED in red line
-                const lineClass = isCancelled
-                  ? stageLineColors.CANCELLED
-                  : stageLineColors[order.stage] || "border-gray-300";
+            {/* Activity Timeline */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+               <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-6 flex items-center gap-2">
+                <ClockIcon className="h-4 w-4 text-orange-500" />
+                Timeline
+              </h3>
+              <div className="relative border-l-2 border-slate-100 ml-3 space-y-8 pb-2">
+                  {timeline.map((entry, idx) => {
+                    const isLatest = idx === 0;
+                    return (
+                      <div key={idx} className="relative pl-8 group">
+                        <span className={`absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white shadow-sm transition-all duration-300
+                          ${isLatest ? 'bg-orange-500 ring-4 ring-orange-50 scale-110' : 'bg-slate-300 group-hover:bg-slate-400'}
+                        `}></span>
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                          <span className={`text-sm font-bold ${isLatest ? 'text-slate-900' : 'text-slate-600'}`}>
+                            {entry.stage.replace(/_/g, " ")}
+                          </span>
+                          <span className="text-xs text-slate-400 font-mono">
+                            {formatDateTime(entry.date)}
+                          </span>
+                        </div>
+                        {entry.note && (
+                          <p className="mt-2 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100 inline-block">
+                            {entry.note}
+                          </p>
+                        )}
+                      </div>
+                    )
+                  })}
+               </div>
+            </div>
 
-                return (
-                  <div key={stage} className="relative flex-1 flex flex-col items-center">
-                    {/* Connection line left (except first) */}
-                    {index > 0 && (
-                      <div
-                        className={`absolute left-0 right-1/2 top-1/2 border-t ${
-                          isCompleted || isCurrent
-                            ? lineClass
-                            : "border-gray-200"
-                        }`}
-                      />
-                    )}
+          </div>
 
-                    {/* Dot */}
-                    <div
-                      className={`flex h-7 w-7 items-center justify-center rounded-full border-2 bg-white
-                      ${
-                        isCurrent
-                          ? "border-orange-500"
-                          : isCompleted
-                          ? "border-transparent"
-                          : "border-gray-300"
-                      }`}
-                    >
-                      <span
-                        className={`h-3 w-3 rounded-full ${
-                          isCompleted || isCurrent
-                            ? stageDotColors[isCancelled ? "CANCELLED" : stage] ||
-                              "bg-orange-500"
-                            : "bg-gray-300"
-                        }`}
-                      />
+          {/* RIGHT COLUMN: Info Sidebars */}
+          <div className="space-y-6">
+            
+            {/* Customer Card */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+              <div className="flex items-center justify-between mb-4">
+                 <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                    <UserIcon className="h-4 w-4 text-orange-500" />
+                    Customer
+                 </h3>
+                 <span className="text-xs font-medium text-orange-600 hover:underline cursor-pointer">View Profile</span>
+              </div>
+              
+              <div className="flex items-center gap-4 mb-6">
+                 <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 flex items-center justify-center text-lg font-bold shadow-sm ring-2 ring-white">
+                    {customer.name ? customer.name.charAt(0).toUpperCase() : "?"}
+                 </div>
+                 <div className="overflow-hidden">
+                    <p className="text-base font-bold text-slate-900 truncate">{customer.name || "Guest"}</p>
+                    <p className="text-xs text-slate-500 truncate">Customer since 2024</p>
+                 </div>
+              </div>
+
+              <div className="space-y-3">
+                {customer.email && (
+                  <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group cursor-pointer">
+                    <div className="bg-white p-1.5 rounded-lg shadow-sm text-slate-400 group-hover:text-orange-500 transition-colors">
+                       <MailIcon className="h-4 w-4" />
                     </div>
-
-                    {/* Label */}
-                    <div className="mt-2 text-[10px] text-center uppercase tracking-wide text-gray-600">
-                      {stage.replace(/_/g, " ")}
-                    </div>
+                    <span className="text-sm text-slate-600 font-medium truncate">{customer.email}</span>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Stage Buttons */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {STAGES.filter((s) => s !== "CANCELLED").map((s) => (
-                <button
-                  key={s}
-                  disabled={updating || terminal}
-                  onClick={() => updateStage(s)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium border
-                    ${
-                      s === order.stage
-                        ? "bg-orange-500 text-white border-orange-600"
-                        : "bg-white text-gray-700 hover:bg-orange-50 border-gray-200"
-                    }
-                    ${terminal ? "opacity-60 cursor-not-allowed" : ""}
-                  `}
-                >
-                  {s.replace(/_/g, " ")}
-                </button>
-              ))}
-
-              {/* Cancel button */}
-              <button
-                disabled={updating || terminal}
-                onClick={() => updateStage("CANCELLED")}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium border
-                  ${
-                    order.stage === "CANCELLED"
-                      ? "bg-red-500 text-white border-red-600"
-                      : "bg-white text-red-600 hover:bg-red-50 border-red-300"
-                  }
-                  ${terminal && order.stage !== "CANCELLED" ? "opacity-60 cursor-not-allowed" : ""}
-                `}
-              >
-                Cancel Order
-              </button>
-            </div>
-          </div>
-
-          {/* Timeline */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
-            <h2 className="text-sm font-semibold text-gray-800 mb-4">
-              Activity Timeline
-            </h2>
-
-            {timeline.length === 0 ? (
-              <p className="text-xs text-gray-500">No status history available.</p>
-            ) : (
-              <ol className="relative border-l border-gray-200 pl-4 space-y-4">
-                {timeline.map((entry, idx) => {
-                  const isLast = idx === timeline.length - 1;
-                  const clr =
-                    stageDotColors[entry.stage] || "bg-gray-400";
-
-                  return (
-                    <li key={idx} className="relative pl-4">
-                      <span
-                        className={`absolute -left-2 top-1.5 h-3 w-3 rounded-full ${clr} border-2 border-white shadow`}
-                      />
-                      {!isLast && (
-                        <span className="absolute -left-[1px] top-4 bottom-0 w-px bg-gray-200" />
-                      )}
-                      <div className="text-xs font-semibold text-gray-800">
-                        {entry.stage.replace(/_/g, " ")}
-                      </div>
-                      <div className="text-[11px] text-gray-500">
-                        {formatDateTime(entry.date)}
-                      </div>
-                      {entry.note && (
-                        <p className="text-xs text-gray-600 mt-1">{entry.note}</p>
-                      )}
-                    </li>
-                  );
-                })}
-              </ol>
-            )}
-          </div>
-        </div>
-
-        {/* RIGHT: Summary + Customer + Address */}
-        <div className="space-y-6">
-          {/* Summary Card */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-3">
-            <h2 className="text-sm font-semibold text-gray-800 mb-2">
-              Payment & Summary
-            </h2>
-
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Payment Status</span>
-              <span className="font-semibold text-gray-800">
-                {order.paymentStatus || "PENDING"}
-              </span>
-            </div>
-
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Payment Method</span>
-              <span className="font-semibold text-gray-800">
-                {order.paymentMethod || "COD"}
-              </span>
-            </div>
-
-            <div className="border-t border-dashed my-2" />
-
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Subtotal</span>
-              <span>₹{order.subtotal}</span>
-            </div>
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Tax (GST)</span>
-              <span>₹{order.tax}</span>
-            </div>
-            <div className="flex justify-between text-xs text-gray-600">
-              <span>Shipping</span>
-              <span>₹{order.shipping}</span>
-            </div>
-
-            {order.promo && (
-              <div className="flex justify-between text-xs text-gray-600">
-                <span>Promo</span>
-                <span className="font-mono uppercase">{order.promo}</span>
-              </div>
-            )}
-
-            <div className="border-t border-dashed my-2" />
-
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-semibold text-gray-700">
-                Total ({order.currency || "INR"})
-              </span>
-              <span className="text-lg font-bold text-gray-900">
-                ₹{order.totalPrice}
-              </span>
-            </div>
-          </div>
-
-          {/* Customer Card */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 space-y-3">
-            <h2 className="text-sm font-semibold text-gray-800 mb-2">
-              Customer
-            </h2>
-
-            <div className="flex items-center gap-2 text-xs text-gray-700">
-              <UserIcon className="h-4 w-4 text-gray-500" />
-              <span>{customer.name || "Unknown Customer"}</span>
-            </div>
-
-            {customer.email && (
-              <div className="flex items-center gap-2 text-xs text-gray-700">
-                <MailIcon className="h-4 w-4 text-gray-500" />
-                <span>{customer.email}</span>
-              </div>
-            )}
-
-            {customer.phone && (
-              <div className="flex items-center gap-2 text-xs text-gray-700">
-                <PhoneIcon className="h-4 w-4 text-gray-500" />
-                <span>{customer.phone}</span>
-              </div>
-            )}
-          </div>
-
-          {/* Address Card */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
-            <h2 className="text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
-              <LocationMarkerIcon className="h-4 w-4 text-gray-600" />
-              Shipping Address
-            </h2>
-            <p className="text-xs text-gray-700 whitespace-pre-line">
-              {order.shippingAddress || "-"}
-            </p>
-          </div>
-
-          {/* Items Summary Card (compact) */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-5">
-            <h2 className="text-sm font-semibold text-gray-800 mb-2">
-              Items ({order.products?.length || 0})
-            </h2>
-            <div className="space-y-3 max-h-64 overflow-y-auto pr-1">
-              {order.products?.map((p, idx) => {
-                const lineTotal = p.lineTotal ?? (p.price || 0) * (p.quantity || 0);
-                return (
-                  <div key={idx} className="flex items-center gap-3">
-                    {p.image && (
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        className="h-12 w-12 rounded-md border object-cover"
-                      />
-                    )}
-                    <div className="flex-1">
-                      <div className="text-xs font-semibold text-gray-800 line-clamp-2">
-                        {p.name}
-                      </div>
-                      <div className="text-[11px] text-gray-500">
-                        Qty: {p.quantity} • ₹{p.price}
-                      </div>
+                )}
+                {customer.phone && (
+                  <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group cursor-pointer">
+                    <div className="bg-white p-1.5 rounded-lg shadow-sm text-slate-400 group-hover:text-orange-500 transition-colors">
+                       <PhoneIcon className="h-4 w-4" />
                     </div>
-                    <div className="text-xs font-semibold text-gray-800">
-                      ₹{lineTotal}
-                    </div>
+                    <span className="text-sm text-slate-600 font-medium">{customer.phone}</span>
                   </div>
-                );
-              })}
+                )}
+              </div>
             </div>
+
+            {/* Shipping Card */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <LocationMarkerIcon className="h-4 w-4 text-orange-500" />
+                Delivery Details
+              </h3>
+              <div className="relative p-4 bg-slate-50/80 rounded-xl border border-slate-100">
+                 {/* Decorator */}
+                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-400 to-orange-600 rounded-l-xl"></div>
+                 <p className="text-sm text-slate-700 leading-relaxed font-medium pl-2">
+                  {order.shippingAddress || "No shipping address provided."}
+                 </p>
+              </div>
+            </div>
+
+            {/* Payment Card */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <CreditCardIcon className="h-4 w-4 text-orange-500" />
+                Payment
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-3">
+                   <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                      <p className="text-xs text-slate-500 mb-1">Method</p>
+                      <p className="text-sm font-bold text-slate-800 uppercase">{order.paymentMethod || "COD"}</p>
+                   </div>
+                   <div className={`p-3 rounded-xl border text-center
+                      ${order.paymentStatus === 'PAID' ? 'bg-emerald-50 border-emerald-100 text-emerald-700' : 'bg-amber-50 border-amber-100 text-amber-700'}
+                   `}>
+                      <p className="text-xs opacity-80 mb-1">Status</p>
+                      <p className="text-sm font-bold uppercase">{order.paymentStatus || "PENDING"}</p>
+                   </div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-100 space-y-2">
+                   <div className="flex justify-between text-sm text-slate-600">
+                      <span>Subtotal</span>
+                      <span>₹{order.subtotal?.toLocaleString()}</span>
+                   </div>
+                   <div className="flex justify-between text-sm text-slate-600">
+                      <span>Shipping</span>
+                      <span>₹{order.shipping?.toLocaleString()}</span>
+                   </div>
+                   <div className="flex justify-between text-sm text-slate-600">
+                      <span>Tax</span>
+                      <span>₹{order.tax?.toLocaleString()}</span>
+                   </div>
+                   <div className="pt-2 mt-2 border-t border-slate-100 flex justify-between items-center">
+                      <span className="text-base font-bold text-slate-900">Total Paid</span>
+                      <span className="text-xl font-bold text-slate-900">₹{order.totalPrice?.toLocaleString()}</span>
+                   </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </div>
     </div>

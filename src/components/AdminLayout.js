@@ -1,42 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
+import AdminFooter from "./AdminFooter";
 
-export default function AdminLayout() {
+// 1. Receive the setIsAdmin prop
+export default function AdminLayout({ setIsAdmin }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   /* ---------------------------------------------------
-     AUTH GUARD – block unauthorized admins instantly
+       AUTH GUARD
   ---------------------------------------------------- */
   useEffect(() => {
     const token = localStorage.getItem("admin_token");
     if (!token) {
+      // 2. Sync state if token is missing to prevent loops
+      if (setIsAdmin) setIsAdmin(false);
       navigate("/admin/login", { replace: true });
     }
-  }, [navigate]);
+  }, [navigate, setIsAdmin]);
 
   /* ---------------------------------------------------
-     FIXED LOGOUT (instant redirect – no UI flicker)
+       SCROLL RESET ON NAVIGATE
+  ---------------------------------------------------- */
+  useEffect(() => {
+    const mainContent = document.getElementById("main-content");
+    if (mainContent) mainContent.scrollTop = 0;
+  }, [location.pathname]);
+
+  /* ---------------------------------------------------
+       LOGOUT HANDLER
   ---------------------------------------------------- */
   const handleLogout = () => {
     localStorage.removeItem("admin_token");
-
-    // Navigate immediately
+    
+    // 3. Update State IMMEDIATELY to stop redirect loop
+    if (setIsAdmin) setIsAdmin(false);
+    
     navigate("/admin/login", { replace: true });
-
-    // Fire-and-forget logout API call (non-blocking)
-    fetch("/api/logout", {
-      method: "POST",
-      credentials: "include",
-    }).catch(() => {});
+    fetch("/api/logout", { method: "POST" }).catch(() => {});
   };
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden">
+    <div className="flex h-screen bg-slate-50 overflow-hidden font-sans text-slate-900">
 
       {/* Sidebar */}
       <AdminSidebar
@@ -47,8 +57,8 @@ export default function AdminLayout() {
         onLogout={handleLogout}
       />
 
-      {/* Main Layout */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      {/* Main Content Wrapper */}
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden transition-all duration-300 ease-in-out relative">
 
         {/* Top Header */}
         <AdminHeader
@@ -57,8 +67,14 @@ export default function AdminLayout() {
         />
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-6">
-          <Outlet />
+        <main 
+          id="main-content"
+          className="flex-1 overflow-y-auto focus:outline-none scroll-smooth flex flex-col"
+        >
+          <div className="flex-1">
+             <Outlet />
+          </div>
+          <AdminFooter />
         </main>
       </div>
     </div>

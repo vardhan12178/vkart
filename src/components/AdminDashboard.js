@@ -1,7 +1,5 @@
-// src/components/AdminDashboard.js
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "./axiosInstance";
 import {
   TrendingUpIcon,
   ShoppingBagIcon,
@@ -9,6 +7,12 @@ import {
   CurrencyRupeeIcon,
   RefreshIcon,
   StatusOnlineIcon,
+  ArrowSmUpIcon,
+  ArrowSmDownIcon,
+  ClockIcon,
+  PhotographIcon,
+  CalendarIcon,
+  ExternalLinkIcon
 } from "@heroicons/react/outline";
 import {
   AreaChart,
@@ -20,8 +24,21 @@ import {
   CartesianGrid,
   BarChart,
   Bar,
+  Cell,
 } from "recharts";
 
+// --- CSS for Hiding Scrollbars ---
+const noScrollbarStyle = `
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`;
+
+// --- Utilities ---
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -30,14 +47,7 @@ const INR = (n) =>
   }).format(Math.round(Number(n) || 0));
 
 const STAGES = [
-  "PLACED",
-  "CONFIRMED",
-  "PROCESSING",
-  "PACKED",
-  "SHIPPED",
-  "OUT_FOR_DELIVERY",
-  "DELIVERED",
-  "CANCELLED",
+  "PLACED", "CONFIRMED", "PROCESSING", "PACKED", "SHIPPED", "OUT_FOR_DELIVERY", "DELIVERED", "CANCELLED",
 ];
 
 const stageLabels = {
@@ -52,25 +62,14 @@ const stageLabels = {
 };
 
 const stageColors = {
-  PLACED: "bg-gray-100 text-gray-700",
-  CONFIRMED: "bg-blue-100 text-blue-700",
-  PROCESSING: "bg-amber-100 text-amber-700",
-  PACKED: "bg-purple-100 text-purple-700",
-  SHIPPED: "bg-indigo-100 text-indigo-700",
-  OUT_FOR_DELIVERY: "bg-orange-100 text-orange-700",
-  DELIVERED: "bg-emerald-100 text-emerald-700",
-  CANCELLED: "bg-red-100 text-red-700",
-};
-
-const stageBarColors = {
-  PLACED: "#9CA3AF",
-  CONFIRMED: "#60A5FA",
-  PROCESSING: "#F59E0B",
-  PACKED: "#A855F7",
-  SHIPPED: "#6366F1",
-  OUT_FOR_DELIVERY: "#FB923C",
-  DELIVERED: "#10B981",
-  CANCELLED: "#EF4444",
+  PLACED: "bg-slate-100 text-slate-600 border-slate-200",
+  CONFIRMED: "bg-blue-50 text-blue-600 border-blue-200",
+  PROCESSING: "bg-amber-50 text-amber-600 border-amber-200",
+  PACKED: "bg-purple-50 text-purple-600 border-purple-200",
+  SHIPPED: "bg-indigo-50 text-indigo-600 border-indigo-200",
+  OUT_FOR_DELIVERY: "bg-orange-50 text-orange-600 border-orange-200",
+  DELIVERED: "bg-emerald-50 text-emerald-600 border-emerald-200",
+  CANCELLED: "bg-red-50 text-red-600 border-red-200",
 };
 
 export default function AdminDashboard() {
@@ -79,554 +78,533 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [refreshedAt, setRefreshedAt] = useState(null);
+  const [timeRange, setTimeRange] = useState("30d"); 
 
   const navigate = useNavigate();
 
   useEffect(() => {
     loadAll();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadAll = async () => {
     try {
       setLoading(true);
       setError("");
-
       const token = localStorage.getItem("admin_token") || "";
       const authHeader = { Authorization: `Bearer ${token}` };
 
       const [ordersRes, usersRes] = await Promise.all([
-        axios.get("/api/admin/orders", { headers: authHeader }),
-        axios.get("/api/admin/users", { headers: authHeader }),
+        fetch("/api/admin/orders", { headers: authHeader }).then(r => r.json()),
+        fetch("/api/admin/users", { headers: authHeader }).then(r => r.json()),
       ]);
 
-      const rawOrders = ordersRes.data ?? [];
-      const rawUsers = usersRes.data ?? [];
+      const rawOrders = ordersRes ?? [];
+      const rawUsers = usersRes ?? [];
 
-      const ordersArr = Array.isArray(rawOrders)
-        ? rawOrders
-        : rawOrders.items || rawOrders.orders || [];
-      const usersArr = Array.isArray(rawUsers)
-        ? rawUsers
-        : rawUsers.items || rawUsers.users || [];
+      const ordersArr = Array.isArray(rawOrders) ? rawOrders : rawOrders.items || rawOrders.orders || [];
+      const usersArr = Array.isArray(rawUsers) ? rawUsers : rawUsers.items || rawUsers.users || [];
 
       setOrders(ordersArr || []);
       setUsers(usersArr || []);
       setRefreshedAt(new Date());
     } catch (e) {
       console.error("Dashboard load error:", e);
-      const msg =
-        e?.response?.data?.message ||
-        e?.message ||
-        "Failed to load dashboard data.";
-      setError(msg);
+      setError("Could not sync dashboard data.");
     } finally {
       setLoading(false);
     }
   };
 
-  /* ---------------------------- computed metrics --------------------------- */
+  // --- Filter Logic ---
+  const filteredOrders = useMemo(() => {
+    if (!orders.length) return [];
+    const now = new Date();
+    const days = timeRange === '7d' ? 7 : timeRange === '30d' ? 30 : 90;
+    const cutoff = new Date(now.setDate(now.getDate() - days));
 
+    return orders.filter(o => new Date(o.createdAt) >= cutoff);
+  }, [orders, timeRange]);
+
+
+  /* ---------------------------- Metrics Logic --------------------------- */
   const stats = useMemo(() => {
-    if (!orders.length) {
-      return {
-        totalRevenue: 0,
-        totalOrders: 0,
-        avgOrderValue: 0,
-        activeCustomers: 0,
-        thisMonthRevenue: 0,
-        thisMonthOrders: 0,
-      };
-    }
+    const sourceData = orders; 
+
+    if (!sourceData.length) return { totalRevenue: 0, totalOrders: 0, avgOrderValue: 0, activeCustomers: 0, thisMonthOrders: 0 };
 
     let totalRevenue = 0;
     const customerSet = new Set();
-
     const now = new Date();
     const thisMonth = now.getMonth();
-    const thisYear = now.getFullYear();
-
-    let thisMonthRevenue = 0;
     let thisMonthOrders = 0;
 
-    for (const o of orders) {
+    for (const o of sourceData) {
       const total = Number(o.totalPrice || 0);
       totalRevenue += total;
-
       const created = o.createdAt ? new Date(o.createdAt) : null;
-      if (created && created.getMonth() === thisMonth && created.getFullYear() === thisYear) {
-        thisMonthRevenue += total;
+      if (created && created.getMonth() === thisMonth && created.getFullYear() === now.getFullYear()) {
         thisMonthOrders += 1;
       }
-
-      if (o.userId) {
-        customerSet.add(String(o.userId));
-      } else if (o.customer?.email) {
-        customerSet.add(o.customer.email.toLowerCase());
-      }
+      if (o.userId) customerSet.add(String(o.userId));
+      else if (o.customer?.email) customerSet.add(o.customer.email.toLowerCase());
     }
-
-    const totalOrders = orders.length;
-    const avgOrderValue = totalOrders ? totalRevenue / totalOrders : 0;
-    const activeCustomers = customerSet.size;
 
     return {
       totalRevenue,
-      totalOrders,
-      avgOrderValue,
-      activeCustomers,
-      thisMonthRevenue,
+      totalOrders: sourceData.length,
+      avgOrderValue: sourceData.length ? totalRevenue / sourceData.length : 0,
+      activeCustomers: customerSet.size,
       thisMonthOrders,
     };
   }, [orders]);
 
   const stageData = useMemo(() => {
-    if (!orders.length) return [];
     const counts = {};
     STAGES.forEach((s) => (counts[s] = 0));
-    orders.forEach((o) => {
+    filteredOrders.forEach((o) => {
       const s = (o.stage || "").toUpperCase();
       if (counts[s] != null) counts[s] += 1;
     });
-    return STAGES.map((s) => ({
-      stage: stageLabels[s],
-      key: s,
-      count: counts[s] || 0,
-      color: stageBarColors[s],
-    }));
-  }, [orders]);
+    
+    const colors = ["#cbd5e1", "#93c5fd", "#fcd34d", "#c084fc", "#818cf8", "#fb923c", "#34d399", "#f87171"];
+    return STAGES.map((s, idx) => ({ stage: stageLabels[s], key: s, count: counts[s] || 0, color: colors[idx] }));
+  }, [filteredOrders]);
 
   const revenueSeries = useMemo(() => {
-    if (!orders.length) return [];
     const map = new Map();
     const now = new Date();
-    for (let i = 6; i >= 0; i--) {
-      const d = new Date(now);
-      d.setDate(d.getDate() - i);
+    const days = timeRange === '7d' ? 7 : timeRange === '30d' ? 30 : 90;
+    
+    for (let i = days - 1; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(now.getDate() - i);
       const key = d.toISOString().slice(0, 10);
       map.set(key, {
         dateKey: key,
-        label: d.toLocaleDateString("en-IN", {
-          day: "2-digit",
-          month: "short",
-        }),
+        label: d.toLocaleDateString("en-IN", { day: "2-digit", month: "short" }),
         revenue: 0,
       });
     }
 
-    orders.forEach((o) => {
+    filteredOrders.forEach((o) => {
       if (!o.createdAt) return;
-      const d = new Date(o.createdAt);
-      const key = d.toISOString().slice(0, 10);
-      if (map.has(key)) {
-        const item = map.get(key);
-        item.revenue += Number(o.totalPrice || 0);
-      }
+      const key = new Date(o.createdAt).toISOString().slice(0, 10);
+      if (map.has(key)) map.get(key).revenue += Number(o.totalPrice || 0);
     });
 
     return Array.from(map.values());
-  }, [orders]);
+  }, [filteredOrders, timeRange]);
 
   const topProducts = useMemo(() => {
-    if (!orders.length) return [];
     const agg = new Map();
-    for (const o of orders) {
+    for (const o of filteredOrders) {
       (o.products || []).forEach((p) => {
-        const name = p.name || "Unknown Item";
+        const name = p.name || "Unknown";
         const prev = agg.get(name) || { name, qty: 0, revenue: 0, image: p.image || "" };
         prev.qty += Number(p.quantity || 0);
-        const lineTotal =
-          p.lineTotal != null
-            ? Number(p.lineTotal)
-            : Number(p.price || 0) * Number(p.quantity || 0);
-        prev.revenue += lineTotal;
-        if (!prev.image && p.image) prev.image = p.image;
+        prev.revenue += p.lineTotal != null ? Number(p.lineTotal) : Number(p.price || 0) * Number(p.quantity || 0);
+        if ((!prev.image || prev.image.includes('fakestore')) && p.image && !p.image.includes('fakestore')) {
+            prev.image = p.image;
+        }
         agg.set(name, prev);
       });
     }
-
-    return Array.from(agg.values())
-      .sort((a, b) => b.revenue - a.revenue)
-      .slice(0, 5);
-  }, [orders]);
+    return Array.from(agg.values()).sort((a, b) => b.revenue - a.revenue).slice(0, 5);
+  }, [filteredOrders]);
 
   const recentOrders = useMemo(() => {
-    if (!orders.length) return [];
-    return [...orders]
-      .sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0))
-      .slice(0, 6);
+    return [...orders].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)).slice(0, 10);
   }, [orders]);
 
-  const totalUsers = users.length;
-  const newUsers30 = useMemo(() => {
-    if (!users.length) return 0;
-    const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
-    return users.filter((u) => new Date(u.createdAt || 0).getTime() >= cutoff).length;
-  }, [users]);
+  const greeting = useMemo(() => {
+    const h = new Date().getHours();
+    if (h < 12) return "Good Morning";
+    if (h < 18) return "Good Afternoon";
+    return "Good Evening";
+  }, []);
 
-  /* --------------------------------- render -------------------------------- */
+  const fadeInClass = (delay) => `animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-${delay}`;
 
   return (
-    <div className="p-6 space-y-6">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            High-level overview of VKart performance and activity.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          {refreshedAt && (
-            <span className="text-xs text-gray-500">
-              Updated{" "}
-              {refreshedAt.toLocaleTimeString("en-IN", {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
-            </span>
-          )}
-          <button
-            type="button"
-            onClick={loadAll}
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-          >
-            <RefreshIcon className="h-4 w-4" />
-            Refresh
-          </button>
-        </div>
-      </div>
-
-      {error && (
-        <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
-          {error}
-        </div>
-      )}
-
-      {/* Top summary cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <StatCard
-          title="Total Revenue"
-          value={INR(stats.totalRevenue)}
-          subtitle="All time"
-          icon={<CurrencyRupeeIcon className="h-6 w-6 text-white" />}
-          gradient="from-orange-500 to-amber-500"
-        />
-        <StatCard
-          title="Total Orders"
-          value={stats.totalOrders}
-          subtitle={`${stats.thisMonthOrders} this month`}
-          icon={<ShoppingBagIcon className="h-6 w-6 text-white" />}
-          gradient="from-blue-500 to-indigo-500"
-        />
-        <StatCard
-          title="Avg. Order Value"
-          value={INR(stats.avgOrderValue)}
-          subtitle="Revenue / order"
-          icon={<TrendingUpIcon className="h-6 w-6 text-white" />}
-          gradient="from-emerald-500 to-teal-500"
-        />
-        <StatCard
-          title="Customers"
-          value={stats.activeCustomers || totalUsers}
-          subtitle={`${newUsers30} joined last 30 days`}
-          icon={<UsersIcon className="h-6 w-6 text-white" />}
-          gradient="from-sky-500 to-cyan-500"
-        />
-      </div>
-
-      {/* Charts row */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-        {/* Revenue chart */}
-        <div className="xl:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h2 className="text-sm font-semibold text-gray-800">
-                Revenue (Last 7 Days)
-              </h2>
-              <p className="text-xs text-gray-500">
-                Includes all completed orders by created date.
-              </p>
-            </div>
-            <span className="text-xs font-medium text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full inline-flex items-center gap-1">
-              <StatusOnlineIcon className="h-4 w-4" />
-              Live
-            </span>
+    <div className="min-h-screen bg-[#F8F9FA] font-sans text-slate-800 pb-10">
+      <style>{noScrollbarStyle}</style>
+      
+      {/* Sticky Header */}
+      <div className="sticky top-0 z-20 bg-[#F8F9FA]/80 backdrop-blur-xl border-b border-slate-200/50 px-4 sm:px-8 py-4">
+        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+              {greeting}, Admin <span className="text-2xl animate-pulse">👋</span>
+            </h1>
+            <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mt-1">
+              Overview Dashboard
+            </p>
           </div>
 
-          {revenueSeries.length ? (
-            <div className="h-60">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={revenueSeries}>
-                  <defs>
-                    <linearGradient id="revGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#fb923c" stopOpacity={0.8} />
-                      <stop offset="95%" stopColor="#fed7aa" stopOpacity={0.1} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E7EB" />
-                  <XAxis
-                    dataKey="label"
-                    tickLine={false}
-                    axisLine={false}
-                    tick={{ fontSize: 11, fill: "#6B7280" }}
-                  />
-                  <YAxis
-                    tickLine={false}
-                    axisLine={false}
-                    tick={{ fontSize: 11, fill: "#6B7280" }}
-                    tickFormatter={(v) => (v >= 1000 ? `${Math.round(v / 1000)}k` : v)}
-                  />
-                  <Tooltip
-                    formatter={(value) => INR(value)}
-                    labelStyle={{ fontSize: 12 }}
-                    contentStyle={{
-                      borderRadius: 8,
-                      borderColor: "#F97316",
-                      fontSize: 12,
-                    }}
-                  />
-                  <Area
-                    type="monotone"
-                    dataKey="revenue"
-                    stroke="#fb923c"
-                    strokeWidth={2}
-                    fillOpacity={1}
-                    fill="url(#revGradient)"
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          ) : (
-            <EmptyChartPlaceholder />
-          )}
-        </div>
-
-        {/* Stage distribution */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <h2 className="text-sm font-semibold text-gray-800 mb-1">
-            Orders by Stage
-          </h2>
-          <p className="text-xs text-gray-500 mb-4">
-            Current distribution across the full order lifecycle.
-          </p>
-
-          {stageData.some((s) => s.count > 0) ? (
-            <div className="h-60">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={stageData}>
-                  <CartesianGrid vertical={false} stroke="#E5E7EB" />
-                  <XAxis
-                    dataKey="stage"
-                    tickLine={false}
-                    axisLine={false}
-                    tick={{ fontSize: 10, fill: "#6B7280" }}
-                    interval={0}
-                  />
-                  <YAxis
-                    tickLine={false}
-                    axisLine={false}
-                    tick={{ fontSize: 10, fill: "#6B7280" }}
-                    allowDecimals={false}
-                  />
-                  <Tooltip
-                    labelStyle={{ fontSize: 12 }}
-                    contentStyle={{
-                      borderRadius: 8,
-                      borderColor: "#9CA3AF",
-                      fontSize: 12,
-                    }}
-                  />
-                  <Bar
-                    dataKey="count"
-                    radius={[6, 6, 0, 0]}
-                    isAnimationActive={true}
+          <div className="flex items-center gap-4 self-end md:self-auto">
+             {/* Date Filter - Segmented Control */}
+             <div className="bg-slate-200/50 p-1 rounded-xl flex items-center">
+                {['7d', '30d', '90d'].map((range) => (
+                  <button
+                    key={range}
+                    onClick={() => setTimeRange(range)}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${
+                      timeRange === range
+                        ? "bg-white text-slate-900 shadow-sm scale-105"
+                        : "text-slate-500 hover:text-slate-700"
+                    }`}
                   >
-                    {stageData.map((entry, index) => (
-                      <cell
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={`cell-${index}`}
-                        fill={entry.color}
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          ) : (
-            <EmptyChartPlaceholder />
-          )}
+                    {range === '7d' ? '7 Days' : range === '30d' ? '30 Days' : '3 Months'}
+                  </button>
+                ))}
+             </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-2 text-xs">
-            {stageData.map((s) => (
-              <div
-                key={s.key}
-                className="flex items-center justify-between rounded-lg bg-gray-50 px-2 py-1.5"
-              >
-                <span className="truncate text-gray-600">{s.stage}</span>
-                <span className="font-semibold text-gray-900">{s.count}</span>
-              </div>
-            ))}
+             <button
+               onClick={loadAll}
+               disabled={loading}
+               className="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all shadow-sm active:scale-95"
+               title="Sync Data"
+             >
+               <RefreshIcon className={`h-5 w-5 ${loading ? "animate-spin" : ""}`} />
+             </button>
           </div>
         </div>
       </div>
 
-      {/* Bottom row: recent orders + top products */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        {/* Recent orders */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-semibold text-gray-800">Recent Orders</h2>
-            <button
-              type="button"
-              onClick={() => navigate("/admin/orders")}
-              className="text-xs font-medium text-orange-600 hover:text-orange-700"
-            >
-              View all →
-            </button>
+      <div className="max-w-[1600px] mx-auto space-y-8 px-4 sm:px-8 mt-8">
+        
+        {error && (
+          <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600 flex items-center gap-2 animate-in fade-in shadow-sm">
+            <StatusOnlineIcon className="h-5 w-5" />
+            <span className="font-medium">{error}</span>
           </div>
+        )}
 
-          {recentOrders.length ? (
-            <div className="divide-y divide-gray-100">
-              {recentOrders.map((o) => (
-                <div
-                  key={o._id}
-                  className="py-3 flex items-center gap-3 text-sm"
-                >
-                  <div className="flex-1 min-w-0">
-                    <p className="font-medium text-gray-900 truncate">
-                      {o.orderId || o._id}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      {o.customer?.name || "Unknown Customer"} •{" "}
-                      {o.createdAt
-                        ? new Date(o.createdAt).toLocaleString("en-IN", {
-                            day: "2-digit",
-                            month: "short",
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })
-                        : "—"}
+        {/* Skeleton Loading State */}
+        {loading && !orders.length ? (
+          <DashboardSkeleton />
+        ) : (
+          <>
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className={fadeInClass(0)}>
+                <StatCard
+                  title="Total Revenue"
+                  value={INR(stats.totalRevenue)}
+                  subtitle="Gross Income"
+                  icon={<CurrencyRupeeIcon className="h-6 w-6 text-white" />}
+                  gradient="from-orange-500 to-amber-500"
+                  trend="+12.5%"
+                  trendUp={true}
+                />
+              </div>
+              <div className={fadeInClass(100)}>
+                <StatCard
+                  title="Total Orders"
+                  value={stats.totalOrders}
+                  subtitle="All time"
+                  icon={<ShoppingBagIcon className="h-6 w-6 text-white" />}
+                  gradient="from-blue-500 to-indigo-500"
+                  trend={`+${stats.thisMonthOrders} this month`}
+                  trendUp={true}
+                />
+              </div>
+              <div className={fadeInClass(200)}>
+                <StatCard
+                  title="Avg. Order Value"
+                  value={INR(stats.avgOrderValue)}
+                  subtitle="Revenue per Order"
+                  icon={<TrendingUpIcon className="h-6 w-6 text-white" />}
+                  gradient="from-emerald-500 to-teal-500"
+                  trend="+2.4%"
+                  trendUp={true}
+                />
+              </div>
+              <div className={fadeInClass(300)}>
+                <StatCard
+                  title="Active Customers"
+                  value={stats.activeCustomers || users.length}
+                  subtitle="Total User Base"
+                  icon={<UsersIcon className="h-6 w-6 text-white" />}
+                  gradient="from-pink-500 to-rose-500"
+                  trend={`+${users.length} total`}
+                  trendUp={true}
+                />
+              </div>
+            </div>
+
+            {/* Main Charts Section */}
+            <div className={`grid grid-cols-1 xl:grid-cols-3 gap-6 ${fadeInClass(400)}`}>
+              
+              {/* Revenue Chart */}
+              <div className="xl:col-span-2 bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm p-6 hover:shadow-md transition-all duration-300">
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <h2 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                        <CalendarIcon className="h-5 w-5 text-slate-400" />
+                        Revenue Analytics
+                    </h2>
+                    <p className="text-xs font-medium text-slate-400 mt-1 ml-7">
+                        Income trend for the selected period
                     </p>
                   </div>
-                  <span className="text-sm font-semibold text-gray-900 min-w-[80px] text-right">
-                    {INR(o.totalPrice || 0)}
-                  </span>
-                  <span
-                    className={[
-                      "inline-flex items-center justify-center rounded-full px-2.5 py-1 text-[11px] font-semibold whitespace-nowrap",
-                      stageColors[o.stage] || "bg-gray-100 text-gray-700",
-                    ].join(" ")}
-                  >
-                    {stageLabels[o.stage] || o.stage || "Unknown"}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => navigate(`/admin/orders/${o._id}`)}
-                    className="ml-2 text-xs text-orange-600 hover:text-orange-700"
-                  >
-                    View →
-                  </button>
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
+                    <TrendingUpIcon className="h-3 w-3" />
+                    <span>Growth Stable</span>
+                  </div>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-sm text-gray-500">No orders yet.</p>
-          )}
-        </div>
 
-        {/* Top products */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-semibold text-gray-800">Top Products</h2>
-            <span className="text-xs text-gray-500">
-              Based on revenue across all orders.
-            </span>
-          </div>
+                <div className="h-[320px] w-full">
+                  {revenueSeries.length > 0 && revenueSeries.some(d => d.revenue > 0) ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <AreaChart data={revenueSeries} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                        <defs>
+                          <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="5%" stopColor="#f97316" stopOpacity={0.1} />
+                            <stop offset="95%" stopColor="#f97316" stopOpacity={0} />
+                          </linearGradient>
+                        </defs>
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                        <XAxis 
+                          dataKey="label" 
+                          axisLine={false} 
+                          tickLine={false} 
+                          tick={{ fontSize: 10, fill: "#94a3b8", fontWeight: 500 }} 
+                          dy={10}
+                        />
+                        <YAxis 
+                          axisLine={false} 
+                          tickLine={false} 
+                          tick={{ fontSize: 10, fill: "#94a3b8", fontWeight: 500 }} 
+                          tickFormatter={(val) => `₹${val >= 1000 ? (val/1000).toFixed(0) + 'k' : val}`}
+                        />
+                        <Tooltip 
+                          contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '8px 12px', fontSize: '12px' }}
+                          cursor={{ stroke: '#f97316', strokeWidth: 1, strokeDasharray: '4 4' }}
+                        />
+                        <Area 
+                          type="monotone" 
+                          dataKey="revenue" 
+                          stroke="#f97316" 
+                          strokeWidth={2} 
+                          fillOpacity={1} 
+                          fill="url(#colorRevenue)" 
+                          animationDuration={1500}
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <EmptyState message="No revenue data available" />
+                  )}
+                </div>
+              </div>
 
-          {topProducts.length ? (
-            <div className="space-y-3">
-              {topProducts.map((p, idx) => (
-                <div
-                  key={p.name}
-                  className="flex items-center gap-3 rounded-xl border border-gray-100 px-3 py-2 hover:bg-gray-50"
-                >
-                  <div className="h-10 w-10 rounded-lg bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">
-                    {p.image ? (
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        className="object-contain h-full w-full"
-                      />
+              {/* Order Stages Bar Chart */}
+              <div className="bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm p-6 hover:shadow-md transition-all duration-300 flex flex-col">
+                  <h2 className="text-lg font-bold text-slate-900 mb-1 tracking-tight">Pipeline</h2>
+                  <p className="text-xs font-medium text-slate-400 mb-6">Order status distribution</p>
+
+                  <div className="flex-1 min-h-[220px]">
+                    {stageData.some(s => s.count > 0) ? (
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={stageData} layout="vertical" margin={{ left: 0, right: 20 }}>
+                          <CartesianGrid horizontal={false} stroke="#f1f5f9" />
+                          <XAxis type="number" hide />
+                          <YAxis 
+                            dataKey="stage" 
+                            type="category" 
+                            axisLine={false} 
+                            tickLine={false} 
+                            width={80}
+                            tick={{ fontSize: 10, fill: "#64748b", fontWeight: 600 }} 
+                          />
+                          <Tooltip 
+                            cursor={{fill: 'transparent'}}
+                            contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', fontSize: '12px' }}
+                          />
+                          <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={16} animationDuration={1500}>
+                            {stageData.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
                     ) : (
-                      <span className="text-xs text-gray-400">#{idx + 1}</span>
+                      <EmptyState message="No active orders" />
                     )}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">
-                      {p.name}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      {p.qty} sold • {INR(p.revenue)}
-                    </p>
-                  </div>
-                  <span className="text-xs font-semibold text-gray-400">
-                    TOP {idx + 1}
-                  </span>
-                </div>
-              ))}
+              </div>
             </div>
-          ) : (
-            <p className="text-sm text-gray-500">No product data yet.</p>
-          )}
-        </div>
-      </div>
 
-      {loading && (
-        <div className="fixed inset-x-0 bottom-4 flex justify-center pointer-events-none">
-          <div className="pointer-events-auto rounded-full bg-gray-900 text-white text-xs px-4 py-2 shadow-lg flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Updating metrics…
-          </div>
-        </div>
-      )}
+            {/* Bottom Section - Lists with Premium "Invisible" Scroll */}
+            <div className={`grid grid-cols-1 xl:grid-cols-2 gap-6 ${fadeInClass(500)}`}>
+              
+              {/* Recent Orders List */}
+              <div className="bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm h-[450px] flex flex-col relative group">
+                <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-[1.5rem]">
+                    <h2 className="text-lg font-bold text-slate-900 tracking-tight">Recent Orders</h2>
+                    <button onClick={() => navigate("/admin/orders")} className="text-slate-400 hover:text-orange-600 transition-colors">
+                      <ExternalLinkIcon className="h-4 w-4" />
+                    </button>
+                </div>
+                
+                {/* Scrollable Content Area */}
+                <div className="overflow-y-auto no-scrollbar flex-1 p-2">
+                  {recentOrders.length > 0 ? recentOrders.map((order) => (
+                    <div key={order._id} className="p-3 hover:bg-slate-50/80 rounded-2xl transition-colors flex items-center gap-4 group/item cursor-pointer mb-1" onClick={() => navigate(`/admin/orders/${order._id}`)}>
+                        <div className="h-10 w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 group-hover/item:bg-orange-100 group-hover/item:text-orange-600 transition-colors">
+                           <ShoppingBagIcon className="h-5 w-5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                           <div className="flex items-center justify-between mb-1">
+                             <p className="text-sm font-bold text-slate-900 truncate">#{order.orderId || order._id.slice(-6).toUpperCase()}</p>
+                             <p className="text-sm font-black text-slate-900">{INR(order.totalPrice)}</p>
+                           </div>
+                           <div className="flex items-center justify-between">
+                             <p className="text-xs font-medium text-slate-500 truncate">{order.customer?.name || "Guest"}</p>
+                             <span className={`text-[9px] uppercase tracking-wide px-2 py-0.5 rounded-full font-bold border ${stageColors[order.stage]}`}>
+                               {stageLabels[order.stage]}
+                             </span>
+                           </div>
+                        </div>
+                    </div>
+                  )) : (
+                    <EmptyState message="No recent orders found" />
+                  )}
+                  {/* Spacer for bottom scroll */}
+                  <div className="h-12"></div>
+                </div>
+
+                {/* Premium Fade Overlay - Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-[1.5rem]" />
+              </div>
+
+              {/* Top Products List */}
+              <div className="bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm h-[450px] flex flex-col relative group">
+                <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-[1.5rem]">
+                    <h2 className="text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
+                    <button onClick={() => navigate("/admin/products")} className="text-slate-400 hover:text-orange-600 transition-colors">
+                      <ExternalLinkIcon className="h-4 w-4" />
+                    </button>
+                </div>
+                
+                <div className="overflow-y-auto no-scrollbar flex-1 p-4 space-y-3">
+                    {topProducts.length > 0 ? topProducts.map((p, idx) => (
+                      <div key={idx} className="flex items-center gap-4 p-3 rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-sm transition-all bg-white group/item">
+                         <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-100 relative">
+                            <ImageWithFallback src={p.image} alt={p.name} className="h-full w-full object-contain p-1 group-hover/item:scale-110 transition-transform duration-500 mix-blend-multiply" />
+                            <div className="absolute top-0 left-0 bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-br-lg">#{idx + 1}</div>
+                         </div>
+                         <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-bold text-slate-900 truncate group-hover/item:text-orange-600 transition-colors">{p.name}</h4>
+                            <p className="text-xs font-medium text-slate-500">{p.qty} units sold</p>
+                         </div>
+                         <div className="text-right">
+                            <p className="text-sm font-black text-slate-900">{INR(p.revenue)}</p>
+                         </div>
+                      </div>
+                    )) : (
+                      <EmptyState message={`No sales in this period`} />
+                    )}
+                    <div className="h-12"></div>
+                </div>
+
+                {/* Premium Fade Overlay - Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-[1.5rem]" />
+              </div>
+
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
 
-/* -------------------------- small helper components ------------------------- */
+/* ---------------------- Components ---------------------- */
 
-function StatCard({ title, value, subtitle, icon, gradient }) {
+function ImageWithFallback({ src, alt, className }) {
+    const [error, setError] = useState(false);
+    
+    if (!src || error) {
+        return <PhotographIcon className="h-6 w-6 text-slate-300" />;
+    }
+    
+    return (
+        <img 
+            src={src} 
+            alt={alt} 
+            className={className} 
+            onError={() => setError(true)}
+        />
+    );
+}
+
+function StatCard({ title, value, subtitle, icon, gradient, trend, trendUp }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100 p-4">
-      <div className="flex items-start justify-between">
+    <div className="relative overflow-hidden rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200/60 group hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1">
+      {/* Subtle Gradient Background */}
+      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-700`}></div>
+
+      <div className="flex justify-between items-start relative z-10">
         <div>
-          <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-            {title}
-          </p>
-          <p className="mt-1 text-xl font-bold text-gray-900">{value}</p>
-          {subtitle && (
-            <p className="mt-1 text-[11px] text-gray-500">{subtitle}</p>
-          )}
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{title}</p>
+          <h3 className="text-3xl font-black text-slate-900 tracking-tight">{value}</h3>
         </div>
-        <div
-          className={`h-10 w-10 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md`}
-        >
+        <div className={`h-10 w-10 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md text-white transform group-hover:rotate-6 transition-transform duration-300`}>
           {icon}
         </div>
       </div>
-
-  
+      
+      <div className="mt-4 flex items-center gap-2 text-xs font-medium relative z-10">
+        <span className={`flex items-center gap-0.5 px-1.5 py-0.5 rounded-md ${trendUp ? "text-emerald-700 bg-emerald-50" : "text-red-700 bg-red-50"}`}>
+           {trendUp ? <ArrowSmUpIcon className="h-3 w-3" /> : <ArrowSmDownIcon className="h-3 w-3" />}
+           {trend}
+        </span>
+        <span className="text-slate-400">{subtitle}</span>
+      </div>
     </div>
   );
 }
 
-
-function EmptyChartPlaceholder() {
+function EmptyState({ message }) {
   return (
-    <div className="h-40 flex items-center justify-center text-xs text-gray-400 border border-dashed border-gray-200 rounded-xl bg-gray-50/60">
-      Not enough data yet. Place a few orders to see charts here.
+    <div className="flex flex-col items-center justify-center h-full py-12 text-slate-400">
+       <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-3 border border-slate-100">
+          <ClockIcon className="h-6 w-6 text-slate-300" />
+       </div>
+       <p className="text-xs font-bold text-slate-400 uppercase tracking-wide">{message}</p>
+    </div>
+  );
+}
+
+function DashboardSkeleton() {
+  return (
+    <div className="animate-pulse space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[1,2,3,4].map(i => (
+          <div key={i} className="h-36 bg-white rounded-[1.5rem] border border-slate-100 shadow-sm p-6 relative overflow-hidden">
+            <div className="flex justify-between">
+               <div className="h-3 w-20 bg-slate-100 rounded mb-3"></div>
+               <div className="h-10 w-10 bg-slate-100 rounded-xl"></div>
+            </div>
+            <div className="h-8 w-28 bg-slate-100 rounded mb-3"></div>
+            <div className="h-3 w-full bg-slate-50 rounded"></div>
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <div className="xl:col-span-2 h-80 bg-white rounded-[1.5rem] border border-slate-100 p-6">
+           <div className="h-5 w-40 bg-slate-100 rounded mb-8"></div>
+           <div className="h-56 bg-slate-50 rounded-xl"></div>
+        </div>
+        <div className="h-80 bg-white rounded-[1.5rem] border border-slate-100 p-6">
+           <div className="h-5 w-24 bg-slate-100 rounded mb-8"></div>
+           <div className="space-y-3">
+              {[1,2,3,4].map(j => <div key={j} className="h-10 bg-slate-50 rounded-xl"></div>)}
+           </div>
+        </div>
+      </div>
     </div>
   );
 }

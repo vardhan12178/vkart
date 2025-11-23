@@ -1,55 +1,90 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock, FaArrowRight, FaBoxOpen, FaHeart, FaHeadset } from "react-icons/fa";
+
+/* ---------- Animation Styles ---------- */
+const AnimStyles = () => (
+  <style>{`
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  `}</style>
+);
 
 export default function ProfilePreview() {
   return (
-    <div className="min-h-screen bg-[#f9fafb] py-8 sm:py-12 px-3 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
-        
-        {/* Header */}
-        <div className="p-8 sm:p-10 bg-gradient-to-r from-orange-100 to-amber-100 border-b border-gray-200">
-          <div className="flex flex-col items-center text-center">
-            <div className="h-24 w-24 sm:h-28 sm:w-28 rounded-full bg-white shadow-md grid place-items-center ring-4 ring-white">
-              <FaUser className="text-orange-500 text-4xl sm:text-5xl" />
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 flex items-center justify-center relative overflow-hidden p-6">
+      <AnimStyles />
+
+      {/* Ambient Background */}
+      <div className="fixed top-0 right-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-orange-100/30 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+      {/* Main Card */}
+      <div className="relative z-10 w-full max-w-md">
+        <div className="bg-white/80 backdrop-blur-xl border border-white/60 shadow-2xl shadow-gray-200/50 rounded-[2.5rem] overflow-hidden p-8 sm:p-12 text-center animate-fade-up">
+          
+          {/* Icon Visual */}
+          <div className="relative mx-auto w-28 h-28 mb-8">
+            <div className="absolute inset-0 bg-blue-50 rounded-full animate-pulse" />
+            <div className="relative w-full h-full bg-gradient-to-tr from-gray-900 to-gray-700 rounded-full flex items-center justify-center shadow-xl shadow-gray-900/20 animate-float">
+              <FaUser className="text-white text-3xl" />
+              <div className="absolute bottom-0 right-0 bg-white text-orange-500 p-2.5 rounded-full shadow-md border-4 border-white/50">
+                <FaLock size={12} />
+              </div>
             </div>
-
-            <h1 className="mt-4 text-xl sm:text-2xl font-bold text-gray-900">
-              Your Profile
-            </h1>
-
-            <p className="mt-1 text-sm sm:text-base text-gray-600">
-              Login to access your account details, orders, and settings.
-            </p>
           </div>
-        </div>
 
-        {/* Body */}
-        <div className="p-6 sm:p-10 bg-white">
-          <div className="text-center">
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              Sign in to view your full profile, manage your orders, update security, 
-              browse previous activity, and access your personalized VKart dashboard.
-            </p>
+          {/* Headlines */}
+          <h1 className="text-3xl font-black text-gray-900 mb-4 tracking-tight">
+            Member Access
+          </h1>
+          <p className="text-gray-500 text-sm leading-relaxed mb-8 font-medium">
+            Manage your profile, track your orders, and view your wishlist in one place.
+          </p>
 
+          {/* Value Props Grid */}
+          <div className="grid grid-cols-3 gap-3 mb-10">
+            {[
+              { icon: <FaBoxOpen />, label: "Orders" },
+              { icon: <FaHeart />, label: "Wishlist" },
+              { icon: <FaHeadset />, label: "Support" },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-gray-50 border border-gray-100 hover:border-orange-200 hover:bg-orange-50/50 transition-colors group">
+                <div className="text-gray-400 group-hover:text-orange-500 transition-colors text-xl">{item.icon}</div>
+                <span className="text-[10px] font-bold text-gray-600 uppercase tracking-wide">{item.label}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Actions */}
+          <div className="space-y-5">
             <Link
-             to="/login?redirect=/profile"
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 text-white px-6 py-3 text-sm sm:text-base font-semibold shadow hover:bg-orange-600 transition"
+              to="/login?redirect=/profile"
+              className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-2xl bg-gray-900 text-white font-bold text-base shadow-xl shadow-gray-900/10 transition-all hover:scale-[1.02] hover:shadow-gray-900/20 active:scale-[0.98]"
             >
-              <FaLock /> Sign In to Continue
+              <span>Login to Continue</span>
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
             </Link>
 
-            <div className="mt-4">
+            <div className="flex items-center justify-center gap-2 text-sm font-medium text-gray-500">
+              <span>New to VKart?</span>
               <Link
                 to="/register"
-                className="text-orange-600 text-sm sm:text-base font-semibold hover:underline"
+                className="font-bold text-orange-600 hover:text-orange-700 hover:underline transition-colors"
               >
-                New user? Create an account
+                Create an account
               </Link>
             </div>
           </div>
-        </div>
 
+        </div>
+        
+        {/* Footer Note */}
+        <p className="text-center text-[10px] font-bold text-gray-400 mt-6 uppercase tracking-widest">
+          Secure • Personal • Fast
+        </p>
       </div>
     </div>
   );

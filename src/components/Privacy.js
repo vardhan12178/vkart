@@ -1,176 +1,214 @@
-import React from "react";
-import {
-  HiOutlineShieldCheck,
-  HiOutlineInformationCircle,
-  HiOutlineDatabase,
-  HiOutlineGlobeAlt,
-  HiOutlineAdjustments,
-} from "react-icons/hi";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { 
+  FaShieldAlt, 
+  FaUserSecret, 
+  FaCookieBite, 
+  FaServer, 
+  FaGlobeAmericas, 
+  FaUserCog, 
+  FaEnvelope 
+} from "react-icons/fa";
 
-const Section = ({ number, title, icon: Icon, children }) => (
-  <section className="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
-    <h2 className="flex items-center gap-2 text-base font-semibold text-gray-900">
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-xs font-bold text-orange-700">
-        {number}
-      </span>
-      {title}
-      {Icon ? <Icon className="ml-1 h-4 w-4 text-gray-400" /> : null}
-    </h2>
-    <div className="mt-3 text-sm leading-relaxed text-gray-700">{children}</div>
-  </section>
+/* ---------- Animation Styles ---------- */
+const AnimStyles = () => (
+  <style>{`
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    html { scroll-behavior: smooth; }
+  `}</style>
 );
 
 export default function Privacy() {
-  const lastUpdated = new Date().toLocaleDateString();
+  const lastUpdated = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  const [activeSection, setActiveSection] = useState("overview");
+
+  // Scroll Spy Logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      let current = "overview";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 150) {
+          current = section.getAttribute("id");
+        }
+      });
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const sections = [
+    { id: "overview", title: "1. Overview", icon: FaShieldAlt },
+    { id: "info", title: "2. Data Collection", icon: FaUserSecret },
+    { id: "storage", title: "3. Cookies & Storage", icon: FaCookieBite },
+    { id: "analytics", title: "4. Analytics (None)", icon: FaServer },
+    { id: "thirdparty", title: "5. Third-Party APIs", icon: FaGlobeAmericas },
+    { id: "rights", title: "6. Your Rights", icon: FaUserCog },
+    { id: "contact", title: "7. Contact", icon: FaEnvelope },
+  ];
 
   return (
-    <main className="min-h-[70vh] bg-[#f9fafb]">
-      <div className="container mx-auto px-6 lg:px-10 py-10 lg:py-14">
-        {/* simple hero, no global <header> styling issues */}
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-orange-700 ring-1 ring-orange-200">
-            <span className="h-2 w-2 rounded-full bg-orange-500" />
-            Sample privacy notice for a demo project
-          </div>
+    <main className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20 relative overflow-hidden">
+      <AnimStyles />
+      
+      {/* Ambient Background */}
+      <div className="fixed top-0 right-0 w-[800px] h-[800px] bg-blue-200/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
-          <div className="mt-3 rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
-              Privacy Policy
-            </h1>
-            <p className="mt-3 text-sm md:text-base text-gray-700">
-              VKart is a <strong>non-commercial portfolio demonstration</strong>{" "}
-              created to showcase full-stack e-commerce features. This Privacy
-              Policy explains what information is handled in the demo and how
-              you should treat any data you choose to enter.
-            </p>
-            <p className="mt-2 text-xs text-gray-500">
-              Last updated: {lastUpdated}
-            </p>
-          </div>
+      {/* Header */}
+      <div className="relative bg-white border-b border-gray-200 pt-24 pb-12 px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="max-w-4xl mx-auto text-center animate-fade-up">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-100 text-green-700 text-xs font-bold uppercase tracking-widest mb-6">
+            Data & Security
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight mb-4">
+            Privacy Policy
+          </h1>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            Transparency regarding how this portfolio demo handles data. No real customer data is processed or sold.
+          </p>
+          <p className="mt-4 text-sm font-medium text-gray-400">Last Updated: {lastUpdated}</p>
         </div>
+      </div>
 
-        <div className="mt-8 grid gap-5">
-          <Section
-            number="1"
-            title="Overview"
-            icon={HiOutlineShieldCheck}
-          >
-            <p>
-              This demo is intended for learning, portfolio, and recruitment
-              purposes only. It is not an operating online store and is not
-              designed to process real customer data, real payments, or real
-              orders.
-            </p>
-          </Section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 relative z-10">
+        
+        {/* --- SIDEBAR NAVIGATION (Desktop Sticky) --- */}
+        <aside className="hidden lg:block w-64 shrink-0">
+          <div className="sticky top-24 space-y-1">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 pl-4">Table of Contents</p>
+            {sections.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`flex items-center gap-3 px-4 py-3 text-sm font-bold rounded-xl transition-all ${
+                  activeSection === item.id
+                    ? "bg-gray-900 text-white shadow-lg"
+                    : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                }`}
+              >
+                <item.icon className={activeSection === item.id ? "text-green-400" : "text-gray-400"} />
+                {item.title}
+              </a>
+            ))}
+          </div>
+        </aside>
 
-          <Section
-            number="2"
-            title="Information You May Enter"
-            icon={HiOutlineInformationCircle}
-          >
-            <p>
-              Some screens allow you to type details such as a name, email
-              address, shipping address, or support message. This information is
-              used purely to demonstrate typical e-commerce flows (for example,
-              filling a checkout form or sending a contact request).
-            </p>
-            <p className="mt-2">
-              You should treat all fields as <strong>test inputs</strong>. Do
-              not submit:
-            </p>
-            <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>Real payment card or banking information.</li>
-              <li>
-                Government-issued IDs or other highly sensitive personal data.
-              </li>
-              <li>
-                Anything you would not normally share in a public demo
-                environment.
-              </li>
-            </ul>
-          </Section>
+        {/* --- CONTENT AREA --- */}
+        <div className="flex-1 max-w-3xl space-y-12 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          
+          {/* 1. Overview */}
+          <section id="overview" className="scroll-mt-28">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">1</span>
+              Overview
+            </h2>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <p>
+                VKart is a <strong>non-commercial portfolio demonstration</strong> created to showcase full-stack e-commerce features. 
+                This policy clarifies that while the site looks and feels real, it is a simulation. 
+              </p>
+            </div>
+          </section>
 
-          <Section
-            number="3"
-            title="Local Storage, Cookies & Session Data"
-            icon={HiOutlineDatabase}
-          >
-            <p>
-              The demo may use browser technologies such as{" "}
-              <strong>localStorage</strong>, <strong>sessionStorage</strong>, or
-              simple cookies to:
-            </p>
-            <ul className="mt-2 list-disc pl-5 space-y-1">
-              <li>Keep items in your cart while you browse.</li>
-              <li>Remember filters or view preferences.</li>
-              <li>Simulate a logged-in session.</li>
-            </ul>
-            <p className="mt-2">
-              This data is stored only in your browser and can be cleared at any
-              time using your browser settings (clear site data / cookies).
-            </p>
-          </Section>
+          {/* 2. Data Collection */}
+          <section id="info" className="scroll-mt-28">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">2</span>
+              Information You Enter
+            </h2>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <p className="mb-4">
+                You may be asked to enter details like names, addresses, or emails to test functionalities (e.g., Checkout, Profile).
+              </p>
+              <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-sm text-amber-800 font-medium">
+                Please treat all input fields as <strong>Test Inputs</strong>. Do not submit real credit card numbers, passwords used on other sites, or sensitive personal data.
+              </div>
+            </div>
+          </section>
 
-          <Section
-            number="4"
-            title="Analytics & Tracking"
-            icon={HiOutlineGlobeAlt}
-          >
-            <p>
-              The hosted portfolio version of VKart does{" "}
-              <strong>not</strong> include third-party analytics such as Google
-              Analytics, advertising trackers, or remarketing pixels.
-            </p>
-            <p className="mt-2">
-              If you reuse this codebase in your own project and add analytics
-              or marketing tools, you should update this section to reflect your
-              actual data collection and obtain any required consent.
-            </p>
-          </Section>
+          {/* 3. Storage */}
+          <section id="storage" className="scroll-mt-28">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">3</span>
+              Local Storage & Cookies
+            </h2>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <p className="mb-4">
+                We use browser technologies like <strong>LocalStorage</strong> and <strong>Session Cookies</strong> to:
+              </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Persist your shopping cart items.</li>
+                <li>Keep you logged in during your demo session.</li>
+                <li>Save user preferences (like theme or view mode).</li>
+              </ul>
+              <p className="mt-4 text-sm">This data lives in your browser and can be cleared via settings at any time.</p>
+            </div>
+          </section>
 
-          <Section
-            number="5"
-            title="Third-party APIs & Demo Data"
-            icon={HiOutlineGlobeAlt}
-          >
-            <p>
-              Product listings and other sample content may be sourced from
-              public demo APIs or static JSON files. These calls generally
-              include only technical request information (such as your IP
-              address, as part of normal web traffic) and do not attach
-              additional identifiers from this demo.
-            </p>
-          </Section>
+          {/* 4. Analytics */}
+          <section id="analytics" className="scroll-mt-28">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">4</span>
+              Analytics & Tracking
+            </h2>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <p>
+                The portfolio version of VKart does <strong>not</strong> use third-party tracking pixels, Google Analytics, or advertising cookies. Your browsing activity on this demo is private to your session.
+              </p>
+            </div>
+          </section>
 
-          <Section
-            number="6"
-            title="Your Choices"
-            icon={HiOutlineAdjustments}
-          >
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                Avoid using real personal or payment details while exploring the
-                demo.
-              </li>
-              <li>
-                Clear your browser’s cookies and storage if you want to remove
-                any locally stored demo data (cart contents, forms, or mock
-                sessions).
-              </li>
-              <li>
-                You may stop using the demo at any time; data may be reset
-                without notice as part of development.
-              </li>
-            </ul>
-          </Section>
+          {/* 5. Third Party */}
+          <section id="thirdparty" className="scroll-mt-28">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">5</span>
+              Third-Party Services
+            </h2>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <p>
+                This demo may fetch product data from public APIs or use services like <strong>Razorpay (Test Mode)</strong> or <strong>Google OAuth</strong>. Interactions with these services are subject to their respective privacy policies.
+              </p>
+            </div>
+          </section>
 
-          <Section number="7" title="Contact" icon={HiOutlineInformationCircle}>
-            <p>
-              If you have questions about how this portfolio demo works or
-              would like more technical details for evaluation or recruitment,
-              please use the Contact page provided in the site navigation.
-            </p>
-          </Section>
+          {/* 6. Rights */}
+          <section id="rights" className="scroll-mt-28">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">6</span>
+              Your Choices
+            </h2>
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <ul className="list-disc pl-5 space-y-2">
+                <li>You can clear your browser cache to remove all local data from this site.</li>
+                <li>You can delete your demo account via the Profile settings (simulated).</li>
+                <li>Since this is a demo, data may be periodically wiped from the database without notice.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* 7. Contact */}
+          <section id="contact" className="scroll-mt-28 mb-20">
+            <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">7</span>
+              Contact Information
+            </h2>
+            <div className="bg-gray-900 rounded-2xl p-8 text-white shadow-xl">
+              <p className="mb-6 text-gray-300">
+                If you have technical questions about how this project handles data or authentication, feel free to reach out.
+              </p>
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition-colors"
+              >
+                <FaEnvelope /> Contact Developer
+              </Link>
+            </div>
+          </section>
+
         </div>
       </div>
     </main>

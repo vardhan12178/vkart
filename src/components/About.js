@@ -8,26 +8,42 @@ import {
   FaShieldAlt,
   FaRocket,
   FaCartPlus,
-  FaQuestionCircle,
+  FaQuestion,
   FaCogs,
+  FaGithub,
+  FaArrowRight,
+  FaServer,
+  FaCode,
+  FaLayerGroup
 } from "react-icons/fa";
+import { SiRedux, SiTailwindcss, SiRazorpay } from "react-icons/si";
+
+/* ---------- Animation Styles ---------- */
+const AnimStyles = () => (
+  <style>{`
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+  `}</style>
+);
 
 export default function About() {
-  const [open, setOpen] = useState(-1);
+  const [open, setOpen] = useState(0);
 
   const faqs = useMemo(
     () => [
       {
         q: "Is VKart a real store?",
-        a: "No. VKart is a portfolio project built by a single developer (Bala Vardhan) to demonstrate MERN stack expertise, UI/UX skills, and real e-commerce flows.",
+        a: "No. VKart is a portfolio project built by a single developer to demonstrate MERN stack expertise, UI/UX skills, and real e-commerce flows.",
       },
       {
-        q: "Does the checkout and payment system actually work?",
+        q: "Does the checkout actually work?",
         a: "Yes. VKart integrates Razorpay (test mode), Google OAuth login, JWT auth, and secure backend flows just like a real-world app.",
       },
       {
         q: "Is there an admin panel?",
-        a: "Yes. VKart has a full admin dashboard for managing products, users, and orders. Access is restricted, but the full demo can be shown during an interview.",
+        a: "Yes. VKart has a full admin dashboard for managing products, users, and orders. Access is restricted for security, but code is available on GitHub.",
       },
       {
         q: "Why did you build VKart?",
@@ -38,212 +54,202 @@ export default function About() {
   );
 
   return (
-    <main className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50">
+    <main className="relative min-h-screen bg-gray-50 font-sans text-gray-800 overflow-hidden selection:bg-orange-100 selection:text-orange-900">
+      <AnimStyles />
 
-      {/* Background bubbles */}
-      <div aria-hidden className="absolute -top-32 -left-20 h-72 w-72 rounded-full bg-orange-200/40 blur-3xl" />
-      <div aria-hidden className="absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl" />
+      {/* Ambient Background Blobs */}
+      <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-      {/* HERO */}
-      <section className="container mx-auto px-6 lg:px-10 pt-20 pb-16">
-        <div className="grid items-center gap-12 md:grid-cols-2">
+      {/* --- HERO SECTION --- */}
+      <section className="relative container mx-auto px-4 pt-20 pb-24 sm:pt-32 sm:pb-32 text-center z-10">
+        <div className="animate-fade-up">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-sm mb-8">
+            <FaRocket /> Project Case Study
+          </span>
+          
+          <h1 className="text-5xl sm:text-7xl font-black text-gray-900 tracking-tight leading-[1.1] mb-6">
+            Building a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Production-Ready</span> <br className="hidden sm:block" /> E-Commerce Engine.
+          </h1>
+          
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 leading-relaxed font-medium">
+            VKart isn't just a template. It's a complete, full-stack system engineered with modern practices, secure authentication, and complex state management.
+          </p>
+        </div>
+      </section>
+
+      {/* --- TECH STACK BENTO GRID --- */}
+      <section className="container mx-auto px-4 pb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          {[
+            { icon: FaReact, name: "React.js", color: "text-blue-400" },
+            { icon: SiRedux, name: "Redux Toolkit", color: "text-purple-500" },
+            { icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
+            { icon: FaDatabase, name: "MongoDB", color: "text-green-600" },
+            { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-sky-400" },
+            { icon: FaLock, name: "JWT Auth", color: "text-orange-500" },
+            { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
+            { icon: FaServer, name: "Express.js", color: "text-gray-600" },
+          ].map((tech, i) => (
+            <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
+              <tech.icon className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
+              <span className="font-bold text-gray-700 text-sm">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- KEY FEATURES (Cards) --- */}
+      <section className="container mx-auto px-4 pb-24">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
-            <p className="text-sm font-semibold tracking-wider text-orange-600">
-              ABOUT THIS PROJECT
-            </p>
-
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
-              VKart — A Modern{" "}
-              <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
-                Full-Stack E-Commerce
-              </span>{" "}
-              Case Study.
-            </h1>
-
-            <p className="mt-4 text-gray-700 leading-relaxed text-lg">
-              VKart is a complete e-commerce system built from scratch using the
-              MERN stack. It showcases production-like flows, UI polish,
-              authentication, payments, admin tools, and clean component
-              architecture — all created by a single developer.
-            </p>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="mx-auto max-w-md rounded-3xl bg-white/70 p-6 shadow-xl ring-1 ring-gray-200 backdrop-blur">
-            <h3 className="text-xl font-bold text-gray-900 text-center mb-4">
-              Technology Stack
-            </h3>
-
-            <div className="grid grid-cols-2 gap-4 text-center">
-              <div className="rounded-2xl bg-orange-50 p-4">
-                <FaReact className="mx-auto text-3xl text-orange-600" />
-                <p className="mt-2 font-semibold text-gray-900">React + Redux</p>
-              </div>
-              <div className="rounded-2xl bg-orange-50 p-4">
-                <FaNodeJs className="mx-auto text-3xl text-orange-600" />
-                <p className="mt-2 font-semibold text-gray-900">Node.js + Express</p>
-              </div>
-              <div className="rounded-2xl bg-orange-50 p-4">
-                <FaDatabase className="mx-auto text-3xl text-orange-600" />
-                <p className="mt-2 font-semibold text-gray-900">MongoDB</p>
-              </div>
-              <div className="rounded-2xl bg-orange-50 p-4">
-                <FaLock className="mx-auto text-3xl text-orange-600" />
-                <p className="mt-2 font-semibold text-gray-900">OAuth + JWT + 2FA</p>
-              </div>
-            </div>
-
-            <p className="mt-5 text-sm text-gray-700 text-center">
-              Real authentication, real payments, real architecture. All flows work end-to-end.
-            </p>
+            <h2 className="text-3xl font-black text-gray-900 tracking-tight">Core Architecture</h2>
+            <p className="text-gray-500 mt-2">Built to handle real-world scenarios.</p>
           </div>
         </div>
-      </section>
 
-      {/* FEATURES SECTION */}
-      <section className="container mx-auto px-6 lg:px-10 pb-16">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10">
-          Project Goals & Key Features
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              icon: <FaCogs className="text-5xl text-orange-500" />,
-              title: "Full Admin Dashboard",
-              text: "Manage products, users, orders, inventory, and more. All CRUD operations implemented with secure APIs.",
+              icon: <FaCogs />,
+              title: "Admin Dashboard",
+              desc: "Full CRUD capabilities for products and users protected by admin middleware."
             },
             {
-              icon: <FaLock className="text-5xl text-orange-500" />,
-              title: "Advanced Authentication",
-              text: "JWT-based login, Google OAuth, secure password hashing, and Two-Factor Authentication support.",
+              icon: <FaShieldAlt />,
+              title: "Secure Auth",
+              desc: "JWT-based sessions with HttpOnly cookies and Google OAuth integration."
             },
             {
-              icon: <FaCartPlus className="text-5xl text-orange-500" />,
-              title: "Real Checkout Flow",
-              text: "Integrated Razorpay test-mode payments, delivery info, order summary, and confirmation screens.",
+              icon: <FaCartPlus />,
+              title: "Checkout Flow",
+              desc: "End-to-end payment processing with address management and order tracking."
             },
             {
-              icon: <FaRocket className="text-5xl text-orange-500" />,
-              title: "Modern UI & UX",
-              text: "Clean responsive design, filters, persistent cart, smooth interactions, and production-quality components.",
+              icon: <FaLayerGroup />,
+              title: "State Management",
+              desc: "Centralized Redux store for cart, user session, and persistent UI states."
             },
-          ].map((f, i) => (
-            <article
-              key={i}
-              className="group rounded-2xl bg-white/80 p-8 shadow-xl ring-1 ring-gray-200 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
-            >
-              <div className="flex flex-col items-center text-center">
-                {f.icon}
-                <h3 className="mt-4 text-xl font-bold text-gray-900">{f.title}</h3>
-                <p className="mt-3 text-lg leading-relaxed text-gray-700">
-                  {f.text}
-                </p>
+          ].map((feature, i) => (
+            <div key={i} className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-100 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl text-orange-600 mb-6 group-hover:scale-110 transition-transform">
+                {feature.icon}
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ARCHITECTURE */}
-      <section className="container mx-auto px-6 lg:px-10 pb-16">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-6">
-          System Architecture Overview
-        </h2>
-
-        <p className="max-w-3xl mx-auto text-center text-gray-700 leading-relaxed mb-10">
-          VKart is structured like a real production system with isolated concerns,
-          modular components, and scalable back-end routing. The project reflects
-          strong engineering practices, not template usage.
-        </p>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {[
-            "Modular React component design",
-            "Redux Toolkit state management",
-            "Express REST API architecture",
-            "MongoDB schema & indexing",
-            "Secure auth & token lifecycle",
-            "Protected admin routes",
-            "Image upload pipeline",
-            "Checkout + payment validation",
-          ].map((text, i) => (
-            <div
-              key={i}
-              className="rounded-2xl bg-white/80 p-5 shadow ring-1 ring-gray-200 backdrop-blur flex items-center gap-3"
-            >
-              <FaCheckCircle className="text-emerald-500" />
-              <p className="text-gray-900 font-medium">{text}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {feature.desc}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="container mx-auto px-6 lg:px-10 pb-20">
-        <div className="mx-auto max-w-3xl">
-          <div className="flex items-center justify-center gap-2">
-            <FaQuestionCircle className="text-orange-600" />
-            <h3 className="text-2xl font-extrabold text-gray-900">FAQs</h3>
-          </div>
-
-          <div className="mt-6 divide-y divide-gray-200 rounded-2xl bg-white/80 shadow ring-1 ring-gray-200 backdrop-blur">
-            {faqs.map((f, i) => (
-              <button
-                key={i}
-                onClick={() => setOpen(open === i ? -1 : i)}
-                className="w-full text-left px-5 py-4"
-              >
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold text-gray-900">{f.q}</p>
-                  <span
-                    className={`ml-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold transition ${
-                      open === i
-                        ? "bg-orange-600 text-white"
-                        : "bg-orange-100 text-orange-700"
-                    }`}
-                  >
-                    {open === i ? "–" : "+"}
-                  </span>
+      {/* --- ARCHITECTURE LIST --- */}
+      <section className="py-24 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaCode className="text-2xl text-gray-600" />
+            </div>
+            <h2 className="text-3xl font-black text-gray-900 mb-12">Engineering Decisions</h2>
+            
+            <div className="grid sm:grid-cols-2 text-left gap-x-12 gap-y-6">
+              {[
+                "Modular component architecture for reusability",
+                "Optimistic UI updates for snappy feel",
+                "Data validation via Mongoose Schemas",
+                "MongoDB indexing for faster queries",
+                "Responsive mobile-first Tailwind styling",
+                "Secure environment variable management",
+                "Image optimization and lazy loading",
+                "RESTful API best practices"
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                  <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
+                  <span className="font-medium text-gray-700">{item}</span>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-                {open === i && (
-                  <p className="mt-2 text-gray-700 leading-relaxed">{f.a}</p>
-                )}
-              </button>
+      {/* --- FAQ ACCORDION --- */}
+      <section className="container mx-auto px-4 py-24">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-orange-600 font-bold tracking-widest text-xs uppercase">Questions</span>
+            <h2 className="text-3xl font-black text-gray-900 mt-2">Common Queries</h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <div 
+                key={i} 
+                className={`rounded-2xl border transition-all duration-300 ${
+                  open === i 
+                    ? "bg-white border-orange-200 shadow-lg shadow-orange-500/5" 
+                    : "bg-white/50 border-gray-200 hover:bg-white"
+                }`}
+              >
+                <button
+                  onClick={() => setOpen(open === i ? -1 : i)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <span className={`font-bold transition-colors ${open === i ? "text-orange-600" : "text-gray-900"}`}>
+                    {f.q}
+                  </span>
+                  <span className={`ml-4 text-xl font-light transition-transform duration-300 ${open === i ? "rotate-45 text-orange-600" : "text-gray-400"}`}>
+                    +
+                  </span>
+                </button>
+                <div 
+                  className={`px-6 text-gray-600 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${
+                    open === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  {f.a}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative isolate mx-4 mb-20 rounded-3xl bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-12 text-center shadow-2xl ring-1 ring-orange-300 sm:mx-auto sm:max-w-4xl">
-        <h3 className="text-2xl font-extrabold text-white">
-          Want a full walkthrough of VKart?
-        </h3>
-
-        <p className="mt-2 text-white/90 max-w-xl mx-auto">
-          I can provide a complete code and feature walkthrough during an
-          interview — frontend, backend, admin tools, payments, and architecture.
-        </p>
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="/products"
-            className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow hover:opacity-95"
-          >
-            Browse Products
-          </a>
-
-          <a
-            href="https://github.com/vardhan12178/vkart"
-            target="_blank"
-            className="rounded-xl ring-1 ring-white/80 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-          >
-            View Source Code
-          </a>
+      {/* --- CTA / FOOTER --- */}
+      <section className="container mx-auto px-4 pb-12">
+        <div className="bg-[#0f0f0f] rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          {/* Decor */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-800/50 via-transparent to-transparent" />
+          
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6">
+              Ready to see the code?
+            </h2>
+            <p className="text-gray-400 text-lg mb-10">
+              Dive into the repository to explore the folder structure, custom hooks, and backend logic.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="/products"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-black font-bold hover:bg-gray-100 transition-all active:scale-95"
+              >
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/vardhan12178/vkart"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 text-white font-bold border border-white/10 hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+              >
+                <FaGithub size={20} /> Source Code
+              </a>
+            </div>
+          </div>
         </div>
       </section>
+
     </main>
   );
 }
