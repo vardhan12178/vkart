@@ -560,13 +560,13 @@ useEffect(() => {
         </div>
       </div>
 
-      <button
+      {/* <button
         onClick={() => alert("AI Assistant feature coming soon!")}
         className="fixed bottom-8 right-8 z-30 h-12 w-12 rounded-full bg-gray-900 text-white shadow-xl shadow-gray-900/20 flex items-center justify-center hover:scale-110 transition-transform"
       >
         <FaMagic size={16} />
       </button>
-      
+       */}
       {/* RESTORED COMPARE DOCK */}
       {compare.length > 0 && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-up">

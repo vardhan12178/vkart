@@ -35,24 +35,24 @@ useEffect(() => {
   return (
     
     <Provider store={store}>
-      <Helmet>
-        <title>VKart — Curated Shopping, Fast Delivery</title>
-        <meta
-          name="description"
-          content="VKart is a curated e-commerce experience for electronics, fashion and essentials. Fast delivery, secure payments, and handpicked deals."
-        />
-        <link rel="canonical" href="https://vkartshop.netlify.app/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="VKart" />
-        <meta property="og:title" content="VKart — Curated Shopping, Fast Delivery" />
-        <meta property="og:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
-        <meta property="og:url" content="https://vkartshop.netlify.app/" />
-        <meta property="og:image" content="https://vkartshop.netlify.app/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="VKart — Curated Shopping, Fast Delivery" />
-        <meta name="twitter:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
-        <meta name="twitter:image" content="https://vkartshop.netlify.app/og-image.jpg" />
-      </Helmet>
+    <Helmet>
+      <title>VKart — Curated Shopping, Fast Delivery</title>
+      <meta
+        name="description"
+        content="VKart is a curated e-commerce experience for electronics, fashion and essentials. Fast delivery, secure payments, and handpicked deals."
+      />
+      <link rel="canonical" href="https://vkart.balavardhan.dev/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="VKart" />
+      <meta property="og:title" content="VKart — Curated Shopping, Fast Delivery" />
+      <meta property="og:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
+      <meta property="og:url" content="https://vkart.balavardhan.dev/" />
+      <meta property="og:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="VKart — Curated Shopping, Fast Delivery" />
+      <meta name="twitter:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
+      <meta name="twitter:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
+    </Helmet>
       
       <div id="root">
        {/*  Header behaves like Footer: always on non-admin routes */}

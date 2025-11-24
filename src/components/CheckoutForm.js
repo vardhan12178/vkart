@@ -233,7 +233,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
                   <InputField 
                     label="Full Name" name="fullName" 
-                    icon={FaUser} placeholder="John Doe"
+                    icon={FaUser} placeholder="Enter your name"
                     value={data.fullName} onChange={(e) => setField("fullName", e.target.value)} onBlur={() => markTouched("fullName")} 
                     error={errors.fullName} touched={touched.fullName} 
                   />
@@ -246,7 +246,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   <div className="md:col-span-2">
                     <InputField 
                       label="Email Address" name="email" type="email"
-                      icon={FaEnvelope} placeholder="john@example.com"
+                      icon={FaEnvelope} placeholder="your.email@example.com"
                       value={data.email} onChange={(e) => setField("email", e.target.value)} onBlur={() => markTouched("email")} 
                       error={errors.email} touched={touched.email} 
                     />

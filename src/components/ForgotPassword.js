@@ -1,29 +1,60 @@
+// src/pages/ForgotPassword.jsx
 import React, { useState } from "react";
 import axios from "./axiosInstance";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ExclamationCircleIcon,
   CheckCircleIcon,
   MailIcon,
   ArrowLeftIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/outline";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
+const currentYear = new Date().getFullYear();
+
+// --- Animation Variants ---
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const staggerContainer = {
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+// --- Helper Components ---
 
 const Toast = ({ show, kind = "error", children }) => {
   if (!show) return null;
-  const palette =
-    kind === "success"
-      ? "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200"
-      : "bg-red-50 text-red-800 ring-1 ring-red-200";
-  const Icon = kind === "success" ? CheckCircleIcon : ExclamationCircleIcon;
+  const isSuccess = kind === "success";
+
   return (
-    <div className={cx("flex items-center gap-2 rounded-lg px-3 py-2 text-sm", palette)} aria-live="polite">
-      <Icon className="h-4 w-4" />
-      <div>{children}</div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      className={cx(
+        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
+        isSuccess
+          ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
+          : "bg-red-50/80 border-red-100 text-red-800"
+      )}
+      role="status"
+    >
+      {isSuccess ? (
+        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
+      ) : (
+        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
+      )}
+      <div className="pt-0.5 font-medium">{children}</div>
+    </motion.div>
   );
 };
+
+// --- Main Component ---
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
@@ -54,69 +85,131 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-white px-6 py-12">
-      <div className="mx-auto w-full max-w-md">
-        <button
-          onClick={() => navigate("/login")}
-          className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-orange-600 hover:text-orange-500"
+    <>
+      <Helmet>
+        <title>Forgot Password — VKart</title>
+        <meta name="description" content="Recover your VKart account access." />
+      </Helmet>
+
+      {/* BACKGROUND */}
+      <div className="min-h-screen w-full flex items-center justify-center p-4 bg-[#F8F9FA] relative overflow-hidden">
+        {/* Abstract Orbs */}
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-orange-200/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="relative w-full max-w-[480px] bg-white rounded-[32px] shadow-2xl border border-white/50 overflow-hidden"
         >
-          <ArrowLeftIcon className="h-4 w-4" />
-          Back to sign in
-        </button>
-
-        <div className="rounded-3xl bg-white/80 p-6 shadow-xl backdrop-blur-sm sm:p-10">
-          <div className="mb-6 text-center">
-            <h1 className="text-2xl font-bold text-gray-900">Forgot password</h1>
-            <p className="mt-2 text-sm text-gray-500">Enter your email or username. We’ll send a reset link if an account exists.</p>
-          </div>
-
-          <div className="space-y-3">
-            <Toast show={!!okMsg} kind="success">{okMsg}</Toast>
-            <Toast show={!!errMsg}>{errMsg}</Toast>
-          </div>
-
-          <form onSubmit={onSubmit} className="mt-6 space-y-5" noValidate>
-            <label htmlFor="emailOrUsername" className="mb-1 block text-sm font-medium text-gray-700">
-              Email or Username
-            </label>
-            <div className="relative">
-              <MailIcon className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                id="emailOrUsername"
-                type="text"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                placeholder="you@example.com or yourusername"
-                className="block w-full rounded-xl border border-gray-200 bg-white pl-10 pr-3 py-3 text-gray-900 shadow-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
-                autoComplete="username email"
-                required
-              />
+          <div className="px-8 py-12 sm:px-10">
+            
+            {/* Header with Logo */}
+            <div className="text-center mb-8">
+              <div className="flex justify-center mb-6">
+                <div className="h-12 w-12 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
+                  <ShoppingCartIcon className="h-7 w-7" />
+                </div>
+              </div>
+              <motion.h1 
+                variants={fadeInUp}
+                className="text-2xl font-extrabold text-gray-900 tracking-tight"
+              >
+                Forgot password?
+              </motion.h1>
+              <motion.p 
+                variants={fadeInUp}
+                className="mt-2 text-sm text-gray-500 leading-relaxed px-4"
+              >
+                Enter your email or username and we'll send you a link to reset your password.
+              </motion.p>
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 px-4 py-3 text-base font-semibold text-white shadow-lg transition hover:brightness-[1.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 disabled:cursor-not-allowed disabled:opacity-80"
-            >
-              {loading ? (
-                <>
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                  Sending…
-                </>
-              ) : (
-                "Send reset link"
+            {/* Toast Notifications */}
+            <AnimatePresence>
+              {(okMsg || errMsg) && (
+                <Toast show={true} kind={okMsg ? "success" : "error"}>
+                  {okMsg || errMsg}
+                </Toast>
               )}
-            </button>
-          </form>
+            </AnimatePresence>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
-            Don’t need a reset?{" "}
-            <button onClick={() => navigate("/register")} className="font-semibold text-orange-600 hover:text-orange-500">
-              Create an account
-            </button>
-          </p>
-        </div>
+            <motion.form 
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              onSubmit={onSubmit} 
+              className="space-y-5" 
+              noValidate
+            >
+              <motion.div variants={fadeInUp}>
+                <label htmlFor="emailOrUsername" className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">
+                  Email or Username
+                </label>
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <MailIcon className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                  </div>
+                  <input
+                    id="emailOrUsername"
+                    type="text"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    placeholder="you@example.com"
+                    className="block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-4 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
+                    autoComplete="username email"
+                    required
+                  />
+                </div>
+              </motion.div>
+
+              <motion.button
+                variants={fadeInUp}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                disabled={loading}
+                className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-2"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+                  {loading ? "Sending Link..." : "Send Reset Link"}
+                </span>
+              </motion.button>
+            </motion.form>
+
+            {/* Footer Actions */}
+            <motion.div variants={fadeInUp} className="mt-8 flex flex-col items-center gap-4 text-sm">
+              <button
+                onClick={() => navigate("/login")}
+                className="inline-flex items-center gap-2 font-bold text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                <ArrowLeftIcon className="h-4 w-4" />
+                Back to Sign In
+              </button>
+              
+              <div className="w-full h-px bg-gray-100" />
+              
+              <p className="text-gray-600">
+                Don't have an account?{" "}
+                <button 
+                  onClick={() => navigate("/register")} 
+                  className="font-bold text-orange-600 hover:text-orange-700 transition-colors"
+                >
+                  Create Account
+                </button>
+              </p>
+            </motion.div>
+
+            <div className="mt-8 text-center">
+                <p className="text-[10px] text-gray-400">
+                   © {currentYear} VKart Inc.
+                </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </>
   );
 }
