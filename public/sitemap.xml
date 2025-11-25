@@ -1,84 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Home Page -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Products -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/products</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/blog</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- About -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/about</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Contact -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/contact</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Compare -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/compare</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Careers -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/careers</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Terms of Service -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/terms</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/privacy</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- License -->
-  <url>
-    <loc>https://vkart.balavardhan.dev/license</loc>
-    <lastmod>2025-01-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-</urlset>
+User-agent: *
+Allow: /
+
+# Block admin routes from being indexed
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://vkart.balavardhan.dev/sitemap.xml
