@@ -274,12 +274,12 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
 
               {/* Mobile Actions */}
               <div className="pt-4 border-t border-gray-100 grid grid-cols-2 gap-3">
-                 <button 
+                 {/* <button 
                     onClick={() => { setIsMobileMenuOpen(false); setAiMenuOpen(true); }} // Note: In real mobile app, better to navigate to a dedicated AI page or modal
                     className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-orange-50 text-orange-700 text-sm font-bold border border-orange-100"
                  >
                     <SparklesIcon className="h-4 w-4" /> Ask AI
-                 </button>
+                 </button> */}
                  
                  {loggedIn ? (
                     <button

@@ -137,16 +137,89 @@ export default function Register() {
   const [showPw, setShowPw] = useState(false);
   const [showPw2, setShowPw2] = useState(false);
   const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({
+    name: false,
+    username: false,
+    email: false,
+    password: false,
+    confirmPassword: false,
+  });
   const [toast, setToast] = useState({ show: false, kind: "error", msg: "" });
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  const setField = (k, v) => setForm((s) => ({ ...s, [k]: v }));
+  const setField = (k, v) => {
+    setForm((s) => ({ ...s, [k]: v }));
+    // Validate field as user types if it's already been touched
+    if (touched[k]) {
+      validateField(k, v);
+    }
+  };
+
+  const validateField = (field, value) => {
+    if (!touched[field]) return;
+
+    const newErrors = { ...errors };
+
+    switch (field) {
+      case "name":
+        newErrors.name = !value.trim() ? "Name is required." : "";
+        break;
+      case "username":
+        if (!value.trim()) {
+          newErrors.username = "Username is required.";
+        } else if (!/^[a-z0-9._-]{3,64}$/i.test(value.trim())) {
+          newErrors.username = "3-64 chars, alphanumeric, dot, underscore.";
+        } else {
+          newErrors.username = "";
+        }
+        break;
+      case "email":
+        if (!value.trim()) {
+          newErrors.email = "Email is required.";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
+          newErrors.email = "Enter a valid email.";
+        } else {
+          newErrors.email = "";
+        }
+        break;
+      case "password":
+        if (!value) {
+          newErrors.password = "Password is required.";
+        } else if (value.length < 8) {
+          newErrors.password = "Min 8 characters required.";
+        } else {
+          newErrors.password = "";
+        }
+        // Also revalidate confirmPassword if it's been touched
+        if (touched.confirmPassword && form.confirmPassword) {
+          if (value !== form.confirmPassword) {
+            newErrors.confirmPassword = "Passwords do not match.";
+          } else {
+            newErrors.confirmPassword = "";
+          }
+        }
+        break;
+      case "confirmPassword":
+        if (!value) {
+          newErrors.confirmPassword = "Confirm your password.";
+        } else if (form.password !== value) {
+          newErrors.confirmPassword = "Passwords do not match.";
+        } else {
+          newErrors.confirmPassword = "";
+        }
+        break;
+      default:
+        break;
+    }
+
+    setErrors(newErrors);
+  };
 
   const validate = () => {
     const e = {};
     if (!form.name.trim()) e.name = "Name is required.";
-    
+
     if (!form.username.trim()) {
       e.username = "Username is required.";
     } else if (!/^[a-z0-9._-]{3,64}$/i.test(form.username.trim())) {
@@ -178,6 +251,16 @@ export default function Register() {
   const submit = async (e) => {
     e.preventDefault();
     setToast({ show: false, kind: "error", msg: "" });
+
+    // Mark all fields as touched on submit
+    setTouched({
+      name: true,
+      username: true,
+      email: true,
+      password: true,
+      confirmPassword: true,
+    });
+
     if (!validate()) return;
     setLoading(true);
     try {
@@ -232,19 +315,18 @@ export default function Register() {
       <style>{scrollbarStyles}</style>
 
       {/* BACKGROUND */}
-      <div className="min-h-screen w-full flex items-center justify-center p-4 bg-[#F8F9FA] relative overflow-hidden">
-        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-orange-200/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
+      <div className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 bg-[#F8F9FA] relative overflow-hidden">
+        <div className="absolute top-[-10%] right-[-5%] w-64 h-64 sm:w-96 sm:h-96 bg-orange-200/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-64 h-64 sm:w-96 sm:h-96 bg-amber-100/40 rounded-full blur-3xl" />
 
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          // REDUCED SIZE: max-w from 1200 to 1050, height from 850 to 720
-          className="relative w-full max-w-[1050px] h-[680px] lg:h-[720px] bg-white rounded-[32px] shadow-2xl flex overflow-hidden border border-white/50"
+          className="relative w-full max-w-[1050px] min-h-[680px] sm:min-h-[700px] lg:min-h-[720px] bg-white rounded-2xl sm:rounded-[32px] shadow-2xl flex overflow-hidden border border-white/50"
         >
           {/* --- LEFT PANEL (Visual) --- */}
-          <div className="hidden lg:flex w-5/12 relative flex-col justify-between bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 overflow-hidden">
+          <div className="hidden lg:flex w-5/12 relative flex-col justify-between bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 xl:p-10 overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
 
             <div className="relative z-10">
@@ -259,7 +341,7 @@ export default function Register() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl font-extrabold text-gray-900 leading-[1.15]"
+                className="text-3xl xl:text-4xl font-extrabold text-gray-900 leading-[1.15]"
               >
                 Join the <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
@@ -272,12 +354,12 @@ export default function Register() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative z-10 flex-1 flex items-center justify-center"
+              className="relative z-10 flex-1 flex items-center justify-center py-8"
             >
               <img
                 src="/login.webp"
                 alt="Shopping Illustration"
-                className="max-h-[350px] w-auto object-contain drop-shadow-2xl"
+                className="max-h-[280px] xl:max-h-[350px] w-auto object-contain drop-shadow-2xl"
               />
             </motion.div>
           </div>
@@ -286,7 +368,7 @@ export default function Register() {
           <div className="w-full lg:w-7/12 bg-white flex flex-col relative">
             {/* Scrollable Form Area - Added 'no-scrollbar' class */}
             <div className="absolute inset-0 overflow-y-auto no-scrollbar">
-              <div className="min-h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-8">
+              <div className="min-h-full flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10">
                 {/* Mobile Logo */}
                 <div className="lg:hidden flex justify-center mb-6">
                   <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
@@ -300,9 +382,9 @@ export default function Register() {
                   animate="visible"
                   className="w-full max-w-md mx-auto"
                 >
-                  <motion.div variants={fadeInUp} className="text-center mb-6">
-                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Create Account</h1>
-                    <p className="mt-1 text-sm text-gray-500">Start your journey with VKart today.</p>
+                  <motion.div variants={fadeInUp} className="text-center mb-5 sm:mb-6">
+                    <h1 className="text-2xl sm:text-2xl font-bold text-gray-900 tracking-tight">Create Account</h1>
+                    <p className="mt-1 text-xs sm:text-sm text-gray-500">Start your journey with VKart today.</p>
                   </motion.div>
 
                   <AnimatePresence>
@@ -310,11 +392,11 @@ export default function Register() {
                   </AnimatePresence>
 
                   {/* Google Button */}
-                  <motion.div variants={fadeInUp} className="mb-5 flex justify-center">
-                    <div className="w-full flex justify-center transform transition-transform hover:scale-[1.01] relative">
+                  <motion.div variants={fadeInUp} className="mb-4 sm:mb-5 flex justify-center">
+                    <div className="w-full max-w-[400px] flex justify-center transform transition-transform hover:scale-[1.01] relative">
                       {googleLoading && (
                         <div className="absolute inset-0 z-10 grid place-items-center bg-white/60 backdrop-blur-[2px] rounded-lg">
-                           <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent"/>
+                          <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />
                         </div>
                       )}
                       <GoogleLogin
@@ -323,14 +405,14 @@ export default function Register() {
                         ux_mode="popup"
                         theme="outline"
                         size="large"
-                        width="400"
+                        width="100%"
                         shape="rectangular"
                         text="signup_with"
                       />
                     </div>
                   </motion.div>
 
-                  <motion.div variants={fadeInUp} className="relative flex items-center gap-4 mb-5">
+                  <motion.div variants={fadeInUp} className="relative flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
                     <div className="h-px bg-gray-200 flex-1" />
                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                       or register with email
@@ -338,92 +420,108 @@ export default function Register() {
                     <div className="h-px bg-gray-200 flex-1" />
                   </motion.div>
 
-                  {/* Form inputs compacted (py-3 to py-2.5, space-y-4 to space-y-3) */}
+                  {/* Form inputs */}
                   <form onSubmit={submit} className="space-y-3" noValidate>
                     {/* Full Name */}
                     <motion.div variants={fadeInUp}>
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Full Name</label>
                       <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <UserIcon className="h-4 w-4 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                        <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                          <UserIcon className={cx("h-4 w-4 transition-colors", errors.name && touched.name ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type="text"
                           value={form.name}
                           onChange={(e) => setField("name", e.target.value)}
+                          onBlur={() => {
+                            setTouched((prev) => ({ ...prev, name: true }));
+                            validateField("name", form.name);
+                          }}
                           placeholder="Enter your name"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
-                            errors.name
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            errors.name && touched.name
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
                           )}
                         />
                       </div>
-                      <FieldError id="name-error" message={errors.name} />
+                      {touched.name && <FieldError id="name-error" message={errors.name} />}
                     </motion.div>
 
                     {/* Username */}
                     <motion.div variants={fadeInUp}>
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Username</label>
                       <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <IdentificationIcon className="h-4 w-4 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                        <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                          <IdentificationIcon className={cx("h-4 w-4 transition-colors", errors.username && touched.username ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type="text"
                           value={form.username}
                           onChange={(e) => setField("username", e.target.value)}
+                          onBlur={() => {
+                            setTouched((prev) => ({ ...prev, username: true }));
+                            validateField("username", form.username);
+                          }}
                           placeholder="your.username"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
-                            errors.username
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            errors.username && touched.username
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
                           )}
                         />
                       </div>
-                      <FieldError id="username-error" message={errors.username} />
+                      {touched.username && <FieldError id="username-error" message={errors.username} />}
                     </motion.div>
 
                     {/* Email */}
                     <motion.div variants={fadeInUp}>
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Email</label>
                       <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <MailIcon className="h-4 w-4 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                        <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                          <MailIcon className={cx("h-4 w-4 transition-colors", errors.email && touched.email ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type="email"
                           value={form.email}
                           onChange={(e) => setField("email", e.target.value)}
+                          onBlur={() => {
+                            setTouched((prev) => ({ ...prev, email: true }));
+                            validateField("email", form.email);
+                          }}
                           placeholder="you@example.com"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
-                            errors.email
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            errors.email && touched.email
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
                           )}
                         />
                       </div>
-                      <FieldError id="email-error" message={errors.email} />
+                      {touched.email && <FieldError id="email-error" message={errors.email} />}
                     </motion.div>
 
                     {/* Password */}
                     <motion.div variants={fadeInUp}>
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Password</label>
                       <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <LockClosedIcon className="h-4 w-4 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                        <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                          <LockClosedIcon className={cx("h-4 w-4 transition-colors", errors.password && touched.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type={showPw ? "text" : "password"}
                           value={form.password}
                           onChange={(e) => setField("password", e.target.value)}
+                          onBlur={() => {
+                            setTouched((prev) => ({ ...prev, password: true }));
+                            validateField("password", form.password);
+                          }}
                           placeholder="Create password"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-10 pr-10 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
-                            errors.password
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-10 sm:pr-12 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            errors.password && touched.password
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
                           )}
@@ -431,43 +529,49 @@ export default function Register() {
                         <button
                           type="button"
                           onClick={() => setShowPw(!showPw)}
-                          className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+                          className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-none min-w-[44px] min-h-[44px]"
+                          aria-label={showPw ? "Hide password" : "Show password"}
                         >
                           {showPw ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
                         </button>
                       </div>
                       <PasswordStrengthIndicator password={form.password} />
-                      <FieldError id="password-error" message={errors.password} />
+                      {touched.password && <FieldError id="password-error" message={errors.password} />}
                     </motion.div>
 
                     {/* Confirm Password */}
                     <motion.div variants={fadeInUp}>
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Confirm Password</label>
                       <div className="relative group">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <LockClosedIcon className="h-4 w-4 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                        <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                          <LockClosedIcon className={cx("h-4 w-4 transition-colors", errors.confirmPassword && touched.confirmPassword ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type={showPw2 ? "text" : "password"}
                           value={form.confirmPassword}
                           onChange={(e) => setField("confirmPassword", e.target.value)}
+                          onBlur={() => {
+                            setTouched((prev) => ({ ...prev, confirmPassword: true }));
+                            validateField("confirmPassword", form.confirmPassword);
+                          }}
                           placeholder="Repeat password"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-10 pr-10 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
-                            errors.confirmPassword
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-10 sm:pr-12 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            errors.confirmPassword && touched.confirmPassword
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
                           )}
                         />
-                         <button
+                        <button
                           type="button"
                           onClick={() => setShowPw2(!showPw2)}
-                          className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+                          className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-none min-w-[44px] min-h-[44px]"
+                          aria-label={showPw2 ? "Hide password" : "Show password"}
                         >
                           {showPw2 ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
                         </button>
                       </div>
-                      <FieldError id="confirm-error" message={errors.confirmPassword} />
+                      {touched.confirmPassword && <FieldError id="confirm-error" message={errors.confirmPassword} />}
                     </motion.div>
 
                     {/* Submit Button */}
@@ -486,7 +590,7 @@ export default function Register() {
                     </motion.button>
                   </form>
 
-                  <motion.div variants={fadeInUp} className="mt-6 text-center">
+                  <motion.div variants={fadeInUp} className="mt-5 sm:mt-6 text-center">
                     <p className="text-xs text-gray-600">
                       Already have an account?{" "}
                       <button
@@ -496,7 +600,7 @@ export default function Register() {
                         Sign in
                       </button>
                     </p>
-                    <p className="mt-4 text-[10px] text-gray-400 max-w-xs mx-auto">
+                    <p className="mt-3 sm:mt-4 text-[10px] text-gray-400 max-w-xs mx-auto">
                       By registering, you agree to our{" "}
                       <a href="/terms" className="hover:text-gray-600 underline">Terms</a> &{" "}
                       <a href="/privacy" className="hover:text-gray-600 underline">Privacy Policy</a>.
