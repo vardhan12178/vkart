@@ -19,7 +19,6 @@ import {
   FaExpand,
   FaLayerGroup,
   FaArrowRight,
-  FaMagic
 } from "react-icons/fa";
 
 import Sidebar from "./Sidebar";
@@ -39,11 +38,11 @@ const AnimStyles = () => (
 
 /* ---------- UTILS ---------- */
 const formatPrice = (amount) => {
-    return new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        maximumFractionDigits: 0,
-    }).format(amount);
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(amount);
 };
 
 const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
@@ -107,34 +106,34 @@ const QuickView = ({ product, onClose, onAdd }) => {
         </button>
 
         <div className="w-full md:w-1/2 bg-gray-50 p-6 flex flex-col justify-between relative">
-           <div className="flex-1 flex items-center justify-center relative">
-             <img 
-               src={images[activeIdx]} 
-               alt={product.title} 
-               className="max-h-[350px] w-full object-contain mix-blend-multiply"
-             />
-             {product.discountPercentage && (
-                <span className="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  -{Math.round(product.discountPercentage)}%
-                </span>
-             )}
-           </div>
-           
-           {images.length > 1 && (
-             <div className="flex gap-3 overflow-x-auto py-4 px-2 justify-center scrollbar-hide">
-               {images.map((src, idx) => (
-                 <button
-                   key={idx}
-                   onClick={() => setActiveIdx(idx)}
-                   className={`h-14 w-14 rounded-lg border-2 flex-shrink-0 overflow-hidden transition-all ${
-                     idx === activeIdx ? "border-gray-900" : "border-transparent opacity-60 hover:opacity-100"
-                   }`}
-                 >
-                   <img src={src} alt="" className="h-full w-full object-cover bg-white" />
-                 </button>
-               ))}
-             </div>
-           )}
+          <div className="flex-1 flex items-center justify-center relative">
+            <img 
+              src={images[activeIdx]} 
+              alt={product.title} 
+              className="max-h-[350px] w-full object-contain mix-blend-multiply"
+            />
+            {product.discountPercentage && (
+              <span className="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
+                -{Math.round(product.discountPercentage)}%
+              </span>
+            )}
+          </div>
+          
+          {images.length > 1 && (
+            <div className="flex gap-3 overflow-x-auto py-4 px-2 justify-center scrollbar-hide">
+              {images.map((src, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveIdx(idx)}
+                  className={`h-14 w-14 rounded-lg border-2 flex-shrink-0 overflow-hidden transition-all ${
+                    idx === activeIdx ? "border-gray-900" : "border-transparent opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img src={src} alt="" className="h-full w-full object-cover bg-white" />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="w-full md:w-1/2 p-8 overflow-y-auto bg-white">
@@ -144,11 +143,11 @@ const QuickView = ({ product, onClose, onAdd }) => {
           <h2 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">{product.title}</h2>
           
           <div className="flex items-center gap-3 mb-6">
-             <Stars value={product.rating} />
-             <span className="text-xs text-gray-300">|</span>
-             <span className={`text-xs font-bold ${product.stock > 0 ? 'text-green-600' : 'text-red-500'}`}>
-               {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
-             </span>
+            <Stars value={product.rating} />
+            <span className="text-xs text-gray-300">|</span>
+            <span className={`text-xs font-bold ${product.stock > 0 ? 'text-green-600' : 'text-red-500'}`}>
+              {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
+            </span>
           </div>
 
           <div className="flex items-baseline gap-3 mb-6">
@@ -181,17 +180,12 @@ export default function Products() {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
-const [totalProducts, setTotalProducts] = useState(0);
-const [hasMore, setHasMore] = useState(true);
-const [filterLoading, setFilterLoading] = useState(false);
+  const [filterLoading, setFilterLoading] = useState(false);
 
+  const [searchInput, setSearchInput] = useState(searchParams.get("q") || "");
   const [searchTerm, setSearchTerm] = useState(searchParams.get("q") || "");
   const [categoryFilter, setCategoryFilter] = useState(searchParams.get("cat") || "");
-  
-  // --- NEW: Separate State for Rating Filter ---
   const [ratingFilter, setRatingFilter] = useState(Number(searchParams.get("rating")) || 0);
-
   const [priceRange, setPriceRange] = useState({
     min: Number(searchParams.get("min")) || 0,
     max: Number(searchParams.get("max")) || 100000,
@@ -215,90 +209,109 @@ const [filterLoading, setFilterLoading] = useState(false);
   const PAGE_SIZE = 12;
   const [visible, setVisible] = useState(PAGE_SIZE);
 
-  // --- FETCHING ---
-// Fetch products with pagination
-useEffect(() => {
-  (async () => {
-    try {
-      setFilterLoading(true); //  Show mini loader
-      
-      const params = {
-        page: 1,
-        limit: 100,
-      };
-      
-      if (categoryFilter) params.category = categoryFilter;
-      if (searchTerm) params.q = searchTerm;
-      if (priceRange.min > 0) params.minPrice = priceRange.min;
-      if (priceRange.max < 100000) params.maxPrice = priceRange.max;
-      if (sortBy !== "relevance") {
-        if (sortBy === "price-asc") params.sort = "price_asc";
-        else if (sortBy === "price-desc") params.sort = "price_desc";
-      }
-      
-      const res = await axios.get("/api/products", { params });
-      const { products: fetchedProducts, pagination } = res.data;
-      
-      setProducts(fetchedProducts || []);
-      setTotalProducts(pagination?.total || 0);
-    } catch (err) {
-      console.error("Fetch error:", err);
-      setProducts([]);
-    } finally {
-      setFilterLoading(false); //  Hide loader
-      setLoading(false);
-    }
-  })();
-}, [categoryFilter, searchTerm, priceRange, sortBy]);
+  /**
+   * Debounce search input to avoid excessive API calls
+   * Updates searchTerm after 500ms of no typing
+   */
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchTerm(searchInput);
+    }, 500);
 
-  // --- URL PARAMS UPDATE ---
+    return () => clearTimeout(timer);
+  }, [searchInput]);
+
+  /**
+   * Fetch products from backend with all filters applied server-side
+   * Backend handles: search, category, price, rating, and sorting
+   */
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        setFilterLoading(true);
+        
+        const params = {
+          page: 1,
+          limit: 100,
+        };
+        
+        if (categoryFilter) params.category = categoryFilter;
+        if (searchTerm) params.q = searchTerm;
+        if (priceRange.min > 0) params.minPrice = priceRange.min;
+        if (priceRange.max < 100000) params.maxPrice = priceRange.max;
+        if (ratingFilter > 0) params.minRating = ratingFilter;
+        
+        if (sortBy !== "relevance") {
+          if (sortBy === "price-asc") params.sort = "price_asc";
+          else if (sortBy === "price-desc") params.sort = "price_desc";
+          else if (sortBy === "rating-desc") params.sort = "rating_desc";
+        }
+        
+        const res = await axios.get("/api/products", { 
+          params,
+          signal: controller.signal 
+        });
+        const { products: fetchedProducts } = res.data;
+        
+        if (isMounted) {
+          setProducts(fetchedProducts || []);
+        }
+      } catch (err) {
+        if (err.name !== 'CanceledError') {
+          console.error("Fetch error:", err);
+          if (isMounted) {
+            setProducts([]);
+          }
+        }
+      } finally {
+        if (isMounted) {
+          setFilterLoading(false);
+          setLoading(false);
+        }
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, [categoryFilter, searchTerm, priceRange, sortBy, ratingFilter]);
+
+  /**
+   * Sync filter state to URL parameters
+   */
   useEffect(() => {
     const next = new URLSearchParams();
     if (searchTerm) next.set("q", searchTerm);
     if (categoryFilter) next.set("cat", categoryFilter);
-    // Sync rating filter to URL
     if (ratingFilter > 0) next.set("rating", String(ratingFilter));
-    
     if (priceRange.min) next.set("min", String(priceRange.min));
     if (priceRange.max !== 100000) next.set("max", String(priceRange.max));
     if (sortBy !== "relevance") next.set("sort", sortBy);
     setSearchParams(next, { replace: true });
   }, [searchTerm, categoryFilter, ratingFilter, priceRange, sortBy, setSearchParams]);
 
-  // --- FILTERING LOGIC ---
+  /**
+   * No client-side filtering needed - backend handles everything
+   * Products array is already filtered and sorted by the backend
+   */
   const filteredProducts = useMemo(() => {
-    let list = products.slice();
-    
-    // 1. Search Filter (Title/Desc only)
-    if (searchTerm) {
-      const q = searchTerm.toLowerCase();
-      list = list.filter((p) => `${p.title} ${p.description}`.toLowerCase().includes(q));
-    }
+    return products;
+  }, [products]);
 
-    // 2. Rating Filter (Now separated)
-    if (ratingFilter > 0) {
-       list = list.filter((p) => p.rating >= ratingFilter);
-    }
+  /**
+   * Reset visible items count when filters change
+   */
+  useEffect(() => {
+    setVisible(PAGE_SIZE);
+  }, [searchTerm, categoryFilter, ratingFilter, priceRange, sortBy]);
 
-    // 3. Category Filter
-    if (categoryFilter) list = list.filter((p) => p.category === categoryFilter);
-    
-    // 4. Price Filter
-    list = list.filter((p) => p.price >= priceRange.min && p.price <= priceRange.max);
-    
-    // 5. Sorting
-    switch (sortBy) {
-      case "price-asc": list.sort((a, b) => a.price - b.price); break;
-      case "price-desc": list.sort((a, b) => b.price - a.price); break;
-      case "rating-desc": list.sort((a, b) => b.rating - a.rating); break;
-      default: break;
-    }
-    return list;
-  }, [products, searchTerm, categoryFilter, ratingFilter, priceRange, sortBy]);
-
-  useEffect(() => setVisible(PAGE_SIZE), [searchTerm, categoryFilter, ratingFilter, priceRange, sortBy]);
-
-  // --- ACTIONS ---
+  /**
+   * Check if product is in wishlist
+   */
   const isInWishlist = useCallback(
     (id) => {
       if (!Array.isArray(wishlist) || !wishlist.length) return false;
@@ -312,6 +325,9 @@ useEffect(() => {
     [wishlist]
   );
 
+  /**
+   * Toggle product in wishlist
+   */
   const toggleWishlistItem = (product) => {
     const exists = isInWishlist(product._id);      
     dispatch(toggleWishlist(product));
@@ -321,6 +337,9 @@ useEffect(() => {
     );
   };
 
+  /**
+   * Add product to cart
+   */
   const handleAddToCart = useCallback(
     (product) => {
       dispatch(addToCart({ ...product, quantity: 1 }));
@@ -329,6 +348,9 @@ useEffect(() => {
     [dispatch]
   );
 
+  /**
+   * Toggle product in comparison list (max 4 products)
+   */
   const toggleCompare = useCallback((_id) => {
     setCompare((prev) => {
       if (prev.includes(_id)) return prev.filter((x) => x !== _id);
@@ -337,16 +359,21 @@ useEffect(() => {
     });
   }, []);
 
+  /**
+   * Clear all filters and reset to defaults
+   */
   const clearAll = () => {
+    setSearchInput("");
     setSearchTerm("");
     setCategoryFilter("");
-    setRatingFilter(0); // Reset Rating
+    setRatingFilter(0);
     setPriceRange({ min: 0, max: 100000 });
     setSortBy("relevance");
   };
 
   const visibleItems = filteredProducts.slice(0, visible);
   const total = filteredProducts.length;
+  const isSearching = searchInput !== searchTerm;
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans selection:bg-orange-100 selection:text-orange-900 relative overflow-hidden">
@@ -370,7 +397,7 @@ useEffect(() => {
             </div>
 
             <div className="flex gap-3 items-center w-full md:w-auto">
-               <button
+              <button
                 onClick={() => setShowFilters(true)}
                 className="lg:hidden flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-700 shadow-sm active:scale-95 transition-transform"
               >
@@ -382,11 +409,16 @@ useEffect(() => {
                   <FaSearch className="text-gray-400 group-focus-within:text-gray-900 transition-colors" />
                 </div>
                 <input
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
                   placeholder="Search products..."
                   className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-gray-100 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all text-sm font-medium"
                 />
+                {isSearching && (
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <div className="animate-spin h-4 w-4 border-2 border-gray-300 border-t-gray-900 rounded-full"></div>
+                  </div>
+                )}
               </div>
 
               <div className="hidden sm:block w-48">
@@ -411,18 +443,17 @@ useEffect(() => {
         <div className="flex gap-8 items-start">
           
           <div className="hidden lg:block w-72 shrink-0">
-             <Sidebar
-                categoryFilter={categoryFilter}
-                onCategoryChange={setCategoryFilter}
-                onSearch={setSearchTerm}
-                // --- Pass the Rating Handler ---
-                onRatingChange={setRatingFilter}
-                onPriceChange={(r) => setPriceRange({ min: clamp(r.min, 0, 100000), max: clamp(r.max, 0, 100000) })}
-              />
+            <Sidebar
+              categoryFilter={categoryFilter}
+              onCategoryChange={setCategoryFilter}
+              onSearch={setSearchInput}
+              onRatingChange={setRatingFilter}
+              onPriceChange={(r) => setPriceRange({ min: clamp(r.min, 0, 100000), max: clamp(r.max, 0, 100000) })}
+            />
           </div>
 
           <div className="flex-1 min-w-0">
-            {loading ? (
+            {(loading || filterLoading || isSearching) ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
                 {Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)}
               </div>
@@ -432,6 +463,7 @@ useEffect(() => {
                   <FaSearch />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">No products found</h3>
+                <p className="text-sm text-gray-500 mt-2">Try adjusting your filters or search terms</p>
                 <button
                   onClick={clearAll}
                   className="mt-4 px-5 py-2 bg-gray-900 text-white rounded-lg font-medium text-sm hover:bg-black transition-colors"
@@ -458,42 +490,42 @@ useEffect(() => {
                     >
                       <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-gray-50 group-hover:bg-gray-100 transition-colors">
                         <Link to={`/product/${p._id}`} className="block w-full h-full">
-                         <img
-                          src={p.thumbnail}
-                          alt={p.title}
-                          loading="lazy"
-                          decoding="async" 
-                          className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
-                          onError={(e) => { 
-                            e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
-                          }}
-                        />
+                          <img
+                            src={p.thumbnail}
+                            alt={p.title}
+                            loading="lazy"
+                            decoding="async" 
+                            className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
+                            onError={(e) => { 
+                              e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                            }}
+                          />
                         </Link>
 
                         <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10">
-                           {p.discountPercentage ? (
-                             <span className="bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
-                               -{Math.round(p.discountPercentage)}%
-                             </span>
-                           ) : <div />}
-                           
-                           <div className="flex flex-col gap-2">
-                             <button
-                                onClick={() => toggleWishlistItem(p)}
-                                className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${
-                                  inWishlist ? "bg-red-50 text-red-500" : "bg-white/90 text-gray-400 hover:bg-white hover:text-gray-900"
-                                }`}
-                              >
-                                {inWishlist ? <FaHeart size={12} /> : <FaRegHeart size={12} />}
-                              </button>
-                              
-                              <button
-                                onClick={() => setQuickView(p)}
-                                className="w-8 h-8 rounded-full bg-white/90 text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-                              >
-                                <FaExpand size={10} />
-                              </button>
-                           </div>
+                          {p.discountPercentage ? (
+                            <span className="bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                              -{Math.round(p.discountPercentage)}%
+                            </span>
+                          ) : <div />}
+                          
+                          <div className="flex flex-col gap-2">
+                            <button
+                              onClick={() => toggleWishlistItem(p)}
+                              className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${
+                                inWishlist ? "bg-red-50 text-red-500" : "bg-white/90 text-gray-400 hover:bg-white hover:text-gray-900"
+                              }`}
+                            >
+                              {inWishlist ? <FaHeart size={12} /> : <FaRegHeart size={12} />}
+                            </button>
+                            
+                            <button
+                              onClick={() => setQuickView(p)}
+                              className="w-8 h-8 rounded-full bg-white/90 text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                            >
+                              <FaExpand size={10} />
+                            </button>
+                          </div>
                         </div>
 
                         <div className="absolute bottom-3 left-3 right-3 
@@ -502,10 +534,10 @@ useEffect(() => {
                                       lg:group-hover:translate-y-0 lg:group-hover:opacity-100 
                                       transition-all duration-300 z-20">
                           <button
-                             onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
-                             className="w-full py-2.5 bg-gray-900 text-white rounded-lg text-xs font-bold shadow-lg hover:bg-black flex items-center justify-center gap-2 active:scale-95 transition-transform"
+                            onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
+                            className="w-full py-2.5 bg-gray-900 text-white rounded-lg text-xs font-bold shadow-lg hover:bg-black flex items-center justify-center gap-2 active:scale-95 transition-transform"
                           >
-                             <FaCartPlus /> Add
+                            <FaCartPlus /> Add
                           </button>
                         </div>
                       </div>
@@ -518,26 +550,26 @@ useEffect(() => {
                         </Link>
 
                         <div className="flex items-center justify-between mt-2">
-                           <div className="flex flex-col">
-                             <span className="text-base font-bold text-gray-900">{formatPrice(price)}</span>
-                             <span className="text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
-                           </div>
-                           
-                           <div className="flex flex-col items-end gap-1">
-                             <div className="flex items-center gap-1">
-                               <FaStar className="text-amber-400 text-[10px]" />
-                               <span className="text-xs font-bold text-gray-600">{p.rating}</span>
-                             </div>
-                             <label className="cursor-pointer text-[10px] text-gray-400 hover:text-gray-600 flex items-center gap-1 select-none">
-                               <input 
-                                 type="checkbox" 
-                                 className="accent-gray-900 w-3 h-3"
-                                 checked={inCompare}
-                                 onChange={() => toggleCompare(p._id)}
-                               />
-                               Compare
-                             </label>
-                           </div>
+                          <div className="flex flex-col">
+                            <span className="text-base font-bold text-gray-900">{formatPrice(price)}</span>
+                            <span className="text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
+                          </div>
+                          
+                          <div className="flex flex-col items-end gap-1">
+                            <div className="flex items-center gap-1">
+                              <FaStar className="text-amber-400 text-[10px]" />
+                              <span className="text-xs font-bold text-gray-600">{p.rating}</span>
+                            </div>
+                            <label className="cursor-pointer text-[10px] text-gray-400 hover:text-gray-600 flex items-center gap-1 select-none">
+                              <input 
+                                type="checkbox" 
+                                className="accent-gray-900 w-3 h-3"
+                                checked={inCompare}
+                                onChange={() => toggleCompare(p._id)}
+                              />
+                              Compare
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -560,14 +592,6 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* <button
-        onClick={() => alert("AI Assistant feature coming soon!")}
-        className="fixed bottom-8 right-8 z-30 h-12 w-12 rounded-full bg-gray-900 text-white shadow-xl shadow-gray-900/20 flex items-center justify-center hover:scale-110 transition-transform"
-      >
-        <FaMagic size={16} />
-      </button>
-       */}
-      {/* RESTORED COMPARE DOCK */}
       {compare.length > 0 && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-up">
           <div className="bg-gray-900 text-white px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-4">
@@ -597,18 +621,18 @@ useEffect(() => {
             <button onClick={() => setShowFilters(false)} className="p-2 bg-white rounded-full shadow-sm text-gray-500"><FaTimes /></button>
           </div>
           <div className="flex-1 overflow-y-auto p-5">
-             <Sidebar
-                categoryFilter={categoryFilter}
-                onCategoryChange={(v) => { setCategoryFilter(v); setShowFilters(false); }}
-                onSearch={(v) => { setSearchTerm(v); setShowFilters(false); }}
-                // --- Pass the Rating Handler to Mobile Drawer too ---
-                onRatingChange={(v) => { setRatingFilter(v); setShowFilters(false); }}
-                onPriceChange={(r) => setPriceRange({ min: clamp(r.min, 0, 100000), max: clamp(r.max, 0, 100000) })}
-              />
+            <Sidebar
+              categoryFilter={categoryFilter}
+              onCategoryChange={(v) => { setCategoryFilter(v); setShowFilters(false); }}
+              onSearch={(v) => { setSearchInput(v); setShowFilters(false); }}
+              onRatingChange={(v) => { setRatingFilter(v); setShowFilters(false); }}
+              onPriceChange={(r) => setPriceRange({ min: clamp(r.min, 0, 100000), max: clamp(r.max, 100000) })}
+            />
           </div>
         </div>
       </div>
- {quickView && (
+
+      {quickView && (
         <QuickView
           product={quickView}
           onClose={() => setQuickView(null)}
