@@ -5,6 +5,12 @@ import { addToCart } from "../redux/cartSlice";
 import { toggleWishlist } from "../redux/wishlistSlice";
 import { showToast } from "../utils/toast";
 import axios from "./axiosInstance";
+import { Helmet } from "react-helmet-async";
+
+// Extracted Components
+import Stars from "./Stars";
+import ProductSkeleton from "./product/ProductSkeleton";
+import ProductQuickView from "./product/ProductQuickView";
 
 import {
   FaCartPlus,
@@ -49,127 +55,7 @@ const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
 
 /* ---------- Components ---------- */
 
-const Stars = ({ value }) => {
-  const rounded = Math.round(value * 2) / 2;
-  return (
-    <div className="flex items-center gap-0.5 text-amber-400 text-xs">
-      {Array.from({ length: 5 }).map((_, i) => {
-        if (i + 1 <= Math.floor(rounded)) return <FaStar key={i} />;
-        if (i + 0.5 === rounded) return <FaStarHalfAlt key={i} />;
-        return <FaRegStar key={i} className="text-gray-200" />;
-      })}
-    </div>
-  );
-};
 
-const CardSkeleton = () => (
-  <div className="relative overflow-hidden rounded-2xl bg-white p-3 shadow-sm border border-gray-100">
-    <div className="aspect-[3/4] w-full rounded-xl bg-gray-100 animate-pulse" />
-    <div className="mt-4 space-y-2">
-      <div className="h-3 w-1/3 rounded-full bg-gray-100 animate-pulse" />
-      <div className="h-4 w-3/4 rounded-full bg-gray-100 animate-pulse" />
-      <div className="flex justify-between items-center pt-2">
-        <div className="h-5 w-20 rounded-lg bg-gray-100 animate-pulse" />
-        <div className="h-6 w-6 rounded-full bg-gray-100 animate-pulse" />
-      </div>
-    </div>
-  </div>
-);
-
-const QuickView = ({ product, onClose, onAdd }) => {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const images = product?.images?.length ? product.images : [product?.thumbnail].filter(Boolean);
-
-  useEffect(() => {
-    if (!product) return;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = "auto"; };
-  }, [product]);
-
-  if (!product) return null;
-
-  const price = product.price;
-  const mrp = product.discountPercentage
-    ? price / (1 - product.discountPercentage / 100)
-    : price * 1.2;
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onClick={onClose} />
-      <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-white shadow-2xl animate-scale-in flex flex-col md:flex-row max-h-[90vh]">
-        
-        <button 
-          onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur rounded-full hover:bg-gray-100 transition-colors"
-        >
-          <FaTimes size={18} className="text-gray-500" />
-        </button>
-
-        <div className="w-full md:w-1/2 bg-gray-50 p-6 flex flex-col justify-between relative">
-          <div className="flex-1 flex items-center justify-center relative">
-            <img 
-              src={images[activeIdx]} 
-              alt={product.title} 
-              className="max-h-[350px] w-full object-contain mix-blend-multiply"
-            />
-            {product.discountPercentage && (
-              <span className="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
-                -{Math.round(product.discountPercentage)}%
-              </span>
-            )}
-          </div>
-          
-          {images.length > 1 && (
-            <div className="flex gap-3 overflow-x-auto py-4 px-2 justify-center scrollbar-hide">
-              {images.map((src, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIdx(idx)}
-                  className={`h-14 w-14 rounded-lg border-2 flex-shrink-0 overflow-hidden transition-all ${
-                    idx === activeIdx ? "border-gray-900" : "border-transparent opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  <img src={src} alt="" className="h-full w-full object-cover bg-white" />
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="w-full md:w-1/2 p-8 overflow-y-auto bg-white">
-          <div className="mb-2 text-gray-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-            <FaLayerGroup /> {product.category}
-          </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">{product.title}</h2>
-          
-          <div className="flex items-center gap-3 mb-6">
-            <Stars value={product.rating} />
-            <span className="text-xs text-gray-300">|</span>
-            <span className={`text-xs font-bold ${product.stock > 0 ? 'text-green-600' : 'text-red-500'}`}>
-              {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
-            </span>
-          </div>
-
-          <div className="flex items-baseline gap-3 mb-6">
-            <span className="text-3xl font-bold text-gray-900">{formatPrice(price)}</span>
-            <span className="text-lg text-gray-300 line-through">{formatPrice(mrp)}</span>
-          </div>
-
-          <p className="text-sm text-gray-500 leading-relaxed mb-8 line-clamp-4">{product.description}</p>
-
-          <div className="mt-auto">
-            <button
-              onClick={() => onAdd(product)}
-              className="w-full py-3.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-lg hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-            >
-              <FaCartPlus /> Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 /* =================== MAIN COMPONENT =================== */
 export default function Products() {
@@ -232,30 +118,30 @@ export default function Products() {
     (async () => {
       try {
         setFilterLoading(true);
-        
+
         const params = {
           page: 1,
           limit: 100,
         };
-        
+
         if (categoryFilter) params.category = categoryFilter;
         if (searchTerm) params.q = searchTerm;
         if (priceRange.min > 0) params.minPrice = priceRange.min;
         if (priceRange.max < 100000) params.maxPrice = priceRange.max;
         if (ratingFilter > 0) params.minRating = ratingFilter;
-        
+
         if (sortBy !== "relevance") {
           if (sortBy === "price-asc") params.sort = "price_asc";
           else if (sortBy === "price-desc") params.sort = "price_desc";
           else if (sortBy === "rating-desc") params.sort = "rating_desc";
         }
-        
-        const res = await axios.get("/api/products", { 
+
+        const res = await axios.get("/api/products", {
           params,
-          signal: controller.signal 
+          signal: controller.signal
         });
         const { products: fetchedProducts } = res.data;
-        
+
         if (isMounted) {
           setProducts(fetchedProducts || []);
         }
@@ -329,7 +215,7 @@ export default function Products() {
    * Toggle product in wishlist
    */
   const toggleWishlistItem = (product) => {
-    const exists = isInWishlist(product._id);      
+    const exists = isInWishlist(product._id);
     dispatch(toggleWishlist(product));
     showToast(
       exists ? "Removed from Wishlist" : "Added to Wishlist",
@@ -378,14 +264,23 @@ export default function Products() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans selection:bg-orange-100 selection:text-orange-900 relative overflow-hidden">
       <AnimStyles />
-      
+
       <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+      <Helmet>
+        <title>Shop Our Collection | VKart</title>
+        <meta name="description" content="Browse our extensive collection of electronics, fashion, and essentials. Find the best deals on VKart today." />
+        <link rel="canonical" href="https://vkart.balavardhan.dev/products" />
+        <meta property="og:title" content="Shop Our Collection | VKart" />
+        <meta property="og:description" content="Browse our extensive collection of electronics, fashion, and essentials. Find the best deals on VKart today." />
+        <meta property="og:url" content="https://vkart.balavardhan.dev/products" />
+      </Helmet>
 
       <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm transition-all">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
-            
+
             <div className="flex items-center gap-4">
               <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
                 Our Collection
@@ -404,22 +299,7 @@ export default function Products() {
                 <FaFilter className="text-gray-400" /> Filters
               </button>
 
-              <div className="relative flex-1 md:w-80 group">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaSearch className="text-gray-400 group-focus-within:text-gray-900 transition-colors" />
-                </div>
-                <input
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  placeholder="Search products..."
-                  className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-gray-100 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all text-sm font-medium"
-                />
-                {isSearching && (
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                    <div className="animate-spin h-4 w-4 border-2 border-gray-300 border-t-gray-900 rounded-full"></div>
-                  </div>
-                )}
-              </div>
+
 
               <div className="hidden sm:block w-48">
                 <CustomDropdown
@@ -441,7 +321,7 @@ export default function Products() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         <div className="flex gap-8 items-start">
-          
+
           <div className="hidden lg:block w-72 shrink-0">
             <Sidebar
               categoryFilter={categoryFilter}
@@ -455,7 +335,7 @@ export default function Products() {
           <div className="flex-1 min-w-0">
             {(loading || filterLoading || isSearching) ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-                {Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)}
+                {Array.from({ length: 8 }).map((_, i) => <ProductSkeleton key={i} />)}
               </div>
             ) : filteredProducts.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 text-center bg-white rounded-3xl border border-dashed border-gray-200">
@@ -476,14 +356,14 @@ export default function Products() {
                 {visibleItems.map((p, i) => {
                   const inWishlist = isInWishlist(p._id);
                   const inCompare = compare.includes(p._id);
-                  
+
                   const price = p.price;
-                  const mrp = p.discountPercentage 
-                    ? price / (1 - p.discountPercentage/100)
+                  const mrp = p.discountPercentage
+                    ? price / (1 - p.discountPercentage / 100)
                     : price * 1.2;
 
                   return (
-                    <div 
+                    <div
                       key={p._id}
                       className="group relative bg-white rounded-2xl p-3 shadow-sm hover:shadow-xl hover:shadow-gray-200/40 border border-gray-100 transition-all duration-300 hover:-translate-y-1 animate-fade-up"
                       style={{ animationDelay: `${i * 50}ms` }}
@@ -494,9 +374,9 @@ export default function Products() {
                             src={p.thumbnail}
                             alt={p.title}
                             loading="lazy"
-                            decoding="async" 
+                            decoding="async"
                             className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
-                            onError={(e) => { 
+                            onError={(e) => {
                               e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
                             }}
                           />
@@ -508,17 +388,16 @@ export default function Products() {
                               -{Math.round(p.discountPercentage)}%
                             </span>
                           ) : <div />}
-                          
+
                           <div className="flex flex-col gap-2">
                             <button
                               onClick={() => toggleWishlistItem(p)}
-                              className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${
-                                inWishlist ? "bg-red-50 text-red-500" : "bg-white/90 text-gray-400 hover:bg-white hover:text-gray-900"
-                              }`}
+                              className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${inWishlist ? "bg-red-50 text-red-500" : "bg-white/90 text-gray-400 hover:bg-white hover:text-gray-900"
+                                }`}
                             >
                               {inWishlist ? <FaHeart size={12} /> : <FaRegHeart size={12} />}
                             </button>
-                            
+
                             <button
                               onClick={() => setQuickView(p)}
                               className="w-8 h-8 rounded-full bg-white/90 text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
@@ -544,7 +423,7 @@ export default function Products() {
 
                       <div className="px-1 pt-3 pb-1">
                         <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">{p.category}</p>
-                        
+
                         <Link to={`/product/${p._id}`} className="block text-sm font-bold text-gray-900 leading-snug mb-1 line-clamp-1 hover:text-orange-600 transition-colors">
                           {p.title}
                         </Link>
@@ -554,15 +433,15 @@ export default function Products() {
                             <span className="text-base font-bold text-gray-900">{formatPrice(price)}</span>
                             <span className="text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
                           </div>
-                          
+
                           <div className="flex flex-col items-end gap-1">
                             <div className="flex items-center gap-1">
                               <FaStar className="text-amber-400 text-[10px]" />
                               <span className="text-xs font-bold text-gray-600">{p.rating}</span>
                             </div>
                             <label className="cursor-pointer text-[10px] text-gray-400 hover:text-gray-600 flex items-center gap-1 select-none">
-                              <input 
-                                type="checkbox" 
+                              <input
+                                type="checkbox"
                                 className="accent-gray-900 w-3 h-3"
                                 checked={inCompare}
                                 onChange={() => toggleCompare(p._id)}
@@ -602,7 +481,7 @@ export default function Products() {
             <div className="h-3 w-px bg-white/20" />
             <div className="flex items-center gap-2">
               <button onClick={() => setCompare([])} className="text-xs text-gray-400 hover:text-white transition-colors">Clear</button>
-              <button 
+              <button
                 onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
                 className="bg-white text-gray-900 px-3 py-1 rounded-full text-xs font-bold hover:bg-gray-100 transition-colors"
               >
@@ -633,7 +512,7 @@ export default function Products() {
       </div>
 
       {quickView && (
-        <QuickView
+        <ProductQuickView
           product={quickView}
           onClose={() => setQuickView(null)}
           onAdd={handleAddToCart}

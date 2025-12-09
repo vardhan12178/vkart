@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import axios from "./axiosInstance"; // Kept as requested
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/authSlice";
 import imageCompression from "browser-image-compression";
 // Removed ProfilePreview import if it's not strictly needed, or keep if you have it. 
 // Assuming ProfilePreview was just a placeholder in your previous code.
@@ -48,8 +50,8 @@ const Skeleton = () => (
           <div className="h-8 w-48 bg-gray-200 rounded-lg" />
           <div className="h-4 w-32 bg-gray-200 rounded-lg" />
           <div className="flex gap-2 pt-2">
-             <div className="h-10 w-24 bg-gray-200 rounded-lg" />
-             <div className="h-10 w-24 bg-gray-200 rounded-lg" />
+            <div className="h-10 w-24 bg-gray-200 rounded-lg" />
+            <div className="h-10 w-24 bg-gray-200 rounded-lg" />
           </div>
         </div>
       </div>
@@ -69,9 +71,8 @@ const Toast = ({ kind = "success", message }) => {
   const ok = kind === "success";
   return (
     <div className="fixed top-6 left-1/2 z-[100] -translate-x-1/2 animate-fade-in-down">
-      <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${
-        ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
-      }`}>
+      <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
+        }`}>
         <div className={`p-1 rounded-full ${ok ? 'bg-emerald-200' : 'bg-red-200'}`}>
           {ok ? <FaCheckCircle size={14} /> : <FaTimesCircle size={14} />}
         </div>
@@ -82,8 +83,9 @@ const Toast = ({ kind = "success", message }) => {
 };
 
 // --- MAIN COMPONENT ---
-export default function Profile({ setIsLoggedIn }) {
+export default function Profile() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // --- STATE (UNCHANGED LOGIC) ---
   const [user, setUser] = useState(null);
@@ -152,7 +154,7 @@ export default function Profile({ setIsLoggedIn }) {
       } catch (e) {
         // If 401, logout
         if (e.response && e.response.status === 401) {
-           handleLogout();
+          handleLogout();
         }
         setError("Failed to fetch profile or orders");
       } finally {
@@ -165,7 +167,7 @@ export default function Profile({ setIsLoggedIn }) {
     return () => {
       if (toastTimer.current) clearTimeout(toastTimer.current);
     };
-  }, [navigate, setIsLoggedIn]);
+  }, [navigate]);
 
   // --- HANDLERS (UNCHANGED LOGIC) ---
   const handleLogout = async () => {
@@ -176,8 +178,8 @@ export default function Profile({ setIsLoggedIn }) {
     } finally {
       localStorage.removeItem("auth_token");
       localStorage.removeItem("admin_token");
-      if (setIsLoggedIn) setIsLoggedIn(false);
-      navigate("/login");
+      dispatch(logout());
+      navigate("/");
     }
   };
 
@@ -196,7 +198,7 @@ export default function Profile({ setIsLoggedIn }) {
   const handleUpload = async () => {
     if (!editorRef.current || !selectedFile) return;
     try {
-      const canvas = editorRef.current.getImageScaledToCanvas(); 
+      const canvas = editorRef.current.getImageScaledToCanvas();
       const blob = await new Promise((r) => canvas.toBlob(r, "image/jpeg", 0.92));
       if (!blob) return;
       const compressed = await imageCompression(blob, {
@@ -216,7 +218,7 @@ export default function Profile({ setIsLoggedIn }) {
       showToast("success", "Profile photo updated!", 1600);
     } catch (e) {
       if (e?.response?.status === 401) {
-        if (setIsLoggedIn) setIsLoggedIn(false);
+        dispatch(logout());
         return;
       }
       const msg = e?.response?.data?.message || "Failed to upload profile image.";
@@ -280,7 +282,7 @@ export default function Profile({ setIsLoggedIn }) {
   // Only show error if truly blocking (e.g. network fail), otherwise show partial
   if (error && !user) return <div className="min-h-screen flex items-center justify-center text-red-500 font-medium bg-gray-50">{error}</div>;
   // If somehow loaded but no user
-  if (!user && !loading) return null; 
+  if (!user && !loading) return null;
 
   const ordersCount = orders.length;
 
@@ -303,7 +305,7 @@ export default function Profile({ setIsLoggedIn }) {
                 <div className="w-40 h-40 mb-4 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-xs">No QR Loaded</div>
               )}
               <p className="text-xs text-gray-500 mb-4">Scan this with Google Authenticator</p>
-              
+
               <div className="w-full bg-gray-50 p-2 rounded-lg mb-6 border border-gray-100 flex items-center justify-between">
                 <code className="text-xs font-mono text-gray-600 truncate flex-1 text-left">{twoFAState.secret}</code>
               </div>
@@ -314,7 +316,7 @@ export default function Profile({ setIsLoggedIn }) {
                 className="w-full text-center text-xl tracking-widest font-bold py-3 border-b-2 border-gray-200 focus:border-orange-500 outline-none bg-transparent mb-6"
                 maxLength={6}
                 value={twoFAState.code}
-                onChange={(e) => setTwoFAState({...twoFAState, code: e.target.value.replace(/\D/g, "")})}
+                onChange={(e) => setTwoFAState({ ...twoFAState, code: e.target.value.replace(/\D/g, "") })}
               />
 
               <button
@@ -333,14 +335,14 @@ export default function Profile({ setIsLoggedIn }) {
       <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-gray-50 to-white opacity-70" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-16">
-        
+
         {/* --- HEADER CARD --- */}
         <div className="relative bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 overflow-hidden">
           {/* Decorative Gradient Blur */}
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
           <div className="relative flex flex-col md:flex-row items-center md:items-end gap-8 z-10">
-            
+
             {/* Avatar Group */}
             <div className="relative group shrink-0">
               <div className="h-36 w-36 sm:h-40 sm:w-40 rounded-full p-1.5 bg-white shadow-xl ring-1 ring-gray-100 overflow-hidden">
@@ -351,8 +353,8 @@ export default function Profile({ setIsLoggedIn }) {
                     className="h-full w-full rounded-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     // Fallback to Initials if image load fails logic could be complex here, usually simpler to assume URL works or null
                     onError={(e) => {
-                        // Optional: Hide img and show text fallback if broken
-                        e.currentTarget.style.display = 'none';
+                      // Optional: Hide img and show text fallback if broken
+                      e.currentTarget.style.display = 'none';
                     }}
                   />
                 ) : (
@@ -364,7 +366,7 @@ export default function Profile({ setIsLoggedIn }) {
                   </div>
                 )}
               </div>
-              
+
               <label htmlFor="file-upload" className="absolute bottom-2 right-2 p-3 bg-gray-900 text-white rounded-full cursor-pointer shadow-lg hover:bg-orange-600 hover:scale-110 transition-all duration-300 border-4 border-white z-10">
                 <FaCamera size={14} />
                 <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
@@ -381,25 +383,25 @@ export default function Profile({ setIsLoggedIn }) {
                   Member
                 </span>
               </div>
-              
+
               <div className="text-gray-500 font-medium mb-6 flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm">
                 <span className="flex items-center gap-1.5">
-                   <span className="text-gray-400">@</span>{user?.username || "unknown"}
+                  <span className="text-gray-400">@</span>{user?.username || "unknown"}
                 </span>
                 <span className="hidden md:block w-1 h-1 rounded-full bg-gray-300" />
                 <span className="flex items-center gap-1.5">
-                   <FaEnvelope className="text-gray-400" /> {user?.email}
+                  <FaEnvelope className="text-gray-400" /> {user?.email}
                 </span>
               </div>
 
               {/* Mini Stats */}
               <div className="flex gap-4 justify-center md:justify-start">
                 <div className="px-5 py-2.5 bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center gap-3">
-                   <div className="p-1.5 bg-orange-50 rounded-lg text-orange-500"><FaShoppingBag /></div>
-                   <div className="flex flex-col items-start leading-none">
-                      <span className="font-bold text-gray-900 text-lg">{ordersCount}</span>
-                      <span className="text-[10px] text-gray-400 font-bold uppercase">Orders</span>
-                   </div>
+                  <div className="p-1.5 bg-orange-50 rounded-lg text-orange-500"><FaShoppingBag /></div>
+                  <div className="flex flex-col items-start leading-none">
+                    <span className="font-bold text-gray-900 text-lg">{ordersCount}</span>
+                    <span className="text-[10px] text-gray-400 font-bold uppercase">Orders</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -416,105 +418,103 @@ export default function Profile({ setIsLoggedIn }) {
 
         {/* --- TABS --- */}
         <div className="mt-10 flex justify-center md:justify-start mb-8">
-           <div className="bg-white p-1.5 rounded-2xl shadow-sm border border-gray-100 inline-flex">
-             {['overview', 'orders'].map(tab => (
-               <button
-                 key={tab}
-                 onClick={() => setActiveTab(tab)}
-                 className={`px-8 py-2.5 rounded-xl text-sm font-bold capitalize transition-all duration-300 ${
-                   activeTab === tab 
-                   ? "bg-gray-900 text-white shadow-md" 
-                   : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
-                 }`}
-               >
-                 {tab}
-               </button>
-             ))}
-           </div>
+          <div className="bg-white p-1.5 rounded-2xl shadow-sm border border-gray-100 inline-flex">
+            {['overview', 'orders'].map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-8 py-2.5 rounded-xl text-sm font-bold capitalize transition-all duration-300 ${activeTab === tab
+                  ? "bg-gray-900 text-white shadow-md"
+                  : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* --- CONTENT AREA --- */}
         <div className="animate-fade-in">
           {activeTab === "overview" ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              
+
               {/* Column 1: Identity Cards */}
               <div className="space-y-4">
-                 {[
-                    { icon: <FaUser />, label: "Full Name", value: user?.name },
-                    { icon: <FaEnvelope />, label: "Email", value: user?.email },
-                    { icon: <FaPen />, label: "Username", value: user?.username ? `@${user.username}` : "Not set" },
-                 ].map((item, i) => (
-                   <div key={i} className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-                      <div className="h-10 w-10 rounded-xl bg-gray-50 text-gray-400 flex items-center justify-center group-hover:bg-orange-50 group-hover:text-orange-500 transition-colors">
-                        {item.icon}
-                      </div>
-                      <div className="min-w-0">
-                         <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">{item.label}</p>
-                         <p className="font-bold text-gray-900 truncate">{item.value}</p>
-                      </div>
-                   </div>
-                 ))}
+                {[
+                  { icon: <FaUser />, label: "Full Name", value: user?.name },
+                  { icon: <FaEnvelope />, label: "Email", value: user?.email },
+                  { icon: <FaPen />, label: "Username", value: user?.username ? `@${user.username}` : "Not set" },
+                ].map((item, i) => (
+                  <div key={i} className="group flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+                    <div className="h-10 w-10 rounded-xl bg-gray-50 text-gray-400 flex items-center justify-center group-hover:bg-orange-50 group-hover:text-orange-500 transition-colors">
+                      {item.icon}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">{item.label}</p>
+                      <p className="font-bold text-gray-900 truncate">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               {/* Column 2: Security (Span 2 cols on large screens) */}
               <div className="lg:col-span-2 space-y-6">
-                
+
                 {/* Security Box */}
                 <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm relative overflow-hidden">
-                   <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${user?.twoFactorEnabled ? 'bg-emerald-500' : 'bg-gray-200'}`} />
-                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-                      <div className="flex gap-5">
-                         <div className={`h-14 w-14 rounded-2xl flex items-center justify-center text-xl shrink-0 ${
-                           user?.twoFactorEnabled ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-400'
-                         }`}>
-                            <FaShieldAlt />
-                         </div>
-                         <div>
-                            <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                               Security 
-                               {user?.twoFactorEnabled && <FaCheckCircle className="text-emerald-500 text-sm" />}
-                            </h3>
-                            <p className="text-gray-500 text-sm mt-1">Protect your account with 2FA.</p>
-                         </div>
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${user?.twoFactorEnabled ? 'bg-emerald-500' : 'bg-gray-200'}`} />
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                    <div className="flex gap-5">
+                      <div className={`h-14 w-14 rounded-2xl flex items-center justify-center text-xl shrink-0 ${user?.twoFactorEnabled ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-400'
+                        }`}>
+                        <FaShieldAlt />
                       </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                          Security
+                          {user?.twoFactorEnabled && <FaCheckCircle className="text-emerald-500 text-sm" />}
+                        </h3>
+                        <p className="text-gray-500 text-sm mt-1">Protect your account with 2FA.</p>
+                      </div>
+                    </div>
 
-                      {user?.twoFactorEnabled ? (
-                         <button 
-                           onClick={disableTwoFA} 
-                           disabled={twoFAState.disabling}
-                           className="px-6 py-3 rounded-xl border-2 border-gray-100 text-gray-600 font-bold hover:border-red-100 hover:bg-red-50 hover:text-red-600 transition-all text-sm flex items-center gap-2"
-                         >
-                           <FaLock size={12} /> {twoFAState.disabling ? "Disabling..." : "Disable"}
-                         </button>
-                      ) : (
-                        <button 
-                           onClick={startTwoFASetup} 
-                           disabled={twoFAState.loading}
-                           className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black hover:scale-105 transition-all text-sm flex items-center gap-2"
-                         >
-                           <FaQrcode size={14} /> {twoFAState.loading ? "Loading..." : "Setup 2FA"}
-                         </button>
-                      )}
-                   </div>
+                    {user?.twoFactorEnabled ? (
+                      <button
+                        onClick={disableTwoFA}
+                        disabled={twoFAState.disabling}
+                        className="px-6 py-3 rounded-xl border-2 border-gray-100 text-gray-600 font-bold hover:border-red-100 hover:bg-red-50 hover:text-red-600 transition-all text-sm flex items-center gap-2"
+                      >
+                        <FaLock size={12} /> {twoFAState.disabling ? "Disabling..." : "Disable"}
+                      </button>
+                    ) : (
+                      <button
+                        onClick={startTwoFASetup}
+                        disabled={twoFAState.loading}
+                        className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black hover:scale-105 transition-all text-sm flex items-center gap-2"
+                      >
+                        <FaQrcode size={14} /> {twoFAState.loading ? "Loading..." : "Setup 2FA"}
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 {/* Quick Links Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                   {[
-                     { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
-                     { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
-                     { to: "/contact", icon: <FaEnvelope />, title: "Support", desc: "Get help", color: "text-purple-500", bg: "bg-purple-50" },
-                   ].map((link, i) => (
-                     <Link key={i} to={link.to} className="group bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
-                        <div className="flex justify-between items-start mb-4">
-                           <div className={`p-3 rounded-2xl ${link.bg} ${link.color} text-lg`}>{link.icon}</div>
-                           <FaChevronRight className="text-gray-300 group-hover:text-gray-600 transition-colors opacity-0 group-hover:opacity-100" size={12} />
-                        </div>
-                        <h4 className="font-bold text-gray-900">{link.title}</h4>
-                        <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
-                     </Link>
-                   ))}
+                  {[
+                    { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
+                    { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
+                    { to: "/contact", icon: <FaEnvelope />, title: "Support", desc: "Get help", color: "text-purple-500", bg: "bg-purple-50" },
+                  ].map((link, i) => (
+                    <Link key={i} to={link.to} className="group bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className={`p-3 rounded-2xl ${link.bg} ${link.color} text-lg`}>{link.icon}</div>
+                        <FaChevronRight className="text-gray-300 group-hover:text-gray-600 transition-colors opacity-0 group-hover:opacity-100" size={12} />
+                      </div>
+                      <h4 className="font-bold text-gray-900">{link.title}</h4>
+                      <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
+                    </Link>
+                  ))}
                 </div>
 
               </div>
@@ -522,90 +522,90 @@ export default function Profile({ setIsLoggedIn }) {
           ) : (
             // --- ORDERS TAB ---
             <div className="bg-white rounded-[2.5rem] shadow-sm border border-gray-100 min-h-[400px] p-8">
-               <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900">Order History</h2>
-                    <p className="text-gray-500 text-sm">Track your recent purchases</p>
-                  </div>
-                  <span className="bg-gray-900 text-white px-3 py-1 rounded-lg text-xs font-bold">{ordersCount} Total</span>
-               </div>
+              <div className="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900">Order History</h2>
+                  <p className="text-gray-500 text-sm">Track your recent purchases</p>
+                </div>
+                <span className="bg-gray-900 text-white px-3 py-1 rounded-lg text-xs font-bold">{ordersCount} Total</span>
+              </div>
 
-               <Suspense fallback={<div className="space-y-4">{[1,2].map(i => <div key={i} className="h-24 bg-gray-50 rounded-2xl animate-pulse"/>)}</div>}>
-                  {orders.length === 0 ? (
-                     <div className="text-center py-12">
-                        <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mx-auto mb-4 text-3xl"><FaBoxOpen /></div>
-                        <h3 className="text-lg font-bold text-gray-900">No orders yet</h3>
-                        <p className="text-gray-500 text-sm mb-6">Start shopping to fill this page.</p>
-                      <Link 
-                          to="/products" 
-                          className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black transition-all"
-                        >
-                          Browse Products
-                        </Link>
-                      </div>
-                  ) : (
-                     <div className="grid gap-4">
-                        {orders.map(o => <OrderCard key={o._id} order={o} />)}
-                     </div>
-                  )}
-               </Suspense>
+              <Suspense fallback={<div className="space-y-4">{[1, 2].map(i => <div key={i} className="h-24 bg-gray-50 rounded-2xl animate-pulse" />)}</div>}>
+                {orders.length === 0 ? (
+                  <div className="text-center py-12">
+                    <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mx-auto mb-4 text-3xl"><FaBoxOpen /></div>
+                    <h3 className="text-lg font-bold text-gray-900">No orders yet</h3>
+                    <p className="text-gray-500 text-sm mb-6">Start shopping to fill this page.</p>
+                    <Link
+                      to="/products"
+                      className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black transition-all"
+                    >
+                      Browse Products
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="grid gap-4">
+                    {orders.map(o => <OrderCard key={o._id} order={o} />)}
+                  </div>
+                )}
+              </Suspense>
             </div>
           )}
         </div>
       </div>
-      
+
       {/* --- AVATAR CROPPER MODAL --- */}
       {showEditor && selectedFile && (
-      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[100] animate-fade-in">
-        <div className="bg-white p-6 rounded-3xl shadow-2xl space-y-6 w-[320px]">
-          <h3 className="text-lg font-bold text-center text-gray-900">Adjust Photo</h3>
-          
-          <div className="flex justify-center">
-            <AvatarEditor
-              ref={editorRef}
-              image={selectedFile}
-              width={200}
-              height={200}
-              border={20}
-              borderRadius={120}
-              scale={scale}
-              rotate={0}
-              className="rounded-full bg-gray-100"
-            />
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[100] animate-fade-in">
+          <div className="bg-white p-6 rounded-3xl shadow-2xl space-y-6 w-[320px]">
+            <h3 className="text-lg font-bold text-center text-gray-900">Adjust Photo</h3>
+
+            <div className="flex justify-center">
+              <AvatarEditor
+                ref={editorRef}
+                image={selectedFile}
+                width={200}
+                height={200}
+                border={20}
+                borderRadius={120}
+                scale={scale}
+                rotate={0}
+                className="rounded-full bg-gray-100"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-wider text-center">Zoom</label>
+              <input
+                type="range"
+                min="1"
+                max="2"
+                step="0.01"
+                value={scale}
+                onChange={(e) => setScale(parseFloat(e.target.value))}
+                className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gray-900"
+              />
+            </div>
+
+            <div className="flex gap-3 pt-2">
+              <button
+                onClick={() => setShowEditor(false)}
+                className="flex-1 py-2.5 rounded-xl border border-gray-200 text-gray-600 font-bold text-sm hover:bg-gray-50 transition-colors"
+              >
+                Cancel
+              </button>
+
+              <button
+                onClick={handleUpload}
+                className="flex-1 py-2.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-md hover:bg-black transition-transform active:scale-95"
+              >
+                Save Photo
+              </button>
+            </div>
+
           </div>
-
-          <div>
-             <label className="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-wider text-center">Zoom</label>
-             <input
-               type="range"
-               min="1"
-               max="2"
-               step="0.01"
-               value={scale}
-               onChange={(e) => setScale(parseFloat(e.target.value))}
-               className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gray-900"
-             />
-          </div>
-
-          <div className="flex gap-3 pt-2">
-            <button
-              onClick={() => setShowEditor(false)}
-              className="flex-1 py-2.5 rounded-xl border border-gray-200 text-gray-600 font-bold text-sm hover:bg-gray-50 transition-colors"
-            >
-              Cancel
-            </button>
-
-            <button
-              onClick={handleUpload}
-              className="flex-1 py-2.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-md hover:bg-black transition-transform active:scale-95"
-            >
-              Save Photo
-            </button>
-          </div>
-
         </div>
-      </div>
-    )}
+      )}
 
     </div>
   );

@@ -1,64 +1,77 @@
-import { React, useEffect, useState, Provider, Navigate, Route, Routes, store, Compare, Login, Register, Home, About, Contact, Header, Footer, Error, Products, ProductCard, Cart, Profile } from './imports';
+import { React, useEffect, useState, Provider, Navigate, Route, Routes, store, Compare, Login, Register, Home, About, Contact, Header, Footer, Error, Products, ProductCard, Cart, Profile, ScrollToTop } from './imports';
 import { Blog, Careers, Terms, Privacy, License, ForgotPassword, ResetPassword, axios, BlogIndex, OrderStages, AdminLogin, AdminLayout, AdminSettings, AdminUsers, AdminDashboard, AdminProducts, AdminOrders, AdminOrderDetails, PostPage } from "./imports";
 
+import { useDispatch } from "react-redux";
+import { loginSuccess, adminLoginSuccess } from "./redux/authSlice";
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import CookieBanner from './components/CookieBanner';
+import AIChatAssistant from "./components/AIChatAssistant";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const dispatch = useDispatch();
   const [authReady, setAuthReady] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
   const isAdminRoute = window.location.pathname.startsWith("/admin");
 
-  // Restore admin session on refresh
+  // Restore session on refresh
   useEffect(() => {
-    const token = localStorage.getItem("admin_token");
-    if (token) setIsAdmin(true);
-  }, []);
+    const adminToken = localStorage.getItem("admin_token");
+    if (adminToken) {
+      setIsAdmin(true);
+      dispatch(adminLoginSuccess());
+    }
 
-useEffect(() => {
-  // For admin routes, skip everything and mark ready
-  if (isAdminRoute) {
+    // Check user auth
+    const userToken = localStorage.getItem("auth_token");
+    if (userToken) {
+      dispatch(loginSuccess());
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    // For admin routes, skip everything and mark ready
+    if (isAdminRoute) {
+      setAuthReady(true);
+      return;
+    }
+
+    // Storefront is fully public → no profile check here
     setAuthReady(true);
-    return;
-  }
-
-  // Storefront is fully public → no profile check here
-  setAuthReady(true);
-}, [isAdminRoute]);
+  }, [isAdminRoute]);
 
 
   if (!authReady) return null;
 
   return (
-    
+
     <Provider store={store}>
-    <Helmet>
-      <title>VKart — Curated Shopping, Fast Delivery</title>
-      <meta
-        name="description"
-        content="VKart is a curated e-commerce experience for electronics, fashion and essentials. Fast delivery, secure payments, and handpicked deals."
-      />
-      <link rel="canonical" href="https://vkart.balavardhan.dev/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="VKart" />
-      <meta property="og:title" content="VKart — Curated Shopping, Fast Delivery" />
-      <meta property="og:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
-      <meta property="og:url" content="https://vkart.balavardhan.dev/" />
-      <meta property="og:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="VKart — Curated Shopping, Fast Delivery" />
-      <meta name="twitter:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
-      <meta name="twitter:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
-    </Helmet>
-      
+      <Helmet>
+        <title>VKart — Curated Shopping, Fast Delivery</title>
+        <meta
+          name="description"
+          content="VKart is a curated e-commerce experience for electronics, fashion and essentials. Fast delivery, secure payments, and handpicked deals."
+        />
+        <link rel="canonical" href="https://vkart.balavardhan.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="VKart" />
+        <meta property="og:title" content="VKart — Curated Shopping, Fast Delivery" />
+        <meta property="og:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
+        <meta property="og:url" content="https://vkart.balavardhan.dev/" />
+        <meta property="og:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VKart — Curated Shopping, Fast Delivery" />
+        <meta name="twitter:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
+        <meta name="twitter:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
+      </Helmet>
+
       <div id="root">
-       {/*  Header behaves like Footer: always on non-admin routes */}
-      {!isAdminRoute && (
-        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-      )}
+        <ScrollToTop />
+        {/*  Header behaves like Footer: always on non-admin routes */}
+        {!isAdminRoute && (
+          <Header />
+        )}
         <main>
           <Toaster position="top-right" toastOptions={{ duration: 2000 }} />
           <Routes>
@@ -79,12 +92,12 @@ useEffect(() => {
             <Route path="/reset-password" element={<ResetPassword />} />
 
             {/* User Auth Pages */}
-            <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
             {/* Protected by Component-Level Guard (CartPreview / ProfilePreview) */}
             <Route path="/cart" element={<Cart />} />
-            <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/orderstages" element={<OrderStages />} />
 
             {/* Admin Login */}
@@ -104,9 +117,10 @@ useEffect(() => {
             <Route path="*" element={<Error />} />
 
           </Routes>
-         <CookieBanner />
+          <CookieBanner />
         </main>
-      {!isAdminRoute && <Footer />}
+        {!isAdminRoute && <AIChatAssistant />}
+        {!isAdminRoute && <Footer />}
       </div>
     </Provider>
   );

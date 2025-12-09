@@ -52,7 +52,7 @@ describe("Login Component", () => {
 
     render(
       <BrowserRouter>
-        <Login setIsLoggedIn={jest.fn()} />
+        <Login />
       </BrowserRouter>
     );
 

@@ -37,13 +37,12 @@ export default function CookieBanner() {
 
   return (
     <div
-      className={`fixed bottom-4 right-4 left-4 md:left-auto md:max-w-[400px] z-50 transition-all duration-500 ease-in-out transform ${
-        isMounting ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      }`}
+      className={`fixed bottom-4 left-4 right-4 md:right-auto md:max-w-[400px] z-[60] transition-all duration-500 ease-in-out transform ${isMounting ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        }`}
     >
       {/* Glassmorphism Container */}
       <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-2xl rounded-2xl p-6 overflow-hidden">
-        
+
         {/* Decorative background glow */}
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>

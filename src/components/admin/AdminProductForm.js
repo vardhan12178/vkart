@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProductImageUploader from "./ProductImageUploader";
+import ProductImageUploader from "../ProductImageUploader";
 
 export default function AdminProductForm({ initialData = null, onSubmit, onCancel }) {
   const [form, setForm] = useState({
@@ -191,7 +191,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         mode="single"
         initial={form.thumbnail ? [form.thumbnail] : []}
         onUpload={(url) => update("thumbnail", url)}
-        />
+      />
 
 
 
@@ -202,7 +202,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         limit={5}
         initial={Array.isArray(form.images) ? form.images : []}
         onUpload={(urls) => update("images", urls)}
-        />
+      />
 
 
       {/* Dimensions */}

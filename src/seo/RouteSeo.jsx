@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 
-const SITE = "https://vkartshop.netlify.app";
+const SITE = "https://vkart.balavardhan.dev";
 const DEFAULT_TITLE = "VKart — Curated Shopping, Fast Delivery";
 const DEFAULT_DESC =
   "VKart is a curated e-commerce experience for electronics, fashion and essentials. Fast delivery, secure payments, and handpicked deals.";

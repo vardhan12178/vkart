@@ -1,7 +1,7 @@
 // src/pages/AdminLogin.jsx
 /* global google */
 import React, { useRef, useState, useEffect } from "react";
-import axios from "./axiosInstance";
+import axios from "../axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
@@ -89,7 +89,7 @@ export default function AdminLogin({ setIsAdmin }) {
   const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState("");
   const [errors, setErrors] = useState({ adminId: "", password: "" });
-  
+
   // ---------------- GOOGLE BUTTON INIT ----------------
   useEffect(() => {
     loadGoogleScript().then(() => {
@@ -208,7 +208,7 @@ export default function AdminLogin({ setIsAdmin }) {
           <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-gradient-to-br from-orange-50 via-white to-amber-50 p-12 overflow-hidden">
             {/* Decorative Patterns */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 {/* Admin Icon variant */}
@@ -217,25 +217,25 @@ export default function AdminLogin({ setIsAdmin }) {
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart Admin.</span>
               </div>
-              
-              <motion.h2 
+
+              <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-4xl font-extrabold text-gray-900 leading-[1.15]"
               >
-                Manage the <br/>
+                Manage the <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
                   future of shopping.
                 </span>
               </motion.h2>
             </div>
 
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ delay: 0.4, duration: 0.8 }}
-               className="relative z-10 flex-1 flex items-center justify-center"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="relative z-10 flex-1 flex items-center justify-center"
             >
               <img
                 src="/login.webp"
@@ -245,17 +245,17 @@ export default function AdminLogin({ setIsAdmin }) {
             </motion.div>
 
             <div className="relative z-10 text-xs text-gray-400 font-medium">
-                © {currentYear} VKart Inc. Authorized personnel only.
+              © {currentYear} VKart Inc. Authorized personnel only.
             </div>
           </div>
 
           {/* --- RIGHT PANEL (Form) --- */}
           <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 relative">
-             {/* Mobile Logo */}
+            {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-8">
-                <div className="h-10 w-10 bg-gradient-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg text-white">
-                  <ShieldCheckIcon className="h-6 w-6" />
-                </div>
+              <div className="h-10 w-10 bg-gradient-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg text-white">
+                <ShieldCheckIcon className="h-6 w-6" />
+              </div>
             </div>
 
             <motion.div
@@ -276,18 +276,18 @@ export default function AdminLogin({ setIsAdmin }) {
 
               {/* Google Button */}
               <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
-                 <div className="w-full flex justify-center transform transition-transform hover:scale-[1.01]">
-                   <div 
-                     id="adminGoogleBtn"
-                     className="w-full flex justify-center"
-                   />
-                 </div>
+                <div className="w-full flex justify-center transform transition-transform hover:scale-[1.01]">
+                  <div
+                    id="adminGoogleBtn"
+                    className="w-full flex justify-center"
+                  />
+                </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="relative flex items-center gap-4 mb-6">
-                 <div className="h-px bg-gray-200 flex-1" />
-                 <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">or login with ID</span>
-                 <div className="h-px bg-gray-200 flex-1" />
+                <div className="h-px bg-gray-200 flex-1" />
+                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">or login with ID</span>
+                <div className="h-px bg-gray-200 flex-1" />
               </motion.div>
 
               <form onSubmit={onSubmit} className="space-y-5" noValidate>
@@ -351,11 +351,11 @@ export default function AdminLogin({ setIsAdmin }) {
                       {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                     </button>
                   </div>
-                  
+
                   {capsOn && (
-                      <motion.div initial={{opacity:0, height:0}} animate={{opacity:1, height:"auto"}} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
-                        ⚠️ Caps Lock is ON
-                      </motion.div>
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
+                      ⚠️ Caps Lock is ON
+                    </motion.div>
                   )}
                   <FieldError id="password-error" message={errors.password} />
                 </motion.div>
@@ -370,17 +370,17 @@ export default function AdminLogin({ setIsAdmin }) {
                   className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                      {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
-                      {loading ? "Authenticating..." : "Access Dashboard"}
+                    {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+                    {loading ? "Authenticating..." : "Access Dashboard"}
                   </span>
                 </motion.button>
               </form>
 
               <motion.div variants={fadeInUp} className="mt-8 text-center">
-                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100 text-[10px] text-gray-400">
-                    <ShieldCheckIcon className="h-3 w-3" />
-                    <span>Secure Admin Environment</span>
-                 </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100 text-[10px] text-gray-400">
+                  <ShieldCheckIcon className="h-3 w-3" />
+                  <span>Secure Admin Environment</span>
+                </div>
               </motion.div>
 
             </motion.div>

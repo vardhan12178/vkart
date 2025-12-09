@@ -12,6 +12,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AnnouncementBar from './components/AnnouncementBar';
 import Error from './components/Error';
 import Products from './components/Products';
 import ProductCard from './components/ProductCard';
@@ -30,15 +31,16 @@ import ResetPassword from "./components/ResetPassword";
 import axios from "./components/axiosInstance";
 import BlogIndex from "./components/blog/BlogIndex";
 import OrderStages from "./components/OrderStages";
-import AdminLogin from "./components/AdminLogin";
-import AdminLayout from "./components/AdminLayout";
-import AdminSettings from "./components/AdminSettings";
-import AdminUsers from "./components/AdminUsers";
-import AdminDashboard from "./components/AdminDashboard";
-import AdminProducts from "./components/AdminProducts";
-import AdminOrders from "./components/AdminOrders";
-import AdminOrderDetails from "./components/AdminOrderDetails";
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminSettings from "./components/admin/AdminSettings";
+import AdminUsers from "./components/admin/AdminUsers";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import AdminProducts from "./components/admin/AdminProducts";
+import AdminOrders from "./components/admin/AdminOrders";
+import AdminOrderDetails from "./components/admin/AdminOrderDetails";
 import PostPage from "./components/blog/PostPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
@@ -60,13 +62,14 @@ export {
   Contact,
   Header,
   Footer,
+  AnnouncementBar,
   Error,
   Products,
   ProductCard,
   Cart,
   Compare,
   Profile,
-   Blog,
+  Blog,
   Careers,
   Terms,
   Privacy,
@@ -85,4 +88,5 @@ export {
   AdminOrders,
   AdminOrderDetails,
   PostPage,
+  ScrollToTop,
 };

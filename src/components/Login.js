@@ -1,10 +1,12 @@
 // src/pages/Login.jsx
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import axios from "./axiosInstance";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { GoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
+import { loginSuccess } from "../redux/authSlice";
 
 import {
   EyeIcon,
@@ -46,7 +48,7 @@ const FieldError = ({ id, message }) =>
 const Toast = ({ show, kind = "error", children }) => {
   if (!show) return null;
   const isSuccess = kind === "success";
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
@@ -70,8 +72,9 @@ const Toast = ({ show, kind = "error", children }) => {
   );
 };
 
-export default function Login({ setIsLoggedIn }) {
+export default function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const location = useLocation();
   const redirect = new URLSearchParams(location.search).get("redirect") || "/";
 
@@ -95,6 +98,10 @@ export default function Login({ setIsLoggedIn }) {
   const [verifying2fa, setVerifying2fa] = useState(false);
   const [pendingLogin, setPendingLogin] = useState(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const validate = () => {
     const e = { userId: "", password: "" };
     if (!userId.trim()) e.userId = "Please enter your email address.";
@@ -106,7 +113,7 @@ export default function Login({ setIsLoggedIn }) {
   // Validate individual field only if touched
   const validateField = (field, value) => {
     if (!touched[field]) return;
-    
+
     const newErrors = { ...errors };
     if (field === "userId") {
       newErrors.userId = !value.trim() ? "Please enter your email address." : "";
@@ -126,10 +133,10 @@ export default function Login({ setIsLoggedIn }) {
   const onSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
-    
+
     // Mark all fields as touched on submit
     setTouched({ userId: true, password: true });
-    
+
     if (!validate()) return;
     setLoading(true);
     const start = performance.now();
@@ -155,7 +162,7 @@ export default function Login({ setIsLoggedIn }) {
 
       // normal login
       if (res.data?.token) localStorage.setItem("auth_token", res.data.token);
-      setIsLoggedIn?.(true);
+      dispatch(loginSuccess(res.data));
       navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;
@@ -188,7 +195,7 @@ export default function Login({ setIsLoggedIn }) {
         { withCredentials: true }
       );
       if (verify.data?.token) localStorage.setItem("auth_token", verify.data.token);
-      setIsLoggedIn?.(true);
+      dispatch(loginSuccess(verify.data));
       setShow2fa(false);
       setPendingLogin(null);
       navigate(redirect);
@@ -218,7 +225,7 @@ export default function Login({ setIsLoggedIn }) {
         { withCredentials: true }
       );
       if (res?.data?.token) localStorage.setItem("auth_token", res.data.token);
-      setIsLoggedIn?.(true);
+      dispatch(loginSuccess(res.data));
       navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;
@@ -257,7 +264,7 @@ export default function Login({ setIsLoggedIn }) {
           <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 xl:p-12 overflow-hidden">
             {/* Decorative Patterns */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
@@ -265,25 +272,25 @@ export default function Login({ setIsLoggedIn }) {
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart.</span>
               </div>
-              
-              <motion.h2 
+
+              <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-3xl xl:text-4xl font-extrabold text-gray-900 leading-[1.15]"
               >
-                Experience the <br/>
+                Experience the <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
                   future of shopping.
                 </span>
               </motion.h2>
             </div>
 
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ delay: 0.4, duration: 0.8 }}
-               className="relative z-10 flex-1 flex items-center justify-center py-8"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="relative z-10 flex-1 flex items-center justify-center py-8"
             >
               <img
                 src="/login.webp"
@@ -293,7 +300,7 @@ export default function Login({ setIsLoggedIn }) {
             </motion.div>
 
             <div className="relative z-10 backdrop-blur-md bg-white/30 p-4 rounded-2xl border border-white/50 shadow-sm">
-                {/* <p className="text-sm font-medium text-gray-800">"The best shopping experience I've had in years. Fast, reliable, and premium."</p>
+              {/* <p className="text-sm font-medium text-gray-800">"The best shopping experience I've had in years. Fast, reliable, and premium."</p>
                 <div className="flex items-center gap-2 mt-2">
                     <div className="h-6 w-6 rounded-full bg-gray-900 flex items-center justify-center text-[10px] text-white font-bold">A</div>
                     <span className="text-xs text-gray-500">Alex M. — Verified Buyer</span>
@@ -303,11 +310,11 @@ export default function Login({ setIsLoggedIn }) {
 
           {/* --- RIGHT PANEL (Form) --- */}
           <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 relative">
-             {/* Mobile Logo */}
+            {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-6 sm:mb-8">
-                <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
-                  <ShoppingCartIcon className="h-6 w-6" />
-                </div>
+              <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
+                <ShoppingCartIcon className="h-6 w-6" />
+              </div>
             </div>
 
             <motion.div
@@ -328,29 +335,29 @@ export default function Login({ setIsLoggedIn }) {
 
               {/* Google Button */}
               <motion.div variants={fadeInUp} className="mb-5 sm:mb-6 flex justify-center">
-                 <div className="w-full max-w-[380px] relative flex justify-center transform transition-transform hover:scale-[1.01]">
-                   {googleLoading && (
-                      <div className="absolute inset-0 z-10 grid place-items-center bg-white/60 backdrop-blur-[2px] rounded-lg">
-                         <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent"/>
-                      </div>
-                   )}
-                   <GoogleLogin
-                     onSuccess={handleGoogleSuccess}
-                     onError={handleGoogleError}
-                     ux_mode="popup"
-                     theme="outline"
-                     size="large"
-                     width="100%"
-                     shape="rectangular"
-                     text="continue_with"
-                   />
-                 </div>
+                <div className="w-full max-w-[380px] relative flex justify-center transform transition-transform hover:scale-[1.01]">
+                  {googleLoading && (
+                    <div className="absolute inset-0 z-10 grid place-items-center bg-white/60 backdrop-blur-[2px] rounded-lg">
+                      <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />
+                    </div>
+                  )}
+                  <GoogleLogin
+                    onSuccess={handleGoogleSuccess}
+                    onError={handleGoogleError}
+                    ux_mode="popup"
+                    theme="outline"
+                    size="large"
+                    width="100%"
+                    shape="rectangular"
+                    text="continue_with"
+                  />
+                </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="relative flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
-                 <div className="h-px bg-gray-200 flex-1" />
-                 <span className="text-[10px] sm:text-xs font-medium text-gray-400 uppercase tracking-wider">or sign in with email</span>
-                 <div className="h-px bg-gray-200 flex-1" />
+                <div className="h-px bg-gray-200 flex-1" />
+                <span className="text-[10px] sm:text-xs font-medium text-gray-400 uppercase tracking-wider">or sign in with email</span>
+                <div className="h-px bg-gray-200 flex-1" />
               </motion.div>
 
               <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5" noValidate>
@@ -426,33 +433,33 @@ export default function Login({ setIsLoggedIn }) {
                       {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                     </button>
                   </div>
-                  
+
                   {capsOn && (
-                     <motion.div initial={{opacity:0, height:0}} animate={{opacity:1, height:"auto"}} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
-                        ⚠️ Caps Lock is ON
-                     </motion.div>
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
+                      ⚠️ Caps Lock is ON
+                    </motion.div>
                   )}
                   {touched.password && <FieldError id="password-error" message={errors.password} />}
                 </motion.div>
 
                 {/* Remember & Forgot */}
                 <motion.div variants={fadeInUp} className="flex items-center justify-between">
-                   <label className="flex items-center gap-2 cursor-pointer group">
-                      <input 
-                         type="checkbox" 
-                         checked={remember} 
-                         onChange={(e)=>setRemember(e.target.checked)}
-                         className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
-                      />
-                      <span className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Remember for 30 days</span>
-                   </label>
-                   <button 
-                      type="button" 
-                      onClick={() => navigate("/forgot-password")}
-                      className="text-xs sm:text-sm font-semibold text-orange-600 hover:text-orange-500 hover:underline decoration-2 underline-offset-2 transition-all"
-                   >
-                     Forgot password?
-                   </button>
+                  <label className="flex items-center gap-2 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={remember}
+                      onChange={(e) => setRemember(e.target.checked)}
+                      className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
+                    />
+                    <span className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Remember for 30 days</span>
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => navigate("/forgot-password")}
+                    className="text-xs sm:text-sm font-semibold text-orange-600 hover:text-orange-500 hover:underline decoration-2 underline-offset-2 transition-all"
+                  >
+                    Forgot password?
+                  </button>
                 </motion.div>
 
                 {/* Submit Button */}
@@ -465,8 +472,8 @@ export default function Login({ setIsLoggedIn }) {
                   className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                     {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
-                     {loading ? "Signing in..." : "Sign In"}
+                    {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+                    {loading ? "Signing in..." : "Sign In"}
                   </span>
                 </motion.button>
               </form>
@@ -486,7 +493,7 @@ export default function Login({ setIsLoggedIn }) {
 
             {/* Footer Links */}
             <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 flex justify-center gap-4 sm:gap-6 text-[10px] sm:text-xs text-gray-400">
-               {/* <a href="/privacy" className="hover:text-gray-600 transition-colors">Privacy Policy</a>
+              {/* <a href="/privacy" className="hover:text-gray-600 transition-colors">Privacy Policy</a>
                <a href="/terms" className="hover:text-gray-600 transition-colors">Terms of Service</a> */}
             </div>
           </div>
@@ -508,8 +515,8 @@ export default function Login({ setIsLoggedIn }) {
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               className="w-full max-w-sm rounded-2xl sm:rounded-3xl bg-white shadow-2xl p-6 sm:p-8 relative overflow-hidden"
             >
-               {/* Decorative background blur inside modal */}
-               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+              {/* Decorative background blur inside modal */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
 
               <button
                 onClick={() => {
@@ -547,15 +554,15 @@ export default function Login({ setIsLoggedIn }) {
                     inputMode="numeric"
                     className="w-full text-center text-2xl sm:text-3xl font-bold tracking-[0.3em] sm:tracking-[0.5em] text-gray-800 border-b-2 border-gray-200 py-3 sm:py-4 focus:border-orange-500 focus:outline-none bg-transparent transition-colors placeholder:text-gray-200"
                   />
-                  
+
                   {twofaError && (
-                    <motion.div initial={{opacity:0, y:-10}} animate={{opacity:1, y:0}} className="mt-3 flex items-center justify-center gap-1.5 text-xs text-red-500 font-medium">
+                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-3 flex items-center justify-center gap-1.5 text-xs text-red-500 font-medium">
                       <ExclamationCircleIcon className="h-4 w-4" /> {twofaError}
                     </motion.div>
                   )}
-                  
+
                   <div className="mt-2 text-[10px] text-gray-400 font-medium uppercase tracking-wider">
-                     Code refreshes every 30s
+                    Code refreshes every 30s
                   </div>
                 </div>
 
