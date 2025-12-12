@@ -98,12 +98,12 @@ const Header = () => {
           }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between gap-4">
+          <div className="flex h-14 md:h-20 items-center justify-between gap-4">
 
             {/* --- LEFT: BRAND & NAV --- */}
             <div className="flex items-center gap-8">
               <Link to="/" className="group flex items-center gap-2.5 shrink-0">
-                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gray-900 text-white shadow-lg shadow-gray-900/20 transition-transform group-hover:scale-95">
+                <div className="relative flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-xl bg-gray-900 text-white shadow-lg shadow-gray-900/20 transition-transform group-hover:scale-95">
                   <ShoppingCartIcon className="h-5 w-5" />
                   {/* Decorative dot */}
                   <div className="absolute top-0 right-0 -mt-1 -mr-1 h-3 w-3 rounded-full bg-orange-500 border-2 border-white" />
@@ -133,7 +133,7 @@ const Header = () => {
 
             {/* --- CENTER: SEARCH (Desktop) --- */}
             <div className="hidden md:flex flex-1 max-w-md mx-4">
-              <form onSubmit={handleSearch} className="w-full relative group">
+              <div className="w-full relative group">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <SearchIcon className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" />
                 </div>
@@ -141,10 +141,38 @@ const Header = () => {
                   type="text"
                   placeholder="Search for products..."
                   value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  className="block w-full rounded-xl border-gray-200 bg-gray-100 pl-10 pr-4 py-2.5 text-sm font-medium focus:border-gray-900 focus:bg-white focus:ring-0 transition-all placeholder:text-gray-400"
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setSearchInput(val);
+                    // Dynamic search if on products page
+                    if (location.pathname === "/products") {
+                      navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault(); // Prevent form submit refresh
+                      navigate(`/products?q=${encodeURIComponent(searchInput)}`);
+                      setShowSearch(false);
+                    }
+                  }}
+                  className="block w-full rounded-xl border-gray-200 bg-gray-100 pl-10 pr-10 py-2.5 text-sm font-medium focus:border-gray-900 focus:bg-white focus:ring-0 transition-all placeholder:text-gray-400"
                 />
-              </form>
+                {searchInput && (
+                  <button
+                    onClick={() => {
+                      setSearchInput("");
+                      if (location.pathname === "/products") {
+                        navigate("/products", { replace: true });
+                      }
+                      // Focus input after clearing
+                    }}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
+                  >
+                    <XIcon className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
             </div>
 
 

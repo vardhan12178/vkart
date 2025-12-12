@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
-import { 
-  FaPaperPlane, 
-  FaMapMarkerAlt, 
-  FaEnvelope, 
-  FaClock, 
+import {
+  FaPaperPlane,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaClock,
   FaUser,
   FaCommentAlt,
   FaCheckCircle,
@@ -75,9 +75,8 @@ export default function Contact() {
           value={form[name]}
           onChange={handleChange}
           placeholder={placeholder}
-          className={`w-full rounded-xl border-0 bg-gray-50 py-3.5 pl-11 pr-4 text-sm font-semibold text-gray-900 shadow-inner ring-1 ring-inset transition-all placeholder:text-gray-400 focus:ring-2 focus:bg-white ${
-            errors[name] ? "ring-red-300 focus:ring-red-500" : "ring-gray-200 focus:ring-orange-500/50"
-          }`}
+          className={`w-full rounded-xl border-0 bg-gray-50 py-3.5 pl-11 pr-4 text-sm font-semibold text-gray-900 shadow-inner ring-1 ring-inset transition-all placeholder:text-gray-400 focus:ring-2 focus:bg-white ${errors[name] ? "ring-red-300 focus:ring-red-500" : "ring-gray-200 focus:ring-orange-500/50"
+            }`}
         />
       </div>
       {errors[name] && <p className="text-xs text-red-500 mt-1.5 ml-1 font-medium">{errors[name]}</p>}
@@ -95,9 +94,8 @@ export default function Contact() {
       {/* Toast Notification */}
       {toast.show && (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-up">
-          <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${
-            toast.ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
-          }`}>
+          <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${toast.ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
+            }`}>
             {toast.ok ? <FaCheckCircle /> : <FaExclamationCircle />}
             <span className="text-sm font-semibold">{toast.text}</span>
           </div>
@@ -105,7 +103,7 @@ export default function Contact() {
       )}
 
       <div className="container mx-auto px-4 py-12 sm:py-16 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-up">
           <span className="text-orange-600 font-bold tracking-widest text-xs uppercase bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
@@ -124,19 +122,19 @@ export default function Contact() {
           {/* --- LEFT: Contact Form --- */}
           <div className="lg:col-span-7 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-10 shadow-xl shadow-gray-200/50 border border-white/60">
-              
+
               <form onSubmit={handleSubmit} noValidate>
                 {/* Honey Pot */}
                 <input type="text" name="honey" value={form.honey} onChange={handleChange} className="hidden" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
-                  <InputField 
-                    label="Full Name" name="name" 
-                    icon={FaUser} placeholder="John Doe" 
+                  <InputField
+                    label="Full Name" name="name"
+                    icon={FaUser} placeholder="John Doe"
                   />
-                  <InputField 
+                  <InputField
                     label="Email Address" name="email" type="email"
-                    icon={FaEnvelope} placeholder="john@example.com" 
+                    icon={FaEnvelope} placeholder="john@example.com"
                   />
                 </div>
 
@@ -150,11 +148,10 @@ export default function Contact() {
                         key={tag}
                         type="button"
                         onClick={() => setForm((f) => ({ ...f, subject: tag }))}
-                        className={`px-4 py-2 rounded-full text-xs font-bold transition-all border ${
-                          form.subject === tag
+                        className={`px-4 py-2 rounded-full text-xs font-bold transition-all border ${form.subject === tag
                             ? "bg-gray-900 text-white border-gray-900 shadow-lg"
                             : "bg-white text-gray-600 border-gray-200 hover:border-orange-300 hover:text-orange-600"
-                        }`}
+                          }`}
                       >
                         {tag}
                       </button>
@@ -175,9 +172,8 @@ export default function Contact() {
                       value={form.message}
                       onChange={handleChange}
                       placeholder="How can we help you?"
-                      className={`w-full h-40 rounded-2xl border-0 bg-gray-50 py-3.5 pl-11 pr-4 text-sm font-medium text-gray-900 shadow-inner ring-1 ring-inset transition-all placeholder:text-gray-400 focus:ring-2 focus:bg-white resize-none ${
-                        errors.message ? "ring-red-300 focus:ring-red-500" : "ring-gray-200 focus:ring-orange-500/50"
-                      }`}
+                      className={`w-full h-40 rounded-2xl border-0 bg-gray-50 py-3.5 pl-11 pr-4 text-sm font-medium text-gray-900 shadow-inner ring-1 ring-inset transition-all placeholder:text-gray-400 focus:ring-2 focus:bg-white resize-none ${errors.message ? "ring-red-300 focus:ring-red-500" : "ring-gray-200 focus:ring-orange-500/50"
+                        }`}
                     />
                   </div>
                   <div className="flex justify-end mt-1.5">
@@ -207,44 +203,44 @@ export default function Contact() {
 
           {/* --- RIGHT: Info & FAQ --- */}
           <div className="lg:col-span-5 space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            
+
             {/* Info Card */}
-            <div className="bg-gradient-to-br from-orange-500 to-amber-600 rounded-[2.5rem] p-8 text-white shadow-2xl shadow-orange-500/20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
-              
+            <div className="bg-gray-900 rounded-[2.5rem] p-8 text-white shadow-2xl shadow-gray-900/20 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+
               <h3 className="text-xl font-black mb-6 relative z-10">Contact Information</h3>
-              
+
               <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10">
-                    <FaEnvelope className="text-lg" />
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <FaEnvelope className="text-lg text-orange-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-orange-100 uppercase tracking-wider opacity-80">Email</p>
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider opacity-80">Email</p>
                     <p className="font-semibold text-lg">support@vkart.com</p>
-                    <p className="text-xs text-orange-100/70 mt-0.5">We reply within 24 hours</p>
+                    <p className="text-xs text-gray-500 mt-0.5">We reply within 24 hours</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10">
-                    <FaClock className="text-lg" />
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <FaClock className="text-lg text-orange-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-orange-100 uppercase tracking-wider opacity-80">Hours</p>
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider opacity-80">Hours</p>
                     <p className="font-semibold text-lg">Mon - Sat, 9am - 6pm</p>
-                    <p className="text-xs text-orange-100/70 mt-0.5">Support team available</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Support team available</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10">
-                    <FaMapMarkerAlt className="text-lg" />
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <FaMapMarkerAlt className="text-lg text-orange-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-orange-100 uppercase tracking-wider opacity-80">Location</p>
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider opacity-80">Location</p>
                     <p className="font-semibold text-lg">Remote First</p>
-                    <p className="text-xs text-orange-100/70 mt-0.5">Operating across India</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Operating across India</p>
                   </div>
                 </div>
               </div>

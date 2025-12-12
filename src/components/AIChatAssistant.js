@@ -86,7 +86,7 @@ const AIChatAssistant = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => dispatch(openChat())}
-            className="absolute bottom-0 right-0 group flex items-center gap-3 px-6 py-4 bg-gray-900 text-white rounded-full shadow-2xl hover:shadow-gray-900/40 transition-shadow whitespace-nowrap"
+            className="absolute bottom-0 right-0 group flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-gray-900 text-white rounded-full shadow-2xl hover:shadow-gray-900/40 transition-shadow whitespace-nowrap"
           >
             <MessageSquare size={24} className="text-white shrink-0" />
             <span className="font-bold text-lg tracking-wide hidden md:block">Ask AI</span>
@@ -101,7 +101,7 @@ const AIChatAssistant = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="absolute bottom-0 right-0 w-[90vw] md:w-[400px] h-[600px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-100 ring-1 ring-black/5"
+            className="absolute bottom-0 right-0 w-[90vw] md:w-[400px] h-[70vh] md:h-[600px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-100 ring-1 ring-black/5"
           >
 
             {/* Header */}

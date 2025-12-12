@@ -69,7 +69,8 @@ export default function Products() {
   const [filterLoading, setFilterLoading] = useState(false);
 
   const [searchInput, setSearchInput] = useState(searchParams.get("q") || "");
-  const [searchTerm, setSearchTerm] = useState(searchParams.get("q") || "");
+  const searchTerm = searchParams.get("q") || ""; // Derived directly from URL
+
   const [categoryFilter, setCategoryFilter] = useState(searchParams.get("cat") || "");
   const [ratingFilter, setRatingFilter] = useState(Number(searchParams.get("rating")) || 0);
   const [priceRange, setPriceRange] = useState({
@@ -96,16 +97,33 @@ export default function Products() {
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   /**
-   * Debounce search input to avoid excessive API calls
-   * Updates searchTerm after 500ms of no typing
+   * Sync Search Input with URL (e.g. when navigating from Header)
+   */
+  useEffect(() => {
+    const q = searchParams.get("q") || "";
+    if (q !== searchInput) {
+      setSearchInput(q);
+    }
+  }, [searchParams]);
+
+  /**
+   * Debouce Search Input -> Update URL
    */
   useEffect(() => {
     const timer = setTimeout(() => {
-      setSearchTerm(searchInput);
+      const currentQ = searchParams.get("q") || "";
+      if (searchInput !== currentQ) {
+        setSearchParams(prev => {
+          const next = new URLSearchParams(prev);
+          if (searchInput) next.set("q", searchInput);
+          else next.delete("q");
+          return next;
+        }, { replace: true });
+      }
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [searchInput]);
+  }, [searchInput, searchParams]);
 
   /**
    * Fetch products from backend with all filters applied server-side
@@ -168,17 +186,23 @@ export default function Products() {
 
   /**
    * Sync filter state to URL parameters
+   * Note: We exclude 'searchTerm' (q) here because it is handled by the debounce effect.
+   * This effect handles the OTHER filters.
    */
   useEffect(() => {
-    const next = new URLSearchParams();
-    if (searchTerm) next.set("q", searchTerm);
-    if (categoryFilter) next.set("cat", categoryFilter);
-    if (ratingFilter > 0) next.set("rating", String(ratingFilter));
-    if (priceRange.min) next.set("min", String(priceRange.min));
-    if (priceRange.max !== 100000) next.set("max", String(priceRange.max));
-    if (sortBy !== "relevance") next.set("sort", sortBy);
+    const next = new URLSearchParams(searchParams);
+
+    // We do NOT set 'q' here from state, we preserve what's in searchParams (or handled by debounce)
+    // Actually, we should probably ensure the other params match state.
+
+    if (categoryFilter) next.set("cat", categoryFilter); else next.delete("cat");
+    if (ratingFilter > 0) next.set("rating", String(ratingFilter)); else next.delete("rating");
+    if (priceRange.min) next.set("min", String(priceRange.min)); else next.delete("min");
+    if (priceRange.max !== 100000) next.set("max", String(priceRange.max)); else next.delete("max");
+    if (sortBy !== "relevance") next.set("sort", sortBy); else next.delete("sort");
+
     setSearchParams(next, { replace: true });
-  }, [searchTerm, categoryFilter, ratingFilter, priceRange, sortBy, setSearchParams]);
+  }, [categoryFilter, ratingFilter, priceRange, sortBy, setSearchParams]);
 
   /**
    * No client-side filtering needed - backend handles everything
@@ -250,7 +274,7 @@ export default function Products() {
    */
   const clearAll = () => {
     setSearchInput("");
-    setSearchTerm("");
+    // setSearchTerm(""); // Removed: derived from URL
     setCategoryFilter("");
     setRatingFilter(0);
     setPriceRange({ min: 0, max: 100000 });

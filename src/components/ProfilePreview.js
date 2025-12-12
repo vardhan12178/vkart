@@ -24,7 +24,7 @@ export default function ProfilePreview() {
       {/* Main Card */}
       <div className="relative z-10 w-full max-w-md">
         <div className="bg-white/80 backdrop-blur-xl border border-white/60 shadow-2xl shadow-gray-200/50 rounded-[2.5rem] overflow-hidden p-8 sm:p-12 text-center animate-fade-up">
-          
+
           {/* Icon Visual */}
           <div className="relative mx-auto w-28 h-28 mb-8">
             <div className="absolute inset-0 bg-blue-50 rounded-full animate-pulse" />
@@ -80,7 +80,7 @@ export default function ProfilePreview() {
           </div>
 
         </div>
-        
+
         {/* Footer Note */}
         <p className="text-center text-[10px] font-bold text-gray-400 mt-6 uppercase tracking-widest">
           Secure • Personal • Fast

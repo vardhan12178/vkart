@@ -14,9 +14,11 @@ import {
   FaArrowRight,
   FaServer,
   FaCode,
-  FaLayerGroup
+  FaLayerGroup,
+  FaBrain,
+  FaAws
 } from "react-icons/fa";
-import { SiRedux, SiTailwindcss, SiRazorpay } from "react-icons/si";
+import { SiRedux, SiTailwindcss, SiRazorpay, SiRedis } from "react-icons/si";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -67,11 +69,11 @@ export default function About() {
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-sm mb-8">
             <FaRocket /> Project Case Study
           </span>
-          
+
           <h1 className="text-5xl sm:text-7xl font-black text-gray-900 tracking-tight leading-[1.1] mb-6">
             Building a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Production-Ready</span> <br className="hidden sm:block" /> E-Commerce Engine.
           </h1>
-          
+
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 leading-relaxed font-medium">
             VKart isn't just a template. It's a complete, full-stack system engineered with modern practices, secure authentication, and complex state management.
           </p>
@@ -85,11 +87,12 @@ export default function About() {
             { icon: FaReact, name: "React.js", color: "text-blue-400" },
             { icon: SiRedux, name: "Redux Toolkit", color: "text-purple-500" },
             { icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
-            { icon: FaDatabase, name: "MongoDB", color: "text-green-600" },
+            { icon: FaDatabase, name: "MongoDB Vector", color: "text-green-600" },
+            { icon: SiRedis, name: "Redis Cache", color: "text-red-500" },
+            { icon: FaAws, name: "AWS S3", color: "text-orange-500" },
             { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-sky-400" },
             { icon: FaLock, name: "JWT Auth", color: "text-orange-500" },
             { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
-            { icon: FaServer, name: "Express.js", color: "text-gray-600" },
           ].map((tech, i) => (
             <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
               <tech.icon className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
@@ -130,6 +133,11 @@ export default function About() {
               title: "State Management",
               desc: "Centralized Redux store for cart, user session, and persistent UI states."
             },
+            {
+              icon: <FaBrain />,
+              title: "AI Intelligence",
+              desc: "RAG-powered assistant using MongoDB Vector Search for context-aware support."
+            },
           ].map((feature, i) => (
             <div key={i} className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-100 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-300 group">
               <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl text-orange-600 mb-6 group-hover:scale-110 transition-transform">
@@ -152,7 +160,7 @@ export default function About() {
               <FaCode className="text-2xl text-gray-600" />
             </div>
             <h2 className="text-3xl font-black text-gray-900 mb-12">Engineering Decisions</h2>
-            
+
             <div className="grid sm:grid-cols-2 text-left gap-x-12 gap-y-6">
               {[
                 "Modular component architecture for reusability",
@@ -184,13 +192,12 @@ export default function About() {
 
           <div className="space-y-4">
             {faqs.map((f, i) => (
-              <div 
-                key={i} 
-                className={`rounded-2xl border transition-all duration-300 ${
-                  open === i 
-                    ? "bg-white border-orange-200 shadow-lg shadow-orange-500/5" 
+              <div
+                key={i}
+                className={`rounded-2xl border transition-all duration-300 ${open === i
+                    ? "bg-white border-orange-200 shadow-lg shadow-orange-500/5"
                     : "bg-white/50 border-gray-200 hover:bg-white"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => setOpen(open === i ? -1 : i)}
@@ -203,10 +210,9 @@ export default function About() {
                     +
                   </span>
                 </button>
-                <div 
-                  className={`px-6 text-gray-600 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${
-                    open === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                <div
+                  className={`px-6 text-gray-600 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${open === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"
+                    }`}
                 >
                   {f.a}
                 </div>
@@ -221,7 +227,7 @@ export default function About() {
         <div className="bg-[#0f0f0f] rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-2xl">
           {/* Decor */}
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-800/50 via-transparent to-transparent" />
-          
+
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6">
               Ready to see the code?
@@ -229,7 +235,7 @@ export default function About() {
             <p className="text-gray-400 text-lg mb-10">
               Dive into the repository to explore the folder structure, custom hooks, and backend logic.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="/products"

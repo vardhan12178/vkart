@@ -148,8 +148,7 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [dealEndsAt] = useState(() => Date.now() + 1000 * 60 * 60 * 18);
-  const [nowTick, setNowTick] = useState(Date.now());
+  /* Removed dealEndsAt and nowTick state */
 
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -165,10 +164,7 @@ export default function Home() {
     if (quickView) setQuickView(null);
   };
 
-  useEffect(() => {
-    const t = setInterval(() => setNowTick(Date.now()), 1000);
-    return () => clearInterval(t);
-  }, []);
+  /* Removed timer interval effect */
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
@@ -232,8 +228,8 @@ export default function Home() {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1.15, // Show a bit of next slide
-          centerMode: false,  // Left align
+          slidesToShow: 1,
+          centerMode: false,
           arrows: false,
           infinite: true
         }
@@ -255,10 +251,7 @@ export default function Home() {
     }
   };
 
-  const timeLeft = Math.max(0, Math.floor((dealEndsAt - nowTick) / 1000));
-  const hours = String(Math.floor(timeLeft / 3600)).padStart(2, "0");
-  const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, "0");
-  const seconds = String(timeLeft % 60).padStart(2, "0");
+  /* Removed time calculation logic */
 
   return (
     <main className="bg-[#f8f9fa] font-sans text-gray-800 overflow-x-hidden">
@@ -338,7 +331,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-4"
+                className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 lg:mb-0"
               >
                 <Link
                   to="/products"
@@ -426,6 +419,7 @@ export default function Home() {
       </section>
 
       {/* FLASH SALE (Same) */}
+      {/* COLLECTION SHOWCASE */}
       <section className="py-20 bg-[#050505] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-500/10 rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px] pointer-events-none" />
@@ -434,27 +428,18 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-white text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-md">
-                <FaBolt className="text-yellow-400" /> Flash Deal
+                <FaStar className="text-yellow-400" /> Premium Catalog
               </div>
               <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                50% OFF <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-200">Everything.</span>
+                Curated <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-200">Perfection.</span>
               </h2>
               <p className="text-gray-400 text-lg mb-12 max-w-lg mx-auto lg:mx-0">
-                Don't miss out on our biggest sale of the season. Premium tech and fashion at unbeatable prices.
+                Browse our complete collection of high-performance gadgets and lifestyle essentials. No clutter, just quality.
               </p>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
-                {[{ val: hours, label: "Hours" }, { val: minutes, label: "Mins" }, { val: seconds, label: "Secs" }].map((t, i) => (
-                  <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4 min-w-[100px] text-center backdrop-blur-sm">
-                    <div className="text-4xl font-black text-white tabular-nums">{t.val}</div>
-                    <div className="text-[10px] font-bold text-gray-500 uppercase mt-1">{t.label}</div>
-                  </div>
-                ))}
-              </div>
-
               <Link to="/products" className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition-all transform hover:scale-105">
-                Shop The Sale <FaArrowRight />
+                View All Products <FaArrowRight />
               </Link>
             </div>
 
@@ -463,11 +448,11 @@ export default function Home() {
               <div className="relative bg-white/5 border border-white/10 rounded-[3rem] p-8 md:p-12 backdrop-blur-xl">
                 <div className="text-center">
                   <div className="inline-flex p-4 rounded-full bg-orange-500/20 text-orange-400 mb-6">
-                    <FaBolt size={32} />
+                    <FaShoppingBag size={32} />
                   </div>
-                  <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Limited Time</div>
-                  <div className="text-8xl font-black text-white tracking-tighter mb-2">50<span className="text-4xl text-orange-500">%</span></div>
-                  <div className="text-2xl font-bold text-white mb-8">OFF EVERYTHING</div>
+                  <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Shop The Best</div>
+                  <div className="text-5xl font-black text-white tracking-tighter mb-2">100<span className="text-3xl text-orange-500">%</span></div>
+                  <div className="text-xl font-bold text-white mb-8">QUALITY GUARANTEE</div>
                   <div className="h-px w-full bg-white/10 mb-8" />
                   <div className="flex justify-center gap-4 text-sm font-medium text-gray-400">
                     <span>Free Shipping</span>
@@ -503,13 +488,13 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 md:col-span-2">
+            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 md:col-span-2 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
               <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl mb-6">
                 <FaShieldAlt />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Bank-Grade Security</h3>
               <p className="text-gray-500 leading-relaxed">
-                We use industry-standard encryption, JWT authentication, and Razorpay's secure payment gateway.
+                Secured by <strong>Razorpay</strong> (Test Mode). We use JWT authentication and industry-standard encryption for data protection.
               </p>
             </div>
 
@@ -521,12 +506,12 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Blazing Fast</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Optimized with React & Redux for instant page loads.
+                  Powered by <strong>Node.js</strong> & <strong>Redis</strong> caching. Images served via <strong>AWS S3</strong> for lightning performance.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40">
+            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
               <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 text-2xl mb-6">
                 <FaTruck />
               </div>
@@ -536,13 +521,13 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 md:col-span-2">
+            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 md:col-span-2 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
               <div className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 text-2xl mb-6">
                 <FaHeadset />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">24/7 Support</h3>
               <p className="text-gray-500 leading-relaxed">
-                Our AI-powered support assistant is always available to help you.
+                Our AI Assistant uses <strong>MongoDB Vector Search</strong> & <strong>RAG</strong> to provide smart, context-aware help.
               </p>
             </div>
           </div>
