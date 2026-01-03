@@ -65,11 +65,10 @@ export default function AdminOrders() {
   const loadOrders = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem("admin_token");
-      // Ensure this endpoint exists in your backend
+      // Cookie-based auth - no token needed
       const response = await fetch("/api/admin/orders", {
-        headers: { 
-          Authorization: `Bearer ${token}`,
+        credentials: 'include',
+        headers: {
           "Content-Type": "application/json"
         },
       });
@@ -98,7 +97,7 @@ export default function AdminOrders() {
 
     const q = search.trim().toLowerCase();
     if (q) {
-      result = result.filter((o) => 
+      result = result.filter((o) =>
         o._id.toLowerCase().includes(q) ||
         (o.customer?.name || "").toLowerCase().includes(q) ||
         (o.customer?.email || "").toLowerCase().includes(q)
@@ -185,7 +184,7 @@ export default function AdminOrders() {
   return (
     <div className="min-h-screen bg-gray-50/50 p-6 sm:p-8 font-sans text-slate-800">
       <div className="max-w-7xl mx-auto space-y-8">
-        
+
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
@@ -195,7 +194,7 @@ export default function AdminOrders() {
             </p>
           </div>
           <div className="flex items-center gap-3">
-             <button
+            <button
               onClick={loadOrders}
               disabled={loading}
               className="flex items-center gap-2 px-4 py-2 bg-white text-slate-700 border border-slate-200 rounded-lg shadow-sm hover:bg-slate-50 transition-all active:scale-95"
@@ -208,24 +207,24 @@ export default function AdminOrders() {
 
         {/* Stats Overview Cards (Premium Touch) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <StatCard 
-            title="Total Revenue" 
-            value={`₹${stats.totalRevenue.toLocaleString('en-IN')}`} 
-            icon={CurrencyRupeeIcon} 
+          <StatCard
+            title="Total Revenue"
+            value={`₹${stats.totalRevenue.toLocaleString('en-IN')}`}
+            icon={CurrencyRupeeIcon}
             color="text-emerald-600"
             bg="bg-emerald-50"
           />
-          <StatCard 
-            title="Active Orders" 
-            value={stats.activeOrders} 
-            icon={ClockIcon} 
+          <StatCard
+            title="Active Orders"
+            value={stats.activeOrders}
+            icon={ClockIcon}
             color="text-orange-600"
             bg="bg-orange-50"
           />
-           <StatCard 
-            title="Completed" 
-            value={stats.completedOrders} 
-            icon={CheckCircleIcon} 
+          <StatCard
+            title="Completed"
+            value={stats.completedOrders}
+            icon={CheckCircleIcon}
             color="text-blue-600"
             bg="bg-blue-50"
           />
@@ -246,7 +245,7 @@ export default function AdminOrders() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          
+
           <div className="w-px bg-slate-100 my-1 hidden sm:block"></div>
 
           {/* Filter Dropdown */}
@@ -254,8 +253,8 @@ export default function AdminOrders() {
             <button
               onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}
               className={`flex items-center justify-between gap-2 px-4 py-2.5 text-sm font-medium rounded-xl transition-all w-full sm:w-48
-                ${isFilterMenuOpen || filterStage !== 'ALL' 
-                  ? "bg-slate-100 text-slate-900" 
+                ${isFilterMenuOpen || filterStage !== 'ALL'
+                  ? "bg-slate-100 text-slate-900"
                   : "bg-white text-slate-600 hover:bg-slate-50"
                 }`}
             >
@@ -268,26 +267,26 @@ export default function AdminOrders() {
 
             {isFilterMenuOpen && (
               <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-1 z-50 animate-in fade-in zoom-in-95 duration-100">
-                 <div className="px-3 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                   Select Status
-                 </div>
-                 <div className="max-h-64 overflow-y-auto">
-                   {STAGES.map((stage) => (
-                     <button
-                       key={stage}
-                       onClick={() => {
-                         setFilterStage(stage);
-                         setIsFilterMenuOpen(false);
-                       }}
-                       className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 flex items-center justify-between group"
-                     >
-                       <span className={filterStage === stage ? "font-medium text-slate-900" : ""}>
-                         {stage.replace(/_/g, " ")}
-                       </span>
-                       {filterStage === stage && <CheckIcon className="h-4 w-4 text-slate-900" />}
-                     </button>
-                   ))}
-                 </div>
+                <div className="px-3 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  Select Status
+                </div>
+                <div className="max-h-64 overflow-y-auto">
+                  {STAGES.map((stage) => (
+                    <button
+                      key={stage}
+                      onClick={() => {
+                        setFilterStage(stage);
+                        setIsFilterMenuOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 flex items-center justify-between group"
+                    >
+                      <span className={filterStage === stage ? "font-medium text-slate-900" : ""}>
+                        {stage.replace(/_/g, " ")}
+                      </span>
+                      {filterStage === stage && <CheckIcon className="h-4 w-4 text-slate-900" />}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -295,7 +294,7 @@ export default function AdminOrders() {
 
         {/* Main Table Area */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
-          
+
           {loading ? (
             <div className="p-8 space-y-4 animate-pulse">
               {[1, 2, 3].map((i) => (
@@ -303,7 +302,7 @@ export default function AdminOrders() {
               ))}
             </div>
           ) : filteredAndSortedOrders.length === 0 ? (
-             <div className="flex flex-col items-center justify-center py-24 text-center">
+            <div className="flex flex-col items-center justify-center py-24 text-center">
               <div className="h-16 w-16 bg-slate-50 rounded-full flex items-center justify-center mb-4">
                 <InboxIcon className="h-8 w-8 text-slate-300" />
               </div>
@@ -311,7 +310,7 @@ export default function AdminOrders() {
               <p className="text-slate-500 text-sm mt-1">
                 Try adjusting your search or filter to find what you're looking for.
               </p>
-              <button 
+              <button
                 onClick={() => { setSearch(''); setFilterStage('ALL'); }}
                 className="mt-4 text-orange-600 font-medium text-sm hover:text-orange-700"
               >
@@ -355,7 +354,7 @@ export default function AdminOrders() {
 
                         {/* Customer */}
                         <td className="px-6 py-4 whitespace-nowrap">
-                           <div className="flex items-center">
+                          <div className="flex items-center">
                             <div className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500 ring-2 ring-white">
                               {getInitials(o.customer?.name)}
                             </div>
@@ -384,12 +383,12 @@ export default function AdminOrders() {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm text-slate-500 tabular-nums">
                             {new Date(o.createdAt).toLocaleDateString("en-IN", {
-                                day: "2-digit", month: "short"
+                              day: "2-digit", month: "short"
                             })}
                           </div>
-                           <div className="text-xs text-slate-400 tabular-nums">
-                             {new Date(o.createdAt).toLocaleTimeString("en-IN", { hour: '2-digit', minute:'2-digit'})}
-                           </div>
+                          <div className="text-xs text-slate-400 tabular-nums">
+                            {new Date(o.createdAt).toLocaleTimeString("en-IN", { hour: '2-digit', minute: '2-digit' })}
+                          </div>
                         </td>
 
                         {/* Action */}
@@ -407,7 +406,7 @@ export default function AdminOrders() {
                 <div className="text-sm text-slate-500">
                   Showing <span className="font-medium text-slate-900">{startIndex + 1}</span> to <span className="font-medium text-slate-900">{Math.min(endIndex, filteredAndSortedOrders.length)}</span> of <span className="font-medium text-slate-900">{filteredAndSortedOrders.length}</span>
                 </div>
-                
+
                 <div className="flex gap-1">
                   <button
                     onClick={() => goToPage(currentPage - 1)}
@@ -419,7 +418,7 @@ export default function AdminOrders() {
                   <button
                     onClick={() => goToPage(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                     className="p-1 rounded-md hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    className="p-1 rounded-md hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
                   >
                     <ChevronRightIcon className="h-5 w-5 text-slate-600" />
                   </button>
@@ -452,15 +451,15 @@ function StatCard({ title, value, icon: Icon, color, bg }) {
 function SortableHeader({ label, sortKey, currentSort, onSort }) {
   const isActive = currentSort.key === sortKey;
   return (
-    <th 
-      scope="col" 
+    <th
+      scope="col"
       className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider cursor-pointer group select-none"
       onClick={() => onSort(sortKey)}
     >
       <div className="flex items-center gap-1 group-hover:text-slate-800 transition-colors">
         {label}
         {isActive && (
-          currentSort.direction === 'asc' 
+          currentSort.direction === 'asc'
             ? <SortAscendingIcon className="h-3 w-3 text-orange-500" />
             : <SortDescendingIcon className="h-3 w-3 text-orange-500" />
         )}

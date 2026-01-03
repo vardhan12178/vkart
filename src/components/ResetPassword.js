@@ -17,7 +17,6 @@ import {
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
 
-// --- Animation Variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -26,8 +25,6 @@ const fadeInUp = {
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
-
-// --- Helper Components (Reused from Register/Login for consistency) ---
 
 const FieldError = ({ id, message }) =>
   !message ? null : (
@@ -111,8 +108,6 @@ const PasswordStrengthIndicator = ({ password }) => {
   );
 };
 
-// --- Main Component ---
-
 export default function ResetPassword() {
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -147,7 +142,7 @@ export default function ResetPassword() {
     if (!validate()) return;
     setLoading(true);
     try {
-      const { data } = await axios.post("/auth/reset", {
+      const { data } = await axios.post("/api/auth/reset", {
         token,
         password,
         confirmPassword: confirm,
@@ -188,13 +183,13 @@ export default function ResetPassword() {
                   <ShoppingCartIcon className="h-7 w-7" />
                 </div>
               </div>
-              <motion.h1 
+              <motion.h1
                 variants={fadeInUp}
                 className="text-2xl font-extrabold text-gray-900 tracking-tight"
               >
                 Reset Password
               </motion.h1>
-              <motion.p 
+              <motion.p
                 variants={fadeInUp}
                 className="mt-2 text-sm text-gray-500"
               >
@@ -211,12 +206,12 @@ export default function ResetPassword() {
               )}
             </AnimatePresence>
 
-            <motion.form 
+            <motion.form
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
-              onSubmit={onSubmit} 
-              className="space-y-5" 
+              onSubmit={onSubmit}
+              className="space-y-5"
               noValidate
             >
               {/* New Password */}
@@ -312,9 +307,9 @@ export default function ResetPassword() {
             </motion.div>
 
             <div className="mt-8 text-center">
-                <p className="text-[10px] text-gray-400">
-                   © {currentYear} VKart Inc. Secure System.
-                </p>
+              <p className="text-[10px] text-gray-400">
+                © {currentYear} VKart Inc. Secure System.
+              </p>
             </div>
           </div>
         </motion.div>

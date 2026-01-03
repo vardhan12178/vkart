@@ -290,7 +290,7 @@ export default function Register() {
     setGoogleLoading(true);
     try {
       await axios.post(
-        "/auth/google",
+        "/api/auth/google",
         { idToken: cred?.credential, remember: true },
         { withCredentials: true }
       );

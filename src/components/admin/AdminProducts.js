@@ -71,9 +71,8 @@ export default function AdminProducts() {
   const loadProducts = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem("admin_token");
       const res = await fetch("/api/admin/products", {
-        headers: { Authorization: `Bearer ${token}` }
+        credentials: 'include'
       });
 
       if (!res.ok) throw new Error("Failed to fetch products");
@@ -110,10 +109,8 @@ export default function AdminProducts() {
 
   const submitProduct = async (payload) => {
     try {
-      const token = localStorage.getItem("admin_token");
       const headers = {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       };
 
       let res;
@@ -121,12 +118,14 @@ export default function AdminProducts() {
         res = await fetch(`/api/admin/products/${editData._id}`, {
           method: "PUT",
           headers,
+          credentials: 'include',
           body: JSON.stringify(payload),
         });
       } else {
         res = await fetch("/api/admin/products", {
           method: "POST",
           headers,
+          credentials: 'include',
           body: JSON.stringify(payload),
         });
       }

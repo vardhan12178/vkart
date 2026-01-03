@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "", 
+  baseURL: process.env.REACT_APP_API_BASE_URL || "",
   withCredentials: true,
   timeout: 25000,
   validateStatus: (s) => s >= 200 && s < 300,
@@ -9,12 +9,8 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
-
-  const t = localStorage.getItem("auth_token");
-  if (t) {
-    config.headers = { ...(config.headers || {}), Authorization: `Bearer ${t}` };
-  }
-
+  // Cookies are sent automatically via withCredentials: true
+  // No need to manually add Authorization header
 
   const isForm = typeof FormData !== "undefined" && config.data instanceof FormData;
   if (isForm) {
@@ -35,8 +31,23 @@ instance.interceptors.response.use(
     const status = error?.response?.status;
 
     if (status === 401) {
-      if (typeof window !== "undefined" && !window.location.pathname.startsWith("/login")) {
-        window.location.assign("/login");
+      // Don't redirect for auth-check calls (profile, admin verify, etc.) - these should fail silently
+      const isAuthCheck = cfg.url?.includes('/api/profile') ||
+        cfg.url?.includes('/api/auth/check') ||
+        cfg.url?.includes('/api/admin/verify') ||
+        cfg.__skipAuthRedirect;
+
+      if (!isAuthCheck && typeof window !== "undefined") {
+        const path = window.location.pathname;
+        // Don't redirect if already on a login page
+        if (!path.startsWith("/login") && !path.startsWith("/admin/login")) {
+          // Redirect admin routes to admin login, regular routes to regular login
+          if (path.startsWith("/admin")) {
+            window.location.assign("/admin/login");
+          } else {
+            window.location.assign("/login");
+          }
+        }
       }
       return Promise.reject(error);
     }

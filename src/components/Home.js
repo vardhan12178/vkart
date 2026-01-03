@@ -166,9 +166,8 @@ export default function Home() {
 
   /* Removed timer interval effect */
 
+  // Fetch profile if logged in (cookie-based auth)
   useEffect(() => {
-    const token = localStorage.getItem("auth_token");
-    if (!token) return;
     let cancelled = false;
     (async () => {
       try {

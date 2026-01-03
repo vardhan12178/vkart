@@ -118,17 +118,9 @@ export default function Profile() {
     toastTimer.current = setTimeout(() => setToast({ kind, message: "" }), ms);
   };
 
-  // --- EFFECTS (UNCHANGED LOGIC) ---
+  // --- EFFECTS (Cookie-based auth) ---
   useEffect(() => {
-    const token = localStorage.getItem("auth_token");
-
-    if (!token) {
-      setLoading(false);
-      setUser(null);
-      return () => {
-        if (toastTimer.current) clearTimeout(toastTimer.current);
-      };
-    }
+    // No localStorage check needed - let API call verify auth via cookie
 
     const load = async () => {
       try {

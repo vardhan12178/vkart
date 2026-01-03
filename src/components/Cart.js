@@ -32,6 +32,7 @@ import {
 } from "react-icons/fa";
 import CheckoutForm from "./CheckoutForm";
 import OrderStages from "./OrderStages";
+import OrderTimeline from "./OrderTimeline";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
 
@@ -72,14 +73,13 @@ export default function Cart() {
 
   const checkoutRef = useRef(null);
 
-  // --- Logic ---
   const calc = useMemo(() => {
     if (!cartItems?.length)
       return { mrp: 0, rawSell: 0, subtotal: 0, promoOff: 0, tax: 0, total: 0, savingsMrpVsSell: 0, shipping: 0 };
 
     const lines = cartItems.map((it) => {
       // REMOVED: Currency conversion (* 83)
-      const unitSell = round2(it.price); 
+      const unitSell = round2(it.price);
       const unitMrp = it.discountPercentage
         ? round2(it.price / (1 - it.discountPercentage / 100))
         : unitSell;
@@ -89,16 +89,24 @@ export default function Cart() {
     const mrp = round2(lines.reduce((a, b) => a + b.mrp, 0));
     const rawSell = round2(lines.reduce((a, b) => a + b.sell, 0));
     const promoOff = promoApplied?.pct ? round2(rawSell * (promoApplied.pct / 100)) : 0;
-    const subtotal = round2(rawSell - promoOff);
+
+    // Inclusive Tax Logic
+    const subtotal = round2(rawSell - promoOff); // This is the amount the user expects to pay for items
     const shipping = subtotal >= 999 ? 0 : 50;
-    const tax = round2(subtotal * TAX_RATE);
-    const total = round2(subtotal + tax + shipping);
+
+    // Tax is extracted FROM the subtotal, not added TO it
+    // Formula: Amount * (Rate / (1 + Rate))
+    const tax = round2(subtotal * (TAX_RATE / (1 + TAX_RATE)));
+
+    // Total is just subtotal + shipping (since tax is inside subtotal)
+    const total = round2(subtotal + shipping);
+
     const savingsMrpVsSell = Math.max(0, round2(mrp - rawSell));
     return { mrp, rawSell, subtotal, promoOff, tax, total, savingsMrpVsSell, shipping };
   }, [cartItems, promoApplied]);
 
-  const isLoggedIn = !!localStorage.getItem("auth_token");
-  if (!isLoggedIn) return <CartPreview />;
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+  if (!isAuthenticated) return <CartPreview />;
 
   const applyPromo = () => {
     const code = promo.trim().toUpperCase();
@@ -184,7 +192,7 @@ export default function Cart() {
 
   const hasCartItems = cartItems.length > 0;
   const hasWishlistItems = wishlistItems.length > 0;
-  
+
   // Only render "Empty State" if BOTH cart and wishlist are empty, and no order was just placed.
   const isCompletelyEmpty = !hasCartItems && !hasWishlistItems && !orderPlaced;
 
@@ -214,12 +222,12 @@ export default function Cart() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-800 pb-32 lg:pb-20 overflow-x-hidden">
       <AnimStyles />
-      
+
       {/* Ambient Background */}
       <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative z-10">
-        
+
         {/* Header */}
         <div className="flex items-center justify-between mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">Shopping Cart</h1>
@@ -232,10 +240,10 @@ export default function Cart() {
 
         {!orderPlaced ? (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
-            
+
             {/* --- LEFT COLUMN: Cart Items & Wishlist --- */}
             <div className="lg:col-span-8 space-y-8">
-              
+
               {/* 1. Cart Items List */}
               {hasCartItems ? (
                 <div className="space-y-4">
@@ -272,7 +280,7 @@ export default function Cart() {
                                 <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight line-clamp-2">{item.title}</h3>
                                 <p className="text-xs sm:text-sm text-gray-500 mt-1 capitalize truncate">{item.category}</p>
                               </div>
-                              <button 
+                              <button
                                 onClick={() => setConfirmRemoveId(k)}
                                 className="text-gray-300 hover:text-red-500 transition-colors p-1 shrink-0"
                               >
@@ -283,16 +291,16 @@ export default function Cart() {
                             <div className="flex flex-wrap items-end justify-between gap-3 mt-3 sm:mt-4">
                               {/* Quantity Pill */}
                               <div className="flex items-center bg-gray-50 rounded-xl border border-gray-100 h-8 sm:h-10">
-                                <button 
-                                  onClick={() => dispatch(decrementQuantity(k))} 
+                                <button
+                                  onClick={() => dispatch(decrementQuantity(k))}
                                   disabled={item.quantity <= 1}
                                   className="w-8 sm:w-10 h-full flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-l-xl transition disabled:opacity-30"
                                 >
                                   <FaMinus size={10} />
                                 </button>
                                 <span className="w-6 sm:w-8 text-center font-bold text-xs sm:text-sm">{item.quantity}</span>
-                                <button 
-                                  onClick={() => dispatch(incrementQuantity(k))} 
+                                <button
+                                  onClick={() => dispatch(incrementQuantity(k))}
                                   className="w-8 sm:w-10 h-full flex items-center justify-center text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-r-xl transition"
                                 >
                                   <FaPlus size={10} />
@@ -335,12 +343,12 @@ export default function Cart() {
               ) : (
                 /* Empty Cart Banner (Show only if Wishlist has items) */
                 <div className="bg-white rounded-[2rem] p-8 text-center border border-dashed border-gray-300">
-                   <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400">
-                      <FaShoppingBag size={24} />
-                   </div>
-                   <h3 className="text-lg font-bold text-gray-900">Your cart is empty</h3>
-                   <p className="text-sm text-gray-500 mb-4">But you have items saved for later!</p>
-                   <Link to="/products" className="text-sm font-bold text-orange-600 hover:underline">Continue Shopping</Link>
+                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400">
+                    <FaShoppingBag size={24} />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">Your cart is empty</h3>
+                  <p className="text-sm text-gray-500 mb-4">But you have items saved for later!</p>
+                  <Link to="/products" className="text-sm font-bold text-orange-600 hover:underline">Continue Shopping</Link>
                 </div>
               )}
 
@@ -349,7 +357,7 @@ export default function Cart() {
                 <div className={hasCartItems ? "mt-12" : "mt-6"}>
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-lg sm:text-xl font-bold text-gray-900 flex items-center gap-2">
-                        <FaHeart className="text-orange-500" /> Saved for Later
+                      <FaHeart className="text-orange-500" /> Saved for Later
                     </h2>
                     <button onClick={() => dispatch(clearWishlist())} className="text-xs font-bold text-red-500 hover:underline">Clear All</button>
                   </div>
@@ -363,7 +371,7 @@ export default function Cart() {
                           <h4 className="text-sm font-bold text-gray-900 line-clamp-2 mb-1">{w.title}</h4>
                           {/* REMOVED: Currency conversion (* 83) */}
                           <div className="text-xs font-bold text-gray-500 mb-2">{INR(w.price)}</div>
-                          <button 
+                          <button
                             onClick={() => moveWishlistToCart(w)}
                             className="text-xs font-bold text-orange-600 hover:text-white hover:bg-orange-600 bg-orange-50 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1 w-fit"
                           >
@@ -383,15 +391,15 @@ export default function Cart() {
                 <div className="sticky top-24 space-y-6">
                   <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 shadow-xl shadow-orange-500/5 border border-gray-100">
                     <h2 className="text-lg sm:text-xl font-black text-gray-900 mb-6">Order Summary</h2>
-                    
+
                     <div className="space-y-4 text-sm font-medium text-gray-600">
                       <div className="flex justify-between">
                         <span>Subtotal</span>
                         <span className="text-gray-900">{INR(calc.subtotal)}</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span>Tax (18%)</span>
-                        <span className="text-gray-900">{INR(calc.tax)}</span>
+                      <div className="flex justify-between text-gray-400">
+                        <span className="text-xs">Tax (Included 18%)</span>
+                        <span className="text-xs">{INR(calc.tax)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Shipping</span>
@@ -405,9 +413,9 @@ export default function Cart() {
                           <span>-{INR(calc.promoOff)}</span>
                         </div>
                       )}
-                      
+
                       <div className="h-px bg-gray-100 my-4" />
-                      
+
                       <div className="flex justify-between text-lg font-black text-gray-900">
                         <span>Total</span>
                         <span>{INR(calc.total)}</span>
@@ -424,7 +432,7 @@ export default function Cart() {
                           placeholder="Promo Code"
                           className="w-full pl-10 pr-20 py-3 rounded-xl bg-gray-50 border-none text-sm font-bold text-gray-900 focus:ring-2 focus:ring-orange-500/20 placeholder:text-gray-400"
                         />
-                        <button 
+                        <button
                           onClick={applyPromo}
                           className="absolute right-2 top-2 bottom-2 px-3 bg-white rounded-lg text-xs font-bold text-gray-900 shadow-sm hover:bg-gray-50 transition"
                         >
@@ -450,9 +458,9 @@ export default function Cart() {
                             <span><FaTruck className="text-orange-500" /></span>
                           </div>
                           <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-gradient-to-r from-orange-400 to-red-500 rounded-full" 
-                              style={{ width: `${(calc.subtotal / 999) * 100}%` }} 
+                            <div
+                              className="h-full bg-gradient-to-r from-orange-400 to-red-500 rounded-full"
+                              style={{ width: `${(calc.subtotal / 999) * 100}%` }}
                             />
                           </div>
                         </>
@@ -467,11 +475,11 @@ export default function Cart() {
               ) : (
                 /* Empty Cart Side Message */
                 <div className="bg-white rounded-3xl p-6 border border-gray-100 sticky top-24">
-                   <h3 className="font-bold text-gray-900 mb-2">Need Help?</h3>
-                   <p className="text-sm text-gray-500 mb-4">
-                     If you are looking for items you previously added, try checking your order history.
-                   </p>
-                   <Link to="/profile" className="text-sm font-bold text-orange-600 hover:underline">Go to Profile</Link>
+                  <h3 className="font-bold text-gray-900 mb-2">Need Help?</h3>
+                  <p className="text-sm text-gray-500 mb-4">
+                    If you are looking for items you previously added, try checking your order history.
+                  </p>
+                  <Link to="/profile" className="text-sm font-bold text-orange-600 hover:underline">Go to Profile</Link>
                 </div>
               )}
             </div>
@@ -486,9 +494,9 @@ export default function Cart() {
             <p className="text-gray-500 mb-8 text-base sm:text-lg">
               Thank you for your purchase. You ordered {totalItemsOrdered} {totalItemsOrdered > 1 ? "items" : "item"}.
             </p>
-            
-            <div className="py-8 border-t border-b border-gray-100 mb-8">
-              <OrderStages currentStage="Shipping" />
+
+            <div className="py-8 border-t border-b border-gray-100 mb-8 w-full">
+              <OrderTimeline currentStage="PLACED" createdAt={new Date().toISOString()} />
             </div>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -538,7 +546,7 @@ export default function Cart() {
               <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wide">Total</div>
               <div className="text-xl font-black text-gray-900 leading-none">{INR(calc.total)}</div>
             </div>
-            <button 
+            <button
               onClick={handleProceed}
               className="px-8 h-12 bg-gray-900 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-2"
             >

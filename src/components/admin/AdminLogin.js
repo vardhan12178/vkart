@@ -105,7 +105,7 @@ export default function AdminLogin({ setIsAdmin }) {
               );
 
               if (r.data?.token) {
-                localStorage.setItem("admin_token", r.data.token);
+                // Cookie is set by backend
                 setIsAdmin?.(true);
                 navigate("/admin/dashboard");
               }
@@ -153,7 +153,7 @@ export default function AdminLogin({ setIsAdmin }) {
       });
 
       if (res.data?.token) {
-        localStorage.setItem("admin_token", res.data.token);
+        // Cookie is set by backend
         setIsAdmin?.(true);
         navigate("/admin/dashboard");
       } else {

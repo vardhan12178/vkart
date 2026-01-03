@@ -15,7 +15,6 @@ import {
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
 
-// --- Animation Variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -24,8 +23,6 @@ const fadeInUp = {
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
-
-// --- Helper Components ---
 
 const Toast = ({ show, kind = "error", children }) => {
   if (!show) return null;
@@ -54,8 +51,6 @@ const Toast = ({ show, kind = "error", children }) => {
   );
 };
 
-// --- Main Component ---
-
 export default function ForgotPassword() {
   const navigate = useNavigate();
   const [value, setValue] = useState("");
@@ -74,7 +69,7 @@ export default function ForgotPassword() {
     }
     setLoading(true);
     try {
-      const { data } = await axios.post("/forgot", { emailOrUsername: v });
+      const { data } = await axios.post("/api/forgot", { emailOrUsername: v });
       setOkMsg(data?.message || "If an account exists, a reset link was sent.");
     } catch (err) {
       const msg = err?.response?.data?.message || "Something went wrong. Try again.";
@@ -104,7 +99,7 @@ export default function ForgotPassword() {
           className="relative w-full max-w-[480px] bg-white rounded-[32px] shadow-2xl border border-white/50 overflow-hidden"
         >
           <div className="px-8 py-12 sm:px-10">
-            
+
             {/* Header with Logo */}
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
@@ -112,13 +107,13 @@ export default function ForgotPassword() {
                   <ShoppingCartIcon className="h-7 w-7" />
                 </div>
               </div>
-              <motion.h1 
+              <motion.h1
                 variants={fadeInUp}
                 className="text-2xl font-extrabold text-gray-900 tracking-tight"
               >
                 Forgot password?
               </motion.h1>
-              <motion.p 
+              <motion.p
                 variants={fadeInUp}
                 className="mt-2 text-sm text-gray-500 leading-relaxed px-4"
               >
@@ -135,12 +130,12 @@ export default function ForgotPassword() {
               )}
             </AnimatePresence>
 
-            <motion.form 
+            <motion.form
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
-              onSubmit={onSubmit} 
-              className="space-y-5" 
+              onSubmit={onSubmit}
+              className="space-y-5"
               noValidate
             >
               <motion.div variants={fadeInUp}>
@@ -188,13 +183,13 @@ export default function ForgotPassword() {
                 <ArrowLeftIcon className="h-4 w-4" />
                 Back to Sign In
               </button>
-              
+
               <div className="w-full h-px bg-gray-100" />
-              
+
               <p className="text-gray-600">
                 Don't have an account?{" "}
-                <button 
-                  onClick={() => navigate("/register")} 
+                <button
+                  onClick={() => navigate("/register")}
                   className="font-bold text-orange-600 hover:text-orange-700 transition-colors"
                 >
                   Create Account
@@ -203,9 +198,9 @@ export default function ForgotPassword() {
             </motion.div>
 
             <div className="mt-8 text-center">
-                <p className="text-[10px] text-gray-400">
-                   © {currentYear} VKart Inc.
-                </p>
+              <p className="text-[10px] text-gray-400">
+                © {currentYear} VKart Inc.
+              </p>
             </div>
           </div>
         </motion.div>

@@ -2,34 +2,59 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "./axiosInstance";
-import { MessageSquare, X, Send, Loader2, Sparkles, ChevronRight } from "lucide-react";
+import {
+  MessageSquare, X, Send, Loader2, Sparkles,
+  ChevronRight, Lightbulb, ArrowRight
+} from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat } from "../redux/uiSlice";
 
 const AIChatAssistant = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.ui.isChatOpen);
+  const navigate = useNavigate();
 
+  // ---------------------------------------------------------
+  // 🧠 STATE MANAGEMENT
+  // ---------------------------------------------------------
   const [messages, setMessages] = useState([
-    { type: "bot", text: "Hi! I'm your VKart AI Assistant. Looking for something specific?" }
+    {
+      type: "bot",
+      structured: {
+        // Initial static greeting
+        greeting: "Hi there! I'm VKart Copilot.",
+        response: {
+          summary: "I can help you find the best products, check prices, or compare specs.",
+          points: ["Try 'Best gaming phone under 30k'", "Or 'Running shoes for men'"]
+        },
+        followUp: null
+      }
+    }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate();
-
-  // 🛡️ RATE LIMIT PROTECTION
+  // 🛡️ Rate Limit State
   const [cooldown, setCooldown] = useState(0);
-  const messagesEndRef = useRef(null);
 
-  // Auto-scroll to bottom
+  // Auto-scroll ref
+  const messagesEndRef = useRef(null);
+  const scrollAreaRef = useRef(null);
+
+  // ---------------------------------------------------------
+  // ⚡ EFFECTS
+  // ---------------------------------------------------------
+
+  // Scroll to bottom whenever messages change
   useEffect(() => {
     if (isOpen) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100); // Slight delay to allow animations to start
     }
-  }, [messages, isOpen]);
+  }, [messages, isOpen, isLoading]);
 
-  // Handle Cooldown Timer
+  // Cooldown Timer
   useEffect(() => {
     if (cooldown > 0) {
       const timer = setTimeout(() => setCooldown(cooldown - 1), 1000);
@@ -37,33 +62,55 @@ const AIChatAssistant = () => {
     }
   }, [cooldown]);
 
+  // ---------------------------------------------------------
+  // 🛠️ HANDLERS
+  // ---------------------------------------------------------
+
+  const buildHistory = () => {
+    // Only send last 6 exchanges to save tokens/bandwidth
+    return messages.slice(-6).map(msg => ({
+      role: msg.type === "user" ? "user" : "assistant",
+      content: msg.type === "user"
+        ? msg.text
+        : msg.structured?.response?.summary || ""
+    }));
+  };
+
   const handleSend = async () => {
     if (!input.trim() || cooldown > 0 || isLoading) return;
 
     const userMessage = input.trim();
     setInput("");
-
     setMessages((prev) => [...prev, { type: "user", text: userMessage }]);
     setIsLoading(true);
-    setCooldown(3);
+    setCooldown(3); // Prevent spamming
 
     try {
-      const res = await axios.post("/api/chat", {
-        message: userMessage
+      const res = await axios.post("/api/ai/chat", {
+        message: userMessage,
+        history: buildHistory()
       });
 
-      const { reply, products } = res.data;
+      const { structured, products } = res.data;
 
       setMessages((prev) => [
         ...prev,
-        { type: "bot", text: reply, products: products }
+        { type: "bot", structured, products }
       ]);
 
     } catch (error) {
       console.error("AI Chat Error:", error);
       setMessages((prev) => [
         ...prev,
-        { type: "bot", text: "I'm having trouble connecting to the server. Please try again!" }
+        {
+          type: "bot",
+          structured: {
+            response: {
+              summary: "I'm having a little trouble connecting to the brain 🧠. Please try again in a moment!",
+              points: []
+            }
+          }
+        }
       ]);
     } finally {
       setIsLoading(false);
@@ -71,48 +118,230 @@ const AIChatAssistant = () => {
   };
 
   const handleProductClick = (productId) => {
+    // Optional: Add analytics here
     dispatch(closeChat());
     navigate(`/product/${productId}`);
   };
 
+  // ---------------------------------------------------------
+  // 🎨 RENDER HELPERS
+  // ---------------------------------------------------------
+
+  const renderBotMessage = (msg) => {
+    const { structured, products } = msg;
+    if (!structured) return null;
+
+    const { greeting, response, recommendation, alternatives, followUp } = structured;
+
+    // Animation variants for staggered entrance
+    const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+    };
+
+    const itemVariants = {
+      hidden: { opacity: 0, y: 10 },
+      visible: { opacity: 1, y: 0 }
+    };
+
+    return (
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="space-y-4 max-w-[95%] w-full"
+      >
+        {/* 1. Greeting Banner (Only for first message usually) */}
+        {greeting && (
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-2 px-4 py-2 bg-amber-50 text-amber-900 rounded-full text-xs font-bold border border-amber-100 self-start w-fit shadow-sm"
+          >
+            <Sparkles size={12} className="text-amber-500 fill-amber-500" />
+            {greeting}
+          </motion.div>
+        )}
+
+        {/* 2. Main Text Bubble */}
+        {response && (
+          <motion.div variants={itemVariants} className="relative group">
+            <div className="px-5 py-4 bg-white text-gray-800 rounded-2xl rounded-tl-sm border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+              <p className="text-[15px] leading-relaxed font-medium text-gray-700">
+                {response.summary}
+              </p>
+
+              {/* Bullet Points */}
+              {response.points && response.points.length > 0 && (
+                <ul className="mt-4 space-y-2">
+                  {response.points.map((point, i) => (
+                    <motion.li
+                      key={i}
+                      variants={itemVariants}
+                      className="flex items-start gap-2.5 text-[13px] text-gray-600 bg-gray-50/50 p-2 rounded-lg"
+                    >
+                      <div className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                      <span className="leading-normal">{point}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </motion.div>
+        )}
+
+        {/* 3. "Why this?" Recommendation Reason */}
+        {recommendation && recommendation.reason && (
+          <motion.div
+            variants={itemVariants}
+            className="flex gap-3 px-4 py-3 bg-indigo-50 border border-indigo-100/50 rounded-xl"
+          >
+            <Lightbulb size={18} className="text-indigo-600 shrink-0 mt-0.5" />
+            <p className="text-xs font-medium text-indigo-900 leading-relaxed">
+              <span className="font-bold block mb-0.5 text-indigo-700">Why this pick?</span>
+              {recommendation.reason}
+            </p>
+          </motion.div>
+        )}
+
+        {/* 4. Product Cards (Horizontal Stack) */}
+        {products && products.length > 0 && (
+          <motion.div variants={itemVariants} className="pt-2 grid gap-3">
+            {products.map((prod, i) => {
+              // Check if this is the "Best Match" (Backend puts it at index 0, logic is usually index 1)
+              const isBestMatch = recommendation?.productIndex === i + 1;
+
+              return (
+                <motion.div
+                  key={prod._id}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleProductClick(prod._id)}
+                  className={`relative flex gap-4 p-3 rounded-xl border cursor-pointer transition-all bg-white
+                    ${isBestMatch
+                      ? "border-amber-400/50 shadow-lg shadow-amber-100/50 ring-1 ring-amber-100"
+                      : "border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200"
+                    }`}
+                >
+                  {/* Thumbnail */}
+                  <div className="w-16 h-16 rounded-lg bg-gray-50 p-1.5 shrink-0 flex items-center justify-center border border-gray-100">
+                    <img
+                      src={prod.thumbnail}
+                      alt={prod.title}
+                      className="w-full h-full object-contain mix-blend-multiply"
+                      onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }}
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-center">
+                    <div className="flex justify-between items-start gap-2">
+                      <h4 className="text-sm font-bold text-gray-900 line-clamp-1">{prod.title}</h4>
+                      {isBestMatch && (
+                        <span className="shrink-0 px-1.5 py-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-[9px] font-black text-white uppercase tracking-wider rounded-md shadow-sm flex items-center gap-1">
+                          <Sparkles size={8} /> Top Pick
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide mt-0.5">
+                      {prod.category || 'Electronic'}
+                    </p>
+                    <div className="flex items-center gap-2 mt-1.5">
+                      <span className="text-sm font-bold text-gray-900">₹{prod.price}</span>
+                      <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">In Stock</span>
+                    </div>
+                  </div>
+
+                  {/* Arrow Icon */}
+                  <div className="self-center pr-1 text-gray-300 group-hover:text-gray-900 transition-colors">
+                    <ChevronRight size={18} />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {/* 5. Alternatives / Suggestions */}
+        {alternatives && alternatives.length > 0 && (
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-1">
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider w-full mb-1">Also consider:</span>
+            {alternatives.map((alt, i) => (
+              <button
+                key={i}
+                onClick={() => setInput(alt)} // Clicking fills input
+                className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg transition-colors border border-gray-200"
+              >
+                {alt}
+              </button>
+            ))}
+          </motion.div>
+        )}
+
+        {/* 6. Smart Follow-up Chip */}
+        {followUp && (
+          <motion.button
+            variants={itemVariants}
+            onClick={() => setInput(followUp)}
+            className="mt-2 flex items-center justify-between w-full px-4 py-3 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-medium transition-all shadow-lg active:scale-95 group"
+          >
+            <span>{followUp}</span>
+            <ArrowRight size={16} className="text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
+          </motion.button>
+        )}
+      </motion.div>
+    );
+  };
+
+  // ---------------------------------------------------------
+  // 🚀 MAIN RENDER
+  // ---------------------------------------------------------
+
   return (
-    <div className="fixed bottom-8 right-8 z-[100] font-sans">
+    <div className="fixed inset-0 z-[100] pointer-events-none flex items-end justify-center md:block md:pb-0">
+
+      {/* 1. Floating Toggle Button */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.05 }}
+            initial={{ scale: 0, rotate: -45 }}
+            animate={{ scale: 1, rotate: 0 }}
+            exit={{ scale: 0, rotate: 45 }}
+            whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => dispatch(openChat())}
-            className="absolute bottom-0 right-0 group flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-gray-900 text-white rounded-full shadow-2xl hover:shadow-gray-900/40 transition-shadow whitespace-nowrap"
+            className="absolute bottom-6 right-6 md:bottom-8 md:right-8 pointer-events-auto group flex items-center gap-3 px-5 py-4 bg-gray-900 text-white rounded-full shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] border border-white/10"
           >
-            <MessageSquare size={24} className="text-white shrink-0" />
-            <span className="font-bold text-lg tracking-wide hidden md:block">Ask AI</span>
+            <div className="relative">
+              <MessageSquare size={24} className="text-white shrink-0" />
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-amber-500 border-2 border-gray-900 rounded-full animate-pulse" />
+            </div>
+            <span className="font-bold text-base tracking-tight hidden md:block pr-1">Ask Copilot</span>
           </motion.button>
         )}
       </AnimatePresence>
 
+      {/* 2. Main Chat Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 100, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 100, scale: 0.95 }}
+            exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="absolute bottom-0 right-0 w-[90vw] md:w-[400px] h-[70vh] md:h-[600px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-100 ring-1 ring-black/5"
+            className="pointer-events-auto fixed bottom-0 left-0 w-full h-[85vh] md:absolute md:top-auto md:left-auto md:bottom-8 md:right-8 md:w-[420px] md:h-[650px] bg-white md:rounded-[2rem] rounded-t-[2rem] shadow-2xl flex flex-col overflow-hidden border border-gray-200/50"
           >
-
-            {/* Header */}
-            <div className="bg-gray-900 p-6 flex justify-between items-center shrink-0">
+            {/* --- Header (DARK VERSION) --- */}
+            <div className="bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900 p-5 flex justify-between items-center shrink-0 border-b border-white/10 relative z-20 text-white">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-gray-900 to-slate-800 flex items-center justify-center text-white shadow-lg shadow-slate-900/20 border border-white/10">
                   <Sparkles size={18} className="text-amber-400" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-white tracking-wide">VKart Copilot</h3>
-                  <p className="text-xs text-gray-400 font-medium">Assistant</p>
+                  <h3 className="font-bold text-lg text-white leading-tight">VKart Copilot</h3>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Online</p>
+                  </div>
                 </div>
               </div>
               <button
@@ -123,114 +352,67 @@ const AIChatAssistant = () => {
               </button>
             </div>
 
-            {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-5 space-y-6 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent">
+            {/* --- Messages Area --- */}
+            <div ref={scrollAreaRef} className="flex-1 overflow-y-auto p-5 space-y-6 bg-slate-50/50">
               {messages.map((msg, idx) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  key={idx}
-                  className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"}`}
-                >
-
-                  {/* Text Bubble */}
-                  <div className={`max-w-[85%] px-5 py-4 rounded-2xl text-sm leading-relaxed shadow-sm ${msg.type === "user"
-                    ? "bg-gray-900 text-white rounded-br-sm"
-                    : "bg-gray-50 text-gray-800 border border-gray-100 rounded-bl-sm"
-                    }`}>
-                    {msg.text}
-                  </div>
-
-                  {/* Product Cards */}
-                  {msg.products && msg.products.length > 0 && (
-                    <div className="mt-4 space-y-3 w-full pl-2">
-                      {msg.products.map((prod, i) => (
-                        <motion.div
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.1 * i }}
-                          key={prod._id}
-                          onClick={() => handleProductClick(prod._id)}
-                          className="group flex gap-3 p-3 bg-white rounded-xl border border-gray-100 hover:border-gray-900 transition-colors shadow-sm cursor-pointer"
-                        >
-                          <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-50 shrink-0">
-                            <img
-                              src={prod.thumbnail}
-                              alt={prod.title}
-                              className="w-full h-full object-contain mix-blend-multiply p-2"
-                              onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }}
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0 flex flex-col justify-center gap-1">
-                            <h4 className="text-sm font-bold text-gray-900 truncate">{prod.title}</h4>
-                            <div className="flex items-center justify-between">
-                              <p className="text-xs font-bold text-green-600">₹{prod.price}</p>
-                              <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-900 group-hover:text-white transition-all">
-                                <ChevronRight size={14} />
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
+                <div key={idx} className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"}`}>
+                  {msg.type === "user" ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="max-w-[85%] px-5 py-3.5 rounded-2xl rounded-tr-sm bg-gray-900 text-white text-[14px] leading-relaxed shadow-md"
+                    >
+                      {msg.text}
+                    </motion.div>
+                  ) : (
+                    renderBotMessage(msg)
                   )}
-                </motion.div>
+                </div>
               ))}
 
-              {/* Typing Indicator */}
+              {/* Loading State */}
               {isLoading && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center gap-2 text-gray-400 text-xs ml-2"
+                  className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest pl-2"
                 >
-                  <div className="flex gap-1">
-                    <motion.span
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ repeat: Infinity, duration: 0.6, delay: 0 }}
-                      className="w-1.5 h-1.5 bg-gray-400 rounded-full"
-                    />
-                    <motion.span
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }}
-                      className="w-1.5 h-1.5 bg-gray-400 rounded-full"
-                    />
-                    <motion.span
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }}
-                      className="w-1.5 h-1.5 bg-gray-400 rounded-full"
-                    />
-                  </div>
-                  <span className="font-medium">Thinking...</span>
+                  <Loader2 size={12} className="animate-spin text-amber-500" />
+                  Thinking...
                 </motion.div>
               )}
-              <div ref={messagesEndRef} />
+
+              <div ref={messagesEndRef} className="h-4" />
             </div>
 
-            {/* Input Area */}
-            <div className="p-4 bg-white border-t border-gray-100 flex items-center gap-3">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                placeholder={cooldown > 0 ? `Wait ${cooldown}s...` : "Ask for gift ideas..."}
-                className="flex-1 bg-gray-50 focus:bg-white text-sm px-5 py-4 rounded-full border-none outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-gray-900 transition-all placeholder:text-gray-400 font-medium"
-                disabled={isLoading || cooldown > 0}
-              />
-              <motion.button
-                whileTap={{ scale: 0.9 }}
-                onClick={handleSend}
-                disabled={isLoading || cooldown > 0 || !input.trim()}
-                className={`p-4 rounded-full text-white transition-all shadow-md ${isLoading || cooldown > 0 || !input.trim()
-                  ? "bg-gray-100 text-gray-300 shadow-none cursor-not-allowed"
-                  : "bg-gray-900 hover:bg-black hover:shadow-lg"
-                  }`}
-              >
-                {isLoading ? <Loader2 size={20} className="animate-spin" /> : <Send size={20} />}
-              </motion.button>
+            {/* --- Input Area (No Footer) --- */}
+            <div className="p-4 bg-white border-t border-gray-100 relative z-20">
+              <div className="relative group">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                  placeholder={cooldown > 0 ? `Wait ${cooldown}s...` : "Ask anything about products..."}
+                  className="w-full bg-gray-50 text-[14px] px-5 py-4 rounded-xl border border-transparent focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 transition-all outline-none font-medium placeholder:text-gray-400 pr-14"
+                  disabled={isLoading || cooldown > 0}
+                />
+
+                <button
+                  onClick={handleSend}
+                  disabled={isLoading || cooldown > 0 || !input.trim()}
+                  className={`absolute right-2 top-1/2 -translate-y-1/2 p-2.5 rounded-lg transition-all
+                    ${!input.trim() || isLoading
+                      ? "text-gray-300 bg-transparent cursor-not-allowed"
+                      : "bg-gray-900 text-white shadow-md hover:scale-105 active:scale-95"
+                    }`}
+                >
+                  {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
+                </button>
+              </div>
+              {/* Footer removed here */}
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,60 +1,82 @@
-import React, { useEffect, useState } from 'react';
-import { Provider } from 'react-redux';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Navigate, Route, Routes, useLocation, useNavigate, Link, useParams } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import store from './redux/store';
 import './App.css';
-import Login from './components/Login';
+import { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
-import Register from './components/Register';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import AnnouncementBar from './components/AnnouncementBar';
-import Error from './components/Error';
-import Products from './components/Products';
-import ProductCard from './components/ProductCard';
-import Cart from './components/Cart';
-import Profile from './components/Profile';
-import Compare from "./components/Compare";
-
-
-import Blog from "./components/Blog";
-import Careers from "./components/Careers";
-import Terms from "./components/Terms";
-import Privacy from "./components/Privacy";
-import License from "./components/License";
-import ForgotPassword from "./components/ForgotPassword";
-import ResetPassword from "./components/ResetPassword";
+// Eager imports (Utilities & High Priority)
 import axios from "./components/axiosInstance";
-import BlogIndex from "./components/blog/BlogIndex";
-import OrderStages from "./components/OrderStages";
-import AdminLogin from "./components/admin/AdminLogin";
-import AdminLayout from "./components/admin/AdminLayout";
-import AdminSettings from "./components/admin/AdminSettings";
-import AdminUsers from "./components/admin/AdminUsers";
-import AdminDashboard from "./components/admin/AdminDashboard";
-import AdminProducts from "./components/admin/AdminProducts";
-import AdminOrders from "./components/admin/AdminOrders";
-import AdminOrderDetails from "./components/admin/AdminOrderDetails";
-import PostPage from "./components/blog/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 
+// Lazy Load Components
+const Login = lazy(() => import('./components/Login'));
+const Register = lazy(() => import('./components/Register'));
+const Home = lazy(() => import('./components/Home'));
+const About = lazy(() => import('./components/About'));
+const Contact = lazy(() => import('./components/Contact'));
+const Header = lazy(() => import('./components/Header'));
+const Footer = lazy(() => import('./components/Footer'));
+const AnnouncementBar = lazy(() => import('./components/AnnouncementBar'));
+const Error = lazy(() => import('./components/Error'));
+const Products = lazy(() => import('./components/Products'));
+const ProductCard = lazy(() => import('./components/ProductCard'));
+const Cart = lazy(() => import('./components/Cart'));
+const Profile = lazy(() => import('./components/Profile'));
+const Compare = lazy(() => import("./components/Compare"));
 
+const Blog = lazy(() => import("./components/Blog"));
+const BlogIndex = lazy(() => import("./components/blog/BlogIndex"));
+const PostPage = lazy(() => import("./components/blog/PostPage"));
 
+const Careers = lazy(() => import("./components/Careers"));
+const Terms = lazy(() => import("./components/Terms"));
+const Privacy = lazy(() => import("./components/Privacy"));
+const License = lazy(() => import("./components/License"));
+const ForgotPassword = lazy(() => import("./components/ForgotPassword"));
+const ResetPassword = lazy(() => import("./components/ResetPassword"));
+const OrderStages = lazy(() => import("./components/OrderStages"));
+
+// Admin Components (Lazy)
+const AdminLogin = lazy(() => import("./components/admin/AdminLogin"));
+const AdminLayout = lazy(() => import("./components/admin/AdminLayout"));
+const AdminSettings = lazy(() => import("./components/admin/AdminSettings"));
+const AdminUsers = lazy(() => import("./components/admin/AdminUsers"));
+const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
+const AdminProducts = lazy(() => import("./components/admin/AdminProducts"));
+const AdminOrders = lazy(() => import("./components/admin/AdminOrders"));
+const AdminOrderDetails = lazy(() => import("./components/admin/AdminOrderDetails"));
+
+// Additional Components requested to be moved
+const CookieBanner = lazy(() => import('./components/CookieBanner'));
+const AIChatAssistant = lazy(() => import("./components/AIChatAssistant"));
 
 export {
   React,
   useEffect,
   useState,
+  lazy,
+  Suspense,
   Provider,
+  useDispatch,
+  useSelector,
   Navigate,
   Route,
   Routes,
+  useLocation,
+  useNavigate,
+  Link,
+  useParams,
   Cookies,
   store,
+  Toaster,
+  Helmet,
+  axios,
+  ScrollToTop,
+
+  // Components
   Login,
   Register,
   Home,
@@ -70,15 +92,19 @@ export {
   Compare,
   Profile,
   Blog,
+  BlogIndex,
+  PostPage,
   Careers,
   Terms,
   Privacy,
   License,
   ForgotPassword,
   ResetPassword,
-  axios,
-  BlogIndex,
   OrderStages,
+  CookieBanner,
+  AIChatAssistant,
+
+  // Admin
   AdminLogin,
   AdminLayout,
   AdminSettings,
@@ -87,6 +113,4 @@ export {
   AdminProducts,
   AdminOrders,
   AdminOrderDetails,
-  PostPage,
-  ScrollToTop,
 };

@@ -160,8 +160,7 @@ export default function Login() {
         return;
       }
 
-      // normal login
-      if (res.data?.token) localStorage.setItem("auth_token", res.data.token);
+      // normal login - cookie is set by backend
       dispatch(loginSuccess(res.data));
       navigate(redirect);
     } catch (err) {
@@ -194,7 +193,7 @@ export default function Login() {
         },
         { withCredentials: true }
       );
-      if (verify.data?.token) localStorage.setItem("auth_token", verify.data.token);
+      // Cookie is set by backend
       dispatch(loginSuccess(verify.data));
       setShow2fa(false);
       setPendingLogin(null);
@@ -220,11 +219,11 @@ export default function Login() {
     setGoogleLoading(true);
     try {
       const res = await axios.post(
-        "/auth/google",
+        "/api/auth/google",
         { idToken: cred?.credential, remember },
         { withCredentials: true }
       );
-      if (res?.data?.token) localStorage.setItem("auth_token", res.data.token);
+      // Cookie is set by backend
       dispatch(loginSuccess(res.data));
       navigate(redirect);
     } catch (err) {

@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const AUTH_TOKEN_KEY = "auth_token";
-const ADMIN_TOKEN_KEY = "admin_token";
+// Auth state is now determined by cookie-based API calls, not localStorage.
+// On app mount, App.js will call /api/profile to check if user is logged in.
 
 const initialState = {
-    isAuthenticated: !!localStorage.getItem(AUTH_TOKEN_KEY),
-    isAdmin: !!localStorage.getItem(ADMIN_TOKEN_KEY),
-    user: null, // Can be expanded later to store user details
+    isAuthenticated: false,  // Will be set true after successful login or profile fetch
+    isAdmin: false,
+    user: null,
 };
 
 const authSlice = createSlice({
@@ -16,8 +16,6 @@ const authSlice = createSlice({
         loginSuccess: (state, action) => {
             state.isAuthenticated = true;
             state.user = action.payload || null;
-            // Note: Token storage should ideally happen in the component or a thunk, 
-            // but state update happens here.
         },
         adminLoginSuccess: (state) => {
             state.isAdmin = true;
@@ -26,16 +24,19 @@ const authSlice = createSlice({
             state.isAuthenticated = false;
             state.isAdmin = false;
             state.user = null;
-            localStorage.removeItem(AUTH_TOKEN_KEY);
-            localStorage.removeItem(ADMIN_TOKEN_KEY);
+            // No localStorage to clear - backend clears the cookie
         },
-        // Useful if we want to sync state without affecting localStorage (e.g. init)
+        // Used by App.js to set auth state based on profile API response
         setAuthState: (state, action) => {
             state.isAuthenticated = action.payload.isAuthenticated;
-            state.isAdmin = action.payload.isAdmin;
+            state.isAdmin = action.payload.isAdmin ?? state.isAdmin;
+            if (action.payload.user !== undefined) {
+                state.user = action.payload.user;
+            }
         }
     },
 });
 
 export const { loginSuccess, adminLoginSuccess, logout, setAuthState } = authSlice.actions;
 export default authSlice.reducer;
+
