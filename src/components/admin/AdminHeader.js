@@ -114,7 +114,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
   useEffect(() => {
     fetchNotifications();
 
-    const socketUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+    const socketUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
     const socket = io(socketUrl);
 
     socket.on("connect", () => {
