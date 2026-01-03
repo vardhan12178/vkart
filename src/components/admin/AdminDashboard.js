@@ -14,6 +14,7 @@ import {
   CalendarIcon,
   ExternalLinkIcon
 } from "@heroicons/react/outline";
+import axiosInstance from "../axiosInstance";
 import {
   AreaChart,
   Area,
@@ -93,12 +94,12 @@ export default function AdminDashboard() {
       // Cookie-based auth - no token needed
 
       const [ordersRes, usersRes] = await Promise.all([
-        fetch("/api/admin/orders", { credentials: 'include' }).then(r => r.json()),
-        fetch("/api/admin/users", { credentials: 'include' }).then(r => r.json()),
+        axiosInstance.get("/api/admin/orders"),
+        axiosInstance.get("/api/admin/users"),
       ]);
 
-      const rawOrders = ordersRes ?? [];
-      const rawUsers = usersRes ?? [];
+      const rawOrders = ordersRes.data ?? [];
+      const rawUsers = usersRes.data ?? [];
 
       const ordersArr = Array.isArray(rawOrders) ? rawOrders : rawOrders.items || rawOrders.orders || [];
       const usersArr = Array.isArray(rawUsers) ? rawUsers : rawUsers.items || rawUsers.users || [];
@@ -248,8 +249,8 @@ export default function AdminDashboard() {
                   key={range}
                   onClick={() => setTimeRange(range)}
                   className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${timeRange === range
-                      ? "bg-white text-slate-900 shadow-sm scale-105"
-                      : "text-slate-500 hover:text-slate-700"
+                    ? "bg-white text-slate-900 shadow-sm scale-105"
+                    : "text-slate-500 hover:text-slate-700"
                     }`}
                 >
                   {range === '7d' ? '7 Days' : range === '30d' ? '30 Days' : '3 Months'}

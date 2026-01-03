@@ -25,6 +25,7 @@ import {
   ArchiveIcon,
   TrashIcon
 } from "@heroicons/react/outline";
+import axiosInstance from "../axiosInstance";
 
 // --- CSS for Custom Scrollbars ---
 const customScrollStyle = `
@@ -71,14 +72,8 @@ export default function AdminProducts() {
   const loadProducts = async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/admin/products", {
-        credentials: 'include'
-      });
-
-      if (!res.ok) throw new Error("Failed to fetch products");
-
-      const data = await res.json();
-      setProducts(data || []);
+      const res = await axiosInstance.get("/api/admin/products");
+      setProducts(res.data || []);
     } catch (err) {
       console.error("Load products:", err);
       showToastMsg("error", "Failed to load products.");
@@ -109,28 +104,14 @@ export default function AdminProducts() {
 
   const submitProduct = async (payload) => {
     try {
-      const headers = {
-        "Content-Type": "application/json",
-      };
-
       let res;
       if (editData) {
-        res = await fetch(`/api/admin/products/${editData._id}`, {
-          method: "PUT",
-          headers,
-          credentials: 'include',
-          body: JSON.stringify(payload),
-        });
+        res = await axiosInstance.put(`/api/admin/products/${editData._id}`, payload);
       } else {
-        res = await fetch("/api/admin/products", {
-          method: "POST",
-          headers,
-          credentials: 'include',
-          body: JSON.stringify(payload),
-        });
+        res = await axiosInstance.post("/api/admin/products", payload);
       }
 
-      if (!res.ok) throw new Error("Failed to save product");
+      // if (!res.ok) throw new Error("Failed to save product");
 
       showToastMsg("success", editData ? "Product updated successfully." : "Product created successfully.");
       setShowModal(false);

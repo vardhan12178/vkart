@@ -17,6 +17,7 @@ import {
   ClockIcon,
   CheckCircleIcon,
 } from "@heroicons/react/outline";
+import axiosInstance from "../axiosInstance";
 
 const STAGES = [
   "ALL",
@@ -66,17 +67,8 @@ export default function AdminOrders() {
     try {
       setLoading(true);
       // Cookie-based auth - no token needed
-      const response = await fetch("/api/admin/orders", {
-        credentials: 'include',
-        headers: {
-          "Content-Type": "application/json"
-        },
-      });
-
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-      const data = await response.json();
-      setOrders(data);
+      const response = await axiosInstance.get("/api/admin/orders");
+      setOrders(response.data);
     } catch (err) {
       console.error("Orders fetch error:", err);
     } finally {

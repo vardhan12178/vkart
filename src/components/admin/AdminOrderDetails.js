@@ -20,6 +20,7 @@ import {
   ShieldCheckIcon,
   ArchiveIcon
 } from "@heroicons/react/outline";
+import axiosInstance from "../axiosInstance";
 
 const STAGES = [
   "PLACED",
@@ -75,17 +76,9 @@ export default function AdminOrderDetails() {
   const loadOrder = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`/api/admin/orders/${id}`, {
-        credentials: 'include',
-        headers: {
-          "Content-Type": "application/json"
-        },
-      });
-
-      if (!res.ok) throw new Error("Failed to fetch order");
-
-      const data = await res.json();
-      setOrder(data);
+      setLoading(true);
+      const res = await axiosInstance.get(`/api/admin/orders/${id}`);
+      setOrder(res.data);
     } catch (err) {
       console.error("Order load error:", err);
       showToast("error", "Failed to load order details.");
@@ -108,23 +101,13 @@ export default function AdminOrderDetails() {
 
     try {
       setUpdating(true);
-      const res = await fetch(`/api/admin/orders/${id}/stage`, {
-        method: "PATCH",
-        credentials: 'include',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ stage }),
-      });
+      setUpdating(true);
+      const res = await axiosInstance.patch(`/api/admin/orders/${id}/stage`, { stage });
+      const data = res.data;
 
-      const data = await res.json();
-
-      if (res.ok) {
-        setOrder(data.order || { ...order, stage });
-        showToast("success", `Status updated to ${stage.replace(/_/g, " ")}`);
-      } else {
-        throw new Error(data.message || "Update failed");
-      }
+      // Axios throws on error statuses by default, so we can assume success if we get here
+      setOrder(data.order || { ...order, stage });
+      showToast("success", `Status updated to ${stage.replace(/_/g, " ")}`);
     } catch (err) {
       showToast("error", err.message || "Failed to update status.");
     } finally {

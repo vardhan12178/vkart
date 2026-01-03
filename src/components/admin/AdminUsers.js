@@ -17,6 +17,7 @@ import {
   MailIcon,
   DownloadIcon
 } from "@heroicons/react/outline";
+import axiosInstance from "../axiosInstance";
 
 const ADMIN_USERS_ENDPOINT = "/api/admin/users";
 
@@ -66,13 +67,8 @@ export default function AdminUsers() {
     try {
       setError(null);
       setLoading(true);
-      const res = await fetch(ADMIN_USERS_ENDPOINT, {
-        credentials: 'include',
-      });
-
-      if (!res.ok) throw new Error(`Failed to fetch users`);
-
-      const data = await res.json();
+      const res = await axiosInstance.get(ADMIN_USERS_ENDPOINT);
+      const data = res.data;
       const list = Array.isArray(data) ? data : Array.isArray(data?.users) ? data.users : [];
       setUsers(list);
     } catch (err) {
@@ -160,13 +156,9 @@ export default function AdminUsers() {
   async function handleToggleBlock(user) {
     try {
       setBusyAction(true);
-      const res = await fetch(`/api/admin/users/${user._id}/block`, {
-        method: "PATCH",
-        credentials: 'include',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ blocked: !user.blocked }),
-      });
-      if (!res.ok) throw new Error("Failed");
+      setBusyAction(true);
+      await axiosInstance.patch(`/api/admin/users/${user._id}/block`, { blocked: !user.blocked });
+      // if (!res.ok) throw new Error("Failed");
       showToast(!user.blocked ? "User blocked." : "User activated.");
       await loadUsers();
     } catch (err) { showToast("Update failed.", "error"); } finally { setBusyAction(false); }
@@ -175,11 +167,9 @@ export default function AdminUsers() {
   async function handleDisable2FA(user) {
     try {
       setBusyAction(true);
-      const res = await fetch(`/api/admin/users/${user._id}/2fa/disable`, {
-        method: "PATCH",
-        credentials: 'include',
-      });
-      if (!res.ok) throw new Error("Failed");
+      setBusyAction(true);
+      await axiosInstance.patch(`/api/admin/users/${user._id}/2fa/disable`);
+      // if (!res.ok) throw new Error("Failed");
       showToast("2FA Disabled.");
       await loadUsers();
     } catch (err) { showToast("Failed to disable 2FA.", "error"); } finally { setBusyAction(false); }
@@ -189,11 +179,9 @@ export default function AdminUsers() {
     if (!resetUser) return;
     try {
       setBusyAction(true);
-      const res = await fetch(`/api/admin/users/${resetUser._id}/reset-password`, {
-        method: "POST",
-        credentials: 'include',
-      });
-      if (!res.ok) throw new Error("Failed");
+      setBusyAction(true);
+      await axiosInstance.post(`/api/admin/users/${resetUser._id}/reset-password`);
+      // if (!res.ok) throw new Error("Failed");
       showToast("Reset email sent.");
       setResetUser(null);
     } catch (err) { showToast("Reset failed.", "error"); } finally { setBusyAction(false); }
@@ -203,11 +191,9 @@ export default function AdminUsers() {
     if (!deleteUser) return;
     try {
       setBusyAction(true);
-      const res = await fetch(`/api/admin/users/${deleteUser._id}`, {
-        method: "DELETE",
-        credentials: 'include',
-      });
-      if (!res.ok) throw new Error("Failed");
+      setBusyAction(true);
+      await axiosInstance.delete(`/api/admin/users/${deleteUser._id}`);
+      // if (!res.ok) throw new Error("Failed");
       showToast("User deleted.");
       setDeleteUser(null);
       await loadUsers();
