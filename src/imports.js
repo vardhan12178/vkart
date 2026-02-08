@@ -37,7 +37,10 @@ const Privacy = lazy(() => import("./components/Privacy"));
 const License = lazy(() => import("./components/License"));
 const ForgotPassword = lazy(() => import("./components/ForgotPassword"));
 const ResetPassword = lazy(() => import("./components/ResetPassword"));
+const VerifyEmail = lazy(() => import("./components/VerifyEmail"));
 const OrderStages = lazy(() => import("./components/OrderStages"));
+const Orders = lazy(() => import("./components/Orders"));
+const OrderSuccess = lazy(() => import("./components/OrderSuccess"));
 
 // Admin Components (Lazy)
 const AdminLogin = lazy(() => import("./components/admin/AdminLogin"));
@@ -48,10 +51,18 @@ const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
 const AdminProducts = lazy(() => import("./components/admin/AdminProducts"));
 const AdminOrders = lazy(() => import("./components/admin/AdminOrders"));
 const AdminOrderDetails = lazy(() => import("./components/admin/AdminOrderDetails"));
+const AdminReviews = lazy(() => import("./components/admin/AdminReviews"));
+const AdminCoupons = lazy(() => import("./components/admin/AdminCoupons"));
+const AdminSales = lazy(() => import("./components/admin/AdminSales"));
+const AdminMembership = lazy(() => import("./components/admin/AdminMembership"));
+const PrimeMembership = lazy(() => import("./components/PrimeMembership"));
 
 // Additional Components requested to be moved
+const Wishlist = lazy(() => import('./components/Wishlist'));
+const ErrorBoundary = lazy(() => import('./components/ErrorBoundary'));
 const CookieBanner = lazy(() => import('./components/CookieBanner'));
 const AIChatAssistant = lazy(() => import("./components/AIChatAssistant"));
+const ClientSync = lazy(() => import("./components/ClientSync"));
 
 export {
   React,
@@ -100,9 +111,15 @@ export {
   License,
   ForgotPassword,
   ResetPassword,
+  VerifyEmail,
   OrderStages,
+  Orders,
+  OrderSuccess,
+  Wishlist,
+  ErrorBoundary,
   CookieBanner,
   AIChatAssistant,
+  ClientSync,
 
   // Admin
   AdminLogin,
@@ -113,4 +130,9 @@ export {
   AdminProducts,
   AdminOrders,
   AdminOrderDetails,
+  AdminReviews,
+  AdminCoupons,
+  AdminSales,
+  AdminMembership,
+  PrimeMembership,
 };

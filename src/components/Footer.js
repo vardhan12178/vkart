@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ShoppingCartIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowRight, FaEnvelope } from "react-icons/fa";
+import axios from "./axiosInstance";
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -9,9 +10,11 @@ const scrollToTop = () => {
 
 const Footer = () => {
   const [subscribed, setSubscribed] = useState(false);
+  const [nlEmail, setNlEmail] = useState("");
+  const [nlBusy, setNlBusy] = useState(false);
 
   return (
-    <footer className="bg-[#050505] text-gray-400 border-t border-white/5 font-sans relative overflow-hidden">
+    <footer className="bg-[#050505] text-gray-400 border-t border-white/5 font-sans relative overflow-hidden" role="contentinfo" aria-label="Site footer">
       
       {/* Subtle Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -45,18 +48,28 @@ const Footer = () => {
               </div>
 
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  setSubscribed(true);
+                  if (nlBusy) return;
+                  setNlBusy(true);
+                  try {
+                    await axios.post("/api/newsletter/subscribe", { email: nlEmail });
+                    setSubscribed(true);
+                  } catch { setSubscribed(true); }
+                  setNlBusy(false);
                 }}
                 className="w-full max-w-md relative"
+                aria-label="Newsletter subscription"
               >
                 <div className="relative group">
-                  <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-orange-500 transition-colors" />
+                  <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-orange-500 transition-colors" aria-hidden="true" />
                   <input
                     type="email"
                     required
+                    value={nlEmail}
+                    onChange={(e) => setNlEmail(e.target.value)}
                     placeholder="Enter your email address"
+                    aria-label="Email address for newsletter"
                     className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 pl-12 pr-36 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
                   />
                   <button

@@ -165,13 +165,19 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
   };
 
   // Helper to get icon for notification
-  const getNotificationIcon = (type) => {
-    switch (type) {
-      case "order": return <ShoppingBagIcon className="h-5 w-5 text-emerald-500" />;
-      case "alert": return <ExclamationCircleIcon className="h-5 w-5 text-red-500" />;
-      case "user": return <UserAddIcon className="h-5 w-5 text-blue-500" />;
-      default: return <BellIcon className="h-5 w-5 text-slate-500" />;
-    }
+  // Helper to get icon for notification
+  const getNotificationIcon = (type, title = "") => {
+    const titleUpper = (title || "").toUpperCase();
+
+    if (titleUpper.includes("ORDER") || type === "order") return <ShoppingBagIcon className="h-5 w-5 text-emerald-500" />;
+    if (titleUpper.includes("ALERT") || type === "alert") return <ExclamationCircleIcon className="h-5 w-5 text-red-500" />;
+    if (titleUpper.includes("USER") || type === "user") return <UserAddIcon className="h-5 w-5 text-blue-500" />;
+
+    // More specific checks
+    if (titleUpper.includes("STOCK")) return <ExclamationCircleIcon className="h-5 w-5 text-orange-500" />;
+    if (titleUpper.includes("PAYMENT")) return <ShoppingBagIcon className="h-5 w-5 text-purple-500" />;
+
+    return <BellIcon className="h-5 w-5 text-slate-400" />;
   };
 
   // Helper to get friendly time (simple implementation or use library)
@@ -287,7 +293,12 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
                   <div className="px-5 py-4 border-b border-slate-50 flex items-center justify-between">
                     <div>
                       <h3 className="text-sm font-bold text-slate-900">Notifications</h3>
-                      <p className="text-xs text-slate-500 mt-0.5">You have {unreadCount} unread messages</p>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        {unreadCount > 0
+                          ? `You have ${unreadCount} new alerts`
+                          : "Recent activity & updates"
+                        }
+                      </p>
                     </div>
                     {unreadCount > 0 && (
                       <button
@@ -299,7 +310,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
                     )}
                   </div>
 
-                  <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
+                  <div className="max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
                     {notifications.length > 0 ? (
                       notifications.map((item) => (
                         <div
@@ -310,8 +321,8 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
                             ${!item.isRead ? "bg-slate-50/50" : ""}
                           `}
                         >
-                          <div className={`mt-1 h-9 w-9 rounded-full flex items-center justify-center flex-shrink-0 ${!item.isRead ? "bg-white shadow-sm ring-1 ring-slate-100" : "bg-slate-100"}`}>
-                            {getNotificationIcon(item.type)}
+                          <div className={`mt-1 h-9 w-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${!item.isRead ? "bg-white shadow-sm ring-1 ring-slate-100" : "bg-slate-100"}`}>
+                            {getNotificationIcon(item.type, item.title)}
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-start">

@@ -4,6 +4,10 @@ Allow: /
 # Block admin routes from being indexed
 Disallow: /admin/
 Disallow: /api/
+Disallow: /cart
+Disallow: /checkout
+Disallow: /login
+Disallow: /register
 
 # Sitemap location
 Sitemap: https://vkart.balavardhan.dev/sitemap.xml

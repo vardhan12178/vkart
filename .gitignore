@@ -2,6 +2,9 @@
 node_modules/
 **/node_modules/
 
+# Backend (separate repo)
+backend/
+
 # Build / dist
 build/
 dist/

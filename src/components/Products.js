@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
@@ -8,7 +8,6 @@ import axios from "./axiosInstance";
 import { Helmet } from "react-helmet-async";
 
 // Extracted Components
-import Stars from "./Stars";
 import ProductSkeleton from "./product/ProductSkeleton";
 import ProductQuickView from "./product/ProductQuickView";
 
@@ -17,14 +16,12 @@ import {
   FaHeart,
   FaRegHeart,
   FaStar,
-  FaRegStar,
-  FaStarHalfAlt,
   FaFilter,
   FaTimes,
   FaSearch,
   FaExpand,
-  FaLayerGroup,
   FaArrowRight,
+  FaBolt,
 } from "react-icons/fa";
 
 import Sidebar from "./Sidebar";
@@ -67,6 +64,8 @@ export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterLoading, setFilterLoading] = useState(false);
+  const [activeSale, setActiveSale] = useState(null);
+  const saleOnly = searchParams.get("sale") === "true";
 
   const [searchInput, setSearchInput] = useState(searchParams.get("q") || "");
   const searchTerm = searchParams.get("q") || ""; // Derived directly from URL
@@ -128,61 +127,67 @@ export default function Products() {
   /**
    * Fetch products from backend with all filters applied server-side
    * Backend handles: search, category, price, rating, and sorting
+   * Debounced: 300ms delay so rapid slider / filter changes batch into one request
    */
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
 
-    (async () => {
-      try {
-        setFilterLoading(true);
+    const timer = setTimeout(() => {
+      (async () => {
+        try {
+          setFilterLoading(true);
 
-        const params = {
-          page: 1,
-          limit: 100,
-        };
+          const params = {
+            page: 1,
+            limit: 100,
+          };
 
-        if (categoryFilter) params.category = categoryFilter;
-        if (searchTerm) params.q = searchTerm;
-        if (priceRange.min > 0) params.minPrice = priceRange.min;
-        if (priceRange.max < 100000) params.maxPrice = priceRange.max;
-        if (ratingFilter > 0) params.minRating = ratingFilter;
+          if (categoryFilter) params.category = categoryFilter;
+          if (searchTerm) params.q = searchTerm;
+          if (saleOnly) params.sale = "true";
+          if (priceRange.min > 0) params.minPrice = priceRange.min;
+          if (priceRange.max < 100000) params.maxPrice = priceRange.max;
+          if (ratingFilter > 0) params.minRating = ratingFilter;
 
-        if (sortBy !== "relevance") {
-          if (sortBy === "price-asc") params.sort = "price_asc";
-          else if (sortBy === "price-desc") params.sort = "price_desc";
-          else if (sortBy === "rating-desc") params.sort = "rating_desc";
-        }
+          if (sortBy !== "relevance") {
+            if (sortBy === "price-asc") params.sort = "price_asc";
+            else if (sortBy === "price-desc") params.sort = "price_desc";
+            else if (sortBy === "rating-desc") params.sort = "rating_desc";
+          }
 
-        const res = await axios.get("/api/products", {
-          params,
-          signal: controller.signal
-        });
-        const { products: fetchedProducts } = res.data;
+          const res = await axios.get("/api/products", {
+            params,
+            signal: controller.signal
+          });
+          const { products: fetchedProducts, activeSale: saleData } = res.data;
 
-        if (isMounted) {
-          setProducts(fetchedProducts || []);
-        }
-      } catch (err) {
-        if (err.name !== 'CanceledError') {
-          console.error("Fetch error:", err);
           if (isMounted) {
-            setProducts([]);
+            setProducts(fetchedProducts || []);
+            setActiveSale(saleData || null);
+          }
+        } catch (err) {
+          if (err.name !== 'CanceledError') {
+            console.error("Fetch error:", err);
+            if (isMounted) {
+              setProducts([]);
+            }
+          }
+        } finally {
+          if (isMounted) {
+            setFilterLoading(false);
+            setLoading(false);
           }
         }
-      } finally {
-        if (isMounted) {
-          setFilterLoading(false);
-          setLoading(false);
-        }
-      }
-    })();
+      })();
+    }, 300);
 
     return () => {
       isMounted = false;
+      clearTimeout(timer);
       controller.abort();
     };
-  }, [categoryFilter, searchTerm, priceRange, sortBy, ratingFilter]);
+  }, [categoryFilter, searchTerm, priceRange, sortBy, ratingFilter, saleOnly]);
 
   /**
    * Sync filter state to URL parameters
@@ -208,9 +213,7 @@ export default function Products() {
    * No client-side filtering needed - backend handles everything
    * Products array is already filtered and sorted by the backend
    */
-  const filteredProducts = useMemo(() => {
-    return products;
-  }, [products]);
+  const filteredProducts = products;
 
   /**
    * Reset visible items count when filters change
@@ -293,7 +296,7 @@ export default function Products() {
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
       <Helmet>
-        <title>Shop Our Collection | VKart</title>
+        <title>{saleOnly ? 'Sale | VKart' : 'Shop Our Collection | VKart'}</title>
         <meta name="description" content="Browse our extensive collection of electronics, fashion, and essentials. Find the best deals on VKart today." />
         <link rel="canonical" href="https://vkart.balavardhan.dev/products" />
         <meta property="og:title" content="Shop Our Collection | VKart" />
@@ -307,7 +310,7 @@ export default function Products() {
 
             <div className="flex items-center gap-4">
               <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-                Our Collection
+                {saleOnly && activeSale ? activeSale.name : "Our Collection"}
               </h1>
               <div className="h-6 w-px bg-gray-200 hidden sm:block" />
               <span className="text-sm font-medium text-gray-500 hidden sm:block">
@@ -357,6 +360,30 @@ export default function Products() {
           </div>
 
           <div className="flex-1 min-w-0">
+
+            {/* Active Sale Banner */}
+            {activeSale && (
+              <div className="mb-6 relative overflow-hidden rounded-2xl bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 p-5 sm:p-6 text-white shadow-lg animate-fade-up">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+                <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-white/20 backdrop-blur-sm p-2.5 rounded-xl">
+                      <FaBolt className="text-yellow-200 text-lg" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-black tracking-tight">{activeSale.name}</h3>
+                      <p className="text-white/80 text-xs sm:text-sm font-medium mt-0.5">
+                        Sale ends {new Date(activeSale.endDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/30 uppercase tracking-wider">
+                    Live Now
+                  </span>
+                </div>
+              </div>
+            )}
+
             {(loading || filterLoading || isSearching) ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
                 {Array.from({ length: 8 }).map((_, i) => <ProductSkeleton key={i} />)}
@@ -407,11 +434,18 @@ export default function Products() {
                         </Link>
 
                         <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10">
-                          {p.discountPercentage ? (
-                            <span className="bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
-                              -{Math.round(p.discountPercentage)}%
-                            </span>
-                          ) : <div />}
+                          <div className="flex flex-col gap-1">
+                            {p.onSale && (
+                              <span className="bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                                {p.saleName || 'SALE'}
+                              </span>
+                            )}
+                            {p.discountPercentage ? (
+                              <span className="bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                                -{Math.round(p.discountPercentage)}%
+                              </span>
+                            ) : null}
+                          </div>
 
                           <div className="flex flex-col gap-2">
                             <button
@@ -529,7 +563,7 @@ export default function Products() {
               onCategoryChange={(v) => { setCategoryFilter(v); setShowFilters(false); }}
               onSearch={(v) => { setSearchInput(v); setShowFilters(false); }}
               onRatingChange={(v) => { setRatingFilter(v); setShowFilters(false); }}
-              onPriceChange={(r) => setPriceRange({ min: clamp(r.min, 0, 100000), max: clamp(r.max, 100000) })}
+              onPriceChange={(r) => setPriceRange({ min: clamp(r.min, 0, 100000), max: clamp(r.max, 0, 100000) })}
             />
           </div>
         </div>

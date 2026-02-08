@@ -46,7 +46,10 @@ const INR = (n) =>
 
 const TAX_RATE = 0.18;
 const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
-const keyOf = (it) => it?._id || it?.productId || it?.externalId || it?.id;
+const keyOf = (it) => {
+  const base = it?._id || it?.productId || it?.externalId || it?.id;
+  return it?.selectedVariants ? `${base}::${it.selectedVariants}` : base;
+};
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -70,6 +73,9 @@ export default function Cart() {
   const [confirmRemoveId, setConfirmRemoveId] = useState(null);
   const [promo, setPromo] = useState("");
   const [promoApplied, setPromoApplied] = useState(null);
+  const [promoLoading, setPromoLoading] = useState(false);
+  const [availableCoupons, setAvailableCoupons] = useState([]);
+  const [showCoupons, setShowCoupons] = useState(false);
 
   const checkoutRef = useRef(null);
 
@@ -78,7 +84,6 @@ export default function Cart() {
       return { mrp: 0, rawSell: 0, subtotal: 0, promoOff: 0, tax: 0, total: 0, savingsMrpVsSell: 0, shipping: 0 };
 
     const lines = cartItems.map((it) => {
-      // REMOVED: Currency conversion (* 83)
       const unitSell = round2(it.price);
       const unitMrp = it.discountPercentage
         ? round2(it.price / (1 - it.discountPercentage / 100))
@@ -88,17 +93,15 @@ export default function Cart() {
 
     const mrp = round2(lines.reduce((a, b) => a + b.mrp, 0));
     const rawSell = round2(lines.reduce((a, b) => a + b.sell, 0));
-    const promoOff = promoApplied?.pct ? round2(rawSell * (promoApplied.pct / 100)) : 0;
+    const promoOff = promoApplied?.discount || 0;
 
-    // Inclusive Tax Logic
-    const subtotal = round2(rawSell - promoOff); // This is the amount the user expects to pay for items
+    const subtotal = round2(rawSell - promoOff);
     const shipping = subtotal >= 999 ? 0 : 50;
 
-    // Tax is extracted FROM the subtotal, not added TO it
-    // Formula: Amount * (Rate / (1 + Rate))
+    // Tax included in subtotal
     const tax = round2(subtotal * (TAX_RATE / (1 + TAX_RATE)));
 
-    // Total is just subtotal + shipping (since tax is inside subtotal)
+    // Total = subtotal + shipping (tax already inside subtotal)
     const total = round2(subtotal + shipping);
 
     const savingsMrpVsSell = Math.max(0, round2(mrp - rawSell));
@@ -108,16 +111,35 @@ export default function Cart() {
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
   if (!isAuthenticated) return <CartPreview />;
 
-  const applyPromo = () => {
+  const applyPromo = async () => {
     const code = promo.trim().toUpperCase();
     if (!code) return;
-    if (code === "SAVE10") {
-      setPromoApplied({ code, pct: 10 });
-      showToast("SAVE10 applied 🎉", "success");
-    } else {
+    setPromoLoading(true);
+    try {
+      const { data } = await axios.post("/api/coupons/validate", { code, subtotal: calc.rawSell });
+      if (data.valid) {
+        setPromoApplied({ code: data.code, discount: data.discount, description: data.description });
+        showToast(`${data.code} applied — ${INR(data.discount)} off!`, "success");
+      }
+    } catch (err) {
       setPromoApplied(null);
-      showToast("Invalid code. Try SAVE10.", "error");
+      showToast(err?.response?.data?.message || "Invalid coupon code", "error");
+    } finally {
+      setPromoLoading(false);
     }
+  };
+
+  const removePromo = () => {
+    setPromoApplied(null);
+    setPromo("");
+    showToast("Coupon removed", "success");
+  };
+
+  const fetchCoupons = async () => {
+    try {
+      const { data } = await axios.get("/api/coupons/public");
+      setAvailableCoupons(data.coupons || []);
+    } catch { /* ignore */ }
   };
 
   const handleOrderPlaced = async (orderDetails) => {
@@ -129,7 +151,6 @@ export default function Cart() {
       const productsPayload = cartItems.map((it) => {
         const mongoId = it._id || it.productId || null;
         const extId = it.externalId || (it.id != null ? String(it.id) : null);
-        // REMOVED: Currency conversion (* 83)
         const unitPrice = round2(it.price);
         const lineTotal = round2(unitPrice * it.quantity);
         const payload = {
@@ -140,11 +161,13 @@ export default function Cart() {
           lineTotal,
           currency: "INR",
         };
+        if (it.selectedVariants) payload.selectedVariants = it.selectedVariants;
         if (mongoId) payload.productId = String(mongoId);
         if (!mongoId && extId) payload.externalId = extId;
         return payload;
       });
 
+      const isPaid = !!orderDetails?.payment?.paymentId || orderDetails?.method === "WALLET";
       const orderData = {
         products: productsPayload,
         subtotal: round2(calc.subtotal),
@@ -155,6 +178,11 @@ export default function Cart() {
         currency: "INR",
         shippingAddress: orderDetails.address,
         promo: promoApplied?.code || undefined,
+        paymentStatus: isPaid ? "PAID" : "PENDING",
+        paymentMethod: orderDetails?.method ? orderDetails.method.toUpperCase() : undefined,
+        paymentId: orderDetails?.payment?.paymentId,
+        paymentOrderId: orderDetails?.payment?.paymentOrderId,
+        walletUsed: Number(orderDetails?.walletUsed) || 0,
       };
 
       await axios.post("/api/orders", orderData);
@@ -279,6 +307,9 @@ export default function Cart() {
                               <div className="min-w-0">
                                 <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-tight line-clamp-2">{item.title}</h3>
                                 <p className="text-xs sm:text-sm text-gray-500 mt-1 capitalize truncate">{item.category}</p>
+                                {item.selectedVariants && (
+                                  <p className="text-xs text-orange-600 font-semibold mt-0.5">{item.selectedVariants}</p>
+                                )}
                               </div>
                               <button
                                 onClick={() => setConfirmRemoveId(k)}
@@ -369,7 +400,6 @@ export default function Cart() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="text-sm font-bold text-gray-900 line-clamp-2 mb-1">{w.title}</h4>
-                          {/* REMOVED: Currency conversion (* 83) */}
                           <div className="text-xs font-bold text-gray-500 mb-2">{INR(w.price)}</div>
                           <button
                             onClick={() => moveWishlistToCart(w)}
@@ -424,21 +454,65 @@ export default function Cart() {
 
                     {/* Promo Input */}
                     <div className="mt-6">
-                      <div className="relative">
-                        <FaTag className="absolute left-4 top-3.5 text-gray-400 text-xs" />
-                        <input
-                          value={promo}
-                          onChange={(e) => setPromo(e.target.value)}
-                          placeholder="Promo Code"
-                          className="w-full pl-10 pr-20 py-3 rounded-xl bg-gray-50 border-none text-sm font-bold text-gray-900 focus:ring-2 focus:ring-orange-500/20 placeholder:text-gray-400"
-                        />
+                      {promoApplied ? (
+                        <div className="flex items-center justify-between bg-green-50 px-4 py-3 rounded-xl border border-green-200">
+                          <div className="flex items-center gap-2">
+                            <FaTag className="text-green-600 text-xs" />
+                            <span className="text-sm font-bold text-green-700">{promoApplied.code}</span>
+                            <span className="text-xs text-green-600">-{INR(promoApplied.discount)}</span>
+                          </div>
+                          <button onClick={removePromo} className="text-xs font-bold text-red-500 hover:underline">Remove</button>
+                        </div>
+                      ) : (
+                        <div className="relative">
+                          <FaTag className="absolute left-4 top-3.5 text-gray-400 text-xs" />
+                          <input
+                            value={promo}
+                            onChange={(e) => setPromo(e.target.value)}
+                            onKeyDown={(e) => e.key === "Enter" && applyPromo()}
+                            placeholder="Coupon Code"
+                            className="w-full pl-10 pr-20 py-3 rounded-xl bg-gray-50 border-none text-sm font-bold text-gray-900 focus:ring-2 focus:ring-orange-500/20 placeholder:text-gray-400"
+                          />
+                          <button
+                            onClick={applyPromo}
+                            disabled={promoLoading}
+                            className="absolute right-2 top-2 bottom-2 px-3 bg-white rounded-lg text-xs font-bold text-gray-900 shadow-sm hover:bg-gray-50 transition disabled:opacity-50"
+                          >
+                            {promoLoading ? "..." : "Apply"}
+                          </button>
+                        </div>
+                      )}
+                      {!promoApplied && (
                         <button
-                          onClick={applyPromo}
-                          className="absolute right-2 top-2 bottom-2 px-3 bg-white rounded-lg text-xs font-bold text-gray-900 shadow-sm hover:bg-gray-50 transition"
+                          onClick={() => { if (!showCoupons) fetchCoupons(); setShowCoupons(!showCoupons); }}
+                          className="mt-2 text-xs font-bold text-orange-600 hover:underline"
                         >
-                          Apply
+                          {showCoupons ? "Hide coupons" : "View available coupons"}
                         </button>
-                      </div>
+                      )}
+                      {showCoupons && !promoApplied && availableCoupons.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {availableCoupons.map((c) => (
+                            <button
+                              key={c.code}
+                              onClick={() => { setPromo(c.code); setShowCoupons(false); }}
+                              className="w-full text-left p-3 rounded-xl bg-orange-50/50 border border-orange-100 hover:bg-orange-100/50 transition"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="text-sm font-bold text-gray-900">{c.code}</span>
+                                <span className="text-xs font-bold text-orange-600">
+                                  {c.type === "percent" ? `${c.value}% off` : `${INR(c.value)} off`}
+                                </span>
+                              </div>
+                              {c.description && <p className="text-xs text-gray-500 mt-1">{c.description}</p>}
+                              {c.minOrder > 0 && <p className="text-[10px] text-gray-400 mt-0.5">Min order: {INR(c.minOrder)}</p>}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {showCoupons && !promoApplied && availableCoupons.length === 0 && (
+                        <p className="mt-3 text-xs text-gray-400 text-center">No coupons available right now</p>
+                      )}
                     </div>
 
                     {/* Desktop Checkout Button */}

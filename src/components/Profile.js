@@ -3,6 +3,8 @@ import axios from "./axiosInstance"; // Kept as requested
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/authSlice";
+import { clearCart } from "../redux/cartSlice";
+import { clearWishlist } from "../redux/wishlistSlice";
 import imageCompression from "browser-image-compression";
 // Removed ProfilePreview import if it's not strictly needed, or keep if you have it. 
 // Assuming ProfilePreview was just a placeholder in your previous code.
@@ -23,7 +25,11 @@ import {
   FaQrcode,
   FaChevronRight,
   FaShoppingBag,
-  FaTimes
+  FaTimes,
+  FaMapMarkerAlt,
+  FaPlus,
+  FaTrash,
+  FaCrown
 } from "react-icons/fa";
 
 const OrderCard = lazy(() => import("./OrderCard"));
@@ -111,6 +117,23 @@ export default function Profile() {
     loading: false,
     disabling: false,
   });
+  const [wallet, setWallet] = useState({ balance: 0, transactions: [] });
+
+  // Password change
+  const [pwOpen, setPwOpen] = useState(false);
+  const [pw, setPw] = useState({ current: "", next: "", confirm: "", loading: false });
+
+  // Address book
+  const [addresses, setAddresses] = useState([]);
+  const [addrOpen, setAddrOpen] = useState(false);
+  const [editAddr, setEditAddr] = useState(null); // null = add mode, object = edit mode
+  const emptyAddr = { fullName: "", phone: "", line1: "", line2: "", city: "", state: "", zip: "", isDefault: false };
+  const [addrForm, setAddrForm] = useState({ ...emptyAddr });
+  const [addrLoading, setAddrLoading] = useState(false);
+
+  // Name editing
+  const [editingName, setEditingName] = useState(false);
+  const [nameInput, setNameInput] = useState("");
 
   const showToast = (kind, message, ms = 1800) => {
     setToast({ kind, message });
@@ -143,6 +166,19 @@ export default function Profile() {
             (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
           )
         );
+
+        try {
+          const w = await axios.get("/api/wallet");
+          setWallet({
+            balance: Number(w?.data?.balance) || 0,
+            transactions: w?.data?.transactions || [],
+          });
+        } catch {}
+
+        try {
+          const a = await axios.get("/api/profile/addresses");
+          setAddresses(a.data?.addresses || []);
+        } catch {}
       } catch (e) {
         // If 401, logout
         if (e.response && e.response.status === 401) {
@@ -170,6 +206,8 @@ export default function Profile() {
     } finally {
       localStorage.removeItem("auth_token");
       localStorage.removeItem("admin_token");
+      dispatch(clearCart());
+      dispatch(clearWishlist());
       dispatch(logout());
       navigate("/");
     }
@@ -267,6 +305,85 @@ export default function Profile() {
       showToast("error", msg);
     } finally {
       setTwoFAState((s) => ({ ...s, disabling: false }));
+    }
+  };
+
+  const handleChangePassword = async () => {
+    const { current, next, confirm } = pw;
+    if (!current || !next || !confirm) return showToast("error", "All fields are required.");
+    if (next.length < 8) return showToast("error", "New password must be at least 8 characters.");
+    if (next !== confirm) return showToast("error", "New passwords do not match.");
+    try {
+      setPw((s) => ({ ...s, loading: true }));
+      await axios.put("/api/profile/password", {
+        currentPassword: current,
+        newPassword: next,
+        confirmPassword: confirm,
+      });
+      showToast("success", "Password changed successfully!");
+      setPw({ current: "", next: "", confirm: "", loading: false });
+      setPwOpen(false);
+    } catch (e) {
+      const msg = e?.response?.data?.message || "Failed to change password.";
+      showToast("error", msg);
+      setPw((s) => ({ ...s, loading: false }));
+    }
+  };
+
+  // --- ADDRESS HANDLERS ---
+  const openAddressForm = (addr = null) => {
+    if (addr) {
+      setEditAddr(addr);
+      setAddrForm({ fullName: addr.fullName || "", phone: addr.phone || "", line1: addr.line1 || "", line2: addr.line2 || "", city: addr.city || "", state: addr.state || "", zip: addr.zip || "", isDefault: !!addr.isDefault });
+    } else {
+      setEditAddr(null);
+      setAddrForm({ ...emptyAddr });
+    }
+    setAddrOpen(true);
+  };
+
+  const handleSaveAddress = async () => {
+    const { fullName, phone, line1, city, state, zip } = addrForm;
+    if (!fullName || !phone || !line1 || !city || !state || !zip) return showToast("error", "Please fill all required fields.");
+    try {
+      setAddrLoading(true);
+      let res;
+      if (editAddr) {
+        res = await axios.put(`/api/profile/addresses/${editAddr._id}`, addrForm);
+      } else {
+        res = await axios.post("/api/profile/addresses", addrForm);
+      }
+      setAddresses(res.data.addresses || []);
+      setAddrOpen(false);
+      setEditAddr(null);
+      setAddrForm({ ...emptyAddr });
+      showToast("success", editAddr ? "Address updated!" : "Address added!");
+    } catch (e) {
+      showToast("error", e?.response?.data?.message || "Failed to save address.");
+    } finally {
+      setAddrLoading(false);
+    }
+  };
+
+  const handleDeleteAddress = async (addrId) => {
+    try {
+      const res = await axios.delete(`/api/profile/addresses/${addrId}`);
+      setAddresses(res.data.addresses || []);
+      showToast("success", "Address removed.");
+    } catch (e) {
+      showToast("error", e?.response?.data?.message || "Failed to delete address.");
+    }
+  };
+
+  const handleUpdateName = async () => {
+    if (!nameInput.trim()) return;
+    try {
+      const res = await axios.put("/api/profile/name", { name: nameInput.trim() });
+      setUser((u) => ({ ...u, name: res.data.name }));
+      setEditingName(false);
+      showToast("success", "Name updated!");
+    } catch (e) {
+      showToast("error", e?.response?.data?.message || "Failed to update name.");
     }
   };
 
@@ -368,12 +485,35 @@ export default function Profile() {
             {/* Text Info */}
             <div className="flex-1 text-center md:text-left">
               <div className="flex flex-col md:flex-row items-center gap-3 mb-2">
-                <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
-                  {user?.name || "Guest User"}
-                </h1>
-                <span className="px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-bold uppercase tracking-wider border border-orange-100">
-                  Member
-                </span>
+                {editingName ? (
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={nameInput}
+                      onChange={(e) => setNameInput(e.target.value)}
+                      onKeyDown={(e) => e.key === "Enter" && handleUpdateName()}
+                      className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-none px-1"
+                      autoFocus
+                    />
+                    <button onClick={handleUpdateName} className="p-2 rounded-lg bg-gray-900 text-white text-xs font-bold hover:bg-black"><FaCheckCircle /></button>
+                    <button onClick={() => setEditingName(false)} className="p-2 rounded-lg text-gray-400 hover:text-gray-600"><FaTimes /></button>
+                  </div>
+                ) : (
+                  <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight group/name cursor-pointer" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
+                    {user?.name || "Guest User"}
+                    <FaPen className="inline ml-2 text-sm text-gray-300 group-hover/name:text-orange-500 transition-colors" />
+                  </h1>
+                )}
+                {user?.isPrime ? (
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gradient-to-r from-amber-100 to-amber-50 text-amber-900 text-xs font-bold uppercase tracking-wider border border-amber-200 shadow-sm">
+                    <FaCrown size={10} className="text-amber-500" />
+                    Prime Member
+                  </span>
+                ) : (
+                  <span className="px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-bold uppercase tracking-wider border border-orange-100">
+                    Member
+                  </span>
+                )}
               </div>
 
               <div className="text-gray-500 font-medium mb-6 flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm">
@@ -491,8 +631,54 @@ export default function Profile() {
                   </div>
                 </div>
 
-                {/* Quick Links Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {/* Password Change Box */}
+                <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${pwOpen ? 'bg-orange-400' : 'bg-gray-200'}`} />
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                    <div className="flex gap-5">
+                      <div className={`h-14 w-14 rounded-2xl flex items-center justify-center text-xl shrink-0 ${pwOpen ? 'bg-orange-50 text-orange-600' : 'bg-gray-100 text-gray-400'}`}>
+                        <FaLock />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900">Password</h3>
+                        <p className="text-gray-500 text-sm mt-1">Update your account password.</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => { setPwOpen((o) => !o); setPw({ current: "", next: "", confirm: "", loading: false }); }}
+                      className="px-6 py-3 rounded-xl border-2 border-gray-100 text-gray-600 font-bold hover:border-orange-100 hover:bg-orange-50 hover:text-orange-600 transition-all text-sm flex items-center gap-2"
+                    >
+                      <FaPen size={12} /> {pwOpen ? "Cancel" : "Change"}
+                    </button>
+                  </div>
+
+                  {pwOpen && (
+                    <div className="mt-6 space-y-4 max-w-sm">
+                      <div>
+                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 block">Current Password</label>
+                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-sm transition-all" placeholder="••••••••" />
+                      </div>
+                      <div>
+                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 block">New Password</label>
+                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-sm transition-all" placeholder="Min 8 characters" />
+                      </div>
+                      <div>
+                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 block">Confirm Password</label>
+                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-sm transition-all" placeholder="Re-enter new password" />
+                      </div>
+                      <button
+                        onClick={handleChangePassword}
+                        disabled={pw.loading}
+                        className="w-full py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black transition-all disabled:opacity-50 text-sm"
+                      >
+                        {pw.loading ? "Saving..." : "Update Password"}
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+              {/* Quick Links Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
                     { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
                     { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
@@ -507,9 +693,113 @@ export default function Profile() {
                       <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
                     </Link>
                   ))}
+              </div>
+
+              {/* Wallet */}
+              <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">VKart Wallet</h3>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="text-sm text-gray-500">Available Balance</div>
+                  <div className="text-2xl font-black text-gray-900">₹{Math.round(wallet.balance)}</div>
+                </div>
+                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                  Recent Transactions
+                </div>
+                <div className="space-y-2">
+                  {wallet.transactions.length === 0 ? (
+                    <div className="text-sm text-gray-500">No wallet activity yet.</div>
+                  ) : (
+                    wallet.transactions.slice(0, 5).map((t, i) => (
+                      <div key={i} className="flex items-center justify-between text-sm">
+                        <span className="text-gray-600">{t.reason || t.type}</span>
+                        <span className={`font-bold ${t.type === "CREDIT" ? "text-emerald-600" : "text-red-600"}`}>
+                          {t.type === "CREDIT" ? "+" : "-"}₹{Math.round(t.amount)}
+                        </span>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+
+              {/* Address Book */}
+              <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                    <FaMapMarkerAlt className="text-orange-500" /> Addresses
+                  </h3>
+                  <button onClick={() => openAddressForm()} className="flex items-center gap-1.5 text-sm font-bold text-gray-600 hover:text-gray-900 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-50">
+                    <FaPlus size={12} /> Add
+                  </button>
                 </div>
 
+                {addresses.length === 0 && !addrOpen ? (
+                  <div className="text-center py-8">
+                    <FaMapMarkerAlt className="mx-auto text-gray-300 mb-3" size={28} />
+                    <p className="text-sm text-gray-500">No saved addresses yet.</p>
+                    <button onClick={() => openAddressForm()} className="mt-3 text-sm font-bold text-orange-600 hover:underline">Add your first address</button>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {addresses.map((addr) => (
+                      <div key={addr._id} className={`p-4 rounded-xl border ${addr.isDefault ? 'border-orange-200 bg-orange-50/50' : 'border-gray-100'} flex justify-between items-start gap-3`}>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-bold text-gray-900 text-sm">{addr.fullName}</span>
+                            {addr.isDefault && <span className="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">Default</span>}
+                          </div>
+                          <p className="text-xs text-gray-600">{addr.line1}{addr.line2 ? `, ${addr.line2}` : ""}</p>
+                          <p className="text-xs text-gray-500">{addr.city}, {addr.state} {addr.zip}</p>
+                          <p className="text-xs text-gray-400 mt-1">{addr.phone}</p>
+                        </div>
+                        <div className="flex gap-1 shrink-0">
+                          <button onClick={() => openAddressForm(addr)} className="p-2 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"><FaPen size={12} /></button>
+                          <button onClick={() => handleDeleteAddress(addr._id)} className="p-2 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors"><FaTrash size={12} /></button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Address Form (inline) */}
+                {addrOpen && (
+                  <div className="mt-6 border-t border-gray-100 pt-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <h4 className="font-bold text-gray-900 text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
+                      <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-gray-400 hover:text-gray-600"><FaTimes size={14} /></button>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {[
+                        { key: "fullName", label: "Full Name", span: 1 },
+                        { key: "phone", label: "Phone", span: 1 },
+                        { key: "line1", label: "Address Line 1", span: 2 },
+                        { key: "line2", label: "Address Line 2 (optional)", span: 2 },
+                        { key: "city", label: "City", span: 1 },
+                        { key: "state", label: "State", span: 1 },
+                        { key: "zip", label: "ZIP Code", span: 1 },
+                      ].map((f) => (
+                        <div key={f.key} className={f.span === 2 ? "sm:col-span-2" : ""}>
+                          <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 block">{f.label}</label>
+                          <input
+                            type="text"
+                            value={addrForm[f.key]}
+                            onChange={(e) => setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))}
+                            className="w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-sm transition-all"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <label className="flex items-center gap-2 mt-3 text-sm text-gray-600 cursor-pointer">
+                      <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-gray-300 text-orange-500 focus:ring-orange-200" />
+                      Set as default address
+                    </label>
+                    <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-4 w-full py-2.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-lg hover:bg-black transition-all disabled:opacity-50">
+                      {addrLoading ? "Saving..." : (editAddr ? "Update Address" : "Save Address")}
+                    </button>
+                  </div>
+                )}
               </div>
+
+            </div>
             </div>
           ) : (
             // --- ORDERS TAB ---

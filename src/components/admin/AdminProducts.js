@@ -504,6 +504,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
   const [form, setForm] = useState({
     title: "", description: "", category: "", brand: "", price: "", discountPercentage: "", stock: "", sku: "", tags: "",
     thumbnail: "", images: [], weight: "", width: "", height: "", depth: "", warrantyInformation: "", shippingInformation: "", returnPolicy: "", isActive: true,
+    variants: [],
   });
 
   useEffect(() => {
@@ -528,6 +529,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
         shippingInformation: initialData.shippingInformation || "",
         returnPolicy: initialData.returnPolicy || "",
         isActive: initialData.isActive ?? true,
+        variants: initialData.variants || [],
       });
     }
   }, [initialData]);
@@ -544,6 +546,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
       weight: Number(form.weight),
       dimensions: { width: Number(form.width), height: Number(form.height), depth: Number(form.depth) },
+      variants: (form.variants || []).filter((v) => v.type && v.options?.length),
     };
     onSubmit(payload);
   };
@@ -626,6 +629,62 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                 />
               </div>
             </div>
+          </div>
+
+          {/* Variants Card */}
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-5">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide">Variants</h3>
+              <button
+                type="button"
+                onClick={() => update("variants", [...(form.variants || []), { type: "", options: [] }])}
+                className="text-xs font-bold text-slate-600 hover:text-slate-900 border border-slate-200 rounded-lg px-3 py-1.5 hover:bg-slate-50 transition-colors"
+              >
+                + Add Variant
+              </button>
+            </div>
+            {(form.variants || []).length === 0 && (
+              <p className="text-xs text-slate-400">No variants. Add size, color, or storage options.</p>
+            )}
+            {(form.variants || []).map((v, vi) => (
+              <div key={vi} className="p-4 bg-slate-50 rounded-xl space-y-3 relative">
+                <button
+                  type="button"
+                  onClick={() => update("variants", form.variants.filter((_, i) => i !== vi))}
+                  className="absolute top-3 right-3 text-slate-400 hover:text-red-500 text-xs font-bold"
+                >
+                  Remove
+                </button>
+                <div>
+                  <label className="block text-[10px] font-bold text-slate-600 mb-1">Type</label>
+                  <input
+                    type="text"
+                    value={v.type}
+                    onChange={(e) => {
+                      const copy = [...form.variants];
+                      copy[vi] = { ...copy[vi], type: e.target.value };
+                      update("variants", copy);
+                    }}
+                    className="w-48 rounded border-slate-200 text-sm py-1.5 px-2 bg-white"
+                    placeholder="e.g. Size, Color, Storage"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold text-slate-600 mb-1">Options (comma-separated)</label>
+                  <input
+                    type="text"
+                    value={(v.options || []).join(", ")}
+                    onChange={(e) => {
+                      const copy = [...form.variants];
+                      copy[vi] = { ...copy[vi], options: e.target.value.split(",").map((o) => o.trim()).filter(Boolean) };
+                      update("variants", copy);
+                    }}
+                    className="w-full rounded border-slate-200 text-sm py-1.5 px-2 bg-white"
+                    placeholder="S, M, L, XL"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Media Card */}

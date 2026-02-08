@@ -1,10 +1,9 @@
 import React, { useState, useMemo } from "react";
-import moment from "moment";
+import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
 import {
   FaBox,
   FaChevronDown,
-  FaChevronUp,
   FaMapMarkerAlt,
   FaReceipt,
   FaShoppingBag
@@ -31,20 +30,30 @@ const stageStyles = {
 
 export default function OrderCard({ order }) {
   const [open, setOpen] = useState(false);
+  const [returnBusy, setReturnBusy] = useState(false);
+  const [showReturn, setShowReturn] = useState(false);
+  const [showCancel, setShowCancel] = useState(false);
+  const [reason, setReason] = useState("");
+  const [refundMethod, setRefundMethod] = useState("ORIGINAL");
+  const [returnType, setReturnType] = useState("REFUND");
 
   const stage = order.stage || "PLACED";
   const style = stageStyles[stage] || stageStyles.PLACED;
   const firstProduct = order.products?.[0] || {};
+  const hasReturn = order.returnStatus && order.returnStatus !== "NONE";
+  const hasRefund = order.refundStatus && order.refundStatus !== "NONE";
 
   const orderDate = useMemo(
-    () => moment(order.createdAt).format("MMM D, YYYY • h:mm A"),
+    () => new Date(order.createdAt).toLocaleDateString("en-IN", {
+      month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true
+    }),
     [order.createdAt]
   );
 
   return (
     <div className={`group relative rounded-[2rem] border transition-all duration-300 overflow-hidden ${open
-        ? "bg-white border-orange-200 shadow-xl shadow-orange-500/5"
-        : "bg-white border-gray-100 shadow-sm hover:shadow-md"
+      ? "bg-white border-orange-200 shadow-xl shadow-orange-500/5"
+      : "bg-white border-gray-100 shadow-sm hover:shadow-md"
       }`}>
 
       {/* --- SUMMARY HEADER --- */}
@@ -67,20 +76,55 @@ export default function OrderCard({ order }) {
             <div className="space-y-1">
               <div className="flex items-center gap-3 mb-1">
                 <h3 className="text-lg font-black text-gray-900 tracking-tight">
-                  #{order.orderId || order._id.slice(-8).toUpperCase()}
+                  {(() => {
+                    const products = order.products || [];
+                    if (products.length === 0) return 'Order';
+                    const names = products.slice(0, 2).map(p => p.name).join(', ');
+                    const more = products.length > 2 ? ` +${products.length - 2} more` : '';
+                    return names + more;
+                  })()}
                 </h3>
-                <span className={`hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-transparent ${style.bg} ${style.text}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
-                  {stage.replace(/_/g, " ")}
-                </span>
+                {/* Status Badges - Prioritize specific statuses (Refund > Return > Main Status) */}
+                {(() => {
+                  if (hasRefund) {
+                    return (
+                      <span className="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-100">
+                        Refund {order.refundStatus}
+                      </span>
+                    );
+                  }
+                  if (hasReturn) {
+                    return (
+                      <span className="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-100">
+                        Return {order.returnStatus}
+                      </span>
+                    );
+                  }
+                  return (
+                    <span className={`hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-transparent ${style.bg} ${style.text}`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
+                      {stage.replace(/_/g, " ")}
+                    </span>
+                  );
+                })()}
               </div>
               <p className="text-sm font-medium text-gray-500">{orderDate}</p>
-              {/* Mobile Status Pill */}
+              {/* Mobile Status Pill - same priority logic */}
               <div className="sm:hidden mt-2">
-                <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${style.bg} ${style.text}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
-                  {stage.replace(/_/g, " ")}
-                </span>
+                {hasRefund ? (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-100">
+                    Refund {order.refundStatus}
+                  </span>
+                ) : hasReturn ? (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-100">
+                    Return {order.returnStatus}
+                  </span>
+                ) : (
+                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${style.bg} ${style.text}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
+                    {stage.replace(/_/g, " ")}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -186,9 +230,184 @@ export default function OrderCard({ order }) {
             />
           </div>
 
+          <div className="mt-6 flex gap-3">
+            <button
+              onClick={() => window.open(`${apiBase}/api/orders/${order._id}/invoice`, "_blank")}
+              className="px-4 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50"
+            >
+              Download Invoice
+            </button>
+          </div>
+
+          {/* Return Section */}
+          {stage === "DELIVERED" && (
+            <div className="mt-6">
+              <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+                Returns
+              </div>
+              {order.returnStatus && order.returnStatus !== "NONE" ? (
+                <div className="text-sm font-bold text-gray-700">
+                  Status: {order.returnStatus}
+                </div>
+              ) : (
+                <button
+                  disabled={returnBusy}
+                  onClick={() => {
+                    setReason("");
+                    setRefundMethod("ORIGINAL");
+                    setReturnType("REFUND");
+                    setShowReturn(true);
+                  }}
+                  className="px-4 py-2 rounded-xl bg-gray-900 text-white text-xs font-bold shadow-md hover:bg-black transition-all disabled:opacity-60"
+                >
+                  {returnBusy ? "Submitting..." : "Request Return"}
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* Cancel Section */}
+          {["PLACED", "CONFIRMED", "PROCESSING", "PACKED"].includes(stage) && (
+            <div className="mt-4">
+              <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+                Cancel Order
+              </div>
+              <button
+                onClick={() => {
+                  setReason("");
+                  setRefundMethod("ORIGINAL");
+                  setShowCancel(true);
+                }}
+                className="px-4 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50"
+              >
+                Cancel Order
+              </button>
+            </div>
+          )}
+
         </div>
       </div>
+
+      {/* Return Modal */}
+      {showReturn && (
+        <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md">
+            <h3 className="text-lg font-bold text-gray-900 mb-3">Request Return</h3>
+            <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Reason</label>
+            <textarea
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+              className="w-full mt-2 p-3 rounded-xl border border-gray-200 text-sm"
+              rows={3}
+            />
+            <div className="mt-4">
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Return Type</div>
+              <label className="flex items-center gap-2 text-sm">
+                <input type="radio" checked={returnType === "REPLACEMENT"} onChange={() => setReturnType("REPLACEMENT")} />
+                Replacement
+              </label>
+              <label className="flex items-center gap-2 text-sm mt-2">
+                <input type="radio" checked={returnType === "REFUND"} onChange={() => setReturnType("REFUND")} />
+                Refund
+              </label>
+
+              {returnType === "REFUND" && (
+                <div className="mt-4">
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Refund Method</div>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} />
+                    Original Payment (7 days)
+                  </label>
+                  <label className="flex items-center gap-2 text-sm mt-2">
+                    <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} />
+                    VKart Wallet (instant)
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className="mt-5 flex justify-end gap-2">
+              <button onClick={() => setShowReturn(false)} className="px-4 py-2 rounded-xl border border-gray-200 text-sm">Cancel</button>
+              <button
+                disabled={returnBusy || reason.trim().length < 3}
+                onClick={async () => {
+                  setReturnBusy(true);
+                  try {
+                    await axios.post(`/api/orders/${order._id}/return`, {
+                      reason,
+                      returnType,
+                      refundMethod,
+                    });
+                    window.location.reload();
+                  } catch {
+                    alert("Return request failed.");
+                  } finally {
+                    setReturnBusy(false);
+                    setShowReturn(false);
+                  }
+                }}
+                className="px-4 py-2 rounded-xl bg-gray-900 text-white text-sm font-bold disabled:opacity-60"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Cancel Modal */}
+      {showCancel && (
+        <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md">
+            <h3 className="text-lg font-bold text-gray-900 mb-3">Cancel Order</h3>
+            <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Reason</label>
+            <textarea
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+              className="w-full mt-2 p-3 rounded-xl border border-gray-200 text-sm"
+              rows={3}
+            />
+            <div className="mt-4">
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Refund Method</div>
+              <label className="flex items-center gap-2 text-sm">
+                <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} />
+                Original Payment (7 days)
+              </label>
+              <label className="flex items-center gap-2 text-sm mt-2">
+                <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} />
+                VKart Wallet (instant)
+              </label>
+            </div>
+            <div className="mt-5 flex justify-end gap-2">
+              <button onClick={() => setShowCancel(false)} className="px-4 py-2 rounded-xl border border-gray-200 text-sm">Close</button>
+              <button
+                disabled={reason.trim().length < 3}
+                onClick={async () => {
+                  try {
+                    await axios.post(`/api/orders/${order._id}/cancel`, {
+                      reason,
+                      refundMethod,
+                    });
+                    window.location.reload();
+                  } catch {
+                    alert("Cancel failed.");
+                  } finally {
+                    setShowCancel(false);
+                  }
+                }}
+                className="px-4 py-2 rounded-xl bg-gray-900 text-white text-sm font-bold disabled:opacity-60"
+              >
+                Cancel Order
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
 }
+  const apiBase =
+    typeof window !== "undefined" &&
+    (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://localhost:5000"
+      : (process.env.REACT_APP_API_BASE_URL || "");

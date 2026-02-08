@@ -61,6 +61,13 @@ export default function AdminOrderDetails() {
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [toast, setToast] = useState({ type: "", message: "" });
+  const [returnUpdating, setReturnUpdating] = useState(false);
+  const [refundUpdating, setRefundUpdating] = useState(false);
+  const apiBase =
+    typeof window !== "undefined" &&
+    (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://localhost:5000"
+      : (process.env.REACT_APP_API_BASE_URL || "");
 
   const showToast = (type, message, ms = 3000) => {
     setToast({ type, message });
@@ -112,6 +119,34 @@ export default function AdminOrderDetails() {
       showToast("error", err.message || "Failed to update status.");
     } finally {
       setUpdating(false);
+    }
+  };
+
+  const updateReturn = async (status) => {
+    if (!order) return;
+    try {
+      setReturnUpdating(true);
+      const res = await axiosInstance.patch(`/api/admin/orders/${id}/return`, { status });
+      setOrder(res.data.order || order);
+      showToast("success", `Return status: ${status}`);
+    } catch (err) {
+      showToast("error", "Failed to update return status.");
+    } finally {
+      setReturnUpdating(false);
+    }
+  };
+
+  const initiateRefund = async (method) => {
+    if (!order) return;
+    try {
+      setRefundUpdating(true);
+      const res = await axiosInstance.post(`/api/admin/orders/${id}/refund`, { method });
+      setOrder(res.data.order || order);
+      showToast("success", `Refund ${method}`);
+    } catch (err) {
+      showToast("error", "Failed to initiate refund.");
+    } finally {
+      setRefundUpdating(false);
     }
   };
 
@@ -193,6 +228,12 @@ export default function AdminOrderDetails() {
             >
               <PrinterIcon className="h-4 w-4" />
               Invoice
+            </button>
+            <button
+              onClick={() => window.open(`${apiBase}/api/orders/${order._id}/invoice`, "_blank")}
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-medium shadow-sm hover:bg-black transition-all active:scale-95"
+            >
+              Download PDF
             </button>
             <button
               onClick={loadOrder}
@@ -537,6 +578,74 @@ export default function AdminOrderDetails() {
 
           </div>
 
+        </div>
+        {/* Returns & Refunds */}
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+          <h3 className="text-lg font-bold text-slate-900 mb-4">Returns & Refunds</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <div className="text-xs text-slate-500 font-bold uppercase mb-1">Return Status</div>
+              <div className="text-sm font-semibold text-slate-900">{order.returnStatus || "NONE"}</div>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <div className="text-xs text-slate-500 font-bold uppercase mb-1">Refund Status</div>
+              <div className="text-sm font-semibold text-slate-900">{order.refundStatus || "NONE"}</div>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <div className="text-xs text-slate-500 font-bold uppercase mb-1">Refund Method</div>
+              <div className="text-sm font-semibold text-slate-900">{order.refundMethod || "-"}</div>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <div className="text-xs text-slate-500 font-bold uppercase mb-1">Return Type</div>
+              <div className="text-sm font-semibold text-slate-900">{order.returnType || "-"}</div>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            {["APPROVED", "PICKED", "RECEIVED", "REJECTED", "CLOSED"].map((s) => (
+              <button
+                key={s}
+                onClick={() => updateReturn(s)}
+                disabled={returnUpdating}
+                className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+              >
+                Set {s}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-3">
+            <button
+              onClick={() => initiateRefund("WALLET")}
+              disabled={refundUpdating}
+              className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-md hover:bg-black disabled:opacity-60"
+            >
+              Refund to Wallet
+            </button>
+            <button
+              onClick={() => initiateRefund("ORIGINAL")}
+              disabled={refundUpdating}
+              className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+            >
+              Refund to Original
+            </button>
+            {order.returnType === "REPLACEMENT" && order.returnStatus === "RECEIVED" && !order.replacementOrderId && (
+              <button
+                onClick={async () => {
+                  try {
+                    const res = await axiosInstance.post(`/api/admin/orders/${id}/replacement`);
+                    setOrder(res.data.replacement ? { ...order, replacementOrderId: res.data.replacement._id } : order);
+                    showToast("success", "Replacement created");
+                  } catch {
+                    showToast("error", "Replacement failed");
+                  }
+                }}
+                className="px-4 py-2 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-700 hover:bg-emerald-50"
+              >
+                Create Replacement Order
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

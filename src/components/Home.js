@@ -19,7 +19,10 @@ import {
   FaHeadset,
   FaEnvelope,
   FaCheckCircle,
-  FaExpand // Import Expand icon
+  FaExpand,
+  FaUserCircle,
+  FaCrown,
+  FaTag,
 } from "react-icons/fa";
 
 import "slick-carousel/slick/slick.css";
@@ -37,6 +40,8 @@ const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     
     .slick-dots li button:before { font-size: 8px; color: #cbd5e1; opacity: 1; }
     .slick-dots li.slick-active button:before { color: #f97316; }
@@ -82,11 +87,18 @@ function ProductCard({ p, onQuickView, onAdd }) {
           className="h-full w-full object-contain mix-blend-multiply p-6 transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
-        {p.discountPercentage > 0 && (
-          <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white/90 backdrop-blur border border-gray-100 text-gray-900 text-[10px] font-bold uppercase tracking-wide shadow-sm">
-              -{Math.round(p.discountPercentage)}%
-            </span>
+        {(p.discountPercentage > 0 || p.onSale) && (
+          <div className="absolute top-3 left-3 flex flex-col gap-1">
+            {p.onSale && (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-red-500 text-white text-[10px] font-bold uppercase tracking-wide shadow-sm">
+                {p.saleName || 'SALE'}
+              </span>
+            )}
+            {p.discountPercentage > 0 && (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white/90 backdrop-blur border border-gray-100 text-gray-900 text-[10px] font-bold uppercase tracking-wide shadow-sm">
+                -{Math.round(p.discountPercentage)}%
+              </span>
+            )}
           </div>
         )}
 
@@ -148,6 +160,7 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [activeSale, setActiveSale] = useState(null);
   /* Removed dealEndsAt and nowTick state */
 
   const [email, setEmail] = useState("");
@@ -183,21 +196,13 @@ export default function Home() {
     (async () => {
       try {
         setLoading(true);
-        const categoryPromises = ["beauty", "fragrances", "smartphones", "laptops"].map((cat) =>
-          axios.get("/api/products", { params: { category: cat, limit: 5 }, signal: ac.signal }).then((res) => res.data)
-        );
-        const latestPromise = axios.get("/api/products", {
-          params: { limit: 12, sort: "-createdAt" },
-          signal: ac.signal,
-        }).then((res) => res.data);
-
-        const results = await Promise.allSettled([...categoryPromises, latestPromise]);
-        const [c1, c2, c3, c4, latestRes] = results.map((r) => r.status === "fulfilled" ? r.value : { products: [] });
-
-        setFeatured([...(c1.products || []), ...(c2.products || []), ...(c3.products || []), ...(c4.products || [])].slice(0, 16));
-        setNewArrivals((latestRes.products || []).slice(0, 8));
+        const res = await axios.get("/api/home", { signal: ac.signal });
+        const { featured: f = [], newArrivals: na = [], activeSale: sale } = res.data;
+        setFeatured(f);
+        setNewArrivals(na);
+        if (sale) setActiveSale(sale);
       } catch (err) {
-        console.error(err);
+        if (err.name !== "CanceledError") console.error(err);
       } finally {
         setLoading(false);
       }
@@ -209,6 +214,11 @@ export default function Home() {
     const setB = new Set((featured || []).map((p) => p.brand).filter(Boolean));
     return Array.from(setB).slice(0, 12);
   }, [featured]);
+
+  const allCategories = useMemo(() => {
+    const cats = new Set([...(featured || []), ...(newArrivals || [])].map((p) => p.category).filter(Boolean));
+    return Array.from(cats).sort().slice(0, 10);
+  }, [featured, newArrivals]);
 
   const productSliderSettings = {
     dots: false,
@@ -243,9 +253,10 @@ export default function Home() {
     try { await axios.post("/api/2fa/suppress", null, { withCredentials: true }); } catch (e) { }
   };
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (email && email.includes("@")) {
+      try { await axios.post("/api/newsletter/subscribe", { email }); } catch { /* still show success */ }
       setIsSubscribed(true);
     }
   };
@@ -378,6 +389,189 @@ export default function Home() {
         </div>
       )}
 
+      {/* SHOP BY CATEGORY */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <span className="text-orange-600 font-bold uppercase tracking-widest text-xs">Curated Collections</span>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 tracking-tight">Browse by Category</h2>
+            </div>
+            <Link to="/products" className="text-sm font-bold text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-2">
+              See All Collections <FaArrowRight />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Smartphones",
+                count: "Latest Models",
+                image: "/assets/categories/smartphones.png",
+                link: "/products?cat=smartphones",
+                colSpan: "lg:col-span-2"
+              },
+              {
+                name: "Laptops",
+                count: "Power & Performance",
+                image: "/assets/categories/laptops.png",
+                link: "/products?cat=laptops",
+                colSpan: "lg:col-span-1"
+              },
+              {
+                name: "Fragrances",
+                count: "Luxury Scents",
+                image: "/assets/categories/fragrances.png",
+                link: "/products?cat=fragrances",
+                colSpan: "lg:col-span-1"
+              },
+              {
+                name: "Beauty",
+                count: "Skincare & Makeup",
+                image: "/assets/categories/beauty.png",
+                link: "/products?cat=beauty",
+                colSpan: "lg:col-span-2"
+              },
+              {
+                name: "Watches",
+                count: "Luxury Timepieces",
+                image: "/assets/categories/watches.png",
+                link: "/products?cat=mens-watches",
+                colSpan: "lg:col-span-2"
+              },
+              {
+                name: "Sunglasses",
+                count: "Trendy Eyewear",
+                image: "/assets/categories/sunglasses.png",
+                link: "/products?cat=sunglasses",
+                colSpan: "lg:col-span-1"
+              }
+            ].map((cat, idx) => (
+              <Link
+                key={idx}
+                to={cat.link}
+                className={`group relative h-80 rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 block ${cat.colSpan || 'lg:col-span-1'}`}
+              >
+                {/* Background Image with Zoom Effect + Lazy Loading */}
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 p-8 w-full z-10 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <p className="text-orange-300 font-bold text-xs uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100 transform -translate-y-2 group-hover:translate-y-0 duration-300">
+                        {cat.count}
+                      </p>
+                      <h3 className="text-3xl font-black tracking-tight mb-0 group-hover:mb-1 transition-all">
+                        {cat.name}
+                      </h3>
+                    </div>
+
+                    <div className="w-12 h-12 rounded-full bg-white text-gray-900 flex items-center justify-center opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-lg">
+                      <FaArrowRight />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LIVE SALE BANNER */}
+      {activeSale && (
+        <section className="py-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Link
+              to="/products?sale=true"
+              className="block relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 p-8 sm:p-10 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+            >
+              <div className="absolute top-0 right-0 w-60 h-60 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4 blur-2xl" />
+              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
+                    <FaBolt className="text-yellow-200 text-2xl" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-yellow-200 mb-1">Limited Time</div>
+                    <h3 className="text-2xl sm:text-3xl font-black tracking-tight">{activeSale.name}</h3>
+                    <p className="text-white/70 text-sm mt-1">
+                      Ends {new Date(activeSale.endDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+                      {' • '}
+                      Up to {Math.max(...(activeSale.categories || []).map(c => c.discountPercent || 0), 0)}% off
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30 font-bold text-sm group-hover:bg-white/30 transition-colors">
+                  Shop the Sale <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* QUICK CATEGORY CHIPS */}
+      {allCategories.length > 0 && (
+        <section className="py-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-1">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap shrink-0">
+                <FaTag className="inline mr-1" /> Quick Shop
+              </span>
+              {allCategories.map((cat) => (
+                <Link
+                  key={cat}
+                  to={`/products?cat=${cat.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="whitespace-nowrap px-4 py-2 rounded-full bg-white border border-gray-200 text-sm font-bold text-gray-700 hover:border-gray-900 hover:text-gray-900 hover:shadow-sm transition-all shrink-0"
+                >
+                  {cat.replace(/-/g, ' ').replace(/\b\w/g, (ch) => ch.toUpperCase())}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* PRIME MEMBERSHIP CTA (hidden for existing members) */}
+      {!profile?.isPrime && (
+        <section className="py-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Link
+              to="/prime"
+              className="block relative overflow-hidden rounded-3xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-8 sm:p-10 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.15),transparent_50%)]" />
+              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-amber-500/20 backdrop-blur-sm p-4 rounded-2xl border border-amber-500/30">
+                    <FaCrown className="text-amber-400 text-2xl" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">VKart Prime</div>
+                    <h3 className="text-xl sm:text-2xl font-black tracking-tight">Get Exclusive Member Discounts</h3>
+                    <p className="text-gray-400 text-sm mt-1">Extra sale discounts, free shipping, early access & more</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-amber-500 px-6 py-3 rounded-full font-bold text-sm shadow-lg shadow-amber-500/20 group-hover:bg-amber-400 transition-colors">
+                  Join Prime <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* --- FEATURED CAROUSEL (FIXED ALIGNMENT) --- */}
       <section className="py-16 sm:py-24 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -474,6 +668,42 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {loading ? [1, 2, 3, 4].map(i => <SkeletonCard key={i} />) : newArrivals.map(p => <ProductCard key={p._id} p={p} onQuickView={setQuickView} onAdd={handleAddToCart} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-orange-600 font-bold uppercase tracking-widest text-xs">Social Proof</span>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-3 tracking-tight">What Our Customers Say</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { name: "Priya S.", role: "Software Engineer", quote: "The delivery was super fast and the product quality exceeded my expectations. VKart is now my go-to shopping app!", rating: 5 },
+              { name: "Rahul M.", role: "Business Owner", quote: "Amazing deals and seamless checkout. The AI assistant helped me find exactly what I needed. Highly recommend!", rating: 5 },
+              { name: "Ananya K.", role: "Designer", quote: "Love the curated collection! Every product feels premium. The UI is beautiful and shopping is a breeze.", rating: 5 },
+            ].map((t, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex gap-1 text-amber-400 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => <FaStar key={i} />)}
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-6 italic">"{t.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+                    <p className="text-xs text-gray-500">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

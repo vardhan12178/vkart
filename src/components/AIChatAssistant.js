@@ -2,12 +2,23 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "./axiosInstance";
+import { addToCart } from "../redux/cartSlice";
+import { showToast } from "../utils/toast";
 import {
   MessageSquare, X, Send, Loader2, Sparkles,
-  ChevronRight, Lightbulb, ArrowRight
+  ChevronRight, Lightbulb, ArrowRight, ShoppingCart
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat } from "../redux/uiSlice";
+
+const INR = (n) =>
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(Math.round(n ?? 0));
+
+const CHAT_STORAGE_KEY = "vkart_chat_history";
 
 const AIChatAssistant = () => {
   const dispatch = useDispatch();
@@ -17,20 +28,30 @@ const AIChatAssistant = () => {
   // ---------------------------------------------------------
   // 🧠 STATE MANAGEMENT
   // ---------------------------------------------------------
-  const [messages, setMessages] = useState([
-    {
-      type: "bot",
-      structured: {
-        // Initial static greeting
-        greeting: "Hi there! I'm VKart Copilot.",
-        response: {
-          summary: "I can help you find the best products, check prices, or compare specs.",
-          points: ["Try 'Best gaming phone under 30k'", "Or 'Running shoes for men'"]
-        },
-        followUp: null
-      }
+  const initGreeting = {
+    type: "bot",
+    structured: {
+      greeting: "Hi there! I'm VKart Copilot.",
+      response: {
+        summary: "I can help you find the best products, check prices, or compare specs.",
+        points: ["Try 'Best gaming phone under 30k'", "Or 'Running shoes for men'"]
+      },
+      followUp: null
     }
-  ]);
+  };
+
+  const [messages, setMessages] = useState(() => {
+    try {
+      const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
+      if (saved) { const parsed = JSON.parse(saved); if (parsed.length) return parsed; }
+    } catch {}
+    return [initGreeting];
+  });
+
+  // Persist chat to sessionStorage
+  useEffect(() => {
+    try { sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages)); } catch {}
+  }, [messages]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -118,9 +139,14 @@ const AIChatAssistant = () => {
   };
 
   const handleProductClick = (productId) => {
-    // Optional: Add analytics here
     dispatch(closeChat());
     navigate(`/product/${productId}`);
+  };
+
+  const handleAddToCart = (e, prod) => {
+    e.stopPropagation();
+    dispatch(addToCart({ ...prod, quantity: 1 }));
+    showToast("Added to cart", "success");
   };
 
   // ---------------------------------------------------------
@@ -246,14 +272,21 @@ const AIChatAssistant = () => {
                       {prod.category || 'Electronic'}
                     </p>
                     <div className="flex items-center gap-2 mt-1.5">
-                      <span className="text-sm font-bold text-gray-900">₹{prod.price}</span>
+                      <span className="text-sm font-bold text-gray-900">{INR(prod.price)}</span>
                       <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">In Stock</span>
                     </div>
                   </div>
 
-                  {/* Arrow Icon */}
-                  <div className="self-center pr-1 text-gray-300 group-hover:text-gray-900 transition-colors">
-                    <ChevronRight size={18} />
+                  {/* Actions */}
+                  <div className="self-center flex flex-col items-center gap-1.5 pr-1">
+                    <button
+                      onClick={(e) => handleAddToCart(e, prod)}
+                      className="p-1.5 rounded-lg bg-gray-900 text-white hover:bg-black transition-colors"
+                      title="Add to Cart"
+                    >
+                      <ShoppingCart size={14} />
+                    </button>
+                    <ChevronRight size={14} className="text-gray-300" />
                   </div>
                 </motion.div>
               );

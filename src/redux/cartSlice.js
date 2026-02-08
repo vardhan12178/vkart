@@ -18,13 +18,21 @@ const saveCart = (state) => {
   } catch {}
 };
 
-const getKey = (it) =>
-  it?._id || it?.productId || it?.externalId || it?.id;
+const getKey = (it) => {
+  const base = it?.productId || it?.externalId || it?._id || it?.id;
+  return it?.selectedVariants ? `${base}::${it.selectedVariants}` : base;
+};
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: loadCart(),
   reducers: {
+    setCart: (_state, action) => {
+      const items = Array.isArray(action.payload) ? action.payload : [];
+      // Don't persist to localStorage — server is source of truth for
+      // authenticated users.  Guest cart is persisted by addToCart / etc.
+      return items;
+    },
     addToCart: (state, action) => {
       const item = action.payload;
       const qty = Math.max(1, item.quantity || 1);
@@ -81,6 +89,7 @@ export const {
   decrementQuantity,
   removeFromCart,
   clearCart,
+  setCart,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

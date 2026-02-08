@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -11,12 +11,19 @@ import {
   SearchIcon,
   CubeIcon,
   HomeIcon,
+  StarIcon,
+  LightningBoltIcon,
+  CheckCircleIcon,
+  HeartIcon,
 } from "@heroicons/react/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "./axiosInstance";
 import { logout } from "../redux/authSlice";
+import { clearCart } from "../redux/cartSlice";
+import { clearWishlist } from "../redux/wishlistSlice";
 import { toggleChat } from "../redux/uiSlice";
 import AnnouncementBar from "./AnnouncementBar";
+import NotificationBell from "./NotificationBell";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -28,14 +35,35 @@ const Header = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const isChatOpen = useSelector((state) => state.ui.isChatOpen);
 
+  const user = useSelector((state) => state.auth.user);
   const cartCount = cartItems.reduce((t, i) => t + i.quantity, 0);
+  const isPrime = !!user?.isPrime;
+  const wishlistItems = useSelector((state) => state.wishlist);
+  const wishlistCount = wishlistItems.length;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [hasActiveSale, setHasActiveSale] = useState(false);
+  const suggestRef = useRef(null);
+  const debounceRef = useRef(null);
 
   // --- Effects ---
+
+  // 0. Check if there's an active sale (lightweight, cached in Redis)
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await axios.get("/api/sales/active");
+        if (!cancelled) setHasActiveSale(!!res.data?.sale);
+      } catch { if (!cancelled) setHasActiveSale(false); }
+    })();
+    return () => { cancelled = true; };
+  }, [location.pathname]);
 
   // 1. Handle Scroll styling
   useEffect(() => {
@@ -48,7 +76,29 @@ const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setShowSearch(false);
+    setShowSuggestions(false);
   }, [location.pathname]);
+
+  // 3. Close suggestions on outside click
+  useEffect(() => {
+    const handler = (e) => {
+      if (suggestRef.current && !suggestRef.current.contains(e.target)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  // 4. Fetch autocomplete suggestions
+  const fetchSuggestions = useCallback(async (q) => {
+    if (!q || q.length < 2) { setSuggestions([]); setShowSuggestions(false); return; }
+    try {
+      const res = await axios.get(`/api/products/suggest?q=${encodeURIComponent(q)}`);
+      setSuggestions(res.data || []);
+      setShowSuggestions(true);
+    } catch { setSuggestions([]); }
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -56,6 +106,8 @@ const Header = () => {
     } catch (err) {
       console.error("Logout failed:", err);
     } finally {
+      dispatch(clearCart());
+      dispatch(clearWishlist());
       dispatch(logout());
       navigate("/", { replace: true });
     }
@@ -63,6 +115,14 @@ const Header = () => {
 
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/";
+    if (path.includes("?")) {
+      const [pathname, query] = path.split("?");
+      return location.pathname === pathname && location.search.includes(query);
+    }
+    // For Collection (/products), only highlight when no query params
+    if (path === "/products") {
+      return location.pathname === "/products" && !location.search;
+    }
     return location.pathname.startsWith(path);
   };
 
@@ -86,12 +146,14 @@ const Header = () => {
   const navLinks = [
     { label: "Home", to: "/", icon: HomeIcon },
     { label: "Collection", to: "/products", icon: CubeIcon },
+    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sale=true", icon: LightningBoltIcon }] : []),
   ];
 
   return (
     <>
       <AnnouncementBar />
       <header
+        role="banner"
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
           ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-200/50"
           : "bg-white/50 backdrop-blur-md border-b border-white/20"
@@ -114,13 +176,14 @@ const Header = () => {
               </Link>
 
               {/* Desktop Nav Links */}
-              <nav className="hidden md:flex items-center gap-1">
+              <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
                 {navLinks.map((item) => {
                   const active = isActive(item.to);
                   return (
                     <Link
                       key={item.to}
                       to={item.to}
+                      aria-current={active ? "page" : undefined}
                       className="relative px-4 py-2 text-sm font-bold text-gray-600 hover:text-gray-900 transition-colors group"
                     >
                       {item.label}
@@ -133,7 +196,7 @@ const Header = () => {
 
             {/* --- CENTER: SEARCH (Desktop) --- */}
             <div className="hidden md:flex flex-1 max-w-md mx-4">
-              <div className="w-full relative group">
+              <div className="w-full relative group" ref={suggestRef}>
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <SearchIcon className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" />
                 </div>
@@ -148,12 +211,17 @@ const Header = () => {
                     if (location.pathname === "/products") {
                       navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
                     }
+                    // Debounced autocomplete
+                    clearTimeout(debounceRef.current);
+                    debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
                   }}
+                  onFocus={() => { if (suggestions.length) setShowSuggestions(true); }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
-                      e.preventDefault(); // Prevent form submit refresh
+                      e.preventDefault();
                       navigate(`/products?q=${encodeURIComponent(searchInput)}`);
                       setShowSearch(false);
+                      setShowSuggestions(false);
                     }
                   }}
                   className="block w-full rounded-xl border-gray-200 bg-gray-100 pl-10 pr-10 py-2.5 text-sm font-medium focus:border-gray-900 focus:bg-white focus:ring-0 transition-all placeholder:text-gray-400"
@@ -162,15 +230,43 @@ const Header = () => {
                   <button
                     onClick={() => {
                       setSearchInput("");
+                      setSuggestions([]);
+                      setShowSuggestions(false);
                       if (location.pathname === "/products") {
                         navigate("/products", { replace: true });
                       }
-                      // Focus input after clearing
                     }}
                     className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
                   >
                     <XIcon className="h-4 w-4" />
                   </button>
+                )}
+
+                {/* Autocomplete dropdown */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">
+                    {suggestions.map((s) => (
+                      <button
+                        key={s._id}
+                        onClick={() => {
+                          navigate(`/product/${s._id}`);
+                          setShowSuggestions(false);
+                          setSearchInput("");
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
+                      >
+                        {s.thumbnail && (
+                          <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
+                          <div className="text-xs text-gray-500">
+                            {s.category} — ₹{Math.round(s.price)}
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
             </div>
@@ -187,6 +283,22 @@ const Header = () => {
                 <SearchIcon className="h-6 w-6" />
               </button>
 
+              {/* Prime Badge — membership-aware */}
+              <Link
+                to="/prime"
+                className={`hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ${
+                  isPrime
+                    ? "bg-gradient-to-r from-emerald-400 to-teal-500 text-white shadow-emerald-200/50 hover:shadow-emerald-300/50"
+                    : "bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-orange-200/50 hover:shadow-orange-300/50"
+                }`}
+              >
+                {isPrime ? (
+                  <><CheckCircleIcon className="h-3.5 w-3.5" /> Prime</>
+                ) : (
+                  <><StarIcon className="h-3.5 w-3.5" /> Prime</>
+                )}
+              </Link>
+
               {/* Ask AI Button */}
               <button
                 onClick={() => dispatch(toggleChat())}
@@ -198,6 +310,27 @@ const Header = () => {
                 <SparklesIcon className={`h-4 w-4 ${isChatOpen ? "text-amber-400" : ""}`} />
                 <span className="text-xs font-bold uppercase tracking-wide">Ask AI</span>
               </button>
+
+              {/* Wishlist Icon */}
+              <Link
+                to="/wishlist"
+                className="relative group p-2.5 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-all"
+              >
+                <HeartIcon className="h-6 w-6" />
+                <AnimatePresence>
+                  {wishlistCount > 0 && (
+                    <motion.span
+                      key="wish-badge"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      exit={{ scale: 0 }}
+                      className="absolute top-1 right-0.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-bold text-white ring-2 ring-white"
+                    >
+                      {wishlistCount}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </Link>
 
               {/* Cart Icon */}
               <Link
@@ -219,6 +352,9 @@ const Header = () => {
                   )}
                 </AnimatePresence>
               </Link>
+
+              {/* Notification Bell - Only for authenticated users */}
+              {isAuthenticated && <NotificationBell />}
 
               {/* Profile / Auth */}
               {isAuthenticated ? (
@@ -324,6 +460,20 @@ const Header = () => {
                     </Link>
                   )}
                 </div>
+
+                {/* Mobile Prime Banner */}
+                <Link
+                  to="/prime"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${
+                    isPrime
+                      ? "bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 border border-emerald-200"
+                      : "bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700 border border-amber-200"
+                  }`}
+                >
+                  {isPrime ? <CheckCircleIcon className="h-5 w-5" /> : <StarIcon className="h-5 w-5" />}
+                  {isPrime ? "Prime Member" : "Get Prime"}
+                </Link>
 
                 {/* Mobile Actions */}
                 <div className="pt-4 border-t border-gray-100 grid grid-cols-2 gap-3">

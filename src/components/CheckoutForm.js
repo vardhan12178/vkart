@@ -79,6 +79,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("");
+  const [showReview, setShowReview] = useState(false);
   const [data, setData] = useState({
     fullName: "",
     phone: "",
@@ -89,9 +90,69 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     address2: "",
     email: "",
   });
+  const [addresses, setAddresses] = useState([]);
+  const [saveAddress, setSaveAddress] = useState(true);
+  const [selectedAddressId, setSelectedAddressId] = useState("");
+  const [walletBalance, setWalletBalance] = useState(0);
+  const [useWallet, setUseWallet] = useState(false);
+  const [topupAmount, setTopupAmount] = useState("");
+  const cartItems = useSelector((s) => s.cart);
 
   const rzpReady = useRazorpayScript();
   const RZP_KEY = process.env.REACT_APP_RAZORPAY_KEY_ID || "";
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    let cancelled = false;
+    const loadAddresses = async () => {
+      try {
+        const res = await axios.get("/api/profile/addresses");
+        if (cancelled) return;
+        const list = Array.isArray(res?.data?.addresses) ? res.data.addresses : [];
+        setAddresses(list);
+        const def = list.find((a) => a.isDefault);
+        if (def) {
+          setSelectedAddressId(def._id);
+          setData((d) => ({
+            ...d,
+            fullName: def.fullName || d.fullName,
+            phone: def.phone || d.phone,
+            email: def.email || d.email,
+            address1: def.address1 || d.address1,
+            address2: def.address2 || d.address2,
+            city: def.city || d.city,
+            state: def.state || d.state,
+            pincode: def.pincode || d.pincode,
+          }));
+        }
+      } catch {
+        // ignore
+      }
+    };
+    loadAddresses();
+    return () => {
+      cancelled = true;
+    };
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    let cancelled = false;
+    const loadWallet = async () => {
+      try {
+        const res = await axios.get("/api/wallet");
+        if (cancelled) return;
+        setWalletBalance(Number(res?.data?.balance) || 0);
+      } catch {
+        // ignore
+      }
+    };
+    loadWallet();
+    return () => {
+      cancelled = true;
+    };
+  }, [isAuthenticated]);
 
   // --- Logic ---
   const setField = (name, value) => {
@@ -127,25 +188,61 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
       )}`;
   }, [data]);
 
-  const onSubmit = async (e) => {
+  /* --- Step 1: Validate & show review overlay --- */
+  const onSubmit = (e) => {
     e.preventDefault();
     const v = validate();
     setErrors(v);
     setTouched(Object.keys(data).reduce((a, k) => ({ ...a, [k]: true }), {}));
     if (Object.keys(v).length) return;
+    setShowReview(true);
+  };
 
+  /* --- Step 2: Confirm & proceed to payment --- */
+  const proceedToPayment = async () => {
     if (!rzpReady || !RZP_KEY) {
       return setStatus("Razorpay not ready. Check REACT_APP_RAZORPAY_KEY_ID.");
     }
 
     setStatus("");
     setBusy(true);
+    setShowReview(false);
 
     const grandTotal = Number(totalAmount) || 0;
 
     try {
+      if (isAuthenticated && saveAddress) {
+        await axios.post("/api/profile/addresses", {
+          label: "Default",
+          fullName: data.fullName,
+          phone: data.phone,
+          email: data.email,
+          address1: data.address1,
+          address2: data.address2,
+          city: data.city,
+          state: data.state,
+          pincode: data.pincode,
+          country: "India",
+          isDefault: true,
+        });
+      }
+
+      const walletApplied = useWallet ? Math.min(walletBalance, grandTotal) : 0;
+      const payable = Math.max(0, grandTotal - walletApplied);
+
+      if (payable === 0) {
+        setBusy(false);
+        onOrderPlaced?.({
+          address: fullAddress,
+          method: "WALLET",
+          walletUsed: walletApplied,
+        });
+        navigate("/orderstages", { replace: true });
+        return;
+      }
+
       const res = await axios.post("/api/razorpay/create-order", {
-        amount: grandTotal,
+        amount: payable,
         currency: "INR",
       });
 
@@ -167,11 +264,30 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           contact: data.phone || "9999999999",
         },
         notes: { shipping_address: fullAddress },
-        theme: { color: "#f97316" }, // Orange-500 matches UI
-        handler: function () {
-          setBusy(false);
-          onOrderPlaced?.({ address: fullAddress, method: "razorpay" });
-          navigate("/orderstages", { replace: true });
+        theme: { color: "#f97316" },
+        handler: async function (response) {
+          try {
+            const verifyRes = await axios.post("/api/razorpay/verify", response);
+            if (!verifyRes?.data?.success) {
+              throw new Error("Payment verification failed");
+            }
+            setBusy(false);
+            onOrderPlaced?.({
+              address: fullAddress,
+              method: "CARD",
+              walletUsed: walletApplied,
+              payment: {
+                paymentId: response?.razorpay_payment_id,
+                paymentOrderId: response?.razorpay_order_id,
+                signature: response?.razorpay_signature,
+              },
+            });
+            navigate("/orderstages", { replace: true });
+          } catch (err) {
+            console.error(err);
+            setBusy(false);
+            setStatus("Payment verification failed. Please contact support.");
+          }
         },
       };
 
@@ -191,10 +307,68 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     }
   };
 
-  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+  const walletAppliedPreview = useWallet ? Math.min(walletBalance, Number(totalAmount) || 0) : 0;
+  const payablePreview = Math.max(0, (Number(totalAmount) || 0) - walletAppliedPreview);
+
   if (!isAuthenticated) return <CheckoutPreview />;
 
   return (
+    <>
+    {/* ---- ORDER REVIEW OVERLAY ---- */}
+    {showReview && (
+      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setShowReview(false)}>
+        <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl p-6 sm:p-8 animate-fade-up" onClick={(e) => e.stopPropagation()}>
+          <button onClick={() => setShowReview(false)} className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 text-sm font-bold">&times;</button>
+
+          <h2 className="text-xl font-black text-gray-900 mb-6 flex items-center gap-3">
+            <FaCheckCircle className="text-orange-500" /> Review Your Order
+          </h2>
+
+          {/* Cart Items */}
+          <div className="mb-6">
+            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Items ({cartItems.length})</h3>
+            <div className="space-y-3 max-h-48 overflow-y-auto pr-1">
+              {cartItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
+                  {item.thumbnail && <img src={item.thumbnail} alt="" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-gray-900 truncate">{item.title || item.name}</p>
+                    <p className="text-xs text-gray-500">Qty: {item.quantity}</p>
+                  </div>
+                  <span className="text-sm font-bold text-gray-900 whitespace-nowrap">{INR((item.price || 0) * (item.quantity || 1))}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Shipping Address */}
+          <div className="mb-6 p-4 rounded-xl bg-orange-50/50 border border-orange-100">
+            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-2"><FaMapMarkerAlt className="text-orange-500" /> Shipping To</h3>
+            <p className="text-sm font-semibold text-gray-800">{data.fullName}</p>
+            <p className="text-xs text-gray-600 mt-1">{data.address1}{data.address2 ? `, ${data.address2}` : ""}</p>
+            <p className="text-xs text-gray-600">{data.city}, {data.state} — {data.pincode}</p>
+            <p className="text-xs text-gray-500 mt-1">{data.phone} &bull; {data.email}</p>
+          </div>
+
+          {/* Payment Breakdown */}
+          <div className="mb-6 space-y-2">
+            <div className="flex justify-between text-sm text-gray-600"><span>Order Total</span><span className="font-bold text-gray-900">{INR(Number(totalAmount) || 0)}</span></div>
+            {walletAppliedPreview > 0 && <div className="flex justify-between text-sm text-green-600"><span>Wallet Applied</span><span className="font-bold">−{INR(walletAppliedPreview)}</span></div>}
+            <div className="h-px bg-gray-200 my-1" />
+            <div className="flex justify-between text-base"><span className="font-bold text-gray-900">Payable Amount</span><span className="text-xl font-black text-orange-600">{INR(payablePreview)}</span></div>
+          </div>
+
+          {/* Actions */}
+          <div className="flex gap-3">
+            <button type="button" onClick={() => setShowReview(false)} className="flex-1 py-3 rounded-xl font-bold text-sm border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors">Edit Details</button>
+            <button type="button" onClick={proceedToPayment} disabled={busy} className="flex-1 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:shadow-orange-500/30 hover:brightness-110 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
+              {busy ? <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Processing...</> : <>Confirm & Pay <FaArrowRight size={12} /></>}
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
     <div className="relative w-full bg-[#f8f9fa] py-8 sm:py-12 overflow-hidden pb-32 lg:pb-12">
       <AnimStyles />
 
@@ -222,6 +396,113 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   <h2 className="text-xl sm:text-2xl font-black text-gray-900 leading-none">Secure Checkout</h2>
                   <p className="text-sm text-gray-500 mt-1 font-medium">Please fill in your shipping details</p>
                 </div>
+              </div>
+
+              {/* Saved Addresses */}
+              {addresses.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-orange-500" /> Saved Addresses
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {addresses.map((a) => (
+                      <button
+                        type="button"
+                        key={a._id}
+                        onClick={() => {
+                          setSelectedAddressId(a._id);
+                          setData((d) => ({
+                            ...d,
+                            fullName: a.fullName || d.fullName,
+                            phone: a.phone || d.phone,
+                            email: a.email || d.email,
+                            address1: a.address1 || d.address1,
+                            address2: a.address2 || d.address2,
+                            city: a.city || d.city,
+                            state: a.state || d.state,
+                            pincode: a.pincode || d.pincode,
+                          }));
+                        }}
+                        className={`text-left p-4 rounded-xl border transition-all ${
+                          selectedAddressId === a._id
+                            ? "border-orange-400 bg-orange-50"
+                            : "border-gray-200 bg-white hover:border-gray-300"
+                        }`}
+                      >
+                        <div className="text-sm font-bold text-gray-900">{a.fullName}</div>
+                        <div className="text-xs text-gray-500 mt-1">
+                          {a.address1} {a.address2 ? `, ${a.address2}` : ""}, {a.city} {a.pincode}
+                        </div>
+                        <div className="text-xs text-gray-500">{a.state}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Wallet */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-orange-500" /> VKart Wallet
+                  </h3>
+                  <span className="text-xs font-bold text-gray-600">Balance: ₹{Math.round(walletBalance)}</span>
+                </div>
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <input
+                    type="checkbox"
+                    checked={useWallet}
+                    onChange={(e) => setUseWallet(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                  />
+                  Use wallet balance for this order
+                </label>
+                {useWallet && walletBalance < Number(totalAmount || 0) && (
+                  <div className="mt-3 flex items-center gap-2">
+                    <input
+                      type="number"
+                      value={topupAmount}
+                      onChange={(e) => setTopupAmount(e.target.value)}
+                      placeholder="Add money"
+                      className="flex-1 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm"
+                    />
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        const amt = Number(topupAmount);
+                        if (!amt || amt <= 0) return;
+                        try {
+                          const res = await axios.post("/api/wallet/topup", { amount: amt });
+                          const { orderId, amount: amountPaise, currency } = res.data;
+                          const options = {
+                            key: RZP_KEY,
+                            amount: amountPaise,
+                            currency,
+                            name: "VKart Wallet",
+                            description: "Wallet Top-up",
+                            order_id: orderId,
+                            handler: async function (response) {
+                              await axios.post("/api/wallet/verify", {
+                                ...response,
+                                amount: amt,
+                              });
+                              const w = await axios.get("/api/wallet");
+                              setWalletBalance(Number(w?.data?.balance) || 0);
+                              setTopupAmount("");
+                            },
+                          };
+                          const rzp = new window.Razorpay(options);
+                          rzp.open();
+                        } catch (err) {
+                          setStatus("Wallet top-up failed.");
+                        }
+                      }}
+                      className="px-4 py-2 rounded-xl bg-gray-900 text-white text-xs font-bold"
+                    >
+                      Add Money
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Personal Info */}
@@ -294,6 +575,19 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     error={errors.pincode} touched={touched.pincode}
                   />
                 </div>
+              </div>
+
+              <div className="mt-6 flex items-center gap-2">
+                <input
+                  id="save-address"
+                  type="checkbox"
+                  checked={saveAddress}
+                  onChange={(e) => setSaveAddress(e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                />
+                <label htmlFor="save-address" className="text-xs font-bold text-gray-600">
+                  Save this address for next time
+                </label>
               </div>
 
             </div>
@@ -417,5 +711,6 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
         </form>
       </div>
     </div>
+    </>
   );
 }

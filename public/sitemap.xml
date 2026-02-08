@@ -80,5 +80,35 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- Wishlist -->
+  <url>
+    <loc>https://vkart.balavardhan.dev/wishlist</loc>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Prime Membership -->
+  <url>
+    <loc>https://vkart.balavardhan.dev/prime</loc>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url><loc>https://vkart.balavardhan.dev/blog/1</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/2</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/3</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/4</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/5</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/6</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/7</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/8</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/9</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/10</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/11</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vkart.balavardhan.dev/blog/12</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   
 </urlset>

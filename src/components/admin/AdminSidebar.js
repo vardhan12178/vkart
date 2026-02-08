@@ -9,7 +9,11 @@ import {
     LogoutIcon,
     ChevronLeftIcon,
     ChevronRightIcon,
-    ShoppingCartIcon
+    ShoppingCartIcon,
+    StarIcon,
+    TagIcon,
+    LightningBoltIcon,
+    SparklesIcon
 } from "@heroicons/react/outline";
 
 export default function AdminSidebar({
@@ -29,6 +33,10 @@ export default function AdminSidebar({
         { name: "Dashboard", icon: HomeIcon, path: "/admin/dashboard" },
         { name: "Products", icon: ShoppingBagIcon, path: "/admin/products" },
         { name: "Orders", icon: ClipboardListIcon, path: "/admin/orders" },
+        { name: "Reviews", icon: StarIcon, path: "/admin/reviews" },
+        { name: "Coupons", icon: TagIcon, path: "/admin/coupons" },
+        { name: "Sales", icon: LightningBoltIcon, path: "/admin/sales" },
+        { name: "Membership", icon: SparklesIcon, path: "/admin/membership" },
         { name: "Users", icon: UsersIcon, path: "/admin/users" },
         { name: "Settings", icon: CogIcon, path: "/admin/settings" },
     ];

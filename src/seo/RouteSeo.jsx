@@ -49,6 +49,28 @@ const routeMeta = {
 
 const noindexPatterns = [/^\/cart/, /^\/checkout/, /^\/order/, /^\/success/, /^\/404/, /^\/error/, /^\/login/];
 
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "VKart",
+  url: SITE,
+  description: DEFAULT_DESC,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: { "@type": "EntryPoint", urlTemplate: `${SITE}/products?q={search_term_string}` },
+    "query-input": "required name=search_term_string",
+  },
+});
+
+const orgSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "VKart",
+  url: SITE,
+  logo: `${SITE}/assets/categories/logo.png`,
+  sameAs: [],
+});
+
 function pickMeta(pathname) {
   if (routeMeta[pathname]) return routeMeta[pathname];
 
@@ -99,6 +121,14 @@ export default function RouteSeo() {
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.desc} />
       <meta name="twitter:image" content={DEFAULT_IMAGE} />
+
+      {/* JSON-LD structured data for home page */}
+      {pathname === "/" && (
+        <>
+          <script type="application/ld+json">{websiteSchema}</script>
+          <script type="application/ld+json">{orgSchema}</script>
+        </>
+      )}
     </Helmet>
   );
 }

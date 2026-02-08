@@ -40,6 +40,7 @@ export default function AdminOrders() {
 
   // Filter & Sort State
   const [filterStage, setFilterStage] = useState("ALL");
+  const [filterReturns, setFilterReturns] = useState(false);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [sortConfig, setSortConfig] = useState({ key: "createdAt", direction: "desc" });
 
@@ -100,6 +101,10 @@ export default function AdminOrders() {
       result = result.filter((o) => o.stage === filterStage);
     }
 
+    if (filterReturns) {
+      result = result.filter((o) => o.returnStatus && o.returnStatus !== "NONE");
+    }
+
     result.sort((a, b) => {
       let va = a[sortConfig.key];
       let vb = b[sortConfig.key];
@@ -118,6 +123,10 @@ export default function AdminOrders() {
         vb = vb.toLowerCase();
       }
 
+      const aReturn = a.returnStatus === "REQUESTED" ? 1 : 0;
+      const bReturn = b.returnStatus === "REQUESTED" ? 1 : 0;
+      if (aReturn !== bReturn) return bReturn - aReturn;
+
       if (va < vb) return sortConfig.direction === "asc" ? -1 : 1;
       if (va > vb) return sortConfig.direction === "asc" ? 1 : -1;
       return 0;
@@ -128,7 +137,7 @@ export default function AdminOrders() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [search, filterStage]);
+  }, [search, filterStage, filterReturns]);
 
   const totalPages = Math.ceil(filteredAndSortedOrders.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -282,6 +291,15 @@ export default function AdminOrders() {
               </div>
             )}
           </div>
+
+          <button
+            onClick={() => setFilterReturns((v) => !v)}
+            className={`px-4 py-2.5 text-sm font-medium rounded-xl transition-all ${
+              filterReturns ? "bg-amber-100 text-amber-700" : "bg-white text-slate-600 hover:bg-slate-50"
+            }`}
+          >
+            Return Requests
+          </button>
         </div>
 
         {/* Main Table Area */}
@@ -368,7 +386,19 @@ export default function AdminOrders() {
 
                         {/* Status */}
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {getStatusBadge(o.stage)}
+                          <div className="flex flex-col gap-1">
+                            {getStatusBadge(o.stage)}
+                            {o.returnStatus && o.returnStatus !== "NONE" && (
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-100">
+                                Return {o.returnStatus}
+                              </span>
+                            )}
+                            {o.refundStatus && o.refundStatus !== "NONE" && (
+                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+                                Refund {o.refundStatus}
+                              </span>
+                            )}
+                          </div>
                         </td>
 
                         {/* Date */}

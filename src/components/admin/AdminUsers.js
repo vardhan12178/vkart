@@ -156,9 +156,7 @@ export default function AdminUsers() {
   async function handleToggleBlock(user) {
     try {
       setBusyAction(true);
-      setBusyAction(true);
       await axiosInstance.patch(`/api/admin/users/${user._id}/block`, { blocked: !user.blocked });
-      // if (!res.ok) throw new Error("Failed");
       showToast(!user.blocked ? "User blocked." : "User activated.");
       await loadUsers();
     } catch (err) { showToast("Update failed.", "error"); } finally { setBusyAction(false); }
@@ -167,21 +165,26 @@ export default function AdminUsers() {
   async function handleDisable2FA(user) {
     try {
       setBusyAction(true);
-      setBusyAction(true);
       await axiosInstance.patch(`/api/admin/users/${user._id}/2fa/disable`);
-      // if (!res.ok) throw new Error("Failed");
       showToast("2FA Disabled.");
       await loadUsers();
     } catch (err) { showToast("Failed to disable 2FA.", "error"); } finally { setBusyAction(false); }
+  }
+
+  async function handleToggleAdmin(user) {
+    try {
+      setBusyAction(true);
+      await axiosInstance.patch(`/api/admin/users/${user._id}/role`);
+      showToast(user.roles?.includes("admin") ? "Admin removed." : "Admin granted.");
+      await loadUsers();
+    } catch (err) { showToast("Role update failed.", "error"); } finally { setBusyAction(false); }
   }
 
   async function confirmResetPassword() {
     if (!resetUser) return;
     try {
       setBusyAction(true);
-      setBusyAction(true);
       await axiosInstance.post(`/api/admin/users/${resetUser._id}/reset-password`);
-      // if (!res.ok) throw new Error("Failed");
       showToast("Reset email sent.");
       setResetUser(null);
     } catch (err) { showToast("Reset failed.", "error"); } finally { setBusyAction(false); }
@@ -191,9 +194,7 @@ export default function AdminUsers() {
     if (!deleteUser) return;
     try {
       setBusyAction(true);
-      setBusyAction(true);
       await axiosInstance.delete(`/api/admin/users/${deleteUser._id}`);
-      // if (!res.ok) throw new Error("Failed");
       showToast("User deleted.");
       setDeleteUser(null);
       await loadUsers();
@@ -314,6 +315,7 @@ export default function AdminUsers() {
                   <tbody className="divide-y divide-slate-50 bg-white">
                     {currentUsers.map((u, index) => {
                       const isLastRows = index >= currentUsers.length - 3 && currentUsers.length > 4;
+                      const isAdminRole = Array.isArray(u.roles) && u.roles.includes("admin");
                       return (
                         <tr key={u._id} className="group hover:bg-slate-50/60 transition-colors">
                           <td className="px-6 py-4">
@@ -322,7 +324,14 @@ export default function AdminUsers() {
                                 {u.profileImage ? <img src={u.profileImage} alt="" className="h-full w-full object-cover" /> : avatarInitial(u.name, u.email)}
                               </div>
                               <div>
-                                <div className="font-semibold text-slate-900 text-sm">{u.name || "Unnamed User"}</div>
+                                <div className="font-semibold text-slate-900 text-sm flex items-center gap-2">
+                                  {u.name || "Unnamed User"}
+                                  {isAdminRole && (
+                                    <span className="text-[10px] font-bold bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full border border-orange-100">
+                                      Admin
+                                    </span>
+                                  )}
+                                </div>
                                 <div className="text-[10px] text-slate-400 font-mono uppercase">ID: {u._id.slice(-6)}</div>
                               </div>
                             </div>
@@ -367,6 +376,7 @@ export default function AdminUsers() {
                                     {u.twoFactorEnabled && (
                                       <MenuItem onClick={() => { handleDisable2FA(u); setMenuOpenId(null); }} icon={LockClosedIcon} label="Disable 2FA" />
                                     )}
+                                    <MenuItem onClick={() => { handleToggleAdmin(u); setMenuOpenId(null); }} icon={ShieldCheckIcon} label={isAdminRole ? "Remove Admin" : "Make Admin"} />
                                     <div className="h-px bg-slate-100 my-1"></div>
                                     <MenuItem onClick={() => { setDeleteUser(u); setMenuOpenId(null); }} icon={TrashIcon} label="Delete Account" danger />
                                   </div>

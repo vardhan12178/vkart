@@ -1,14 +1,28 @@
 import axios from "axios";
 
-console.log("DEBUG: Axios Base URL is:", process.env.REACT_APP_API_BASE_URL);
+// Auto-detect: use localhost backend when running locally, production URL otherwise
+const isLocalhost = typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+
+const baseURL = isLocalhost
+  ? "http://localhost:5000"
+  : (process.env.REACT_APP_API_BASE_URL || "");
+
+console.log("DEBUG: Axios Base URL is:", baseURL, isLocalhost ? "(local dev)" : "(production)");
 
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || "",
+  baseURL,
   withCredentials: true,
   timeout: 25000,
   validateStatus: (s) => s >= 200 && s < 300,
   headers: { Accept: "application/json", "X-Requested-With": "XMLHttpRequest" },
 });
+
+const getCookie = (name) => {
+  if (typeof document === "undefined") return "";
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : "";
+};
 
 instance.interceptors.request.use((config) => {
   // Cookies are sent automatically via withCredentials: true
@@ -20,7 +34,12 @@ instance.interceptors.request.use((config) => {
   } else {
     const m = (config.method || "get").toLowerCase();
     if (!["get", "head"].includes(m)) {
-      config.headers = { ...(config.headers || {}), "Content-Type": "application/json" };
+      const csrf = getCookie("csrf_token");
+      config.headers = {
+        ...(config.headers || {}),
+        "Content-Type": "application/json",
+        ...(csrf ? { "X-CSRF-Token": csrf } : {}),
+      };
     }
   }
   return config;

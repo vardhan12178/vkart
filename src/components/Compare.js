@@ -396,6 +396,78 @@ const Compare = () => {
                     {ids.length < 4 && <td className="p-6"></td>}
                   </tr>
 
+                  {/* Warranty */}
+                  <tr className="group hover:bg-gray-50/50 transition-colors">
+                    <td className="sticky-col p-6 text-sm font-bold text-gray-500">Warranty</td>
+                    {ids.map((id) => {
+                       const item = items.find(p => p._id === id);
+                       return (
+                         <td key={id} className="p-6 align-middle text-sm font-medium text-gray-700">
+                           {item?.warrantyInformation || "1 Year Standard"}
+                         </td>
+                       );
+                    })}
+                    {ids.length < 4 && <td className="p-6"></td>}
+                  </tr>
+
+                  {/* Return Policy */}
+                  <tr className="group hover:bg-gray-50/50 transition-colors">
+                    <td className="sticky-col p-6 text-sm font-bold text-gray-500">Returns</td>
+                    {ids.map((id) => {
+                       const item = items.find(p => p._id === id);
+                       return (
+                         <td key={id} className="p-6 align-middle text-sm font-medium text-gray-700">
+                           {item?.returnPolicy || "7 Day Returns"}
+                         </td>
+                       );
+                    })}
+                    {ids.length < 4 && <td className="p-6"></td>}
+                  </tr>
+
+                  {/* Dimensions / Weight */}
+                  <tr className="group hover:bg-gray-50/50 transition-colors">
+                    <td className="sticky-col p-6 text-sm font-bold text-gray-500">Dimensions</td>
+                    {ids.map((id) => {
+                       const item = items.find(p => p._id === id);
+                       const dim = item?.dimensions;
+                       return (
+                         <td key={id} className="p-6 align-middle text-sm text-gray-600">
+                           {dim ? `${dim.width} × ${dim.height} × ${dim.depth} cm` : "—"}
+                           {item?.weight ? <span className="block text-xs text-gray-400 mt-1">{item.weight} g</span> : null}
+                         </td>
+                       );
+                    })}
+                    {ids.length < 4 && <td className="p-6"></td>}
+                  </tr>
+
+                  {/* Best Value Highlight */}
+                  {items.length >= 2 && (() => {
+                    const best = items.reduce((a, b) => {
+                      const scoreA = (a.rating || 0) / Math.max(a.price, 1);
+                      const scoreB = (b.rating || 0) / Math.max(b.price, 1);
+                      return scoreB > scoreA ? b : a;
+                    });
+                    return (
+                      <tr className="bg-emerald-50/50">
+                        <td className="sticky-col p-6 text-sm font-bold text-emerald-700">Best Value</td>
+                        {ids.map((id) => {
+                          const item = items.find(p => p._id === id);
+                          const isBest = item?._id === best?._id;
+                          return (
+                            <td key={id} className="p-6 align-middle">
+                              {item && isBest ? (
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">
+                                  <FaCheckCircle size={12} /> Best Value Pick
+                                </span>
+                              ) : null}
+                            </td>
+                          );
+                        })}
+                        {ids.length < 4 && <td className="p-6"></td>}
+                      </tr>
+                    );
+                  })()}
+
                 </tbody>
               </table>
             </div>

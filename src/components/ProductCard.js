@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState, useCallback } from "react"
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import { toggleWishlist } from "../redux/wishlistSlice";
 import Slider from "react-slick";
 import axios from "./axiosInstance";
 import { Helmet } from "react-helmet-async";
@@ -160,10 +161,16 @@ export default function ProductCard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const [wish, setWish] = useState(false);
+  // Wishlist from Redux
+  const wishlist = useSelector((state) => state.wishlist);
+  const isInWishlist = product ? wishlist.some((item) => (item._id || item.id) === product._id) : false;
   const [zoom, setZoom] = useState({ enabled: false, x: 0, y: 0 });
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [selectedVariants, setSelectedVariants] = useState({});
+  const [reviewSort, setReviewSort] = useState("newest");
+  const [reviewPage, setReviewPage] = useState(1);
+  const REVIEWS_PER_PAGE = 5;
 
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
@@ -209,6 +216,7 @@ export default function ProductCard() {
     setNav1(null);
     setNav2(null);
     setQuantity(1);
+    setSelectedVariants({});
   }, [id]);
 
   useEffect(() => {
@@ -236,16 +244,27 @@ export default function ProductCard() {
 
   const handleAdd = () => {
     if (!product) return;
-    dispatch(addToCart({ ...product, quantity }));
+    // Require variant selection if product has variants
+    const variants = product.variants || [];
+    if (variants.length > 0) {
+      const missing = variants.find((v) => !selectedVariants[v.type]);
+      if (missing) {
+        showToast(`Please select a ${missing.type}`, "error");
+        return;
+      }
+    }
+    const variantStr = variants.length
+      ? variants.map((v) => `${v.type}: ${selectedVariants[v.type]}`).join(", ")
+      : undefined;
+    dispatch(addToCart({ ...product, quantity, selectedVariants: variantStr }));
     showToast(`Added ${quantity} to cart`, "success");
   };
 
   const handleWish = () => {
-    setWish((w) => {
-      const next = !w;
-      showToast(next ? "Added to wishlist" : "Removed from wishlist", next ? "success" : "error");
-      return next;
-    });
+    if (!product) return;
+    dispatch(toggleWishlist(product));
+    const willBeInWishlist = !isInWishlist;
+    showToast(willBeInWishlist ? "Added to wishlist" : "Removed from wishlist", willBeInWishlist ? "success" : "error");
   };
 
   const handleShare = async () => {
@@ -263,6 +282,51 @@ export default function ProductCard() {
     showToast(`Review added! New rating: ${data.newRating}⭐`, "success");
   };
 
+  const handleBuyNow = () => {
+    if (!product) return;
+    const variants = product.variants || [];
+    if (variants.length > 0) {
+      const missing = variants.find((v) => !selectedVariants[v.type]);
+      if (missing) { showToast(`Please select a ${missing.type}`, "error"); return; }
+    }
+    const variantStr = variants.length
+      ? variants.map((v) => `${v.type}: ${selectedVariants[v.type]}`).join(", ")
+      : undefined;
+    dispatch(addToCart({ ...product, quantity, selectedVariants: variantStr }));
+    navigate("/cart");
+  };
+
+  // Recently viewed
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  useEffect(() => {
+    if (!product) return;
+    // Track in localStorage
+    try {
+      const key = "vkart_recently_viewed";
+      const saved = JSON.parse(localStorage.getItem(key) || "[]");
+      const filtered = saved.filter((pid) => pid !== product._id);
+      filtered.unshift(product._id);
+      localStorage.setItem(key, JSON.stringify(filtered.slice(0, 12)));
+    } catch {}
+  }, [product]);
+
+  useEffect(() => {
+    // Fetch recently viewed products (excluding current)
+    const loadRecent = async () => {
+      try {
+        const key = "vkart_recently_viewed";
+        const saved = JSON.parse(localStorage.getItem(key) || "[]");
+        const ids = saved.filter((pid) => pid !== id).slice(0, 6);
+        if (!ids.length) return;
+        const results = await Promise.all(
+          ids.map((pid) => axios.get(`/api/products/${pid}`).then((r) => r.data).catch(() => null))
+        );
+        setRecentlyViewed(results.filter(Boolean));
+      } catch {}
+    };
+    loadRecent();
+  }, [id]);
+
   if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-500">Loading...</div>;
   if (error || !product) return <div className="min-h-screen flex items-center justify-center text-red-500">{error}</div>;
 
@@ -277,10 +341,39 @@ export default function ProductCard() {
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
       {product && (
-        <Helmet>
+        <Helmet prioritizeSeoTags>
           <title>{product.title} | VKart</title>
           <meta name="description" content={product.description} />
           <link rel="canonical" href={`https://vkart.balavardhan.dev/product/${product._id}`} />
+          <meta property="og:type" content="product" />
+          <meta property="og:title" content={`${product.title} | VKart`} />
+          <meta property="og:description" content={product.description} />
+          <meta property="og:url" content={`https://vkart.balavardhan.dev/product/${product._id}`} />
+          <meta property="og:image" content={imgs?.[0] || product.thumbnail} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`${product.title} | VKart`} />
+          <meta name="twitter:description" content={product.description} />
+          <meta name="twitter:image" content={imgs?.[0] || product.thumbnail} />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: product.title,
+              image: imgs || [product.thumbnail],
+              description: product.description,
+              brand: { "@type": "Brand", name: product.brand || "VKart" },
+              sku: product._id,
+              offers: {
+                "@type": "Offer",
+                url: `https://vkart.balavardhan.dev/product/${product._id}`,
+                priceCurrency: "INR",
+                price: selling,
+                availability: stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+                seller: { "@type": "Organization", name: "VKart" },
+              },
+              ...(rating ? { aggregateRating: { "@type": "AggregateRating", ratingValue: rating, reviewCount: reviewCount || 1, bestRating: 5 } } : {}),
+            })}
+          </script>
         </Helmet>
       )}
 
@@ -396,6 +489,11 @@ export default function ProductCard() {
                 <span className="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
                   {category}
                 </span>
+                {product.onSale && product.saleName && (
+                  <span className="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
+                    {product.saleName}
+                  </span>
+                )}
                 {discountPercentage > 0 && (
                   <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
                     Save {Math.round(discountPercentage)}%
@@ -423,6 +521,37 @@ export default function ProductCard() {
 
             {/* Controls */}
             <div ref={buyBoxRef} className="space-y-6">
+              {/* Variant Selectors */}
+              {product.variants?.length > 0 && (
+                <div className="space-y-4">
+                  {product.variants.map((v) => (
+                    <div key={v.type}>
+                      <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 block">
+                        {v.type}{selectedVariants[v.type] ? `: ${selectedVariants[v.type]}` : ""}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {(v.options || []).map((opt) => {
+                          const active = selectedVariants[v.type] === opt;
+                          return (
+                            <button
+                              key={opt}
+                              onClick={() => setSelectedVariants((prev) => ({ ...prev, [v.type]: opt }))}
+                              className={`px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all ${
+                                active
+                                  ? "border-gray-900 bg-gray-900 text-white shadow-md"
+                                  : "border-gray-200 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
+                              }`}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <div className="flex gap-4">
                 <div className="flex items-center bg-white border border-gray-200 rounded-xl h-14 w-32 shadow-sm">
                   <button onClick={() => changeQty(-1)} className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-l-xl transition">–</button>
@@ -441,13 +570,23 @@ export default function ProductCard() {
                 </button>
               </div>
 
+              {/* Buy Now */}
+              {stock > 0 && (
+                <button
+                  onClick={handleBuyNow}
+                  className="w-full h-14 rounded-xl font-bold text-lg bg-orange-500 text-white shadow-lg shadow-orange-200/50 hover:bg-orange-600 hover:shadow-orange-300/50 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
+                >
+                  ⚡ Buy Now
+                </button>
+              )}
+
               <div className="flex gap-4">
                 <button
                   onClick={handleWish}
-                  className={`flex-1 h-12 rounded-xl font-bold border flex items-center justify-center gap-2 transition-all text-sm ${wish ? "border-rose-200 bg-rose-50 text-rose-600" : "border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
+                  className={`flex-1 h-12 rounded-xl font-bold border flex items-center justify-center gap-2 transition-all text-sm ${isInWishlist ? "border-rose-200 bg-rose-50 text-rose-600" : "border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
                     }`}
                 >
-                  {wish ? <FaHeart /> : <FaRegHeart />} Wishlist
+                  {isInWishlist ? <FaHeart /> : <FaRegHeart />} Wishlist
                 </button>
                 <button
                   onClick={handleShare}
@@ -546,28 +685,61 @@ export default function ProductCard() {
             </div>
 
             <div className="lg:col-span-8">
+              {/* Sort Controls */}
+              {reviewsList.length > 0 && (
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Sort by:</span>
+                  {[
+                    { key: "newest", label: "Newest" },
+                    { key: "highest", label: "Highest Rated" },
+                    { key: "lowest", label: "Lowest Rated" },
+                  ].map((opt) => (
+                    <button
+                      key={opt.key}
+                      onClick={() => { setReviewSort(opt.key); setReviewPage(1); }}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${reviewSort === opt.key ? "bg-gray-900 text-white shadow-sm" : "text-gray-500 hover:bg-gray-100"}`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               <div className="grid gap-4">
-                {reviewsList.length > 0 ? reviewsList.map((r, i) => (
-                  <ReviewCard key={i} review={r} />
-                )) : (
-                  [1, 2, 3].map((_, i) => (
-                    <ReviewCard key={i} review={{
-                      userId: null,
-                      reviewerName: ["Alice M.", "John D.", "Sarah K."][i],
-                      rating: [5, 4, 5][i],
-                      date: new Date().toISOString(),
-                      comment: [
-                        "Absolutely love this product! The quality is outstanding for the price.",
-                        "Good value, fast delivery. Would recommend.",
-                        "Exceeded my expectations. The finish is premium."
-                      ][i]
-                    }} />
-                  ))
-                )}
+                {(() => {
+                  if (!reviewsList.length) return (
+                    <div className="text-center py-12 text-gray-400">
+                      <p className="text-lg font-semibold mb-1">No reviews yet</p>
+                      <p className="text-sm">Be the first to review this product.</p>
+                    </div>
+                  );
+                  const sorted = [...reviewsList].sort((a, b) => {
+                    if (reviewSort === "highest") return (b.rating || 0) - (a.rating || 0);
+                    if (reviewSort === "lowest") return (a.rating || 0) - (b.rating || 0);
+                    return new Date(b.date || 0) - new Date(a.date || 0);
+                  });
+                  const totalPages = Math.ceil(sorted.length / REVIEWS_PER_PAGE);
+                  const paginated = sorted.slice((reviewPage - 1) * REVIEWS_PER_PAGE, reviewPage * REVIEWS_PER_PAGE);
+                  return (
+                    <>
+                      {paginated.map((r, i) => <ReviewCard key={i} review={r} />)}
+                      {totalPages > 1 && (
+                        <div className="flex items-center justify-center gap-2 mt-6">
+                          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                            <button
+                              key={p}
+                              onClick={() => setReviewPage(p)}
+                              className={`h-9 w-9 rounded-lg text-sm font-bold transition-all ${reviewPage === p ? "bg-gray-900 text-white shadow-md" : "text-gray-500 hover:bg-gray-100"}`}
+                            >
+                              {p}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
-              <button className="mt-8 text-gray-900 font-bold hover:underline text-sm w-full text-center">
-                View all reviews
-              </button>
             </div>
           </div>
         </div>
@@ -613,6 +785,27 @@ export default function ProductCard() {
             ))}
           </Slider>
         </div>
+
+        {/* RECENTLY VIEWED */}
+        {recentlyViewed.length > 0 && (
+          <div className="mt-20 lg:mt-32 border-t border-gray-100 pt-16">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-2xl font-bold text-gray-900">Recently Viewed</h3>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {recentlyViewed.map((rp) => (
+                <Link key={rp._id} to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all">
+                  <div className="aspect-square bg-gray-50 rounded-xl mb-2 overflow-hidden">
+                    <img src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-3 group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <h4 className="font-bold text-gray-900 truncate text-xs mb-0.5">{rp.title}</h4>
+                  <div className="font-bold text-gray-900 text-sm">{formatPrice(rp.price)}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Sticky Mobile Bar */}
@@ -625,10 +818,18 @@ export default function ProductCard() {
           <button
             onClick={handleAdd}
             disabled={stock === 0}
-            className="px-8 h-12 bg-gray-900 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-2"
+            className="px-6 h-12 bg-gray-900 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-2"
           >
             <FaCartPlus /> {stock === 0 ? "No Stock" : "Add"}
           </button>
+          {stock > 0 && (
+            <button
+              onClick={handleBuyNow}
+              className="px-6 h-12 bg-orange-500 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform"
+            >
+              Buy Now
+            </button>
+          )}
         </div>
       </div>
 
@@ -641,9 +842,12 @@ export default function ProductCard() {
             <div className="text-xs text-gray-500">{formatPrice(selling)}</div>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <button onClick={handleAdd} className="bg-gray-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition shadow-md">
             Add to Cart
+          </button>
+          <button onClick={handleBuyNow} className="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-orange-600 transition shadow-md">
+            Buy Now
           </button>
         </div>
       </div>
