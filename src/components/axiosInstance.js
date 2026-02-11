@@ -8,7 +8,9 @@ const baseURL = isLocalhost
   ? "http://localhost:5000"
   : (process.env.REACT_APP_API_BASE_URL || "");
 
-console.log("DEBUG: Axios Base URL is:", baseURL, isLocalhost ? "(local dev)" : "(production)");
+if (process.env.NODE_ENV !== "production" && process.env.REACT_APP_DEBUG_HTTP === "true") {
+  console.log("DEBUG: Axios Base URL is:", baseURL, isLocalhost ? "(local dev)" : "(production)");
+}
 
 const instance = axios.create({
   baseURL,

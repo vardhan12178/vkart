@@ -250,7 +250,14 @@ export default function Home() {
 
   const dismiss2fa = async () => {
     setHide2faNudge(true);
-    try { await axios.post("/api/2fa/suppress", null, { withCredentials: true }); } catch (e) { }
+    const shouldPersistDismiss =
+      process.env.NODE_ENV === "production" || process.env.REACT_APP_PERSIST_2FA_NUDGE === "true";
+    if (!shouldPersistDismiss || !profile?._id) return;
+    try {
+      await axios.post("/api/2fa/suppress", {}, { withCredentials: true, __skipAuthRedirect: true });
+    } catch (e) {
+      // Non-blocking UX action: keep UI dismissed even if network call fails.
+    }
   };
 
   const handleSubscribe = async (e) => {

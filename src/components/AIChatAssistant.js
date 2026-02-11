@@ -19,6 +19,17 @@ const INR = (n) =>
   }).format(Math.round(n ?? 0));
 
 const CHAT_STORAGE_KEY = "vkart_chat_history";
+const DEFAULT_PROMPTS = [
+  "Best gaming phone under 30k",
+  "Recommend a lightweight laptop for coding",
+  "Top wireless earbuds under 5k",
+  "Best running shoes for daily use"
+];
+
+const createMessageId = () =>
+  `${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+
+const withMessageId = (msg) => (msg?.id ? msg : { ...msg, id: createMessageId() });
 
 const AIChatAssistant = () => {
   const dispatch = useDispatch();
@@ -29,6 +40,7 @@ const AIChatAssistant = () => {
   // 🧠 STATE MANAGEMENT
   // ---------------------------------------------------------
   const initGreeting = {
+    id: createMessageId(),
     type: "bot",
     structured: {
       greeting: "Hi there! I'm VKart Copilot.",
@@ -43,9 +55,12 @@ const AIChatAssistant = () => {
   const [messages, setMessages] = useState(() => {
     try {
       const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
-      if (saved) { const parsed = JSON.parse(saved); if (parsed.length) return parsed; }
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length) return parsed.map(withMessageId);
+      }
     } catch {}
-    return [initGreeting];
+    return [withMessageId(initGreeting)];
   });
 
   // Persist chat to sessionStorage
@@ -61,19 +76,48 @@ const AIChatAssistant = () => {
   // Auto-scroll ref
   const messagesEndRef = useRef(null);
   const scrollAreaRef = useRef(null);
+  const botMessageRefs = useRef(new Map());
+  const nextScrollRef = useRef({ type: "none", id: null });
+  const wasOpenRef = useRef(false);
 
   // ---------------------------------------------------------
   // ⚡ EFFECTS
   // ---------------------------------------------------------
 
-  // Scroll to bottom whenever messages change
+  // On open: show latest message first.
   useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-      }, 100); // Slight delay to allow animations to start
+    if (isOpen && !wasOpenRef.current) {
+      requestAnimationFrame(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "auto", block: "end" });
+      });
     }
-  }, [messages, isOpen, isLoading]);
+    wasOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  // Scroll behavior per action:
+  // - after user message: stay at bottom
+  // - after bot response: bring new response card into view (top-aligned)
+  useEffect(() => {
+    if (!isOpen) return;
+    const intent = nextScrollRef.current;
+    if (!intent || intent.type === "none") return;
+
+    const timer = setTimeout(() => {
+      if (intent.type === "bot" && intent.id) {
+        const node = botMessageRefs.current.get(intent.id);
+        if (node) {
+          node.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+        }
+      } else {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+      }
+    }, 70);
+
+    nextScrollRef.current = { type: "none", id: null };
+    return () => clearTimeout(timer);
+  }, [messages, isLoading, isOpen]);
 
   // Cooldown Timer
   useEffect(() => {
@@ -97,45 +141,58 @@ const AIChatAssistant = () => {
     }));
   };
 
-  const handleSend = async () => {
-    if (!input.trim() || cooldown > 0 || isLoading) return;
+  const setBotMessageRef = (id, node) => {
+    if (!id) return;
+    if (node) botMessageRefs.current.set(id, node);
+    else botMessageRefs.current.delete(id);
+  };
 
-    const userMessage = input.trim();
+  const appendBotMessage = (payload) => {
+    const botMessage = withMessageId({ type: "bot", ...payload });
+    nextScrollRef.current = { type: "bot", id: botMessage.id };
+    setMessages((prev) => [...prev, botMessage]);
+  };
+
+  const sendMessage = async (rawMessage) => {
+    const userMessage = String(rawMessage || "").trim();
+    if (!userMessage || cooldown > 0 || isLoading) return;
+
+    const history = buildHistory();
+    const userEntry = withMessageId({ type: "user", text: userMessage });
+
     setInput("");
-    setMessages((prev) => [...prev, { type: "user", text: userMessage }]);
+    nextScrollRef.current = { type: "bottom", id: null };
+    setMessages((prev) => [...prev, userEntry]);
     setIsLoading(true);
     setCooldown(3); // Prevent spamming
 
     try {
       const res = await axios.post("/api/ai/chat", {
         message: userMessage,
-        history: buildHistory()
+        history
       });
 
       const { structured, products } = res.data;
-
-      setMessages((prev) => [
-        ...prev,
-        { type: "bot", structured, products }
-      ]);
-
+      appendBotMessage({ structured, products });
     } catch (error) {
       console.error("AI Chat Error:", error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          type: "bot",
-          structured: {
-            response: {
-              summary: "I'm having a little trouble connecting to the brain 🧠. Please try again in a moment!",
-              points: []
-            }
+      appendBotMessage({
+        structured: {
+          response: {
+            summary: "I'm having a little trouble connecting right now. Please try again in a moment.",
+            points: []
           }
         }
-      ]);
+      });
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSend = async () => sendMessage(input);
+
+  const handlePromptClick = async (prompt) => {
+    await sendMessage(prompt);
   };
 
   const handleProductClick = (productId) => {
@@ -301,7 +358,7 @@ const AIChatAssistant = () => {
             {alternatives.map((alt, i) => (
               <button
                 key={i}
-                onClick={() => setInput(alt)} // Clicking fills input
+                onClick={() => handlePromptClick(alt)}
                 className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg transition-colors border border-gray-200"
               >
                 {alt}
@@ -314,7 +371,7 @@ const AIChatAssistant = () => {
         {followUp && (
           <motion.button
             variants={itemVariants}
-            onClick={() => setInput(followUp)}
+            onClick={() => handlePromptClick(followUp)}
             className="mt-2 flex items-center justify-between w-full px-4 py-3 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-medium transition-all shadow-lg active:scale-95 group"
           >
             <span>{followUp}</span>
@@ -387,8 +444,12 @@ const AIChatAssistant = () => {
 
             {/* --- Messages Area --- */}
             <div ref={scrollAreaRef} className="flex-1 overflow-y-auto p-5 space-y-6 bg-slate-50/50">
-              {messages.map((msg, idx) => (
-                <div key={idx} className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"}`}>
+              {messages.map((msg) => (
+                <div
+                  key={msg.id}
+                  ref={msg.type === "bot" ? (node) => setBotMessageRef(msg.id, node) : null}
+                  className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"}`}
+                >
                   {msg.type === "user" ? (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
@@ -420,6 +481,23 @@ const AIChatAssistant = () => {
 
             {/* --- Input Area (No Footer) --- */}
             <div className="p-4 bg-white border-t border-gray-100 relative z-20">
+              {messages.length <= 1 && (
+                <div className="mb-3">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">Try asking:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {DEFAULT_PROMPTS.map((prompt) => (
+                      <button
+                        key={prompt}
+                        onClick={() => handlePromptClick(prompt)}
+                        disabled={isLoading || cooldown > 0}
+                        className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors border border-gray-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {prompt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="relative group">
                 <input
                   type="text"
