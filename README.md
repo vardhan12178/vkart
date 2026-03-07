@@ -1,314 +1,316 @@
 # 🛒 VKart — Full-Stack MERN E-Commerce Platform
 
-> Curated Shopping, Fast Delivery
+> A modern MERN-based e-commerce platform with AI-powered product search, secure authentication, and real-time order updates.
 
-🔴 **Live Demo:** [vkart.balavardhan.dev](https://vkart.balavardhan.dev/)
+🔴 **Live Demo:**  
+https://vkart.balavardhan.dev/
 
-📂 **Frontend Repo:** [github.com/vardhan12178/vkart](https://github.com/vardhan12178/vkart)
-📂 **Backend Repo:** [github.com/vardhan12178/backend](https://github.com/vardhan12178/backend)
+📂 **Frontend Repository:**  
+https://github.com/vardhan12178/vkart  
 
-VKart is a production-grade e-commerce web application built using the MERN stack. The project demonstrates backend-leaning system design with Redis caching, AI-assisted semantic search (RAG), real-time updates via WebSockets, dual payment gateways, and a fully responsive modern UI.
+📂 **Backend Repository:**  
+https://github.com/vardhan12178/backend
 
 ---
 
-## 🚀 Tech Stack
+# 📌 Overview
 
-### Frontend
+VKart is a **full-stack e-commerce web application built using the MERN stack**.  
+The project focuses on scalable backend design, efficient caching, secure authentication, and a modern user experience.
+
+Key highlights include:
+
+- AI-powered **semantic product search (RAG)**
+- **AI shopping assistant chatbot**
+- Redis-powered caching
+- Real-time notifications using WebSockets
+- Secure authentication with **JWT, Google OAuth, and 2FA**
+- Razorpay payment integration
+- Prime membership system
+- Wallet and refund management
+- Fully responsive UI
+
+---
+
+# 🚀 Tech Stack
+
+## Frontend
+
 | Category | Technologies |
 |---|---|
-| **Core** | React 18, React Router v6, Redux Toolkit |
-| **UI** | Tailwind CSS, Headless UI, Heroicons, Framer Motion |
-| **Payments** | Stripe (React Elements), Razorpay |
-| **Auth** | Google OAuth (@react-oauth/google) |
-| **Charts** | Recharts |
-| **SEO** | React Helmet Async |
-| **Real-time** | Socket.io Client |
+Core | React 18, React Router v6, Redux Toolkit |
+UI | Tailwind CSS, Headless UI, Heroicons, Framer Motion |
+Auth | Google OAuth (@react-oauth/google) |
+Charts | Recharts |
+SEO | React Helmet Async |
+Real-time | Socket.io Client |
 
-### Backend
+---
+
+## Backend
+
 | Category | Technologies |
 |---|---|
-| **Core** | Node.js (ESM), Express 4 |
-| **Database** | MongoDB Atlas (Mongoose 8) |
-| **Caching** | Redis (ioredis) |
-| **Auth** | JWT, bcryptjs, Speakeasy (TOTP 2FA), Google Auth Library |
-| **Security** | Helmet, CORS, CSRF, Rate Limiting, Mongo Sanitize, HPP |
-| **AI/Search** | Google Gemini 2.5 Flash, LangChain, Vector Embeddings (text-embedding-004) |
-| **Payments** | Razorpay SDK, Stripe SDK |
-| **Cloud** | AWS S3 (@aws-sdk/client-s3), Multer-S3 |
-| **Email** | Resend |
-| **Real-time** | Socket.io |
-| **Documents** | PDFKit (invoices), QRCode |
-| **Scheduling** | node-cron |
-| **Logging** | Winston |
+Core | Node.js, Express |
+Database | MongoDB Atlas (Mongoose) |
+Caching | Redis |
+Auth | JWT, bcryptjs, Speakeasy (TOTP 2FA), Google Auth Library |
+Security | Helmet, CORS, Rate Limiting |
+AI/Search | Gemini embeddings, MongoDB Atlas Vector Search |
+Payments | Razorpay SDK |
+Cloud Storage | AWS S3 |
+Email | Resend |
+Real-time | Socket.io |
+Documents | PDFKit |
 
-### Deployment
-| Service | Platform |
-|---|---|
-| Frontend | Netlify |
-| Backend API | Render |
-| Database | MongoDB Atlas |
-| File Storage | AWS S3 (ap-south-1) |
-| Caching | Redis |
-| Containerized | Docker + Docker Compose + AWS ECS (Fargate) |
 
 ---
 
-## 🧩 Features
+# 🧩 Features
 
-### 🛍️ Storefront
-- **Product Catalog** — Listing with advanced filters (category, price range, rating, sort), search with autocomplete suggestions
-- **AI Semantic Search** — RAG-style vector search using MongoDB Atlas `$vectorSearch` and Google Gemini embeddings
-- **AI Shopping Assistant** — Floating chat widget powered by Gemini 2.5 Flash with contextual product recommendations
-- **Sales & Promotions** — Time-bound sales with per-category discounts, dynamic sale banners, Prime-exclusive discount tiers
-- **Coupons** — Percent/flat discount codes with min-order, max-discount cap, per-user usage limits
-- **Product Comparison** — Side-by-side product comparison tool
-- **Wishlist** — Persistent wishlist synced with user profile
+## 🛍️ Storefront
 
-### 🔐 Authentication & Security
-- **JWT Authentication** with HTTP-only cookie-based sessions
-- **Google OAuth 2.0** — One-click sign-in
-- **Two-Factor Authentication (2FA)** — TOTP via authenticator apps with QR setup, backup codes, AES-encrypted secret storage
-- **Email Verification** — Required on registration with resend functionality
-- **Password Recovery** — Forgot/reset password flow via email
-- **Token Blacklisting** — JWT invalidation with TTL-based auto-cleanup
-- **Security Middleware** — Helmet, CORS whitelist, CSRF protection, rate limiting, NoSQL injection prevention, HPP
-
-### 💳 Payments & Wallet
-- **Dual Payment Gateways** — Razorpay (server-side) + Stripe (client-side Elements)
-- **Built-in Wallet** — Top-up via Razorpay, balance tracking, transaction history, pay at checkout with wallet
-- **Payment Methods** — Card, UPI, COD, Wallet
-- **Coupon Validation** — Real-time coupon application at checkout
-
-### 📦 Order Management
-- **8-Stage Order Pipeline** — Placed → Confirmed → Processing → Packed → Shipped → Out for Delivery → Delivered → Cancelled
-- **Full Status History Timeline** — Every stage change recorded with timestamps
-- **Returns & Refunds** — Return initiation with 7-stage return tracking, refund to wallet or original payment method
-- **Auto-Refund Scheduler** — Daily cron job (2 AM) for automated refund processing
-- **PDF Invoice Generation** — Auto-increment invoice numbers, downloadable PDFs via PDFKit
-- **Real-time Order Updates** — Socket.io push notifications on stage changes
-
-### 👑 Prime Membership
-- **Configurable Plans** — Multiple tiers with duration, pricing, and feature lists
-- **Prime-Exclusive Discounts** — Additional sale discounts for Prime members
-- **Razorpay Payment Flow** — Purchase and verification
-- **Status Tracking** — Active membership badge, auto-expiration
-
-### 🔔 Real-Time Notifications
-- **Socket.io Integration** — JWT-authenticated WebSocket connections
-- **Notification Types** — Order updates, alerts, user actions, system messages, returns, refunds
-- **Admin Notifications** — Separate admin notification channel
-- **Notification Bell** — Unread count badge, mark as read
-
-### 📊 Admin Dashboard
-- **Product Management** — Full CRUD with S3 image upload, variant support, featured/active toggles
-- **Order Management** — View all orders, update stages, process returns/refunds/replacements
-- **User Management** — List users, block/unblock, force password reset, disable 2FA, toggle admin role
-- **Review Moderation** — View, hide/show, or delete product reviews
-- **Coupon Management** — Create and manage discount codes
-- **Sales & Promotions** — Create time-bound sales with per-category and Prime-specific discounts
-- **Membership Plan Management** — CRUD for Prime membership tiers
-- **Store Settings** — Store name, tagline, support info, GST number, logo upload
-- **Announcement Bar** — Configurable site-wide announcements with custom colors and links
-- **Analytics** — Dashboard overview with charts (Recharts)
-
-### 🌐 Additional Features
-- **Blog** — Blog listing and post detail pages
-- **Newsletter** — Email subscribe/unsubscribe
-- **Dynamic Sitemap** — Auto-generated XML sitemap at `/sitemap.xml`
-- **SEO Optimization** — Per-route meta tags, OpenGraph, Twitter Cards, Google site verification
-- **Cookie Consent Banner** — GDPR-friendly cookie notice
-- **Announcement Bar** — Admin-configurable promotional banner
-- **Responsive Design** — Mobile-first UI with Tailwind CSS
+- Product catalog with filtering and sorting
+- Category and price filtering
+- Search with autocomplete suggestions
+- Wishlist system
+- Product comparison tool
 
 ---
 
-## ⚡ Performance & Caching
+## 🤖 AI Semantic Search
 
-VKart uses Redis for multi-layer caching to minimize database calls:
+VKart includes an **AI-powered product search system** that allows users to search using natural language.
+
+- Uses **vector embeddings**
+- MongoDB Atlas `$vectorSearch`
+- Semantic product discovery instead of simple keyword matching
+
+---
+
+## 🤖 AI Shopping Assistant
+
+An **AI chatbot assistant** powered by Gemini that helps users discover products and get recommendations.
+
+---
+
+## 🔐 Authentication & Security
+
+- JWT authentication with HTTP-only cookies
+- Google OAuth login
+- Two-factor authentication (TOTP)
+- Password reset system
+- Email verification using Resend
+- Rate limiting and security middleware
+
+---
+
+## 💳 Payments & Wallet
+
+- Razorpay payment integration
+- Wallet system for refunds and balance management
+
+Supported payment methods:
+
+- Card
+- UPI
+- Wallet
+- Cash on Delivery
+
+---
+
+## 📦 Order Management
+
+Complete order lifecycle tracking.
+
+Order pipeline:
+
+Placed → Confirmed → Processing → Packed → Shipped → Out for Delivery → Delivered → Cancelled
+
+Features include:
+
+- Order status timeline
+- Refund processing
+- Return management
+- PDF invoice generation
+- Real-time order updates via Socket.io
+
+---
+
+## 👑 Prime Membership
+
+VKart includes a **Prime subscription system** with configurable membership plans.
+
+Features:
+
+- Multiple membership tiers
+- Prime-exclusive discounts
+- Razorpay subscription purchase flow
+- Membership status tracking
+- Automatic expiration
+
+---
+
+## 🔔 Real-Time Notifications
+
+Socket.io enables real-time notifications for:
+
+- Order updates
+- Admin alerts
+- Refund notifications
+- System messages
+
+Users receive notifications through a **notification bell with unread badge**.
+
+---
+
+## 📊 Admin Dashboard
+
+The admin panel allows complete platform management.
+
+### Product Management
+- Product CRUD
+- Image uploads to AWS S3
+- Category management
+- Featured product toggles
+
+### Order Management
+- View all orders
+- Update order status
+- Manage returns and refunds
+
+### User Management
+- Block / unblock users
+- Reset passwords
+- Disable 2FA
+- Grant admin roles
+
+### Promotions
+- Create coupons
+- Configure sales
+- Manage Prime membership plans
+
+### Store Settings
+- Store branding
+- Announcement bar
+- Support contact info
+
+---
+
+# ⚡ Performance & Caching
+
+VKart uses **Redis caching** to reduce database load and improve response time.
 
 | Cache Key | TTL | Description |
 |---|---|---|
-| `home:data` | 5 min | Aggregated home page payload (featured, new arrivals, active sale) |
-| `products:raw:page1:limit20` | 5 min | Default product listing |
-| `product:{id}` | 10 min | Individual product detail |
-| `sale:active` | 1 min | Current active sale |
-| `suggest:{query}` | 5 min | Search autocomplete results |
-| `profile:{userId}` | 1 hr | User profile data |
+home:data | 5 min | Aggregated homepage data |
+products:page | 5 min | Product listing cache |
+product:{id} | 10 min | Individual product page |
+sale:active | 1 min | Active sale data |
+profile:{userId} | 1 hr | User profile data |
 
-- **Cache invalidation** on all write operations (create/update/delete products, sales, reviews)
-- **Pattern-based invalidation** via `SCAN` + `DEL` (production-safe, no `KEYS` command)
-- **Null caching** to prevent repeated DB misses for empty results
+Features:
 
----
-
-## 🏗️ Architecture
-
-```
-┌─────────────┐     ┌──────────────┐     ┌──────────────┐
-│   React SPA  │────▶│  Express API  │────▶│  MongoDB     │
-│   (Netlify)  │◀────│  (Render)     │◀────│  Atlas       │
-└─────────────┘     └──────┬───────┘     └──────────────┘
-                           │
-                    ┌──────┴───────┐
-                    │              │
-               ┌────▼────┐  ┌─────▼─────┐
-               │  Redis   │  │  AWS S3    │
-               │  Cache   │  │  Storage   │
-               └──────────┘  └───────────┘
-                    │
-               ┌────▼────────────┐
-               │  Socket.io       │
-               │  (Real-time)     │
-               └──────────────────┘
-                    │
-               ┌────▼────────────┐
-               │  Gemini AI       │
-               │  (Search + Chat) │
-               └──────────────────┘
-```
+- Automatic cache invalidation
+- Pattern-based cache clearing
+- Null caching to prevent DB misses
 
 ---
 
-## ⚙️ Setup Instructions
+# 🏗️ Architecture
 
-### 1. Clone the Repositories
+
+React Frontend (Netlify)
+│
+▼
+Express API (Render)
+│
+▼
+MongoDB Atlas
+│
+├── Redis Cache
+├── AWS S3 Storage
+│
+Socket.io (Real-time updates)
+│
+Gemini AI (Search + Chatbot)
+
+
+---
+
+# ⚙️ Setup Instructions
+
+## 1️⃣ Clone Repositories
+
 ```bash
 git clone https://github.com/vardhan12178/vkart.git
 git clone https://github.com/vardhan12178/backend.git
-```
-
-### 2. Backend Setup
-```bash
+2️⃣ Backend Setup
 cd backend
 npm install
 npm run dev
-```
 
-Create a `.env` file inside the `backend` folder:
-```env
+Create .env
+
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_connection
 REDIS_URL=your_redis_url
-JWT_SECRET=your_secret_key
-AES_KEY=your_32_byte_aes_key
 
-RAZORPAY_KEY_ID=your_test_key
-RAZORPAY_KEY_SECRET=your_test_secret
+JWT_SECRET=your_secret
 
-AWS_ACCESS_KEY_ID=your_aws_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret
+RAZORPAY_KEY_ID=your_key
+RAZORPAY_KEY_SECRET=your_secret
+
+AWS_ACCESS_KEY_ID=your_key
+AWS_SECRET_ACCESS_KEY=your_secret
 AWS_REGION=ap-south-1
-S3_BUCKET=your_s3_bucket
+S3_BUCKET=your_bucket
 
 GEMINI_API_KEY=your_gemini_api_key
-
 RESEND_API_KEY=your_resend_key
-FROM_EMAIL=noreply@yourdomain.com
 
 GOOGLE_CLIENT_ID=your_google_client_id
-```
-
-### 3. Frontend Setup
-```bash
+3️⃣ Frontend Setup
 cd vkart
 npm install
 npm start
-```
 
-Create a `.env` file inside the `vkart` folder:
-```env
+Create .env
+
 REACT_APP_API_URL=http://localhost:5000
 REACT_APP_SOCKET_URL=http://localhost:5000
-```
+📁 Project Structure
 
-### 4. Local Development
-- **Frontend:** http://localhost:3000
-- **Backend API:** http://localhost:5000
-
----
-
-## 🧪 Testing
-
-### Frontend Tests
-```bash
-npm test
-```
-- Jest 27 + React Testing Library
-- Component tests for auth flows (Login, ForgotPassword, ResetPassword)
-- Redux slice tests
-
-### Backend Tests
-```bash
-cd backend
-npm test
-```
-- Jest 29 + Supertest + mongodb-memory-server
-- API integration tests for auth, orders, and products
-- In-memory MongoDB for isolated test environments
-
----
-
-## 🐳 Docker
-
-### Frontend
-```bash
-docker-compose up --build
-```
-Multi-stage build: Node 20 Alpine (build) → Nginx Alpine (serve)
-
-### Backend
-```bash
-cd backend
-docker-compose up --build
-```
-Node 18 Alpine container on port 5000
-
----
-
-## 📁 Project Structure
-
-```
 vkart/
-├── public/                  # Static assets
+├── public/
 ├── src/
-│   ├── components/          # ~60 React components
-│   │   ├── admin/           # Admin dashboard pages
-│   │   ├── blog/            # Blog components
-│   │   └── ...              # Storefront components
-│   ├── redux/               # Redux Toolkit slices & store
-│   ├── seo/                 # Per-route SEO config
-│   ├── services/            # API service layer
-│   └── utils/               # Frontend utilities
-├── backend/
-│   ├── controllers/         # 19 route controllers
-│   ├── routes/              # Express route definitions
-│   ├── models/              # 10 Mongoose models
-│   ├── middleware/           # Auth, admin, validation, security
-│   ├── services/            # AI, Email, Refund scheduler
-│   ├── utils/               # Redis, S3, Socket.io, Crypto
-│   ├── scripts/             # Data vectorization & localization
-│   └── tests/               # Backend integration tests
-└── build/                   # Production build output
-```
+│ ├── components/
+│ ├── redux/
+│ ├── services/
+│ ├── seo/
+│ └── utils/
+│
+backend/
+├── controllers/
+├── routes/
+├── models/
+├── middleware/
+├── services/
+├── utils/
+└── scripts/
 
----
 
-## 📊 Project Stats
+👨‍💻 Author
 
-| Metric | Count |
-|---|---|
-| Frontend Pages | 30+ |
-| Admin Dashboard Pages | 10 |
-| React Components | ~60 |
-| API Endpoints | 75+ |
-| Mongoose Models | 10 |
-| Redux Slices | 5 |
-| Backend Services | 3 |
+Bala Vardhan
+Full-Stack MERN Developer
 
----
+Portfolio
+https://balavardhan.dev
 
-## 👤 Author
+GitHub
+https://github.com/vardhan12178
 
-**Bala Vardhan**
-Full-Stack Developer (MERN)
+⭐ If you like this project
 
+Consider giving the repository a star ⭐
