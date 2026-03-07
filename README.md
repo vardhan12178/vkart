@@ -158,7 +158,7 @@ vkart/
 │   ├── seo/
 │   └── utils/
 ├── index.html
-├── vite.config.js
+├── vite.config.mjs
 └── package.json
 ```
 
