@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useRef, useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { useSelector, useDispatch } from "react-redux";
 import CartPreview from "./CartPreview";
 import {
@@ -35,6 +36,8 @@ import OrderStages from "./OrderStages";
 import OrderTimeline from "./OrderTimeline";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
+import { buildSecureOrderPayload } from "../utils/orderPayload";
+import { qk } from "../query/queryKeys";
 
 /* ---------- Helpers ---------- */
 const INR = (n) =>
@@ -62,6 +65,7 @@ const AnimStyles = () => (
 /* -------------------------------------------------------------------------- */
 export default function Cart() {
   const dispatch = useDispatch();
+  const queryClient = useQueryClient();
   const cartItems = useSelector((s) => s.cart);
   const wishlistItems = useSelector((s) => s.wishlist);
 
@@ -167,25 +171,20 @@ export default function Cart() {
         return payload;
       });
 
-      const isPaid = !!orderDetails?.payment?.paymentId || orderDetails?.method === "WALLET";
-      const orderData = {
-        products: productsPayload,
-        subtotal: round2(calc.subtotal),
-        discount: round2(calc.promoOff),
-        tax: round2(calc.tax),
-        shipping: round2(calc.shipping),
-        totalPrice: round2(calc.total),
-        currency: "INR",
+      const orderData = buildSecureOrderPayload({
+        productsPayload,
         shippingAddress: orderDetails.address,
-        promo: promoApplied?.code || undefined,
-        paymentStatus: isPaid ? "PAID" : "PENDING",
-        paymentMethod: orderDetails?.method ? orderDetails.method.toUpperCase() : undefined,
-        paymentId: orderDetails?.payment?.paymentId,
-        paymentOrderId: orderDetails?.payment?.paymentOrderId,
-        walletUsed: Number(orderDetails?.walletUsed) || 0,
-      };
+        promoCode: promoApplied?.code,
+        paymentVerificationToken: orderDetails?.payment?.verificationToken,
+        walletUsed: orderDetails?.walletUsed,
+      });
 
       await axios.post("/api/orders", orderData);
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: qk.profile.orders }),
+        queryClient.invalidateQueries({ queryKey: qk.profile.root }),
+        queryClient.invalidateQueries({ queryKey: qk.profile.wallet }),
+      ]);
       dispatch(clearCart());
       setOrderPlaced(true);
       showToast("Order placed successfully ✅", "success");
@@ -193,6 +192,7 @@ export default function Cart() {
       const msg = e?.response?.data?.message || e?.message || "Failed to place the order.";
       setError(msg);
       showToast(msg, "error");
+      throw e;
     } finally {
       setIsLoading(false);
     }

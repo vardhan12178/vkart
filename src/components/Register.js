@@ -366,7 +366,7 @@ export default function Register() {
 
           {/* --- RIGHT PANEL (Form) --- */}
           <div className="w-full lg:w-7/12 bg-white flex flex-col relative">
-            {/* Scrollable Form Area - Added 'no-scrollbar' class */}
+            {/* Scrollable form area */}
             <div className="absolute inset-0 overflow-y-auto no-scrollbar">
               <div className="min-h-full flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10">
                 {/* Mobile Logo */}

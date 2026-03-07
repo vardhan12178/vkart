@@ -2,8 +2,11 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { FaCheckCircle, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaCity, FaGlobe, FaMailBulk, FaShieldAlt, FaLock, FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import CheckoutPreview from "./CheckoutPreview";
+import { buildVerifiedPaymentMeta, extractVerificationToken } from "../utils/checkoutPayment";
+import { qk } from "../query/queryKeys";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -19,6 +22,11 @@ const INR = (n) =>
     currency: "INR",
     maximumFractionDigits: 0,
   }).format(Math.round(n));
+
+const getErrorMessage = (err, fallback) =>
+  err?.response?.data?.message ||
+  err?.response?.data?.errors?.[0]?.msg ||
+  fallback;
 
 /* -------- Razorpay Script Hook -------- */
 function useRazorpayScript() {
@@ -75,6 +83,7 @@ const InputField = React.memo(function InputField({ label, name, value, onChange
 
 export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [busy, setBusy] = useState(false);
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
@@ -90,10 +99,8 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     address2: "",
     email: "",
   });
-  const [addresses, setAddresses] = useState([]);
   const [saveAddress, setSaveAddress] = useState(true);
   const [selectedAddressId, setSelectedAddressId] = useState("");
-  const [walletBalance, setWalletBalance] = useState(0);
   const [useWallet, setUseWallet] = useState(false);
   const [topupAmount, setTopupAmount] = useState("");
   const cartItems = useSelector((s) => s.cart);
@@ -102,57 +109,69 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
   const RZP_KEY = process.env.REACT_APP_RAZORPAY_KEY_ID || "";
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
 
-  useEffect(() => {
-    if (!isAuthenticated) return;
-    let cancelled = false;
-    const loadAddresses = async () => {
-      try {
-        const res = await axios.get("/api/profile/addresses");
-        if (cancelled) return;
-        const list = Array.isArray(res?.data?.addresses) ? res.data.addresses : [];
-        setAddresses(list);
-        const def = list.find((a) => a.isDefault);
-        if (def) {
-          setSelectedAddressId(def._id);
-          setData((d) => ({
-            ...d,
-            fullName: def.fullName || d.fullName,
-            phone: def.phone || d.phone,
-            email: def.email || d.email,
-            address1: def.address1 || d.address1,
-            address2: def.address2 || d.address2,
-            city: def.city || d.city,
-            state: def.state || d.state,
-            pincode: def.pincode || d.pincode,
-          }));
-        }
-      } catch {
-        // ignore
-      }
-    };
-    loadAddresses();
-    return () => {
-      cancelled = true;
-    };
-  }, [isAuthenticated]);
+  const { data: addresses = [] } = useQuery({
+    queryKey: qk.profile.addresses,
+    enabled: isAuthenticated,
+    queryFn: async () => {
+      const res = await axios.get("/api/profile/addresses");
+      return Array.isArray(res?.data?.addresses) ? res.data.addresses : [];
+    },
+    staleTime: 60 * 1000,
+  });
+
+  const { data: wallet = null } = useQuery({
+    queryKey: qk.profile.wallet,
+    enabled: isAuthenticated,
+    queryFn: async () => {
+      const res = await axios.get("/api/wallet");
+      return res.data || null;
+    },
+  });
+
+  const saveAddressMutation = useMutation({
+    mutationFn: async (payload) => axios.post("/api/profile/addresses", payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.profile.addresses });
+    },
+  });
+
+  const createWalletTopupMutation = useMutation({
+    mutationFn: async (amount) => {
+      const res = await axios.post("/api/wallet/topup", { amount });
+      return res.data;
+    },
+  });
+
+  const verifyWalletTopupMutation = useMutation({
+    mutationFn: async ({ response, amount }) =>
+      axios.post("/api/wallet/verify", {
+        ...response,
+        amount,
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.profile.wallet });
+    },
+  });
 
   useEffect(() => {
-    if (!isAuthenticated) return;
-    let cancelled = false;
-    const loadWallet = async () => {
-      try {
-        const res = await axios.get("/api/wallet");
-        if (cancelled) return;
-        setWalletBalance(Number(res?.data?.balance) || 0);
-      } catch {
-        // ignore
-      }
-    };
-    loadWallet();
-    return () => {
-      cancelled = true;
-    };
-  }, [isAuthenticated]);
+    if (!addresses.length || selectedAddressId) return;
+    const def = addresses.find((a) => a.isDefault) || addresses[0];
+    if (!def) return;
+    setSelectedAddressId(def._id);
+    setData((d) => ({
+      ...d,
+      fullName: def.fullName || def.name || d.fullName,
+      phone: def.phone || d.phone,
+      email: def.email || d.email,
+      address1: def.address1 || def.line1 || d.address1,
+      address2: def.address2 || def.line2 || d.address2,
+      city: def.city || d.city,
+      state: def.state || d.state,
+      pincode: def.pincode || def.zip || d.pincode,
+    }));
+  }, [addresses, selectedAddressId]);
+
+  const walletBalance = Number(wallet?.balance) || 0;
 
   // --- Logic ---
   const setField = (name, value) => {
@@ -212,7 +231,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
 
     try {
       if (isAuthenticated && saveAddress) {
-        await axios.post("/api/profile/addresses", {
+        await saveAddressMutation.mutateAsync({
           label: "Default",
           fullName: data.fullName,
           phone: data.phone,
@@ -231,12 +250,12 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
       const payable = Math.max(0, grandTotal - walletApplied);
 
       if (payable === 0) {
-        setBusy(false);
-        onOrderPlaced?.({
+        await onOrderPlaced?.({
           address: fullAddress,
           method: "WALLET",
           walletUsed: walletApplied,
         });
+        setBusy(false);
         navigate("/orderstages", { replace: true });
         return;
       }
@@ -268,25 +287,19 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
         handler: async function (response) {
           try {
             const verifyRes = await axios.post("/api/razorpay/verify", response);
-            if (!verifyRes?.data?.success) {
-              throw new Error("Payment verification failed");
-            }
-            setBusy(false);
-            onOrderPlaced?.({
+            const verificationToken = extractVerificationToken(verifyRes);
+            await onOrderPlaced?.({
               address: fullAddress,
               method: "CARD",
               walletUsed: walletApplied,
-              payment: {
-                paymentId: response?.razorpay_payment_id,
-                paymentOrderId: response?.razorpay_order_id,
-                signature: response?.razorpay_signature,
-              },
+              payment: buildVerifiedPaymentMeta(response, verificationToken),
             });
+            setBusy(false);
             navigate("/orderstages", { replace: true });
           } catch (err) {
             console.error(err);
             setBusy(false);
-            setStatus("Payment verification failed. Please contact support.");
+            setStatus(getErrorMessage(err, "Payment verification failed. Please contact support."));
           }
         },
       };
@@ -303,7 +316,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     } catch (err) {
       console.error(err);
       setBusy(false);
-      setStatus("Unable to initialize payment.");
+      setStatus(getErrorMessage(err, "Unable to initialize payment."));
     }
   };
 
@@ -413,14 +426,14 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                           setSelectedAddressId(a._id);
                           setData((d) => ({
                             ...d,
-                            fullName: a.fullName || d.fullName,
+                            fullName: a.fullName || a.name || d.fullName,
                             phone: a.phone || d.phone,
                             email: a.email || d.email,
-                            address1: a.address1 || d.address1,
-                            address2: a.address2 || d.address2,
+                            address1: a.address1 || a.line1 || d.address1,
+                            address2: a.address2 || a.line2 || d.address2,
                             city: a.city || d.city,
                             state: a.state || d.state,
-                            pincode: a.pincode || d.pincode,
+                            pincode: a.pincode || a.zip || d.pincode,
                           }));
                         }}
                         className={`text-left p-4 rounded-xl border transition-all ${
@@ -429,9 +442,9 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                             : "border-gray-200 bg-white hover:border-gray-300"
                         }`}
                       >
-                        <div className="text-sm font-bold text-gray-900">{a.fullName}</div>
+                        <div className="text-sm font-bold text-gray-900">{a.fullName || a.name}</div>
                         <div className="text-xs text-gray-500 mt-1">
-                          {a.address1} {a.address2 ? `, ${a.address2}` : ""}, {a.city} {a.pincode}
+                          {a.address1 || a.line1} {a.address2 || a.line2 ? `, ${a.address2 || a.line2}` : ""}, {a.city} {a.pincode || a.zip}
                         </div>
                         <div className="text-xs text-gray-500">{a.state}</div>
                       </button>
@@ -472,8 +485,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                         const amt = Number(topupAmount);
                         if (!amt || amt <= 0) return;
                         try {
-                          const res = await axios.post("/api/wallet/topup", { amount: amt });
-                          const { orderId, amount: amountPaise, currency } = res.data;
+                          const { orderId, amount: amountPaise, currency } = await createWalletTopupMutation.mutateAsync(amt);
                           const options = {
                             key: RZP_KEY,
                             amount: amountPaise,
@@ -482,12 +494,10 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                             description: "Wallet Top-up",
                             order_id: orderId,
                             handler: async function (response) {
-                              await axios.post("/api/wallet/verify", {
-                                ...response,
+                              await verifyWalletTopupMutation.mutateAsync({
+                                response,
                                 amount: amt,
                               });
-                              const w = await axios.get("/api/wallet");
-                              setWalletBalance(Number(w?.data?.balance) || 0);
                               setTopupAmount("");
                             },
                           };

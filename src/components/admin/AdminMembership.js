@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
 import {
   PlusIcon,
@@ -8,6 +9,7 @@ import {
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/outline";
+import { qk } from "../../query/queryKeys";
 
 const emptyPlan = {
   name: "",
@@ -25,13 +27,10 @@ const INR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
 
 export default function AdminMembership() {
-  const [plans, setPlans] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const queryClient = useQueryClient();
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(emptyPlan);
-  const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState(null);
 
   const showToast = (msg, type = "success") => {
@@ -39,20 +38,41 @@ export default function AdminMembership() {
     setTimeout(() => setToast(null), 3000);
   };
 
-  const load = async () => {
-    try {
-      setError("");
-      setLoading(true);
+  const plansQuery = useQuery({
+    queryKey: qk.admin.membershipPlans,
+    queryFn: async () => {
       const res = await axiosInstance.get("/api/membership/admin/plans");
-      setPlans(res?.data || []);
-    } catch {
-      setError("Failed to load plans");
-    } finally {
-      setLoading(false);
-    }
-  };
+      return res?.data || [];
+    },
+  });
 
-  useEffect(() => { load(); }, []);
+  const savePlanMutation = useMutation({
+    mutationFn: async ({ payload, planId }) => {
+      if (planId) return axiosInstance.put(`/api/membership/admin/plans/${planId}`, payload);
+      return axiosInstance.post("/api/membership/admin/plans", payload);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.membershipPlans });
+    },
+  });
+
+  const deletePlanMutation = useMutation({
+    mutationFn: async (planId) => axiosInstance.delete(`/api/membership/admin/plans/${planId}`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.membershipPlans });
+    },
+  });
+
+  useEffect(() => {
+    if (plansQuery.isError) {
+      showToast("Failed to load plans", "error");
+    }
+  }, [plansQuery.isError]);
+
+  const plans = plansQuery.data || [];
+  const loading = plansQuery.isLoading;
+  const error = plansQuery.isError ? "Failed to load plans" : "";
+  const saving = savePlanMutation.isPending;
 
   const openCreate = () => {
     setEditing(null);
@@ -92,7 +112,6 @@ export default function AdminMembership() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSaving(true);
     try {
       const payload = {
         ...form,
@@ -102,28 +121,19 @@ export default function AdminMembership() {
         sortOrder: Number(form.sortOrder) || 0,
         features: form.features.filter((f) => f.trim()),
       };
-      if (editing) {
-        await axiosInstance.put(`/api/membership/admin/plans/${editing}`, payload);
-        showToast("Plan updated");
-      } else {
-        await axiosInstance.post("/api/membership/admin/plans", payload);
-        showToast("Plan created");
-      }
+      await savePlanMutation.mutateAsync({ payload, planId: editing });
+      showToast(editing ? "Plan updated" : "Plan created");
       setShowForm(false);
-      load();
     } catch (err) {
       showToast(err?.response?.data?.message || "Failed to save", "error");
-    } finally {
-      setSaving(false);
     }
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this plan?")) return;
     try {
-      await axiosInstance.delete(`/api/membership/admin/plans/${id}`);
+      await deletePlanMutation.mutateAsync(id);
       showToast("Plan deleted");
-      load();
     } catch {
       showToast("Delete failed", "error");
     }
@@ -140,8 +150,8 @@ export default function AdminMembership() {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-black text-gray-900">Prime Membership Plans</h1>
         <div className="flex gap-2">
-          <button onClick={load} className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
-            <RefreshIcon className="h-5 w-5 text-gray-500" />
+          <button onClick={() => plansQuery.refetch()} className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+            <RefreshIcon className={`h-5 w-5 text-gray-500 ${plansQuery.isFetching ? "animate-spin" : ""}`} />
           </button>
           <button onClick={openCreate} className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-black transition">
             <PlusIcon className="h-4 w-4" /> New Plan

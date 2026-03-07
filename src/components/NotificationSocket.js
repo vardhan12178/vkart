@@ -3,21 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { io } from "socket.io-client";
 import { addNotification, clearNotifications } from "../redux/notificationSlice";
 import { showToast } from "../utils/toast";
+import { getSocketBaseUrl, normalizeNotification } from "../utils/notificationHelpers";
 
-/**
- * NotificationSocket - Invisible component that handles real-time socket connection
- * for user notifications. Mounts once globally in App.js.
- */
 const NotificationSocket = () => {
     const dispatch = useDispatch();
     const socketRef = useRef(null);
-
     const { isAuthenticated, user } = useSelector((state) => state.auth);
 
     useEffect(() => {
-        // Only connect if authenticated and we have a user ID
         if (!isAuthenticated || !user?._id) {
-            // Disconnect if user logs out
             if (socketRef.current) {
                 socketRef.current.disconnect();
                 socketRef.current = null;
@@ -26,9 +20,8 @@ const NotificationSocket = () => {
             return;
         }
 
-        // Connect to socket server
-        const socketUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
-        const socket = io(socketUrl, {
+        const socket = io(getSocketBaseUrl(), {
+            path: "/socket.io",
             withCredentials: true,
             transports: ["websocket", "polling"],
         });
@@ -36,58 +29,45 @@ const NotificationSocket = () => {
         socketRef.current = socket;
 
         socket.on("connect", () => {
-            // Join user-specific notification room
-            socket.emit("join_user", user._id);
+            socket.emit("join_user", String(user._id));
         });
 
-        // Listen for user notifications
         socket.on("user_notification", (notification) => {
-            // Add to Redux store
-            dispatch(addNotification(notification));
+            const nextNotification = normalizeNotification(notification);
+            dispatch(addNotification(nextNotification));
 
-            // Show toast notification
-            const emoji = getNotificationEmoji(notification.status || notification.type);
-            showToast(`${emoji} ${notification.message || notification.title}`, "success");
-        });
-
-        socket.on("disconnect", () => {
-            console.log("Notification socket disconnected");
+            const label = getNotificationLabel(nextNotification.status || nextNotification.type);
+            showToast(`${label} ${nextNotification.message || nextNotification.title}`, "success");
         });
 
         socket.on("connect_error", (error) => {
             console.error("Socket connection error:", error.message);
         });
 
-        // Cleanup on unmount or auth change
         return () => {
-            if (socket) {
-                socket.disconnect();
-            }
+            socket.disconnect();
         };
-    }, [isAuthenticated, user?._id, dispatch]);
+    }, [dispatch, isAuthenticated, user?._id]);
 
-    return null; // Invisible component
+    return null;
 };
 
-/**
- * Get emoji for notification based on status/type
- */
-const getNotificationEmoji = (statusOrType) => {
+const getNotificationLabel = (statusOrType) => {
     switch (statusOrType) {
         case "CONFIRMED":
-            return "✅";
+            return "[Confirmed]";
         case "SHIPPED":
-            return "📦";
+            return "[Shipped]";
         case "OUT_FOR_DELIVERY":
-            return "🚚";
+            return "[Out for delivery]";
         case "DELIVERED":
-            return "🎉";
+            return "[Delivered]";
         case "CANCELLED":
-            return "❌";
+            return "[Cancelled]";
         case "order":
-            return "🛒";
+            return "[Order]";
         default:
-            return "🔔";
+            return "[Alert]";
     }
 };
 

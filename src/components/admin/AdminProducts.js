@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import ProductImageUploader from "../ProductImageUploader";
 import {
   PlusIcon,
@@ -26,6 +27,7 @@ import {
   TrashIcon
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
+import { qk } from "../../query/queryKeys";
 
 // --- CSS for Custom Scrollbars ---
 const customScrollStyle = `
@@ -47,8 +49,7 @@ const customScrollStyle = `
 
 // --- Main Component ---
 export default function AdminProducts() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
 
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all"); // 'all', 'active', 'inactive'
@@ -69,22 +70,36 @@ export default function AdminProducts() {
     setTimeout(() => setToast({ type: "", message: "" }), ms);
   };
 
-  const loadProducts = async () => {
-    try {
-      setLoading(true);
+  const productsQuery = useQuery({
+    queryKey: qk.admin.products,
+    queryFn: async () => {
       const res = await axiosInstance.get("/api/admin/products");
-      setProducts(res.data || []);
-    } catch (err) {
-      console.error("Load products:", err);
-      showToastMsg("error", "Failed to load products.");
-    } finally {
-      setLoading(false);
-    }
-  };
+      return res.data || [];
+    },
+  });
+
+  const saveProductMutation = useMutation({
+    mutationFn: async (payload) => {
+      if (editData) {
+        return axiosInstance.put(`/api/admin/products/${editData._id}`, payload);
+      }
+      return axiosInstance.post("/api/admin/products", payload);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.products });
+      queryClient.invalidateQueries({ queryKey: ["products", "list"] });
+      queryClient.invalidateQueries({ queryKey: qk.home.landing });
+    },
+  });
 
   useEffect(() => {
-    loadProducts();
-  }, []);
+    if (productsQuery.isError) {
+      showToastMsg("error", "Failed to load products.");
+    }
+  }, [productsQuery.isError]);
+
+  const products = useMemo(() => productsQuery.data ?? [], [productsQuery.data]);
+  const loading = productsQuery.isLoading;
 
   // Extract unique categories
   const uniqueCategories = useMemo(() => {
@@ -104,19 +119,10 @@ export default function AdminProducts() {
 
   const submitProduct = async (payload) => {
     try {
-      let res;
-      if (editData) {
-        res = await axiosInstance.put(`/api/admin/products/${editData._id}`, payload);
-      } else {
-        res = await axiosInstance.post("/api/admin/products", payload);
-      }
-
-      // if (!res.ok) throw new Error("Failed to save product");
-
+      await saveProductMutation.mutateAsync(payload);
       showToastMsg("success", editData ? "Product updated successfully." : "Product created successfully.");
       setShowModal(false);
       setEditData(null);
-      await loadProducts();
     } catch (err) {
       console.error("Save error:", err);
       showToastMsg("error", "Failed to save product.");
@@ -432,9 +438,8 @@ export default function AdminProducts() {
         </div>
       </div>
 
-      {/* Modal with Correct Stacking Context */}
+      {/* Product modal */}
       {showModal && (
-        // FIX: Z-Index 100 to beat Header (Z-30)
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
 
           {/* Backdrop */}

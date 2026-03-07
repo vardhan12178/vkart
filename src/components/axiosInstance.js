@@ -8,10 +8,6 @@ const baseURL = isLocalhost
   ? "http://localhost:5000"
   : (process.env.REACT_APP_API_BASE_URL || "");
 
-if (process.env.NODE_ENV !== "production" && process.env.REACT_APP_DEBUG_HTTP === "true") {
-  console.log("DEBUG: Axios Base URL is:", baseURL, isLocalhost ? "(local dev)" : "(production)");
-}
-
 const instance = axios.create({
   baseURL,
   withCredentials: true,
@@ -31,12 +27,16 @@ instance.interceptors.request.use((config) => {
   // No need to manually add Authorization header
 
   const isForm = typeof FormData !== "undefined" && config.data instanceof FormData;
+  const m = (config.method || "get").toLowerCase();
+  const csrf = !["get", "head"].includes(m) ? getCookie("csrf_token") : "";
   if (isForm) {
     if (config.headers?.["Content-Type"]) delete config.headers["Content-Type"];
+    config.headers = {
+      ...(config.headers || {}),
+      ...(csrf ? { "X-CSRF-Token": csrf } : {}),
+    };
   } else {
-    const m = (config.method || "get").toLowerCase();
     if (!["get", "head"].includes(m)) {
-      const csrf = getCookie("csrf_token");
       config.headers = {
         ...(config.headers || {}),
         "Content-Type": "application/json",

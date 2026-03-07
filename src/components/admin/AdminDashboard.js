@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import {
   TrendingUpIcon,
   ShoppingBagIcon,
@@ -15,6 +16,7 @@ import {
   ExternalLinkIcon
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
+import { qk } from "../../query/queryKeys";
 import {
   AreaChart,
   Area,
@@ -74,25 +76,13 @@ const stageColors = {
 };
 
 export default function AdminDashboard() {
-  const [orders, setOrders] = useState([]);
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [refreshedAt, setRefreshedAt] = useState(null);
   const [timeRange, setTimeRange] = useState("30d");
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    loadAll();
-  }, []);
-
-  const loadAll = async () => {
-    try {
-      setLoading(true);
-      setError("");
-      // Cookie-based auth - no token needed
-
+  const dashboardQuery = useQuery({
+    queryKey: qk.admin.dashboard,
+    queryFn: async () => {
       const [ordersRes, usersRes] = await Promise.all([
         axiosInstance.get("/api/admin/orders"),
         axiosInstance.get("/api/admin/users"),
@@ -101,19 +91,17 @@ export default function AdminDashboard() {
       const rawOrders = ordersRes.data ?? [];
       const rawUsers = usersRes.data ?? [];
 
-      const ordersArr = Array.isArray(rawOrders) ? rawOrders : rawOrders.items || rawOrders.orders || [];
-      const usersArr = Array.isArray(rawUsers) ? rawUsers : rawUsers.items || rawUsers.users || [];
+      return {
+        orders: Array.isArray(rawOrders) ? rawOrders : rawOrders.items || rawOrders.orders || [],
+        users: Array.isArray(rawUsers) ? rawUsers : rawUsers.items || rawUsers.users || [],
+      };
+    },
+  });
 
-      setOrders(ordersArr || []);
-      setUsers(usersArr || []);
-      setRefreshedAt(new Date());
-    } catch (e) {
-      console.error("Dashboard load error:", e);
-      setError("Could not sync dashboard data.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  const orders = useMemo(() => dashboardQuery.data?.orders ?? [], [dashboardQuery.data]);
+  const users = useMemo(() => dashboardQuery.data?.users ?? [], [dashboardQuery.data]);
+  const loading = dashboardQuery.isLoading;
+  const error = dashboardQuery.isError ? "Could not sync dashboard data." : "";
 
   // --- Filter Logic ---
   const filteredOrders = useMemo(() => {
@@ -259,12 +247,12 @@ export default function AdminDashboard() {
             </div>
 
             <button
-              onClick={loadAll}
-              disabled={loading}
+              onClick={() => dashboardQuery.refetch()}
+              disabled={dashboardQuery.isFetching}
               className="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all shadow-sm active:scale-95"
               title="Sync Data"
             >
-              <RefreshIcon className={`h-5 w-5 ${loading ? "animate-spin" : ""}`} />
+              <RefreshIcon className={`h-5 w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
           </div>
         </div>

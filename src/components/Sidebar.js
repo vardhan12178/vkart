@@ -1,5 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import axios from "./axiosInstance";
+import { qk } from "../query/queryKeys";
 import {
   FaFilter,
   FaChevronDown,
@@ -7,39 +9,31 @@ import {
   FaStar,
   FaCheck,
   FaUndo,
-  FaLayerGroup,
   FaCircle
 } from "react-icons/fa";
 
-// 1. Added 'onRatingChange' to props
 export default function Sidebar({ categoryFilter, onCategoryChange, onSearch, onRatingChange }) {
-  const [categories, setCategories] = useState([]);
-  const [loadingCats, setLoadingCats] = useState(true);
-  const [catError, setCatError] = useState(null);
   const [showAllCats, setShowAllCats] = useState(false);
   const [expanded, setExpanded] = useState("categories"); 
   const [selectedRating, setSelectedRating] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        setLoadingCats(true);
-        const res = await axios.get("/api/products", { params: { limit: 500 } });
-        const products = res.data.products || [];
-        const unique = Array.from(new Set(products.map((p) => p.category)));
-        const normalized = unique.map((c) => ({
-          slug: c.toLowerCase().replace(/\s+/g, "-"),
-          label: c.replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase()),
-        }));
-        setCategories(normalized);
-      } catch (e) {
-        console.error(e);
-        setCatError("Failed to load categories");
-      } finally {
-        setLoadingCats(false);
-      }
-    })();
-  }, []);
+  const {
+    data: categories = [],
+    isLoading: loadingCats,
+    isError: catError,
+  } = useQuery({
+    queryKey: qk.products.categories,
+    queryFn: async () => {
+      const res = await axios.get("/api/products", { params: { limit: 500 } });
+      const products = res.data.products || [];
+      const unique = Array.from(new Set(products.map((p) => p.category)));
+      return unique.map((c) => ({
+        slug: c.toLowerCase().replace(/\s+/g, "-"),
+        label: c.replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase()),
+      }));
+    },
+    staleTime: 5 * 60 * 1000,
+  });
 
   const visibleCats = useMemo(
     () => (showAllCats ? categories : categories.slice(0, 16)),
@@ -50,8 +44,7 @@ export default function Sidebar({ categoryFilter, onCategoryChange, onSearch, on
     onCategoryChange(categoryFilter === slug ? "" : slug);
   };
 
-  // 2. FIXED: No longer touches the search bar. 
-  // It calls the dedicated rating handler instead.
+  // Keep rating changes separate from the search input state.
   const handleRating = (r) => {
     const newVal = selectedRating === r ? null : r;
     setSelectedRating(newVal);
@@ -116,7 +109,7 @@ export default function Sidebar({ categoryFilter, onCategoryChange, onSearch, on
                     ))}
                   </div>
                 ) : catError ? (
-                  <div className="text-xs text-red-500">{catError}</div>
+                  <div className="text-xs text-red-500">Failed to load categories</div>
                 ) : (
                   <div className="flex flex-col space-y-1">
                     {visibleCats.map((cat) => {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
 import {
   PlusIcon,
@@ -9,6 +10,7 @@ import {
   XCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
+import { qk } from "../../query/queryKeys";
 
 const empty = {
   code: "",
@@ -26,13 +28,10 @@ const empty = {
 };
 
 export default function AdminCoupons() {
-  const [coupons, setCoupons] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const queryClient = useQueryClient();
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(empty);
-  const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState(null);
 
   const showToast = (msg, type = "success") => {
@@ -40,20 +39,53 @@ export default function AdminCoupons() {
     setTimeout(() => setToast(null), 3000);
   };
 
-  const load = async () => {
-    try {
-      setError("");
-      setLoading(true);
+  const couponsQuery = useQuery({
+    queryKey: qk.admin.coupons,
+    queryFn: async () => {
       const res = await axiosInstance.get("/api/coupons/all");
-      setCoupons(res?.data?.coupons || []);
-    } catch {
-      setError("Failed to load coupons");
-    } finally {
-      setLoading(false);
-    }
-  };
+      return res?.data?.coupons || [];
+    },
+  });
 
-  useEffect(() => { load(); }, []);
+  const saveCouponMutation = useMutation({
+    mutationFn: async ({ payload, couponId }) => {
+      if (couponId) {
+        return axiosInstance.patch(`/api/coupons/${couponId}`, payload);
+      }
+      return axiosInstance.post("/api/coupons", payload);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.coupons });
+      queryClient.invalidateQueries({ queryKey: qk.public.coupons });
+    },
+  });
+
+  const deleteCouponMutation = useMutation({
+    mutationFn: async (couponId) => axiosInstance.delete(`/api/coupons/${couponId}`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.coupons });
+      queryClient.invalidateQueries({ queryKey: qk.public.coupons });
+    },
+  });
+
+  const toggleCouponMutation = useMutation({
+    mutationFn: async ({ couponId, isActive }) => axiosInstance.patch(`/api/coupons/${couponId}`, { isActive }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.coupons });
+      queryClient.invalidateQueries({ queryKey: qk.public.coupons });
+    },
+  });
+
+  useEffect(() => {
+    if (couponsQuery.isError) {
+      showToast("Failed to load coupons", "error");
+    }
+  }, [couponsQuery.isError]);
+
+  const coupons = couponsQuery.data || [];
+  const loading = couponsQuery.isLoading;
+  const error = couponsQuery.isError ? "Failed to load coupons" : "";
+  const saving = saveCouponMutation.isPending;
 
   const openCreate = () => {
     setEditing(null);
@@ -85,7 +117,6 @@ export default function AdminCoupons() {
       showToast("Code, type, value and expiry date are required", "error");
       return;
     }
-    setSaving(true);
     try {
       const payload = {
         ...form,
@@ -96,28 +127,19 @@ export default function AdminCoupons() {
         perUserLimit: form.perUserLimit ? Number(form.perUserLimit) : 1,
       };
 
-      if (editing) {
-        await axiosInstance.patch(`/api/coupons/${editing}`, payload);
-        showToast("Coupon updated");
-      } else {
-        await axiosInstance.post("/api/coupons", payload);
-        showToast("Coupon created");
-      }
+      await saveCouponMutation.mutateAsync({ payload, couponId: editing });
+      showToast(editing ? "Coupon updated" : "Coupon created");
       setShowForm(false);
-      load();
     } catch (err) {
       showToast(err?.response?.data?.message || "Save failed", "error");
-    } finally {
-      setSaving(false);
     }
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this coupon?")) return;
     try {
-      await axiosInstance.delete(`/api/coupons/${id}`);
+      await deleteCouponMutation.mutateAsync(id);
       showToast("Coupon deleted");
-      load();
     } catch {
       showToast("Delete failed", "error");
     }
@@ -125,8 +147,7 @@ export default function AdminCoupons() {
 
   const toggleActive = async (c) => {
     try {
-      await axiosInstance.patch(`/api/coupons/${c._id}`, { isActive: !c.isActive });
-      load();
+      await toggleCouponMutation.mutateAsync({ couponId: c._id, isActive: !c.isActive });
     } catch {
       showToast("Update failed", "error");
     }
@@ -152,8 +173,8 @@ export default function AdminCoupons() {
             <p className="text-sm text-slate-500 mt-1">{coupons.length} total</p>
           </div>
           <div className="flex gap-2">
-            <button onClick={load} className="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-100 transition">
-              <RefreshIcon className="h-4 w-4 text-slate-600" />
+            <button onClick={() => couponsQuery.refetch()} className="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-100 transition">
+              <RefreshIcon className={`h-4 w-4 text-slate-600 ${couponsQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
             <button onClick={openCreate} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition shadow-sm">
               <PlusIcon className="h-4 w-4" /> New Coupon

@@ -1,13 +1,12 @@
-import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
+import React, { useEffect, useState, useRef, Suspense, lazy, useCallback } from "react";
 import axios from "./axiosInstance"; // Kept as requested
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { logout } from "../redux/authSlice";
 import { clearCart } from "../redux/cartSlice";
 import { clearWishlist } from "../redux/wishlistSlice";
 import imageCompression from "browser-image-compression";
-// Removed ProfilePreview import if it's not strictly needed, or keep if you have it. 
-// Assuming ProfilePreview was just a placeholder in your previous code.
 import AvatarEditor from "react-avatar-editor";
 
 import {
@@ -31,8 +30,12 @@ import {
   FaTrash,
   FaCrown
 } from "react-icons/fa";
+import { qk } from "../query/queryKeys";
 
 const OrderCard = lazy(() => import("./OrderCard"));
+const EMPTY_ORDERS = [];
+const EMPTY_ADDRESSES = [];
+const EMPTY_WALLET = { balance: 0, transactions: [] };
 
 // --- HELPER: Get Initials ---
 const getInitials = (name) => {
@@ -92,13 +95,12 @@ const Toast = ({ kind = "success", message }) => {
 export default function Profile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const queryClient = useQueryClient();
 
-  // --- STATE (UNCHANGED LOGIC) ---
+  // State
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
-  const [error, setError] = useState("");
   const [toast, setToast] = useState({ kind: "success", message: "" });
   const toastTimer = useRef(null);
 
@@ -127,7 +129,7 @@ export default function Profile() {
   const [addresses, setAddresses] = useState([]);
   const [addrOpen, setAddrOpen] = useState(false);
   const [editAddr, setEditAddr] = useState(null); // null = add mode, object = edit mode
-  const emptyAddr = { fullName: "", phone: "", line1: "", line2: "", city: "", state: "", zip: "", isDefault: false };
+  const emptyAddr = { fullName: "", phone: "", address1: "", address2: "", city: "", state: "", pincode: "", isDefault: false };
   const [addrForm, setAddrForm] = useState({ ...emptyAddr });
   const [addrLoading, setAddrLoading] = useState(false);
 
@@ -141,69 +143,104 @@ export default function Profile() {
     toastTimer.current = setTimeout(() => setToast({ kind, message: "" }), ms);
   };
 
-  // --- EFFECTS (Cookie-based auth) ---
+  const {
+    data: profileData,
+    isLoading: profileLoading,
+    isError: profileIsError,
+    error: profileError,
+  } = useQuery({
+    queryKey: qk.profile.root,
+    retry: false,
+    queryFn: async () => {
+      const res = await axios.get("/api/profile");
+      return {
+        ...res.data,
+        twoFactorEnabled: !!res.data.twoFactorEnabled,
+        suppress2faPrompt: !!res.data.suppress2faPrompt,
+      };
+    },
+  });
+
+  const {
+    data: ordersData = EMPTY_ORDERS,
+    isLoading: ordersLoading,
+    isError: ordersIsError,
+    error: ordersError,
+  } = useQuery({
+    queryKey: qk.profile.orders,
+    retry: false,
+    queryFn: async () => {
+      const res = await axios.get("/api/profile/orders");
+      return (res.data || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    },
+  });
+
+  const { data: walletData = EMPTY_WALLET } = useQuery({
+    queryKey: qk.profile.wallet,
+    retry: false,
+    queryFn: async () => {
+      const res = await axios.get("/api/wallet");
+      return {
+        balance: Number(res?.data?.balance) || 0,
+        transactions: res?.data?.transactions || [],
+      };
+    },
+  });
+
+  const { data: addressesData = EMPTY_ADDRESSES } = useQuery({
+    queryKey: qk.profile.addresses,
+    retry: false,
+    queryFn: async () => {
+      const res = await axios.get("/api/profile/addresses");
+      return res?.data?.addresses || [];
+    },
+  });
+
+  const loading = profileLoading || ordersLoading;
+  const error = profileIsError || ordersIsError ? "Failed to fetch profile or orders" : "";
+
+  // --- EFFECTS ---
   useEffect(() => {
-    // No localStorage check needed - let API call verify auth via cookie
+    if (profileData) setUser(profileData);
+  }, [profileData]);
 
-    const load = async () => {
-      try {
-        setLoading(true);
-        // Note: In a real app, ensure axios interceptors handle auth headers or pass them here
-        const [p, o] = await Promise.all([
-          axios.get("/api/profile"),
-          axios.get("/api/profile/orders"),
-        ]);
+  useEffect(() => {
+    setOrders(ordersData);
+  }, [ordersData]);
 
-        const profile = {
-          ...p.data,
-          twoFactorEnabled: !!p.data.twoFactorEnabled,
-          suppress2faPrompt: !!p.data.suppress2faPrompt,
-        };
+  useEffect(() => {
+    setWallet(walletData);
+  }, [walletData]);
 
-        setUser(profile);
-        setOrders(
-          (o.data || []).sort(
-            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-          )
-        );
+  useEffect(() => {
+    setAddresses(addressesData);
+  }, [addressesData]);
 
-        try {
-          const w = await axios.get("/api/wallet");
-          setWallet({
-            balance: Number(w?.data?.balance) || 0,
-            transactions: w?.data?.transactions || [],
-          });
-        } catch {}
-
-        try {
-          const a = await axios.get("/api/profile/addresses");
-          setAddresses(a.data?.addresses || []);
-        } catch {}
-      } catch (e) {
-        // If 401, logout
-        if (e.response && e.response.status === 401) {
-          handleLogout();
-        }
-        setError("Failed to fetch profile or orders");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    load();
-
+  useEffect(() => {
     return () => {
       if (toastTimer.current) clearTimeout(toastTimer.current);
     };
-  }, [navigate]);
+  }, []);
 
-  // --- HANDLERS (UNCHANGED LOGIC) ---
-  const handleLogout = async () => {
+  // Handlers
+  const handleLogout = useCallback(async () => {
     try {
       await axios.post("/api/logout", {}, { withCredentials: true });
     } catch (err) {
       console.error("Logout failed:", err);
     } finally {
+      queryClient.setQueryData(qk.auth.session, { authenticated: false, user: null });
+      [
+        qk.profile.root,
+        qk.profile.orders,
+        qk.profile.addresses,
+        qk.profile.wallet,
+        qk.profile.cart,
+        qk.profile.wishlist,
+        qk.membership.status,
+      ].forEach((queryKey) => {
+        queryClient.removeQueries({ queryKey });
+      });
       localStorage.removeItem("auth_token");
       localStorage.removeItem("admin_token");
       dispatch(clearCart());
@@ -211,7 +248,12 @@ export default function Profile() {
       dispatch(logout());
       navigate("/");
     }
-  };
+  }, [dispatch, navigate, queryClient]);
+
+  useEffect(() => {
+    const status = profileError?.response?.status || ordersError?.response?.status;
+    if (status === 401) handleLogout();
+  }, [handleLogout, ordersError, profileError]);
 
   const handleFileChange = (e) => {
     const f = e.target.files?.[0];
@@ -239,8 +281,11 @@ export default function Profile() {
       const formData = new FormData();
       formData.append("profileImage", compressed, `profile-${Date.now()}.jpg`);
       const res = await axios.post("/api/profile/upload", formData);
-
-      setUser((prev) => ({ ...(prev || {}), ...res.data }));
+      setUser((prev) => {
+        const nextUser = { ...(prev || {}), ...res.data };
+        queryClient.setQueryData(qk.profile.root, nextUser);
+        return nextUser;
+      });
 
       setSelectedFile(null);
       setScale(1.2);
@@ -248,7 +293,7 @@ export default function Profile() {
       showToast("success", "Profile photo updated!", 1600);
     } catch (e) {
       if (e?.response?.status === 401) {
-        dispatch(logout());
+        await handleLogout();
         return;
       }
       const msg = e?.response?.data?.message || "Failed to upload profile image.";
@@ -283,7 +328,11 @@ export default function Profile() {
     try {
       setTwoFAState((s) => ({ ...s, loading: true }));
       await axios.post("/api/2fa/enable", { token: code, secret: twoFAState.secret });
-      setUser((u) => ({ ...u, twoFactorEnabled: true }));
+      setUser((u) => {
+        const nextUser = { ...u, twoFactorEnabled: true };
+        queryClient.setQueryData(qk.profile.root, nextUser);
+        return nextUser;
+      });
       setTwoFAOpen(false);
       setTwoFAState({ qr: "", secret: "", code: "", loading: false, disabling: false });
       showToast("success", "Two-factor authentication enabled.");
@@ -298,7 +347,11 @@ export default function Profile() {
     try {
       setTwoFAState((s) => ({ ...s, disabling: true }));
       await axios.post("/api/2fa/disable");
-      setUser((u) => ({ ...u, twoFactorEnabled: false }));
+      setUser((u) => {
+        const nextUser = { ...u, twoFactorEnabled: false };
+        queryClient.setQueryData(qk.profile.root, nextUser);
+        return nextUser;
+      });
       showToast("success", "Two-factor authentication disabled.");
     } catch (e) {
       const msg = e?.response?.data?.message || "Failed to disable 2FA.";
@@ -334,7 +387,16 @@ export default function Profile() {
   const openAddressForm = (addr = null) => {
     if (addr) {
       setEditAddr(addr);
-      setAddrForm({ fullName: addr.fullName || "", phone: addr.phone || "", line1: addr.line1 || "", line2: addr.line2 || "", city: addr.city || "", state: addr.state || "", zip: addr.zip || "", isDefault: !!addr.isDefault });
+      setAddrForm({
+        fullName: addr.fullName || addr.name || "",
+        phone: addr.phone || "",
+        address1: addr.address1 || addr.line1 || "",
+        address2: addr.address2 || addr.line2 || "",
+        city: addr.city || "",
+        state: addr.state || "",
+        pincode: addr.pincode || addr.zip || "",
+        isDefault: !!addr.isDefault,
+      });
     } else {
       setEditAddr(null);
       setAddrForm({ ...emptyAddr });
@@ -343,8 +405,8 @@ export default function Profile() {
   };
 
   const handleSaveAddress = async () => {
-    const { fullName, phone, line1, city, state, zip } = addrForm;
-    if (!fullName || !phone || !line1 || !city || !state || !zip) return showToast("error", "Please fill all required fields.");
+    const { fullName, phone, address1, city, state, pincode } = addrForm;
+    if (!fullName || !phone || !address1 || !city || !state || !pincode) return showToast("error", "Please fill all required fields.");
     try {
       setAddrLoading(true);
       let res;
@@ -353,7 +415,9 @@ export default function Profile() {
       } else {
         res = await axios.post("/api/profile/addresses", addrForm);
       }
-      setAddresses(res.data.addresses || []);
+      const nextAddresses = res.data.addresses || [];
+      setAddresses(nextAddresses);
+      queryClient.setQueryData(qk.profile.addresses, nextAddresses);
       setAddrOpen(false);
       setEditAddr(null);
       setAddrForm({ ...emptyAddr });
@@ -368,7 +432,9 @@ export default function Profile() {
   const handleDeleteAddress = async (addrId) => {
     try {
       const res = await axios.delete(`/api/profile/addresses/${addrId}`);
-      setAddresses(res.data.addresses || []);
+      const nextAddresses = res.data.addresses || [];
+      setAddresses(nextAddresses);
+      queryClient.setQueryData(qk.profile.addresses, nextAddresses);
       showToast("success", "Address removed.");
     } catch (e) {
       showToast("error", e?.response?.data?.message || "Failed to delete address.");
@@ -379,7 +445,11 @@ export default function Profile() {
     if (!nameInput.trim()) return;
     try {
       const res = await axios.put("/api/profile/name", { name: nameInput.trim() });
-      setUser((u) => ({ ...u, name: res.data.name }));
+      setUser((u) => {
+        const nextUser = { ...u, name: res.data.name };
+        queryClient.setQueryData(qk.profile.root, nextUser);
+        return nextUser;
+      });
       setEditingName(false);
       showToast("success", "Name updated!");
     } catch (e) {
@@ -460,14 +530,11 @@ export default function Profile() {
                     src={user.profileImage}
                     alt="Profile"
                     className="h-full w-full rounded-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                    // Fallback to Initials if image load fails logic could be complex here, usually simpler to assume URL works or null
                     onError={(e) => {
-                      // Optional: Hide img and show text fallback if broken
                       e.currentTarget.style.display = 'none';
                     }}
                   />
                 ) : (
-                  // --- INITIALS AVATAR (The solution) ---
                   <div className="h-full w-full rounded-full bg-gradient-to-tr from-orange-100 to-amber-200 flex items-center justify-center">
                     <span className="text-4xl sm:text-5xl font-black text-orange-600/80 tracking-wide select-none">
                       {getInitials(user?.name)}
@@ -743,12 +810,12 @@ export default function Profile() {
                     {addresses.map((addr) => (
                       <div key={addr._id} className={`p-4 rounded-xl border ${addr.isDefault ? 'border-orange-200 bg-orange-50/50' : 'border-gray-100'} flex justify-between items-start gap-3`}>
                         <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="font-bold text-gray-900 text-sm">{addr.fullName}</span>
-                            {addr.isDefault && <span className="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">Default</span>}
-                          </div>
-                          <p className="text-xs text-gray-600">{addr.line1}{addr.line2 ? `, ${addr.line2}` : ""}</p>
-                          <p className="text-xs text-gray-500">{addr.city}, {addr.state} {addr.zip}</p>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="font-bold text-gray-900 text-sm">{addr.fullName || addr.name}</span>
+                          {addr.isDefault && <span className="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">Default</span>}
+                        </div>
+                          <p className="text-xs text-gray-600">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
+                          <p className="text-xs text-gray-500">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>
                           <p className="text-xs text-gray-400 mt-1">{addr.phone}</p>
                         </div>
                         <div className="flex gap-1 shrink-0">
@@ -771,11 +838,11 @@ export default function Profile() {
                       {[
                         { key: "fullName", label: "Full Name", span: 1 },
                         { key: "phone", label: "Phone", span: 1 },
-                        { key: "line1", label: "Address Line 1", span: 2 },
-                        { key: "line2", label: "Address Line 2 (optional)", span: 2 },
+                        { key: "address1", label: "Address Line 1", span: 2 },
+                        { key: "address2", label: "Address Line 2 (optional)", span: 2 },
                         { key: "city", label: "City", span: 1 },
                         { key: "state", label: "State", span: 1 },
-                        { key: "zip", label: "ZIP Code", span: 1 },
+                        { key: "pincode", label: "Pincode", span: 1 },
                       ].map((f) => (
                         <div key={f.key} className={f.span === 2 ? "sm:col-span-2" : ""}>
                           <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 block">{f.label}</label>

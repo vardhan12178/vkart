@@ -1,55 +1,59 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "../axiosInstance";
 import AdminSidebar from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
 import AdminFooter from "./AdminFooter";
+import { qk } from "../../query/queryKeys";
 
 // 1. Receive the setIsAdmin prop
 export default function AdminLayout({ setIsAdmin }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const queryClient = useQueryClient();
 
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [authChecked, setAuthChecked] = useState(false);
-  const [adminProfile, setAdminProfile] = useState(null);
 
-  /* ---------------------------------------------------
-       FETCH ADMIN PROFILE
-  ---------------------------------------------------- */
-  const fetchAdminProfile = useCallback(async () => {
-    try {
+  const adminVerifyQuery = useQuery({
+    queryKey: qk.auth.adminVerify,
+    queryFn: async () => {
+      const res = await axios.get("/api/admin/verify", { withCredentials: true });
+      return res.data;
+    },
+    retry: false,
+    staleTime: 0,
+    refetchOnMount: "always",
+  });
+
+  const adminSettingsQuery = useQuery({
+    queryKey: qk.admin.settings,
+    queryFn: async () => {
       const res = await axios.get("/api/admin/settings");
-      if (res.data?.admin) {
-        setAdminProfile(res.data.admin);
-      }
-    } catch (err) {
-      console.error("Failed to fetch admin profile", err);
-    }
-  }, []);
+      return res.data;
+    },
+    enabled: Boolean(adminVerifyQuery.data?.valid),
+  });
+
+  const fetchAdminProfile = useCallback(async () => {
+    await adminSettingsQuery.refetch();
+  }, [adminSettingsQuery]);
 
   /* ---------------------------------------------------
        AUTH GUARD - Now uses cookie-based API check
   ---------------------------------------------------- */
   useEffect(() => {
-    const verifyAdmin = async () => {
-      try {
-        const res = await axios.get("/api/admin/verify", { withCredentials: true });
-        if (res.data?.valid) {
-          if (setIsAdmin) setIsAdmin(true);
-          setAuthChecked(true);
-          fetchAdminProfile(); // Fetch profile after verification
-        } else {
-          throw new Error("Invalid");
-        }
-      } catch (err) {
-        if (setIsAdmin) setIsAdmin(false);
-        navigate("/admin/login", { replace: true });
-      }
-    };
-    verifyAdmin();
-  }, [navigate, setIsAdmin, fetchAdminProfile]);
+    if (adminVerifyQuery.isLoading) return;
+
+    if (adminVerifyQuery.data?.valid) {
+      if (setIsAdmin) setIsAdmin(true);
+      return;
+    }
+
+    if (setIsAdmin) setIsAdmin(false);
+    navigate("/admin/login", { replace: true });
+  }, [navigate, setIsAdmin, adminVerifyQuery.isLoading, adminVerifyQuery.data]);
 
   /* ---------------------------------------------------
        SCROLL RESET ON NAVIGATE
@@ -68,12 +72,14 @@ export default function AdminLayout({ setIsAdmin }) {
     } catch (err) {
       // Ignore errors
     }
+    queryClient.removeQueries({ queryKey: qk.auth.adminVerify });
+    queryClient.removeQueries({ queryKey: qk.admin.settings });
     if (setIsAdmin) setIsAdmin(false);
     navigate("/admin/login", { replace: true });
   };
 
   // Don't render until auth is verified
-  if (!authChecked) {
+  if (adminVerifyQuery.isLoading) {
     return (
       <div className="flex h-screen items-center justify-center bg-slate-50">
         <div className="animate-spin h-8 w-8 border-4 border-orange-500 border-t-transparent rounded-full"></div>
@@ -101,7 +107,7 @@ export default function AdminLayout({ setIsAdmin }) {
           setMobileOpen={setMobileOpen}
           collapsed={collapsed}
           onLogout={handleLogout}
-          adminProfile={adminProfile}
+          adminProfile={adminSettingsQuery.data?.admin || null}
         />
 
         {/* Page Content */}

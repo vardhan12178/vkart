@@ -1,6 +1,7 @@
 // src/pages/admin/AdminOrders.jsx
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import {
   SearchIcon,
   RefreshIcon,
@@ -18,6 +19,7 @@ import {
   CheckCircleIcon,
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
+import { qk } from "../../query/queryKeys";
 
 const STAGES = [
   "ALL",
@@ -34,9 +36,7 @@ const STAGES = [
 export default function AdminOrders() {
   const navigate = useNavigate();
 
-  const [orders, setOrders] = useState([]);
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
 
   // Filter & Sort State
   const [filterStage, setFilterStage] = useState("ALL");
@@ -60,22 +60,17 @@ export default function AdminOrders() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(() => {
-    loadOrders();
-  }, []);
-
-  const loadOrders = async () => {
-    try {
-      setLoading(true);
-      // Cookie-based auth - no token needed
+  const ordersQuery = useQuery({
+    queryKey: qk.admin.orders,
+    queryFn: async () => {
       const response = await axiosInstance.get("/api/admin/orders");
-      setOrders(response.data);
-    } catch (err) {
-      console.error("Orders fetch error:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+      const raw = response.data ?? [];
+      return Array.isArray(raw) ? raw : raw.items || raw.orders || [];
+    },
+  });
+
+  const orders = useMemo(() => ordersQuery.data ?? [], [ordersQuery.data]);
+  const loading = ordersQuery.isLoading;
 
   // --- derived stats for the top cards ---
   const stats = useMemo(() => {
@@ -133,7 +128,7 @@ export default function AdminOrders() {
     });
 
     return result;
-  }, [orders, search, filterStage, sortConfig]);
+  }, [orders, search, filterStage, filterReturns, sortConfig]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -196,11 +191,11 @@ export default function AdminOrders() {
           </div>
           <div className="flex items-center gap-3">
             <button
-              onClick={loadOrders}
-              disabled={loading}
+              onClick={() => ordersQuery.refetch()}
+              disabled={ordersQuery.isFetching}
               className="flex items-center gap-2 px-4 py-2 bg-white text-slate-700 border border-slate-200 rounded-lg shadow-sm hover:bg-slate-50 transition-all active:scale-95"
             >
-              <RefreshIcon className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+              <RefreshIcon className={`h-4 w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
               <span className="text-sm font-medium">Sync</span>
             </button>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
 import { useOutletContext } from "react-router-dom";
 import {
@@ -11,10 +12,12 @@ import {
   PhoneIcon,
   XCircleIcon
 } from "@heroicons/react/outline";
+import { qk } from "../../query/queryKeys";
 
 export default function AdminSettings() {
+  const queryClient = useQueryClient();
   const [activeTab, setActiveTab] = useState("store");
-  const [loading, setLoading] = useState(false);
+  const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState(null);
 
   // Get refresh function from AdminLayout
@@ -24,8 +27,8 @@ export default function AdminSettings() {
   const [profile, setProfile] = useState({
     name: "",
     email: "",
-    role: "Super Admin", // Assuming role is static or comes from elsewhere, not specified in GET API, keeping default
-    avatar: "", // URL from API
+    role: "Super Admin",
+    avatar: "",
   });
 
   const [store, setStore] = useState({
@@ -50,49 +53,69 @@ export default function AdminSettings() {
   const logoInputRef = useRef(null);
   const avatarInputRef = useRef(null);
 
-  // --- Initial Data Load ---
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        const response = await axiosInstance.get("/api/admin/settings");
-        const { store: storeData, admin: adminData } = response.data;
-
-        if (storeData) {
-          setStore((prev) => ({
-            ...prev,
-            ...storeData,
-          }));
-          if (storeData.storeLogo) {
-            setStoreLogoPreview(storeData.storeLogo);
-          }
-        }
-
-        if (adminData) {
-          setProfile((prev) => ({
-            ...prev,
-            name: adminData.name || "",
-            email: adminData.email || "",
-            avatar: adminData.profileImage || "",
-          }));
-          if (adminData.profileImage) {
-            setAvatarPreview(adminData.profileImage);
-          }
-        }
-      } catch (error) {
-        console.error("Failed to load settings:", error);
-        showToast("error", "Failed to load settings.");
-      }
-    };
-
-    fetchSettings();
-  }, []);
-
   // --- Handlers ---
 
   const showToast = (type, message) => {
     setToast({ type, message });
     setTimeout(() => setToast(null), 3000);
   };
+
+  const settingsQuery = useQuery({
+    queryKey: qk.admin.settings,
+    queryFn: async () => {
+      const response = await axiosInstance.get("/api/admin/settings");
+      return response.data;
+    },
+  });
+
+  const saveSettingsMutation = useMutation({
+    mutationFn: async ({ tab, formData }) => {
+      if (tab === "store") {
+        return axiosInstance.put("/api/admin/settings/store", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+      }
+      return axiosInstance.put("/api/admin/settings/profile", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.settings });
+    },
+  });
+
+  useEffect(() => {
+    if (!settingsQuery.data) return;
+    const { store: storeData, admin: adminData } = settingsQuery.data;
+
+    if (storeData) {
+      setStore((prev) => ({
+        ...prev,
+        ...storeData,
+      }));
+      if (storeData.storeLogo) {
+        setStoreLogoPreview(storeData.storeLogo);
+      }
+    }
+
+    if (adminData) {
+      setProfile((prev) => ({
+        ...prev,
+        name: adminData.name || "",
+        email: adminData.email || "",
+        avatar: adminData.profileImage || "",
+      }));
+      if (adminData.profileImage) {
+        setAvatarPreview(adminData.profileImage);
+      }
+    }
+  }, [settingsQuery.data]);
+
+  useEffect(() => {
+    if (settingsQuery.isError) {
+      showToast("error", "Failed to load settings.");
+    }
+  }, [settingsQuery.isError]);
 
   const handleFileChange = (e, type) => {
     const file = e.target.files[0];
@@ -114,7 +137,7 @@ export default function AdminSettings() {
   };
 
   const handleSave = async () => {
-    setLoading(true);
+    setSaving(true);
 
     try {
       const formData = new FormData();
@@ -128,9 +151,7 @@ export default function AdminSettings() {
           formData.append("storeLogo", storeLogoFile);
         }
 
-        await axiosInstance.put("/api/admin/settings/store", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await saveSettingsMutation.mutateAsync({ tab: "store", formData });
         showToast("success", "Store settings saved successfully.");
 
         // Refresh profile if logo might affect it (unlikely but safe)
@@ -143,9 +164,7 @@ export default function AdminSettings() {
           formData.append("profileImage", avatarFile);
         }
 
-        await axiosInstance.put("/api/admin/settings/profile", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await saveSettingsMutation.mutateAsync({ tab: "profile", formData });
         showToast("success", "Profile updated successfully.");
 
         // Refresh profile in Header
@@ -158,7 +177,7 @@ export default function AdminSettings() {
       const msg = error.response?.data?.message || "Failed to save settings.";
       showToast("error", msg);
     } finally {
-      setLoading(false);
+      setSaving(false);
     }
   };
 
@@ -181,15 +200,15 @@ export default function AdminSettings() {
           </div>
           <button
             onClick={handleSave}
-            disabled={loading}
+            disabled={saving}
             className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-lg shadow-slate-200 active:scale-95 text-sm font-bold disabled:opacity-70"
           >
-            {loading ? (
+            {saving ? (
               <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             ) : (
               <SaveIcon className="h-4 w-4" />
             )}
-            {loading ? "Saving..." : "Save Changes"}
+            {saving ? "Saving..." : "Save Changes"}
           </button>
         </div>
 
@@ -390,10 +409,10 @@ export default function AdminSettings() {
             <div className="mt-8 sm:hidden sticky bottom-4 z-10">
               <button
                 onClick={handleSave}
-                disabled={loading}
+                disabled={saving}
                 className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 text-white transition-all shadow-xl active:scale-95 text-sm font-bold disabled:opacity-70"
               >
-                {loading ? (
+                {saving ? (
                   <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <SaveIcon className="h-4 w-4" />

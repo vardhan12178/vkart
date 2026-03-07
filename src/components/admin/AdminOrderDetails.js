@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   ArrowLeftIcon,
   LocationMarkerIcon,
@@ -21,6 +22,7 @@ import {
   ArchiveIcon
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
+import { qk } from "../../query/queryKeys";
 
 const STAGES = [
   "PLACED",
@@ -56,13 +58,9 @@ function formatDateTime(isoStr) {
 export default function AdminOrderDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  const [order, setOrder] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [updating, setUpdating] = useState(false);
   const [toast, setToast] = useState({ type: "", message: "" });
-  const [returnUpdating, setReturnUpdating] = useState(false);
-  const [refundUpdating, setRefundUpdating] = useState(false);
   const apiBase =
     typeof window !== "undefined" &&
     (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
@@ -80,23 +78,89 @@ export default function AdminOrderDetails() {
     showToast("success", "Order ID copied to clipboard!");
   };
 
-  const loadOrder = async () => {
-    try {
-      setLoading(true);
-      setLoading(true);
+  const orderQuery = useQuery({
+    queryKey: qk.admin.order(id),
+    queryFn: async () => {
       const res = await axiosInstance.get(`/api/admin/orders/${id}`);
-      setOrder(res.data);
-    } catch (err) {
-      console.error("Order load error:", err);
-      showToast("error", "Failed to load order details.");
-    } finally {
-      setLoading(false);
-    }
-  };
+      return res.data;
+    },
+    enabled: Boolean(id),
+  });
+
+  const order = orderQuery.data || null;
+  const loading = orderQuery.isLoading;
 
   useEffect(() => {
-    loadOrder();
-  }, [id]);
+    if (orderQuery.isError) {
+      showToast("error", "Failed to load order details.");
+    }
+  }, [orderQuery.isError]);
+
+  const updateStageMutation = useMutation({
+    mutationFn: async (stage) => {
+      const res = await axiosInstance.patch(`/api/admin/orders/${id}/stage`, { stage });
+      return { stage, data: res.data };
+    },
+    onSuccess: ({ stage, data }) => {
+      queryClient.setQueryData(qk.admin.order(id), (prev) => data.order || (prev ? { ...prev, stage } : prev));
+      queryClient.invalidateQueries({ queryKey: qk.admin.orders });
+      queryClient.invalidateQueries({ queryKey: qk.admin.dashboard });
+      showToast("success", `Status updated to ${stage.replace(/_/g, " ")}`);
+    },
+    onError: (err) => {
+      showToast("error", err?.message || "Failed to update status.");
+    },
+  });
+
+  const updateReturnMutation = useMutation({
+    mutationFn: async (status) => {
+      const res = await axiosInstance.patch(`/api/admin/orders/${id}/return`, { status });
+      return { status, data: res.data };
+    },
+    onSuccess: ({ status, data }) => {
+      queryClient.setQueryData(qk.admin.order(id), (prev) => data.order || prev);
+      queryClient.invalidateQueries({ queryKey: qk.admin.orders });
+      queryClient.invalidateQueries({ queryKey: qk.admin.dashboard });
+      showToast("success", `Return status: ${status}`);
+    },
+    onError: () => {
+      showToast("error", "Failed to update return status.");
+    },
+  });
+
+  const refundMutation = useMutation({
+    mutationFn: async (method) => {
+      const res = await axiosInstance.post(`/api/admin/orders/${id}/refund`, { method });
+      return { method, data: res.data };
+    },
+    onSuccess: ({ method, data }) => {
+      queryClient.setQueryData(qk.admin.order(id), (prev) => data.order || prev);
+      queryClient.invalidateQueries({ queryKey: qk.admin.orders });
+      queryClient.invalidateQueries({ queryKey: qk.admin.dashboard });
+      showToast("success", `Refund ${method}`);
+    },
+    onError: () => {
+      showToast("error", "Failed to initiate refund.");
+    },
+  });
+
+  const replacementMutation = useMutation({
+    mutationFn: async () => {
+      const res = await axiosInstance.post(`/api/admin/orders/${id}/replacement`);
+      return res.data;
+    },
+    onSuccess: (data) => {
+      queryClient.setQueryData(qk.admin.order(id), (prev) =>
+        data.replacement ? { ...prev, replacementOrderId: data.replacement._id } : prev
+      );
+      queryClient.invalidateQueries({ queryKey: qk.admin.orders });
+      queryClient.invalidateQueries({ queryKey: qk.admin.dashboard });
+      showToast("success", "Replacement created");
+    },
+    onError: () => {
+      showToast("error", "Replacement failed");
+    },
+  });
 
   const updateStage = async (stage) => {
     if (!order) return;
@@ -107,46 +171,27 @@ export default function AdminOrderDetails() {
     if (stage === order.stage) return;
 
     try {
-      setUpdating(true);
-      setUpdating(true);
-      const res = await axiosInstance.patch(`/api/admin/orders/${id}/stage`, { stage });
-      const data = res.data;
-
-      // Axios throws on error statuses by default, so we can assume success if we get here
-      setOrder(data.order || { ...order, stage });
-      showToast("success", `Status updated to ${stage.replace(/_/g, " ")}`);
-    } catch (err) {
-      showToast("error", err.message || "Failed to update status.");
-    } finally {
-      setUpdating(false);
+      await updateStageMutation.mutateAsync(stage);
+    } catch {
+      // Error toast is handled in mutation callbacks.
     }
   };
 
   const updateReturn = async (status) => {
     if (!order) return;
     try {
-      setReturnUpdating(true);
-      const res = await axiosInstance.patch(`/api/admin/orders/${id}/return`, { status });
-      setOrder(res.data.order || order);
-      showToast("success", `Return status: ${status}`);
-    } catch (err) {
-      showToast("error", "Failed to update return status.");
-    } finally {
-      setReturnUpdating(false);
+      await updateReturnMutation.mutateAsync(status);
+    } catch {
+      // Error toast is handled in mutation callbacks.
     }
   };
 
   const initiateRefund = async (method) => {
     if (!order) return;
     try {
-      setRefundUpdating(true);
-      const res = await axiosInstance.post(`/api/admin/orders/${id}/refund`, { method });
-      setOrder(res.data.order || order);
-      showToast("success", `Refund ${method}`);
-    } catch (err) {
-      showToast("error", "Failed to initiate refund.");
-    } finally {
-      setRefundUpdating(false);
+      await refundMutation.mutateAsync(method);
+    } catch {
+      // Error toast is handled in mutation callbacks.
     }
   };
 
@@ -236,10 +281,10 @@ export default function AdminOrderDetails() {
               Download PDF
             </button>
             <button
-              onClick={loadOrder}
+              onClick={() => orderQuery.refetch()}
               className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-all active:scale-95"
             >
-              <RefreshIcon className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+              <RefreshIcon className={`h-4 w-4 ${orderQuery.isFetching ? 'animate-spin' : ''}`} />
               Refresh
             </button>
           </div>
@@ -349,7 +394,7 @@ export default function AdminOrderDetails() {
                   {/* Primary Action: The Next Logical Step */}
                   {nextLogicalStage && (
                     <button
-                      disabled={updating}
+                      disabled={updateStageMutation.isPending}
                       onClick={() => updateStage(nextLogicalStage)}
                       className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-bold shadow-lg shadow-slate-200 hover:bg-slate-800 hover:scale-[1.02] transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
@@ -363,7 +408,7 @@ export default function AdminOrderDetails() {
                     {STAGES.filter(s => s !== "CANCELLED" && s !== nextLogicalStage && s !== order.stage).map((s) => (
                       <button
                         key={s}
-                        disabled={updating}
+                        disabled={updateStageMutation.isPending}
                         onClick={() => updateStage(s)}
                         className="px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-white hover:border-orange-200 hover:text-orange-600 transition-all"
                       >
@@ -606,7 +651,7 @@ export default function AdminOrderDetails() {
               <button
                 key={s}
                 onClick={() => updateReturn(s)}
-                disabled={returnUpdating}
+                disabled={updateReturnMutation.isPending}
                 className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
               >
                 Set {s}
@@ -617,29 +662,22 @@ export default function AdminOrderDetails() {
           <div className="mt-4 flex flex-wrap gap-3">
             <button
               onClick={() => initiateRefund("WALLET")}
-              disabled={refundUpdating}
+              disabled={refundMutation.isPending}
               className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-md hover:bg-black disabled:opacity-60"
             >
               Refund to Wallet
             </button>
             <button
               onClick={() => initiateRefund("ORIGINAL")}
-              disabled={refundUpdating}
+              disabled={refundMutation.isPending}
               className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
             >
               Refund to Original
             </button>
             {order.returnType === "REPLACEMENT" && order.returnStatus === "RECEIVED" && !order.replacementOrderId && (
               <button
-                onClick={async () => {
-                  try {
-                    const res = await axiosInstance.post(`/api/admin/orders/${id}/replacement`);
-                    setOrder(res.data.replacement ? { ...order, replacementOrderId: res.data.replacement._id } : order);
-                    showToast("success", "Replacement created");
-                  } catch {
-                    showToast("error", "Replacement failed");
-                  }
-                }}
+                onClick={() => replacementMutation.mutate()}
+                disabled={replacementMutation.isPending}
                 className="px-4 py-2 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-700 hover:bg-emerald-50"
               >
                 Create Replacement Order

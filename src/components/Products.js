@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
 import { addToCart } from "../redux/cartSlice";
 import { toggleWishlist } from "../redux/wishlistSlice";
 import { showToast } from "../utils/toast";
 import axios from "./axiosInstance";
 import { Helmet } from "react-helmet-async";
+import { qk } from "../query/queryKeys";
 
 // Extracted Components
 import ProductSkeleton from "./product/ProductSkeleton";
@@ -61,10 +63,6 @@ export default function Products() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [filterLoading, setFilterLoading] = useState(false);
-  const [activeSale, setActiveSale] = useState(null);
   const saleOnly = searchParams.get("sale") === "true";
 
   const [searchInput, setSearchInput] = useState(searchParams.get("q") || "");
@@ -103,7 +101,7 @@ export default function Products() {
     if (q !== searchInput) {
       setSearchInput(q);
     }
-  }, [searchParams]);
+  }, [searchInput, searchParams]);
 
   /**
    * Debouce Search Input -> Update URL
@@ -122,72 +120,64 @@ export default function Products() {
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [searchInput, searchParams]);
+  }, [searchInput, searchParams, setSearchParams]);
 
-  /**
-   * Fetch products from backend with all filters applied server-side
-   * Backend handles: search, category, price, rating, and sorting
-   * Debounced: 300ms delay so rapid slider / filter changes batch into one request
-   */
+  const [debouncedFilters, setDebouncedFilters] = useState(() => ({
+    categoryFilter,
+    searchTerm,
+    saleOnly,
+    minPrice: priceRange.min,
+    maxPrice: priceRange.max,
+    ratingFilter,
+    sortBy,
+  }));
+
   useEffect(() => {
-    let isMounted = true;
-    const controller = new AbortController();
-
     const timer = setTimeout(() => {
-      (async () => {
-        try {
-          setFilterLoading(true);
-
-          const params = {
-            page: 1,
-            limit: 100,
-          };
-
-          if (categoryFilter) params.category = categoryFilter;
-          if (searchTerm) params.q = searchTerm;
-          if (saleOnly) params.sale = "true";
-          if (priceRange.min > 0) params.minPrice = priceRange.min;
-          if (priceRange.max < 100000) params.maxPrice = priceRange.max;
-          if (ratingFilter > 0) params.minRating = ratingFilter;
-
-          if (sortBy !== "relevance") {
-            if (sortBy === "price-asc") params.sort = "price_asc";
-            else if (sortBy === "price-desc") params.sort = "price_desc";
-            else if (sortBy === "rating-desc") params.sort = "rating_desc";
-          }
-
-          const res = await axios.get("/api/products", {
-            params,
-            signal: controller.signal
-          });
-          const { products: fetchedProducts, activeSale: saleData } = res.data;
-
-          if (isMounted) {
-            setProducts(fetchedProducts || []);
-            setActiveSale(saleData || null);
-          }
-        } catch (err) {
-          if (err.name !== 'CanceledError') {
-            console.error("Fetch error:", err);
-            if (isMounted) {
-              setProducts([]);
-            }
-          }
-        } finally {
-          if (isMounted) {
-            setFilterLoading(false);
-            setLoading(false);
-          }
-        }
-      })();
+      setDebouncedFilters({
+        categoryFilter,
+        searchTerm,
+        saleOnly,
+        minPrice: priceRange.min,
+        maxPrice: priceRange.max,
+        ratingFilter,
+        sortBy,
+      });
     }, 300);
 
-    return () => {
-      isMounted = false;
-      clearTimeout(timer);
-      controller.abort();
+    return () => clearTimeout(timer);
+  }, [categoryFilter, searchTerm, saleOnly, priceRange.min, priceRange.max, ratingFilter, sortBy]);
+
+  const productParams = useMemo(() => {
+    const params = {
+      page: 1,
+      limit: 100,
     };
-  }, [categoryFilter, searchTerm, priceRange, sortBy, ratingFilter, saleOnly]);
+
+    if (debouncedFilters.categoryFilter) params.category = debouncedFilters.categoryFilter;
+    if (debouncedFilters.searchTerm) params.q = debouncedFilters.searchTerm;
+    if (debouncedFilters.saleOnly) params.sale = "true";
+    if (debouncedFilters.minPrice > 0) params.minPrice = debouncedFilters.minPrice;
+    if (debouncedFilters.maxPrice < 100000) params.maxPrice = debouncedFilters.maxPrice;
+    if (debouncedFilters.ratingFilter > 0) params.minRating = debouncedFilters.ratingFilter;
+
+    if (debouncedFilters.sortBy !== "relevance") {
+      if (debouncedFilters.sortBy === "price-asc") params.sort = "price_asc";
+      else if (debouncedFilters.sortBy === "price-desc") params.sort = "price_desc";
+      else if (debouncedFilters.sortBy === "rating-desc") params.sort = "rating_desc";
+    }
+
+    return params;
+  }, [debouncedFilters]);
+
+  const productsQuery = useQuery({
+    queryKey: qk.products.list(productParams),
+    queryFn: async () => {
+      const res = await axios.get("/api/products", { params: productParams });
+      return res.data;
+    },
+    placeholderData: (previousData) => previousData,
+  });
 
   /**
    * Sync filter state to URL parameters
@@ -195,25 +185,27 @@ export default function Products() {
    * This effect handles the OTHER filters.
    */
   useEffect(() => {
-    const next = new URLSearchParams(searchParams);
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
 
-    // We do NOT set 'q' here from state, we preserve what's in searchParams (or handled by debounce)
-    // Actually, we should probably ensure the other params match state.
+      if (categoryFilter) next.set("cat", categoryFilter); else next.delete("cat");
+      if (ratingFilter > 0) next.set("rating", String(ratingFilter)); else next.delete("rating");
+      if (priceRange.min) next.set("min", String(priceRange.min)); else next.delete("min");
+      if (priceRange.max !== 100000) next.set("max", String(priceRange.max)); else next.delete("max");
+      if (sortBy !== "relevance") next.set("sort", sortBy); else next.delete("sort");
 
-    if (categoryFilter) next.set("cat", categoryFilter); else next.delete("cat");
-    if (ratingFilter > 0) next.set("rating", String(ratingFilter)); else next.delete("rating");
-    if (priceRange.min) next.set("min", String(priceRange.min)); else next.delete("min");
-    if (priceRange.max !== 100000) next.set("max", String(priceRange.max)); else next.delete("max");
-    if (sortBy !== "relevance") next.set("sort", sortBy); else next.delete("sort");
-
-    setSearchParams(next, { replace: true });
-  }, [categoryFilter, ratingFilter, priceRange, sortBy, setSearchParams]);
+      return next;
+    }, { replace: true });
+  }, [categoryFilter, ratingFilter, priceRange.max, priceRange.min, sortBy, setSearchParams]);
 
   /**
    * No client-side filtering needed - backend handles everything
    * Products array is already filtered and sorted by the backend
    */
-  const filteredProducts = products;
+  const filteredProducts = productsQuery.data?.products || [];
+  const activeSale = productsQuery.data?.activeSale || null;
+  const loading = productsQuery.isLoading;
+  const filterLoading = productsQuery.isFetching && !productsQuery.isLoading;
 
   /**
    * Reset visible items count when filters change

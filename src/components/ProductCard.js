@@ -1,11 +1,13 @@
-import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { addToCart } from "../redux/cartSlice";
 import { toggleWishlist } from "../redux/wishlistSlice";
 import Slider from "react-slick";
 import axios from "./axiosInstance";
 import { Helmet } from "react-helmet-async";
+import { qk } from "../query/queryKeys";
 
 import ReviewModal from "./ReviewModal";
 
@@ -15,6 +17,7 @@ import {
   FaRegStar,
   FaChevronLeft,
   FaChevronRight,
+  FaBolt,
   FaShareAlt,
   FaTruck,
   FaUndoAlt,
@@ -154,12 +157,54 @@ export default function ProductCard() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const queryClient = useQueryClient();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  const [product, setProduct] = useState(null);
-  const [related, setRelated] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const {
+    data: product,
+    isLoading: loading,
+    isError: productError,
+  } = useQuery({
+    queryKey: qk.products.details(id),
+    enabled: Boolean(id),
+    retry: false,
+    queryFn: async ({ signal }) => {
+      const res = await axios.get(`/api/products/${id}`, { signal });
+      return res.data;
+    },
+  });
+
+  const { data: related = [] } = useQuery({
+    queryKey: qk.products.related(id, product?.category || ""),
+    enabled: Boolean(product?._id && product?.category),
+    queryFn: async ({ signal }) => {
+      const relRes = await axios.get("/api/products", {
+        params: { category: product.category, limit: 8 },
+        signal,
+      });
+      return (relRes.data.products || []).filter((p) => p._id !== product._id);
+    },
+  });
+
+  const { data: recentlyViewed = [] } = useQuery({
+    queryKey: qk.products.recent(id),
+    enabled: Boolean(id),
+    queryFn: async () => {
+      try {
+        const key = "vkart_recently_viewed";
+        const saved = JSON.parse(localStorage.getItem(key) || "[]");
+        const ids = saved.filter((pid) => pid !== id).slice(0, 6);
+        if (!ids.length) return [];
+        const results = await Promise.all(
+          ids.map((pid) => axios.get(`/api/products/${pid}`).then((r) => r.data).catch(() => null))
+        );
+        return results.filter(Boolean);
+      } catch {
+        return [];
+      }
+    },
+  });
+
   const [quantity, setQuantity] = useState(1);
   // Wishlist from Redux
   const wishlist = useSelector((state) => state.wishlist);
@@ -180,37 +225,6 @@ export default function ProductCard() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
-
-  const fetchProduct = useCallback(async (signal) => {
-    try {
-      setError("");
-      setLoading(true);
-      const res = await axios.get(`/api/products/${id}`, { signal });
-      const data = res.data;
-      setProduct(data);
-
-      let relatedList = [];
-      try {
-        const relRes = await axios.get("/api/products", {
-          params: { category: data.category, limit: 8 },
-          signal,
-        });
-        relatedList = relRes.data.products || [];
-      } catch { relatedList = []; }
-
-      setRelated(relatedList.filter((p) => p._id !== data._id));
-    } catch (e) {
-      if (e.name !== "AbortError") setError("Could not load product.");
-    } finally {
-      setLoading(false);
-    }
-  }, [id]);
-
-  useEffect(() => {
-    const ac = new AbortController();
-    fetchProduct(ac.signal);
-    return () => ac.abort();
-  }, [fetchProduct]);
 
   useEffect(() => {
     setNav1(null);
@@ -278,8 +292,8 @@ export default function ProductCard() {
   };
 
   const handleReviewAdded = (data) => {
-    fetchProduct(new AbortController().signal);
-    showToast(`Review added! New rating: ${data.newRating}⭐`, "success");
+    queryClient.invalidateQueries({ queryKey: qk.products.details(id) });
+    showToast(`Review added! New rating: ${data.newRating}/5`, "success");
   };
 
   const handleBuyNow = () => {
@@ -296,8 +310,6 @@ export default function ProductCard() {
     navigate("/cart");
   };
 
-  // Recently viewed
-  const [recentlyViewed, setRecentlyViewed] = useState([]);
   useEffect(() => {
     if (!product) return;
     // Track in localStorage
@@ -307,28 +319,12 @@ export default function ProductCard() {
       const filtered = saved.filter((pid) => pid !== product._id);
       filtered.unshift(product._id);
       localStorage.setItem(key, JSON.stringify(filtered.slice(0, 12)));
+      queryClient.invalidateQueries({ queryKey: qk.products.recent(id) });
     } catch {}
-  }, [product]);
-
-  useEffect(() => {
-    // Fetch recently viewed products (excluding current)
-    const loadRecent = async () => {
-      try {
-        const key = "vkart_recently_viewed";
-        const saved = JSON.parse(localStorage.getItem(key) || "[]");
-        const ids = saved.filter((pid) => pid !== id).slice(0, 6);
-        if (!ids.length) return;
-        const results = await Promise.all(
-          ids.map((pid) => axios.get(`/api/products/${pid}`).then((r) => r.data).catch(() => null))
-        );
-        setRecentlyViewed(results.filter(Boolean));
-      } catch {}
-    };
-    loadRecent();
-  }, [id]);
+  }, [id, product, queryClient]);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-500">Loading...</div>;
-  if (error || !product) return <div className="min-h-screen flex items-center justify-center text-red-500">{error}</div>;
+  if (productError || !product) return <div className="min-h-screen flex items-center justify-center text-red-500">Could not load product.</div>;
 
   const { title, brand, category, discountPercentage, rating, stock, description } = product;
   const { imgs, selling, mrp, reviewsList, reviewCount } = computed;
@@ -389,19 +385,11 @@ export default function ProductCard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
-          {/* ------------------------------------------
-            LEFT COLUMN: Images 
-            FIX: Changed from col-span-7 to col-span-6 to prevent 
-            the image from getting too tall on laptops.
-            ------------------------------------------
-          */}
+          {/* Image gallery */}
           <div className="lg:col-span-6 space-y-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 relative">
 
-              {/* FIX: Main Display Area
-                 Added max-h-[600px] to ensure it doesn't take up the whole screen height.
-                 Kept aspect-square for consistency.
-              */}
+              {/* Main display area */}
               <div className="relative group rounded-2xl overflow-hidden bg-gray-50 aspect-square max-h-[350px] lg:max-h-[450px] w-full mx-auto">
                 <Slider
                   asNavFor={nav2}
@@ -476,11 +464,7 @@ export default function ProductCard() {
             </div>
           </div>
 
-          {/* ------------------------------------------
-            RIGHT COLUMN: Details
-            FIX: Changed from col-span-5 to col-span-6 (50/50 split)
-            ------------------------------------------
-          */}
+          {/* Product details */}
           <div className="lg:col-span-6 space-y-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
 
             {/* Header */}
@@ -520,7 +504,7 @@ export default function ProductCard() {
             </div>
 
             {/* Controls */}
-            <div ref={buyBoxRef} className="space-y-6">
+            <div ref={buyBoxRef} className="space-y-4 rounded-2xl border border-gray-100 bg-white p-4 sm:p-5 shadow-sm">
               {/* Variant Selectors */}
               {product.variants?.length > 0 && (
                 <div className="space-y-4">
@@ -552,34 +536,50 @@ export default function ProductCard() {
                 </div>
               )}
 
-              <div className="flex gap-4">
-                <div className="flex items-center bg-white border border-gray-200 rounded-xl h-14 w-32 shadow-sm">
-                  <button onClick={() => changeQty(-1)} className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-l-xl transition">–</button>
+              <div
+                className={`grid grid-cols-1 gap-3 ${
+                  stock > 0
+                    ? "sm:grid-cols-[8rem_minmax(0,1fr)_minmax(0,1fr)]"
+                    : "sm:grid-cols-[8rem_minmax(0,1fr)]"
+                }`}
+              >
+                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl h-12 w-full shadow-sm">
+                  <button
+                    onClick={() => changeQty(-1)}
+                    className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-white rounded-l-xl transition"
+                  >
+                    -
+                  </button>
                   <span className="w-8 text-center font-bold text-gray-900">{quantity}</span>
-                  <button onClick={() => changeQty(1)} className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-r-xl transition">+</button>
+                  <button
+                    onClick={() => changeQty(1)}
+                    className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-white rounded-r-xl transition"
+                  >
+                    +
+                  </button>
                 </div>
                 <button
                   onClick={handleAdd}
                   disabled={stock === 0}
-                  className={`flex-1 h-14 rounded-xl font-bold text-lg shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 ${stock === 0
-                    ? "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
-                    : "bg-gray-900 text-white hover:bg-black hover:shadow-xl"
-                    }`}
+                  className={`h-12 rounded-xl font-bold text-base shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 ${
+                    stock === 0
+                      ? "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
+                      : "bg-gray-900 text-white hover:bg-black hover:shadow-xl"
+                  }`}
                 >
                   <FaCartPlus /> {stock === 0 ? "Out of Stock" : "Add to Cart"}
                 </button>
+
+                {/* Buy Now */}
+                {stock > 0 && (
+                  <button
+                    onClick={handleBuyNow}
+                    className="h-12 rounded-xl font-bold text-base bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-[0_10px_24px_-12px_rgba(249,115,22,0.85)] hover:from-orange-600 hover:to-amber-600 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
+                  >
+                    <FaBolt size={12} /> Buy Now
+                  </button>
+                )}
               </div>
-
-              {/* Buy Now */}
-              {stock > 0 && (
-                <button
-                  onClick={handleBuyNow}
-                  className="w-full h-14 rounded-xl font-bold text-lg bg-orange-500 text-white shadow-lg shadow-orange-200/50 hover:bg-orange-600 hover:shadow-orange-300/50 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
-                >
-                  ⚡ Buy Now
-                </button>
-              )}
-
               <div className="flex gap-4">
                 <button
                   onClick={handleWish}
@@ -597,9 +597,7 @@ export default function ProductCard() {
               </div>
             </div>
 
-            {/* FIX: IMPROVED TRUST BADGES
-               Horizontal layout, better icons, cleaner look.
-            */}
+            {/* Trust badges */}
             <div className="grid grid-cols-3 gap-4 py-6 border-y border-gray-100 my-6 bg-gray-50/50 rounded-2xl px-4">
               {[
                 { icon: <FaTruck />, title: "Free Delivery", sub: "By Wed, 12th" },
@@ -618,9 +616,7 @@ export default function ProductCard() {
               ))}
             </div>
 
-            {/* FIX: SMART DESCRIPTION LIST
-               Converts plain text to nice bullet points automatically.
-            */}
+            {/* Product highlights */}
             <div className="mb-4">
               <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
                 <span className="w-1 h-4 bg-amber-400 rounded-full"></span>
@@ -628,8 +624,8 @@ export default function ProductCard() {
               </h3>
 
               <div className="space-y-3">
-                {description.split(/(?=[•\-])|\n/).map((line, index) => {
-                  const cleanedLine = line.replace(/^[•\-]\s*/, '').trim();
+                {description.split(/(?=[\u2022*-])|\n/).map((line, index) => {
+                  const cleanedLine = line.replace(/^[\u2022*-]\s*/, "").trim();
                   if (!cleanedLine) return null;
 
                   const isSpec = cleanedLine.includes(':');
@@ -825,9 +821,9 @@ export default function ProductCard() {
           {stock > 0 && (
             <button
               onClick={handleBuyNow}
-              className="px-6 h-12 bg-orange-500 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform"
+              className="px-5 h-12 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5"
             >
-              Buy Now
+              <FaBolt size={11} /> Buy Now
             </button>
           )}
         </div>
@@ -846,8 +842,8 @@ export default function ProductCard() {
           <button onClick={handleAdd} className="bg-gray-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition shadow-md">
             Add to Cart
           </button>
-          <button onClick={handleBuyNow} className="bg-orange-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-orange-600 transition shadow-md">
-            Buy Now
+          <button onClick={handleBuyNow} className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2 rounded-lg font-bold hover:from-orange-600 hover:to-amber-600 transition shadow-md inline-flex items-center gap-2">
+            <FaBolt size={11} /> Buy Now
           </button>
         </div>
       </div>
@@ -862,3 +858,4 @@ export default function ProductCard() {
     </div>
   );
 }
+

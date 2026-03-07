@@ -18,53 +18,69 @@ import { setAuthState } from "./redux/authSlice";
 import LoadingSpinner from "./components/LoadingSpinner";
 import NotificationSocket from "./components/NotificationSocket";
 import RouteSeo from "./seo/RouteSeo";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { qk } from "./query/queryKeys";
 
 const App = () => {
   const dispatch = useDispatch();
-  const [authReady, setAuthReady] = useState(false);
+  const queryClient = useQueryClient();
   const [isAdmin, setIsAdmin] = useState(false);
 
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
 
-  // Restore session on refresh - now via API call (cookie-based)
+  const adminVerifyQuery = useQuery({
+    queryKey: qk.auth.adminVerify,
+    queryFn: async () => {
+      const res = await axios.get("/api/admin/verify", { withCredentials: true });
+      return res.data;
+    },
+    enabled: isAdminRoute,
+    retry: false,
+    staleTime: 0,
+    refetchOnMount: "always",
+  });
+
+  const sessionQuery = useQuery({
+    queryKey: qk.auth.session,
+    queryFn: async () => {
+      const res = await axios.get("/api/auth/check", { withCredentials: true });
+      return res.data;
+    },
+    enabled: !isAdminRoute,
+    retry: false,
+    staleTime: 0,
+    refetchOnMount: "always",
+  });
+
   useEffect(() => {
-    const checkAuth = async () => {
-      // For admin routes, check admin auth separately
-      if (isAdminRoute) {
-        try {
-          // Verify admin session via cookie
-          const res = await axios.get("/api/admin/verify", { withCredentials: true });
-          if (res.data?.valid) {
-            setIsAdmin(true);
-          }
-        } catch (err) {
-          // Admin not authenticated - will redirect to login
-          setIsAdmin(false);
-        }
-        setAuthReady(true);
-        return;
-      }
+    if (!isAdminRoute) {
+      setIsAdmin(false);
+      return;
+    }
+    if (adminVerifyQuery.isError) {
+      setIsAdmin(false);
+      return;
+    }
+    setIsAdmin(Boolean(adminVerifyQuery.data?.valid));
+  }, [isAdminRoute, adminVerifyQuery.data, adminVerifyQuery.isError]);
 
-      // For regular routes, check if user is logged in via cookie
-      try {
-        const res = await axios.get("/api/profile", { withCredentials: true });
-        if (res.data) {
-          dispatch(setAuthState({ isAuthenticated: true, user: res.data }));
-        }
-      } catch (err) {
-        // 401 means not logged in, which is fine for public routes
-        dispatch(setAuthState({ isAuthenticated: false }));
-      } finally {
-        setAuthReady(true);
-      }
-    };
+  useEffect(() => {
+    if (isAdminRoute) return;
+    if (sessionQuery.data?.authenticated && sessionQuery.data.user) {
+      queryClient.setQueryData(qk.profile.root, sessionQuery.data.user);
+      dispatch(setAuthState({ isAuthenticated: true, user: sessionQuery.data.user }));
+      return;
+    }
+    if (sessionQuery.data?.authenticated === false || sessionQuery.isError) {
+      queryClient.removeQueries({ queryKey: qk.profile.root });
+      dispatch(setAuthState({ isAuthenticated: false, user: null }));
+    }
+  }, [dispatch, isAdminRoute, queryClient, sessionQuery.data, sessionQuery.isError]);
 
-    checkAuth();
-  }, [dispatch, isAdminRoute]);
+  const authLoading = isAdminRoute ? adminVerifyQuery.isLoading : sessionQuery.isLoading;
 
-
-  if (!authReady) return <LoadingSpinner />;
+  if (authLoading) return <LoadingSpinner />;
 
   return (
 

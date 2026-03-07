@@ -1,36 +1,70 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "./axiosInstance";
 import { useSelector } from "react-redux";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt } from "react-icons/fa";
 import { showToast } from "../utils/toast";
+import { qk } from "../query/queryKeys";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
 
 export default function PrimeMembership() {
-  const [plans, setPlans] = useState([]);
-  const [membership, setMembership] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
   const [purchasing, setPurchasing] = useState(null);
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
 
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const [plansRes, statusRes] = await Promise.all([
-          axios.get("/api/membership/plans"),
-          isAuthenticated ? axios.get("/api/membership/status") : Promise.resolve({ data: null }),
-        ]);
-        setPlans(plansRes.data || []);
-        if (statusRes.data) setMembership(statusRes.data);
-      } catch { /* ignore */ } finally {
-        setLoading(false);
-      }
-    };
-    load();
-  }, [isAuthenticated]);
+  const { data: plans = [], isLoading: plansLoading } = useQuery({
+    queryKey: qk.membership.plans,
+    queryFn: async () => {
+      const res = await axios.get("/api/membership/plans");
+      return res.data || [];
+    },
+    staleTime: 5 * 60 * 1000,
+  });
 
-  const isPrime = membership?.isPrime;
+  const { data: membership = null, isLoading: statusLoading } = useQuery({
+    queryKey: qk.membership.status,
+    enabled: isAuthenticated,
+    retry: false,
+    queryFn: async () => {
+      const res = await axios.get("/api/membership/status");
+      return res.data || null;
+    },
+  });
+
+  const purchaseMutation = useMutation({
+    mutationFn: async (planId) => {
+      const { data } = await axios.post("/api/membership/purchase", { planId });
+      return data;
+    },
+  });
+
+  const verifyMutation = useMutation({
+    mutationFn: async ({ paymentResponse, planId }) => {
+      const res = await axios.post("/api/membership/verify", {
+        razorpay_order_id: paymentResponse.razorpay_order_id,
+        razorpay_payment_id: paymentResponse.razorpay_payment_id,
+        razorpay_signature: paymentResponse.razorpay_signature,
+        planId,
+      });
+      return res.data;
+    },
+    onSuccess: (data) => {
+      if (!data?.success) return;
+      queryClient.setQueryData(qk.membership.status, {
+        membership: data.membership,
+        isPrime: data.isPrime,
+      });
+      queryClient.invalidateQueries({ queryKey: qk.membership.status });
+      queryClient.invalidateQueries({ queryKey: qk.profile.root });
+      showToast("Welcome to VKart Prime!", "success");
+    },
+  });
+
+  const isLoading = plansLoading || (isAuthenticated && statusLoading);
+  const membershipData = isAuthenticated ? membership : null;
+  const isPrime = membershipData?.isPrime;
 
   const handlePurchase = async (planId) => {
     if (!isAuthenticated) {
@@ -39,8 +73,8 @@ export default function PrimeMembership() {
     }
     setPurchasing(planId);
     try {
-      const { data } = await axios.post("/api/membership/purchase", { planId });
-      if (!data.orderId) throw new Error("No orderId returned");
+      const data = await purchaseMutation.mutateAsync(planId);
+      if (!data?.orderId) throw new Error("No orderId returned");
 
       const options = {
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
@@ -51,16 +85,10 @@ export default function PrimeMembership() {
         order_id: data.orderId,
         handler: async (response) => {
           try {
-            const res = await axios.post("/api/membership/verify", {
-              razorpay_order_id: response.razorpay_order_id,
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_signature: response.razorpay_signature,
+            await verifyMutation.mutateAsync({
+              paymentResponse: response,
               planId,
             });
-            if (res.data.success) {
-              setMembership({ membership: res.data.membership, isPrime: res.data.isPrime });
-              showToast("Welcome to VKart Prime! 🎉", "success");
-            }
           } catch {
             showToast("Verification failed", "error");
           } finally {
@@ -79,7 +107,7 @@ export default function PrimeMembership() {
     }
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="w-10 h-10 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
@@ -98,16 +126,18 @@ export default function PrimeMembership() {
             <span className="text-sm font-bold text-amber-300">VKart Prime</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight">
-            Unlock Premium<br />Shopping Benefits
+            Unlock Premium
+            <br />
+            Shopping Benefits
           </h1>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Exclusive discounts, priority support, and premium perks — all in one membership.
+            Exclusive discounts, priority support, and premium perks - all in one membership.
           </p>
         </div>
       </div>
 
       {/* Active Membership Banner */}
-      {isPrime && membership?.membership && (
+      {isPrime && membershipData?.membership && (
         <div className="max-w-5xl mx-auto px-4 -mt-8 relative z-20">
           <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-6 shadow-lg">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -118,20 +148,29 @@ export default function PrimeMembership() {
                 <div>
                   <p className="font-bold text-gray-900">You're a Prime Member!</p>
                   <p className="text-sm text-gray-600">
-                    Active until {new Date(membership.membership.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}
+                    Active until{" "}
+                    {new Date(membershipData.membership.endDate).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
                   </p>
                 </div>
               </div>
               <span className="bg-amber-500 text-white text-xs font-bold px-4 py-2 rounded-full">ACTIVE</span>
             </div>
-            {membership.membership.history?.length > 0 && (
+            {membershipData.membership.history?.length > 0 && (
               <div className="mt-4 pt-4 border-t border-amber-200/50">
                 <p className="text-xs font-bold text-amber-700 uppercase tracking-wider mb-2">Membership History</p>
                 <div className="space-y-1">
-                  {membership.membership.history.slice(-3).reverse().map((h, i) => (
+                  {membershipData.membership.history.slice(-3).reverse().map((h, i) => (
                     <div key={i} className="flex justify-between text-xs text-gray-600">
                       <span>{h.plan || "Prime Plan"}</span>
-                      <span>{new Date(h.startDate).toLocaleDateString("en-IN")} → {new Date(h.endDate).toLocaleDateString("en-IN")}</span>
+                      <span>
+                        {new Date(h.startDate).toLocaleDateString("en-IN")}
+                        {" -> "}
+                        {new Date(h.endDate).toLocaleDateString("en-IN")}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -210,11 +249,7 @@ export default function PrimeMembership() {
                     : "bg-gray-900 text-white hover:bg-black"
                 }`}
               >
-                {purchasing === plan._id
-                  ? "Processing..."
-                  : isPrime
-                  ? "Extend Membership"
-                  : "Get Prime"}
+                {purchasing === plan._id ? "Processing..." : isPrime ? "Extend Membership" : "Get Prime"}
               </button>
             </div>
           ))}

@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useNavigate, useSearchParams, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import OrderCard from "./OrderCard";
+import { qk } from "../query/queryKeys";
 import {
     FaBoxOpen,
     FaShoppingBag,
@@ -29,10 +31,6 @@ export default function Orders() {
 
     const { isAuthenticated } = useSelector((state) => state.auth);
 
-    const [orders, setOrders] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
-
     const highlightRef = useRef(null);
 
     // Redirect if not authenticated
@@ -42,31 +40,30 @@ export default function Orders() {
         }
     }, [isAuthenticated, navigate]);
 
-    // Fetch orders
-    useEffect(() => {
-        const fetchOrders = async () => {
+    const {
+        data: orders = [],
+        isLoading: loading,
+        isError,
+        refetch,
+    } = useQuery({
+        queryKey: qk.profile.orders,
+        enabled: isAuthenticated,
+        retry: false,
+        queryFn: async () => {
             try {
-                setLoading(true);
                 const response = await axios.get("/api/profile/orders");
-                const sortedOrders = (response.data || []).sort(
+                return (response.data || []).sort(
                     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
                 );
-                setOrders(sortedOrders);
             } catch (err) {
-                if (err.response?.status === 401) {
+                if (err?.response?.status === 401) {
                     navigate("/login", { replace: true });
-                } else {
-                    setError("Failed to load orders. Please try again.");
+                    return [];
                 }
-            } finally {
-                setLoading(false);
+                throw err;
             }
-        };
-
-        if (isAuthenticated) {
-            fetchOrders();
-        }
-    }, [isAuthenticated, navigate]);
+        },
+    });
 
     // Scroll to highlighted order
     useEffect(() => {
@@ -120,7 +117,7 @@ export default function Orders() {
                 <div className="bg-white rounded-[2rem] shadow-sm border border-gray-100 min-h-[400px] p-6 sm:p-8">
                     {loading ? (
                         <OrdersSkeleton />
-                    ) : error ? (
+                    ) : isError ? (
                         <div className="text-center py-12">
                             <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center text-red-400 mx-auto mb-4">
                                 <FaBoxOpen size={24} />
@@ -128,9 +125,9 @@ export default function Orders() {
                             <h3 className="text-lg font-bold text-gray-900 mb-2">
                                 Oops! Something went wrong
                             </h3>
-                            <p className="text-gray-500 text-sm mb-6">{error}</p>
+                            <p className="text-gray-500 text-sm mb-6">Failed to load orders. Please try again.</p>
                             <button
-                                onClick={() => window.location.reload()}
+                                onClick={() => refetch()}
                                 className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black transition-all"
                             >
                                 Try Again

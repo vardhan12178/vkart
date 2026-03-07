@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -24,9 +25,11 @@ import { clearWishlist } from "../redux/wishlistSlice";
 import { toggleChat } from "../redux/uiSlice";
 import AnnouncementBar from "./AnnouncementBar";
 import NotificationBell from "./NotificationBell";
+import { qk } from "../query/queryKeys";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -106,6 +109,18 @@ const Header = () => {
     } catch (err) {
       console.error("Logout failed:", err);
     } finally {
+      queryClient.setQueryData(qk.auth.session, { authenticated: false, user: null });
+      [
+        qk.profile.root,
+        qk.profile.orders,
+        qk.profile.addresses,
+        qk.profile.wallet,
+        qk.profile.cart,
+        qk.profile.wishlist,
+        qk.membership.status,
+      ].forEach((queryKey) => {
+        queryClient.removeQueries({ queryKey });
+      });
       dispatch(clearCart());
       dispatch(clearWishlist());
       dispatch(logout());

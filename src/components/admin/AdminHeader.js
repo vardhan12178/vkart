@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { io } from "socket.io-client";
 import { showToast } from "../../utils/toast";
 import axiosInstance from "../axiosInstance";
+import { getSocketBaseUrl, normalizeNotification, normalizeNotificationTitle } from "../../utils/notificationHelpers";
 import {
   MenuIcon,
   SearchIcon,
@@ -16,15 +18,14 @@ import {
   ExclamationCircleIcon,
   UserAddIcon,
 } from "@heroicons/react/outline";
+import { qk } from "../../query/queryKeys";
 
 export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
+  const queryClient = useQueryClient();
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const [notifications, setNotifications] = useState([]);
-  const [unreadCount, setUnreadCount] = useState(0);
 
   const dropdownRef = useRef(null);
   const notificationRef = useRef(null);
@@ -40,46 +41,46 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
 
   // --- Notification Logic ---
 
-  const fetchNotifications = async () => {
-    try {
+  const notificationsQuery = useQuery({
+    queryKey: qk.admin.notifications,
+    queryFn: async () => {
       const response = await axiosInstance.get("/api/admin/notifications");
-      if (response.data?.success) {
-        setNotifications(response.data.notifications || []);
-        // If unreadCount is provided by API use it, otherwise calculate it
-        setUnreadCount(response.data.unreadCount ?? response.data.notifications.filter(n => !n.isRead).length);
-      }
-    } catch (error) {
-      console.error("Failed to fetch notifications", error);
-    }
-  };
+      const notifications = (response.data?.notifications || []).map(normalizeNotification);
+      return {
+        notifications,
+        unreadCount: response.data?.unreadCount ?? notifications.filter((n) => !n.isRead).length,
+      };
+    },
+  });
+
+  const markReadMutation = useMutation({
+    mutationFn: async (payload) => axiosInstance.put("/api/admin/notifications/read", payload),
+    onError: () => {
+      notificationsQuery.refetch();
+    },
+  });
+
+  const notifications = notificationsQuery.data?.notifications || [];
+  const unreadCount = notificationsQuery.data?.unreadCount || 0;
 
   const markAsRead = async (ids = [], markAll = false) => {
     try {
-      // Optimistic update
-      setNotifications(prev => prev.map(n => {
-        if (markAll || ids.includes(n._id)) {
-          return { ...n, isRead: true };
-        }
-        return n;
-      }));
-
-      // Update unread count immediately for better UX
-      if (markAll) {
-        setUnreadCount(0);
-      } else {
-        const markedCount = ids.length;
-        setUnreadCount(prev => Math.max(0, prev - markedCount));
-      }
+      queryClient.setQueryData(qk.admin.notifications, (prev) => {
+        const current = prev || { notifications: [], unreadCount: 0 };
+        const updated = current.notifications.map((n) =>
+          markAll || ids.includes(n._id) ? { ...n, isRead: true } : n
+        );
+        return {
+          notifications: updated,
+          unreadCount: updated.filter((n) => !n.isRead).length,
+        };
+      });
 
       const payload = markAll ? { all: true } : { ids };
-      await axiosInstance.put("/api/admin/notifications/read", payload);
-
-      // Optionally refetch to ensure sync, but optimistic update is usually enough
-      // fetchNotifications(); 
-
+      await markReadMutation.mutateAsync(payload);
     } catch (error) {
       console.error("Failed to mark notifications read", error);
-      // Revert if needed, but for notifications it's usually low risk
+      notificationsQuery.refetch();
     }
   };
 
@@ -91,15 +92,24 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
 
     // 2. Navigate based on type
     setNotificationsOpen(false);
+    if (notification.link) {
+      navigate(notification.link);
+      return;
+    }
+
     switch (notification.type) {
       case "order":
         navigate("/admin/orders");
         break;
       case "user":
-        navigate("/admin/customers");
+        navigate("/admin/users");
         break;
       case "alert":
         navigate("/admin/products");
+        break;
+      case "return":
+      case "refund":
+        navigate("/admin/orders");
         break;
       case "system":
         navigate("/admin/settings");
@@ -112,27 +122,35 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
 
   // Socket.io
   useEffect(() => {
-    fetchNotifications();
-
-    const socketUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
-    const socket = io(socketUrl);
+    const socket = io(getSocketBaseUrl(), {
+      path: "/socket.io",
+      withCredentials: true,
+      transports: ["websocket", "polling"],
+    });
 
     socket.on("connect", () => {
       socket.emit("join_admin");
     });
 
     socket.on("new_notification", (notification) => {
-      setNotifications((prev) => [notification, ...prev]);
-      setUnreadCount((prev) => prev + 1);
+      const nextNotification = normalizeNotification(notification);
+      queryClient.setQueryData(qk.admin.notifications, (prev) => {
+        const current = prev || { notifications: [], unreadCount: 0 };
+        const nextNotifications = [nextNotification, ...current.notifications];
+        return {
+          notifications: nextNotifications,
+          unreadCount: nextNotifications.filter((n) => !n.isRead).length,
+        };
+      });
 
-      const msg = notification.message || "New activity detected";
-      showToast(`🔔 ${msg}`, "success");
+      const msg = nextNotification.message || "New activity detected";
+      showToast(`Notification: ${msg}`, "success");
     });
 
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [queryClient]);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -250,7 +268,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                 <kbd className="hidden sm:inline-flex items-center h-6 px-2 border border-slate-300 rounded text-[10px] font-bold text-slate-500 bg-white">
-                  ⌘K
+                  âŒ˜K
                 </kbd>
               </div>
             </div>
@@ -271,7 +289,10 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
             {/* Notification Bell */}
             <div className="relative" ref={notificationRef}>
               <button
-                onClick={() => setNotificationsOpen(!notificationsOpen)}
+                onClick={() => {
+                  setNotificationsOpen(!notificationsOpen);
+                  if (!notificationsOpen) notificationsQuery.refetch();
+                }}
                 className={`
                   relative p-2 sm:p-2.5 rounded-full transition-all group min-w-[44px] min-h-[44px] flex items-center justify-center
                   ${notificationsOpen ? "bg-orange-50 text-orange-600" : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"}
@@ -327,7 +348,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-start">
                               <p className={`text-sm ${!item.isRead ? "font-bold text-slate-900" : "font-medium text-slate-700"}`}>
-                                {item.title}
+                                {normalizeNotificationTitle(item.title)}
                               </p>
                               <span className="text-[10px] text-slate-400 whitespace-nowrap ml-2">{getTimeAgo(item.createdAt || Date.now())}</span>
                             </div>

@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { BellIcon, ShoppingBagIcon, TruckIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import axiosInstance from "./axiosInstance";
-import { setNotifications, markAsRead, addNotification } from "../redux/notificationSlice";
-import { showToast } from "../utils/toast";
+import { setNotifications, markAsRead } from "../redux/notificationSlice";
+import { normalizeNotification, normalizeNotificationTitle } from "../utils/notificationHelpers";
 
 const NotificationBell = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const NotificationBell = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const { notifications, unreadCount } = useSelector((state) => state.notifications);
-    const { isAuthenticated, user } = useSelector((state) => state.auth);
+    const { isAuthenticated } = useSelector((state) => state.auth);
 
     // Fetch notifications on mount
     useEffect(() => {
@@ -42,8 +42,9 @@ const NotificationBell = () => {
                 __skipAuthRedirect: true
             });
             if (response.data?.success) {
+                const notifications = (response.data.notifications || []).map(normalizeNotification);
                 dispatch(setNotifications({
-                    notifications: response.data.notifications || [],
+                    notifications,
                     unreadCount: response.data.unreadCount,
                 }));
             }
@@ -221,7 +222,7 @@ const NotificationBell = () => {
                                         <div className="flex-1 min-w-0">
                                             <div className="flex justify-between items-start">
                                                 <p className={`text-sm ${!item.isRead ? "font-bold text-gray-900" : "font-medium text-gray-700"}`}>
-                                                    {item.title}
+                                                    {normalizeNotificationTitle(item.title)}
                                                 </p>
                                                 <span className="text-[10px] text-gray-400 whitespace-nowrap ml-2">
                                                     {getTimeAgo(item.createdAt || Date.now())}

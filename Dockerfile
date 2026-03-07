@@ -9,7 +9,7 @@ RUN npm run build
 # ---- Serve Stage ----
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
-COPY --from=build /app/build .
+COPY --from=build /app/dist .
 # Optional: replace default Nginx config for React router
 RUN rm -rf /etc/nginx/conf.d/*
 COPY nginx.conf /etc/nginx/conf.d/default.conf

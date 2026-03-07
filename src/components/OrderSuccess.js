@@ -20,16 +20,7 @@ const OrderSuccess = () => {
     useEffect(() => {
         const fetchOrder = async () => {
             try {
-                // Try fetching by order ID (works for both _id and custom orderId strings if API supports it)
-                // Assuming existing API endpoint supports getting order by ID. 
-                // Using admin endpoint logic generally, but user should verify their own order.
-                // If specific endpoint '/api/orders/:id' exists for user, use that.
-                // Based on previous context, we might need a user-specific get order endpoint 
-                // or use the list and find (less efficient). 
-                // Let's assume GET /api/orders/:id or similar exists or we fallback to Profile orders.
-
-                // Better approach: Use the profile orders endpoint and find the specific one 
-                // to ensure security (user can only see own orders) if no direct single-order endpoint.
+                // Load the matching order from the authenticated user's order history.
                 const response = await axios.get("/api/profile/orders");
                 const foundOrder = response.data.find(o =>
                     o._id === orderId || o.orderId === orderId || o.razorpayOrderId === orderId
@@ -55,7 +46,6 @@ const OrderSuccess = () => {
             setError(true);
         }
 
-        // Stop confetti after 5 seconds
         const timer = setTimeout(() => setShowConfetti(false), 5000);
         return () => clearTimeout(timer);
     }, [orderId]);

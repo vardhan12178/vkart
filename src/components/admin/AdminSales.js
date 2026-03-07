@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
 import {
   PlusIcon,
@@ -8,6 +9,7 @@ import {
   CheckCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/outline";
+import { qk } from "../../query/queryKeys";
 
 const emptySale = {
   name: "",
@@ -23,48 +25,69 @@ const emptySale = {
 const toLocal = (iso) => (iso ? new Date(iso).toISOString().slice(0, 16) : "");
 
 export default function AdminSales() {
-  const [sales, setSales] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const queryClient = useQueryClient();
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(emptySale);
-  const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState(null);
-  const [productCategories, setProductCategories] = useState([]);
 
   const showToast = (msg, type = "success") => {
     setToast({ msg, type });
     setTimeout(() => setToast(null), 3000);
   };
 
-  const load = async () => {
-    try {
-      setError("");
-      setLoading(true);
+  const salesQuery = useQuery({
+    queryKey: qk.admin.sales,
+    queryFn: async () => {
       const res = await axiosInstance.get("/api/sales");
-      setSales(res?.data || []);
-    } catch {
-      setError("Failed to load sales");
-    } finally {
-      setLoading(false);
-    }
-  };
+      return res?.data || [];
+    },
+  });
+
+  const categoriesQuery = useQuery({
+    queryKey: ["admin", "sales", "categories"],
+    queryFn: async () => {
+      const res = await axiosInstance.get("/api/products", { params: { limit: 500 } });
+      const products = res.data?.products || [];
+      const unique = [...new Set(products.map((p) => p.category).filter(Boolean))];
+      return unique.sort();
+    },
+  });
+
+  const saveSaleMutation = useMutation({
+    mutationFn: async ({ payload, saleId }) => {
+      if (saleId) return axiosInstance.put(`/api/sales/${saleId}`, payload);
+      return axiosInstance.post("/api/sales", payload);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.sales });
+      queryClient.invalidateQueries({ queryKey: qk.public.activeSale });
+      queryClient.invalidateQueries({ queryKey: qk.home.landing });
+      queryClient.invalidateQueries({ queryKey: ["products", "list"] });
+    },
+  });
+
+  const deleteSaleMutation = useMutation({
+    mutationFn: async (saleId) => axiosInstance.delete(`/api/sales/${saleId}`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: qk.admin.sales });
+      queryClient.invalidateQueries({ queryKey: qk.public.activeSale });
+      queryClient.invalidateQueries({ queryKey: qk.home.landing });
+      queryClient.invalidateQueries({ queryKey: ["products", "list"] });
+    },
+  });
 
   useEffect(() => {
-    load();
-    // Fetch unique product categories for dropdown
-    (async () => {
-      try {
-        const res = await axiosInstance.get("/api/products", { params: { limit: 500 } });
-        const products = res.data?.products || [];
-        const unique = [...new Set(products.map((p) => p.category).filter(Boolean))];
-        setProductCategories(unique.sort());
-      } catch (e) {
-        console.error("Failed to load categories:", e);
-      }
-    })();
-  }, []);
+    if (salesQuery.isError) {
+      showToast("Failed to load sales", "error");
+    }
+  }, [salesQuery.isError]);
+
+  const sales = salesQuery.data || [];
+  const loading = salesQuery.isLoading;
+  const error = salesQuery.isError ? "Failed to load sales" : "";
+  const saving = saveSaleMutation.isPending;
+  const productCategories = categoriesQuery.data || [];
 
   const openCreate = () => {
     setEditing(null);
@@ -114,7 +137,6 @@ export default function AdminSales() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSaving(true);
     try {
       const payload = {
         ...form,
@@ -126,28 +148,19 @@ export default function AdminSales() {
             primeDiscountPercent: Number(c.primeDiscountPercent) || 0,
           })),
       };
-      if (editing) {
-        await axiosInstance.put(`/api/sales/${editing}`, payload);
-        showToast("Sale updated");
-      } else {
-        await axiosInstance.post("/api/sales", payload);
-        showToast("Sale created");
-      }
+      await saveSaleMutation.mutateAsync({ payload, saleId: editing });
+      showToast(editing ? "Sale updated" : "Sale created");
       setShowForm(false);
-      load();
     } catch (err) {
       showToast(err?.response?.data?.message || "Failed to save", "error");
-    } finally {
-      setSaving(false);
     }
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this sale?")) return;
     try {
-      await axiosInstance.delete(`/api/sales/${id}`);
+      await deleteSaleMutation.mutateAsync(id);
       showToast("Sale deleted");
-      load();
     } catch {
       showToast("Delete failed", "error");
     }
@@ -166,8 +179,8 @@ export default function AdminSales() {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-black text-gray-900">Sales & Promotions</h1>
         <div className="flex gap-2">
-          <button onClick={load} className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
-            <RefreshIcon className="h-5 w-5 text-gray-500" />
+          <button onClick={() => salesQuery.refetch()} className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+            <RefreshIcon className={`h-5 w-5 text-gray-500 ${salesQuery.isFetching ? "animate-spin" : ""}`} />
           </button>
           <button onClick={openCreate} className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-black transition">
             <PlusIcon className="h-4 w-4" /> New Sale

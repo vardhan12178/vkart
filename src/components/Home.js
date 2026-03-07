@@ -1,12 +1,14 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion, AnimatePresence } from "framer-motion";
-import { useDispatch } from "react-redux"; // Import useDispatch
+import { useDispatch, useSelector } from "react-redux";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { addToCart } from "../redux/cartSlice"; // Import actions
 import { showToast } from "../utils/toast"; // Import toast
 import axios from "./axiosInstance";
 import ProductQuickView from "./product/ProductQuickView"; // Import Modal
+import { qk } from "../query/queryKeys";
 
 import {
   FaStar,
@@ -157,16 +159,12 @@ function SkeletonCard() {
 /* ---------- MAIN HOME COMPONENT ---------- */
 export default function Home() {
   const dispatch = useDispatch();
-  const [featured, setFeatured] = useState([]);
-  const [newArrivals, setNewArrivals] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [activeSale, setActiveSale] = useState(null);
-  /* Removed dealEndsAt and nowTick state */
+  const profile = useSelector((s) => s.auth.user);
+  const queryClient = useQueryClient();
 
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const [profile, setProfile] = useState(null);
   const [hide2faNudge, setHide2faNudge] = useState(false);
 
   const [quickView, setQuickView] = useState(null);
@@ -177,38 +175,31 @@ export default function Home() {
     if (quickView) setQuickView(null);
   };
 
-  /* Removed timer interval effect */
+  const { data: homeData, isLoading: loading } = useQuery({
+    queryKey: qk.home.landing,
+    queryFn: async () => {
+      const res = await axios.get("/api/home");
+      return res.data;
+    },
+  });
 
-  // Fetch profile if logged in (cookie-based auth)
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await axios.get("/api/profile", { withCredentials: true });
-        if (!cancelled) setProfile(res.data);
-      } catch (e) { if (!cancelled) setProfile(null); }
-    })();
-    return () => { cancelled = true; };
-  }, []);
+  const featured = useMemo(() => homeData?.featured ?? [], [homeData]);
+  const newArrivals = useMemo(() => homeData?.newArrivals ?? [], [homeData]);
+  const activeSale = homeData?.activeSale || null;
 
-  useEffect(() => {
-    const ac = new AbortController();
-    (async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get("/api/home", { signal: ac.signal });
-        const { featured: f = [], newArrivals: na = [], activeSale: sale } = res.data;
-        setFeatured(f);
-        setNewArrivals(na);
-        if (sale) setActiveSale(sale);
-      } catch (err) {
-        if (err.name !== "CanceledError") console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    })();
-    return () => ac.abort();
-  }, []);
+  const dismiss2faMutation = useMutation({
+    mutationFn: async () =>
+      axios.post("/api/2fa/suppress", {}, { withCredentials: true, __skipAuthRedirect: true }),
+    onSuccess: () => {
+      queryClient.setQueryData(qk.profile.root, (prev) =>
+        prev ? { ...prev, suppress2faPrompt: true } : prev
+      );
+    },
+  });
+
+  const subscribeMutation = useMutation({
+    mutationFn: async (subscribeEmail) => axios.post("/api/newsletter/subscribe", { email: subscribeEmail }),
+  });
 
   const brands = useMemo(() => {
     const setB = new Set((featured || []).map((p) => p.brand).filter(Boolean));
@@ -254,7 +245,7 @@ export default function Home() {
       process.env.NODE_ENV === "production" || process.env.REACT_APP_PERSIST_2FA_NUDGE === "true";
     if (!shouldPersistDismiss || !profile?._id) return;
     try {
-      await axios.post("/api/2fa/suppress", {}, { withCredentials: true, __skipAuthRedirect: true });
+      await dismiss2faMutation.mutateAsync();
     } catch (e) {
       // Non-blocking UX action: keep UI dismissed even if network call fails.
     }
@@ -263,12 +254,10 @@ export default function Home() {
   const handleSubscribe = async (e) => {
     e.preventDefault();
     if (email && email.includes("@")) {
-      try { await axios.post("/api/newsletter/subscribe", { email }); } catch { /* still show success */ }
+      try { await subscribeMutation.mutateAsync(email); } catch { /* still show success */ }
       setIsSubscribed(true);
     }
   };
-
-  /* Removed time calculation logic */
 
   return (
     <main className="bg-[#f8f9fa] font-sans text-gray-800 overflow-x-hidden">

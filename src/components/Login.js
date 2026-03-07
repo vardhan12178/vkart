@@ -1,5 +1,6 @@
 // src/pages/Login.jsx
 import React, { useRef, useState, useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -7,6 +8,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { loginSuccess } from "../redux/authSlice";
+import { qk } from "../query/queryKeys";
 
 import {
   EyeIcon,
@@ -75,6 +77,7 @@ const Toast = ({ show, kind = "error", children }) => {
 export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const queryClient = useQueryClient();
   const location = useLocation();
   const redirect = new URLSearchParams(location.search).get("redirect") || "/";
 
@@ -101,6 +104,22 @@ export default function Login() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const hydrateUserSession = (userData) => {
+    queryClient.setQueryData(qk.auth.session, { authenticated: true, user: userData });
+    queryClient.setQueryData(qk.profile.root, userData);
+    [
+      qk.profile.orders,
+      qk.profile.addresses,
+      qk.profile.wallet,
+      qk.profile.cart,
+      qk.profile.wishlist,
+      qk.membership.status,
+    ].forEach((queryKey) => {
+      queryClient.removeQueries({ queryKey });
+    });
+    queryClient.invalidateQueries({ queryKey: qk.profile.root });
+  };
 
   const validate = () => {
     const e = { userId: "", password: "" };
@@ -161,6 +180,7 @@ export default function Login() {
       }
 
       // normal login - cookie is set by backend
+      hydrateUserSession(res.data);
       dispatch(loginSuccess(res.data));
       navigate(redirect);
     } catch (err) {
@@ -194,6 +214,7 @@ export default function Login() {
         { withCredentials: true }
       );
       // Cookie is set by backend
+      hydrateUserSession(verify.data);
       dispatch(loginSuccess(verify.data));
       setShow2fa(false);
       setPendingLogin(null);
@@ -224,6 +245,7 @@ export default function Login() {
         { withCredentials: true }
       );
       // Cookie is set by backend
+      hydrateUserSession(res.data);
       dispatch(loginSuccess(res.data));
       navigate(redirect);
     } catch (err) {

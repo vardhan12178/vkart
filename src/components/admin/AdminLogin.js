@@ -119,11 +119,8 @@ export default function AdminLogin({ setIsAdmin }) {
 
         const btn = document.getElementById("adminGoogleBtn");
         if (btn) {
-          // FIX: Dynamic width calculation to fit mobile screens (iPhone SE is ~375px)
-          // We check the container width, or default to 300px for mobile safety.
+          // Keep the Google button width within a safe mobile/desktop range.
           const containerWidth = btn.clientWidth || 300;
-          // Google button max-width is usually good around 300-400px.
-          // If screen < 420px (mobile), use "300", else "380".
           const widthStr = window.innerWidth < 420 ? "300" : "380";
 
           google.accounts.id.renderButton(btn, {

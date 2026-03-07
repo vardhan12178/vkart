@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   SearchIcon,
   RefreshIcon,
@@ -18,6 +19,7 @@ import {
   DownloadIcon
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
+import { qk } from "../../query/queryKeys";
 
 const ADMIN_USERS_ENDPOINT = "/api/admin/users";
 
@@ -36,10 +38,7 @@ function avatarInitial(name, email) {
 }
 
 export default function AdminUsers() {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [refreshing, setRefreshing] = useState(false);
-  const [error, setError] = useState(null);
+  const queryClient = useQueryClient();
 
   const [search, setSearch] = useState("");
   const [filterTwoFA, setFilterTwoFA] = useState("all"); // all | on | off
@@ -54,41 +53,66 @@ export default function AdminUsers() {
   const [menuOpenId, setMenuOpenId] = useState(null);
   const [resetUser, setResetUser] = useState(null);
   const [deleteUser, setDeleteUser] = useState(null);
-  const [busyAction, setBusyAction] = useState(false);
   const [toast, setToast] = useState(null);
 
-  useEffect(() => {
-    loadUsers();
-  }, []);
-
-
-
-  async function loadUsers() {
-    try {
-      setError(null);
-      setLoading(true);
+  const usersQuery = useQuery({
+    queryKey: qk.admin.users,
+    queryFn: async () => {
       const res = await axiosInstance.get(ADMIN_USERS_ENDPOINT);
       const data = res.data;
-      const list = Array.isArray(data) ? data : Array.isArray(data?.users) ? data.users : [];
-      setUsers(list);
-    } catch (err) {
-      console.error("Admin users fetch error:", err);
-      setError("Unable to load users. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
+      return Array.isArray(data) ? data : Array.isArray(data?.users) ? data.users : [];
+    },
+  });
+
+  const users = useMemo(() => usersQuery.data ?? [], [usersQuery.data]);
+  const loading = usersQuery.isLoading;
+  const refreshing = usersQuery.isFetching && !usersQuery.isLoading;
+  const error = usersQuery.isError ? "Unable to load users. Please try again." : null;
 
   async function refresh() {
-    setRefreshing(true);
-    await loadUsers();
-    setRefreshing(false);
+    await usersQuery.refetch();
   }
 
   function showToast(message, type = "success") {
     setToast({ message, type });
     setTimeout(() => setToast(null), 3000);
   }
+
+  const syncUsers = () => {
+    queryClient.invalidateQueries({ queryKey: qk.admin.users });
+    queryClient.invalidateQueries({ queryKey: qk.admin.dashboard });
+  };
+
+  const toggleBlockMutation = useMutation({
+    mutationFn: ({ userId, blocked }) => axiosInstance.patch(`/api/admin/users/${userId}/block`, { blocked }),
+    onSuccess: () => syncUsers(),
+  });
+
+  const disable2faMutation = useMutation({
+    mutationFn: (userId) => axiosInstance.patch(`/api/admin/users/${userId}/2fa/disable`),
+    onSuccess: () => syncUsers(),
+  });
+
+  const toggleAdminMutation = useMutation({
+    mutationFn: (userId) => axiosInstance.patch(`/api/admin/users/${userId}/role`),
+    onSuccess: () => syncUsers(),
+  });
+
+  const resetPasswordMutation = useMutation({
+    mutationFn: (userId) => axiosInstance.post(`/api/admin/users/${userId}/reset-password`),
+  });
+
+  const deleteUserMutation = useMutation({
+    mutationFn: (userId) => axiosInstance.delete(`/api/admin/users/${userId}`),
+    onSuccess: () => syncUsers(),
+  });
+
+  const busyAction =
+    toggleBlockMutation.isPending ||
+    disable2faMutation.isPending ||
+    toggleAdminMutation.isPending ||
+    resetPasswordMutation.isPending ||
+    deleteUserMutation.isPending;
 
   // --- Stats Calculation ---
   const stats = useMemo(() => {
@@ -155,50 +179,41 @@ export default function AdminUsers() {
   // --- Actions ---
   async function handleToggleBlock(user) {
     try {
-      setBusyAction(true);
-      await axiosInstance.patch(`/api/admin/users/${user._id}/block`, { blocked: !user.blocked });
+      await toggleBlockMutation.mutateAsync({ userId: user._id, blocked: !user.blocked });
       showToast(!user.blocked ? "User blocked." : "User activated.");
-      await loadUsers();
-    } catch (err) { showToast("Update failed.", "error"); } finally { setBusyAction(false); }
+    } catch (err) { showToast("Update failed.", "error"); }
   }
 
   async function handleDisable2FA(user) {
     try {
-      setBusyAction(true);
-      await axiosInstance.patch(`/api/admin/users/${user._id}/2fa/disable`);
+      await disable2faMutation.mutateAsync(user._id);
       showToast("2FA Disabled.");
-      await loadUsers();
-    } catch (err) { showToast("Failed to disable 2FA.", "error"); } finally { setBusyAction(false); }
+    } catch (err) { showToast("Failed to disable 2FA.", "error"); }
   }
 
   async function handleToggleAdmin(user) {
     try {
-      setBusyAction(true);
-      await axiosInstance.patch(`/api/admin/users/${user._id}/role`);
+      await toggleAdminMutation.mutateAsync(user._id);
       showToast(user.roles?.includes("admin") ? "Admin removed." : "Admin granted.");
-      await loadUsers();
-    } catch (err) { showToast("Role update failed.", "error"); } finally { setBusyAction(false); }
+    } catch (err) { showToast("Role update failed.", "error"); }
   }
 
   async function confirmResetPassword() {
     if (!resetUser) return;
     try {
-      setBusyAction(true);
-      await axiosInstance.post(`/api/admin/users/${resetUser._id}/reset-password`);
+      await resetPasswordMutation.mutateAsync(resetUser._id);
       showToast("Reset email sent.");
       setResetUser(null);
-    } catch (err) { showToast("Reset failed.", "error"); } finally { setBusyAction(false); }
+    } catch (err) { showToast("Reset failed.", "error"); }
   }
 
   async function confirmDeleteUser() {
     if (!deleteUser) return;
     try {
-      setBusyAction(true);
-      await axiosInstance.delete(`/api/admin/users/${deleteUser._id}`);
+      await deleteUserMutation.mutateAsync(deleteUser._id);
       showToast("User deleted.");
       setDeleteUser(null);
-      await loadUsers();
-    } catch (err) { showToast("Delete failed.", "error"); } finally { setBusyAction(false); }
+    } catch (err) { showToast("Delete failed.", "error"); }
   }
 
   return (
