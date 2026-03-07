@@ -8,6 +8,7 @@ export const qk = {
   },
   products: {
     list: (params = {}) => ["products", "list", params],
+    filters: (params = {}) => ["products", "filters", params],
     details: (id) => ["products", "details", id],
     suggest: (q) => ["products", "suggest", q],
     categories: ["products", "categories"],

@@ -47,10 +47,11 @@ export default function AdminSales() {
   const categoriesQuery = useQuery({
     queryKey: ["admin", "sales", "categories"],
     queryFn: async () => {
-      const res = await axiosInstance.get("/api/products", { params: { limit: 500 } });
-      const products = res.data?.products || [];
-      const unique = [...new Set(products.map((p) => p.category).filter(Boolean))];
-      return unique.sort();
+      const res = await axiosInstance.get("/api/products/filters");
+      return (res.data?.categories || [])
+        .map((entry) => entry.slug)
+        .filter(Boolean)
+        .sort();
     },
   });
 
@@ -64,6 +65,7 @@ export default function AdminSales() {
       queryClient.invalidateQueries({ queryKey: qk.public.activeSale });
       queryClient.invalidateQueries({ queryKey: qk.home.landing });
       queryClient.invalidateQueries({ queryKey: ["products", "list"] });
+      queryClient.invalidateQueries({ queryKey: ["products", "filters"] });
     },
   });
 
@@ -74,6 +76,7 @@ export default function AdminSales() {
       queryClient.invalidateQueries({ queryKey: qk.public.activeSale });
       queryClient.invalidateQueries({ queryKey: qk.home.landing });
       queryClient.invalidateQueries({ queryKey: ["products", "list"] });
+      queryClient.invalidateQueries({ queryKey: ["products", "filters"] });
     },
   });
 

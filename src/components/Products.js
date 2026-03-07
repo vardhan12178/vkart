@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { addToCart } from "../redux/cartSlice";
 import { toggleWishlist } from "../redux/wishlistSlice";
 import { showToast } from "../utils/toast";
@@ -91,7 +91,6 @@ export default function Products() {
   }, [compare]);
 
   const PAGE_SIZE = 12;
-  const [visible, setVisible] = useState(PAGE_SIZE);
 
   /**
    * Sync Search Input with URL (e.g. when navigating from Header)
@@ -149,10 +148,7 @@ export default function Products() {
   }, [categoryFilter, searchTerm, saleOnly, priceRange.min, priceRange.max, ratingFilter, sortBy]);
 
   const productParams = useMemo(() => {
-    const params = {
-      page: 1,
-      limit: 100,
-    };
+    const params = {};
 
     if (debouncedFilters.categoryFilter) params.category = debouncedFilters.categoryFilter;
     if (debouncedFilters.searchTerm) params.q = debouncedFilters.searchTerm;
@@ -170,13 +166,20 @@ export default function Products() {
     return params;
   }, [debouncedFilters]);
 
-  const productsQuery = useQuery({
+  const productsQuery = useInfiniteQuery({
     queryKey: qk.products.list(productParams),
-    queryFn: async () => {
-      const res = await axios.get("/api/products", { params: productParams });
+    queryFn: async ({ pageParam = 1 }) => {
+      const res = await axios.get("/api/products", {
+        params: { ...productParams, page: pageParam, limit: PAGE_SIZE },
+      });
       return res.data;
     },
-    placeholderData: (previousData) => previousData,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      const currentPage = lastPage?.pagination?.page || 1;
+      const totalPages = lastPage?.pagination?.totalPages || 0;
+      return currentPage < totalPages ? currentPage + 1 : undefined;
+    },
   });
 
   /**
@@ -202,17 +205,18 @@ export default function Products() {
    * No client-side filtering needed - backend handles everything
    * Products array is already filtered and sorted by the backend
    */
-  const filteredProducts = productsQuery.data?.products || [];
-  const activeSale = productsQuery.data?.activeSale || null;
+  const pages = productsQuery.data?.pages || [];
+  const filteredProducts = useMemo(
+    () => pages.flatMap((page) => page?.products || []),
+    [pages]
+  );
+  const firstPage = pages[0] || null;
+  const activeSale = firstPage?.activeSale || null;
   const loading = productsQuery.isLoading;
-  const filterLoading = productsQuery.isFetching && !productsQuery.isLoading;
-
-  /**
-   * Reset visible items count when filters change
-   */
-  useEffect(() => {
-    setVisible(PAGE_SIZE);
-  }, [searchTerm, categoryFilter, ratingFilter, priceRange, sortBy]);
+  const filterLoading =
+    productsQuery.isFetching &&
+    !productsQuery.isLoading &&
+    !productsQuery.isFetchingNextPage;
 
   /**
    * Check if product is in wishlist
@@ -276,8 +280,8 @@ export default function Products() {
     setSortBy("relevance");
   };
 
-  const visibleItems = filteredProducts.slice(0, visible);
-  const total = filteredProducts.length;
+  const visibleItems = filteredProducts;
+  const total = firstPage?.pagination?.total || filteredProducts.length;
   const isSearching = searchInput !== searchTerm;
 
   return (
@@ -344,6 +348,9 @@ export default function Products() {
           <div className="hidden lg:block w-72 shrink-0">
             <Sidebar
               categoryFilter={categoryFilter}
+              saleOnly={saleOnly}
+              searchTerm={searchTerm}
+              ratingFilter={ratingFilter}
               onCategoryChange={setCategoryFilter}
               onSearch={setSearchInput}
               onRatingChange={setRatingFilter}
@@ -507,13 +514,14 @@ export default function Products() {
               </div>
             )}
 
-            {visible < filteredProducts.length && (
+            {productsQuery.hasNextPage && (
               <div className="mt-12 flex justify-center">
                 <button
-                  onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                  onClick={() => productsQuery.fetchNextPage()}
+                  disabled={productsQuery.isFetchingNextPage}
                   className="px-6 py-2.5 rounded-lg bg-white border border-gray-200 text-gray-900 text-sm font-bold shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2"
                 >
-                  Show More <FaArrowRight size={10} />
+                  {productsQuery.isFetchingNextPage ? "Loading..." : "Show More"} <FaArrowRight size={10} />
                 </button>
               </div>
             )}
@@ -552,6 +560,9 @@ export default function Products() {
           <div className="flex-1 overflow-y-auto p-5">
             <Sidebar
               categoryFilter={categoryFilter}
+              saleOnly={saleOnly}
+              searchTerm={searchTerm}
+              ratingFilter={ratingFilter}
               onCategoryChange={(v) => { setCategoryFilter(v); setShowFilters(false); }}
               onSearch={(v) => { setSearchInput(v); setShowFilters(false); }}
               onRatingChange={(v) => { setRatingFilter(v); setShowFilters(false); }}

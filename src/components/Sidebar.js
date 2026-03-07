@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import { qk } from "../query/queryKeys";
@@ -12,33 +12,50 @@ import {
   FaCircle
 } from "react-icons/fa";
 
-export default function Sidebar({ categoryFilter, onCategoryChange, onSearch, onRatingChange }) {
+export default function Sidebar({
+  categoryFilter,
+  saleOnly = false,
+  searchTerm = "",
+  ratingFilter = 0,
+  onCategoryChange,
+  onSearch,
+  onRatingChange,
+}) {
   const [showAllCats, setShowAllCats] = useState(false);
   const [expanded, setExpanded] = useState("categories"); 
   const [selectedRating, setSelectedRating] = useState(null);
 
+  const filterParams = useMemo(() => {
+    const params = {};
+    if (saleOnly) params.sale = "true";
+    if (searchTerm) params.q = searchTerm;
+    if (ratingFilter > 0) params.minRating = ratingFilter;
+    return params;
+  }, [ratingFilter, saleOnly, searchTerm]);
+
   const {
-    data: categories = [],
+    data: filtersData,
     isLoading: loadingCats,
     isError: catError,
   } = useQuery({
-    queryKey: qk.products.categories,
+    queryKey: qk.products.filters(filterParams),
     queryFn: async () => {
-      const res = await axios.get("/api/products", { params: { limit: 500 } });
-      const products = res.data.products || [];
-      const unique = Array.from(new Set(products.map((p) => p.category)));
-      return unique.map((c) => ({
-        slug: c.toLowerCase().replace(/\s+/g, "-"),
-        label: c.replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase()),
-      }));
+      const res = await axios.get("/api/products/filters", { params: filterParams });
+      return res.data;
     },
     staleTime: 5 * 60 * 1000,
   });
+
+  const categories = filtersData?.categories || [];
 
   const visibleCats = useMemo(
     () => (showAllCats ? categories : categories.slice(0, 16)),
     [categories, showAllCats]
   );
+
+  useEffect(() => {
+    setSelectedRating(ratingFilter || null);
+  }, [ratingFilter]);
 
   const handleCat = (slug) => {
     onCategoryChange(categoryFilter === slug ? "" : slug);

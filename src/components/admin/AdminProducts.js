@@ -88,6 +88,7 @@ export default function AdminProducts() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: qk.admin.products });
       queryClient.invalidateQueries({ queryKey: ["products", "list"] });
+      queryClient.invalidateQueries({ queryKey: ["products", "filters"] });
       queryClient.invalidateQueries({ queryKey: qk.home.landing });
     },
   });
