@@ -105,9 +105,22 @@ export default function Login() {
     window.scrollTo(0, 0);
   }, []);
 
-  const hydrateUserSession = (userData) => {
-    queryClient.setQueryData(qk.auth.session, { authenticated: true, user: userData });
-    queryClient.setQueryData(qk.profile.root, userData);
+  const normalizeSessionData = (sessionData) => {
+    if (sessionData?.authenticated && sessionData?.user) {
+      return { authenticated: true, user: sessionData.user };
+    }
+    if (sessionData?.user) {
+      return { authenticated: true, user: sessionData.user };
+    }
+    return { authenticated: false, user: null };
+  };
+
+  const hydrateUserSession = (sessionData) => {
+    const nextSession = normalizeSessionData(sessionData);
+    if (!nextSession.authenticated || !nextSession.user) return null;
+
+    queryClient.setQueryData(qk.auth.session, nextSession);
+    queryClient.setQueryData(qk.profile.root, nextSession.user);
     [
       qk.profile.orders,
       qk.profile.addresses,
@@ -118,7 +131,15 @@ export default function Login() {
     ].forEach((queryKey) => {
       queryClient.removeQueries({ queryKey });
     });
-    queryClient.invalidateQueries({ queryKey: qk.profile.root });
+    return nextSession.user;
+  };
+
+  const requireUserSession = (sessionData) => {
+    const nextUser = hydrateUserSession(sessionData);
+    if (!nextUser) {
+      throw new Error("Invalid session response");
+    }
+    return nextUser;
   };
 
   const validate = () => {
@@ -180,8 +201,8 @@ export default function Login() {
       }
 
       // normal login - cookie is set by backend
-      hydrateUserSession(res.data);
-      dispatch(loginSuccess(res.data));
+      const nextUser = requireUserSession(res.data);
+      dispatch(loginSuccess(nextUser));
       navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;
@@ -214,8 +235,8 @@ export default function Login() {
         { withCredentials: true }
       );
       // Cookie is set by backend
-      hydrateUserSession(verify.data);
-      dispatch(loginSuccess(verify.data));
+      const nextUser = requireUserSession(verify.data);
+      dispatch(loginSuccess(nextUser));
       setShow2fa(false);
       setPendingLogin(null);
       navigate(redirect);
@@ -245,8 +266,8 @@ export default function Login() {
         { withCredentials: true }
       );
       // Cookie is set by backend
-      hydrateUserSession(res.data);
-      dispatch(loginSuccess(res.data));
+      const nextUser = requireUserSession(res.data);
+      dispatch(loginSuccess(nextUser));
       navigate(redirect);
     } catch (err) {
       const apiMsg = err?.response?.data?.message;

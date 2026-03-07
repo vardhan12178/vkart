@@ -13,13 +13,23 @@ import {
   PrimeMembership, Wishlist, ErrorBoundary
 } from './imports';
 
-import { useDispatch, useLocation } from "./imports"; // Moved useDispatch to imports based on user request (implied) or keep standard? imports.js has it.
+import { useDispatch, useLocation } from "./imports";
 import { setAuthState } from "./redux/authSlice";
 import LoadingSpinner from "./components/LoadingSpinner";
 import NotificationSocket from "./components/NotificationSocket";
 import RouteSeo from "./seo/RouteSeo";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { qk } from "./query/queryKeys";
+
+const userScopedKeys = [
+  qk.profile.root,
+  qk.profile.orders,
+  qk.profile.addresses,
+  qk.profile.wallet,
+  qk.profile.cart,
+  qk.profile.wishlist,
+  qk.membership.status,
+];
 
 const App = () => {
   const dispatch = useDispatch();
@@ -72,11 +82,14 @@ const App = () => {
       dispatch(setAuthState({ isAuthenticated: true, user: sessionQuery.data.user }));
       return;
     }
-    if (sessionQuery.data?.authenticated === false || sessionQuery.isError) {
-      queryClient.removeQueries({ queryKey: qk.profile.root });
+    if (sessionQuery.data?.authenticated === false) {
+      queryClient.setQueryData(qk.auth.session, { authenticated: false, user: null });
+      userScopedKeys.forEach((queryKey) => {
+        queryClient.removeQueries({ queryKey });
+      });
       dispatch(setAuthState({ isAuthenticated: false, user: null }));
     }
-  }, [dispatch, isAdminRoute, queryClient, sessionQuery.data, sessionQuery.isError]);
+  }, [dispatch, isAdminRoute, queryClient, sessionQuery.data]);
 
   const authLoading = isAdminRoute ? adminVerifyQuery.isLoading : sessionQuery.isLoading;
 

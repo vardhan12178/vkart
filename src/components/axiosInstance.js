@@ -1,12 +1,11 @@
 import axios from "axios";
 
-// Auto-detect: use localhost backend when running locally, production URL otherwise
 const isLocalhost = typeof window !== "undefined" &&
-  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+  ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
 const baseURL = isLocalhost
   ? "http://localhost:5000"
-  : (process.env.REACT_APP_API_BASE_URL || "");
+  : "";
 
 const instance = axios.create({
   baseURL,
@@ -23,9 +22,6 @@ const getCookie = (name) => {
 };
 
 instance.interceptors.request.use((config) => {
-  // Cookies are sent automatically via withCredentials: true
-  // No need to manually add Authorization header
-
   const isForm = typeof FormData !== "undefined" && config.data instanceof FormData;
   const m = (config.method || "get").toLowerCase();
   const csrf = !["get", "head"].includes(m) ? getCookie("csrf_token") : "";
