@@ -109,14 +109,14 @@ export default function PrimeMembership() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed] flex items-center justify-center">
         <div className="w-10 h-10 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed]">
       {/* Hero */}
       <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.15),transparent_50%)]" />
@@ -125,13 +125,12 @@ export default function PrimeMembership() {
             <FaCrown className="text-amber-400" />
             <span className="text-sm font-bold text-amber-300">VKart Prime</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight">
-            Unlock Premium
-            <br />
-            Shopping Benefits
+          <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal mb-6 leading-[0.9] tracking-[-0.04em]">
+            More of what matters.
+            <br />Less of what doesn’t.
           </h1>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Exclusive discounts, priority support, and premium perks - all in one membership.
+          <p className="text-white/55 text-lg max-w-xl mx-auto">
+            Considered benefits, earlier access, and better value across the things you already want.
           </p>
         </div>
       </div>

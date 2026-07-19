@@ -1,185 +1,218 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { addToCart } from "../redux/cartSlice"; // Import actions
-import { showToast } from "../utils/toast"; // Import toast
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Crown,
+  Eye,
+  Headphones,
+  RefreshCw,
+  ShieldCheck,
+  ShoppingBag,
+  Sparkles,
+  Star,
+  Truck,
+  X,
+  Zap,
+} from "lucide-react";
+import { addToCart } from "../redux/cartSlice";
+import { showToast } from "../utils/toast";
 import axios from "./axiosInstance";
-import ProductQuickView from "./product/ProductQuickView"; // Import Modal
+import ProductQuickView from "./product/ProductQuickView";
 import { qk } from "../query/queryKeys";
 
-import {
-  FaStar,
-  FaShoppingBag,
-  FaArrowRight,
-  FaTimes,
-  FaBolt,
-  FaShieldAlt,
-  FaTruck,
-  FaHeadset,
-  FaEnvelope,
-  FaCheckCircle,
-  FaExpand,
-  FaUserCircle,
-  FaCrown,
-  FaTag,
-} from "react-icons/fa";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-/* ---------- UTILS & STYLES ---------- */
-const INR = (n) =>
+const INR = (value) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",
     maximumFractionDigits: 0,
-  }).format(Math.round(n));
+  }).format(Math.round(value));
 
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .scrollbar-hide::-webkit-scrollbar { display: none; }
-    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-    
-    .slick-dots li button:before { font-size: 8px; color: #cbd5e1; opacity: 1; }
-    .slick-dots li.slick-active button:before { color: #f97316; }
-    .slick-track { display: flex; align-items: stretch; }
-    .slick-slide { height: auto; display: flex; justify-content: center; }
-    .slick-slide > div { width: 100%; padding: 0 8px; }
-    /* Mobile Edge-to-Edge Fix */
-    @media (max-width: 640px) {
-      .slick-slide > div { padding: 0 6px; } 
-      .slick-list { padding-left: 0px !important; } /* Ensure start alignment */
-    }
-  `}</style>
-);
+const reveal = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0 },
+};
 
-/* ---------- SUB-COMPONENTS ---------- */
+const categories = [
+  {
+    number: "01",
+    eyebrow: "Pocket technology",
+    name: "Smartphones",
+    image: "/assets/categories/editorial-smartphones-v2.webp",
+    to: "/products?cat=smartphones",
+  },
+  {
+    number: "02",
+    eyebrow: "Tools for focus",
+    name: "Laptops",
+    image: "/assets/categories/editorial-laptops-v2.webp",
+    to: "/products?cat=laptops",
+  },
+  {
+    number: "03",
+    eyebrow: "Considered details",
+    name: "Watches",
+    image: "/assets/categories/editorial-watches-v2.webp",
+    to: "/products?cat=mens-watches",
+  },
+  {
+    number: "04",
+    eyebrow: "Everyday rituals",
+    name: "Fragrances",
+    image: "/assets/categories/editorial-fragrances-v2.webp",
+    to: "/products?cat=fragrances",
+  },
+];
 
-function ProductCard({ p, onQuickView, onAdd }) {
-  const img = p.images?.[0] || p.thumbnail;
-  const [src, setSrc] = useState(img);
+const trustItems = [
+  { icon: Truck, title: "Fast delivery", copy: "Free over ₹499" },
+  { icon: RefreshCw, title: "Easy returns", copy: "7-day window" },
+  { icon: ShieldCheck, title: "Secure checkout", copy: "Protected payments" },
+  { icon: Headphones, title: "Always supported", copy: "Help when you need it" },
+];
 
-  const handleAdd = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    onAdd(p);
-  };
-
-  const handleQuickView = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    onQuickView(p);
-  };
+function ProductCard({ product, onQuickView, onAdd }) {
+  const image = product.images?.[0] || product.thumbnail;
+  const [src, setSrc] = useState(image);
+  const hasDiscount = Number(product.discountPercentage) > 0;
+  const previousPrice = hasDiscount
+    ? product.price * (1 + product.discountPercentage / 100)
+    : null;
 
   return (
-    <Link
-      to={`/product/${p._id}`}
-      className="group relative flex flex-col h-full bg-white rounded-[1.5rem] sm:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
-    >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50">
-        <img
-          src={src}
-          alt={p.title}
-          onError={() => setSrc(p.thumbnail)}
-          className="h-full w-full object-contain mix-blend-multiply p-6 transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
-        />
-        {(p.discountPercentage > 0 || p.onSale) && (
-          <div className="absolute top-3 left-3 flex flex-col gap-1">
-            {p.onSale && (
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-red-500 text-white text-[10px] font-bold uppercase tracking-wide shadow-sm">
-                {p.saleName || 'SALE'}
-              </span>
-            )}
-            {p.discountPercentage > 0 && (
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white/90 backdrop-blur border border-gray-100 text-gray-900 text-[10px] font-bold uppercase tracking-wide shadow-sm">
-                -{Math.round(p.discountPercentage)}%
-              </span>
-            )}
-          </div>
-        )}
+    <article className="group relative min-w-0">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#f1eee7] border border-black/[0.05]">
+          <img
+            src={src}
+            alt={product.title}
+            onError={() => setSrc(product.thumbnail)}
+            className="h-full w-full object-contain p-7 mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            loading="lazy"
+            decoding="async"
+          />
 
-        {/* Hover Action Buttons */}
-        <div className="hidden lg:flex flex-col gap-2 absolute bottom-3 right-3 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-          <button
-            onClick={handleQuickView}
-            className="w-10 h-10 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors"
-            title="Quick View"
-          >
-            <FaExpand size={14} />
-          </button>
-          <button
-            onClick={handleAdd}
-            className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center shadow-lg hover:bg-black transition-colors"
-            title="Add to Cart"
-          >
-            <FaShoppingBag size={14} />
-          </button>
-        </div>
+          {(hasDiscount || product.onSale) && (
+            <div className="absolute left-4 top-4 z-20 flex flex-wrap gap-2">
+              {product.onSale && (
+                <span className="rounded-full bg-[#1d1c19] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                  {product.saleName || "Limited offer"}
+                </span>
+              )}
+              {hasDiscount && (
+                <span className="rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#1d1c19] backdrop-blur">
+                  {Math.round(product.discountPercentage)}% off
+                </span>
+              )}
+            </div>
+          )}
+
+          <Link
+            to={`/product/${product._id}`}
+            className="absolute inset-0 z-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#b66a3c]"
+            aria-label={`View ${product.title}`}
+          />
+
+          <div className="absolute inset-x-4 bottom-4 z-20 flex translate-y-3 items-center justify-end gap-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <button
+              type="button"
+              onClick={(event) => {
+                event.preventDefault();
+                onQuickView(product);
+              }}
+              className="grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-white text-[#1d1c19] shadow-lg transition-colors hover:bg-[#f6f3ed] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:ring-offset-2"
+              aria-label={`Quick view ${product.title}`}
+            >
+              <Eye size={17} />
+            </button>
+            <button
+              type="button"
+              onClick={(event) => {
+                event.preventDefault();
+                onAdd(product);
+              }}
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-[#1d1c19] px-5 text-xs font-bold text-white shadow-lg transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:ring-offset-2"
+              aria-label={`Add ${product.title} to cart`}
+            >
+              <ShoppingBag size={15} /> Add
+            </button>
+          </div>
       </div>
 
-      <div className="p-4 sm:p-5 flex flex-col flex-1">
-        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">{p.category}</div>
-        <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-1 group-hover:text-orange-600 transition-colors mb-2">
-          {p.title}
-        </h3>
-        <div className="mt-auto flex items-end justify-between">
-          <div className="flex flex-col">
-            {p.discountPercentage && (
-              <span className="text-[10px] sm:text-xs text-gray-400 line-through font-medium decoration-gray-300">
-                {INR(p.price * (1 + p.discountPercentage / 100))}
+      <Link to={`/product/${product._id}`} className="block px-1 pt-5" aria-label={`View ${product.title} details`}>
+          <div className="mb-2 flex items-center justify-between gap-4">
+            <span className="truncate text-[10px] font-bold uppercase tracking-[0.2em] text-[#8c887e]">
+              {product.category}
+            </span>
+            {product.rating && (
+              <span className="flex shrink-0 items-center gap-1 text-xs font-semibold text-[#706c63]">
+                <Star size={12} className="fill-[#b66a3c] text-[#b66a3c]" /> {product.rating}
               </span>
             )}
-            <span className="text-base sm:text-lg font-black text-gray-900">{INR(p.price)}</span>
           </div>
-          <div className="flex items-center gap-1 text-amber-400 text-xs font-bold">
-            <FaStar /> <span>{p.rating}</span>
+          <h3 className="line-clamp-1 text-base font-semibold tracking-[-0.02em] text-[#1d1c19] transition-colors group-hover:text-[#9b5330]">
+            {product.title}
+          </h3>
+          <div className="mt-2 flex items-center gap-2">
+            <span className="text-base font-bold text-[#1d1c19]">{INR(product.price)}</span>
+            {previousPrice && (
+              <span className="text-xs font-medium text-[#9b978d] line-through">{INR(previousPrice)}</span>
+            )}
           </div>
-        </div>
-      </div>
-    </Link>
+      </Link>
+
+      <button
+        type="button"
+        onClick={() => onAdd(product)}
+        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 py-3 text-xs font-bold text-[#1d1c19] md:hidden"
+      >
+        <ShoppingBag size={15} /> Add to bag
+      </button>
+    </article>
   );
 }
 
 function SkeletonCard() {
   return (
-    <div className="rounded-[2rem] bg-white p-4 border border-gray-100 h-full">
-      <div className="aspect-[4/3] w-full rounded-2xl bg-gray-50 animate-pulse mb-4" />
-      <div className="h-4 w-3/4 bg-gray-100 rounded mb-2 animate-pulse" />
-      <div className="h-4 w-1/2 bg-gray-100 rounded animate-pulse" />
+    <div className="animate-pulse">
+      <div className="aspect-[4/5] rounded-[1.5rem] bg-[#ebe7de]" />
+      <div className="mt-5 h-3 w-1/3 rounded-full bg-[#e4dfd5]" />
+      <div className="mt-3 h-5 w-3/4 rounded-full bg-[#e4dfd5]" />
+      <div className="mt-3 h-4 w-1/4 rounded-full bg-[#e4dfd5]" />
     </div>
   );
 }
 
-/* ---------- MAIN HOME COMPONENT ---------- */
+function SectionHeading({ eyebrow, title, copy, action }) {
+  return (
+    <div className="mb-10 flex flex-col justify-between gap-6 md:mb-14 md:flex-row md:items-end">
+      <div className="max-w-2xl">
+        <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">{eyebrow}</p>
+        <h2 className="font-editorial text-4xl leading-[0.98] tracking-[-0.035em] text-[#1d1c19] sm:text-5xl lg:text-6xl">
+          {title}
+        </h2>
+        {copy && <p className="mt-5 max-w-xl text-base leading-7 text-[#6f6b62]">{copy}</p>}
+      </div>
+      {action}
+    </div>
+  );
+}
+
 export default function Home() {
   const dispatch = useDispatch();
-  const profile = useSelector((s) => s.auth.user);
+  const profile = useSelector((state) => state.auth.user);
   const queryClient = useQueryClient();
-
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
   const [hide2faNudge, setHide2faNudge] = useState(false);
-
   const [quickView, setQuickView] = useState(null);
-
-  const handleAddToCart = (product) => {
-    dispatch(addToCart({ ...product, quantity: 1 }));
-    showToast("Added to Cart", "success");
-    if (quickView) setQuickView(null);
-  };
 
   const { data: homeData, isLoading: loading } = useQuery({
     queryKey: qk.home.landing,
     queryFn: async () => {
-      const res = await axios.get("/api/home");
-      return res.data;
+      const response = await axios.get("/api/home");
+      return response.data;
     },
   });
 
@@ -191,626 +224,461 @@ export default function Home() {
     mutationFn: async () =>
       axios.post("/api/2fa/suppress", {}, { withCredentials: true, __skipAuthRedirect: true }),
     onSuccess: () => {
-      queryClient.setQueryData(qk.profile.root, (prev) =>
-        prev ? { ...prev, suppress2faPrompt: true } : prev
+      queryClient.setQueryData(qk.profile.root, (previous) =>
+        previous ? { ...previous, suppress2faPrompt: true } : previous
       );
     },
   });
 
-  const subscribeMutation = useMutation({
-    mutationFn: async (subscribeEmail) => axios.post("/api/newsletter/subscribe", { email: subscribeEmail }),
-  });
-
-  const brands = useMemo(() => {
-    const setB = new Set((featured || []).map((p) => p.brand).filter(Boolean));
-    return Array.from(setB).slice(0, 12);
-  }, [featured]);
-
-  const allCategories = useMemo(() => {
-    const cats = new Set([...(featured || []), ...(newArrivals || [])].map((p) => p.category).filter(Boolean));
-    return Array.from(cats).sort().slice(0, 10);
-  }, [featured, newArrivals]);
-
-  const productSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-    cssEase: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-    responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2.2 } },
-      // UPDATED MOBILE SETTINGS
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-          arrows: false,
-          infinite: true
-        }
-      },
-    ],
-  };
-
-  const show2faNudge = profile && !profile.twoFactorEnabled && !profile.suppress2faPrompt && !hide2faNudge;
+  const show2faNudge =
+    profile && !profile.twoFactorEnabled && !profile.suppress2faPrompt && !hide2faNudge;
 
   const dismiss2fa = async () => {
     setHide2faNudge(true);
     const shouldPersistDismiss =
-      process.env.NODE_ENV === "production" || process.env.REACT_APP_PERSIST_2FA_NUDGE === "true";
+      process.env.NODE_ENV === "production" ||
+      process.env.REACT_APP_PERSIST_2FA_NUDGE === "true";
     if (!shouldPersistDismiss || !profile?._id) return;
     try {
       await dismiss2faMutation.mutateAsync();
-    } catch (e) {
-      // Non-blocking UX action: keep UI dismissed even if network call fails.
+    } catch {
+      // This is intentionally non-blocking; the nudge remains dismissed locally.
     }
   };
 
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    if (email && email.includes("@")) {
-      try { await subscribeMutation.mutateAsync(email); } catch { /* still show success */ }
-      setIsSubscribed(true);
-    }
+  const handleAddToCart = (product) => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
+    showToast("Added to your bag", "success");
+    if (quickView) setQuickView(null);
   };
+
+  const maxSaleDiscount = activeSale
+    ? Math.max(
+        0,
+        ...(activeSale.categories || []).map((category) => category.discountPercent || 0)
+      )
+    : 0;
 
   return (
-    <main className="bg-[#f8f9fa] font-sans text-gray-800 overflow-x-hidden">
-      <AnimStyles />
+    <main className="overflow-hidden bg-[#f6f3ed] text-[#1d1c19] selection:bg-[#1d1c19] selection:text-white">
+      <style>{`
+        .font-editorial { font-family: "DM Serif Display", Georgia, serif; }
+        .home-section-title { color: #1d1c19 !important; }
+        .editorial-grain::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          opacity: .035;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+          mix-blend-mode: multiply;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        }
+      `}</style>
 
-      {/* 2FA NUDGE (Same as before) */}
       <AnimatePresence>
         {show2faNudge && (
-          <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          <motion.aside
+            initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 50, scale: 0.9 }}
-            className="fixed bottom-6 left-6 z-50 w-[90%] max-w-sm bg-white/90 backdrop-blur-2xl border border-orange-100 shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl p-5 flex gap-4"
+            exit={{ opacity: 0, y: 24, scale: 0.98 }}
+            className="fixed inset-x-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-50 flex gap-3 rounded-[1.15rem] border border-black/10 bg-[#fffdf8]/95 p-4 shadow-[0_20px_55px_rgba(29,28,25,.18)] backdrop-blur-xl sm:left-6 sm:right-auto sm:w-[min(26rem,calc(100vw-3rem))] sm:gap-4 sm:p-5"
           >
-            <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
-              <FaShieldAlt size={20} />
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#1d1c19] text-white sm:h-11 sm:w-11">
+              <ShieldCheck size={18} />
             </div>
-            <div className="flex-1">
-              <h4 className="text-sm font-bold text-gray-900">Protect your account</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Enable 2-Factor Authentication for bank-grade security.</p>
-              <div className="mt-3 flex gap-3">
-                <Link to="/profile" className="text-xs font-bold text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-black transition">Enable</Link>
-                <button onClick={dismiss2fa} className="text-xs font-bold text-gray-500 hover:text-gray-700 px-2">Later</button>
+            <div className="min-w-0 flex-1">
+              <h3 className="pr-5 text-sm font-bold leading-5 text-[#1d1c19]">Protect your account</h3>
+              <p className="mt-1 text-xs leading-5 text-[#706c63]">Enable two-factor authentication for a safer account.</p>
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                <Link to="/profile" className="text-xs font-bold text-[#925033] underline decoration-[#925033]/30 underline-offset-4">Enable 2FA</Link>
+                <button type="button" onClick={dismiss2fa} className="text-xs font-semibold text-[#858177]">Maybe later</button>
               </div>
             </div>
-            <button onClick={dismiss2fa} className="text-gray-400 hover:text-gray-600 self-start -mt-1"><FaTimes /></button>
-          </motion.div>
+            <button type="button" onClick={dismiss2fa} aria-label="Dismiss security suggestion" className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full text-[#858177] transition-colors hover:bg-black/[0.05] hover:text-black">
+              <X size={17} />
+            </button>
+          </motion.aside>
         )}
       </AnimatePresence>
 
-      {/* HERO SECTION (Same as before) */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white pt-20 lg:pt-0">
-        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-orange-200/30 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-200/20 rounded-full blur-[120px] pointer-events-none" />
+      <section className="px-3 pb-4 pt-0 sm:px-5 lg:px-7 lg:pb-5">
+        {/* Mobile and tablet hero: the copy and photography get their own space. */}
+        <div className="mx-auto overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-[#eee8dd] shadow-[0_18px_55px_rgba(29,28,25,.08)] lg:hidden">
+          <div className="px-6 pb-7 pt-7 sm:px-9 sm:pb-9 sm:pt-9 md:px-12 md:py-12">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={reveal}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.23em] text-[#5e594f] sm:text-[10px]"
+            >
+              <span className="h-px w-7 bg-[#9b5330]" /> The VKart edit · 2026
+            </motion.div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left animate-fade-up">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider mb-8 shadow-sm"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                </span>
-                New Collection 2025
-              </motion.div>
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={reveal}
+              transition={{ delay: 0.07, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 max-w-[19rem] font-editorial text-[2.9rem] leading-[0.9] tracking-[-0.05em] text-[#1d1c19] min-[420px]:text-[3.25rem] sm:max-w-lg sm:text-[4.25rem]"
+            >
+              Better things,
+              <span className="block italic text-[#9b5330]">beautifully chosen.</span>
+            </motion.h1>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-black text-gray-900 tracking-tight leading-[1] mb-6"
-              >
-                The Future <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">is Here.</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0 font-medium"
-              >
-                Discover curated gadgets, premium fashion, and lifestyle essentials designed for the modern world.
-              </motion.p>
-
-              <div className="lg:hidden mb-10 relative">
-                <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full scale-75" />
-                <img src="hero11.webp" alt="Hero" className="relative z-10 w-full max-w-sm mx-auto drop-shadow-2xl" />
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 lg:mb-0"
-              >
-                <Link
-                  to="/products"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gray-900 text-white font-bold text-lg shadow-2xl shadow-gray-900/30 hover:bg-black hover:scale-105 transition-all"
-                >
-                  Start Shopping <FaArrowRight size={14} />
-                </Link>
-                <Link
-                  to="/products"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-900 font-bold text-lg border border-gray-200 shadow-sm hover:bg-gray-50 transition-all"
-                >
-                  Explore Brands
-                </Link>
-              </motion.div>
-            </div>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={reveal}
+              transition={{ delay: 0.14, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-5 max-w-md text-sm font-medium leading-6 text-[#625e55] sm:text-base sm:leading-7"
+            >
+              A considered edit of technology, style, and everyday essentials—only the pieces worth bringing home.
+            </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="hidden lg:flex relative w-full h-full items-center justify-center"
+              initial="hidden"
+              animate="visible"
+              variants={reveal}
+              transition={{ delay: 0.22, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-7 flex flex-col gap-4 min-[430px]:flex-row min-[430px]:items-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-orange-100 to-transparent rounded-full blur-3xl opacity-60 animate-pulse" />
-              <img
-                src="hero11.webp"
-                alt="Premium Shopping"
-                className="relative z-10 w-full max-w-lg object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out"
-              />
+              <Link
+                to="/products"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#1d1c19] px-6 py-3.5 text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.18)] transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-[#9b5330] focus:ring-offset-4 focus:ring-offset-[#eee8dd]"
+              >
+                Shop the collection <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/products?sort=newest"
+                className="group inline-flex min-h-11 items-center justify-center gap-2 text-sm font-bold text-[#1d1c19] min-[430px]:justify-start"
+              >
+                See what’s new <ArrowUpRight size={15} />
+              </Link>
             </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* BRANDS MARQUEE */}
-      {brands.length > 0 && (
-        <div className="py-10 border-y border-gray-100 bg-white overflow-hidden">
-          <div className="flex gap-16 whitespace-nowrap animate-[marquee_40s_linear_infinite] hover:[animation-play-state:paused] items-center">
-            {[...brands, ...brands, ...brands].map((b, i) => (
-              <span key={i} className="text-2xl font-black text-gray-300 uppercase tracking-widest hover:text-gray-900 transition-colors cursor-default select-none">
-                {b}
-              </span>
-            ))}
-          </div>
-          <style>{`@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }`}</style>
-        </div>
-      )}
-
-      {/* SHOP BY CATEGORY */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-              <span className="text-orange-600 font-bold uppercase tracking-widest text-xs">Curated Collections</span>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 tracking-tight">Browse by Category</h2>
+          <div className="relative h-[18rem] overflow-hidden border-t border-black/[0.06] sm:h-[25rem] md:h-[31rem]">
+            <img
+              src="/vkart-editorial-hero.png"
+              alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
+              className="h-full w-full object-cover object-[72%_center] sm:object-[68%_center]"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/5" />
+            <div className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-black/40 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md sm:bottom-6 sm:left-6">
+              Tech · Style · Life
             </div>
-            <Link to="/products" className="text-sm font-bold text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-2">
-              See All Collections <FaArrowRight />
-            </Link>
+          </div>
+        </div>
+
+        {/* Desktop hero keeps the wide editorial composition. */}
+        <div className="editorial-grain relative mx-auto hidden min-h-[calc(100vh-8rem)] max-w-[1500px] overflow-hidden rounded-[1.75rem] bg-[#e8e0d4] lg:block">
+          <img
+            src="/vkart-editorial-hero.png"
+            alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f0eadf]/95 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/5" />
+
+          <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-7xl flex-col justify-between px-14 py-14">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={reveal}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#555148]"
+            >
+              <span className="h-px w-8 bg-[#8e5c3f]" /> The VKart edit · 2026
+            </motion.div>
+
+            <div className="max-w-[690px] pb-10 pt-20">
+              <motion.h1
+                initial="hidden"
+                animate="visible"
+                variants={reveal}
+                transition={{ delay: 0.08, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                className="font-editorial text-[7.25rem] leading-[0.86] tracking-[-0.055em] text-[#1d1c19]"
+              >
+                Better things,
+                <span className="block italic text-[#9b5330]">beautifully chosen.</span>
+              </motion.h1>
+              <motion.p
+                initial="hidden"
+                animate="visible"
+                variants={reveal}
+                transition={{ delay: 0.18, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-8 max-w-lg text-lg font-medium leading-8 text-[#5f5b52]"
+              >
+                Technology, style, and everyday essentials—edited down to the pieces worth bringing home.
+              </motion.p>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={reveal}
+                transition={{ delay: 0.28, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-9 flex items-center gap-5"
+              >
+                <Link
+                  to="/products"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#1d1c19] px-7 py-4 text-sm font-bold text-white shadow-[0_14px_35px_rgba(29,28,25,.2)] transition-all hover:-translate-y-0.5 hover:bg-black focus:outline-none focus:ring-2 focus:ring-[#9b5330] focus:ring-offset-4 focus:ring-offset-[#eee7db]"
+                >
+                  Shop the collection <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  to="/products?sort=newest"
+                  className="group inline-flex items-center gap-2 border-b border-[#1d1c19]/30 pb-1 text-sm font-bold text-[#1d1c19] transition-colors hover:border-[#1d1c19]"
+                >
+                  See what’s new <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </Link>
+              </motion.div>
+            </div>
+
+            <div className="flex max-w-xl flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/15 pt-5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#5f5b52]">
+              <span className="flex items-center gap-2"><Check size={13} /> Curated weekly</span>
+              <span className="flex items-center gap-2"><Check size={13} /> Secure checkout</span>
+              <span className="flex items-center gap-2"><Check size={13} /> Easy returns</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Smartphones",
-                count: "Latest Models",
-                image: "/assets/categories/smartphones.png",
-                link: "/products?cat=smartphones",
-                colSpan: "lg:col-span-2"
-              },
-              {
-                name: "Laptops",
-                count: "Power & Performance",
-                image: "/assets/categories/laptops.png",
-                link: "/products?cat=laptops",
-                colSpan: "lg:col-span-1"
-              },
-              {
-                name: "Fragrances",
-                count: "Luxury Scents",
-                image: "/assets/categories/fragrances.png",
-                link: "/products?cat=fragrances",
-                colSpan: "lg:col-span-1"
-              },
-              {
-                name: "Beauty",
-                count: "Skincare & Makeup",
-                image: "/assets/categories/beauty.png",
-                link: "/products?cat=beauty",
-                colSpan: "lg:col-span-2"
-              },
-              {
-                name: "Watches",
-                count: "Luxury Timepieces",
-                image: "/assets/categories/watches.png",
-                link: "/products?cat=mens-watches",
-                colSpan: "lg:col-span-2"
-              },
-              {
-                name: "Sunglasses",
-                count: "Trendy Eyewear",
-                image: "/assets/categories/sunglasses.png",
-                link: "/products?cat=sunglasses",
-                colSpan: "lg:col-span-1"
-              }
-            ].map((cat, idx) => (
+          <div className="absolute bottom-8 right-8 hidden border-r border-black/20 pr-5 text-right lg:block">
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#6d675d]">The everyday edit</p>
+            <p className="mt-2 font-editorial text-2xl text-[#1d1c19]">Tech · Style · Life</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-black/[0.08] bg-[#f6f3ed]">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-black/[0.08] px-4 lg:grid-cols-4 lg:divide-y-0">
+          {trustItems.map(({ icon: Icon, title, copy }) => (
+            <div key={title} className="flex items-center gap-3 px-4 py-7 sm:px-7">
+              <Icon size={19} strokeWidth={1.6} className="shrink-0 text-[#9b5330]" />
+              <div>
+                <p className="text-xs font-bold text-[#292722]">{title}</p>
+                <p className="mt-0.5 text-[11px] text-[#817c72]">{copy}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-5 py-16 sm:px-7 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-9 grid gap-6 border-b border-black/[0.1] pb-8 sm:mb-11 sm:pb-10 lg:grid-cols-[.9fr_1fr] lg:items-end lg:gap-16">
+            <div>
+              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
+                Shop the edit
+              </p>
+              <h2 className="home-section-title max-w-2xl font-editorial text-4xl leading-[0.98] tracking-[-0.035em] sm:text-5xl">
+                Four ways into the collection.
+              </h2>
+            </div>
+            <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
+              <p className="max-w-lg text-sm leading-6 text-[#6f6b62] sm:text-[15px] sm:leading-7">
+                Technology, timepieces, and everyday rituals—brought together with one quieter point of view.
+              </p>
               <Link
-                key={idx}
-                to={cat.link}
-                className={`group relative h-80 rounded-[2.5rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 block ${cat.colSpan || 'lg:col-span-1'}`}
+                to="/products"
+                className="group inline-flex shrink-0 items-center gap-2 border-b border-black/20 pb-1 text-xs font-bold text-[#1d1c19] transition-colors hover:border-black/60"
               >
-                {/* Background Image with Zoom Effect + Lazy Loading */}
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 p-8 w-full z-10 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <p className="text-orange-300 font-bold text-xs uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100 transform -translate-y-2 group-hover:translate-y-0 duration-300">
-                        {cat.count}
-                      </p>
-                      <h3 className="text-3xl font-black tracking-tight mb-0 group-hover:mb-1 transition-all">
-                        {cat.name}
-                      </h3>
-                    </div>
-
-                    <div className="w-12 h-12 rounded-full bg-white text-gray-900 flex items-center justify-center opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-lg">
-                      <FaArrowRight />
-                    </div>
-                  </div>
-                </div>
+                View everything
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link
+                  to={category.to}
+                  className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-black/[0.08] bg-[#ebe4da] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#e5ded3]">
+                    <img
+                      src={category.image}
+                      alt={`${category.name} collection`}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                    />
+                    <span className="absolute left-4 top-4 rounded-full border border-black/[0.08] bg-[#f7f3ec]/90 px-2.5 py-1 text-[9px] font-bold tracking-[0.14em] text-[#696258] backdrop-blur-sm">
+                      {category.number}
+                    </span>
+                  </div>
+                  <div className="flex min-h-[7.5rem] items-center justify-between gap-4 p-5 sm:p-6">
+                    <div>
+                      <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#8a7667]">{category.eyebrow}</p>
+                      <h3 className="font-editorial text-2xl tracking-[-0.03em] text-[#1d1c19] sm:text-[1.7rem]">{category.name}</h3>
+                    </div>
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-black/[0.12] bg-[#f6f3ed] text-[#1d1c19] transition-all group-hover:border-[#1d1c19] group-hover:bg-[#1d1c19] group-hover:text-white">
+                      <ArrowUpRight size={15} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LIVE SALE BANNER */}
       {activeSale && (
-        <section className="py-6">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              to="/products?sale=true"
-              className="block relative overflow-hidden rounded-3xl bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 p-8 sm:p-10 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
-            >
-              <div className="absolute top-0 right-0 w-60 h-60 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4 blur-2xl" />
-              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
-                    <FaBolt className="text-yellow-200 text-2xl" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-yellow-200 mb-1">Limited Time</div>
-                    <h3 className="text-2xl sm:text-3xl font-black tracking-tight">{activeSale.name}</h3>
-                    <p className="text-white/70 text-sm mt-1">
-                      Ends {new Date(activeSale.endDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
-                      {' • '}
-                      Up to {Math.max(...(activeSale.categories || []).map(c => c.discountPercent || 0), 0)}% off
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30 font-bold text-sm group-hover:bg-white/30 transition-colors">
-                  Shop the Sale <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </div>
+        <section className="px-4 pb-20 sm:px-7 sm:pb-32">
+          <Link
+            to="/products?sale=true"
+            className="group relative mx-auto grid max-w-7xl overflow-hidden rounded-[1.25rem] border border-black/[0.09] bg-[#eee7dd] text-[#1d1c19] shadow-[0_18px_60px_rgba(29,28,25,.06)] sm:rounded-[1.5rem] lg:grid-cols-[1fr_19rem]"
+          >
+            <span className="absolute inset-y-0 left-0 w-1 bg-[#a85d37] sm:w-1.5" />
+            <div className="relative px-6 py-7 sm:flex sm:items-start sm:gap-5 sm:px-11 sm:py-10">
+              <span className="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8] text-[#a85d37] sm:static sm:h-11 sm:w-11 sm:shrink-0"><Zap size={16} strokeWidth={1.8} /></span>
+              <div className="pr-12 sm:pr-0">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#8a604b] sm:text-[10px] sm:tracking-[0.24em]">
+                  <span className="sm:hidden">Limited-time offer</span>
+                  <span className="hidden sm:inline">The member edit · Limited time</span>
+                </p>
+                <h2 className="mt-2 max-w-[13rem] font-editorial text-[2.35rem] leading-[0.94] tracking-[-0.035em] sm:mt-3 sm:max-w-none sm:text-[2.8rem]">{activeSale.name}</h2>
+                <p className="mt-4 text-[13px] leading-5 text-[#716b62] sm:text-sm">
+                  <span className="sm:hidden">Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
+                  <span className="hidden sm:inline">Selected pieces, considered prices · Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
+                </p>
               </div>
-            </Link>
-          </div>
+            </div>
+            <div className="relative grid grid-cols-[1fr_auto] items-center gap-3 border-t border-black/[0.09] px-6 py-5 sm:flex sm:justify-between sm:gap-6 sm:px-7 sm:py-6 lg:flex-col lg:items-start lg:justify-center lg:border-l lg:border-t-0 lg:px-9">
+              <div className="flex items-end gap-2">
+                <span className="font-editorial text-4xl leading-none tracking-[-0.04em] sm:text-5xl">{maxSaleDiscount}%</span>
+                <span className="pb-0.5 text-[8px] font-bold uppercase leading-tight tracking-[0.14em] text-[#7d766d] sm:pb-1 sm:text-[9px] sm:tracking-[0.16em]">off<br />selected</span>
+              </div>
+              <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[#1d1c19] px-4 py-2.5 text-[11px] font-bold text-white transition-transform group-hover:-translate-y-0.5 sm:gap-3 sm:px-5 sm:py-3 sm:text-xs">
+                Shop now <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          </Link>
         </section>
       )}
 
-      {/* QUICK CATEGORY CHIPS */}
-      {allCategories.length > 0 && (
-        <section className="py-6">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-1">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap shrink-0">
-                <FaTag className="inline mr-1" /> Quick Shop
-              </span>
-              {allCategories.map((cat) => (
+      <section className="bg-[#fffdf8] px-5 py-24 sm:px-7 sm:py-32">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="This week’s shortlist"
+            title="Trending, for good reason."
+            copy="The pieces customers keep coming back to—selected from across the VKart catalogue."
+            action={
+              <Link to="/products" className="group inline-flex items-center gap-2 text-sm font-bold text-[#1d1c19]">
+                Shop all products <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+            }
+          />
+
+          <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {loading
+              ? [1, 2, 3, 4].map((item) => <SkeletonCard key={item} />)
+              : featured.slice(0, 4).map((product) => (
+                  <ProductCard key={product._id} product={product} onQuickView={setQuickView} onAdd={handleAddToCart} />
+                ))}
+          </div>
+        </div>
+      </section>
+
+      {!profile?.isPrime && (
+        <section className="border-y border-black/[0.06] bg-[#e9e1d5] px-5 py-16 sm:px-7 sm:py-20">
+          <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#1d1c19] text-white shadow-[0_28px_80px_rgba(29,28,25,.15)] lg:grid-cols-[1.1fr_.9fr]">
+            <div className="relative px-7 py-12 sm:px-12 sm:py-14 lg:px-14 lg:py-16">
+              <div className="absolute -left-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[#b66a3c]/15 blur-3xl" />
+              <div className="relative">
+                <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#d99b72]">
+                  <Crown size={14} /> VKart Prime
+                </span>
+                <h2 className="mt-6 max-w-xl font-editorial text-4xl leading-[0.95] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+                  A little more, for people who shop less.
+                </h2>
+                <p className="mt-6 max-w-xl text-sm leading-7 text-white/60 sm:text-base">
+                  Better value, earlier access, and thoughtful benefits across the things you already want.
+                </p>
                 <Link
-                  key={cat}
-                  to={`/products?cat=${cat.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="whitespace-nowrap px-4 py-2 rounded-full bg-white border border-gray-200 text-sm font-bold text-gray-700 hover:border-gray-900 hover:text-gray-900 hover:shadow-sm transition-all shrink-0"
+                  to="/prime"
+                  className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#d18a5e] px-6 py-3.5 text-sm font-bold text-[#1d1c19] transition-all hover:-translate-y-0.5 hover:bg-[#e0a37d]"
                 >
-                  {cat.replace(/-/g, ' ').replace(/\b\w/g, (ch) => ch.toUpperCase())}
+                  Discover Prime <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
                 </Link>
+              </div>
+            </div>
+            <div className="grid border-t border-white/10 lg:border-l lg:border-t-0">
+              {[
+                ["01", "Member pricing", "Extra savings on selected collections."],
+                ["02", "Priority access", "Shop new drops and live sales first."],
+                ["03", "Delivery on us", "Free shipping on eligible orders."],
+              ].map(([number, title, copy]) => (
+                <div key={number} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-white/10 px-7 py-7 last:border-b-0 sm:px-10 lg:content-center lg:py-6">
+                  <span className="font-editorial text-2xl text-[#d18a5e]">{number}</span>
+                  <div>
+                    <h3 className="text-base font-bold">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/45">{copy}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* PRIME MEMBERSHIP CTA (hidden for existing members) */}
-      {!profile?.isPrime && (
-        <section className="py-6">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              to="/prime"
-              className="block relative overflow-hidden rounded-3xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-8 sm:p-10 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.15),transparent_50%)]" />
-              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-amber-500/20 backdrop-blur-sm p-4 rounded-2xl border border-amber-500/30">
-                    <FaCrown className="text-amber-400 text-2xl" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">VKart Prime</div>
-                    <h3 className="text-xl sm:text-2xl font-black tracking-tight">Get Exclusive Member Discounts</h3>
-                    <p className="text-gray-400 text-sm mt-1">Extra sale discounts, free shipping, early access & more</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 bg-amber-500 px-6 py-3 rounded-full font-bold text-sm shadow-lg shadow-amber-500/20 group-hover:bg-amber-400 transition-colors">
-                  Join Prime <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-      )}
-
-      {/* --- FEATURED CAROUSEL (FIXED ALIGNMENT) --- */}
-      <section className="py-16 sm:py-24 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Alignment Fix: 
-                - items-start on mobile (left align)
-                - sm:items-end on desktop (standard alignment)
-            */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-12 gap-4">
-            <div>
-              <span className="text-orange-600 font-bold uppercase tracking-widest text-xs mb-2 block">Weekly Picks</span>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">Trending Now</h2>
-            </div>
-            <Link to="/products" className="group inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-gray-900 transition-colors">
-              View Collection <span className="group-hover:translate-x-1 transition-transform"><FaArrowRight /></span>
-            </Link>
-          </div>
-
-          {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[1, 2, 3, 4].map(i => <SkeletonCard key={i} />)}
-            </div>
-          ) : (
-            /* Slider Wrapper Fix: 
-               -mx-4 ensures the slider touches the edges on mobile
-               sm:mx-0 brings it back to container width on desktop
-            */
-            <div className="-mx-4 sm:mx-0">
-              <Slider {...productSliderSettings} className="pb-12">
-                {featured.map(p => (
-                  <div key={p._id} className="px-3 h-full">
-                    <ProductCard p={p} onQuickView={setQuickView} onAdd={handleAddToCart} />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* FLASH SALE (Same) */}
-      {/* COLLECTION SHOWCASE */}
-      <section className="py-20 bg-[#050505] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-500/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-white/10 bg-white/5 text-white text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-md">
-                <FaStar className="text-yellow-400" /> Premium Catalog
-              </div>
-              <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                Curated <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-200">Perfection.</span>
-              </h2>
-              <p className="text-gray-400 text-lg mb-12 max-w-lg mx-auto lg:mx-0">
-                Browse our complete collection of high-performance gadgets and lifestyle essentials. No clutter, just quality.
-              </p>
-
-              <Link to="/products" className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition-all transform hover:scale-105">
-                View All Products <FaArrowRight />
+      <section className="px-5 py-24 sm:px-7 sm:py-32">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Recently arrived"
+            title="Fresh perspective."
+            copy="New additions chosen to make daily routines feel a little more considered."
+            action={
+              <Link to="/products?sort=newest" className="group inline-flex items-center gap-2 text-sm font-bold text-[#1d1c19]">
+                Explore new arrivals <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
               </Link>
-            </div>
-
-            <div className="relative w-full max-w-md mx-auto lg:mr-0">
-              <div className="absolute inset-0 bg-gradient-to-tr from-orange-500 to-purple-600 rounded-[3rem] blur-2xl opacity-20 animate-pulse" />
-              <div className="relative bg-white/5 border border-white/10 rounded-[3rem] p-8 md:p-12 backdrop-blur-xl">
-                <div className="text-center">
-                  <div className="inline-flex p-4 rounded-full bg-orange-500/20 text-orange-400 mb-6">
-                    <FaShoppingBag size={32} />
-                  </div>
-                  <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Shop The Best</div>
-                  <div className="text-5xl font-black text-white tracking-tighter mb-2">100<span className="text-3xl text-orange-500">%</span></div>
-                  <div className="text-xl font-bold text-white mb-8">QUALITY GUARANTEE</div>
-                  <div className="h-px w-full bg-white/10 mb-8" />
-                  <div className="flex justify-center gap-4 text-sm font-medium text-gray-400">
-                    <span>Free Shipping</span>
-                    <span>•</span>
-                    <span>Easy Returns</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            }
+          />
+          <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {loading
+              ? [1, 2, 3, 4].map((item) => <SkeletonCard key={item} />)
+              : newArrivals.slice(0, 4).map((product) => (
+                  <ProductCard key={product._id} product={product} onQuickView={setQuickView} onAdd={handleAddToCart} />
+                ))}
           </div>
         </div>
       </section>
 
-      {/* NEW ARRIVALS */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-orange-600 font-bold uppercase tracking-widest text-xs">Just Dropped</span>
-            <h2 className="text-4xl font-black text-gray-900 mt-3 tracking-tight">New Arrivals</h2>
+      <section className="border-t border-black/[0.08] bg-[#efe9df] px-5 py-20 sm:px-7 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">Why VKart</p>
+            <h2 className="home-why-title mt-5 font-editorial text-5xl leading-[0.95] tracking-[-0.035em] sm:text-6xl">Shopping should feel considered.</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {loading ? [1, 2, 3, 4].map(i => <SkeletonCard key={i} />) : newArrivals.map(p => <ProductCard key={p._id} p={p} onQuickView={setQuickView} onAdd={handleAddToCart} />)}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-orange-600 font-bold uppercase tracking-widest text-xs">Social Proof</span>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-3 tracking-tight">What Our Customers Say</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid gap-4 sm:grid-cols-3">
             {[
-              { name: "Priya S.", role: "Software Engineer", quote: "The delivery was super fast and the product quality exceeded my expectations. VKart is now my go-to shopping app!", rating: 5 },
-              { name: "Rahul M.", role: "Business Owner", quote: "Amazing deals and seamless checkout. The AI assistant helped me find exactly what I needed. Highly recommend!", rating: 5 },
-              { name: "Ananya K.", role: "Designer", quote: "Love the curated collection! Every product feels premium. The UI is beautiful and shopping is a breeze.", rating: 5 },
-            ].map((t, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="flex gap-1 text-amber-400 mb-4">
-                  {Array.from({ length: t.rating }).map((_, i) => <FaStar key={i} />)}
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-6 italic">"{t.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900 text-sm">{t.name}</p>
-                    <p className="text-xs text-gray-500">{t.role}</p>
-                  </div>
-                </div>
+              [Sparkles, "Curated, not crowded", "A sharper catalogue that keeps the good things easy to find."],
+              [ShieldCheck, "Confidence at checkout", "Clear pricing and protected payments from bag to doorstep."],
+              [Headphones, "Human when it matters", "Helpful support backed by smart tools, without the runaround."],
+            ].map(([Icon, title, copy]) => (
+              <div key={title} className="border-t border-black/15 pt-6">
+                <Icon size={20} strokeWidth={1.5} className="text-[#9b5330]" />
+                <h3 className="mt-7 text-sm font-bold">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#777269]">{copy}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TECH STACK */}
-      <section className="py-24 bg-gray-50 border-t border-gray-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">The VKart Experience</h2>
-            <p className="text-gray-500 mt-4 text-lg">Built for speed, security, and scalability.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 md:col-span-2 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl mb-6">
-                <FaShieldAlt />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Bank-Grade Security</h3>
-              <p className="text-gray-500 leading-relaxed">
-                Secured by <strong>Razorpay</strong> (Test Mode). We use JWT authentication and industry-standard encryption for data protection.
-              </p>
-            </div>
-
-            <div className="bg-gray-900 rounded-[2.5rem] p-8 text-white shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500 rounded-full blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity" />
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-orange-400 text-2xl mb-6 backdrop-blur-sm">
-                  <FaBolt />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">Blazing Fast</h3>
-                <p className="text-gray-400 leading-relaxed">
-                  Powered by <strong>Node.js</strong> & <strong>Redis</strong> caching. Images served via <strong>AWS S3</strong> for lightning performance.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 text-2xl mb-6">
-                <FaTruck />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Express Delivery</h3>
-              <p className="text-gray-500 leading-relaxed">
-                Order tracking and fast dispatch on all eligible items.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl shadow-gray-200/40 md:col-span-2 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 text-2xl mb-6">
-                <FaHeadset />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">24/7 Support</h3>
-              <p className="text-gray-500 leading-relaxed">
-                Our AI Assistant uses <strong>MongoDB Vector Search</strong> & <strong>RAG</strong> to provide smart, context-aware help.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* NEWSLETTER */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="relative max-w-4xl mx-auto bg-gray-900 rounded-[3rem] px-6 py-20 sm:px-20 text-center overflow-hidden shadow-2xl shadow-gray-900/30">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-black" />
-
-            <div className="relative z-10">
-              {!isSubscribed ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <div className="inline-flex p-4 rounded-full bg-white/5 mb-8 border border-white/10 backdrop-blur-sm">
-                    <FaEnvelope className="text-white text-xl" />
-                  </div>
-                  <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 tracking-tight">Unlock Exclusive Access</h2>
-                  <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
-                    Get exclusive access to new drops, secret sales, and tech news directly to your inbox.
-                  </p>
-
-                  <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={handleSubscribe}>
-                    <input
-                      type="email"
-                      placeholder="you@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="flex-1 px-6 py-4 rounded-2xl bg-white/10 border border-white/10 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 backdrop-blur-md transition-all"
-                    />
-                    <button className="px-8 py-4 rounded-2xl bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105">
-                      Subscribe
-                    </button>
-                  </form>
-                </motion.div>
-              ) : (
-                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="py-8">
-                  <div className="inline-flex p-6 rounded-full bg-green-500/20 mb-6 text-green-400 border border-green-500/30">
-                    <FaCheckCircle size={40} />
-                  </div>
-                  <h2 className="text-3xl font-bold text-white mb-4">Welcome to the Club!</h2>
-                  <p className="text-gray-400">You've successfully joined the inner circle. Keep an eye on your inbox.</p>
-                </motion.div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {quickView && (
-        <ProductQuickView
-          product={quickView}
-          onClose={() => setQuickView(null)}
-          onAdd={handleAddToCart}
-        />
+        <ProductQuickView product={quickView} onClose={() => setQuickView(null)} onAdd={handleAddToCart} />
       )}
-
     </main>
   );
 }

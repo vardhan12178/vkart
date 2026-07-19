@@ -1,170 +1,146 @@
 import { useState } from "react";
-import { ShoppingCartIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaTwitter, FaArrowRight, FaEnvelope } from "react-icons/fa";
+import { ArrowRight, Check, Mail, ShoppingBag } from "lucide-react";
 import axios from "./axiosInstance";
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const Footer = () => {
+const footerGroups = [
+  {
+    title: "Shop",
+    links: [
+      ["All products", "/products"],
+      ["New arrivals", "/products?sort=newest"],
+      ["VKart Prime", "/prime"],
+      ["Stories & guides", "/blog"],
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      ["Our story", "/about"],
+      ["Careers", "/careers"],
+      ["Contact", "/contact"],
+    ],
+  },
+  {
+    title: "Customer care",
+    links: [
+      ["Help & support", "/contact"],
+      ["Track an order", "/orders"],
+      ["Privacy", "/privacy"],
+      ["Terms", "/terms"],
+    ],
+  },
+];
+
+export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
-  const [nlEmail, setNlEmail] = useState("");
-  const [nlBusy, setNlBusy] = useState(false);
+  const [email, setEmail] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  const handleSubscribe = async (event) => {
+    event.preventDefault();
+    if (busy) return;
+    setBusy(true);
+    try {
+      await axios.post("/api/newsletter/subscribe", { email });
+    } catch {
+      // The signup is intentionally optimistic so a temporary network issue
+      // does not interrupt the footer experience.
+    }
+    setSubscribed(true);
+    setBusy(false);
+  };
 
   return (
-    <footer className="bg-[#050505] text-gray-400 border-t border-white/5 font-sans relative overflow-hidden" role="contentinfo" aria-label="Site footer">
-      
-      {/* Subtle Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/5 rounded-full blur-[120px] pointer-events-none" />
+    <footer className="relative overflow-hidden bg-[#171612] text-white" role="contentinfo" aria-label="Site footer">
+      <div className="absolute right-[-10rem] top-[-15rem] h-[34rem] w-[34rem] rounded-full border border-white/[0.06]" />
+      <div className="absolute right-[-3rem] top-[-10rem] h-[24rem] w-[24rem] rounded-full border border-white/[0.05]" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+      <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-7 sm:py-16">
+        <div className="grid gap-10 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,.04)] sm:p-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-16 lg:p-12">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#d18a5e]">The VKart letter</p>
+            <h2 className="mt-5 max-w-xl font-editorial text-4xl leading-[0.95] tracking-[-0.035em] text-white sm:text-5xl">
+              Good things, occasionally delivered.
+            </h2>
+            <p className="mt-5 max-w-lg text-sm leading-6 text-white/55">
+              Thoughtful new arrivals, useful buying guides, and first access to private offers. No inbox clutter.
+            </p>
+          </div>
 
-        {/* --- NEWSLETTER SECTION --- */}
-        <div className="mb-16 rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 relative overflow-hidden">
-          {/* Decorative Grid Pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.03]" />
-          
           {subscribed ? (
-            <div className="relative flex flex-col items-center text-center animate-fade-up">
-              <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 mb-4">
-                <FaArrowRight className="-rotate-45" size={24} />
+            <div className="flex items-center gap-4 rounded-[1.25rem] border border-white/10 bg-white/[0.05] p-5">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#d18a5e] text-[#171612]">
+                <Check size={19} />
+              </span>
+              <div>
+                <p className="text-sm font-bold">You’re on the list.</p>
+                <p className="mt-1 text-xs text-white/45">Watch your inbox for the next VKart edit.</p>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">You're on the list!</h3>
-              <p className="text-gray-400 max-w-md">
-                Thank you for subscribing. Keep an eye on your inbox for the latest VKart drops.
-              </p>
             </div>
           ) : (
-            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="text-center lg:text-left max-w-xl">
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight">
-                  Join the Inner Circle
-                </h3>
-                <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-                  Get exclusive access to new collections, priority support, and special offers directly to your inbox. No spam, ever.
-                </p>
+            <form onSubmit={handleSubscribe} className="rounded-[1.25rem] border border-white/10 bg-[#11100d] p-2 sm:flex sm:items-center" aria-label="Newsletter subscription">
+              <label htmlFor="footer-email" className="sr-only">Email address</label>
+              <div className="relative min-w-0 flex-1">
+                <Mail size={17} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
+                <input
+                  id="footer-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="Your email address"
+                  className="w-full border-0 bg-transparent py-4 pl-11 pr-4 text-sm text-white outline-none placeholder:text-white/35 focus:ring-0"
+                />
               </div>
-
-              <form
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  if (nlBusy) return;
-                  setNlBusy(true);
-                  try {
-                    await axios.post("/api/newsletter/subscribe", { email: nlEmail });
-                    setSubscribed(true);
-                  } catch { setSubscribed(true); }
-                  setNlBusy(false);
-                }}
-                className="w-full max-w-md relative"
-                aria-label="Newsletter subscription"
+              <button
+                type="submit"
+                disabled={busy}
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-[.9rem] bg-[#d18a5e] px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-[#171612] transition-colors hover:bg-[#e0a37d] disabled:opacity-50 sm:w-auto"
               >
-                <div className="relative group">
-                  <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-orange-500 transition-colors" aria-hidden="true" />
-                  <input
-                    type="email"
-                    required
-                    value={nlEmail}
-                    onChange={(e) => setNlEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    aria-label="Email address for newsletter"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 pl-12 pr-36 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-2 top-2 bottom-2 bg-white text-black hover:bg-gray-200 font-bold rounded-xl px-6 text-sm transition-colors"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div>
+                {busy ? "Joining…" : "Join the list"}
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </button>
+            </form>
           )}
         </div>
 
-        {/* --- LINKS GRID --- */}
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4 border-b border-white/10 pb-12">
-          
-          {/* Brand Column */}
-          <div className="space-y-6">
-            <Link
-              to="/"
-              onClick={scrollToTop}
-              className="flex items-center gap-3 group"
-            >
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-white text-black transition-transform group-hover:scale-95">
-                <ShoppingCartIcon className="h-5 w-5" />
-              </div>
-              <span className="text-2xl font-black tracking-tighter text-white">VKart</span>
+        <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-[1.35fr_repeat(3,1fr)] lg:py-16">
+          <div>
+            <Link to="/" onClick={scrollToTop} className="inline-flex items-center gap-3" aria-label="VKart home">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#171612]">
+                <ShoppingBag size={18} />
+              </span>
+              <span className="text-xl font-extrabold tracking-[-0.05em]">VKart</span>
             </Link>
-
-            <p className="text-sm leading-relaxed text-gray-500 max-w-xs">
-              A premium e-commerce experience built for the modern web. Quality products, seamless shopping.
+            <p className="mt-6 max-w-xs text-sm leading-6 text-white/35">
+              A considered destination for technology, style, and the everyday things worth keeping.
             </p>
+          </div>
 
-            <div className="flex items-center gap-4">
-              {[
-                { icon: FaGithub, href: "https://github.com" },
-                { icon: FaLinkedin, href: "https://linkedin.com" },
-                { icon: FaTwitter, href: "https://twitter.com" },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white/5 text-gray-400 hover:bg-white hover:text-black transition-all duration-300"
-                >
-                  <social.icon size={18} />
-                </a>
-              ))}
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">{group.title}</h3>
+              <ul className="mt-6 space-y-4">
+                {group.links.map(([label, to]) => (
+                  <li key={label}>
+                    <Link to={to} onClick={scrollToTop} className="text-sm text-white/70 transition-colors hover:text-[#d18a5e]">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Links Columns */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Shop</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/products" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">All Products</Link></li>
-              <li><Link to="/blog" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Stories & Guides</Link></li>
-              <li><Link to="/contact" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Customer Support</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-6">Company</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/about" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">About Us</Link></li>
-              <li><Link to="/contact" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Contact</Link></li>
-              <li><Link to="/blog" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Latest News</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-6">Legal</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/terms" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Terms of Service</Link></li>
-              <li><Link to="/privacy" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/license" onClick={scrollToTop} className="hover:text-orange-500 transition-colors">Licenses</Link></li>
-            </ul>
-          </div>
+          ))}
         </div>
 
-        {/* --- BOTTOM BAR --- */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600 font-medium">
-          <p>© {new Date().getFullYear()} VKart Inc. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>Sitemap</span>
-          </div>
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-7 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/25 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} VKart. All rights reserved.</p>
+          <p>Curated with care in India.</p>
         </div>
-
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

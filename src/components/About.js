@@ -56,7 +56,7 @@ export default function About() {
   );
 
   return (
-    <main className="relative min-h-screen bg-gray-50 font-sans text-gray-800 overflow-hidden selection:bg-orange-100 selection:text-orange-900">
+    <main className="premium-page premium-about relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
 
       {/* Ambient Background Blobs */}
@@ -70,12 +70,12 @@ export default function About() {
             <FaRocket /> Project Case Study
           </span>
 
-          <h1 className="text-5xl sm:text-7xl font-black text-gray-900 tracking-tight leading-[1.1] mb-6">
-            Building a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Production-Ready</span> <br className="hidden sm:block" /> E-Commerce Engine.
+          <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal text-[#1d1c19] tracking-[-0.045em] leading-[0.9] mb-8">
+            A real storefront,<br className="hidden sm:block" /> engineered end to end.
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 leading-relaxed font-medium">
-            VKart isn't just a template. It's a complete, full-stack system engineered with modern practices, secure authentication, and complex state management.
+            VKart is designed as a convincing consumer product and built as a complete full-stack system—with secure identity, commerce workflows, and resilient state management.
           </p>
         </div>
       </section>

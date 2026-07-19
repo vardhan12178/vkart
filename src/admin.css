@@ -1,0 +1,538 @@
+:root {
+  --admin-ink: #1d1c19;
+  --admin-sidebar: #fffdf8;
+  --admin-canvas: #f6f3ed;
+  --admin-paper: #fffdf8;
+  --admin-muted: #6f6b62;
+  --admin-line: rgba(29, 28, 25, 0.09);
+  --admin-accent: #a85d37;
+  --admin-positive: #59634f;
+  --admin-critical: #75483b;
+  --admin-critical-soft: #eee2dc;
+}
+
+.premium-admin {
+  background: var(--admin-canvas) !important;
+  color: var(--admin-ink) !important;
+}
+
+.premium-admin-sidebar {
+  border-color: var(--admin-line) !important;
+  background: var(--admin-sidebar) !important;
+  color: var(--admin-ink) !important;
+  box-shadow: none !important;
+}
+
+.premium-admin-sidebar > div:first-of-type,
+.premium-admin-sidebar > div:last-of-type {
+  border-color: var(--admin-line) !important;
+  background: transparent !important;
+}
+
+.premium-admin-sidebar [class~="bg-slate-900"] {
+  background: var(--admin-ink) !important;
+  color: #fffdf8 !important;
+  box-shadow: none !important;
+}
+
+.premium-admin-sidebar [class~="text-slate-900"],
+.premium-admin-sidebar [class~="text-slate-800"] {
+  color: var(--admin-ink) !important;
+}
+
+.premium-admin-sidebar [class~="text-slate-500"],
+.premium-admin-sidebar [class~="text-slate-400"] {
+  color: var(--admin-muted) !important;
+}
+
+.premium-admin-sidebar nav a {
+  color: var(--admin-muted) !important;
+}
+
+.premium-admin-sidebar nav a:hover {
+  background: rgba(34, 33, 29, 0.035) !important;
+  color: var(--admin-ink) !important;
+}
+
+.premium-admin-sidebar nav a[aria-current="page"] {
+  background: #eee8df !important;
+  color: var(--admin-ink) !important;
+  box-shadow: none !important;
+}
+
+.premium-admin-sidebar nav a[aria-current="page"] svg {
+  color: var(--admin-accent) !important;
+}
+
+.premium-admin-sidebar nav a[aria-current="page"] > div[class*="right-0"] {
+  display: none;
+}
+
+.premium-admin-sidebar button[class*="-right-3"] {
+  border-color: rgba(34, 33, 29, 0.12) !important;
+  background: #fffdf8 !important;
+  color: var(--admin-sidebar) !important;
+}
+
+.premium-admin-header {
+  border-color: var(--admin-line) !important;
+  background: rgba(255, 253, 248, 0.94) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.premium-admin-header [class~="bg-slate-900"] {
+  background: var(--admin-ink) !important;
+}
+
+.premium-admin-header input {
+  border: 1px solid var(--admin-line) !important;
+  background: rgba(251, 250, 246, 0.88) !important;
+  box-shadow: none !important;
+}
+
+.premium-admin-header input:focus {
+  border-color: rgba(181, 106, 63, 0.45) !important;
+  box-shadow: 0 0 0 4px rgba(181, 106, 63, 0.08) !important;
+}
+
+.premium-admin-header [class~="text-orange-500"],
+.premium-admin-header [class~="text-orange-600"],
+.premium-admin-header [class~="text-blue-500"],
+.premium-admin-header [class~="text-purple-500"] {
+  color: var(--admin-accent) !important;
+}
+
+.premium-admin-header [class~="text-emerald-500"] {
+  color: var(--admin-positive) !important;
+}
+
+.premium-admin-header [class~="text-red-500"],
+.premium-admin-header [class~="text-red-600"] {
+  color: var(--admin-critical) !important;
+}
+
+.premium-admin-header [class~="bg-orange-50"],
+.premium-admin-header [class~="bg-orange-100"] {
+  background: #eee2d8 !important;
+}
+
+.premium-admin-header [class~="bg-orange-400"],
+.premium-admin-header [class~="bg-orange-500"] {
+  background: var(--admin-accent) !important;
+}
+
+.premium-admin-header [class~="bg-red-50"] {
+  background: var(--admin-critical-soft) !important;
+}
+
+.premium-admin-header [class*="from-orange-"][class*="to-amber-"] {
+  background-image: none !important;
+  background: var(--admin-accent) !important;
+}
+
+.premium-admin main {
+  background: var(--admin-canvas);
+}
+
+.premium-admin main [class~="min-h-screen"],
+.premium-admin main [class*="bg-[#F8F9FA]"],
+.premium-admin main [class~="bg-slate-50/50"],
+.premium-admin main [class~="bg-gray-50/50"] {
+  background: transparent !important;
+}
+
+.premium-admin main h1 {
+  color: var(--admin-ink) !important;
+  font-family: "DM Serif Display", Georgia, serif !important;
+  font-size: clamp(2.25rem, 4vw, 3.5rem) !important;
+  font-weight: 400 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.premium-admin main h2,
+.premium-admin main h3,
+.premium-admin main h4 {
+  color: var(--admin-ink) !important;
+  letter-spacing: -0.025em;
+}
+
+.premium-admin main [class~="text-slate-900"],
+.premium-admin main [class~="text-gray-900"],
+.premium-admin main [class~="text-slate-800"] {
+  color: var(--admin-ink) !important;
+}
+
+.premium-admin main [class~="text-slate-500"],
+.premium-admin main [class~="text-slate-400"],
+.premium-admin main [class~="text-gray-500"],
+.premium-admin main [class~="text-gray-600"] {
+  color: var(--admin-muted) !important;
+}
+
+.premium-admin main [class~="bg-white"] {
+  border-color: var(--admin-line) !important;
+  background: var(--admin-paper) !important;
+}
+
+.premium-admin main [class~="bg-slate-50"],
+.premium-admin main [class~="bg-gray-50"],
+.premium-admin main [class~="bg-slate-100"],
+.premium-admin main [class~="bg-gray-100"] {
+  background: #ebe8e1 !important;
+}
+
+.premium-admin main [class~="shadow-sm"] {
+  box-shadow: none !important;
+}
+
+.premium-admin main [class~="shadow-xl"],
+.premium-admin main [class~="shadow-2xl"] {
+  box-shadow: 0 24px 65px rgba(34, 33, 29, 0.1) !important;
+}
+
+.premium-admin main [class*="rounded-[1.5rem]"],
+.premium-admin main [class~="rounded-2xl"] {
+  border-radius: 1.15rem !important;
+}
+
+.premium-admin main table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.premium-admin main thead,
+.premium-admin main thead[class*="bg-"] {
+  background: #ece9e2 !important;
+  color: #6d685f !important;
+}
+
+.premium-admin main tbody tr {
+  border-color: var(--admin-line) !important;
+}
+
+.premium-admin main tbody tr:hover {
+  background: rgba(181, 106, 63, 0.045) !important;
+}
+
+.premium-admin main input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.premium-admin main textarea,
+.premium-admin main select,
+.premium-admin main [role="combobox"] {
+  border-color: rgba(34, 33, 29, 0.12) !important;
+  border-radius: 0.8rem !important;
+  background: #fffdf8 !important;
+  color: var(--admin-ink) !important;
+}
+
+.premium-admin main input:focus,
+.premium-admin main textarea:focus,
+.premium-admin main select:focus {
+  border-color: rgba(181, 106, 63, 0.55) !important;
+  box-shadow: 0 0 0 4px rgba(181, 106, 63, 0.08) !important;
+  outline: none !important;
+}
+
+.premium-admin main input[type="checkbox"],
+.premium-admin main input[type="radio"] {
+  accent-color: var(--admin-accent);
+}
+
+.premium-admin main button[class~="bg-gray-900"],
+.premium-admin main button[class~="bg-slate-900"],
+.premium-admin main a[class~="bg-gray-900"],
+.premium-admin main a[class~="bg-slate-900"] {
+  border-radius: 999px !important;
+  background: var(--admin-ink) !important;
+  box-shadow: none !important;
+}
+
+.premium-admin main button[class*="bg-gradient-to"],
+.premium-admin main a[class*="bg-gradient-to"] {
+  background-image: none !important;
+  background-color: var(--admin-accent) !important;
+}
+
+.premium-admin main [class~="text-orange-500"],
+.premium-admin main [class~="text-orange-600"],
+.premium-admin main [class~="text-orange-700"],
+.premium-admin main [class~="text-amber-400"],
+.premium-admin main [class~="text-amber-500"],
+.premium-admin main [class~="text-amber-600"] {
+  color: var(--admin-accent) !important;
+}
+
+.premium-admin main [class~="bg-orange-50"],
+.premium-admin main [class~="bg-orange-100"],
+.premium-admin main [class~="bg-amber-50"],
+.premium-admin main [class~="bg-amber-100"] {
+  background: #f2e4da !important;
+}
+
+.premium-admin main [class~="border-orange-100"],
+.premium-admin main [class~="border-orange-200"] {
+  border-color: rgba(181, 106, 63, 0.18) !important;
+}
+
+/* Collapse the legacy rainbow dashboard palette into the VKart system. */
+.premium-admin main [class~="text-red-200"],
+.premium-admin main [class~="text-red-300"],
+.premium-admin main [class~="text-red-400"],
+.premium-admin main [class~="text-red-500"],
+.premium-admin main [class~="text-red-600"],
+.premium-admin main [class~="text-red-700"],
+.premium-admin main [class~="text-red-800"],
+.premium-admin main [class~="text-red-900"],
+.premium-admin main [class~="text-rose-500"],
+.premium-admin main [class~="text-rose-600"] {
+  color: var(--admin-critical) !important;
+}
+
+.premium-admin main [class~="bg-red-50"],
+.premium-admin main [class~="bg-red-100"],
+.premium-admin main [class~="bg-red-200"],
+.premium-admin main [class~="bg-rose-50"],
+.premium-admin main [class~="bg-rose-100"] {
+  background: var(--admin-critical-soft) !important;
+}
+
+.premium-admin main [class~="bg-red-500"],
+.premium-admin main [class~="bg-red-600"],
+.premium-admin main [class~="bg-rose-500"],
+.premium-admin main [class~="bg-rose-600"] {
+  background: var(--admin-critical) !important;
+}
+
+.premium-admin main [class~="border-red-100"],
+.premium-admin main [class~="border-red-200"],
+.premium-admin main [class~="border-red-300"],
+.premium-admin main [class~="border-rose-100"],
+.premium-admin main [class~="border-rose-200"] {
+  border-color: rgba(117, 72, 59, 0.2) !important;
+}
+
+.premium-admin main [class~="text-blue-500"],
+.premium-admin main [class~="text-blue-600"],
+.premium-admin main [class~="text-blue-700"],
+.premium-admin main [class~="text-indigo-500"],
+.premium-admin main [class~="text-indigo-600"],
+.premium-admin main [class~="text-indigo-700"],
+.premium-admin main [class~="text-purple-500"],
+.premium-admin main [class~="text-purple-600"],
+.premium-admin main [class~="text-pink-500"],
+.premium-admin main [class~="text-pink-600"] {
+  color: var(--admin-accent) !important;
+}
+
+.premium-admin main [class~="bg-blue-50"],
+.premium-admin main [class~="bg-blue-100"],
+.premium-admin main [class~="bg-indigo-50"],
+.premium-admin main [class~="bg-indigo-100"],
+.premium-admin main [class~="bg-purple-50"],
+.premium-admin main [class~="bg-purple-100"],
+.premium-admin main [class~="bg-pink-50"],
+.premium-admin main [class~="bg-pink-100"] {
+  background: #eee8df !important;
+}
+
+.premium-admin main [class~="bg-blue-500"],
+.premium-admin main [class~="bg-blue-600"],
+.premium-admin main [class~="bg-indigo-500"],
+.premium-admin main [class~="bg-indigo-600"],
+.premium-admin main [class~="bg-purple-500"],
+.premium-admin main [class~="bg-purple-600"],
+.premium-admin main [class~="bg-pink-500"],
+.premium-admin main [class~="bg-pink-600"] {
+  background: var(--admin-accent) !important;
+}
+
+.premium-admin main [class~="text-green-500"],
+.premium-admin main [class~="text-green-600"],
+.premium-admin main [class~="text-green-700"],
+.premium-admin main [class~="text-emerald-500"],
+.premium-admin main [class~="text-emerald-600"],
+.premium-admin main [class~="text-emerald-700"],
+.premium-admin main [class~="text-yellow-200"],
+.premium-admin main [class~="text-yellow-400"],
+.premium-admin main [class~="text-yellow-500"],
+.premium-admin main [class~="text-yellow-600"] {
+  color: var(--admin-positive) !important;
+}
+
+.premium-admin main [class~="bg-green-50"],
+.premium-admin main [class~="bg-green-100"],
+.premium-admin main [class~="bg-emerald-50"],
+.premium-admin main [class~="bg-emerald-100"],
+.premium-admin main [class~="bg-yellow-50"],
+.premium-admin main [class~="bg-yellow-100"] {
+  background: #e5e8df !important;
+}
+
+.premium-admin main [class*="from-red-"][class*="to-"],
+.premium-admin main [class*="from-rose-"][class*="to-"] {
+  background-image: none !important;
+  background-color: var(--admin-critical) !important;
+}
+
+.premium-admin main [class*="from-blue-"][class*="to-"],
+.premium-admin main [class*="from-indigo-"][class*="to-"],
+.premium-admin main [class*="from-purple-"][class*="to-"],
+.premium-admin main [class*="from-pink-"][class*="to-"],
+.premium-admin main [class*="from-orange-"][class*="to-"] {
+  background-image: none !important;
+  background-color: var(--admin-accent) !important;
+}
+
+.premium-admin main [class*="from-green-"][class*="to-"],
+.premium-admin main [class*="from-emerald-"][class*="to-"] {
+  background-image: none !important;
+  background-color: var(--admin-positive) !important;
+}
+
+.premium-admin main [class~="border-blue-100"],
+.premium-admin main [class~="border-blue-200"],
+.premium-admin main [class~="border-indigo-100"],
+.premium-admin main [class~="border-indigo-200"],
+.premium-admin main [class~="border-purple-100"],
+.premium-admin main [class~="border-purple-200"],
+.premium-admin main [class~="border-pink-100"],
+.premium-admin main [class~="border-pink-200"],
+.premium-admin main [class~="border-green-100"],
+.premium-admin main [class~="border-emerald-100"] {
+  border-color: var(--admin-line) !important;
+}
+
+.premium-admin main [class*="hover:text-red"]:hover,
+.premium-admin main .group:hover [class*="group-hover:text-red"] {
+  color: var(--admin-critical) !important;
+}
+
+.premium-admin main [class*="hover:bg-red"]:hover {
+  background: var(--admin-critical-soft) !important;
+}
+
+.premium-admin main [class*="hover:text-orange"]:hover,
+.premium-admin main [class*="hover:text-amber"]:hover,
+.premium-admin main [class*="hover:text-blue"]:hover,
+.premium-admin main [class*="hover:text-indigo"]:hover,
+.premium-admin main [class*="hover:text-purple"]:hover,
+.premium-admin main [class*="hover:text-pink"]:hover,
+.premium-admin main .group:hover [class*="group-hover:text-orange"],
+.premium-admin main .group:hover [class*="group-hover:text-amber"] {
+  color: var(--admin-accent) !important;
+}
+
+.premium-admin main [class*="hover:bg-orange"]:hover,
+.premium-admin main [class*="hover:bg-amber"]:hover,
+.premium-admin main [class*="hover:bg-blue"]:hover,
+.premium-admin main [class*="hover:bg-indigo"]:hover,
+.premium-admin main [class*="hover:bg-purple"]:hover,
+.premium-admin main [class*="hover:bg-pink"]:hover {
+  background: #e8dfd4 !important;
+}
+
+.premium-admin main > div > footer {
+  border-color: var(--admin-line) !important;
+  background: transparent !important;
+}
+
+/* Admin authentication */
+.premium-admin-login {
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(181, 106, 63, 0.08), transparent 25rem),
+    var(--admin-canvas) !important;
+}
+
+.premium-admin-login-shell .font-editorial {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+.premium-admin-login-shell > .hidden .text-gray-900,
+.premium-admin-login-shell > .hidden .text-gray-400 {
+  color: white !important;
+}
+
+.premium-admin-login-shell input {
+  border-color: rgba(34, 33, 29, 0.12) !important;
+  border-radius: 0.9rem !important;
+  background: #f5f2eb !important;
+}
+
+.premium-admin-login-shell input:focus {
+  border-color: rgba(181, 106, 63, 0.55) !important;
+  box-shadow: 0 0 0 4px rgba(181, 106, 63, 0.08) !important;
+}
+
+.premium-admin-login-shell button[type="submit"] {
+  border-radius: 999px !important;
+  background-image: none !important;
+  background: var(--admin-ink) !important;
+  box-shadow: none !important;
+}
+
+.premium-admin-login-shell [class~="text-red-400"],
+.premium-admin-login-shell [class~="text-red-500"],
+.premium-admin-login-shell [class~="text-red-600"],
+.premium-admin-login-shell [class~="text-red-800"] {
+  color: var(--admin-critical) !important;
+}
+
+.premium-admin-login-shell [class~="bg-red-50"],
+.premium-admin-login-shell [class~="bg-red-100"] {
+  background: var(--admin-critical-soft) !important;
+}
+
+.premium-admin-login-shell [class~="border-red-100"],
+.premium-admin-login-shell [class~="border-red-300"] {
+  border-color: rgba(117, 72, 59, 0.2) !important;
+}
+
+.premium-admin-login-shell [class~="text-orange-500"],
+.premium-admin-login-shell [class~="text-orange-600"],
+.premium-admin-login-shell [class~="text-amber-600"] {
+  color: var(--admin-accent) !important;
+}
+
+.premium-admin-login-shell [class~="bg-amber-50"],
+.premium-admin-login-shell [class~="bg-orange-50"] {
+  background: #eee2d8 !important;
+}
+
+.premium-admin-login-shell [class~="text-emerald-600"],
+.premium-admin-login-shell [class~="text-emerald-800"] {
+  color: var(--admin-positive) !important;
+}
+
+.premium-admin-login-shell [class~="bg-emerald-50"] {
+  background: #e5e8df !important;
+}
+
+@media (max-width: 1023px) {
+  .premium-admin-sidebar {
+    box-shadow: 24px 0 70px rgba(24, 23, 19, 0.25) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .premium-admin-login {
+    padding: 0 !important;
+  }
+
+  .premium-admin-login-shell {
+    min-height: 100vh !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-admin *,
+  .premium-admin-login * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

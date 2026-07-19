@@ -70,7 +70,7 @@ export default function BlogIndex() {
   const rest = hasPosts ? filtered.slice(1) : [];
 
   return (
-    <main className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20 relative overflow-hidden selection:bg-orange-100 selection:text-orange-900">
+    <main className="premium-page premium-blog min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
       
       {/* Ambient Background Blobs - Fixed Z-Index to stay behind */}
@@ -84,11 +84,11 @@ export default function BlogIndex() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-orange-100 text-orange-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
             <BookOpen size={12} /> The Journal
           </div>
-          <h1 className="text-5xl sm:text-7xl font-black text-gray-900 tracking-tight mb-6 leading-[1.1]">
-            Stories & Insights
+          <h1 className="font-editorial text-6xl sm:text-8xl font-normal text-[#1d1c19] tracking-[-0.045em] mb-7 leading-[0.9]">
+            The VKart edit.
           </h1>
           <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
-            Deep dives into tech trends, setup guides, and the latest from the VKart editorial team.
+            Useful guides, considered recommendations, and a closer look at the products shaping everyday life.
           </p>
         </div>
 

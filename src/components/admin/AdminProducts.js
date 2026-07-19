@@ -188,7 +188,7 @@ export default function AdminProducts() {
   const lowStockCount = products.filter((p) => (p.stock ?? 0) > 0 && p.stock <= 5).length;
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] p-6 sm:p-8 font-sans text-slate-800">
+    <div className="premium-admin-page min-h-screen bg-transparent p-6 sm:p-8 font-sans text-[#24231f]">
       <style>{customScrollStyle}</style>
       <div className="max-w-[1600px] mx-auto space-y-8">
 
@@ -487,9 +487,9 @@ export default function AdminProducts() {
 
 function StatCard({ label, value, icon: Icon, color }) {
   const colors = {
-    blue: "text-blue-600 bg-blue-50",
-    emerald: "text-emerald-600 bg-emerald-50",
-    amber: "text-amber-600 bg-amber-50"
+    blue: "text-[#5f5a52] bg-[#ece8df]",
+    emerald: "text-[#59634f] bg-[#e5e8df]",
+    amber: "text-[#8b5437] bg-[#f0e5db]"
   };
 
   return (

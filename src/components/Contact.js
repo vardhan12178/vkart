@@ -84,7 +84,7 @@ export default function Contact() {
   );
 
   return (
-    <main className="relative min-h-screen bg-gray-50 font-sans text-gray-800 overflow-hidden selection:bg-orange-100 selection:text-orange-900">
+    <main className="premium-page premium-contact relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
 
       {/* Ambient Background Blobs */}
@@ -109,11 +109,11 @@ export default function Contact() {
           <span className="text-orange-600 font-bold tracking-widest text-xs uppercase bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
             Contact Us
           </span>
-          <h1 className="mt-4 text-4xl sm:text-5xl font-black text-gray-900 tracking-tight">
-            Let's start a conversation.
+          <h1 className="mt-5 font-editorial text-5xl sm:text-7xl font-normal text-[#1d1c19] tracking-[-0.04em] leading-[0.95]">
+            Talk to VKart.
           </h1>
           <p className="mt-4 text-lg text-gray-500 leading-relaxed">
-            Have questions about a product, or just want to say hello? We're ready to answer all your questions.
+            Product question, order update, or something else? Tell us what you need and we’ll point you in the right direction.
           </p>
         </div>
 

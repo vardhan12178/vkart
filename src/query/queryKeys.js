@@ -13,7 +13,11 @@ export const qk = {
     suggest: (q) => ["products", "suggest", q],
     categories: ["products", "categories"],
     related: (id, category) => ["products", "related", id, category],
+    similar: (id) => ["products", "similar", id],
     recent: (id) => ["products", "recent", id],
+  },
+  recommendations: {
+    forYou: ["recommendations", "for-you"],
   },
   profile: {
     root: ["profile"],

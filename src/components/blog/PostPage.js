@@ -29,7 +29,7 @@ export default function PostPage() {
 
   if (!post) {
     return (
-      <main className="flex min-h-[80vh] items-center justify-center px-6 bg-gray-50">
+    <main className="premium-page premium-blog flex min-h-[80vh] items-center justify-center px-6 bg-[#f6f3ed]">
         <div className="text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Article Not Found</h2>
           <Link to="/blog" className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-white font-bold shadow-lg hover:scale-105 transition-transform">
@@ -41,7 +41,7 @@ export default function PostPage() {
   }
 
   return (
-    <main className="bg-gray-50 font-sans text-gray-800 selection:bg-orange-100 selection:text-orange-900 pb-20">
+    <main className="premium-page premium-blog bg-[#f6f3ed] font-sans text-[#1d1c19] selection:bg-[#1d1c19] selection:text-white pb-20">
       <AnimStyles />
 
       {/* --- IMMERSIVE HEADER --- */}

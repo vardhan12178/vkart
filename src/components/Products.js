@@ -52,6 +52,33 @@ const formatPrice = (amount) => {
 
 const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
 
+const COLLECTION_COPY = {
+  smartphones: "Phones selected for strong cameras, dependable performance, and effortless everyday use.",
+  laptops: "Portable performance for focused work, creative projects, and everything between.",
+  "mens-watches": "Considered timepieces that bring clarity and character to the everyday.",
+  "womens-watches": "Refined watches chosen as practical, lasting finishing details.",
+  fragrances: "Distinctive scents selected for daily signatures and memorable occasions.",
+  beauty: "Useful formulas and considered essentials for an uncomplicated routine.",
+  furniture: "Functional pieces designed to make everyday spaces feel more resolved.",
+  groceries: "Reliable pantry favourites and useful everyday provisions.",
+  "home-decoration": "Thoughtful accents that add warmth, texture, and personality to a room.",
+  "womens-dresses": "Easy silhouettes and considered details for everyday and occasion dressing.",
+  "womens-shoes": "Versatile footwear selected for comfort, finish, and repeat wear.",
+  "mens-shirts": "Well-made shirts for a sharper, easier everyday wardrobe.",
+  "mens-shoes": "Dependable footwear balancing comfort, utility, and considered style.",
+};
+
+const formatCollectionName = (value = "") =>
+  value
+    .split("-")
+    .filter(Boolean)
+    .map((word) => {
+      if (word === "mens") return "Men’s";
+      if (word === "womens") return "Women’s";
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+
 /* ---------- Components ---------- */
 
 
@@ -283,31 +310,73 @@ export default function Products() {
   const visibleItems = filteredProducts;
   const total = firstPage?.pagination?.total || filteredProducts.length;
   const isSearching = searchInput !== searchTerm;
+  const collectionName = formatCollectionName(categoryFilter);
+  const mastheadTitle = saleOnly
+    ? (activeSale?.name || "Current offers")
+    : searchTerm
+      ? `Results for “${searchTerm}”`
+      : collectionName || "The VKart collection";
+  const mastheadEyebrow = saleOnly
+    ? "Limited-time offers"
+    : searchTerm
+      ? "Search results"
+      : categoryFilter
+        ? "Selected collection"
+        : "Curated across tech, style, and life";
+  const mastheadCopy = saleOnly
+    ? "Save on selected products for a limited time. Prices return to normal when the sale ends."
+    : searchTerm
+      ? "The closest matches from across the VKart catalogue. Refine the selection with filters below."
+      : categoryFilter
+        ? COLLECTION_COPY[categoryFilter] || `A considered selection of ${collectionName.toLowerCase()}, chosen for quality, value, and everyday usefulness.`
+        : "A considered catalogue of useful technology, personal style, and everyday essentials—without the endless aisle.";
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans selection:bg-orange-100 selection:text-orange-900 relative overflow-hidden">
+    <div className="premium-page premium-catalog min-h-screen bg-[#f6f3ed] font-sans selection:bg-[#1d1c19] selection:text-white relative overflow-hidden">
       <AnimStyles />
 
-      <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+      <div className="hidden" />
+      <div className="hidden" />
 
       <Helmet>
-        <title>{saleOnly ? 'Sale | VKart' : 'Shop Our Collection | VKart'}</title>
-        <meta name="description" content="Browse our extensive collection of electronics, fashion, and essentials. Find the best deals on VKart today." />
+        <title>{mastheadTitle} | VKart</title>
+        <meta name="description" content={mastheadCopy} />
         <link rel="canonical" href="https://vkart.balavardhan.dev/products" />
-        <meta property="og:title" content="Shop Our Collection | VKart" />
-        <meta property="og:description" content="Browse our extensive collection of electronics, fashion, and essentials. Find the best deals on VKart today." />
+        <meta property="og:title" content={`${mastheadTitle} | VKart`} />
+        <meta property="og:description" content={mastheadCopy} />
         <meta property="og:url" content="https://vkart.balavardhan.dev/products" />
       </Helmet>
 
-      <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm transition-all">
+      <section className="relative z-10 border-b border-black/[0.08] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-5 flex flex-wrap items-center gap-3">
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#a85d37]">
+              {mastheadEyebrow}
+            </p>
+            <span className="h-3 w-px bg-black/15" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#8a857b]">
+              {total} {total === 1 ? "item" : "items"}
+            </span>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
+            <h1 className="max-w-3xl font-editorial text-4xl leading-[0.94] tracking-[-0.04em] text-[#1d1c19] sm:text-5xl lg:text-6xl">
+              {mastheadTitle}.
+            </h1>
+            <p className="max-w-xl text-sm leading-6 text-[#6f6b62] lg:pb-1 lg:text-[15px] lg:leading-7">
+              {mastheadCopy}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="sticky top-0 z-40 bg-[#f6f3ed]/90 backdrop-blur-xl border-b border-black/[0.08] transition-all">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
 
             <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-                {saleOnly && activeSale ? activeSale.name : "Our Collection"}
-              </h1>
+              <h2 className="font-sans text-sm font-bold text-[#1d1c19] tracking-[-0.01em]">
+                {categoryFilter ? `Showing ${collectionName}` : searchTerm ? "Matching products" : saleOnly ? "Sale products" : "All products"}
+              </h2>
               <div className="h-6 w-px bg-gray-200 hidden sm:block" />
               <span className="text-sm font-medium text-gray-500 hidden sm:block">
                 {total} Items
@@ -362,22 +431,23 @@ export default function Products() {
 
             {/* Active Sale Banner */}
             {activeSale && (
-              <div className="mb-6 relative overflow-hidden rounded-2xl bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 p-5 sm:p-6 text-white shadow-lg animate-fade-up">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="relative mb-6 overflow-hidden rounded-[1.35rem] border border-black/[0.09] bg-[#eee7dd] px-5 py-4 text-[#1d1c19] shadow-[0_12px_38px_rgba(29,28,25,.05)] animate-fade-up sm:px-6 sm:py-5">
+                <span className="absolute inset-y-0 left-0 w-1 bg-[#a85d37]" />
+                <div className="relative z-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
                   <div className="flex items-center gap-3">
-                    <div className="bg-white/20 backdrop-blur-sm p-2.5 rounded-xl">
-                      <FaBolt className="text-yellow-200 text-lg" />
+                    <div className="grid h-10 w-10 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8]">
+                      <FaBolt className="text-sm text-[#a85d37]" />
                     </div>
                     <div>
-                      <h3 className="text-lg sm:text-xl font-black tracking-tight">{activeSale.name}</h3>
-                      <p className="text-white/80 text-xs sm:text-sm font-medium mt-0.5">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#8a604b]">Limited-time selection</p>
+                      <h3 className="mt-1 font-editorial text-xl leading-none tracking-[-0.02em] sm:text-2xl">{activeSale.name}</h3>
+                      <p className="mt-1.5 text-xs font-medium text-[#716b62] sm:text-sm">
                         Sale ends {new Date(activeSale.endDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </p>
                     </div>
                   </div>
-                  <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/30 uppercase tracking-wider">
-                    Live Now
+                  <span className="inline-flex items-center gap-2 rounded-full border border-black/[0.09] bg-[#fffdf8] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#5d584f]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#59634f]" /> Live now
                   </span>
                 </div>
               </div>
@@ -396,7 +466,7 @@ export default function Products() {
                 <p className="text-sm text-gray-500 mt-2">Try adjusting your filters or search terms</p>
                 <button
                   onClick={clearAll}
-                  className="mt-4 px-5 py-2 bg-gray-900 text-white rounded-lg font-medium text-sm hover:bg-black transition-colors"
+                  className="mt-5 rounded-full bg-[#1d1c19] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-black"
                 >
                   Clear Filters
                 </button>
@@ -415,10 +485,10 @@ export default function Products() {
                   return (
                     <div
                       key={p._id}
-                      className="group relative bg-white rounded-2xl p-3 shadow-sm hover:shadow-xl hover:shadow-gray-200/40 border border-gray-100 transition-all duration-300 hover:-translate-y-1 animate-fade-up"
+              className="group relative bg-transparent rounded-none p-0 border-0 transition-all duration-300 hover:-translate-y-1 animate-fade-up"
                       style={{ animationDelay: `${i * 50}ms` }}
                     >
-                      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-gray-50 group-hover:bg-gray-100 transition-colors">
+                      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.35rem] bg-[#eeebe4] border border-black/[0.06] transition-colors">
                         <Link to={`/product/${p._id}`} className="block w-full h-full">
                           <img
                             src={p.thumbnail}
@@ -435,7 +505,7 @@ export default function Products() {
                         <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10">
                           <div className="flex flex-col gap-1">
                             {p.onSale && (
-                              <span className="bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                              <span className="rounded-full bg-[#75483b] px-2.5 py-1 text-[10px] font-bold text-white">
                                 {p.saleName || 'SALE'}
                               </span>
                             )}
@@ -449,8 +519,9 @@ export default function Products() {
                           <div className="flex flex-col gap-2">
                             <button
                               onClick={() => toggleWishlistItem(p)}
-                              className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${inWishlist ? "bg-red-50 text-red-500" : "bg-white/90 text-gray-400 hover:bg-white hover:text-gray-900"
+                              className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${inWishlist ? "bg-[#efe3d9] text-[#874526]" : "bg-white/90 text-gray-400 hover:bg-white hover:text-[#874526]"
                                 }`}
+                              aria-label={inWishlist ? `Remove ${p.title} from saved items` : `Save ${p.title}`}
                             >
                               {inWishlist ? <FaHeart size={12} /> : <FaRegHeart size={12} />}
                             </button>
@@ -458,6 +529,7 @@ export default function Products() {
                             <button
                               onClick={() => setQuickView(p)}
                               className="w-8 h-8 rounded-full bg-white/90 text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                              aria-label={`Quick view ${p.title}`}
                             >
                               <FaExpand size={10} />
                             </button>
@@ -471,7 +543,7 @@ export default function Products() {
                                       transition-all duration-300 z-20">
                           <button
                             onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
-                            className="w-full py-2.5 bg-gray-900 text-white rounded-lg text-xs font-bold shadow-lg hover:bg-black flex items-center justify-center gap-2 active:scale-95 transition-transform"
+                            className="w-full py-3 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg hover:bg-black flex items-center justify-center gap-2 active:scale-95 transition-transform"
                           >
                             <FaCartPlus /> Add
                           </button>
@@ -481,7 +553,7 @@ export default function Products() {
                       <div className="px-1 pt-3 pb-1">
                         <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">{p.category}</p>
 
-                        <Link to={`/product/${p._id}`} className="block text-sm font-bold text-gray-900 leading-snug mb-1 line-clamp-1 hover:text-orange-600 transition-colors">
+                        <Link to={`/product/${p._id}`} className="block text-sm font-semibold text-[#1d1c19] leading-snug mb-1 line-clamp-1 hover:text-[#a85d37] transition-colors">
                           {p.title}
                         </Link>
 
@@ -519,7 +591,7 @@ export default function Products() {
                 <button
                   onClick={() => productsQuery.fetchNextPage()}
                   disabled={productsQuery.isFetchingNextPage}
-                  className="px-6 py-2.5 rounded-lg bg-white border border-gray-200 text-gray-900 text-sm font-bold shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2"
+                  className="flex items-center gap-2 rounded-full border border-black/10 bg-transparent px-6 py-2.5 text-sm font-bold text-[#1d1c19] transition-colors hover:bg-black/[0.04]"
                 >
                   {productsQuery.isFetchingNextPage ? "Loading..." : "Show More"} <FaArrowRight size={10} />
                 </button>
@@ -531,9 +603,9 @@ export default function Products() {
 
       {compare.length > 0 && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-up">
-          <div className="bg-gray-900 text-white px-5 py-2.5 rounded-full shadow-2xl flex items-center gap-4">
+          <div className="flex items-center gap-4 rounded-full border border-white/10 bg-[#1d1c19] px-5 py-2.5 text-white shadow-[0_18px_45px_rgba(29,28,25,.22)]">
             <div className="flex items-center gap-2">
-              <span className="bg-white text-gray-900 text-xs font-bold px-1.5 py-0.5 rounded">{compare.length}</span>
+              <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#a85d37] px-1 text-[10px] font-bold text-white">{compare.length}</span>
               <span className="text-xs font-medium text-gray-300">Selected</span>
             </div>
             <div className="h-3 w-px bg-white/20" />
@@ -541,7 +613,7 @@ export default function Products() {
               <button onClick={() => setCompare([])} className="text-xs text-gray-400 hover:text-white transition-colors">Clear</button>
               <button
                 onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
-                className="bg-white text-gray-900 px-3 py-1 rounded-full text-xs font-bold hover:bg-gray-100 transition-colors"
+                className="rounded-full bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#1d1c19] transition-colors hover:bg-[#eee8df]"
               >
                 Compare
               </button>
@@ -552,10 +624,10 @@ export default function Products() {
 
       <div className={`fixed inset-0 z-[60] lg:hidden transition-transform duration-300 ${showFilters ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowFilters(false)} />
-        <div className="absolute inset-y-0 left-0 w-[85%] max-w-sm bg-white shadow-2xl flex flex-col">
-          <div className="p-5 border-b border-gray-100 flex justify-between items-center bg-gray-50">
-            <h3 className="font-bold text-gray-900 text-base">Filters</h3>
-            <button onClick={() => setShowFilters(false)} className="p-2 bg-white rounded-full shadow-sm text-gray-500"><FaTimes /></button>
+        <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-sm flex-col border-r border-black/[0.08] bg-[#fffdf8]">
+          <div className="flex items-center justify-between border-b border-black/[0.07] bg-[#f3efe8] p-5">
+            <h3 className="text-base font-bold text-[#1d1c19]">Refine the collection</h3>
+            <button onClick={() => setShowFilters(false)} className="grid h-9 w-9 place-items-center rounded-full border border-black/[0.08] text-[#6f6b62]" aria-label="Close filters"><FaTimes /></button>
           </div>
           <div className="flex-1 overflow-y-auto p-5">
             <Sidebar

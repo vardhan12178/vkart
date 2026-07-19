@@ -80,7 +80,7 @@ export default function Orders() {
     if (!isAuthenticated) return null;
 
     return (
-        <div className="min-h-screen bg-gray-50/50 font-sans text-gray-800 pb-20">
+    <div className="premium-page premium-orders min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20">
             {/* Background decoration */}
             <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-gray-50 to-white opacity-70" />
 
@@ -95,11 +95,11 @@ export default function Orders() {
                             <FaArrowLeft size={16} />
                         </button>
                         <div>
-                            <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                                My Orders
+                            <h1 className="font-editorial text-4xl sm:text-6xl font-normal text-[#1d1c19] tracking-[-0.04em]">
+                                Your orders.
                             </h1>
                             <p className="text-gray-500 text-sm mt-1">
-                                Track and manage your purchases
+                                Everything purchased, delivered, and in progress.
                             </p>
                         </div>
                     </div>

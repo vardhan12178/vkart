@@ -94,7 +94,7 @@ export default function Sidebar({
           {(categoryFilter || selectedRating) && (
             <button
               onClick={clearAll}
-              className="group flex items-center gap-1.5 text-[10px] font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-md hover:bg-red-100 transition-colors"
+              className="group flex items-center gap-1.5 rounded-md border border-[#a85d37]/15 bg-[#a85d37]/[0.07] px-2.5 py-1 text-[10px] font-bold text-[#925033] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
             >
               <FaUndo size={8} className="group-hover:-rotate-180 transition-transform duration-500" />
               RESET

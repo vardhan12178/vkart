@@ -226,7 +226,7 @@ export default function AdminOrderDetails() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50/50 flex items-center justify-center p-6">
+      <div className="premium-admin-page min-h-screen bg-transparent flex items-center justify-center p-6">
         <div className="flex flex-col items-center gap-4 animate-pulse">
           <div className="h-12 w-12 bg-slate-200 rounded-xl"></div>
           <div className="h-4 w-32 bg-slate-200 rounded-lg"></div>
@@ -243,7 +243,7 @@ export default function AdminOrderDetails() {
   const StatusIcon = currentStageStyle.icon;
 
   return (
-    <div className="min-h-screen bg-slate-50/50 p-4 sm:p-8 font-sans text-slate-800">
+    <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
 
       {/* Toast Notification */}
       {toast.message && (

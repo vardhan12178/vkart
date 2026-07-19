@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "./axiosInstance";
 import { addToCart } from "../redux/cartSlice";
 import { showToast } from "../utils/toast";
 import {
-  MessageSquare, X, Send, Loader2, Sparkles,
+  X, Send, Loader2, Sparkles, MessageCircleMore,
   ChevronRight, Lightbulb, ArrowRight, ShoppingCart
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -35,6 +35,8 @@ const AIChatAssistant = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.ui.isChatOpen);
   const navigate = useNavigate();
+  const location = useLocation();
+  const showDesktopLauncher = location.pathname === "/";
 
   // ---------------------------------------------------------
   // 🧠 STATE MANAGEMENT
@@ -43,7 +45,7 @@ const AIChatAssistant = () => {
     id: createMessageId(),
     type: "bot",
     structured: {
-      greeting: "Hi there! I'm VKart Copilot.",
+      greeting: "Hi — I’m the VKart concierge.",
       response: {
         summary: "I can help you find the best products, check prices, or compare specs.",
         points: ["Try 'Best gaming phone under 30k'", "Or 'Running shoes for men'"]
@@ -238,9 +240,9 @@ const AIChatAssistant = () => {
         {greeting && (
           <motion.div
             variants={itemVariants}
-            className="flex items-center gap-2 px-4 py-2 bg-amber-50 text-amber-900 rounded-full text-xs font-bold border border-amber-100 self-start w-fit shadow-sm"
+            className="flex w-fit items-center gap-2 self-start rounded-full border border-[#a85d37]/15 bg-[#efe4d9] px-4 py-2 text-xs font-bold text-[#75462f]"
           >
-            <Sparkles size={12} className="text-amber-500 fill-amber-500" />
+            <Sparkles size={12} className="text-[#a85d37]" />
             {greeting}
           </motion.div>
         )}
@@ -248,8 +250,8 @@ const AIChatAssistant = () => {
         {/* 2. Main Text Bubble */}
         {response && (
           <motion.div variants={itemVariants} className="relative group">
-            <div className="px-5 py-4 bg-white text-gray-800 rounded-2xl rounded-tl-sm border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
-              <p className="text-[15px] leading-relaxed font-medium text-gray-700">
+            <div className="rounded-[1.1rem] rounded-tl-sm border border-black/[0.07] bg-[#fffdf8] px-5 py-4 text-[#1d1c19]">
+              <p className="text-[15px] font-medium leading-relaxed text-[#4f4b44]">
                 {response.summary}
               </p>
 
@@ -260,9 +262,9 @@ const AIChatAssistant = () => {
                     <motion.li
                       key={i}
                       variants={itemVariants}
-                      className="flex items-start gap-2.5 text-[13px] text-gray-600 bg-gray-50/50 p-2 rounded-lg"
+                      className="flex items-start gap-2.5 border-t border-black/[0.06] px-0 py-2 text-[13px] text-[#6f6b62]"
                     >
-                      <div className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                      <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#a85d37]" />
                       <span className="leading-normal">{point}</span>
                     </motion.li>
                   ))}
@@ -276,11 +278,11 @@ const AIChatAssistant = () => {
         {recommendation && recommendation.reason && (
           <motion.div
             variants={itemVariants}
-            className="flex gap-3 px-4 py-3 bg-indigo-50 border border-indigo-100/50 rounded-xl"
+            className="flex gap-3 rounded-[1.1rem] border border-[#a85d37]/12 bg-[#eee8df] px-4 py-3"
           >
-            <Lightbulb size={18} className="text-indigo-600 shrink-0 mt-0.5" />
-            <p className="text-xs font-medium text-indigo-900 leading-relaxed">
-              <span className="font-bold block mb-0.5 text-indigo-700">Why this pick?</span>
+            <Lightbulb size={18} className="mt-0.5 shrink-0 text-[#a85d37]" />
+            <p className="text-xs font-medium leading-relaxed text-[#5f5a52]">
+              <span className="mb-0.5 block font-bold text-[#1d1c19]">Why this pick?</span>
               {recommendation.reason}
             </p>
           </motion.div>
@@ -299,14 +301,14 @@ const AIChatAssistant = () => {
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleProductClick(prod._id)}
-                  className={`relative flex gap-4 p-3 rounded-xl border cursor-pointer transition-all bg-white
+                  className={`relative flex cursor-pointer gap-4 rounded-[1.1rem] border bg-[#fffdf8] p-3 transition-all
                     ${isBestMatch
-                      ? "border-amber-400/50 shadow-lg shadow-amber-100/50 ring-1 ring-amber-100"
-                      : "border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200"
+                      ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10"
+                      : "border-black/[0.07] hover:border-black/15"
                     }`}
                 >
                   {/* Thumbnail */}
-                  <div className="w-16 h-16 rounded-lg bg-gray-50 p-1.5 shrink-0 flex items-center justify-center border border-gray-100">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[0.85rem] border border-black/[0.06] bg-[#eeeae2] p-1.5">
                     <img
                       src={prod.thumbnail}
                       alt={prod.title}
@@ -318,19 +320,19 @@ const AIChatAssistant = () => {
                   {/* Info */}
                   <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <div className="flex justify-between items-start gap-2">
-                      <h4 className="text-sm font-bold text-gray-900 line-clamp-1">{prod.title}</h4>
+                      <h4 className="line-clamp-1 text-sm font-bold text-[#1d1c19]">{prod.title}</h4>
                       {isBestMatch && (
-                        <span className="shrink-0 px-1.5 py-0.5 bg-gradient-to-r from-amber-500 to-orange-500 text-[9px] font-black text-white uppercase tracking-wider rounded-md shadow-sm flex items-center gap-1">
+                        <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#a85d37] px-2 py-1 text-[8px] font-black uppercase tracking-wider text-white">
                           <Sparkles size={8} /> Top Pick
                         </span>
                       )}
                     </div>
-                    <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide mt-0.5">
+                    <p className="mt-0.5 text-[10px] font-medium uppercase tracking-wide text-[#817c73]">
                       {prod.category || 'Electronic'}
                     </p>
                     <div className="flex items-center gap-2 mt-1.5">
-                      <span className="text-sm font-bold text-gray-900">{INR(prod.price)}</span>
-                      <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">In Stock</span>
+                      <span className="text-sm font-bold text-[#1d1c19]">{INR(prod.price)}</span>
+                      <span className="text-[10px] font-bold text-[#5f6a52]">In stock</span>
                     </div>
                   </div>
 
@@ -338,12 +340,13 @@ const AIChatAssistant = () => {
                   <div className="self-center flex flex-col items-center gap-1.5 pr-1">
                     <button
                       onClick={(e) => handleAddToCart(e, prod)}
-                      className="p-1.5 rounded-lg bg-gray-900 text-white hover:bg-black transition-colors"
-                      title="Add to Cart"
+                      className="grid h-8 w-8 place-items-center rounded-full bg-[#1d1c19] text-white transition-colors hover:bg-black"
+                      title="Add to bag"
+                      aria-label={`Add ${prod.title} to bag`}
                     >
                       <ShoppingCart size={14} />
                     </button>
-                    <ChevronRight size={14} className="text-gray-300" />
+                    <ChevronRight size={14} className="text-[#aaa49a]" />
                   </div>
                 </motion.div>
               );
@@ -354,12 +357,12 @@ const AIChatAssistant = () => {
         {/* 5. Alternatives / Suggestions */}
         {alternatives && alternatives.length > 0 && (
           <motion.div variants={itemVariants} className="flex flex-wrap gap-2 pt-1">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider w-full mb-1">Also consider:</span>
+            <span className="mb-1 w-full text-[10px] font-bold uppercase tracking-wider text-[#8e887e]">Also consider:</span>
             {alternatives.map((alt, i) => (
               <button
                 key={i}
                 onClick={() => handlePromptClick(alt)}
-                className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg transition-colors border border-gray-200"
+                className="rounded-full border border-black/[0.08] bg-transparent px-3 py-1.5 text-xs text-[#5f5a52] transition-colors hover:bg-black/[0.04]"
               >
                 {alt}
               </button>
@@ -372,10 +375,10 @@ const AIChatAssistant = () => {
           <motion.button
             variants={itemVariants}
             onClick={() => handlePromptClick(followUp)}
-            className="mt-2 flex items-center justify-between w-full px-4 py-3 bg-slate-900 hover:bg-black text-white rounded-xl text-sm font-medium transition-all shadow-lg active:scale-95 group"
+            className="group mt-2 flex w-full items-center justify-between rounded-full bg-[#1d1c19] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-black"
           >
             <span>{followUp}</span>
-            <ArrowRight size={16} className="text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
+            <ArrowRight size={16} className="text-[#d7d1c7] transition-transform group-hover:translate-x-1" />
           </motion.button>
         )}
       </motion.div>
@@ -387,25 +390,30 @@ const AIChatAssistant = () => {
   // ---------------------------------------------------------
 
   return (
-    <div className="fixed inset-0 z-[100] pointer-events-none flex items-end justify-center md:block md:pb-0">
+    <div className="premium-assistant fixed inset-0 z-[100] pointer-events-none flex items-end justify-center md:block md:pb-0">
 
       {/* 1. Floating Toggle Button */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            initial={{ scale: 0, rotate: -45 }}
-            animate={{ scale: 1, rotate: 0 }}
-            exit={{ scale: 0, rotate: 45 }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => dispatch(openChat())}
-            className="absolute bottom-6 right-6 md:bottom-8 md:right-8 pointer-events-auto group flex items-center gap-3 px-5 py-4 bg-gray-900 text-white rounded-full shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] border border-white/10"
+            className={`premium-assistant-toggle pointer-events-auto absolute bottom-5 right-5 flex h-14 w-14 items-center justify-center overflow-hidden rounded-[1.15rem] border border-black/10 bg-[#f0e8dd] text-[#1d1c19] shadow-[0_16px_42px_rgba(29,28,25,.14)] transition-colors hover:bg-[#fffdf8] ${showDesktopLauncher ? "md:h-auto md:w-auto md:gap-3 md:p-2 md:pr-5" : "sm:hidden"}`}
+            aria-label="Ask VKart assistant"
           >
-            <div className="relative">
-              <MessageSquare size={24} className="text-white shrink-0" />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-amber-500 border-2 border-gray-900 rounded-full animate-pulse" />
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[0.8rem] bg-[#3f493d] text-[#fffdf8]">
+              <MessageCircleMore size={18} strokeWidth={1.8} />
             </div>
-            <span className="font-bold text-base tracking-tight hidden md:block pr-1">Ask Copilot</span>
+            {showDesktopLauncher && (
+              <span className="hidden flex-col items-start leading-none md:flex">
+                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#817a70]">Product concierge</span>
+                <span className="mt-1.5 text-sm font-bold tracking-[-0.01em] text-[#1d1c19]">Ask VKart</span>
+              </span>
+            )}
           </motion.button>
         )}
       </AnimatePresence>
@@ -418,32 +426,36 @@ const AIChatAssistant = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="pointer-events-auto fixed bottom-0 left-0 w-full h-[85vh] md:absolute md:top-auto md:left-auto md:bottom-8 md:right-8 md:w-[420px] md:h-[650px] bg-white md:rounded-[2rem] rounded-t-[2rem] shadow-2xl flex flex-col overflow-hidden border border-gray-200/50"
+            className="premium-assistant-panel pointer-events-auto fixed inset-x-3 bottom-3 flex h-[min(42rem,calc(100dvh-1.5rem))] flex-col overflow-hidden rounded-[1.4rem] border border-black/10 bg-[#fffdf8] shadow-[0_30px_90px_rgba(29,28,25,.22)] md:absolute md:inset-auto md:bottom-8 md:right-8 md:h-[680px] md:w-[430px]"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Ask VKart product concierge"
           >
             {/* --- Header (DARK VERSION) --- */}
-            <div className="bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900 p-5 flex justify-between items-center shrink-0 border-b border-white/10 relative z-20 text-white">
+            <div className="premium-assistant-header bg-[#fffdf8] p-5 flex justify-between items-center shrink-0 border-b border-black/[0.08] relative z-20 text-[#1d1c19]">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-gray-900 to-slate-800 flex items-center justify-center text-white shadow-lg shadow-slate-900/20 border border-white/10">
-                  <Sparkles size={18} className="text-amber-400" />
+                <div className="w-10 h-10 rounded-full bg-[#1d1c19] flex items-center justify-center text-white">
+                  <Sparkles size={17} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-white leading-tight">VKart Copilot</h3>
+                  <h3 className="font-editorial text-2xl text-[#1d1c19] leading-tight tracking-[-0.03em]">Ask VKart</h3>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Online</p>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#59634f]" />
+                    <p className="text-[9px] text-[#777269] font-bold uppercase tracking-[0.16em]">Product concierge</p>
                   </div>
                 </div>
               </div>
               <button
                 onClick={() => dispatch(closeChat())}
-                className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                className="p-2 rounded-full text-[#777269] hover:text-[#1d1c19] hover:bg-black/5 transition-all"
+                aria-label="Close product concierge"
               >
                 <X size={20} />
               </button>
             </div>
 
             {/* --- Messages Area --- */}
-            <div ref={scrollAreaRef} className="flex-1 overflow-y-auto p-5 space-y-6 bg-slate-50/50">
+            <div ref={scrollAreaRef} className="premium-assistant-messages flex-1 overflow-y-auto p-5 space-y-6 bg-[#f6f3ed]">
               {messages.map((msg) => (
                 <div
                   key={msg.id}
@@ -454,7 +466,7 @@ const AIChatAssistant = () => {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="max-w-[85%] px-5 py-3.5 rounded-2xl rounded-tr-sm bg-gray-900 text-white text-[14px] leading-relaxed shadow-md"
+                      className="max-w-[85%] px-5 py-3.5 rounded-[1.15rem] rounded-tr-sm bg-[#a85d37] text-white text-[14px] leading-relaxed"
                     >
                       {msg.text}
                     </motion.div>
@@ -469,9 +481,9 @@ const AIChatAssistant = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest pl-2"
+                  className="flex items-center gap-2 pl-2 text-xs font-bold uppercase tracking-widest text-[#8e887e]"
                 >
-                  <Loader2 size={12} className="animate-spin text-amber-500" />
+                  <Loader2 size={12} className="animate-spin text-[#a85d37]" />
                   Thinking...
                 </motion.div>
               )}
@@ -480,17 +492,17 @@ const AIChatAssistant = () => {
             </div>
 
             {/* --- Input Area (No Footer) --- */}
-            <div className="p-4 bg-white border-t border-gray-100 relative z-20">
+            <div className="premium-assistant-input p-4 bg-[#fffdf8] border-t border-black/[0.08] relative z-20">
               {messages.length <= 1 && (
                 <div className="mb-3">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">Try asking:</p>
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-[#8e887e]">Try asking:</p>
                   <div className="flex flex-wrap gap-2">
                     {DEFAULT_PROMPTS.map((prompt) => (
                       <button
                         key={prompt}
                         onClick={() => handlePromptClick(prompt)}
                         disabled={isLoading || cooldown > 0}
-                        className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors border border-gray-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="text-[11px] px-3 py-2 bg-[#f1ede5] hover:bg-[#e8e1d7] text-[#5f5b52] rounded-full transition-colors border border-black/[0.07] disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {prompt}
                       </button>
@@ -505,18 +517,19 @@ const AIChatAssistant = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder={cooldown > 0 ? `Wait ${cooldown}s...` : "Ask anything about products..."}
-                  className="w-full bg-gray-50 text-[14px] px-5 py-4 rounded-xl border border-transparent focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 transition-all outline-none font-medium placeholder:text-gray-400 pr-14"
+                  className="w-full bg-[#f5f1e9] text-[14px] px-5 py-4 rounded-full border border-black/[0.07] focus:bg-white focus:border-[#a85d37]/40 focus:ring-4 focus:ring-[#a85d37]/10 transition-all outline-none font-medium placeholder:text-[#969086] pr-14"
                   disabled={isLoading || cooldown > 0}
                 />
 
                 <button
                   onClick={handleSend}
                   disabled={isLoading || cooldown > 0 || !input.trim()}
-                  className={`absolute right-2 top-1/2 -translate-y-1/2 p-2.5 rounded-lg transition-all
+                  className={`absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-2.5 transition-all
                     ${!input.trim() || isLoading
-                      ? "text-gray-300 bg-transparent cursor-not-allowed"
-                      : "bg-gray-900 text-white shadow-md hover:scale-105 active:scale-95"
+                      ? "cursor-not-allowed bg-transparent text-[#c4beb4]"
+                      : "bg-[#1d1c19] text-white hover:bg-black"
                     }`}
+                  aria-label="Send message"
                 >
                   {isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
                 </button>

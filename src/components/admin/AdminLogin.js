@@ -190,19 +190,19 @@ export default function AdminLogin({ setIsAdmin }) {
       </Helmet>
 
       {/* BACKGROUND: Subtle Premium Gradient */}
-      <div className="min-h-screen w-full flex items-center justify-center p-4 bg-[#F8F9FA] relative overflow-hidden">
+      <div className="premium-admin-login min-h-screen w-full flex items-center justify-center p-4 bg-[#f2f0eb] relative overflow-hidden">
         {/* Abstract Background Orbs */}
-        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-orange-200/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
+        <div className="hidden" />
+        <div className="hidden" />
 
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="relative w-full max-w-[1100px] h-[650px] lg:h-[750px] bg-white rounded-[32px] shadow-2xl flex overflow-hidden border border-white/50"
+          className="premium-admin-login-shell relative w-full max-w-[1180px] min-h-[680px] lg:h-[760px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_90px_rgba(29,28,25,.15)] flex overflow-hidden border border-black/[0.07]"
         >
           {/* --- LEFT PANEL (Visual) --- */}
-          <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-gradient-to-br from-orange-50 via-white to-amber-50 p-12 overflow-hidden">
+          <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-[#1d1c19] p-12 overflow-hidden text-white">
             {/* Decorative Patterns */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
 
@@ -219,12 +219,9 @@ export default function AdminLogin({ setIsAdmin }) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl font-extrabold text-gray-900 leading-[1.15]"
+                className="font-editorial text-5xl font-normal text-white leading-[0.95] tracking-[-0.035em]"
               >
-                Manage the <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
-                  future of shopping.
-                </span>
+                The considered side<br />of store operations.
               </motion.h2>
             </div>
 
@@ -235,9 +232,9 @@ export default function AdminLogin({ setIsAdmin }) {
               className="relative z-10 flex-1 flex items-center justify-center"
             >
               <img
-                src="/login.webp"
-                alt="Admin Dashboard Illustration"
-                className="max-h-[350px] w-auto object-contain drop-shadow-2xl grayscale-[20%]"
+                src="/vkart-editorial-hero.png"
+                alt="VKart product collection"
+                className="h-[360px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />
             </motion.div>
 
@@ -247,7 +244,7 @@ export default function AdminLogin({ setIsAdmin }) {
           </div>
 
           {/* --- RIGHT PANEL (Form) --- */}
-          <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 relative">
+          <div className="w-full lg:w-1/2 bg-[#fffdf8] flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 relative">
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-8">
               <div className="h-10 w-10 bg-gradient-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg text-white">
@@ -262,8 +259,8 @@ export default function AdminLogin({ setIsAdmin }) {
               className="w-full max-w-sm mx-auto"
             >
               <motion.div variants={fadeInUp} className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Admin Portal</h1>
-                <p className="mt-2 text-gray-500">Secure entry for store management.</p>
+                <h1 className="font-editorial text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">Operations.</h1>
+                <p className="mt-3 text-[#777269]">Secure entry for the VKart team.</p>
               </motion.div>
 
               {/* Toast / Error Area */}

@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lato', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
+        editorial: ['DM Serif Display', 'Georgia', 'serif'],
       },
     },
   },

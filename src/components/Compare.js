@@ -132,7 +132,7 @@ const Compare = () => {
   // --- EMPTY STATE ---
   if (!ids.length) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden font-sans">
+      <div className="premium-page premium-compare min-h-screen bg-[#f6f3ed] flex items-center justify-center p-4 relative overflow-hidden font-sans">
         <GlobalStyles />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orange-100/40 via-transparent to-transparent pointer-events-none" />
         
@@ -158,7 +158,7 @@ const Compare = () => {
 
   // --- MAIN UI ---
   return (
-    <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-800 pb-20 selection:bg-orange-100 selection:text-orange-900">
+    <div className="premium-page premium-compare min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 selection:bg-[#1d1c19] selection:text-white">
       <GlobalStyles />
       
       {/* Header Bar */}

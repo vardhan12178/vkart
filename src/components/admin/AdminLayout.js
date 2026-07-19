@@ -81,14 +81,14 @@ export default function AdminLayout({ setIsAdmin }) {
   // Don't render until auth is verified
   if (adminVerifyQuery.isLoading) {
     return (
-      <div className="flex h-screen items-center justify-center bg-slate-50">
+      <div className="premium-admin flex h-screen items-center justify-center bg-[#f2f0eb]">
         <div className="animate-spin h-8 w-8 border-4 border-orange-500 border-t-transparent rounded-full"></div>
       </div>
     );
   }
 
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden font-sans text-slate-900">
+    <div className="premium-admin flex h-screen bg-[#f2f0eb] overflow-hidden font-sans text-[#24231f]">
 
       {/* Sidebar */}
       <AdminSidebar

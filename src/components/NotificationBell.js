@@ -98,24 +98,24 @@ const NotificationBell = () => {
         const titleUpper = (title || "").toUpperCase();
 
         if (textStart === "CONFIRMED" || titleUpper.includes("CONFIRMED"))
-            return <CheckCircleIcon className="h-5 w-5 text-emerald-500" />;
+            return <CheckCircleIcon className="h-5 w-5 text-[#59634f]" />;
 
         if (textStart === "SHIPPED" || titleUpper.includes("SHIPPED"))
-            return <TruckIcon className="h-5 w-5 text-indigo-500" />;
+            return <TruckIcon className="h-5 w-5 text-[#776c5b]" />;
 
         if (textStart === "OUT_FOR_DELIVERY" || titleUpper.includes("OUT FOR DELIVERY"))
-            return <TruckIcon className="h-5 w-5 text-orange-500" />;
+            return <TruckIcon className="h-5 w-5 text-[#a85d37]" />;
 
         if (textStart === "DELIVERED" || titleUpper.includes("DELIVERED"))
-            return <CheckCircleIcon className="h-5 w-5 text-green-600" />;
+            return <CheckCircleIcon className="h-5 w-5 text-[#59634f]" />;
 
         if (textStart === "CANCELLED" || titleUpper.includes("CANCELLED"))
-            return <XCircleIcon className="h-5 w-5 text-red-500" />;
+            return <XCircleIcon className="h-5 w-5 text-[#75483b]" />;
 
         if (type === "order" || titleUpper.includes("ORDER"))
-            return <ShoppingBagIcon className="h-5 w-5 text-orange-500" />;
+            return <ShoppingBagIcon className="h-5 w-5 text-[#a85d37]" />;
 
-        return <BellIcon className="h-5 w-5 text-gray-400" />;
+        return <BellIcon className="h-5 w-5 text-[#8b867d]" />;
     };
 
     const getTimeAgo = (dateString) => {
@@ -141,15 +141,15 @@ const NotificationBell = () => {
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`
-          relative p-2.5 rounded-full transition-all group
+          relative grid h-10 w-10 place-items-center rounded-full transition-colors group
           ${isOpen
-                        ? "bg-gray-100 text-gray-900"
-                        : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                        ? "bg-[#e9e1d7] text-[#1d1c19]"
+                        : "text-[#656159] hover:bg-black/[0.05] hover:text-[#1d1c19]"
                     }
         `}
                 aria-label="Notifications"
             >
-                <BellIcon className={`h-6 w-6 ${isOpen ? "fill-current" : ""}`} />
+                <BellIcon className="h-[1.35rem] w-[1.35rem] stroke-[1.6]" />
 
                 {/* Unread Badge */}
                 <AnimatePresence>
@@ -158,10 +158,9 @@ const NotificationBell = () => {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 0 }}
-                            className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5"
+                            className="absolute right-0.5 top-0.5 flex h-2.5 w-2.5"
                         >
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500 ring-2 ring-white" />
+                            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#a85d37] ring-2 ring-[#fffdf8]" />
                         </motion.span>
                     )}
                 </AnimatePresence>
@@ -175,13 +174,13 @@ const NotificationBell = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 py-2 z-50 origin-top-right"
+                        className="absolute right-0 z-50 mt-3 w-[min(23rem,calc(100vw-1.5rem))] origin-top-right overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)]"
                     >
                         {/* Header */}
-                        <div className="px-5 py-4 border-b border-gray-50 flex items-center justify-between">
+                        <div className="flex items-center justify-between border-b border-black/[0.07] px-5 py-4">
                             <div>
-                                <h3 className="text-sm font-bold text-gray-900">Notifications</h3>
-                                <p className="text-xs text-gray-500 mt-0.5">
+                                <h3 className="text-sm font-bold text-[#1d1c19]">Updates</h3>
+                                <p className="mt-0.5 text-xs text-[#7b766d]">
                                     {unreadCount > 0
                                         ? `You have ${unreadCount} new updates`
                                         : "Recent updates & alerts"
@@ -191,7 +190,7 @@ const NotificationBell = () => {
                             {unreadCount > 0 && (
                                 <button
                                     onClick={() => handleMarkAsRead([], true)}
-                                    className="text-[10px] font-bold text-orange-600 hover:text-orange-700 bg-orange-50 hover:bg-orange-100 px-2 py-1 rounded-lg transition-colors"
+                                    className="rounded-full border border-[#a85d37]/15 bg-[#efe4d9] px-3 py-1.5 text-[10px] font-bold text-[#75462f] transition-colors hover:bg-[#e9dace]"
                                 >
                                     Mark all read
                                 </button>
@@ -199,21 +198,21 @@ const NotificationBell = () => {
                         </div>
 
                         {/* Notification List with Custom Scrollbar */}
-                        <div className="max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent">
+                        <div className="max-h-[350px] overflow-y-auto">
                             {notifications.length > 0 ? (
                                 notifications.map((item) => (
                                     <div
                                         key={item._id || item.id}
                                         onClick={() => handleNotificationClick(item)}
                                         className={`
-                      px-5 py-3 hover:bg-gray-50 transition-colors flex gap-4 border-b border-gray-50 last:border-0 cursor-pointer
-                      ${!item.isRead ? "bg-orange-50/30" : ""}
+                      flex cursor-pointer gap-4 border-b border-black/[0.055] px-5 py-3.5 transition-colors last:border-0 hover:bg-black/[0.025]
+                      ${!item.isRead ? "bg-[#f2ebe2]" : ""}
                     `}
                                     >
                                         {/* Icon */}
                                         <div className={`
                       mt-0.5 h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors
-                      ${!item.isRead ? "bg-white shadow-sm ring-1 ring-gray-100" : "bg-gray-50"}
+                      ${!item.isRead ? "bg-[#fffdf8] ring-1 ring-black/[0.06]" : "bg-[#eeeae2]"}
                     `}>
                                             {getNotificationIcon(item.type, item.status, item.title)}
                                         </div>
@@ -221,42 +220,42 @@ const NotificationBell = () => {
                                         {/* Content */}
                                         <div className="flex-1 min-w-0">
                                             <div className="flex justify-between items-start">
-                                                <p className={`text-sm ${!item.isRead ? "font-bold text-gray-900" : "font-medium text-gray-700"}`}>
+                                                <p className={`text-sm ${!item.isRead ? "font-bold text-[#1d1c19]" : "font-medium text-[#5f5a52]"}`}>
                                                     {normalizeNotificationTitle(item.title)}
                                                 </p>
-                                                <span className="text-[10px] text-gray-400 whitespace-nowrap ml-2">
+                                                <span className="ml-2 whitespace-nowrap text-[10px] text-[#969086]">
                                                     {getTimeAgo(item.createdAt || Date.now())}
                                                 </span>
                                             </div>
-                                            <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{item.message}</p>
+                                            <p className="mt-0.5 line-clamp-2 text-xs text-[#7b766d]">{item.message}</p>
                                         </div>
 
                                         {/* Unread Dot */}
                                         {!item.isRead && (
                                             <div className="flex-shrink-0 self-center">
-                                                <div className="h-2 w-2 rounded-full bg-orange-500" />
+                                                <div className="h-2 w-2 rounded-full bg-[#a85d37]" />
                                             </div>
                                         )}
                                     </div>
                                 ))
                             ) : (
-                                <div className="py-12 text-center text-gray-500">
-                                    <BellIcon className="h-10 w-10 mx-auto text-gray-300 mb-3" />
+                                <div className="py-12 text-center text-[#7b766d]">
+                                    <BellIcon className="mx-auto mb-3 h-10 w-10 text-[#bbb4aa]" />
                                     <p className="text-sm font-medium">No notifications yet</p>
-                                    <p className="text-xs text-gray-400 mt-1">We'll notify you when something arrives</p>
+                                    <p className="mt-1 text-xs text-[#969086]">We'll let you know when something arrives</p>
                                 </div>
                             )}
                         </div>
 
                         {/* Footer */}
                         {notifications.length > 0 && (
-                            <div className="border-t border-gray-50 pt-2 pb-1 px-2">
+                            <div className="border-t border-black/[0.07] p-2">
                                 <button
                                     onClick={() => {
                                         setIsOpen(false);
                                         navigate("/orders");
                                     }}
-                                    className="w-full py-2 text-xs font-bold text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+                                    className="w-full rounded-full py-2.5 text-xs font-bold text-[#5f5a52] transition-colors hover:bg-black/[0.04]"
                                 >
                                     View All Orders
                                 </button>

@@ -153,13 +153,13 @@ export default function AdminOrders() {
   const getStatusBadge = (stage) => {
     const configs = {
       PLACED: { bg: "bg-slate-100", text: "text-slate-600", dot: "bg-slate-400" },
-      CONFIRMED: { bg: "bg-blue-50", text: "text-blue-600", dot: "bg-blue-500" },
-      PROCESSING: { bg: "bg-indigo-50", text: "text-indigo-600", dot: "bg-indigo-500" },
-      PACKED: { bg: "bg-orange-50", text: "text-orange-600", dot: "bg-orange-500" },
-      SHIPPED: { bg: "bg-purple-50", text: "text-purple-600", dot: "bg-purple-500" },
-      OUT_FOR_DELIVERY: { bg: "bg-yellow-50", text: "text-yellow-600", dot: "bg-yellow-500" },
-      DELIVERED: { bg: "bg-emerald-50", text: "text-emerald-600", dot: "bg-emerald-500" },
-      CANCELLED: { bg: "bg-red-50", text: "text-red-600", dot: "bg-red-500" },
+      CONFIRMED: { bg: "bg-[#ece8df]", text: "text-[#5f5a52]", dot: "bg-[#776f63]" },
+      PROCESSING: { bg: "bg-[#f0e5db]", text: "text-[#8b5437]", dot: "bg-[#b56a3f]" },
+      PACKED: { bg: "bg-[#e9e5dd]", text: "text-[#665f55]", dot: "bg-[#776f63]" },
+      SHIPPED: { bg: "bg-[#e8e4dc]", text: "text-[#655e54]", dot: "bg-[#6d665b]" },
+      OUT_FOR_DELIVERY: { bg: "bg-[#efe2d8]", text: "text-[#8b5437]", dot: "bg-[#b56a3f]" },
+      DELIVERED: { bg: "bg-[#e5e8df]", text: "text-[#59634f]", dot: "bg-[#59634f]" },
+      CANCELLED: { bg: "bg-[#eee2dc]", text: "text-[#75483b]", dot: "bg-[#75483b]" },
     };
 
     const config = configs[stage] || configs.PLACED;
@@ -178,7 +178,7 @@ export default function AdminOrders() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50/50 p-6 sm:p-8 font-sans text-slate-800">
+    <div className="premium-admin-page min-h-screen bg-transparent p-6 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-7xl mx-auto space-y-8">
 
         {/* Header Section */}

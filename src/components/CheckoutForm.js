@@ -89,6 +89,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("");
   const [showReview, setShowReview] = useState(false);
+  const [showTestCard, setShowTestCard] = useState(false);
   const [data, setData] = useState({
     fullName: "",
     phone: "",
@@ -217,6 +218,30 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     setShowReview(true);
   };
 
+  /* Save the entered address after a successful order. Non-fatal: the order
+     itself carries the address string, so a failure here is only a missed
+     convenience for next time. */
+  const persistAddressIfNeeded = async () => {
+    if (!(isAuthenticated && saveAddress)) return;
+    try {
+      await saveAddressMutation.mutateAsync({
+        label: "Default",
+        fullName: data.fullName,
+        phone: data.phone,
+        email: data.email,
+        address1: data.address1,
+        address2: data.address2,
+        city: data.city,
+        state: data.state,
+        pincode: data.pincode,
+        country: "India",
+        isDefault: true,
+      });
+    } catch (err) {
+      console.warn("Address save failed (non-fatal):", err);
+    }
+  };
+
   /* --- Step 2: Confirm & proceed to payment --- */
   const proceedToPayment = async () => {
     if (!rzpReady || !RZP_KEY) {
@@ -230,33 +255,18 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     const grandTotal = Number(totalAmount) || 0;
 
     try {
-      if (isAuthenticated && saveAddress) {
-        await saveAddressMutation.mutateAsync({
-          label: "Default",
-          fullName: data.fullName,
-          phone: data.phone,
-          email: data.email,
-          address1: data.address1,
-          address2: data.address2,
-          city: data.city,
-          state: data.state,
-          pincode: data.pincode,
-          country: "India",
-          isDefault: true,
-        });
-      }
-
       const walletApplied = useWallet ? Math.min(walletBalance, grandTotal) : 0;
       const payable = Math.max(0, grandTotal - walletApplied);
 
       if (payable === 0) {
-        await onOrderPlaced?.({
+        const orderId = await onOrderPlaced?.({
           address: fullAddress,
           method: "WALLET",
           walletUsed: walletApplied,
         });
+        await persistAddressIfNeeded();
         setBusy(false);
-        navigate("/orderstages", { replace: true });
+        navigate(orderId ? `/order-success/${orderId}` : "/orders", { replace: true });
         return;
       }
 
@@ -288,14 +298,15 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           try {
             const verifyRes = await axios.post("/api/razorpay/verify", response);
             const verificationToken = extractVerificationToken(verifyRes);
-            await onOrderPlaced?.({
+            const orderId = await onOrderPlaced?.({
               address: fullAddress,
               method: "CARD",
               walletUsed: walletApplied,
               payment: buildVerifiedPaymentMeta(response, verificationToken),
             });
+            await persistAddressIfNeeded();
             setBusy(false);
-            navigate("/orderstages", { replace: true });
+            navigate(orderId ? `/order-success/${orderId}` : "/orders", { replace: true });
           } catch (err) {
             console.error(err);
             setBusy(false);
@@ -329,12 +340,12 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     <>
     {/* ---- ORDER REVIEW OVERLAY ---- */}
     {showReview && (
-      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setShowReview(false)}>
-        <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl p-6 sm:p-8 animate-fade-up" onClick={(e) => e.stopPropagation()}>
-          <button onClick={() => setShowReview(false)} className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 text-sm font-bold">&times;</button>
+      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-[#1d1c19]/50 backdrop-blur-sm p-4" onClick={() => setShowReview(false)}>
+        <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[1.6rem] border border-black/10 bg-[#fffdf8] p-6 shadow-[0_30px_90px_rgba(29,28,25,.24)] animate-fade-up sm:p-8" onClick={(e) => e.stopPropagation()}>
+          <button onClick={() => setShowReview(false)} className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#eee8df] text-sm font-bold text-[#777168] transition-colors hover:bg-[#e4ddd3] hover:text-[#1d1c19]">&times;</button>
 
-          <h2 className="text-xl font-black text-gray-900 mb-6 flex items-center gap-3">
-            <FaCheckCircle className="text-orange-500" /> Review Your Order
+          <h2 className="mb-6 flex items-center gap-3 font-editorial text-3xl leading-none tracking-[-0.03em] text-[#1d1c19]">
+            <FaCheckCircle className="text-[#a85d37]" /> Review Your Order
           </h2>
 
           {/* Cart Items */}
@@ -342,7 +353,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
             <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Items ({cartItems.length})</h3>
             <div className="space-y-3 max-h-48 overflow-y-auto pr-1">
               {cartItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
+                <div key={i} className="flex items-center gap-3 rounded-xl border border-black/[0.07] bg-[#eeeae2] p-3">
                   {item.thumbnail && <img src={item.thumbnail} alt="" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />}
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold text-gray-900 truncate">{item.title || item.name}</p>
@@ -355,8 +366,8 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           </div>
 
           {/* Shipping Address */}
-          <div className="mb-6 p-4 rounded-xl bg-orange-50/50 border border-orange-100">
-            <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-2"><FaMapMarkerAlt className="text-orange-500" /> Shipping To</h3>
+          <div className="mb-6 rounded-xl border border-[#a85d37]/15 bg-[#f4eee7] p-4">
+            <h3 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#777168]"><FaMapMarkerAlt className="text-[#a85d37]" /> Shipping To</h3>
             <p className="text-sm font-semibold text-gray-800">{data.fullName}</p>
             <p className="text-xs text-gray-600 mt-1">{data.address1}{data.address2 ? `, ${data.address2}` : ""}</p>
             <p className="text-xs text-gray-600">{data.city}, {data.state} — {data.pincode}</p>
@@ -366,15 +377,15 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           {/* Payment Breakdown */}
           <div className="mb-6 space-y-2">
             <div className="flex justify-between text-sm text-gray-600"><span>Order Total</span><span className="font-bold text-gray-900">{INR(Number(totalAmount) || 0)}</span></div>
-            {walletAppliedPreview > 0 && <div className="flex justify-between text-sm text-green-600"><span>Wallet Applied</span><span className="font-bold">−{INR(walletAppliedPreview)}</span></div>}
+            {walletAppliedPreview > 0 && <div className="flex justify-between text-sm text-[#59634f]"><span>Wallet Applied</span><span className="font-bold">−{INR(walletAppliedPreview)}</span></div>}
             <div className="h-px bg-gray-200 my-1" />
-            <div className="flex justify-between text-base"><span className="font-bold text-gray-900">Payable Amount</span><span className="text-xl font-black text-orange-600">{INR(payablePreview)}</span></div>
+            <div className="flex justify-between text-base"><span className="font-bold text-gray-900">Payable Amount</span><span className="text-xl font-black text-[#a85d37]">{INR(payablePreview)}</span></div>
           </div>
 
           {/* Actions */}
           <div className="flex gap-3">
-            <button type="button" onClick={() => setShowReview(false)} className="flex-1 py-3 rounded-xl font-bold text-sm border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors">Edit Details</button>
-            <button type="button" onClick={proceedToPayment} disabled={busy} className="flex-1 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:shadow-orange-500/30 hover:brightness-110 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
+            <button type="button" onClick={() => setShowReview(false)} className="flex-1 rounded-full border border-black/10 bg-transparent py-3 text-sm font-bold text-[#5f5a52] transition-colors hover:bg-[#eee8df] hover:text-[#1d1c19]">Edit Details</button>
+            <button type="button" onClick={proceedToPayment} disabled={busy} className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#1d1c19] py-3 text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.16)] transition-all hover:-translate-y-0.5 hover:bg-[#34312c] disabled:translate-y-0 disabled:opacity-50">
               {busy ? <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Processing...</> : <>Confirm & Pay <FaArrowRight size={12} /></>}
             </button>
           </div>
@@ -382,11 +393,11 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
       </div>
     )}
 
-    <div className="relative w-full bg-[#f8f9fa] py-8 sm:py-12 overflow-hidden pb-32 lg:pb-12">
+    <div className="premium-page premium-checkout relative w-full bg-[#f6f3ed] py-8 sm:py-12 overflow-hidden pb-32 lg:pb-12">
       <AnimStyles />
 
       {/* Ambient Background */}
-      <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="hidden" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
 
@@ -406,8 +417,8 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   <FaLock size={20} />
                 </div>
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-black text-gray-900 leading-none">Secure Checkout</h2>
-                  <p className="text-sm text-gray-500 mt-1 font-medium">Please fill in your shipping details</p>
+                  <h2 className="font-editorial text-3xl sm:text-4xl font-normal text-[#1d1c19] leading-none">Secure checkout.</h2>
+                  <p className="text-sm text-[#777269] mt-2 font-medium">Where should we send your order?</p>
                 </div>
               </div>
 
@@ -484,6 +495,11 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                       onClick={async () => {
                         const amt = Number(topupAmount);
                         if (!amt || amt <= 0) return;
+                        if (!rzpReady || !RZP_KEY) {
+                          setStatus("Razorpay not ready. Check REACT_APP_RAZORPAY_KEY_ID.");
+                          return;
+                        }
+                        setStatus("");
                         try {
                           const { orderId, amount: amountPaise, currency } = await createWalletTopupMutation.mutateAsync(amt);
                           const options = {
@@ -494,17 +510,25 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                             description: "Wallet Top-up",
                             order_id: orderId,
                             handler: async function (response) {
-                              await verifyWalletTopupMutation.mutateAsync({
-                                response,
-                                amount: amt,
-                              });
-                              setTopupAmount("");
+                              try {
+                                await verifyWalletTopupMutation.mutateAsync({
+                                  response,
+                                  amount: amt,
+                                });
+                                setTopupAmount("");
+                                setStatus("");
+                              } catch (err) {
+                                setStatus(getErrorMessage(err, "Wallet top-up verification failed."));
+                              }
                             },
                           };
                           const rzp = new window.Razorpay(options);
+                          rzp.on("payment.failed", function () {
+                            setStatus("Wallet top-up payment failed. Please try again.");
+                          });
                           rzp.open();
                         } catch (err) {
-                          setStatus("Wallet top-up failed.");
+                          setStatus(getErrorMessage(err, "Wallet top-up failed."));
                         }
                       }}
                       className="px-4 py-2 rounded-xl bg-gray-900 text-white text-xs font-bold"
@@ -629,40 +653,49 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                 </div>
               </div>
 
-              {/* Test Mode Credentials Block */}
-              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
-                  Test Mode: RuPay Card Details
-                </p>
+              {/* Test Mode Credentials Block (collapsible) */}
+              <div className="bg-white/5 border border-white/10 rounded-lg">
+                <button
+                  type="button"
+                  onClick={() => setShowTestCard((v) => !v)}
+                  className="w-full flex items-center justify-between gap-2 p-4 text-left"
+                >
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+                    Test Mode: Use a test card
+                  </span>
+                  <span className={`text-gray-400 text-xs transition-transform ${showTestCard ? "rotate-180" : ""}`}>▾</span>
+                </button>
 
-                <div className="flex items-start gap-3">
-                  {/* SVG Card Icon */}
-                  <div className="p-2 bg-white/10 rounded-md shrink-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-orange-500"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="2" y="5" width="20" height="14" rx="2" />
-                      <line x1="2" y1="10" x2="22" y2="10" />
-                    </svg>
-                  </div>
-
-                  <div className="text-xs text-gray-300">
-                    <p className="text-white font-bold text-sm mb-0.5">RuPay Test Card</p>
-                    <p className="mb-0.5">Card: <span className="text-white font-mono font-semibold">6070 1010 1010 1010</span></p>
-                    <div className="flex gap-3">
-                      <p>Exp: <span className="text-white">12/34</span></p>
-                      <p>CVV: <span className="text-white">123</span></p>
+                {showTestCard && (
+                  <div className="px-4 pb-4 flex items-start gap-3 animate-fade-up">
+                    {/* SVG Card Icon */}
+                    <div className="p-2 bg-white/10 rounded-md shrink-0">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-orange-500"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <line x1="2" y1="10" x2="22" y2="10" />
+                      </svg>
                     </div>
-                    <p className="mt-0.5 text-emerald-400">OTP: 123456</p>
+
+                    <div className="text-xs text-gray-300">
+                      <p className="text-white font-bold text-sm mb-0.5">RuPay Test Card</p>
+                      <p className="mb-0.5">Card: <span className="text-white font-mono font-semibold">6070 1010 1010 1010</span></p>
+                      <div className="flex gap-3">
+                        <p>Exp: <span className="text-white">12/34</span></p>
+                        <p>CVV: <span className="text-white">123</span></p>
+                      </div>
+                      <p className="mt-0.5 text-emerald-400">OTP: 123456</p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
 
@@ -672,7 +705,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                 disabled={busy || !rzpReady}
                 className={`hidden lg:flex w-full py-4 rounded-xl font-bold text-base shadow-lg transition-all transform active:scale-[0.98] items-center justify-center gap-2 ${busy || !rzpReady
                   ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-                  : "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-orange-500/40 hover:brightness-110"
+                  : "bg-[#1d1c19] text-white hover:-translate-y-0.5 hover:bg-[#34312c] hover:shadow-[0_14px_30px_rgba(29,28,25,.2)]"
                   }`}
               >
                 {busy ? (

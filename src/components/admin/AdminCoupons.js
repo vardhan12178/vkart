@@ -157,7 +157,7 @@ export default function AdminCoupons() {
   const isExpired = (d) => d && new Date(d) < new Date();
 
   return (
-    <div className="min-h-screen bg-slate-50/50 p-4 sm:p-8 font-sans text-slate-800">
+    <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-7xl mx-auto space-y-6">
 
         {toast && (

@@ -291,19 +291,19 @@ export default function Login() {
       </Helmet>
 
       {/* BACKGROUND: Subtle Premium Gradient */}
-      <div className="min-h-screen w-full flex items-center justify-center p-4 sm:p-6 bg-[#F8F9FA] relative overflow-hidden">
+      <div className="premium-page premium-auth min-h-screen w-full flex items-center justify-center p-4 sm:p-6 bg-[#f6f3ed] relative overflow-hidden">
         {/* Abstract Background Orbs */}
-        <div className="absolute top-[-10%] right-[-5%] w-64 h-64 sm:w-96 sm:h-96 bg-orange-200/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-64 h-64 sm:w-96 sm:h-96 bg-amber-100/40 rounded-full blur-3xl" />
+        <div className="hidden" />
+        <div className="hidden" />
 
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="relative w-full max-w-[1100px] min-h-[600px] sm:min-h-[650px] lg:min-h-[700px] bg-white rounded-2xl sm:rounded-[32px] shadow-2xl flex overflow-hidden border border-white/50"
+          className="premium-auth-shell relative w-full max-w-[1180px] min-h-[650px] lg:min-h-[720px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/[0.06]"
         >
           {/* --- LEFT PANEL (Visual) --- */}
-          <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 xl:p-12 overflow-hidden">
+          <div className="premium-auth-visual hidden lg:flex w-1/2 relative flex-col justify-between bg-[#ded2c2] p-8 xl:p-12 overflow-hidden">
             {/* Decorative Patterns */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
 
@@ -319,12 +319,9 @@ export default function Login() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-3xl xl:text-4xl font-extrabold text-gray-900 leading-[1.15]"
+                className="font-editorial text-4xl xl:text-5xl font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.03em]"
               >
-                Experience the <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
-                  future of shopping.
-                </span>
+                Welcome back to<br />better choices.
               </motion.h2>
             </div>
 
@@ -335,9 +332,9 @@ export default function Login() {
               className="relative z-10 flex-1 flex items-center justify-center py-8"
             >
               <img
-                src="/login.webp"
-                alt="Shopping Illustration"
-                className="max-h-[280px] xl:max-h-[350px] w-auto object-contain drop-shadow-2xl"
+                src="/vkart-editorial-hero.png"
+                alt="A curated selection of VKart products"
+                className="h-[310px] xl:h-[380px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />
             </motion.div>
 
@@ -351,7 +348,7 @@ export default function Login() {
           </div>
 
           {/* --- RIGHT PANEL (Form) --- */}
-          <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 relative">
+          <div className="premium-auth-form w-full lg:w-1/2 bg-[#fffdf8] flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 relative">
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-6 sm:mb-8">
               <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
@@ -366,8 +363,8 @@ export default function Login() {
               className="w-full max-w-sm mx-auto"
             >
               <motion.div variants={fadeInUp} className="text-center mb-6 sm:mb-8">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Welcome back</h1>
-                <p className="mt-2 text-sm sm:text-base text-gray-500">Please enter your details to sign in.</p>
+                <h1 className="font-editorial text-4xl sm:text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">Welcome back.</h1>
+                <p className="mt-3 text-sm text-[#777269]">Sign in to continue your VKart edit.</p>
               </motion.div>
 
               {/* Toast / Error Area */}

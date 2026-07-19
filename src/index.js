@@ -5,9 +5,9 @@ import { Provider } from "react-redux";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { HelmetProvider } from "react-helmet-async";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import store from "./redux/store";
 import App from "./App";
+import "./App.css"; // Tailwind base/components/utilities live here
 import "./index.css";
 import "./styles.css";
 import { queryClient } from "./query/queryClient";
@@ -24,9 +24,6 @@ root.render(
           </BrowserRouter>
         </GoogleOAuthProvider>
       </Provider>
-      {process.env.NODE_ENV !== "production" ? (
-        <ReactQueryDevtools initialIsOpen={false} />
-      ) : null}
     </QueryClientProvider>
   </HelmetProvider>
 );

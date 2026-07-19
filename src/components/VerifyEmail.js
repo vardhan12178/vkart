@@ -31,7 +31,7 @@ export default function VerifyEmail() {
   }, [search]);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+    <div className="premium-page premium-auth premium-auth-compact min-h-screen bg-[#f6f3ed] flex items-center justify-center p-6">
       <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 max-w-md w-full text-center">
         <h1 className="text-2xl font-bold text-gray-900 mb-3">Email Verification</h1>
         <p className="text-sm text-gray-600 mb-6">

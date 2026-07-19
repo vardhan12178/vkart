@@ -52,7 +52,7 @@ const OrderSuccess = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-50">
+            <div className="premium-page premium-success min-h-screen flex items-center justify-center bg-[#f6f3ed]">
                 <div className="w-16 h-16 border-4 border-orange-200 border-t-orange-500 rounded-full animate-spin" />
             </div>
         );
@@ -60,7 +60,7 @@ const OrderSuccess = () => {
 
     if (error || !order) {
         return (
-            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4 text-center">
+            <div className="premium-page premium-success min-h-screen flex flex-col items-center justify-center bg-[#f6f3ed] p-4 text-center">
                 <div className="w-20 h-20 bg-red-100 text-red-500 rounded-full flex items-center justify-center mb-4">
                     <FaBox size={32} />
                 </div>
@@ -74,7 +74,7 @@ const OrderSuccess = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50/50 py-12 px-4 relative overflow-hidden">
+        <div className="premium-page premium-success min-h-screen bg-[#f6f3ed] py-12 px-4 relative overflow-hidden">
             {showConfetti && <Confetti width={width} height={height} numberOfPieces={200} recycle={false} />}
 
             <div className="max-w-4xl mx-auto space-y-8 relative z-10">

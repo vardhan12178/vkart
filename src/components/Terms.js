@@ -42,7 +42,7 @@ export default function Terms() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20 relative overflow-hidden">
+    <main className="premium-page premium-legal min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden">
       <AnimStyles />
       
       {/* Ambient Background */}

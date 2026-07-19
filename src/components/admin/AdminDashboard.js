@@ -66,13 +66,13 @@ const stageLabels = {
 
 const stageColors = {
   PLACED: "bg-slate-100 text-slate-600 border-slate-200",
-  CONFIRMED: "bg-blue-50 text-blue-600 border-blue-200",
-  PROCESSING: "bg-amber-50 text-amber-600 border-amber-200",
-  PACKED: "bg-purple-50 text-purple-600 border-purple-200",
-  SHIPPED: "bg-indigo-50 text-indigo-600 border-indigo-200",
-  OUT_FOR_DELIVERY: "bg-orange-50 text-orange-600 border-orange-200",
-  DELIVERED: "bg-emerald-50 text-emerald-600 border-emerald-200",
-  CANCELLED: "bg-red-50 text-red-600 border-red-200",
+  CONFIRMED: "bg-[#ece8df] text-[#5f5a52] border-black/10",
+  PROCESSING: "bg-[#f0e5db] text-[#8b5437] border-[#b56a3f]/15",
+  PACKED: "bg-[#e9e5dd] text-[#665f55] border-black/10",
+  SHIPPED: "bg-[#e8e4dc] text-[#655e54] border-black/10",
+  OUT_FOR_DELIVERY: "bg-[#efe2d8] text-[#8b5437] border-[#b56a3f]/15",
+  DELIVERED: "bg-[#e5e8df] text-[#59634f] border-[#59634f]/15",
+  CANCELLED: "bg-[#eee2dc] text-[#75483b] border-[#75483b]/15",
 };
 
 export default function AdminDashboard() {
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
   const fadeInClass = (delay) => `animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-${delay}`;
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] font-sans text-slate-800 pb-10">
+    <div className="premium-admin-page min-h-screen bg-transparent font-sans text-[#24231f] pb-10">
       <style>{noScrollbarStyle}</style>
 
       {/* Sticky Header */}
@@ -222,10 +222,10 @@ export default function AdminDashboard() {
         <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              {greeting}, Admin <span className="text-2xl animate-pulse">👋</span>
+              Store overview.
             </h1>
             <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mt-1">
-              Overview Dashboard
+              {greeting} · Live operations
             </p>
           </div>
 
@@ -280,7 +280,7 @@ export default function AdminDashboard() {
                   value={INR(stats.totalRevenue)}
                   subtitle="Gross Income"
                   icon={<CurrencyRupeeIcon className="h-6 w-6 text-white" />}
-                  gradient="from-orange-500 to-amber-500"
+                  gradient="from-[#b56a3f] to-[#8f4e2f]"
                   trend="+12.5%"
                   trendUp={true}
                 />
@@ -291,7 +291,7 @@ export default function AdminDashboard() {
                   value={stats.totalOrders}
                   subtitle="All time"
                   icon={<ShoppingBagIcon className="h-6 w-6 text-white" />}
-                  gradient="from-blue-500 to-indigo-500"
+                  gradient="from-[#2f2d28] to-[#4f4a42]"
                   trend={`+${stats.thisMonthOrders} this month`}
                   trendUp={true}
                 />
@@ -302,7 +302,7 @@ export default function AdminDashboard() {
                   value={INR(stats.avgOrderValue)}
                   subtitle="Revenue per Order"
                   icon={<TrendingUpIcon className="h-6 w-6 text-white" />}
-                  gradient="from-emerald-500 to-teal-500"
+                  gradient="from-[#59634f] to-[#414a39]"
                   trend="+2.4%"
                   trendUp={true}
                 />
@@ -313,7 +313,7 @@ export default function AdminDashboard() {
                   value={stats.activeCustomers || users.length}
                   subtitle="Total User Base"
                   icon={<UsersIcon className="h-6 w-6 text-white" />}
-                  gradient="from-pink-500 to-rose-500"
+                  gradient="from-[#8b6653] to-[#6f4c3d]"
                   trend={`+${users.length} total`}
                   trendUp={true}
                 />

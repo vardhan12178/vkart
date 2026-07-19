@@ -1,98 +1,96 @@
-import React, { useState, useEffect } from "react";
-import { FaCookieBite } from "react-icons/fa"; // Swapped for a sharper icon
-import { IoClose } from "react-icons/io5"; // Modern close icon
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaCookieBite } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [isMounting, setIsMounting] = useState(false);
 
   useEffect(() => {
-    const hasAccepted = localStorage.getItem("cookieConsent");
-    if (!hasAccepted) {
-      // Slight delay for smooth entrance
-      setTimeout(() => {
-        setIsMounting(true);
-        setIsVisible(true);
-      }, 1000);
-    }
+    const hasConsentChoice = localStorage.getItem("cookieConsent");
+    if (hasConsentChoice) return undefined;
+
+    const timer = window.setTimeout(() => {
+      setIsVisible(true);
+      requestAnimationFrame(() => setIsMounting(true));
+      document.body.classList.add("cookie-consent-open");
+    }, 900);
+
+    return () => {
+      window.clearTimeout(timer);
+      document.body.classList.remove("cookie-consent-open");
+    };
   }, []);
 
-  const handleAccept = () => {
+  const saveChoice = (choice) => {
     setIsMounting(false);
-    setTimeout(() => {
-      localStorage.setItem("cookieConsent", "true");
+    document.body.classList.remove("cookie-consent-open");
+    window.setTimeout(() => {
+      localStorage.setItem("cookieConsent", choice);
       setIsVisible(false);
-    }, 300); // Wait for exit animation
-  };
-
-  const handleDecline = () => {
-    setIsMounting(false);
-    setTimeout(() => {
-      localStorage.setItem("cookieConsent", "false");
-      setIsVisible(false);
-    }, 300);
+    }, 220);
   };
 
   if (!isVisible) return null;
 
   return (
-    <div
-      className={`fixed bottom-4 left-4 right-4 md:right-auto md:max-w-[400px] z-[60] transition-all duration-500 ease-in-out transform ${isMounting ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-        }`}
+    <section
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="cookie-consent-title"
+      aria-describedby="cookie-consent-copy"
+      className={`cookie-consent fixed inset-x-3 bottom-[calc(.75rem+env(safe-area-inset-bottom))] z-[110] transition duration-300 ease-out sm:left-5 sm:right-auto sm:w-[min(30rem,calc(100vw-2.5rem))] ${
+        isMounting ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+      }`}
     >
-      {/* Glassmorphism Container */}
-      <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-2xl rounded-2xl p-6 overflow-hidden">
+      <div className="relative overflow-hidden rounded-[1.25rem] border border-black/[0.1] bg-[#fffdf8]/95 p-4 text-[#1d1c19] shadow-[0_24px_70px_rgba(29,28,25,.2)] backdrop-blur-xl sm:p-5">
+        <button
+          type="button"
+          onClick={() => saveChoice("essential")}
+          className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-[#8a857b] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30"
+          aria-label="Close cookie preferences and use essential cookies only"
+        >
+          <IoClose size={19} />
+        </button>
 
-        {/* Decorative background glow */}
-        <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="flex items-start gap-4 relative z-10">
-          {/* Icon Container */}
-          <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-xl flex-shrink-0 text-orange-500">
-            <FaCookieBite size={20} />
+        <div className="flex items-start gap-3.5 pr-8">
+          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#a85d37]/10 text-[#a85d37]">
+            <FaCookieBite size={17} />
           </div>
-
-          {/* Close Button (Mobile/Desktop) */}
-          <button
-            onClick={handleDecline}
-            className="absolute -top-2 -right-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-2 transition-colors"
-          >
-            <IoClose size={20} />
-          </button>
-
-          <div className="flex-1">
-            <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1">
-              Cookie Preferences
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-snug mb-4">
-              We use cookies to ensure you get the best experience on our website.{" "}
-              <a
-                href="/privacy"
-                className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
-              >
-                Read Policy
-              </a>
+          <div className="min-w-0">
+            <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">
+              Your privacy
             </p>
-
-            {/* Modern Button Layout */}
-            <div className="flex flex-col sm:flex-row gap-2">
-              <button
-                onClick={handleAccept}
-                className="flex-1 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold rounded-lg hover:bg-black dark:hover:bg-gray-100 transition-transform active:scale-95 shadow-sm"
-              >
-                Accept All
-              </button>
-              <button
-                onClick={handleDecline}
-                className="flex-1 px-4 py-2 bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-              >
-                Decline
-              </button>
-            </div>
+            <h2 id="cookie-consent-title" className="cookie-consent-title text-base font-bold tracking-[-0.015em]">
+              A more considered experience.
+            </h2>
+            <p id="cookie-consent-copy" className="mt-1.5 text-xs leading-5 text-[#6f6b62] sm:text-[13px]">
+              We use optional cookies to improve VKart. Essential cookies keep the store working.{" "}
+              <Link to="/privacy" className="font-bold text-[#75472f] underline decoration-[#75472f]/30 underline-offset-3 hover:decoration-[#75472f]">
+                Privacy details
+              </Link>
+            </p>
           </div>
         </div>
+
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={() => saveChoice("accepted")}
+            className="min-h-11 rounded-full bg-[#1d1c19] px-4 text-xs font-bold text-white transition-colors hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
+          >
+            Accept all
+          </button>
+          <button
+            type="button"
+            onClick={() => saveChoice("essential")}
+            className="min-h-11 rounded-full border border-black/[0.11] bg-transparent px-4 text-xs font-bold text-[#514d45] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#75472f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
+          >
+            Essential only
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

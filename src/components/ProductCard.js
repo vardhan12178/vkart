@@ -175,9 +175,22 @@ export default function ProductCard() {
   });
 
   const { data: related = [] } = useQuery({
-    queryKey: qk.products.related(id, product?.category || ""),
-    enabled: Boolean(product?._id && product?.category),
+    queryKey: qk.products.similar(id),
+    enabled: Boolean(product?._id),
     queryFn: async ({ signal }) => {
+      // Vector-similarity recommendations ("you might also like").
+      try {
+        const simRes = await axios.get(`/api/products/${product._id}/similar`, {
+          params: { limit: 8 },
+          signal,
+        });
+        const items = simRes.data.products || [];
+        if (items.length) return items;
+      } catch {
+        /* fall through to category-based browsing below */
+      }
+      // Fallback: same-category products if similarity is unavailable.
+      if (!product.category) return [];
       const relRes = await axios.get("/api/products", {
         params: { category: product.category, limit: 8 },
         signal,
@@ -323,18 +336,18 @@ export default function ProductCard() {
     } catch {}
   }, [id, product, queryClient]);
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-500">Loading...</div>;
-  if (productError || !product) return <div className="min-h-screen flex items-center justify-center text-red-500">Could not load product.</div>;
+  if (loading) return <div className="premium-page min-h-screen flex items-center justify-center text-gray-500">Preparing the details...</div>;
+  if (productError || !product) return <div className="premium-page min-h-screen flex items-center justify-center text-red-500">We could not find this product.</div>;
 
   const { title, brand, category, discountPercentage, rating, stock, description } = product;
   const { imgs, selling, mrp, reviewsList, reviewCount } = computed;
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
+    <div className="premium-page premium-product min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] selection:bg-[#1d1c19] selection:text-white overflow-x-hidden">
       <AnimStyles />
 
-      <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+      <div className="hidden" />
+      <div className="hidden" />
 
       {product && (
         <Helmet prioritizeSeoTags>
@@ -433,7 +446,7 @@ export default function ProductCard() {
                 </Slider>
 
                 {stock === 0 && (
-                  <div className="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+                  <div className="absolute left-4 top-4 z-20 rounded-full bg-[#75483b] px-3 py-1 text-xs font-bold text-white">
                     Out of Stock
                   </div>
                 )}
@@ -474,17 +487,17 @@ export default function ProductCard() {
                   {category}
                 </span>
                 {product.onSale && product.saleName && (
-                  <span className="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
+                  <span className="rounded-full bg-[#eee2dc] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#75483b]">
                     {product.saleName}
                   </span>
                 )}
                 {discountPercentage > 0 && (
-                  <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
+                  <span className="rounded-full bg-[#e5e8df] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#59634f]">
                     Save {Math.round(discountPercentage)}%
                   </span>
                 )}
               </div>
-              <h1 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-2">
+              <h1 className="product-detail-title font-editorial font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.035em] mb-4">
                 {title}
               </h1>
               <div className="flex items-center gap-4 text-sm mb-6">
@@ -520,10 +533,10 @@ export default function ProductCard() {
                             <button
                               key={opt}
                               onClick={() => setSelectedVariants((prev) => ({ ...prev, [v.type]: opt }))}
-                              className={`px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all ${
+                              className={`rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
                                 active
-                                  ? "border-gray-900 bg-gray-900 text-white shadow-md"
-                                  : "border-gray-200 text-gray-600 hover:border-gray-400 hover:bg-gray-50"
+                                  ? "border-[#1d1c19] bg-[#1d1c19] text-white"
+                                  : "border-black/10 text-[#6f6b62] hover:border-black/25 hover:text-[#1d1c19]"
                               }`}
                             >
                               {opt}
@@ -543,17 +556,19 @@ export default function ProductCard() {
                     : "sm:grid-cols-[8rem_minmax(0,1fr)]"
                 }`}
               >
-                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl h-12 w-full shadow-sm">
+                <div className="flex h-12 w-full items-center rounded-full border border-black/10 bg-[#f1ede5]">
                   <button
                     onClick={() => changeQty(-1)}
-                    className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-white rounded-l-xl transition"
+                    className="h-full flex-1 rounded-l-full font-bold text-[#6f6b62] transition-colors hover:bg-[#fffdf8] hover:text-[#1d1c19]"
+                    aria-label="Decrease quantity"
                   >
                     -
                   </button>
                   <span className="w-8 text-center font-bold text-gray-900">{quantity}</span>
                   <button
                     onClick={() => changeQty(1)}
-                    className="flex-1 h-full font-bold text-gray-500 hover:text-gray-900 hover:bg-white rounded-r-xl transition"
+                    className="h-full flex-1 rounded-r-full font-bold text-[#6f6b62] transition-colors hover:bg-[#fffdf8] hover:text-[#1d1c19]"
+                    aria-label="Increase quantity"
                   >
                     +
                   </button>
@@ -561,36 +576,36 @@ export default function ProductCard() {
                 <button
                   onClick={handleAdd}
                   disabled={stock === 0}
-                  className={`h-12 rounded-xl font-bold text-base shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 ${
+                  className={`flex h-12 items-center justify-center gap-2 rounded-full text-base font-bold transition-colors ${
                     stock === 0
-                      ? "bg-gray-200 text-gray-500 cursor-not-allowed shadow-none"
-                      : "bg-gray-900 text-white hover:bg-black hover:shadow-xl"
+                      ? "cursor-not-allowed bg-[#ddd8cf] text-[#8b867d]"
+                      : "bg-[#1d1c19] text-white hover:bg-black"
                   }`}
                 >
-                  <FaCartPlus /> {stock === 0 ? "Out of Stock" : "Add to Cart"}
+                  <FaCartPlus /> {stock === 0 ? "Out of Stock" : "Add to Bag"}
                 </button>
 
                 {/* Buy Now */}
                 {stock > 0 && (
                   <button
                     onClick={handleBuyNow}
-                    className="h-12 rounded-xl font-bold text-base bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-[0_10px_24px_-12px_rgba(249,115,22,0.85)] hover:from-orange-600 hover:to-amber-600 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2"
+                    className="flex h-12 items-center justify-center gap-2 rounded-full bg-[#a85d37] text-base font-bold text-white transition-colors hover:bg-[#874526]"
                   >
-                    <FaBolt size={12} /> Buy Now
+                    <FaBolt size={12} /> Buy It Now
                   </button>
                 )}
               </div>
               <div className="flex gap-4">
                 <button
                   onClick={handleWish}
-                  className={`flex-1 h-12 rounded-xl font-bold border flex items-center justify-center gap-2 transition-all text-sm ${isInWishlist ? "border-rose-200 bg-rose-50 text-rose-600" : "border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
+                  className={`flex h-12 flex-1 items-center justify-center gap-2 rounded-full border text-sm font-bold transition-colors ${isInWishlist ? "border-[#c9a58f] bg-[#efe3d9] text-[#874526]" : "border-black/10 text-[#5f5b52] hover:border-[#b98a70] hover:bg-[#f1e8df] hover:text-[#874526]"
                     }`}
                 >
-                  {isInWishlist ? <FaHeart /> : <FaRegHeart />} Wishlist
+                  {isInWishlist ? <FaHeart /> : <FaRegHeart />} {isInWishlist ? "Saved" : "Save item"}
                 </button>
                 <button
                   onClick={handleShare}
-                  className="flex-1 h-12 rounded-xl font-bold border border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50 flex items-center justify-center gap-2 transition-all text-sm"
+                  className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-black/10 text-sm font-bold text-[#5f5b52] transition-colors hover:bg-black/[0.04] hover:text-[#1d1c19]"
                 >
                   <FaShareAlt /> Share
                 </button>
@@ -600,9 +615,9 @@ export default function ProductCard() {
             {/* Trust badges */}
             <div className="grid grid-cols-3 gap-4 py-6 border-y border-gray-100 my-6 bg-gray-50/50 rounded-2xl px-4">
               {[
-                { icon: <FaTruck />, title: "Free Delivery", sub: "By Wed, 12th" },
-                { icon: <FaShieldAlt />, title: "1 Year Warranty", sub: "Brand Assured" },
-                { icon: <FaUndoAlt />, title: "7 Day Returns", sub: "No Questions Asked" },
+                { icon: <FaTruck />, title: "Free Delivery", sub: "On eligible orders" },
+                { icon: <FaShieldAlt />, title: "Protected", sub: "Secure checkout" },
+                { icon: <FaUndoAlt />, title: "Easy Returns", sub: "Within 7 days" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center justify-center text-center gap-1.5">
                   <div className="text-gray-900 bg-white p-2.5 rounded-full shadow-sm border border-gray-100">
@@ -805,7 +820,7 @@ export default function ProductCard() {
       </div>
 
       {/* Sticky Mobile Bar */}
-      <div className={`fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 lg:hidden z-40 transition-transform duration-300 ${showStickyBar ? 'translate-y-0' : 'translate-y-full'}`}>
+      <div className={`fixed bottom-0 left-0 right-0 z-40 border-t border-black/[0.08] bg-[#fffdf8]/95 p-4 backdrop-blur lg:hidden transition-transform duration-300 ${showStickyBar ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="flex gap-3 items-center">
           <div className="flex-1">
             <div className="text-[10px] text-gray-500 uppercase tracking-wide font-bold">Total</div>
@@ -814,14 +829,14 @@ export default function ProductCard() {
           <button
             onClick={handleAdd}
             disabled={stock === 0}
-            className="px-6 h-12 bg-gray-900 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-2"
+            className="flex h-12 items-center gap-2 rounded-full bg-[#1d1c19] px-6 font-bold text-white"
           >
             <FaCartPlus /> {stock === 0 ? "No Stock" : "Add"}
           </button>
           {stock > 0 && (
             <button
               onClick={handleBuyNow}
-              className="px-5 h-12 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-xl font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5"
+              className="flex h-12 items-center gap-1.5 rounded-full bg-[#a85d37] px-5 font-bold text-white"
             >
               <FaBolt size={11} /> Buy Now
             </button>
@@ -839,10 +854,10 @@ export default function ProductCard() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button onClick={handleAdd} className="bg-gray-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition shadow-md">
-            Add to Cart
+          <button onClick={handleAdd} className="rounded-full bg-[#1d1c19] px-6 py-2 font-bold text-white transition-colors hover:bg-black">
+            Add to bag
           </button>
-          <button onClick={handleBuyNow} className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2 rounded-lg font-bold hover:from-orange-600 hover:to-amber-600 transition shadow-md inline-flex items-center gap-2">
+          <button onClick={handleBuyNow} className="inline-flex items-center gap-2 rounded-full bg-[#a85d37] px-6 py-2 font-bold text-white transition-colors hover:bg-[#874526]">
             <FaBolt size={11} /> Buy Now
           </button>
         </div>

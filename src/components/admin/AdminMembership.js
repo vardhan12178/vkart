@@ -140,7 +140,7 @@ export default function AdminMembership() {
   };
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="premium-admin-page space-y-6 p-6 sm:p-8">
       {toast && (
         <div className={`fixed top-6 right-6 z-50 px-5 py-3 rounded-xl shadow-lg text-sm font-bold text-white ${toast.type === "error" ? "bg-red-500" : "bg-green-500"}`}>
           {toast.msg}

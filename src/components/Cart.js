@@ -32,8 +32,6 @@ import {
   FaShoppingBag
 } from "react-icons/fa";
 import CheckoutForm from "./CheckoutForm";
-import OrderStages from "./OrderStages";
-import OrderTimeline from "./OrderTimeline";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
 import { buildSecureOrderPayload } from "../utils/orderPayload";
@@ -70,8 +68,6 @@ export default function Cart() {
   const wishlistItems = useSelector((s) => s.wishlist);
 
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
-  const [orderPlaced, setOrderPlaced] = useState(false);
-  const [totalItemsOrdered, setTotalItemsOrdered] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [confirmRemoveId, setConfirmRemoveId] = useState(null);
@@ -150,8 +146,6 @@ export default function Cart() {
     setIsLoading(true);
     setError(null);
     try {
-      const itemsOrdered = cartItems.reduce((t, i) => t + i.quantity, 0);
-      setTotalItemsOrdered(itemsOrdered);
       const productsPayload = cartItems.map((it) => {
         const mongoId = it._id || it.productId || null;
         const extId = it.externalId || (it.id != null ? String(it.id) : null);
@@ -179,16 +173,24 @@ export default function Cart() {
         walletUsed: orderDetails?.walletUsed,
       });
 
-      await axios.post("/api/orders", orderData);
+      const res = await axios.post("/api/orders", orderData);
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: qk.profile.orders }),
         queryClient.invalidateQueries({ queryKey: qk.profile.root }),
         queryClient.invalidateQueries({ queryKey: qk.profile.wallet }),
       ]);
       dispatch(clearCart());
-      setOrderPlaced(true);
       showToast("Order placed successfully ✅", "success");
+      return res?.data?._id || res?.data?.orderId || null;
     } catch (e) {
+      // A 409 means the order already exists for this payment (e.g. retry /
+      // double-submit) — treat it as success and route to the existing order.
+      const existingId = e?.response?.status === 409 ? e?.response?.data?.orderId : null;
+      if (existingId) {
+        dispatch(clearCart());
+        await queryClient.invalidateQueries({ queryKey: qk.profile.orders });
+        return existingId;
+      }
       const msg = e?.response?.data?.message || e?.message || "Failed to place the order.";
       setError(msg);
       showToast(msg, "error");
@@ -221,25 +223,25 @@ export default function Cart() {
   const hasCartItems = cartItems.length > 0;
   const hasWishlistItems = wishlistItems.length > 0;
 
-  // Only render "Empty State" if BOTH cart and wishlist are empty, and no order was just placed.
-  const isCompletelyEmpty = !hasCartItems && !hasWishlistItems && !orderPlaced;
+  // Only render "Empty State" if BOTH cart and wishlist are empty.
+  const isCompletelyEmpty = !hasCartItems && !hasWishlistItems;
 
   /* --- RENDER: COMPLETELY EMPTY STATE --- */
   if (isCompletelyEmpty) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] flex items-center justify-center p-4">
         <AnimStyles />
         <div className="text-center animate-fade-up max-w-md">
           <div className="w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
             <FaShoppingCart className="text-4xl text-orange-400" />
           </div>
-          <h2 className="text-3xl font-black text-gray-900 mb-2">Your cart is empty</h2>
-          <p className="text-gray-500 mb-8">Looks like you haven't made your choice yet.</p>
+          <h2 className="font-editorial text-5xl font-normal text-[#1d1c19] mb-3">Your bag is waiting.</h2>
+          <p className="text-[#777269] mb-8">You haven’t added anything yet. Start with the latest edit.</p>
           <Link
             to="/products"
             className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-gray-200 hover:scale-105 transition-transform"
           >
-            Start Shopping <FaArrowRight size={12} />
+            Explore the collection <FaArrowRight size={12} />
           </Link>
         </div>
       </div>
@@ -248,17 +250,17 @@ export default function Cart() {
 
   /* --- RENDER: MAIN LAYOUT --- */
   return (
-    <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-800 pb-32 lg:pb-20 overflow-x-hidden">
+    <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-32 lg:pb-20 overflow-x-hidden">
       <AnimStyles />
 
       {/* Ambient Background */}
-      <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="hidden" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative z-10">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">Shopping Cart</h1>
+          <h1 className="font-editorial text-4xl sm:text-6xl font-normal text-[#1d1c19] tracking-[-0.04em]">Your bag.</h1>
           {hasCartItems && (
             <span className="bg-white border border-gray-200 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold text-gray-600 shadow-sm whitespace-nowrap">
               {cartItems.length} Items
@@ -266,7 +268,7 @@ export default function Cart() {
           )}
         </div>
 
-        {!orderPlaced ? (
+        {(
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
 
             {/* --- LEFT COLUMN: Cart Items & Wishlist --- */}
@@ -361,8 +363,8 @@ export default function Cart() {
 
                           {confirming && (
                             <div className="flex items-center gap-3 animate-fade-up ml-auto">
-                              <span className="text-xs text-red-500 font-bold hidden sm:inline">Confirm?</span>
-                              <button onClick={() => dispatch(removeFromCart(k))} className="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded">Delete</button>
+                              <span className="hidden text-xs font-bold text-[#75483b] sm:inline">Remove item?</span>
+                              <button onClick={() => dispatch(removeFromCart(k))} className="rounded-full bg-[#eee2dc] px-3 py-1 text-xs font-bold text-[#75483b]">Remove</button>
                               <button onClick={() => setConfirmRemoveId(null)} className="text-xs font-bold text-gray-500 px-2 py-1">Cancel</button>
                             </div>
                           )}
@@ -390,7 +392,7 @@ export default function Cart() {
                     <h2 className="text-lg sm:text-xl font-bold text-gray-900 flex items-center gap-2">
                       <FaHeart className="text-orange-500" /> Saved for Later
                     </h2>
-                    <button onClick={() => dispatch(clearWishlist())} className="text-xs font-bold text-red-500 hover:underline">Clear All</button>
+                    <button onClick={() => dispatch(clearWishlist())} className="rounded-full border border-black/10 bg-[#eee8df] px-3 py-1.5 text-xs font-bold text-[#6f6b62] transition-colors hover:bg-[#e6ddd2] hover:text-[#1d1c19]">Clear saved items</button>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {wishlistItems.map(w => (
@@ -461,7 +463,7 @@ export default function Cart() {
                             <span className="text-sm font-bold text-green-700">{promoApplied.code}</span>
                             <span className="text-xs text-green-600">-{INR(promoApplied.discount)}</span>
                           </div>
-                          <button onClick={removePromo} className="text-xs font-bold text-red-500 hover:underline">Remove</button>
+                          <button onClick={removePromo} className="text-xs font-bold text-[#75483b] hover:underline">Remove</button>
                         </div>
                       ) : (
                         <div className="relative">
@@ -558,34 +560,10 @@ export default function Cart() {
               )}
             </div>
           </div>
-        ) : (
-          /* --- ORDER PLACED SUCCESS --- */
-          <div className="max-w-2xl mx-auto bg-white rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-10 text-center shadow-2xl animate-fade-up border border-gray-100">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FaCheckCircle className="text-4xl sm:text-5xl text-green-500" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">Order Placed!</h2>
-            <p className="text-gray-500 mb-8 text-base sm:text-lg">
-              Thank you for your purchase. You ordered {totalItemsOrdered} {totalItemsOrdered > 1 ? "items" : "item"}.
-            </p>
-
-            <div className="py-8 border-t border-b border-gray-100 mb-8 w-full">
-              <OrderTimeline currentStage="PLACED" createdAt={new Date().toISOString()} />
-            </div>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/products" className="px-8 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black transition text-center">
-                Continue Shopping
-              </Link>
-              <Link to="/profile" className="px-8 py-3 rounded-xl border border-gray-200 font-bold text-gray-700 hover:bg-gray-50 transition text-center">
-                View Order
-              </Link>
-            </div>
-          </div>
         )}
 
         {/* Checkout Form Section */}
-        {showPaymentDetails && !orderPlaced && hasCartItems && (
+        {showPaymentDetails && hasCartItems && (
           <div ref={checkoutRef} className="mt-12 pt-12 border-t border-gray-200">
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8 sm:mb-10 text-center">Secure Checkout</h2>
             <div className="max-w-6xl mx-auto">
@@ -613,7 +591,7 @@ export default function Cart() {
       </div>
 
       {/* --- MOBILE STICKY FOOTER --- */}
-      {!orderPlaced && !showPaymentDetails && hasCartItems && (
+      {!showPaymentDetails && hasCartItems && (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 lg:hidden z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex gap-3 items-center max-w-7xl mx-auto">
             <div className="flex-1">

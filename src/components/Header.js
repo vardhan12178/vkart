@@ -3,20 +3,22 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  ShoppingCartIcon,
-  LogoutIcon,
-  MenuIcon,
-  XIcon,
-  UserIcon,
-  SparklesIcon,
-  SearchIcon,
   CubeIcon,
   HomeIcon,
-  StarIcon,
   LightningBoltIcon,
-  CheckCircleIcon,
-  HeartIcon,
 } from "@heroicons/react/outline";
+import {
+  BadgeCheck,
+  Crown,
+  Heart,
+  LogOut,
+  Menu,
+  Search,
+  ShoppingBag,
+  Sparkles,
+  UserRound,
+  X,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "./axiosInstance";
 import { logout } from "../redux/authSlice";
@@ -169,23 +171,23 @@ const Header = () => {
       <AnnouncementBar />
       <header
         role="banner"
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-200/50"
-          : "bg-white/50 backdrop-blur-md border-b border-white/20"
+        data-scrolled={scrolled ? "true" : "false"}
+        className={`vkart-site-header sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
+          ? "backdrop-blur-xl"
+          : ""
           }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-14 md:h-20 items-center justify-between gap-4">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 md:h-[4.75rem] items-center justify-between gap-4">
 
             {/* --- LEFT: BRAND & NAV --- */}
-            <div className="flex items-center gap-8">
-              <Link to="/" className="group flex items-center gap-2.5 shrink-0">
-                <div className="relative flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-xl bg-gray-900 text-white shadow-lg shadow-gray-900/20 transition-transform group-hover:scale-95">
-                  <ShoppingCartIcon className="h-5 w-5" />
-                  {/* Decorative dot */}
-                  <div className="absolute top-0 right-0 -mt-1 -mr-1 h-3 w-3 rounded-full bg-orange-500 border-2 border-white" />
+            <div className="flex items-center gap-5 xl:gap-8">
+              <Link to="/" className="group flex items-center gap-2.5 shrink-0" aria-label="VKart home">
+                <div className="relative flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-[#1d1c19] text-white transition-transform group-hover:-rotate-3 group-hover:scale-95">
+                  <ShoppingBag className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.8} />
+                  <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#b66a3c] border-2 border-[#fffdf8]" />
                 </div>
-                <span className="hidden sm:block text-xl font-black tracking-tight text-gray-900">
+                <span className="hidden sm:block text-xl font-extrabold tracking-[-0.05em] text-[#1d1c19]">
                   VKart
                 </span>
               </Link>
@@ -199,10 +201,10 @@ const Header = () => {
                       key={item.to}
                       to={item.to}
                       aria-current={active ? "page" : undefined}
-                      className="relative px-4 py-2 text-sm font-bold text-gray-600 hover:text-gray-900 transition-colors group"
+                      className="relative px-3 xl:px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#5f5b52] hover:text-[#1d1c19] transition-colors group"
                     >
                       {item.label}
-                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gray-900 transition-all duration-300 group-hover:w-1/2 ${active ? "w-1/2" : ""}`} />
+                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#1d1c19] transition-all duration-300 group-hover:w-1/2 ${active ? "w-1/2" : ""}`} />
                     </Link>
                   );
                 })}
@@ -210,14 +212,14 @@ const Header = () => {
             </div>
 
             {/* --- CENTER: SEARCH (Desktop) --- */}
-            <div className="hidden md:flex flex-1 max-w-md mx-4">
+            <div className="hidden md:flex flex-1 max-w-md mx-2 xl:mx-4">
               <div className="w-full relative group" ref={suggestRef}>
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <SearchIcon className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" />
+                  <Search className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" strokeWidth={1.8} />
                 </div>
                 <input
                   type="text"
-                  placeholder="Search for products..."
+                  placeholder="Search the collection"
                   value={searchInput}
                   onChange={(e) => {
                     const val = e.target.value;
@@ -239,7 +241,7 @@ const Header = () => {
                       setShowSuggestions(false);
                     }
                   }}
-                  className="block w-full rounded-xl border-gray-200 bg-gray-100 pl-10 pr-10 py-2.5 text-sm font-medium focus:border-gray-900 focus:bg-white focus:ring-0 transition-all placeholder:text-gray-400"
+                  className="block w-full rounded-full border border-black/[0.06] bg-[#f2eee6] pl-10 pr-10 py-2.5 text-sm font-medium text-[#1d1c19] focus:border-[#9b5330]/40 focus:bg-white focus:ring-0 transition-all placeholder:text-[#99948a]"
                 />
                 {searchInput && (
                   <button
@@ -253,7 +255,7 @@ const Header = () => {
                     }}
                     className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
                   >
-                    <XIcon className="h-4 w-4" />
+                    <X className="h-4 w-4" strokeWidth={1.8} />
                   </button>
                 )}
 
@@ -288,50 +290,55 @@ const Header = () => {
 
 
             {/* --- RIGHT: ACTIONS --- */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-1.5 xl:gap-3 shrink-0">
 
               {/* Mobile Search Toggle */}
               <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="md:hidden p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors"
+                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                aria-label={showSearch ? "Close search" : "Open search"}
               >
-                <SearchIcon className="h-6 w-6" />
+                <Search className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
               </button>
 
               {/* Prime Badge — membership-aware */}
               <Link
                 to="/prime"
-                className={`hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ${
-                  isPrime
-                    ? "bg-gradient-to-r from-emerald-400 to-teal-500 text-white shadow-emerald-200/50 hover:shadow-emerald-300/50"
-                    : "bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-orange-200/50 hover:shadow-orange-300/50"
-                }`}
+                className="hidden sm:flex h-9 items-center gap-1.5 rounded-full border border-[#a85d37]/15 bg-[#efe4d9] px-3 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#79462f] transition-colors hover:border-[#a85d37]/30 hover:bg-[#e9dace]"
+                aria-label={isPrime ? "View Prime membership" : "Explore Prime membership"}
               >
                 {isPrime ? (
-                  <><CheckCircleIcon className="h-3.5 w-3.5" /> Prime</>
+                  <><BadgeCheck className="h-3.5 w-3.5" strokeWidth={1.8} /> Prime</>
                 ) : (
-                  <><StarIcon className="h-3.5 w-3.5" /> Prime</>
+                  <><Crown className="h-3.5 w-3.5" strokeWidth={1.8} /> Prime</>
                 )}
               </Link>
 
-              {/* Ask AI Button */}
-              <button
-                onClick={() => dispatch(toggleChat())}
-                className={`hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 ${isChatOpen
-                  ? "bg-gray-900 border-gray-900 text-white shadow-md"
-                  : "bg-white border-gray-200 text-gray-600 hover:border-gray-900 hover:text-gray-900 hover:shadow-sm"
-                  }`}
-              >
-                <SparklesIcon className={`h-4 w-4 ${isChatOpen ? "text-amber-400" : ""}`} />
-                <span className="text-xs font-bold uppercase tracking-wide">Ask AI</span>
-              </button>
+              {/* Product concierge: home uses the contextual floating launcher. */}
+              {location.pathname !== "/" && (
+                <button
+                  onClick={() => dispatch(toggleChat())}
+                  className={`hidden sm:flex h-9 items-center gap-2 border-l border-black/10 pl-3 pr-1 text-[11px] font-extrabold uppercase tracking-[0.08em] transition-colors ${isChatOpen
+                    ? "text-[#a85d37]"
+                    : "text-[#4f4b44] hover:text-[#a85d37]"
+                    }`}
+                  aria-pressed={isChatOpen}
+                  aria-label={isChatOpen ? "Close VKart concierge" : "Open VKart concierge"}
+                >
+                  <span className={`grid h-7 w-7 place-items-center rounded-full transition-colors ${isChatOpen ? "bg-[#1d1c19] text-white" : "bg-black/[0.045]"}`}>
+                    <Sparkles className="h-3.5 w-3.5" strokeWidth={1.8} />
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-wide">Ask VKart</span>
+                </button>
+              )}
 
               {/* Wishlist Icon */}
               <Link
                 to="/wishlist"
-                className="relative group p-2.5 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-all"
+                className="relative group grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                aria-label={`Wishlist${wishlistCount ? `, ${wishlistCount} items` : ""}`}
               >
-                <HeartIcon className="h-6 w-6" />
+                <Heart className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                 <AnimatePresence>
                   {wishlistCount > 0 && (
                     <motion.span
@@ -339,7 +346,7 @@ const Header = () => {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       exit={{ scale: 0 }}
-                      className="absolute top-1 right-0.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-bold text-white ring-2 ring-white"
+                      className="absolute -right-0.5 top-0 flex h-[1.15rem] min-w-[1.15rem] items-center justify-center rounded-full bg-[#1d1c19] px-1 text-[9px] font-bold text-white ring-2 ring-[#fffdf8]"
                     >
                       {wishlistCount}
                     </motion.span>
@@ -350,9 +357,10 @@ const Header = () => {
               {/* Cart Icon */}
               <Link
                 to="/cart"
-                className="relative group p-2.5 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-all"
+                className="relative group grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                aria-label={`Shopping bag${cartCount ? `, ${cartCount} items` : ""}`}
               >
-                <ShoppingCartIcon className="h-6 w-6" />
+                <ShoppingBag className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                 <AnimatePresence>
                   {cartCount > 0 && (
                     <motion.span
@@ -360,7 +368,7 @@ const Header = () => {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       exit={{ scale: 0 }}
-                      className="absolute top-1 right-0.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-orange-500 px-1 text-[10px] font-bold text-white ring-2 ring-white"
+                      className="absolute -right-0.5 top-0 flex h-[1.15rem] min-w-[1.15rem] items-center justify-center rounded-full bg-[#a85d37] px-1 text-[9px] font-bold text-white ring-2 ring-[#fffdf8]"
                     >
                       {cartCount}
                     </motion.span>
@@ -373,22 +381,23 @@ const Header = () => {
 
               {/* Profile / Auth */}
               {isAuthenticated ? (
-                <div className="hidden md:flex items-center gap-2 pl-2 border-l border-gray-200">
-                  <Link to="/profile" className="p-2.5 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                    <UserIcon className="h-6 w-6" />
+                <div className="hidden md:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
+                  <Link to="/profile" className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]" aria-label="Account profile">
+                    <UserRound className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="p-2.5 rounded-full text-gray-400 hover:bg-red-50 hover:text-red-500 transition-all"
-                    title="Logout"
+                    className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-[#e9e1d7] hover:text-[#75483b]"
+                    title="Sign out"
+                    aria-label="Sign out"
                   >
-                    <LogoutIcon className="h-6 w-6" />
+                    <LogOut className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                   </button>
                 </div>
               ) : (
                 <Link
                   to="/login"
-                  className="hidden md:inline-flex items-center justify-center rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-gray-900/20 transition-all hover:bg-black hover:shadow-gray-900/30 hover:-translate-y-0.5"
+                  className="hidden md:inline-flex items-center justify-center rounded-full bg-[#1d1c19] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
                 >
                   Sign In
                 </Link>
@@ -396,10 +405,12 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-colors"
+                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
               >
-                {isMobileMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+                {isMobileMenuOpen ? <X className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} /> : <Menu className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />}
               </button>
             </div>
           </div>
@@ -414,14 +425,14 @@ const Header = () => {
                 className="md:hidden overflow-hidden pb-4"
               >
                 <form onSubmit={handleSearch} className="relative">
-                  <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" strokeWidth={1.8} />
                   <input
                     type="text"
                     autoFocus
                     placeholder="Search products..."
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 pl-10 pr-4 py-3 text-sm font-medium focus:border-gray-900 focus:bg-white focus:ring-0"
+                    className="w-full rounded-full border border-black/10 bg-[#f1ede5] py-3 pl-10 pr-4 text-sm font-medium text-[#1d1c19] placeholder:text-[#8b867d] focus:border-[#a85d37]/40 focus:bg-[#fffdf8] focus:ring-0"
                   />
                 </form>
               </motion.div>
@@ -437,7 +448,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl overflow-hidden shadow-2xl"
+              className="md:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/95 backdrop-blur-xl"
             >
               <div className="px-4 py-6 space-y-4">
 
@@ -451,9 +462,9 @@ const Header = () => {
                         key={item.to}
                         to={item.to}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${active
-                          ? "bg-gray-100 text-gray-900"
-                          : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                        className={`flex items-center gap-3 border-b border-black/[0.06] px-2 py-3.5 text-sm font-bold transition-colors ${active
+                          ? "text-[#a85d37]"
+                          : "text-[#6f6b62] hover:text-[#1d1c19]"
                           }`}
                       >
                         <Icon className="h-5 w-5" />
@@ -465,12 +476,12 @@ const Header = () => {
                     <Link
                       to="/profile"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${isActive("/profile")
-                        ? "bg-gray-100 text-gray-900"
-                        : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                      className={`flex items-center gap-3 border-b border-black/[0.06] px-2 py-3.5 text-sm font-bold transition-colors ${isActive("/profile")
+                        ? "text-[#a85d37]"
+                        : "text-[#6f6b62] hover:text-[#1d1c19]"
                         }`}
                     >
-                      <UserIcon className="h-5 w-5" />
+                      <UserRound className="h-5 w-5" strokeWidth={1.8} />
                       Profile
                     </Link>
                   )}
@@ -480,37 +491,33 @@ const Header = () => {
                 <Link
                   to="/prime"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all ${
-                    isPrime
-                      ? "bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 border border-emerald-200"
-                      : "bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700 border border-amber-200"
-                  }`}
+                  className="flex items-center gap-3 rounded-2xl border border-[#a85d37]/15 bg-[#efe4d9] px-4 py-3 text-sm font-bold text-[#79462f] transition-colors hover:bg-[#e9dace]"
                 >
-                  {isPrime ? <CheckCircleIcon className="h-5 w-5" /> : <StarIcon className="h-5 w-5" />}
+                  {isPrime ? <BadgeCheck className="h-5 w-5" strokeWidth={1.8} /> : <Crown className="h-5 w-5" strokeWidth={1.8} />}
                   {isPrime ? "Prime Member" : "Get Prime"}
                 </Link>
 
                 {/* Mobile Actions */}
-                <div className="pt-4 border-t border-gray-100 grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3 border-t border-black/[0.07] pt-4">
                   <button
                     onClick={handleChatToggle}
-                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-sm font-bold shadow-lg"
+                    className="flex items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-black"
                   >
-                    <SparklesIcon className="h-4 w-4 text-amber-400" /> Ask AI
+                    <Sparkles className="h-4 w-4" strokeWidth={1.8} /> Ask VKart
                   </button>
 
                   {isAuthenticated ? (
                     <button
                       onClick={() => { setIsMobileMenuOpen(false); handleLogout(); }}
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-red-50 text-red-600 text-sm font-bold border border-red-100"
+                      className="flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#eee8df] px-4 py-3 text-sm font-bold text-[#75483b] transition-colors hover:bg-[#e6ddd2]"
                     >
-                      <LogoutIcon className="h-4 w-4" /> Logout
+                      <LogOut className="h-4 w-4" strokeWidth={1.8} /> Logout
                     </button>
                   ) : (
                     <Link
                       to="/login"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gray-900 text-white text-sm font-bold shadow-lg"
+                      className="flex items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-black"
                     >
                       Sign In
                     </Link>

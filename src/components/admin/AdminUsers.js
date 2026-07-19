@@ -25,10 +25,10 @@ const ADMIN_USERS_ENDPOINT = "/api/admin/users";
 
 // Semantic styles for badges
 const badgeStyles = {
-  twoFAOn: "bg-emerald-50 text-emerald-700 border-emerald-100 ring-emerald-500/30",
+  twoFAOn: "bg-[#e5e8df] text-[#59634f] border-[#59634f]/15 ring-[#59634f]/20",
   twoFAOff: "bg-slate-50 text-slate-500 border-slate-100 ring-slate-500/30",
-  blocked: "bg-red-50 text-red-700 border-red-100 ring-red-500/30",
-  active: "bg-blue-50 text-blue-700 border-blue-100 ring-blue-500/30",
+  blocked: "bg-[#eee2dc] text-[#75483b] border-[#75483b]/15 ring-[#75483b]/20",
+  active: "bg-[#ece8df] text-[#5f5a52] border-black/10 ring-black/10",
 };
 
 function avatarInitial(name, email) {
@@ -217,7 +217,7 @@ export default function AdminUsers() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50/50 p-4 sm:p-8 font-sans text-slate-800">
+    <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-7xl mx-auto space-y-6">
 
         {/* Toast */}
@@ -474,7 +474,7 @@ export default function AdminUsers() {
           <p className="text-sm text-slate-600">Permanently remove <span className="font-bold text-slate-900">{deleteUser.email}</span>? This cannot be undone.</p>
           <div className="mt-6 flex justify-end gap-2">
             <button onClick={() => setDeleteUser(null)} disabled={busyAction} className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">Cancel</button>
-            <button onClick={confirmDeleteUser} disabled={busyAction} className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-lg shadow-red-100">{busyAction ? "Deleting..." : "Delete User"}</button>
+            <button onClick={confirmDeleteUser} disabled={busyAction} className="rounded-full bg-[#75483b] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#60372e]">{busyAction ? "Deleting..." : "Delete User"}</button>
           </div>
         </Modal>
       )}
@@ -486,9 +486,9 @@ export default function AdminUsers() {
 
 function StatCard({ label, value, icon: Icon, color }) {
   const colors = {
-    blue: "text-blue-600 bg-blue-50",
-    emerald: "text-emerald-600 bg-emerald-50",
-    red: "text-red-600 bg-red-50"
+    blue: "text-[#5f5a52] bg-[#ece8df]",
+    emerald: "text-[#59634f] bg-[#e5e8df]",
+    red: "text-[#75483b] bg-[#eee2dc]"
   };
   return (
     <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">

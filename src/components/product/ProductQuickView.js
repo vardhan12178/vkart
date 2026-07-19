@@ -1,24 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { FaTimes, FaLayerGroup, FaCartPlus } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaArrowRight, FaCartPlus, FaTimes } from "react-icons/fa";
 import Stars from "../Stars";
 
-const formatPrice = (amount) => {
-    return new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        maximumFractionDigits: 0,
-    }).format(amount);
-};
+const formatPrice = (amount) => new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+}).format(amount);
 
 const ProductQuickView = ({ product, onClose, onAdd }) => {
     const [activeIdx, setActiveIdx] = useState(0);
-    const images = product?.images?.length ? product.images : [product?.thumbnail].filter(Boolean);
+    const images = product?.images?.length
+        ? product.images
+        : [product?.thumbnail].filter(Boolean);
 
     useEffect(() => {
-        if (!product) return;
+        if (!product) return undefined;
+        const previousOverflow = document.body.style.overflow;
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") onClose();
+        };
+
         document.body.style.overflow = "hidden";
-        return () => { document.body.style.overflow = "auto"; };
-    }, [product]);
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [product, onClose]);
+
+    useEffect(() => setActiveIdx(0), [product?._id]);
 
     if (!product) return null;
 
@@ -26,80 +39,121 @@ const ProductQuickView = ({ product, onClose, onAdd }) => {
     const mrp = product.discountPercentage
         ? price / (1 - product.discountPercentage / 100)
         : price * 1.2;
+    const saving = product.discountPercentage
+        ? Math.round(product.discountPercentage)
+        : 0;
+    const isAvailable = product.stock > 0;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onClick={onClose} />
-            <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-white shadow-2xl animate-scale-in flex flex-col md:flex-row max-h-[90vh]">
+        <div className="fixed inset-0 z-[110] flex items-end justify-center p-0 sm:items-center sm:p-5">
+            <button
+                type="button"
+                className="absolute inset-0 cursor-default bg-[#1d1c19]/48 backdrop-blur-[2px]"
+                onClick={onClose}
+                aria-label="Close product preview"
+                tabIndex={-1}
+            />
 
+            <section
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="quick-view-title"
+                className="relative flex max-h-[calc(100dvh-0.75rem)] w-full max-w-5xl flex-col overflow-y-auto rounded-t-[1.5rem] border border-black/[0.08] bg-[#fffdf8] shadow-[0_34px_100px_rgba(29,28,25,.28)] sm:max-h-[min(46rem,calc(100dvh-2.5rem))] sm:rounded-[1.5rem] md:grid md:grid-cols-[1.08fr_.92fr] md:overflow-hidden"
+            >
                 <button
+                    type="button"
                     onClick={onClose}
-                    className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur rounded-full hover:bg-gray-100 transition-colors"
+                    className="absolute right-4 top-4 z-20 grid h-10 w-10 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8]/90 text-[#6f6b62] backdrop-blur transition-colors hover:bg-[#eee8df] hover:text-[#1d1c19]"
+                    aria-label="Close product preview"
                 >
-                    <FaTimes size={18} className="text-gray-500" />
+                    <FaTimes size={15} />
                 </button>
 
-                <div className="w-full md:w-1/2 bg-gray-50 p-6 flex flex-col justify-between relative">
-                    <div className="flex-1 flex items-center justify-center relative">
-                        <img
-                            src={images[activeIdx]}
-                            alt={product.title}
-                            className="max-h-[350px] w-full object-contain mix-blend-multiply"
-                        />
-                        {product.discountPercentage && (
-                            <span className="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
-                                -{Math.round(product.discountPercentage)}%
+                <div className="flex min-h-[20rem] flex-col bg-[#ece8df] p-5 sm:p-7 md:min-h-[38rem]">
+                    <div className="flex items-center justify-between pr-12">
+                        <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#6f6b62]">
+                            A closer look
+                        </span>
+                        {saving > 0 && (
+                            <span className="rounded-full border border-[#a85d37]/18 bg-[#f3e9df] px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.08em] text-[#874f33]">
+                                Save {saving}%
                             </span>
                         )}
                     </div>
 
+                    <div className="flex min-h-[15rem] flex-1 items-center justify-center py-5">
+                        <img
+                            src={images[activeIdx]}
+                            alt={product.title}
+                            className="max-h-[19rem] w-full object-contain mix-blend-multiply md:max-h-[28rem]"
+                        />
+                    </div>
+
                     {images.length > 1 && (
-                        <div className="flex gap-3 overflow-x-auto py-4 px-2 justify-center scrollbar-hide">
+                        <div className="flex gap-2 overflow-x-auto pb-1">
                             {images.map((src, idx) => (
                                 <button
-                                    key={idx}
+                                    type="button"
+                                    key={`${src}-${idx}`}
                                     onClick={() => setActiveIdx(idx)}
-                                    className={`h-14 w-14 rounded-lg border-2 flex-shrink-0 overflow-hidden transition-all ${idx === activeIdx ? "border-gray-900" : "border-transparent opacity-60 hover:opacity-100"
-                                        }`}
+                                    className={`h-14 w-14 flex-shrink-0 overflow-hidden rounded-[0.8rem] border bg-[#fffdf8] p-1 transition-opacity ${idx === activeIdx
+                                        ? "border-[#1d1c19] opacity-100"
+                                        : "border-black/[0.08] opacity-55 hover:opacity-100"
+                                    }`}
+                                    aria-label={`View image ${idx + 1} of ${images.length}`}
+                                    aria-pressed={idx === activeIdx}
                                 >
-                                    <img src={src} alt="" className="h-full w-full object-cover bg-white" />
+                                    <img src={src} alt="" className="h-full w-full object-contain mix-blend-multiply" />
                                 </button>
                             ))}
                         </div>
                     )}
                 </div>
 
-                <div className="w-full md:w-1/2 p-8 overflow-y-auto bg-white">
-                    <div className="mb-2 text-gray-400 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-                        <FaLayerGroup /> {product.category}
-                    </div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">{product.title}</h2>
+                <div className="flex flex-col justify-center p-6 sm:p-9 md:overflow-y-auto md:p-10">
+                    <p className="mb-4 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#a85d37]">
+                        {product.category || "The collection"}
+                    </p>
+                    <h2 id="quick-view-title" className="font-editorial text-[2rem] font-normal leading-[1.02] tracking-[-0.035em] text-[#1d1c19] sm:text-[2.55rem]">
+                        {product.title}
+                    </h2>
 
-                    <div className="flex items-center gap-3 mb-6">
+                    <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-black/[0.08] pb-5">
                         <Stars value={product.rating} />
-                        <span className="text-xs text-gray-300">|</span>
-                        <span className={`text-xs font-bold ${product.stock > 0 ? 'text-green-600' : 'text-red-500'}`}>
-                            {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
+                        <span className="h-3 w-px bg-black/10" aria-hidden="true" />
+                        <span className={`text-xs font-bold ${isAvailable ? "text-[#59634f]" : "text-[#75483b]"}`}>
+                            {isAvailable ? "Ready to ship" : "Currently unavailable"}
                         </span>
                     </div>
 
-                    <div className="flex items-baseline gap-3 mb-6">
-                        <span className="text-3xl font-bold text-gray-900">{formatPrice(price)}</span>
-                        <span className="text-lg text-gray-300 line-through">{formatPrice(mrp)}</span>
+                    <div className="mt-6 flex items-baseline gap-3">
+                        <span className="text-3xl font-extrabold tracking-[-0.04em] text-[#1d1c19]">{formatPrice(price)}</span>
+                        <span className="text-sm text-[#9b958b] line-through">{formatPrice(mrp)}</span>
                     </div>
 
-                    <p className="text-sm text-gray-500 leading-relaxed mb-8 line-clamp-4">{product.description}</p>
+                    <p className="mt-5 line-clamp-4 text-sm leading-6 text-[#6f6b62]">
+                        {product.description}
+                    </p>
 
-                    <div className="mt-auto">
+                    <div className="mt-8 space-y-3">
                         <button
+                            type="button"
                             onClick={() => onAdd(product)}
-                            className="w-full py-3.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-lg hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                            disabled={!isAvailable}
+                            className="flex w-full items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-5 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:bg-[#a8a299]"
                         >
-                            <FaCartPlus /> Add to Cart
+                            <FaCartPlus aria-hidden="true" /> {isAvailable ? "Add to bag" : "Unavailable"}
                         </button>
+                        <Link
+                            to={`/product/${product._id}`}
+                            onClick={onClose}
+                            className="flex w-full items-center justify-center gap-2 rounded-full border border-black/[0.1] px-5 py-3.5 text-sm font-bold text-[#4f4b44] transition-colors hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                        >
+                            View full details <FaArrowRight size={12} aria-hidden="true" />
+                        </Link>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
