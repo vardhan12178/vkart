@@ -85,7 +85,7 @@ export default function BlogIndex() {
             <BookOpen size={12} /> The Journal
           </div>
           <h1 className="font-editorial text-6xl sm:text-8xl font-normal text-[#1d1c19] tracking-[-0.045em] mb-7 leading-[0.9]">
-            The VKart edit.
+            The VKart Curation.
           </h1>
           <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
             Useful guides, considered recommendations, and a closer look at the products shaping everyday life.

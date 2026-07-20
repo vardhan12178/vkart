@@ -226,7 +226,7 @@ const Compare = () => {
                               {/* Remove Button */}
                               <button 
                                 onClick={() => removeId(id)}
-                                className="absolute -top-3 -right-3 z-10 h-8 w-8 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0"
+                                className="absolute -top-3 -right-3 z-10 h-8 w-8 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition-all opacity-100 translate-y-0 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-2 lg:group-hover:translate-y-0"
                               >
                                 <FaTimes size={12} />
                               </button>

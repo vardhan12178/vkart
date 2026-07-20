@@ -54,6 +54,7 @@ const Header = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [hasActiveSale, setHasActiveSale] = useState(false);
   const suggestRef = useRef(null);
+  const suggestRefMobile = useRef(null);
   const debounceRef = useRef(null);
 
   // --- Effects ---
@@ -87,7 +88,9 @@ const Header = () => {
   // 3. Close suggestions on outside click
   useEffect(() => {
     const handler = (e) => {
-      if (suggestRef.current && !suggestRef.current.contains(e.target)) {
+      const clickOutsideDesktop = suggestRef.current && !suggestRef.current.contains(e.target);
+      const clickOutsideMobile = suggestRefMobile.current && !suggestRefMobile.current.contains(e.target);
+      if (clickOutsideDesktop && clickOutsideMobile) {
         setShowSuggestions(false);
       }
     };
@@ -424,16 +427,59 @@ const Header = () => {
                 exit={{ height: 0, opacity: 0 }}
                 className="md:hidden overflow-hidden pb-4"
               >
-                <form onSubmit={handleSearch} className="relative">
+                <form onSubmit={handleSearch} className="relative" ref={suggestRefMobile}>
                   <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" strokeWidth={1.8} />
                   <input
                     type="text"
                     autoFocus
                     placeholder="Search products..."
                     value={searchInput}
-                    onChange={(e) => setSearchInput(e.target.value)}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      setSearchInput(val);
+                      if (location.pathname === "/products") {
+                        navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
+                      }
+                      clearTimeout(debounceRef.current);
+                      debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
+                    }}
+                    onFocus={() => { if (suggestions.length) setShowSuggestions(true); }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        navigate(`/products?q=${encodeURIComponent(searchInput)}`);
+                        setShowSearch(false);
+                        setShowSuggestions(false);
+                      }
+                    }}
                     className="w-full rounded-full border border-black/10 bg-[#f1ede5] py-3 pl-10 pr-4 text-sm font-medium text-[#1d1c19] placeholder:text-[#8b867d] focus:border-[#a85d37]/40 focus:bg-[#fffdf8] focus:ring-0"
                   />
+                  {showSuggestions && suggestions.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">
+                      {suggestions.map((s) => (
+                        <button
+                          key={s._id}
+                          onClick={() => {
+                            navigate(`/product/${s._id}`);
+                            setShowSuggestions(false);
+                            setSearchInput("");
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
+                        >
+                          {s.thumbnail && (
+                            <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
+                          )}
+                          <div className="min-w-0 flex-1">
+                            <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
+                            <div className="text-xs text-gray-500">
+                              {s.category} — ₹{Math.round(s.price)}
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </form>
               </motion.div>
             )}

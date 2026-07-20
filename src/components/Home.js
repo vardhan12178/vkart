@@ -85,7 +85,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
 
   return (
     <article className="group relative min-w-0">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#f1eee7] border border-black/[0.05]">
+      <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-[#f1eee7] border border-black/[0.05]">
           <img
             src={src}
             alt={product.title}
@@ -167,7 +167,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
       <button
         type="button"
         onClick={() => onAdd(product)}
-        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 py-3 text-xs font-bold text-[#1d1c19] md:hidden"
+        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 py-3 text-xs font-bold text-white transition-colors hover:bg-black md:hidden"
       >
         <ShoppingBag size={15} /> Add to bag
       </button>
@@ -315,7 +315,7 @@ export default function Home() {
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.23em] text-[#5e594f] sm:text-[10px]"
             >
-              <span className="h-px w-7 bg-[#9b5330]" /> The VKart edit · 2026
+              <span className="h-px w-7 bg-[#9b5330]" /> The VKart Curation · 2026
             </motion.div>
 
             <motion.h1
@@ -363,7 +363,7 @@ export default function Home() {
 
           <div className="relative h-[18rem] overflow-hidden border-t border-black/[0.06] sm:h-[25rem] md:h-[31rem]">
             <img
-              src="/vkart-editorial-hero.png"
+              src="/vkart-editorial-hero.webp"
               alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
               className="h-full w-full object-cover object-[72%_center] sm:object-[68%_center]"
               fetchPriority="high"
@@ -378,7 +378,7 @@ export default function Home() {
         {/* Desktop hero keeps the wide editorial composition. */}
         <div className="editorial-grain relative mx-auto hidden min-h-[calc(100vh-8rem)] max-w-[1500px] overflow-hidden rounded-[1.75rem] bg-[#e8e0d4] lg:block">
           <img
-            src="/vkart-editorial-hero.png"
+            src="/vkart-editorial-hero.webp"
             alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
             className="absolute inset-0 h-full w-full object-cover object-center"
             fetchPriority="high"
@@ -394,7 +394,7 @@ export default function Home() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#555148]"
             >
-              <span className="h-px w-8 bg-[#8e5c3f]" /> The VKart edit · 2026
+              <span className="h-px w-8 bg-[#8e5c3f]" /> The VKart Curation · 2026
             </motion.div>
 
             <div className="max-w-[690px] pb-10 pt-20">

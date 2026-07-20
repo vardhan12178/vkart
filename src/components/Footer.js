@@ -77,7 +77,7 @@ export default function Footer() {
               </span>
               <div>
                 <p className="text-sm font-bold">You’re on the list.</p>
-                <p className="mt-1 text-xs text-white/45">Watch your inbox for the next VKart edit.</p>
+                <p className="mt-1 text-xs text-white/45">Watch your inbox for the next VKart selection.</p>
               </div>
             </div>
           ) : (

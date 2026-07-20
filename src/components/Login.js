@@ -332,19 +332,13 @@ export default function Login() {
               className="relative z-10 flex-1 flex items-center justify-center py-8"
             >
               <img
-                src="/vkart-editorial-hero.png"
+                src="/vkart-editorial-hero.webp"
                 alt="A curated selection of VKart products"
                 className="h-[310px] xl:h-[380px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />
             </motion.div>
 
-            <div className="relative z-10 backdrop-blur-md bg-white/30 p-4 rounded-2xl border border-white/50 shadow-sm">
-              {/* <p className="text-sm font-medium text-gray-800">"The best shopping experience I've had in years. Fast, reliable, and premium."</p>
-                <div className="flex items-center gap-2 mt-2">
-                    <div className="h-6 w-6 rounded-full bg-gray-900 flex items-center justify-center text-[10px] text-white font-bold">A</div>
-                    <span className="text-xs text-gray-500">Alex M. — Verified Buyer</span>
-                </div> */}
-            </div>
+
           </div>
 
           {/* --- RIGHT PANEL (Form) --- */}
@@ -364,7 +358,7 @@ export default function Login() {
             >
               <motion.div variants={fadeInUp} className="text-center mb-6 sm:mb-8">
                 <h1 className="font-editorial text-4xl sm:text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">Welcome back.</h1>
-                <p className="mt-3 text-sm text-[#777269]">Sign in to continue your VKart edit.</p>
+                <p className="mt-3 text-sm text-[#777269]">Sign in to continue your shopping journey.</p>
               </motion.div>
 
               {/* Toast / Error Area */}
@@ -373,8 +367,8 @@ export default function Login() {
               </AnimatePresence>
 
               {/* Google Button */}
-              <motion.div variants={fadeInUp} className="mb-5 sm:mb-6 flex justify-center">
-                <div className="w-full max-w-[380px] relative flex justify-center transform transition-transform hover:scale-[1.01]">
+              <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">
+                <div className="w-full relative flex justify-center transform transition-transform hover:scale-[1.01]">
                   {googleLoading && (
                     <div className="absolute inset-0 z-10 grid place-items-center bg-white/60 backdrop-blur-[2px] rounded-lg">
                       <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />

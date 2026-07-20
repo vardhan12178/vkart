@@ -354,7 +354,7 @@ export default function Register() {
               className="relative z-10 flex-1 flex items-center justify-center py-8"
             >
               <img
-                src="/vkart-editorial-hero.png"
+                src="/vkart-editorial-hero.webp"
                 alt="A curated selection of VKart products"
                 className="h-[300px] xl:h-[360px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />

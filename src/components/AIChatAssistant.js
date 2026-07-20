@@ -389,12 +389,14 @@ const AIChatAssistant = () => {
   // 🚀 MAIN RENDER
   // ---------------------------------------------------------
 
+  const hideToggle = ["/cart", "/checkout"].some(path => location.pathname.startsWith(path));
+
   return (
     <div className="premium-assistant fixed inset-0 z-[100] pointer-events-none flex items-end justify-center md:block md:pb-0">
 
       {/* 1. Floating Toggle Button */}
       <AnimatePresence>
-        {!isOpen && (
+        {!isOpen && !hideToggle && (
           <motion.button
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

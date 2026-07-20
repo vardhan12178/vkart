@@ -232,7 +232,7 @@ export default function AdminLogin({ setIsAdmin }) {
               className="relative z-10 flex-1 flex items-center justify-center"
             >
               <img
-                src="/vkart-editorial-hero.png"
+                src="/vkart-editorial-hero.webp"
                 alt="VKart product collection"
                 className="h-[360px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />

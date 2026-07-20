@@ -463,6 +463,20 @@ export default function ProductCard() {
                     focusOnSelect={true}
                     arrows={false}
                     className="thumbnail-slider"
+                    responsive={[
+                      {
+                        breakpoint: 768,
+                        settings: {
+                          slidesToShow: Math.min(imgs.length, 4)
+                        }
+                      },
+                      {
+                        breakpoint: 480,
+                        settings: {
+                          slidesToShow: Math.min(imgs.length, 3)
+                        }
+                      }
+                    ]}
                   >
                     {imgs.map((img, i) => (
                       <div key={i} className="px-1 md:px-2 cursor-pointer outline-none">

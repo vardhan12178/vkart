@@ -779,6 +779,7 @@
   }
 
   .premium-assistant-toggle {
+    position: fixed !important;
     right: 1rem !important;
     bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
     width: 3.25rem;

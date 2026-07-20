@@ -447,7 +447,11 @@ export default function Products() {
                     </div>
                   </div>
                   <span className="inline-flex items-center gap-2 rounded-full border border-black/[0.09] bg-[#fffdf8] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#5d584f]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#59634f]" /> Live now
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59634f] opacity-75" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#59634f]" />
+                    </span>
+                    <span>Live now</span>
                   </span>
                 </div>
               </div>
@@ -528,7 +532,7 @@ export default function Products() {
 
                             <button
                               onClick={() => setQuickView(p)}
-                              className="w-8 h-8 rounded-full bg-white/90 text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                              className="w-8 h-8 rounded-full bg-white/90 text-gray-900 lg:text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-0 lg:translate-x-10 lg:opacity-100 lg:group-hover:translate-x-0 lg:group-hover:opacity-100"
                               aria-label={`Quick view ${p.title}`}
                             >
                               <FaExpand size={10} />
@@ -602,8 +606,8 @@ export default function Products() {
       </div>
 
       {compare.length > 0 && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-up">
-          <div className="flex items-center gap-4 rounded-full border border-white/10 bg-[#1d1c19] px-5 py-2.5 text-white shadow-[0_18px_45px_rgba(29,28,25,.22)]">
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-up w-[calc(100vw-2rem)] sm:w-auto">
+          <div className="flex items-center justify-between sm:justify-start gap-4 rounded-full border border-white/10 bg-[#1d1c19] px-5 py-2.5 text-white shadow-[0_18px_45px_rgba(29,28,25,.22)] w-full">
             <div className="flex items-center gap-2">
               <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#a85d37] px-1 text-[10px] font-bold text-white">{compare.length}</span>
               <span className="text-xs font-medium text-gray-300">Selected</span>
