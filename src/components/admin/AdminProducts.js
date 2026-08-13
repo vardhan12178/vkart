@@ -28,6 +28,7 @@ import {
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
 
 // --- CSS for Custom Scrollbars ---
 const customScrollStyle = `
@@ -50,6 +51,7 @@ const customScrollStyle = `
 // --- Main Component ---
 export default function AdminProducts() {
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("products");
 
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all"); // 'all', 'active', 'inactive'
@@ -212,13 +214,15 @@ export default function AdminProducts() {
             </p>
           </div>
 
-          <button
-            onClick={openAdd}
-            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white shadow-lg shadow-slate-200 hover:bg-slate-800 hover:scale-[1.02] transition-all duration-200 active:scale-95"
-          >
-            <PlusIcon className="h-5 w-5 text-white/90 transition-colors" />
-            <span className="font-semibold text-sm">Add Product</span>
-          </button>
+          {canWrite && (
+            <button
+              onClick={openAdd}
+              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white shadow-lg shadow-slate-200 hover:bg-slate-800 hover:scale-[1.02] transition-all duration-200 active:scale-95"
+            >
+              <PlusIcon className="h-5 w-5 text-white/90 transition-colors" />
+              <span className="font-semibold text-sm">Add Product</span>
+            </button>
+          )}
         </div>
 
         {/* Stats Cards */}
@@ -337,7 +341,7 @@ export default function AdminProducts() {
                       <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Price</th>
                       <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Stock</th>
                       <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
-                      <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Action</th>
+                      {canWrite && <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Action</th>}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50 bg-white">
@@ -394,6 +398,7 @@ export default function AdminProducts() {
                             </span>
                           </td>
 
+                          {canWrite && (
                           <td className="px-6 py-4 text-right">
                             <button
                               onClick={() => openEdit(p)}
@@ -403,6 +408,7 @@ export default function AdminProducts() {
                               <PencilAltIcon className="h-5 w-5" />
                             </button>
                           </td>
+                          )}
                         </tr>
                       );
                     })}

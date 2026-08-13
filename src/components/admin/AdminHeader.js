@@ -19,8 +19,10 @@ import {
   UserAddIcon,
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
+import { canAccess } from "../../utils/adminPermissions";
+import { ROLE_LABELS } from "../../constants/adminRoles";
 
-export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
+export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adminRole, permissions }) {
   const queryClient = useQueryClient();
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -38,6 +40,8 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
   const adminEmail = adminProfile?.email || "admin@vkart.com";
   const adminAvatar = adminProfile?.profileImage;
   const adminInitials = adminName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || "AD";
+  const roleLabel = ROLE_LABELS[adminRole] || "Team Member";
+  const canReachSettings = canAccess(adminRole, permissions, "settings", "read");
 
   // --- Notification Logic ---
 
@@ -368,12 +372,6 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
                       </div>
                     )}
                   </div>
-
-                  <div className="border-t border-slate-50 pt-2 pb-1 px-2">
-                    <button className="w-full py-2 text-xs font-bold text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
-                      View All Notifications
-                    </button>
-                  </div>
                 </div>
               )}
             </div>
@@ -408,7 +406,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
 
                 <div className="hidden md:flex flex-col items-start text-left">
                   <span className="text-sm font-bold text-slate-800 leading-none max-w-[100px] truncate">{adminName}</span>
-                  <span className="text-[10px] font-medium text-slate-500 mt-0.5">Super Admin</span>
+                  <span className="text-[10px] font-medium text-slate-500 mt-0.5">{roleLabel}</span>
                 </div>
 
                 <ChevronDownIcon
@@ -426,21 +424,23 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
 
                   <div className="py-2 px-2">
                     <Link
-                      to="/admin/settings"
+                      to="/admin/profile"
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-xl transition-colors"
                       onClick={() => setProfileOpen(false)}
                     >
                       <UserIcon className="w-5 h-5 text-slate-400" />
                       My Profile
                     </Link>
-                    <Link
-                      to="/admin/settings"
-                      className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-xl transition-colors"
-                      onClick={() => setProfileOpen(false)}
-                    >
-                      <CogIcon className="w-5 h-5 text-slate-400" />
-                      Settings
-                    </Link>
+                    {canReachSettings && (
+                      <Link
+                        to="/admin/settings"
+                        className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-xl transition-colors"
+                        onClick={() => setProfileOpen(false)}
+                      >
+                        <CogIcon className="w-5 h-5 text-slate-400" />
+                        Settings
+                      </Link>
+                    )}
                   </div>
 
                   <div className="border-t border-slate-100 my-1 px-2 pb-1 pt-1">
@@ -492,20 +492,6 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile }) {
                 aria-label="Close search"
               >
                 <XIcon className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Quick Search Suggestions */}
-            <div className="px-4 pb-4 space-y-2">
-              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider px-2">Quick Search</p>
-              <button className="w-full text-left px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
-                Recent orders
-              </button>
-              <button className="w-full text-left px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
-                Popular products
-              </button>
-              <button className="w-full text-left px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
-                Customer list
               </button>
             </div>
           </div>

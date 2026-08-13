@@ -20,6 +20,9 @@ import {
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
+import { avatarInitial } from "./ui/avatarInitial";
+import Modal from "./ui/Modal";
 
 const ADMIN_USERS_ENDPOINT = "/api/admin/users";
 
@@ -31,14 +34,9 @@ const badgeStyles = {
   active: "bg-[#ece8df] text-[#5f5a52] border-black/10 ring-black/10",
 };
 
-function avatarInitial(name, email) {
-  const src = (name || email || "").trim();
-  if (!src) return "?";
-  return src.charAt(0).toUpperCase();
-}
-
 export default function AdminUsers() {
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("users");
 
   const [search, setSearch] = useState("");
   const [filterTwoFA, setFilterTwoFA] = useState("all"); // all | on | off
@@ -89,12 +87,7 @@ export default function AdminUsers() {
   });
 
   const disable2faMutation = useMutation({
-    mutationFn: (userId) => axiosInstance.patch(`/api/admin/users/${userId}/2fa/disable`),
-    onSuccess: () => syncUsers(),
-  });
-
-  const toggleAdminMutation = useMutation({
-    mutationFn: (userId) => axiosInstance.patch(`/api/admin/users/${userId}/role`),
+    mutationFn: (userId) => axiosInstance.patch(`/api/admin/users/${userId}/disable-2fa`),
     onSuccess: () => syncUsers(),
   });
 
@@ -110,7 +103,6 @@ export default function AdminUsers() {
   const busyAction =
     toggleBlockMutation.isPending ||
     disable2faMutation.isPending ||
-    toggleAdminMutation.isPending ||
     resetPasswordMutation.isPending ||
     deleteUserMutation.isPending;
 
@@ -189,13 +181,6 @@ export default function AdminUsers() {
       await disable2faMutation.mutateAsync(user._id);
       showToast("2FA Disabled.");
     } catch (err) { showToast("Failed to disable 2FA.", "error"); }
-  }
-
-  async function handleToggleAdmin(user) {
-    try {
-      await toggleAdminMutation.mutateAsync(user._id);
-      showToast(user.roles?.includes("admin") ? "Admin removed." : "Admin granted.");
-    } catch (err) { showToast("Role update failed.", "error"); }
   }
 
   async function confirmResetPassword() {
@@ -324,7 +309,7 @@ export default function AdminUsers() {
                       <Th>Security</Th>
                       <Th>Status</Th>
                       <Th onClick={() => toggleSort("createdAt")} active={sortKey === "createdAt"} dir={sortDir}>Joined</Th>
-                      <th className="px-6 py-4 text-right text-xs font-semibold text-slate-400 uppercase">Actions</th>
+                      {canWrite && <th className="px-6 py-4 text-right text-xs font-semibold text-slate-400 uppercase">Actions</th>}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50 bg-white">
@@ -372,6 +357,7 @@ export default function AdminUsers() {
                           <td className="px-6 py-4 text-slate-500 text-xs tabular-nums">
                             {u.createdAt ? new Date(u.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "—"}
                           </td>
+                          {canWrite && (
                           <td className="px-6 py-4 text-right relative">
                             <button
                               onClick={() => setMenuOpenId(menuOpenId === u._id ? null : u._id)}
@@ -391,7 +377,6 @@ export default function AdminUsers() {
                                     {u.twoFactorEnabled && (
                                       <MenuItem onClick={() => { handleDisable2FA(u); setMenuOpenId(null); }} icon={LockClosedIcon} label="Disable 2FA" />
                                     )}
-                                    <MenuItem onClick={() => { handleToggleAdmin(u); setMenuOpenId(null); }} icon={ShieldCheckIcon} label={isAdminRole ? "Remove Admin" : "Make Admin"} />
                                     <div className="h-px bg-slate-100 my-1"></div>
                                     <MenuItem onClick={() => { setDeleteUser(u); setMenuOpenId(null); }} icon={TrashIcon} label="Delete Account" danger />
                                   </div>
@@ -399,6 +384,7 @@ export default function AdminUsers() {
                               </>
                             )}
                           </td>
+                          )}
                         </tr>
                       )
                     })}
@@ -427,6 +413,7 @@ export default function AdminUsers() {
                       <div className="flex gap-2">
                         {u.twoFactorEnabled && <span className="text-[10px] font-bold bg-emerald-50 text-emerald-600 px-2 py-1 rounded-md border border-emerald-100">2FA</span>}
                       </div>
+                      {canWrite && (
                       <div className="flex gap-3">
                         <button onClick={() => handleToggleBlock(u)} className="text-xs font-medium text-slate-500 hover:text-slate-900">
                           {u.blocked ? "Unblock" : "Block"}
@@ -438,6 +425,7 @@ export default function AdminUsers() {
                           Delete
                         </button>
                       </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -541,22 +529,5 @@ function MenuItem({ onClick, icon: Icon, label, danger }) {
       <Icon className="h-4 w-4" />
       {label}
     </button>
-  );
-}
-
-function Modal({ title, icon: Icon, children, onClose, danger }) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-      <div className="absolute inset-0 bg-slate-900/20 backdrop-blur-sm transition-opacity" onClick={onClose}></div>
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 animate-in zoom-in-95 duration-200">
-        <div className="flex items-center gap-3 mb-4">
-          <div className={`h-10 w-10 rounded-full flex items-center justify-center ${danger ? 'bg-red-50 text-red-600' : 'bg-slate-50 text-slate-600'}`}>
-            <Icon className="h-5 w-5" />
-          </div>
-          <h3 className="text-lg font-bold text-slate-900">{title}</h3>
-        </div>
-        {children}
-      </div>
-    </div>
   );
 }

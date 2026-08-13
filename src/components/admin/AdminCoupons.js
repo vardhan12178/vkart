@@ -11,6 +11,7 @@ import {
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
 
 const empty = {
   code: "",
@@ -29,6 +30,7 @@ const empty = {
 
 export default function AdminCoupons() {
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("coupons");
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(empty);
@@ -176,9 +178,11 @@ export default function AdminCoupons() {
             <button onClick={() => couponsQuery.refetch()} className="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-100 transition">
               <RefreshIcon className={`h-4 w-4 text-slate-600 ${couponsQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
-            <button onClick={openCreate} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition shadow-sm">
-              <PlusIcon className="h-4 w-4" /> New Coupon
-            </button>
+            {canWrite && (
+              <button onClick={openCreate} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition shadow-sm">
+                <PlusIcon className="h-4 w-4" /> New Coupon
+              </button>
+            )}
           </div>
         </div>
 
@@ -295,7 +299,7 @@ export default function AdminCoupons() {
                     <th className="px-5 py-4">Used</th>
                     <th className="px-5 py-4">Valid Until</th>
                     <th className="px-5 py-4">Status</th>
-                    <th className="px-5 py-4 text-right">Actions</th>
+                    {canWrite && <th className="px-5 py-4 text-right">Actions</th>}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -318,21 +322,39 @@ export default function AdminCoupons() {
                         <span className={isExpired(c.validTo) ? "text-red-500" : ""}>{fmt(c.validTo)}</span>
                       </td>
                       <td className="px-5 py-4">
-                        <button onClick={() => toggleActive(c)} className="inline-flex items-center gap-1.5">
-                          {c.isActive && !isExpired(c.validTo) ? (
-                            <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                              <CheckCircleIcon className="h-3.5 w-3.5" /> Active
-                            </span>
-                          ) : (
-                            <span className="flex items-center gap-1 text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">
-                              <XCircleIcon className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
-                            </span>
-                          )}
-                          {c.isPublic && (
-                            <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Public</span>
-                          )}
-                        </button>
+                        {canWrite ? (
+                          <button onClick={() => toggleActive(c)} className="inline-flex items-center gap-1.5">
+                            {c.isActive && !isExpired(c.validTo) ? (
+                              <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
+                                <CheckCircleIcon className="h-3.5 w-3.5" /> Active
+                              </span>
+                            ) : (
+                              <span className="flex items-center gap-1 text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">
+                                <XCircleIcon className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                              </span>
+                            )}
+                            {c.isPublic && (
+                              <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Public</span>
+                            )}
+                          </button>
+                        ) : (
+                          <div className="inline-flex items-center gap-1.5">
+                            {c.isActive && !isExpired(c.validTo) ? (
+                              <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
+                                <CheckCircleIcon className="h-3.5 w-3.5" /> Active
+                              </span>
+                            ) : (
+                              <span className="flex items-center gap-1 text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">
+                                <XCircleIcon className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                              </span>
+                            )}
+                            {c.isPublic && (
+                              <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Public</span>
+                            )}
+                          </div>
+                        )}
                       </td>
+                      {canWrite && (
                       <td className="px-5 py-4">
                         <div className="flex items-center justify-end gap-1.5">
                           <button onClick={() => openEdit(c)} className="p-2 rounded-lg hover:bg-slate-100 transition">
@@ -343,6 +365,7 @@ export default function AdminCoupons() {
                           </button>
                         </div>
                       </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>

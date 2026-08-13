@@ -3,9 +3,11 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
 import { EyeIcon, EyeOffIcon, TrashIcon, RefreshIcon, ExclamationCircleIcon } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
 
 export default function AdminReviews() {
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("reviews");
 
   const reviewsQuery = useQuery({
     queryKey: qk.admin.reviews,
@@ -83,7 +85,7 @@ export default function AdminReviews() {
                 <tr>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-slate-500 uppercase">Product</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-slate-500 uppercase">Review</th>
-                  <th className="px-6 py-4 text-right text-xs font-semibold text-slate-500 uppercase">Actions</th>
+                  {canWrite && <th className="px-6 py-4 text-right text-xs font-semibold text-slate-500 uppercase">Actions</th>}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -96,6 +98,7 @@ export default function AdminReviews() {
                         {r.review.reviewerName || "Anonymous"} • {r.review.rating}★
                       </div>
                     </td>
+                    {canWrite && (
                     <td className="px-6 py-4 text-right">
                       <button
                         onClick={() => toggle(r)}
@@ -112,6 +115,7 @@ export default function AdminReviews() {
                         Delete
                       </button>
                     </td>
+                    )}
                   </tr>
                 ))}
               </tbody>

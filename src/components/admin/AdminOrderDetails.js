@@ -23,6 +23,7 @@ import {
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
 
 const STAGES = [
   "PLACED",
@@ -59,6 +60,7 @@ export default function AdminOrderDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("orders");
 
   const [toast, setToast] = useState({ type: "", message: "" });
   const apiBase =
@@ -390,6 +392,7 @@ export default function AdminOrderDetails() {
               </div>
 
               {!terminal ? (
+                canWrite ? (
                 <div className="flex flex-col sm:flex-row gap-4">
                   {/* Primary Action: The Next Logical Step */}
                   {nextLogicalStage && (
@@ -423,6 +426,13 @@ export default function AdminOrderDetails() {
                     </button>
                   </div>
                 </div>
+                ) : (
+                  <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                    <p className="text-slate-500 font-medium text-sm">
+                      You have read-only access and cannot modify this order.
+                    </p>
+                  </div>
+                )
               ) : (
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
                   <p className="text-slate-500 font-medium text-sm">
@@ -646,6 +656,7 @@ export default function AdminOrderDetails() {
             </div>
           </div>
 
+          {canWrite && (
           <div className="mt-6 flex flex-wrap gap-3">
             {["APPROVED", "PICKED", "RECEIVED", "REJECTED", "CLOSED"].map((s) => (
               <button
@@ -658,7 +669,9 @@ export default function AdminOrderDetails() {
               </button>
             ))}
           </div>
+          )}
 
+          {canWrite && (
           <div className="mt-4 flex flex-wrap gap-3">
             <button
               onClick={() => initiateRefund("WALLET")}
@@ -684,6 +697,7 @@ export default function AdminOrderDetails() {
               </button>
             )}
           </div>
+          )}
         </div>
       </div>
     </div>

@@ -13,8 +13,10 @@ import {
   Star,
   Tag,
   Users,
+  UsersRound,
   Zap,
 } from "lucide-react";
+import { canAccess } from "../../utils/adminPermissions";
 
 export default function AdminSidebar({
   collapsed,
@@ -22,20 +24,27 @@ export default function AdminSidebar({
   mobileOpen,
   setMobileOpen,
   onLogout,
+  adminRole,
+  permissions,
 }) {
   const navigate = useNavigate();
 
-  const navLinks = [
-    { name: "Dashboard", icon: LayoutDashboard, path: "/admin/dashboard" },
-    { name: "Products", icon: Package, path: "/admin/products" },
-    { name: "Orders", icon: ClipboardList, path: "/admin/orders" },
-    { name: "Reviews", icon: Star, path: "/admin/reviews" },
-    { name: "Coupons", icon: Tag, path: "/admin/coupons" },
-    { name: "Sales", icon: Zap, path: "/admin/sales" },
-    { name: "Membership", icon: Sparkles, path: "/admin/membership" },
-    { name: "Users", icon: Users, path: "/admin/users" },
-    { name: "Settings", icon: Settings, path: "/admin/settings" },
+  const allNavLinks = [
+    { name: "Dashboard", icon: LayoutDashboard, path: "/admin/dashboard", module: null },
+    { name: "Products", icon: Package, path: "/admin/products", module: "products" },
+    { name: "Orders", icon: ClipboardList, path: "/admin/orders", module: "orders" },
+    { name: "Reviews", icon: Star, path: "/admin/reviews", module: "reviews" },
+    { name: "Coupons", icon: Tag, path: "/admin/coupons", module: "coupons" },
+    { name: "Sales", icon: Zap, path: "/admin/sales", module: "sales" },
+    { name: "Membership", icon: Sparkles, path: "/admin/membership", module: "membership" },
+    { name: "Users", icon: Users, path: "/admin/users", module: "users" },
+    { name: "Employees", icon: UsersRound, path: "/admin/employees", module: "employees" },
+    { name: "Settings", icon: Settings, path: "/admin/settings", module: "settings" },
   ];
+
+  const navLinks = allNavLinks.filter((link) =>
+    canAccess(adminRole, permissions, link.module, "read")
+  );
 
   return (
     <>

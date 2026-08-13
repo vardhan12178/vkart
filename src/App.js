@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import LoadingSpinner from "./components/LoadingSpinner";
 import NotificationSocket from "./components/NotificationSocket";
 import RouteSeo from "./seo/RouteSeo";
+import RequireModule from "./components/admin/RequireModule";
 import { setAuthState } from "./redux/authSlice";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { qk } from "./query/queryKeys";
@@ -58,6 +59,8 @@ const AdminReviews = lazy(() => import("./components/admin/AdminReviews"));
 const AdminCoupons = lazy(() => import("./components/admin/AdminCoupons"));
 const AdminSales = lazy(() => import("./components/admin/AdminSales"));
 const AdminMembership = lazy(() => import("./components/admin/AdminMembership"));
+const AdminEmployees = lazy(() => import("./components/admin/AdminEmployees"));
+const AdminProfile = lazy(() => import("./components/admin/AdminProfile"));
 
 const userScopedKeys = [
   qk.profile.root,
@@ -225,15 +228,17 @@ const App = () => {
               <Route path="/admin" element={isAdmin ? <AdminLayout setIsAdmin={setIsAdmin} /> : <Navigate to="/admin/login" />}>
                 <Route index element={<Navigate to="/admin/dashboard" replace />} />
                 <Route path="dashboard" element={<AdminDashboard />} />
-                <Route path="products" element={<AdminProducts />} />
-                <Route path="orders" element={<AdminOrders />} />
-                <Route path="orders/:id" element={<AdminOrderDetails />} />
-                <Route path="users" element={<AdminUsers />} />
-                <Route path="reviews" element={<AdminReviews />} />
-                <Route path="coupons" element={<AdminCoupons />} />
-                <Route path="sales" element={<AdminSales />} />
-                <Route path="membership" element={<AdminMembership />} />
-                <Route path="settings" element={<AdminSettings />} />
+                <Route path="profile" element={<AdminProfile />} />
+                <Route path="products" element={<RequireModule module="products"><AdminProducts /></RequireModule>} />
+                <Route path="orders" element={<RequireModule module="orders"><AdminOrders /></RequireModule>} />
+                <Route path="orders/:id" element={<RequireModule module="orders"><AdminOrderDetails /></RequireModule>} />
+                <Route path="users" element={<RequireModule module="users"><AdminUsers /></RequireModule>} />
+                <Route path="reviews" element={<RequireModule module="reviews"><AdminReviews /></RequireModule>} />
+                <Route path="coupons" element={<RequireModule module="coupons"><AdminCoupons /></RequireModule>} />
+                <Route path="sales" element={<RequireModule module="sales"><AdminSales /></RequireModule>} />
+                <Route path="membership" element={<RequireModule module="membership"><AdminMembership /></RequireModule>} />
+                <Route path="employees" element={<RequireModule module="employees"><AdminEmployees /></RequireModule>} />
+                <Route path="settings" element={<RequireModule module="settings"><AdminSettings /></RequireModule>} />
               </Route>
 
               {/* Error / 404 */}

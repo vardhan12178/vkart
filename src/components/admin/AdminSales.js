@@ -10,6 +10,7 @@ import {
   XCircleIcon,
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
 
 const emptySale = {
   name: "",
@@ -26,6 +27,7 @@ const toLocal = (iso) => (iso ? new Date(iso).toISOString().slice(0, 16) : "");
 
 export default function AdminSales() {
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("sales");
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(emptySale);
@@ -185,9 +187,11 @@ export default function AdminSales() {
           <button onClick={() => salesQuery.refetch()} className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
             <RefreshIcon className={`h-5 w-5 text-gray-500 ${salesQuery.isFetching ? "animate-spin" : ""}`} />
           </button>
-          <button onClick={openCreate} className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-black transition">
-            <PlusIcon className="h-4 w-4" /> New Sale
-          </button>
+          {canWrite && (
+            <button onClick={openCreate} className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-black transition">
+              <PlusIcon className="h-4 w-4" /> New Sale
+            </button>
+          )}
         </div>
       </div>
 
@@ -198,7 +202,9 @@ export default function AdminSales() {
       ) : sales.length === 0 ? (
         <div className="text-center py-20">
           <p className="text-gray-500 mb-4">No sales created yet</p>
-          <button onClick={openCreate} className="text-sm font-bold text-orange-600 hover:underline">Create your first sale</button>
+          {canWrite && (
+            <button onClick={openCreate} className="text-sm font-bold text-orange-600 hover:underline">Create your first sale</button>
+          )}
         </div>
       ) : (
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
@@ -210,7 +216,7 @@ export default function AdminSales() {
                   <th className="px-6 py-4 text-left">Categories</th>
                   <th className="px-6 py-4 text-left">Duration</th>
                   <th className="px-6 py-4 text-center">Status</th>
-                  <th className="px-6 py-4 text-right">Actions</th>
+                  {canWrite && <th className="px-6 py-4 text-right">Actions</th>}
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-50">
@@ -246,6 +252,7 @@ export default function AdminSales() {
                         </span>
                       )}
                     </td>
+                    {canWrite && (
                     <td className="px-6 py-4">
                       <div className="flex justify-end gap-2">
                         <button onClick={() => openEdit(s)} className="p-2 rounded-lg hover:bg-gray-100 transition">
@@ -256,6 +263,7 @@ export default function AdminSales() {
                         </button>
                       </div>
                     </td>
+                    )}
                   </tr>
                 ))}
               </tbody>

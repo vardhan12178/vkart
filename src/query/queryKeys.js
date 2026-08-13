@@ -40,6 +40,7 @@ export const qk = {
     sales: ["admin", "sales"],
     membershipPlans: ["admin", "membership", "plans"],
     membershipStatus: ["admin", "membership", "status"],
+    employees: ["admin", "employees"],
   },
   public: {
     announcements: ["public", "announcements"],

@@ -16,6 +16,10 @@ export default function AdminLayout({ setIsAdmin }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // The single source of truth for "who is this admin" — identity, role, and
+  // module permissions all come from here. It's the one endpoint every admin
+  // can hit regardless of their permissions, so the header/sidebar/pages never
+  // need a module-gated call just to know who's logged in.
   const adminVerifyQuery = useQuery({
     queryKey: qk.auth.adminVerify,
     queryFn: async () => {
@@ -27,18 +31,9 @@ export default function AdminLayout({ setIsAdmin }) {
     refetchOnMount: "always",
   });
 
-  const adminSettingsQuery = useQuery({
-    queryKey: qk.admin.settings,
-    queryFn: async () => {
-      const res = await axios.get("/api/admin/settings");
-      return res.data;
-    },
-    enabled: Boolean(adminVerifyQuery.data?.valid),
-  });
-
-  const fetchAdminProfile = useCallback(async () => {
-    await adminSettingsQuery.refetch();
-  }, [adminSettingsQuery]);
+  const refreshProfile = useCallback(async () => {
+    await adminVerifyQuery.refetch();
+  }, [adminVerifyQuery]);
 
   /* ---------------------------------------------------
        AUTH GUARD - Now uses cookie-based API check
@@ -73,7 +68,6 @@ export default function AdminLayout({ setIsAdmin }) {
       // Ignore errors
     }
     queryClient.removeQueries({ queryKey: qk.auth.adminVerify });
-    queryClient.removeQueries({ queryKey: qk.admin.settings });
     if (setIsAdmin) setIsAdmin(false);
     navigate("/admin/login", { replace: true });
   };
@@ -87,6 +81,15 @@ export default function AdminLayout({ setIsAdmin }) {
     );
   }
 
+  const adminRole = adminVerifyQuery.data?.adminRole || null;
+  const permissions = adminVerifyQuery.data?.permissions || {};
+  const identity = {
+    name: adminVerifyQuery.data?.name || "",
+    email: adminVerifyQuery.data?.email || "",
+    profileImage: adminVerifyQuery.data?.profileImage || null,
+    createdAt: adminVerifyQuery.data?.createdAt || null,
+  };
+
   return (
     <div className="premium-admin flex h-screen bg-[#f2f0eb] overflow-hidden font-sans text-[#24231f]">
 
@@ -97,6 +100,8 @@ export default function AdminLayout({ setIsAdmin }) {
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}
         onLogout={handleLogout}
+        adminRole={adminRole}
+        permissions={permissions}
       />
 
       {/* Main Content Wrapper */}
@@ -107,7 +112,9 @@ export default function AdminLayout({ setIsAdmin }) {
           setMobileOpen={setMobileOpen}
           collapsed={collapsed}
           onLogout={handleLogout}
-          adminProfile={adminSettingsQuery.data?.admin || null}
+          adminProfile={identity}
+          adminRole={adminRole}
+          permissions={permissions}
         />
 
         {/* Page Content */}
@@ -116,7 +123,14 @@ export default function AdminLayout({ setIsAdmin }) {
           className="flex-1 overflow-y-auto focus:outline-none scroll-smooth flex flex-col"
         >
           <div className="flex-1">
-            <Outlet context={{ refreshProfile: fetchAdminProfile }} />
+            <Outlet
+              context={{
+                refreshProfile,
+                adminRole,
+                permissions,
+                identity,
+              }}
+            />
           </div>
           <AdminFooter />
         </main>

@@ -49,3 +49,6 @@ coverage/
 # If you really need Netlify redirects at repo root:
 # (no special rule needed if you don’t ignore the root)
 # _redirects
+
+# Local agent/tool settings
+.claude/

@@ -10,6 +10,7 @@ import {
   XCircleIcon,
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
+import usePermission from "./usePermission";
 
 const emptyPlan = {
   name: "",
@@ -28,6 +29,7 @@ const INR = (n) =>
 
 export default function AdminMembership() {
   const queryClient = useQueryClient();
+  const { canWrite } = usePermission("membership");
   const [showForm, setShowForm] = useState(false);
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState(emptyPlan);
@@ -153,9 +155,11 @@ export default function AdminMembership() {
           <button onClick={() => plansQuery.refetch()} className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
             <RefreshIcon className={`h-5 w-5 text-gray-500 ${plansQuery.isFetching ? "animate-spin" : ""}`} />
           </button>
-          <button onClick={openCreate} className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-black transition">
-            <PlusIcon className="h-4 w-4" /> New Plan
-          </button>
+          {canWrite && (
+            <button onClick={openCreate} className="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-black transition">
+              <PlusIcon className="h-4 w-4" /> New Plan
+            </button>
+          )}
         </div>
       </div>
 
@@ -166,7 +170,9 @@ export default function AdminMembership() {
       ) : plans.length === 0 ? (
         <div className="text-center py-20">
           <p className="text-gray-500 mb-4">No plans created yet</p>
-          <button onClick={openCreate} className="text-sm font-bold text-orange-600 hover:underline">Create your first plan</button>
+          {canWrite && (
+            <button onClick={openCreate} className="text-sm font-bold text-orange-600 hover:underline">Create your first plan</button>
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -205,6 +211,7 @@ export default function AdminMembership() {
                 <span className="inline-block text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full mb-3">★ Popular</span>
               )}
 
+              {canWrite && (
               <div className="flex gap-2 pt-3 border-t border-gray-100">
                 <button onClick={() => openEdit(plan)} className="flex-1 py-2 rounded-lg border border-gray-200 text-xs font-bold text-gray-600 hover:bg-gray-50 transition flex items-center justify-center gap-1">
                   <PencilIcon className="h-3.5 w-3.5" /> Edit
@@ -213,6 +220,7 @@ export default function AdminMembership() {
                   <TrashIcon className="h-3.5 w-3.5" />
                 </button>
               </div>
+              )}
             </div>
           ))}
         </div>
