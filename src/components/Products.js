@@ -130,6 +130,47 @@ export default function Products() {
   }, [searchInput, searchParams]);
 
   /**
+   * Sync the other filter dimensions from the URL too (e.g. when the AI
+   * search bar navigates here with cat/min/max/rating/sort already resolved
+   * while this page is already mounted - only `q` had this sync before).
+   * Guarded by equality checks so this can't fight the state->URL effect below.
+   */
+  // Deliberately depend on `searchParams` ONLY, not on categoryFilter/etc.
+  // Sidebar (and other in-page controls) sets these via direct setState calls,
+  // not URL navigation - if the state variable were also a dependency here,
+  // every direct setState would re-fire this effect against a still-stale
+  // `searchParams` closure, which re-set the state back, which re-triggered
+  // the state->URL effect below, ping-ponging forever (this actually happened:
+  // "Maximum update depth exceeded" from clicking a sidebar category, since
+  // unlike the debounced `q` sync above, these run synchronously with no
+  // debounce). Reading the latest state via closure at execution time is
+  // still correct without listing it as a dependency.
+  useEffect(() => {
+    const cat = searchParams.get("cat") || "";
+    setCategoryFilter((prev) => (cat !== prev ? cat : prev));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  useEffect(() => {
+    const r = Number(searchParams.get("rating")) || 0;
+    setRatingFilter((prev) => (r !== prev ? r : prev));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  useEffect(() => {
+    const min = Number(searchParams.get("min")) || 0;
+    const max = Number(searchParams.get("max")) || 100000;
+    setPriceRange((prev) => (min !== prev.min || max !== prev.max ? { min, max } : prev));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  useEffect(() => {
+    const s = searchParams.get("sort") || "relevance";
+    setSortBy((prev) => (s !== prev ? s : prev));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  /**
    * Debouce Search Input -> Update URL
    */
   useEffect(() => {
@@ -224,9 +265,18 @@ export default function Products() {
       if (priceRange.max !== 100000) next.set("max", String(priceRange.max)); else next.delete("max");
       if (sortBy !== "relevance") next.set("sort", sortBy); else next.delete("sort");
 
-      return next;
+      // Bail out if nothing would actually change - calling setSearchParams
+      // unconditionally on every effect run (even with equivalent content)
+      // can make `searchParams`/`setSearchParams` churn to a new reference
+      // every render, which - combined with `setSearchParams` being listed
+      // as this same effect's own dependency below - becomes a self-driven
+      // infinite loop with no user interaction required at all.
+      return next.toString() === prev.toString() ? prev : next;
     }, { replace: true });
-  }, [categoryFilter, ratingFilter, priceRange.max, priceRange.min, sortBy, setSearchParams]);
+    // `setSearchParams` intentionally omitted: including it here is what
+    // caused the loop above when its reference isn't stable across renders.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [categoryFilter, ratingFilter, priceRange.max, priceRange.min, sortBy]);
 
   /**
    * No client-side filtering needed - backend handles everything
