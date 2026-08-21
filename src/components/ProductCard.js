@@ -286,10 +286,13 @@ export default function ProductCard() {
     },
   });
 
+  const [showAiSummary, setShowAiSummary] = useState(false);
   const reviewCountForSummary = product?.reviews?.length || 0;
   const { data: reviewSummary, isLoading: reviewSummaryLoading } = useQuery({
     queryKey: qk.products.reviewSummary(id),
-    enabled: Boolean(id) && reviewCountForSummary >= 3,
+    // Deferred until the shopper actually asks for it (see the button near
+    // Product Highlights) — avoids spending an AI call on every page view.
+    enabled: Boolean(id) && reviewCountForSummary >= 3 && showAiSummary,
     staleTime: 5 * 60 * 1000,
     queryFn: async ({ signal }) => {
       const res = await axios.get(`/api/products/${id}/review-summary`, { signal });
@@ -725,6 +728,24 @@ export default function ProductCard() {
               ))}
             </div>
 
+            {/* AI review summary — opt-in, not shown until asked for */}
+            {reviewCountForSummary >= 3 && (
+              <div className="mb-6">
+                <button
+                  type="button"
+                  onClick={() => setShowAiSummary((v) => !v)}
+                  className="inline-flex items-center gap-2 rounded-full border border-[#a85d37]/20 bg-[#a85d37]/5 px-4 py-2 text-xs font-bold text-[#a85d37] transition-colors hover:bg-[#a85d37]/10"
+                >
+                  <Sparkles size={14} /> {showAiSummary ? "Hide AI review summary" : "See AI review summary"}
+                </button>
+                {showAiSummary && (
+                  <div className="mt-3">
+                    <AIReviewSummary data={reviewSummary} loading={reviewSummaryLoading} />
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Product highlights */}
             <div className="mb-4">
               <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
@@ -767,8 +788,6 @@ export default function ProductCard() {
 
           <div className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4 space-y-8">
-              <AIReviewSummary data={reviewSummary} loading={reviewCountForSummary >= 3 && reviewSummaryLoading} />
-
               <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
                 <ReviewSummary reviews={reviewsList.length ? reviewsList : Array(reviewCount).fill({ rating: rating || 5 })} rating={rating} />
               </div>
