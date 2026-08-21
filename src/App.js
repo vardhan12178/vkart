@@ -60,6 +60,7 @@ const AdminCoupons = lazy(() => import("./components/admin/AdminCoupons"));
 const AdminSales = lazy(() => import("./components/admin/AdminSales"));
 const AdminMembership = lazy(() => import("./components/admin/AdminMembership"));
 const AdminEmployees = lazy(() => import("./components/admin/AdminEmployees"));
+const AdminSupport = lazy(() => import("./components/admin/AdminSupport"));
 const AdminProfile = lazy(() => import("./components/admin/AdminProfile"));
 
 const userScopedKeys = [
@@ -238,6 +239,7 @@ const App = () => {
                 <Route path="sales" element={<RequireModule module="sales"><AdminSales /></RequireModule>} />
                 <Route path="membership" element={<RequireModule module="membership"><AdminMembership /></RequireModule>} />
                 <Route path="employees" element={<RequireModule module="employees"><AdminEmployees /></RequireModule>} />
+                <Route path="support" element={<RequireModule module="support"><AdminSupport /></RequireModule>} />
                 <Route path="settings" element={<RequireModule module="settings"><AdminSettings /></RequireModule>} />
               </Route>
 

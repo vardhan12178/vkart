@@ -4,6 +4,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ClipboardList,
+  Headset,
   LayoutDashboard,
   LogOut,
   Package,
@@ -38,6 +39,7 @@ export default function AdminSidebar({
     { name: "Sales", icon: Zap, path: "/admin/sales", module: "sales" },
     { name: "Membership", icon: Sparkles, path: "/admin/membership", module: "membership" },
     { name: "Users", icon: Users, path: "/admin/users", module: "users" },
+    { name: "Support", icon: Headset, path: "/admin/support", module: "support" },
     { name: "Employees", icon: UsersRound, path: "/admin/employees", module: "employees" },
     { name: "Settings", icon: Settings, path: "/admin/settings", module: "settings" },
   ];

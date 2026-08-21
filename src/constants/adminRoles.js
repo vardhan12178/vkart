@@ -9,6 +9,7 @@ export const ROLE_LABELS = {
   reviewer: "Reviewer",
   order_manager: "Order Manager",
   sales_manager: "Sales Manager",
+  customer_support: "Customer Support",
 };
 
 export const MODULES = [
@@ -23,6 +24,7 @@ export const MODULES = [
   { key: "marketing", label: "Marketing" },
   { key: "notifications", label: "Notifications" },
   { key: "employees", label: "Employees" },
+  { key: "support", label: "Support" },
 ];
 
 export const ROLE_PRESETS = {
@@ -32,4 +34,5 @@ export const ROLE_PRESETS = {
   reviewer: { reviews: "write", notifications: "read" },
   order_manager: { orders: "write", notifications: "read" },
   sales_manager: { coupons: "write", sales: "write", membership: "write", marketing: "write", notifications: "read" },
+  customer_support: { support: "write", orders: "read", notifications: "read" },
 };
