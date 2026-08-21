@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
-import { FaCheckCircle, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaCity, FaGlobe, FaMailBulk, FaShieldAlt, FaLock, FaArrowRight } from "react-icons/fa";
+import { FaCheckCircle, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaCity, FaGlobe, FaMailBulk, FaShieldAlt, FaLock, FaArrowRight, FaMobileAlt, FaCreditCard } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -104,6 +104,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
   const [selectedAddressId, setSelectedAddressId] = useState("");
   const [useWallet, setUseWallet] = useState(false);
   const [topupAmount, setTopupAmount] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("upi");
   const cartItems = useSelector((s) => s.cart);
 
   const rzpReady = useRazorpayScript();
@@ -294,13 +295,19 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
         },
         notes: { shipping_address: fullAddress },
         theme: { color: "#f97316" },
+        // Pre-selects the method chosen in our own in-page picker so
+        // Razorpay's modal skips straight to that method's entry form
+        // instead of showing its own method-selection screen first.
+        method: paymentMethod === "upi"
+          ? { upi: true, card: false, netbanking: false, wallet: false, paylater: false, emi: false }
+          : { card: true, upi: false, netbanking: false, wallet: false, paylater: false, emi: false },
         handler: async function (response) {
           try {
             const verifyRes = await axios.post("/api/razorpay/verify", response);
             const verificationToken = extractVerificationToken(verifyRes);
             const orderId = await onOrderPlaced?.({
               address: fullAddress,
-              method: "CARD",
+              method: paymentMethod.toUpperCase(),
               walletUsed: walletApplied,
               payment: buildVerifiedPaymentMeta(response, verificationToken),
             });
@@ -653,7 +660,47 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                 </div>
               </div>
 
-              {/* Test Mode Credentials Block (collapsible) */}
+              {/* Payment Method Picker — embedded in-page choice; Razorpay's
+                  modal opens directly into whichever one is selected instead
+                  of showing its own method-list screen first. */}
+              {payablePreview > 0 && (
+                <div className="relative z-10 mb-6">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Pay with</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod("upi")}
+                      aria-pressed={paymentMethod === "upi"}
+                      className={`flex flex-col items-center gap-2 rounded-xl border p-4 transition-all ${
+                        paymentMethod === "upi"
+                          ? "border-orange-400 bg-orange-500/10"
+                          : "border-white/10 bg-white/5 hover:border-white/20"
+                      }`}
+                    >
+                      <FaMobileAlt className={paymentMethod === "upi" ? "text-orange-400" : "text-gray-400"} size={20} />
+                      <span className="text-xs font-bold text-white">UPI</span>
+                      <span className="text-[10px] text-gray-400">Any UPI app</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod("card")}
+                      aria-pressed={paymentMethod === "card"}
+                      className={`flex flex-col items-center gap-2 rounded-xl border p-4 transition-all ${
+                        paymentMethod === "card"
+                          ? "border-orange-400 bg-orange-500/10"
+                          : "border-white/10 bg-white/5 hover:border-white/20"
+                      }`}
+                    >
+                      <FaCreditCard className={paymentMethod === "card" ? "text-orange-400" : "text-gray-400"} size={20} />
+                      <span className="text-xs font-bold text-white">Card</span>
+                      <span className="text-[10px] text-gray-400">Credit or Debit</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Test Mode Credentials Block (collapsible) — reflects whichever
+                  method is currently selected above. */}
               <div className="bg-white/5 border border-white/10 rounded-lg">
                 <button
                   type="button"
@@ -661,12 +708,26 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   className="w-full flex items-center justify-between gap-2 p-4 text-left"
                 >
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
-                    Test Mode: Use a test card
+                    Test Mode: {paymentMethod === "upi" ? "Use a test UPI ID" : "Use a test card"}
                   </span>
                   <span className={`text-gray-400 text-xs transition-transform ${showTestCard ? "rotate-180" : ""}`}>▾</span>
                 </button>
 
-                {showTestCard && (
+                {showTestCard && paymentMethod === "upi" && (
+                  <div className="px-4 pb-4 flex items-start gap-3 animate-fade-up">
+                    <div className="p-2 bg-white/10 rounded-md shrink-0">
+                      <FaMobileAlt className="h-5 w-5 text-orange-500" />
+                    </div>
+                    <div className="text-xs text-gray-300">
+                      <p className="text-white font-bold text-sm mb-0.5">Test UPI ID</p>
+                      <p className="mb-0.5">Enter: <span className="text-white font-mono font-semibold">success@razorpay</span></p>
+                      <p className="mt-0.5 text-emerald-400">Auto-approves — no app or OTP needed</p>
+                      <p className="mt-1.5 text-gray-500">Use <span className="font-mono">failure@razorpay</span> to test a declined payment.</p>
+                    </div>
+                  </div>
+                )}
+
+                {showTestCard && paymentMethod === "card" && (
                   <div className="px-4 pb-4 flex items-start gap-3 animate-fade-up">
                     {/* SVG Card Icon */}
                     <div className="p-2 bg-white/10 rounded-md shrink-0">
