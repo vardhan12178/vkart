@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
-import { FaCheckCircle, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaCity, FaGlobe, FaMailBulk, FaShieldAlt, FaLock, FaArrowRight, FaMobileAlt, FaCreditCard } from "react-icons/fa";
+import { FaCheckCircle, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaCity, FaGlobe, FaMailBulk, FaShieldAlt, FaLock, FaArrowRight, FaCreditCard, FaUniversity, FaClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -104,7 +104,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
   const [selectedAddressId, setSelectedAddressId] = useState("");
   const [useWallet, setUseWallet] = useState(false);
   const [topupAmount, setTopupAmount] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("upi");
+  const [paymentMethod, setPaymentMethod] = useState("card");
   const cartItems = useSelector((s) => s.cart);
 
   const rzpReady = useRazorpayScript();
@@ -294,13 +294,24 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           contact: data.phone || "9999999999",
         },
         notes: { shipping_address: fullAddress },
-        theme: { color: "#f97316" },
+        // Matches VKart's primary CTA color (the "Confirm & Pay" button right
+        // behind this modal) rather than the leftover stock Tailwind orange.
+        theme: { color: "#1d1c19" },
         // Pre-selects the method chosen in our own in-page picker so
         // Razorpay's modal skips straight to that method's entry form
-        // instead of showing its own method-selection screen first.
-        method: paymentMethod === "upi"
-          ? { upi: true, card: false, netbanking: false, wallet: false, paylater: false, emi: false }
-          : { card: true, upi: false, netbanking: false, wallet: false, paylater: false, emi: false },
+        // instead of showing its own method-selection screen first. UPI is
+        // deliberately not an option here — it isn't enabled on this
+        // Razorpay account (Dashboard > Payment Configuration has no UPI
+        // block), so offering it would just dead-end with "No appropriate
+        // payment method found."
+        method: {
+          card: paymentMethod === "card",
+          netbanking: paymentMethod === "netbanking",
+          paylater: paymentMethod === "paylater",
+          upi: false,
+          wallet: false,
+          emi: false,
+        },
         handler: async function (response) {
           try {
             const verifyRes = await axios.post("/api/razorpay/verify", response);
@@ -516,6 +527,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                             name: "VKart Wallet",
                             description: "Wallet Top-up",
                             order_id: orderId,
+                            theme: { color: "#1d1c19" },
                             handler: async function (response) {
                               try {
                                 await verifyWalletTopupMutation.mutateAsync({
@@ -666,35 +678,28 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               {payablePreview > 0 && (
                 <div className="relative z-10 mb-6">
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Pay with</p>
-                  <div className="grid grid-cols-2 gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod("upi")}
-                      aria-pressed={paymentMethod === "upi"}
-                      className={`flex flex-col items-center gap-2 rounded-xl border p-4 transition-all ${
-                        paymentMethod === "upi"
-                          ? "border-orange-400 bg-orange-500/10"
-                          : "border-white/10 bg-white/5 hover:border-white/20"
-                      }`}
-                    >
-                      <FaMobileAlt className={paymentMethod === "upi" ? "text-orange-400" : "text-gray-400"} size={20} />
-                      <span className="text-xs font-bold text-white">UPI</span>
-                      <span className="text-[10px] text-gray-400">Any UPI app</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod("card")}
-                      aria-pressed={paymentMethod === "card"}
-                      className={`flex flex-col items-center gap-2 rounded-xl border p-4 transition-all ${
-                        paymentMethod === "card"
-                          ? "border-orange-400 bg-orange-500/10"
-                          : "border-white/10 bg-white/5 hover:border-white/20"
-                      }`}
-                    >
-                      <FaCreditCard className={paymentMethod === "card" ? "text-orange-400" : "text-gray-400"} size={20} />
-                      <span className="text-xs font-bold text-white">Card</span>
-                      <span className="text-[10px] text-gray-400">Credit or Debit</span>
-                    </button>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { id: "card", icon: FaCreditCard, label: "Card", caption: "Credit or Debit" },
+                      { id: "netbanking", icon: FaUniversity, label: "Netbanking", caption: "All major banks" },
+                      { id: "paylater", icon: FaClock, label: "Pay Later", caption: "Buy now, pay later" },
+                    ].map(({ id, icon: Icon, label, caption }) => (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => setPaymentMethod(id)}
+                        aria-pressed={paymentMethod === id}
+                        className={`flex flex-col items-center gap-1.5 rounded-xl border p-3 text-center transition-all ${
+                          paymentMethod === id
+                            ? "border-orange-400 bg-orange-500/10"
+                            : "border-white/10 bg-white/5 hover:border-white/20"
+                        }`}
+                      >
+                        <Icon className={paymentMethod === id ? "text-orange-400" : "text-gray-400"} size={18} />
+                        <span className="text-xs font-bold text-white">{label}</span>
+                        <span className="text-[9px] leading-tight text-gray-400">{caption}</span>
+                      </button>
+                    ))}
                   </div>
                 </div>
               )}
@@ -708,21 +713,33 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   className="w-full flex items-center justify-between gap-2 p-4 text-left"
                 >
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
-                    Test Mode: {paymentMethod === "upi" ? "Use a test UPI ID" : "Use a test card"}
+                    Test Mode: {paymentMethod === "card" ? "Use a test card" : paymentMethod === "netbanking" ? "Test netbanking" : "Test PayLater"}
                   </span>
                   <span className={`text-gray-400 text-xs transition-transform ${showTestCard ? "rotate-180" : ""}`}>▾</span>
                 </button>
 
-                {showTestCard && paymentMethod === "upi" && (
+                {showTestCard && paymentMethod === "netbanking" && (
                   <div className="px-4 pb-4 flex items-start gap-3 animate-fade-up">
                     <div className="p-2 bg-white/10 rounded-md shrink-0">
-                      <FaMobileAlt className="h-5 w-5 text-orange-500" />
+                      <FaUniversity className="h-5 w-5 text-orange-500" />
                     </div>
                     <div className="text-xs text-gray-300">
-                      <p className="text-white font-bold text-sm mb-0.5">Test UPI ID</p>
-                      <p className="mb-0.5">Enter: <span className="text-white font-mono font-semibold">success@razorpay</span></p>
-                      <p className="mt-0.5 text-emerald-400">Auto-approves — no app or OTP needed</p>
-                      <p className="mt-1.5 text-gray-500">Use <span className="font-mono">failure@razorpay</span> to test a declined payment.</p>
+                      <p className="text-white font-bold text-sm mb-0.5">Test bank</p>
+                      <p className="mb-0.5">Pick any bank from the list — Razorpay's test mode auto-approves it.</p>
+                      <p className="mt-0.5 text-emerald-400">No real bank login needed</p>
+                    </div>
+                  </div>
+                )}
+
+                {showTestCard && paymentMethod === "paylater" && (
+                  <div className="px-4 pb-4 flex items-start gap-3 animate-fade-up">
+                    <div className="p-2 bg-white/10 rounded-md shrink-0">
+                      <FaClock className="h-5 w-5 text-orange-500" />
+                    </div>
+                    <div className="text-xs text-gray-300">
+                      <p className="text-white font-bold text-sm mb-0.5">Test PayLater provider</p>
+                      <p className="mb-0.5">Pick any provider from the list — test mode auto-approves it.</p>
+                      <p className="mt-0.5 text-emerald-400">No real account needed</p>
                     </div>
                   </div>
                 )}
