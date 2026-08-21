@@ -20,15 +20,16 @@ export const MODULES = [
   { key: "users", label: "Users" },
   { key: "reviews", label: "Reviews" },
   { key: "settings", label: "Settings" },
+  { key: "marketing", label: "Marketing" },
   { key: "notifications", label: "Notifications" },
   { key: "employees", label: "Employees" },
 ];
 
 export const ROLE_PRESETS = {
   super_admin: {},
-  product_manager: { products: "write" },
-  customer_service: { users: "write" },
-  reviewer: { reviews: "write" },
-  order_manager: { orders: "write" },
-  sales_manager: { coupons: "write", sales: "write", membership: "write" },
+  product_manager: { products: "write", notifications: "read" },
+  customer_service: { users: "write", notifications: "read" },
+  reviewer: { reviews: "write", notifications: "read" },
+  order_manager: { orders: "write", notifications: "read" },
+  sales_manager: { coupons: "write", sales: "write", membership: "write", marketing: "write", notifications: "read" },
 };
