@@ -163,10 +163,10 @@ export default function OrderCard({ order }) {
         }`}>
         <div className="p-6 sm:p-8 bg-gray-50/50">
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8">
 
             {/* Column 1: Shipping Info */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="space-y-6">
               <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
                 <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
                   <FaMapMarkerAlt /> Delivery Address
@@ -188,7 +188,7 @@ export default function OrderCard({ order }) {
             </div>
 
             {/* Column 2: Product List */}
-            <div className="lg:col-span-2">
+            <div>
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="px-5 py-3 border-b border-gray-100 bg-gray-50/30">
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Items Ordered</h4>
