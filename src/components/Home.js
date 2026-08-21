@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,6 +36,48 @@ const reveal = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
 };
+
+function useCountdown(targetDate) {
+  const target = useMemo(() => new Date(targetDate).getTime(), [targetDate]);
+  const [remaining, setRemaining] = useState(() => Math.max(0, target - Date.now()));
+
+  useEffect(() => {
+    setRemaining(Math.max(0, target - Date.now()));
+    const id = setInterval(() => setRemaining(Math.max(0, target - Date.now())), 1000);
+    return () => clearInterval(id);
+  }, [target]);
+
+  const totalSeconds = Math.floor(remaining / 1000);
+  return {
+    days: Math.floor(totalSeconds / 86400),
+    hours: Math.floor((totalSeconds % 86400) / 3600),
+    minutes: Math.floor((totalSeconds % 3600) / 60),
+    seconds: totalSeconds % 60,
+    expired: remaining <= 0,
+  };
+}
+
+function SaleCountdown({ endDate }) {
+  const { days, hours, minutes, seconds, expired } = useCountdown(endDate);
+  if (expired) return null;
+
+  const pad = (n) => String(n).padStart(2, "0");
+  const units = days > 0
+    ? [[days, "d"], [hours, "h"], [minutes, "m"]]
+    : [[hours, "h"], [minutes, "m"], [seconds, "s"]];
+
+  return (
+    <div className="mt-4 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-[#a85d37]" aria-label={`Sale ends in ${days} days ${hours} hours ${minutes} minutes`}>
+      <span className="text-[#8a604b]">Ends in</span>
+      {units.map(([value, unit], index) => (
+        <span key={unit} className="flex items-center gap-1.5">
+          <span className="rounded-md bg-[#1d1c19] px-1.5 py-0.5 font-mono text-white tabular-nums">{pad(value)}{unit}</span>
+          {index < units.length - 1 && <span className="text-[#c9a68e]">:</span>}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 const categories = [
   {
@@ -219,6 +261,7 @@ export default function Home() {
   const featured = useMemo(() => homeData?.featured ?? [], [homeData]);
   const newArrivals = useMemo(() => homeData?.newArrivals ?? [], [homeData]);
   const activeSale = homeData?.activeSale || null;
+  const stats = homeData?.stats || null;
 
   const dismiss2faMutation = useMutation({
     mutationFn: async () =>
@@ -361,12 +404,12 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="relative h-[18rem] overflow-hidden border-t border-black/[0.06] sm:h-[25rem] md:h-[31rem]">
+          <div className="relative aspect-[6/5] overflow-hidden border-t border-black/[0.06] sm:aspect-[3/2]">
             <img
               src="/vkart-editorial-hero.webp"
               alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
               className="h-full w-full object-cover object-[72%_center] sm:object-[68%_center]"
-              fetchPriority="high"
+              fetchpriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/5" />
             <div className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-black/40 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md sm:bottom-6 sm:left-6">
@@ -381,7 +424,7 @@ export default function Home() {
             src="/vkart-editorial-hero.webp"
             alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
             className="absolute inset-0 h-full w-full object-cover object-center"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f0eadf]/95 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/5" />
@@ -467,7 +510,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-7 sm:py-20 lg:py-24">
+      <section className="px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mb-9 grid gap-6 border-b border-black/[0.1] pb-8 sm:mb-11 sm:pb-10 lg:grid-cols-[.9fr_1fr] lg:items-end lg:gap-16">
             <div>
@@ -534,7 +577,7 @@ export default function Home() {
       </section>
 
       {activeSale && (
-        <section className="px-4 pb-20 sm:px-7 sm:pb-32">
+        <section className="px-4 pb-16 sm:px-7 sm:pb-20">
           <Link
             to="/products?sale=true"
             className="group relative mx-auto grid max-w-7xl overflow-hidden rounded-[1.25rem] border border-black/[0.09] bg-[#eee7dd] text-[#1d1c19] shadow-[0_18px_60px_rgba(29,28,25,.06)] sm:rounded-[1.5rem] lg:grid-cols-[1fr_19rem]"
@@ -552,6 +595,7 @@ export default function Home() {
                   <span className="sm:hidden">Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
                   <span className="hidden sm:inline">Selected pieces, considered prices · Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
                 </p>
+                <SaleCountdown endDate={activeSale.endDate} />
               </div>
             </div>
             <div className="relative grid grid-cols-[1fr_auto] items-center gap-3 border-t border-black/[0.09] px-6 py-5 sm:flex sm:justify-between sm:gap-6 sm:px-7 sm:py-6 lg:flex-col lg:items-start lg:justify-center lg:border-l lg:border-t-0 lg:px-9">
@@ -567,7 +611,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="bg-[#fffdf8] px-5 py-24 sm:px-7 sm:py-32">
+      <section className="bg-[#fffdf8] px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="This week’s shortlist"
@@ -582,13 +626,44 @@ export default function Home() {
 
           <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {loading
-              ? [1, 2, 3, 4].map((item) => <SkeletonCard key={item} />)
-              : featured.slice(0, 4).map((product) => (
+              ? [1, 2, 3, 4, 5, 6, 7, 8].map((item) => <SkeletonCard key={item} />)
+              : featured.slice(0, 8).map((product) => (
                   <ProductCard key={product._id} product={product} onQuickView={setQuickView} onAdd={handleAddToCart} />
                 ))}
           </div>
         </div>
       </section>
+
+      {stats && (
+        <section className="border-y border-black/[0.08] bg-[#efe9df] px-5 py-16 sm:px-7 sm:py-20">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-center text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
+              Trusted across the catalogue
+            </p>
+            <div className="mt-8 grid grid-cols-1 gap-8 text-center sm:grid-cols-3 sm:gap-6">
+              <div>
+                <p className="font-editorial text-4xl text-[#1d1c19] sm:text-5xl">
+                  {stats.avgRating.toFixed(1)}
+                  <span className="text-xl text-[#9b978d] sm:text-2xl">/5</span>
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#6f6b62]">Average rating across every product</p>
+              </div>
+              <div>
+                <p className="font-editorial text-4xl text-[#1d1c19] sm:text-5xl">
+                  {stats.totalReviews.toLocaleString("en-IN")}+
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#6f6b62]">Verified customer reviews</p>
+              </div>
+              <div>
+                <p className="font-editorial text-4xl text-[#1d1c19] sm:text-5xl">
+                  {stats.totalProducts.toLocaleString("en-IN")}+
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#6f6b62]">Curated products, always in stock</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {!profile?.isPrime && (
         <section className="border-y border-black/[0.06] bg-[#e9e1d5] px-5 py-16 sm:px-7 sm:py-20">
@@ -632,7 +707,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="px-5 py-24 sm:px-7 sm:py-32">
+      <section className="px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Recently arrived"
@@ -646,15 +721,15 @@ export default function Home() {
           />
           <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {loading
-              ? [1, 2, 3, 4].map((item) => <SkeletonCard key={item} />)
-              : newArrivals.slice(0, 4).map((product) => (
+              ? [1, 2, 3, 4, 5, 6, 7, 8].map((item) => <SkeletonCard key={item} />)
+              : newArrivals.slice(0, 8).map((product) => (
                   <ProductCard key={product._id} product={product} onQuickView={setQuickView} onAdd={handleAddToCart} />
                 ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-black/[0.08] bg-[#efe9df] px-5 py-20 sm:px-7 sm:py-24">
+      <section className="border-t border-black/[0.08] bg-[#efe9df] px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">Why VKart</p>

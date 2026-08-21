@@ -38,18 +38,19 @@ export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubscribe = async (event) => {
     event.preventDefault();
     if (busy) return;
     setBusy(true);
+    setError("");
     try {
       await axios.post("/api/newsletter/subscribe", { email });
+      setSubscribed(true);
     } catch {
-      // The signup is intentionally optimistic so a temporary network issue
-      // does not interrupt the footer experience.
+      setError("Something went wrong — please try again.");
     }
-    setSubscribed(true);
     setBusy(false);
   };
 
@@ -104,6 +105,9 @@ export default function Footer() {
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </button>
             </form>
+          )}
+          {error && !subscribed && (
+            <p className="mt-3 text-xs font-semibold text-[#e0876a]">{error}</p>
           )}
         </div>
 
