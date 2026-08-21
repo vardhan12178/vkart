@@ -657,45 +657,70 @@ export default function AdminOrderDetails() {
           </div>
 
           {canWrite && (
-          <div className="mt-6 flex flex-wrap gap-3">
-            {["APPROVED", "PICKED", "RECEIVED", "REJECTED", "CLOSED"].map((s) => (
-              <button
-                key={s}
-                onClick={() => updateReturn(s)}
-                disabled={updateReturnMutation.isPending}
-                className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
-              >
-                Set {s}
-              </button>
-            ))}
+          <div className="mt-6">
+            {order.returnStatus && order.returnStatus !== "NONE" ? (
+              <div className="flex flex-wrap gap-3">
+                {["APPROVED", "PICKED", "RECEIVED", "REJECTED", "CLOSED"].map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => updateReturn(s)}
+                    disabled={updateReturnMutation.isPending}
+                    className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+                  >
+                    Set {s}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="text-xs text-slate-400 italic">No return has been requested for this order yet.</p>
+            )}
           </div>
           )}
 
           {canWrite && (
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              onClick={() => initiateRefund("WALLET")}
-              disabled={refundMutation.isPending}
-              className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-md hover:bg-black disabled:opacity-60"
-            >
-              Refund to Wallet
-            </button>
-            <button
-              onClick={() => initiateRefund("ORIGINAL")}
-              disabled={refundMutation.isPending}
-              className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
-            >
-              Refund to Original
-            </button>
-            {order.returnType === "REPLACEMENT" && order.returnStatus === "RECEIVED" && !order.replacementOrderId && (
-              <button
-                onClick={() => replacementMutation.mutate()}
-                disabled={replacementMutation.isPending}
-                className="px-4 py-2 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-700 hover:bg-emerald-50"
-              >
-                Create Replacement Order
-              </button>
-            )}
+          <div className="mt-4">
+            {(() => {
+              const refundEligible = order.stage === "CANCELLED" || ["APPROVED", "PICKED", "RECEIVED"].includes(order.returnStatus);
+              const refundAlreadyHandled = order.refundStatus && order.refundStatus !== "NONE" && order.refundStatus !== "FAILED";
+
+              if (refundAlreadyHandled) {
+                return <p className="text-xs text-slate-400 italic">A refund has already been {order.refundStatus.toLowerCase()} for this order.</p>;
+              }
+              if (!refundEligible) {
+                return (
+                  <p className="text-xs text-slate-400 italic">
+                    Refunds are only available for cancelled orders, or once a return has been approved.
+                  </p>
+                );
+              }
+              return (
+                <div className="flex flex-wrap gap-3">
+                  <button
+                    onClick={() => initiateRefund("WALLET")}
+                    disabled={refundMutation.isPending}
+                    className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-md hover:bg-black disabled:opacity-60"
+                  >
+                    Refund to Wallet
+                  </button>
+                  <button
+                    onClick={() => initiateRefund("ORIGINAL")}
+                    disabled={refundMutation.isPending}
+                    className="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+                  >
+                    Refund to Original
+                  </button>
+                  {order.returnType === "REPLACEMENT" && order.returnStatus === "RECEIVED" && !order.replacementOrderId && (
+                    <button
+                      onClick={() => replacementMutation.mutate()}
+                      disabled={replacementMutation.isPending}
+                      className="px-4 py-2 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-700 hover:bg-emerald-50"
+                    >
+                      Create Replacement Order
+                    </button>
+                  )}
+                </div>
+              );
+            })()}
           </div>
           )}
         </div>
