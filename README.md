@@ -11,13 +11,14 @@ Repositories:
 ## Overview
 
 This app provides:
-- Product listing, filtering, search, wishlist, and comparison
-- AI shopping assistant and semantic product discovery
+- Product listing, filtering, search, wishlist, and side-by-side comparison with an AI-generated verdict
+- AI shopping assistant, natural-language search that resolves to structured filters, and AI-generated review summaries
 - Login, Google OAuth, 2FA flows, and profile management
-- Razorpay and wallet-based checkout flows
-- Prime membership purchase and status tracking
+- Embedded Razorpay checkout (Card, Netbanking, Pay Later) with webhook-backed payment confirmation, wallet-based checkout, and real refund processing on returns/cancellations
+- Prime membership purchase using the same embedded payment experience
+- Customer support: a guided self-service flow (order status, returns, payment FAQs) with escalation to live agent chat, including real-time typing indicators
 - Real-time user and admin notifications with Socket.io
-- Admin tools for products, orders, users, coupons, sales, reviews, and settings
+- Admin tools for products, orders, users, coupons, sales, reviews, and settings, backed by a role-based access system (granular per-module permissions, employee management, and a dedicated support inbox)
 
 ## Tech Stack
 
@@ -32,7 +33,7 @@ This app provides:
 | Real-time | socket.io-client |
 | Charts | Recharts |
 | SEO | react-helmet-async |
-| Payments | Razorpay, Stripe |
+| Payments | Razorpay |
 
 ### Backend
 
@@ -40,7 +41,7 @@ The frontend depends on the separate backend repo for:
 - Express API
 - MongoDB
 - Redis caching
-- Razorpay and Stripe verification
+- Razorpay order creation, signature verification, and webhook handling
 - Socket.io server
 - AWS S3 uploads
 - Resend email flows
@@ -73,6 +74,7 @@ AES_KEY=your_32_byte_aes_key
 
 RAZORPAY_KEY_ID=your_razorpay_key
 RAZORPAY_KEY_SECRET=your_razorpay_secret
+RAZORPAY_WEBHOOK_SECRET=your_razorpay_webhook_secret
 
 AWS_ACCESS_KEY_ID=your_aws_key
 AWS_SECRET_ACCESS_KEY=your_aws_secret
