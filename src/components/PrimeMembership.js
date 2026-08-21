@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "./axiosInstance";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt } from "react-icons/fa";
+import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt, FaCreditCard, FaUniversity, FaClock } from "react-icons/fa";
 import { showToast } from "../utils/toast";
 import { qk } from "../query/queryKeys";
 
@@ -12,6 +12,8 @@ const INR = (n) =>
 export default function PrimeMembership() {
   const queryClient = useQueryClient();
   const [purchasing, setPurchasing] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState("card");
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
 
   const { data: plans = [], isLoading: plansLoading } = useQuery({
@@ -76,6 +78,9 @@ export default function PrimeMembership() {
       const data = await purchaseMutation.mutateAsync(planId);
       if (!data?.orderId) throw new Error("No orderId returned");
 
+      // Close our own picker now — Razorpay's modal takes over from here.
+      setSelectedPlan(null);
+
       const options = {
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
         amount: data.amount,
@@ -96,7 +101,20 @@ export default function PrimeMembership() {
           }
         },
         modal: { ondismiss: () => setPurchasing(null) },
-        theme: { color: "#F59E0B" },
+        // Matches the checkout flow's Razorpay look — the primary CTA color
+        // rather than Prime's own amber, so the payment step itself feels
+        // consistent regardless of which flow got you there.
+        theme: { color: "#1D1C19" },
+        // Pre-selects the method chosen in the picker below, same as
+        // checkout — skips Razorpay's own method-list screen.
+        method: {
+          card: paymentMethod === "card",
+          netbanking: paymentMethod === "netbanking",
+          paylater: paymentMethod === "paylater",
+          upi: false,
+          wallet: false,
+          emi: false,
+        },
       };
 
       const rzp = new window.Razorpay(options);
@@ -240,7 +258,14 @@ export default function PrimeMembership() {
               </ul>
 
               <button
-                onClick={() => handlePurchase(plan._id)}
+                onClick={() => {
+                  if (!isAuthenticated) {
+                    showToast("Please login first", "error");
+                    return;
+                  }
+                  setPaymentMethod("card");
+                  setSelectedPlan(plan);
+                }}
                 disabled={purchasing === plan._id}
                 className={`w-full py-3 rounded-xl font-bold transition-all text-sm ${
                   plan.isPopular
@@ -254,6 +279,58 @@ export default function PrimeMembership() {
           ))}
         </div>
       </div>
+
+      {/* Payment method picker — intentionally lightweight compared to the
+          full checkout form (no address to collect here), but the Razorpay
+          look and available methods match checkout exactly. */}
+      {selectedPlan && (
+        <div
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
+          onClick={() => !purchasing && setSelectedPlan(null)}
+        >
+          <div
+            className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-1">
+              <h3 className="text-lg font-bold text-gray-900">{selectedPlan.name}</h3>
+              <span className="text-lg font-black text-gray-900">{INR(selectedPlan.price)}</span>
+            </div>
+            <p className="text-xs text-gray-500 mb-5">{selectedPlan.durationDays} days of VKart Prime</p>
+
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Pay with</p>
+            <div className="grid grid-cols-3 gap-2 mb-6">
+              {[
+                { id: "card", icon: FaCreditCard, label: "Card" },
+                { id: "netbanking", icon: FaUniversity, label: "Netbanking" },
+                { id: "paylater", icon: FaClock, label: "Pay Later" },
+              ].map(({ id, icon: Icon, label }) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => setPaymentMethod(id)}
+                  className={`flex flex-col items-center gap-1.5 rounded-xl border p-3 text-center transition-all ${
+                    paymentMethod === id
+                      ? "border-amber-400 bg-amber-50"
+                      : "border-gray-200 hover:border-gray-300"
+                  }`}
+                >
+                  <Icon className={paymentMethod === id ? "text-amber-500" : "text-gray-400"} size={16} />
+                  <span className="text-[11px] font-bold text-gray-700">{label}</span>
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => handlePurchase(selectedPlan._id)}
+              disabled={purchasing === selectedPlan._id}
+              className="w-full py-3 rounded-xl bg-gray-900 text-white font-bold text-sm hover:bg-black transition-colors disabled:opacity-60"
+            >
+              {purchasing === selectedPlan._id ? "Processing..." : `Confirm & Pay ${INR(selectedPlan.price)}`}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
