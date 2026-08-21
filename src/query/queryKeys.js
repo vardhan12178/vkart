@@ -16,6 +16,7 @@ export const qk = {
     related: (id, category) => ["products", "related", id, category],
     similar: (id) => ["products", "similar", id],
     recent: (id) => ["products", "recent", id],
+    compareSummary: (ids) => ["products", "compare-summary", [...ids].sort()],
   },
   recommendations: {
     forYou: ["recommendations", "for-you"],
@@ -42,6 +43,8 @@ export const qk = {
     membershipPlans: ["admin", "membership", "plans"],
     membershipStatus: ["admin", "membership", "status"],
     employees: ["admin", "employees"],
+    supportConversations: (filters = {}) => ["admin", "support", "conversations", filters],
+    supportConversation: (id) => ["admin", "support", "conversations", id],
   },
   public: {
     announcements: ["public", "announcements"],

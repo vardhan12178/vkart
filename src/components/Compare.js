@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import { FaTimes, FaCartPlus, FaPlus, FaLayerGroup, FaArrowRight, FaCheckCircle, FaTimesCircle, FaTrashAlt } from "react-icons/fa";
+import { Sparkles } from "lucide-react";
 import axios from "./axiosInstance";
 
 /* ---------- STYLES ---------- */
@@ -85,6 +86,9 @@ const Compare = () => {
   const [ids, setIds] = useState(() => normalizeIds(searchParams.get("ids")));
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [aiVerdict, setAiVerdict] = useState(null);
+  const [aiVerdictLoading, setAiVerdictLoading] = useState(false);
+  const [aiVerdictError, setAiVerdictError] = useState("");
 
   // Sync URL
   useEffect(() => {
@@ -120,6 +124,28 @@ const Compare = () => {
     })();
     return () => { cancelled = true; };
   }, [ids]);
+
+  // The AI verdict is tied to a specific product set — clear it whenever
+  // that set changes so a stale verdict never lingers for a different
+  // comparison.
+  useEffect(() => {
+    setAiVerdict(null);
+    setAiVerdictError("");
+  }, [ids]);
+
+  const fetchAiVerdict = useCallback(async () => {
+    if (items.length < 2) return;
+    setAiVerdictLoading(true);
+    setAiVerdictError("");
+    try {
+      const res = await axios.post("/api/ai/compare", { ids: items.map((p) => p._id) });
+      setAiVerdict(res.data);
+    } catch (err) {
+      setAiVerdictError("Couldn't generate a comparison right now. Please try again.");
+    } finally {
+      setAiVerdictLoading(false);
+    }
+  }, [items]);
 
   const removeId = useCallback((id) => setIds((prev) => prev.filter((x) => x !== id)), []);
   const clearAll = useCallback(() => setIds([]), []);
@@ -196,7 +222,72 @@ const Compare = () => {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
+        {/* AI Comparison — opt-in via button, sits above the spec table so
+            it reads as the TL;DR rather than something buried below it. */}
+        {!loading && items.length >= 2 && (
+          <div className="mb-6">
+            {!aiVerdict && !aiVerdictLoading && (
+              <button
+                type="button"
+                onClick={fetchAiVerdict}
+                className="inline-flex items-center gap-2 rounded-xl bg-gray-900 text-white text-xs font-bold px-5 py-3 shadow-lg hover:bg-black transition-all"
+              >
+                <Sparkles size={14} /> Get AI Comparison
+              </button>
+            )}
+
+            {aiVerdictLoading && (
+              <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm animate-pulse">
+                <div className="h-4 w-40 bg-gray-100 rounded mb-3" />
+                <div className="h-3 w-full bg-gray-100 rounded mb-2" />
+                <div className="h-3 w-2/3 bg-gray-100 rounded" />
+              </div>
+            )}
+
+            {aiVerdictError && (
+              <p className="text-xs font-semibold text-red-500 mt-2">{aiVerdictError}</p>
+            )}
+
+            {aiVerdict?.available && (
+              <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-bold text-gray-900 flex items-center gap-2 text-sm">
+                    <Sparkles size={15} className="text-orange-500" /> AI Comparison
+                  </h3>
+                  <button type="button" onClick={() => setAiVerdict(null)} className="text-xs font-bold text-gray-400 hover:text-gray-600">
+                    Hide
+                  </button>
+                </div>
+
+                {aiVerdict.overallReason && (
+                  <p className="text-sm text-gray-700 mb-4 pb-4 border-b border-gray-100">
+                    <span className="font-bold text-gray-900">
+                      Overall pick: {items.find((p) => p._id === aiVerdict.overallPickId)?.title || "—"}.
+                    </span>{" "}
+                    {aiVerdict.overallReason}
+                  </p>
+                )}
+
+                {aiVerdict.perProduct?.length > 0 && (
+                  <ul className="space-y-2">
+                    {aiVerdict.perProduct.map((row) => {
+                      const p = items.find((it) => it._id === row.id);
+                      if (!p || !row.bestFor) return null;
+                      return (
+                        <li key={row.id} className="text-sm text-gray-600">
+                          <span className="font-bold text-gray-900">{p.title}: </span>
+                          {row.bestFor}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
         {loading ? (
            <CompareSkeleton />
         ) : (
@@ -231,18 +322,33 @@ const Compare = () => {
                                 <FaTimes size={12} />
                               </button>
                               
-                              {/* Image */}
-                              <div className="aspect-[4/3] w-full flex items-center justify-center mb-4 bg-gray-50 rounded-2xl p-4 border border-gray-50 transition-colors group-hover:border-gray-200">
-                                <img 
-                                  src={item.thumbnail} 
-                                  alt="" 
-                                  className="h-full w-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-110" 
+                              {/* Image — shrink-0/grow-0 forces this flex-column child to
+                                  honor aspect-[4/3] exactly. Without them, a flex item with
+                                  aspect-ratio can still get stretched/shrunk by the column's
+                                  available space (min-height:auto lets flex-shrink win over
+                                  the ratio), which is why two products with different native
+                                  image proportions were rendering at different box heights
+                                  despite sharing the same aspect-ratio class. */}
+                              {/* padding-bottom percentage trick instead of the `aspect-ratio`
+                                  property: aspect-ratio was resolving inconsistently depending
+                                  on the image's own natural ratio (a square 300x300 thumbnail
+                                  rendered its box as a square too, ignoring the stated 4/3),
+                                  while padding-bottom derives height from width alone via a
+                                  well-established mechanism with no such content dependency. */}
+                              <div className="relative w-full shrink-0 grow-0 mb-4 bg-gray-50 rounded-2xl border border-gray-50 transition-colors group-hover:border-gray-200" style={{ paddingBottom: "75%" }}>
+                                <img
+                                  src={item.thumbnail}
+                                  alt=""
+                                  className="absolute inset-0 h-full w-full object-contain p-4 mix-blend-multiply transition-transform duration-500 group-hover:scale-110"
                                 />
                               </div>
                               
-                              {/* Title & CTA */}
+                              {/* Title & CTA — the title gets a fixed min-height (room for
+                                  2 lines) regardless of how many lines this particular title
+                                  actually wraps to, so the button below lines up across every
+                                  column instead of drifting with title length. */}
                               <div className="flex-1 flex flex-col">
-                                <Link to={`/product/${item._id}`} className="text-base font-bold text-gray-900 leading-snug mb-2 hover:text-orange-600 transition-colors line-clamp-2">
+                                <Link to={`/product/${item._id}`} className="text-base font-bold text-gray-900 leading-snug mb-2 hover:text-orange-600 transition-colors line-clamp-2 min-h-[2.75rem]">
                                   {item.title}
                                 </Link>
                                 <div className="mt-auto pt-3">
