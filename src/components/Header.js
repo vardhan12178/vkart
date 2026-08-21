@@ -53,6 +53,7 @@ const Header = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [hasActiveSale, setHasActiveSale] = useState(false);
+  const [aiParsing, setAiParsing] = useState(false);
   const suggestRef = useRef(null);
   const suggestRefMobile = useRef(null);
   const debounceRef = useRef(null);
@@ -151,12 +152,43 @@ const Header = () => {
     dispatch(toggleChat());
   };
 
+  // On explicit submit (Enter / form submit), run the query through the AI
+  // parser so free text like "red heels under 3000" resolves into real
+  // category/price/rating filters, not just a keyword match. Live typing
+  // (onChange below) stays a plain, instant `q=` navigation for responsiveness -
+  // only the deliberate "search" action pays the extra AI round trip.
+  const runSearch = async (rawText) => {
+    const trimmed = rawText.trim();
+    if (!trimmed) return;
+    setShowSearch(false);
+    setShowSuggestions(false);
+    setAiParsing(true);
+    try {
+      const res = await axios.post("/api/ai/parse-search", { query: trimmed });
+      const { q, category, minPrice, maxPrice, minRating, sort } = res.data;
+      const sortMap = { price_asc: "price-asc", price_desc: "price-desc", rating_desc: "rating-desc" };
+
+      const params = new URLSearchParams();
+      if (q) params.set("q", q);
+      else if (!category) params.set("q", trimmed); // AI found nothing structured - fall back to raw text
+      if (category) params.set("cat", category);
+      if (minPrice != null) params.set("min", String(minPrice));
+      if (maxPrice != null) params.set("max", String(maxPrice));
+      if (minRating != null) params.set("rating", String(minRating));
+      if (sort && sortMap[sort]) params.set("sort", sortMap[sort]);
+
+      navigate(`/products?${params.toString()}`);
+    } catch (err) {
+      // AI search is a nice-to-have, never a blocker - fall back to plain search.
+      navigate(`/products?q=${encodeURIComponent(trimmed)}`);
+    } finally {
+      setAiParsing(false);
+    }
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchInput.trim()) {
-      navigate(`/products?q=${encodeURIComponent(searchInput)}`);
-      setShowSearch(false);
-    }
+    runSearch(searchInput);
   };
 
   // Hide header on auth pages
@@ -218,12 +250,17 @@ const Header = () => {
             <div className="hidden md:flex flex-1 max-w-md mx-2 xl:mx-4">
               <div className="w-full relative group" ref={suggestRef}>
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" strokeWidth={1.8} />
+                  {aiParsing ? (
+                    <Sparkles className="h-4 w-4 text-[#a85d37] animate-pulse" strokeWidth={1.8} />
+                  ) : (
+                    <Search className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" strokeWidth={1.8} />
+                  )}
                 </div>
                 <input
                   type="text"
-                  placeholder="Search the collection"
+                  placeholder="Search, or ask e.g. 'red heels under 3000'"
                   value={searchInput}
+                  disabled={aiParsing}
                   onChange={(e) => {
                     const val = e.target.value;
                     setSearchInput(val);
@@ -239,12 +276,10 @@ const Header = () => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
-                      navigate(`/products?q=${encodeURIComponent(searchInput)}`);
-                      setShowSearch(false);
-                      setShowSuggestions(false);
+                      runSearch(searchInput);
                     }
                   }}
-                  className="block w-full rounded-full border border-black/[0.06] bg-[#f2eee6] pl-10 pr-10 py-2.5 text-sm font-medium text-[#1d1c19] focus:border-[#9b5330]/40 focus:bg-white focus:ring-0 transition-all placeholder:text-[#99948a]"
+                  className="block w-full rounded-full border border-black/[0.06] bg-[#f2eee6] pl-10 pr-10 py-2.5 text-sm font-medium text-[#1d1c19] focus:border-[#9b5330]/40 focus:bg-white focus:ring-0 transition-all placeholder:text-[#99948a] disabled:opacity-60"
                 />
                 {searchInput && (
                   <button
@@ -428,12 +463,17 @@ const Header = () => {
                 className="md:hidden overflow-hidden pb-4"
               >
                 <form onSubmit={handleSearch} className="relative" ref={suggestRefMobile}>
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" strokeWidth={1.8} />
+                  {aiParsing ? (
+                    <Sparkles className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#a85d37] animate-pulse" strokeWidth={1.8} />
+                  ) : (
+                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" strokeWidth={1.8} />
+                  )}
                   <input
                     type="text"
                     autoFocus
-                    placeholder="Search products..."
+                    placeholder="Search, or ask e.g. 'red heels under 3000'"
                     value={searchInput}
+                    disabled={aiParsing}
                     onChange={(e) => {
                       const val = e.target.value;
                       setSearchInput(val);
@@ -447,12 +487,10 @@ const Header = () => {
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         e.preventDefault();
-                        navigate(`/products?q=${encodeURIComponent(searchInput)}`);
-                        setShowSearch(false);
-                        setShowSuggestions(false);
+                        runSearch(searchInput);
                       }
                     }}
-                    className="w-full rounded-full border border-black/10 bg-[#f1ede5] py-3 pl-10 pr-4 text-sm font-medium text-[#1d1c19] placeholder:text-[#8b867d] focus:border-[#a85d37]/40 focus:bg-[#fffdf8] focus:ring-0"
+                    className="w-full rounded-full border border-black/10 bg-[#f1ede5] py-3 pl-10 pr-4 text-sm font-medium text-[#1d1c19] placeholder:text-[#8b867d] focus:border-[#a85d37]/40 focus:bg-[#fffdf8] focus:ring-0 disabled:opacity-60"
                   />
                   {showSuggestions && suggestions.length > 0 && (
                     <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">

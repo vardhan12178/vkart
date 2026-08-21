@@ -10,6 +10,7 @@ export const qk = {
     list: (params = {}) => ["products", "list", params],
     filters: (params = {}) => ["products", "filters", params],
     details: (id) => ["products", "details", id],
+    reviewSummary: (id) => ["products", "review-summary", id],
     suggest: (q) => ["products", "suggest", q],
     categories: ["products", "categories"],
     related: (id, category) => ["products", "related", id, category],

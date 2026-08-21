@@ -29,6 +29,7 @@ import {
   FaCheckCircle,
   FaUserCircle
 } from "react-icons/fa";
+import { Sparkles } from "lucide-react";
 import { showToast } from "../utils/toast";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -151,6 +152,73 @@ const ReviewSummary = ({ reviews = [], rating }) => {
   );
 };
 
+const AIReviewSummary = ({ data, loading }) => {
+  if (loading) {
+    return (
+      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm animate-pulse">
+        <div className="h-4 w-40 bg-gray-100 rounded mb-4" />
+        <div className="h-3 w-full bg-gray-100 rounded mb-2" />
+        <div className="h-3 w-2/3 bg-gray-100 rounded" />
+      </div>
+    );
+  }
+
+  if (!data || !data.available) return null;
+
+  const sentimentStyle = {
+    positive: "bg-green-50 text-green-700",
+    mixed: "bg-amber-50 text-amber-700",
+    negative: "bg-red-50 text-red-700",
+  }[data.sentiment] || "bg-gray-50 text-gray-700";
+
+  return (
+    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+      <div className="flex items-center justify-between mb-4">
+        <h4 className="font-bold text-gray-900 flex items-center gap-2 text-sm">
+          <Sparkles size={15} className="text-[#a85d37]" /> AI Review Summary
+        </h4>
+        <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-full ${sentimentStyle}`}>
+          {data.sentiment}
+        </span>
+      </div>
+
+      {data.pros?.length > 0 && (
+        <div className="mb-3">
+          <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">Customers liked</p>
+          <ul className="space-y-1">
+            {data.pros.map((p, i) => (
+              <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
+                <span className="text-green-600 font-bold mt-0.5 shrink-0">+</span> {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {data.cons?.length > 0 && (
+        <div className="mb-3">
+          <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">Worth knowing</p>
+          <ul className="space-y-1">
+            {data.cons.map((c, i) => (
+              <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
+                <span className="text-amber-600 font-bold mt-0.5 shrink-0">−</span> {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {data.bestFor && (
+        <p className="text-sm text-gray-500 italic border-t border-gray-100 pt-3 mt-3">{data.bestFor}</p>
+      )}
+
+      <p className="text-[11px] text-gray-400 mt-3">
+        Summarized from {data.reviewsAnalyzed} customer review{data.reviewsAnalyzed === 1 ? "" : "s"} using AI.
+      </p>
+    </div>
+  );
+};
+
 /* ---------- Main Component ---------- */
 export default function ProductCard() {
   const { id } = useParams();
@@ -215,6 +283,17 @@ export default function ProductCard() {
       } catch {
         return [];
       }
+    },
+  });
+
+  const reviewCountForSummary = product?.reviews?.length || 0;
+  const { data: reviewSummary, isLoading: reviewSummaryLoading } = useQuery({
+    queryKey: qk.products.reviewSummary(id),
+    enabled: Boolean(id) && reviewCountForSummary >= 3,
+    staleTime: 5 * 60 * 1000,
+    queryFn: async ({ signal }) => {
+      const res = await axios.get(`/api/products/${id}/review-summary`, { signal });
+      return res.data;
     },
   });
 
@@ -306,6 +385,7 @@ export default function ProductCard() {
 
   const handleReviewAdded = (data) => {
     queryClient.invalidateQueries({ queryKey: qk.products.details(id) });
+    queryClient.invalidateQueries({ queryKey: qk.products.reviewSummary(id) });
     showToast(`Review added! New rating: ${data.newRating}/5`, "success");
   };
 
@@ -687,6 +767,8 @@ export default function ProductCard() {
 
           <div className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4 space-y-8">
+              <AIReviewSummary data={reviewSummary} loading={reviewCountForSummary >= 3 && reviewSummaryLoading} />
+
               <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
                 <ReviewSummary reviews={reviewsList.length ? reviewsList : Array(reviewCount).fill({ rating: rating || 5 })} rating={rating} />
               </div>

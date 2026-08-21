@@ -332,7 +332,9 @@ const AIChatAssistant = () => {
                     </p>
                     <div className="flex items-center gap-2 mt-1.5">
                       <span className="text-sm font-bold text-[#1d1c19]">{INR(prod.price)}</span>
-                      <span className="text-[10px] font-bold text-[#5f6a52]">In stock</span>
+                      <span className={`text-[10px] font-bold ${prod.stock > 0 ? 'text-[#5f6a52]' : 'text-[#a85d37]'}`}>
+                        {prod.stock > 0 ? 'In stock' : 'Out of stock'}
+                      </span>
                     </div>
                   </div>
 
