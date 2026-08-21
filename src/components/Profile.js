@@ -9,6 +9,7 @@ import { clearCart } from "../redux/cartSlice";
 import { clearWishlist } from "../redux/wishlistSlice";
 import imageCompression from "browser-image-compression";
 import AvatarEditor from "react-avatar-editor";
+import SupportChatWidget from "./support/SupportChatWidget";
 
 import {
   FaCamera,
@@ -104,6 +105,7 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState("overview");
   const [toast, setToast] = useState({ kind: "success", message: "" });
   const toastTimer = useRef(null);
+  const [showSupportChat, setShowSupportChat] = useState(false);
 
   // Avatar
   const [selectedFile, setSelectedFile] = useState(null);
@@ -761,18 +763,32 @@ export default function Profile() {
                   {[
                     { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
                     { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
-                    { to: "/contact", icon: <FaEnvelope />, title: "Support", desc: "Get help", color: "text-purple-500", bg: "bg-purple-50" },
-                  ].map((link, i) => (
-                    <Link key={i} to={link.to} className="group bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1">
-                      <div className="flex justify-between items-start mb-4">
-                        <div className={`p-3 rounded-2xl ${link.bg} ${link.color} text-lg`}>{link.icon}</div>
-                        <FaChevronRight className="text-gray-300 group-hover:text-gray-600 transition-colors opacity-0 group-hover:opacity-100" size={12} />
-                      </div>
-                      <h4 className="font-bold text-gray-900">{link.title}</h4>
-                      <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
-                    </Link>
-                  ))}
+                    { action: () => setShowSupportChat(true), icon: <FaEnvelope />, title: "Support", desc: "Get help", color: "text-purple-500", bg: "bg-purple-50" },
+                  ].map((link, i) => {
+                    const cardBody = (
+                      <>
+                        <div className="flex justify-between items-start mb-4">
+                          <div className={`p-3 rounded-2xl ${link.bg} ${link.color} text-lg`}>{link.icon}</div>
+                          <FaChevronRight className="text-gray-300 group-hover:text-gray-600 transition-colors opacity-0 group-hover:opacity-100" size={12} />
+                        </div>
+                        <h4 className="font-bold text-gray-900">{link.title}</h4>
+                        <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
+                      </>
+                    );
+                    const cardClass = "group bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1 text-left w-full";
+                    return link.action ? (
+                      <button key={i} type="button" onClick={link.action} className={cardClass}>
+                        {cardBody}
+                      </button>
+                    ) : (
+                      <Link key={i} to={link.to} className={cardClass}>
+                        {cardBody}
+                      </Link>
+                    );
+                  })}
               </div>
+
+              <SupportChatWidget open={showSupportChat} onClose={() => setShowSupportChat(false)} />
 
               {/* Wallet */}
               <div className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm">
