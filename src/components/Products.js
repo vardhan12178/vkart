@@ -441,6 +441,24 @@ export default function Products() {
                 <FaFilter className="text-gray-400" /> Filters
               </button>
 
+              {/* Compare selection — lives in the sticky filter bar rather than
+                  floating over the grid, so it never covers a card's own
+                  Compare checkbox or collides with the chat launcher. */}
+              {compare.length > 0 && (
+                <div className="flex items-center gap-2 rounded-full bg-[#1d1c19] pl-3 pr-1.5 py-1.5 text-white shrink-0 animate-fade-up">
+                  <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#a85d37] px-1 text-[10px] font-bold">{compare.length}</span>
+                  <span className="text-xs font-medium text-gray-300 hidden sm:inline">Selected</span>
+                  <div className="h-3 w-px bg-white/20 mx-0.5" />
+                  <button onClick={() => setCompare([])} className="text-xs text-gray-400 hover:text-white transition-colors px-1.5">Clear</button>
+                  <button
+                    onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
+                    className="rounded-full bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#1d1c19] transition-colors hover:bg-[#eee8df]"
+                  >
+                    Compare
+                  </button>
+                </div>
+              )}
+
 
 
               <div className="hidden sm:block w-48">
@@ -654,27 +672,6 @@ export default function Products() {
           </div>
         </div>
       </div>
-
-      {compare.length > 0 && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-up w-[calc(100vw-2rem)] sm:w-auto">
-          <div className="flex items-center justify-between sm:justify-start gap-4 rounded-full border border-white/10 bg-[#1d1c19] px-5 py-2.5 text-white shadow-[0_18px_45px_rgba(29,28,25,.22)] w-full">
-            <div className="flex items-center gap-2">
-              <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#a85d37] px-1 text-[10px] font-bold text-white">{compare.length}</span>
-              <span className="text-xs font-medium text-gray-300">Selected</span>
-            </div>
-            <div className="h-3 w-px bg-white/20" />
-            <div className="flex items-center gap-2">
-              <button onClick={() => setCompare([])} className="text-xs text-gray-400 hover:text-white transition-colors">Clear</button>
-              <button
-                onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
-                className="rounded-full bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#1d1c19] transition-colors hover:bg-[#eee8df]"
-              >
-                Compare
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <div className={`fixed inset-0 z-[60] lg:hidden transition-transform duration-300 ${showFilters ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowFilters(false)} />

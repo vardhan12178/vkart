@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { BellIcon, ShoppingBagIcon, TruckIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/outline";
@@ -13,8 +13,28 @@ const NotificationBell = () => {
     const dropdownRef = useRef(null);
 
     const [isOpen, setIsOpen] = useState(false);
+    const [panelStyle, setPanelStyle] = useState({ position: "fixed", top: -9999, right: -9999, width: 0 });
+    const buttonRef = useRef(null);
     const { notifications, unreadCount } = useSelector((state) => state.notifications);
     const { isAuthenticated } = useSelector((state) => state.auth);
+
+    // Position the dropdown against the viewport rather than the bell button's
+    // own (narrow) relative container — the bell isn't the last header icon
+    // (a hamburger/profile cluster follows it), so a plain `right-0` anchor
+    // pushes a near-full-width panel off the left edge on small screens.
+    useLayoutEffect(() => {
+        if (!isOpen || !buttonRef.current) return;
+        const updatePosition = () => {
+            const rect = buttonRef.current.getBoundingClientRect();
+            const margin = 12;
+            const width = Math.min(368, window.innerWidth - margin * 2);
+            const right = Math.max(margin, Math.min(window.innerWidth - rect.right, window.innerWidth - width - margin));
+            setPanelStyle({ position: "fixed", top: rect.bottom + 8, right, width });
+        };
+        updatePosition();
+        window.addEventListener("resize", updatePosition);
+        return () => window.removeEventListener("resize", updatePosition);
+    }, [isOpen]);
 
     // Fetch notifications on mount
     useEffect(() => {
@@ -139,6 +159,7 @@ const NotificationBell = () => {
         <div className="relative" ref={dropdownRef}>
             {/* Bell Button */}
             <button
+                ref={buttonRef}
                 onClick={() => setIsOpen(!isOpen)}
                 className={`
           relative grid h-10 w-10 place-items-center rounded-full transition-colors group
@@ -174,7 +195,8 @@ const NotificationBell = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute right-0 z-50 mt-3 w-[min(23rem,calc(100vw-1.5rem))] origin-top-right overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)]"
+                        style={{ zIndex: 50, ...panelStyle }}
+                        className="origin-top-right overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)]"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between border-b border-black/[0.07] px-5 py-4">

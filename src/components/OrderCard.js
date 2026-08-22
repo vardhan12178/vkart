@@ -58,14 +58,14 @@ export default function OrderCard({ order }) {
 
       {/* --- SUMMARY HEADER --- */}
       <div
-        className="p-6 sm:p-8 cursor-pointer"
+        className="p-4 sm:p-8 cursor-pointer"
         onClick={() => setOpen(!open)}
       >
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 lg:gap-6">
 
           {/* Left: Icon + ID + Date */}
-          <div className="flex items-start gap-5">
-            <div className="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 p-2 flex items-center justify-center shrink-0">
+          <div className="flex items-start gap-3 sm:gap-5">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 border border-gray-100 p-2 flex items-center justify-center shrink-0">
               <img
                 src={firstProduct.image || firstProduct.thumbnail || "https://via.placeholder.com/80"}
                 alt="Product"
@@ -73,9 +73,9 @@ export default function OrderCard({ order }) {
               />
             </div>
 
-            <div className="space-y-1">
-              <div className="flex items-center gap-3 mb-1">
-                <h3 className="text-lg font-black text-gray-900 tracking-tight">
+            <div className="space-y-0.5 sm:space-y-1">
+              <div className="flex items-center gap-3 mb-0.5 sm:mb-1">
+                <h3 className="text-base sm:text-lg font-black text-gray-900 tracking-tight">
                   {(() => {
                     const products = order.products || [];
                     if (products.length === 0) return 'Order';
@@ -108,9 +108,9 @@ export default function OrderCard({ order }) {
                   );
                 })()}
               </div>
-              <p className="text-sm font-medium text-gray-500">{orderDate}</p>
+              <p className="text-xs sm:text-sm font-medium text-gray-500">{orderDate}</p>
               {/* Mobile Status Pill - same priority logic */}
-              <div className="sm:hidden mt-2">
+              <div className="sm:hidden mt-1.5">
                 {hasRefund ? (
                   <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-100">
                     Refund {order.refundStatus}
@@ -130,17 +130,17 @@ export default function OrderCard({ order }) {
           </div>
 
           {/* Right: Price + Items + Action */}
-          <div className="flex items-center justify-between lg:justify-end gap-6 lg:gap-10 border-t lg:border-t-0 border-gray-50 pt-4 lg:pt-0">
+          <div className="flex items-center justify-between lg:justify-end gap-4 lg:gap-10 border-t lg:border-t-0 border-gray-50 pt-3 lg:pt-0">
 
             {/* Stats */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-6 sm:gap-8">
               <div>
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Total</p>
-                <p className="text-lg font-black text-gray-900">{INR(order.totalPrice)}</p>
+                <p className="text-base sm:text-lg font-black text-gray-900">{INR(order.totalPrice)}</p>
               </div>
               <div>
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Items</p>
-                <p className="text-lg font-black text-gray-900 flex items-center gap-1">
+                <p className="text-base sm:text-lg font-black text-gray-900 flex items-center gap-1">
                   <FaShoppingBag size={14} className="text-orange-500" /> {order.products?.length || 0}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function OrderCard({ order }) {
 
             {/* Toggle Button */}
             <button
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-gray-900 text-white rotate-180" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-gray-900 text-white rotate-180" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
                 }`}
             >
               <FaChevronDown size={14} />
@@ -163,7 +163,7 @@ export default function OrderCard({ order }) {
         }`}>
         <div className="p-6 sm:p-8 bg-gray-50/50">
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             {/* Column 1: Shipping Info */}
             <div className="space-y-6">
