@@ -60,9 +60,9 @@ export default function Wishlist() {
         />
       </Helmet>
 
-      <section className="wishlist-masthead border-b border-black/[0.08] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+      <section className="wishlist-masthead border-b border-black/[0.08] px-4 py-5 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-5 flex flex-wrap items-center gap-3">
+          <div className="mb-3 sm:mb-5 flex flex-wrap items-center gap-3">
             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#a85d37]">
               Your personal edit
             </p>
@@ -72,11 +72,11 @@ export default function Wishlist() {
             </span>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
-            <h1 className="max-w-3xl font-editorial text-4xl leading-[0.94] tracking-[-0.04em] text-[#1d1c19] sm:text-5xl lg:text-6xl">
+          <div className="grid gap-3 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
+            <h1 className="max-w-3xl font-editorial text-2xl leading-tight tracking-[-0.03em] text-[#1d1c19] sm:text-4xl lg:text-5xl">
               Worth another look.
             </h1>
-            <p className="max-w-xl text-sm leading-6 text-[#6f6b62] lg:pb-1 lg:text-[15px] lg:leading-7">
+            <p className="max-w-xl text-xs leading-relaxed text-[#6f6b62] sm:text-sm lg:pb-1">
               A considered shortlist of the pieces that caught your eye—kept together until you are ready to choose.
             </p>
           </div>
@@ -109,9 +109,9 @@ export default function Wishlist() {
             </div>
           </section>
 
-          <section className="px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+          <section className="px-3 py-5 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
             <div className="mx-auto max-w-7xl">
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-5">
                 {wishlist.map((item) => {
                   const key = keyOf(item);
                   const selling = item.price || 0;
@@ -122,14 +122,14 @@ export default function Wishlist() {
                   return (
                     <article
                       key={key}
-                      className="wishlist-product group overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[#fbfaf7] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
+                      className="wishlist-product group overflow-hidden rounded-xl sm:rounded-[1.25rem] border border-black/[0.08] bg-[#fbfaf7] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
                     >
                       <Link
                         to={productPath(item)}
                         className="block"
                         aria-label={`View ${item.title}`}
                       >
-                        <div className="relative aspect-[1.08/1] overflow-hidden bg-[#ebe7df] p-6 sm:p-7">
+                        <div className="relative aspect-square overflow-hidden bg-[#ebe7df] p-2.5 sm:p-7">
                           {image ? (
                             <img
                               src={image}
@@ -138,59 +138,59 @@ export default function Wishlist() {
                             />
                           ) : (
                             <div className="flex h-full items-center justify-center text-[#b6b0a5]">
-                              <FaShoppingBag size={30} />
+                              <FaShoppingBag size={20} />
                             </div>
                           )}
 
                           {discount > 0 && (
-                            <span className="absolute left-3 top-3 rounded-full border border-[#a85d37]/15 bg-[#f6eee8]/95 px-2.5 py-1 text-[10px] font-bold tracking-[0.04em] text-[#925033] backdrop-blur-sm">
-                              Save {Math.round(discount)}%
+                            <span className="absolute left-2 top-2 sm:left-3 sm:top-3 rounded-full border border-[#a85d37]/15 bg-[#f6eee8]/95 px-1.5 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[10px] font-bold tracking-[0.04em] text-[#925033] backdrop-blur-sm">
+                              -{Math.round(discount)}%
                             </span>
                           )}
 
-                          <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-black/[0.07] bg-[#fbfaf7]/90 text-[#a85d37] shadow-sm backdrop-blur-sm">
-                            <FaHeart size={11} />
+                          <span className="absolute right-2 top-2 sm:right-3 sm:top-3 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-black/[0.07] bg-[#fbfaf7]/90 text-[#a85d37] shadow-sm backdrop-blur-sm">
+                            <FaHeart size={10} />
                           </span>
                         </div>
                       </Link>
 
-                      <div className="flex min-h-[208px] flex-col p-4 sm:p-5">
-                        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a9489]">
-                          {categoryName(item.category) || "VKart selection"}
+                      <div className="flex flex-col p-2.5 sm:p-5">
+                        <p className="mb-1 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.16em] text-[#9a9489]">
+                          {categoryName(item.category) || "VKart"}
                         </p>
                         <Link to={productPath(item)}>
-                          <h3 className="wishlist-product-title line-clamp-2 min-h-[2.7rem] text-[15px] font-bold leading-[1.4] tracking-[-0.01em] text-[#282621] transition-colors hover:text-[#925033]">
+                          <h3 className="wishlist-product-title line-clamp-1 sm:line-clamp-2 text-xs sm:text-[15px] font-bold leading-tight sm:leading-[1.4] text-[#282621] transition-colors hover:text-[#925033]">
                             {item.title}
                           </h3>
                         </Link>
 
-                        <div className="mt-4 flex items-baseline gap-2">
-                          <span className="text-lg font-black tracking-[-0.025em] text-[#1d1c19]">
+                        <div className="mt-1.5 sm:mt-4 flex items-baseline gap-1.5 flex-wrap">
+                          <span className="text-xs sm:text-lg font-bold text-[#1d1c19]">
                             {INR(selling)}
                           </span>
                           {mrp && (
-                            <span className="text-xs text-[#a5a096] line-through">
+                            <span className="text-[10px] sm:text-xs text-[#a5a096] line-through">
                               {INR(mrp)}
                             </span>
                           )}
                         </div>
 
-                        <div className="mt-auto flex gap-2 pt-4">
+                        <div className="mt-2.5 sm:mt-auto flex gap-1.5 sm:gap-2 pt-2">
                           <button
                             type="button"
                             onClick={() => moveToCart(item)}
-                            className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 text-xs font-bold text-white shadow-[0_8px_20px_rgba(29,28,25,0.12)] transition hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
+                            className="flex h-8 sm:min-h-11 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#1d1c19] px-2 sm:px-4 text-[10px] sm:text-xs font-bold text-white shadow-sm transition hover:bg-black active:scale-95"
                           >
-                            <FaCartPlus size={12} /> Move to bag
+                            <FaCartPlus size={11} /> <span className="hidden min-[380px]:inline">Move to </span>bag
                           </button>
                           <button
                             type="button"
                             onClick={() => removeItem(item)}
-                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-black/[0.09] bg-transparent text-[#8a857b] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#925033] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
+                            className="flex h-8 w-8 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-black/[0.09] bg-transparent text-[#8a857b] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#925033]"
                             aria-label={`Remove ${item.title} from saved items`}
                             title="Remove from saved items"
                           >
-                            <FaTrash size={11} />
+                            <FaTrash size={10} />
                           </button>
                         </div>
                       </div>

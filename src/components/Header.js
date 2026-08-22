@@ -531,13 +531,13 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/95 backdrop-blur-xl"
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/98 backdrop-blur-xl shadow-lg"
             >
-              <div className="px-4 py-6 space-y-4">
+              <div className="px-4 py-3 space-y-2.5">
 
                 {/* Mobile Nav Links */}
-                <div className="space-y-1">
+                <div className="space-y-0.5">
                   {navLinks.map((item) => {
                     const active = isActive(item.to);
                     const Icon = item.icon;
@@ -546,12 +546,12 @@ const Header = () => {
                         key={item.to}
                         to={item.to}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center gap-3 border-b border-black/[0.06] px-2 py-3.5 text-sm font-bold transition-colors ${active
-                          ? "text-[#a85d37]"
-                          : "text-[#6f6b62] hover:text-[#1d1c19]"
+                        className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${active
+                          ? "bg-[#1d1c19] text-white"
+                          : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
                           }`}
                       >
-                        <Icon className="h-5 w-5" />
+                        <Icon className="h-4 w-4" />
                         {item.label}
                       </Link>
                     );
@@ -560,12 +560,12 @@ const Header = () => {
                     <Link
                       to="/profile"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 border-b border-black/[0.06] px-2 py-3.5 text-sm font-bold transition-colors ${isActive("/profile")
-                        ? "text-[#a85d37]"
-                        : "text-[#6f6b62] hover:text-[#1d1c19]"
+                      className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${isActive("/profile")
+                        ? "bg-[#1d1c19] text-white"
+                        : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
                         }`}
                     >
-                      <UserRound className="h-5 w-5" strokeWidth={1.8} />
+                      <UserRound className="h-4 w-4" strokeWidth={1.8} />
                       Profile
                     </Link>
                   )}
@@ -575,33 +575,33 @@ const Header = () => {
                 <Link
                   to="/prime"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-2xl border border-[#a85d37]/15 bg-[#efe4d9] px-4 py-3 text-sm font-bold text-[#79462f] transition-colors hover:bg-[#e9dace]"
+                  className="flex items-center gap-2.5 rounded-xl border border-[#a85d37]/15 bg-[#efe4d9] px-3 py-2 text-xs font-bold text-[#79462f] transition-colors hover:bg-[#e9dace]"
                 >
-                  {isPrime ? <BadgeCheck className="h-5 w-5" strokeWidth={1.8} /> : <Crown className="h-5 w-5" strokeWidth={1.8} />}
+                  {isPrime ? <BadgeCheck className="h-4 w-4" strokeWidth={1.8} /> : <Crown className="h-4 w-4" strokeWidth={1.8} />}
                   {isPrime ? "Prime Member" : "Get Prime"}
                 </Link>
 
                 {/* Mobile Actions */}
-                <div className="grid grid-cols-2 gap-3 border-t border-black/[0.07] pt-4">
+                <div className="grid grid-cols-2 gap-2 border-t border-black/[0.06] pt-2.5">
                   <button
                     onClick={handleChatToggle}
-                    className="flex items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-black"
+                    className="flex h-9 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] px-3 text-xs font-bold text-white transition-colors hover:bg-black active:scale-95"
                   >
-                    <Sparkles className="h-4 w-4" strokeWidth={1.8} /> Ask VKart
+                    <Sparkles className="h-3.5 w-3.5" strokeWidth={1.8} /> Ask VKart
                   </button>
 
                   {isAuthenticated ? (
                     <button
                       onClick={() => { setIsMobileMenuOpen(false); handleLogout(); }}
-                      className="flex items-center justify-center gap-2 rounded-full border border-black/10 bg-[#eee8df] px-4 py-3 text-sm font-bold text-[#75483b] transition-colors hover:bg-[#e6ddd2]"
+                      className="flex h-9 items-center justify-center gap-1.5 rounded-full border border-black/10 bg-[#eee8df] px-3 text-xs font-bold text-[#75483b] transition-colors hover:bg-[#e6ddd2] active:scale-95"
                     >
-                      <LogOut className="h-4 w-4" strokeWidth={1.8} /> Logout
+                      <LogOut className="h-3.5 w-3.5" strokeWidth={1.8} /> Logout
                     </button>
                   ) : (
                     <Link
                       to="/login"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-black"
+                      className="flex h-9 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] px-3 text-xs font-bold text-white transition-colors hover:bg-black active:scale-95"
                     >
                       Sign In
                     </Link>

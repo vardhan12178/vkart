@@ -127,26 +127,26 @@ function ProductCard({ product, onQuickView, onAdd }) {
 
   return (
     <article className="group relative min-w-0">
-      <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-[#f1eee7] border border-black/[0.05]">
+      <div className="relative aspect-square overflow-hidden rounded-xl sm:rounded-[1.5rem] bg-[#f1eee7] border border-black/[0.05]">
           <img
             src={src}
             alt={product.title}
             onError={() => setSrc(product.thumbnail)}
-            className="h-full w-full object-contain p-7 mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            className="h-full w-full object-contain p-2.5 sm:p-7 mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-[1.06]"
             loading="lazy"
             decoding="async"
           />
 
           {(hasDiscount || product.onSale) && (
-            <div className="absolute left-4 top-4 z-20 flex flex-wrap gap-2">
+            <div className="absolute left-2 top-2 sm:left-4 sm:top-4 z-20 flex flex-wrap gap-1 sm:gap-2">
               {product.onSale && (
-                <span className="rounded-full bg-[#1d1c19] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
-                  {product.saleName || "Limited offer"}
+                <span className="rounded-full bg-[#1d1c19] px-2 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-white">
+                  {product.saleName || "Sale"}
                 </span>
               )}
               {hasDiscount && (
-                <span className="rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#1d1c19] backdrop-blur">
-                  {Math.round(product.discountPercentage)}% off
+                <span className="rounded-full bg-white/90 px-1.5 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-[#1d1c19] backdrop-blur">
+                  -{Math.round(product.discountPercentage)}%
                 </span>
               )}
             </div>
@@ -158,7 +158,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
             aria-label={`View ${product.title}`}
           />
 
-          <div className="absolute inset-x-4 bottom-4 z-20 flex translate-y-3 items-center justify-end gap-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+          <div className="absolute inset-x-4 bottom-4 z-20 hidden md:flex translate-y-3 items-center justify-end gap-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
             <button
               type="button"
               onClick={(event) => {
@@ -184,24 +184,24 @@ function ProductCard({ product, onQuickView, onAdd }) {
           </div>
       </div>
 
-      <Link to={`/product/${product._id}`} className="block px-1 pt-5" aria-label={`View ${product.title} details`}>
-          <div className="mb-2 flex items-center justify-between gap-4">
-            <span className="truncate text-[10px] font-bold uppercase tracking-[0.2em] text-[#8c887e]">
+      <Link to={`/product/${product._id}`} className="block px-0.5 pt-2.5 sm:pt-5" aria-label={`View ${product.title} details`}>
+          <div className="mb-1 flex items-center justify-between gap-1">
+            <span className="truncate text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.16em] text-[#8c887e]">
               {product.category}
             </span>
             {product.rating && (
-              <span className="flex shrink-0 items-center gap-1 text-xs font-semibold text-[#706c63]">
-                <Star size={12} className="fill-[#b66a3c] text-[#b66a3c]" /> {product.rating}
+              <span className="flex shrink-0 items-center gap-0.5 text-[10px] sm:text-xs font-semibold text-[#706c63]">
+                <Star size={10} className="fill-[#b66a3c] text-[#b66a3c]" /> {product.rating}
               </span>
             )}
           </div>
-          <h3 className="line-clamp-1 text-base font-semibold tracking-[-0.02em] text-[#1d1c19] transition-colors group-hover:text-[#9b5330]">
+          <h3 className="line-clamp-1 text-xs sm:text-base font-semibold tracking-tight text-[#1d1c19] transition-colors group-hover:text-[#9b5330]">
             {product.title}
           </h3>
-          <div className="mt-2 flex items-center gap-2">
-            <span className="text-base font-bold text-[#1d1c19]">{INR(product.price)}</span>
+          <div className="mt-1 flex items-baseline gap-1.5 flex-wrap">
+            <span className="text-xs sm:text-base font-bold text-[#1d1c19]">{INR(product.price)}</span>
             {previousPrice && (
-              <span className="text-xs font-medium text-[#9b978d] line-through">{INR(previousPrice)}</span>
+              <span className="text-[10px] sm:text-xs font-medium text-[#9b978d] line-through">{INR(previousPrice)}</span>
             )}
           </div>
       </Link>
@@ -209,9 +209,9 @@ function ProductCard({ product, onQuickView, onAdd }) {
       <button
         type="button"
         onClick={() => onAdd(product)}
-        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-4 py-3 text-xs font-bold text-white transition-colors hover:bg-black md:hidden"
+        className="mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] px-3 py-1.5 text-[11px] font-bold text-white transition-colors hover:bg-black md:hidden active:scale-95"
       >
-        <ShoppingBag size={15} /> Add to bag
+        <ShoppingBag size={12} /> Add
       </button>
     </article>
   );
@@ -220,23 +220,23 @@ function ProductCard({ product, onQuickView, onAdd }) {
 function SkeletonCard() {
   return (
     <div className="animate-pulse">
-      <div className="aspect-[4/5] rounded-[1.5rem] bg-[#ebe7de]" />
-      <div className="mt-5 h-3 w-1/3 rounded-full bg-[#e4dfd5]" />
-      <div className="mt-3 h-5 w-3/4 rounded-full bg-[#e4dfd5]" />
-      <div className="mt-3 h-4 w-1/4 rounded-full bg-[#e4dfd5]" />
+      <div className="aspect-square rounded-xl sm:rounded-[1.5rem] bg-[#ebe7de]" />
+      <div className="mt-3 h-3 w-1/3 rounded-full bg-[#e4dfd5]" />
+      <div className="mt-2 h-4 w-3/4 rounded-full bg-[#e4dfd5]" />
+      <div className="mt-2 h-3 w-1/4 rounded-full bg-[#e4dfd5]" />
     </div>
   );
 }
 
 function SectionHeading({ eyebrow, title, copy, action }) {
   return (
-    <div className="mb-10 flex flex-col justify-between gap-6 md:mb-14 md:flex-row md:items-end">
+    <div className="mb-6 flex flex-col justify-between gap-3 sm:mb-14 sm:gap-6 md:flex-row md:items-end">
       <div className="max-w-2xl">
-        <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">{eyebrow}</p>
-        <h2 className="font-editorial text-4xl leading-[0.98] tracking-[-0.035em] text-[#1d1c19] sm:text-5xl lg:text-6xl">
+        <p className="mb-1.5 sm:mb-4 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">{eyebrow}</p>
+        <h2 className="font-editorial text-2xl leading-tight tracking-tight text-[#1d1c19] sm:text-5xl lg:text-6xl sm:leading-[0.98] sm:tracking-[-0.035em]">
           {title}
         </h2>
-        {copy && <p className="mt-5 max-w-xl text-base leading-7 text-[#6f6b62]">{copy}</p>}
+        {copy && <p className="mt-2 sm:mt-5 max-w-xl text-xs sm:text-base leading-relaxed text-[#6f6b62]">{copy}</p>}
       </div>
       {action}
     </div>
@@ -347,18 +347,18 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <section className="px-3 pb-4 pt-0 sm:px-5 lg:px-7 lg:pb-5">
+      <section className="px-3 pb-3 pt-3 sm:px-5 sm:pt-4 lg:px-7 lg:pb-5">
         {/* Mobile and tablet hero: the copy and photography get their own space. */}
-        <div className="mx-auto overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-[#eee8dd] shadow-[0_18px_55px_rgba(29,28,25,.08)] lg:hidden">
-          <div className="px-6 pb-7 pt-7 sm:px-9 sm:pb-9 sm:pt-9 md:px-12 md:py-12">
+        <div className="mx-auto overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] border border-black/[0.06] bg-[#eee8dd] shadow-[0_18px_55px_rgba(29,28,25,.08)] lg:hidden">
+          <div className="px-5 py-6 sm:px-9 sm:pb-9 sm:pt-9 md:px-12 md:py-12">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={reveal}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.23em] text-[#5e594f] sm:text-[10px]"
+              className="flex items-center gap-2.5 text-[9px] font-bold uppercase tracking-[0.23em] text-[#5e594f] sm:text-[10px]"
             >
-              <span className="h-px w-7 bg-[#9b5330]" /> The VKart Curation · 2026
+              <span className="h-px w-6 bg-[#9b5330]" /> The VKart Curation · 2026
             </motion.div>
 
             <motion.h1
@@ -366,7 +366,7 @@ export default function Home() {
               animate="visible"
               variants={reveal}
               transition={{ delay: 0.07, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 max-w-[19rem] font-editorial text-[2.9rem] leading-[0.9] tracking-[-0.05em] text-[#1d1c19] min-[420px]:text-[3.25rem] sm:max-w-lg sm:text-[4.25rem]"
+              className="mt-4 max-w-[19rem] font-editorial text-[2.25rem] leading-[0.92] tracking-[-0.04em] text-[#1d1c19] min-[420px]:text-[2.75rem] sm:max-w-lg sm:text-[4.25rem]"
             >
               Better things,
               <span className="block italic text-[#9b5330]">beautifully chosen.</span>
@@ -377,7 +377,7 @@ export default function Home() {
               animate="visible"
               variants={reveal}
               transition={{ delay: 0.14, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-5 max-w-md text-sm font-medium leading-6 text-[#625e55] sm:text-base sm:leading-7"
+              className="mt-3 max-w-md text-xs font-medium leading-relaxed text-[#625e55] sm:text-base sm:leading-7"
             >
               A considered edit of technology, style, and everyday essentials—only the pieces worth bringing home.
             </motion.p>
@@ -387,24 +387,24 @@ export default function Home() {
               animate="visible"
               variants={reveal}
               transition={{ delay: 0.22, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-7 flex flex-col gap-4 min-[430px]:flex-row min-[430px]:items-center"
+              className="mt-5 flex flex-col gap-2.5 min-[430px]:flex-row min-[430px]:items-center"
             >
               <Link
                 to="/products"
-                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#1d1c19] px-6 py-3.5 text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.18)] transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-[#9b5330] focus:ring-offset-4 focus:ring-offset-[#eee8dd]"
+                className="group inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.18)] transition-colors hover:bg-black"
               >
-                Shop the collection <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                Shop the collection <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/products?sort=newest"
-                className="group inline-flex min-h-11 items-center justify-center gap-2 text-sm font-bold text-[#1d1c19] min-[430px]:justify-start"
+                className="group inline-flex min-h-9 items-center justify-center gap-1.5 text-xs sm:text-sm font-bold text-[#1d1c19] min-[430px]:justify-start"
               >
-                See what’s new <ArrowUpRight size={15} />
+                See what’s new <ArrowUpRight size={13} />
               </Link>
             </motion.div>
           </div>
 
-          <div className="relative aspect-[6/5] overflow-hidden border-t border-black/[0.06] sm:aspect-[3/2]">
+          <div className="relative aspect-[16/11] sm:aspect-[3/2] overflow-hidden border-t border-black/[0.06]">
             <img
               src="/vkart-editorial-hero.webp"
               alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
@@ -412,7 +412,7 @@ export default function Home() {
               fetchpriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/5" />
-            <div className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-black/40 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md sm:bottom-6 sm:left-6">
+            <div className="absolute bottom-3 left-3 rounded-full border border-white/25 bg-black/40 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md sm:bottom-6 sm:left-6 sm:px-3 sm:py-2 sm:text-[9px]">
               Tech · Style · Life
             </div>
           </div>
@@ -497,45 +497,45 @@ export default function Home() {
       </section>
 
       <section className="border-y border-black/[0.08] bg-[#f6f3ed]">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-black/[0.08] px-4 lg:grid-cols-4 lg:divide-y-0">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-black/[0.08] px-2 sm:px-4 lg:grid-cols-4 lg:divide-y-0">
           {trustItems.map(({ icon: Icon, title, copy }) => (
-            <div key={title} className="flex items-center gap-3 px-4 py-7 sm:px-7">
-              <Icon size={19} strokeWidth={1.6} className="shrink-0 text-[#9b5330]" />
+            <div key={title} className="flex items-center gap-2.5 px-3 py-3.5 sm:px-7 sm:py-7">
+              <Icon size={17} strokeWidth={1.6} className="shrink-0 text-[#9b5330]" />
               <div>
                 <p className="text-xs font-bold text-[#292722]">{title}</p>
-                <p className="mt-0.5 text-[11px] text-[#817c72]">{copy}</p>
+                <p className="mt-0.5 text-[10px] sm:text-[11px] text-[#817c72]">{copy}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
+      <section className="px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-9 grid gap-6 border-b border-black/[0.1] pb-8 sm:mb-11 sm:pb-10 lg:grid-cols-[.9fr_1fr] lg:items-end lg:gap-16">
+          <div className="mb-6 grid gap-4 border-b border-black/[0.1] pb-5 sm:mb-11 sm:gap-6 sm:pb-10 lg:grid-cols-[.9fr_1fr] lg:items-end lg:gap-16">
             <div>
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
+              <p className="mb-2 sm:mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
                 Shop the edit
               </p>
-              <h2 className="home-section-title max-w-2xl font-editorial text-4xl leading-[0.98] tracking-[-0.035em] sm:text-5xl">
+              <h2 className="home-section-title max-w-2xl font-editorial text-2xl leading-tight tracking-tight sm:text-5xl sm:leading-[0.98] sm:tracking-[-0.035em]">
                 Four ways into the collection.
               </h2>
             </div>
-            <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end">
-              <p className="max-w-lg text-sm leading-6 text-[#6f6b62] sm:text-[15px] sm:leading-7">
+            <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end sm:gap-5">
+              <p className="max-w-lg text-xs leading-relaxed text-[#6f6b62] sm:text-[15px] sm:leading-7">
                 Technology, timepieces, and everyday rituals—brought together with one quieter point of view.
               </p>
               <Link
                 to="/products"
-                className="group inline-flex shrink-0 items-center gap-2 border-b border-black/20 pb-1 text-xs font-bold text-[#1d1c19] transition-colors hover:border-black/60"
+                className="group inline-flex shrink-0 items-center gap-1.5 border-b border-black/20 pb-0.5 text-xs font-bold text-[#1d1c19] transition-colors hover:border-black/60"
               >
                 View everything
-                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 xl:grid-cols-4 sm:gap-4">
             {categories.map((category, index) => (
               <motion.div
                 key={category.name}
@@ -546,7 +546,7 @@ export default function Home() {
               >
                 <Link
                   to={category.to}
-                  className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-black/[0.08] bg-[#ebe4da] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-xl sm:rounded-[1.35rem] border border-black/[0.08] bg-[#ebe4da] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#e5ded3]">
                     <img
@@ -556,17 +556,17 @@ export default function Home() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                     />
-                    <span className="absolute left-4 top-4 rounded-full border border-black/[0.08] bg-[#f7f3ec]/90 px-2.5 py-1 text-[9px] font-bold tracking-[0.14em] text-[#696258] backdrop-blur-sm">
+                    <span className="absolute left-2.5 top-2.5 sm:left-4 sm:top-4 rounded-full border border-black/[0.08] bg-[#f7f3ec]/90 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[9px] font-bold tracking-[0.14em] text-[#696258] backdrop-blur-sm">
                       {category.number}
                     </span>
                   </div>
-                  <div className="flex min-h-[7.5rem] items-center justify-between gap-4 p-5 sm:p-6">
+                  <div className="flex min-h-[4.5rem] sm:min-h-[7.5rem] items-center justify-between gap-2 p-3 sm:p-6">
                     <div>
-                      <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#8a7667]">{category.eyebrow}</p>
-                      <h3 className="font-editorial text-2xl tracking-[-0.03em] text-[#1d1c19] sm:text-[1.7rem]">{category.name}</h3>
+                      <p className="mb-0.5 sm:mb-2 text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.2em] text-[#8a7667]">{category.eyebrow}</p>
+                      <h3 className="font-editorial text-base sm:text-2xl sm:text-[1.7rem] tracking-tight text-[#1d1c19]">{category.name}</h3>
                     </div>
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-black/[0.12] bg-[#f6f3ed] text-[#1d1c19] transition-all group-hover:border-[#1d1c19] group-hover:bg-[#1d1c19] group-hover:text-white">
-                      <ArrowUpRight size={15} />
+                    <span className="grid h-7 w-7 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/[0.12] bg-[#f6f3ed] text-[#1d1c19] transition-all group-hover:border-[#1d1c19] group-hover:bg-[#1d1c19] group-hover:text-white">
+                      <ArrowUpRight size={13} />
                     </span>
                   </div>
                 </Link>
@@ -577,54 +577,54 @@ export default function Home() {
       </section>
 
       {activeSale && (
-        <section className="px-4 pb-16 sm:px-7 sm:pb-20">
+        <section className="px-3 pb-8 sm:px-7 sm:pb-20">
           <Link
             to="/products?sale=true"
-            className="group relative mx-auto grid max-w-7xl overflow-hidden rounded-[1.25rem] border border-black/[0.09] bg-[#eee7dd] text-[#1d1c19] shadow-[0_18px_60px_rgba(29,28,25,.06)] sm:rounded-[1.5rem] lg:grid-cols-[1fr_19rem]"
+            className="group relative mx-auto grid max-w-7xl overflow-hidden rounded-xl border border-black/[0.09] bg-[#eee7dd] text-[#1d1c19] shadow-[0_18px_60px_rgba(29,28,25,.06)] sm:rounded-[1.5rem] lg:grid-cols-[1fr_19rem]"
           >
             <span className="absolute inset-y-0 left-0 w-1 bg-[#a85d37] sm:w-1.5" />
-            <div className="relative px-6 py-7 sm:flex sm:items-start sm:gap-5 sm:px-11 sm:py-10">
-              <span className="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8] text-[#a85d37] sm:static sm:h-11 sm:w-11 sm:shrink-0"><Zap size={16} strokeWidth={1.8} /></span>
-              <div className="pr-12 sm:pr-0">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#8a604b] sm:text-[10px] sm:tracking-[0.24em]">
-                  <span className="sm:hidden">Limited-time offer</span>
+            <div className="relative px-4 py-4 sm:flex sm:items-start sm:gap-5 sm:px-11 sm:py-10">
+              <span className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8] text-[#a85d37] sm:static sm:h-11 sm:w-11 sm:shrink-0"><Zap size={14} strokeWidth={1.8} /></span>
+              <div className="pr-10 sm:pr-0">
+                <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#8a604b] sm:text-[10px] sm:tracking-[0.24em]">
+                  <span className="sm:hidden">Limited offer</span>
                   <span className="hidden sm:inline">The member edit · Limited time</span>
                 </p>
-                <h2 className="mt-2 max-w-[13rem] font-editorial text-[2.35rem] leading-[0.94] tracking-[-0.035em] sm:mt-3 sm:max-w-none sm:text-[2.8rem]">{activeSale.name}</h2>
-                <p className="mt-4 text-[13px] leading-5 text-[#716b62] sm:text-sm">
-                  <span className="sm:hidden">Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
+                <h2 className="mt-1 font-editorial text-xl sm:text-[2.8rem] leading-tight sm:leading-[0.94] tracking-tight sm:mt-3 sm:max-w-none">{activeSale.name}</h2>
+                <p className="mt-2 text-xs leading-tight text-[#716b62] sm:text-sm sm:mt-4">
+                  <span className="sm:hidden">Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}</span>
                   <span className="hidden sm:inline">Selected pieces, considered prices · Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
                 </p>
                 <SaleCountdown endDate={activeSale.endDate} />
               </div>
             </div>
-            <div className="relative grid grid-cols-[1fr_auto] items-center gap-3 border-t border-black/[0.09] px-6 py-5 sm:flex sm:justify-between sm:gap-6 sm:px-7 sm:py-6 lg:flex-col lg:items-start lg:justify-center lg:border-l lg:border-t-0 lg:px-9">
-              <div className="flex items-end gap-2">
-                <span className="font-editorial text-4xl leading-none tracking-[-0.04em] sm:text-5xl">{maxSaleDiscount}%</span>
+            <div className="relative grid grid-cols-[1fr_auto] items-center gap-3 border-t border-black/[0.09] px-4 py-3 sm:flex sm:justify-between sm:gap-6 sm:px-7 sm:py-6 lg:flex-col lg:items-start lg:justify-center lg:border-l lg:border-t-0 lg:px-9">
+              <div className="flex items-end gap-1.5 sm:gap-2">
+                <span className="font-editorial text-2xl leading-none tracking-tight sm:text-5xl">{maxSaleDiscount}%</span>
                 <span className="pb-0.5 text-[8px] font-bold uppercase leading-tight tracking-[0.14em] text-[#7d766d] sm:pb-1 sm:text-[9px] sm:tracking-[0.16em]">off<br />selected</span>
               </div>
-              <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[#1d1c19] px-4 py-2.5 text-[11px] font-bold text-white transition-transform group-hover:-translate-y-0.5 sm:gap-3 sm:px-5 sm:py-3 sm:text-xs">
-                Shop now <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[#1d1c19] px-3.5 py-1.5 text-[10px] font-bold text-white transition-transform group-hover:-translate-y-0.5 sm:gap-3 sm:px-5 sm:py-3 sm:text-xs">
+                Shop now <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
               </span>
             </div>
           </Link>
         </section>
       )}
 
-      <section className="bg-[#fffdf8] px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
+      <section className="bg-[#fffdf8] px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="This week’s shortlist"
             title="Trending, for good reason."
             copy="The pieces customers keep coming back to—selected from across the VKart catalogue."
             action={
-              <Link to="/products" className="group inline-flex items-center gap-2 text-sm font-bold text-[#1d1c19]">
-                Shop all products <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              <Link to="/products" className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#1d1c19]">
+                Shop all products <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
               </Link>
             }
           />
 
-          <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-5 sm:gap-y-12">
             {loading
               ? [1, 2, 3, 4, 5, 6, 7, 8].map((item) => <SkeletonCard key={item} />)
               : featured.slice(0, 8).map((product) => (
@@ -635,30 +635,30 @@ export default function Home() {
       </section>
 
       {stats && (
-        <section className="border-y border-black/[0.08] bg-[#efe9df] px-5 py-16 sm:px-7 sm:py-20">
+        <section className="border-y border-black/[0.08] bg-[#efe9df] px-4 py-6 sm:px-7 sm:py-16">
           <div className="mx-auto max-w-7xl">
-            <p className="text-center text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
+            <p className="text-center text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
               Trusted across the catalogue
             </p>
-            <div className="mt-8 grid grid-cols-1 gap-8 text-center sm:grid-cols-3 sm:gap-6">
+            <div className="mt-4 sm:mt-8 grid grid-cols-3 gap-2 text-center sm:gap-6">
               <div>
-                <p className="font-editorial text-4xl text-[#1d1c19] sm:text-5xl">
+                <p className="font-editorial text-xl sm:text-5xl text-[#1d1c19]">
                   {stats.avgRating.toFixed(1)}
-                  <span className="text-xl text-[#9b978d] sm:text-2xl">/5</span>
+                  <span className="text-xs text-[#9b978d] sm:text-2xl">/5</span>
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[#6f6b62]">Average rating across every product</p>
+                <p className="mt-1 text-[10px] leading-tight text-[#6f6b62] sm:text-sm sm:leading-6">Average rating</p>
               </div>
               <div>
-                <p className="font-editorial text-4xl text-[#1d1c19] sm:text-5xl">
+                <p className="font-editorial text-xl sm:text-5xl text-[#1d1c19]">
                   {stats.totalReviews.toLocaleString("en-IN")}+
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[#6f6b62]">Verified customer reviews</p>
+                <p className="mt-1 text-[10px] leading-tight text-[#6f6b62] sm:text-sm sm:leading-6">Verified reviews</p>
               </div>
               <div>
-                <p className="font-editorial text-4xl text-[#1d1c19] sm:text-5xl">
+                <p className="font-editorial text-xl sm:text-5xl text-[#1d1c19]">
                   {stats.totalProducts.toLocaleString("en-IN")}+
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[#6f6b62]">Curated products, always in stock</p>
+                <p className="mt-1 text-[10px] leading-tight text-[#6f6b62] sm:text-sm sm:leading-6">Curated pieces</p>
               </div>
             </div>
           </div>
@@ -666,25 +666,25 @@ export default function Home() {
       )}
 
       {!profile?.isPrime && (
-        <section className="border-y border-black/[0.06] bg-[#e9e1d5] px-5 py-16 sm:px-7 sm:py-20">
-          <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#1d1c19] text-white shadow-[0_28px_80px_rgba(29,28,25,.15)] lg:grid-cols-[1.1fr_.9fr]">
-            <div className="relative px-7 py-12 sm:px-12 sm:py-14 lg:px-14 lg:py-16">
+        <section className="border-y border-black/[0.06] bg-[#e9e1d5] px-3 py-6 sm:px-7 sm:py-16">
+          <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-xl border border-white/[0.08] bg-[#1d1c19] text-white shadow-[0_28px_80px_rgba(29,28,25,.15)] sm:rounded-[1.75rem] lg:grid-cols-[1.1fr_.9fr]">
+            <div className="relative px-5 py-6 sm:px-12 sm:py-14 lg:px-14 lg:py-16">
               <div className="absolute -left-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[#b66a3c]/15 blur-3xl" />
               <div className="relative">
-                <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#d99b72]">
-                  <Crown size={14} /> VKart Prime
+                <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.24em] text-[#d99b72]">
+                  <Crown size={13} /> VKart Prime
                 </span>
-                <h2 className="mt-6 max-w-xl font-editorial text-4xl leading-[0.95] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+                <h2 className="mt-3 sm:mt-6 max-w-xl font-editorial text-2xl leading-tight sm:leading-[0.95] tracking-tight sm:tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
                   A little more, for people who shop less.
                 </h2>
-                <p className="mt-6 max-w-xl text-sm leading-7 text-white/60 sm:text-base">
+                <p className="mt-2 sm:mt-6 max-w-xl text-xs leading-relaxed text-white/60 sm:text-base sm:leading-7">
                   Better value, earlier access, and thoughtful benefits across the things you already want.
                 </p>
                 <Link
                   to="/prime"
-                  className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#d18a5e] px-6 py-3.5 text-sm font-bold text-[#1d1c19] transition-all hover:-translate-y-0.5 hover:bg-[#e0a37d]"
+                  className="group mt-4 sm:mt-8 inline-flex items-center gap-2 rounded-full bg-[#d18a5e] px-4 py-2 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-bold text-[#1d1c19] transition-all hover:-translate-y-0.5 hover:bg-[#e0a37d]"
                 >
-                  Discover Prime <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                  Discover Prime <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -694,11 +694,11 @@ export default function Home() {
                 ["02", "Priority access", "Shop new drops and live sales first."],
                 ["03", "Delivery on us", "Free shipping on eligible orders."],
               ].map(([number, title, copy]) => (
-                <div key={number} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-white/10 px-7 py-7 last:border-b-0 sm:px-10 lg:content-center lg:py-6">
-                  <span className="font-editorial text-2xl text-[#d18a5e]">{number}</span>
+                <div key={number} className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr] gap-2.5 sm:gap-4 border-b border-white/10 px-4 py-3.5 last:border-b-0 sm:px-10 lg:content-center sm:py-6">
+                  <span className="font-editorial text-lg sm:text-2xl text-[#d18a5e]">{number}</span>
                   <div>
-                    <h3 className="text-base font-bold">{title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-white/45">{copy}</p>
+                    <h3 className="text-xs sm:text-base font-bold">{title}</h3>
+                    <p className="mt-0.5 sm:mt-2 text-[11px] sm:text-sm leading-tight text-white/45">{copy}</p>
                   </div>
                 </div>
               ))}
@@ -707,19 +707,19 @@ export default function Home() {
         </section>
       )}
 
-      <section className="px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
+      <section className="px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Recently arrived"
             title="Fresh perspective."
             copy="New additions chosen to make daily routines feel a little more considered."
             action={
-              <Link to="/products?sort=newest" className="group inline-flex items-center gap-2 text-sm font-bold text-[#1d1c19]">
-                Explore new arrivals <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+              <Link to="/products?sort=newest" className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#1d1c19]">
+                Explore new arrivals <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
               </Link>
             }
           />
-          <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-5 sm:gap-y-12">
             {loading
               ? [1, 2, 3, 4, 5, 6, 7, 8].map((item) => <SkeletonCard key={item} />)
               : newArrivals.slice(0, 8).map((product) => (
@@ -729,22 +729,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-black/[0.08] bg-[#efe9df] px-5 py-20 sm:px-7 sm:py-24 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
+      <section className="border-t border-black/[0.08] bg-[#efe9df] px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-6 sm:gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">Why VKart</p>
-            <h2 className="home-why-title mt-5 font-editorial text-5xl leading-[0.95] tracking-[-0.035em] sm:text-6xl">Shopping should feel considered.</h2>
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">Why VKart</p>
+            <h2 className="home-why-title mt-2 sm:mt-5 font-editorial text-2xl sm:text-5xl leading-tight tracking-tight sm:leading-[0.95] sm:tracking-[-0.035em]">Shopping should feel considered.</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-3 sm:gap-4 sm:grid-cols-3">
             {[
               [Sparkles, "Curated, not crowded", "A sharper catalogue that keeps the good things easy to find."],
               [ShieldCheck, "Confidence at checkout", "Clear pricing and protected payments from bag to doorstep."],
               [Headphones, "Human when it matters", "Helpful support backed by smart tools, without the runaround."],
             ].map(([Icon, title, copy]) => (
-              <div key={title} className="border-t border-black/15 pt-6">
-                <Icon size={20} strokeWidth={1.5} className="text-[#9b5330]" />
-                <h3 className="mt-7 text-sm font-bold">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#777269]">{copy}</p>
+              <div key={title} className="border-t border-black/15 pt-3 sm:pt-6">
+                <Icon size={17} strokeWidth={1.5} className="text-[#9b5330]" />
+                <h3 className="mt-2 sm:mt-7 text-xs sm:text-sm font-bold">{title}</h3>
+                <p className="mt-1 sm:mt-3 text-[11px] sm:text-sm leading-relaxed text-[#777269]">{copy}</p>
               </div>
             ))}
           </div>

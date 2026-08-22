@@ -51,21 +51,21 @@ export default function OrderCard({ order }) {
   );
 
   return (
-    <div className={`group relative rounded-[2rem] border transition-all duration-300 overflow-hidden ${open
+    <div className={`group relative rounded-2xl sm:rounded-[2rem] border transition-all duration-300 overflow-hidden ${open
       ? "bg-white border-orange-200 shadow-xl shadow-orange-500/5"
       : "bg-white border-gray-100 shadow-sm hover:shadow-md"
       }`}>
 
       {/* --- SUMMARY HEADER --- */}
       <div
-        className="p-4 sm:p-8 cursor-pointer"
+        className="p-3.5 sm:p-6 cursor-pointer"
         onClick={() => setOpen(!open)}
       >
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 lg:gap-6">
 
           {/* Left: Icon + ID + Date */}
           <div className="flex items-start gap-3 sm:gap-5">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 border border-gray-100 p-2 flex items-center justify-center shrink-0">
+            <div className="w-11 h-11 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gray-50 border border-gray-100 p-1.5 sm:p-2 flex items-center justify-center shrink-0">
               <img
                 src={firstProduct.image || firstProduct.thumbnail || "https://via.placeholder.com/80"}
                 alt="Product"
@@ -73,9 +73,9 @@ export default function OrderCard({ order }) {
               />
             </div>
 
-            <div className="space-y-0.5 sm:space-y-1">
-              <div className="flex items-center gap-3 mb-0.5 sm:mb-1">
-                <h3 className="text-base sm:text-lg font-black text-gray-900 tracking-tight">
+            <div className="space-y-0.5 sm:space-y-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-0.5 sm:mb-1">
+                <h3 className="text-sm sm:text-base font-black text-gray-900 tracking-tight line-clamp-1">
                   {(() => {
                     const products = order.products || [];
                     if (products.length === 0) return 'Order';
@@ -108,19 +108,19 @@ export default function OrderCard({ order }) {
                   );
                 })()}
               </div>
-              <p className="text-xs sm:text-sm font-medium text-gray-500">{orderDate}</p>
+              <p className="text-[11px] sm:text-sm font-medium text-gray-500">{orderDate}</p>
               {/* Mobile Status Pill - same priority logic */}
-              <div className="sm:hidden mt-1.5">
+              <div className="sm:hidden mt-1">
                 {hasRefund ? (
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-100">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-100">
                     Refund {order.refundStatus}
                   </span>
                 ) : hasReturn ? (
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-100">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-100">
                     Return {order.returnStatus}
                   </span>
                 ) : (
-                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${style.bg} ${style.text}`}>
+                  <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${style.bg} ${style.text}`}>
                     <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
                     {stage.replace(/_/g, " ")}
                   </span>
@@ -130,28 +130,28 @@ export default function OrderCard({ order }) {
           </div>
 
           {/* Right: Price + Items + Action */}
-          <div className="flex items-center justify-between lg:justify-end gap-4 lg:gap-10 border-t lg:border-t-0 border-gray-50 pt-3 lg:pt-0">
+          <div className="flex items-center justify-between lg:justify-end gap-3 sm:gap-6 lg:gap-10 border-t lg:border-t-0 border-gray-100 pt-2.5 sm:pt-3 lg:pt-0">
 
             {/* Stats */}
-            <div className="flex items-center gap-6 sm:gap-8">
+            <div className="flex items-center gap-5 sm:gap-8">
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Total</p>
-                <p className="text-base sm:text-lg font-black text-gray-900">{INR(order.totalPrice)}</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Total</p>
+                <p className="text-sm sm:text-base font-black text-gray-900">{INR(order.totalPrice)}</p>
               </div>
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Items</p>
-                <p className="text-base sm:text-lg font-black text-gray-900 flex items-center gap-1">
-                  <FaShoppingBag size={14} className="text-orange-500" /> {order.products?.length || 0}
+                <p className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Items</p>
+                <p className="text-sm sm:text-base font-black text-gray-900 flex items-center gap-1">
+                  <FaShoppingBag size={12} className="text-orange-500" /> {order.products?.length || 0}
                 </p>
               </div>
             </div>
 
             {/* Toggle Button */}
             <button
-              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-gray-900 text-white rotate-180" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-gray-900 text-white rotate-180" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
                 }`}
             >
-              <FaChevronDown size={14} />
+              <FaChevronDown size={12} />
             </button>
           </div>
 
@@ -159,28 +159,28 @@ export default function OrderCard({ order }) {
       </div>
 
       {/* --- EXPANDED DETAILS --- */}
-      <div className={`transition-all duration-500 ease-in-out overflow-hidden ${open ? "max-h-[1000px] opacity-100 border-t border-gray-100" : "max-h-0 opacity-0"
-        }`}>
-        <div className="p-6 sm:p-8 bg-gray-50/50">
+      <div className={`transition-all duration-500 ease-in-out overflow-hidden ${open ? "max-h-[1200px] opacity-100 border-t border-gray-100" : "max-h-0 opacity-0"
+      }`}>
+        <div className="p-4 sm:p-8 bg-gray-50/50">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
 
             {/* Column 1: Shipping Info */}
-            <div className="space-y-6">
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-                <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">
                   <FaMapMarkerAlt /> Delivery Address
                 </h4>
-                <p className="text-sm font-medium text-gray-700 leading-relaxed">
+                <p className="text-xs sm:text-sm font-medium text-gray-700 leading-relaxed">
                   {order.shippingAddress || "No address provided"}
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-                <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+              <div className="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">
                   <FaReceipt /> Payment
                 </h4>
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-xs sm:text-sm">
                   <span className="text-gray-600">Method</span>
                   <span className="font-bold text-gray-900">Online (Razorpay)</span>
                 </div>
@@ -189,14 +189,14 @@ export default function OrderCard({ order }) {
 
             {/* Column 2: Product List */}
             <div>
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                <div className="px-5 py-3 border-b border-gray-100 bg-gray-50/30">
+              <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div className="px-4 sm:px-5 py-2.5 sm:py-3 border-b border-gray-100 bg-gray-50/30">
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Items Ordered</h4>
                 </div>
                 <div className="divide-y divide-gray-50">
                   {order.products.map((p, i) => (
-                    <div key={i} className="p-4 flex items-center gap-4 hover:bg-gray-50 transition-colors">
-                      <div className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-100 p-1 flex items-center justify-center">
+                    <div key={i} className="p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:bg-gray-50 transition-colors">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gray-50 border border-gray-100 p-1 flex items-center justify-center shrink-0">
                         <img
                           src={p.image || p.thumbnail}
                           alt={p.name}
@@ -204,10 +204,10 @@ export default function OrderCard({ order }) {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-bold text-gray-900 truncate">{p.name}</p>
-                        <p className="text-xs text-gray-500">Qty: {p.quantity}</p>
+                        <p className="text-xs sm:text-sm font-bold text-gray-900 truncate">{p.name}</p>
+                        <p className="text-[11px] sm:text-xs text-gray-500">Qty: {p.quantity}</p>
                       </div>
-                      <div className="text-sm font-bold text-gray-900">
+                      <div className="text-xs sm:text-sm font-bold text-gray-900">
                         {INR(p.lineTotal ?? p.price * p.quantity)}
                       </div>
                     </div>

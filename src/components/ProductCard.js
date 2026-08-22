@@ -126,24 +126,24 @@ const ReviewSummary = ({ reviews = [], rating }) => {
   });
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-8">
-      <div className="text-center md:text-left shrink-0">
-        <div className="text-5xl font-black text-gray-900">{rating?.toFixed(1)}</div>
-        <Stars value={rating} size="text-lg" className="justify-center md:justify-start my-2" />
-        <p className="text-sm text-gray-500">{total} reviews</p>
+    <div className="flex flex-row items-center gap-4 sm:gap-6">
+      <div className="text-center sm:text-left shrink-0 pr-3 sm:pr-4 border-r border-gray-100">
+        <div className="text-3xl sm:text-4xl font-black text-gray-900 leading-none">{rating?.toFixed(1)}</div>
+        <Stars value={rating} size="text-xs sm:text-sm" className="justify-center sm:justify-start my-1.5" />
+        <p className="text-[11px] text-gray-500 font-medium">{total} reviews</p>
       </div>
-      <div className="flex-1 w-full space-y-2">
+      <div className="flex-1 w-full space-y-1">
         {[5, 4, 3, 2, 1].map((star) => {
           const count = counts[star];
           const pct = total ? (count / total) * 100 : 0;
           return (
-            <div key={star} className="flex items-center gap-3 text-sm">
-              <span className="w-3 font-bold text-gray-500">{star}</span>
-              <FaStar className="text-gray-300 text-xs" />
-              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div key={star} className="flex items-center gap-1.5 sm:gap-2 text-xs">
+              <span className="w-2.5 font-bold text-gray-500 text-[11px]">{star}</span>
+              <FaStar className="text-gray-300 text-[9px]" />
+              <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                 <div className="h-full bg-amber-400 rounded-full" style={{ width: `${pct}%` }} />
               </div>
-              <span className="w-8 text-right text-gray-400 text-xs">{pct.toFixed(0)}%</span>
+              <span className="w-6 text-right text-gray-400 text-[10px]">{pct.toFixed(0)}%</span>
             </div>
           );
         })}
@@ -257,13 +257,29 @@ export default function ProductCard() {
       } catch {
         /* fall through to category-based browsing below */
       }
-      // Fallback: same-category products if similarity is unavailable.
-      if (!product.category) return [];
-      const relRes = await axios.get("/api/products", {
-        params: { category: product.category, limit: 8 },
-        signal,
-      });
-      return (relRes.data.products || []).filter((p) => p._id !== product._id);
+      // Fallback 1: same-category products if similarity is unavailable.
+      if (product.category) {
+        try {
+          const relRes = await axios.get("/api/products", {
+            params: { category: product.category, limit: 8 },
+            signal,
+          });
+          const catItems = (relRes.data.products || []).filter((p) => p._id !== product._id);
+          if (catItems.length) return catItems;
+        } catch {
+          /* fall through to general products fallback */
+        }
+      }
+      // Fallback 2: latest/trending catalog products if category is empty
+      try {
+        const fallbackRes = await axios.get("/api/products", {
+          params: { limit: 8 },
+          signal,
+        });
+        return (fallbackRes.data.products || []).filter((p) => p._id !== product._id);
+      } catch {
+        return [];
+      }
     },
   });
 
@@ -469,9 +485,9 @@ export default function ProductCard() {
         </Helmet>
       )}
 
-      <div className="container mx-auto px-4 py-6 sm:py-10 relative z-10 pb-32 lg:pb-10">
+      <div className="container mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-10 relative z-10 pb-28 lg:pb-10">
 
-        <nav className="flex items-center gap-2 text-xs font-medium text-gray-500 mb-6 md:mb-8 animate-fade-up">
+        <nav className="flex items-center gap-2 text-xs font-medium text-gray-500 mb-4 md:mb-8 animate-fade-up">
           <Link to="/" className="hover:text-gray-900 transition-colors">Home</Link>
           <span className="text-gray-300">/</span>
           <Link to="/products" className="hover:text-gray-900 transition-colors">Collection</Link>
@@ -479,14 +495,14 @@ export default function ProductCard() {
           <span className="text-gray-900 truncate max-w-[150px] md:max-w-[300px]">{title}</span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
 
           {/* Image gallery */}
-          <div className="lg:col-span-6 space-y-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 relative">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 shadow-sm border border-gray-100 relative">
 
               {/* Main display area */}
-              <div className="relative group rounded-2xl overflow-hidden bg-gray-50 aspect-square max-h-[350px] lg:max-h-[450px] w-full mx-auto">
+              <div className="relative group rounded-xl sm:rounded-2xl overflow-hidden bg-gray-50 aspect-square max-h-[350px] lg:max-h-[450px] w-full mx-auto">
                 <Slider
                   asNavFor={nav2}
                   ref={(slider) => setNav1(slider)}
@@ -498,7 +514,7 @@ export default function ProductCard() {
                   {imgs.map((img, i) => (
                     <div key={i} className="relative w-full h-full outline-none">
                       <div
-                        className="w-full h-full flex items-center justify-center cursor-zoom-in p-6"
+                        className="w-full h-full flex items-center justify-center cursor-zoom-in p-4 sm:p-6"
                         onMouseMove={(e) => {
                           const rect = e.currentTarget.getBoundingClientRect();
                           const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -529,7 +545,7 @@ export default function ProductCard() {
                 </Slider>
 
                 {stock === 0 && (
-                  <div className="absolute left-4 top-4 z-20 rounded-full bg-[#75483b] px-3 py-1 text-xs font-bold text-white">
+                  <div className="absolute left-3 top-3 z-20 rounded-full bg-[#75483b] px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-bold text-white">
                     Out of Stock
                   </div>
                 )}
@@ -537,7 +553,7 @@ export default function ProductCard() {
 
               {/* Thumbnails */}
               {imgs.length > 1 && (
-                <div className="mt-4 px-2">
+                <div className="mt-3 sm:mt-4 px-1 sm:px-2">
                   <Slider
                     asNavFor={nav1}
                     ref={(slider) => setNav2(slider)}
@@ -556,14 +572,14 @@ export default function ProductCard() {
                       {
                         breakpoint: 480,
                         settings: {
-                          slidesToShow: Math.min(imgs.length, 3)
+                          slidesToShow: Math.min(imgs.length, 4)
                         }
                       }
                     ]}
                   >
                     {imgs.map((img, i) => (
                       <div key={i} className="px-1 md:px-2 cursor-pointer outline-none">
-                        <div className="h-16 w-full rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden hover:border-gray-900 transition-all">
+                        <div className="h-14 sm:h-16 w-full rounded-lg sm:rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden hover:border-gray-900 transition-all">
                           <img src={img} className="h-full w-full object-contain p-1 mix-blend-multiply" alt="" />
                         </div>
                       </div>
@@ -575,62 +591,62 @@ export default function ProductCard() {
           </div>
 
           {/* Product details */}
-          <div className="lg:col-span-6 space-y-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <div className="lg:col-span-6 space-y-3 sm:space-y-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
 
             {/* Header */}
             <div>
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-4">
+                <span className="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">
                   {category}
                 </span>
                 {product.onSale && product.saleName && (
-                  <span className="rounded-full bg-[#eee2dc] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#75483b]">
+                  <span className="rounded-full bg-[#eee2dc] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#75483b]">
                     {product.saleName}
                   </span>
                 )}
                 {discountPercentage > 0 && (
-                  <span className="rounded-full bg-[#e5e8df] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#59634f]">
+                  <span className="rounded-full bg-[#e5e8df] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#59634f]">
                     Save {Math.round(discountPercentage)}%
                   </span>
                 )}
               </div>
-              <h1 className="product-detail-title font-editorial font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.035em] mb-4">
+              <h1 className="product-detail-title font-editorial font-bold sm:font-normal text-[#1d1c19] leading-snug sm:leading-[1.05] tracking-tight sm:tracking-[-0.035em] mb-1 sm:mb-4">
                 {title}
               </h1>
-              <div className="flex items-center gap-4 text-sm mb-6">
+              <div className="flex items-center gap-2.5 sm:gap-4 text-xs sm:text-sm mb-2 sm:mb-6">
                 <div className="font-bold text-gray-500">{brand}</div>
-                <div className="h-4 w-px bg-gray-300" />
+                <div className="h-3 sm:h-4 w-px bg-gray-300" />
                 <div className="flex items-center gap-1">
-                  <Stars value={rating} size="text-sm" />
-                  <span className="text-gray-400 font-medium">({reviewCount} Reviews)</span>
+                  <Stars value={rating} size="text-[11px] sm:text-sm" />
+                  <span className="text-gray-400 font-medium text-[11px] sm:text-xs">({reviewCount} Reviews)</span>
                 </div>
               </div>
 
               {/* Price */}
-              <div className="flex items-baseline gap-3 pb-6 border-b border-gray-100">
-                <div className="text-4xl font-bold text-gray-900">{formatPrice(selling)}</div>
-                {mrp && <div className="text-lg text-gray-400 line-through">{formatPrice(mrp)}</div>}
+              <div className="flex items-baseline gap-2 sm:gap-3 pb-2.5 sm:pb-6 border-b border-gray-100">
+                <div className="text-xl sm:text-4xl font-black text-gray-900">{formatPrice(selling)}</div>
+                {mrp && <div className="text-sm sm:text-lg text-gray-400 line-through">{formatPrice(mrp)}</div>}
               </div>
             </div>
 
             {/* Controls */}
-            <div ref={buyBoxRef} className="space-y-4 rounded-2xl border border-gray-100 bg-white p-4 sm:p-5 shadow-sm">
+            <div ref={buyBoxRef} className="space-y-2.5 sm:space-y-4 rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-2.5 sm:p-5 shadow-sm">
               {/* Variant Selectors */}
               {product.variants?.length > 0 && (
-                <div className="space-y-4">
+                <div className="space-y-2 sm:space-y-4">
                   {product.variants.map((v) => (
                     <div key={v.type}>
-                      <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 block">
+                      <label className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 sm:mb-2 block">
                         {v.type}{selectedVariants[v.type] ? `: ${selectedVariants[v.type]}` : ""}
                       </label>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
                         {(v.options || []).map((opt) => {
                           const active = selectedVariants[v.type] === opt;
                           return (
                             <button
                               key={opt}
                               onClick={() => setSelectedVariants((prev) => ({ ...prev, [v.type]: opt }))}
-                              className={`rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
+                              className={`rounded-full border px-2.5 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-bold transition-colors ${
                                 active
                                   ? "border-[#1d1c19] bg-[#1d1c19] text-white"
                                   : "border-black/10 text-[#6f6b62] hover:border-black/25 hover:text-[#1d1c19]"
@@ -646,83 +662,83 @@ export default function ProductCard() {
                 </div>
               )}
 
-              <div
-                className={`grid grid-cols-1 gap-3 ${
-                  stock > 0
-                    ? "sm:grid-cols-[8rem_minmax(0,1fr)_minmax(0,1fr)]"
-                    : "sm:grid-cols-[8rem_minmax(0,1fr)]"
-                }`}
-              >
-                <div className="flex h-12 w-full items-center rounded-full border border-black/10 bg-[#f1ede5]">
+              {/* Action Buttons — Single horizontal row on mobile */}
+              <div className="flex items-center gap-1.5 sm:grid sm:gap-3 sm:grid-cols-[8rem_minmax(0,1fr)_minmax(0,1fr)]">
+                {/* Quantity */}
+                <div className="flex h-9 sm:h-12 w-20 sm:w-full items-center rounded-full border border-black/10 bg-[#f1ede5] shrink-0">
                   <button
                     onClick={() => changeQty(-1)}
-                    className="h-full flex-1 rounded-l-full font-bold text-[#6f6b62] transition-colors hover:bg-[#fffdf8] hover:text-[#1d1c19]"
+                    className="h-full flex-1 rounded-l-full font-bold text-[#6f6b62] transition-colors hover:bg-[#fffdf8] hover:text-[#1d1c19] text-xs sm:text-base"
                     aria-label="Decrease quantity"
                   >
                     -
                   </button>
-                  <span className="w-8 text-center font-bold text-gray-900">{quantity}</span>
+                  <span className="w-5 sm:w-8 text-center font-bold text-gray-900 text-xs sm:text-sm">{quantity}</span>
                   <button
                     onClick={() => changeQty(1)}
-                    className="h-full flex-1 rounded-r-full font-bold text-[#6f6b62] transition-colors hover:bg-[#fffdf8] hover:text-[#1d1c19]"
+                    className="h-full flex-1 rounded-r-full font-bold text-[#6f6b62] transition-colors hover:bg-[#fffdf8] hover:text-[#1d1c19] text-xs sm:text-base"
                     aria-label="Increase quantity"
                   >
                     +
                   </button>
                 </div>
+
+                {/* Add to Bag */}
                 <button
                   onClick={handleAdd}
                   disabled={stock === 0}
-                  className={`flex h-12 items-center justify-center gap-2 rounded-full text-base font-bold transition-colors ${
+                  className={`flex h-9 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full text-xs sm:text-base font-bold transition-colors ${
                     stock === 0
                       ? "cursor-not-allowed bg-[#ddd8cf] text-[#8b867d]"
-                      : "bg-[#1d1c19] text-white hover:bg-black"
+                      : "bg-[#1d1c19] text-white hover:bg-black active:scale-95"
                   }`}
                 >
-                  <FaCartPlus /> {stock === 0 ? "Out of Stock" : "Add to Bag"}
+                  <FaCartPlus size={11} /> {stock === 0 ? "Out of Stock" : "Add to Bag"}
                 </button>
 
                 {/* Buy Now */}
                 {stock > 0 && (
                   <button
                     onClick={handleBuyNow}
-                    className="flex h-12 items-center justify-center gap-2 rounded-full bg-[#a85d37] text-base font-bold text-white transition-colors hover:bg-[#874526]"
+                    className="flex h-9 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#a85d37] text-xs sm:text-base font-bold text-white transition-colors hover:bg-[#874526] active:scale-95"
                   >
-                    <FaBolt size={12} /> Buy It Now
+                    <FaBolt size={10} /> Buy Now
                   </button>
                 )}
               </div>
-              <div className="flex gap-4">
+
+              {/* Secondary Actions: Save & Share */}
+              <div className="flex gap-1.5 sm:gap-4">
                 <button
                   onClick={handleWish}
-                  className={`flex h-12 flex-1 items-center justify-center gap-2 rounded-full border text-sm font-bold transition-colors ${isInWishlist ? "border-[#c9a58f] bg-[#efe3d9] text-[#874526]" : "border-black/10 text-[#5f5b52] hover:border-[#b98a70] hover:bg-[#f1e8df] hover:text-[#874526]"
+                  className={`flex h-8 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full border text-[11px] sm:text-sm font-bold transition-colors ${isInWishlist ? "border-[#c9a58f] bg-[#efe3d9] text-[#874526]" : "border-black/10 text-[#5f5b52] hover:border-[#b98a70] hover:bg-[#f1e8df] hover:text-[#874526]"
                     }`}
                 >
-                  {isInWishlist ? <FaHeart /> : <FaRegHeart />} {isInWishlist ? "Saved" : "Save item"}
+                  {isInWishlist ? <FaHeart size={11} /> : <FaRegHeart size={11} />} {isInWishlist ? "Saved" : "Save item"}
                 </button>
                 <button
                   onClick={handleShare}
-                  className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-black/10 text-sm font-bold text-[#5f5b52] transition-colors hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                  className="flex h-8 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full border border-black/10 text-[11px] sm:text-sm font-bold text-[#5f5b52] transition-colors hover:bg-black/[0.04] hover:text-[#1d1c19]"
                 >
-                  <FaShareAlt /> Share
+                  <FaShareAlt size={11} /> Share
                 </button>
               </div>
             </div>
 
             {/* Trust badges */}
-            <div className="grid grid-cols-3 gap-4 py-6 border-y border-gray-100 my-6 bg-gray-50/50 rounded-2xl px-4">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 py-2.5 sm:py-6 border-y border-gray-100 my-2.5 sm:my-6 bg-gray-50/50 rounded-lg sm:rounded-2xl px-2 sm:px-4">
               {[
                 { icon: <FaTruck />, title: "Free Delivery", sub: "On eligible orders" },
                 { icon: <FaShieldAlt />, title: "Protected", sub: "Secure checkout" },
                 { icon: <FaUndoAlt />, title: "Easy Returns", sub: "Within 7 days" },
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center justify-center text-center gap-1.5">
-                  <div className="text-gray-900 bg-white p-2.5 rounded-full shadow-sm border border-gray-100">
+                <div key={i} className="flex flex-col items-center justify-center text-center gap-1">
+                  <div className="text-gray-900 bg-white p-2 sm:p-2.5 rounded-full shadow-sm border border-gray-100 text-xs sm:text-base">
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-[11px] font-bold text-gray-900 uppercase tracking-wide">{item.title}</div>
-                    <div className="text-[10px] text-gray-500 font-medium">{item.sub}</div>
+                    <div className="text-[10px] sm:text-[11px] font-bold text-gray-900 uppercase tracking-wide">{item.title}</div>
+                    <div className="text-[9px] sm:text-[10px] text-gray-500 font-medium">{item.sub}</div>
                   </div>
                 </div>
               ))}
@@ -783,30 +799,24 @@ export default function ProductCard() {
         </div>
 
         {/* REVIEWS SECTION */}
-        <div className="mt-20 lg:mt-32">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Customer Reviews</h3>
+        <div className="mt-12 sm:mt-20 lg:mt-28 border-t border-gray-100 pt-8 sm:pt-14">
+          <div className="flex items-center justify-between gap-3 mb-4 sm:mb-6">
+            <div>
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 leading-tight">Customer Reviews</h3>
+              <p className="text-[11px] sm:text-xs text-gray-500 mt-0.5">Real feedback from verified buyers</p>
+            </div>
+            <button
+              onClick={() => isAuthenticated ? setShowReviewModal(true) : navigate(`/login?redirect=${encodeURIComponent(location.pathname)}`)}
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gray-900 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-sm hover:bg-black transition-all active:scale-95 shrink-0"
+            >
+              <FaPen size={10} /> {isAuthenticated ? "Write Review" : "Write Review"}
+            </button>
+          </div>
 
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-4 space-y-8">
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div className="grid lg:grid-cols-12 gap-5 lg:gap-8">
+            <div className="lg:col-span-4 space-y-4">
+              <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm">
                 <ReviewSummary reviews={reviewsList.length ? reviewsList : Array(reviewCount).fill({ rating: rating || 5 })} rating={rating} />
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                <h4 className="font-bold text-gray-900 mb-2">Write a Review</h4>
-                <p className="text-gray-500 text-sm mb-6">Share your thoughts with other customers.</p>
-                <button
-                  onClick={() => isAuthenticated ? setShowReviewModal(true) : navigate(`/login?redirect=${encodeURIComponent(location.pathname)}`)}
-                  className="w-full py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-black transition-colors flex items-center justify-center gap-2"
-                >
-                  {isAuthenticated ? (
-                    <>
-                      <FaPen size={12} /> Write Review
-                    </>
-                  ) : (
-                    "Login to Review"
-                  )}
-                </button>
               </div>
             </div>
 
@@ -871,50 +881,52 @@ export default function ProductCard() {
         </div>
 
         {/* RELATED PRODUCTS */}
-        <div className="mt-20 lg:mt-32 border-t border-gray-100 pt-16">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-bold text-gray-900">You might also like</h3>
-            <Link to="/products" className="text-sm font-bold text-gray-900 hover:underline">View All</Link>
-          </div>
+        {related.length > 0 && (
+          <div className="mt-12 sm:mt-20 lg:mt-28 border-t border-gray-100 pt-8 sm:pt-14">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900">You might also like</h3>
+              <Link to="/products" className="text-xs sm:text-sm font-bold text-gray-900 hover:underline">View All</Link>
+            </div>
 
-          <Slider
-            dots={false}
-            infinite={false}
-            speed={500}
-            slidesToShow={4}
-            slidesToScroll={1}
-            responsive={[
-              { breakpoint: 1280, settings: { slidesToShow: 3 } },
-              { breakpoint: 1024, settings: { slidesToShow: 2.2 } },
-              { breakpoint: 640, settings: { slidesToShow: 1.3, arrows: false } },
-            ]}
-            className="-mx-2 md:-mx-4"
-          >
-            {related.map((rp) => (
-              <div key={rp._id} className="px-2 md:px-4 py-2 h-full">
-                <Link to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full">
-                  <div className="aspect-[4/3] bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
-                    <img src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
-                    {rp.discountPercentage > 0 && (
-                      <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
-                        -{Math.round(rp.discountPercentage)}%
-                      </span>
-                    )}
-                  </div>
-                  <h4 className="font-bold text-gray-900 truncate text-sm mb-1">{rp.title}</h4>
-                  <div className="flex items-baseline gap-2">
-                    <div className="font-bold text-gray-900">{formatPrice(rp.price)}</div>
-                    <div className="text-xs text-gray-400 line-through">{formatPrice(rp.price * 1.2)}</div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </Slider>
-        </div>
+            <Slider
+              dots={false}
+              infinite={false}
+              speed={500}
+              slidesToShow={4}
+              slidesToScroll={1}
+              responsive={[
+                { breakpoint: 1280, settings: { slidesToShow: 3 } },
+                { breakpoint: 1024, settings: { slidesToShow: 2.2 } },
+                { breakpoint: 640, settings: { slidesToShow: 1.3, arrows: false } },
+              ]}
+              className="-mx-2 md:-mx-4"
+            >
+              {related.map((rp) => (
+                <div key={rp._id} className="px-2 md:px-4 py-2 h-full">
+                  <Link to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full">
+                    <div className="aspect-[4/3] bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
+                      <img src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
+                      {rp.discountPercentage > 0 && (
+                        <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                          -{Math.round(rp.discountPercentage)}%
+                        </span>
+                      )}
+                    </div>
+                    <h4 className="font-bold text-gray-900 truncate text-sm mb-1">{rp.title}</h4>
+                    <div className="flex items-baseline gap-2">
+                      <div className="font-bold text-gray-900">{formatPrice(rp.price)}</div>
+                      <div className="text-xs text-gray-400 line-through">{formatPrice(rp.price * 1.2)}</div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        )}
 
         {/* RECENTLY VIEWED */}
         {recentlyViewed.length > 0 && (
-          <div className="mt-20 lg:mt-32 border-t border-gray-100 pt-16">
+          <div className="mt-12 sm:mt-20 lg:mt-28 border-t border-gray-100 pt-8 sm:pt-14">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-gray-900">Recently Viewed</h3>
             </div>
@@ -935,23 +947,23 @@ export default function ProductCard() {
       </div>
 
       {/* Sticky Mobile Bar */}
-      <div className={`fixed bottom-0 left-0 right-0 z-40 border-t border-black/[0.08] bg-[#fffdf8]/95 p-4 backdrop-blur lg:hidden transition-transform duration-300 ${showStickyBar ? 'translate-y-0' : 'translate-y-full'}`}>
-        <div className="flex gap-3 items-center">
-          <div className="flex-1">
+      <div className={`fixed bottom-0 left-0 right-0 z-40 border-t border-black/[0.08] bg-[#fffdf8]/95 px-4 py-2.5 pb-[max(0.6rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden transition-transform duration-300 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] ${showStickyBar ? 'translate-y-0' : 'translate-y-full'}`}>
+        <div className="flex gap-2.5 items-center">
+          <div className="flex-1 min-w-0">
             <div className="text-[10px] text-gray-500 uppercase tracking-wide font-bold">Total</div>
-            <div className="text-xl font-black text-gray-900 leading-none">{formatPrice(selling * quantity)}</div>
+            <div className="text-base font-black text-gray-900 leading-tight truncate">{formatPrice(selling * quantity)}</div>
           </div>
           <button
             onClick={handleAdd}
             disabled={stock === 0}
-            className="flex h-12 items-center gap-2 rounded-full bg-[#1d1c19] px-6 font-bold text-white"
+            className="flex h-10 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] px-4 text-xs font-bold text-white shrink-0 active:scale-95 transition-transform"
           >
-            <FaCartPlus /> {stock === 0 ? "No Stock" : "Add"}
+            <FaCartPlus size={11} /> {stock === 0 ? "No Stock" : "Add to Bag"}
           </button>
           {stock > 0 && (
             <button
               onClick={handleBuyNow}
-              className="flex h-12 items-center gap-1.5 rounded-full bg-[#a85d37] px-5 font-bold text-white"
+              className="flex h-10 items-center justify-center gap-1.5 rounded-full bg-[#a85d37] px-4 text-xs font-bold text-white shrink-0 active:scale-95 hover:bg-[#874526] transition-all"
             >
               <FaBolt size={11} /> Buy Now
             </button>

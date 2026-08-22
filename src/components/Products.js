@@ -441,26 +441,6 @@ export default function Products() {
                 <FaFilter className="text-gray-400" /> Filters
               </button>
 
-              {/* Compare selection — lives in the sticky filter bar rather than
-                  floating over the grid, so it never covers a card's own
-                  Compare checkbox or collides with the chat launcher. */}
-              {compare.length > 0 && (
-                <div className="flex items-center gap-2 rounded-full bg-[#1d1c19] pl-3 pr-1.5 py-1.5 text-white shrink-0 animate-fade-up">
-                  <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#a85d37] px-1 text-[10px] font-bold">{compare.length}</span>
-                  <span className="text-xs font-medium text-gray-300 hidden sm:inline">Selected</span>
-                  <div className="h-3 w-px bg-white/20 mx-0.5" />
-                  <button onClick={() => setCompare([])} className="text-xs text-gray-400 hover:text-white transition-colors px-1.5">Clear</button>
-                  <button
-                    onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
-                    className="rounded-full bg-[#fffdf8] px-3 py-1 text-xs font-bold text-[#1d1c19] transition-colors hover:bg-[#eee8df]"
-                  >
-                    Compare
-                  </button>
-                </div>
-              )}
-
-
-
               <div className="hidden sm:block w-48">
                 <CustomDropdown
                   options={[
@@ -557,50 +537,52 @@ export default function Products() {
                   return (
                     <div
                       key={p._id}
-              className="group relative bg-transparent rounded-none p-0 border-0 transition-all duration-300 hover:-translate-y-1 animate-fade-up"
+                      className="group relative bg-[#fffdf8] sm:bg-transparent rounded-2xl sm:rounded-none p-2.5 sm:p-0 border border-black/[0.07] sm:border-0 transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 animate-fade-up flex flex-row sm:flex-col gap-3 sm:gap-0 shadow-[0_2px_8px_rgba(0,0,0,0.02)] sm:shadow-none"
                       style={{ animationDelay: `${i * 50}ms` }}
                     >
-                      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1.35rem] bg-[#eeebe4] border border-black/[0.06] transition-colors">
+                      {/* Thumbnail container — Left side on mobile, Top on desktop */}
+                      <div className="relative aspect-square sm:aspect-[3/4] w-28 sm:w-full min-w-[7rem] sm:min-w-0 shrink-0 overflow-hidden rounded-xl sm:rounded-[1.35rem] bg-[#eeebe4] border border-black/[0.06] transition-colors">
                         <Link to={`/product/${p._id}`} className="block w-full h-full">
                           <img
                             src={p.thumbnail}
                             alt={p.title}
                             loading="lazy"
                             decoding="async"
-                            className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
+                            className="h-full w-full object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-105 mix-blend-multiply"
                             onError={(e) => {
                               e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
                             }}
                           />
                         </Link>
 
-                        <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10">
-                          <div className="flex flex-col gap-1">
+                        {/* Top Badges and Heart overlay */}
+                        <div className="absolute top-2 sm:top-3 left-2 sm:left-3 right-2 sm:right-3 flex justify-between items-start z-10 pointer-events-none">
+                          <div className="flex flex-col gap-1 pointer-events-auto">
                             {p.onSale && (
-                              <span className="rounded-full bg-[#75483b] px-2.5 py-1 text-[10px] font-bold text-white">
+                              <span className="rounded-full bg-[#75483b] px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-bold text-white">
                                 {p.saleName || 'SALE'}
                               </span>
                             )}
                             {p.discountPercentage ? (
-                              <span className="bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                              <span className="bg-white/90 backdrop-blur text-gray-900 text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded shadow-sm">
                                 -{Math.round(p.discountPercentage)}%
                               </span>
                             ) : null}
                           </div>
 
-                          <div className="flex flex-col gap-2">
+                          <div className="flex flex-col gap-1.5 sm:gap-2 pointer-events-auto">
                             <button
                               onClick={() => toggleWishlistItem(p)}
-                              className={`w-8 h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${inWishlist ? "bg-[#efe3d9] text-[#874526]" : "bg-white/90 text-gray-400 hover:bg-white hover:text-[#874526]"
+                              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${inWishlist ? "bg-[#efe3d9] text-[#874526]" : "bg-white/90 text-gray-400 hover:bg-white hover:text-[#874526]"
                                 }`}
                               aria-label={inWishlist ? `Remove ${p.title} from saved items` : `Save ${p.title}`}
                             >
-                              {inWishlist ? <FaHeart size={12} /> : <FaRegHeart size={12} />}
+                              {inWishlist ? <FaHeart size={11} /> : <FaRegHeart size={11} />}
                             </button>
 
                             <button
                               onClick={() => setQuickView(p)}
-                              className="w-8 h-8 rounded-full bg-white/90 text-gray-900 lg:text-gray-400 flex items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-0 lg:translate-x-10 lg:opacity-100 lg:group-hover:translate-x-0 lg:group-hover:opacity-100"
+                              className="hidden sm:flex w-8 h-8 rounded-full bg-white/90 text-gray-900 lg:text-gray-400 items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-0 lg:translate-x-10 lg:opacity-100 lg:group-hover:translate-x-0 lg:group-hover:opacity-100"
                               aria-label={`Quick view ${p.title}`}
                             >
                               <FaExpand size={10} />
@@ -608,10 +590,10 @@ export default function Products() {
                           </div>
                         </div>
 
-                        <div className="absolute bottom-3 left-3 right-3 
-                                      translate-y-0 opacity-100 
-                                      lg:translate-y-12 lg:opacity-0 
-                                      lg:group-hover:translate-y-0 lg:group-hover:opacity-100 
+                        {/* Desktop Hover Add Button */}
+                        <div className="hidden sm:block absolute bottom-3 left-3 right-3 
+                                      translate-y-12 opacity-0 
+                                      group-hover:translate-y-0 group-hover:opacity-100 
                                       transition-all duration-300 z-20">
                           <button
                             onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
@@ -622,25 +604,38 @@ export default function Products() {
                         </div>
                       </div>
 
-                      <div className="px-1 pt-3 pb-1">
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">{p.category}</p>
-
-                        <Link to={`/product/${p._id}`} className="block text-sm font-semibold text-[#1d1c19] leading-snug mb-1 line-clamp-1 hover:text-[#a85d37] transition-colors">
-                          {p.title}
-                        </Link>
-
-                        <div className="flex items-center justify-between mt-2">
-                          <div className="flex flex-col">
-                            <span className="text-base font-bold text-gray-900">{formatPrice(price)}</span>
-                            <span className="text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
+                      {/* Content column — Right side on mobile, Bottom on desktop */}
+                      <div className="flex-1 flex flex-col justify-between px-0 sm:px-1 pt-0 sm:pt-3 pb-0 sm:pb-1 min-w-0">
+                        <div>
+                          <div className="flex items-center justify-between gap-1 mb-0.5 sm:mb-1">
+                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider truncate">{p.category}</p>
+                            <div className="flex items-center gap-1 shrink-0">
+                              <FaStar className="text-amber-400 text-[10px]" />
+                              <span className="text-[11px] sm:text-xs font-bold text-gray-600">{p.rating}</span>
+                            </div>
                           </div>
 
-                          <div className="flex flex-col items-end gap-1">
-                            <div className="flex items-center gap-1">
-                              <FaStar className="text-amber-400 text-[10px]" />
-                              <span className="text-xs font-bold text-gray-600">{p.rating}</span>
+                          <Link to={`/product/${p._id}`} className="block text-xs sm:text-sm font-bold sm:font-semibold text-[#1d1c19] leading-snug mb-1 line-clamp-2 sm:line-clamp-1 hover:text-[#a85d37] transition-colors">
+                            {p.title}
+                          </Link>
+
+                          <div className="flex items-baseline gap-1.5 sm:justify-between mt-1 sm:mt-2 flex-wrap">
+                            <div className="flex items-baseline gap-1.5 flex-wrap">
+                              <span className="text-sm sm:text-base font-black text-gray-900">{formatPrice(price)}</span>
+                              <span className="text-[11px] sm:text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
                             </div>
-                            <label className="cursor-pointer text-[10px] text-gray-400 hover:text-gray-600 flex items-center gap-1 select-none">
+                            {p.discountPercentage ? (
+                              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded hidden sm:inline">
+                                Save {Math.round(p.discountPercentage)}%
+                              </span>
+                            ) : null}
+                          </div>
+                        </div>
+
+                        {/* Mobile Actions: Compare Checkbox + Full-width Add Button */}
+                        <div className="mt-2 sm:mt-2 pt-1 border-t border-black/[0.04] sm:border-0 flex flex-col gap-2">
+                          <div className="flex items-center justify-between">
+                            <label className="cursor-pointer text-[10px] sm:text-[10px] text-gray-400 hover:text-gray-600 flex items-center gap-1 select-none">
                               <input
                                 type="checkbox"
                                 className="accent-gray-900 w-3 h-3"
@@ -650,6 +645,14 @@ export default function Products() {
                               Compare
                             </label>
                           </div>
+
+                          {/* Mobile-only Add to Cart Button */}
+                          <button
+                            onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
+                            className="sm:hidden w-full py-1.5 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-sm hover:bg-black flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+                          >
+                            <FaCartPlus size={11} /> Add to Cart
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -672,6 +675,41 @@ export default function Products() {
           </div>
         </div>
       </div>
+
+      {/* Floating Compare Action Bar — centered horizontally with flex container */}
+      {compare.length > 0 && (
+        <div className="fixed inset-x-0 bottom-4 sm:bottom-6 z-40 flex justify-center pointer-events-none px-4">
+          <div className="pointer-events-auto flex items-center gap-2 sm:gap-3 rounded-full border border-white/15 bg-[#1d1c19]/95 backdrop-blur-md px-3 sm:px-5 py-2 sm:py-2.5 text-white shadow-[0_12px_36px_rgba(0,0,0,0.35)]">
+            <div className="flex items-center gap-1.5">
+              <span className="grid h-5 min-w-5 place-items-center rounded-full bg-[#a85d37] px-1 text-[10px] font-bold text-white shrink-0">
+                {compare.length}
+              </span>
+              <span className="text-xs font-semibold text-gray-200 hidden xs:inline sm:inline">
+                {compare.length === 1 ? "Selected" : "Selected"}
+              </span>
+            </div>
+
+            <div className="h-3.5 w-px bg-white/20" />
+
+            <button
+              onClick={() => setCompare([])}
+              className="text-[11px] sm:text-xs text-gray-400 hover:text-white transition-colors px-1"
+            >
+              Clear
+            </button>
+
+            <button
+              onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
+              className="rounded-full bg-[#fffdf8] px-3 sm:px-4 py-1.5 text-xs font-bold text-[#1d1c19] transition-all hover:bg-[#eee8df] active:scale-95 shadow-sm shrink-0 flex items-center gap-1.5"
+            >
+              <span>Compare</span>
+              <span className="grid h-4 min-w-4 place-items-center rounded-full bg-[#1d1c19] text-[9px] text-white px-1">
+                {compare.length}
+              </span>
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className={`fixed inset-0 z-[60] lg:hidden transition-transform duration-300 ${showFilters ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowFilters(false)} />
