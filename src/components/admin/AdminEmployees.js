@@ -9,12 +9,13 @@ import {
   ExclamationCircleIcon,
   ShieldCheckIcon,
   MailIcon,
+  RefreshIcon
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import { ROLE_LABELS, ROLE_PRESETS, MODULES } from "../../constants/adminRoles";
-import { avatarInitial } from "./ui/avatarInitial";
+import Avatar from "./ui/Avatar";
 import Modal from "./ui/Modal";
 
 const EMPLOYEES_ENDPOINT = "/api/admin/employees";
@@ -91,114 +92,215 @@ export default function AdminEmployees() {
   }
 
   return (
-    <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
+      <div className="max-w-5xl mx-auto space-y-4 sm:space-y-6">
 
         {toast && (
-          <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}>
+          <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}>
             {toast.type === "error" ? <ExclamationCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
-            <span className="text-sm font-semibold">{toast.message}</span>
+            <span>{toast.message}</span>
           </div>
         )}
 
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Employees</h1>
-            <p className="text-slate-500 mt-1 text-sm">Manage who has admin panel access, and what they can touch.</p>
+        {/* Header Section */}
+        <div className="flex items-center justify-between gap-2">
+          <div className="min-w-0 flex-1">
+            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight truncate">
+              Employees
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium truncate">
+              Manage admin panel access and permissions.
+            </p>
           </div>
-          {canWrite && (
+          <div className="flex items-center gap-1.5 shrink-0">
             <button
-              onClick={openAdd}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium shadow-md hover:bg-slate-800 transition-all active:scale-95"
+              onClick={() => employeesQuery.refetch()}
+              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition shadow-xs text-slate-600"
+              title="Refresh"
             >
-              <PlusIcon className="h-4 w-4" />
-              Add Employee
+              <RefreshIcon className={`h-4 w-4 ${employeesQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
-          )}
+            {canWrite && (
+              <button
+                onClick={openAdd}
+                className="flex items-center gap-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shadow-xs shrink-0 whitespace-nowrap active:scale-95"
+              >
+                <PlusIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <span className="hidden sm:inline">Add Employee</span>
+                <span className="sm:hidden">Employee</span>
+              </button>
+            )}
+          </div>
         </div>
 
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+        {/* Main Employees Content */}
+        <div className="bg-white border border-slate-200/70 rounded-2xl shadow-xs overflow-hidden">
           {employeesQuery.isLoading ? (
-            <div className="p-12 space-y-4 animate-pulse">
+            <div className="p-8 space-y-3 animate-pulse">
               {[1, 2, 3].map((i) => <div key={i} className="h-12 bg-slate-50 rounded-xl w-full" />)}
             </div>
           ) : employees.length === 0 ? (
             <div className="p-12 text-center flex flex-col items-center justify-center">
-              <div className="h-16 w-16 bg-slate-50 rounded-full flex items-center justify-center mb-4">
-                <UserGroupIcon className="h-6 w-6 text-slate-300" />
+              <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center mb-3 text-slate-300">
+                <UserGroupIcon className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900">No employees yet</h3>
-              <p className="text-slate-500 text-sm mt-1">Add someone to give them scoped admin access.</p>
+              <h3 className="text-sm sm:text-base font-bold text-slate-900">No employees yet</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-0.5">Add someone to give them scoped admin access.</p>
+              {canWrite && (
+                <button onClick={openAdd} className="mt-3 text-orange-600 font-bold text-xs hover:underline">
+                  + Add First Employee
+                </button>
+              )}
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-slate-50">
-                <thead className="bg-slate-50/50">
-                  <tr>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Employee</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Role</th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Access</th>
-                    {canWrite && <th className="px-6 py-4 text-right text-xs font-semibold text-slate-400 uppercase">Actions</th>}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-50 bg-white">
-                  {employees.map((emp) => {
-                    const isSuperAdmin = emp.adminRole === "super_admin";
-                    const grantedModules = Object.entries(emp.permissions || {});
-                    return (
-                      <tr key={emp._id} className="hover:bg-slate-50/60 transition-colors">
-                        <td className="px-6 py-4">
-                          <div className="flex items-center gap-3">
-                            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 text-slate-600 font-bold flex items-center justify-center text-sm ring-2 ring-white shadow-sm overflow-hidden">
-                              {emp.profileImage ? <img src={emp.profileImage} alt="" className="h-full w-full object-cover" /> : avatarInitial(emp.name, emp.email)}
+            <>
+              {/* Desktop Table View (>= md) */}
+              <div className="hidden md:block overflow-x-auto">
+                <table className="min-w-full divide-y divide-slate-100">
+                  <thead className="bg-slate-50/50">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Employee</th>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Role</th>
+                      <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Access</th>
+                      {canWrite && <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>}
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 bg-white">
+                    {employees.map((emp) => {
+                      const isSuperAdmin = emp.adminRole === "super_admin";
+                      const grantedModules = Object.entries(emp.permissions || {});
+                      return (
+                        <tr key={emp._id} className="hover:bg-slate-50/60 transition-colors">
+                          <td className="px-6 py-4">
+                            <div className="flex items-center gap-3">
+                              <Avatar
+                                src={emp.profileImage}
+                                name={emp.name}
+                                email={emp.email}
+                                className="h-10 w-10 rounded-xl shadow-xs"
+                              />
+                              <div>
+                                <div className="font-bold text-slate-900 text-sm">{emp.name || "Unnamed"}</div>
+                                <div className="text-xs text-slate-400 flex items-center gap-1 font-medium mt-0.5">
+                                  <MailIcon className="h-3 w-3" />
+                                  <span>{emp.email}</span>
+                                </div>
+                              </div>
                             </div>
-                            <div>
-                              <div className="font-semibold text-slate-900 text-sm">{emp.name || "Unnamed"}</div>
-                              <div className="text-xs text-slate-400 flex items-center gap-1"><MailIcon className="h-3 w-3" />{emp.email}</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4">
-                          <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${isSuperAdmin ? "bg-orange-50 text-orange-700 border-orange-100" : "bg-slate-50 text-slate-600 border-slate-100"}`}>
-                            {isSuperAdmin && <ShieldCheckIcon className="h-3.5 w-3.5" />}
-                            {emp.adminRole ? ROLE_LABELS[emp.adminRole] || emp.adminRole : "Unassigned"}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4">
-                          {isSuperAdmin ? (
-                            <span className="text-xs text-slate-500">Full access</span>
-                          ) : grantedModules.length === 0 ? (
-                            <span className="text-xs text-slate-400">No modules granted</span>
-                          ) : (
-                            <div className="flex flex-wrap gap-1.5">
-                              {grantedModules.map(([mod, level]) => (
-                                <span key={mod} className="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">
-                                  {MODULES.find((m) => m.key === mod)?.label || mod} · {level}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                        </td>
-                        {canWrite && (
-                          <td className="px-6 py-4 text-right">
-                            {(!isSuperAdmin || myRole === "super_admin") && (
-                              <div className="flex justify-end gap-1">
-                                <button onClick={() => openEdit(emp)} className="p-2 rounded-lg text-slate-400 hover:bg-slate-50 hover:text-slate-700" title="Manage access">
-                                  <PencilIcon className="h-4 w-4" />
-                                </button>
-                                <button onClick={() => setRevokeTarget(emp)} className="p-2 rounded-lg text-slate-400 hover:bg-red-50 hover:text-red-600" title="Revoke access">
-                                  <TrashIcon className="h-4 w-4" />
-                                </button>
+                          </td>
+                          <td className="px-6 py-4">
+                            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold border ${isSuperAdmin ? "bg-orange-50 text-orange-700 border-orange-100" : "bg-slate-50 text-slate-600 border-slate-200"}`}>
+                              {isSuperAdmin && <ShieldCheckIcon className="h-3.5 w-3.5 text-orange-600" />}
+                              <span>{emp.adminRole ? ROLE_LABELS[emp.adminRole] || emp.adminRole : "Unassigned"}</span>
+                            </span>
+                          </td>
+                          <td className="px-6 py-4">
+                            {isSuperAdmin ? (
+                              <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100">Full Access</span>
+                            ) : grantedModules.length === 0 ? (
+                              <span className="text-xs text-slate-400">No modules granted</span>
+                            ) : (
+                              <div className="flex flex-wrap gap-1.5">
+                                {grantedModules.map(([mod, level]) => (
+                                  <span key={mod} className="text-[10px] font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md border border-slate-200/60">
+                                    {MODULES.find((m) => m.key === mod)?.label || mod} · <span className={level === "write" ? "text-orange-700 font-extrabold" : "text-slate-500"}>{level}</span>
+                                  </span>
+                                ))}
                               </div>
                             )}
                           </td>
+                          {canWrite && (
+                            <td className="px-6 py-4 text-right">
+                              {(!isSuperAdmin || myRole === "super_admin") && (
+                                <div className="flex justify-end gap-1">
+                                  <button onClick={() => openEdit(emp)} className="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100 hover:text-slate-800 transition" title="Manage access">
+                                    <PencilIcon className="h-4 w-4" />
+                                  </button>
+                                  <button onClick={() => setRevokeTarget(emp)} className="p-1.5 rounded-lg text-slate-400 hover:bg-red-50 hover:text-red-600 transition" title="Revoke access">
+                                    <TrashIcon className="h-4 w-4" />
+                                  </button>
+                                </div>
+                              )}
+                            </td>
+                          )}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Card View (< md) */}
+              <div className="md:hidden divide-y divide-slate-100">
+                {employees.map((emp) => {
+                  const isSuperAdmin = emp.adminRole === "super_admin";
+                  const grantedModules = Object.entries(emp.permissions || {});
+                  return (
+                    <div key={emp._id} className="p-3.5 space-y-2.5 hover:bg-slate-50/50 transition">
+                      {/* Top Row: Avatar, Name, Email, and Role Badge */}
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Avatar
+                            src={emp.profileImage}
+                            name={emp.name}
+                            email={emp.email}
+                            className="h-10 w-10 rounded-xl shrink-0 shadow-xs"
+                          />
+                          <div className="min-w-0">
+                            <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">{emp.name || "Unnamed"}</p>
+                            <p className="text-[11px] text-slate-500 truncate mt-0.5">{emp.email}</p>
+                          </div>
+                        </div>
+
+                        <span className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border ${isSuperAdmin ? "bg-orange-50 text-orange-700 border-orange-100" : "bg-slate-50 text-slate-600 border-slate-200"}`}>
+                          {isSuperAdmin && <ShieldCheckIcon className="h-3 w-3 text-orange-600" />}
+                          <span>{emp.adminRole ? ROLE_LABELS[emp.adminRole] || emp.adminRole : "Unassigned"}</span>
+                        </span>
+                      </div>
+
+                      {/* Permissions Row */}
+                      <div className="pt-1 text-xs">
+                        {isSuperAdmin ? (
+                          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                            Full Admin Access
+                          </span>
+                        ) : grantedModules.length === 0 ? (
+                          <span className="text-[11px] text-slate-400">No modules granted</span>
+                        ) : (
+                          <div className="flex flex-wrap gap-1">
+                            {grantedModules.map(([mod, level]) => (
+                              <span key={mod} className="text-[10px] font-bold bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded border border-slate-200/60">
+                                {MODULES.find((m) => m.key === mod)?.label || mod} · <span className={level === "write" ? "text-orange-700 font-extrabold" : "text-slate-500"}>{level}</span>
+                              </span>
+                            ))}
+                          </div>
                         )}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                      </div>
+
+                      {/* Bottom Row: Actions */}
+                      {canWrite && (!isSuperAdmin || myRole === "super_admin") && (
+                        <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-50">
+                          <button
+                            onClick={() => openEdit(emp)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 bg-white text-slate-700 text-xs font-bold hover:bg-slate-50 transition shadow-xs"
+                          >
+                            <PencilIcon className="h-3 w-3" />
+                            <span>Edit Access</span>
+                          </button>
+                          <button
+                            onClick={() => setRevokeTarget(emp)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-red-100 bg-red-50 text-red-700 text-xs font-bold hover:bg-red-100 transition shadow-xs"
+                          >
+                            <TrashIcon className="h-3 w-3" />
+                            <span>Revoke</span>
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </>
           )}
         </div>
       </div>

@@ -89,10 +89,8 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
 
   /* --- PROGRESS TIMELINE (horizontal at every breakpoint, scrolls on narrow screens) --- */
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600" />
-
-      <div className="overflow-x-auto -mx-1 px-1 pt-3 pb-1">
+    <div className="w-full bg-white rounded-2xl border border-gray-100 shadow-2xs p-3.5 sm:p-5 relative overflow-hidden">
+      <div className="overflow-x-auto -mx-1 px-1 pt-1 pb-1">
         <div
           className="relative flex items-start"
           style={{ minWidth: `${stages.length * STEP_WIDTH}px` }}

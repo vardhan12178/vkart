@@ -95,10 +95,18 @@ const ReviewCard = ({ review }) => {
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 shrink-0 overflow-hidden">
             {profileImage ? (
-              <img src={profileImage} alt={displayName} className="h-full w-full object-cover" />
-            ) : (
-              <FaUserCircle size={24} />
-            )}
+              <img
+                src={profileImage}
+                alt={displayName}
+                className="h-full w-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  const fallback = e.currentTarget.nextElementSibling;
+                  if (fallback) fallback.classList.remove("hidden");
+                }}
+              />
+            ) : null}
+            <FaUserCircle size={24} className={profileImage ? "hidden" : ""} />
           </div>
           <div>
             <h4 className="text-sm font-bold text-gray-900">{displayName}</h4>
@@ -610,7 +618,7 @@ export default function ProductCard() {
                   </span>
                 )}
               </div>
-              <h1 className="product-detail-title font-editorial font-bold sm:font-normal text-[#1d1c19] leading-snug sm:leading-[1.05] tracking-tight sm:tracking-[-0.035em] mb-1 sm:mb-4">
+              <h1 className="product-detail-title font-sans font-bold text-slate-900 leading-snug tracking-tight mb-1 sm:mb-3">
                 {title}
               </h1>
               <div className="flex items-center gap-2.5 sm:gap-4 text-xs sm:text-sm mb-2 sm:mb-6">

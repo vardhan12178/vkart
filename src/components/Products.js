@@ -397,48 +397,48 @@ export default function Products() {
         <meta property="og:url" content="https://vkart.balavardhan.dev/products" />
       </Helmet>
 
-      <section className="relative z-10 border-b border-black/[0.08] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+      {/* Masthead Section — Compact on mobile */}
+      <section className="relative z-10 border-b border-black/[0.08] px-4 py-3.5 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-5 flex flex-wrap items-center gap-3">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#a85d37]">
+          <div className="mb-1.5 sm:mb-4 flex flex-wrap items-center gap-2 sm:gap-3">
+            <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">
               {mastheadEyebrow}
             </p>
-            <span className="h-3 w-px bg-black/15" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#8a857b]">
+            <span className="h-2.5 sm:h-3 w-px bg-black/15" />
+            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.16em] text-[#8a857b]">
               {total} {total === 1 ? "item" : "items"}
             </span>
           </div>
-          <div className="grid gap-5 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
-            <h1 className="max-w-3xl font-editorial text-4xl leading-[0.94] tracking-[-0.04em] text-[#1d1c19] sm:text-5xl lg:text-6xl">
+          <div className="grid gap-2 sm:gap-5 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
+            <h1 className="max-w-3xl font-editorial font-bold text-2xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-[#1d1c19]">
               {mastheadTitle}.
             </h1>
-            <p className="max-w-xl text-sm leading-6 text-[#6f6b62] lg:pb-1 lg:text-[15px] lg:leading-7">
+            <p className="hidden sm:block max-w-xl text-xs sm:text-sm leading-relaxed text-[#6f6b62] lg:pb-1">
               {mastheadCopy}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Sticky Bar — Sleek & Compact */}
       <div className="sticky top-0 z-40 bg-[#f6f3ed]/90 backdrop-blur-xl border-b border-black/[0.08] transition-all">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
-
-            <div className="flex items-center gap-4">
-              <h2 className="font-sans text-sm font-bold text-[#1d1c19] tracking-[-0.01em]">
-                {categoryFilter ? `Showing ${collectionName}` : searchTerm ? "Matching products" : saleOnly ? "Sale products" : "All products"}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3.5">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+              <h2 className="font-sans text-xs sm:text-sm font-bold text-[#1d1c19] tracking-tight truncate">
+                {categoryFilter ? `${collectionName}` : searchTerm ? "Search Results" : saleOnly ? "Sale Products" : "All Products"}
               </h2>
-              <div className="h-6 w-px bg-gray-200 hidden sm:block" />
-              <span className="text-sm font-medium text-gray-500 hidden sm:block">
-                {total} Items
+              <span className="text-xs font-semibold text-slate-400 shrink-0">
+                ({total})
               </span>
             </div>
 
-            <div className="flex gap-3 items-center w-full md:w-auto">
+            <div className="flex items-center gap-2 shrink-0">
               <button
                 onClick={() => setShowFilters(true)}
-                className="lg:hidden flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-bold text-gray-700 shadow-sm active:scale-95 transition-transform"
+                className="lg:hidden flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 shadow-2xs active:scale-95 transition-transform"
               >
-                <FaFilter className="text-gray-400" /> Filters
+                <FaFilter className="text-gray-400 text-[10px]" /> Filters
               </button>
 
               <div className="hidden sm:block w-48">
@@ -459,7 +459,7 @@ export default function Products() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-8 relative z-10">
         <div className="flex gap-8 items-start">
 
           <div className="hidden lg:block w-72 shrink-0">
@@ -477,24 +477,21 @@ export default function Products() {
 
           <div className="flex-1 min-w-0">
 
-            {/* Active Sale Banner */}
+            {/* Active Sale Banner — Streamlined */}
             {activeSale && (
-              <div className="relative mb-6 overflow-hidden rounded-[1.35rem] border border-black/[0.09] bg-[#eee7dd] px-5 py-4 text-[#1d1c19] shadow-[0_12px_38px_rgba(29,28,25,.05)] animate-fade-up sm:px-6 sm:py-5">
+              <div className="relative mb-3.5 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl border border-black/[0.08] bg-[#eee7dd] px-3.5 py-2.5 sm:px-6 sm:py-4 text-[#1d1c19] shadow-2xs animate-fade-up">
                 <span className="absolute inset-y-0 left-0 w-1 bg-[#a85d37]" />
-                <div className="relative z-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                  <div className="flex items-center gap-3">
-                    <div className="grid h-10 w-10 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8]">
-                      <FaBolt className="text-sm text-[#a85d37]" />
+                <div className="relative z-10 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8]">
+                      <FaBolt className="text-xs sm:text-sm text-[#a85d37]" />
                     </div>
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#8a604b]">Limited-time selection</p>
-                      <h3 className="mt-1 font-editorial text-xl leading-none tracking-[-0.02em] sm:text-2xl">{activeSale.name}</h3>
-                      <p className="mt-1.5 text-xs font-medium text-[#716b62] sm:text-sm">
-                        Sale ends {new Date(activeSale.endDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
-                      </p>
+                    <div className="min-w-0">
+                      <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.16em] text-[#8a604b] truncate">Limited-time sale</p>
+                      <h3 className="font-editorial font-bold text-sm sm:text-xl leading-tight truncate">{activeSale.name}</h3>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-black/[0.09] bg-[#fffdf8] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#5d584f]">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-black/[0.08] bg-[#fffdf8] px-2.5 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#5d584f] shrink-0">
                     <span className="relative flex h-1.5 w-1.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59634f] opacity-75" />
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#59634f]" />

@@ -88,55 +88,64 @@ export default function AdminProfile() {
       <div className="max-w-3xl mx-auto space-y-6">
 
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 tracking-tight">My Profile</h1>
-          <p className="text-slate-500 mt-1 text-sm font-medium">Your personal admin account details and access.</p>
+          <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            My Profile
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Your personal admin account details and access.</p>
         </div>
 
         {toast && (
-          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}>
+          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}>
             {toast.type === "error" ? <XCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
-            <span className="text-sm font-bold">{toast.message}</span>
+            <span className="font-bold">{toast.message}</span>
           </div>
         )}
 
         {/* Personal details */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
-          <h2 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-8">
+          <h2 className="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
             <UserCircleIcon className="h-5 w-5 text-slate-400" />
             Personal Details
           </h2>
 
-          <div className="flex items-center gap-6 mb-8 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-            <div className="relative">
-              <div
-                className="h-16 w-16 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white text-xl font-bold ring-4 ring-white shadow-sm overflow-hidden cursor-pointer hover:opacity-90"
-                onClick={() => avatarInputRef.current?.click()}
-              >
-                {avatarPreview ? (
-                  <img src={avatarPreview} alt="Avatar" className="h-full w-full object-cover" />
-                ) : (
-                  (name || email || "?").charAt(0).toUpperCase()
-                )}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8 p-3.5 sm:p-4 bg-slate-50/70 rounded-2xl border border-slate-100">
+            <div className="flex items-center gap-3.5 sm:gap-6 w-full sm:w-auto">
+              <div className="relative shrink-0">
+                <div
+                  className="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white text-lg sm:text-xl font-bold ring-2 ring-white shadow-xs overflow-hidden cursor-pointer hover:opacity-90 transition"
+                  onClick={() => avatarInputRef.current?.click()}
+                >
+                  {avatarPreview ? (
+                    <img
+                      src={avatarPreview}
+                      alt="Avatar"
+                      onError={() => setAvatarPreview(null)}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    (name || email || "?").charAt(0).toUpperCase()
+                  )}
+                </div>
+                <input
+                  type="file"
+                  ref={avatarInputRef}
+                  className="hidden"
+                  accept="image/*"
+                  onChange={handleAvatarChange}
+                />
               </div>
-              <input
-                type="file"
-                ref={avatarInputRef}
-                className="hidden"
-                accept="image/*"
-                onChange={handleAvatarChange}
-              />
-            </div>
-            <div>
-              <h3 className="text-base font-bold text-slate-900">{name || "Unnamed"}</h3>
-              <p className="text-sm text-slate-500 font-medium">{email}</p>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-700 mt-2">
-                <ShieldCheckIcon className="h-3 w-3" />
-                {roleLabel}
-              </span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 truncate">{name || "Unnamed"}</h3>
+                <p className="text-xs sm:text-sm text-slate-500 font-medium truncate">{email}</p>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-700 mt-1">
+                  <ShieldCheckIcon className="h-3 w-3" />
+                  {roleLabel}
+                </span>
+              </div>
             </div>
             <button
               onClick={() => avatarInputRef.current?.click()}
-              className="ml-auto text-sm text-orange-600 font-bold hover:text-orange-700"
+              className="text-xs sm:text-sm text-orange-600 font-bold hover:text-orange-700 sm:ml-auto self-end sm:self-center"
             >
               Change Photo
             </button>

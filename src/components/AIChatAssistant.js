@@ -528,22 +528,6 @@ const AIChatAssistant = () => {
 
             {/* --- Input Area --- */}
             <div className="premium-assistant-input p-3 sm:p-4 bg-[#fffdf8] border-t border-black/[0.08] relative z-20">
-              {messages.length <= 1 && (
-                <div className="mb-2">
-                  <div className="flex gap-1.5 overflow-x-auto no-scrollbar pb-1.5 -mx-1 px-1">
-                    {DEFAULT_PROMPTS.map((prompt) => (
-                      <button
-                        key={prompt}
-                        onClick={() => handlePromptClick(prompt)}
-                        disabled={isLoading || cooldown > 0}
-                        className="text-[10px] sm:text-[11px] px-2.5 py-1 sm:px-3 sm:py-1.5 bg-[#f1ede5] hover:bg-[#e8e1d7] text-[#5f5b52] rounded-full transition-colors border border-black/[0.07] whitespace-nowrap shrink-0 disabled:opacity-60"
-                      >
-                        {prompt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
               <div className="relative group">
                 <input
                   type="text"

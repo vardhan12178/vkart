@@ -61,7 +61,11 @@
 
 .premium-product .product-detail-title {
   max-width: 44rem;
-  font-size: clamp(2.25rem, 3.2vw, 3rem) !important;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: clamp(1.125rem, 2vw, 1.875rem);
+  font-weight: 700 !important;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
@@ -424,20 +428,26 @@
 }
 
 @media (max-width: 639px) {
+  .premium-product .product-detail-title,
   .premium-product h1,
   .product-detail-title {
-    font-size: 1.25rem !important;
-    line-height: 1.2 !important;
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
     font-weight: 700 !important;
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.01em !important;
   }
 }
 
 @media (min-width: 640px) {
+  .premium-product .product-detail-title,
   .premium-product h1 {
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
     max-width: 42rem;
-    font-size: clamp(1.75rem, 3.5vw, 3.5rem) !important;
-    line-height: 1.08 !important;
+    font-size: clamp(1.25rem, 2vw, 1.75rem) !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.015em !important;
   }
 }
 

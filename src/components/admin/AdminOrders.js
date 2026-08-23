@@ -165,8 +165,8 @@ export default function AdminOrders() {
     const config = configs[stage] || configs.PLACED;
 
     return (
-      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border border-transparent ${config.bg} ${config.text}`}>
-        <span className={`w-1.5 h-1.5 rounded-full mr-1.5 ${config.dot}`}></span>
+      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold ${config.bg} ${config.text}`}>
+        <span className={`w-1.5 h-1.5 rounded-full mr-1 ${config.dot}`}></span>
         {stage.replace(/_/g, " ")}
       </span>
     );
@@ -178,153 +178,218 @@ export default function AdminOrders() {
   };
 
   return (
-    <div className="premium-admin-page min-h-screen bg-transparent p-6 sm:p-8 font-sans text-[#24231f]">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
+      <div className="max-w-7xl mx-auto space-y-4 sm:space-y-8">
 
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Orders</h1>
-            <p className="text-slate-500 mt-1 text-sm">
+            <h1 className="text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+              Orders
+            </h1>
+            <p className="text-slate-500 mt-0.5 text-xs sm:text-sm font-medium">
               Overview of all customer orders and status.
             </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => ordersQuery.refetch()}
               disabled={ordersQuery.isFetching}
-              className="flex items-center gap-2 px-4 py-2 bg-white text-slate-700 border border-slate-200 rounded-lg shadow-sm hover:bg-slate-50 transition-all active:scale-95"
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-slate-700 border border-slate-200 rounded-xl shadow-xs hover:bg-slate-50 transition-all active:scale-95 text-xs sm:text-sm font-semibold"
             >
-              <RefreshIcon className={`h-4 w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
-              <span className="text-sm font-medium">Sync</span>
+              <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
+              <span>Sync</span>
             </button>
           </div>
         </div>
 
-        {/* Stats Overview Cards (Premium Touch) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Stats Overview Cards - 3-Column Compact Row */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           <StatCard
-            title="Total Revenue"
+            title="Revenue"
             value={`₹${stats.totalRevenue.toLocaleString('en-IN')}`}
             icon={CurrencyRupeeIcon}
-            color="text-emerald-600"
+            color="text-emerald-700"
             bg="bg-emerald-50"
           />
           <StatCard
-            title="Active Orders"
+            title="Active"
             value={stats.activeOrders}
             icon={ClockIcon}
-            color="text-orange-600"
+            color="text-orange-700"
             bg="bg-orange-50"
           />
           <StatCard
             title="Completed"
             value={stats.completedOrders}
             icon={CheckCircleIcon}
-            color="text-blue-600"
+            color="text-blue-700"
             bg="bg-blue-50"
           />
         </div>
 
         {/* Controls Toolbar */}
-        <div className="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-2">
+        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row gap-1.5 sm:gap-2">
           {/* Search */}
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <SearchIcon className="h-5 w-5 text-slate-400" />
+              <SearchIcon className="h-4 w-4 text-slate-400" />
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-transparent text-slate-900 placeholder-slate-400 focus:ring-0 text-sm"
+              className="block w-full pl-9 pr-3 py-2 border-none rounded-xl bg-transparent text-slate-900 placeholder-slate-400 focus:ring-0 text-xs sm:text-sm font-medium"
               placeholder="Search orders..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
 
-          <div className="w-px bg-slate-100 my-1 hidden sm:block"></div>
+          <div className="w-full h-px bg-slate-100 sm:w-px sm:h-auto my-0.5 sm:my-1"></div>
 
-          {/* Filter Dropdown */}
-          <div className="relative" ref={filterMenuRef}>
+          <div className="flex items-center gap-1.5 px-1 pb-1 sm:p-0">
+            {/* Filter Dropdown */}
+            <div className="relative flex-1 sm:flex-initial" ref={filterMenuRef}>
+              <button
+                onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}
+                className={`flex items-center justify-between gap-1.5 px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-xl transition-all w-full sm:w-44
+                  ${isFilterMenuOpen || filterStage !== 'ALL'
+                    ? "bg-slate-100 text-slate-900"
+                    : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                  }`}
+              >
+                <div className="flex items-center gap-1.5 truncate">
+                  <FilterIcon className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                  <span className="truncate">{filterStage === "ALL" ? "Filter Status" : filterStage.replace(/_/g, " ")}</span>
+                </div>
+                <ChevronDownIcon className={`h-3.5 w-3.5 transition-transform shrink-0 ${isFilterMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {isFilterMenuOpen && (
+                <div className="absolute right-0 mt-1.5 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-1 z-50 animate-in fade-in zoom-in-95 duration-100">
+                  <div className="px-3 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    Select Status
+                  </div>
+                  <div className="max-h-60 overflow-y-auto">
+                    {STAGES.map((stage) => (
+                      <button
+                        key={stage}
+                        onClick={() => {
+                          setFilterStage(stage);
+                          setIsFilterMenuOpen(false);
+                        }}
+                        className="w-full text-left px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center justify-between group"
+                      >
+                        <span className={filterStage === stage ? "font-bold text-slate-900" : ""}>
+                          {stage.replace(/_/g, " ")}
+                        </span>
+                        {filterStage === stage && <CheckIcon className="h-3.5 w-3.5 text-slate-900" />}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <button
-              onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}
-              className={`flex items-center justify-between gap-2 px-4 py-2.5 text-sm font-medium rounded-xl transition-all w-full sm:w-48
-                ${isFilterMenuOpen || filterStage !== 'ALL'
-                  ? "bg-slate-100 text-slate-900"
-                  : "bg-white text-slate-600 hover:bg-slate-50"
-                }`}
+              onClick={() => setFilterReturns((v) => !v)}
+              className={`px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap ${
+                filterReturns ? "bg-amber-100 text-amber-800" : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+              }`}
             >
-              <div className="flex items-center gap-2">
-                <FilterIcon className="h-4 w-4" />
-                <span className="truncate">{filterStage === "ALL" ? "Filter Status" : filterStage.replace(/_/g, " ")}</span>
-              </div>
-              <ChevronDownIcon className={`h-4 w-4 transition-transform ${isFilterMenuOpen ? "rotate-180" : ""}`} />
+              Returns
             </button>
-
-            {isFilterMenuOpen && (
-              <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-1 z-50 animate-in fade-in zoom-in-95 duration-100">
-                <div className="px-3 py-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                  Select Status
-                </div>
-                <div className="max-h-64 overflow-y-auto">
-                  {STAGES.map((stage) => (
-                    <button
-                      key={stage}
-                      onClick={() => {
-                        setFilterStage(stage);
-                        setIsFilterMenuOpen(false);
-                      }}
-                      className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 flex items-center justify-between group"
-                    >
-                      <span className={filterStage === stage ? "font-medium text-slate-900" : ""}>
-                        {stage.replace(/_/g, " ")}
-                      </span>
-                      {filterStage === stage && <CheckIcon className="h-4 w-4 text-slate-900" />}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
-
-          <button
-            onClick={() => setFilterReturns((v) => !v)}
-            className={`px-4 py-2.5 text-sm font-medium rounded-xl transition-all ${
-              filterReturns ? "bg-amber-100 text-amber-700" : "bg-white text-slate-600 hover:bg-slate-50"
-            }`}
-          >
-            Return Requests
-          </button>
         </div>
 
-        {/* Main Table Area */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        {/* Main Table / Mobile List Area */}
+        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden flex flex-col min-h-[350px]">
 
           {loading ? (
-            <div className="p-8 space-y-4 animate-pulse">
+            <div className="p-8 space-y-3 animate-pulse">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-16 bg-slate-50 rounded-xl w-full"></div>
+                <div key={i} className="h-14 bg-slate-50 rounded-xl w-full"></div>
               ))}
             </div>
           ) : filteredAndSortedOrders.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-24 text-center">
-              <div className="h-16 w-16 bg-slate-50 rounded-full flex items-center justify-center mb-4">
-                <InboxIcon className="h-8 w-8 text-slate-300" />
+            <div className="flex flex-col items-center justify-center py-16 text-center">
+              <div className="h-14 w-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-3 border border-slate-100">
+                <InboxIcon className="h-7 w-7 text-slate-300" />
               </div>
-              <h3 className="text-lg font-medium text-slate-900">No orders found</h3>
-              <p className="text-slate-500 text-sm mt-1">
+              <h3 className="text-base font-bold text-slate-900">No orders found</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-0.5 max-w-xs">
                 Try adjusting your search or filter to find what you're looking for.
               </p>
               <button
-                onClick={() => { setSearch(''); setFilterStage('ALL'); }}
-                className="mt-4 text-orange-600 font-medium text-sm hover:text-orange-700"
+                onClick={() => { setSearch(''); setFilterStage('ALL'); setFilterReturns(false); }}
+                className="mt-4 text-orange-600 font-bold text-xs sm:text-sm hover:underline"
               >
                 Clear filters
               </button>
             </div>
           ) : (
             <>
-              <div className="overflow-x-auto">
+              {/* Mobile Card List (< md) */}
+              <div className="block md:hidden divide-y divide-slate-100">
+                {currentOrders.map((o) => (
+                  <div
+                    key={o._id}
+                    onClick={() => navigate(`/admin/orders/${o._id}`)}
+                    className="p-3 hover:bg-slate-50/70 transition-colors flex flex-col gap-2 cursor-pointer"
+                  >
+                    {/* Top Row: Order ID + Status Badges */}
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <div className="h-8 w-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
+                          <ShoppingBagIcon className="h-4 w-4" />
+                        </div>
+                        <span className="font-mono text-xs font-bold text-slate-900">
+                          #{o.orderId || o._id.slice(-6).toUpperCase()}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-1 shrink-0">
+                        {getStatusBadge(o.stage)}
+                        {o.returnStatus && o.returnStatus !== "NONE" && (
+                          <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-100">
+                            Return {o.returnStatus}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Middle Row: Customer Info */}
+                    <div className="flex items-center gap-2 pl-10">
+                      <div className="h-6 w-6 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500 shrink-0">
+                        {getInitials(o.customer?.name)}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs font-medium text-slate-800 truncate">{o.customer?.name || "Guest"}</p>
+                        <p className="text-[10px] text-slate-400 truncate">{o.customer?.email}</p>
+                      </div>
+                    </div>
+
+                    {/* Bottom Row: Price + Date + Arrow */}
+                    <div className="flex items-center justify-between pt-1.5 pl-10 border-t border-slate-50">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-sm font-black text-slate-900">
+                          ₹{o.totalPrice?.toLocaleString('en-IN')}
+                        </span>
+                        <span className="text-[10px] text-slate-400 font-medium">
+                          · {new Date(o.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short" })}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center text-xs font-bold text-orange-600 gap-0.5">
+                        <span>Details</span>
+                        <ChevronRightIcon className="h-3.5 w-3.5" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Table View (>= md) */}
+              <div className="hidden md:block overflow-x-auto">
                 <table className="min-w-full divide-y divide-slate-100">
                   <thead className="bg-slate-50/50">
                     <tr>
@@ -352,7 +417,7 @@ export default function AdminOrders() {
                               <ShoppingBagIcon className="h-5 w-5" />
                             </div>
                             <div className="font-mono text-sm font-medium text-slate-700">
-                              #{o._id.slice(-6).toUpperCase()}
+                              #{o.orderId || o._id.slice(-6).toUpperCase()}
                             </div>
                           </div>
                         </td>
@@ -419,25 +484,28 @@ export default function AdminOrders() {
               </div>
 
               {/* Pagination */}
-              <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/30">
-                <div className="text-sm text-slate-500">
+              <div className="px-3.5 sm:px-6 py-2.5 sm:py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/30">
+                <div className="text-xs sm:text-sm text-slate-500">
                   Showing <span className="font-medium text-slate-900">{startIndex + 1}</span> to <span className="font-medium text-slate-900">{Math.min(endIndex, filteredAndSortedOrders.length)}</span> of <span className="font-medium text-slate-900">{filteredAndSortedOrders.length}</span>
                 </div>
 
-                <div className="flex gap-1">
+                <div className="flex items-center gap-1">
                   <button
                     onClick={() => goToPage(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="p-1 rounded-md hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white hover:shadow-xs disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    aria-label="Previous page"
                   >
-                    <ChevronLeftIcon className="h-5 w-5 text-slate-600" />
+                    <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
+                  <span className="text-xs font-bold text-slate-700 px-1 sm:hidden">{currentPage}/{totalPages || 1}</span>
                   <button
                     onClick={() => goToPage(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="p-1 rounded-md hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    disabled={currentPage === totalPages || totalPages === 0}
+                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white hover:shadow-xs disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    aria-label="Next page"
                   >
-                    <ChevronRightIcon className="h-5 w-5 text-slate-600" />
+                    <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
                 </div>
               </div>
@@ -452,16 +520,16 @@ export default function AdminOrders() {
 // Helper Component for Stats
 function StatCard({ title, value, icon: Icon, color, bg }) {
   return (
-    <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start justify-between">
-      <div>
-        <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider">{title}</p>
-        <h3 className="text-2xl font-bold text-slate-900 mt-1">{value}</h3>
+    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">
+      <div className="min-w-0 flex-1">
+        <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate">{title}</p>
+        <h3 className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5">{value}</h3>
       </div>
-      <div className={`p-3 rounded-xl ${bg} ${color}`}>
-        <Icon className="h-6 w-6" />
+      <div className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl ${bg} ${color} shrink-0 self-end sm:self-center`}>
+        <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
       </div>
     </div>
-  )
+  );
 }
 
 // Sortable Header Helper

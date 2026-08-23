@@ -527,102 +527,92 @@ export default function Profile() {
       {/* --- BACKGROUND DECOR --- */}
       <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-gray-50 to-white opacity-70" />
 
-      <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-4 sm:pt-14">
+      <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 sm:pt-10">
 
         {/* --- HEADER CARD --- */}
-        <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 overflow-hidden">
+        <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100/90 overflow-hidden">
           {/* Decorative Gradient Blur */}
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-50 pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-48 h-48 sm:w-64 sm:h-64 bg-orange-100 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
-          <div className="relative flex flex-col md:flex-row items-center md:items-end gap-3.5 sm:gap-8 z-10">
+          <div className="relative flex flex-row items-center gap-3.5 sm:gap-6 z-10">
 
             {/* Avatar Group */}
             <div className="relative group shrink-0">
-              <div className="h-20 w-20 sm:h-36 sm:w-36 rounded-full p-1 sm:p-1.5 bg-white shadow-md sm:shadow-xl ring-1 ring-gray-100 overflow-hidden">
-                {user?.profileImage ? (
+              <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full p-1 bg-white shadow-sm ring-1 ring-gray-100 overflow-hidden">
+                {user?.profileImage && (
                   <img
                     src={user.profileImage}
                     alt="Profile"
-                    className="h-full w-full rounded-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    referrerPolicy="no-referrer"
+                    className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
+                      const fallback = e.currentTarget.parentElement?.querySelector('.avatar-fallback');
+                      if (fallback) fallback.classList.remove('hidden');
                     }}
                   />
-                ) : (
-                  <div className="h-full w-full rounded-full bg-gradient-to-tr from-orange-100 to-amber-200 flex items-center justify-center">
-                    <span className="text-2xl sm:text-4xl font-black text-orange-600/80 tracking-wide select-none">
-                      {getInitials(user?.name)}
-                    </span>
-                  </div>
                 )}
+                <div className={`avatar-fallback h-full w-full rounded-full bg-gradient-to-tr from-orange-100 to-amber-200 flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}>
+                  <span className="text-xl sm:text-3xl font-black text-orange-600/80 tracking-wide select-none">
+                    {getInitials(user?.name)}
+                  </span>
+                </div>
               </div>
 
-              <label htmlFor="file-upload" className="absolute bottom-0 right-0 sm:bottom-2 sm:right-2 p-1.5 sm:p-3 bg-gray-900 text-white rounded-full cursor-pointer shadow-md hover:bg-orange-600 hover:scale-110 transition-all duration-300 border-2 sm:border-4 border-white z-10">
-                <FaCamera className="text-[10px] sm:text-sm" />
+              <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-gray-900 text-white rounded-full cursor-pointer shadow-sm hover:bg-orange-600 transition-all border-2 border-white z-10" title="Change Photo">
+                <FaCamera className="text-[9px] sm:text-xs" />
                 <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
               </label>
             </div>
 
             {/* Text Info */}
-            <div className="flex-1 text-center md:text-left min-w-0 w-full">
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5 sm:gap-3 mb-1.5 sm:mb-2">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 flex-wrap mb-1">
                 {editingName ? (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
                     <input
                       type="text"
                       value={nameInput}
                       onChange={(e) => setNameInput(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && handleUpdateName()}
-                      className="text-lg sm:text-3xl font-black text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-none px-1"
+                      className="text-base sm:text-2xl font-bold text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-none px-1"
                       autoFocus
                     />
-                    <button onClick={handleUpdateName} className="p-1.5 sm:p-2 rounded-lg bg-gray-900 text-white text-xs font-bold hover:bg-black"><FaCheckCircle /></button>
-                    <button onClick={() => setEditingName(false)} className="p-1.5 sm:p-2 rounded-lg text-gray-400 hover:text-gray-600"><FaTimes /></button>
+                    <button onClick={handleUpdateName} className="p-1 rounded-md bg-gray-900 text-white text-xs font-bold hover:bg-black"><FaCheckCircle size={12} /></button>
+                    <button onClick={() => setEditingName(false)} className="p-1 rounded-md text-gray-400 hover:text-gray-600"><FaTimes size={12} /></button>
                   </div>
                 ) : (
-                  <h1 className="profile-display-name text-lg sm:text-3xl font-extrabold text-gray-900 tracking-tight group/name cursor-pointer inline-flex items-center" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
-                    <span>{user?.name || "Guest User"}</span>
-                    <FaPen className="inline ml-1.5 text-xs text-gray-300 group-hover/name:text-orange-500 transition-colors" />
+                  <h1 className="profile-display-name text-base sm:text-2xl font-bold text-gray-900 tracking-tight group/name cursor-pointer inline-flex items-center gap-1.5" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
+                    <span className="truncate">{user?.name || "Guest User"}</span>
+                    <FaPen className="text-[10px] sm:text-xs text-gray-300 group-hover/name:text-orange-500 transition-colors shrink-0" />
                   </h1>
                 )}
                 {user?.isPrime ? (
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-gradient-to-r from-amber-100 to-amber-50 text-amber-900 text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-amber-200 shadow-sm">
-                    <FaCrown size={9} className="text-amber-500" />
-                    Prime Member
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 text-[10px] font-bold uppercase tracking-wider border border-amber-200 shadow-2xs shrink-0">
+                    <FaCrown size={8} className="text-amber-500" />
+                    Prime
                   </span>
                 ) : (
-                  <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-orange-50 text-orange-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-orange-100">
+                  <span className="px-2 py-0.5 rounded-full bg-orange-50 text-orange-700 text-[10px] font-bold uppercase tracking-wider border border-orange-100 shrink-0">
                     Member
                   </span>
                 )}
               </div>
 
-              <div className="text-gray-500 font-medium mb-3 sm:mb-5 flex flex-col md:flex-row items-center justify-center md:justify-start gap-1 sm:gap-2 md:gap-6 text-xs sm:text-sm">
-                <span className="flex items-center gap-1">
-                  <span className="text-gray-400">@</span>{user?.username || "unknown"}
-                </span>
-                <span className="hidden md:block w-1 h-1 rounded-full bg-gray-300" />
-                <span className="flex items-center gap-1">
-                  <FaEnvelope className="text-gray-400 text-[11px]" /> {user?.email}
-                </span>
+              <div className="text-gray-500 font-medium flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 text-xs">
+                <span className="truncate">{user?.email}</span>
+                {user?.username && (
+                  <span className="text-gray-400 text-[11px] hidden sm:inline">@{user.username}</span>
+                )}
               </div>
 
-              {/* Action & Stats Row on Mobile */}
-              <div className="flex items-center justify-center md:justify-start gap-2.5 sm:gap-4 flex-wrap">
-                <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-white rounded-xl border border-gray-100 shadow-sm flex items-center gap-2 sm:gap-2.5">
-                  <div className="p-1 bg-orange-50 rounded-lg text-orange-500 text-xs sm:text-sm"><FaShoppingBag /></div>
-                  <div className="flex items-baseline gap-1.5 leading-none">
-                    <span className="font-bold text-gray-900 text-sm sm:text-base">{ordersCount}</span>
-                    <span className="text-[9px] sm:text-[10px] text-gray-400 font-bold uppercase tracking-wider">Orders</span>
-                  </div>
+              {/* Stats Row */}
+              <div className="mt-2.5">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 rounded-lg border border-gray-100 text-xs">
+                  <FaShoppingBag className="text-orange-500 text-[11px]" />
+                  <span className="font-bold text-gray-900">{ordersCount}</span>
+                  <span className="text-[10px] text-gray-500 font-medium">Orders Placed</span>
                 </div>
-
-                <button
-                  onClick={handleLogout}
-                  className="group flex items-center gap-1.5 sm:gap-2 rounded-xl border border-black/10 bg-[#eee8df] px-3.5 py-1.5 sm:px-5 sm:py-2 text-xs font-bold text-[#75483b] transition-colors hover:bg-[#e6ddd2]"
-                >
-                  <FaSignOutAlt className="group-hover:-translate-x-0.5 transition-transform text-[11px]" /> Sign Out
-                </button>
               </div>
             </div>
 
@@ -630,14 +620,14 @@ export default function Profile() {
         </div>
 
         {/* --- TABS --- */}
-        <div className="mt-4 sm:mt-8 flex justify-center md:justify-start mb-4 sm:mb-6">
-          <div className="bg-white p-1 sm:p-1.5 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 inline-flex">
+        <div className="mt-3.5 sm:mt-6 flex justify-center sm:justify-start mb-3 sm:mb-5">
+          <div className="bg-white p-1 rounded-xl shadow-2xs border border-gray-100 inline-flex">
             {['overview', 'orders'].map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 sm:px-7 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold capitalize transition-all duration-300 ${activeTab === tab
-                  ? "bg-gray-900 text-white shadow-sm"
+                className={`px-4 sm:px-6 py-1.5 rounded-lg text-xs sm:text-sm font-bold capitalize transition-all ${activeTab === tab
+                  ? "bg-gray-900 text-white shadow-xs"
                   : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
                   }`}
               >
@@ -650,45 +640,48 @@ export default function Profile() {
         {/* --- CONTENT AREA --- */}
         <div className="animate-fade-in">
           {activeTab === "overview" ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 sm:gap-5">
 
-              {/* Column 1: Identity Cards */}
-              <div className="space-y-3 sm:space-y-4">
-                {[
-                  { icon: <FaUser />, label: "Full Name", value: user?.name },
-                  { icon: <FaEnvelope />, label: "Email", value: user?.email },
-                  { icon: <FaPen />, label: "Username", value: user?.username ? `@${user.username}` : "Not set" },
-                ].map((item, i) => (
-                  <div key={i} className="group flex items-center gap-3 sm:gap-4 p-3.5 sm:p-5 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-                    <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl bg-gray-50 text-gray-400 flex items-center justify-center group-hover:bg-orange-50 group-hover:text-orange-500 transition-colors text-xs sm:text-base shrink-0">
-                      {item.icon}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider">{item.label}</p>
-                      <p className="font-bold text-gray-900 text-xs sm:text-sm truncate">{item.value || "—"}</p>
-                    </div>
+              {/* Column 1: Personal Details Card */}
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-xs p-4 sm:p-5 space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-gray-50">
+                  <FaUser className="text-gray-400 text-xs" />
+                  <h3 className="text-xs sm:text-sm font-bold text-gray-900">Personal Details</h3>
+                </div>
+                <div className="space-y-2.5">
+                  <div>
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Full Name</p>
+                    <p className="text-xs sm:text-sm font-bold text-gray-900 truncate mt-0.5">{user?.name || "—"}</p>
                   </div>
-                ))}
+                  <div>
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Email</p>
+                    <p className="text-xs sm:text-sm font-bold text-gray-900 truncate mt-0.5">{user?.email || "—"}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Username</p>
+                    <p className="text-xs sm:text-sm font-bold text-gray-900 truncate mt-0.5">{user?.username ? `@${user.username}` : "Not set"}</p>
+                  </div>
+                </div>
               </div>
 
-              {/* Column 2: Security (Span 2 cols on large screens) */}
-              <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+              {/* Column 2: Security & Quick Links (Span 2 cols on desktop) */}
+              <div className="lg:col-span-2 space-y-3.5 sm:space-y-5">
 
                 {/* Security Box */}
-                <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 border border-gray-100 shadow-sm relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${user?.twoFactorEnabled ? 'bg-emerald-500' : 'bg-gray-200'}`} />
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
-                    <div className="flex gap-3 sm:gap-5 items-center sm:items-start">
-                      <div className={`h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl flex items-center justify-center text-sm sm:text-xl shrink-0 ${user?.twoFactorEnabled ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-400'
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs relative overflow-hidden">
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${user?.twoFactorEnabled ? 'bg-emerald-500' : 'bg-gray-200'}`} />
+                  <div className="flex flex-row justify-between items-center gap-3">
+                    <div className="flex gap-2.5 sm:gap-4 items-center">
+                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${user?.twoFactorEnabled ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-400'
                         }`}>
                         <FaShieldAlt />
                       </div>
                       <div>
-                        <h3 className="text-sm sm:text-lg font-bold text-gray-900 flex items-center gap-1.5 sm:gap-2">
-                          Security
-                          {user?.twoFactorEnabled && <FaCheckCircle className="text-emerald-500 text-xs sm:text-sm" />}
+                        <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
+                          Two-Factor Auth
+                          {user?.twoFactorEnabled && <FaCheckCircle className="text-emerald-500 text-xs" />}
                         </h3>
-                        <p className="text-gray-500 text-xs sm:text-sm mt-0.5">Protect your account with 2FA.</p>
+                        <p className="text-gray-500 text-[11px] sm:text-xs">Enhanced account protection</p>
                       </div>
                     </div>
 
@@ -696,61 +689,61 @@ export default function Profile() {
                       <button
                         onClick={disableTwoFA}
                         disabled={twoFAState.disabling}
-                        className="flex items-center gap-1.5 sm:gap-2 rounded-xl sm:rounded-full border border-black/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold text-[#75483b] transition-colors hover:bg-[#eee2dc] w-full sm:w-auto justify-center"
+                        className="flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition shadow-2xs shrink-0"
                       >
-                        <FaLock size={11} /> {twoFAState.disabling ? "Disabling..." : "Disable"}
+                        <FaLock size={10} /> {twoFAState.disabling ? "..." : "Disable"}
                       </button>
                     ) : (
                       <button
                         onClick={startTwoFASetup}
                         disabled={twoFAState.loading}
-                        className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl bg-gray-900 text-white font-bold shadow-sm hover:bg-black transition-all text-xs sm:text-sm flex items-center gap-1.5 justify-center w-full sm:w-auto"
+                        className="px-3 py-1.5 rounded-xl bg-gray-900 text-white font-bold shadow-2xs hover:bg-black transition text-xs flex items-center gap-1 shrink-0"
                       >
-                        <FaQrcode size={12} /> {twoFAState.loading ? "Loading..." : "Setup 2FA"}
+                        <FaQrcode size={11} /> {twoFAState.loading ? "..." : "Enable"}
                       </button>
                     )}
                   </div>
                 </div>
 
                 {/* Password Change Box */}
-                <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 border border-gray-100 shadow-sm relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${pwOpen ? 'bg-orange-400' : 'bg-gray-200'}`} />
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
-                    <div className="flex gap-3 sm:gap-5 items-center sm:items-start">
-                      <div className={`h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl flex items-center justify-center text-sm sm:text-xl shrink-0 ${pwOpen ? 'bg-orange-50 text-orange-600' : 'bg-gray-100 text-gray-400'}`}>
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs relative overflow-hidden">
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${pwOpen ? 'bg-orange-400' : 'bg-gray-200'}`} />
+                  <div className="flex flex-row justify-between items-center gap-3">
+                    <div className="flex gap-2.5 sm:gap-4 items-center">
+                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${pwOpen ? 'bg-orange-50 text-orange-600' : 'bg-gray-100 text-gray-400'}`}>
                         <FaLock />
                       </div>
                       <div>
-                        <h3 className="text-sm sm:text-lg font-bold text-gray-900">Password</h3>
-                        <p className="text-gray-500 text-xs sm:text-sm mt-0.5">Update your account password.</p>
+                        <h3 className="text-xs sm:text-base font-bold text-gray-900">Password</h3>
+                        <p className="text-gray-500 text-[11px] sm:text-xs">Update your security password</p>
                       </div>
                     </div>
                     <button
                       onClick={() => { setPwOpen((o) => !o); setPw({ current: "", next: "", confirm: "", loading: false }); }}
-                      className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl border-2 border-gray-100 text-gray-600 font-bold hover:border-orange-100 hover:bg-orange-50 hover:text-orange-600 transition-all text-xs sm:text-sm flex items-center gap-1.5 justify-center w-full sm:w-auto"
+                      className="px-3 py-1.5 rounded-xl border border-gray-200 text-gray-700 font-bold hover:bg-gray-50 transition text-xs flex items-center gap-1 shrink-0"
                     >
-                      <FaPen size={11} /> {pwOpen ? "Cancel" : "Change"}
+                      <FaPen size={10} /> {pwOpen ? "Cancel" : "Change"}
                     </button>
                   </div>
 
                   {pwOpen && (
-                    <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 max-w-sm">
+                    <div className="mt-3.5 sm:mt-5 space-y-2.5 max-w-sm">
                       <div>
-                        <label className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 block">Current Password</label>
-                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-xs sm:text-sm transition-all" placeholder="••••••••" />
+                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">Current Password</label>
+                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="••••••••" />
                       </div>
                       <div>
-                        <label className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 block">New Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-xs sm:text-sm transition-all" placeholder="Min 8 characters" />
+                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">New Password</label>
+                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="Min 8 characters" />
                       </div>
                       <div>
-                        <label className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 block">Confirm Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-xs sm:text-sm transition-all" placeholder="Re-enter new password" />
+                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">Confirm Password</label>
+                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="Re-enter new password" />
                       </div>
                       <button
                         onClick={handleChangePassword}
                         disabled={pw.loading}
-                        className="w-full py-2.5 sm:py-3 rounded-xl bg-gray-900 text-white font-bold shadow-sm hover:bg-black transition-all disabled:opacity-50 text-xs sm:text-sm"
+                        className="w-full py-2 rounded-xl bg-gray-900 text-white font-bold shadow-xs hover:bg-black transition-all disabled:opacity-50 text-xs"
                       >
                         {pw.loading ? "Saving..." : "Update Password"}
                       </button>
@@ -758,24 +751,21 @@ export default function Profile() {
                   )}
                 </div>
 
-              {/* Quick Links Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                {/* Quick Links Grid (3 Compact Tiles) */}
+                <div className="grid grid-cols-3 gap-2 sm:gap-3.5">
                   {[
                     { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
                     { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
-                    { action: () => setShowSupportChat(true), icon: <FaEnvelope />, title: "Support", desc: "Get help", color: "text-purple-500", bg: "bg-purple-50" },
+                    { action: () => setShowSupportChat(true), icon: <FaEnvelope />, title: "Support", desc: "Live chat", color: "text-purple-500", bg: "bg-purple-50" },
                   ].map((link, i) => {
                     const cardBody = (
-                      <>
-                        <div className="flex justify-between items-start mb-2 sm:mb-4">
-                          <div className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl ${link.bg} ${link.color} text-sm sm:text-lg`}>{link.icon}</div>
-                          <FaChevronRight className="text-gray-300 group-hover:text-gray-600 transition-colors opacity-0 group-hover:opacity-100" size={12} />
-                        </div>
-                        <h4 className="font-bold text-gray-900 text-xs sm:text-base">{link.title}</h4>
-                        <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5">{link.desc}</p>
-                      </>
+                      <div className="text-center sm:text-left">
+                        <div className={`p-2 rounded-xl ${link.bg} ${link.color} text-sm sm:text-base inline-flex mb-1.5`}>{link.icon}</div>
+                        <h4 className="font-bold text-gray-900 text-xs sm:text-sm">{link.title}</h4>
+                        <p className="text-[10px] text-gray-400 truncate hidden sm:block mt-0.5">{link.desc}</p>
+                      </div>
                     );
-                    const cardClass = "group bg-white p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1 text-left w-full";
+                    const cardClass = "group bg-white p-3 sm:p-4 rounded-2xl border border-gray-100 shadow-2xs hover:shadow-md transition-all text-left w-full";
                     return link.action ? (
                       <button key={i} type="button" onClick={link.action} className={cardClass}>
                         {cardBody}
@@ -786,115 +776,114 @@ export default function Profile() {
                       </Link>
                     );
                   })}
-              </div>
-
-              <SupportChatWidget open={showSupportChat} onClose={() => setShowSupportChat(false)} />
-
-              {/* Wallet */}
-              <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 border border-gray-100 shadow-sm">
-                <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">VKart Wallet</h3>
-                <div className="flex items-center justify-between mb-4 sm:mb-6">
-                  <div className="text-xs sm:text-sm text-gray-500">Available Balance</div>
-                  <div className="text-lg sm:text-2xl font-black text-gray-900">₹{Math.round(wallet.balance)}</div>
-                </div>
-                <div className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 sm:mb-3">
-                  Recent Transactions
-                </div>
-                <div className="space-y-2">
-                  {wallet.transactions.length === 0 ? (
-                    <div className="text-xs sm:text-sm text-gray-500">No wallet activity yet.</div>
-                  ) : (
-                    wallet.transactions.slice(0, 5).map((t, i) => (
-                      <div key={i} className="flex items-center justify-between text-xs sm:text-sm">
-                        <span className="text-gray-600">{t.reason || t.type}</span>
-                        <span className={`font-bold ${t.type === "CREDIT" ? "text-emerald-600" : "text-red-600"}`}>
-                          {t.type === "CREDIT" ? "+" : "-"}₹{Math.round(t.amount)}
-                        </span>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-
-              {/* Address Book */}
-              <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 border border-gray-100 shadow-sm">
-                <div className="flex items-center justify-between mb-4 sm:mb-6">
-                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 flex items-center gap-1.5 sm:gap-2">
-                    <FaMapMarkerAlt className="text-orange-500 text-xs sm:text-base" /> Addresses
-                  </h3>
-                  <button onClick={() => openAddressForm()} className="flex items-center gap-1 text-xs sm:text-sm font-bold text-gray-600 hover:text-gray-900 transition-colors px-2.5 py-1 rounded-lg hover:bg-gray-50">
-                    <FaPlus size={11} /> Add
-                  </button>
                 </div>
 
-                {addresses.length === 0 && !addrOpen ? (
-                  <div className="text-center py-8">
-                    <FaMapMarkerAlt className="mx-auto text-gray-300 mb-3" size={28} />
-                    <p className="text-sm text-gray-500">No saved addresses yet.</p>
-                    <button onClick={() => openAddressForm()} className="mt-3 text-sm font-bold text-orange-600 hover:underline">Add your first address</button>
+                <SupportChatWidget open={showSupportChat} onClose={() => setShowSupportChat(false)} />
+
+                {/* Wallet */}
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xs sm:text-base font-bold text-gray-900">VKart Wallet</h3>
+                    <div className="text-base sm:text-xl font-bold text-gray-900">₹{Math.round(wallet.balance)}</div>
                   </div>
-                ) : (
-                  <div className="space-y-3">
-                    {addresses.map((addr) => (
-                      <div key={addr._id} className={`p-4 rounded-xl border ${addr.isDefault ? 'border-orange-200 bg-orange-50/50' : 'border-gray-100'} flex justify-between items-start gap-3`}>
-                        <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-bold text-gray-900 text-sm">{addr.fullName || addr.name}</span>
-                          {addr.isDefault && <span className="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">Default</span>}
-                        </div>
-                          <p className="text-xs text-gray-600">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
-                          <p className="text-xs text-gray-500">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>
-                          <p className="text-xs text-gray-400 mt-1">{addr.phone}</p>
-                        </div>
-                        <div className="flex gap-1 shrink-0">
-                          <button onClick={() => openAddressForm(addr)} className="p-2 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"><FaPen size={12} /></button>
-                          <button onClick={() => handleDeleteAddress(addr._id)} className="p-2 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors"><FaTrash size={12} /></button>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">
+                    Recent Activity
                   </div>
-                )}
+                  <div className="space-y-1.5">
+                    {wallet.transactions.length === 0 ? (
+                      <div className="text-xs text-gray-400">No wallet activity yet.</div>
+                    ) : (
+                      wallet.transactions.slice(0, 4).map((t, i) => (
+                        <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-gray-50 last:border-0">
+                          <span className="text-gray-600 truncate mr-2">{t.reason || t.type}</span>
+                          <span className={`font-bold shrink-0 ${t.type === "CREDIT" ? "text-emerald-600" : "text-red-600"}`}>
+                            {t.type === "CREDIT" ? "+" : "-"}₹{Math.round(t.amount)}
+                          </span>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
 
-                {/* Address Form (inline) */}
-                {addrOpen && (
-                  <div className="mt-6 border-t border-gray-100 pt-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <h4 className="font-bold text-gray-900 text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
-                      <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-gray-400 hover:text-gray-600"><FaTimes size={14} /></button>
+                {/* Address Book */}
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
+                      <FaMapMarkerAlt className="text-orange-500 text-xs sm:text-sm" /> Saved Addresses
+                    </h3>
+                    <button onClick={() => openAddressForm()} className="flex items-center gap-1 text-xs font-bold text-gray-700 hover:text-black transition px-2 py-0.5 rounded-lg hover:bg-gray-100">
+                      <FaPlus size={10} /> Add
+                    </button>
+                  </div>
+
+                  {addresses.length === 0 && !addrOpen ? (
+                    <div className="text-center py-6">
+                      <FaMapMarkerAlt className="mx-auto text-gray-300 mb-2" size={22} />
+                      <p className="text-xs text-gray-500">No saved addresses yet.</p>
+                      <button onClick={() => openAddressForm()} className="mt-2 text-xs font-bold text-orange-600 hover:underline">+ Add Address</button>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {[
-                        { key: "fullName", label: "Full Name", span: 1 },
-                        { key: "phone", label: "Phone", span: 1 },
-                        { key: "address1", label: "Address Line 1", span: 2 },
-                        { key: "address2", label: "Address Line 2 (optional)", span: 2 },
-                        { key: "city", label: "City", span: 1 },
-                        { key: "state", label: "State", span: 1 },
-                        { key: "pincode", label: "Pincode", span: 1 },
-                      ].map((f) => (
-                        <div key={f.key} className={f.span === 2 ? "sm:col-span-2" : ""}>
-                          <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1 block">{f.label}</label>
-                          <input
-                            type="text"
-                            value={addrForm[f.key]}
-                            onChange={(e) => setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))}
-                            className="w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none text-sm transition-all"
-                          />
+                  ) : (
+                    <div className="space-y-2.5">
+                      {addresses.map((addr) => (
+                        <div key={addr._id} className={`p-3 rounded-xl border ${addr.isDefault ? 'border-orange-200 bg-orange-50/40' : 'border-gray-100'} flex justify-between items-start gap-2.5`}>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-1.5 mb-0.5">
+                              <span className="font-bold text-gray-900 text-xs sm:text-sm">{addr.fullName || addr.name}</span>
+                              {addr.isDefault && <span className="text-[9px] font-bold text-orange-600 bg-orange-100 px-1.5 py-0.2 rounded-full">Default</span>}
+                            </div>
+                            <p className="text-[11px] text-gray-600">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
+                            <p className="text-[11px] text-gray-500">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>
+                            <p className="text-[10px] text-gray-400 mt-0.5 font-mono">{addr.phone}</p>
+                          </div>
+                          <div className="flex gap-1 shrink-0">
+                            <button onClick={() => openAddressForm(addr)} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition"><FaPen size={11} /></button>
+                            <button onClick={() => handleDeleteAddress(addr._id)} className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition"><FaTrash size={11} /></button>
+                          </div>
                         </div>
                       ))}
                     </div>
-                    <label className="flex items-center gap-2 mt-3 text-sm text-gray-600 cursor-pointer">
-                      <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-gray-300 text-orange-500 focus:ring-orange-200" />
-                      Set as default address
-                    </label>
-                    <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-4 w-full py-2.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-lg hover:bg-black transition-all disabled:opacity-50">
-                      {addrLoading ? "Saving..." : (editAddr ? "Update Address" : "Save Address")}
-                    </button>
-                  </div>
-                )}
-              </div>
+                  )}
 
-            </div>
+                  {/* Address Form (inline) */}
+                  {addrOpen && (
+                    <div className="mt-4 border-t border-gray-100 pt-4">
+                      <div className="flex justify-between items-center mb-3">
+                        <h4 className="font-bold text-gray-900 text-xs sm:text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
+                        <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-gray-400 hover:text-gray-600"><FaTimes size={12} /></button>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {[
+                          { key: "fullName", label: "Full Name", span: 1 },
+                          { key: "phone", label: "Phone", span: 1 },
+                          { key: "address1", label: "Address Line 1", span: 2 },
+                          { key: "address2", label: "Address Line 2 (optional)", span: 2 },
+                          { key: "city", label: "City", span: 1 },
+                          { key: "state", label: "State", span: 1 },
+                          { key: "pincode", label: "Pincode", span: 1 },
+                        ].map((f) => (
+                          <div key={f.key} className={f.span === 2 ? "sm:col-span-2" : ""}>
+                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">{f.label}</label>
+                            <input
+                              type="text"
+                              value={addrForm[f.key]}
+                              onChange={(e) => setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))}
+                              className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <label className="flex items-center gap-2 mt-2.5 text-xs text-gray-600 cursor-pointer">
+                        <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-gray-300 text-orange-500 focus:ring-orange-200" />
+                        Set as default address
+                      </label>
+                      <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-3.5 w-full py-2.5 rounded-xl bg-gray-900 text-white font-bold text-xs shadow-xs hover:bg-black transition-all disabled:opacity-50">
+                        {addrLoading ? "Saving..." : (editAddr ? "Update Address" : "Save Address")}
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+              </div>
             </div>
           ) : (
             // --- ORDERS TAB ---
@@ -928,6 +917,17 @@ export default function Profile() {
               </Suspense>
             </div>
           )}
+        </div>
+
+        {/* --- BOTTOM SIGN OUT ACTION --- */}
+        <div className="mt-8 pb-12 flex justify-center">
+          <button
+            onClick={handleLogout}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-red-200/80 bg-red-50/80 hover:bg-red-100/80 text-red-700 font-bold text-xs sm:text-sm transition-all shadow-2xs active:scale-95"
+          >
+            <FaSignOutAlt className="text-xs" />
+            <span>Sign Out</span>
+          </button>
         </div>
       </div>
 

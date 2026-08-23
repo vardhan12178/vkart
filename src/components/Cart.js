@@ -557,8 +557,8 @@ export default function Cart() {
 
         {/* Checkout Form Section */}
         {showPaymentDetails && hasCartItems && (
-          <div ref={checkoutRef} className="mt-8 pt-8 sm:mt-12 sm:pt-12 border-t border-black/10">
-            <h2 className="text-xl sm:text-3xl font-editorial font-bold text-[#1d1c19] mb-6 sm:mb-10 text-center">Secure Checkout</h2>
+          <div ref={checkoutRef} className="mt-6 pt-6 sm:mt-10 sm:pt-10 border-t border-black/10">
+            <h2 className="text-lg sm:text-2xl font-editorial font-bold text-[#1d1c19] mb-3 sm:mb-6 text-center">Secure Checkout</h2>
             <div className="max-w-6xl mx-auto">
               <CheckoutForm onOrderPlaced={handleOrderPlaced} totalAmount={calc.total} />
             </div>

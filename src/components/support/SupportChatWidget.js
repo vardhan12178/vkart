@@ -144,48 +144,60 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
 
   return (
     <div className="flex flex-col h-full">
-      <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-2 pr-1">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-2.5 pr-1">
         {messages.length === 0 && (
-          <p className="text-xs text-gray-400 text-center py-4">
-            You're connected. Send a message and our team will reply here.
-          </p>
-        )}
-        {messages.map((m, i) => (
-          <div key={m._id || i} className={`flex ${m.sender === "USER" ? "justify-end" : "justify-start"}`}>
-            <div
-              className={`max-w-[80%] rounded-2xl px-3.5 py-2 text-sm ${
-                m.sender === "USER" ? "bg-gray-900 text-white" : "bg-white border border-gray-200 text-gray-800"
-              }`}
-            >
-              {m.text}
+          <div className="text-center py-6 px-4">
+            <div className="h-10 w-10 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
+              <FaHeadset size={16} />
             </div>
+            <p className="text-xs font-bold text-slate-800">You're connected to support</p>
+            <p className="text-[11px] text-slate-400 mt-0.5">Send a message and our team will assist you shortly.</p>
           </div>
-        ))}
+        )}
+        {messages.map((m, i) => {
+          const isUser = m.sender === "USER";
+          return (
+            <div key={m._id || i} className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+              <div
+                className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-xs sm:text-sm leading-relaxed shadow-xs ${
+                  isUser
+                    ? "bg-slate-900 text-white rounded-br-xs"
+                    : "bg-white border border-slate-200 text-slate-800 rounded-bl-xs"
+                }`}
+              >
+                <p>{m.text}</p>
+                <span className={`text-[9px] block mt-0.5 text-right ${isUser ? "text-slate-400" : "text-slate-400"}`}>
+                  {m.createdAt ? new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}
+                </span>
+              </div>
+            </div>
+          );
+        })}
         {agentTyping && (
           <div className="flex justify-start">
-            <div className="bg-white border border-gray-200 rounded-2xl px-3.5 py-2 text-xs text-gray-400 italic">
+            <div className="bg-white border border-slate-200 rounded-2xl px-3.5 py-2 text-xs text-slate-400 italic shadow-xs">
               Agent is typing…
             </div>
           </div>
         )}
       </div>
 
-      <div className="mt-3 flex items-center gap-2 shrink-0">
+      <div className="mt-3 pt-2 border-t border-slate-200/60 flex items-center gap-2 shrink-0">
         <input
           type="text"
           value={text}
           onChange={(e) => handleChangeText(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter") send(); }}
           placeholder="Type your message..."
-          className="flex-1 rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:ring-2 focus:ring-orange-200"
+          className="flex-1 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500"
         />
         <button
           type="button"
           onClick={send}
           disabled={!text.trim()}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gray-900 text-white disabled:opacity-40 hover:bg-black transition-colors"
+          className="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-slate-900 text-white disabled:opacity-40 hover:bg-black transition-colors shadow-xs"
         >
-          <FaPaperPlane size={13} />
+          <FaPaperPlane size={12} />
         </button>
       </div>
     </div>
@@ -212,7 +224,7 @@ const MENU_OPTIONS = [
 
 function BackButton({ onClick }) {
   return (
-    <button type="button" onClick={onClick} className="flex items-center gap-1.5 text-xs font-bold text-gray-400 hover:text-gray-600 transition-colors mb-1">
+    <button type="button" onClick={onClick} className="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors mb-1.5">
       <FaChevronLeft size={9} /> Back
     </button>
   );
@@ -263,97 +275,115 @@ export default function SupportChatWidget({ open, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[999] flex items-end sm:items-center justify-center sm:justify-end bg-black/30 backdrop-blur-sm p-0 sm:p-6"
+      className="fixed inset-0 z-[999] flex items-end sm:items-center justify-center sm:justify-end bg-black/40 backdrop-blur-xs p-0 sm:p-6"
       onClick={onClose}
     >
       <style>{`
-        @keyframes supportChatFadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-up { animation: supportChatFadeUp 0.25s ease-out forwards; }
+        @keyframes supportChatFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: supportChatFadeUp 0.22s ease-out forwards; }
       `}</style>
       <div
-        className="relative w-full sm:w-[400px] h-[85vh] sm:h-[620px] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fade-up"
+        className="relative w-full sm:w-[420px] h-[90vh] sm:h-[620px] bg-white rounded-t-[2rem] sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fade-up border border-slate-200/60"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Mobile Pull Bar Indicator */}
+        <div className="sm:hidden w-full pt-2.5 pb-1 flex justify-center bg-slate-900">
+          <div className="w-10 h-1 bg-white/20 rounded-full"></div>
+        </div>
+
         {/* Header */}
-        <div className="bg-gray-900 text-white px-5 py-4 flex items-center justify-between shrink-0">
+        <div className="bg-slate-900 text-white px-4 sm:px-5 py-3.5 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-white/10">
+            <span className="grid h-8 w-8 place-items-center rounded-xl bg-white/10 text-white">
               <FaHeadset size={14} />
             </span>
             <div>
-              <p className="font-bold text-sm leading-none">VKart Support</p>
-              <p className="text-[10px] text-white/50 mt-1">Usually replies within a few hours</p>
+              <div className="flex items-center gap-1.5">
+                <p className="font-bold text-xs sm:text-sm leading-none">VKart Customer Support</p>
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              </div>
+              <p className="text-[10px] text-white/60 mt-0.5 font-medium">Live assistance & instant answers</p>
             </div>
           </div>
-          <button type="button" onClick={onClose} className="text-white/60 hover:text-white transition-colors">
-            <FaTimes size={16} />
+          <button type="button" onClick={onClose} className="p-1 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+            <FaTimes size={15} />
           </button>
         </div>
 
         {/* Body */}
-        <div className={step === "AGENT_CHAT" ? "flex-1 overflow-hidden p-5 bg-gray-50 flex flex-col" : "flex-1 overflow-y-auto p-5 space-y-3 bg-gray-50"}>
+        <div className={step === "AGENT_CHAT" ? "flex-1 overflow-hidden p-4 sm:p-5 bg-slate-50/60 flex flex-col" : "flex-1 overflow-y-auto p-4 sm:p-5 space-y-2.5 bg-slate-50/60"}>
           {step === "MENU" && (
             <>
-              <p className="text-sm text-gray-600 mb-2">Hi! What can we help you with today?</p>
-              {MENU_OPTIONS.map(({ id, label, icon: Icon }) => (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => chooseIntent(id)}
-                  className="w-full flex items-center justify-between gap-3 bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-800 hover:border-orange-300 hover:bg-orange-50/50 transition-colors"
-                >
-                  <span className="flex items-center gap-3">
-                    <Icon className="text-orange-500" size={14} /> {label}
-                  </span>
-                  <FaChevronRight size={10} className="text-gray-300" />
-                </button>
-              ))}
+              <p className="text-xs sm:text-sm font-bold text-slate-700 mb-1">How can we help you today?</p>
+              <div className="space-y-2">
+                {MENU_OPTIONS.map(({ id, label, icon: Icon }) => (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => chooseIntent(id)}
+                    className="w-full flex items-center justify-between gap-3 bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-xs sm:text-sm font-bold text-slate-800 hover:border-slate-900 hover:bg-slate-50 transition-all shadow-xs group"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <span className="h-7 w-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-slate-900 group-hover:text-white transition-colors">
+                        <Icon size={12} />
+                      </span>
+                      <span>{label}</span>
+                    </span>
+                    <FaChevronRight size={10} className="text-slate-300 group-hover:text-slate-600 transition-colors" />
+                  </button>
+                ))}
+              </div>
             </>
           )}
 
           {step === "ORDER_LIST" && (
             <>
               <BackButton onClick={() => setStep("MENU")} />
-              <p className="text-sm text-gray-600 mb-2">Which order do you need help with?</p>
-              {ordersLoading && <p className="text-xs text-gray-400">Loading your orders...</p>}
+              <p className="text-xs sm:text-sm font-bold text-slate-800 mb-1">Select an order:</p>
+              {ordersLoading && <p className="text-xs text-slate-400 py-4 text-center">Loading your recent orders...</p>}
               {!ordersLoading && orders.length === 0 && (
-                <p className="text-xs text-gray-400">You don't have any orders yet.</p>
+                <p className="text-xs text-slate-400 py-4 text-center">No orders found on your account.</p>
               )}
-              {orders.map((o) => (
-                <button
-                  key={o._id}
-                  type="button"
-                  onClick={() => pickOrder(o)}
-                  className="w-full flex items-center gap-3 text-left bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-orange-300 transition-colors"
-                >
-                  {o.products?.[0]?.image && (
-                    <img
-                      src={o.products[0].image}
-                      alt=""
-                      className="h-11 w-11 shrink-0 rounded-lg object-contain bg-gray-50 border border-gray-100 p-1"
-                    />
-                  )}
-                  <div className="min-w-0 flex-1">
-                    <div className="flex justify-between items-center gap-2">
-                      <span className="text-sm font-bold text-gray-900 truncate">{o.orderId}</span>
-                      <span className="shrink-0 text-[9px] font-bold uppercase tracking-wide text-gray-400">{o.stage}</span>
+              <div className="space-y-2">
+                {orders.map((o) => (
+                  <button
+                    key={o._id}
+                    type="button"
+                    onClick={() => pickOrder(o)}
+                    className="w-full flex items-center gap-3 text-left bg-white border border-slate-200/80 rounded-xl p-3 hover:border-slate-900 hover:bg-slate-50 transition-all shadow-xs"
+                  >
+                    {o.products?.[0]?.image && (
+                      <img
+                        src={o.products[0].image}
+                        alt=""
+                        className="h-10 w-10 shrink-0 rounded-lg object-contain bg-white border border-slate-100 p-0.5"
+                      />
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex justify-between items-center gap-2">
+                        <span className="text-xs font-mono font-bold text-slate-900 truncate">{o.orderId}</span>
+                        <span className="shrink-0 text-[9px] font-bold uppercase tracking-wide bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded-md">{o.stage}</span>
+                      </div>
+                      <p className="text-[11px] text-slate-500 mt-0.5 truncate">
+                        {o.products?.[0]?.name}
+                        {o.products?.length > 1 ? ` +${o.products.length - 1} more` : ""}
+                      </p>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1 truncate">
-                      {o.products?.[0]?.name}
-                      {o.products?.length > 1 ? ` +${o.products.length - 1} more` : ""}
-                    </p>
-                  </div>
-                </button>
-              ))}
+                  </button>
+                ))}
+              </div>
             </>
           )}
 
           {step === "ORDER_DETAIL" && selectedOrder && (
             <>
               <BackButton onClick={() => setStep("ORDER_LIST")} />
-              <div className="bg-white border border-gray-200 rounded-xl p-4">
-                <p className="text-sm font-bold text-gray-900 mb-1">{selectedOrder.orderId}</p>
-                <p className="text-sm text-gray-600">
+              <div className="bg-white border border-slate-200/80 rounded-xl p-4 shadow-xs space-y-2">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-mono font-bold text-slate-900">{selectedOrder.orderId}</p>
+                  <span className="text-[9px] font-bold uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{selectedOrder.stage}</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600">
                   {STAGE_MESSAGES[selectedOrder.stage] || "We're tracking your order's progress."}
                 </p>
               </div>
@@ -365,26 +395,20 @@ export default function SupportChatWidget({ open, onClose }) {
                     onClose();
                     navigate("/orders");
                   }}
-                  className="w-full bg-gray-900 text-white text-sm font-bold rounded-xl px-4 py-3 hover:bg-black transition-colors"
+                  className="w-full bg-slate-900 text-white text-xs sm:text-sm font-bold rounded-xl px-4 py-2.5 hover:bg-black transition-colors shadow-xs"
                 >
-                  Go to My Orders to request a return
+                  Go to Orders to request return
                 </button>
               )}
 
-              {selectedOrder.stage === "DELIVERED" && intent !== "return" && (
-                <p className="text-xs text-gray-500">
-                  Need to return this or ask for a refund? Choose "Return or refund" from the menu instead.
-                </p>
-              )}
-
               {selectedOrder.stage === "CANCELLED" && selectedOrder.refundStatus && selectedOrder.refundStatus !== "NONE" && (
-                <p className="text-xs text-gray-500">
-                  Refund status: <span className="font-bold text-gray-700">{selectedOrder.refundStatus}</span>
-                </p>
+                <div className="bg-amber-50 border border-amber-100 rounded-xl p-3 text-xs text-amber-800">
+                  Refund status: <span className="font-bold">{selectedOrder.refundStatus}</span>
+                </div>
               )}
 
-              <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-sm font-bold text-orange-600 hover:text-orange-700">
-                Continue
+              <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-xs sm:text-sm font-bold text-orange-600 hover:underline">
+                Continue →
               </button>
             </>
           )}
@@ -392,13 +416,13 @@ export default function SupportChatWidget({ open, onClose }) {
           {step === "PAYMENT_INFO" && (
             <>
               <BackButton onClick={() => setStep("MENU")} />
-              <div className="bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-600 space-y-2">
+              <div className="bg-white border border-slate-200/80 rounded-xl p-4 text-xs sm:text-sm text-slate-600 space-y-2 shadow-xs">
                 <p>• Payments are processed securely via Razorpay (UPI, Cards, Netbanking, Pay Later).</p>
                 <p>• Refunds to your original payment method typically take 5-7 business days once initiated.</p>
                 <p>• Refunds to your VKart Wallet are instant.</p>
               </div>
-              <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-sm font-bold text-orange-600 hover:text-orange-700">
-                Continue
+              <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-xs sm:text-sm font-bold text-orange-600 hover:underline">
+                Continue →
               </button>
             </>
           )}
@@ -406,23 +430,23 @@ export default function SupportChatWidget({ open, onClose }) {
           {step === "OTHER_INFO" && (
             <>
               <BackButton onClick={() => setStep("MENU")} />
-              <div className="bg-white border border-gray-200 rounded-xl p-4 text-sm text-gray-600">
-                No problem — let's get you connected with our support team.
+              <div className="bg-white border border-slate-200/80 rounded-xl p-4 text-xs sm:text-sm text-slate-600 shadow-xs">
+                No problem — let's connect you with our live support team.
               </div>
-              <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-sm font-bold text-orange-600 hover:text-orange-700">
-                Continue
+              <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-xs sm:text-sm font-bold text-orange-600 hover:underline">
+                Continue →
               </button>
             </>
           )}
 
           {step === "FOLLOWUP" && (
             <>
-              <p className="text-sm text-gray-600 mb-2">Did that answer your question?</p>
-              <div className="flex gap-3">
-                <button type="button" onClick={onClose} className="flex-1 bg-white border border-gray-200 rounded-xl py-3 text-sm font-bold text-gray-700 hover:bg-gray-50 transition-colors">
+              <p className="text-xs sm:text-sm font-bold text-slate-800 mb-2">Did that answer your question?</p>
+              <div className="flex gap-2">
+                <button type="button" onClick={onClose} className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors shadow-xs">
                   Yes, thanks!
                 </button>
-                <button type="button" onClick={() => setStep("WANT_AGENT")} className="flex-1 bg-gray-900 text-white rounded-xl py-3 text-sm font-bold hover:bg-black transition-colors">
+                <button type="button" onClick={() => setStep("WANT_AGENT")} className="flex-1 bg-slate-900 text-white rounded-xl py-2.5 text-xs sm:text-sm font-bold hover:bg-black transition-colors shadow-xs">
                   Not really
                 </button>
               </div>
@@ -431,12 +455,12 @@ export default function SupportChatWidget({ open, onClose }) {
 
           {step === "WANT_AGENT" && (
             <>
-              <p className="text-sm text-gray-600 mb-2">Want to chat with our support team directly?</p>
-              <div className="flex gap-3">
-                <button type="button" onClick={onClose} className="flex-1 bg-white border border-gray-200 rounded-xl py-3 text-sm font-bold text-gray-700 hover:bg-gray-50 transition-colors">
+              <p className="text-xs sm:text-sm font-bold text-slate-800 mb-2">Want to chat with our support team?</p>
+              <div className="flex gap-2">
+                <button type="button" onClick={onClose} className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors shadow-xs">
                   No thanks
                 </button>
-                <button type="button" onClick={() => setStep("AGENT_CHAT")} className="flex-1 bg-gray-900 text-white rounded-xl py-3 text-sm font-bold hover:bg-black transition-colors">
+                <button type="button" onClick={() => setStep("AGENT_CHAT")} className="flex-1 bg-slate-900 text-white rounded-xl py-2.5 text-xs sm:text-sm font-bold hover:bg-black transition-colors shadow-xs">
                   Yes, connect me
                 </button>
               </div>

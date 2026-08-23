@@ -218,26 +218,26 @@ export default function AdminDashboard() {
       <style>{noScrollbarStyle}</style>
 
       {/* Sticky Header */}
-      <div className="sticky top-0 z-20 bg-[#F8F9FA]/80 backdrop-blur-xl border-b border-slate-200/50 px-4 sm:px-8 py-4">
-        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="sticky top-0 z-20 bg-[#F8F9FA]/85 backdrop-blur-xl border-b border-slate-200/60 px-3.5 sm:px-8 py-3 sm:py-4">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 sm:gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+            <h1 className="font-editorial text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-tight">
               Store overview.
             </h1>
-            <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mt-1">
+            <p className="text-slate-500 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mt-0.5">
               {greeting} · Live operations
             </p>
           </div>
 
-          <div className="flex items-center gap-4 self-end md:self-auto">
+          <div className="flex items-center gap-2 self-start sm:self-auto">
             {/* Date Filter - Segmented Control */}
-            <div className="bg-slate-200/50 p-1 rounded-xl flex items-center">
+            <div className="bg-slate-200/60 p-0.5 sm:p-1 rounded-xl flex items-center">
               {['7d', '30d', '90d'].map((range) => (
                 <button
                   key={range}
                   onClick={() => setTimeRange(range)}
-                  className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${timeRange === range
-                    ? "bg-white text-slate-900 shadow-sm scale-105"
+                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${timeRange === range
+                    ? "bg-white text-slate-900 shadow-xs scale-102"
                     : "text-slate-500 hover:text-slate-700"
                     }`}
                 >
@@ -249,20 +249,20 @@ export default function AdminDashboard() {
             <button
               onClick={() => dashboardQuery.refetch()}
               disabled={dashboardQuery.isFetching}
-              className="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all shadow-sm active:scale-95"
+              className="p-1.5 sm:p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all shadow-xs active:scale-95"
               title="Sync Data"
             >
-              <RefreshIcon className={`h-5 w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[1600px] mx-auto space-y-8 px-4 sm:px-8 mt-8">
+      <div className="max-w-[1600px] mx-auto space-y-4 sm:space-y-8 px-3.5 sm:px-8 mt-4 sm:mt-8">
 
         {error && (
-          <div className="rounded-2xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600 flex items-center gap-2 animate-in fade-in shadow-sm">
-            <StatusOnlineIcon className="h-5 w-5" />
+          <div className="rounded-2xl bg-red-50 border border-red-100 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-red-600 flex items-center gap-2 animate-in fade-in shadow-xs">
+            <StatusOnlineIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             <span className="font-medium">{error}</span>
           </div>
         )}
@@ -272,14 +272,14 @@ export default function AdminDashboard() {
           <DashboardSkeleton />
         ) : (
           <>
-            {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {/* Stats Grid - 2 Column on Mobile */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
               <div className={fadeInClass(0)}>
                 <StatCard
                   title="Total Revenue"
                   value={INR(stats.totalRevenue)}
                   subtitle="Gross Income"
-                  icon={<CurrencyRupeeIcon className="h-6 w-6 text-white" />}
+                  icon={<CurrencyRupeeIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#b56a3f] to-[#8f4e2f]"
                   trend="+12.5%"
                   trendUp={true}
@@ -290,18 +290,18 @@ export default function AdminDashboard() {
                   title="Total Orders"
                   value={stats.totalOrders}
                   subtitle="All time"
-                  icon={<ShoppingBagIcon className="h-6 w-6 text-white" />}
+                  icon={<ShoppingBagIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#2f2d28] to-[#4f4a42]"
-                  trend={`+${stats.thisMonthOrders} this month`}
+                  trend={`+${stats.thisMonthOrders} this mo`}
                   trendUp={true}
                 />
               </div>
               <div className={fadeInClass(200)}>
                 <StatCard
-                  title="Avg. Order Value"
+                  title="Avg. Order"
                   value={INR(stats.avgOrderValue)}
-                  subtitle="Revenue per Order"
-                  icon={<TrendingUpIcon className="h-6 w-6 text-white" />}
+                  subtitle="Per Order"
+                  icon={<TrendingUpIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#59634f] to-[#414a39]"
                   trend="+2.4%"
                   trendUp={true}
@@ -309,42 +309,42 @@ export default function AdminDashboard() {
               </div>
               <div className={fadeInClass(300)}>
                 <StatCard
-                  title="Active Customers"
+                  title="Customers"
                   value={stats.activeCustomers || users.length}
-                  subtitle="Total User Base"
-                  icon={<UsersIcon className="h-6 w-6 text-white" />}
+                  subtitle="Total Users"
+                  icon={<UsersIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#8b6653] to-[#6f4c3d]"
-                  trend={`+${users.length} total`}
+                  trend={`+${users.length}`}
                   trendUp={true}
                 />
               </div>
             </div>
 
             {/* Main Charts Section */}
-            <div className={`grid grid-cols-1 xl:grid-cols-3 gap-6 ${fadeInClass(400)}`}>
+            <div className={`grid grid-cols-1 xl:grid-cols-3 gap-3.5 sm:gap-6 ${fadeInClass(400)}`}>
 
               {/* Revenue Chart */}
-              <div className="xl:col-span-2 bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm p-6 hover:shadow-md transition-all duration-300">
-                <div className="flex items-center justify-between mb-8">
+              <div className="xl:col-span-2 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6 hover:shadow-md transition-all duration-300">
+                <div className="flex items-center justify-between mb-4 sm:mb-8">
                   <div>
-                    <h2 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
-                      <CalendarIcon className="h-5 w-5 text-slate-400" />
+                    <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight flex items-center gap-1.5 sm:gap-2">
+                      <CalendarIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
                       Revenue Analytics
                     </h2>
-                    <p className="text-xs font-medium text-slate-400 mt-1 ml-7">
+                    <p className="text-[10px] sm:text-xs font-medium text-slate-400 mt-0.5 ml-5 sm:ml-7">
                       Income trend for the selected period
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
+                  <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-emerald-100">
                     <TrendingUpIcon className="h-3 w-3" />
                     <span>Growth Stable</span>
                   </div>
                 </div>
 
-                <div className="h-[320px] w-full">
+                <div className="h-[220px] sm:h-[320px] w-full">
                   {revenueSeries.length > 0 && revenueSeries.some(d => d.revenue > 0) ? (
                     <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={revenueSeries} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                      <AreaChart data={revenueSeries} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
                         <defs>
                           <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="#f97316" stopOpacity={0.1} />
@@ -356,13 +356,13 @@ export default function AdminDashboard() {
                           dataKey="label"
                           axisLine={false}
                           tickLine={false}
-                          tick={{ fontSize: 10, fill: "#94a3b8", fontWeight: 500 }}
-                          dy={10}
+                          tick={{ fontSize: 9, fill: "#94a3b8", fontWeight: 500 }}
+                          dy={5}
                         />
                         <YAxis
                           axisLine={false}
                           tickLine={false}
-                          tick={{ fontSize: 10, fill: "#94a3b8", fontWeight: 500 }}
+                          tick={{ fontSize: 9, fill: "#94a3b8", fontWeight: 500 }}
                           tickFormatter={(val) => `₹${val >= 1000 ? (val / 1000).toFixed(0) + 'k' : val}`}
                         />
                         <Tooltip
@@ -387,14 +387,14 @@ export default function AdminDashboard() {
               </div>
 
               {/* Order Stages Bar Chart */}
-              <div className="bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm p-6 hover:shadow-md transition-all duration-300 flex flex-col">
-                <h2 className="text-lg font-bold text-slate-900 mb-1 tracking-tight">Pipeline</h2>
-                <p className="text-xs font-medium text-slate-400 mb-6">Order status distribution</p>
+              <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6 hover:shadow-md transition-all duration-300 flex flex-col">
+                <h2 className="text-sm sm:text-lg font-bold text-slate-900 mb-0.5 sm:mb-1 tracking-tight">Pipeline</h2>
+                <p className="text-[10px] sm:text-xs font-medium text-slate-400 mb-3 sm:mb-6">Order status distribution</p>
 
-                <div className="flex-1 min-h-[220px]">
+                <div className="flex-1 min-h-[180px] sm:min-h-[220px]">
                   {stageData.some(s => s.count > 0) ? (
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={stageData} layout="vertical" margin={{ left: 0, right: 20 }}>
+                      <BarChart data={stageData} layout="vertical" margin={{ left: -10, right: 10 }}>
                         <CartesianGrid horizontal={false} stroke="#f1f5f9" />
                         <XAxis type="number" hide />
                         <YAxis
@@ -402,14 +402,14 @@ export default function AdminDashboard() {
                           type="category"
                           axisLine={false}
                           tickLine={false}
-                          width={80}
-                          tick={{ fontSize: 10, fill: "#64748b", fontWeight: 600 }}
+                          width={75}
+                          tick={{ fontSize: 9, fill: "#64748b", fontWeight: 600 }}
                         />
                         <Tooltip
                           cursor={{ fill: 'transparent' }}
                           contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', fontSize: '12px' }}
                         />
-                        <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={16} animationDuration={1500}>
+                        <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={14} animationDuration={1500}>
                           {stageData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
                           ))}
@@ -424,32 +424,32 @@ export default function AdminDashboard() {
             </div>
 
             {/* Bottom Section - Lists with Premium "Invisible" Scroll */}
-            <div className={`grid grid-cols-1 xl:grid-cols-2 gap-6 ${fadeInClass(500)}`}>
+            <div className={`grid grid-cols-1 xl:grid-cols-2 gap-3.5 sm:gap-6 ${fadeInClass(500)}`}>
 
               {/* Recent Orders List */}
-              <div className="bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm h-[450px] flex flex-col relative group">
-                <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-[1.5rem]">
-                  <h2 className="text-lg font-bold text-slate-900 tracking-tight">Recent Orders</h2>
-                  <button onClick={() => navigate("/admin/orders")} className="text-slate-400 hover:text-orange-600 transition-colors">
+              <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
+                <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
+                  <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Recent Orders</h2>
+                  <button onClick={() => navigate("/admin/orders")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all orders">
                     <ExternalLinkIcon className="h-4 w-4" />
                   </button>
                 </div>
 
                 {/* Scrollable Content Area */}
-                <div className="overflow-y-auto no-scrollbar flex-1 p-2">
+                <div className="overflow-y-auto no-scrollbar flex-1 p-2 sm:p-3">
                   {recentOrders.length > 0 ? recentOrders.map((order) => (
-                    <div key={order._id} className="p-3 hover:bg-slate-50/80 rounded-2xl transition-colors flex items-center gap-4 group/item cursor-pointer mb-1" onClick={() => navigate(`/admin/orders/${order._id}`)}>
-                      <div className="h-10 w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 group-hover/item:bg-orange-100 group-hover/item:text-orange-600 transition-colors">
-                        <ShoppingBagIcon className="h-5 w-5" />
+                    <div key={order._id} className="p-2.5 sm:p-3 hover:bg-slate-50/80 rounded-xl sm:rounded-2xl transition-colors flex items-center gap-2.5 sm:gap-4 group/item cursor-pointer mb-1" onClick={() => navigate(`/admin/orders/${order._id}`)}>
+                      <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 group-hover/item:bg-orange-100 group-hover/item:text-orange-600 transition-colors shrink-0">
+                        <ShoppingBagIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm font-bold text-slate-900 truncate">#{order.orderId || order._id.slice(-6).toUpperCase()}</p>
-                          <p className="text-sm font-black text-slate-900">{INR(order.totalPrice)}</p>
+                        <div className="flex items-center justify-between mb-0.5">
+                          <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">#{order.orderId || order._id.slice(-6).toUpperCase()}</p>
+                          <p className="text-xs sm:text-sm font-black text-slate-900">{INR(order.totalPrice)}</p>
                         </div>
                         <div className="flex items-center justify-between">
-                          <p className="text-xs font-medium text-slate-500 truncate">{order.customer?.name || "Guest"}</p>
-                          <span className={`text-[9px] uppercase tracking-wide px-2 py-0.5 rounded-full font-bold border ${stageColors[order.stage]}`}>
+                          <p className="text-[10px] sm:text-xs font-medium text-slate-500 truncate">{order.customer?.name || "Guest"}</p>
+                          <span className={`text-[8px] sm:text-[9px] uppercase tracking-wide px-1.5 py-0.5 rounded-full font-bold border ${stageColors[order.stage]}`}>
                             {stageLabels[order.stage]}
                           </span>
                         </div>
@@ -459,45 +459,45 @@ export default function AdminDashboard() {
                     <EmptyState message="No recent orders found" />
                   )}
                   {/* Spacer for bottom scroll */}
-                  <div className="h-12"></div>
+                  <div className="h-10"></div>
                 </div>
 
                 {/* Premium Fade Overlay - Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-[1.5rem]" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-[1.5rem]" />
               </div>
 
               {/* Top Products List */}
-              <div className="bg-white rounded-[1.5rem] border border-slate-200/60 shadow-sm h-[450px] flex flex-col relative group">
-                <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-[1.5rem]">
-                  <h2 className="text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
-                  <button onClick={() => navigate("/admin/products")} className="text-slate-400 hover:text-orange-600 transition-colors">
+              <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
+                <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
+                  <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
+                  <button onClick={() => navigate("/admin/products")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all products">
                     <ExternalLinkIcon className="h-4 w-4" />
                   </button>
                 </div>
 
-                <div className="overflow-y-auto no-scrollbar flex-1 p-4 space-y-3">
+                <div className="overflow-y-auto no-scrollbar flex-1 p-2.5 sm:p-4 space-y-2 sm:space-y-3">
                   {topProducts.length > 0 ? topProducts.map((p, idx) => (
-                    <div key={idx} className="flex items-center gap-4 p-3 rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-sm transition-all bg-white group/item">
-                      <div className="h-12 w-12 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-100 relative">
+                    <div key={idx} className="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-xs transition-all bg-white group/item">
+                      <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-100 relative">
                         <ImageWithFallback src={p.image} alt={p.name} className="h-full w-full object-contain p-1 group-hover/item:scale-110 transition-transform duration-500 mix-blend-multiply" />
-                        <div className="absolute top-0 left-0 bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-br-lg">#{idx + 1}</div>
+                        <div className="absolute top-0 left-0 bg-slate-900 text-white text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded-br-lg">#{idx + 1}</div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-bold text-slate-900 truncate group-hover/item:text-orange-600 transition-colors">{p.name}</h4>
-                        <p className="text-xs font-medium text-slate-500">{p.qty} units sold</p>
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-900 truncate group-hover/item:text-orange-600 transition-colors">{p.name}</h4>
+                        <p className="text-[10px] sm:text-xs font-medium text-slate-500">{p.qty} units sold</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-black text-slate-900">{INR(p.revenue)}</p>
+                        <p className="text-xs sm:text-sm font-black text-slate-900">{INR(p.revenue)}</p>
                       </div>
                     </div>
                   )) : (
                     <EmptyState message={`No sales in this period`} />
                   )}
-                  <div className="h-12"></div>
+                  <div className="h-10"></div>
                 </div>
 
                 {/* Premium Fade Overlay - Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-[1.5rem]" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-[1.5rem]" />
               </div>
 
             </div>
@@ -529,26 +529,26 @@ function ImageWithFallback({ src, alt, className }) {
 
 function StatCard({ title, value, subtitle, icon, gradient, trend, trendUp }) {
   return (
-    <div className="relative overflow-hidden rounded-[1.5rem] bg-white p-6 shadow-sm border border-slate-200/60 group hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1">
+    <div className="relative overflow-hidden rounded-2xl sm:rounded-[1.5rem] bg-white p-3 sm:p-6 shadow-xs border border-slate-200/60 group hover:shadow-md transition-all duration-300">
       {/* Subtle Gradient Background */}
-      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-700`}></div>
+      <div className={`absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-6 -mt-6 sm:-mr-8 sm:-mt-8 transition-transform group-hover:scale-110 duration-700 pointer-events-none`}></div>
 
-      <div className="flex justify-between items-start relative z-10">
-        <div>
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{title}</p>
-          <h3 className="text-3xl font-black text-slate-900 tracking-tight">{value}</h3>
+      <div className="flex justify-between items-start relative z-10 gap-1.5 sm:gap-2">
+        <div className="min-w-0 flex-1">
+          <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5 sm:mb-1 truncate">{title}</p>
+          <h3 className="text-base sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight leading-tight truncate">{value}</h3>
         </div>
-        <div className={`h-10 w-10 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md text-white transform group-hover:rotate-6 transition-transform duration-300`}>
+        <div className={`h-7 w-7 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-xs text-white shrink-0 transform group-hover:rotate-6 transition-transform duration-300`}>
           {icon}
         </div>
       </div>
 
-      <div className="mt-4 flex items-center gap-2 text-xs font-medium relative z-10">
-        <span className={`flex items-center gap-0.5 px-1.5 py-0.5 rounded-md ${trendUp ? "text-emerald-700 bg-emerald-50" : "text-red-700 bg-red-50"}`}>
-          {trendUp ? <ArrowSmUpIcon className="h-3 w-3" /> : <ArrowSmDownIcon className="h-3 w-3" />}
+      <div className="mt-2 sm:mt-4 flex items-center gap-1.5 text-[9px] sm:text-xs font-medium relative z-10 truncate">
+        <span className={`flex items-center gap-0.5 px-1 sm:px-1.5 py-0.5 rounded-md shrink-0 font-bold ${trendUp ? "text-emerald-700 bg-emerald-50" : "text-red-700 bg-red-50"}`}>
+          {trendUp ? <ArrowSmUpIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> : <ArrowSmDownIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />}
           {trend}
         </span>
-        <span className="text-slate-400">{subtitle}</span>
+        <span className="text-slate-400 truncate hidden sm:inline">{subtitle}</span>
       </div>
     </div>
   );
@@ -568,27 +568,27 @@ function EmptyState({ message }) {
 function DashboardSkeleton() {
   return (
     <div className="animate-pulse space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="h-36 bg-white rounded-[1.5rem] border border-slate-100 shadow-sm p-6 relative overflow-hidden">
+          <div key={i} className="h-28 sm:h-36 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 shadow-xs p-3 sm:p-6 relative overflow-hidden">
             <div className="flex justify-between">
-              <div className="h-3 w-20 bg-slate-100 rounded mb-3"></div>
-              <div className="h-10 w-10 bg-slate-100 rounded-xl"></div>
+              <div className="h-3 w-16 bg-slate-100 rounded mb-2"></div>
+              <div className="h-7 w-7 sm:h-10 sm:w-10 bg-slate-100 rounded-xl"></div>
             </div>
-            <div className="h-8 w-28 bg-slate-100 rounded mb-3"></div>
-            <div className="h-3 w-full bg-slate-50 rounded"></div>
+            <div className="h-6 sm:h-8 w-20 sm:w-28 bg-slate-100 rounded mb-2"></div>
+            <div className="h-2.5 w-full bg-slate-50 rounded"></div>
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-        <div className="xl:col-span-2 h-80 bg-white rounded-[1.5rem] border border-slate-100 p-6">
-          <div className="h-5 w-40 bg-slate-100 rounded mb-8"></div>
-          <div className="h-56 bg-slate-50 rounded-xl"></div>
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-3.5 sm:gap-6">
+        <div className="xl:col-span-2 h-64 sm:h-80 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 p-4 sm:p-6">
+          <div className="h-5 w-40 bg-slate-100 rounded mb-6"></div>
+          <div className="h-44 sm:h-56 bg-slate-50 rounded-xl"></div>
         </div>
-        <div className="h-80 bg-white rounded-[1.5rem] border border-slate-100 p-6">
-          <div className="h-5 w-24 bg-slate-100 rounded mb-8"></div>
-          <div className="space-y-3">
-            {[1, 2, 3, 4].map(j => <div key={j} className="h-10 bg-slate-50 rounded-xl"></div>)}
+        <div className="h-64 sm:h-80 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 p-4 sm:p-6">
+          <div className="h-5 w-24 bg-slate-100 rounded mb-6"></div>
+          <div className="space-y-2.5">
+            {[1, 2, 3, 4].map(j => <div key={j} className="h-8 sm:h-10 bg-slate-50 rounded-xl"></div>)}
           </div>
         </div>
       </div>

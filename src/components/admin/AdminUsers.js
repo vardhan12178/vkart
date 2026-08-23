@@ -22,6 +22,7 @@ import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import { avatarInitial } from "./ui/avatarInitial";
+import Avatar from "./ui/Avatar";
 import Modal from "./ui/Modal";
 
 const ADMIN_USERS_ENDPOINT = "/api/admin/users";
@@ -202,75 +203,77 @@ export default function AdminUsers() {
   }
 
   return (
-    <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
+      <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
 
         {/* Toast */}
         {toast && (
-          <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"
+          <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"
             }`}>
             {toast.type === "error" ? <ExclamationCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
-            <span className="text-sm font-semibold">{toast.message}</span>
+            <span>{toast.message}</span>
           </div>
         )}
 
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Header Section */}
+        <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Users</h1>
-            <p className="text-slate-500 mt-1 text-sm">Manage access and security for all accounts.</p>
+            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+              Users
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Manage access and security for all accounts.</p>
           </div>
-          <div className="flex gap-3">
-            <button className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-slate-600 text-sm font-medium shadow-sm hover:bg-slate-50 transition-all">
+          <div className="flex items-center gap-2">
+            <button className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-slate-600 text-xs sm:text-sm font-semibold shadow-xs hover:bg-slate-50 transition-all">
               <DownloadIcon className="h-4 w-4" />
-              Export
+              <span>Export</span>
             </button>
             <button
               onClick={refresh}
               disabled={refreshing}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium shadow-md hover:bg-slate-800 transition-all disabled:opacity-70 active:scale-95"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs hover:bg-slate-800 transition-all disabled:opacity-70 active:scale-95 shrink-0"
             >
-              <RefreshIcon className={`h-4 w-4 ${refreshing ? "animate-spin" : ""}`} />
-              {refreshing ? "Syncing..." : "Sync Users"}
+              <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${refreshing ? "animate-spin" : ""}`} />
+              <span>{refreshing ? "Syncing..." : "Sync Users"}</span>
             </button>
           </div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <StatCard label="Total Accounts" value={stats.total} icon={UserGroupIcon} color="blue" />
-          <StatCard label="Secured with 2FA" value={stats.twoFAEnabled} icon={ShieldCheckIcon} color="emerald" />
-          <StatCard label="Blocked / Suspended" value={stats.blocked} icon={BanIcon} color="red" />
+        {/* 3-Column Compact Metric Row */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
+          <StatCard label="Total" fullLabel="Total Accounts" value={stats.total} icon={UserGroupIcon} color="blue" />
+          <StatCard label="2FA" fullLabel="Secured with 2FA" value={stats.twoFAEnabled} icon={ShieldCheckIcon} color="emerald" />
+          <StatCard label="Blocked" fullLabel="Blocked / Suspended" value={stats.blocked} icon={BanIcon} color="red" />
         </div>
 
         {/* Controls Toolbar */}
-        <div className="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm flex flex-col lg:flex-row gap-2">
+        <div className="bg-white p-1.5 sm:p-2 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col lg:flex-row gap-2">
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <SearchIcon className="h-5 w-5 text-slate-400" />
+              <SearchIcon className="h-4 w-4 text-slate-400" />
             </div>
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search users..."
-              className="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl bg-transparent text-slate-900 placeholder-slate-400 focus:ring-0 text-sm"
+              placeholder="Search by name, email, or ID..."
+              className="block w-full pl-9 pr-3 py-2 border-none rounded-xl bg-transparent text-slate-900 placeholder-slate-400 focus:ring-0 text-xs sm:text-sm font-medium outline-none"
             />
           </div>
 
           <div className="h-px w-full bg-slate-100 lg:h-auto lg:w-px lg:bg-slate-100"></div>
 
           {/* Filter Tabs */}
-          <div className="flex items-center gap-2 px-2 pb-2 lg:pb-0 overflow-x-auto no-scrollbar">
-            <div className="flex bg-slate-100/80 p-1 rounded-lg">
+          <div className="flex items-center gap-1.5 px-1 pb-1 lg:pb-0 overflow-x-auto no-scrollbar">
+            <div className="flex bg-slate-100/80 p-0.5 sm:p-1 rounded-xl">
               <TabButton label="All" active={filterBlocked === 'all'} onClick={() => setFilterBlocked('all')} />
               <TabButton label="Active" active={filterBlocked === 'active'} onClick={() => setFilterBlocked('active')} />
               <TabButton label="Blocked" active={filterBlocked === 'blocked'} onClick={() => setFilterBlocked('blocked')} />
             </div>
 
-            <div className="w-px h-6 bg-slate-200 mx-1 hidden sm:block"></div>
+            <div className="w-px h-5 bg-slate-200 mx-0.5"></div>
 
-            <div className="flex bg-slate-100/80 p-1 rounded-lg">
+            <div className="flex bg-slate-100/80 p-0.5 sm:p-1 rounded-xl">
               <TabButton label="All Security" active={filterTwoFA === 'all'} onClick={() => setFilterTwoFA('all')} />
               <TabButton label="2FA Only" active={filterTwoFA === 'on'} onClick={() => setFilterTwoFA('on')} />
             </div>
@@ -278,30 +281,30 @@ export default function AdminUsers() {
         </div>
 
         {/* Main Table Card */}
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+        <div className="bg-white border border-slate-200/70 rounded-2xl shadow-xs overflow-hidden">
           {loading ? (
-            <div className="p-12 space-y-4 animate-pulse">
+            <div className="p-8 space-y-3 animate-pulse">
               {[1, 2, 3, 4].map(i => <div key={i} className="h-12 bg-slate-50 rounded-xl w-full"></div>)}
             </div>
           ) : error ? (
-            <div className="p-12 text-center text-red-600">
-              <ExclamationCircleIcon className="h-10 w-10 mx-auto mb-2 opacity-50" />
+            <div className="p-8 text-center text-red-600 text-xs sm:text-sm">
+              <ExclamationCircleIcon className="h-8 w-8 mx-auto mb-2 opacity-50" />
               <p>{error}</p>
             </div>
           ) : filtered.length === 0 ? (
-            <div className="p-12 text-center flex flex-col items-center justify-center">
-              <div className="h-16 w-16 bg-slate-50 rounded-full flex items-center justify-center mb-4">
-                <FilterIcon className="h-6 w-6 text-slate-300" />
+            <div className="p-8 sm:p-12 text-center flex flex-col items-center justify-center">
+              <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center mb-3 text-slate-300">
+                <FilterIcon className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-semibold text-slate-900">No users found</h3>
-              <p className="text-slate-500 text-sm mt-1">Try clearing your filters or search.</p>
-              <button onClick={() => { setSearch(''); setFilterBlocked('all'); setFilterTwoFA('all') }} className="mt-4 text-orange-600 font-medium text-sm hover:underline">Reset Filters</button>
+              <h3 className="text-sm sm:text-base font-bold text-slate-900">No users found</h3>
+              <p className="text-slate-500 text-xs sm:text-sm mt-0.5">Try adjusting your filters or search keyword.</p>
+              <button onClick={() => { setSearch(''); setFilterBlocked('all'); setFilterTwoFA('all') }} className="mt-3 text-orange-600 font-bold text-xs hover:underline">Reset Filters</button>
             </div>
           ) : (
             <>
-              {/* Desktop Table */}
-              <div className="hidden lg:block overflow-x-auto">
-                <table className="min-w-full divide-y divide-slate-50">
+              {/* Desktop Table (>= lg) */}
+              <div className="hidden lg:block overflow-x-auto min-h-[340px]">
+                <table className="min-w-full divide-y divide-slate-100">
                   <thead className="bg-slate-50/50">
                     <tr>
                       <Th onClick={() => toggleSort("name")} active={sortKey === "name"} dir={sortDir}>User</Th>
@@ -309,25 +312,28 @@ export default function AdminUsers() {
                       <Th>Security</Th>
                       <Th>Status</Th>
                       <Th onClick={() => toggleSort("createdAt")} active={sortKey === "createdAt"} dir={sortDir}>Joined</Th>
-                      {canWrite && <th className="px-6 py-4 text-right text-xs font-semibold text-slate-400 uppercase">Actions</th>}
+                      {canWrite && <th className="px-6 py-4 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>}
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-50 bg-white">
+                  <tbody className="divide-y divide-slate-100 bg-white">
                     {currentUsers.map((u, index) => {
-                      const isLastRows = index >= currentUsers.length - 3 && currentUsers.length > 4;
+                      const isLastRows = index >= currentUsers.length - 2 || (currentUsers.length <= 3 && index >= 1);
                       const isAdminRole = Array.isArray(u.roles) && u.roles.includes("admin");
                       return (
                         <tr key={u._id} className="group hover:bg-slate-50/60 transition-colors">
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-3">
-                              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 text-slate-600 font-bold flex items-center justify-center text-sm ring-2 ring-white shadow-sm overflow-hidden">
-                                {u.profileImage ? <img src={u.profileImage} alt="" className="h-full w-full object-cover" /> : avatarInitial(u.name, u.email)}
-                              </div>
+                              <Avatar
+                                src={u.profileImage}
+                                name={u.name}
+                                email={u.email}
+                                className="h-9 w-9 rounded-xl shadow-xs"
+                              />
                               <div>
-                                <div className="font-semibold text-slate-900 text-sm flex items-center gap-2">
+                                <div className="font-semibold text-slate-900 text-sm flex items-center gap-1.5">
                                   {u.name || "Unnamed User"}
                                   {isAdminRole && (
-                                    <span className="text-[10px] font-bold bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full border border-orange-100">
+                                    <span className="text-[10px] font-bold bg-orange-50 text-orange-700 px-1.5 py-0.2 rounded-full border border-orange-100">
                                       Admin
                                     </span>
                                   )}
@@ -338,39 +344,39 @@ export default function AdminUsers() {
                           </td>
                           <td className="px-6 py-4">
                             <div className="flex flex-col">
-                              <div className="flex items-center gap-1.5 text-sm text-slate-600">
-                                <MailIcon className="h-3.5 w-3.5 text-slate-400" />
+                              <div className="flex items-center gap-1.5 text-sm text-slate-600 font-medium">
+                                <MailIcon className="h-3.5 w-3.5 text-slate-400 shrink-0" />
                                 {u.email}
                               </div>
                               {u.username && <span className="text-xs text-slate-400 pl-5">@{u.username}</span>}
                             </div>
                           </td>
                           <td className="px-6 py-4">
-                            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${u.twoFactorEnabled ? badgeStyles.twoFAOn : badgeStyles.twoFAOff}`}>
-                              {u.twoFactorEnabled ? <ShieldCheckIcon className="h-3.5 w-3.5" /> : <LockClosedIcon className="h-3.5 w-3.5" />}
+                            <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border ${u.twoFactorEnabled ? badgeStyles.twoFAOn : badgeStyles.twoFAOff}`}>
+                              {u.twoFactorEnabled ? <ShieldCheckIcon className="h-3.5 w-3.5 text-emerald-600" /> : <LockClosedIcon className="h-3.5 w-3.5" />}
                               {u.twoFactorEnabled ? "2FA On" : "Standard"}
                             </span>
                           </td>
                           <td className="px-6 py-4">
                             <StatusBadge blocked={u.blocked} />
                           </td>
-                          <td className="px-6 py-4 text-slate-500 text-xs tabular-nums">
+                          <td className="px-6 py-4 text-slate-500 text-xs tabular-nums font-medium">
                             {u.createdAt ? new Date(u.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "—"}
                           </td>
                           {canWrite && (
                           <td className="px-6 py-4 text-right relative">
                             <button
                               onClick={() => setMenuOpenId(menuOpenId === u._id ? null : u._id)}
-                              className={`p-2 rounded-lg transition-colors ${menuOpenId === u._id ? 'bg-slate-100 text-slate-900' : 'text-slate-400 hover:bg-slate-50 hover:text-slate-700'}`}
+                              className={`p-1.5 rounded-lg transition-colors ${menuOpenId === u._id ? 'bg-slate-100 text-slate-900' : 'text-slate-400 hover:bg-slate-50 hover:text-slate-700'}`}
                             >
-                              <DotsVerticalIcon className="h-5 w-5" />
+                              <DotsVerticalIcon className="h-4 w-4" />
                             </button>
 
                             {/* Dropdown Menu */}
                             {menuOpenId === u._id && (
                               <>
                                 <div className="fixed inset-0 z-10" onClick={() => setMenuOpenId(null)}></div>
-                                <div className={`absolute right-8 w-56 bg-white rounded-xl shadow-xl border border-slate-100 ring-1 ring-black/5 z-50 overflow-hidden animate-in zoom-in-95 duration-100 ${isLastRows ? 'bottom-0 mb-2 origin-bottom-right' : 'top-8 mt-1 origin-top-right'}`}>
+                                <div className={`absolute right-8 w-52 bg-white rounded-2xl shadow-2xl border border-slate-100 ring-1 ring-black/10 z-50 overflow-hidden animate-in zoom-in-95 duration-100 ${isLastRows ? 'bottom-8 mb-1 origin-bottom-right' : 'top-8 mt-1 origin-top-right'}`}>
                                   <div className="p-1 space-y-0.5">
                                     <MenuItem onClick={() => { handleToggleBlock(u); setMenuOpenId(null); }} icon={u.blocked ? CheckCircleIcon : BanIcon} label={u.blocked ? "Unblock User" : "Block Access"} />
                                     <MenuItem onClick={() => { setResetUser(u); setMenuOpenId(null); }} icon={KeyIcon} label="Reset Password" />
@@ -392,53 +398,83 @@ export default function AdminUsers() {
                 </table>
               </div>
 
-              {/* Mobile List View */}
+              {/* Mobile List View (< lg) */}
               <div className="lg:hidden divide-y divide-slate-100">
-                {currentUsers.map((u) => (
-                  <div key={u._id} className="p-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-500 text-sm">
-                          {avatarInitial(u.name, u.email)}
+                {currentUsers.map((u) => {
+                  const isAdminRole = Array.isArray(u.roles) && u.roles.includes("admin");
+                  return (
+                    <div key={u._id} className="p-3.5 space-y-2 hover:bg-slate-50/50 transition">
+                      {/* Top Row: User Avatar, Name, and Status Badge */}
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Avatar
+                            src={u.profileImage}
+                            name={u.name}
+                            email={u.email}
+                            className="h-9 w-9 rounded-xl shrink-0 shadow-xs"
+                          />
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-1.5">
+                              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">{u.name || "User"}</p>
+                              {isAdminRole && (
+                                <span className="text-[9px] font-bold bg-orange-50 text-orange-700 px-1.5 py-0.2 rounded-full border border-orange-100">
+                                  Admin
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-[11px] text-slate-500 truncate">{u.email}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-sm font-bold text-slate-900">{u.name || "User"}</p>
-                          <p className="text-xs text-slate-500">{u.email}</p>
-                        </div>
-                      </div>
-                      <StatusBadge blocked={u.blocked} />
-                    </div>
 
-                    <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-50">
-                      <div className="flex gap-2">
-                        {u.twoFactorEnabled && <span className="text-[10px] font-bold bg-emerald-50 text-emerald-600 px-2 py-1 rounded-md border border-emerald-100">2FA</span>}
+                        <div className="flex items-center gap-1 shrink-0">
+                          <StatusBadge blocked={u.blocked} />
+                          {u.twoFactorEnabled && (
+                            <span className="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded-full border border-emerald-100">
+                              2FA
+                            </span>
+                          )}
+                        </div>
                       </div>
-                      {canWrite && (
-                      <div className="flex gap-3">
-                        <button onClick={() => handleToggleBlock(u)} className="text-xs font-medium text-slate-500 hover:text-slate-900">
-                          {u.blocked ? "Unblock" : "Block"}
-                        </button>
-                        <button onClick={() => setResetUser(u)} className="text-xs font-medium text-slate-500 hover:text-slate-900">
-                          Reset
-                        </button>
-                        <button onClick={() => setDeleteUser(u)} className="text-xs font-medium text-red-600 hover:text-red-700">
-                          Delete
-                        </button>
+
+                      {/* Bottom Row: Metadata & Actions */}
+                      <div className="flex items-center justify-between pt-1 border-t border-slate-50 text-[10px] text-slate-400">
+                        <span>Joined: {u.createdAt ? new Date(u.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "—"}</span>
+
+                        {canWrite && (
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => handleToggleBlock(u)}
+                              className={`font-bold transition ${u.blocked ? "text-emerald-600 hover:text-emerald-700" : "text-slate-600 hover:text-slate-900"}`}
+                            >
+                              {u.blocked ? "Unblock" : "Block"}
+                            </button>
+                            <span>·</span>
+                            <button onClick={() => setResetUser(u)} className="font-bold text-slate-600 hover:text-slate-900">
+                              Reset
+                            </button>
+                            <span>·</span>
+                            <button onClick={() => setDeleteUser(u)} className="font-bold text-red-600 hover:text-red-700">
+                              Delete
+                            </button>
+                          </div>
+                        )}
                       </div>
-                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Pagination */}
-              <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/30">
-                <div className="text-sm text-slate-500">
-                  <span className="font-medium text-slate-900">{startIndex + 1}-{Math.min(endIndex, filtered.length)}</span> of <span className="font-medium text-slate-900">{filtered.length}</span>
+              <div className="px-4 sm:px-6 py-3 border-t border-slate-100 flex items-center justify-between bg-slate-50/40 text-xs sm:text-sm text-slate-500">
+                <div>
+                  <span className="font-bold text-slate-900">{startIndex + 1}-{Math.min(endIndex, filtered.length)}</span> of <span className="font-bold text-slate-900">{filtered.length}</span>
                 </div>
-                <div className="flex gap-1">
-                  <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-1.5 rounded-lg hover:bg-white hover:shadow-sm disabled:opacity-30 transition-all"><ChevronLeftIcon className="h-5 w-5 text-slate-600" /></button>
-                  <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-1.5 rounded-lg hover:bg-white hover:shadow-sm disabled:opacity-30 transition-all"><ChevronRightIcon className="h-5 w-5 text-slate-600" /></button>
+                <div className="flex items-center gap-1">
+                  <span className="text-[11px] font-bold text-slate-400 mr-1.5">
+                    {currentPage}/{totalPages || 1}
+                  </span>
+                  <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all shadow-xs"><ChevronLeftIcon className="h-4 w-4 text-slate-600" /></button>
+                  <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all shadow-xs"><ChevronRightIcon className="h-4 w-4 text-slate-600" /></button>
                 </div>
               </div>
             </>
@@ -449,20 +485,20 @@ export default function AdminUsers() {
       {/* Modals */}
       {resetUser && (
         <Modal title="Reset Password" icon={KeyIcon} onClose={() => !busyAction && setResetUser(null)}>
-          <p className="text-sm text-slate-600">Send a password reset email to <span className="font-bold text-slate-900">{resetUser.email}</span>?</p>
-          <div className="mt-6 flex justify-end gap-2">
-            <button onClick={() => setResetUser(null)} disabled={busyAction} className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">Cancel</button>
-            <button onClick={confirmResetPassword} disabled={busyAction} className="px-4 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-black rounded-lg shadow-lg shadow-slate-200">{busyAction ? "Sending..." : "Send Email"}</button>
+          <p className="text-xs sm:text-sm text-slate-600">Send a password reset email to <span className="font-bold text-slate-900">{resetUser.email}</span>?</p>
+          <div className="mt-5 flex justify-end gap-2">
+            <button onClick={() => setResetUser(null)} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl border border-slate-200">Cancel</button>
+            <button onClick={confirmResetPassword} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-white bg-slate-900 hover:bg-black rounded-xl shadow-xs">{busyAction ? "Sending..." : "Send Email"}</button>
           </div>
         </Modal>
       )}
 
       {deleteUser && (
         <Modal title="Delete Account" icon={TrashIcon} danger onClose={() => !busyAction && setDeleteUser(null)}>
-          <p className="text-sm text-slate-600">Permanently remove <span className="font-bold text-slate-900">{deleteUser.email}</span>? This cannot be undone.</p>
-          <div className="mt-6 flex justify-end gap-2">
-            <button onClick={() => setDeleteUser(null)} disabled={busyAction} className="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg">Cancel</button>
-            <button onClick={confirmDeleteUser} disabled={busyAction} className="rounded-full bg-[#75483b] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#60372e]">{busyAction ? "Deleting..." : "Delete User"}</button>
+          <p className="text-xs sm:text-sm text-slate-600">Permanently remove <span className="font-bold text-slate-900">{deleteUser.email}</span>? This cannot be undone.</p>
+          <div className="mt-5 flex justify-end gap-2">
+            <button onClick={() => setDeleteUser(null)} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl border border-slate-200">Cancel</button>
+            <button onClick={confirmDeleteUser} disabled={busyAction} className="rounded-xl bg-red-600 px-4 py-2 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-red-700 shadow-xs">{busyAction ? "Deleting..." : "Delete User"}</button>
           </div>
         </Modal>
       )}
@@ -472,20 +508,23 @@ export default function AdminUsers() {
 
 /* --- Sub Components for Cleaner Code --- */
 
-function StatCard({ label, value, icon: Icon, color }) {
+function StatCard({ label, fullLabel, value, icon: Icon, color }) {
   const colors = {
     blue: "text-[#5f5a52] bg-[#ece8df]",
     emerald: "text-[#59634f] bg-[#e5e8df]",
     red: "text-[#75483b] bg-[#eee2dc]"
   };
   return (
-    <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex items-center justify-between">
       <div>
-        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">{label}</p>
-        <p className="text-2xl font-bold text-slate-900 mt-1">{value}</p>
+        <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
+          <span className="sm:hidden">{label}</span>
+          <span className="hidden sm:inline">{fullLabel || label}</span>
+        </p>
+        <p className="text-base sm:text-2xl font-black text-slate-900 mt-0.5">{value}</p>
       </div>
-      <div className={`p-3 rounded-xl ${colors[color]}`}>
-        <Icon className="h-6 w-6" />
+      <div className={`p-1.5 sm:p-3 rounded-xl ${colors[color]}`}>
+        <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
       </div>
     </div>
   );
@@ -495,7 +534,7 @@ function TabButton({ label, active, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${active ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+      className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${active ? "bg-white text-slate-900 shadow-xs" : "text-slate-500 hover:text-slate-700"
         }`}
     >
       {label}
@@ -505,7 +544,7 @@ function TabButton({ label, active, onClick }) {
 
 function StatusBadge({ blocked }) {
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${blocked ? badgeStyles.blocked : badgeStyles.active}`}>
+    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border ${blocked ? badgeStyles.blocked : badgeStyles.active}`}>
       <span className={`w-1.5 h-1.5 rounded-full ${blocked ? "bg-red-500" : "bg-blue-500"}`}></span>
       {blocked ? "Blocked" : "Active"}
     </span>
@@ -514,7 +553,7 @@ function StatusBadge({ blocked }) {
 
 function Th({ children, onClick, active, dir }) {
   return (
-    <th className="px-6 py-4 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider cursor-pointer group select-none" onClick={onClick}>
+    <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider cursor-pointer group select-none" onClick={onClick}>
       <div className="flex items-center gap-1 group-hover:text-slate-800 transition-colors">
         {children}
         {active && <span className="text-orange-500">{dir === "asc" ? "▲" : "▼"}</span>}
@@ -525,7 +564,7 @@ function Th({ children, onClick, active, dir }) {
 
 function MenuItem({ onClick, icon: Icon, label, danger }) {
   return (
-    <button onClick={onClick} className={`w-full text-left px-3 py-2 text-sm rounded-md flex items-center gap-2 transition-colors ${danger ? "text-red-600 hover:bg-red-50" : "text-slate-700 hover:bg-slate-50"}`}>
+    <button onClick={onClick} className={`w-full text-left px-3 py-2 text-xs font-bold rounded-xl flex items-center gap-2 transition-colors ${danger ? "text-red-600 hover:bg-red-50" : "text-slate-700 hover:bg-slate-50"}`}>
       <Icon className="h-4 w-4" />
       {label}
     </button>

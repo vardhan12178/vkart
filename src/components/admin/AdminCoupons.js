@@ -159,8 +159,8 @@ export default function AdminCoupons() {
   const isExpired = (d) => d && new Date(d) < new Date();
 
   return (
-    <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
+      <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
 
         {toast && (
           <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}>
@@ -169,106 +169,123 @@ export default function AdminCoupons() {
           </div>
         )}
 
-        <div className="flex items-center justify-between">
+        {/* Header Section */}
+        <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Coupons</h1>
-            <p className="text-sm text-slate-500 mt-1">{coupons.length} total</p>
+            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+              Coupons
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">{coupons.length} total coupons</p>
           </div>
-          <div className="flex gap-2">
-            <button onClick={() => couponsQuery.refetch()} className="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-100 transition">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => couponsQuery.refetch()}
+              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition shadow-xs"
+              title="Refresh"
+            >
               <RefreshIcon className={`h-4 w-4 text-slate-600 ${couponsQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
             {canWrite && (
-              <button onClick={openCreate} className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition shadow-sm">
-                <PlusIcon className="h-4 w-4" /> New Coupon
+              <button
+                onClick={openCreate}
+                className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-semibold hover:bg-slate-800 transition shadow-xs shrink-0"
+              >
+                <PlusIcon className="h-4 w-4" />
+                <span>New Coupon</span>
               </button>
             )}
           </div>
         </div>
 
         {error && (
-          <div className="bg-red-50 border border-red-100 text-red-700 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-2">
-            <ExclamationCircleIcon className="h-5 w-5" /> {error}
+          <div className="bg-red-50 border border-red-100 text-red-700 px-4 py-3 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2">
+            <ExclamationCircleIcon className="h-5 w-5 shrink-0" />
+            <span>{error}</span>
           </div>
         )}
 
         {/* Coupon Form Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-slate-900/30 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowForm(false)}>
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto p-6 space-y-4" onClick={(e) => e.stopPropagation()}>
-              <h2 className="text-lg font-bold text-slate-900">{editing ? "Edit Coupon" : "Create Coupon"}</h2>
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[94vh] overflow-y-auto p-4 sm:p-6 space-y-3 sm:space-y-4 border border-slate-200 animate-in zoom-in-95 duration-150" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h2 className="text-base sm:text-lg font-bold text-slate-900">{editing ? "Edit Coupon" : "Create Coupon"}</h2>
+                <button onClick={() => setShowForm(false)} className="text-slate-400 hover:text-slate-600 p-1">
+                  ✕
+                </button>
+              </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                 <div className="col-span-2">
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Code *</label>
-                  <input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })} placeholder="e.g. SAVE10" className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm font-bold focus:ring-2 focus:ring-orange-500/20 focus:border-orange-300" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Code *</label>
+                  <input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })} placeholder="e.g. SAVE10" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono font-bold focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div className="col-span-2">
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Description</label>
-                  <input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Shown to users" className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-300" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Description</label>
+                  <input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Shown to users at checkout" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Type *</label>
-                  <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20">
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Type *</label>
+                  <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-semibold focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50">
                     <option value="percent">Percentage (%)</option>
                     <option value="flat">Flat (₹)</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Value *</label>
-                  <input type="number" value={form.value} onChange={(e) => setForm({ ...form, value: e.target.value })} placeholder={form.type === "percent" ? "e.g. 10" : "e.g. 100"} className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Value *</label>
+                  <input type="number" value={form.value} onChange={(e) => setForm({ ...form, value: e.target.value })} placeholder={form.type === "percent" ? "e.g. 10" : "e.g. 100"} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 {form.type === "percent" && (
                   <div>
-                    <label className="text-xs font-semibold text-slate-600 mb-1 block">Max Discount (₹)</label>
-                    <input type="number" value={form.maxDiscount} onChange={(e) => setForm({ ...form, maxDiscount: e.target.value })} placeholder="No cap" className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Max Discount (₹)</label>
+                    <input type="number" value={form.maxDiscount} onChange={(e) => setForm({ ...form, maxDiscount: e.target.value })} placeholder="No cap" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                   </div>
                 )}
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Min Order (₹)</label>
-                  <input type="number" value={form.minOrder} onChange={(e) => setForm({ ...form, minOrder: e.target.value })} placeholder="0" className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Min Order (₹)</label>
+                  <input type="number" value={form.minOrder} onChange={(e) => setForm({ ...form, minOrder: e.target.value })} placeholder="0" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Usage Limit</label>
-                  <input type="number" value={form.usageLimit} onChange={(e) => setForm({ ...form, usageLimit: e.target.value })} placeholder="Unlimited" className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Usage Limit</label>
+                  <input type="number" value={form.usageLimit} onChange={(e) => setForm({ ...form, usageLimit: e.target.value })} placeholder="Unlimited" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Per User Limit</label>
-                  <input type="number" value={form.perUserLimit} onChange={(e) => setForm({ ...form, perUserLimit: e.target.value })} placeholder="1" className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Per User Limit</label>
+                  <input type="number" value={form.perUserLimit} onChange={(e) => setForm({ ...form, perUserLimit: e.target.value })} placeholder="1" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Valid From</label>
-                  <input type="datetime-local" value={form.validFrom} onChange={(e) => setForm({ ...form, validFrom: e.target.value })} className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Valid From</label>
+                  <input type="datetime-local" value={form.validFrom} onChange={(e) => setForm({ ...form, validFrom: e.target.value })} className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-600 mb-1 block">Valid To *</label>
-                  <input type="datetime-local" value={form.validTo} onChange={(e) => setForm({ ...form, validTo: e.target.value })} className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-orange-500/20" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Valid To *</label>
+                  <input type="datetime-local" value={form.validTo} onChange={(e) => setForm({ ...form, validTo: e.target.value })} className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white" />
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 pt-2">
-                <label className="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
+              <div className="flex flex-wrap items-center gap-4 pt-1">
+                <label className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700 cursor-pointer">
                   <input type="checkbox" checked={form.isPublic} onChange={(e) => setForm({ ...form, isPublic: e.target.checked })} className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
-                  Show to users at checkout
+                  Show at checkout
                 </label>
-                <label className="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
+                <label className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700 cursor-pointer">
                   <input type="checkbox" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })} className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
                   Active
                 </label>
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
-                <button onClick={() => setShowForm(false)} className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition">Cancel</button>
-                <button onClick={handleSave} disabled={saving} className="px-5 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition disabled:opacity-50">
+              <div className="flex justify-end gap-2.5 pt-3 border-t border-slate-100">
+                <button onClick={() => setShowForm(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 transition">Cancel</button>
+                <button onClick={handleSave} disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shadow-xs disabled:opacity-50">
                   {saving ? "Saving..." : editing ? "Update" : "Create"}
                 </button>
               </div>
@@ -276,22 +293,119 @@ export default function AdminCoupons() {
           </div>
         )}
 
-        {/* Coupons Table */}
+        {/* Coupons List / Table */}
         {loading ? (
           <div className="flex justify-center py-20">
             <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-600 rounded-full animate-spin" />
           </div>
         ) : coupons.length === 0 ? (
-          <div className="text-center py-20 text-slate-400">
-            <p className="text-lg font-semibold">No coupons yet</p>
-            <p className="text-sm mt-1">Create your first coupon to get started</p>
+          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">
+            <p className="text-base font-bold text-slate-900">No coupons yet</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-0.5">Create your first coupon to offer discounts to customers.</p>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="overflow-x-auto">
+          <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden">
+            {/* Mobile Card List (< md) */}
+            <div className="block md:hidden divide-y divide-slate-100">
+              {coupons.map((c) => (
+                <div key={c._id} className="p-3.5 space-y-2.5 hover:bg-slate-50/50 transition">
+                  {/* Top Row: Code + Status Pills */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-mono text-xs font-black text-slate-900 bg-slate-100 border border-dashed border-slate-300 px-2 py-0.5 rounded-lg tracking-wider">
+                      {c.code}
+                    </span>
+
+                    <div className="flex items-center gap-1.5">
+                      {canWrite ? (
+                        <button onClick={() => toggleActive(c)} className="inline-flex items-center gap-1">
+                          {c.isActive && !isExpired(c.validTo) ? (
+                            <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full">
+                              <CheckCircleIcon className="h-3 w-3" /> Active
+                            </span>
+                          ) : (
+                            <span className="flex items-center gap-1 text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
+                              <XCircleIcon className="h-3 w-3" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                            </span>
+                          )}
+                          {c.isPublic && (
+                            <span className="text-[10px] font-bold text-blue-700 bg-blue-50 border border-blue-100 px-1.5 py-0.5 rounded-full">Public</span>
+                          )}
+                        </button>
+                      ) : (
+                        <div className="inline-flex items-center gap-1">
+                          {c.isActive && !isExpired(c.validTo) ? (
+                            <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                              <CheckCircleIcon className="h-3 w-3" /> Active
+                            </span>
+                          ) : (
+                            <span className="flex items-center gap-1 text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">
+                              <XCircleIcon className="h-3 w-3" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                            </span>
+                          )}
+                          {c.isPublic && (
+                            <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full">Public</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Middle Info: Value & Terms */}
+                  <div className="bg-slate-50/70 p-2.5 rounded-xl border border-slate-100/80 space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs sm:text-sm font-black text-slate-900">
+                        {c.type === "percent" ? `${c.value}% OFF` : `₹${c.value} FLAT OFF`}
+                      </span>
+                      {c.maxDiscount && (
+                        <span className="text-[10px] font-bold text-slate-500">Max ₹{c.maxDiscount}</span>
+                      )}
+                    </div>
+
+                    <div className="text-[10px] text-slate-500 flex flex-wrap items-center gap-2">
+                      {c.minOrder ? <span>Min Order: ₹{c.minOrder}</span> : <span>No min order</span>}
+                      <span>·</span>
+                      <span>Used: {c.usedCount || 0}{c.usageLimit ? `/${c.usageLimit}` : ""}</span>
+                    </div>
+
+                    {c.description && (
+                      <p className="text-[11px] text-slate-600 italic mt-0.5">{c.description}</p>
+                    )}
+                  </div>
+
+                  {/* Bottom Row: Validity & Actions */}
+                  <div className="flex items-center justify-between pt-1">
+                    <span className={`text-[10px] font-medium ${isExpired(c.validTo) ? "text-red-500 font-bold" : "text-slate-400"}`}>
+                      Valid till: {fmt(c.validTo)}
+                    </span>
+
+                    {canWrite && (
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => openEdit(c)}
+                          className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1 transition"
+                        >
+                          <PencilIcon className="h-3 w-3" />
+                          <span>Edit</span>
+                        </button>
+                        <button
+                          onClick={() => handleDelete(c._id)}
+                          className="px-2.5 py-1 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-xs font-bold flex items-center gap-1 transition"
+                        >
+                          <TrashIcon className="h-3 w-3" />
+                          <span>Delete</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop Table View (>= md) */}
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-slate-50/80 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                  <tr className="bg-slate-50/80 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">
                     <th className="px-5 py-4">Code</th>
                     <th className="px-5 py-4">Type</th>
                     <th className="px-5 py-4">Value</th>
