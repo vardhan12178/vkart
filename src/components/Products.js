@@ -555,11 +555,6 @@ export default function Products() {
                         {/* Top Badges and Heart overlay */}
                         <div className="absolute top-2 sm:top-3 left-2 sm:left-3 right-2 sm:right-3 flex justify-between items-start z-10 pointer-events-none">
                           <div className="flex flex-col gap-1 pointer-events-auto">
-                            {p.onSale && (
-                              <span className="rounded-full bg-[#75483b] px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-bold text-white">
-                                {p.saleName || 'SALE'}
-                              </span>
-                            )}
                             {p.discountPercentage ? (
                               <span className="bg-white/90 backdrop-blur text-gray-900 text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded shadow-sm">
                                 -{Math.round(p.discountPercentage)}%
@@ -604,29 +599,45 @@ export default function Products() {
                       {/* Content column — Right side on mobile, Bottom on desktop */}
                       <div className="flex-1 flex flex-col justify-between px-0 sm:px-1 pt-0 sm:pt-3 pb-0 sm:pb-1 min-w-0">
                         <div>
-                          <div className="flex items-center justify-between gap-1 mb-0.5 sm:mb-1">
-                            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider truncate">{p.category}</p>
-                            <div className="flex items-center gap-1 shrink-0">
-                              <FaStar className="text-amber-400 text-[10px]" />
-                              <span className="text-[11px] sm:text-xs font-bold text-gray-600">{p.rating}</span>
-                            </div>
-                          </div>
+                          {/* Top Row: Category Label */}
+                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider truncate mb-1">
+                            {p.category}
+                          </p>
 
-                          <Link to={`/product/${p._id}`} className="block text-xs sm:text-sm font-bold sm:font-semibold text-[#1d1c19] leading-snug mb-1 line-clamp-2 sm:line-clamp-1 hover:text-[#a85d37] transition-colors">
+                          {/* Product Title */}
+                          <Link to={`/product/${p._id}`} className="block text-xs sm:text-sm font-bold sm:font-semibold text-[#1d1c19] leading-snug mb-1.5 line-clamp-2 sm:line-clamp-1 hover:text-[#a85d37] transition-colors">
                             {p.title}
                           </Link>
 
-                          <div className="flex items-baseline gap-1.5 sm:justify-between mt-1 sm:mt-2 flex-wrap">
+                          {/* Price & Rating Row */}
+                          <div className="flex items-center justify-between gap-1.5 mt-1 flex-wrap">
                             <div className="flex items-baseline gap-1.5 flex-wrap">
                               <span className="text-sm sm:text-base font-black text-gray-900">{formatPrice(price)}</span>
                               <span className="text-[11px] sm:text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
+                              {p.discountPercentage ? (
+                                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded hidden sm:inline">
+                                  Save {Math.round(p.discountPercentage)}%
+                                </span>
+                              ) : null}
                             </div>
-                            {p.discountPercentage ? (
-                              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded hidden sm:inline">
-                                Save {Math.round(p.discountPercentage)}%
-                              </span>
+
+                            {/* Rating Badge — Positioned next to Price */}
+                            {p.rating ? (
+                              <div className="inline-flex items-center gap-1 bg-amber-50/80 border border-amber-200/60 px-1.5 py-0.5 rounded-md text-[10px] font-bold text-amber-900 shrink-0">
+                                <FaStar className="text-amber-500 text-[9px]" />
+                                <span>{p.rating}</span>
+                              </div>
                             ) : null}
                           </div>
+
+                          {/* Sale Deal Badge — Placed cleanly below price */}
+                          {p.onSale && (
+                            <div className="mt-1 sm:mt-1.5 flex items-center">
+                              <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-[#75483b] bg-[#eee2dc] px-2 py-0.5 rounded-md uppercase tracking-wide">
+                                <FaBolt className="text-[8px]" /> {p.saleName || "Prime Day Sale"}
+                              </span>
+                            </div>
+                          )}
                         </div>
 
                         {/* Mobile Actions: Compare Checkbox + Full-width Add Button */}

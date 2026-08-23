@@ -137,18 +137,11 @@ function ProductCard({ product, onQuickView, onAdd }) {
             decoding="async"
           />
 
-          {(hasDiscount || product.onSale) && (
+          {hasDiscount && (
             <div className="absolute left-2 top-2 sm:left-4 sm:top-4 z-20 flex flex-wrap gap-1 sm:gap-2">
-              {product.onSale && (
-                <span className="rounded-full bg-[#1d1c19] px-2 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-white">
-                  {product.saleName || "Sale"}
-                </span>
-              )}
-              {hasDiscount && (
-                <span className="rounded-full bg-white/90 px-1.5 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-[#1d1c19] backdrop-blur">
-                  -{Math.round(product.discountPercentage)}%
-                </span>
-              )}
+              <span className="rounded-full bg-white/90 px-1.5 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-[#1d1c19] backdrop-blur">
+                -{Math.round(product.discountPercentage)}%
+              </span>
             </div>
           )}
 
@@ -190,7 +183,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
               {product.category}
             </span>
             {product.rating && (
-              <span className="flex shrink-0 items-center gap-0.5 text-[10px] sm:text-xs font-semibold text-[#706c63]">
+              <span className="inline-flex items-center gap-0.5 text-[10px] sm:text-xs font-semibold text-[#706c63] shrink-0">
                 <Star size={10} className="fill-[#b66a3c] text-[#b66a3c]" /> {product.rating}
               </span>
             )}
@@ -204,6 +197,13 @@ function ProductCard({ product, onQuickView, onAdd }) {
               <span className="text-[10px] sm:text-xs font-medium text-[#9b978d] line-through">{INR(previousPrice)}</span>
             )}
           </div>
+          {product.onSale && (
+            <div className="mt-1.5 flex items-center">
+              <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-[#75483b] bg-[#eee2dc] px-2 py-0.5 rounded-md uppercase tracking-wide">
+                <Zap size={9} /> {product.saleName || "Prime Day Sale"}
+              </span>
+            </div>
+          )}
       </Link>
 
       <button

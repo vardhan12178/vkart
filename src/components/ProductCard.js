@@ -83,6 +83,77 @@ const Arrow = ({ onClick, direction }) => (
   </button>
 );
 
+function useCountdown(targetDate) {
+  const target = useMemo(() => (targetDate ? new Date(targetDate).getTime() : 0), [targetDate]);
+  const [remaining, setRemaining] = useState(() => Math.max(0, target - Date.now()));
+
+  useEffect(() => {
+    if (!target) return;
+    setRemaining(Math.max(0, target - Date.now()));
+    const id = setInterval(() => setRemaining(Math.max(0, target - Date.now())), 1000);
+    return () => clearInterval(id);
+  }, [target]);
+
+  const totalSeconds = Math.floor(remaining / 1000);
+  return {
+    days: Math.floor(totalSeconds / 86400),
+    hours: Math.floor((totalSeconds % 86400) / 3600),
+    minutes: Math.floor((totalSeconds % 3600) / 60),
+    seconds: totalSeconds % 60,
+    expired: !target || remaining <= 0,
+  };
+}
+
+const ProductSaleTimer = ({ endDate, saleName }) => {
+  const { days, hours, minutes, seconds, expired } = useCountdown(endDate);
+  if (expired) return null;
+
+  const pad = (n) => String(n).padStart(2, "0");
+
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#eee5db] border border-[#a85d37]/20 text-[#1d1c19] my-2.5 sm:my-3.5 shadow-2xs">
+      <div className="flex items-center gap-2.5">
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#75483b] text-white shrink-0">
+          <FaBolt size={11} />
+        </span>
+        <div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-bold text-[#75483b] uppercase tracking-wide">
+              {saleName || "Prime Day Sale"}
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-1.5 py-0.2 text-[9px] font-bold text-emerald-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" /> Live Deal
+            </span>
+          </div>
+          <p className="text-[10px] sm:text-[11px] text-[#787268] font-medium">Limited-time promotional pricing</p>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-1 text-xs font-bold self-start sm:self-auto">
+        <span className="text-[10px] uppercase font-bold text-[#8a604b] mr-1">Ends in:</span>
+        {days > 0 && (
+          <div className="flex items-center">
+            <span className="bg-[#1d1c19] text-white font-mono text-xs px-1.5 py-0.5 rounded-md tabular-nums font-bold">{pad(days)}</span>
+            <span className="text-[10px] text-gray-500 font-bold ml-0.5 mr-1">d</span>
+          </div>
+        )}
+        <div className="flex items-center">
+          <span className="bg-[#1d1c19] text-white font-mono text-xs px-1.5 py-0.5 rounded-md tabular-nums font-bold">{pad(hours)}</span>
+          <span className="text-[10px] text-gray-500 font-bold ml-0.5 mr-1">h</span>
+        </div>
+        <div className="flex items-center">
+          <span className="bg-[#1d1c19] text-white font-mono text-xs px-1.5 py-0.5 rounded-md tabular-nums font-bold">{pad(minutes)}</span>
+          <span className="text-[10px] text-gray-500 font-bold ml-0.5 mr-1">m</span>
+        </div>
+        <div className="flex items-center">
+          <span className="bg-[#75483b] text-white font-mono text-xs px-1.5 py-0.5 rounded-md tabular-nums font-bold">{pad(seconds)}</span>
+          <span className="text-[10px] text-gray-500 font-bold ml-0.5">s</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 /* ---------- Sub-Components (ReviewCard, ReviewSummary) ---------- */
 const ReviewCard = ({ review }) => {
   const user = review.userId;
@@ -289,6 +360,19 @@ export default function ProductCard() {
         return [];
       }
     },
+  });
+
+  const { data: activeSale } = useQuery({
+    queryKey: qk.public.activeSale,
+    queryFn: async () => {
+      try {
+        const res = await axios.get("/api/sales/active");
+        return res.data?.sale || null;
+      } catch {
+        return null;
+      }
+    },
+    staleTime: 60 * 1000,
   });
 
   const { data: recentlyViewed = [] } = useQuery({
@@ -607,9 +691,9 @@ export default function ProductCard() {
                 <span className="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">
                   {category}
                 </span>
-                {product.onSale && product.saleName && (
-                  <span className="rounded-full bg-[#eee2dc] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#75483b]">
-                    {product.saleName}
+                {product.onSale && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#eee2dc] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#75483b]">
+                    <FaBolt className="text-[9px]" /> {product.saleName || activeSale?.name || "Prime Day Sale"}
                   </span>
                 )}
                 {discountPercentage > 0 && (
@@ -631,10 +715,18 @@ export default function ProductCard() {
               </div>
 
               {/* Price */}
-              <div className="flex items-baseline gap-2 sm:gap-3 pb-2.5 sm:pb-6 border-b border-gray-100">
+              <div className="flex items-baseline gap-2 sm:gap-3 pb-2.5 sm:pb-4 border-b border-gray-100">
                 <div className="text-xl sm:text-4xl font-black text-gray-900">{formatPrice(selling)}</div>
                 {mrp && <div className="text-sm sm:text-lg text-gray-400 line-through">{formatPrice(mrp)}</div>}
               </div>
+
+              {/* Live Prime Day Sale Timer */}
+              {product.onSale && (product.saleEndDate || activeSale?.endDate) && (
+                <ProductSaleTimer
+                  endDate={product.saleEndDate || activeSale?.endDate}
+                  saleName={product.saleName || activeSale?.name || "Prime Day Sale"}
+                />
+              )}
             </div>
 
             {/* Controls */}
