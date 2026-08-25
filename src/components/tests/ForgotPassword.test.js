@@ -8,6 +8,12 @@ import '@testing-library/jest-dom';
 
 jest.mock('../axiosInstance');
 
+const mockNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockNavigate,
+}));
+
 // Mock framer-motion
 jest.mock('framer-motion', () => {
     const filterProps = (props) => {
@@ -29,9 +35,7 @@ jest.mock('framer-motion', () => {
 });
 
 describe('ForgotPassword Component', () => {
-    test('submits email to /api/forgot endpoint', async () => {
-        axios.post.mockResolvedValueOnce({ data: { message: 'Reset link sent' } });
-
+    const renderForgot = () =>
         render(
             <HelmetProvider>
                 <BrowserRouter>
@@ -40,11 +44,30 @@ describe('ForgotPassword Component', () => {
             </HelmetProvider>
         );
 
+    beforeEach(() => {
+        mockNavigate.mockClear();
+        axios.post.mockClear();
+    });
+
+    test('blocks submit and shows validation error when field is empty', async () => {
+        renderForgot();
+        fireEvent.click(screen.getByRole('button', { name: /send reset link/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText(/please enter your email or username/i)).toBeInTheDocument();
+        });
+        expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    test('submits trimmed email to /api/forgot endpoint', async () => {
+        axios.post.mockResolvedValueOnce({ data: { message: 'Reset link sent' } });
+
+        renderForgot();
+
         const input = screen.getByPlaceholderText('you@example.com');
-        // Button might be nested
         const button = screen.getByRole('button', { name: /send reset link/i });
 
-        fireEvent.change(input, { target: { value: 'test@example.com' } });
+        fireEvent.change(input, { target: { value: '  test@example.com  ' } });
         fireEvent.click(button);
 
         await waitFor(() => {
@@ -53,7 +76,6 @@ describe('ForgotPassword Component', () => {
             });
         });
 
-        // Wait for success message
         await waitFor(() => {
             expect(screen.getByText('Reset link sent')).toBeInTheDocument();
         });
@@ -64,13 +86,7 @@ describe('ForgotPassword Component', () => {
             response: { data: { message: 'User not found' } }
         });
 
-        render(
-            <HelmetProvider>
-                <BrowserRouter>
-                    <ForgotPassword />
-                </BrowserRouter>
-            </HelmetProvider>
-        );
+        renderForgot();
 
         fireEvent.change(screen.getByPlaceholderText('you@example.com'), { target: { value: 'wrong@user.com' } });
         fireEvent.click(screen.getByRole('button', { name: /send reset link/i }));
@@ -78,5 +94,29 @@ describe('ForgotPassword Component', () => {
         await waitFor(() => {
             expect(screen.getByText('User not found')).toBeInTheDocument();
         });
+    });
+
+    test('shows generic error message when server sends no message', async () => {
+        axios.post.mockRejectedValueOnce(new Error('network down'));
+
+        renderForgot();
+        fireEvent.change(screen.getByPlaceholderText('you@example.com'), { target: { value: 'test@example.com' } });
+        fireEvent.click(screen.getByRole('button', { name: /send reset link/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText(/something went wrong/i)).toBeInTheDocument();
+        });
+    });
+
+    test('navigates back to login when link is clicked', () => {
+        renderForgot();
+        fireEvent.click(screen.getByRole('button', { name: /back to sign in/i }));
+        expect(mockNavigate).toHaveBeenCalledWith('/login');
+    });
+
+    test('navigates to register when create account is clicked', () => {
+        renderForgot();
+        fireEvent.click(screen.getByRole('button', { name: /create account/i }));
+        expect(mockNavigate).toHaveBeenCalledWith('/register');
     });
 });

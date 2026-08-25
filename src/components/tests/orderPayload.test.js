@@ -40,4 +40,27 @@ describe("orderPayload utils", () => {
       walletUsed: 0,
     });
   });
+
+  test("buildSecureOrderPayload coerces a non-numeric walletUsed to 0 instead of NaN", () => {
+    const payload = buildSecureOrderPayload({
+      productsPayload: [],
+      shippingAddress: "NaN Street",
+      walletUsed: "not-a-number",
+    });
+    expect(payload.walletUsed).toBe(0);
+  });
+
+  test("buildSecureOrderPayload ignores unexpected client-supplied fields (paymentStatus/paymentMethod/totalPrice can never reach the server)", () => {
+    const payload = buildSecureOrderPayload({
+      productsPayload: [{ productId: "x" }],
+      shippingAddress: "Somewhere",
+      paymentStatus: "PAID",
+      paymentMethod: "CARD",
+      totalPrice: 999999,
+      extraHackerField: "malicious",
+    });
+    expect(Object.keys(payload).sort()).toEqual(
+      ["paymentVerificationToken", "products", "promo", "shippingAddress", "walletUsed"].sort()
+    );
+  });
 });

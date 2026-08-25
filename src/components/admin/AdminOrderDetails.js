@@ -237,7 +237,33 @@ export default function AdminOrderDetails() {
     );
   }
 
-  if (!order) return null;
+  if (!order) {
+    // The fetch-error toast set above can never reach the screen without this:
+    // previously this branch was a bare `return null`, so a failed or missing
+    // order left admins staring at a blank page with no feedback at all —
+    // even though `orderQuery.isError` already set an error toast in state.
+    return (
+      <div className="premium-admin-page min-h-screen bg-transparent flex flex-col items-center justify-center p-6 gap-4">
+        {toast.message && (
+          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
+            }`}>
+            {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <XCircleIcon className="h-5 w-5 text-red-500" />}
+            <span className="text-sm font-semibold">{toast.message}</span>
+          </div>
+        )}
+        <div className="text-center">
+          <h2 className="text-lg font-bold text-slate-900">Order not found</h2>
+          <p className="text-slate-500 text-sm mt-1">This order may have been removed, or the link is invalid.</p>
+        </div>
+        <button
+          onClick={() => navigate("/admin/orders")}
+          className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-bold shadow-xs hover:bg-black transition-all"
+        >
+          Back to Orders
+        </button>
+      </div>
+    );
+  }
 
   const customer = order.customer || {};
   const terminal = ["DELIVERED", "CANCELLED"].includes(order.stage);

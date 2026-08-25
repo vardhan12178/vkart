@@ -20,10 +20,23 @@ export default function ProductImageUploader({
   const [uploading, setUploading] = useState(false);
   const fileRef = useRef(null);
 
-  // Sync state if initial prop changes (e.g., when editing a different product)
+  // Sync state if initial prop changes (e.g., when editing a different product).
+  // Keyed on content (JSON.stringify) rather than the `initial` array's own
+  // identity: callers commonly pass an inline literal (e.g.
+  // `initial={form.thumbnail ? [form.thumbnail] : []}`), which is a brand-new
+  // reference on every parent render, and the default `initial = []` above
+  // is likewise a fresh array on every render when the prop is omitted.
+  // Depending on identity there previously caused this effect to fire every
+  // render, call setImages every time, and re-render — an infinite loop
+  // whenever a caller relied on the documented default and omitted `initial`.
+  const initialKey = JSON.stringify(Array.isArray(initial) ? initial : []);
   useEffect(() => {
-    setImages(Array.isArray(initial) ? initial : []);
-  }, [initial]);
+    const next = Array.isArray(initial) ? initial : [];
+    setImages((prev) =>
+      prev.length === next.length && prev.every((url, i) => url === next[i]) ? prev : next
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialKey]);
 
   const compressAndConvert = async (file) => {
     const compressed = await imageCompression(file, {

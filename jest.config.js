@@ -5,7 +5,10 @@ module.exports = {
     "^.+\\.[tj]sx?$": "babel-jest",
   },
   transformIgnorePatterns: [
-    "node_modules/(?!(axios)/)"  
+    "node_modules/(?!(axios)/)"
   ],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "<rootDir>/src/components/tests/styleMock.js",
+  },
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };

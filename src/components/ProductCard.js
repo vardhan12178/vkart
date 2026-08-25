@@ -461,6 +461,13 @@ export default function ProductCard() {
 
   const handleAdd = () => {
     if (!product) return;
+    // Defense in depth: the "Add to Bag" button is only visually disabled
+    // when out of stock, so guard the handler itself too (e.g. the desktop
+    // sticky bar's buttons aren't disabled/hidden for an out-of-stock item).
+    if (!(product.stock > 0)) {
+      showToast("This item is currently out of stock", "error");
+      return;
+    }
     // Require variant selection if product has variants
     const variants = product.variants || [];
     if (variants.length > 0) {
@@ -502,6 +509,14 @@ export default function ProductCard() {
 
   const handleBuyNow = () => {
     if (!product) return;
+    // Same defense-in-depth as handleAdd: the desktop sticky bar's "Buy Now"
+    // button was previously rendered unconditionally, letting an
+    // out-of-stock product be added to the cart and taken straight to
+    // checkout even though the main buy box correctly disables/hides it.
+    if (!(product.stock > 0)) {
+      showToast("This item is currently out of stock", "error");
+      return;
+    }
     const variants = product.variants || [];
     if (variants.length > 0) {
       const missing = variants.find((v) => !selectedVariants[v.type]);
@@ -1081,12 +1096,18 @@ export default function ProductCard() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button onClick={handleAdd} className="rounded-full bg-[#1d1c19] px-6 py-2 font-bold text-white transition-colors hover:bg-black">
-            Add to bag
+          <button
+            onClick={handleAdd}
+            disabled={stock === 0}
+            className="rounded-full bg-[#1d1c19] px-6 py-2 font-bold text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:bg-[#ddd8cf] disabled:text-[#8b867d]"
+          >
+            {stock === 0 ? "Out of Stock" : "Add to bag"}
           </button>
-          <button onClick={handleBuyNow} className="inline-flex items-center gap-2 rounded-full bg-[#a85d37] px-6 py-2 font-bold text-white transition-colors hover:bg-[#874526]">
-            <FaBolt size={11} /> Buy Now
-          </button>
+          {stock > 0 && (
+            <button onClick={handleBuyNow} className="inline-flex items-center gap-2 rounded-full bg-[#a85d37] px-6 py-2 font-bold text-white transition-colors hover:bg-[#874526]">
+              <FaBolt size={11} /> Buy Now
+            </button>
+          )}
         </div>
       </div>
       {/* Review Modal */}

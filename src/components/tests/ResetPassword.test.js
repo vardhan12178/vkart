@@ -8,11 +8,13 @@ import '@testing-library/jest-dom';
 
 jest.mock('../axiosInstance');
 
-// Mock useLocation
+const mockNavigate = jest.fn();
+let mockSearch = '?token=test-token-123';
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockNavigate,
     useLocation: () => ({
-        search: '?token=test-token-123',
+        search: mockSearch,
         pathname: '/reset-password'
     })
 }));
@@ -38,10 +40,7 @@ jest.mock('framer-motion', () => {
 });
 
 describe('ResetPassword Component', () => {
-    test('submits new password to /api/auth/reset', async () => {
-        // Setup Mock
-        const mockPost = axios.post.mockResolvedValue({ data: { message: 'Password reset successful.' } });
-
+    const renderReset = () =>
         render(
             <HelmetProvider>
                 <BrowserRouter>
@@ -50,18 +49,26 @@ describe('ResetPassword Component', () => {
             </HelmetProvider>
         );
 
-        // Fill Passwords
+    beforeEach(() => {
+        mockSearch = '?token=test-token-123';
+        mockNavigate.mockClear();
+        axios.post.mockClear();
+    });
+
+    test('submits new password to /api/auth/reset', async () => {
+        const mockPost = axios.post.mockResolvedValue({ data: { message: 'Password reset successful.' } });
+
+        renderReset();
+
         const passwordInput = screen.getByPlaceholderText('At least 8 characters');
         const confirmInput = screen.getByPlaceholderText('Re-enter password');
 
         fireEvent.change(passwordInput, { target: { value: 'NewPass123!' } });
         fireEvent.change(confirmInput, { target: { value: 'NewPass123!' } });
 
-        // Click Submit
         const submitBtn = screen.getByRole('button', { name: /update password/i });
         fireEvent.click(submitBtn);
 
-        // Wait for API call
         await waitFor(() => {
             expect(mockPost).toHaveBeenCalledWith('/api/auth/reset', {
                 token: 'test-token-123',
@@ -70,7 +77,89 @@ describe('ResetPassword Component', () => {
             });
         });
 
-        // Verify Success Message
         expect(await screen.findByText('Password reset successful.')).toBeInTheDocument();
+    });
+
+    test('navigates to login two seconds after a successful reset', async () => {
+        axios.post.mockResolvedValueOnce({ data: { message: 'Password reset successful.' } });
+
+        renderReset();
+        fireEvent.change(screen.getByPlaceholderText('At least 8 characters'), { target: { value: 'NewPass123!' } });
+        fireEvent.change(screen.getByPlaceholderText('Re-enter password'), { target: { value: 'NewPass123!' } });
+        fireEvent.click(screen.getByRole('button', { name: /update password/i }));
+
+        expect(await screen.findByText('Password reset successful.')).toBeInTheDocument();
+        expect(mockNavigate).not.toHaveBeenCalled();
+
+        await waitFor(
+            () => {
+                expect(mockNavigate).toHaveBeenCalledWith('/login');
+            },
+            { timeout: 3000 }
+        );
+    });
+
+    test('blocks submit with missing token and never calls the API', async () => {
+        mockSearch = '';
+        renderReset();
+
+        fireEvent.change(screen.getByPlaceholderText('At least 8 characters'), { target: { value: 'NewPass123!' } });
+        fireEvent.change(screen.getByPlaceholderText('Re-enter password'), { target: { value: 'NewPass123!' } });
+        fireEvent.click(screen.getByRole('button', { name: /update password/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText(/missing or invalid reset link/i)).toBeInTheDocument();
+        });
+        expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    test('shows validation error for short password without calling the API', async () => {
+        renderReset();
+        fireEvent.change(screen.getByPlaceholderText('At least 8 characters'), { target: { value: 'short' } });
+        fireEvent.change(screen.getByPlaceholderText('Re-enter password'), { target: { value: 'short' } });
+        fireEvent.click(screen.getByRole('button', { name: /update password/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText(/use at least 8 characters/i)).toBeInTheDocument();
+        });
+        expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    test('shows validation error when passwords do not match', async () => {
+        renderReset();
+        fireEvent.change(screen.getByPlaceholderText('At least 8 characters'), { target: { value: 'NewPass123!' } });
+        fireEvent.change(screen.getByPlaceholderText('Re-enter password'), { target: { value: 'Different123!' } });
+        fireEvent.click(screen.getByRole('button', { name: /update password/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText(/passwords do not match/i)).toBeInTheDocument();
+        });
+        expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    test('shows server error message on failed reset', async () => {
+        axios.post.mockRejectedValueOnce({
+            response: { data: { message: 'Reset link expired' } }
+        });
+
+        renderReset();
+        fireEvent.change(screen.getByPlaceholderText('At least 8 characters'), { target: { value: 'NewPass123!' } });
+        fireEvent.change(screen.getByPlaceholderText('Re-enter password'), { target: { value: 'NewPass123!' } });
+        fireEvent.click(screen.getByRole('button', { name: /update password/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText('Reset link expired')).toBeInTheDocument();
+        });
+        expect(mockNavigate).not.toHaveBeenCalled();
+    });
+
+    test('toggles password visibility', () => {
+        renderReset();
+        const passwordInput = screen.getByPlaceholderText('At least 8 characters');
+        expect(passwordInput).toHaveAttribute('type', 'password');
+
+        const toggleButtons = screen.getAllByRole('button').filter((b) => !b.textContent);
+        fireEvent.click(toggleButtons[0]);
+        expect(passwordInput).toHaveAttribute('type', 'text');
     });
 });
