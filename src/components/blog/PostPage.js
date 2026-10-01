@@ -171,6 +171,8 @@ export default function PostPage() {
               >
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={p.image}
                     alt={p.title}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

@@ -334,6 +334,7 @@ const Compare = () => {
                               
                               <div className="relative w-full shrink-0 grow-0 mb-2 sm:mb-4 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-50 transition-colors group-hover:border-gray-200" style={{ paddingBottom: "75%" }}>
                                 <img
+                                  decoding="async"
                                   src={item.thumbnail}
                                   alt=""
                                   className="absolute inset-0 h-full w-full object-contain p-2 sm:p-4 mix-blend-multiply transition-transform duration-500 group-hover:scale-110"

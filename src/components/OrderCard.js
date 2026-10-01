@@ -12,6 +12,7 @@ import {
   FaUndoAlt,
   FaCheckCircle,
 } from "react-icons/fa";
+import { IMAGE_PLACEHOLDER } from "../utils/imagePlaceholder";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -90,7 +91,9 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
             <div className="w-14 h-14 sm:w-16 sm:h-16 max-w-[56px] max-h-[56px] sm:max-w-[64px] sm:max-h-[64px] rounded-xl bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
               <img
-                src={firstProduct.image || firstProduct.thumbnail || "https://via.placeholder.com/80"}
+                loading="lazy"
+                decoding="async"
+                src={firstProduct.image || firstProduct.thumbnail || IMAGE_PLACEHOLDER}
                 alt="Product"
                 className="w-full h-full max-w-full max-h-full object-contain mix-blend-multiply"
               />
@@ -243,6 +246,8 @@ export default function OrderCard({ order, defaultOpen = false }) {
                     <div key={i} className="p-2.5 sm:p-3 flex items-center gap-3 hover:bg-slate-50/80 transition">
                       <div className="w-10 h-10 max-w-[40px] max-h-[40px] rounded-lg bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden">
                         <img
+                          loading="lazy"
+                          decoding="async"
                           src={p.image || p.thumbnail}
                           alt={p.name}
                           className="w-full h-full max-w-full max-h-full object-contain mix-blend-multiply"

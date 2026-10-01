@@ -407,6 +407,10 @@ export default function Home() {
           <div className="relative aspect-[16/11] sm:aspect-[3/2] overflow-hidden border-t border-black/[0.06]">
             <img
               src="/vkart-editorial-hero.webp"
+              srcSet="/vkart-editorial-hero-768.webp 768w, /vkart-editorial-hero-1024.webp 1024w, /vkart-editorial-hero.webp 1536w"
+              sizes="(min-width: 1500px) 1500px, 100vw"
+              width={1536}
+              height={1024}
               alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
               className="h-full w-full object-cover object-[72%_center] sm:object-[68%_center]"
               fetchpriority="high"
@@ -422,6 +426,10 @@ export default function Home() {
         <div className="editorial-grain relative mx-auto hidden min-h-[calc(100vh-8rem)] max-w-[1500px] overflow-hidden rounded-[1.75rem] bg-[#e8e0d4] lg:block">
           <img
             src="/vkart-editorial-hero.webp"
+            srcSet="/vkart-editorial-hero-768.webp 768w, /vkart-editorial-hero-1024.webp 1024w, /vkart-editorial-hero.webp 1536w"
+            sizes="(min-width: 1500px) 1500px, 100vw"
+            width={1536}
+            height={1024}
             alt="A curated arrangement of headphones, a watch, fragrance, sunglasses, and a leather accessory"
             className="absolute inset-0 h-full w-full object-cover object-center"
             fetchpriority="high"

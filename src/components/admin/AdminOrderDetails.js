@@ -493,7 +493,7 @@ export default function AdminOrderDetails() {
                   <div key={idx} className="p-3 flex items-center gap-3">
                     <div className="h-12 w-12 flex-shrink-0 bg-slate-50 rounded-xl overflow-hidden border border-slate-200 p-0.5">
                       {p.image ? (
-                        <img src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
+                        <img loading="lazy" decoding="async" src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
                       ) : (
                         <div className="h-full w-full flex items-center justify-center text-slate-300">
                           <CubeIcon className="h-5 w-5" />
@@ -536,7 +536,7 @@ export default function AdminOrderDetails() {
                           <div className="flex items-center gap-4">
                             <div className="h-14 w-14 flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 group-hover:border-orange-200 transition-colors">
                               {p.image ? (
-                                <img src={p.image} alt={p.name} className="h-full w-full object-contain" />
+                                <img loading="lazy" decoding="async" src={p.image} alt={p.name} className="h-full w-full object-contain" />
                               ) : (
                                 <div className="h-full w-full flex items-center justify-center text-slate-300">
                                   <CubeIcon className="h-6 w-6" />

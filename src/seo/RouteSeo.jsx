@@ -67,7 +67,7 @@ const orgSchema = JSON.stringify({
   "@type": "Organization",
   name: "VKart",
   url: SITE,
-  logo: `${SITE}/assets/categories/logo.png`,
+  logo: `${SITE}/icon-512.png`,
   sameAs: [],
 });
 
@@ -103,7 +103,7 @@ export default function RouteSeo() {
 
       <meta name="description" content={meta.desc} />
       <meta name="application-name" content="VKart" />
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="theme-color" content="#e9e1d6" />
       <meta name="color-scheme" content="light" />
       <meta name="format-detection" content="telephone=no, email=no, address=no" />
       {shouldNoindex && <meta name="robots" content="noindex,nofollow" />}

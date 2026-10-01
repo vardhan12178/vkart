@@ -16,6 +16,7 @@ import { useWindowSize } from "react-use";
 import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
 import SupportChatWidget from "./support/SupportChatWidget";
+import { IMAGE_PLACEHOLDER } from "../utils/imagePlaceholder";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -151,7 +152,9 @@ export default function OrderSuccess() {
               <div key={idx} className="py-2.5 first:pt-0 last:pb-0 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden">
                   <img
-                    src={p.image || p.thumbnail || "https://via.placeholder.com/60"}
+                    loading="lazy"
+                    decoding="async"
+                    src={p.image || p.thumbnail || IMAGE_PLACEHOLDER}
                     alt={p.name}
                     className="w-full h-full object-contain mix-blend-multiply"
                   />

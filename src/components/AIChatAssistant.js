@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat } from "../redux/uiSlice";
+import { IMAGE_PLACEHOLDER } from "../utils/imagePlaceholder";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -325,10 +326,12 @@ const AIChatAssistant = () => {
                   {/* Thumbnail */}
                   <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-lg border border-black/[0.05] bg-[#eeeae2] p-1">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={prod.thumbnail}
                       alt={prod.title}
                       className="w-full h-full object-contain mix-blend-multiply"
-                      onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }}
+                      onError={(e) => { e.target.src = IMAGE_PLACEHOLDER; }}
                     />
                   </div>
 

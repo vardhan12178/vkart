@@ -633,7 +633,10 @@ export default function ProductCard() {
                       >
                         <img
                           src={img}
-                          alt="Product"
+                          alt={i === 0 ? title : `${title} — view ${i + 1}`}
+                          loading={i === 0 ? "eager" : "lazy"}
+                          fetchpriority={i === 0 ? "high" : "auto"}
+                          decoding="async"
                           className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105"
                         />
                         {zoom.enabled && (
@@ -1020,7 +1023,7 @@ export default function ProductCard() {
                 <div key={rp._id} className="px-2 md:px-4 py-2 h-full">
                   <Link to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full">
                     <div className="aspect-[4/3] bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
-                      <img src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
+                      <img loading="lazy" decoding="async" src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
                       {rp.discountPercentage > 0 && (
                         <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
                           -{Math.round(rp.discountPercentage)}%
@@ -1050,7 +1053,7 @@ export default function ProductCard() {
               {recentlyViewed.map((rp) => (
                 <Link key={rp._id} to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all">
                   <div className="aspect-square bg-gray-50 rounded-xl mb-2 overflow-hidden">
-                    <img src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-3 group-hover:scale-105 transition-transform duration-500" />
+                    <img loading="lazy" decoding="async" src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-3 group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <h4 className="font-bold text-gray-900 truncate text-xs mb-0.5">{rp.title}</h4>
                   <div className="font-bold text-gray-900 text-sm">{formatPrice(rp.price)}</div>

@@ -372,7 +372,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
             <div className="space-y-2 sm:space-y-3 max-h-40 sm:max-h-48 overflow-y-auto pr-1">
               {cartItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-black/[0.07] bg-[#eeeae2] p-2.5 sm:p-3">
-                  {item.thumbnail && <img src={item.thumbnail} alt="" className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0" />}
+                  {item.thumbnail && <img loading="lazy" decoding="async" src={item.thumbnail} alt="" className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0" />}
                   <div className="flex-1 min-w-0">
                     <p className="text-xs sm:text-sm font-bold text-gray-900 truncate">{item.title || item.name}</p>
                     <p className="text-[11px] text-gray-500">Qty: {item.quantity}</p>

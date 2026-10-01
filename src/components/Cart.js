@@ -288,6 +288,7 @@ export default function Cart() {
                         {/* Image */}
                         <div className="w-20 h-20 sm:w-28 sm:h-28 shrink-0 bg-[#fbfaf7] rounded-xl sm:rounded-2xl p-2 border border-black/[0.05]">
                           <img
+                            decoding="async"
                             src={item.thumbnail || item.images?.[0]}
                             alt={item.title}
                             className="w-full h-full object-contain mix-blend-multiply"
@@ -391,7 +392,7 @@ export default function Cart() {
                     <div key={keyOf(w)} className="bg-white p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-black/[0.06] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
                       <div className="flex items-center gap-2 sm:gap-3">
                         <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbfaf7] rounded-lg p-1.5 shrink-0 border border-black/[0.04]">
-                          <img src={w.thumbnail} className="w-full h-full object-contain mix-blend-multiply" alt="" />
+                          <img loading="lazy" decoding="async" src={w.thumbnail} className="w-full h-full object-contain mix-blend-multiply" alt="" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="text-xs font-bold text-[#1d1c19] line-clamp-1">{w.title}</h4>

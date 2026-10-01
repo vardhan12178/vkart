@@ -355,6 +355,10 @@ export default function Register() {
             >
               <img
                 src="/vkart-editorial-hero.webp"
+                srcSet="/vkart-editorial-hero-768.webp 768w, /vkart-editorial-hero-1024.webp 1024w, /vkart-editorial-hero.webp 1536w"
+                sizes="(min-width: 1280px) 600px, 45vw"
+                width={1536}
+                height={1024}
                 alt="A curated selection of VKart products"
                 className="h-[300px] xl:h-[360px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />

@@ -343,7 +343,7 @@ export default function AdminProducts() {
                     <div key={p._id} className="p-3 hover:bg-slate-50/60 transition-colors flex items-start gap-3">
                       <div className="h-14 w-14 flex-shrink-0 rounded-xl border border-slate-200 bg-white p-1 overflow-hidden shadow-xs">
                         {p.thumbnail ? (
-                          <img src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
+                          <img loading="lazy" decoding="async" src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
                         ) : (
                           <div className="h-full w-full flex items-center justify-center text-slate-300 bg-slate-50 rounded-lg">
                             <PhotographIcon className="h-5 w-5" />
@@ -421,7 +421,7 @@ export default function AdminProducts() {
                             <div className="flex items-center gap-4">
                               <div className="h-14 w-14 flex-shrink-0 rounded-xl border border-slate-200 bg-white p-1 overflow-hidden shadow-sm">
                                 {p.thumbnail ? (
-                                  <img src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
+                                  <img loading="lazy" decoding="async" src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
                                 ) : (
                                   <div className="h-full w-full flex items-center justify-center text-slate-300 bg-slate-50 rounded-lg">
                                     <PhotographIcon className="h-6 w-6" />

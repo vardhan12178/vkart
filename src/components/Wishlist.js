@@ -132,6 +132,8 @@ export default function Wishlist() {
                         <div className="relative aspect-square overflow-hidden bg-[#ebe7df] p-2.5 sm:p-7">
                           {image ? (
                             <img
+                              loading="lazy"
+                              decoding="async"
                               src={image}
                               alt={item.title}
                               className="h-full w-full object-contain mix-blend-multiply transition-transform duration-500 ease-out group-hover:scale-[1.04]"

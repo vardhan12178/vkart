@@ -354,6 +354,8 @@ export default function SupportChatWidget({ open, onClose }) {
                   >
                     {o.products?.[0]?.image && (
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={o.products[0].image}
                         alt=""
                         className="h-10 w-10 shrink-0 rounded-lg object-contain bg-white border border-slate-100 p-0.5"

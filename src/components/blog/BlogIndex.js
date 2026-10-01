@@ -178,7 +178,9 @@ export default function BlogIndex() {
                   
                   {/* Image Card */}
                   <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gray-100 shadow-sm group-hover:shadow-2xl group-hover:shadow-orange-500/10 transition-all duration-500 group-hover:-translate-y-1">
-                    <img 
+                    <img
+                      loading="lazy"
+                      decoding="async"
                       src={post.image} 
                       alt={post.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 

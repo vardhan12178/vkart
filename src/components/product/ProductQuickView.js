@@ -103,7 +103,7 @@ const ProductQuickView = ({ product, onClose, onAdd }) => {
                                     aria-label={`View image ${idx + 1} of ${images.length}`}
                                     aria-pressed={idx === activeIdx}
                                 >
-                                    <img src={src} alt="" className="h-full w-full object-contain mix-blend-multiply" />
+                                    <img loading="lazy" decoding="async" src={src} alt="" className="h-full w-full object-contain mix-blend-multiply" />
                                 </button>
                             ))}
                         </div>

@@ -311,7 +311,7 @@ const Header = () => {
                         className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
                       >
                         {s.thumbnail && (
-                          <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
+                          <img loading="lazy" decoding="async" src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
                         )}
                         <div className="min-w-0 flex-1">
                           <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
@@ -506,7 +506,7 @@ const Header = () => {
                           className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
                         >
                           {s.thumbnail && (
-                            <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
+                            <img loading="lazy" decoding="async" src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
                           )}
                           <div className="min-w-0 flex-1">
                             <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
