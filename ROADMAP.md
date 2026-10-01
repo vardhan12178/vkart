@@ -14,7 +14,7 @@ Phased plan covering both repos (`vkart` frontend, `backend` API). Agreed Oct 20
 | Phase | Title | Status |
 |---|---|---|
 | 1 | Cleanup & performance quick wins | Done — awaiting owner review |
-| 2 | Money & security correctness | Not started |
+| 2 | Money & security correctness | Done — awaiting owner review |
 | 3 | Stack modernization | Not started |
 | 4 | AI upgrade (core) | Not started |
 | 5 | Design & motion | Not started |
@@ -52,18 +52,31 @@ Notes for later phases:
 - `<div id="root">` is rendered inside `#root` in `App.js` (duplicate id) — fix during the Phase 3 React 19 upgrade.
 - AVIF variants skipped (no AVIF encoder in the build environment) — revisit with `vite-imagetools` in Phase 3.
 
-## Phase 2 — Money & security correctness (`backend/ACTION_ITEMS.md`)
+## Phase 2 — Money & security correctness (`backend/ACTION_ITEMS.md`) ✅
 
-- Checkout payment-token race: atomic consume before commit + unique indexes on `Order.paymentId` / `paymentOrderId`.
-- Wallet / membership double-credit race: atomic credit.
-- Coupon `usageLimit` / `perUserLimit` race: atomic increment inside the order transaction.
-- JWT roles/blocked staleness: re-check from DB on protected routes.
-- Razorpay checkout order created from a server-priced session (not client `amount`).
-- Google signup username collision; hide inactive products from `getProductById`; `multer` 1.x → 2.x.
-- AI cost guardrails: per-user daily caps, stricter guest limits.
+What shipped (details and deploy notes in `backend/ACTION_ITEMS.md`):
+
+- **Checkout:** one Razorpay payment can only ever become one order. There are unique indexes on `paymentId`/`paymentOrderId`, a claim lock per verification token, idempotent `/razorpay/verify`, and atomic session pops. Concurrent-checkout write conflicts return a clean 409 "please retry" instead of a 500.
+- **Server-priced Razorpay order:** the storefront sends the cart and the backend prices it with the same `quoteCheckout()` that places the order. The legacy `amount` request is kept for one release.
+- **Coupons:** a use is claimed atomically inside the order transaction, so `usageLimit`/`perUserLimit` hold under concurrency.
+- **Wallet top-up / Prime:** credited exactly once per payment. Two different Prime payments landing together both count.
+- **Auth:** roles, admin role and blocked status are read live from the DB on every request (HTTP and Socket.io). Demotion and blocking take effect immediately, and blocked users are signed out.
+- **Refund scheduler:** it no longer marks no-gateway refunds "completed"; it flags them to admins instead.
+- **Smaller fixes:** Google sign-up usernames, inactive products hidden (404), `multer` 2.x, and AI daily quotas (100/day signed-in, 20/day guest IP), with a clear message in the chat.
+- **Tests:** `backend/tests/hardening.test.js` (17 tests). The race tests were run against the old code first to confirm they fail there.
+
+Manual verification checklist:
+
+1. Checkout in Razorpay test mode: card and netbanking, with and without a coupon, with partial wallet. The amount in the Razorpay modal should match the order total.
+2. Double-click "Confirm & Pay" / refresh during verification: still exactly one order.
+3. Wallet top-up and Prime purchase still work. The balance and Prime end date are correct.
+4. Admin: demote or block an account in another browser. That session loses access on its next click; a blocked user is sent to login.
+5. Deactivate a product: its page 404s for shoppers and still opens from the admin.
+6. Before deploying, run the duplicate-`paymentId` check in `ACTION_ITEMS.md` → "Deploy notes".
 
 ## Phase 3 — Stack modernization (safety net before big UI/AI work)
 
+- Remove the legacy client-`amount` path from `POST /api/razorpay/create-order` (kept one release in Phase 2).
 - Frontend tests: Jest 27 → Vitest; add Playwright E2E for core flows (browse → cart → checkout in Razorpay test mode, login, admin order handling).
 - React 18 → 19, React Router 6 → 7, Tailwind 3 → 4 (official codemods), Express 4 → 5.
 - Dependency diet: one icon set (lucide; drop react-icons + heroicons v1), Embla instead of react-slick, move server state out of Redux into React Query.
