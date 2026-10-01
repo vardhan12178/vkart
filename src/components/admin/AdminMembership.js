@@ -214,7 +214,7 @@ export default function AdminMembership() {
                       <div className="flex items-center gap-2">
                         <h3 className="font-bold text-sm sm:text-base text-slate-900">{plan.name}</h3>
                         {plan.isPopular && (
-                          <span className="text-[10px] font-bold text-amber-800 bg-amber-50 border border-amber-200/60 px-2 py-0.2 rounded-full">
+                          <span className="text-[10px] font-bold text-amber-800 bg-amber-50 border border-amber-200/60 px-2 py-px rounded-full">
                             ★ Popular
                           </span>
                         )}

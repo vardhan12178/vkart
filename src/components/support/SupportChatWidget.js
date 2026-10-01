@@ -364,7 +364,7 @@ export default function SupportChatWidget({ open, onClose }) {
                     <div className="min-w-0 flex-1">
                       <div className="flex justify-between items-center gap-2">
                         <span className="text-xs font-mono font-bold text-slate-900 truncate">{o.orderId}</span>
-                        <span className="shrink-0 text-[9px] font-bold uppercase tracking-wide bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded-md">{o.stage}</span>
+                        <span className="shrink-0 text-[9px] font-bold uppercase tracking-wide bg-slate-100 text-slate-600 px-1.5 py-px rounded-md">{o.stage}</span>
                       </div>
                       <p className="text-[11px] text-slate-500 mt-0.5 truncate">
                         {o.products?.[0]?.name}

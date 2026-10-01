@@ -218,7 +218,7 @@ export default function AdminSupport() {
                         <span className="text-xs sm:text-sm font-bold text-slate-900 truncate">
                           {c.userId?.name || "Customer"}
                         </span>
-                        <span className={`shrink-0 text-[9px] font-bold uppercase px-1.5 py-0.2 rounded-full border ${cfg.text}`}>
+                        <span className={`shrink-0 text-[9px] font-bold uppercase px-1.5 py-px rounded-full border ${cfg.text}`}>
                           {c.status?.replace("_", " ")}
                         </span>
                       </div>
@@ -270,7 +270,7 @@ export default function AdminSupport() {
                         <p className="text-xs sm:text-sm font-bold text-slate-900 truncate leading-tight">
                           {conversation.userId?.name || "Customer"}
                         </p>
-                        <span className={`hidden sm:inline-block text-[9px] font-bold uppercase px-1.5 py-0.2 rounded-full border ${STATUS_CONFIG[conversation.status]?.text || ""}`}>
+                        <span className={`hidden sm:inline-block text-[9px] font-bold uppercase px-1.5 py-px rounded-full border ${STATUS_CONFIG[conversation.status]?.text || ""}`}>
                           {conversation.status?.replace("_", " ")}
                         </span>
                       </div>

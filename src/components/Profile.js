@@ -829,7 +829,7 @@ export default function Profile() {
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-1.5 mb-0.5">
                               <span className="font-bold text-gray-900 text-xs sm:text-sm">{addr.fullName || addr.name}</span>
-                              {addr.isDefault && <span className="text-[9px] font-bold text-orange-600 bg-orange-100 px-1.5 py-0.2 rounded-full">Default</span>}
+                              {addr.isDefault && <span className="text-[9px] font-bold text-orange-600 bg-orange-100 px-1.5 py-px rounded-full">Default</span>}
                             </div>
                             <p className="text-[11px] text-gray-600">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
                             <p className="text-[11px] text-gray-500">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>

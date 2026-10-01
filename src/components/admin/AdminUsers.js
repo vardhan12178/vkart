@@ -333,7 +333,7 @@ export default function AdminUsers() {
                                 <div className="font-semibold text-slate-900 text-sm flex items-center gap-1.5">
                                   {u.name || "Unnamed User"}
                                   {isAdminRole && (
-                                    <span className="text-[10px] font-bold bg-orange-50 text-orange-700 px-1.5 py-0.2 rounded-full border border-orange-100">
+                                    <span className="text-[10px] font-bold bg-orange-50 text-orange-700 px-1.5 py-px rounded-full border border-orange-100">
                                       Admin
                                     </span>
                                   )}
@@ -417,7 +417,7 @@ export default function AdminUsers() {
                             <div className="flex items-center gap-1.5">
                               <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">{u.name || "User"}</p>
                               {isAdminRole && (
-                                <span className="text-[9px] font-bold bg-orange-50 text-orange-700 px-1.5 py-0.2 rounded-full border border-orange-100">
+                                <span className="text-[9px] font-bold bg-orange-50 text-orange-700 px-1.5 py-px rounded-full border border-orange-100">
                                   Admin
                                 </span>
                               )}

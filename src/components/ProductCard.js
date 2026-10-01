@@ -121,7 +121,7 @@ const ProductSaleTimer = ({ endDate, saleName }) => {
             <span className="text-xs font-bold text-[#75483b] uppercase tracking-wide">
               {saleName || "Prime Day Sale"}
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-1.5 py-0.2 text-[9px] font-bold text-emerald-800">
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-1.5 py-px text-[9px] font-bold text-emerald-800">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" /> Live Deal
             </span>
           </div>

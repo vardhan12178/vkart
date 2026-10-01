@@ -159,7 +159,7 @@ export default function AdminReviews() {
                     <div className="text-[10px] text-slate-400 flex items-center gap-1.5 truncate">
                       <span className="font-semibold text-slate-600 truncate">{r.review.reviewerName || "Anonymous"}</span>
                       {r.review.isHidden && (
-                        <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-0.2 rounded font-bold">
+                        <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-px rounded font-bold">
                           Hidden
                         </span>
                       )}
