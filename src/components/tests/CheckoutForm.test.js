@@ -68,6 +68,7 @@ describe("CheckoutForm Component", () => {
     cart = VALID_CART,
     onOrderPlaced = jest.fn(),
     totalAmount = 200,
+    getCheckoutDraft,
   } = {}) => {
     const store = configureStore({
       reducer: {
@@ -79,7 +80,7 @@ describe("CheckoutForm Component", () => {
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
           <BrowserRouter>
-            <CheckoutForm onOrderPlaced={onOrderPlaced} totalAmount={totalAmount} />
+            <CheckoutForm onOrderPlaced={onOrderPlaced} totalAmount={totalAmount} getCheckoutDraft={getCheckoutDraft} />
           </BrowserRouter>
         </Provider>
       </QueryClientProvider>
@@ -285,6 +286,48 @@ describe("CheckoutForm Component", () => {
     await waitFor(() => expect(window.Razorpay).toHaveBeenCalled());
     expect(capturedOptions.order_id).toBe("rzp_order_1");
     expect(capturedOptions.amount).toBe(20000);
+  });
+
+  test("sends the cart (not an amount) so the server prices the Razorpay order", async () => {
+    window.Razorpay = jest.fn(function () {
+      this.on = jest.fn();
+      this.open = jest.fn();
+    });
+    axios.post.mockImplementation((url) => {
+      if (url === "/api/razorpay/create-order") {
+        return Promise.resolve({
+          data: { success: true, orderId: "rzp_order_2", amount: 19900, currency: "INR" },
+        });
+      }
+      return Promise.resolve({ data: {} });
+    });
+
+    const getCheckoutDraft = () => ({
+      products: [
+        { productId: "p1", quantity: 2, price: 50, name: "Item", selectedVariants: "Size: M" },
+        { productId: "p2", quantity: 1, price: 100, name: "Other" },
+      ],
+      promo: "SAVE10",
+    });
+    renderCheckout({ totalAmount: 200, getCheckoutDraft });
+    await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
+    fillValidForm();
+
+    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    fireEvent.click(submitButtons[submitButtons.length - 1]);
+    expect(await screen.findByText(/review your order/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /confirm & pay/i }));
+
+    await waitFor(() => {
+      expect(axios.post).toHaveBeenCalledWith("/api/razorpay/create-order", {
+        products: [
+          { productId: "p1", quantity: 2, selectedVariants: "Size: M" },
+          { productId: "p2", quantity: 1 },
+        ],
+        promo: "SAVE10",
+        walletUsed: 0,
+      });
+    });
   });
 
   test("completes the order after the Razorpay handler verifies payment", async () => {

@@ -81,7 +81,7 @@ const InputField = React.memo(function InputField({ label, name, value, onChange
   );
 });
 
-export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
+export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDraft }) {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [busy, setBusy] = useState(false);
@@ -271,10 +271,23 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
         return;
       }
 
-      const res = await axios.post("/api/razorpay/create-order", {
-        amount: payable,
-        currency: "INR",
-      });
+      // The server prices the cart itself (same logic that places the order),
+      // so we send what's in the bag rather than an amount.
+      const draft = getCheckoutDraft?.() || {};
+      const res = await axios.post(
+        "/api/razorpay/create-order",
+        draft.products?.length
+          ? {
+              products: draft.products.map(({ productId, quantity, selectedVariants }) => ({
+                productId,
+                quantity,
+                ...(selectedVariants ? { selectedVariants } : {}),
+              })),
+              promo: draft.promo || undefined,
+              walletUsed: walletApplied,
+            }
+          : { amount: payable, currency: "INR" }
+      );
 
       if (!res?.data?.success || !res.data.orderId)
         throw new Error("Failed to create order");

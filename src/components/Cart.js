@@ -140,28 +140,31 @@ export default function Cart() {
     } catch { /* ignore */ }
   };
 
+  const buildProductsPayload = () =>
+    cartItems.map((it) => {
+      const mongoId = it._id || it.productId || null;
+      const extId = it.externalId || (it.id != null ? String(it.id) : null);
+      const unitPrice = round2(it.price);
+      const lineTotal = round2(unitPrice * it.quantity);
+      const payload = {
+        name: it.title,
+        image: it.thumbnail || it.images?.[0],
+        quantity: it.quantity,
+        price: unitPrice,
+        lineTotal,
+        currency: "INR",
+      };
+      if (it.selectedVariants) payload.selectedVariants = it.selectedVariants;
+      if (mongoId) payload.productId = String(mongoId);
+      if (!mongoId && extId) payload.externalId = extId;
+      return payload;
+    });
+
   const handleOrderPlaced = async (orderDetails) => {
     setIsLoading(true);
     setError(null);
     try {
-      const productsPayload = cartItems.map((it) => {
-        const mongoId = it._id || it.productId || null;
-        const extId = it.externalId || (it.id != null ? String(it.id) : null);
-        const unitPrice = round2(it.price);
-        const lineTotal = round2(unitPrice * it.quantity);
-        const payload = {
-          name: it.title,
-          image: it.thumbnail || it.images?.[0],
-          quantity: it.quantity,
-          price: unitPrice,
-          lineTotal,
-          currency: "INR",
-        };
-        if (it.selectedVariants) payload.selectedVariants = it.selectedVariants;
-        if (mongoId) payload.productId = String(mongoId);
-        if (!mongoId && extId) payload.externalId = extId;
-        return payload;
-      });
+      const productsPayload = buildProductsPayload();
 
       const orderData = buildSecureOrderPayload({
         productsPayload,
@@ -561,7 +564,11 @@ export default function Cart() {
           <div ref={checkoutRef} className="mt-6 pt-6 sm:mt-10 sm:pt-10 border-t border-black/10">
             <h2 className="text-lg sm:text-2xl font-editorial font-bold text-[#1d1c19] mb-3 sm:mb-6 text-center">Secure Checkout</h2>
             <div className="max-w-6xl mx-auto">
-              <CheckoutForm onOrderPlaced={handleOrderPlaced} totalAmount={calc.total} />
+              <CheckoutForm
+                onOrderPlaced={handleOrderPlaced}
+                totalAmount={calc.total}
+                getCheckoutDraft={() => ({ products: buildProductsPayload(), promo: promoApplied?.code })}
+              />
             </div>
           </div>
         )}
