@@ -17,6 +17,7 @@ import {
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
+import WebVitalsCard from "./WebVitalsCard";
 import {
   AreaChart,
   Area,
@@ -501,6 +502,10 @@ export default function AdminDashboard() {
               </div>
 
             </div>
+
+            <div className={fadeInClass(500)}>
+              <WebVitalsCard />
+            </div>
           </>
         )}
       </div>
@@ -519,6 +524,8 @@ function ImageWithFallback({ src, alt, className }) {
 
   return (
     <img
+      loading="lazy"
+      decoding="async"
       src={src}
       alt={alt}
       className={className}

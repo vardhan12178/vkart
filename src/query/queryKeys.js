@@ -43,6 +43,7 @@ export const qk = {
     membershipPlans: ["admin", "membership", "plans"],
     membershipStatus: ["admin", "membership", "status"],
     employees: ["admin", "employees"],
+    vitals: ["admin", "vitals"],
     supportConversations: (filters = {}) => ["admin", "support", "conversations", filters],
     supportConversation: (id) => ["admin", "support", "conversations", id],
   },

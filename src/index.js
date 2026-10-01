@@ -11,6 +11,7 @@ import "./App.css"; // Tailwind base/components/utilities live here
 import "./index.css";
 import "./styles.css";
 import { queryClient } from "./query/queryClient";
+import reportWebVitals from "./utils/reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -42,3 +43,8 @@ if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   });
 }
 
+// Real-user performance metrics (production only; admin pages excluded so
+// the numbers reflect what shoppers experience).
+if (process.env.NODE_ENV === "production" && !window.location.pathname.startsWith("/admin")) {
+  reportWebVitals();
+}
