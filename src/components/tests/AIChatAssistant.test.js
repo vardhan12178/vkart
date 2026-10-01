@@ -147,6 +147,25 @@ describe("AIChatAssistant Component", () => {
     expect(await screen.findByText(/having a little trouble connecting/i)).toBeInTheDocument();
   });
 
+  test("explains a used-up daily AI allowance instead of a connection error", async () => {
+    const quotaError = Object.assign(new Error("Too Many Requests"), {
+      response: {
+        status: 429,
+        data: { quotaExceeded: true, error: "You've reached today's AI limit for guests. Sign in to keep chatting." },
+      },
+    });
+    axios.post.mockRejectedValueOnce(quotaError);
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), {
+      target: { value: "Best headphones" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+
+    expect(await screen.findByText(/sign in to keep chatting/i)).toBeInTheDocument();
+    expect(screen.queryByText(/having a little trouble connecting/i)).not.toBeInTheDocument();
+  });
+
   test("clicking a recommended product navigates to its page and closes the chat", async () => {
     axios.post.mockResolvedValueOnce({
       data: {

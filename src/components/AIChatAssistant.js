@@ -179,10 +179,16 @@ const AIChatAssistant = () => {
       appendBotMessage({ structured, products });
     } catch (error) {
       console.error("AI Chat Error:", error);
+      // 429 with quotaExceeded = daily AI allowance used up; say so plainly
+      // (and, for guests, that signing in raises it) instead of "trouble connecting".
+      const quotaMessage =
+        error?.response?.status === 429 && error.response.data?.quotaExceeded
+          ? error.response.data.error
+          : null;
       appendBotMessage({
         structured: {
           response: {
-            summary: "I'm having a little trouble connecting right now. Please try again in a moment.",
+            summary: quotaMessage || "I'm having a little trouble connecting right now. Please try again in a moment.",
             points: []
           }
         }
