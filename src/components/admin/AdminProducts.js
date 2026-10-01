@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import ProductImageUploader from "../ProductImageUploader";
 import {
@@ -53,7 +54,11 @@ export default function AdminProducts() {
   const queryClient = useQueryClient();
   const { canWrite } = usePermission("products");
 
-  const [search, setSearch] = useState("");
+  const [searchParams] = useSearchParams();
+  // The admin header quick search links here with ?q=<term>.
+  const urlQuery = searchParams.get("q") || "";
+  const [search, setSearch] = useState(urlQuery);
+  useEffect(() => setSearch(urlQuery), [urlQuery]);
   const [statusFilter, setStatusFilter] = useState("all"); // 'all', 'active', 'inactive'
   const [sortBy, setSortBy] = useState("newest");
 

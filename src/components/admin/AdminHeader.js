@@ -22,6 +22,7 @@ import { qk } from "../../query/queryKeys";
 import { canAccess } from "../../utils/adminPermissions";
 import { ROLE_LABELS } from "../../constants/adminRoles";
 import Avatar from "./ui/Avatar";
+import AdminQuickSearch from "./AdminQuickSearch";
 
 export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adminRole, permissions }) {
   const queryClient = useQueryClient();
@@ -255,29 +256,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
 
           {/* --- CENTER: Desktop Search --- */}
           <div className="mr-auto hidden max-w-lg flex-1 lg:flex">
-            <div className="relative w-full group">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <SearchIcon className="h-4 w-4 text-[#8b867d] transition-colors group-focus-within:text-[#a85d37]" />
-              </div>
-              <input
-                type="text"
-                className="
-                    block w-full pl-11 pr-20 py-2.5 
-                    rounded-full border-0 
-                    bg-[#f1ede5] hover:bg-[#eee9e0] focus:bg-[#fffdf8]
-                    text-[#1d1c19] placeholder-[#99948a]
-                    ring-1 ring-black/[0.07] focus:ring-[#a85d37]/20
-                    transition-all duration-200
-                    text-sm font-medium outline-none
-                  "
-                placeholder="Search the operation"
-              />
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <kbd className="hidden h-6 items-center rounded-full border border-black/10 bg-[#fffdf8] px-2 text-[10px] font-bold text-[#777269] sm:inline-flex">
-                  /
-                </kbd>
-              </div>
-            </div>
+            <AdminQuickSearch adminRole={adminRole} permissions={permissions} variant="desktop" />
           </div>
 
           {/* --- RIGHT: Actions & Profile --- */}
@@ -467,20 +446,12 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
           >
             <div className="px-4 py-4 flex items-center gap-3">
               <div className="relative flex-1">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <SearchIcon className="h-5 w-5 text-slate-400" />
-                </div>
-                <input
+                <AdminQuickSearch
+                  adminRole={adminRole}
+                  permissions={permissions}
+                  variant="mobile"
                   autoFocus
-                  type="text"
-                  className="
-                    block w-full pl-11 pr-4 py-3
-                    rounded-xl border border-slate-200
-                    bg-slate-50 text-slate-900 placeholder-slate-500
-                    focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10
-                    transition-all duration-200 text-sm font-medium outline-none
-                  "
-                placeholder="Search the operation"
+                  onDone={() => setMobileSearchOpen(false)}
                 />
               </div>
               <button

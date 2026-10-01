@@ -1,23 +1,8 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ClipboardList,
-  Headset,
-  LayoutDashboard,
-  LogOut,
-  Package,
-  Settings,
-  ShoppingBag,
-  Sparkles,
-  Star,
-  Tag,
-  Users,
-  UsersRound,
-  Zap,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, LogOut, ShoppingBag } from "lucide-react";
 import { canAccess } from "../../utils/adminPermissions";
+import { ADMIN_NAV } from "../../constants/adminNav";
 
 export default function AdminSidebar({
   collapsed,
@@ -30,21 +15,7 @@ export default function AdminSidebar({
 }) {
   const navigate = useNavigate();
 
-  const allNavLinks = [
-    { name: "Dashboard", icon: LayoutDashboard, path: "/admin/dashboard", module: null },
-    { name: "Products", icon: Package, path: "/admin/products", module: "products" },
-    { name: "Orders", icon: ClipboardList, path: "/admin/orders", module: "orders" },
-    { name: "Reviews", icon: Star, path: "/admin/reviews", module: "reviews" },
-    { name: "Coupons", icon: Tag, path: "/admin/coupons", module: "coupons" },
-    { name: "Sales", icon: Zap, path: "/admin/sales", module: "sales" },
-    { name: "Membership", icon: Sparkles, path: "/admin/membership", module: "membership" },
-    { name: "Users", icon: Users, path: "/admin/users", module: "users" },
-    { name: "Support", icon: Headset, path: "/admin/support", module: "support" },
-    { name: "Employees", icon: UsersRound, path: "/admin/employees", module: "employees" },
-    { name: "Settings", icon: Settings, path: "/admin/settings", module: "settings" },
-  ];
-
-  const navLinks = allNavLinks.filter((link) =>
+  const navLinks = ADMIN_NAV.filter((link) =>
     canAccess(adminRole, permissions, link.module, "read")
   );
 

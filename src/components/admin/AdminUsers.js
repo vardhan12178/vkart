@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   SearchIcon,
@@ -39,7 +40,11 @@ export default function AdminUsers() {
   const queryClient = useQueryClient();
   const { canWrite } = usePermission("users");
 
-  const [search, setSearch] = useState("");
+  const [searchParams] = useSearchParams();
+  // The admin header quick search links here with ?q=<term>.
+  const urlQuery = searchParams.get("q") || "";
+  const [search, setSearch] = useState(urlQuery);
+  useEffect(() => setSearch(urlQuery), [urlQuery]);
   const [filterTwoFA, setFilterTwoFA] = useState("all"); // all | on | off
   const [filterBlocked, setFilterBlocked] = useState("all"); // all | blocked | active
   const [sortKey, setSortKey] = useState("createdAt");

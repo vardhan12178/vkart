@@ -1,6 +1,6 @@
 // src/pages/admin/AdminOrders.jsx
 import React, { useEffect, useState, useMemo, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import {
   SearchIcon,
@@ -36,7 +36,11 @@ const STAGES = [
 export default function AdminOrders() {
   const navigate = useNavigate();
 
-  const [search, setSearch] = useState("");
+  const [searchParams] = useSearchParams();
+  // The admin header quick search links here with ?q=<term>.
+  const urlQuery = searchParams.get("q") || "";
+  const [search, setSearch] = useState(urlQuery);
+  useEffect(() => setSearch(urlQuery), [urlQuery]);
 
   // Filter & Sort State
   const [filterStage, setFilterStage] = useState("ALL");

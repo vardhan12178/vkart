@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
 import {
@@ -18,7 +19,11 @@ import usePermission from "./usePermission";
 export default function AdminReviews() {
   const queryClient = useQueryClient();
   const { canWrite } = usePermission("reviews");
-  const [search, setSearch] = useState("");
+  const [searchParams] = useSearchParams();
+  // The admin header quick search links here with ?q=<term>.
+  const urlQuery = searchParams.get("q") || "";
+  const [search, setSearch] = useState(urlQuery);
+  useEffect(() => setSearch(urlQuery), [urlQuery]);
 
   const reviewsQuery = useQuery({
     queryKey: qk.admin.reviews,
