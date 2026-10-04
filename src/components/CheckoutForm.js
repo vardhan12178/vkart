@@ -260,10 +260,6 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
   /* --- Step 2: Confirm & proceed to payment --- */
   const proceedToPayment = async () => {
-    if (!rzpReady || !RZP_KEY) {
-      return setStatus("Razorpay not ready. Check REACT_APP_RAZORPAY_KEY_ID.");
-    }
-
     setStatus("");
     setBusy(true);
     setShowReview(false);
@@ -273,6 +269,13 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
     try {
       const walletApplied = useWallet ? Math.min(walletBalance, grandTotal) : 0;
       const payable = Math.max(0, grandTotal - walletApplied);
+      // Razorpay is only needed when part of the order is paid online — a
+      // wallet-covered order must still go through if its script is blocked
+      // (ad-blockers) or not configured.
+      if (payable > 0 && (!rzpReady || !RZP_KEY)) {
+        setBusy(false);
+        return setStatus("Online payment isn't available right now. Please try again in a moment.");
+      }
 
       if (payable === 0) {
         const orderId = await onOrderPlaced?.({
@@ -375,6 +378,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
   const walletAppliedPreview = useWallet ? Math.min(walletBalance, Number(totalAmount) || 0) : 0;
   const payablePreview = Math.max(0, (Number(totalAmount) || 0) - walletAppliedPreview);
+  const onlinePaymentBlocked = payablePreview > 0 && !rzpReady;
 
   if (!isAuthenticated) return <CheckoutPreview />;
 
@@ -786,8 +790,8 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
               {/* Desktop Button */}
               <button
                 type="submit"
-                disabled={busy || !rzpReady}
-                className={`hidden lg:flex w-full py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition-all transform active:scale-[0.98] items-center justify-center gap-2 ${busy || !rzpReady
+                disabled={busy || onlinePaymentBlocked}
+                className={`hidden lg:flex w-full py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition-all transform active:scale-[0.98] items-center justify-center gap-2 ${busy || onlinePaymentBlocked
                   ? "bg-gray-800 text-gray-500 cursor-not-allowed"
                   : "bg-white text-gray-900 hover:bg-gray-100"
                   }`}
@@ -827,7 +831,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
               </div>
               <button
                 type="submit"
-                disabled={busy || !rzpReady}
+                disabled={busy || onlinePaymentBlocked}
                 className="px-6 h-10 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5 disabled:opacity-50 hover:bg-black"
               >
                 {busy ? "Processing..." : "Pay Now"} <ArrowRight size={11} />

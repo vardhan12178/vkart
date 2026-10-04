@@ -253,6 +253,45 @@ describe("CheckoutForm Component", () => {
     });
   });
 
+  test("a wallet-covered order still goes through when the Razorpay script is blocked", async () => {
+    axios.get.mockImplementation((url) => {
+      if (url === "/api/profile/addresses") return Promise.resolve({ data: { addresses: [] } });
+      if (url === "/api/wallet") return Promise.resolve({ data: { balance: 500 } });
+      return Promise.resolve({ data: {} });
+    });
+    delete window.Razorpay; // e.g. an ad-blocker stopped checkout.js loading
+    const onOrderPlaced = vi.fn().mockResolvedValue("order-789");
+
+    renderCheckout({ totalAmount: 200, onOrderPlaced });
+    await waitFor(() => expect(screen.getByText(/balance: ₹500/i)).toBeInTheDocument());
+    fireEvent.click(screen.getByLabelText(/use wallet balance/i));
+    fillValidForm();
+
+    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    submitButtons.forEach((b) => expect(b).not.toBeDisabled());
+    fireEvent.click(submitButtons[submitButtons.length - 1]);
+    fireEvent.click(await screen.findByRole("button", { name: /confirm & pay/i }));
+
+    await waitFor(() => {
+      expect(onOrderPlaced).toHaveBeenCalledWith(expect.objectContaining({ method: "WALLET", walletUsed: 200 }));
+    });
+  });
+
+  test("without the Razorpay script, an order that needs online payment can't be submitted", async () => {
+    axios.get.mockImplementation((url) => {
+      if (url === "/api/profile/addresses") return Promise.resolve({ data: { addresses: [] } });
+      if (url === "/api/wallet") return Promise.resolve({ data: { balance: 0 } });
+      return Promise.resolve({ data: {} });
+    });
+    delete window.Razorpay;
+
+    renderCheckout({ totalAmount: 200 });
+    await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
+    fillValidForm();
+
+    screen.getAllByRole("button", { name: /pay now/i }).forEach((b) => expect(b).toBeDisabled());
+  });
+
   test("creates a Razorpay order from the cart when wallet is unused", async () => {
     let capturedOptions = null;
     window.Razorpay = vi.fn(function (options) {

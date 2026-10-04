@@ -43,7 +43,8 @@
     "test": "vitest run",
     "dev": "vite",
     "preview": "vite preview",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
   },
   "browserslist": {
     "production": [
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/vite": "^4.3.3",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.3",

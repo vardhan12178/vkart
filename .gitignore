@@ -52,3 +52,8 @@ coverage/
 
 # Local agent/tool settings
 .claude/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/

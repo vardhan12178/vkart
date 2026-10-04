@@ -19,3 +19,83 @@ jobs:
 
       - run: npm ci
       - run: npm test
+
+  e2e:
+    # Full-stack browser tests: this storefront (vite preview) against the
+    # backend API, a MongoDB replica set (transactions) and Redis.
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CI: 'true'
+      E2E_BACKEND_DIR: ${{ github.workspace }}/../backend
+      E2E_MONGO_URI: mongodb://localhost:27017/vkart_e2e?replicaSet=rs0&directConnection=true
+      E2E_REDIS_URL: redis://localhost:6379
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Start MongoDB (single-node replica set) and Redis
+        run: |
+          docker run -d --name mongo -p 27017:27017 mongo:7.0 --replSet rs0 --bind_ip_all
+          docker run -d --name redis -p 6379:6379 redis:7-alpine
+          for i in $(seq 1 30); do
+            docker exec mongo mongosh --quiet --eval 'db.adminCommand("ping").ok' >/dev/null 2>&1 && break
+            sleep 1
+          done
+          docker exec mongo mongosh --quiet --eval 'rs.initiate({ _id: "rs0", members: [{ _id: 0, host: "localhost:27017" }] })'
+          for i in $(seq 1 30); do
+            [ "$(docker exec mongo mongosh --quiet --eval 'rs.status().myState')" = "1" ] && break
+            sleep 1
+          done
+
+      - name: Check out the backend (same branch name if it exists, else main)
+        env:
+          REF: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git clone --depth 1 --branch "$REF" https://github.com/vardhan12178/backend.git "$E2E_BACKEND_DIR" \
+            || git clone --depth 1 https://github.com/vardhan12178/backend.git "$E2E_BACKEND_DIR"
+          git -C "$E2E_BACKEND_DIR" log -1 --format='backend @ %h %s'
+
+      - name: Install
+        run: |
+          npm ci
+          npm ci --prefix "$E2E_BACKEND_DIR"
+          npx playwright install --with-deps chromium
+
+      - name: Start the backend
+        working-directory: ${{ env.E2E_BACKEND_DIR }}
+        run: |
+          # Throwaway values for an isolated test stack; nothing here is a real credential.
+          export NODE_ENV=development PORT=5000 MONGO_URI="$E2E_MONGO_URI" REDIS_URL="$E2E_REDIS_URL" \
+            APP_URL=http://localhost:3000 APP_ORIGIN=http://localhost:3000 API_RATE_LIMIT_PER_MIN=5000 \
+            JWT_SECRET="$(openssl rand -hex 32)" AES_KEY="$(openssl rand -hex 16)" \
+            RAZORPAY_KEY_ID=rzp_test_e2e RAZORPAY_KEY_SECRET=e2e RAZORPAY_WEBHOOK_SECRET=e2e GEMINI_API_KEY=e2e
+          nohup node server.js > "$RUNNER_TEMP/backend.log" 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://localhost:5000/health >/dev/null && exit 0; sleep 1; done
+          cat "$RUNNER_TEMP/backend.log"; exit 1
+
+      - name: Build and serve the storefront
+        run: |
+          npm run build
+          nohup npx vite preview --port 3000 --strictPort > "$RUNNER_TEMP/preview.log" 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/ >/dev/null && exit 0; sleep 1; done
+          cat "$RUNNER_TEMP/preview.log"; exit 1
+
+      - run: npm run test:e2e
+
+      - name: Server logs
+        if: failure()
+        run: tail -n 200 "$RUNNER_TEMP/backend.log" "$RUNNER_TEMP/preview.log"
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
