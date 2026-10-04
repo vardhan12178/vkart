@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter, Routes, Route, Outlet } from "react-router-dom";
@@ -6,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AdminProfile from "../admin/AdminProfile";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 function TestLayout({ context }) {
   return <Outlet context={context} />;
@@ -23,12 +24,12 @@ describe("AdminProfile Component", () => {
   let refreshProfile;
 
   beforeAll(() => {
-    global.URL.createObjectURL = jest.fn(() => "blob:mock-preview-url");
+    global.URL.createObjectURL = vi.fn(() => "blob:mock-preview-url");
   });
 
   beforeEach(() => {
     axios.put.mockReset();
-    refreshProfile = jest.fn();
+    refreshProfile = vi.fn();
     queryClient = new QueryClient({
       defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
     });

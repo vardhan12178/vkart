@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -5,7 +6,7 @@ import "@testing-library/jest-dom";
 import Sidebar from "../Sidebar";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 const CATEGORIES = [
   { slug: "electronics", label: "Electronics" },
@@ -26,9 +27,9 @@ describe("Sidebar Component", () => {
     const defaultProps = {
       categoryFilter: "",
       ratingFilter: 0,
-      onCategoryChange: jest.fn(),
-      onSearch: jest.fn(),
-      onRatingChange: jest.fn(),
+      onCategoryChange: vi.fn(),
+      onSearch: vi.fn(),
+      onRatingChange: vi.fn(),
     };
     const merged = { ...defaultProps, ...props };
     return {

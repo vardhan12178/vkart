@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
@@ -8,7 +9,7 @@ import Compare from "../Compare";
 import axios from "../axiosInstance";
 import cartReducer from "../../redux/cartSlice";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 const PRODUCT_A = { _id: "p1", title: "Widget A", thumbnail: "a.png", price: 500 };
 const PRODUCT_B = { _id: "p2", title: "Widget B", thumbnail: "b.png", price: 700 };

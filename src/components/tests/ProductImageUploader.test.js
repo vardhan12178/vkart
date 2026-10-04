@@ -1,29 +1,30 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import ProductImageUploader from "../ProductImageUploader";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-jest.mock("browser-image-compression", () => {
-  const fn = jest.fn().mockResolvedValue(new Blob(["fake-compressed"], { type: "image/webp" }));
-  fn.getDataUrlFromFile = jest.fn().mockResolvedValue("data:image/webp;base64,ZmFrZQ==");
-  return fn;
+vi.mock("browser-image-compression", () => {
+  const fn = vi.fn().mockResolvedValue(new Blob(["fake-compressed"], { type: "image/webp" }));
+  fn.getDataUrlFromFile = vi.fn().mockResolvedValue("data:image/webp;base64,ZmFrZQ==");
+  return { default: fn };
 });
 
 describe("ProductImageUploader Component", () => {
   let alertSpy;
 
   beforeAll(() => {
-    global.fetch = jest.fn().mockResolvedValue({
+    global.fetch = vi.fn().mockResolvedValue({
       blob: () => Promise.resolve(new Blob(["fake"], { type: "image/webp" })),
     });
   });
 
   beforeEach(() => {
     axios.post.mockReset();
-    alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
+    alertSpy = vi.spyOn(window, "alert").mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -33,13 +34,13 @@ describe("ProductImageUploader Component", () => {
   const getFileInput = (container) => container.querySelector('input[type="file"]');
 
   test("renders the empty dropzone", () => {
-    render(<ProductImageUploader label="Thumbnail" onUpload={jest.fn()} />);
+    render(<ProductImageUploader label="Thumbnail" onUpload={vi.fn()} />);
     expect(screen.getByText("Thumbnail")).toBeInTheDocument();
     expect(screen.getByText(/click to upload/i)).toBeInTheDocument();
   });
 
   test("rejects a non-image file type", async () => {
-    const onUpload = jest.fn();
+    const onUpload = vi.fn();
     const { container } = render(<ProductImageUploader label="Thumbnail" onUpload={onUpload} />);
     const textFile = new File(["hello"], "notes.txt", { type: "text/plain" });
 
@@ -54,7 +55,7 @@ describe("ProductImageUploader Component", () => {
 
   test("uploads a single image and reports the resulting URL as a string", async () => {
     axios.post.mockResolvedValueOnce({ data: { url: "https://cdn.example.com/thumb.webp" } });
-    const onUpload = jest.fn();
+    const onUpload = vi.fn();
     const { container } = render(<ProductImageUploader mode="single" label="Thumbnail" onUpload={onUpload} />);
     const imgFile = new File(["img"], "photo.png", { type: "image/png" });
 
@@ -71,7 +72,7 @@ describe("ProductImageUploader Component", () => {
 
   test("uploads a multiple-mode image and reports an array", async () => {
     axios.post.mockResolvedValueOnce({ data: { url: "https://cdn.example.com/gallery1.webp" } });
-    const onUpload = jest.fn();
+    const onUpload = vi.fn();
     const { container } = render(
       <ProductImageUploader mode="multiple" limit={3} label="Gallery" onUpload={onUpload} />
     );
@@ -87,7 +88,7 @@ describe("ProductImageUploader Component", () => {
 
   test("removes an uploaded image", async () => {
     axios.post.mockResolvedValueOnce({ data: { url: "https://cdn.example.com/thumb.webp" } });
-    const onUpload = jest.fn();
+    const onUpload = vi.fn();
     const { container } = render(<ProductImageUploader mode="single" label="Thumbnail" onUpload={onUpload} />);
     const imgFile = new File(["img"], "photo.png", { type: "image/png" });
     fireEvent.change(getFileInput(container), { target: { files: [imgFile] } });
@@ -101,7 +102,7 @@ describe("ProductImageUploader Component", () => {
 
   test("shows an alert when the upload request fails", async () => {
     axios.post.mockRejectedValueOnce(new Error("network down"));
-    const { container } = render(<ProductImageUploader mode="single" label="Thumbnail" onUpload={jest.fn()} />);
+    const { container } = render(<ProductImageUploader mode="single" label="Thumbnail" onUpload={vi.fn()} />);
     const imgFile = new File(["img"], "photo.png", { type: "image/png" });
 
     fireEvent.change(getFileInput(container), { target: { files: [imgFile] } });

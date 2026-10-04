@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -12,22 +13,21 @@ import wishlistReducer from "../../redux/wishlistSlice";
 import cartReducer from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
-jest.mock("../Sidebar", () => () => <div data-testid="sidebar-mock" />);
-jest.mock("../CustomDropdown", () => () => <div data-testid="dropdown-mock" />);
-jest.mock("../product/ProductQuickView", () => (props) =>
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
+vi.mock("../Sidebar", () => ({ default: () => <div data-testid="sidebar-mock" /> }));
+vi.mock("../CustomDropdown", () => ({ default: () => <div data-testid="dropdown-mock" /> }));
+vi.mock("../product/ProductQuickView", () => ({ default: (props) =>
   props.product ? (
     <div data-testid="quick-view-mock">
       Quick view: {props.product.title}
       <button onClick={props.onClose}>Close Quick View</button>
     </div>
-  ) : null
-);
+  ) : null }));
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 

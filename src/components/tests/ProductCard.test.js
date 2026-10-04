@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -12,21 +13,20 @@ import cartReducer from "../../redux/cartSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
-jest.mock("react-slick", () => (props) => <div data-testid="slider-mock">{props.children}</div>);
-jest.mock("../ReviewModal", () => (props) =>
-  props.isOpen ? <div data-testid="review-modal-mock">Review Modal Open</div> : null
-);
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
+vi.mock("react-slick", () => ({ default: (props) => <div data-testid="slider-mock">{props.children}</div> }));
+vi.mock("../ReviewModal", () => ({ default: (props) =>
+  props.isOpen ? <div data-testid="review-modal-mock">Review Modal Open</div> : null }));
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 
 beforeAll(() => {
-  Object.defineProperty(window, "scrollTo", { writable: true, value: jest.fn() });
+  Object.defineProperty(window, "scrollTo", { writable: true, value: vi.fn() });
   global.IntersectionObserver = class {
     observe() {}
     disconnect() {}

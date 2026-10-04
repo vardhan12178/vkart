@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,16 +7,16 @@ import "@testing-library/jest-dom";
 import AdminProducts from "../admin/AdminProducts";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
-jest.mock("../ProductImageUploader", () => () => <div data-testid="image-uploader-mock" />);
+vi.mock("../axiosInstance");
+vi.mock("../ProductImageUploader", () => ({ default: () => <div data-testid="image-uploader-mock" /> }));
 
 function TestLayout({ adminRole, permissions }) {
   return <Outlet context={{ adminRole, permissions }} />;
 }
 
 const PRODUCTS = [
-  { _id: "p1", title: "Wireless Mouse", category: "Electronics", brand: "Acme", price: 999, stock: 20, isActive: true, createdAt: "2024-01-01T00:00:00.000Z" },
-  { _id: "p2", title: "Draft Keyboard", category: "Electronics", brand: "Acme", price: 1999, stock: 0, isActive: false, createdAt: "2024-02-01T00:00:00.000Z" },
+  { _id: "p1", title: "Wireless Mouse", description: "Quiet 2.4GHz mouse", category: "Electronics", brand: "Acme", price: 999, stock: 20, isActive: true, createdAt: "2024-01-01T00:00:00.000Z" },
+  { _id: "p2", title: "Draft Keyboard", description: "Mechanical keyboard", category: "Electronics", brand: "Acme", price: 1999, stock: 0, isActive: false, createdAt: "2024-02-01T00:00:00.000Z" },
 ];
 
 describe("AdminProducts Component", () => {
@@ -105,6 +106,10 @@ describe("AdminProducts Component", () => {
 
     fireEvent.change(screen.getByPlaceholderText(/wireless noise cancelling/i), {
       target: { value: "New Gadget" },
+    });
+    // Description is required: the browser (and jsdom) won't submit without it.
+    fireEvent.change(screen.getByPlaceholderText(/describe the product/i), {
+      target: { value: "Over-ear, 30h battery" },
     });
     fireEvent.change(screen.getByPlaceholderText("0.00"), { target: { value: "499" } });
     // "0" placeholder is shared by Discount (%) and Stock Qty; Stock Qty is the second.

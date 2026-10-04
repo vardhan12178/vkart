@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -10,7 +11,7 @@ import cartReducer from "../../redux/cartSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
 
 const ITEM_A = { _id: "p1", title: "Saved Widget", price: 500, discountPercentage: 20, category: "gadgets", thumbnail: "a.png" };
 const ITEM_B = { _id: "p2", title: "Saved Gadget", price: 300, category: "accessories", thumbnail: "b.png" };
@@ -55,7 +56,7 @@ describe("Wishlist Component", () => {
 
   test("moves an item to the cart and removes it from the wishlist", () => {
     const { store } = renderWishlist([ITEM_A]);
-    fireEvent.click(screen.getByRole("button", { name: /move to bag/i }));
+    fireEvent.click(screen.getByRole("button", { name: /move saved widget to bag/i }));
 
     expect(store.getState().cart).toHaveLength(1);
     expect(store.getState().wishlist).toHaveLength(0);

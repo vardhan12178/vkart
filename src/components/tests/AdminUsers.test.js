@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,7 +7,7 @@ import "@testing-library/jest-dom";
 import AdminUsers from "../admin/AdminUsers";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 function TestLayout({ adminRole, permissions }) {
   return <Outlet context={{ adminRole, permissions }} />;

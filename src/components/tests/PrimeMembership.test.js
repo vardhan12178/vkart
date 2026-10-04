@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -8,8 +9,8 @@ import PrimeMembership from "../PrimeMembership";
 import axios from "../axiosInstance";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
 
 const PLAN = {
   _id: "plan1",
@@ -28,9 +29,9 @@ describe("PrimeMembership Component", () => {
     axios.get.mockReset();
     axios.post.mockReset();
     showToast.mockClear();
-    window.Razorpay = jest.fn(function () {
-      this.on = jest.fn();
-      this.open = jest.fn();
+    window.Razorpay = vi.fn(function () {
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     queryClient = new QueryClient({
       defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
@@ -108,10 +109,10 @@ describe("PrimeMembership Component", () => {
 
   test("purchases a plan, opens Razorpay with the selected method, and verifies on success", async () => {
     let capturedOptions = null;
-    window.Razorpay = jest.fn(function (options) {
+    window.Razorpay = vi.fn(function (options) {
       capturedOptions = options;
-      this.on = jest.fn();
-      this.open = jest.fn();
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     axios.post.mockImplementation((url) => {
       if (url === "/api/membership/purchase") {
@@ -159,10 +160,10 @@ describe("PrimeMembership Component", () => {
 
   test("shows a toast when verification fails after payment", async () => {
     let capturedOptions = null;
-    window.Razorpay = jest.fn(function (options) {
+    window.Razorpay = vi.fn(function (options) {
       capturedOptions = options;
-      this.on = jest.fn();
-      this.open = jest.fn();
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     axios.post.mockImplementation((url) => {
       if (url === "/api/membership/purchase") {

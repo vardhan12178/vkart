@@ -1,10 +1,11 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import OrderCard from "../OrderCard";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 const baseOrder = {
   _id: "abcdef1234567890",
@@ -25,9 +26,9 @@ describe("OrderCard Component", () => {
 
   beforeEach(() => {
     axios.post.mockReset();
-    alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
-    openSpy = jest.spyOn(window, "open").mockImplementation(() => {});
-    reloadSpy = jest.fn();
+    alertSpy = vi.spyOn(window, "alert").mockImplementation(() => {});
+    openSpy = vi.spyOn(window, "open").mockImplementation(() => {});
+    reloadSpy = vi.fn();
     Object.defineProperty(window, "location", {
       configurable: true,
       value: { ...window.location, reload: reloadSpy },

@@ -1,11 +1,12 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import BlogIndex from "../blog/BlogIndex";
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const strip = (props) => {
     const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...rest } = props;
     return rest;

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -5,8 +6,8 @@ import ReviewModal from "../ReviewModal";
 import axios from "../axiosInstance";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
 
 describe("ReviewModal Component", () => {
   beforeEach(() => {
@@ -15,18 +16,18 @@ describe("ReviewModal Component", () => {
   });
 
   test("renders nothing when closed", () => {
-    const { container } = render(<ReviewModal isOpen={false} onClose={jest.fn()} productId="p1" />);
+    const { container } = render(<ReviewModal isOpen={false} onClose={vi.fn()} productId="p1" />);
     expect(container).toBeEmptyDOMElement();
   });
 
   test("renders the form when open", () => {
-    render(<ReviewModal isOpen onClose={jest.fn()} productId="p1" />);
+    render(<ReviewModal isOpen onClose={vi.fn()} productId="p1" />);
     expect(screen.getByText("Write a Review")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/what did you like or dislike/i)).toBeInTheDocument();
   });
 
   test("disables the submit button until a rating and a long-enough comment are provided", () => {
-    render(<ReviewModal isOpen onClose={jest.fn()} productId="p1" />);
+    render(<ReviewModal isOpen onClose={vi.fn()} productId="p1" />);
     const submitBtn = screen.getByRole("button", { name: /submit review/i });
     expect(submitBtn).toBeDisabled();
 
@@ -45,15 +46,15 @@ describe("ReviewModal Component", () => {
   });
 
   test("shows the selected rating label", () => {
-    render(<ReviewModal isOpen onClose={jest.fn()} productId="p1" />);
+    render(<ReviewModal isOpen onClose={vi.fn()} productId="p1" />);
     fireEvent.click(screen.getByTitle("5 Stars"));
     expect(screen.getByText("Excellent (5/5)")).toBeInTheDocument();
   });
 
   test("submits a review and notifies the parent", async () => {
     axios.post.mockResolvedValueOnce({ data: { message: "Thanks!", review: { rating: 5 } } });
-    const onClose = jest.fn();
-    const onReviewAdded = jest.fn();
+    const onClose = vi.fn();
+    const onReviewAdded = vi.fn();
     render(<ReviewModal isOpen onClose={onClose} productId="p1" onReviewAdded={onReviewAdded} />);
 
     fireEvent.click(screen.getByTitle("5 Stars"));
@@ -74,7 +75,7 @@ describe("ReviewModal Component", () => {
   });
 
   test("shows a toast and does not submit when no rating is selected", () => {
-    render(<ReviewModal isOpen onClose={jest.fn()} productId="p1" />);
+    render(<ReviewModal isOpen onClose={vi.fn()} productId="p1" />);
     fireEvent.change(screen.getByPlaceholderText(/what did you like or dislike/i), {
       target: { value: "This is a long enough comment" },
     });
@@ -88,7 +89,7 @@ describe("ReviewModal Component", () => {
 
   test("shows the server error message when submission fails", async () => {
     axios.post.mockRejectedValueOnce({ response: { data: { error: "Duplicate review" } } });
-    render(<ReviewModal isOpen onClose={jest.fn()} productId="p1" />);
+    render(<ReviewModal isOpen onClose={vi.fn()} productId="p1" />);
 
     fireEvent.click(screen.getByTitle("3 Stars"));
     fireEvent.change(screen.getByPlaceholderText(/what did you like or dislike/i), {

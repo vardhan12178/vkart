@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -10,17 +11,17 @@ const OPTIONS = [
 
 describe("CustomDropdown Component", () => {
   test("shows the label when no option is selected", () => {
-    render(<CustomDropdown options={OPTIONS} value="" onChange={jest.fn()} label="Sort By" />);
+    render(<CustomDropdown options={OPTIONS} value="" onChange={vi.fn()} label="Sort By" />);
     expect(screen.getByText("Sort By")).toBeInTheDocument();
   });
 
   test("shows the selected option's label", () => {
-    render(<CustomDropdown options={OPTIONS} value="price-asc" onChange={jest.fn()} label="Sort By" />);
+    render(<CustomDropdown options={OPTIONS} value="price-asc" onChange={vi.fn()} label="Sort By" />);
     expect(screen.getByText("Price: Low to High")).toBeInTheDocument();
   });
 
   test("opens the menu and selects an option", () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<CustomDropdown options={OPTIONS} value="" onChange={onChange} label="Sort By" />);
 
     fireEvent.click(screen.getByRole("button", { name: /sort by/i }));
@@ -34,7 +35,7 @@ describe("CustomDropdown Component", () => {
   test("closes the menu when clicking outside", () => {
     render(
       <div>
-        <CustomDropdown options={OPTIONS} value="" onChange={jest.fn()} label="Sort By" />
+        <CustomDropdown options={OPTIONS} value="" onChange={vi.fn()} label="Sort By" />
         <button>Outside</button>
       </div>
     );
@@ -46,7 +47,7 @@ describe("CustomDropdown Component", () => {
   });
 
   test("closes the menu when Escape is pressed", () => {
-    render(<CustomDropdown options={OPTIONS} value="" onChange={jest.fn()} label="Sort By" />);
+    render(<CustomDropdown options={OPTIONS} value="" onChange={vi.fn()} label="Sort By" />);
     fireEvent.click(screen.getByRole("button", { name: /sort by/i }));
     expect(screen.getByRole("listbox")).toBeInTheDocument();
 

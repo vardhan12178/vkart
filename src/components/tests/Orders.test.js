@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -8,29 +9,29 @@ import "@testing-library/jest-dom";
 import Orders from "../Orders";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockNavigate = jest.fn();
+const mockNavigate = vi.fn();
 let mockRouteParams = {};
 let mockSearchParams = new URLSearchParams();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
   useParams: () => mockRouteParams,
   useSearchParams: () => [mockSearchParams],
 }));
 
-jest.mock("../OrderCard", () => (props) => (
+vi.mock("../OrderCard", () => ({ default: (props) => (
   <div data-testid={`order-${props.order._id}`}>
     {props.order._id} - defaultOpen:{String(props.defaultOpen)}
   </div>
-));
+) }));
 
 describe("Orders Component", () => {
   let queryClient;
 
   beforeAll(() => {
-    Element.prototype.scrollIntoView = jest.fn();
+    Element.prototype.scrollIntoView = vi.fn();
   });
 
   beforeEach(() => {

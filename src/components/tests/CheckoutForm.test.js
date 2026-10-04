@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, within, act } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -8,11 +9,11 @@ import "@testing-library/jest-dom";
 import CheckoutForm from "../CheckoutForm";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 
@@ -49,9 +50,9 @@ describe("CheckoutForm Component", () => {
     // Present by default so the Pay Now buttons (disabled while !rzpReady)
     // are interactive; individual tests override this when they need to
     // capture the options passed to `new Razorpay(...)`.
-    window.Razorpay = jest.fn(function () {
-      this.on = jest.fn();
-      this.open = jest.fn();
+    window.Razorpay = vi.fn(function () {
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
 
     queryClient = new QueryClient({
@@ -66,7 +67,7 @@ describe("CheckoutForm Component", () => {
   const renderCheckout = ({
     isAuthenticated = true,
     cart = VALID_CART,
-    onOrderPlaced = jest.fn(),
+    onOrderPlaced = vi.fn(),
     totalAmount = 200,
     getCheckoutDraft,
   } = {}) => {
@@ -227,8 +228,8 @@ describe("CheckoutForm Component", () => {
       if (url === "/api/wallet") return Promise.resolve({ data: { balance: 500 } });
       return Promise.resolve({ data: {} });
     });
-    window.Razorpay = jest.fn();
-    const onOrderPlaced = jest.fn().mockResolvedValue("order-123");
+    window.Razorpay = vi.fn();
+    const onOrderPlaced = vi.fn().mockResolvedValue("order-123");
 
     renderCheckout({ totalAmount: 200, onOrderPlaced });
     await waitFor(() => expect(screen.getByText(/balance: ₹500/i)).toBeInTheDocument());
@@ -254,10 +255,10 @@ describe("CheckoutForm Component", () => {
 
   test("creates a Razorpay order for the payable balance when wallet is unused", async () => {
     let capturedOptions = null;
-    window.Razorpay = jest.fn(function (options) {
+    window.Razorpay = vi.fn(function (options) {
       capturedOptions = options;
-      this.on = jest.fn();
-      this.open = jest.fn();
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     axios.post.mockImplementation((url) => {
       if (url === "/api/razorpay/create-order") {
@@ -289,9 +290,9 @@ describe("CheckoutForm Component", () => {
   });
 
   test("sends the cart (not an amount) so the server prices the Razorpay order", async () => {
-    window.Razorpay = jest.fn(function () {
-      this.on = jest.fn();
-      this.open = jest.fn();
+    window.Razorpay = vi.fn(function () {
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     axios.post.mockImplementation((url) => {
       if (url === "/api/razorpay/create-order") {
@@ -332,10 +333,10 @@ describe("CheckoutForm Component", () => {
 
   test("completes the order after the Razorpay handler verifies payment", async () => {
     let capturedOptions = null;
-    window.Razorpay = jest.fn(function (options) {
+    window.Razorpay = vi.fn(function (options) {
       capturedOptions = options;
-      this.on = jest.fn();
-      this.open = jest.fn();
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     axios.post.mockImplementation((url) => {
       if (url === "/api/razorpay/create-order") {
@@ -348,7 +349,7 @@ describe("CheckoutForm Component", () => {
       }
       return Promise.resolve({ data: {} });
     });
-    const onOrderPlaced = jest.fn().mockResolvedValue("order-456");
+    const onOrderPlaced = vi.fn().mockResolvedValue("order-456");
 
     renderCheckout({ totalAmount: 200, onOrderPlaced });
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
@@ -387,10 +388,10 @@ describe("CheckoutForm Component", () => {
 
   test("shows a verification error and does not navigate when payment verification fails", async () => {
     let capturedOptions = null;
-    window.Razorpay = jest.fn(function (options) {
+    window.Razorpay = vi.fn(function (options) {
       capturedOptions = options;
-      this.on = jest.fn();
-      this.open = jest.fn();
+      this.on = vi.fn();
+      this.open = vi.fn();
     });
     axios.post.mockImplementation((url) => {
       if (url === "/api/razorpay/create-order") {
@@ -403,7 +404,7 @@ describe("CheckoutForm Component", () => {
       }
       return Promise.resolve({ data: {} });
     });
-    const onOrderPlaced = jest.fn();
+    const onOrderPlaced = vi.fn();
 
     renderCheckout({ totalAmount: 200, onOrderPlaced });
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
@@ -430,7 +431,7 @@ describe("CheckoutForm Component", () => {
   });
 
   test("shows an error when Razorpay order creation fails server-side", async () => {
-    window.Razorpay = jest.fn();
+    window.Razorpay = vi.fn();
     axios.post.mockImplementation((url) => {
       if (url === "/api/razorpay/create-order") {
         return Promise.resolve({ data: { success: false } });

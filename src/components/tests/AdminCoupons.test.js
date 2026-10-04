@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,7 +7,7 @@ import "@testing-library/jest-dom";
 import AdminCoupons from "../admin/AdminCoupons";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 function TestLayout({ adminRole, permissions }) {
   return <Outlet context={{ adminRole, permissions }} />;
@@ -36,7 +37,7 @@ describe("AdminCoupons Component", () => {
     axios.post.mockReset();
     axios.patch.mockReset();
     axios.delete.mockReset();
-    confirmSpy = jest.spyOn(window, "confirm").mockReturnValue(true);
+    confirmSpy = vi.spyOn(window, "confirm").mockReturnValue(true);
     queryClient = new QueryClient({
       defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
     });

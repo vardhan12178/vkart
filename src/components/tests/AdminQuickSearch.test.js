@@ -1,12 +1,13 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import AdminQuickSearch from "../admin/AdminQuickSearch";
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 
@@ -60,7 +61,7 @@ describe("AdminQuickSearch", () => {
   });
 
   it("selects a result on mouse down and calls onDone", () => {
-    const onDone = jest.fn();
+    const onDone = vi.fn();
     renderSearch({ variant: "mobile", onDone });
     fireEvent.mouseDown(screen.getByRole("option", { name: /go to dashboard/i }));
     expect(mockNavigate).toHaveBeenCalledWith("/admin/dashboard");

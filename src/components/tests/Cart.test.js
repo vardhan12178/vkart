@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -11,10 +12,10 @@ import cartReducer from "../../redux/cartSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
 
-jest.mock("../CheckoutForm", () => (props) => (
+vi.mock("../CheckoutForm", () => ({ default: (props) => (
   <div data-testid="checkout-form-mock">
     <div data-testid="checkout-total">{props.totalAmount}</div>
     <button onClick={() => props.onOrderPlaced({ address: "123 Test St", method: "CARD", walletUsed: 0 })}>
@@ -28,7 +29,7 @@ jest.mock("../CheckoutForm", () => (props) => (
       Simulate Order Placed (swallow error)
     </button>
   </div>
-));
+) }));
 
 const PRODUCT = {
   productId: "p1",

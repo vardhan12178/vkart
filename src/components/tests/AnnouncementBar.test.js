@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -5,10 +6,10 @@ import "@testing-library/jest-dom";
 import AnnouncementBar from "../AnnouncementBar";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const strip = (props) => {
     const { initial, animate, exit, variants, transition, mode, custom, ...rest } = props;
     return rest;

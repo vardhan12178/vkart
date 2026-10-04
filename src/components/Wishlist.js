@@ -181,6 +181,8 @@ export default function Wishlist() {
                           <button
                             type="button"
                             onClick={() => moveToCart(item)}
+                            // Visible text shrinks to just "bag" on narrow screens; keep a full name.
+                            aria-label={`Move ${item.title} to bag`}
                             className="flex h-8 sm:min-h-11 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#1d1c19] px-2 sm:px-4 text-[10px] sm:text-xs font-bold text-white shadow-sm transition hover:bg-black active:scale-95"
                           >
                             <FaCartPlus size={11} /> <span className="hidden min-[380px]:inline">Move to </span>bag

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
@@ -5,24 +6,23 @@ import "@testing-library/jest-dom";
 import OrderSuccess from "../OrderSuccess";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-jest.mock("react-confetti", () => (props) => (
+vi.mock("react-confetti", () => ({ default: (props) => (
   <div data-testid="confetti" data-pieces={props.numberOfPieces} />
-));
+) }));
 
-jest.mock("react-use", () => ({
+vi.mock("react-use", () => ({
   useWindowSize: () => ({ width: 1024, height: 768 }),
 }));
 
-jest.mock("../support/SupportChatWidget", () => (props) =>
+vi.mock("../support/SupportChatWidget", () => ({ default: (props) =>
   props.open ? (
     <div data-testid="support-widget">
       Support open
       <button onClick={props.onClose}>Close support</button>
     </div>
-  ) : null
-);
+  ) : null }));
 
 const ORDER = {
   _id: "order-abc123456",

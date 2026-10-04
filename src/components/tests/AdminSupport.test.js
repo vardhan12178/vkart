@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,11 +7,11 @@ import "@testing-library/jest-dom";
 import AdminSupport from "../admin/AdminSupport";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockSocket = { on: jest.fn(), emit: jest.fn(), disconnect: jest.fn() };
-jest.mock("socket.io-client", () => ({
-  io: jest.fn(() => mockSocket),
+const mockSocket = { on: vi.fn(), emit: vi.fn(), disconnect: vi.fn() };
+vi.mock("socket.io-client", () => ({
+  io: vi.fn(() => mockSocket),
 }));
 
 function TestLayout({ adminRole, permissions }) {
@@ -36,7 +37,7 @@ describe("AdminSupport Component", () => {
   beforeAll(() => {
     // jsdom doesn't implement Element.scrollTo; the component calls it to
     // auto-scroll the message thread on new messages.
-    Element.prototype.scrollTo = jest.fn();
+    Element.prototype.scrollTo = vi.fn();
   });
 
   beforeEach(() => {

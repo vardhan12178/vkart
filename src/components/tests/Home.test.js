@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -10,14 +11,13 @@ import axios from "../axiosInstance";
 import cartReducer from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
-jest.mock("../product/ProductQuickView", () => (props) =>
-  props.product ? <div data-testid="quick-view-mock">Quick view: {props.product.title}</div> : null
-);
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
+vi.mock("../product/ProductQuickView", () => ({ default: (props) =>
+  props.product ? <div data-testid="quick-view-mock">Quick view: {props.product.title}</div> : null }));
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const stripMotionProps = (props) => {
     const { initial, animate, exit, variants, transition, whileHover, whileTap, whileInView, viewport, custom, ...validProps } = props;
     return validProps;

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -6,16 +7,16 @@ import "@testing-library/jest-dom";
 import AdminLogin from "../admin/AdminLogin";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const stripMotionProps = (props) => {
     const {
       initial,
@@ -44,7 +45,7 @@ jest.mock("framer-motion", () => {
 });
 
 describe("AdminLogin Component", () => {
-  const renderAdminLogin = (setIsAdmin = jest.fn()) =>
+  const renderAdminLogin = (setIsAdmin = vi.fn()) =>
     render(
       <HelmetProvider>
         <BrowserRouter>
@@ -77,7 +78,7 @@ describe("AdminLogin Component", () => {
   });
 
   test("logs in and navigates to the dashboard on a successful response with a token", async () => {
-    const setIsAdmin = jest.fn();
+    const setIsAdmin = vi.fn();
     axios.post.mockResolvedValueOnce({ data: { token: "admin-jwt" } });
 
     renderAdminLogin(setIsAdmin);
@@ -101,7 +102,7 @@ describe("AdminLogin Component", () => {
   });
 
   test("shows an error and does not navigate when the response has no token", async () => {
-    const setIsAdmin = jest.fn();
+    const setIsAdmin = vi.fn();
     axios.post.mockResolvedValueOnce({ data: {} });
 
     renderAdminLogin(setIsAdmin);

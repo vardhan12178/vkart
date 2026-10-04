@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -21,14 +22,14 @@ describe("ProductQuickView Component", () => {
   const renderQuickView = (props = {}) =>
     render(
       <BrowserRouter>
-        <ProductQuickView product={PRODUCT} onClose={jest.fn()} onAdd={jest.fn()} {...props} />
+        <ProductQuickView product={PRODUCT} onClose={vi.fn()} onAdd={vi.fn()} {...props} />
       </BrowserRouter>
     );
 
   test("renders nothing when there is no product", () => {
     const { container } = render(
       <BrowserRouter>
-        <ProductQuickView product={null} onClose={jest.fn()} onAdd={jest.fn()} />
+        <ProductQuickView product={null} onClose={vi.fn()} onAdd={vi.fn()} />
       </BrowserRouter>
     );
     expect(container).toBeEmptyDOMElement();
@@ -50,21 +51,21 @@ describe("ProductQuickView Component", () => {
   });
 
   test("closes when the Escape key is pressed", () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     renderQuickView({ onClose });
     fireEvent.keyDown(document, { key: "Escape" });
     expect(onClose).toHaveBeenCalled();
   });
 
   test("closes when the backdrop is clicked", () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     renderQuickView({ onClose });
     fireEvent.click(screen.getByLabelText(/close product preview/i, { selector: 'button[tabindex="-1"]' }));
     expect(onClose).toHaveBeenCalled();
   });
 
   test("calls onAdd with the product when in stock", () => {
-    const onAdd = jest.fn();
+    const onAdd = vi.fn();
     renderQuickView({ onAdd });
     fireEvent.click(screen.getByRole("button", { name: /add to bag/i }));
     expect(onAdd).toHaveBeenCalledWith(PRODUCT);

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
@@ -8,7 +9,7 @@ import axios from "../axiosInstance";
 import cartReducer from "../../redux/cartSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 describe("ClientSync Component", () => {
   beforeEach(() => {

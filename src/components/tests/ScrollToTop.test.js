@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render } from "@testing-library/react";
 import { MemoryRouter, Routes, Route, Link } from "react-router-dom";
@@ -8,7 +9,7 @@ import ScrollToTop from "../ScrollToTop";
 // the top on every route change — one behavioral test covers it fully.
 describe("ScrollToTop Component", () => {
   test("scrolls to the top whenever the route changes", () => {
-    const scrollToSpy = jest.fn();
+    const scrollToSpy = vi.fn();
     window.scrollTo = scrollToSpy;
 
     render(

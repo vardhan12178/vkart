@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -6,12 +7,12 @@ import axios from '../axiosInstance';
 import { HelmetProvider } from 'react-helmet-async';
 import '@testing-library/jest-dom';
 
-jest.mock('../axiosInstance');
+vi.mock('../axiosInstance');
 
-const mockNavigate = jest.fn();
+const mockNavigate = vi.fn();
 let mockSearch = '?token=test-token-123';
-jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'),
+vi.mock('react-router-dom', async () => ({
+    ...(await vi.importActual('react-router-dom')),
     useNavigate: () => mockNavigate,
     useLocation: () => ({
         search: mockSearch,
@@ -20,7 +21,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 // Mock framer-motion
-jest.mock('framer-motion', () => {
+vi.mock('framer-motion', () => {
     const filterProps = (props) => {
         const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...validProps } = props;
         return validProps;

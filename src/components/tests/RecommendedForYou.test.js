@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -6,8 +7,8 @@ import "@testing-library/jest-dom";
 import RecommendedForYou from "../RecommendedForYou";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
-jest.mock("react-slick", () => ({ children }) => <div data-testid="slider-mock">{children}</div>);
+vi.mock("../axiosInstance");
+vi.mock("react-slick", () => ({ default: ({ children }) => <div data-testid="slider-mock">{children}</div> }));
 
 const makeProducts = (count, overrides = {}) =>
   Array.from({ length: count }, (_, i) => ({

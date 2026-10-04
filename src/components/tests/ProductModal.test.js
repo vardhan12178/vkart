@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -15,12 +16,12 @@ const PRODUCT = {
 
 describe("ProductModal Component", () => {
   test("renders nothing when there is no product", () => {
-    const { container } = render(<ProductModal product={null} onClose={jest.fn()} />);
+    const { container } = render(<ProductModal product={null} onClose={vi.fn()} />);
     expect(container).toBeEmptyDOMElement();
   });
 
   test("renders product details", () => {
-    render(<ProductModal product={PRODUCT} onClose={jest.fn()} />);
+    render(<ProductModal product={PRODUCT} onClose={vi.fn()} />);
     expect(screen.getByText("Test Product")).toBeInTheDocument();
     expect(screen.getByText("₹999")).toBeInTheDocument();
     expect(screen.getByText("(12 Reviews)")).toBeInTheDocument();
@@ -28,21 +29,21 @@ describe("ProductModal Component", () => {
   });
 
   test("calls onClose when the close button is clicked", () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(<ProductModal product={PRODUCT} onClose={onClose} />);
     fireEvent.click(screen.getAllByRole("button")[0]);
     expect(onClose).toHaveBeenCalled();
   });
 
   test("calls onAddToCart with the product when Add to Cart is clicked", () => {
-    const onAddToCart = jest.fn();
-    render(<ProductModal product={PRODUCT} onClose={jest.fn()} onAddToCart={onAddToCart} />);
+    const onAddToCart = vi.fn();
+    render(<ProductModal product={PRODUCT} onClose={vi.fn()} onAddToCart={onAddToCart} />);
     fireEvent.click(screen.getByRole("button", { name: /add to cart/i }));
     expect(onAddToCart).toHaveBeenCalledWith(PRODUCT);
   });
 
   test("locks page scroll while open and restores it on unmount", () => {
-    const { unmount } = render(<ProductModal product={PRODUCT} onClose={jest.fn()} />);
+    const { unmount } = render(<ProductModal product={PRODUCT} onClose={vi.fn()} />);
     expect(document.body.style.overflow).toBe("hidden");
     unmount();
     expect(document.body.style.overflow).toBe("auto");

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
@@ -5,14 +6,14 @@ import "@testing-library/jest-dom";
 import SupportChatWidget from "../support/SupportChatWidget";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockSocket = { on: jest.fn(), emit: jest.fn(), disconnect: jest.fn() };
-jest.mock("socket.io-client", () => ({ io: jest.fn(() => mockSocket) }));
+const mockSocket = { on: vi.fn(), emit: vi.fn(), disconnect: vi.fn() };
+vi.mock("socket.io-client", () => ({ io: vi.fn(() => mockSocket) }));
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 
@@ -25,27 +26,27 @@ const ORDER = {
 
 describe("SupportChatWidget Component", () => {
   beforeAll(() => {
-    Element.prototype.scrollTo = jest.fn();
+    Element.prototype.scrollTo = vi.fn();
   });
 
   beforeEach(() => {
     axios.get.mockReset();
     axios.post.mockReset();
     mockNavigate.mockClear();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   const renderWidget = (props = {}) =>
     render(
       <MemoryRouter>
-        <SupportChatWidget open onClose={jest.fn()} {...props} />
+        <SupportChatWidget open onClose={vi.fn()} {...props} />
       </MemoryRouter>
     );
 
   test("renders nothing when closed", () => {
     const { container } = render(
       <MemoryRouter>
-        <SupportChatWidget open={false} onClose={jest.fn()} />
+        <SupportChatWidget open={false} onClose={vi.fn()} />
       </MemoryRouter>
     );
     expect(container).toBeEmptyDOMElement();
@@ -59,7 +60,7 @@ describe("SupportChatWidget Component", () => {
   });
 
   test("closes when the backdrop or close button is clicked", () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container } = renderWidget({ onClose });
     fireEvent.click(container.firstChild);
     expect(onClose).toHaveBeenCalledTimes(1);
@@ -93,7 +94,7 @@ describe("SupportChatWidget Component", () => {
 
   test("shows a return CTA for a delivered order under the return intent, and navigates on click", async () => {
     axios.get.mockResolvedValueOnce({ data: { items: [ORDER] } });
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     renderWidget({ onClose });
 
     fireEvent.click(screen.getByText("Return or refund"));
@@ -119,7 +120,7 @@ describe("SupportChatWidget Component", () => {
   });
 
   test("closes without escalating when the follow-up is answered positively", () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     renderWidget({ onClose });
     fireEvent.click(screen.getByText("Something else"));
     fireEvent.click(screen.getByRole("button", { name: /continue/i }));

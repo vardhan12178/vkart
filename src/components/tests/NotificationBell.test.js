@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -8,16 +9,16 @@ import NotificationBell from "../NotificationBell";
 import axios from "../axiosInstance";
 import notificationReducer from "../../redux/notificationSlice";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockNavigate = jest.fn();
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+const mockNavigate = vi.fn();
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
 }));
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const strip = (props) => {
     const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...rest } = props;
     return rest;

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -5,11 +6,11 @@ import "@testing-library/jest-dom";
 import VerifyEmail from "../VerifyEmail";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 let mockSearch = "?token=abc123";
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useLocation: () => ({ search: mockSearch, pathname: "/verify-email" }),
 }));
 

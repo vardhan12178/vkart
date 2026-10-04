@@ -27,6 +27,15 @@ export default defineConfig(({ mode }) => {
       ...envDefines,
       "process.env.NODE_ENV": JSON.stringify(mode),
     },
+    test: {
+      environment: "jsdom",
+      globals: true,
+      setupFiles: ["./src/setupTests.js"],
+      include: ["src/**/*.test.{js,jsx}"],
+      css: false,
+      // Component suites are independent; keep a modest pool so CI stays stable.
+      maxWorkers: 4,
+    },
     server: {
       port: 3000,
       proxy: {

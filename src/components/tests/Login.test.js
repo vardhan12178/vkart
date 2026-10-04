@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -10,17 +11,17 @@ import Login from "../Login";
 import axios from "../axiosInstance";
 import authReducer from "../../redux/authSlice";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
-const mockNavigate = jest.fn();
+const mockNavigate = vi.fn();
 let mockSearch = "";
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual("react-router-dom")),
   useNavigate: () => mockNavigate,
   useLocation: () => ({ search: mockSearch, pathname: "/login" }),
 }));
 
-jest.mock("@react-oauth/google", () => ({
+vi.mock("@react-oauth/google", () => ({
   GoogleLogin: (props) => (
     <button type="button" onClick={() => props?.onSuccess?.({ credential: "mock-token" })}>
       Continue with Google
@@ -28,8 +29,8 @@ jest.mock("@react-oauth/google", () => ({
   ),
 }));
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const stripMotionProps = (props) => {
     const {
       initial,
@@ -64,7 +65,7 @@ describe("Login Component", () => {
   beforeAll(() => {
     Object.defineProperty(window, "scrollTo", {
       writable: true,
-      value: jest.fn(),
+      value: vi.fn(),
     });
   });
 

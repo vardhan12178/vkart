@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
@@ -10,11 +11,11 @@ import uiReducer, { openChat } from "../../redux/uiSlice";
 import cartReducer from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance");
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
+vi.mock("../axiosInstance");
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
 
-jest.mock("framer-motion", () => {
-  const mockReact = require("react");
+vi.mock("framer-motion", async () => {
+  const mockReact = await vi.importActual("react");
   const stripMotionProps = (props) => {
     const { initial, animate, exit, variants, transition, whileHover, whileTap, whileInView, viewport, custom, ...validProps } = props;
     return validProps;
@@ -37,7 +38,7 @@ describe("AIChatAssistant Component", () => {
   beforeAll(() => {
     // jsdom doesn't implement scrollIntoView; the component auto-scrolls
     // the message list on open and after each new message.
-    Element.prototype.scrollIntoView = jest.fn();
+    Element.prototype.scrollIntoView = vi.fn();
   });
 
   beforeEach(() => {

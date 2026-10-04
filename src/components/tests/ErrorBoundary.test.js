@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -14,7 +15,7 @@ describe("ErrorBoundary Component", () => {
   beforeEach(() => {
     // React logs the caught error to console.error (expected); silence it
     // for a clean test run while still asserting it fired.
-    consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {});
+    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
     originalLocation = window.location;
     delete window.location;
     window.location = { ...originalLocation, href: "" };

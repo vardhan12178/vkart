@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
@@ -7,19 +8,19 @@ import NotificationSocket from "../NotificationSocket";
 import notificationReducer from "../../redux/notificationSlice";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
+vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
 
 const mockSocket = {
-  on: jest.fn(),
-  emit: jest.fn(),
-  disconnect: jest.fn(),
+  on: vi.fn(),
+  emit: vi.fn(),
+  disconnect: vi.fn(),
 };
-const mockIo = jest.fn(() => mockSocket);
-jest.mock("socket.io-client", () => ({ io: (...args) => mockIo(...args) }));
+const mockIo = vi.fn(() => mockSocket);
+vi.mock("socket.io-client", () => ({ io: (...args) => mockIo(...args) }));
 
 describe("NotificationSocket Component", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   const renderSocket = ({ isAuthenticated = false, user = null } = {}) => {

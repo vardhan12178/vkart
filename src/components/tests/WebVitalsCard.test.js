@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -5,7 +6,7 @@ import "@testing-library/jest-dom";
 import WebVitalsCard from "../admin/WebVitalsCard";
 import axios from "../axiosInstance";
 
-jest.mock("../axiosInstance");
+vi.mock("../axiosInstance");
 
 const renderCard = () =>
   render(
@@ -45,7 +46,7 @@ describe("WebVitalsCard", () => {
   });
 
   it("shows an error message when the request fails", async () => {
-    axios.get.mockRejectedValue(new Error("boom"));
+    axios.get.mockRejectedValueOnce(new Error("boom"));
     renderCard();
     expect(await screen.findByText(/could not load performance data/i)).toBeInTheDocument();
   });
