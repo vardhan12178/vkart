@@ -15,7 +15,7 @@ Phased plan covering both repos (`vkart` frontend, `backend` API). Agreed Oct 20
 |---|---|---|
 | 1 | Cleanup & performance quick wins | Done — awaiting owner review |
 | 2 | Money & security correctness | Done — awaiting owner review |
-| 3 | Stack modernization | Not started |
+| 3 | Stack modernization | Done — awaiting owner review |
 | 4 | AI upgrade (core) | Not started |
 | 5 | Design & motion | Not started |
 | 6 | New commerce features | Not started |
@@ -49,8 +49,8 @@ Manual verification checklist:
 
 Notes for later phases:
 
-- `<div id="root">` is rendered inside `#root` in `App.js` (duplicate id) — fix during the Phase 3 React 19 upgrade.
-- AVIF variants skipped (no AVIF encoder in the build environment) — revisit with `vite-imagetools` in Phase 3.
+- ~~`<div id="root">` is rendered inside `#root` in `App.js` (duplicate id)~~ — fixed in Phase 3.
+- AVIF variants skipped (no AVIF encoder in the build environment). Still open; moved to Phase 8.
 
 ## Phase 2 — Money & security correctness (`backend/ACTION_ITEMS.md`) ✅
 
@@ -74,14 +74,66 @@ Manual verification checklist:
 5. Deactivate a product: its page 404s for shoppers and still opens from the admin.
 6. Before deploying, run the duplicate-`paymentId` check in `ACTION_ITEMS.md` → "Deploy notes".
 
-## Phase 3 — Stack modernization (safety net before big UI/AI work)
+## Phase 3 — Stack modernization (safety net before big UI/AI work) ✅
 
-- Remove the legacy client-`amount` path from `POST /api/razorpay/create-order` (kept one release in Phase 2).
-- Frontend tests: Jest 27 → Vitest; add Playwright E2E for core flows (browse → cart → checkout in Razorpay test mode, login, admin order handling).
-- React 18 → 19, React Router 6 → 7, Tailwind 3 → 4 (official codemods), Express 4 → 5.
-- Dependency diet: one icon set (lucide; drop react-icons + heroicons v1), Embla instead of react-slick, move server state out of Redux into React Query.
-- `vite-plugin-pwa` (Workbox) replaces the hand-rolled service worker (prereq for web push).
-- Sentry error tracking (needs DSN from owner; skipped if not provided).
+What shipped (branch `ccr-d558e8f9-ithgfk`, both repos):
+
+- **Checkout pricing (backend):**
+  - `POST /api/razorpay/create-order` now requires the cart. The legacy client-`amount` request is gone.
+  - The quote shown at "Pay" is saved with the Razorpay order. If a sale starts or ends before the order is placed, the customer gets the price they paid, provided the cart, promo and wallet are unchanged. This used to reject an already-charged payment.
+- **Express 4 → 5:**
+  - `express-mongo-sanitize` and `hpp` don't support Express 5, so they are replaced by an in-house query parser plus sanitiser (`middleware/security.js`).
+  - Optional Sentry (`instrument.js`), inert without `SENTRY_DSN`.
+- **Frontend tests:**
+  - Jest 27 + Babel → Vitest (442 tests).
+  - New Playwright E2E suite (`npm run test:e2e`, `e2e/`) covering browse → bag, the out-of-stock guard, search, the full wallet checkout with a coupon, and admin order handling and quick search. It runs on desktop and mobile viewports and is re-seeded from `backend/scripts/seed-dev.js` before each run.
+  - A new `e2e` CI job runs it against a real Mongo replica set and Redis.
+- **Upgrades:**
+  - React 18 → 19, React Router 6 → 7, Tailwind 3 → 4 (CSS-first config in `src/App.css`; no `tailwind.config.js` or PostCSS).
+  - Screenshot comparison against the pre-upgrade build shows no layout changes.
+- **Dependency diet:**
+  - One icon set (lucide). react-icons and heroicons v1 are removed.
+  - Embla carousels replace react-slick.
+  - Customer notifications move from Redux to React Query.
+  - The live-notification socket loads only for signed-in users.
+- **PWA:**
+  - `vite-plugin-pwa` (Workbox) replaces the hand-written service worker.
+  - Products and the home feed fall back to cache when offline.
+  - A "New version available" prompt replaces silent updates.
+- **Monitoring:** optional Sentry in the storefront too (`VITE_SENTRY_DSN`). The SDK is a separate chunk, loaded only when a DSN is set.
+- **Bugs found along the way:**
+  - The wallet-only checkout was blocked when the Razorpay script failed to load.
+  - Purchased items came back in the bag on the next sign-in. The client clears the bag through a debounced sync that is lost if the page navigates right away; the backend now clears them inside the order transaction.
+  - A rate-limited sign-in said "Invalid credentials". It now says "Too many sign-in attempts", and only failed attempts count toward the limit.
+  - The duplicate `#root` id is fixed.
+
+Notes:
+
+- **Deploy both repos together.**
+  - The new backend rejects the amount-only create-order request that the storefront on `main` sends. The new storefront sends only the cart, which the backend on `main` rejects.
+  - Online (Razorpay) checkout fails in the gap between the two deploys. Wallet-only orders are unaffected.
+  - Deploy the backend first, then the storefront straight after.
+- Main bundle: 139 KB gzip, down from 154 KB. React 19 itself costs about 17 KB gzip, which the lazy socket and the dropped icon/carousel libraries more than pay for.
+- Icons are now lucide everywhere, so a few glyphs look slightly different (stroke style). The half-star rating keeps its old look.
+- New optional env vars:
+  - Backend: `SENTRY_DSN`, `SENTRY_TRACES_SAMPLE_RATE`, `RELEASE`, and `API_RATE_LIMIT_PER_MIN` (default 200; raised only for E2E).
+  - Storefront: `VITE_SENTRY_DSN`, `VITE_SENTRY_TRACES_SAMPLE_RATE`, `VITE_RELEASE`.
+- Running E2E locally:
+  - Start Mongo (replica set) and Redis, the backend on :5000, and `vite build && vite preview --port 3000`.
+  - Then run `E2E_MONGO_URI=mongodb://localhost:27017/vkart_e2e?replicaSet=rs0&directConnection=true npm run test:e2e`.
+  - The seed refuses any database whose name lacks `dev`, `e2e` or `test`.
+  - Sign-ins: shopper `shopper` / `Shopper@123`; admin `admin@vkart.test` / `Admin@12345`.
+
+Manual verification checklist:
+
+1. **Visual check.** Click through the storefront and admin on desktop and phone. Look for spacing, borders or font sizes that look off (Tailwind 4), and icons that are missing or look wrong.
+2. **Product page.** The gallery swipes and zooms and the thumbnails work. On the home page, the product rails scroll with arrows and by swipe.
+3. **Razorpay test mode.** Check out with a card, with a coupon, and with a partial wallet. Also check out paying fully from the wallet.
+4. **Bag after an order.** Place an order, sign out, sign back in: the bag is empty.
+5. **Notifications.** Customer notifications arrive live, and "mark all read" works.
+6. **PWA.** Load the site, go offline (DevTools → Network → Offline), and browse products you've seen. After a new deploy, the update prompt appears.
+7. **Admin.** Advance an order through its stages. The `/` quick search works.
+8. **GitHub Actions.** Once a PR exists, both the `test` and `e2e` jobs are green.
 
 ## Phase 4 — AI upgrade (core)
 
@@ -133,5 +185,5 @@ Manual verification checklist:
 ## Inputs needed from owner
 
 - Hero video clip (Phase 5)
-- Sentry DSN (Phase 3, optional)
+- Sentry DSN (optional; Phase 3 shipped the wiring, inert until a DSN is set)
 - Dataset choice (Phase 9)
