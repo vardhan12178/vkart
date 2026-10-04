@@ -148,7 +148,7 @@ export default function Careers() {
             We’re hiring for a few key roles
           </div>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-            Join <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">Vkart</span>
+            Join <span className="bg-linear-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">Vkart</span>
           </h1>
           <p className="mt-3 text-lg text-gray-700">
             Not a real hiring board for this portfolio — but here’s how our careers page would feel.
@@ -162,13 +162,13 @@ export default function Careers() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search roles, teams…"
-              className="w-full rounded-xl border border-gray-200 bg-white/80 pl-10 pr-3 py-2.5 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/40"
+              className="w-full rounded-xl border border-gray-200 bg-white/80 pl-10 pr-3 py-2.5 text-gray-900 placeholder:text-gray-400 focus:outline-hidden focus:ring-2 focus:ring-orange-500/40"
             />
           </div>
           <select
             value={dept}
             onChange={(e) => setDept(e.target.value)}
-            className="rounded-xl border border-gray-200 bg-white/80 px-3 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500/40"
+            className="rounded-xl border border-gray-200 bg-white/80 px-3 py-2.5 text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-orange-500/40"
           >
             {departments.map((d) => (
               <option key={d} value={d}>
@@ -179,7 +179,7 @@ export default function Careers() {
           <select
             value={loc}
             onChange={(e) => setLoc(e.target.value)}
-            className="rounded-xl border border-gray-200 bg-white/80 px-3 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500/40"
+            className="rounded-xl border border-gray-200 bg-white/80 px-3 py-2.5 text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-orange-500/40"
           >
             {locations.map((l) => (
               <option key={l} value={l}>
@@ -190,7 +190,7 @@ export default function Careers() {
           <select
             value={level}
             onChange={(e) => setLevel(e.target.value)}
-            className="rounded-xl border border-gray-200 bg-white/80 px-3 py-2.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500/40"
+            className="rounded-xl border border-gray-200 bg-white/80 px-3 py-2.5 text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-orange-500/40"
           >
             {levels.map((lv) => (
               <option key={lv} value={lv}>
@@ -230,8 +230,8 @@ export default function Careers() {
 
         <section className="mt-8">
           {filtered.length === 0 ? (
-            <div className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/70 via-amber-200/70 to-white">
-              <div className="rounded-3xl bg-white/80 p-8 text-center ring-1 ring-gray-200 backdrop-blur">
+            <div className="rounded-3xl p-px bg-linear-to-br from-orange-200/70 via-amber-200/70 to-white">
+              <div className="rounded-3xl bg-white/80 p-8 text-center ring-1 ring-gray-200 backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-gray-900">No roles match</h3>
                 <p className="mt-1 text-gray-600">Try a different search, department, or location.</p>
               </div>
@@ -243,9 +243,9 @@ export default function Careers() {
                 return (
                   <li
                     key={r.id}
-                    className="group rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/70 via-amber-200/70 to-white shadow-2xl hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition"
+                    className="group rounded-3xl p-px bg-linear-to-br from-orange-200/70 via-amber-200/70 to-white shadow-2xl hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition"
                   >
-                    <div className="rounded-3xl bg-white/90 ring-1 ring-gray-200 backdrop-blur">
+                    <div className="rounded-3xl bg-white/90 ring-1 ring-gray-200 backdrop-blur-sm">
                       <div className="p-6">
                         <div className="flex items-start justify-between gap-4">
                           <div className="min-w-0">
@@ -286,7 +286,7 @@ export default function Careers() {
                           <button
                             type="button"
                             onClick={() => onApply(r)}
-                            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-4 py-2.5 font-semibold text-white shadow hover:opacity-95 active:scale-[0.98]"
+                            className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-amber-500 px-4 py-2.5 font-semibold text-white shadow-sm hover:opacity-95 active:scale-[0.98]"
                           >
                             Apply
                           </button>
@@ -345,7 +345,7 @@ export default function Careers() {
               { t: "Learning budget", d: "Annual stipend for courses, books, and conferences." },
               { t: "Flexible hours", d: "Own your calendar — outcomes over hours." },
             ].map((p) => (
-              <div key={p.t} className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/70 via-amber-200/70 to-white">
+              <div key={p.t} className="rounded-3xl p-px bg-linear-to-br from-orange-200/70 via-amber-200/70 to-white">
                 <div className="rounded-3xl bg-white p-5 ring-1 ring-gray-200">
                   <h4 className="font-semibold text-gray-900">{p.t}</h4>
                   <p className="mt-1 text-gray-700">{p.d}</p>
@@ -355,11 +355,11 @@ export default function Careers() {
           </div>
         </section>
 
-        <section className="relative mx-0 mt-12 rounded-3xl bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-10 text-center shadow-2xl ring-1 ring-orange-300 sm:mx-auto sm:max-w-4xl">
+        <section className="relative mx-0 mt-12 rounded-3xl bg-linear-to-r from-orange-500 to-amber-500 px-6 py-10 text-center shadow-2xl ring-1 ring-orange-300 sm:mx-auto sm:max-w-4xl">
           <h3 className="text-2xl font-extrabold text-white">Don’t see the right role?</h3>
           <p className="mt-2 text-white/90">Send us your portfolio and a note. We read every application.</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href="mailto:careers@vkart.com" className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow hover:opacity-95">Email Careers</a>
+            <a href="mailto:careers@vkart.com" className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:opacity-95">Email Careers</a>
             <Link to="/about" className="rounded-xl ring-1 ring-white/80 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Learn about us</Link>
           </div>
         </section>

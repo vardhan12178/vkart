@@ -61,7 +61,7 @@ const Toast = ({ show, kind = "error", children }) => {
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
       className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
+        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-xs backdrop-blur-md border",
         isSuccess
           ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
           : "bg-red-50/80 border-red-100 text-red-800"
@@ -124,7 +124,7 @@ export default function AdminLogin({ setIsAdmin }) {
           const widthStr = window.innerWidth < 420 ? "300" : "380";
 
           google.accounts.id.renderButton(btn, {
-            theme: "outline",
+            theme: "outline-solid",
             size: "large",
             width: widthStr,
             shape: "rectangular",
@@ -199,7 +199,7 @@ export default function AdminLogin({ setIsAdmin }) {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="premium-admin-login-shell relative w-full max-w-[1180px] min-h-[680px] lg:h-[760px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_90px_rgba(29,28,25,.15)] flex overflow-hidden border border-black/[0.07]"
+          className="premium-admin-login-shell relative w-full max-w-[1180px] min-h-[680px] lg:h-[760px] bg-[#fffdf8] rounded-3xl shadow-[0_30px_90px_rgba(29,28,25,.15)] flex overflow-hidden border border-black/[0.07]"
         >
           {/* --- LEFT PANEL (Visual) --- */}
           <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-[#1d1c19] p-12 overflow-hidden text-white">
@@ -209,7 +209,7 @@ export default function AdminLogin({ setIsAdmin }) {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 {/* Admin Icon variant */}
-                <div className="h-10 w-10 bg-gradient-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg shadow-gray-500/20 text-white">
+                <div className="h-10 w-10 bg-linear-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg shadow-gray-500/20 text-white">
                   <ShieldCheckIcon className="h-6 w-6" />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart Admin.</span>
@@ -251,7 +251,7 @@ export default function AdminLogin({ setIsAdmin }) {
           <div className="w-full lg:w-1/2 bg-[#fffdf8] flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 relative">
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-8">
-              <div className="h-10 w-10 bg-gradient-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg text-white">
+              <div className="h-10 w-10 bg-linear-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg text-white">
                 <ShieldCheckIcon className="h-6 w-6" />
               </div>
             </div>
@@ -305,7 +305,7 @@ export default function AdminLogin({ setIsAdmin }) {
                       placeholder="admin@vkart.com"
                       autoComplete="username"
                       className={cx(
-                        "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-4 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                        "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-4 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                         errors.adminId
                           ? "border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 bg-red-50/30"
                           : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -335,7 +335,7 @@ export default function AdminLogin({ setIsAdmin }) {
                       placeholder="••••••••••••"
                       autoComplete="current-password"
                       className={cx(
-                        "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-12 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                        "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-12 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                         errors.password
                           ? "border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 bg-red-50/30"
                           : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -344,14 +344,14 @@ export default function AdminLogin({ setIsAdmin }) {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+                      className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-hidden"
                     >
                       {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                     </button>
                   </div>
 
                   {capsOn && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded-sm inline-block">
                       ⚠️ Caps Lock is ON
                     </motion.div>
                   )}
@@ -365,7 +365,7 @@ export default function AdminLogin({ setIsAdmin }) {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
+                  className="w-full relative overflow-hidden rounded-xl bg-linear-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-hidden focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}

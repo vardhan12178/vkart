@@ -80,7 +80,7 @@ export default function RecommendedForYou() {
                     className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500"
                   />
                   {p.discountPercentage > 0 && (
-                    <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                    <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded-sm shadow-xs">
                       -{Math.round(p.discountPercentage)}%
                     </span>
                   )}

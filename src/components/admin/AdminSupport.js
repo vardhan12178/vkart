@@ -162,7 +162,7 @@ export default function AdminSupport() {
         {/* Page Masthead (Visible when browsing list on desktop or mobile) */}
         <div className={`flex items-center justify-between gap-3 ${selectedId ? 'hidden lg:flex' : 'flex'}`}>
           <div>
-            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
               Customer Support
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Respond to real-time customer conversations.</p>
@@ -173,7 +173,7 @@ export default function AdminSupport() {
         <div className={`grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-4 sm:gap-6 ${selectedId ? 'h-[calc(100vh-4.5rem)] sm:h-[calc(100vh-11rem)]' : 'h-[calc(100vh-10rem)]'} min-h-[520px]`}>
 
           {/* Conversation List Pane (Hidden on mobile if conversation is selected) */}
-          <div className={`bg-white rounded-2xl border border-slate-200/70 shadow-xs flex flex-col overflow-hidden ${selectedId ? 'hidden lg:flex' : 'flex'}`}>
+          <div className={`bg-white rounded-2xl border border-slate-200/70 flex flex-col overflow-hidden ${selectedId ? 'hidden lg:flex' : 'flex'}`}>
             {/* Tabs Header */}
             <div className="flex items-center gap-1 border-b border-slate-100 shrink-0 overflow-x-auto no-scrollbar bg-slate-50/50 p-1.5">
               {TABS.map((tab) => (
@@ -182,7 +182,7 @@ export default function AdminSupport() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 py-1.5 px-2 text-[11px] sm:text-xs font-bold rounded-xl whitespace-nowrap transition-all text-center ${
                     activeTab === tab.id
-                      ? "bg-white text-slate-900 shadow-xs ring-1 ring-black/5"
+                      ? "bg-white text-slate-900 ring-1 ring-black/5"
                       : "text-slate-500 hover:text-slate-800 hover:bg-white/40"
                   }`}
                 >
@@ -236,7 +236,7 @@ export default function AdminSupport() {
           </div>
 
           {/* Chat Thread Pane (Hidden on mobile if no conversation is selected) */}
-          <div className={`bg-white rounded-2xl border border-slate-200/70 shadow-xs flex flex-col overflow-hidden ${!selectedId ? 'hidden lg:flex' : 'flex'}`}>
+          <div className={`bg-white rounded-2xl border border-slate-200/70 flex flex-col overflow-hidden ${!selectedId ? 'hidden lg:flex' : 'flex'}`}>
             {!selectedId && (
               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-slate-400">
                 <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-2 text-slate-300">
@@ -261,13 +261,13 @@ export default function AdminSupport() {
                       <FaChevronLeft size={11} className="-ml-0.5" />
                     </button>
                     
-                    <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+                    <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-linear-to-br from-slate-800 to-slate-900 text-white font-bold flex items-center justify-center text-xs shrink-0 ">
                       {(conversation.userId?.name || "C").slice(0, 2).toUpperCase()}
                     </div>
 
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <p className="text-xs sm:text-sm font-bold text-slate-900 truncate leading-tight">
+                        <p className="text-xs sm:text-sm sm:leading-5 font-bold text-slate-900 truncate leading-tight">
                           {conversation.userId?.name || "Customer"}
                         </p>
                         <span className={`hidden sm:inline-block text-[9px] font-bold uppercase px-1.5 py-px rounded-full border ${STATUS_CONFIG[conversation.status]?.text || ""}`}>
@@ -286,7 +286,7 @@ export default function AdminSupport() {
                       {!conversation.assignedAgentId && (
                         <button
                           onClick={() => actionMutation.mutate("claim")}
-                          className="px-3 py-1.5 rounded-full bg-slate-900 text-white text-[11px] font-bold hover:bg-black transition shadow-xs"
+                          className="px-3 py-1.5 rounded-full bg-slate-900 text-white text-[11px] font-bold hover:bg-black transition "
                         >
                           Claim
                         </button>
@@ -294,7 +294,7 @@ export default function AdminSupport() {
                       {conversation.status !== "RESOLVED" && conversation.status !== "CLOSED" && (
                         <button
                           onClick={() => actionMutation.mutate("resolve")}
-                          className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-600 text-white text-[11px] font-bold hover:bg-emerald-700 transition shadow-xs"
+                          className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-600 text-white text-[11px] font-bold hover:bg-emerald-700 transition "
                         >
                           <FaCheck size={9} />
                           <span>Resolve</span>
@@ -303,7 +303,7 @@ export default function AdminSupport() {
                       {conversation.status === "RESOLVED" && (
                         <button
                           onClick={() => actionMutation.mutate("reopen")}
-                          className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 text-slate-700 text-[11px] font-bold hover:bg-slate-50 transition shadow-xs"
+                          className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 text-slate-700 text-[11px] font-bold hover:bg-slate-50 transition "
                         >
                           <FaUndo size={9} />
                           <span>Reopen</span>
@@ -327,7 +327,7 @@ export default function AdminSupport() {
                   {/* Centered Order Context Badge */}
                   {conversation.contextSummary && (
                     <div className="flex justify-center my-1">
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-[10px] sm:text-[11px] font-semibold text-slate-600 shadow-2xs">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-[10px] sm:text-[11px] font-semibold text-slate-600 ">
                         <span>📦</span>
                         <span>{conversation.contextSummary}</span>
                       </div>
@@ -337,7 +337,7 @@ export default function AdminSupport() {
                   {/* Empty Messages State */}
                   {(!conversation.messages || conversation.messages.length === 0) && (
                     <div className="flex justify-center py-10">
-                      <div className="bg-white border border-slate-200/70 rounded-2xl p-4 max-w-xs text-center shadow-xs space-y-1">
+                      <div className="bg-white border border-slate-200/70 rounded-2xl p-4 max-w-xs text-center space-y-1">
                         <div className="h-9 w-9 mx-auto rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold mb-2">
                           💬
                         </div>
@@ -353,7 +353,7 @@ export default function AdminSupport() {
                     return (
                       <div key={m._id || i} className={`flex ${isAgent ? "justify-end" : "justify-start"}`}>
                         <div
-                          className={`max-w-[85%] sm:max-w-[70%] rounded-2xl px-3.5 py-2 text-xs sm:text-sm leading-relaxed shadow-xs ${
+                          className={`max-w-[85%] sm:max-w-[70%] rounded-2xl px-3.5 py-2 text-xs sm:text-sm leading-relaxed ${
                             isAgent
                               ? "bg-slate-900 text-white rounded-br-xs"
                               : "bg-white border border-slate-200/80 text-slate-800 rounded-bl-xs"
@@ -371,7 +371,7 @@ export default function AdminSupport() {
                   {/* Typing Indicator */}
                   {customerTyping && (
                     <div className="flex justify-start">
-                      <div className="bg-white border border-slate-200 rounded-2xl px-3.5 py-2 text-xs text-slate-400 italic shadow-xs">
+                      <div className="bg-white border border-slate-200 rounded-2xl px-3.5 py-2 text-xs text-slate-400 italic ">
                         Customer is typing…
                       </div>
                     </div>
@@ -388,12 +388,12 @@ export default function AdminSupport() {
                         onChange={(e) => handleChangeReply(e.target.value)}
                         onKeyDown={(e) => { if (e.key === "Enter") send(); }}
                         placeholder="Type a message..."
-                        className="flex-1 bg-transparent border-none text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none"
+                        className="flex-1 bg-transparent border-none text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-hidden"
                       />
                       <button
                         onClick={send}
                         disabled={!replyText.trim()}
-                        className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center disabled:opacity-30 hover:bg-black transition-all shrink-0 shadow-xs"
+                        className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center disabled:opacity-30 hover:bg-black transition-all shrink-0 "
                       >
                         <FaPaperPlane size={11} className="-ml-0.5" />
                       </button>

@@ -257,7 +257,7 @@ export default function AdminOrderDetails() {
         </div>
         <button
           onClick={() => navigate("/admin/orders")}
-          className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-bold shadow-xs hover:bg-black transition-all"
+          className="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-black transition-all"
         >
           Back to Orders
         </button>
@@ -297,20 +297,20 @@ export default function AdminOrderDetails() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => window.print()}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 shadow-xs hover:bg-slate-50 transition-all active:scale-95"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-all active:scale-95"
             >
               <PrinterIcon className="h-4 w-4" />
               <span>Invoice</span>
             </button>
             <button
               onClick={() => window.open(`${apiBase}/api/orders/${order._id}/invoice`, "_blank")}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white rounded-xl text-xs font-semibold shadow-xs hover:bg-black transition-all active:scale-95"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-black transition-all active:scale-95"
             >
               <span>PDF</span>
             </button>
             <button
               onClick={() => orderQuery.refetch()}
-              className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 shadow-xs hover:bg-slate-50 transition-all active:scale-95"
+              className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-all active:scale-95"
             >
               <RefreshIcon className={`h-3.5 w-3.5 ${orderQuery.isFetching ? 'animate-spin' : ''}`} />
               <span>Refresh</span>
@@ -319,9 +319,9 @@ export default function AdminOrderDetails() {
         </div>
 
         {/* Hero Section */}
-        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-8 relative overflow-hidden">
+        <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-8 relative overflow-hidden">
           {/* Background decoration */}
-          <div className={`absolute top-0 right-0 w-64 h-64 opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl ${currentStageStyle.bg.replace('bg-', 'bg-gradient-to-br from-transparent to-')}`}></div>
+          <div className={`absolute top-0 right-0 w-64 h-64 opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl ${currentStageStyle.bg.replace('bg-', 'bg-linear-to-br from-transparent to-')}`}></div>
 
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-6 relative z-10">
             <div className="space-y-1 sm:space-y-1.5">
@@ -350,7 +350,7 @@ export default function AdminOrderDetails() {
 
             <div className="text-left sm:text-right pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 flex sm:block items-center justify-between">
               <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Total Amount</p>
-              <p className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight">
+              <p className="text-base sm:text-2xl sm:leading-8 font-black text-slate-900 tracking-tight leading-tight">
                 ₹{order.totalPrice?.toLocaleString('en-IN')}
               </p>
             </div>
@@ -364,8 +364,8 @@ export default function AdminOrderDetails() {
 
               {/* Progress Fill */}
               <div
-                className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-1.5 transition-all duration-700 ease-out rounded-full shadow-xs
-                    ${order.stage === 'CANCELLED' ? 'bg-red-500' : 'bg-gradient-to-r from-orange-400 to-orange-600'}
+                className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-1.5 transition-all duration-700 ease-out rounded-full 
+                    ${order.stage === 'CANCELLED' ? 'bg-red-500' : 'bg-linear-to-r from-orange-400 to-orange-600'}
                   `}
                 style={{ width: `${(Math.max(0, STAGES.indexOf(order.stage)) / (STAGES.length - 1)) * 100}%` }}
               ></div>
@@ -379,10 +379,10 @@ export default function AdminOrderDetails() {
                 let textClass = "text-slate-400 font-medium";
 
                 if (isCancelled && stage === "CANCELLED") {
-                  dotClass = "bg-red-500 border-red-500 text-white shadow-xs shadow-red-200";
+                  dotClass = "bg-red-500 border-red-500 text-white shadow-red-200";
                   textClass = "text-red-600 font-bold";
                 } else if (isCurrent) {
-                  dotClass = "bg-orange-600 border-orange-600 text-white shadow-xs shadow-orange-200 scale-110";
+                  dotClass = "bg-orange-600 border-orange-600 text-white shadow-orange-200 scale-110";
                   textClass = "text-orange-700 font-bold";
                 } else if (isCompleted) {
                   dotClass = "bg-orange-500 border-orange-500 text-white";
@@ -411,7 +411,7 @@ export default function AdminOrderDetails() {
           <div className="xl:col-span-2 space-y-4 sm:space-y-6">
 
             {/* Action Center (The Workflow Engine) */}
-            <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-5 space-y-3">
+            <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-5 space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
                   <ClipboardCheckIcon className="h-4 w-4 text-orange-500" />
@@ -432,7 +432,7 @@ export default function AdminOrderDetails() {
                       <button
                         disabled={updateStageMutation.isPending}
                         onClick={() => updateStage(nextLogicalStage)}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-slate-900 text-white rounded-xl text-xs font-bold shadow-2xs hover:bg-slate-800 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <span>Mark as {nextLogicalStage.replace(/_/g, " ")}</span>
                         <ChevronRightIcon className="h-3.5 w-3.5" />
@@ -476,7 +476,7 @@ export default function AdminOrderDetails() {
             </div>
 
             {/* Products Card / Table */}
-            <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden">
+            <div className="bg-white rounded-2xl border border-slate-200/70 overflow-hidden">
               <div className="px-4 sm:px-6 py-3 border-b border-slate-100 flex justify-between items-center bg-slate-50/30">
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
                   <CubeIcon className="h-4 w-4 text-orange-500" />
@@ -491,7 +491,7 @@ export default function AdminOrderDetails() {
               <div className="block md:hidden divide-y divide-slate-100">
                 {order.products?.map((p, idx) => (
                   <div key={idx} className="p-3 flex items-center gap-3">
-                    <div className="h-12 w-12 flex-shrink-0 bg-slate-50 rounded-xl overflow-hidden border border-slate-200 p-0.5">
+                    <div className="h-12 w-12 shrink-0 bg-slate-50 rounded-xl overflow-hidden border border-slate-200 p-0.5">
                       {p.image ? (
                         <img loading="lazy" decoding="async" src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
                       ) : (
@@ -508,7 +508,7 @@ export default function AdminOrderDetails() {
                         <span>Qty: {p.quantity}</span>
                       </div>
                     </div>
-                    <div className="text-right flex-shrink-0">
+                    <div className="text-right shrink-0">
                       <p className="text-xs font-black text-slate-900">₹{((p.price || 0) * (p.quantity || 0)).toLocaleString('en-IN')}</p>
                       {p.quantity > 1 && (
                         <p className="text-[10px] text-slate-400">₹{p.price?.toLocaleString('en-IN')} ea</p>
@@ -534,7 +534,7 @@ export default function AdminOrderDetails() {
                       <tr key={idx} className="group hover:bg-slate-50/50 transition-colors">
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-4">
-                            <div className="h-14 w-14 flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 group-hover:border-orange-200 transition-colors">
+                            <div className="h-14 w-14 shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 group-hover:border-orange-200 transition-colors">
                               {p.image ? (
                                 <img loading="lazy" decoding="async" src={p.image} alt={p.name} className="h-full w-full object-contain" />
                               ) : (
@@ -562,7 +562,7 @@ export default function AdminOrderDetails() {
             </div>
 
             {/* Activity Timeline */}
-            <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-6">
+            <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 sm:mb-6 flex items-center gap-1.5">
                 <ClockIcon className="h-4 w-4 text-orange-500" />
                 Timeline
@@ -572,7 +572,7 @@ export default function AdminOrderDetails() {
                   const isLatest = idx === 0;
                   return (
                     <div key={idx} className="relative pl-6 sm:pl-8 group">
-                      <span className={`absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white shadow-xs transition-all duration-300
+                      <span className={`absolute left-[-9px] top-0 h-4 w-4 rounded-full border-2 border-white transition-all duration-300
                           ${isLatest ? 'bg-orange-500 ring-4 ring-orange-50 scale-110' : 'bg-slate-300 group-hover:bg-slate-400'}
                         `}></span>
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5 sm:gap-1">
@@ -600,7 +600,7 @@ export default function AdminOrderDetails() {
           <div className="space-y-4 sm:space-y-6">
 
             {/* Customer Card */}
-            <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-6">
+            <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <div className="flex items-center justify-between mb-3 sm:mb-4">
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
                   <UserIcon className="h-4 w-4 text-orange-500" />
@@ -609,7 +609,7 @@ export default function AdminOrderDetails() {
               </div>
 
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 flex items-center justify-center text-sm sm:text-lg font-bold shadow-xs ring-2 ring-white shrink-0">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-linear-to-br from-orange-100 to-orange-50 text-orange-600 flex items-center justify-center text-sm sm:text-lg font-bold ring-2 ring-white shrink-0">
                   {customer.name ? customer.name.charAt(0).toUpperCase() : "?"}
                 </div>
                 <div className="overflow-hidden">
@@ -621,7 +621,7 @@ export default function AdminOrderDetails() {
               <div className="space-y-2">
                 {customer.email && (
                   <div className="flex items-center gap-2.5 p-2 sm:p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group cursor-pointer">
-                    <div className="bg-white p-1 rounded-lg shadow-xs text-slate-400 group-hover:text-orange-500 transition-colors">
+                    <div className="bg-white p-1 rounded-lg text-slate-400 group-hover:text-orange-500 transition-colors">
                       <MailIcon className="h-3.5 w-3.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-slate-600 font-medium truncate">{customer.email}</span>
@@ -629,7 +629,7 @@ export default function AdminOrderDetails() {
                 )}
                 {customer.phone && (
                   <div className="flex items-center gap-2.5 p-2 sm:p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group cursor-pointer">
-                    <div className="bg-white p-1 rounded-lg shadow-xs text-slate-400 group-hover:text-orange-500 transition-colors">
+                    <div className="bg-white p-1 rounded-lg text-slate-400 group-hover:text-orange-500 transition-colors">
                       <PhoneIcon className="h-3.5 w-3.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-slate-600 font-medium">{customer.phone}</span>
@@ -639,21 +639,21 @@ export default function AdminOrderDetails() {
             </div>
 
             {/* Shipping Card */}
-            <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-6">
+            <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
                 <LocationMarkerIcon className="h-4 w-4 text-orange-500" />
                 Delivery Details
               </h3>
               <div className="relative p-3 sm:p-4 bg-slate-50/80 rounded-xl border border-slate-100">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-400 to-orange-600 rounded-l-xl"></div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium pl-1.5">
+                <div className="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-orange-400 to-orange-600 rounded-l-xl"></div>
+                <p className="text-xs sm:text-sm sm:leading-5 text-slate-700 leading-relaxed font-medium pl-1.5">
                   {order.shippingAddress || "No shipping address provided."}
                 </p>
               </div>
             </div>
 
             {/* Payment Card */}
-            <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-6">
+            <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
                 <CreditCardIcon className="h-4 w-4 text-orange-500" />
                 Payment
@@ -699,7 +699,7 @@ export default function AdminOrderDetails() {
         </div>
 
         {/* Returns & Refunds */}
-        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-8">
+        <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-8">
           <h3 className="text-sm sm:text-lg font-bold text-slate-900 mb-3 sm:mb-4">Returns & Refunds</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
             <div className="p-2.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -762,7 +762,7 @@ export default function AdminOrderDetails() {
                   <button
                     onClick={() => initiateRefund("WALLET")}
                     disabled={refundMutation.isPending}
-                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-xs hover:bg-black disabled:opacity-60"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-black disabled:opacity-60"
                   >
                     Refund to Wallet
                   </button>

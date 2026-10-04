@@ -229,12 +229,12 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
           border-b
           z-30
           ${isScrolled
-            ? "bg-[#fffdf8]/95 backdrop-blur-xl border-black/[0.08]"
+            ? "bg-[#fffdf8]/95 backdrop-blur-xl border-black/8"
             : "bg-[#fffdf8]/90 backdrop-blur-md border-black/[0.07]"
           }
         `}
       >
-        <div className="flex h-14 sm:h-[4.5rem] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-5 lg:px-7">
+        <div className="flex h-14 sm:h-18 items-center justify-between gap-2 px-3 sm:gap-4 sm:px-5 lg:px-7">
 
           {/* --- LEFT: Mobile Toggle & Brand --- */}
           <div className="flex items-center gap-1.5 sm:gap-4">
@@ -280,7 +280,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                 }}
                 className={`
                   relative p-1.5 sm:p-2.5 rounded-full transition-all group min-w-[38px] min-h-[38px] sm:min-w-[44px] sm:min-h-[44px] flex items-center justify-center
-                  ${notificationsOpen ? "bg-[#e9e1d7] text-[#1d1c19]" : "text-[#656159] hover:bg-black/[0.05] hover:text-[#1d1c19]"}
+                  ${notificationsOpen ? "bg-[#e9e1d7] text-[#1d1c19]" : "text-[#656159] hover:bg-black/5 hover:text-[#1d1c19]"}
                 `}
                 aria-label="Notifications"
               >
@@ -294,7 +294,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
 
               {/* Notification Dropdown */}
               {notificationsOpen && (
-                <div className="fixed left-3 right-3 top-[3.75rem] sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-3 sm:w-96 max-w-sm sm:max-w-none mx-auto sm:mx-0 z-50 origin-top overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)] animate-in fade-in zoom-in-95 duration-150">
+                <div className="fixed left-3 right-3 top-15 sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-3 sm:w-96 max-w-sm sm:max-w-none mx-auto sm:mx-0 z-50 origin-top overflow-hidden rounded-[1.25rem] border border-black/8 bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)] animate-in fade-in zoom-in-95 duration-150">
                   <div className="px-4 py-3 sm:px-5 sm:py-4 border-b border-slate-50 flex items-center justify-between">
                     <div>
                       <h3 className="text-xs sm:text-sm font-bold text-slate-900">Notifications</h3>
@@ -326,7 +326,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                             ${!item.isRead ? "bg-slate-50/50" : ""}
                           `}
                         >
-                          <div className={`mt-0.5 h-8 w-8 sm:h-9 sm:w-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${!item.isRead ? "bg-white shadow-sm ring-1 ring-slate-100" : "bg-slate-100"}`}>
+                          <div className={`mt-0.5 h-8 w-8 sm:h-9 sm:w-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${!item.isRead ? "bg-white shadow-xs ring-1 ring-slate-100" : "bg-slate-100"}`}>
                             {getNotificationIcon(item.type, item.title)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -339,7 +339,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                             <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 line-clamp-2">{item.message}</p>
                           </div>
                           {!item.isRead && (
-                            <div className="flex-shrink-0 self-center">
+                            <div className="shrink-0 self-center">
                               <div className="h-1.5 w-1.5 rounded-full bg-orange-500"></div>
                             </div>
                           )}
@@ -392,7 +392,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
 
               {/* Dropdown Menu */}
               {profileOpen && (
-                <div className="absolute right-0 z-50 mt-3 w-56 origin-top-right overflow-hidden rounded-[1.15rem] border border-black/[0.08] bg-[#fffdf8] py-2 shadow-[0_24px_70px_rgba(29,28,25,.16)] animate-in fade-in zoom-in-95 duration-150 sm:w-64">
+                <div className="absolute right-0 z-50 mt-3 w-56 origin-top-right overflow-hidden rounded-[1.15rem] border border-black/8 bg-[#fffdf8] py-2 shadow-[0_24px_70px_rgba(29,28,25,.16)] animate-in fade-in zoom-in-95 duration-150 sm:w-64">
                   <div className="px-4 sm:px-5 py-3 sm:py-4 border-b border-slate-50 bg-slate-50/50 rounded-t-xl sm:rounded-t-2xl">
                     <p className="text-sm font-bold text-slate-900">{adminName}</p>
                     <p className="text-xs text-slate-500 truncate mt-0.5">{adminEmail}</p>
@@ -439,7 +439,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
 
       {/* Mobile Search Overlay */}
       {mobileSearchOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
+        <div className="lg:hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-200">
           <div
             ref={mobileSearchRef}
             className="absolute top-0 left-0 right-0 bg-white border-b border-slate-200 shadow-lg animate-in slide-in-from-top duration-300"

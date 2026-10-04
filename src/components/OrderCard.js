@@ -77,8 +77,8 @@ export default function OrderCard({ order, defaultOpen = false }) {
     <div
       className={`group relative rounded-2xl sm:rounded-3xl border transition-all duration-300 overflow-hidden ${
         open
-          ? "bg-white border-slate-200 shadow-sm"
-          : "bg-white border-gray-200/80 shadow-2xs hover:border-gray-300 hover:shadow-xs"
+          ? "bg-white border-slate-200 shadow-xs"
+          : "bg-white border-gray-200/80 hover:border-gray-300 "
       }`}
     >
       {/* --- SUMMARY HEADER --- */}
@@ -89,7 +89,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           {/* Left: Thumbnail + Name + Date + Status */}
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 max-w-[56px] max-h-[56px] sm:max-w-[64px] sm:max-h-[64px] rounded-xl bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 max-w-[56px] max-h-[56px] sm:max-w-[64px] sm:max-h-[64px] rounded-xl bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden ">
               <img
                 loading="lazy"
                 decoding="async"
@@ -187,7 +187,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             <button
               className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all ${
-                open ? "bg-slate-900 text-white rotate-180 shadow-2xs" : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                open ? "bg-slate-900 text-white rotate-180 " : "bg-slate-100 text-slate-500 hover:bg-slate-200"
               }`}
               title={open ? "Collapse" : "Expand"}
             >
@@ -203,7 +203,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 sm:gap-5">
             {/* Column 1: Delivery & Payment Details */}
             <div className="space-y-3 sm:space-y-4">
-              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 shadow-2xs">
+              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 ">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
                   <FaMapMarkerAlt className="text-orange-500" />
                   <span>Delivery Address</span>
@@ -213,7 +213,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 </p>
               </div>
 
-              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 shadow-2xs">
+              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 ">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
                   <FaReceipt className="text-emerald-500" />
                   <span>Payment Summary</span>
@@ -235,7 +235,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             {/* Column 2: Items Ordered List */}
             <div>
-              <div className="bg-white rounded-xl border border-gray-100 shadow-2xs overflow-hidden">
+              <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
                 <div className="px-3.5 py-2.5 border-b border-gray-100 bg-slate-50/50">
                   <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                     Items Ordered ({order.products?.length || 0})
@@ -268,7 +268,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
           </div>
 
           {/* Timeline Section */}
-          <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-gray-100 shadow-2xs">
+          <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-gray-100 ">
             <h4 className="text-xs font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-1.5">
               <FaBox className="text-orange-500" />
               <span>Order Tracking Timeline</span>
@@ -284,7 +284,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap pt-1">
             <button
               onClick={() => window.open(`${apiBase}/api/orders/${order._id}/invoice`, "_blank")}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 transition shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 transition "
             >
               <FaFileDownload size={11} className="text-slate-500" />
               <span>Download Invoice</span>
@@ -305,7 +305,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                       setReturnType("REFUND");
                       setShowReturn(true);
                     }}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-2xs hover:bg-black transition disabled:opacity-60"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-black transition disabled:opacity-60"
                   >
                     <FaUndoAlt size={10} />
                     <span>{returnBusy ? "Submitting..." : "Request Return"}</span>
@@ -321,7 +321,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                   setRefundMethod("ORIGINAL");
                   setShowCancel(true);
                 }}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition shadow-2xs"
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition "
               >
                 <FaTimes size={10} />
                 <span>Cancel Order</span>
@@ -333,7 +333,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
       {/* Return Modal */}
       {showReturn && (
-        <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-200 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md shadow-2xl space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-slate-900">Request Return / Replacement</h3>
@@ -347,7 +347,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Explain the issue with the item..."
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-100"
+                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-hidden focus:border-orange-400 focus:ring-1 focus:ring-orange-100"
                 rows={3}
               />
             </div>
@@ -414,7 +414,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
       {/* Cancel Modal */}
       {showCancel && (
-        <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-200 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md shadow-2xl space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-slate-900">Cancel Order</h3>
@@ -428,7 +428,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Why do you wish to cancel this order?"
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-100"
+                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-hidden focus:border-orange-400 focus:ring-1 focus:ring-orange-100"
                 rows={3}
               />
             </div>

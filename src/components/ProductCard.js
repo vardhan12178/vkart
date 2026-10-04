@@ -111,7 +111,7 @@ const ProductSaleTimer = ({ endDate, saleName }) => {
   const pad = (n) => String(n).padStart(2, "0");
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#eee5db] border border-[#a85d37]/20 text-[#1d1c19] my-2.5 sm:my-3.5 shadow-2xs">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#eee5db] border border-[#a85d37]/20 text-[#1d1c19] my-2.5 sm:my-3.5 ">
       <div className="flex items-center gap-2.5">
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#75483b] text-white shrink-0">
           <FaBolt size={11} />
@@ -161,7 +161,7 @@ const ReviewCard = ({ review }) => {
   const profileImage = user?.profileImage;
 
   return (
-    <div className="p-5 rounded-2xl bg-white border border-gray-100 shadow-sm">
+    <div className="p-5 rounded-2xl bg-white border border-gray-100 shadow-xs">
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 shrink-0 overflow-hidden">
@@ -207,7 +207,7 @@ const ReviewSummary = ({ reviews = [], rating }) => {
   return (
     <div className="flex flex-row items-center gap-4 sm:gap-6">
       <div className="text-center sm:text-left shrink-0 pr-3 sm:pr-4 border-r border-gray-100">
-        <div className="text-3xl sm:text-4xl font-black text-gray-900 leading-none">{rating?.toFixed(1)}</div>
+        <div className="text-3xl sm:text-4xl sm:leading-10 font-black text-gray-900 leading-none">{rating?.toFixed(1)}</div>
         <Stars value={rating} size="text-xs sm:text-sm" className="justify-center sm:justify-start my-1.5" />
         <p className="text-[11px] text-gray-500 font-medium">{total} reviews</p>
       </div>
@@ -234,10 +234,10 @@ const ReviewSummary = ({ reviews = [], rating }) => {
 const AIReviewSummary = ({ data, loading }) => {
   if (loading) {
     return (
-      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm animate-pulse">
-        <div className="h-4 w-40 bg-gray-100 rounded mb-4" />
-        <div className="h-3 w-full bg-gray-100 rounded mb-2" />
-        <div className="h-3 w-2/3 bg-gray-100 rounded" />
+      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-xs animate-pulse">
+        <div className="h-4 w-40 bg-gray-100 rounded-sm mb-4" />
+        <div className="h-3 w-full bg-gray-100 rounded-sm mb-2" />
+        <div className="h-3 w-2/3 bg-gray-100 rounded-sm" />
       </div>
     );
   }
@@ -251,7 +251,7 @@ const AIReviewSummary = ({ data, loading }) => {
   }[data.sentiment] || "bg-gray-50 text-gray-700";
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+    <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-xs">
       <div className="flex items-center justify-between mb-4">
         <h4 className="font-bold text-gray-900 flex items-center gap-2 text-sm">
           <Sparkles size={15} className="text-[#a85d37]" /> AI Review Summary
@@ -606,7 +606,7 @@ export default function ProductCard() {
 
           {/* Image gallery */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 shadow-sm border border-gray-100 relative">
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 shadow-xs border border-gray-100 relative">
 
               {/* Main display area */}
               <div className="relative group rounded-xl sm:rounded-2xl overflow-hidden bg-gray-50 aspect-square max-h-[350px] lg:max-h-[450px] w-full mx-auto">
@@ -619,7 +619,7 @@ export default function ProductCard() {
                   className="h-full w-full flex items-center"
                 >
                   {imgs.map((img, i) => (
-                    <div key={i} className="relative w-full h-full outline-none">
+                    <div key={i} className="relative w-full h-full outline-hidden">
                       <div
                         className="w-full h-full flex items-center justify-center cursor-zoom-in p-4 sm:p-6"
                         onMouseMove={(e) => {
@@ -688,7 +688,7 @@ export default function ProductCard() {
                     ]}
                   >
                     {imgs.map((img, i) => (
-                      <div key={i} className="px-1 md:px-2 cursor-pointer outline-none">
+                      <div key={i} className="px-1 md:px-2 cursor-pointer outline-hidden">
                         <div className="h-14 sm:h-16 w-full rounded-lg sm:rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden hover:border-gray-900 transition-all">
                           <img src={img} className="h-full w-full object-contain p-1 mix-blend-multiply" alt="" />
                         </div>
@@ -748,7 +748,7 @@ export default function ProductCard() {
             </div>
 
             {/* Controls */}
-            <div ref={buyBoxRef} className="space-y-2.5 sm:space-y-4 rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-2.5 sm:p-5 shadow-sm">
+            <div ref={buyBoxRef} className="space-y-2.5 sm:space-y-4 rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-2.5 sm:p-5 shadow-xs">
               {/* Variant Selectors */}
               {product.variants?.length > 0 && (
                 <div className="space-y-2 sm:space-y-4">
@@ -836,7 +836,7 @@ export default function ProductCard() {
                 </button>
                 <button
                   onClick={handleShare}
-                  className="flex h-8 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full border border-black/10 text-[11px] sm:text-sm font-bold text-[#5f5b52] transition-colors hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                  className="flex h-8 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full border border-black/10 text-[11px] sm:text-sm font-bold text-[#5f5b52] transition-colors hover:bg-black/4 hover:text-[#1d1c19]"
                 >
                   <FaShareAlt size={11} /> Share
                 </button>
@@ -851,7 +851,7 @@ export default function ProductCard() {
                 { icon: <FaUndoAlt />, title: "Easy Returns", sub: "Within 7 days" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center justify-center text-center gap-1">
-                  <div className="text-gray-900 bg-white p-2 sm:p-2.5 rounded-full shadow-sm border border-gray-100 text-xs sm:text-base">
+                  <div className="text-gray-900 bg-white p-2 sm:p-2.5 rounded-full shadow-xs border border-gray-100 text-xs sm:text-base">
                     {item.icon}
                   </div>
                   <div>
@@ -920,12 +920,12 @@ export default function ProductCard() {
         <div className="mt-12 sm:mt-20 lg:mt-28 border-t border-gray-100 pt-8 sm:pt-14">
           <div className="flex items-center justify-between gap-3 mb-4 sm:mb-6">
             <div>
-              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 leading-tight">Customer Reviews</h3>
+              <h3 className="text-lg sm:text-2xl sm:leading-8 font-bold text-gray-900 leading-tight">Customer Reviews</h3>
               <p className="text-[11px] sm:text-xs text-gray-500 mt-0.5">Real feedback from verified buyers</p>
             </div>
             <button
               onClick={() => isAuthenticated ? setShowReviewModal(true) : navigate(`/login?redirect=${encodeURIComponent(location.pathname)}`)}
-              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gray-900 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-sm hover:bg-black transition-all active:scale-95 shrink-0"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gray-900 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-xs hover:bg-black transition-all active:scale-95 shrink-0"
             >
               <FaPen size={10} /> {isAuthenticated ? "Write Review" : "Write Review"}
             </button>
@@ -933,7 +933,7 @@ export default function ProductCard() {
 
           <div className="grid lg:grid-cols-12 gap-5 lg:gap-8">
             <div className="lg:col-span-4 space-y-4">
-              <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-xs">
                 <ReviewSummary reviews={reviewsList.length ? reviewsList : Array(reviewCount).fill({ rating: rating || 5 })} rating={rating} />
               </div>
             </div>
@@ -951,7 +951,7 @@ export default function ProductCard() {
                     <button
                       key={opt.key}
                       onClick={() => { setReviewSort(opt.key); setReviewPage(1); }}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${reviewSort === opt.key ? "bg-gray-900 text-white shadow-sm" : "text-gray-500 hover:bg-gray-100"}`}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${reviewSort === opt.key ? "bg-gray-900 text-white shadow-xs" : "text-gray-500 hover:bg-gray-100"}`}
                     >
                       {opt.label}
                     </button>
@@ -1022,10 +1022,10 @@ export default function ProductCard() {
               {related.map((rp) => (
                 <div key={rp._id} className="px-2 md:px-4 py-2 h-full">
                   <Link to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full">
-                    <div className="aspect-[4/3] bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
+                    <div className="aspect-4/3 bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
                       <img loading="lazy" decoding="async" src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
                       {rp.discountPercentage > 0 && (
-                        <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded shadow-sm">
+                        <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded-sm shadow-xs">
                           -{Math.round(rp.discountPercentage)}%
                         </span>
                       )}
@@ -1065,7 +1065,7 @@ export default function ProductCard() {
       </div>
 
       {/* Sticky Mobile Bar */}
-      <div className={`fixed bottom-0 left-0 right-0 z-40 border-t border-black/[0.08] bg-[#fffdf8]/95 px-4 py-2.5 pb-[max(0.6rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden transition-transform duration-300 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] ${showStickyBar ? 'translate-y-0' : 'translate-y-full'}`}>
+      <div className={`fixed bottom-0 left-0 right-0 z-40 border-t border-black/8 bg-[#fffdf8]/95 px-4 py-2.5 pb-[max(0.6rem,env(safe-area-inset-bottom))] backdrop-blur-sm lg:hidden transition-transform duration-300 shadow-[0_-4px_16px_rgba(0,0,0,0.06)] ${showStickyBar ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="flex gap-2.5 items-center">
           <div className="flex-1 min-w-0">
             <div className="text-[10px] text-gray-500 uppercase tracking-wide font-bold">Total</div>

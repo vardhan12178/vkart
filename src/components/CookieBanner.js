@@ -40,15 +40,15 @@ export default function CookieBanner() {
       aria-modal="false"
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-copy"
-      className={`cookie-consent fixed inset-x-3 bottom-[calc(.75rem+env(safe-area-inset-bottom))] z-[110] transition duration-300 ease-out sm:left-5 sm:right-auto sm:w-[min(30rem,calc(100vw-2.5rem))] ${
+      className={`cookie-consent fixed inset-x-3 bottom-[calc(.75rem+env(safe-area-inset-bottom))] z-110 transition duration-300 ease-out sm:left-5 sm:right-auto sm:w-[min(30rem,calc(100vw-2.5rem))] ${
         isMounting ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
       }`}
     >
-      <div className="relative overflow-hidden rounded-[1.25rem] border border-black/[0.1] bg-[#fffdf8]/95 p-4 text-[#1d1c19] shadow-[0_24px_70px_rgba(29,28,25,.2)] backdrop-blur-xl sm:p-5">
+      <div className="relative overflow-hidden rounded-[1.25rem] border border-black/10 bg-[#fffdf8]/95 p-4 text-[#1d1c19] shadow-[0_24px_70px_rgba(29,28,25,.2)] backdrop-blur-xl sm:p-5">
         <button
           type="button"
           onClick={() => saveChoice("essential")}
-          className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-[#8a857b] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30"
+          className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-[#8a857b] transition-colors hover:bg-black/5 hover:text-[#1d1c19] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#a85d37]/30"
           aria-label="Close cookie preferences and use essential cookies only"
         >
           <IoClose size={19} />
@@ -78,14 +78,14 @@ export default function CookieBanner() {
           <button
             type="button"
             onClick={() => saveChoice("accepted")}
-            className="min-h-11 rounded-full bg-[#1d1c19] px-4 text-xs font-bold text-white transition-colors hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
+            className="min-h-11 rounded-full bg-[#1d1c19] px-4 text-xs font-bold text-white transition-colors hover:bg-[#34312c] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
           >
             Accept all
           </button>
           <button
             type="button"
             onClick={() => saveChoice("essential")}
-            className="min-h-11 rounded-full border border-black/[0.11] bg-transparent px-4 text-xs font-bold text-[#514d45] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#75472f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
+            className="min-h-11 rounded-full border border-black/11 bg-transparent px-4 text-xs font-bold text-[#514d45] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#75472f] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
           >
             Essential only
           </button>

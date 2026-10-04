@@ -57,7 +57,7 @@ const Toast = ({ show, kind = "error", children }) => {
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
       className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
+        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-xs backdrop-blur-md border",
         isSuccess
           ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
           : "bg-red-50/80 border-red-100 text-red-800"
@@ -300,7 +300,7 @@ export default function Login() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="premium-auth-shell relative w-full max-w-[1180px] min-h-[650px] lg:min-h-[720px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/[0.06]"
+          className="premium-auth-shell relative w-full max-w-[1180px] min-h-[650px] lg:min-h-[720px] bg-[#fffdf8] rounded-3xl shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/6"
         >
           {/* --- LEFT PANEL (Visual) --- */}
           <div className="premium-auth-visual hidden lg:flex w-1/2 relative flex-col justify-between bg-[#ded2c2] p-8 xl:p-12 overflow-hidden">
@@ -309,7 +309,7 @@ export default function Login() {
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
-                <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
+                <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
                   <ShoppingCartIcon className="h-6 w-6" />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart.</span>
@@ -319,7 +319,7 @@ export default function Login() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="font-editorial text-4xl xl:text-5xl font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.03em]"
+                className="font-editorial text-4xl xl:text-5xl xl:leading-none font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.03em]"
               >
                 Welcome back to<br />better choices.
               </motion.h2>
@@ -349,7 +349,7 @@ export default function Login() {
           <div className="premium-auth-form w-full lg:w-1/2 bg-[#fffdf8] flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 relative">
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-6 sm:mb-8">
-              <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
+              <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
                 <ShoppingCartIcon className="h-6 w-6" />
               </div>
             </div>
@@ -419,7 +419,7 @@ export default function Login() {
                       }}
                       placeholder="Enter your email"
                       className={cx(
-                        "block w-full rounded-xl border bg-gray-50/50 py-3 sm:py-3.5 pl-10 sm:pl-11 pr-4 text-sm sm:text-base text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                        "block w-full rounded-xl border bg-gray-50/50 py-3 sm:py-3.5 pl-10 sm:pl-11 pr-4 text-sm sm:text-base text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                         errors.userId && touched.userId
                           ? "border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 bg-red-50/30"
                           : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -455,7 +455,7 @@ export default function Login() {
                       }}
                       placeholder="••••••••"
                       className={cx(
-                        "block w-full rounded-xl border bg-gray-50/50 py-3 sm:py-3.5 pl-10 sm:pl-11 pr-12 sm:pr-14 text-sm sm:text-base text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                        "block w-full rounded-xl border bg-gray-50/50 py-3 sm:py-3.5 pl-10 sm:pl-11 pr-12 sm:pr-14 text-sm sm:text-base text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                         errors.password && touched.password
                           ? "border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 bg-red-50/30"
                           : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -464,7 +464,7 @@ export default function Login() {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-none min-w-[44px] min-h-[44px]"
+                      className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-hidden min-w-[44px] min-h-[44px]"
                       aria-label={showPassword ? "Hide password" : "Show password"}
                     >
                       {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
@@ -472,7 +472,7 @@ export default function Login() {
                   </div>
 
                   {capsOn && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded-sm inline-block">
                       ⚠️ Caps Lock is ON
                     </motion.div>
                   )}
@@ -486,7 +486,7 @@ export default function Login() {
                       type="checkbox"
                       checked={remember}
                       onChange={(e) => setRemember(e.target.checked)}
-                      className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
+                      className="h-4 w-4 rounded-sm border-gray-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
                     />
                     <span className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Remember for 30 days</span>
                   </label>
@@ -506,7 +506,7 @@ export default function Login() {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
+                  className="w-full relative overflow-hidden rounded-xl bg-linear-to-br from-gray-900 to-gray-800 px-4 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-hidden focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
@@ -544,7 +544,7 @@ export default function Login() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-200 flex items-center justify-center bg-gray-900/60 backdrop-blur-xs p-4"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -589,7 +589,7 @@ export default function Login() {
                     onKeyDown={on2faKeyDown}
                     placeholder="000 000"
                     inputMode="numeric"
-                    className="w-full text-center text-2xl sm:text-3xl font-bold tracking-[0.3em] sm:tracking-[0.5em] text-gray-800 border-b-2 border-gray-200 py-3 sm:py-4 focus:border-orange-500 focus:outline-none bg-transparent transition-colors placeholder:text-gray-200"
+                    className="w-full text-center text-2xl sm:text-3xl font-bold tracking-[0.3em] sm:tracking-[0.5em] text-gray-800 border-b-2 border-gray-200 py-3 sm:py-4 focus:border-orange-500 focus:outline-hidden bg-transparent transition-colors placeholder:text-gray-200"
                   />
 
                   {twofaError && (

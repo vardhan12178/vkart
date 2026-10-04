@@ -55,7 +55,7 @@ const Skeleton = () => (
   <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-5xl mx-auto space-y-6">
       {/* Header Skeleton */}
-      <div className="rounded-[2.5rem] bg-white p-8 shadow-sm border border-gray-100 flex flex-col sm:flex-row items-center gap-8 animate-pulse">
+      <div className="rounded-[2.5rem] bg-white p-8 shadow-xs border border-gray-100 flex flex-col sm:flex-row items-center gap-8 animate-pulse">
         <div className="h-32 w-32 rounded-full bg-gray-200 shrink-0" />
         <div className="flex-1 space-y-4 w-full">
           <div className="h-8 w-48 bg-gray-200 rounded-lg" />
@@ -69,7 +69,7 @@ const Skeleton = () => (
       {/* Grid Skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="h-40 bg-white rounded-3xl shadow-sm border border-gray-100 animate-pulse" />
+          <div key={i} className="h-40 bg-white rounded-3xl shadow-xs border border-gray-100 animate-pulse" />
         ))}
       </div>
     </div>
@@ -81,7 +81,7 @@ const Toast = ({ kind = "success", message }) => {
   if (!message) return null;
   const ok = kind === "success";
   return (
-    <div className="fixed top-6 left-1/2 z-[100] -translate-x-1/2 animate-fade-in-down">
+    <div className="fixed top-6 left-1/2 z-100 -translate-x-1/2 animate-fade-in-down">
       <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
         }`}>
         <div className={`p-1 rounded-full ${ok ? 'bg-emerald-200' : 'bg-red-200'}`}>
@@ -474,9 +474,9 @@ export default function Profile() {
 
       {/* --- 2FA MODAL --- */}
       {twoFAOpen && createPortal((
-        <div className="profile-2fa-backdrop fixed inset-0 z-[200] flex items-center justify-center bg-[#171612]/65 backdrop-blur-md p-4 animate-fade-in">
-          <div className="profile-2fa-modal isolate w-full max-w-[26rem] overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#fffdf8] text-[#1d1c19] shadow-[0_30px_100px_rgba(0,0,0,.35)]">
-            <div className="flex items-center justify-between border-b border-black/[0.08] px-6 py-5">
+        <div className="profile-2fa-backdrop fixed inset-0 z-200 flex items-center justify-center bg-[#171612]/65 backdrop-blur-md p-4 animate-fade-in">
+          <div className="profile-2fa-modal isolate w-full max-w-104 overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#fffdf8] text-[#1d1c19] shadow-[0_30px_100px_rgba(0,0,0,.35)]">
+            <div className="flex items-center justify-between border-b border-black/8 px-6 py-5">
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">Account security</p>
                 <h3 className="mt-1 text-lg font-bold text-[#1d1c19]">Set up two-factor authentication</h3>
@@ -494,7 +494,7 @@ export default function Profile() {
               <p className="text-sm font-semibold text-[#34322d]">Scan with Google Authenticator</p>
               <p className="mt-1 max-w-xs text-xs leading-5 text-[#777269]">Then enter the six-digit code shown in the app to finish setup.</p>
 
-              <div className="mt-5 w-full rounded-xl border border-black/[0.08] bg-[#f1ede5] px-3 py-3">
+              <div className="mt-5 w-full rounded-xl border border-black/8 bg-[#f1ede5] px-3 py-3">
                 <p className="mb-1 text-left text-[9px] font-bold uppercase tracking-[0.16em] text-[#8b867c]">Manual setup key</p>
                 <code className="block truncate text-left font-mono text-xs font-semibold text-[#4a4740]">{twoFAState.secret}</code>
               </div>
@@ -506,7 +506,7 @@ export default function Profile() {
                 inputMode="numeric"
                 autoComplete="one-time-code"
                 placeholder="000 000"
-                className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3.5 text-center text-xl font-bold tracking-[0.35em] text-[#1d1c19] outline-none focus:border-[#a85d37] focus:ring-4 focus:ring-[#a85d37]/10"
+                className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3.5 text-center text-xl font-bold tracking-[0.35em] text-[#1d1c19] outline-hidden focus:border-[#a85d37] focus:ring-4 focus:ring-[#a85d37]/10"
                 maxLength={6}
                 value={twoFAState.code}
                 onChange={(e) => setTwoFAState({ ...twoFAState, code: e.target.value.replace(/\D/g, "") })}
@@ -525,7 +525,7 @@ export default function Profile() {
       ), document.body)}
 
       {/* --- BACKGROUND DECOR --- */}
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-gray-50 to-white opacity-70" />
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-orange-50 via-gray-50 to-white opacity-70" />
 
       <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 sm:pt-10">
 
@@ -538,7 +538,7 @@ export default function Profile() {
 
             {/* Avatar Group */}
             <div className="relative group shrink-0">
-              <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full p-1 bg-white shadow-sm ring-1 ring-gray-100 overflow-hidden">
+              <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full p-1 bg-white shadow-xs ring-1 ring-gray-100 overflow-hidden">
                 {user?.profileImage && (
                   <img
                     src={user.profileImage}
@@ -552,14 +552,14 @@ export default function Profile() {
                     }}
                   />
                 )}
-                <div className={`avatar-fallback h-full w-full rounded-full bg-gradient-to-tr from-orange-100 to-amber-200 flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}>
+                <div className={`avatar-fallback h-full w-full rounded-full bg-linear-to-tr from-orange-100 to-amber-200 flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}>
                   <span className="text-xl sm:text-3xl font-black text-orange-600/80 tracking-wide select-none">
                     {getInitials(user?.name)}
                   </span>
                 </div>
               </div>
 
-              <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-gray-900 text-white rounded-full cursor-pointer shadow-sm hover:bg-orange-600 transition-all border-2 border-white z-10" title="Change Photo">
+              <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-gray-900 text-white rounded-full cursor-pointer shadow-xs hover:bg-orange-600 transition-all border-2 border-white z-10" title="Change Photo">
                 <FaCamera className="text-[9px] sm:text-xs" />
                 <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
               </label>
@@ -575,7 +575,7 @@ export default function Profile() {
                       value={nameInput}
                       onChange={(e) => setNameInput(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && handleUpdateName()}
-                      className="text-base sm:text-2xl font-bold text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-none px-1"
+                      className="text-base sm:text-2xl font-bold text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-hidden px-1"
                       autoFocus
                     />
                     <button onClick={handleUpdateName} className="p-1 rounded-md bg-gray-900 text-white text-xs font-bold hover:bg-black"><FaCheckCircle size={12} /></button>
@@ -588,7 +588,7 @@ export default function Profile() {
                   </h1>
                 )}
                 {user?.isPrime ? (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 text-[10px] font-bold uppercase tracking-wider border border-amber-200 shadow-2xs shrink-0">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 text-[10px] font-bold uppercase tracking-wider border border-amber-200 shrink-0">
                     <FaCrown size={8} className="text-amber-500" />
                     Prime
                   </span>
@@ -621,13 +621,13 @@ export default function Profile() {
 
         {/* --- TABS --- */}
         <div className="mt-3.5 sm:mt-6 flex justify-center sm:justify-start mb-3 sm:mb-5">
-          <div className="bg-white p-1 rounded-xl shadow-2xs border border-gray-100 inline-flex">
+          <div className="bg-white p-1 rounded-xl border border-gray-100 inline-flex">
             {['overview', 'orders'].map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 sm:px-6 py-1.5 rounded-lg text-xs sm:text-sm font-bold capitalize transition-all ${activeTab === tab
-                  ? "bg-gray-900 text-white shadow-xs"
+                  ? "bg-gray-900 text-white "
                   : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
                   }`}
               >
@@ -643,7 +643,7 @@ export default function Profile() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 sm:gap-5">
 
               {/* Column 1: Personal Details Card */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-xs p-4 sm:p-5 space-y-3">
+              <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 space-y-3">
                 <div className="flex items-center gap-2 pb-2 border-b border-gray-50">
                   <FaUser className="text-gray-400 text-xs" />
                   <h3 className="text-xs sm:text-sm font-bold text-gray-900">Personal Details</h3>
@@ -668,7 +668,7 @@ export default function Profile() {
               <div className="lg:col-span-2 space-y-3.5 sm:space-y-5">
 
                 {/* Security Box */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs relative overflow-hidden">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 relative overflow-hidden">
                   <div className={`absolute left-0 top-0 bottom-0 w-1 ${user?.twoFactorEnabled ? 'bg-emerald-500' : 'bg-gray-200'}`} />
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
@@ -689,7 +689,7 @@ export default function Profile() {
                       <button
                         onClick={disableTwoFA}
                         disabled={twoFAState.disabling}
-                        className="flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition shadow-2xs shrink-0"
+                        className="flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition shrink-0"
                       >
                         <FaLock size={10} /> {twoFAState.disabling ? "..." : "Disable"}
                       </button>
@@ -697,7 +697,7 @@ export default function Profile() {
                       <button
                         onClick={startTwoFASetup}
                         disabled={twoFAState.loading}
-                        className="px-3 py-1.5 rounded-xl bg-gray-900 text-white font-bold shadow-2xs hover:bg-black transition text-xs flex items-center gap-1 shrink-0"
+                        className="px-3 py-1.5 rounded-xl bg-gray-900 text-white font-bold hover:bg-black transition text-xs flex items-center gap-1 shrink-0"
                       >
                         <FaQrcode size={11} /> {twoFAState.loading ? "..." : "Enable"}
                       </button>
@@ -706,7 +706,7 @@ export default function Profile() {
                 </div>
 
                 {/* Password Change Box */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs relative overflow-hidden">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 relative overflow-hidden">
                   <div className={`absolute left-0 top-0 bottom-0 w-1 ${pwOpen ? 'bg-orange-400' : 'bg-gray-200'}`} />
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
@@ -730,20 +730,20 @@ export default function Profile() {
                     <div className="mt-3.5 sm:mt-5 space-y-2.5 max-w-sm">
                       <div>
                         <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">Current Password</label>
-                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="••••••••" />
+                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-hidden text-xs transition-all" placeholder="••••••••" />
                       </div>
                       <div>
                         <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">New Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="Min 8 characters" />
+                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-hidden text-xs transition-all" placeholder="Min 8 characters" />
                       </div>
                       <div>
                         <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">Confirm Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="Re-enter new password" />
+                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-hidden text-xs transition-all" placeholder="Re-enter new password" />
                       </div>
                       <button
                         onClick={handleChangePassword}
                         disabled={pw.loading}
-                        className="w-full py-2 rounded-xl bg-gray-900 text-white font-bold shadow-xs hover:bg-black transition-all disabled:opacity-50 text-xs"
+                        className="w-full py-2 rounded-xl bg-gray-900 text-white font-bold hover:bg-black transition-all disabled:opacity-50 text-xs"
                       >
                         {pw.loading ? "Saving..." : "Update Password"}
                       </button>
@@ -765,7 +765,7 @@ export default function Profile() {
                         <p className="text-[10px] text-gray-400 truncate hidden sm:block mt-0.5">{link.desc}</p>
                       </div>
                     );
-                    const cardClass = "group bg-white p-3 sm:p-4 rounded-2xl border border-gray-100 shadow-2xs hover:shadow-md transition-all text-left w-full";
+                    const cardClass = "group bg-white p-3 sm:p-4 rounded-2xl border border-gray-100 hover:shadow-md transition-all text-left w-full";
                     return link.action ? (
                       <button key={i} type="button" onClick={link.action} className={cardClass}>
                         {cardBody}
@@ -781,7 +781,7 @@ export default function Profile() {
                 <SupportChatWidget open={showSupportChat} onClose={() => setShowSupportChat(false)} />
 
                 {/* Wallet */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 ">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xs sm:text-base font-bold text-gray-900">VKart Wallet</h3>
                     <div className="text-base sm:text-xl font-bold text-gray-900">₹{Math.round(wallet.balance)}</div>
@@ -806,7 +806,7 @@ export default function Profile() {
                 </div>
 
                 {/* Address Book */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 ">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
                       <FaMapMarkerAlt className="text-orange-500 text-xs sm:text-sm" /> Saved Addresses
@@ -867,16 +867,16 @@ export default function Profile() {
                               type="text"
                               value={addrForm[f.key]}
                               onChange={(e) => setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))}
-                              className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all"
+                              className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-hidden text-xs transition-all"
                             />
                           </div>
                         ))}
                       </div>
                       <label className="flex items-center gap-2 mt-2.5 text-xs text-gray-600 cursor-pointer">
-                        <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-gray-300 text-orange-500 focus:ring-orange-200" />
+                        <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded-sm border-gray-300 text-orange-500 focus:ring-orange-200" />
                         Set as default address
                       </label>
-                      <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-3.5 w-full py-2.5 rounded-xl bg-gray-900 text-white font-bold text-xs shadow-xs hover:bg-black transition-all disabled:opacity-50">
+                      <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-3.5 w-full py-2.5 rounded-xl bg-gray-900 text-white font-bold text-xs hover:bg-black transition-all disabled:opacity-50">
                         {addrLoading ? "Saving..." : (editAddr ? "Update Address" : "Save Address")}
                       </button>
                     </div>
@@ -887,7 +887,7 @@ export default function Profile() {
             </div>
           ) : (
             // --- ORDERS TAB ---
-            <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm border border-gray-100 min-h-[400px] p-4 sm:p-8">
+            <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-xs border border-gray-100 min-h-[400px] p-4 sm:p-8">
               <div className="flex justify-between items-center mb-6 sm:mb-8 border-b border-gray-100 pb-4">
                 <div>
                   <h2 className="text-lg sm:text-xl font-bold text-gray-900">Order History</h2>
@@ -923,7 +923,7 @@ export default function Profile() {
         <div className="mt-8 pb-12 flex justify-center">
           <button
             onClick={handleLogout}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-red-200/80 bg-red-50/80 hover:bg-red-100/80 text-red-700 font-bold text-xs sm:text-sm transition-all shadow-2xs active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-red-200/80 bg-red-50/80 hover:bg-red-100/80 text-red-700 font-bold text-xs sm:text-sm transition-all active:scale-95"
           >
             <FaSignOutAlt className="text-xs" />
             <span>Sign Out</span>
@@ -933,7 +933,7 @@ export default function Profile() {
 
       {/* --- AVATAR CROPPER MODAL --- */}
       {showEditor && selectedFile && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[100] animate-fade-in">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-xs flex items-center justify-center z-100 animate-fade-in">
           <div className="bg-white p-6 rounded-3xl shadow-2xl space-y-6 w-[320px]">
             <h3 className="text-lg font-bold text-center text-gray-900">Adjust Photo</h3>
 

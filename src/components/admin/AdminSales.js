@@ -187,7 +187,7 @@ export default function AdminSales() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <h1 className="font-editorial text-lg sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight truncate">
+            <h1 className="font-editorial text-lg sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight truncate">
               Sales & Promotions
             </h1>
             <p className="text-[11px] sm:text-sm text-slate-500 mt-0.5 font-medium">{sales.length} promotional events</p>
@@ -195,7 +195,7 @@ export default function AdminSales() {
           <div className="flex items-center gap-1.5 shrink-0">
             <button
               onClick={() => salesQuery.refetch()}
-              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition shadow-xs text-slate-600"
+              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-slate-600"
               title="Refresh"
             >
               <RefreshIcon className={`h-4 w-4 ${salesQuery.isFetching ? "animate-spin" : ""}`} />
@@ -203,7 +203,7 @@ export default function AdminSales() {
             {canWrite && (
               <button
                 onClick={openCreate}
-                className="flex items-center gap-1 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shadow-xs shrink-0 whitespace-nowrap"
+                className="flex items-center gap-1 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shrink-0 whitespace-nowrap"
               >
                 <PlusIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="hidden sm:inline">New Sale</span>
@@ -222,9 +222,9 @@ export default function AdminSales() {
 
         {/* Content Area */}
         {loading ? (
-          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">Loading...</div>
+          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200/70 text-slate-400">Loading...</div>
         ) : sales.length === 0 ? (
-          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs">
+          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 ">
             <p className="text-base font-bold text-slate-900 mb-1">No sales created yet</p>
             <p className="text-xs sm:text-sm text-slate-500 mb-4">Set up a seasonal or promotional discount event.</p>
             {canWrite && (
@@ -232,7 +232,7 @@ export default function AdminSales() {
             )}
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden">
+          <div className="bg-white rounded-2xl border border-slate-200/70 overflow-hidden">
             {/* Mobile Card View (< md) */}
             <div className="block md:hidden divide-y divide-slate-100">
               {sales.map((s) => (
@@ -280,11 +280,11 @@ export default function AdminSales() {
                             {c.category.replace(/-/g, ' ')}
                           </span>
                           <div className="flex items-center gap-1 shrink-0">
-                            <span className="font-bold text-orange-700 bg-orange-50 border border-orange-100 px-1.5 py-0.5 rounded text-[10px]">
+                            <span className="font-bold text-orange-700 bg-orange-50 border border-orange-100 px-1.5 py-0.5 rounded-sm text-[10px]">
                               {c.discountPercent}% OFF
                             </span>
                             {c.primeDiscountPercent > 0 && (
-                              <span className="font-bold text-amber-800 bg-amber-50 border border-amber-200/60 px-1.5 py-0.5 rounded text-[10px]">
+                              <span className="font-bold text-amber-800 bg-amber-50 border border-amber-200/60 px-1.5 py-0.5 rounded-sm text-[10px]">
                                 ★ {c.primeDiscountPercent}%
                               </span>
                             )}
@@ -384,7 +384,7 @@ export default function AdminSales() {
 
         {/* Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[94vh] overflow-y-auto border border-slate-200 animate-in zoom-in-95 duration-150" onClick={(e) => e.stopPropagation()}>
               <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100 flex items-center justify-between">
                 <h2 className="text-base sm:text-lg font-bold text-slate-900">{editing ? "Edit Sale" : "Create Sale"}</h2>
@@ -396,27 +396,27 @@ export default function AdminSales() {
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Name *</label>
-                    <input value={form.name} onChange={(e) => handleField("name", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" />
+                    <input value={form.name} onChange={(e) => handleField("name", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-hidden" />
                   </div>
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Slug *</label>
-                    <input value={form.slug} onChange={(e) => handleField("slug", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" placeholder="republic-day-sale" />
+                    <input value={form.slug} onChange={(e) => handleField("slug", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-hidden" placeholder="republic-day-sale" />
                   </div>
                 </div>
 
                 <div>
                   <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Description</label>
-                  <input value={form.description} onChange={(e) => handleField("description", e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" />
+                  <input value={form.description} onChange={(e) => handleField("description", e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-hidden" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Start Date *</label>
-                    <input type="datetime-local" value={form.startDate} onChange={(e) => handleField("startDate", e.target.value)} required className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                    <input type="datetime-local" value={form.startDate} onChange={(e) => handleField("startDate", e.target.value)} required className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" />
                   </div>
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">End Date *</label>
-                    <input type="datetime-local" value={form.endDate} onChange={(e) => handleField("endDate", e.target.value)} required className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                    <input type="datetime-local" value={form.endDate} onChange={(e) => handleField("endDate", e.target.value)} required className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" />
                   </div>
                 </div>
 
@@ -470,13 +470,13 @@ export default function AdminSales() {
                 </div>
 
                 <label className="flex items-center gap-2 cursor-pointer pt-1">
-                  <input type="checkbox" checked={form.isActive} onChange={(e) => handleField("isActive", e.target.checked)} className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
+                  <input type="checkbox" checked={form.isActive} onChange={(e) => handleField("isActive", e.target.checked)} className="rounded-sm border-slate-300 text-orange-500 focus:ring-orange-500" />
                   <span className="text-xs sm:text-sm font-bold text-slate-700">Active</span>
                 </label>
 
                 <div className="flex justify-end gap-2.5 pt-3 border-t border-slate-100">
                   <button type="button" onClick={() => setShowForm(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 transition">Cancel</button>
-                  <button type="submit" disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition disabled:opacity-50 shadow-xs">
+                  <button type="submit" disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition disabled:opacity-50 ">
                     {saving ? "Saving..." : editing ? "Update Sale" : "Create Sale"}
                   </button>
                 </div>

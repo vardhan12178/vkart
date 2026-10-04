@@ -83,7 +83,7 @@ export default function OrderSuccess() {
         </div>
         <h2 className="text-lg font-bold text-gray-900 mb-1">Order Details Unavailable</h2>
         <p className="text-gray-500 text-xs sm:text-sm mb-4">We couldn't locate this order in your account.</p>
-        <Link to="/" className="px-5 py-2.5 bg-gray-900 text-white rounded-xl font-bold text-xs shadow-xs">
+        <Link to="/" className="px-5 py-2.5 bg-gray-900 text-white rounded-xl font-bold text-xs ">
           Back to Home
         </Link>
       </div>
@@ -106,16 +106,16 @@ export default function OrderSuccess() {
       )}
 
       {/* Background radial glow */}
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-50/60 via-gray-50 to-white opacity-80" />
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-amber-50/60 via-gray-50 to-white opacity-80" />
 
       <div className="max-w-xl mx-auto space-y-4 relative z-10">
 
         {/* Top Header Notification */}
         <div className="text-center space-y-1.5 pt-2">
-          <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto shadow-sm shadow-emerald-500/20">
+          <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto shadow-xs shadow-emerald-500/20">
             <FaCheckCircle size={24} />
           </div>
-          <h1 className="font-editorial text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-editorial text-2xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
             Thank you for your order!
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 font-medium">
@@ -124,7 +124,7 @@ export default function OrderSuccess() {
         </div>
 
         {/* Unified Receipt Card */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/80 shadow-xs overflow-hidden">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/80 overflow-hidden">
 
           {/* Card Header Bar */}
           <div className="px-4 sm:px-6 py-3.5 bg-slate-50/80 border-b border-gray-100 flex items-center justify-between gap-2 flex-wrap">
@@ -210,7 +210,7 @@ export default function OrderSuccess() {
           <div className="p-4 sm:p-6 border-t border-gray-100 bg-slate-50/80 flex flex-col sm:flex-row gap-2.5">
             <Link
               to={`/orders/${order._id}`}
-              className="flex-1 py-2.5 px-4 bg-slate-900 text-white text-xs font-bold rounded-xl shadow-xs hover:bg-black transition flex items-center justify-center gap-1.5 text-center"
+              className="flex-1 py-2.5 px-4 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-black transition flex items-center justify-center gap-1.5 text-center"
             >
               <FaBox size={11} />
               <span>View Order Details</span>

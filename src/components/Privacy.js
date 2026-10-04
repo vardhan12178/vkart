@@ -106,7 +106,7 @@ export default function Privacy() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">1</span>
               Overview
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p>
                 VKart is a <strong>non-commercial portfolio demonstration</strong> created to showcase full-stack e-commerce features. 
                 This policy clarifies that while the site looks and feels real, it is a simulation. 
@@ -120,7 +120,7 @@ export default function Privacy() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">2</span>
               Information You Enter
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">
                 You may be asked to enter details like names, addresses, or emails to test functionalities (e.g., Checkout, Profile).
               </p>
@@ -136,7 +136,7 @@ export default function Privacy() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">3</span>
               Local Storage & Cookies
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">
                 We use browser technologies like <strong>LocalStorage</strong> and <strong>Session Cookies</strong> to:
               </p>
@@ -155,7 +155,7 @@ export default function Privacy() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">4</span>
               Analytics & Tracking
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p>
                 The portfolio version of VKart does <strong>not</strong> use third-party tracking pixels, Google Analytics, or advertising cookies. Your browsing activity on this demo is private to your session.
               </p>
@@ -168,7 +168,7 @@ export default function Privacy() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">5</span>
               Third-Party Services
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p>
                 This demo may fetch product data from public APIs or use services like <strong>Razorpay (Test Mode)</strong> or <strong>Google OAuth</strong>. Interactions with these services are subject to their respective privacy policies.
               </p>
@@ -181,7 +181,7 @@ export default function Privacy() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 text-gray-600 text-sm">6</span>
               Your Choices
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <ul className="list-disc pl-5 space-y-2">
                 <li>You can clear your browser cache to remove all local data from this site.</li>
                 <li>You can delete your demo account via the Profile settings (simulated).</li>

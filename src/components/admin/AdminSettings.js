@@ -86,7 +86,7 @@ export default function AdminSettings() {
         {/* Header with Inline Responsive Save CTA */}
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight truncate">
+            <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight truncate">
               Store Settings
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium truncate">
@@ -97,7 +97,7 @@ export default function AdminSettings() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-xs active:scale-95 text-xs sm:text-sm font-bold shrink-0 disabled:opacity-60"
+              className="flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all active:scale-95 text-xs sm:text-sm font-bold shrink-0 disabled:opacity-60"
             >
               {saving ? (
                 <div className="h-3.5 w-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -125,13 +125,13 @@ export default function AdminSettings() {
         <div className="space-y-4 sm:space-y-6">
 
           {/* Store Identity Card */}
-          <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-7 space-y-4">
+          <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 pb-2 border-b border-slate-100">
               <div className="h-8 w-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
                 <OfficeBuildingIcon className="h-4 w-4" />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
+                <h2 className="text-sm sm:text-base sm:leading-6 font-bold text-slate-900 leading-tight">
                   Store Identity
                 </h2>
                 <p className="text-[11px] sm:text-xs text-slate-400 font-medium">Business branding used on receipts and invoices.</p>
@@ -157,13 +157,13 @@ export default function AdminSettings() {
           </div>
 
           {/* Contact Section Card */}
-          <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-7 space-y-4">
+          <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 pb-2 border-b border-slate-100">
               <div className="h-8 w-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
                 <PhoneIcon className="h-4 w-4" />
               </div>
               <div>
-                <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
+                <h2 className="text-sm sm:text-base sm:leading-6 font-bold text-slate-900 leading-tight">
                   Support Contact
                 </h2>
                 <p className="text-[11px] sm:text-xs text-slate-400 font-medium">Customer assistance contacts printed on invoices.</p>
@@ -192,12 +192,12 @@ export default function AdminSettings() {
           </div>
 
           {/* Live Invoice Preview Box */}
-          <div className="bg-gradient-to-br from-slate-50 to-amber-50/30 rounded-2xl border border-slate-200/70 shadow-2xs p-4 sm:p-5">
+          <div className="bg-linear-to-br from-slate-50 to-amber-50/30 rounded-2xl border border-slate-200/70 p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3">
               <DocumentTextIcon className="h-4 w-4 text-slate-500" />
               <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Invoice Header Preview</span>
             </div>
-            <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 sm:p-4 shadow-xs">
+            <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 sm:p-4 ">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-dashed border-slate-200 pb-3">
                 <div>
                   <p className="text-sm font-black text-slate-900 tracking-tight">{store.storeName || "Store Name"}</p>
@@ -220,7 +220,7 @@ export default function AdminSettings() {
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-xs active:scale-95 text-xs sm:text-sm font-bold disabled:opacity-60"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all active:scale-95 text-xs sm:text-sm font-bold disabled:opacity-60"
               >
                 {saving ? (
                   <div className="h-3.5 w-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

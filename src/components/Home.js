@@ -67,7 +67,7 @@ function SaleCountdown({ endDate }) {
     : [[hours, "h"], [minutes, "m"], [seconds, "s"]];
 
   return (
-    <div className="mt-4 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-[#a85d37]" aria-label={`Sale ends in ${days} days ${hours} hours ${minutes} minutes`}>
+    <div className="mt-4 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-[#a85d37]" aria-label={`Sale ends in ${days} days ${hours} hours ${minutes} minutes`}>
       <span className="text-[#8a604b]">Ends in</span>
       {units.map(([value, unit], index) => (
         <span key={unit} className="flex items-center gap-1.5">
@@ -127,7 +127,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
 
   return (
     <article className="group relative min-w-0">
-      <div className="relative aspect-square overflow-hidden rounded-xl sm:rounded-[1.5rem] bg-[#f1eee7] border border-black/[0.05]">
+      <div className="relative aspect-square overflow-hidden rounded-xl sm:rounded-3xl bg-[#f1eee7] border border-black/5">
           <img
             src={src}
             alt={product.title}
@@ -139,7 +139,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
 
           {hasDiscount && (
             <div className="absolute left-2 top-2 sm:left-4 sm:top-4 z-20 flex flex-wrap gap-1 sm:gap-2">
-              <span className="rounded-full bg-white/90 px-1.5 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-[#1d1c19] backdrop-blur">
+              <span className="rounded-full bg-white/90 px-1.5 py-0.5 sm:px-3 sm:py-1.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.12em] text-[#1d1c19] backdrop-blur-sm">
                 -{Math.round(product.discountPercentage)}%
               </span>
             </div>
@@ -147,7 +147,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
 
           <Link
             to={`/product/${product._id}`}
-            className="absolute inset-0 z-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#b66a3c]"
+            className="absolute inset-0 z-10 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-[#b66a3c]"
             aria-label={`View ${product.title}`}
           />
 
@@ -158,7 +158,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
                 event.preventDefault();
                 onQuickView(product);
               }}
-              className="grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-white text-[#1d1c19] shadow-lg transition-colors hover:bg-[#f6f3ed] focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:ring-offset-2"
+              className="grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-white text-[#1d1c19] shadow-lg transition-colors hover:bg-[#f6f3ed] focus:outline-hidden focus:ring-2 focus:ring-[#b66a3c] focus:ring-offset-2"
               aria-label={`Quick view ${product.title}`}
             >
               <Eye size={17} />
@@ -169,7 +169,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
                 event.preventDefault();
                 onAdd(product);
               }}
-              className="inline-flex h-11 items-center gap-2 rounded-full bg-[#1d1c19] px-5 text-xs font-bold text-white shadow-lg transition-colors hover:bg-black focus:outline-none focus:ring-2 focus:ring-[#b66a3c] focus:ring-offset-2"
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-[#1d1c19] px-5 text-xs font-bold text-white shadow-lg transition-colors hover:bg-black focus:outline-hidden focus:ring-2 focus:ring-[#b66a3c] focus:ring-offset-2"
               aria-label={`Add ${product.title} to cart`}
             >
               <ShoppingBag size={15} /> Add
@@ -220,7 +220,7 @@ function ProductCard({ product, onQuickView, onAdd }) {
 function SkeletonCard() {
   return (
     <div className="animate-pulse">
-      <div className="aspect-square rounded-xl sm:rounded-[1.5rem] bg-[#ebe7de]" />
+      <div className="aspect-square rounded-xl sm:rounded-3xl bg-[#ebe7de]" />
       <div className="mt-3 h-3 w-1/3 rounded-full bg-[#e4dfd5]" />
       <div className="mt-2 h-4 w-3/4 rounded-full bg-[#e4dfd5]" />
       <div className="mt-2 h-3 w-1/4 rounded-full bg-[#e4dfd5]" />
@@ -233,10 +233,10 @@ function SectionHeading({ eyebrow, title, copy, action }) {
     <div className="mb-6 flex flex-col justify-between gap-3 sm:mb-14 sm:gap-6 md:flex-row md:items-end">
       <div className="max-w-2xl">
         <p className="mb-1.5 sm:mb-4 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">{eyebrow}</p>
-        <h2 className="font-editorial text-2xl leading-tight tracking-tight text-[#1d1c19] sm:text-5xl lg:text-6xl sm:leading-[0.98] sm:tracking-[-0.035em]">
+        <h2 className="font-editorial text-2xl leading-tight tracking-tight text-[#1d1c19] sm:text-5xl lg:text-6xl lg:leading-none sm:leading-[0.98] sm:tracking-[-0.035em]">
           {title}
         </h2>
-        {copy && <p className="mt-2 sm:mt-5 max-w-xl text-xs sm:text-base leading-relaxed text-[#6f6b62]">{copy}</p>}
+        {copy && <p className="mt-2 sm:mt-5 max-w-xl text-xs sm:text-base sm:leading-6 leading-relaxed text-[#6f6b62]">{copy}</p>}
       </div>
       {action}
     </div>
@@ -340,7 +340,7 @@ export default function Home() {
                 <button type="button" onClick={dismiss2fa} className="text-xs font-semibold text-[#858177]">Maybe later</button>
               </div>
             </div>
-            <button type="button" onClick={dismiss2fa} aria-label="Dismiss security suggestion" className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full text-[#858177] transition-colors hover:bg-black/[0.05] hover:text-black">
+            <button type="button" onClick={dismiss2fa} aria-label="Dismiss security suggestion" className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full text-[#858177] transition-colors hover:bg-black/5 hover:text-black">
               <X size={17} />
             </button>
           </motion.aside>
@@ -349,7 +349,7 @@ export default function Home() {
 
       <section className="px-3 pb-3 pt-3 sm:px-5 sm:pt-4 lg:px-7 lg:pb-5">
         {/* Mobile and tablet hero: the copy and photography get their own space. */}
-        <div className="mx-auto overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] border border-black/[0.06] bg-[#eee8dd] shadow-[0_18px_55px_rgba(29,28,25,.08)] lg:hidden">
+        <div className="mx-auto overflow-hidden rounded-[1.25rem] sm:rounded-3xl border border-black/6 bg-[#eee8dd] shadow-[0_18px_55px_rgba(29,28,25,.08)] lg:hidden">
           <div className="px-5 py-6 sm:px-9 sm:pb-9 sm:pt-9 md:px-12 md:py-12">
             <motion.div
               initial="hidden"
@@ -366,7 +366,7 @@ export default function Home() {
               animate="visible"
               variants={reveal}
               transition={{ delay: 0.07, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-4 max-w-[19rem] font-editorial text-[2.25rem] leading-[0.92] tracking-[-0.04em] text-[#1d1c19] min-[420px]:text-[2.75rem] sm:max-w-lg sm:text-[4.25rem]"
+              className="mt-4 max-w-76 font-editorial text-[2.25rem] leading-[0.92] tracking-[-0.04em] text-[#1d1c19] min-[420px]:text-[2.75rem] sm:max-w-lg sm:text-[4.25rem]"
             >
               Better things,
               <span className="block italic text-[#9b5330]">beautifully chosen.</span>
@@ -404,7 +404,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="relative aspect-[16/11] sm:aspect-[3/2] overflow-hidden border-t border-black/[0.06]">
+          <div className="relative aspect-16/11 sm:aspect-3/2 overflow-hidden border-t border-black/6">
             <img
               src="/vkart-editorial-hero.webp"
               srcSet="/vkart-editorial-hero-768.webp 768w, /vkart-editorial-hero-1024.webp 1024w, /vkart-editorial-hero.webp 1536w"
@@ -415,7 +415,7 @@ export default function Home() {
               className="h-full w-full object-cover object-[72%_center] sm:object-[68%_center]"
               fetchpriority="high"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-white/5" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/15 via-transparent to-white/5" />
             <div className="absolute bottom-3 left-3 rounded-full border border-white/25 bg-black/40 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md sm:bottom-6 sm:left-6 sm:px-3 sm:py-2 sm:text-[9px]">
               Tech · Style · Life
             </div>
@@ -434,8 +434,8 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-cover object-center"
             fetchpriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f0eadf]/95 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/5" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#f0eadf]/95 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-white/5" />
 
           <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-7xl flex-col justify-between px-14 py-14">
             <motion.div
@@ -477,7 +477,7 @@ export default function Home() {
               >
                 <Link
                   to="/products"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#1d1c19] px-7 py-4 text-sm font-bold text-white shadow-[0_14px_35px_rgba(29,28,25,.2)] transition-all hover:-translate-y-0.5 hover:bg-black focus:outline-none focus:ring-2 focus:ring-[#9b5330] focus:ring-offset-4 focus:ring-offset-[#eee7db]"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#1d1c19] px-7 py-4 text-sm font-bold text-white shadow-[0_14px_35px_rgba(29,28,25,.2)] transition-all hover:-translate-y-0.5 hover:bg-black focus:outline-hidden focus:ring-2 focus:ring-[#9b5330] focus:ring-offset-4 focus:ring-offset-[#eee7db]"
                 >
                   Shop the collection <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -504,10 +504,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-black/[0.08] bg-[#f6f3ed]">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-black/[0.08] px-2 sm:px-4 lg:grid-cols-4 lg:divide-y-0">
-          {trustItems.map(({ icon: Icon, title, copy }) => (
-            <div key={title} className="flex items-center gap-2.5 px-3 py-3.5 sm:px-7 sm:py-7">
+      <section className="border-y border-black/8 bg-[#f6f3ed]">
+        {/* Explicit cell borders: a clean cross on the 2x2 mobile grid and
+            three dividers across on desktop (divide-x/y leave stray edge lines
+            once the four items wrap into two rows). */}
+        <div className="mx-auto grid max-w-7xl grid-cols-2 px-2 sm:px-4 lg:grid-cols-4">
+          {trustItems.map(({ icon: Icon, title, copy }, i) => (
+            <div
+              key={title}
+              className={[
+                "flex items-center gap-2.5 border-black/8 px-3 py-3.5 sm:px-7 sm:py-7",
+                // mobile 2x2: right edge on the left column, bottom edge on the top row
+                i % 2 === 0 ? "border-r" : "",
+                i < 2 ? "border-b lg:border-b-0" : "",
+                // desktop 1x4: a divider after every item but the last
+                i < trustItems.length - 1 ? "lg:border-r" : "lg:border-r-0",
+              ].join(" ")}
+            >
               <Icon size={17} strokeWidth={1.6} className="shrink-0 text-[#9b5330]" />
               <div>
                 <p className="text-xs font-bold text-[#292722]">{title}</p>
@@ -520,7 +533,7 @@ export default function Home() {
 
       <section className="px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-6 grid gap-4 border-b border-black/[0.1] pb-5 sm:mb-11 sm:gap-6 sm:pb-10 lg:grid-cols-[.9fr_1fr] lg:items-end lg:gap-16">
+          <div className="mb-6 grid gap-4 border-b border-black/10 pb-5 sm:mb-11 sm:gap-6 sm:pb-10 lg:grid-cols-[.9fr_1fr] lg:items-end lg:gap-16">
             <div>
               <p className="mb-2 sm:mb-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
                 Shop the edit
@@ -554,9 +567,9 @@ export default function Home() {
               >
                 <Link
                   to={category.to}
-                  className="group flex h-full flex-col overflow-hidden rounded-xl sm:rounded-[1.35rem] border border-black/[0.08] bg-[#ebe4da] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-xl sm:rounded-[1.35rem] border border-black/8 bg-[#ebe4da] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-[#e5ded3]">
+                  <div className="relative aspect-4/3 overflow-hidden bg-[#e5ded3]">
                     <img
                       src={category.image}
                       alt={`${category.name} collection`}
@@ -564,16 +577,16 @@ export default function Home() {
                       decoding="async"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                     />
-                    <span className="absolute left-2.5 top-2.5 sm:left-4 sm:top-4 rounded-full border border-black/[0.08] bg-[#f7f3ec]/90 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[9px] font-bold tracking-[0.14em] text-[#696258] backdrop-blur-sm">
+                    <span className="absolute left-2.5 top-2.5 sm:left-4 sm:top-4 rounded-full border border-black/8 bg-[#f7f3ec]/90 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[9px] font-bold tracking-[0.14em] text-[#696258] backdrop-blur-xs">
                       {category.number}
                     </span>
                   </div>
-                  <div className="flex min-h-[4.5rem] sm:min-h-[7.5rem] items-center justify-between gap-2 p-3 sm:p-6">
+                  <div className="flex min-h-18 sm:min-h-30 items-center justify-between gap-2 p-3 sm:p-6">
                     <div>
                       <p className="mb-0.5 sm:mb-2 text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.2em] text-[#8a7667]">{category.eyebrow}</p>
                       <h3 className="font-editorial text-base sm:text-2xl sm:text-[1.7rem] tracking-tight text-[#1d1c19]">{category.name}</h3>
                     </div>
-                    <span className="grid h-7 w-7 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/[0.12] bg-[#f6f3ed] text-[#1d1c19] transition-all group-hover:border-[#1d1c19] group-hover:bg-[#1d1c19] group-hover:text-white">
+                    <span className="grid h-7 w-7 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/12 bg-[#f6f3ed] text-[#1d1c19] transition-all group-hover:border-[#1d1c19] group-hover:bg-[#1d1c19] group-hover:text-white">
                       <ArrowUpRight size={13} />
                     </span>
                   </div>
@@ -588,27 +601,27 @@ export default function Home() {
         <section className="px-3 pb-8 sm:px-7 sm:pb-20">
           <Link
             to="/products?sale=true"
-            className="group relative mx-auto grid max-w-7xl overflow-hidden rounded-xl border border-black/[0.09] bg-[#eee7dd] text-[#1d1c19] shadow-[0_18px_60px_rgba(29,28,25,.06)] sm:rounded-[1.5rem] lg:grid-cols-[1fr_19rem]"
+            className="group relative mx-auto grid max-w-7xl overflow-hidden rounded-xl border border-black/9 bg-[#eee7dd] text-[#1d1c19] shadow-[0_18px_60px_rgba(29,28,25,.06)] sm:rounded-3xl lg:grid-cols-[1fr_19rem]"
           >
             <span className="absolute inset-y-0 left-0 w-1 bg-[#a85d37] sm:w-1.5" />
             <div className="relative px-4 py-4 sm:flex sm:items-start sm:gap-5 sm:px-11 sm:py-10">
-              <span className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8] text-[#a85d37] sm:static sm:h-11 sm:w-11 sm:shrink-0"><Zap size={14} strokeWidth={1.8} /></span>
+              <span className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full border border-black/8 bg-[#fffdf8] text-[#a85d37] sm:static sm:h-11 sm:w-11 sm:shrink-0"><Zap size={14} strokeWidth={1.8} /></span>
               <div className="pr-10 sm:pr-0">
                 <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#8a604b] sm:text-[10px] sm:tracking-[0.24em]">
                   <span className="sm:hidden">Limited offer</span>
                   <span className="hidden sm:inline">The member edit · Limited time</span>
                 </p>
                 <h2 className="mt-1 font-editorial text-xl sm:text-[2.8rem] leading-tight sm:leading-[0.94] tracking-tight sm:mt-3 sm:max-w-none">{activeSale.name}</h2>
-                <p className="mt-2 text-xs leading-tight text-[#716b62] sm:text-sm sm:mt-4">
+                <p className="mt-2 text-xs leading-tight text-[#716b62] sm:text-sm sm:leading-5 sm:mt-4">
                   <span className="sm:hidden">Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}</span>
                   <span className="hidden sm:inline">Selected pieces, considered prices · Ends {new Date(activeSale.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "long" })}</span>
                 </p>
                 <SaleCountdown endDate={activeSale.endDate} />
               </div>
             </div>
-            <div className="relative grid grid-cols-[1fr_auto] items-center gap-3 border-t border-black/[0.09] px-4 py-3 sm:flex sm:justify-between sm:gap-6 sm:px-7 sm:py-6 lg:flex-col lg:items-start lg:justify-center lg:border-l lg:border-t-0 lg:px-9">
+            <div className="relative grid grid-cols-[1fr_auto] items-center gap-3 border-t border-black/9 px-4 py-3 sm:flex sm:justify-between sm:gap-6 sm:px-7 sm:py-6 lg:flex-col lg:items-start lg:justify-center lg:border-l lg:border-t-0 lg:px-9">
               <div className="flex items-end gap-1.5 sm:gap-2">
-                <span className="font-editorial text-2xl leading-none tracking-tight sm:text-5xl">{maxSaleDiscount}%</span>
+                <span className="font-editorial text-2xl leading-none tracking-tight sm:text-5xl sm:leading-none">{maxSaleDiscount}%</span>
                 <span className="pb-0.5 text-[8px] font-bold uppercase leading-tight tracking-[0.14em] text-[#7d766d] sm:pb-1 sm:text-[9px] sm:tracking-[0.16em]">off<br />selected</span>
               </div>
               <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[#1d1c19] px-3.5 py-1.5 text-[10px] font-bold text-white transition-transform group-hover:-translate-y-0.5 sm:gap-3 sm:px-5 sm:py-3 sm:text-xs">
@@ -643,7 +656,7 @@ export default function Home() {
       </section>
 
       {stats && (
-        <section className="border-y border-black/[0.08] bg-[#efe9df] px-4 py-6 sm:px-7 sm:py-16">
+        <section className="border-y border-black/8 bg-[#efe9df] px-4 py-6 sm:px-7 sm:py-16">
           <div className="mx-auto max-w-7xl">
             <p className="text-center text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">
               Trusted across the catalogue
@@ -674,15 +687,15 @@ export default function Home() {
       )}
 
       {!profile?.isPrime && (
-        <section className="border-y border-black/[0.06] bg-[#e9e1d5] px-3 py-6 sm:px-7 sm:py-16">
-          <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-xl border border-white/[0.08] bg-[#1d1c19] text-white shadow-[0_28px_80px_rgba(29,28,25,.15)] sm:rounded-[1.75rem] lg:grid-cols-[1.1fr_.9fr]">
+        <section className="border-y border-black/6 bg-[#e9e1d5] px-3 py-6 sm:px-7 sm:py-16">
+          <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-xl border border-white/8 bg-[#1d1c19] text-white shadow-[0_28px_80px_rgba(29,28,25,.15)] sm:rounded-[1.75rem] lg:grid-cols-[1.1fr_.9fr]">
             <div className="relative px-5 py-6 sm:px-12 sm:py-14 lg:px-14 lg:py-16">
               <div className="absolute -left-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[#b66a3c]/15 blur-3xl" />
               <div className="relative">
                 <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.24em] text-[#d99b72]">
                   <Crown size={13} /> VKart Prime
                 </span>
-                <h2 className="mt-3 sm:mt-6 max-w-xl font-editorial text-2xl leading-tight sm:leading-[0.95] tracking-tight sm:tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+                <h2 className="mt-3 sm:mt-6 max-w-xl font-editorial text-2xl leading-tight sm:leading-[0.95] tracking-tight sm:tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl lg:leading-none">
                   A little more, for people who shop less.
                 </h2>
                 <p className="mt-2 sm:mt-6 max-w-xl text-xs leading-relaxed text-white/60 sm:text-base sm:leading-7">
@@ -706,7 +719,7 @@ export default function Home() {
                   <span className="font-editorial text-lg sm:text-2xl text-[#d18a5e]">{number}</span>
                   <div>
                     <h3 className="text-xs sm:text-base font-bold">{title}</h3>
-                    <p className="mt-0.5 sm:mt-2 text-[11px] sm:text-sm leading-tight text-white/45">{copy}</p>
+                    <p className="mt-0.5 sm:mt-2 text-[11px] sm:text-sm sm:leading-5 leading-tight text-white/45">{copy}</p>
                   </div>
                 </div>
               ))}
@@ -737,7 +750,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-black/[0.08] bg-[#efe9df] px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
+      <section className="border-t border-black/8 bg-[#efe9df] px-4 py-8 sm:px-7 sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-6 sm:gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end">
           <div>
             <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#a45a34]">Why VKart</p>
@@ -752,7 +765,7 @@ export default function Home() {
               <div key={title} className="border-t border-black/15 pt-3 sm:pt-6">
                 <Icon size={17} strokeWidth={1.5} className="text-[#9b5330]" />
                 <h3 className="mt-2 sm:mt-7 text-xs sm:text-sm font-bold">{title}</h3>
-                <p className="mt-1 sm:mt-3 text-[11px] sm:text-sm leading-relaxed text-[#777269]">{copy}</p>
+                <p className="mt-1 sm:mt-3 text-[11px] sm:text-sm sm:leading-5 leading-relaxed text-[#777269]">{copy}</p>
               </div>
             ))}
           </div>

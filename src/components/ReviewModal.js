@@ -63,12 +63,12 @@ export default function ReviewModal({ isOpen, onClose, productId, onReviewAdded 
   const currentDisplayRating = hoverRating || rating;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 bg-black/40 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 bg-black/40 backdrop-blur-xs animate-fade-in">
       <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 max-w-md w-full p-5 sm:p-7 relative overflow-hidden">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-4 sm:mb-5">
           <div>
-            <h2 className="font-editorial text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="font-editorial text-xl sm:text-2xl sm:leading-8 font-bold text-slate-900 tracking-tight leading-tight">
               Write a Review
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
@@ -109,12 +109,12 @@ export default function ReviewModal({ isOpen, onClose, productId, onReviewAdded 
                     onClick={() => setRating(star)}
                     onMouseEnter={() => setHoverRating(star)}
                     onMouseLeave={() => setHoverRating(0)}
-                    className="text-2xl sm:text-3xl transition-transform hover:scale-115 active:scale-95 focus:outline-none"
+                    className="text-2xl sm:text-3xl transition-transform hover:scale-115 active:scale-95 focus:outline-hidden"
                     title={`${star} Star${star > 1 ? "s" : ""}`}
                   >
                     <FaStar
                       className={`transition-colors duration-150 ${
-                        active ? "text-amber-400 drop-shadow-2xs" : "text-slate-200 hover:text-amber-200"
+                        active ? "text-amber-400" : "text-slate-200 hover:text-amber-200"
                       }`}
                     />
                   </button>
@@ -139,7 +139,7 @@ export default function ReviewModal({ isOpen, onClose, productId, onReviewAdded 
               onChange={(e) => setComment(e.target.value)}
               placeholder="What did you like or dislike about this product? (Fit, material, build quality, etc.)"
               rows={4}
-              className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:border-slate-900 focus:ring-1 focus:ring-slate-900/10 outline-none text-xs sm:text-sm resize-none placeholder:text-slate-400 leading-relaxed transition"
+              className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:border-slate-900 focus:ring-1 focus:ring-slate-900/10 outline-hidden text-xs sm:text-sm sm:leading-5 resize-none placeholder:text-slate-400 leading-relaxed transition"
               maxLength={500}
             />
           </div>
@@ -157,7 +157,7 @@ export default function ReviewModal({ isOpen, onClose, productId, onReviewAdded 
             <button
               type="submit"
               disabled={submitting || rating === 0 || comment.trim().length < 10}
-              className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold shadow-xs hover:bg-black transition active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {submitting ? "Submitting..." : "Submit Review"}
             </button>

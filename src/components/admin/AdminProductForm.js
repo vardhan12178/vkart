@@ -92,7 +92,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <input
           value={form.title}
           onChange={(e) => update("title", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
           required
         />
       </div>
@@ -103,7 +103,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <textarea
           value={form.description}
           onChange={(e) => update("description", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
           rows={3}
           required
         />
@@ -116,7 +116,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
           <input
             value={form.category}
             onChange={(e) => update("category", e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded-sm"
             required
           />
         </div>
@@ -126,7 +126,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
           <input
             value={form.brand}
             onChange={(e) => update("brand", e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded-sm"
           />
         </div>
 
@@ -135,7 +135,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
           <input
             value={form.sku}
             onChange={(e) => update("sku", e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded-sm"
           />
         </div>
       </div>
@@ -148,7 +148,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
             type="number"
             value={form.price}
             onChange={(e) => update("price", e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded-sm"
             required
           />
         </div>
@@ -159,7 +159,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
             type="number"
             value={form.discountPercentage}
             onChange={(e) => update("discountPercentage", e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded-sm"
           />
         </div>
 
@@ -169,7 +169,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
             type="number"
             value={form.stock}
             onChange={(e) => update("stock", e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-2 rounded-sm"
             required
           />
         </div>
@@ -181,7 +181,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <input
           value={form.tags}
           onChange={(e) => update("tags", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
       </div>
 
@@ -212,21 +212,21 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
           placeholder="Width"
           value={form.width}
           onChange={(e) => update("width", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
         <input
           type="number"
           placeholder="Height"
           value={form.height}
           onChange={(e) => update("height", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
         <input
           type="number"
           placeholder="Depth"
           value={form.depth}
           onChange={(e) => update("depth", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
       </div>
 
@@ -236,7 +236,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <input
           value={form.warrantyInformation}
           onChange={(e) => update("warrantyInformation", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
       </div>
 
@@ -246,7 +246,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <input
           value={form.shippingInformation}
           onChange={(e) => update("shippingInformation", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
       </div>
 
@@ -256,7 +256,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <input
           value={form.returnPolicy}
           onChange={(e) => update("returnPolicy", e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         />
       </div>
 
@@ -266,7 +266,7 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <select
           value={form.isActive}
           onChange={(e) => update("isActive", e.target.value === "true")}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded-sm"
         >
           <option value="true">Active</option>
           <option value="false">Inactive</option>
@@ -278,13 +278,13 @@ export default function AdminProductForm({ initialData = null, onSubmit, onCance
         <button
           type="button"
           onClick={onCancel}
-          className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
+          className="px-4 py-2 bg-gray-200 text-gray-700 rounded-sm"
         >
           Cancel
         </button>
         <button
           type="submit"
-          className="px-4 py-2 bg-orange-500 text-white rounded hover:brightness-110"
+          className="px-4 py-2 bg-orange-500 text-white rounded-sm hover:brightness-110"
         >
           {initialData ? "Update Product" : "Add Product"}
         </button>

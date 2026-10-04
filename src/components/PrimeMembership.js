@@ -136,14 +136,14 @@ export default function PrimeMembership() {
   return (
     <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed]">
       {/* Hero */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <div className="relative overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.15),transparent_50%)]" />
         <div className="max-w-5xl mx-auto px-4 py-16 sm:py-24 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
             <FaCrown className="text-amber-400" />
             <span className="text-sm font-bold text-amber-300">VKart Prime</span>
           </div>
-          <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal mb-6 leading-[0.9] tracking-[-0.04em]">
+          <h1 className="font-editorial text-5xl sm:text-7xl sm:leading-none lg:text-8xl lg:leading-none font-normal mb-6 leading-[0.9] tracking-[-0.04em]">
             More of what matters.
             <br />Less of what doesn’t.
           </h1>
@@ -156,7 +156,7 @@ export default function PrimeMembership() {
       {/* Active Membership Banner */}
       {isPrime && membershipData?.membership && (
         <div className="max-w-5xl mx-auto px-4 -mt-8 relative z-20">
-          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-6 shadow-lg">
+          <div className="bg-linear-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-6 shadow-lg">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
@@ -207,7 +207,7 @@ export default function PrimeMembership() {
             { icon: <FaBolt />, title: "Early Access", desc: "Shop sales 24 hours before everyone else" },
             { icon: <FaShieldAlt />, title: "Priority Support", desc: "Dedicated support with faster resolution" },
           ].map((b, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center">
+            <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-xs hover:shadow-md transition-shadow text-center">
               <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-amber-600 text-lg">
                 {b.icon}
               </div>
@@ -230,7 +230,7 @@ export default function PrimeMembership() {
               className={`relative bg-white rounded-2xl p-6 border-2 transition-all ${
                 plan.isPopular
                   ? "border-amber-400 shadow-xl shadow-amber-500/10 scale-[1.02]"
-                  : "border-gray-100 shadow-sm hover:shadow-md"
+                  : "border-gray-100 shadow-xs hover:shadow-md"
               }`}
             >
               {plan.isPopular && (
@@ -285,7 +285,7 @@ export default function PrimeMembership() {
           look and available methods match checkout exactly. */}
       {selectedPlan && (
         <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-999 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4"
           onClick={() => !purchasing && setSelectedPlan(null)}
         >
           <div

@@ -183,7 +183,7 @@
   background: #ebe8e1 !important;
 }
 
-.premium-admin main [class~="shadow-sm"] {
+.premium-admin main [class~="shadow-xs"] {
   box-shadow: none !important;
 }
 
@@ -192,7 +192,7 @@
   box-shadow: 0 24px 65px rgba(34, 33, 29, 0.1) !important;
 }
 
-.premium-admin main [class*="rounded-[1.5rem]"],
+.premium-admin main [class*="rounded-3xl"],
 .premium-admin main [class~="rounded-2xl"] {
   border-radius: 1.15rem !important;
 }

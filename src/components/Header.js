@@ -213,7 +213,7 @@ const Header = () => {
           }`}
       >
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 md:h-[4.75rem] items-center justify-between gap-4">
+          <div className="flex h-16 md:h-19 items-center justify-between gap-4">
 
             {/* --- LEFT: BRAND & NAV --- */}
             <div className="flex items-center gap-5 xl:gap-8">
@@ -222,7 +222,7 @@ const Header = () => {
                   <ShoppingBag className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.8} />
                   <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#b66a3c] border-2 border-[#fffdf8]" />
                 </div>
-                <span className="hidden sm:block text-xl font-extrabold tracking-[-0.05em] text-[#1d1c19]">
+                <span className="hidden sm:block text-xl font-extrabold tracking-tighter text-[#1d1c19]">
                   VKart
                 </span>
               </Link>
@@ -236,7 +236,7 @@ const Header = () => {
                       key={item.to}
                       to={item.to}
                       aria-current={active ? "page" : undefined}
-                      className="relative px-3 xl:px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#5f5b52] hover:text-[#1d1c19] transition-colors group"
+                      className="relative px-3 xl:px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#5f5b52] hover:text-[#1d1c19] transition-colors group"
                     >
                       {item.label}
                       <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#1d1c19] transition-all duration-300 group-hover:w-1/2 ${active ? "w-1/2" : ""}`} />
@@ -279,7 +279,7 @@ const Header = () => {
                       runSearch(searchInput);
                     }
                   }}
-                  className="block w-full rounded-full border border-black/[0.06] bg-[#f2eee6] pl-10 pr-10 py-2.5 text-sm font-medium text-[#1d1c19] focus:border-[#9b5330]/40 focus:bg-white focus:ring-0 transition-all placeholder:text-[#99948a] disabled:opacity-60"
+                  className="block w-full rounded-full border border-black/6 bg-[#f2eee6] pl-10 pr-10 py-2.5 text-sm font-medium text-[#1d1c19] focus:border-[#9b5330]/40 focus:bg-white focus:ring-0 transition-all placeholder:text-[#99948a] disabled:opacity-60"
                 />
                 {searchInput && (
                   <button
@@ -333,7 +333,7 @@ const Header = () => {
               {/* Mobile Search Toggle */}
               <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/5 hover:text-[#1d1c19]"
                 aria-label={showSearch ? "Close search" : "Open search"}
               >
                 <Search className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
@@ -363,7 +363,7 @@ const Header = () => {
                   aria-pressed={isChatOpen}
                   aria-label={isChatOpen ? "Close VKart concierge" : "Open VKart concierge"}
                 >
-                  <span className={`grid h-7 w-7 place-items-center rounded-full transition-colors ${isChatOpen ? "bg-[#1d1c19] text-white" : "bg-black/[0.045]"}`}>
+                  <span className={`grid h-7 w-7 place-items-center rounded-full transition-colors ${isChatOpen ? "bg-[#1d1c19] text-white" : "bg-black/4.5"}`}>
                     <Sparkles className="h-3.5 w-3.5" strokeWidth={1.8} />
                   </span>
                   <span className="text-xs font-bold uppercase tracking-wide">Ask VKart</span>
@@ -373,7 +373,7 @@ const Header = () => {
               {/* Wishlist Icon */}
               <Link
                 to="/wishlist"
-                className="relative group grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="relative group grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/5 hover:text-[#1d1c19]"
                 aria-label={`Wishlist${wishlistCount ? `, ${wishlistCount} items` : ""}`}
               >
                 <Heart className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
@@ -395,7 +395,7 @@ const Header = () => {
               {/* Cart Icon */}
               <Link
                 to="/cart"
-                className="relative group grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="relative group grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/5 hover:text-[#1d1c19]"
                 aria-label={`Shopping bag${cartCount ? `, ${cartCount} items` : ""}`}
               >
                 <ShoppingBag className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
@@ -420,7 +420,7 @@ const Header = () => {
               {/* Profile / Auth */}
               {isAuthenticated ? (
                 <div className="hidden md:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
-                  <Link to="/profile" className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]" aria-label="Account profile">
+                  <Link to="/profile" className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/5 hover:text-[#1d1c19]" aria-label="Account profile">
                     <UserRound className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                   </Link>
                   <button
@@ -443,7 +443,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/5 hover:text-[#1d1c19]"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
@@ -548,7 +548,7 @@ const Header = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${active
                           ? "bg-[#1d1c19] text-white"
-                          : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                          : "text-[#6f6b62] hover:bg-black/4 hover:text-[#1d1c19]"
                           }`}
                       >
                         <Icon className="h-4 w-4" />
@@ -562,7 +562,7 @@ const Header = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${isActive("/profile")
                         ? "bg-[#1d1c19] text-white"
-                        : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                        : "text-[#6f6b62] hover:bg-black/4 hover:text-[#1d1c19]"
                         }`}
                     >
                       <UserRound className="h-4 w-4" strokeWidth={1.8} />
@@ -582,7 +582,7 @@ const Header = () => {
                 </Link>
 
                 {/* Mobile Actions */}
-                <div className="grid grid-cols-2 gap-2 border-t border-black/[0.06] pt-2.5">
+                <div className="grid grid-cols-2 gap-2 border-t border-black/6 pt-2.5">
                   <button
                     onClick={handleChatToggle}
                     className="flex h-9 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] px-3 text-xs font-bold text-white transition-colors hover:bg-black active:scale-95"

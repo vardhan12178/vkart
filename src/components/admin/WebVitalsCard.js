@@ -39,7 +39,7 @@ export default function WebVitalsCard() {
   const hasData = METRICS.some(({ key }) => metrics[key]?.count > 0);
 
   return (
-    <section className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6">
+    <section className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 p-4 sm:p-6">
       <div className="flex items-start justify-between gap-3 mb-3 sm:mb-5">
         <div>
           <h2 className="flex items-center gap-2 text-sm sm:text-lg font-bold text-slate-900 tracking-tight">

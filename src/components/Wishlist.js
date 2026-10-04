@@ -60,7 +60,7 @@ export default function Wishlist() {
         />
       </Helmet>
 
-      <section className="wishlist-masthead border-b border-black/[0.08] px-4 py-5 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+      <section className="wishlist-masthead border-b border-black/8 px-4 py-5 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <div className="mx-auto max-w-7xl">
           <div className="mb-3 sm:mb-5 flex flex-wrap items-center gap-3">
             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#a85d37]">
@@ -73,10 +73,10 @@ export default function Wishlist() {
           </div>
 
           <div className="grid gap-3 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
-            <h1 className="max-w-3xl font-editorial text-2xl leading-tight tracking-[-0.03em] text-[#1d1c19] sm:text-4xl lg:text-5xl">
+            <h1 className="max-w-3xl font-editorial text-2xl leading-tight tracking-[-0.03em] text-[#1d1c19] sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none">
               Worth another look.
             </h1>
-            <p className="max-w-xl text-xs leading-relaxed text-[#6f6b62] sm:text-sm lg:pb-1">
+            <p className="max-w-xl text-xs leading-relaxed text-[#6f6b62] sm:text-sm sm:leading-5 lg:pb-1">
               A considered shortlist of the pieces that caught your eye—kept together until you are ready to choose.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function Wishlist() {
 
       {count > 0 ? (
         <>
-          <section className="wishlist-toolbar border-b border-black/[0.08] bg-[#f6f3ed]/95 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-8">
+          <section className="wishlist-toolbar border-b border-black/8 bg-[#f6f3ed]/95 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-8">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#a85d37]/10 text-[#a85d37]">
@@ -122,7 +122,7 @@ export default function Wishlist() {
                   return (
                     <article
                       key={key}
-                      className="wishlist-product group overflow-hidden rounded-xl sm:rounded-[1.25rem] border border-black/[0.08] bg-[#fbfaf7] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
+                      className="wishlist-product group overflow-hidden rounded-xl sm:rounded-[1.25rem] border border-black/8 bg-[#fbfaf7] transition duration-300 hover:-translate-y-1 hover:border-black/[0.14] hover:shadow-[0_20px_50px_rgba(30,27,22,0.09)]"
                     >
                       <Link
                         to={productPath(item)}
@@ -145,12 +145,12 @@ export default function Wishlist() {
                           )}
 
                           {discount > 0 && (
-                            <span className="absolute left-2 top-2 sm:left-3 sm:top-3 rounded-full border border-[#a85d37]/15 bg-[#f6eee8]/95 px-1.5 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[10px] font-bold tracking-[0.04em] text-[#925033] backdrop-blur-sm">
+                            <span className="absolute left-2 top-2 sm:left-3 sm:top-3 rounded-full border border-[#a85d37]/15 bg-[#f6eee8]/95 px-1.5 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[10px] font-bold tracking-[0.04em] text-[#925033] backdrop-blur-xs">
                               -{Math.round(discount)}%
                             </span>
                           )}
 
-                          <span className="absolute right-2 top-2 sm:right-3 sm:top-3 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-black/[0.07] bg-[#fbfaf7]/90 text-[#a85d37] shadow-sm backdrop-blur-sm">
+                          <span className="absolute right-2 top-2 sm:right-3 sm:top-3 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-black/[0.07] bg-[#fbfaf7]/90 text-[#a85d37] shadow-xs backdrop-blur-xs">
                             <FaHeart size={10} />
                           </span>
                         </div>
@@ -183,14 +183,14 @@ export default function Wishlist() {
                             onClick={() => moveToCart(item)}
                             // Visible text shrinks to just "bag" on narrow screens; keep a full name.
                             aria-label={`Move ${item.title} to bag`}
-                            className="flex h-8 sm:min-h-11 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#1d1c19] px-2 sm:px-4 text-[10px] sm:text-xs font-bold text-white shadow-sm transition hover:bg-black active:scale-95"
+                            className="flex h-8 sm:min-h-11 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#1d1c19] px-2 sm:px-4 text-[10px] sm:text-xs font-bold text-white shadow-xs transition hover:bg-black active:scale-95"
                           >
                             <FaCartPlus size={11} /> <span className="hidden min-[380px]:inline">Move to </span>bag
                           </button>
                           <button
                             type="button"
                             onClick={() => removeItem(item)}
-                            className="flex h-8 w-8 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-black/[0.09] bg-transparent text-[#8a857b] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#925033]"
+                            className="flex h-8 w-8 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-black/9 bg-transparent text-[#8a857b] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#925033]"
                             aria-label={`Remove ${item.title} from saved items`}
                             title="Remove from saved items"
                           >
@@ -203,18 +203,18 @@ export default function Wishlist() {
                 })}
               </div>
 
-              <div className="wishlist-continue mt-10 flex flex-col items-start justify-between gap-5 rounded-[1.5rem] border border-black/[0.08] bg-[#ebe6dc] px-6 py-6 sm:flex-row sm:items-center sm:px-8">
+              <div className="wishlist-continue mt-10 flex flex-col items-start justify-between gap-5 rounded-3xl border border-black/8 bg-[#ebe6dc] px-6 py-6 sm:flex-row sm:items-center sm:px-8">
                 <div>
                   <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">
                     Keep looking
                   </p>
-                  <h2 className="font-editorial text-2xl leading-tight tracking-[-0.025em] text-[#1d1c19] sm:text-3xl">
+                  <h2 className="font-editorial text-2xl leading-tight tracking-tight text-[#1d1c19] sm:text-3xl sm:leading-9">
                     Your next good find is waiting.
                   </h2>
                 </div>
                 <Link
                   to="/products"
-                  className="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-full bg-[#1d1c19] px-6 text-sm font-bold text-white transition hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
+                  className="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-full bg-[#1d1c19] px-6 text-sm font-bold text-white transition hover:bg-[#34312c] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
                 >
                   Continue shopping <FaArrowRight size={12} />
                 </Link>
@@ -224,8 +224,8 @@ export default function Wishlist() {
         </>
       ) : (
         <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[1.5rem] border border-black/[0.08] bg-[#ebe6dc] lg:grid-cols-[.8fr_1.2fr]">
-            <div className="flex min-h-[270px] items-center justify-center border-b border-black/[0.08] p-8 lg:border-b-0 lg:border-r">
+          <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl border border-black/8 bg-[#ebe6dc] lg:grid-cols-[.8fr_1.2fr]">
+            <div className="flex min-h-[270px] items-center justify-center border-b border-black/8 p-8 lg:border-b-0 lg:border-r">
               <div className="flex h-28 w-28 items-center justify-center rounded-full border border-[#a85d37]/15 bg-[#f6f3ed] text-[#a85d37] shadow-[0_18px_45px_rgba(29,28,25,0.08)]">
                 <FaHeart size={34} />
               </div>
@@ -234,7 +234,7 @@ export default function Wishlist() {
               <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.22em] text-[#a85d37]">
                 Start your edit
               </p>
-              <h2 className="max-w-xl font-editorial text-3xl leading-[1] tracking-[-0.035em] text-[#1d1c19] sm:text-5xl">
+              <h2 className="max-w-xl font-editorial text-3xl leading-none tracking-[-0.035em] text-[#1d1c19] sm:text-5xl sm:leading-none">
                 Nothing saved—yet.
               </h2>
               <p className="mt-4 max-w-lg text-sm leading-6 text-[#6f6b62] sm:text-[15px] sm:leading-7">
@@ -242,7 +242,7 @@ export default function Wishlist() {
               </p>
               <Link
                 to="/products"
-                className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#1d1c19] px-6 text-sm font-bold text-white transition hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
+                className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#1d1c19] px-6 text-sm font-bold text-white transition hover:bg-[#34312c] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
               >
                 Explore the collection <FaArrowRight size={12} />
               </Link>

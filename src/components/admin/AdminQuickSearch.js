@@ -122,14 +122,14 @@ export default function AdminQuickSearch({ adminRole, permissions, variant = "de
                 text-[#1d1c19] placeholder-[#99948a]
                 ring-1 ring-black/[0.07] focus:ring-[#a85d37]/20
                 transition-all duration-200
-                text-sm font-medium outline-none
+                text-sm font-medium outline-hidden
               `
             : `
                 block w-full pl-11 pr-4 py-3
                 rounded-xl border border-slate-200
                 bg-slate-50 text-slate-900 placeholder-slate-500
                 focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10
-                transition-all duration-200 text-sm font-medium outline-none
+                transition-all duration-200 text-sm font-medium outline-hidden
               `
         }
         placeholder="Search the operation"
@@ -146,7 +146,7 @@ export default function AdminQuickSearch({ adminRole, permissions, variant = "de
         <ul
           id={`admin-quick-search-${variant}`}
           role="listbox"
-          className="absolute left-0 right-0 top-full z-50 mt-2 max-h-80 overflow-y-auto rounded-[1.15rem] border border-black/[0.08] bg-[#fffdf8] py-1.5 shadow-[0_24px_70px_rgba(29,28,25,.16)]"
+          className="absolute left-0 right-0 top-full z-50 mt-2 max-h-80 overflow-y-auto rounded-[1.15rem] border border-black/8 bg-[#fffdf8] py-1.5 shadow-[0_24px_70px_rgba(29,28,25,.16)]"
         >
           {results.map((result, i) => {
             const Icon = result.icon;

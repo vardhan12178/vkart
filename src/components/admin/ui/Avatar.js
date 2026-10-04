@@ -7,7 +7,7 @@ export default function Avatar({
   email = "",
   className = "h-9 w-9 rounded-xl",
   textClassName = "text-xs font-bold",
-  bgClassName = "bg-gradient-to-br from-slate-800 to-slate-900 text-white",
+  bgClassName = "bg-linear-to-br from-slate-800 to-slate-900 text-white",
 }) {
   const [hasError, setHasError] = useState(false);
 
@@ -24,7 +24,7 @@ export default function Avatar({
         alt={name || email || "User"}
         onError={() => setHasError(true)}
         referrerPolicy="no-referrer"
-        className={`${className} object-cover shadow-xs`}
+        className={`${className} object-cover `}
         loading="lazy"
       />
     );
@@ -32,7 +32,7 @@ export default function Avatar({
 
   return (
     <div
-      className={`${className} ${bgClassName} flex items-center justify-center shrink-0 shadow-xs select-none`}
+      className={`${className} ${bgClassName} flex items-center justify-center shrink-0 select-none`}
     >
       <span className={textClassName}>{initial}</span>
     </div>

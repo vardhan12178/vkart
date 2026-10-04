@@ -66,9 +66,9 @@ const InputField = React.memo(function InputField({ label, name, value, onChange
           onChange={onChange}
           onBlur={onBlur}
           placeholder={placeholder}
-          className={`w-full rounded-xl border-0 bg-white h-10 sm:h-11 py-2 pl-9 sm:pl-10 pr-3 sm:pr-4 text-xs sm:text-sm font-semibold text-[#1d1c19] shadow-xs ring-1 ring-inset transition-all placeholder:text-gray-400 focus:ring-2 ${touched && error
+          className={`w-full rounded-xl border-0 bg-white h-10 sm:h-11 py-2 pl-9 sm:pl-10 pr-3 sm:pr-4 text-xs sm:text-sm font-semibold text-[#1d1c19] ring-1 ring-inset transition-all placeholder:text-gray-400 focus:ring-2 ${touched && error
             ? "ring-red-300 focus:ring-red-500 bg-red-50/30"
-            : "ring-black/[0.08] focus:ring-[#a85d37]/40 hover:ring-black/15"
+            : "ring-black/8 focus:ring-[#a85d37]/40 hover:ring-black/15"
             }`}
         />
       </div>
@@ -367,11 +367,11 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
     <>
     {/* ---- ORDER REVIEW OVERLAY ---- */}
     {showReview && (
-      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-[#1d1c19]/50 backdrop-blur-sm p-3 sm:p-4" onClick={() => setShowReview(false)}>
+      <div className="fixed inset-0 z-999 flex items-center justify-center bg-[#1d1c19]/50 backdrop-blur-xs p-3 sm:p-4" onClick={() => setShowReview(false)}>
         <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl sm:rounded-[1.6rem] border border-black/10 bg-[#fffdf8] p-4 sm:p-8 shadow-[0_30px_90px_rgba(29,28,25,.24)] animate-fade-up" onClick={(e) => e.stopPropagation()}>
           <button onClick={() => setShowReview(false)} className="absolute right-3 top-3 sm:right-4 sm:top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#eee8df] text-sm font-bold text-[#777168] transition-colors hover:bg-[#e4ddd3] hover:text-[#1d1c19]">&times;</button>
 
-          <h2 className="mb-4 sm:mb-6 flex items-center gap-2.5 font-editorial text-xl sm:text-3xl font-bold leading-none tracking-tight text-[#1d1c19]">
+          <h2 className="mb-4 sm:mb-6 flex items-center gap-2.5 font-editorial text-xl sm:text-3xl sm:leading-9 font-bold leading-none tracking-tight text-[#1d1c19]">
             <FaCheckCircle className="text-[#a85d37]" size={20} /> Review Your Order
           </h2>
 
@@ -381,7 +381,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
             <div className="space-y-2 sm:space-y-3 max-h-40 sm:max-h-48 overflow-y-auto pr-1">
               {cartItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-black/[0.07] bg-[#eeeae2] p-2.5 sm:p-3">
-                  {item.thumbnail && <img loading="lazy" decoding="async" src={item.thumbnail} alt="" className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover flex-shrink-0" />}
+                  {item.thumbnail && <img loading="lazy" decoding="async" src={item.thumbnail} alt="" className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover shrink-0" />}
                   <div className="flex-1 min-w-0">
                     <p className="text-xs sm:text-sm font-bold text-gray-900 truncate">{item.title || item.name}</p>
                     <p className="text-[11px] text-gray-500">Qty: {item.quantity}</p>
@@ -429,7 +429,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
       <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-4">
 
         {/* Test Mode Banner */}
-        <div className="mb-4 sm:mb-6 rounded-xl bg-blue-50/80 border border-blue-100 px-3 py-2 sm:p-3 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-blue-600 shadow-xs backdrop-blur-xs">
+        <div className="mb-4 sm:mb-6 rounded-xl bg-blue-50/80 border border-blue-100 px-3 py-2 sm:p-3 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-blue-600 backdrop-blur-xs">
           <FaShieldAlt size={13} /> <span>TEST MODE — No real money will be charged.</span>
         </div>
 
@@ -437,14 +437,14 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
           {/* --- LEFT: Form Fields --- */}
           <div className="lg:col-span-7 xl:col-span-8">
-            <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 shadow-sm border border-black/[0.06]">
+            <div className="bg-white rounded-2xl sm:rounded-4xl p-4 sm:p-8 shadow-xs border border-black/6">
 
-              <div className="flex items-center gap-3 mb-4 sm:mb-6 border-b border-black/[0.06] pb-3.5 sm:pb-5">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6 border-b border-black/6 pb-3.5 sm:pb-5">
                 <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-orange-50 flex items-center justify-center text-orange-600 shadow-inner shrink-0">
                   <FaLock size={15} />
                 </div>
                 <div>
-                  <h2 className="font-editorial text-lg sm:text-2xl font-bold text-[#1d1c19] leading-tight">Secure checkout.</h2>
+                  <h2 className="font-editorial text-lg sm:text-2xl sm:leading-8 font-bold text-[#1d1c19] leading-tight">Secure checkout.</h2>
                   <p className="text-xs sm:text-sm text-[#777269] mt-0.5 font-medium">Where should we send your order?</p>
                 </div>
               </div>
@@ -476,12 +476,12 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                         }}
                         className={`text-left p-2.5 sm:p-3.5 rounded-xl border transition-all ${
                           selectedAddressId === a._id
-                            ? "border-orange-400 bg-orange-50/80 shadow-xs"
+                            ? "border-orange-400 bg-orange-50/80 "
                             : "border-gray-200 bg-white hover:border-gray-300"
                         }`}
                       >
                         <div className="text-xs sm:text-sm font-bold text-gray-900 line-clamp-1">{a.fullName || a.name}</div>
-                        <div className="text-[11px] sm:text-xs text-gray-500 mt-0.5 line-clamp-2 leading-tight">
+                        <div className="text-[11px] sm:text-xs sm:leading-4 text-gray-500 mt-0.5 line-clamp-2 leading-tight">
                           {a.address1 || a.line1}{a.address2 || a.line2 ? `, ${a.address2 || a.line2}` : ""}, {a.city} {a.pincode || a.zip}
                         </div>
                         <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5">{a.state}</div>
@@ -504,7 +504,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                     type="checkbox"
                     checked={useWallet}
                     onChange={(e) => setUseWallet(e.target.checked)}
-                    className="h-3.5 w-3.5 sm:h-4 sm:w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                    className="h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-sm border-gray-300 text-orange-600 focus:ring-orange-500"
                   />
                   Use wallet balance for this order
                 </label>
@@ -645,7 +645,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                   type="checkbox"
                   checked={saveAddress}
                   onChange={(e) => setSaveAddress(e.target.checked)}
-                  className="h-3.5 w-3.5 sm:h-4 sm:w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500"
+                  className="h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-sm border-gray-300 text-orange-600 focus:ring-orange-500"
                 />
                 <label htmlFor="save-address" className="text-xs font-bold text-gray-600">
                   Save this address for next time
@@ -698,12 +698,12 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                         aria-pressed={paymentMethod === id}
                         className={`flex flex-col items-center gap-1 rounded-xl border p-2 sm:p-2.5 text-center transition-all ${
                           paymentMethod === id
-                            ? "border-orange-400 bg-orange-500/10 shadow-xs"
+                            ? "border-orange-400 bg-orange-500/10 "
                             : "border-white/10 bg-white/5 hover:border-white/20"
                         }`}
                       >
                         <Icon className={paymentMethod === id ? "text-orange-400" : "text-gray-400"} size={15} />
-                        <span className="text-[11px] sm:text-xs font-bold text-white leading-tight">{label}</span>
+                        <span className="text-[11px] sm:text-xs sm:leading-4 font-bold text-white leading-tight">{label}</span>
                         <span className="text-[8px] sm:text-[9px] leading-tight text-gray-400 truncate">{caption}</span>
                       </button>
                     ))}

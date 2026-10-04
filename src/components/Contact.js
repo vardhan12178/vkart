@@ -109,7 +109,7 @@ export default function Contact() {
           <span className="text-orange-600 font-bold tracking-widest text-xs uppercase bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
             Contact Us
           </span>
-          <h1 className="mt-5 font-editorial text-5xl sm:text-7xl font-normal text-[#1d1c19] tracking-[-0.04em] leading-[0.95]">
+          <h1 className="mt-5 font-editorial text-5xl sm:text-7xl sm:leading-none font-normal text-[#1d1c19] tracking-[-0.04em] leading-[0.95]">
             Talk to VKart.
           </h1>
           <p className="mt-4 text-lg text-gray-500 leading-relaxed">
@@ -212,7 +212,7 @@ export default function Contact() {
 
               <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-xs border border-white/10">
                     <FaEnvelope className="text-lg text-orange-400" />
                   </div>
                   <div>
@@ -223,7 +223,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-xs border border-white/10">
                     <FaClock className="text-lg text-orange-400" />
                   </div>
                   <div>
@@ -234,7 +234,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur-xs border border-white/10">
                     <FaMapMarkerAlt className="text-lg text-orange-400" />
                   </div>
                   <div>

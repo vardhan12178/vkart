@@ -222,7 +222,7 @@ export default function AdminDashboard() {
       <div className="sticky top-0 z-20 bg-[#F8F9FA]/85 backdrop-blur-xl border-b border-slate-200/60 px-3.5 sm:px-8 py-3 sm:py-4">
         <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5 sm:gap-4">
           <div>
-            <h1 className="font-editorial text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-xl sm:text-2xl sm:leading-8 font-bold text-slate-900 tracking-tight leading-tight">
               Store overview.
             </h1>
             <p className="text-slate-500 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mt-0.5">
@@ -238,7 +238,7 @@ export default function AdminDashboard() {
                   key={range}
                   onClick={() => setTimeRange(range)}
                   className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${timeRange === range
-                    ? "bg-white text-slate-900 shadow-xs scale-102"
+                    ? "bg-white text-slate-900 scale-102"
                     : "text-slate-500 hover:text-slate-700"
                     }`}
                 >
@@ -250,7 +250,7 @@ export default function AdminDashboard() {
             <button
               onClick={() => dashboardQuery.refetch()}
               disabled={dashboardQuery.isFetching}
-              className="p-1.5 sm:p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all shadow-xs active:scale-95"
+              className="p-1.5 sm:p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all active:scale-95"
               title="Sync Data"
             >
               <RefreshIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
@@ -262,7 +262,7 @@ export default function AdminDashboard() {
       <div className="max-w-[1600px] mx-auto space-y-4 sm:space-y-8 px-3.5 sm:px-8 mt-4 sm:mt-8">
 
         {error && (
-          <div className="rounded-2xl bg-red-50 border border-red-100 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-red-600 flex items-center gap-2 animate-in fade-in shadow-xs">
+          <div className="rounded-2xl bg-red-50 border border-red-100 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-red-600 flex items-center gap-2 animate-in fade-in ">
             <StatusOnlineIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             <span className="font-medium">{error}</span>
           </div>
@@ -325,7 +325,7 @@ export default function AdminDashboard() {
             <div className={`grid grid-cols-1 xl:grid-cols-3 gap-3.5 sm:gap-6 ${fadeInClass(400)}`}>
 
               {/* Revenue Chart */}
-              <div className="xl:col-span-2 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6 hover:shadow-md transition-all duration-300">
+              <div className="xl:col-span-2 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 p-4 sm:p-6 hover:shadow-md transition-all duration-300">
                 <div className="flex items-center justify-between mb-4 sm:mb-8">
                   <div>
                     <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight flex items-center gap-1.5 sm:gap-2">
@@ -388,7 +388,7 @@ export default function AdminDashboard() {
               </div>
 
               {/* Order Stages Bar Chart */}
-              <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6 hover:shadow-md transition-all duration-300 flex flex-col">
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 p-4 sm:p-6 hover:shadow-md transition-all duration-300 flex flex-col">
                 <h2 className="text-sm sm:text-lg font-bold text-slate-900 mb-0.5 sm:mb-1 tracking-tight">Pipeline</h2>
                 <p className="text-[10px] sm:text-xs font-medium text-slate-400 mb-3 sm:mb-6">Order status distribution</p>
 
@@ -428,8 +428,8 @@ export default function AdminDashboard() {
             <div className={`grid grid-cols-1 xl:grid-cols-2 gap-3.5 sm:gap-6 ${fadeInClass(500)}`}>
 
               {/* Recent Orders List */}
-              <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
-                <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 h-[380px] sm:h-[450px] flex flex-col relative group">
+                <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-3xl">
                   <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Recent Orders</h2>
                   <button onClick={() => navigate("/admin/orders")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all orders">
                     <ExternalLinkIcon className="h-4 w-4" />
@@ -464,12 +464,12 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Premium Fade Overlay - Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-[1.5rem]" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-3xl" />
               </div>
 
               {/* Top Products List */}
-              <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
-                <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 h-[380px] sm:h-[450px] flex flex-col relative group">
+                <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-3xl">
                   <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
                   <button onClick={() => navigate("/admin/products")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all products">
                     <ExternalLinkIcon className="h-4 w-4" />
@@ -478,8 +478,8 @@ export default function AdminDashboard() {
 
                 <div className="overflow-y-auto no-scrollbar flex-1 p-2.5 sm:p-4 space-y-2 sm:space-y-3">
                   {topProducts.length > 0 ? topProducts.map((p, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-xs transition-all bg-white group/item">
-                      <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-100 relative">
+                    <div key={idx} className="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 hover:border-orange-200 transition-all bg-white group/item">
+                      <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-xl bg-slate-50 flex items-center justify-center shrink-0 overflow-hidden border border-slate-100 relative">
                         <ImageWithFallback src={p.image} alt={p.name} className="h-full w-full object-contain p-1 group-hover/item:scale-110 transition-transform duration-500 mix-blend-multiply" />
                         <div className="absolute top-0 left-0 bg-slate-900 text-white text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded-br-lg">#{idx + 1}</div>
                       </div>
@@ -498,7 +498,7 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Premium Fade Overlay - Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-[1.5rem]" />
+                <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-3xl" />
               </div>
 
             </div>
@@ -536,16 +536,16 @@ function ImageWithFallback({ src, alt, className }) {
 
 function StatCard({ title, value, subtitle, icon, gradient, trend, trendUp }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl sm:rounded-[1.5rem] bg-white p-3 sm:p-6 shadow-xs border border-slate-200/60 group hover:shadow-md transition-all duration-300">
+    <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white p-3 sm:p-6 border border-slate-200/60 group hover:shadow-md transition-all duration-300">
       {/* Subtle Gradient Background */}
-      <div className={`absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-6 -mt-6 sm:-mr-8 sm:-mt-8 transition-transform group-hover:scale-110 duration-700 pointer-events-none`}></div>
+      <div className={`absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-linear-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-6 -mt-6 sm:-mr-8 sm:-mt-8 transition-transform group-hover:scale-110 duration-700 pointer-events-none`}></div>
 
       <div className="flex justify-between items-start relative z-10 gap-1.5 sm:gap-2">
         <div className="min-w-0 flex-1">
           <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5 sm:mb-1 truncate">{title}</p>
-          <h3 className="text-base sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight leading-tight truncate">{value}</h3>
+          <h3 className="text-base sm:text-2xl sm:leading-8 lg:text-3xl lg:leading-9 font-black text-slate-900 tracking-tight leading-tight truncate">{value}</h3>
         </div>
-        <div className={`h-7 w-7 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-xs text-white shrink-0 transform group-hover:rotate-6 transition-transform duration-300`}>
+        <div className={`h-7 w-7 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center text-white shrink-0 transform group-hover:rotate-6 transition-transform duration-300`}>
           {icon}
         </div>
       </div>
@@ -577,23 +577,23 @@ function DashboardSkeleton() {
     <div className="animate-pulse space-y-6">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="h-28 sm:h-36 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 shadow-xs p-3 sm:p-6 relative overflow-hidden">
+          <div key={i} className="h-28 sm:h-36 bg-white rounded-2xl sm:rounded-3xl border border-slate-100 p-3 sm:p-6 relative overflow-hidden">
             <div className="flex justify-between">
-              <div className="h-3 w-16 bg-slate-100 rounded mb-2"></div>
+              <div className="h-3 w-16 bg-slate-100 rounded-sm mb-2"></div>
               <div className="h-7 w-7 sm:h-10 sm:w-10 bg-slate-100 rounded-xl"></div>
             </div>
-            <div className="h-6 sm:h-8 w-20 sm:w-28 bg-slate-100 rounded mb-2"></div>
-            <div className="h-2.5 w-full bg-slate-50 rounded"></div>
+            <div className="h-6 sm:h-8 w-20 sm:w-28 bg-slate-100 rounded-sm mb-2"></div>
+            <div className="h-2.5 w-full bg-slate-50 rounded-sm"></div>
           </div>
         ))}
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-3.5 sm:gap-6">
-        <div className="xl:col-span-2 h-64 sm:h-80 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 p-4 sm:p-6">
-          <div className="h-5 w-40 bg-slate-100 rounded mb-6"></div>
+        <div className="xl:col-span-2 h-64 sm:h-80 bg-white rounded-2xl sm:rounded-3xl border border-slate-100 p-4 sm:p-6">
+          <div className="h-5 w-40 bg-slate-100 rounded-sm mb-6"></div>
           <div className="h-44 sm:h-56 bg-slate-50 rounded-xl"></div>
         </div>
-        <div className="h-64 sm:h-80 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 p-4 sm:p-6">
-          <div className="h-5 w-24 bg-slate-100 rounded mb-6"></div>
+        <div className="h-64 sm:h-80 bg-white rounded-2xl sm:rounded-3xl border border-slate-100 p-4 sm:p-6">
+          <div className="h-5 w-24 bg-slate-100 rounded-sm mb-6"></div>
           <div className="space-y-2.5">
             {[1, 2, 3, 4].map(j => <div key={j} className="h-8 sm:h-10 bg-slate-50 rounded-xl"></div>)}
           </div>

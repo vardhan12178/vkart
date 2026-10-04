@@ -43,7 +43,7 @@ const AnnouncementBar = () => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="announcement-bar relative z-[60] overflow-hidden"
+                className="announcement-bar relative z-60 overflow-hidden"
             >
                 <div className="relative mx-auto flex min-h-8 max-w-[1500px] items-center justify-center px-10 py-2 text-[10px] font-bold uppercase tracking-[0.12em] sm:justify-between sm:px-6 lg:px-8">
 
@@ -91,7 +91,7 @@ const AnnouncementBar = () => {
 
                     <button
                         onClick={() => setIsVisible(false)}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-[#776f64] transition-colors hover:bg-black/[0.06] hover:text-[#1d1c19]"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-[#776f64] transition-colors hover:bg-black/6 hover:text-[#1d1c19]"
                         aria-label="Close announcement"
                     >
                         <XIcon className="h-4 w-4" />

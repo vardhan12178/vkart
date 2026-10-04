@@ -188,7 +188,7 @@ export default function AdminOrders() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
               Orders
             </h1>
             <p className="text-slate-500 mt-0.5 text-xs sm:text-sm font-medium">
@@ -199,7 +199,7 @@ export default function AdminOrders() {
             <button
               onClick={() => ordersQuery.refetch()}
               disabled={ordersQuery.isFetching}
-              className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-slate-700 border border-slate-200 rounded-xl shadow-xs hover:bg-slate-50 transition-all active:scale-95 text-xs sm:text-sm font-semibold"
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-slate-700 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all active:scale-95 text-xs sm:text-sm font-semibold"
             >
               <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
               <span>Sync</span>
@@ -233,7 +233,7 @@ export default function AdminOrders() {
         </div>
 
         {/* Controls Toolbar */}
-        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row gap-1.5 sm:gap-2">
+        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 flex flex-col sm:flex-row gap-1.5 sm:gap-2">
           {/* Search */}
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -306,7 +306,7 @@ export default function AdminOrders() {
         </div>
 
         {/* Main Table / Mobile List Area */}
-        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden flex flex-col min-h-[350px]">
+        <div className="bg-white rounded-2xl border border-slate-200/70 overflow-hidden flex flex-col min-h-[350px]">
 
           {loading ? (
             <div className="p-8 space-y-3 animate-pulse">
@@ -497,7 +497,7 @@ export default function AdminOrders() {
                   <button
                     onClick={() => goToPage(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white hover:shadow-xs disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
                     aria-label="Previous page"
                   >
                     <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
@@ -506,7 +506,7 @@ export default function AdminOrders() {
                   <button
                     onClick={() => goToPage(currentPage + 1)}
                     disabled={currentPage === totalPages || totalPages === 0}
-                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white hover:shadow-xs disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
                     aria-label="Next page"
                   >
                     <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
@@ -524,10 +524,10 @@ export default function AdminOrders() {
 // Helper Component for Stats
 function StatCard({ title, value, icon: Icon, color, bg }) {
   return (
-    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">
+    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">
       <div className="min-w-0 flex-1">
         <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate">{title}</p>
-        <h3 className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5">{value}</h3>
+        <h3 className="text-base sm:text-2xl sm:leading-8 font-black text-slate-900 tracking-tight leading-tight mt-0.5">{value}</h3>
       </div>
       <div className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl ${bg} ${color} shrink-0 self-end sm:self-center`}>
         <Icon className="h-4 w-4 sm:h-6 sm:w-6" />

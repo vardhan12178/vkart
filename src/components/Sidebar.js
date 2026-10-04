@@ -82,7 +82,7 @@ export default function Sidebar({
     <aside className="sticky top-24 h-fit w-full min-w-[260px]">
       <div className="absolute -top-10 -left-10 w-32 h-32 bg-orange-200/20 rounded-full blur-3xl pointer-events-none" />
       
-      <div className="relative rounded-2xl bg-white ring-1 ring-gray-100 shadow-sm overflow-hidden">
+      <div className="relative rounded-2xl bg-white ring-1 ring-gray-100 shadow-xs overflow-hidden">
         
         {/* Header */}
         <div className="border-b border-gray-100 p-5 flex items-center justify-between bg-gray-50/50">
@@ -94,7 +94,7 @@ export default function Sidebar({
           {(categoryFilter || selectedRating) && (
             <button
               onClick={clearAll}
-              className="group flex items-center gap-1.5 rounded-md border border-[#a85d37]/15 bg-[#a85d37]/[0.07] px-2.5 py-1 text-[10px] font-bold text-[#925033] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
+              className="group flex items-center gap-1.5 rounded-md border border-[#a85d37]/15 bg-[#a85d37]/[0.07] px-2.5 py-1 text-[10px] font-bold text-[#925033] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/12 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
             >
               <FaUndo size={8} className="group-hover:-rotate-180 transition-transform duration-500" />
               RESET
@@ -122,7 +122,7 @@ export default function Sidebar({
                 {loadingCats ? (
                   <div className="space-y-2">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <div key={i} className="h-6 w-3/4 animate-pulse rounded bg-gray-100" />
+                      <div key={i} className="h-6 w-3/4 animate-pulse rounded-sm bg-gray-100" />
                     ))}
                   </div>
                 ) : catError ? (

@@ -34,7 +34,7 @@ const Toast = ({ show, kind = "error", children }) => {
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
       className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
+        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-xs backdrop-blur-md border",
         isSuccess
           ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
           : "bg-red-50/80 border-red-100 text-red-800"
@@ -103,7 +103,7 @@ export default function ForgotPassword() {
             {/* Header with Logo */}
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
-                <div className="h-12 w-12 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
+                <div className="h-12 w-12 bg-linear-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
                   <ShoppingCartIcon className="h-7 w-7" />
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function ForgotPassword() {
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     placeholder="you@example.com"
-                    className="block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-4 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
+                    className="block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-4 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
                     autoComplete="username email"
                     required
                   />
@@ -165,7 +165,7 @@ export default function ForgotPassword() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={loading}
-                className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-2"
+                className="w-full relative overflow-hidden rounded-xl bg-linear-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-hidden focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-2"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}

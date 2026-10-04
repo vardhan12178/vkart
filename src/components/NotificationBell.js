@@ -165,7 +165,7 @@ const NotificationBell = () => {
           relative grid h-10 w-10 place-items-center rounded-full transition-colors group
           ${isOpen
                         ? "bg-[#e9e1d7] text-[#1d1c19]"
-                        : "text-[#656159] hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                        : "text-[#656159] hover:bg-black/5 hover:text-[#1d1c19]"
                     }
         `}
                 aria-label="Notifications"
@@ -196,7 +196,7 @@ const NotificationBell = () => {
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.15 }}
                         style={{ zIndex: 50, ...panelStyle }}
-                        className="origin-top-right overflow-hidden rounded-[1.25rem] border border-black/[0.08] bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)]"
+                        className="origin-top-right overflow-hidden rounded-[1.25rem] border border-black/8 bg-[#fffdf8] shadow-[0_24px_70px_rgba(29,28,25,.16)]"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between border-b border-black/[0.07] px-4 py-3 sm:px-5 sm:py-4">
@@ -227,14 +227,14 @@ const NotificationBell = () => {
                                         key={item._id || item.id}
                                         onClick={() => handleNotificationClick(item)}
                                         className={`
-                      flex cursor-pointer gap-3 sm:gap-4 border-b border-black/[0.055] px-4 py-2.5 sm:px-5 sm:py-3.5 transition-colors last:border-0 hover:bg-black/[0.025]
+                      flex cursor-pointer gap-3 sm:gap-4 border-b border-black/5.5 px-4 py-2.5 sm:px-5 sm:py-3.5 transition-colors last:border-0 hover:bg-black/2.5
                       ${!item.isRead ? "bg-[#f2ebe2]" : ""}
                     `}
                                     >
                                         {/* Icon */}
                                         <div className={`
-                      mt-0.5 h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 transition-colors
-                      ${!item.isRead ? "bg-[#fffdf8] ring-1 ring-black/[0.06]" : "bg-[#eeeae2]"}
+                      mt-0.5 h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 transition-colors
+                      ${!item.isRead ? "bg-[#fffdf8] ring-1 ring-black/6" : "bg-[#eeeae2]"}
                     `}>
                                             {getNotificationIcon(item.type, item.status, item.title)}
                                         </div>
@@ -254,7 +254,7 @@ const NotificationBell = () => {
 
                                         {/* Unread Dot */}
                                         {!item.isRead && (
-                                            <div className="flex-shrink-0 self-center">
+                                            <div className="shrink-0 self-center">
                                                 <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#a85d37]" />
                                             </div>
                                         )}
@@ -277,7 +277,7 @@ const NotificationBell = () => {
                                         setIsOpen(false);
                                         navigate("/orders");
                                     }}
-                                    className="w-full rounded-full py-2 sm:py-2.5 text-[11px] sm:text-xs font-bold text-[#5f5a52] transition-colors hover:bg-black/[0.04]"
+                                    className="w-full rounded-full py-2 sm:py-2.5 text-[11px] sm:text-xs font-bold text-[#5f5a52] transition-colors hover:bg-black/4"
                                 >
                                     View All Orders
                                 </button>

@@ -48,7 +48,7 @@ const Toast = ({ show, kind = "error", children }) => {
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
       className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
+        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-xs backdrop-blur-md border",
         isSuccess
           ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
           : "bg-red-50/80 border-red-100 text-red-800"
@@ -93,7 +93,7 @@ const PasswordStrengthIndicator = ({ password }) => {
           <div
             key={i}
             className={cx(
-              "flex items-center gap-1 text-[10px] font-medium border px-1.5 py-0.5 rounded",
+              "flex items-center gap-1 text-[10px] font-medium border px-1.5 py-0.5 rounded-sm",
               check.test
                 ? "text-emerald-700 border-emerald-200 bg-emerald-50"
                 : "text-gray-400 border-gray-100 bg-gray-50"
@@ -179,7 +179,7 @@ export default function ResetPassword() {
             {/* Logo & Header */}
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
-                <div className="h-12 w-12 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
+                <div className="h-12 w-12 bg-linear-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
                   <ShoppingCartIcon className="h-7 w-7" />
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function ResetPassword() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="At least 8 characters"
                     className={cx(
-                      "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-12 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                      "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-12 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                       errors.password
                         ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                         : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -238,7 +238,7 @@ export default function ResetPassword() {
                   <button
                     type="button"
                     onClick={() => setShowPwd(!showPwd)}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-hidden"
                   >
                     {showPwd ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                   </button>
@@ -262,7 +262,7 @@ export default function ResetPassword() {
                     onChange={(e) => setConfirm(e.target.value)}
                     placeholder="Re-enter password"
                     className={cx(
-                      "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-12 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                      "block w-full rounded-xl border bg-gray-50/50 py-3.5 pl-11 pr-12 text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                       errors.confirm
                         ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                         : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -271,7 +271,7 @@ export default function ResetPassword() {
                   <button
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-hidden"
                   >
                     {showConfirm ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                   </button>
@@ -286,7 +286,7 @@ export default function ResetPassword() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={loading}
-                className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-4"
+                className="w-full relative overflow-hidden rounded-xl bg-linear-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-hidden focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-4"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}

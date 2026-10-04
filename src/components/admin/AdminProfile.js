@@ -88,7 +88,7 @@ export default function AdminProfile() {
       <div className="max-w-3xl mx-auto space-y-6">
 
         <div>
-          <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
             My Profile
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Your personal admin account details and access.</p>
@@ -102,7 +102,7 @@ export default function AdminProfile() {
         )}
 
         {/* Personal details */}
-        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-8">
+        <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-8">
           <h2 className="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
             <UserCircleIcon className="h-5 w-5 text-slate-400" />
             Personal Details
@@ -112,7 +112,7 @@ export default function AdminProfile() {
             <div className="flex items-center gap-3.5 sm:gap-6 w-full sm:w-auto">
               <div className="relative shrink-0">
                 <div
-                  className="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white text-lg sm:text-xl font-bold ring-2 ring-white shadow-xs overflow-hidden cursor-pointer hover:opacity-90 transition"
+                  className="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-linear-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white text-lg sm:text-xl font-bold ring-2 ring-white overflow-hidden cursor-pointer hover:opacity-90 transition"
                   onClick={() => avatarInputRef.current?.click()}
                 >
                   {avatarPreview ? (
@@ -192,7 +192,7 @@ export default function AdminProfile() {
         </div>
 
         {/* Access summary */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-6 sm:p-8">
           <h2 className="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
             <ShieldCheckIcon className="h-5 w-5 text-slate-400" />
             Your Access

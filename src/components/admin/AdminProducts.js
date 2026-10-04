@@ -202,7 +202,7 @@ export default function AdminProducts() {
         {/* Toast Notification - Z-Index 200 to sit above modal (Z-100) */}
         {toast.message && (
           <div
-            className={`fixed top-5 right-5 z-[200] px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
+            className={`fixed top-5 right-5 z-200 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
               }`}
           >
             {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <ExclamationIcon className="h-5 w-5 text-red-500" />}
@@ -213,7 +213,7 @@ export default function AdminProducts() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
               Inventory
             </h1>
             <p className="text-slate-500 mt-0.5 text-xs sm:text-sm font-medium">
@@ -224,7 +224,7 @@ export default function AdminProducts() {
           {canWrite && (
             <button
               onClick={openAdd}
-              className="group inline-flex items-center gap-1.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white shadow-xs hover:bg-slate-800 active:scale-95 transition-all duration-200 shrink-0"
+              className="group inline-flex items-center gap-1.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800 active:scale-95 transition-all duration-200 shrink-0"
             >
               <PlusIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white/90 transition-colors" />
               <span className="font-bold text-xs sm:text-sm">Add Product</span>
@@ -255,7 +255,7 @@ export default function AdminProducts() {
         </div>
 
         {/* Controls Toolbar */}
-        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row gap-1.5 sm:gap-2">
+        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 flex flex-col sm:flex-row gap-1.5 sm:gap-2">
           <div className="relative flex-1 group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <SearchIcon className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
@@ -276,19 +276,19 @@ export default function AdminProducts() {
             <div className="flex bg-slate-100/80 p-0.5 sm:p-1 rounded-lg">
               <button
                 onClick={() => setStatusFilter('all')}
-                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-md transition-all ${statusFilter === 'all' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
+                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-md transition-all ${statusFilter === 'all' ? 'bg-white text-slate-900 ' : 'text-slate-500 hover:text-slate-700'}`}
               >
                 All
               </button>
               <button
                 onClick={() => setStatusFilter('active')}
-                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-md transition-all ${statusFilter === 'active' ? 'bg-white text-emerald-700 shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
+                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-md transition-all ${statusFilter === 'active' ? 'bg-white text-emerald-700 ' : 'text-slate-500 hover:text-slate-700'}`}
               >
                 Active
               </button>
               <button
                 onClick={() => setStatusFilter('inactive')}
-                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-md transition-all ${statusFilter === 'inactive' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
+                className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-md transition-all ${statusFilter === 'inactive' ? 'bg-white text-slate-900 ' : 'text-slate-500 hover:text-slate-700'}`}
               >
                 Drafts
               </button>
@@ -314,11 +314,11 @@ export default function AdminProducts() {
         </div>
 
         {/* Table / List Section */}
-        <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden flex flex-col min-h-[350px]">
+        <div className="bg-white rounded-2xl border border-slate-200/70 overflow-hidden flex flex-col min-h-[350px]">
           {loading ? (
             <div className="flex-1 flex flex-col items-center justify-center p-12 space-y-4 animate-pulse">
               <div className="h-10 w-10 bg-slate-100 rounded-xl"></div>
-              <div className="h-3.5 w-40 bg-slate-100 rounded"></div>
+              <div className="h-3.5 w-40 bg-slate-100 rounded-sm"></div>
             </div>
           ) : filteredAndSorted.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 text-center">
@@ -346,7 +346,7 @@ export default function AdminProducts() {
 
                   return (
                     <div key={p._id} className="p-3 hover:bg-slate-50/60 transition-colors flex items-start gap-3">
-                      <div className="h-14 w-14 flex-shrink-0 rounded-xl border border-slate-200 bg-white p-1 overflow-hidden shadow-xs">
+                      <div className="h-14 w-14 shrink-0 rounded-xl border border-slate-200 bg-white p-1 overflow-hidden ">
                         {p.thumbnail ? (
                           <img loading="lazy" decoding="async" src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
                         ) : (
@@ -365,7 +365,7 @@ export default function AdminProducts() {
                         </div>
 
                         <div className="text-[10px] text-slate-500 mt-1 flex flex-wrap items-center gap-1.5">
-                          {p.category && <span className="bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded text-slate-600 font-medium truncate max-w-[120px]">{p.category}</span>}
+                          {p.category && <span className="bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-sm text-slate-600 font-medium truncate max-w-[120px]">{p.category}</span>}
                           <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold border
                             ${isOutOfStock ? "bg-red-50 text-red-700 border-red-100"
                                 : isLowStock ? "bg-amber-50 text-amber-700 border-amber-100"
@@ -380,7 +380,7 @@ export default function AdminProducts() {
                           <div className="flex items-center gap-1.5">
                             <span className="text-xs sm:text-sm font-black text-slate-900">₹{p.price?.toLocaleString('en-IN')}</span>
                             {p.discountPercentage > 0 && (
-                              <span className="text-[9px] font-bold text-orange-600 bg-orange-50 px-1 rounded">
+                              <span className="text-[9px] font-bold text-orange-600 bg-orange-50 px-1 rounded-sm">
                                 -{p.discountPercentage}%
                               </span>
                             )}
@@ -424,7 +424,7 @@ export default function AdminProducts() {
                         <tr key={p._id} className="group hover:bg-slate-50/60 transition-colors">
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-4">
-                              <div className="h-14 w-14 flex-shrink-0 rounded-xl border border-slate-200 bg-white p-1 overflow-hidden shadow-sm">
+                              <div className="h-14 w-14 shrink-0 rounded-xl border border-slate-200 bg-white p-1 overflow-hidden shadow-xs">
                                 {p.thumbnail ? (
                                   <img loading="lazy" decoding="async" src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
                                 ) : (
@@ -436,7 +436,7 @@ export default function AdminProducts() {
                               <div>
                                 <div className="font-bold text-slate-900 text-sm line-clamp-1">{p.title}</div>
                                 <div className="text-xs text-slate-500 mt-1 flex flex-wrap items-center gap-2">
-                                  {p.category && <span className="bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-600 font-medium">{p.category}</span>}
+                                  {p.category && <span className="bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-sm text-slate-600 font-medium">{p.category}</span>}
                                   {p.sku && <span className="font-mono text-slate-400">SKU: {p.sku}</span>}
                                 </div>
                               </div>
@@ -446,7 +446,7 @@ export default function AdminProducts() {
                           <td className="px-6 py-4">
                             <div className="text-sm font-bold text-slate-900">₹{p.price?.toLocaleString('en-IN')}</div>
                             {p.discountPercentage > 0 && (
-                              <div className="text-[10px] font-bold text-orange-600 bg-orange-50 inline-block px-1.5 rounded mt-0.5">
+                              <div className="text-[10px] font-bold text-orange-600 bg-orange-50 inline-block px-1.5 rounded-sm mt-0.5">
                                 -{p.discountPercentage}%
                               </div>
                             )}
@@ -496,7 +496,7 @@ export default function AdminProducts() {
                   <button
                     onClick={() => setPage(p => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white hover:shadow-xs disabled:opacity-30 transition-all border border-transparent hover:border-slate-200"
+                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 transition-all border border-transparent hover:border-slate-200"
                     aria-label="Previous page"
                   >
                     <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
@@ -505,7 +505,7 @@ export default function AdminProducts() {
                   <button
                     onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
-                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white hover:shadow-xs disabled:opacity-30 transition-all border border-transparent hover:border-slate-200"
+                    className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 transition-all border border-transparent hover:border-slate-200"
                     aria-label="Next page"
                   >
                     <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
@@ -519,11 +519,11 @@ export default function AdminProducts() {
 
       {/* Product modal */}
       {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-6">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-2 sm:p-6">
 
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity"
             onClick={() => setShowModal(false)}
           ></div>
 
@@ -571,10 +571,10 @@ function StatCard({ label, value, icon: Icon, color }) {
   };
 
   return (
-    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">
+    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">
       <div className="min-w-0 flex-1">
         <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate">{label}</p>
-        <p className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5">{value}</p>
+        <p className="text-base sm:text-2xl sm:leading-8 font-black text-slate-900 tracking-tight leading-tight mt-0.5">{value}</p>
       </div>
       <div className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl ${colors[color]} shrink-0 self-end sm:self-center`}>
         <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
@@ -642,7 +642,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
         {/* Left Column - Main Info */}
         <div className="lg:col-span-2 space-y-3.5 sm:space-y-6">
           {/* General Card */}
-          <div className="bg-white p-3.5 sm:p-6 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 sm:gap-2">
               <ClipboardListIcon className="h-4 w-4 text-slate-400" />
               Basic Details
@@ -654,7 +654,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                   type="text"
                   value={form.title}
                   onChange={(e) => update("title", e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none transition-all bg-slate-50/50 focus:bg-white"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden transition-all bg-slate-50/50 focus:bg-white"
                   required
                   placeholder="e.g. Wireless Noise Cancelling Headphones"
                 />
@@ -664,7 +664,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                 <textarea
                   value={form.description}
                   onChange={(e) => update("description", e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none transition-all bg-slate-50/50 focus:bg-white resize-none"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden transition-all bg-slate-50/50 focus:bg-white resize-none"
                   rows={4}
                   required
                   placeholder="Describe the product features, benefits, and specs..."
@@ -674,7 +674,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           </div>
 
           {/* Pricing Card */}
-          <div className="bg-white p-3.5 sm:p-6 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 sm:gap-2">
               <CurrencyRupeeIcon className="h-4 w-4 text-slate-400" />
               Pricing & Stock
@@ -686,7 +686,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                   type="number"
                   value={form.price}
                   onChange={(e) => update("price", e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 px-2.5 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white"
+                  className="w-full rounded-xl border border-slate-200 px-2.5 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50 focus:bg-white"
                   required
                   placeholder="0.00"
                 />
@@ -697,7 +697,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                   type="number"
                   value={form.discountPercentage}
                   onChange={(e) => update("discountPercentage", e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 px-2.5 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white"
+                  className="w-full rounded-xl border border-slate-200 px-2.5 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50 focus:bg-white"
                   placeholder="0"
                 />
               </div>
@@ -707,7 +707,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                   type="number"
                   value={form.stock}
                   onChange={(e) => update("stock", e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 px-2.5 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white"
+                  className="w-full rounded-xl border border-slate-200 px-2.5 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50 focus:bg-white"
                   required
                   placeholder="0"
                 />
@@ -716,7 +716,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           </div>
 
           {/* Variants Card */}
-          <div className="bg-white p-3.5 sm:p-6 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Variants</h3>
               <button
@@ -772,7 +772,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           </div>
 
           {/* Media Card */}
-          <div className="bg-white p-3.5 sm:p-6 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 sm:gap-2">
               <PhotographIcon className="h-4 w-4 text-slate-400" />
               Media
@@ -798,13 +798,13 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
         {/* Right Column - Sidebar Settings */}
         <div className="space-y-3.5 sm:space-y-6">
           {/* Status Card */}
-          <div className="bg-white p-3.5 sm:p-5 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <div>
               <label className="block text-[11px] sm:text-xs font-bold text-slate-700 mb-1.5">Product Status</label>
               <select
                 value={form.isActive}
                 onChange={(e) => update("isActive", e.target.value === "true")}
-                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-bold focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 cursor-pointer"
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-bold focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50 cursor-pointer"
               >
                 <option value="true">Active (Visible)</option>
                 <option value="false">Draft (Hidden)</option>
@@ -813,7 +813,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           </div>
 
           {/* Organization Card */}
-          <div className="bg-white p-3.5 sm:p-5 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Organization</h3>
 
             <div>
@@ -823,7 +823,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
                 list="categories-list"
                 value={form.category}
                 onChange={(e) => update("category", e.target.value)}
-                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50"
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50"
                 placeholder="Select..."
               />
               <datalist id="categories-list">
@@ -836,7 +836,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
               <input
                 value={form.brand}
                 onChange={(e) => update("brand", e.target.value)}
-                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50"
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50"
                 placeholder="e.g. Nike"
               />
             </div>
@@ -846,7 +846,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
               <input
                 value={form.sku}
                 onChange={(e) => update("sku", e.target.value)}
-                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50"
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50"
                 placeholder="PROD-001"
               />
             </div>
@@ -856,14 +856,14 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
               <input
                 value={form.tags}
                 onChange={(e) => update("tags", e.target.value)}
-                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50"
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50"
                 placeholder="summer, sale..."
               />
             </div>
           </div>
 
           {/* Shipping Card */}
-          <div className="bg-white p-3.5 sm:p-5 rounded-2xl shadow-xs border border-slate-200/70 space-y-3 sm:space-y-4">
+          <div className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Shipping</h3>
             <div className="grid grid-cols-2 gap-2 sm:gap-3">
               <div>
@@ -903,7 +903,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
         </button>
         <button
           type="submit"
-          className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-slate-900 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white shadow-xs hover:bg-black active:scale-95 transition-all"
+          className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-slate-900 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-black active:scale-95 transition-all"
         >
           <SaveIcon className="h-4 w-4 text-slate-300" />
           {initialData ? "Update Product" : "Save Product"}

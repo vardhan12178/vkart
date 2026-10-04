@@ -120,7 +120,7 @@ export default function AdminLayout({ setIsAdmin }) {
         {/* Page Content */}
         <main
           id="main-content"
-          className="flex-1 overflow-y-auto focus:outline-none scroll-smooth flex flex-col"
+          className="flex-1 overflow-y-auto focus:outline-hidden scroll-smooth flex flex-col"
         >
           <div className="flex-1">
             <Outlet

@@ -107,7 +107,7 @@ export default function License() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">1</span>
               Purpose of This Project
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p>
                 VKart is built exclusively for <strong>learning, skill demonstration, and recruitment purposes</strong>. 
                 It acts as a proof-of-concept for full-stack e-commerce development. It is not a registered business entity and does not conduct commercial activity.
@@ -121,7 +121,7 @@ export default function License() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">2</span>
               License Summary
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">
                 The original code, UI designs, and architecture of this demo are licensed under a custom Portfolio License:
               </p>
@@ -142,7 +142,7 @@ export default function License() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">3</span>
               Attribution Template
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">
                 If you adapt significant portions of the UI logic or backend architecture for your own open-source learning project, please include a credit:
               </p>
@@ -161,7 +161,7 @@ export default function License() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">4</span>
               Third-Party Assets
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
                   <span className="font-bold text-gray-900">Heroicons & React Icons:</span> MIT License
@@ -212,7 +212,7 @@ export default function License() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">6</span>
               Disclaimer
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p>
                 VKart and all related names, branding, and products used here are fictional or used for demonstration. Any resemblance to actual active commercial entities is coincidental.
               </p>

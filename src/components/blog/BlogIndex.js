@@ -26,7 +26,7 @@ const formatDate = (iso) =>
   new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
 const TagPill = ({ label }) => (
-  <span className="inline-flex items-center gap-1 rounded-md bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-700 shadow-sm ring-1 ring-gray-200">
+  <span className="inline-flex items-center gap-1 rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-700 shadow-xs ring-1 ring-gray-200">
     <TagIcon size={10} className="text-orange-500" /> {label}
   </span>
 );
@@ -81,13 +81,13 @@ export default function BlogIndex() {
         
         {/* --- PAGE TITLE (Changed to div to fix styling) --- */}
         <div className="mb-16 text-center animate-fade-up relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-orange-100 text-orange-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-orange-100 text-orange-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-xs">
             <BookOpen size={12} /> The Journal
           </div>
-          <h1 className="font-editorial text-6xl sm:text-8xl font-normal text-[#1d1c19] tracking-[-0.045em] mb-7 leading-[0.9]">
+          <h1 className="font-editorial text-6xl sm:text-8xl sm:leading-none font-normal text-[#1d1c19] tracking-[-0.045em] mb-7 leading-[0.9]">
             The VKart Curation.
           </h1>
-          <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-lg sm:text-xl sm:leading-7 text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
             Useful guides, considered recommendations, and a closer look at the products shaping everyday life.
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function BlogIndex() {
               value={query} 
               onChange={(e) => setQuery(e.target.value)} 
               placeholder="Search articles..." 
-              className="w-full pl-11 pr-4 py-3 rounded-2xl bg-transparent text-sm font-medium text-gray-900 focus:bg-white focus:ring-2 focus:ring-orange-500/20 placeholder:text-gray-400 transition-all outline-none" 
+              className="w-full pl-11 pr-4 py-3 rounded-2xl bg-transparent text-sm font-medium text-gray-900 focus:bg-white focus:ring-2 focus:ring-orange-500/20 placeholder:text-gray-400 transition-all outline-hidden" 
             />
           </div>
 
@@ -128,7 +128,7 @@ export default function BlogIndex() {
         {hasPosts && featured && (
           <section className="mb-20 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <Link to={`/blog/${featured.id}`} className="group relative block rounded-[2.5rem] overflow-hidden shadow-2xl shadow-gray-900/10 h-[500px] md:h-[600px]">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent z-10" />
               <img 
                 src={featured.image} 
                 alt={featured.title} 
@@ -140,16 +140,16 @@ export default function BlogIndex() {
                   <span className="bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Featured Story</span>
                   <span className="text-xs font-bold text-gray-300 uppercase tracking-wider">{featured.readingMinutes} min read</span>
                 </div>
-                <h2 className="text-3xl md:text-6xl font-black leading-tight mb-6 max-w-4xl group-hover:text-orange-100 transition-colors">
+                <h2 className="text-3xl md:text-6xl md:leading-none font-black leading-tight mb-6 max-w-4xl group-hover:text-orange-100 transition-colors">
                   {featured.title}
                 </h2>
-                <p className="text-lg md:text-xl text-gray-200 max-w-2xl line-clamp-2 mb-8 opacity-90 leading-relaxed">
+                <p className="text-lg md:text-xl md:leading-7 text-gray-200 max-w-2xl line-clamp-2 mb-8 opacity-90 leading-relaxed">
                   {featured.summary}
                 </p>
                 
                 <div className="flex items-center gap-6 text-sm text-gray-300 font-medium">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white border border-white/20">
+                    <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white border border-white/20">
                       <User size={16} />
                     </div>
                     <span className="font-bold text-white">{featured.author}</span>
@@ -177,7 +177,7 @@ export default function BlogIndex() {
                 <Link key={post.id} to={`/blog/${post.id}`} className="group flex flex-col gap-5">
                   
                   {/* Image Card */}
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gray-100 shadow-sm group-hover:shadow-2xl group-hover:shadow-orange-500/10 transition-all duration-500 group-hover:-translate-y-1">
+                  <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-gray-100 shadow-xs group-hover:shadow-2xl group-hover:shadow-orange-500/10 transition-all duration-500 group-hover:-translate-y-1">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -226,7 +226,7 @@ export default function BlogIndex() {
         {/* --- NEWSLETTER --- */}
         <section className="mt-32 mb-20 animate-fade-up">
           <div className="relative overflow-hidden rounded-[3rem] bg-[#050505] px-6 py-20 sm:px-20 text-center shadow-2xl shadow-gray-900/30">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-black pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-black pointer-events-none" />
             
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 tracking-tight">
@@ -240,7 +240,7 @@ export default function BlogIndex() {
                 <input 
                   type="email" 
                   placeholder="Enter your email address" 
-                  className="flex-1 px-6 py-4 rounded-2xl bg-white/10 border border-white/10 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-orange-500 outline-none backdrop-blur-md transition-all"
+                  className="flex-1 px-6 py-4 rounded-2xl bg-white/10 border border-white/10 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-orange-500 outline-hidden backdrop-blur-md transition-all"
                 />
                 <button className="px-8 py-4 rounded-2xl bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-600 transition-all hover:scale-105 active:scale-95">
                   Subscribe

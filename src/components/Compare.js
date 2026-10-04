@@ -56,20 +56,20 @@ const normalizeIds = (idsStr) =>
 
 /* ---------- SKELETON ---------- */
 const CompareSkeleton = () => (
-  <div className="w-full overflow-hidden rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
+  <div className="w-full overflow-hidden rounded-3xl border border-gray-100 bg-white p-6 shadow-xs">
     <div className="flex gap-8">
       <div className="w-40 shrink-0 space-y-12 pt-32 hidden md:block">
-        {[1,2,3,4].map(i => <div key={i} className="h-4 w-24 bg-gray-100 rounded animate-pulse" />)}
+        {[1,2,3,4].map(i => <div key={i} className="h-4 w-24 bg-gray-100 rounded-sm animate-pulse" />)}
       </div>
       <div className="flex-1 flex gap-6 overflow-hidden">
         {[1,2,3].map(i => (
           <div key={i} className="min-w-[260px] space-y-4 animate-pulse">
             <div className="h-48 w-full bg-gray-100 rounded-2xl" />
-            <div className="h-6 w-3/4 bg-gray-100 rounded" />
-            <div className="h-4 w-1/2 bg-gray-100 rounded" />
+            <div className="h-6 w-3/4 bg-gray-100 rounded-sm" />
+            <div className="h-4 w-1/2 bg-gray-100 rounded-sm" />
             <div className="space-y-2 pt-8">
-               <div className="h-4 w-full bg-gray-50 rounded" />
-               <div className="h-4 w-full bg-gray-50 rounded" />
+               <div className="h-4 w-full bg-gray-50 rounded-sm" />
+               <div className="h-4 w-full bg-gray-50 rounded-sm" />
             </div>
           </div>
         ))}
@@ -160,10 +160,10 @@ const Compare = () => {
     return (
       <div className="premium-page premium-compare premium-compare-hero min-h-screen bg-[#f6f3ed] flex items-center justify-center p-4 relative overflow-hidden font-sans">
         <GlobalStyles />
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orange-100/40 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-orange-100/40 via-transparent to-transparent pointer-events-none" />
         
         <div className="relative w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-orange-900/5 p-10 text-center animate-fade-in border border-white">
-          <div className="w-20 h-20 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/30 rotate-3 text-white text-3xl">
+          <div className="w-20 h-20 bg-linear-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/30 rotate-3 text-white text-3xl">
             <FaLayerGroup />
           </div>
           <h1 className="text-3xl font-black text-gray-900 mb-3 tracking-tight">Compare Products</h1>
@@ -206,7 +206,7 @@ const Compare = () => {
             {items.length < 4 && (
                 <button 
                   onClick={() => navigate("/products")}
-                  className="flex items-center gap-1.5 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gray-900 text-white text-[11px] sm:text-xs font-bold shadow-sm hover:bg-black transition-all"
+                  className="flex items-center gap-1.5 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gray-900 text-white text-[11px] sm:text-xs font-bold shadow-xs hover:bg-black transition-all"
                 >
                   <FaPlus size={10} /> <span>Add <span className="hidden sm:inline">Product</span></span>
                 </button>
@@ -239,10 +239,10 @@ const Compare = () => {
             )}
 
             {aiVerdictLoading && (
-              <div className="rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm animate-pulse">
-                <div className="h-4 w-32 sm:w-40 bg-gray-100 rounded mb-3" />
-                <div className="h-3 w-full bg-gray-100 rounded mb-2" />
-                <div className="h-3 w-2/3 bg-gray-100 rounded" />
+              <div className="rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-xs animate-pulse">
+                <div className="h-4 w-32 sm:w-40 bg-gray-100 rounded-sm mb-3" />
+                <div className="h-3 w-full bg-gray-100 rounded-sm mb-2" />
+                <div className="h-3 w-2/3 bg-gray-100 rounded-sm" />
               </div>
             )}
 
@@ -251,7 +251,7 @@ const Compare = () => {
             )}
 
             {aiVerdict?.available && (
-              <div className="rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
+              <div className="rounded-xl sm:rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-xs">
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <h3 className="font-bold text-gray-900 flex items-center gap-2 text-xs sm:text-sm">
                     <Sparkles size={14} className="text-orange-500" /> AI Comparison
@@ -326,7 +326,7 @@ const Compare = () => {
                               {/* Remove Button */}
                               <button 
                                 onClick={() => removeId(id)}
-                                className="absolute -top-1.5 -right-1.5 sm:-top-3 sm:-right-3 z-10 h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition-all opacity-100 lg:opacity-0 lg:group-hover:opacity-100"
+                                className="absolute -top-1.5 -right-1.5 sm:-top-3 sm:-right-3 z-10 h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-white border border-gray-200 shadow-xs flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition-all opacity-100 lg:opacity-0 lg:group-hover:opacity-100"
                                 aria-label="Remove product from comparison"
                               >
                                 <FaTimes size={10} />
@@ -343,7 +343,7 @@ const Compare = () => {
                               
                               {/* Title & CTA */}
                               <div className="flex-1 flex flex-col">
-                                <Link to={`/product/${item._id}`} className="text-xs sm:text-base font-bold text-gray-900 leading-snug mb-1 sm:mb-2 hover:text-orange-600 transition-colors line-clamp-2 min-h-[2rem] sm:min-h-[2.75rem]">
+                                <Link to={`/product/${item._id}`} className="text-xs sm:text-base sm:leading-6 font-bold text-gray-900 leading-snug mb-1 sm:mb-2 hover:text-orange-600 transition-colors line-clamp-2 min-h-8 sm:min-h-11">
                                   {item.title}
                                 </Link>
                                 <div className="mt-auto pt-2 sm:pt-3">
@@ -366,9 +366,9 @@ const Compare = () => {
                         <th className="w-[180px] min-w-[180px] sm:w-[280px] sm:min-w-[280px] p-3 sm:p-6 border-b border-gray-100 align-middle bg-white">
                            <button 
                              onClick={() => navigate("/products")}
-                             className="w-full aspect-[3/4] rounded-xl sm:rounded-2xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center gap-2 sm:gap-3 text-gray-400 hover:border-orange-300 hover:text-orange-500 hover:bg-orange-50/50 transition-all group"
+                             className="w-full aspect-3/4 rounded-xl sm:rounded-2xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center gap-2 sm:gap-3 text-gray-400 hover:border-orange-300 hover:text-orange-500 hover:bg-orange-50/50 transition-all group"
                            >
-                              <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-full bg-gray-100 group-hover:bg-white flex items-center justify-center text-sm sm:text-lg transition-colors shadow-sm">
+                              <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-full bg-gray-100 group-hover:bg-white flex items-center justify-center text-sm sm:text-lg transition-colors shadow-xs">
                                  <FaPlus />
                               </div>
                               <span className="text-xs sm:text-sm font-bold">Add Product</span>
@@ -488,7 +488,7 @@ const Compare = () => {
                        const item = items.find(p => p._id === id);
                        return (
                          <td key={id} className="p-3 sm:p-6 align-top">
-                           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-3 sm:line-clamp-4">
+                           <p className="text-xs sm:text-sm sm:leading-5 text-gray-500 leading-relaxed line-clamp-3 sm:line-clamp-4">
                              {item?.description || "—"}
                            </p>
                          </td>

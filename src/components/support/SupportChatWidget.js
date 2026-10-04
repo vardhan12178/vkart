@@ -159,7 +159,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
           return (
             <div key={m._id || i} className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
               <div
-                className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-xs sm:text-sm leading-relaxed shadow-xs ${
+                className={`max-w-[85%] rounded-2xl px-3.5 py-2 text-xs sm:text-sm leading-relaxed ${
                   isUser
                     ? "bg-slate-900 text-white rounded-br-xs"
                     : "bg-white border border-slate-200 text-slate-800 rounded-bl-xs"
@@ -175,7 +175,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
         })}
         {agentTyping && (
           <div className="flex justify-start">
-            <div className="bg-white border border-slate-200 rounded-2xl px-3.5 py-2 text-xs text-slate-400 italic shadow-xs">
+            <div className="bg-white border border-slate-200 rounded-2xl px-3.5 py-2 text-xs text-slate-400 italic ">
               Agent is typing…
             </div>
           </div>
@@ -189,13 +189,13 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
           onChange={(e) => handleChangeText(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter") send(); }}
           placeholder="Type your message..."
-          className="flex-1 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500"
+          className="flex-1 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs sm:text-sm outline-hidden focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500"
         />
         <button
           type="button"
           onClick={send}
           disabled={!text.trim()}
-          className="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-slate-900 text-white disabled:opacity-40 hover:bg-black transition-colors shadow-xs"
+          className="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-slate-900 text-white disabled:opacity-40 hover:bg-black transition-colors "
         >
           <FaPaperPlane size={12} />
         </button>
@@ -275,7 +275,7 @@ export default function SupportChatWidget({ open, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[999] flex items-end sm:items-center justify-center sm:justify-end bg-black/40 backdrop-blur-xs p-0 sm:p-6"
+      className="fixed inset-0 z-999 flex items-end sm:items-center justify-center sm:justify-end bg-black/40 backdrop-blur-xs p-0 sm:p-6"
       onClick={onClose}
     >
       <style>{`
@@ -283,7 +283,7 @@ export default function SupportChatWidget({ open, onClose }) {
         .animate-fade-up { animation: supportChatFadeUp 0.22s ease-out forwards; }
       `}</style>
       <div
-        className="relative w-full sm:w-[420px] h-[90vh] sm:h-[620px] bg-white rounded-t-[2rem] sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fade-up border border-slate-200/60"
+        className="relative w-full sm:w-[420px] h-[90vh] sm:h-[620px] bg-white rounded-t-4xl sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fade-up border border-slate-200/60"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Mobile Pull Bar Indicator */}
@@ -299,7 +299,7 @@ export default function SupportChatWidget({ open, onClose }) {
             </span>
             <div>
               <div className="flex items-center gap-1.5">
-                <p className="font-bold text-xs sm:text-sm leading-none">VKart Customer Support</p>
+                <p className="font-bold text-xs sm:text-sm sm:leading-5 leading-none">VKart Customer Support</p>
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
               </div>
               <p className="text-[10px] text-white/60 mt-0.5 font-medium">Live assistance & instant answers</p>
@@ -321,7 +321,7 @@ export default function SupportChatWidget({ open, onClose }) {
                     key={id}
                     type="button"
                     onClick={() => chooseIntent(id)}
-                    className="w-full flex items-center justify-between gap-3 bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-xs sm:text-sm font-bold text-slate-800 hover:border-slate-900 hover:bg-slate-50 transition-all shadow-xs group"
+                    className="w-full flex items-center justify-between gap-3 bg-white border border-slate-200/80 rounded-xl px-4 py-3 text-xs sm:text-sm font-bold text-slate-800 hover:border-slate-900 hover:bg-slate-50 transition-all group"
                   >
                     <span className="flex items-center gap-2.5">
                       <span className="h-7 w-7 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-slate-900 group-hover:text-white transition-colors">
@@ -350,7 +350,7 @@ export default function SupportChatWidget({ open, onClose }) {
                     key={o._id}
                     type="button"
                     onClick={() => pickOrder(o)}
-                    className="w-full flex items-center gap-3 text-left bg-white border border-slate-200/80 rounded-xl p-3 hover:border-slate-900 hover:bg-slate-50 transition-all shadow-xs"
+                    className="w-full flex items-center gap-3 text-left bg-white border border-slate-200/80 rounded-xl p-3 hover:border-slate-900 hover:bg-slate-50 transition-all "
                   >
                     {o.products?.[0]?.image && (
                       <img
@@ -380,7 +380,7 @@ export default function SupportChatWidget({ open, onClose }) {
           {step === "ORDER_DETAIL" && selectedOrder && (
             <>
               <BackButton onClick={() => setStep("ORDER_LIST")} />
-              <div className="bg-white border border-slate-200/80 rounded-xl p-4 shadow-xs space-y-2">
+              <div className="bg-white border border-slate-200/80 rounded-xl p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-mono font-bold text-slate-900">{selectedOrder.orderId}</p>
                   <span className="text-[9px] font-bold uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full">{selectedOrder.stage}</span>
@@ -397,7 +397,7 @@ export default function SupportChatWidget({ open, onClose }) {
                     onClose();
                     navigate("/orders");
                   }}
-                  className="w-full bg-slate-900 text-white text-xs sm:text-sm font-bold rounded-xl px-4 py-2.5 hover:bg-black transition-colors shadow-xs"
+                  className="w-full bg-slate-900 text-white text-xs sm:text-sm font-bold rounded-xl px-4 py-2.5 hover:bg-black transition-colors "
                 >
                   Go to Orders to request return
                 </button>
@@ -418,7 +418,7 @@ export default function SupportChatWidget({ open, onClose }) {
           {step === "PAYMENT_INFO" && (
             <>
               <BackButton onClick={() => setStep("MENU")} />
-              <div className="bg-white border border-slate-200/80 rounded-xl p-4 text-xs sm:text-sm text-slate-600 space-y-2 shadow-xs">
+              <div className="bg-white border border-slate-200/80 rounded-xl p-4 text-xs sm:text-sm text-slate-600 space-y-2 ">
                 <p>• Payments are processed securely via Razorpay (UPI, Cards, Netbanking, Pay Later).</p>
                 <p>• Refunds to your original payment method typically take 5-7 business days once initiated.</p>
                 <p>• Refunds to your VKart Wallet are instant.</p>
@@ -432,7 +432,7 @@ export default function SupportChatWidget({ open, onClose }) {
           {step === "OTHER_INFO" && (
             <>
               <BackButton onClick={() => setStep("MENU")} />
-              <div className="bg-white border border-slate-200/80 rounded-xl p-4 text-xs sm:text-sm text-slate-600 shadow-xs">
+              <div className="bg-white border border-slate-200/80 rounded-xl p-4 text-xs sm:text-sm text-slate-600 ">
                 No problem — let's connect you with our live support team.
               </div>
               <button type="button" onClick={() => setStep("FOLLOWUP")} className="w-full mt-2 text-xs sm:text-sm font-bold text-orange-600 hover:underline">
@@ -445,10 +445,10 @@ export default function SupportChatWidget({ open, onClose }) {
             <>
               <p className="text-xs sm:text-sm font-bold text-slate-800 mb-2">Did that answer your question?</p>
               <div className="flex gap-2">
-                <button type="button" onClick={onClose} className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors shadow-xs">
+                <button type="button" onClick={onClose} className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors ">
                   Yes, thanks!
                 </button>
-                <button type="button" onClick={() => setStep("WANT_AGENT")} className="flex-1 bg-slate-900 text-white rounded-xl py-2.5 text-xs sm:text-sm font-bold hover:bg-black transition-colors shadow-xs">
+                <button type="button" onClick={() => setStep("WANT_AGENT")} className="flex-1 bg-slate-900 text-white rounded-xl py-2.5 text-xs sm:text-sm font-bold hover:bg-black transition-colors ">
                   Not really
                 </button>
               </div>
@@ -459,10 +459,10 @@ export default function SupportChatWidget({ open, onClose }) {
             <>
               <p className="text-xs sm:text-sm font-bold text-slate-800 mb-2">Want to chat with our support team?</p>
               <div className="flex gap-2">
-                <button type="button" onClick={onClose} className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors shadow-xs">
+                <button type="button" onClick={onClose} className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-xs sm:text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors ">
                   No thanks
                 </button>
-                <button type="button" onClick={() => setStep("AGENT_CHAT")} className="flex-1 bg-slate-900 text-white rounded-xl py-2.5 text-xs sm:text-sm font-bold hover:bg-black transition-colors shadow-xs">
+                <button type="button" onClick={() => setStep("AGENT_CHAT")} className="flex-1 bg-slate-900 text-white rounded-xl py-2.5 text-xs sm:text-sm font-bold hover:bg-black transition-colors ">
                   Yes, connect me
                 </button>
               </div>

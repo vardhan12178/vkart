@@ -84,14 +84,14 @@ export default function AdminReviews() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
               Reviews
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Moderate customer product reviews.</p>
           </div>
           <button
             onClick={() => reviewsQuery.refetch()}
-            className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-semibold shadow-xs hover:bg-slate-50 transition-all active:scale-95 shrink-0"
+            className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-semibold hover:bg-slate-50 transition-all active:scale-95 shrink-0"
           >
             <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${reviewsQuery.isFetching ? "animate-spin" : ""}`} />
             <span>Refresh</span>
@@ -99,7 +99,7 @@ export default function AdminReviews() {
         </div>
 
         {/* Search Bar */}
-        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 shadow-xs flex items-center gap-2">
+        <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 flex items-center gap-2">
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <SearchIcon className="h-4 w-4 text-slate-400" />
@@ -119,18 +119,18 @@ export default function AdminReviews() {
 
         {/* Content Section */}
         {loading ? (
-          <div className="bg-white p-8 rounded-2xl border border-slate-200/70 shadow-xs space-y-3 animate-pulse">
+          <div className="bg-white p-8 rounded-2xl border border-slate-200/70 space-y-3 animate-pulse">
             {[1, 2, 3].map((i) => (
               <div key={i} className="h-16 bg-slate-50 rounded-xl"></div>
             ))}
           </div>
         ) : error ? (
-          <div className="bg-white p-6 rounded-2xl border border-red-100 text-red-600 flex items-center gap-2 shadow-xs text-xs sm:text-sm">
+          <div className="bg-white p-6 rounded-2xl border border-red-100 text-red-600 flex items-center gap-2 text-xs sm:text-sm">
             <ExclamationCircleIcon className="h-5 w-5 shrink-0" />
             <span>{error}</span>
           </div>
         ) : filteredReviews.length === 0 ? (
-          <div className="bg-white p-8 sm:p-12 rounded-2xl border border-slate-200/70 shadow-xs text-center">
+          <div className="bg-white p-8 sm:p-12 rounded-2xl border border-slate-200/70 text-center">
             <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-slate-300">
               <ChatAlt2Icon className="h-6 w-6" />
             </div>
@@ -138,7 +138,7 @@ export default function AdminReviews() {
             <p className="text-slate-500 text-xs sm:text-sm mt-0.5">No reviews match your current search.</p>
           </div>
         ) : (
-          <div className="bg-white border border-slate-200/70 rounded-2xl shadow-xs overflow-hidden">
+          <div className="bg-white border border-slate-200/70 rounded-2xl overflow-hidden">
             {/* Mobile Cards (< md) */}
             <div className="block md:hidden divide-y divide-slate-100">
               {filteredReviews.map((r) => (
@@ -164,7 +164,7 @@ export default function AdminReviews() {
                     <div className="text-[10px] text-slate-400 flex items-center gap-1.5 truncate">
                       <span className="font-semibold text-slate-600 truncate">{r.review.reviewerName || "Anonymous"}</span>
                       {r.review.isHidden && (
-                        <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-px rounded font-bold">
+                        <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-px rounded-sm font-bold">
                           Hidden
                         </span>
                       )}
@@ -223,7 +223,7 @@ export default function AdminReviews() {
                             {r.review.rating}
                           </span>
                           {r.review.isHidden && (
-                            <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-0.5 rounded text-[10px] font-bold">
+                            <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-0.5 rounded-sm text-[10px] font-bold">
                               Hidden
                             </span>
                           )}

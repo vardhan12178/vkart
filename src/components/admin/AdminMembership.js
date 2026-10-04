@@ -155,7 +155,7 @@ export default function AdminMembership() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <h1 className="font-editorial text-lg sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight truncate">
+            <h1 className="font-editorial text-lg sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight truncate">
               Prime Membership Plans
             </h1>
             <p className="text-[11px] sm:text-sm text-slate-500 mt-0.5 font-medium">{plans.length} subscription tiers</p>
@@ -163,7 +163,7 @@ export default function AdminMembership() {
           <div className="flex items-center gap-1.5 shrink-0">
             <button
               onClick={() => plansQuery.refetch()}
-              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition shadow-xs text-slate-600"
+              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-slate-600"
               title="Refresh"
             >
               <RefreshIcon className={`h-4 w-4 ${plansQuery.isFetching ? "animate-spin" : ""}`} />
@@ -171,7 +171,7 @@ export default function AdminMembership() {
             {canWrite && (
               <button
                 onClick={openCreate}
-                className="flex items-center gap-1 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shadow-xs shrink-0 whitespace-nowrap"
+                className="flex items-center gap-1 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shrink-0 whitespace-nowrap"
               >
                 <PlusIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="hidden sm:inline">New Plan</span>
@@ -189,9 +189,9 @@ export default function AdminMembership() {
         )}
 
         {loading ? (
-          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">Loading...</div>
+          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200/70 text-slate-400">Loading...</div>
         ) : plans.length === 0 ? (
-          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs">
+          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 ">
             <p className="text-base font-bold text-slate-900 mb-1">No plans created yet</p>
             <p className="text-xs sm:text-sm text-slate-500 mb-4">Create your first membership tier to offer premium perks.</p>
             {canWrite && (
@@ -205,7 +205,7 @@ export default function AdminMembership() {
                 key={plan._id}
                 className={`bg-white rounded-2xl p-4 sm:p-6 border ${
                   plan.isPopular ? "border-amber-400 ring-1 ring-amber-400/30" : "border-slate-200/70"
-                } shadow-xs space-y-3 relative flex flex-col justify-between hover:shadow-md transition-shadow`}
+                } space-y-3 relative flex flex-col justify-between hover:shadow-md transition-shadow`}
               >
                 <div>
                   {/* Top line: Name, duration, and status */}
@@ -278,7 +278,7 @@ export default function AdminMembership() {
 
         {/* Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[94vh] overflow-y-auto border border-slate-200 animate-in zoom-in-95 duration-150" onClick={(e) => e.stopPropagation()}>
               <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100 flex items-center justify-between">
                 <h2 className="text-base sm:text-lg font-bold text-slate-900">{editing ? "Edit Plan" : "Create Plan"}</h2>
@@ -290,26 +290,26 @@ export default function AdminMembership() {
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Name *</label>
-                    <input value={form.name} onChange={(e) => handleField("name", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" placeholder="Monthly" />
+                    <input value={form.name} onChange={(e) => handleField("name", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-hidden" placeholder="Monthly" />
                   </div>
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Slug *</label>
-                    <input value={form.slug} onChange={(e) => handleField("slug", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" placeholder="monthly" />
+                    <input value={form.slug} onChange={(e) => handleField("slug", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-hidden" placeholder="monthly" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 sm:gap-4">
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Duration (days)</label>
-                    <input type="number" value={form.durationDays} onChange={(e) => handleField("durationDays", e.target.value)} required min="1" className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                    <input type="number" value={form.durationDays} onChange={(e) => handleField("durationDays", e.target.value)} required min="1" className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" />
                   </div>
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Price (₹)</label>
-                    <input type="number" value={form.price} onChange={(e) => handleField("price", e.target.value)} required min="0" className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                    <input type="number" value={form.price} onChange={(e) => handleField("price", e.target.value)} required min="0" className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" />
                   </div>
                   <div>
                     <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Original ₹</label>
-                    <input type="number" value={form.originalPrice} onChange={(e) => handleField("originalPrice", e.target.value)} min="0" className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" placeholder="Optional" />
+                    <input type="number" value={form.originalPrice} onChange={(e) => handleField("originalPrice", e.target.value)} min="0" className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" placeholder="Optional" />
                   </div>
                 </div>
 
@@ -322,7 +322,7 @@ export default function AdminMembership() {
                   <div className="space-y-2">
                     {form.features.map((f, idx) => (
                       <div key={idx} className="flex gap-1.5 sm:gap-2">
-                        <input value={f} onChange={(e) => handleFeature(idx, e.target.value)} placeholder="Feature perk text" className="flex-1 px-3 py-1.5 sm:py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                        <input value={f} onChange={(e) => handleFeature(idx, e.target.value)} placeholder="Feature perk text" className="flex-1 px-3 py-1.5 sm:py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" />
                         {form.features.length > 1 && (
                           <button type="button" onClick={() => removeFeature(idx)} className="text-red-400 hover:text-red-600 p-1 shrink-0">
                             <TrashIcon className="h-4 w-4" />
@@ -335,11 +335,11 @@ export default function AdminMembership() {
 
                 <div className="flex items-center gap-4 pt-1">
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={form.isPopular} onChange={(e) => handleField("isPopular", e.target.checked)} className="rounded border-slate-300 text-amber-500 focus:ring-amber-500" />
+                    <input type="checkbox" checked={form.isPopular} onChange={(e) => handleField("isPopular", e.target.checked)} className="rounded-sm border-slate-300 text-amber-500 focus:ring-amber-500" />
                     <span className="text-xs sm:text-sm font-bold text-slate-700">Popular</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={form.isActive} onChange={(e) => handleField("isActive", e.target.checked)} className="rounded border-slate-300 text-emerald-500 focus:ring-emerald-500" />
+                    <input type="checkbox" checked={form.isActive} onChange={(e) => handleField("isActive", e.target.checked)} className="rounded-sm border-slate-300 text-emerald-500 focus:ring-emerald-500" />
                     <span className="text-xs sm:text-sm font-bold text-slate-700">Active</span>
                   </label>
                   <div className="ml-auto flex items-center gap-1.5">
@@ -350,7 +350,7 @@ export default function AdminMembership() {
 
                 <div className="flex justify-end gap-2.5 pt-3 border-t border-slate-100">
                   <button type="button" onClick={() => setShowForm(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 transition">Cancel</button>
-                  <button type="submit" disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition disabled:opacity-50 shadow-xs">
+                  <button type="submit" disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition disabled:opacity-50 ">
                     {saving ? "Saving..." : editing ? "Update Plan" : "Create Plan"}
                   </button>
                 </div>

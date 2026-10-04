@@ -66,15 +66,15 @@ export default function About() {
       {/* --- HERO SECTION --- */}
       <section className="relative container mx-auto px-4 pt-20 pb-24 sm:pt-32 sm:pb-32 text-center z-10">
         <div className="animate-fade-up">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-sm mb-8">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest shadow-xs backdrop-blur-xs mb-8">
             <FaRocket /> Project Case Study
           </span>
 
-          <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal text-[#1d1c19] tracking-[-0.045em] leading-[0.9] mb-8">
+          <h1 className="font-editorial text-5xl sm:text-7xl sm:leading-none lg:text-8xl lg:leading-none font-normal text-[#1d1c19] tracking-[-0.045em] leading-[0.9] mb-8">
             A real storefront,<br className="hidden sm:block" /> engineered end to end.
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 leading-relaxed font-medium">
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl sm:leading-7 text-gray-500 leading-relaxed font-medium">
             VKart is designed as a convincing consumer product and built as a complete full-stack system—with secure identity, commerce workflows, and resilient state management.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function About() {
             { icon: FaLock, name: "JWT Auth", color: "text-orange-500" },
             { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
           ].map((tech, i) => (
-            <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
+            <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-xs hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
               <tech.icon className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
               <span className="font-bold text-gray-700 text-sm">{tech.name}</span>
             </div>
@@ -139,7 +139,7 @@ export default function About() {
               desc: "RAG-powered assistant using MongoDB Vector Search for context-aware support."
             },
           ].map((feature, i) => (
-            <div key={i} className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-100 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-300 group">
+            <div key={i} className="bg-white rounded-4xl p-8 shadow-xl shadow-gray-100 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-300 group">
               <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl text-orange-600 mb-6 group-hover:scale-110 transition-transform">
                 {feature.icon}
               </div>
@@ -226,7 +226,7 @@ export default function About() {
       <section className="container mx-auto px-4 pb-12">
         <div className="bg-[#0f0f0f] rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-2xl">
           {/* Decor */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-800/50 via-transparent to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-gray-800/50 via-transparent to-transparent" />
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6">

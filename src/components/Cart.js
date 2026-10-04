@@ -258,7 +258,7 @@ export default function Cart() {
         <div className="flex items-center justify-between mb-3 sm:mb-6">
           <h1 className="font-editorial text-2xl sm:text-4xl font-bold text-[#1d1c19] tracking-tight">Your bag.</h1>
           {hasCartItems && (
-            <span className="bg-white border border-black/10 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold text-[#5c574e] shadow-sm whitespace-nowrap">
+            <span className="bg-white border border-black/10 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold text-[#5c574e] shadow-xs whitespace-nowrap">
               {cartItems.length} {cartItems.length === 1 ? "Item" : "Items"}
             </span>
           )}
@@ -285,11 +285,11 @@ export default function Cart() {
                   return (
                     <div
                       key={k}
-                      className="group bg-white p-3.5 sm:p-5 rounded-2xl sm:rounded-[2rem] border border-black/[0.06] shadow-sm transition-all animate-fade-up"
+                      className="group bg-white p-3.5 sm:p-5 rounded-2xl sm:rounded-4xl border border-black/6 shadow-xs transition-all animate-fade-up"
                     >
                       <div className="flex gap-3 sm:gap-6">
                         {/* Image */}
-                        <div className="w-20 h-20 sm:w-28 sm:h-28 shrink-0 bg-[#fbfaf7] rounded-xl sm:rounded-2xl p-2 border border-black/[0.05]">
+                        <div className="w-20 h-20 sm:w-28 sm:h-28 shrink-0 bg-[#fbfaf7] rounded-xl sm:rounded-2xl p-2 border border-black/5">
                           <img
                             decoding="async"
                             src={item.thumbnail || item.images?.[0]}
@@ -302,7 +302,7 @@ export default function Cart() {
                         <div className="flex-1 flex flex-col justify-between min-w-0">
                           <div className="flex justify-between items-start gap-2 sm:gap-4">
                             <div className="min-w-0">
-                              <h3 className="text-xs sm:text-base font-bold text-[#1d1c19] leading-snug line-clamp-2">{item.title}</h3>
+                              <h3 className="text-xs sm:text-base sm:leading-6 font-bold text-[#1d1c19] leading-snug line-clamp-2">{item.title}</h3>
                               <p className="text-[10px] sm:text-xs text-[#8c887e] mt-0.5 capitalize truncate">{item.category}</p>
                               {item.selectedVariants && (
                                 <p className="text-[10px] sm:text-xs text-[#a85d37] font-semibold mt-0.5">{item.selectedVariants}</p>
@@ -319,7 +319,7 @@ export default function Cart() {
 
                           <div className="flex items-center justify-between gap-2 mt-2.5 sm:mt-4">
                             {/* Quantity Pill */}
-                            <div className="flex items-center bg-[#f6f3ed] rounded-lg sm:rounded-xl border border-black/[0.06] h-7 sm:h-9">
+                            <div className="flex items-center bg-[#f6f3ed] rounded-lg sm:rounded-xl border border-black/6 h-7 sm:h-9">
                               <button
                                 onClick={() => dispatch(decrementQuantity(k))}
                                 disabled={item.quantity <= 1}
@@ -348,7 +348,7 @@ export default function Cart() {
                       </div>
 
                       {/* Actions Footer */}
-                      <div className="mt-2.5 pt-2 sm:mt-4 sm:pt-4 border-t border-black/[0.05] flex flex-wrap items-center justify-between gap-2">
+                      <div className="mt-2.5 pt-2 sm:mt-4 sm:pt-4 border-t border-black/5 flex flex-wrap items-center justify-between gap-2">
                         <button
                           onClick={() => moveToWishlist(item)}
                           className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#716c63] hover:text-[#a85d37] transition-colors"
@@ -392,9 +392,9 @@ export default function Cart() {
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-2 gap-2.5 sm:gap-4">
                   {wishlistItems.map(w => (
-                    <div key={keyOf(w)} className="bg-white p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-black/[0.06] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div key={keyOf(w)} className="bg-white p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-black/6 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow">
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbfaf7] rounded-lg p-1.5 shrink-0 border border-black/[0.04]">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbfaf7] rounded-lg p-1.5 shrink-0 border border-black/4">
                           <img loading="lazy" decoding="async" src={w.thumbnail} className="w-full h-full object-contain mix-blend-multiply" alt="" />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -419,7 +419,7 @@ export default function Cart() {
           <div className="lg:col-span-4">
             {hasCartItems ? (
               <div className="sticky top-24 space-y-4 sm:space-y-6">
-                <div className="bg-white rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-8 shadow-sm border border-black/[0.06]">
+                <div className="bg-white rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-8 shadow-xs border border-black/6">
                   <h2 className="font-editorial text-lg sm:text-xl font-bold text-[#1d1c19] mb-3 sm:mb-5">Order Summary</h2>
 
                   <div className="space-y-3 text-xs sm:text-sm font-medium text-[#6f6b62]">
@@ -444,7 +444,7 @@ export default function Cart() {
                       </div>
                     )}
 
-                    <div className="h-px bg-black/[0.06] my-3" />
+                    <div className="h-px bg-black/6 my-3" />
 
                     <div className="flex justify-between text-base sm:text-lg font-black text-[#1d1c19]">
                       <span>Total</span>
@@ -471,12 +471,12 @@ export default function Cart() {
                           onChange={(e) => setPromo(e.target.value)}
                           onKeyDown={(e) => e.key === "Enter" && applyPromo()}
                           placeholder="Coupon Code"
-                          className="w-full pl-9 pr-16 py-2.5 rounded-xl bg-[#f6f3ed] border border-black/[0.06] text-xs font-bold text-[#1d1c19] focus:outline-none focus:ring-1 focus:ring-[#a85d37] placeholder:text-gray-400"
+                          className="w-full pl-9 pr-16 py-2.5 rounded-xl bg-[#f6f3ed] border border-black/6 text-xs font-bold text-[#1d1c19] focus:outline-hidden focus:ring-1 focus:ring-[#a85d37] placeholder:text-gray-400"
                         />
                         <button
                           onClick={applyPromo}
                           disabled={promoLoading}
-                          className="absolute right-1.5 top-1.5 bottom-1.5 px-2.5 bg-white rounded-lg text-xs font-bold text-[#1d1c19] shadow-sm hover:bg-gray-50 transition disabled:opacity-50"
+                          className="absolute right-1.5 top-1.5 bottom-1.5 px-2.5 bg-white rounded-lg text-xs font-bold text-[#1d1c19] shadow-xs hover:bg-gray-50 transition disabled:opacity-50"
                         >
                           {promoLoading ? "..." : "Apply"}
                         </button>
@@ -548,7 +548,7 @@ export default function Cart() {
               </div>
             ) : (
               /* Empty Cart Side Message */
-              <div className="bg-white rounded-2xl p-5 border border-black/[0.06] sticky top-24">
+              <div className="bg-white rounded-2xl p-5 border border-black/6 sticky top-24">
                 <h3 className="font-bold text-[#1d1c19] text-sm mb-1.5">Need Help?</h3>
                 <p className="text-xs text-[#6f6b62] mb-3">
                   If you are looking for items you previously added, try checking your order history.
@@ -575,7 +575,7 @@ export default function Cart() {
 
         {/* Global Loader Overlay */}
         {isLoading && (
-          <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center">
+          <div className="fixed inset-0 bg-white/80 backdrop-blur-xs z-50 flex items-center justify-center">
             <div className="flex flex-col items-center gap-3">
               <div className="w-10 h-10 border-4 border-[#a85d37] border-t-transparent rounded-full animate-spin" />
               <span className="font-bold text-sm text-[#1d1c19]">Processing Order...</span>

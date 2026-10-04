@@ -399,7 +399,7 @@ export default function Products() {
       </Helmet>
 
       {/* Masthead Section — Compact on mobile */}
-      <section className="relative z-10 border-b border-black/[0.08] px-4 py-3.5 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+      <section className="relative z-10 border-b border-black/8 px-4 py-3.5 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-1.5 sm:mb-4 flex flex-wrap items-center gap-2 sm:gap-3">
             <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">
@@ -411,10 +411,10 @@ export default function Products() {
             </span>
           </div>
           <div className="grid gap-2 sm:gap-5 lg:grid-cols-[1fr_.7fr] lg:items-end lg:gap-12">
-            <h1 className="max-w-3xl font-editorial font-bold text-2xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-[#1d1c19]">
+            <h1 className="max-w-3xl font-editorial font-bold text-2xl sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none leading-tight tracking-tight text-[#1d1c19]">
               {mastheadTitle}.
             </h1>
-            <p className="hidden sm:block max-w-xl text-xs sm:text-sm leading-relaxed text-[#6f6b62] lg:pb-1">
+            <p className="hidden sm:block max-w-xl text-xs sm:text-sm sm:leading-5 leading-relaxed text-[#6f6b62] lg:pb-1">
               {mastheadCopy}
             </p>
           </div>
@@ -422,7 +422,7 @@ export default function Products() {
       </section>
 
       {/* Sticky Bar — Sleek & Compact */}
-      <div className="sticky top-0 z-40 bg-[#f6f3ed]/90 backdrop-blur-xl border-b border-black/[0.08] transition-all">
+      <div className="sticky top-0 z-40 bg-[#f6f3ed]/90 backdrop-blur-xl border-b border-black/8 transition-all">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3.5">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 sm:gap-4 min-w-0">
@@ -437,7 +437,7 @@ export default function Products() {
             <div className="flex items-center gap-2 shrink-0">
               <button
                 onClick={() => setShowFilters(true)}
-                className="lg:hidden flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 shadow-2xs active:scale-95 transition-transform"
+                className="lg:hidden flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 active:scale-95 transition-transform"
               >
                 <FaFilter className="text-gray-400 text-[10px]" /> Filters
               </button>
@@ -480,19 +480,19 @@ export default function Products() {
 
             {/* Active Sale Banner — Streamlined */}
             {activeSale && (
-              <div className="relative mb-3.5 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl border border-black/[0.08] bg-[#eee7dd] px-3.5 py-2.5 sm:px-6 sm:py-4 text-[#1d1c19] shadow-2xs animate-fade-up">
+              <div className="relative mb-3.5 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl border border-black/8 bg-[#eee7dd] px-3.5 py-2.5 sm:px-6 sm:py-4 text-[#1d1c19] animate-fade-up">
                 <span className="absolute inset-y-0 left-0 w-1 bg-[#a85d37]" />
                 <div className="relative z-10 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                    <div className="grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/[0.08] bg-[#fffdf8]">
+                    <div className="grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/8 bg-[#fffdf8]">
                       <FaBolt className="text-xs sm:text-sm text-[#a85d37]" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.16em] text-[#8a604b] truncate">Limited-time sale</p>
-                      <h3 className="font-editorial font-bold text-sm sm:text-xl leading-tight truncate">{activeSale.name}</h3>
+                      <h3 className="font-editorial font-bold text-sm sm:text-xl sm:leading-7 leading-tight truncate">{activeSale.name}</h3>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-black/[0.08] bg-[#fffdf8] px-2.5 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#5d584f] shrink-0">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-black/8 bg-[#fffdf8] px-2.5 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#5d584f] shrink-0">
                     <span className="relative flex h-1.5 w-1.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#59634f] opacity-75" />
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#59634f]" />
@@ -539,7 +539,7 @@ export default function Products() {
                       style={{ animationDelay: `${i * 50}ms` }}
                     >
                       {/* Thumbnail container — Left side on mobile, Top on desktop */}
-                      <div className="relative aspect-square sm:aspect-[3/4] w-28 sm:w-full min-w-[7rem] sm:min-w-0 shrink-0 overflow-hidden rounded-xl sm:rounded-[1.35rem] bg-[#eeebe4] border border-black/[0.06] transition-colors">
+                      <div className="relative aspect-square sm:aspect-3/4 w-28 sm:w-full min-w-28 sm:min-w-0 shrink-0 overflow-hidden rounded-xl sm:rounded-[1.35rem] bg-[#eeebe4] border border-black/6 transition-colors">
                         <Link to={`/product/${p._id}`} className="block w-full h-full">
                           <img
                             src={p.thumbnail}
@@ -557,7 +557,7 @@ export default function Products() {
                         <div className="absolute top-2 sm:top-3 left-2 sm:left-3 right-2 sm:right-3 flex justify-between items-start z-10 pointer-events-none">
                           <div className="flex flex-col gap-1 pointer-events-auto">
                             {p.discountPercentage ? (
-                              <span className="bg-white/90 backdrop-blur text-gray-900 text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded shadow-sm">
+                              <span className="bg-white/90 backdrop-blur-sm text-gray-900 text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-sm shadow-xs">
                                 -{Math.round(p.discountPercentage)}%
                               </span>
                             ) : null}
@@ -566,7 +566,7 @@ export default function Products() {
                           <div className="flex flex-col gap-1.5 sm:gap-2 pointer-events-auto">
                             <button
                               onClick={() => toggleWishlistItem(p)}
-                              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shadow-sm backdrop-blur transition-all ${inWishlist ? "bg-[#efe3d9] text-[#874526]" : "bg-white/90 text-gray-400 hover:bg-white hover:text-[#874526]"
+                              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shadow-xs backdrop-blur-sm transition-all ${inWishlist ? "bg-[#efe3d9] text-[#874526]" : "bg-white/90 text-gray-400 hover:bg-white hover:text-[#874526]"
                                 }`}
                               aria-label={inWishlist ? `Remove ${p.title} from saved items` : `Save ${p.title}`}
                             >
@@ -575,7 +575,7 @@ export default function Products() {
 
                             <button
                               onClick={() => setQuickView(p)}
-                              className="hidden sm:flex w-8 h-8 rounded-full bg-white/90 text-gray-900 lg:text-gray-400 items-center justify-center shadow-sm backdrop-blur hover:bg-white hover:text-gray-900 transition-all translate-x-0 lg:translate-x-10 lg:opacity-100 lg:group-hover:translate-x-0 lg:group-hover:opacity-100"
+                              className="hidden sm:flex w-8 h-8 rounded-full bg-white/90 text-gray-900 lg:text-gray-400 items-center justify-center shadow-xs backdrop-blur-sm hover:bg-white hover:text-gray-900 transition-all translate-x-0 lg:translate-x-10 lg:opacity-100 lg:group-hover:translate-x-0 lg:group-hover:opacity-100"
                               aria-label={`Quick view ${p.title}`}
                             >
                               <FaExpand size={10} />
@@ -606,7 +606,7 @@ export default function Products() {
                           </p>
 
                           {/* Product Title */}
-                          <Link to={`/product/${p._id}`} className="block text-xs sm:text-sm font-bold sm:font-semibold text-[#1d1c19] leading-snug mb-1.5 line-clamp-2 sm:line-clamp-1 hover:text-[#a85d37] transition-colors">
+                          <Link to={`/product/${p._id}`} className="block text-xs sm:text-sm sm:leading-5 font-bold sm:font-semibold text-[#1d1c19] leading-snug mb-1.5 line-clamp-2 sm:line-clamp-1 hover:text-[#a85d37] transition-colors">
                             {p.title}
                           </Link>
 
@@ -616,7 +616,7 @@ export default function Products() {
                               <span className="text-sm sm:text-base font-black text-gray-900">{formatPrice(price)}</span>
                               <span className="text-[11px] sm:text-xs text-gray-400 line-through decoration-gray-300">{formatPrice(mrp)}</span>
                               {p.discountPercentage ? (
-                                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded hidden sm:inline">
+                                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-sm hidden sm:inline">
                                   Save {Math.round(p.discountPercentage)}%
                                 </span>
                               ) : null}
@@ -642,7 +642,7 @@ export default function Products() {
                         </div>
 
                         {/* Mobile Actions: Compare Checkbox + Full-width Add Button */}
-                        <div className="mt-2 sm:mt-2 pt-1 border-t border-black/[0.04] sm:border-0 flex flex-col gap-2">
+                        <div className="mt-2 sm:mt-2 pt-1 border-t border-black/4 sm:border-0 flex flex-col gap-2">
                           <div className="flex items-center justify-between">
                             <label className="cursor-pointer text-[10px] sm:text-[10px] text-gray-400 hover:text-gray-600 flex items-center gap-1 select-none">
                               <input
@@ -658,7 +658,7 @@ export default function Products() {
                           {/* Mobile-only Add to Cart Button */}
                           <button
                             onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
-                            className="sm:hidden w-full py-1.5 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-sm hover:bg-black flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+                            className="sm:hidden w-full py-1.5 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-xs hover:bg-black flex items-center justify-center gap-1.5 active:scale-95 transition-all"
                           >
                             <FaCartPlus size={11} /> Add to Cart
                           </button>
@@ -675,7 +675,7 @@ export default function Products() {
                 <button
                   onClick={() => productsQuery.fetchNextPage()}
                   disabled={productsQuery.isFetchingNextPage}
-                  className="flex items-center gap-2 rounded-full border border-black/10 bg-transparent px-6 py-2.5 text-sm font-bold text-[#1d1c19] transition-colors hover:bg-black/[0.04]"
+                  className="flex items-center gap-2 rounded-full border border-black/10 bg-transparent px-6 py-2.5 text-sm font-bold text-[#1d1c19] transition-colors hover:bg-black/4"
                 >
                   {productsQuery.isFetchingNextPage ? "Loading..." : "Show More"} <FaArrowRight size={10} />
                 </button>
@@ -709,7 +709,7 @@ export default function Products() {
 
             <button
               onClick={() => navigate(`/compare?ids=${compare.join(",")}`)}
-              className="rounded-full bg-[#fffdf8] px-3 sm:px-4 py-1.5 text-xs font-bold text-[#1d1c19] transition-all hover:bg-[#eee8df] active:scale-95 shadow-sm shrink-0 flex items-center gap-1.5"
+              className="rounded-full bg-[#fffdf8] px-3 sm:px-4 py-1.5 text-xs font-bold text-[#1d1c19] transition-all hover:bg-[#eee8df] active:scale-95 shadow-xs shrink-0 flex items-center gap-1.5"
             >
               <span>Compare</span>
               <span className="grid h-4 min-w-4 place-items-center rounded-full bg-[#1d1c19] text-[9px] text-white px-1">
@@ -720,12 +720,12 @@ export default function Products() {
         </div>
       )}
 
-      <div className={`fixed inset-0 z-[60] lg:hidden transition-transform duration-300 ${showFilters ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setShowFilters(false)} />
-        <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-sm flex-col border-r border-black/[0.08] bg-[#fffdf8]">
+      <div className={`fixed inset-0 z-60 lg:hidden transition-transform duration-300 ${showFilters ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-xs" onClick={() => setShowFilters(false)} />
+        <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-sm flex-col border-r border-black/8 bg-[#fffdf8]">
           <div className="flex items-center justify-between border-b border-black/[0.07] bg-[#f3efe8] p-5">
             <h3 className="text-base font-bold text-[#1d1c19]">Refine the collection</h3>
-            <button onClick={() => setShowFilters(false)} className="grid h-9 w-9 place-items-center rounded-full border border-black/[0.08] text-[#6f6b62]" aria-label="Close filters"><FaTimes /></button>
+            <button onClick={() => setShowFilters(false)} className="grid h-9 w-9 place-items-center rounded-full border border-black/8 text-[#6f6b62]" aria-label="Close filters"><FaTimes /></button>
           </div>
           <div className="flex-1 overflow-y-auto p-5">
             <Sidebar

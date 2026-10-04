@@ -223,20 +223,20 @@ export default function AdminUsers() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
               Users
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Manage access and security for all accounts.</p>
           </div>
           <div className="flex items-center gap-2">
-            <button className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-slate-600 text-xs sm:text-sm font-semibold shadow-xs hover:bg-slate-50 transition-all">
+            <button className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-slate-600 text-xs sm:text-sm font-semibold hover:bg-slate-50 transition-all">
               <DownloadIcon className="h-4 w-4" />
               <span>Export</span>
             </button>
             <button
               onClick={refresh}
               disabled={refreshing}
-              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-xs hover:bg-slate-800 transition-all disabled:opacity-70 active:scale-95 shrink-0"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-slate-800 transition-all disabled:opacity-70 active:scale-95 shrink-0"
             >
               <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${refreshing ? "animate-spin" : ""}`} />
               <span>{refreshing ? "Syncing..." : "Sync Users"}</span>
@@ -252,7 +252,7 @@ export default function AdminUsers() {
         </div>
 
         {/* Controls Toolbar */}
-        <div className="bg-white p-1.5 sm:p-2 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col lg:flex-row gap-2">
+        <div className="bg-white p-1.5 sm:p-2 rounded-2xl border border-slate-200/70 flex flex-col lg:flex-row gap-2">
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <SearchIcon className="h-4 w-4 text-slate-400" />
@@ -262,7 +262,7 @@ export default function AdminUsers() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by name, email, or ID..."
-              className="block w-full pl-9 pr-3 py-2 border-none rounded-xl bg-transparent text-slate-900 placeholder-slate-400 focus:ring-0 text-xs sm:text-sm font-medium outline-none"
+              className="block w-full pl-9 pr-3 py-2 border-none rounded-xl bg-transparent text-slate-900 placeholder-slate-400 focus:ring-0 text-xs sm:text-sm font-medium outline-hidden"
             />
           </div>
 
@@ -286,7 +286,7 @@ export default function AdminUsers() {
         </div>
 
         {/* Main Table Card */}
-        <div className="bg-white border border-slate-200/70 rounded-2xl shadow-xs overflow-hidden">
+        <div className="bg-white border border-slate-200/70 rounded-2xl overflow-hidden">
           {loading ? (
             <div className="p-8 space-y-3 animate-pulse">
               {[1, 2, 3, 4].map(i => <div key={i} className="h-12 bg-slate-50 rounded-xl w-full"></div>)}
@@ -332,7 +332,7 @@ export default function AdminUsers() {
                                 src={u.profileImage}
                                 name={u.name}
                                 email={u.email}
-                                className="h-9 w-9 rounded-xl shadow-xs"
+                                className="h-9 w-9 rounded-xl "
                               />
                               <div>
                                 <div className="font-semibold text-slate-900 text-sm flex items-center gap-1.5">
@@ -416,7 +416,7 @@ export default function AdminUsers() {
                             src={u.profileImage}
                             name={u.name}
                             email={u.email}
-                            className="h-9 w-9 rounded-xl shrink-0 shadow-xs"
+                            className="h-9 w-9 rounded-xl shrink-0 "
                           />
                           <div className="min-w-0">
                             <div className="flex items-center gap-1.5">
@@ -478,8 +478,8 @@ export default function AdminUsers() {
                   <span className="text-[11px] font-bold text-slate-400 mr-1.5">
                     {currentPage}/{totalPages || 1}
                   </span>
-                  <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all shadow-xs"><ChevronLeftIcon className="h-4 w-4 text-slate-600" /></button>
-                  <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all shadow-xs"><ChevronRightIcon className="h-4 w-4 text-slate-600" /></button>
+                  <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all "><ChevronLeftIcon className="h-4 w-4 text-slate-600" /></button>
+                  <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all "><ChevronRightIcon className="h-4 w-4 text-slate-600" /></button>
                 </div>
               </div>
             </>
@@ -493,7 +493,7 @@ export default function AdminUsers() {
           <p className="text-xs sm:text-sm text-slate-600">Send a password reset email to <span className="font-bold text-slate-900">{resetUser.email}</span>?</p>
           <div className="mt-5 flex justify-end gap-2">
             <button onClick={() => setResetUser(null)} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl border border-slate-200">Cancel</button>
-            <button onClick={confirmResetPassword} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-white bg-slate-900 hover:bg-black rounded-xl shadow-xs">{busyAction ? "Sending..." : "Send Email"}</button>
+            <button onClick={confirmResetPassword} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-white bg-slate-900 hover:bg-black rounded-xl ">{busyAction ? "Sending..." : "Send Email"}</button>
           </div>
         </Modal>
       )}
@@ -503,7 +503,7 @@ export default function AdminUsers() {
           <p className="text-xs sm:text-sm text-slate-600">Permanently remove <span className="font-bold text-slate-900">{deleteUser.email}</span>? This cannot be undone.</p>
           <div className="mt-5 flex justify-end gap-2">
             <button onClick={() => setDeleteUser(null)} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl border border-slate-200">Cancel</button>
-            <button onClick={confirmDeleteUser} disabled={busyAction} className="rounded-xl bg-red-600 px-4 py-2 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-red-700 shadow-xs">{busyAction ? "Deleting..." : "Delete User"}</button>
+            <button onClick={confirmDeleteUser} disabled={busyAction} className="rounded-xl bg-red-600 px-4 py-2 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-red-700 ">{busyAction ? "Deleting..." : "Delete User"}</button>
           </div>
         </Modal>
       )}
@@ -520,7 +520,7 @@ function StatCard({ label, fullLabel, value, icon: Icon, color }) {
     red: "text-[#75483b] bg-[#eee2dc]"
   };
   return (
-    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex items-center justify-between">
+    <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 flex items-center justify-between">
       <div>
         <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
           <span className="sm:hidden">{label}</span>
@@ -539,7 +539,7 @@ function TabButton({ label, active, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${active ? "bg-white text-slate-900 shadow-xs" : "text-slate-500 hover:text-slate-700"
+      className={`px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${active ? "bg-white text-slate-900 " : "text-slate-500 hover:text-slate-700"
         }`}
     >
       {label}

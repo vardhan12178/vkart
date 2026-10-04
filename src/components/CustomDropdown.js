@@ -40,7 +40,7 @@ const CustomDropdown = ({ options, value, onChange, label }) => {
         type="button"
         onClick={handleToggle}
         className={`
-          group inline-flex w-full items-center justify-between rounded-xl border bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-gray-700 shadow-sm transition-all duration-200
+          group inline-flex w-full items-center justify-between rounded-xl border bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-gray-700 shadow-xs transition-all duration-200
           ${isOpen 
             ? "border-gray-900 ring-1 ring-gray-900" 
             : "border-gray-200 hover:border-gray-300"
@@ -60,7 +60,7 @@ const CustomDropdown = ({ options, value, onChange, label }) => {
       {/* Dropdown Menu */}
       {isOpen && (
         <div
-          className="absolute right-0 z-50 mt-1.5 sm:mt-2 w-full min-w-[11rem] sm:min-w-[12rem] overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-black/5 animate-scale-in origin-top-right"
+          className="absolute right-0 z-50 mt-1.5 sm:mt-2 w-full min-w-44 sm:min-w-48 overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-black/5 animate-scale-in origin-top-right"
           role="listbox"
         >
           <div className="max-h-[60vh] overflow-auto py-1 sm:py-1.5">

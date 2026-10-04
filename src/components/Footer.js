@@ -56,25 +56,25 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-[#171612] text-white" role="contentinfo" aria-label="Site footer">
-      <div className="absolute right-[-10rem] top-[-15rem] h-[34rem] w-[34rem] rounded-full border border-white/[0.06]" />
-      <div className="absolute right-[-3rem] top-[-10rem] h-[24rem] w-[24rem] rounded-full border border-white/[0.05]" />
+      <div className="absolute -right-40 -top-60 h-136 w-136 rounded-full border border-white/6" />
+      <div className="absolute -right-12 -top-40 h-96 w-[24rem] rounded-full border border-white/5" />
 
       <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-8 sm:px-7 sm:py-16">
         {/* Newsletter Box */}
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-5 sm:p-10 shadow-[inset_0_1px_0_rgba(255,255,255,.04)] lg:grid lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-16 lg:p-12">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#d18a5e]">The VKart Letter</p>
-            <h2 className="mt-2 max-w-xl font-editorial text-xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-white">
+            <h2 className="mt-2 max-w-xl font-editorial text-xl sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none leading-tight tracking-tight text-white">
               Good things, occasionally delivered.
             </h2>
-            <p className="mt-1.5 max-w-lg text-xs sm:text-sm leading-relaxed text-white/55">
+            <p className="mt-1.5 max-w-lg text-xs sm:text-sm sm:leading-5 leading-relaxed text-white/55">
               Thoughtful new arrivals, useful buying guides, and first access to private offers. No inbox clutter.
             </p>
           </div>
 
           <div className="mt-4 lg:mt-0">
             {subscribed ? (
-              <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-3.5 sm:p-5">
+              <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3.5 sm:p-5">
                 <span className="grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full bg-[#d18a5e] text-[#171612]">
                   <Check size={16} />
                 </span>
@@ -95,13 +95,13 @@ export default function Footer() {
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder="Your email address"
-                    className="w-full border-0 bg-transparent py-2.5 pl-9 pr-3 text-xs sm:text-sm text-white outline-none placeholder:text-white/35 focus:ring-0"
+                    className="w-full border-0 bg-transparent py-2.5 pl-9 pr-3 text-xs sm:text-sm text-white outline-hidden placeholder:text-white/35 focus:ring-0"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={busy}
-                  className="mt-1.5 sm:mt-0 group inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-lg bg-[#d18a5e] px-4 py-2.5 text-xs font-bold uppercase tracking-[0.1em] text-[#171612] transition-colors hover:bg-[#e0a37d] disabled:opacity-50"
+                  className="mt-1.5 sm:mt-0 group inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-lg bg-[#d18a5e] px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-[#171612] transition-colors hover:bg-[#e0a37d] disabled:opacity-50"
                 >
                   {busy ? "Joining…" : "Join the list"}
                   <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />

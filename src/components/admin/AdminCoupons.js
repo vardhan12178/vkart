@@ -172,7 +172,7 @@ export default function AdminCoupons() {
         {/* Header Section */}
         <div className="flex items-center justify-between gap-3">
           <div>
-            <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
               Coupons
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">{coupons.length} total coupons</p>
@@ -180,7 +180,7 @@ export default function AdminCoupons() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => couponsQuery.refetch()}
-              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition shadow-xs"
+              className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition "
               title="Refresh"
             >
               <RefreshIcon className={`h-4 w-4 text-slate-600 ${couponsQuery.isFetching ? "animate-spin" : ""}`} />
@@ -188,7 +188,7 @@ export default function AdminCoupons() {
             {canWrite && (
               <button
                 onClick={openCreate}
-                className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-semibold hover:bg-slate-800 transition shadow-xs shrink-0"
+                className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-semibold hover:bg-slate-800 transition shrink-0"
               >
                 <PlusIcon className="h-4 w-4" />
                 <span>New Coupon</span>
@@ -206,7 +206,7 @@ export default function AdminCoupons() {
 
         {/* Coupon Form Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[94vh] overflow-y-auto p-4 sm:p-6 space-y-3 sm:space-y-4 border border-slate-200 animate-in zoom-in-95 duration-150" onClick={(e) => e.stopPropagation()}>
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <h2 className="text-base sm:text-lg font-bold text-slate-900">{editing ? "Edit Coupon" : "Create Coupon"}</h2>
@@ -218,12 +218,12 @@ export default function AdminCoupons() {
               <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                 <div className="col-span-2">
                   <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Code *</label>
-                  <input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })} placeholder="e.g. SAVE10" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono font-bold focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white" />
+                  <input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })} placeholder="e.g. SAVE10" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono font-bold focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div className="col-span-2">
                   <label className="text-[11px] sm:text-xs font-bold text-slate-700 mb-1 block">Description</label>
-                  <input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Shown to users at checkout" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-none bg-slate-50/50 focus:bg-white" />
+                  <input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Shown to users at checkout" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 focus:border-slate-500 outline-hidden bg-slate-50/50 focus:bg-white" />
                 </div>
 
                 <div>
@@ -274,18 +274,18 @@ export default function AdminCoupons() {
 
               <div className="flex flex-wrap items-center gap-4 pt-1">
                 <label className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700 cursor-pointer">
-                  <input type="checkbox" checked={form.isPublic} onChange={(e) => setForm({ ...form, isPublic: e.target.checked })} className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
+                  <input type="checkbox" checked={form.isPublic} onChange={(e) => setForm({ ...form, isPublic: e.target.checked })} className="rounded-sm border-slate-300 text-orange-500 focus:ring-orange-500" />
                   Show at checkout
                 </label>
                 <label className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700 cursor-pointer">
-                  <input type="checkbox" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })} className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
+                  <input type="checkbox" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })} className="rounded-sm border-slate-300 text-orange-500 focus:ring-orange-500" />
                   Active
                 </label>
               </div>
 
               <div className="flex justify-end gap-2.5 pt-3 border-t border-slate-100">
                 <button onClick={() => setShowForm(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 transition">Cancel</button>
-                <button onClick={handleSave} disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shadow-xs disabled:opacity-50">
+                <button onClick={handleSave} disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition disabled:opacity-50">
                   {saving ? "Saving..." : editing ? "Update" : "Create"}
                 </button>
               </div>
@@ -299,12 +299,12 @@ export default function AdminCoupons() {
             <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-600 rounded-full animate-spin" />
           </div>
         ) : coupons.length === 0 ? (
-          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">
+          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 text-slate-400">
             <p className="text-base font-bold text-slate-900">No coupons yet</p>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5">Create your first coupon to offer discounts to customers.</p>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden">
+          <div className="bg-white rounded-2xl border border-slate-200/70 overflow-hidden">
             {/* Mobile Card List (< md) */}
             <div className="block md:hidden divide-y divide-slate-100">
               {coupons.map((c) => (

@@ -257,8 +257,8 @@ const AIChatAssistant = () => {
         {/* 2. Main Text Bubble */}
         {response && (
           <motion.div variants={itemVariants} className="relative group">
-            <div className="rounded-2xl rounded-tl-sm border border-black/[0.06] bg-[#fffdf8] p-3.5 sm:p-4 text-[#1d1c19] shadow-sm">
-              <p className="text-xs sm:text-sm font-medium leading-relaxed text-[#433f38]">
+            <div className="rounded-2xl rounded-tl-sm border border-black/6 bg-[#fffdf8] p-3.5 sm:p-4 text-[#1d1c19] shadow-xs">
+              <p className="text-xs sm:text-sm sm:leading-5 font-medium leading-relaxed text-[#433f38]">
                 {response.summary}
               </p>
 
@@ -273,7 +273,7 @@ const AIChatAssistant = () => {
                       <motion.li
                         key={i}
                         variants={itemVariants}
-                        className="flex items-start gap-2 border-t border-black/[0.05] pt-2 text-xs text-[#6f6b62]"
+                        className="flex items-start gap-2 border-t border-black/5 pt-2 text-xs text-[#6f6b62]"
                       >
                         <div className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#a85d37]" />
                         {isSuggestion ? (
@@ -325,12 +325,12 @@ const AIChatAssistant = () => {
                   onClick={() => handleProductClick(prod._id)}
                   className={`relative flex cursor-pointer gap-2.5 sm:gap-3.5 rounded-xl border bg-[#fffdf8] p-2.5 sm:p-3 transition-all
                     ${isBestMatch
-                      ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10 shadow-sm"
-                      : "border-black/[0.06] hover:border-black/15 shadow-xs"
+                      ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10 shadow-xs"
+                      : "border-black/6 hover:border-black/15 "
                     }`}
                 >
                   {/* Thumbnail */}
-                  <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-lg border border-black/[0.05] bg-[#eeeae2] p-1">
+                  <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-lg border border-black/5 bg-[#eeeae2] p-1">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -388,7 +388,7 @@ const AIChatAssistant = () => {
               <button
                 key={i}
                 onClick={() => handlePromptClick(alt)}
-                className="rounded-full border border-black/[0.08] bg-transparent px-2.5 py-1 text-[11px] text-[#5f5a52] transition-colors hover:bg-black/[0.04]"
+                className="rounded-full border border-black/8 bg-transparent px-2.5 py-1 text-[11px] text-[#5f5a52] transition-colors hover:bg-black/4"
               >
                 {alt}
               </button>
@@ -418,7 +418,7 @@ const AIChatAssistant = () => {
   const hideToggle = ["/cart", "/checkout"].some(path => location.pathname.startsWith(path));
 
   return (
-    <div className="premium-assistant fixed inset-0 z-[100] pointer-events-none flex items-end justify-center md:block md:pb-0">
+    <div className="premium-assistant fixed inset-0 z-100 pointer-events-none flex items-end justify-center md:block md:pb-0">
 
       {/* 0. Mobile Backdrop */}
       <AnimatePresence>
@@ -428,7 +428,7 @@ const AIChatAssistant = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => dispatch(closeChat())}
-            className="fixed inset-0 bg-black/40 backdrop-blur-xs z-[65] md:hidden pointer-events-auto"
+            className="fixed inset-0 bg-black/40 backdrop-blur-xs z-65 md:hidden pointer-events-auto"
           />
         )}
       </AnimatePresence>
@@ -467,7 +467,7 @@ const AIChatAssistant = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 300 }}
-            className="premium-assistant-panel pointer-events-auto fixed inset-x-0 bottom-0 z-[70] flex h-[85dvh] max-h-[85dvh] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-black/10 bg-[#fffdf8] shadow-[0_-16px_48px_rgba(0,0,0,0.2)] md:fixed md:inset-auto md:bottom-6 md:right-6 md:h-[640px] md:w-[420px] md:rounded-[1.5rem] md:border md:border-black/10 md:shadow-[0_24px_64px_rgba(29,28,25,.18)]"
+            className="premium-assistant-panel pointer-events-auto fixed inset-x-0 bottom-0 z-70 flex h-[85dvh] max-h-[85dvh] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-black/10 bg-[#fffdf8] shadow-[0_-16px_48px_rgba(0,0,0,0.2)] md:fixed md:inset-auto md:bottom-6 md:right-6 md:h-[640px] md:w-[420px] md:rounded-3xl md:border md:border-black/10 md:shadow-[0_24px_64px_rgba(29,28,25,.18)]"
             role="dialog"
             aria-modal="true"
             aria-label="Ask VKart product concierge"
@@ -476,13 +476,13 @@ const AIChatAssistant = () => {
             <div className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-black/15 md:hidden" />
 
             {/* --- Header --- */}
-            <div className="premium-assistant-header bg-[#fffdf8] px-4 py-3 sm:px-5 sm:py-3.5 flex justify-between items-center shrink-0 border-b border-black/[0.08] relative z-20 text-[#1d1c19]">
+            <div className="premium-assistant-header bg-[#fffdf8] px-4 py-3 sm:px-5 sm:py-3.5 flex justify-between items-center shrink-0 border-b border-black/8 relative z-20 text-[#1d1c19]">
               <div className="flex items-center gap-2.5 sm:gap-3">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1d1c19] flex items-center justify-center text-white shrink-0">
                   <Sparkles size={15} />
                 </div>
                 <div>
-                  <h3 className="font-editorial text-base sm:text-xl text-[#1d1c19] leading-tight font-bold tracking-tight">Ask VKart</h3>
+                  <h3 className="font-editorial text-base sm:text-xl sm:leading-7 text-[#1d1c19] leading-tight font-bold tracking-tight">Ask VKart</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#59634f]" />
                     <p className="text-[9px] text-[#777269] font-bold uppercase tracking-[0.14em]">Product concierge</p>
@@ -510,7 +510,7 @@ const AIChatAssistant = () => {
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="max-w-[82%] px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl rounded-tr-sm bg-[#1d1c19] text-white text-xs sm:text-sm leading-relaxed shadow-sm font-medium"
+                      className="max-w-[82%] px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl rounded-tr-sm bg-[#1d1c19] text-white text-xs sm:text-sm sm:leading-5 leading-relaxed shadow-xs font-medium"
                     >
                       {msg.text}
                     </motion.div>
@@ -536,7 +536,7 @@ const AIChatAssistant = () => {
             </div>
 
             {/* --- Input Area --- */}
-            <div className="premium-assistant-input p-3 sm:p-4 bg-[#fffdf8] border-t border-black/[0.08] relative z-20">
+            <div className="premium-assistant-input p-3 sm:p-4 bg-[#fffdf8] border-t border-black/8 relative z-20">
               <div className="relative group">
                 <input
                   type="text"
@@ -544,7 +544,7 @@ const AIChatAssistant = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder={cooldown > 0 ? `Wait ${cooldown}s...` : "Ask anything about products..."}
-                  className="w-full bg-[#f5f1e9] text-xs sm:text-sm h-10 sm:h-12 pl-4 pr-11 rounded-full border border-black/[0.07] focus:bg-white focus:border-[#a85d37]/40 focus:ring-2 focus:ring-[#a85d37]/10 transition-all outline-none font-medium placeholder:text-[#969086]"
+                  className="w-full bg-[#f5f1e9] text-xs sm:text-sm h-10 sm:h-12 pl-4 pr-11 rounded-full border border-black/[0.07] focus:bg-white focus:border-[#a85d37]/40 focus:ring-2 focus:ring-[#a85d37]/10 transition-all outline-hidden font-medium placeholder:text-[#969086]"
                   disabled={isLoading || cooldown > 0}
                 />
 

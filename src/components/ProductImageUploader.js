@@ -114,7 +114,7 @@ export default function ProductImageUploader({
           {label}
         </label>
         {mode === "multiple" && (
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200">
+          <span className="text-[10px] font-bold px-2 py-0.5 rounded-sm bg-slate-100 text-slate-500 border border-slate-200">
             {images.length} / {limit}
           </span>
         )}
@@ -125,7 +125,7 @@ export default function ProductImageUploader({
         {images.map((url, idx) => (
           <div
             key={url + idx}
-            className="group relative aspect-square rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden"
+            className="group relative aspect-square rounded-xl bg-white border border-slate-200 shadow-xs overflow-hidden"
           >
             <img
               src={url}
@@ -140,7 +140,7 @@ export default function ProductImageUploader({
             <button
               type="button"
               onClick={() => removeImage(url)}
-              className="absolute top-2 right-2 p-1.5 rounded-full bg-white text-slate-400 hover:text-red-600 hover:bg-red-50 shadow-sm border border-slate-100 opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100"
+              className="absolute top-2 right-2 p-1.5 rounded-full bg-white text-slate-400 hover:text-red-600 hover:bg-red-50 shadow-xs border border-slate-100 opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100"
               title="Remove Image"
             >
               <XIcon className="h-4 w-4" />
@@ -169,7 +169,7 @@ export default function ProductImageUploader({
               </>
             ) : (
               <>
-                <div className="p-3 rounded-full bg-slate-100 group-hover:bg-white group-hover:shadow-sm transition-all">
+                <div className="p-3 rounded-full bg-slate-100 group-hover:bg-white group-hover:shadow-xs transition-all">
                    <CloudUploadIcon className="h-6 w-6 text-slate-400 group-hover:text-slate-600" />
                 </div>
                 <div className="text-center px-2">

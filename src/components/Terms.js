@@ -96,7 +96,7 @@ export default function Terms() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">1</span>
               Overview
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">
                 VKart (“the Site”) is a <strong>non-commercial portfolio project</strong> created for educational and demonstration purposes. It simulates a real-world e-commerce environment but does not facilitate actual sales or product delivery.
               </p>
@@ -112,7 +112,7 @@ export default function Terms() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">2</span>
               Acceptable Use
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">You agree to use the Site only for lawful purposes. You are strictly prohibited from:</p>
               <ul className="space-y-3 list-none pl-0">
                 {[
@@ -136,7 +136,7 @@ export default function Terms() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">3</span>
               Accounts & Content
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p>
                 Account creation features are for demonstration only. Any data you enter (names, emails, addresses) may be stored in a temporary database. 
                 <strong> We reserve the right to delete any account or data at any time without notice.</strong>
@@ -169,7 +169,7 @@ export default function Terms() {
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">5</span>
               Liability & Disclaimer
             </h2>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-xs leading-relaxed text-gray-600">
               <p className="mb-4">
                 The Site is provided on an "AS IS" and "AS AVAILABLE" basis. The creator makes no representations or warranties of any kind, express or implied, regarding the operation of the Site or the information, content, or materials included.
               </p>

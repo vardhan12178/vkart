@@ -42,20 +42,20 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
       {/* Blurred Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity animate-fade-in" 
+        className="absolute inset-0 bg-black/60 backdrop-blur-xs transition-opacity animate-fade-in" 
         onClick={onClose}
       />
 
       {/* Modal Content */}
-      <div className="relative w-full max-w-4xl bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-scale-in">
+      <div className="relative w-full max-w-4xl bg-white rounded-4xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-scale-in">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-900 transition-colors shadow-sm"
+          className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-900 transition-colors shadow-xs"
         >
           <FaTimes size={18} />
         </button>
@@ -91,7 +91,7 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
           </div>
 
           {/* Title */}
-          <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight mb-4">
+          <h2 className="text-2xl md:text-3xl md:leading-9 font-black text-gray-900 leading-tight mb-4">
             {product.title}
           </h2>
 

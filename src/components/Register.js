@@ -65,7 +65,7 @@ const Toast = ({ show, kind = "error", children }) => {
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
       className={cx(
-        "mb-4 flex items-start gap-3 rounded-xl p-3 text-xs shadow-sm backdrop-blur-md border",
+        "mb-4 flex items-start gap-3 rounded-xl p-3 text-xs shadow-xs backdrop-blur-md border",
         isSuccess
           ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
           : "bg-red-50/80 border-red-100 text-red-800"
@@ -110,7 +110,7 @@ const PasswordStrengthIndicator = ({ password }) => {
           <div
             key={i}
             className={cx(
-              "flex items-center gap-1 text-[9px] font-medium border px-1 py-0.5 rounded",
+              "flex items-center gap-1 text-[9px] font-medium border px-1 py-0.5 rounded-sm",
               check.test
                 ? "text-emerald-700 border-emerald-200 bg-emerald-50"
                 : "text-gray-400 border-gray-100 bg-gray-50"
@@ -323,7 +323,7 @@ export default function Register() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="premium-auth-shell relative w-full max-w-[1180px] min-h-[720px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/[0.06]"
+          className="premium-auth-shell relative w-full max-w-[1180px] min-h-[720px] bg-[#fffdf8] rounded-3xl shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/6"
         >
           {/* --- LEFT PANEL (Visual) --- */}
           <div className="premium-auth-visual hidden lg:flex w-5/12 relative flex-col justify-between bg-[#ded2c2] p-8 xl:p-10 overflow-hidden">
@@ -331,7 +331,7 @@ export default function Register() {
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
-                <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
+                <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
                   <ShoppingCartIcon className="h-6 w-6" />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart.</span>
@@ -341,7 +341,7 @@ export default function Register() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="font-editorial text-4xl xl:text-5xl font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.03em]"
+                className="font-editorial text-4xl xl:text-5xl xl:leading-none font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.03em]"
               >
                 Make room for<br />better things.
               </motion.h2>
@@ -372,7 +372,7 @@ export default function Register() {
               <div className="min-h-full flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10">
                 {/* Mobile Logo */}
                 <div className="lg:hidden flex justify-center mb-6">
-                  <div className="h-10 w-10 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
+                  <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
                     <ShoppingCartIcon className="h-6 w-6" />
                   </div>
                 </div>
@@ -440,7 +440,7 @@ export default function Register() {
                           }}
                           placeholder="Enter your name"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                             errors.name && touched.name
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -467,7 +467,7 @@ export default function Register() {
                           }}
                           placeholder="your.username"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                             errors.username && touched.username
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -494,7 +494,7 @@ export default function Register() {
                           }}
                           placeholder="you@example.com"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                             errors.email && touched.email
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -521,7 +521,7 @@ export default function Register() {
                           }}
                           placeholder="Create password"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-10 sm:pr-12 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-10 sm:pr-12 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                             errors.password && touched.password
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -530,7 +530,7 @@ export default function Register() {
                         <button
                           type="button"
                           onClick={() => setShowPw(!showPw)}
-                          className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-none min-w-[44px] min-h-[44px]"
+                          className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-hidden min-w-[44px] min-h-[44px]"
                           aria-label={showPw ? "Hide password" : "Show password"}
                         >
                           {showPw ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
@@ -557,7 +557,7 @@ export default function Register() {
                           }}
                           placeholder="Repeat password"
                           className={cx(
-                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-10 sm:pr-12 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-none",
+                            "block w-full rounded-xl border bg-gray-50/50 py-2.5 pl-9 sm:pl-10 pr-10 sm:pr-12 text-sm text-gray-900 placeholder-gray-400 transition-all duration-200 outline-hidden",
                             errors.confirmPassword && touched.confirmPassword
                               ? "border-red-300 bg-red-50/30 focus:border-red-500 focus:ring-4 focus:ring-red-500/10"
                               : "border-gray-200 hover:border-gray-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 focus:bg-white"
@@ -566,7 +566,7 @@ export default function Register() {
                         <button
                           type="button"
                           onClick={() => setShowPw2(!showPw2)}
-                          className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-none min-w-[44px] min-h-[44px]"
+                          className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-hidden min-w-[44px] min-h-[44px]"
                           aria-label={showPw2 ? "Hide password" : "Show password"}
                         >
                           {showPw2 ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
@@ -582,7 +582,7 @@ export default function Register() {
                       whileTap={{ scale: 0.98 }}
                       type="submit"
                       disabled={loading}
-                      className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-2"
+                      className="w-full relative overflow-hidden rounded-xl bg-linear-to-br from-gray-900 to-gray-800 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-hidden focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-2"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}

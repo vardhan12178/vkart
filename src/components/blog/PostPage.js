@@ -15,7 +15,7 @@ const formatDate = (iso) =>
   new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
 const TagPill = ({ label }) => (
-  <span className="inline-flex items-center gap-1 rounded-md bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-700 shadow-sm ring-1 ring-gray-200">
+  <span className="inline-flex items-center gap-1 rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-700 shadow-xs ring-1 ring-gray-200">
     <TagIcon size={10} className="text-orange-500" /> {label}
   </span>
 );
@@ -47,7 +47,7 @@ export default function PostPage() {
       {/* --- IMMERSIVE HEADER --- */}
       <header className="relative h-[60vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-gray-50 via-transparent to-transparent z-10" />
         
         <img 
           src={post.image} 
@@ -58,7 +58,7 @@ export default function PostPage() {
 
         {/* Navbar Placeholder (Back Button) */}
         <div className="absolute top-8 left-4 sm:left-8 z-20">
-          <Link to="/blog" className="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-4 py-2 text-sm font-bold text-gray-900 shadow-lg hover:bg-white transition-colors">
+          <Link to="/blog" className="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-sm px-4 py-2 text-sm font-bold text-gray-900 shadow-lg hover:bg-white transition-colors">
             <ArrowLeft size={16} /> Back
           </Link>
         </div>
@@ -74,7 +74,7 @@ export default function PostPage() {
               {post.tags.map((t) => <TagPill key={t} label={t} />)}
             </div>
             
-            <h1 className="text-3xl sm:text-5xl font-black text-gray-900 leading-tight mb-6 text-center sm:text-left">
+            <h1 className="text-3xl sm:text-5xl sm:leading-none font-black text-gray-900 leading-tight mb-6 text-center sm:text-left">
               {post.title}
             </h1>
 
@@ -123,7 +123,7 @@ export default function PostPage() {
             {prev ? (
               <Link
                 to={`/blog/${prev.id}`}
-                className="group flex flex-col items-start p-6 rounded-2xl bg-white border border-gray-100 hover:border-orange-200 transition-all shadow-sm hover:shadow-md"
+                className="group flex flex-col items-start p-6 rounded-2xl bg-white border border-gray-100 hover:border-orange-200 transition-all shadow-xs hover:shadow-md"
               >
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 flex items-center gap-1">
                   <ArrowLeft size={12} /> Previous
@@ -137,7 +137,7 @@ export default function PostPage() {
             {next ? (
               <Link
                 to={`/blog/${next.id}`}
-                className="group flex flex-col items-end text-right p-6 rounded-2xl bg-white border border-gray-100 hover:border-orange-200 transition-all shadow-sm hover:shadow-md"
+                className="group flex flex-col items-end text-right p-6 rounded-2xl bg-white border border-gray-100 hover:border-orange-200 transition-all shadow-xs hover:shadow-md"
               >
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 flex items-center gap-1">
                   Next <ArrowRight size={12} />
@@ -167,9 +167,9 @@ export default function PostPage() {
               <Link
                 key={p.id}
                 to={`/blog/${p.id}`}
-                className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group block bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="aspect-[16/9] overflow-hidden">
+                <div className="aspect-video overflow-hidden">
                   <img
                     loading="lazy"
                     decoding="async"

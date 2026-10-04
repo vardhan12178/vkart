@@ -72,7 +72,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
   if (isCancelled) {
     return (
       <div className="max-w-3xl mx-auto my-4">
-        <div className="rounded-2xl bg-red-50 border border-red-100 p-6 text-center shadow-sm">
+        <div className="rounded-2xl bg-red-50 border border-red-100 p-6 text-center shadow-xs">
           <div className="w-14 h-14 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-3">
             <FaTimesCircle size={26} />
           </div>
@@ -89,7 +89,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
 
   /* --- PROGRESS TIMELINE (horizontal at every breakpoint, scrolls on narrow screens) --- */
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-100 shadow-2xs p-3.5 sm:p-5 relative overflow-hidden">
+    <div className="w-full bg-white rounded-2xl border border-gray-100 p-3.5 sm:p-5 relative overflow-hidden">
       <div className="overflow-x-auto -mx-1 px-1 pt-1 pb-1">
         <div
           className="relative flex items-start"
@@ -103,7 +103,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
 
           {/* Active Progress Line */}
           <div
-            className="absolute top-[18px] left-[46px] h-0.5 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full -z-10 transition-all duration-1000 ease-out"
+            className="absolute top-[18px] left-[46px] h-0.5 bg-linear-to-r from-orange-500 to-amber-500 rounded-full -z-10 transition-all duration-1000 ease-out"
             style={{ width: `calc((100% - ${STEP_WIDTH}px) * ${progressFraction})` }}
           />
 

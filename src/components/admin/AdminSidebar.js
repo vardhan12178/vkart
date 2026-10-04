@@ -23,16 +23,16 @@ export default function AdminSidebar({
     <>
       <button
         type="button"
-        className={`fixed inset-0 z-40 bg-[#1d1c19]/30 backdrop-blur-sm transition-opacity lg:hidden ${mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        className={`fixed inset-0 z-40 bg-[#1d1c19]/30 backdrop-blur-xs transition-opacity lg:hidden ${mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
         onClick={() => setMobileOpen(false)}
         aria-label="Close admin navigation"
         tabIndex={mobileOpen ? 0 : -1}
       />
 
       <aside
-        className={`premium-admin-sidebar fixed inset-y-0 left-0 z-50 flex flex-col border-r border-black/[0.08] bg-[#fffdf8] transition-all duration-300 lg:static ${collapsed ? "w-[4.75rem]" : "w-72"} ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+        className={`premium-admin-sidebar fixed inset-y-0 left-0 z-50 flex flex-col border-r border-black/8 bg-[#fffdf8] transition-all duration-300 lg:static ${collapsed ? "w-19" : "w-72"} ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
-        <div className={`relative flex h-[4.5rem] items-center border-b border-black/[0.07] ${collapsed ? "justify-center px-0" : "px-5"}`}>
+        <div className={`relative flex h-18 items-center border-b border-black/[0.07] ${collapsed ? "justify-center px-0" : "px-5"}`}>
           <button
             type="button"
             onClick={() => navigate("/admin/dashboard")}
@@ -96,7 +96,7 @@ export default function AdminSidebar({
             {!collapsed && (
               <span className="text-left">
                 <span className="block">Sign out</span>
-                <span className="block text-[9px] font-semibold uppercase tracking-[0.1em] text-[#9a7667]">Admin session</span>
+                <span className="block text-[9px] font-semibold uppercase tracking-widest text-[#9a7667]">Admin session</span>
               </span>
             )}
           </button>
