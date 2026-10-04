@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import "@testing-library/jest-dom";
 import NotificationSocket from "../NotificationSocket";
-import notificationReducer from "../../redux/notificationSlice";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { showToast } from "../../utils/toast";
 
 vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
@@ -27,15 +27,17 @@ describe("NotificationSocket Component", () => {
     const store = configureStore({
       reducer: {
         auth: (state = { isAuthenticated, isAdmin: false, user }) => state,
-        notifications: notificationReducer,
       },
     });
+    const queryClient = new QueryClient();
     return {
-      store,
+      queryClient,
       ...render(
-        <Provider store={store}>
-          <NotificationSocket />
-        </Provider>
+        <QueryClientProvider client={queryClient}>
+          <Provider store={store}>
+            <NotificationSocket />
+          </Provider>
+        </QueryClientProvider>
       ),
     };
   };
@@ -57,13 +59,14 @@ describe("NotificationSocket Component", () => {
     expect(mockSocket.emit).toHaveBeenCalledWith("join_user", "user1");
   });
 
-  test("dispatches a notification and shows a toast on user_notification events", () => {
-    const { store } = renderSocket({ isAuthenticated: true, user: { _id: "user1" } });
+  test("adds the notification to the cached list and shows a toast on user_notification events", () => {
+    const { queryClient } = renderSocket({ isAuthenticated: true, user: { _id: "user1" } });
 
     const notifHandler = mockSocket.on.mock.calls.find(([event]) => event === "user_notification")[1];
     notifHandler({ status: "SHIPPED", message: "Your order has shipped", title: "Order Shipped!" });
 
-    expect(store.getState().notifications.notifications).toHaveLength(1);
+    expect(queryClient.getQueryData(["profile", "notifications"]).notifications).toHaveLength(1);
+    expect(queryClient.getQueryData(["profile", "notifications"]).unreadCount).toBe(1);
     expect(showToast).toHaveBeenCalledWith("[Shipped] Your order has shipped", "success");
   });
 
@@ -76,36 +79,29 @@ describe("NotificationSocket Component", () => {
   });
 
   test("disconnects the socket and clears notifications when the user logs out", () => {
-    const store = configureStore({
-      reducer: {
-        auth: (state = { isAuthenticated: true, isAdmin: false, user: { _id: "user1" } }) => state,
-        notifications: notificationReducer,
-      },
-    });
-    const { rerender } = render(
-      <Provider store={store}>
-        <NotificationSocket />
-      </Provider>
+    const queryClient = new QueryClient();
+    const storeFor = (isAuthenticated) =>
+      configureStore({
+        reducer: {
+          auth: (state = { isAuthenticated, isAdmin: false, user: isAuthenticated ? { _id: "user1" } : null }) => state,
+        },
+      });
+    const tree = (store) => (
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <NotificationSocket />
+        </Provider>
+      </QueryClientProvider>
     );
+    const { rerender } = render(tree(storeFor(true)));
     expect(mockIo).toHaveBeenCalledTimes(1);
+    queryClient.setQueryData(["profile", "notifications"], { notifications: [{ _id: "n1", title: "x", isRead: false }], unreadCount: 1 });
 
     // Simulate logout by swapping in a store where auth is no longer authenticated.
-    const loggedOutStore = configureStore({
-      reducer: {
-        auth: (state = { isAuthenticated: false, isAdmin: false, user: null }) => state,
-        notifications: notificationReducer,
-      },
-      preloadedState: {
-        notifications: { notifications: [{ _id: "n1", title: "x", isRead: false }], unreadCount: 1, isLoading: false },
-      },
-    });
-    rerender(
-      <Provider store={loggedOutStore}>
-        <NotificationSocket />
-      </Provider>
-    );
+    rerender(tree(storeFor(false)));
 
     expect(mockSocket.disconnect).toHaveBeenCalled();
+    expect(queryClient.getQueryData(["profile", "notifications"])).toBeUndefined();
   });
 
   test("disconnects the socket on unmount", () => {

@@ -1,12 +1,13 @@
 import { useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useQueryClient } from "@tanstack/react-query";
 import { io } from "socket.io-client";
-import { addNotification, clearNotifications } from "../redux/notificationSlice";
+import { addLiveNotification, clearNotifications } from "../query/useUserNotifications";
 import { showToast } from "../utils/toast";
 import { getSocketBaseUrl, normalizeNotification } from "../utils/notificationHelpers";
 
 const NotificationSocket = () => {
-    const dispatch = useDispatch();
+    const queryClient = useQueryClient();
     const socketRef = useRef(null);
     const { isAuthenticated, user } = useSelector((state) => state.auth);
 
@@ -15,7 +16,7 @@ const NotificationSocket = () => {
             if (socketRef.current) {
                 socketRef.current.disconnect();
                 socketRef.current = null;
-                dispatch(clearNotifications());
+                clearNotifications(queryClient);
             }
             return;
         }
@@ -34,7 +35,7 @@ const NotificationSocket = () => {
 
         socket.on("user_notification", (notification) => {
             const nextNotification = normalizeNotification(notification);
-            dispatch(addNotification(nextNotification));
+            addLiveNotification(queryClient, nextNotification);
 
             const label = getNotificationLabel(nextNotification.status || nextNotification.type);
             showToast(`${label} ${nextNotification.message || nextNotification.title}`, "success");
@@ -47,7 +48,7 @@ const NotificationSocket = () => {
         return () => {
             socket.disconnect();
         };
-    }, [dispatch, isAuthenticated, user?._id]);
+    }, [queryClient, isAuthenticated, user?._id]);
 
     return null;
 };

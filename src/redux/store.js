@@ -3,7 +3,6 @@ import cartReducer from "./cartSlice";
 import wishlistReducer from "./wishlistSlice";
 import authReducer from "./authSlice";
 import uiReducer from "./uiSlice";
-import notificationReducer from "./notificationSlice";
 
 const store = configureStore({
   reducer: {
@@ -11,7 +10,6 @@ const store = configureStore({
     wishlist: wishlistReducer,
     auth: authReducer,
     ui: uiReducer,
-    notifications: notificationReducer,
   },
 });
 

@@ -28,6 +28,7 @@ export const qk = {
     wallet: ["profile", "wallet"],
     cart: ["profile", "cart"],
     wishlist: ["profile", "wishlist"],
+    notifications: ["profile", "notifications"],
   },
   admin: {
     settings: ["admin", "settings"],

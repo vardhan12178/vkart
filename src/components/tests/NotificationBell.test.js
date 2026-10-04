@@ -7,7 +7,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import "@testing-library/jest-dom";
 import NotificationBell from "../NotificationBell";
 import axios from "../axiosInstance";
-import notificationReducer from "../../redux/notificationSlice";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 vi.mock("../axiosInstance");
 
@@ -40,17 +40,19 @@ describe("NotificationBell Component", () => {
     const store = configureStore({
       reducer: {
         auth: (state = { isAuthenticated, isAdmin: false, user: null }) => state,
-        notifications: notificationReducer,
       },
     });
+    const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false }, mutations: { retry: false } } });
     return {
-      store,
+      queryClient,
       ...render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <NotificationBell />
-          </BrowserRouter>
-        </Provider>
+        <QueryClientProvider client={queryClient}>
+          <Provider store={store}>
+            <BrowserRouter>
+              <NotificationBell />
+            </BrowserRouter>
+          </Provider>
+        </QueryClientProvider>
       ),
     };
   };
@@ -113,13 +115,13 @@ describe("NotificationBell Component", () => {
       data: { success: true, notifications: [NOTIF_UNREAD], unreadCount: 1 },
     });
     axios.put.mockResolvedValueOnce({ data: { success: true } });
-    const { store } = renderBell();
+    const { queryClient } = renderBell();
     await waitFor(() => expect(axios.get).toHaveBeenCalled());
 
     fireEvent.click(screen.getByLabelText("Notifications"));
     fireEvent.click(screen.getByText("Order Shipped"));
 
-    expect(store.getState().notifications.notifications[0].isRead).toBe(true);
+    await waitFor(() => expect(queryClient.getQueryData(["profile", "notifications"]).notifications[0].isRead).toBe(true));
     await waitFor(() => {
       expect(axios.put).toHaveBeenCalledWith(
         "/api/user/notifications/read",
@@ -135,13 +137,13 @@ describe("NotificationBell Component", () => {
       data: { success: true, notifications: [NOTIF_UNREAD], unreadCount: 1 },
     });
     axios.put.mockResolvedValueOnce({ data: { success: true } });
-    const { store } = renderBell();
+    const { queryClient } = renderBell();
     await waitFor(() => expect(axios.get).toHaveBeenCalled());
 
     fireEvent.click(screen.getByLabelText("Notifications"));
     fireEvent.click(screen.getByRole("button", { name: /mark all read/i }));
 
-    expect(store.getState().notifications.unreadCount).toBe(0);
+    await waitFor(() => expect(queryClient.getQueryData(["profile", "notifications"]).unreadCount).toBe(0));
     await waitFor(() => {
       expect(axios.put).toHaveBeenCalledWith(
         "/api/user/notifications/read",

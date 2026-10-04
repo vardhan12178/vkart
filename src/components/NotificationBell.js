@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import axiosInstance from "./axiosInstance";
-import { setNotifications, markAsRead } from "../redux/notificationSlice";
-import { normalizeNotification, normalizeNotificationTitle } from "../utils/notificationHelpers";
+import { useMarkNotificationsRead, useUserNotifications } from "../query/useUserNotifications";
+import { normalizeNotificationTitle } from "../utils/notificationHelpers";
 import {
   Bell,
   CircleCheck,
@@ -14,15 +13,17 @@ import {
 } from "lucide-react";
 
 const NotificationBell = () => {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const dropdownRef = useRef(null);
 
     const [isOpen, setIsOpen] = useState(false);
     const [panelStyle, setPanelStyle] = useState({ position: "fixed", top: -9999, right: -9999, width: 0 });
     const buttonRef = useRef(null);
-    const { notifications, unreadCount } = useSelector((state) => state.notifications);
     const { isAuthenticated } = useSelector((state) => state.auth);
+    const { data: notificationData } = useUserNotifications(isAuthenticated);
+    const notifications = notificationData?.notifications || [];
+    const unreadCount = notificationData?.unreadCount || 0;
+    const markRead = useMarkNotificationsRead();
 
     // Position the dropdown against the viewport rather than the bell button's
     // own (narrow) relative container — the bell isn't the last header icon
@@ -42,13 +43,6 @@ const NotificationBell = () => {
         return () => window.removeEventListener("resize", updatePosition);
     }, [isOpen]);
 
-    // Fetch notifications on mount
-    useEffect(() => {
-        if (isAuthenticated) {
-            fetchNotifications();
-        }
-    }, [isAuthenticated]);
-
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -60,46 +54,7 @@ const NotificationBell = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const fetchNotifications = async () => {
-        try {
-            // Use __skipAuthRedirect to prevent 401 from triggering logout
-            // (endpoint may not exist on backend yet)
-            const response = await axiosInstance.get("/api/user/notifications", {
-                __skipAuthRedirect: true
-            });
-            if (response.data?.success) {
-                const notifications = (response.data.notifications || []).map(normalizeNotification);
-                dispatch(setNotifications({
-                    notifications,
-                    unreadCount: response.data.unreadCount,
-                }));
-            }
-        } catch (error) {
-            // Silently fail if endpoint doesn't exist yet
-            // Don't log 401/404 errors to avoid console spam
-            if (error.response?.status !== 401 && error.response?.status !== 404) {
-                console.error("Failed to fetch notifications:", error);
-            }
-        }
-    };
-
-    const handleMarkAsRead = async (ids = [], all = false) => {
-        try {
-            // Optimistic update
-            dispatch(markAsRead({ ids, all }));
-
-            const payload = all ? { all: true } : { ids };
-            await axiosInstance.put("/api/user/notifications/read", payload, {
-                __skipAuthRedirect: true
-            });
-        } catch (error) {
-            // Silently fail if endpoint doesn't exist
-            if (error.response?.status !== 401 && error.response?.status !== 404) {
-                console.error("Failed to mark notifications as read:", error);
-                fetchNotifications();
-            }
-        }
-    };
+    const handleMarkAsRead = (ids = [], all = false) => markRead.mutateAsync({ ids, all }).catch(() => {});
 
     const handleNotificationClick = async (notification) => {
         // Mark as read if unread

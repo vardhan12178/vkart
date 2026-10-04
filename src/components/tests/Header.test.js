@@ -11,7 +11,6 @@ import axios from "../axiosInstance";
 import cartReducer from "../../redux/cartSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
 import uiReducer from "../../redux/uiSlice";
-import notificationReducer from "../../redux/notificationSlice";
 import authReducer from "../../redux/authSlice";
 
 vi.mock("../axiosInstance");
@@ -61,7 +60,6 @@ describe("Header Component", () => {
         cart: cartReducer,
         wishlist: wishlistReducer,
         ui: uiReducer,
-        notifications: notificationReducer,
       },
       preloadedState: { auth: { isAuthenticated, isAdmin: false, user: null }, cart, wishlist },
     });

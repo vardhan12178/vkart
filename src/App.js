@@ -70,6 +70,7 @@ const userScopedKeys = [
   qk.profile.wallet,
   qk.profile.cart,
   qk.profile.wishlist,
+  qk.profile.notifications,
   qk.membership.status,
   qk.recommendations.forYou,
 ];
