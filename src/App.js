@@ -1,13 +1,12 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 
 import axios from "./components/axiosInstance";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingSpinner from "./components/LoadingSpinner";
-import NotificationSocket from "./components/NotificationSocket";
 import RouteSeo from "./seo/RouteSeo";
 import RequireModule from "./components/admin/RequireModule";
 import { setAuthState } from "./redux/authSlice";
@@ -43,6 +42,9 @@ const PrimeMembership = lazy(() => import("./components/PrimeMembership"));
 const Wishlist = lazy(() => import("./components/Wishlist"));
 const ErrorBoundary = lazy(() => import("./components/ErrorBoundary"));
 const CookieBanner = lazy(() => import("./components/CookieBanner"));
+const PwaUpdatePrompt = lazy(() => import("./components/PwaUpdatePrompt"));
+// Lazy so socket.io (~35 KB) stays out of the first-load bundle.
+const NotificationSocket = lazy(() => import("./components/NotificationSocket"));
 const AIChatAssistant = lazy(() => import("./components/AIChatAssistant"));
 const ClientSync = lazy(() => import("./components/ClientSync"));
 
@@ -77,6 +79,7 @@ const userScopedKeys = [
 
 const App = () => {
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
   const queryClient = useQueryClient();
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -182,7 +185,11 @@ const App = () => {
         )}
 
         {/* Global notification socket for user-side real-time updates */}
-        {!isAdminRoute && <NotificationSocket />}
+        {!isAdminRoute && isAuthenticated && (
+          <Suspense fallback={null}>
+            <NotificationSocket />
+          </Suspense>
+        )}
 
         <main id="main-content" role="main">
           <Toaster
@@ -254,6 +261,11 @@ const App = () => {
           <Suspense fallback={null}>
             <CookieBanner />
           </Suspense>
+          {process.env.NODE_ENV === "production" && (
+            <Suspense fallback={null}>
+              <PwaUpdatePrompt />
+            </Suspense>
+          )}
         </main>
 
         {!isAdminRoute && (

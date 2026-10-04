@@ -1,4 +1,5 @@
 import React from "react";
+import { reportError } from "../utils/monitoring";
 import {
   TriangleAlert,
 } from "lucide-react";
@@ -15,6 +16,7 @@ class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, info) {
     console.error("ErrorBoundary caught:", error, info.componentStack);
+    reportError(error, { componentStack: info.componentStack });
   }
 
   render() {

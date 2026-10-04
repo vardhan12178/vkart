@@ -12,6 +12,7 @@ import "./index.css";
 import "./styles.css";
 import { queryClient } from "./query/queryClient";
 import reportWebVitals from "./utils/reportWebVitals";
+import { initMonitoring } from "./utils/monitoring";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -29,22 +30,11 @@ root.render(
   </HelmetProvider>
 );
 
-// Register Service Worker for PWA
-if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/service-worker.js')
-      .then((registration) => {
-        // SW registered
-      })
-      .catch((err) => {
-        // SW registration failed
-      });
-  });
-}
-
 // Real-user performance metrics (production only; admin pages excluded so
 // the numbers reflect what shoppers experience).
 if (process.env.NODE_ENV === "production" && !window.location.pathname.startsWith("/admin")) {
   reportWebVitals();
 }
+
+// Error monitoring (no-op unless VITE_SENTRY_DSN is configured).
+initMonitoring();
