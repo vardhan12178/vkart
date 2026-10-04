@@ -274,20 +274,16 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
       // The server prices the cart itself (same logic that places the order),
       // so we send what's in the bag rather than an amount.
       const draft = getCheckoutDraft?.() || {};
-      const res = await axios.post(
-        "/api/razorpay/create-order",
-        draft.products?.length
-          ? {
-              products: draft.products.map(({ productId, quantity, selectedVariants }) => ({
-                productId,
-                quantity,
-                ...(selectedVariants ? { selectedVariants } : {}),
-              })),
-              promo: draft.promo || undefined,
-              walletUsed: walletApplied,
-            }
-          : { amount: payable, currency: "INR" }
-      );
+      if (!draft.products?.length) throw new Error("Your bag is empty.");
+      const res = await axios.post("/api/razorpay/create-order", {
+        products: draft.products.map(({ productId, quantity, selectedVariants }) => ({
+          productId,
+          quantity,
+          ...(selectedVariants ? { selectedVariants } : {}),
+        })),
+        promo: draft.promo || undefined,
+        walletUsed: walletApplied,
+      });
 
       if (!res?.data?.success || !res.data.orderId)
         throw new Error("Failed to create order");

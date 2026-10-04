@@ -69,7 +69,7 @@ describe("CheckoutForm Component", () => {
     cart = VALID_CART,
     onOrderPlaced = vi.fn(),
     totalAmount = 200,
-    getCheckoutDraft,
+    getCheckoutDraft = () => ({ products: [{ productId: "p1", quantity: 2 }], promo: undefined }),
   } = {}) => {
     const store = configureStore({
       reducer: {
@@ -253,7 +253,7 @@ describe("CheckoutForm Component", () => {
     });
   });
 
-  test("creates a Razorpay order for the payable balance when wallet is unused", async () => {
+  test("creates a Razorpay order from the cart when wallet is unused", async () => {
     let capturedOptions = null;
     window.Razorpay = vi.fn(function (options) {
       capturedOptions = options;
@@ -280,8 +280,9 @@ describe("CheckoutForm Component", () => {
 
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith("/api/razorpay/create-order", {
-        amount: 200,
-        currency: "INR",
+        products: [{ productId: "p1", quantity: 2 }],
+        promo: undefined,
+        walletUsed: 0,
       });
     });
     await waitFor(() => expect(window.Razorpay).toHaveBeenCalled());
