@@ -1,20 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import {
-  TrendingUpIcon,
-  ShoppingBagIcon,
-  UsersIcon,
-  CurrencyRupeeIcon,
-  RefreshIcon,
-  StatusOnlineIcon,
-  ArrowSmUpIcon,
-  ArrowSmDownIcon,
-  ClockIcon,
-  PhotographIcon,
-  CalendarIcon,
-  ExternalLinkIcon
-} from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import WebVitalsCard from "./WebVitalsCard";
@@ -30,6 +16,20 @@ import {
   Bar,
   Cell,
 } from "recharts";
+import {
+  ArrowDown,
+  ArrowUp,
+  Calendar,
+  Clock,
+  ExternalLink,
+  Image,
+  IndianRupee,
+  Radio,
+  RefreshCw,
+  ShoppingBag,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 
 // --- CSS for Hiding Scrollbars ---
 const noScrollbarStyle = `
@@ -253,7 +253,7 @@ export default function AdminDashboard() {
               className="p-1.5 sm:p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all active:scale-95"
               title="Sync Data"
             >
-              <RefreshIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshCw className={`h-4 w-4 sm:h-5 sm:w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
           </div>
         </div>
@@ -263,7 +263,7 @@ export default function AdminDashboard() {
 
         {error && (
           <div className="rounded-2xl bg-red-50 border border-red-100 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-red-600 flex items-center gap-2 animate-in fade-in ">
-            <StatusOnlineIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+            <Radio className="h-4 w-4 sm:h-5 sm:w-5" />
             <span className="font-medium">{error}</span>
           </div>
         )}
@@ -280,7 +280,7 @@ export default function AdminDashboard() {
                   title="Total Revenue"
                   value={INR(stats.totalRevenue)}
                   subtitle="Gross Income"
-                  icon={<CurrencyRupeeIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
+                  icon={<IndianRupee className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#b56a3f] to-[#8f4e2f]"
                   trend="+12.5%"
                   trendUp={true}
@@ -291,7 +291,7 @@ export default function AdminDashboard() {
                   title="Total Orders"
                   value={stats.totalOrders}
                   subtitle="All time"
-                  icon={<ShoppingBagIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
+                  icon={<ShoppingBag className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#2f2d28] to-[#4f4a42]"
                   trend={`+${stats.thisMonthOrders} this mo`}
                   trendUp={true}
@@ -302,7 +302,7 @@ export default function AdminDashboard() {
                   title="Avg. Order"
                   value={INR(stats.avgOrderValue)}
                   subtitle="Per Order"
-                  icon={<TrendingUpIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
+                  icon={<TrendingUp className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#59634f] to-[#414a39]"
                   trend="+2.4%"
                   trendUp={true}
@@ -313,7 +313,7 @@ export default function AdminDashboard() {
                   title="Customers"
                   value={stats.activeCustomers || users.length}
                   subtitle="Total Users"
-                  icon={<UsersIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
+                  icon={<Users className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#8b6653] to-[#6f4c3d]"
                   trend={`+${users.length}`}
                   trendUp={true}
@@ -329,7 +329,7 @@ export default function AdminDashboard() {
                 <div className="flex items-center justify-between mb-4 sm:mb-8">
                   <div>
                     <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight flex items-center gap-1.5 sm:gap-2">
-                      <CalendarIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
+                      <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
                       Revenue Analytics
                     </h2>
                     <p className="text-[10px] sm:text-xs font-medium text-slate-400 mt-0.5 ml-5 sm:ml-7">
@@ -337,7 +337,7 @@ export default function AdminDashboard() {
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-emerald-100">
-                    <TrendingUpIcon className="h-3 w-3" />
+                    <TrendingUp className="h-3 w-3" />
                     <span>Growth Stable</span>
                   </div>
                 </div>
@@ -432,7 +432,7 @@ export default function AdminDashboard() {
                 <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-3xl">
                   <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Recent Orders</h2>
                   <button onClick={() => navigate("/admin/orders")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all orders">
-                    <ExternalLinkIcon className="h-4 w-4" />
+                    <ExternalLink className="h-4 w-4" />
                   </button>
                 </div>
 
@@ -441,7 +441,7 @@ export default function AdminDashboard() {
                   {recentOrders.length > 0 ? recentOrders.map((order) => (
                     <div key={order._id} className="p-2.5 sm:p-3 hover:bg-slate-50/80 rounded-xl sm:rounded-2xl transition-colors flex items-center gap-2.5 sm:gap-4 group/item cursor-pointer mb-1" onClick={() => navigate(`/admin/orders/${order._id}`)}>
                       <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 group-hover/item:bg-orange-100 group-hover/item:text-orange-600 transition-colors shrink-0">
-                        <ShoppingBagIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                        <ShoppingBag className="h-4 w-4 sm:h-5 sm:w-5" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-0.5">
@@ -472,7 +472,7 @@ export default function AdminDashboard() {
                 <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-3xl">
                   <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
                   <button onClick={() => navigate("/admin/products")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all products">
-                    <ExternalLinkIcon className="h-4 w-4" />
+                    <ExternalLink className="h-4 w-4" />
                   </button>
                 </div>
 
@@ -519,7 +519,7 @@ function ImageWithFallback({ src, alt, className }) {
   const [error, setError] = useState(false);
 
   if (!src || error) {
-    return <PhotographIcon className="h-6 w-6 text-slate-300" />;
+    return <Image className="h-6 w-6 text-slate-300" />;
   }
 
   return (
@@ -552,7 +552,7 @@ function StatCard({ title, value, subtitle, icon, gradient, trend, trendUp }) {
 
       <div className="mt-2 sm:mt-4 flex items-center gap-1.5 text-[9px] sm:text-xs font-medium relative z-10 truncate">
         <span className={`flex items-center gap-0.5 px-1 sm:px-1.5 py-0.5 rounded-md shrink-0 font-bold ${trendUp ? "text-emerald-700 bg-emerald-50" : "text-red-700 bg-red-50"}`}>
-          {trendUp ? <ArrowSmUpIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> : <ArrowSmDownIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />}
+          {trendUp ? <ArrowUp className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> : <ArrowDown className="h-2.5 w-2.5 sm:h-3 sm:w-3" />}
           {trend}
         </span>
         <span className="text-slate-400 truncate hidden sm:inline">{subtitle}</span>
@@ -565,7 +565,7 @@ function EmptyState({ message }) {
   return (
     <div className="flex flex-col items-center justify-center h-full py-12 text-slate-400">
       <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-3 border border-slate-100">
-        <ClockIcon className="h-6 w-6 text-slate-300" />
+        <Clock className="h-6 w-6 text-slate-300" />
       </div>
       <p className="text-xs font-bold text-slate-400 uppercase tracking-wide">{message}</p>
     </div>

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { 
-  FaShieldAlt, 
-  FaUserSecret, 
-  FaCookieBite, 
-  FaServer, 
-  FaGlobeAmericas, 
-  FaUserCog, 
-  FaEnvelope 
-} from "react-icons/fa";
+import {
+  Cookie,
+  Earth,
+  Mail,
+  Server,
+  Shield,
+  UserCog,
+  VenetianMask,
+} from "lucide-react";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -41,13 +41,13 @@ export default function Privacy() {
   }, []);
 
   const sections = [
-    { id: "overview", title: "1. Overview", icon: FaShieldAlt },
-    { id: "info", title: "2. Data Collection", icon: FaUserSecret },
-    { id: "storage", title: "3. Cookies & Storage", icon: FaCookieBite },
-    { id: "analytics", title: "4. Analytics (None)", icon: FaServer },
-    { id: "thirdparty", title: "5. Third-Party APIs", icon: FaGlobeAmericas },
-    { id: "rights", title: "6. Your Rights", icon: FaUserCog },
-    { id: "contact", title: "7. Contact", icon: FaEnvelope },
+    { id: "overview", title: "1. Overview", icon: Shield },
+    { id: "info", title: "2. Data Collection", icon: VenetianMask },
+    { id: "storage", title: "3. Cookies & Storage", icon: Cookie },
+    { id: "analytics", title: "4. Analytics (None)", icon: Server },
+    { id: "thirdparty", title: "5. Third-Party APIs", icon: Earth },
+    { id: "rights", title: "6. Your Rights", icon: UserCog },
+    { id: "contact", title: "7. Contact", icon: Mail },
   ];
 
   return (
@@ -204,7 +204,7 @@ export default function Privacy() {
                 to="/contact" 
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition-colors"
               >
-                <FaEnvelope /> Contact Developer
+                <Mail size="1em" /> Contact Developer
               </Link>
             </div>
           </section>

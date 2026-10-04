@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import imageCompression from "browser-image-compression";
+import {
+  CloudUpload,
+  Image,
+  RefreshCw,
+  X,
+} from "lucide-react";
 import axios from "./axiosInstance"; // Ensure this path is correct for your setup
-import { 
-  CloudUploadIcon, 
-  XIcon, 
-  PhotographIcon, 
-  RefreshIcon 
-} from "@heroicons/react/outline";
 
 export default function ProductImageUploader({
   label = "Upload Image",
@@ -143,7 +143,7 @@ export default function ProductImageUploader({
               className="absolute top-2 right-2 p-1.5 rounded-full bg-white text-slate-400 hover:text-red-600 hover:bg-red-50 shadow-xs border border-slate-100 opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100"
               title="Remove Image"
             >
-              <XIcon className="h-4 w-4" />
+              <X className="h-4 w-4" />
             </button>
           </div>
         ))}
@@ -164,13 +164,13 @@ export default function ProductImageUploader({
           >
             {uploading ? (
               <>
-                <RefreshIcon className="h-8 w-8 text-orange-500 animate-spin" />
+                <RefreshCw className="h-8 w-8 text-orange-500 animate-spin" />
                 <span className="text-xs font-bold text-slate-400 animate-pulse">Processing...</span>
               </>
             ) : (
               <>
                 <div className="p-3 rounded-full bg-slate-100 group-hover:bg-white group-hover:shadow-xs transition-all">
-                   <CloudUploadIcon className="h-6 w-6 text-slate-400 group-hover:text-slate-600" />
+                   <CloudUpload className="h-6 w-6 text-slate-400 group-hover:text-slate-600" />
                 </div>
                 <div className="text-center px-2">
                   <span className="block text-xs font-bold text-slate-600 group-hover:text-slate-900">

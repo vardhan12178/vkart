@@ -15,25 +15,24 @@ import {
   clearWishlist,
 } from "../redux/wishlistSlice";
 import { Link } from "react-router-dom";
-import {
-  FaShoppingCart,
-  FaTrash,
-  FaHeart,
-  FaCartPlus,
-  FaTag,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaArrowRight,
-  FaTruck,
-  FaMinus,
-  FaPlus,
-  FaShoppingBag,
-} from "react-icons/fa";
 import CheckoutForm from "./CheckoutForm";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
 import { buildSecureOrderPayload } from "../utils/orderPayload";
 import { qk } from "../query/queryKeys";
+import {
+  ArrowRight,
+  CircleCheck,
+  CircleX,
+  Heart,
+  Minus,
+  Plus,
+  ShoppingBag,
+  ShoppingCart,
+  Tag,
+  Trash2,
+  Truck,
+} from "lucide-react";
 
 /* ---------- Helpers ---------- */
 const INR = (n) =>
@@ -232,7 +231,7 @@ export default function Cart() {
         <AnimStyles />
         <div className="text-center animate-fade-up max-w-md">
           <div className="w-20 h-20 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
-            <FaShoppingCart className="text-3xl text-orange-400" />
+            <ShoppingCart size="1em" className="text-3xl text-orange-400" />
           </div>
           <h2 className="font-editorial text-3xl sm:text-5xl font-normal text-[#1d1c19] mb-2">Your bag is waiting.</h2>
           <p className="text-[#777269] text-xs sm:text-sm mb-6">You haven’t added anything yet. Start with the latest edit.</p>
@@ -240,7 +239,7 @@ export default function Cart() {
             to="/products"
             className="inline-flex items-center justify-center gap-2 bg-[#1d1c19] text-white px-6 py-3 rounded-full text-xs font-bold shadow-lg hover:bg-black transition-colors"
           >
-            Explore the collection <FaArrowRight size={12} />
+            Explore the collection <ArrowRight size={12} />
           </Link>
         </div>
       </div>
@@ -313,7 +312,7 @@ export default function Cart() {
                               className="text-gray-300 hover:text-red-500 transition-colors p-1 shrink-0"
                               aria-label="Remove item"
                             >
-                              <FaTrash size={12} />
+                              <Trash2 size={12} />
                             </button>
                           </div>
 
@@ -325,14 +324,14 @@ export default function Cart() {
                                 disabled={item.quantity <= 1}
                                 className="w-7 sm:w-9 h-full flex items-center justify-center text-gray-500 hover:text-gray-900 rounded-l-lg transition disabled:opacity-30"
                               >
-                                <FaMinus size={9} />
+                                <Minus size={9} />
                               </button>
                               <span className="w-5 sm:w-7 text-center font-bold text-xs">{item.quantity}</span>
                               <button
                                 onClick={() => dispatch(incrementQuantity(k))}
                                 className="w-7 sm:w-9 h-full flex items-center justify-center text-gray-500 hover:text-gray-900 rounded-r-lg transition"
                               >
-                                <FaPlus size={9} />
+                                <Plus size={9} />
                               </button>
                             </div>
 
@@ -353,7 +352,7 @@ export default function Cart() {
                           onClick={() => moveToWishlist(item)}
                           className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#716c63] hover:text-[#a85d37] transition-colors"
                         >
-                          <FaHeart size={11} className="text-gray-300 group-hover:text-[#a85d37]" />
+                          <Heart fill="currentColor" size={11} className="text-gray-300 group-hover:text-[#a85d37]" />
                           Save for Later
                         </button>
 
@@ -373,7 +372,7 @@ export default function Cart() {
               /* Empty Cart Banner (Show only if Wishlist has items) */
               <div className="bg-white rounded-2xl p-6 text-center border border-dashed border-gray-300">
                 <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-400">
-                  <FaShoppingBag size={20} />
+                  <ShoppingBag size={20} />
                 </div>
                 <h3 className="text-base font-bold text-gray-900">Your cart is empty</h3>
                 <p className="text-xs text-gray-500 mb-3">You have items saved for later!</p>
@@ -386,7 +385,7 @@ export default function Cart() {
               <div className={hasCartItems ? "mt-6 sm:mt-10" : "mt-4"}>
                 <div className="flex items-center justify-between mb-2.5 sm:mb-4">
                   <h2 className="font-editorial text-lg sm:text-xl font-bold text-[#1d1c19] flex items-center gap-2">
-                    <FaHeart size={13} className="text-[#a85d37]" /> Saved for Later
+                    <Heart fill="currentColor" size={13} className="text-[#a85d37]" /> Saved for Later
                   </h2>
                   <button onClick={() => dispatch(clearWishlist())} className="rounded-full border border-black/10 bg-[#eee8df] px-2.5 py-1 text-[10px] sm:text-xs font-bold text-[#6f6b62] transition-colors hover:bg-[#e6ddd2] hover:text-[#1d1c19]">Clear all</button>
                 </div>
@@ -406,7 +405,7 @@ export default function Cart() {
                         onClick={() => moveWishlistToCart(w)}
                         className="mt-2 text-[10px] sm:text-xs font-bold text-[#a85d37] hover:text-white hover:bg-[#a85d37] bg-[#fbf3ee] py-1.5 px-2 rounded-lg transition-colors flex items-center justify-center gap-1 w-full"
                       >
-                        <FaCartPlus size={10} /> Move to Cart
+                        <ShoppingCart size={10} /> Move to Cart
                       </button>
                     </div>
                   ))}
@@ -457,7 +456,7 @@ export default function Cart() {
                     {promoApplied ? (
                       <div className="flex items-center justify-between bg-green-50 px-3.5 py-2.5 rounded-xl border border-green-200">
                         <div className="flex items-center gap-2">
-                          <FaTag className="text-green-600 text-xs" />
+                          <Tag size="1em" className="text-green-600 text-xs" />
                           <span className="text-xs font-bold text-green-700">{promoApplied.code}</span>
                           <span className="text-[11px] text-green-600">-{INR(promoApplied.discount)}</span>
                         </div>
@@ -465,7 +464,7 @@ export default function Cart() {
                       </div>
                     ) : (
                       <div className="relative">
-                        <FaTag className="absolute left-3.5 top-3 text-gray-400 text-xs" />
+                        <Tag size="1em" className="absolute left-3.5 top-3 text-gray-400 text-xs" />
                         <input
                           value={promo}
                           onChange={(e) => setPromo(e.target.value)}
@@ -520,7 +519,7 @@ export default function Cart() {
                     onClick={handleProceed}
                     className="hidden lg:flex w-full mt-6 py-3.5 rounded-full bg-[#1d1c19] text-white font-bold text-sm shadow-lg hover:bg-black transition-all items-center justify-center gap-2"
                   >
-                    Checkout <FaArrowRight size={12} />
+                    Checkout <ArrowRight size={12} />
                   </button>
 
                   {/* Free Shipping Bar */}
@@ -529,7 +528,7 @@ export default function Cart() {
                       <>
                         <div className="flex justify-between text-[11px] font-bold text-[#6f6b62] mb-1.5">
                           <span>Add {INR(999 - calc.subtotal)} for Free Shipping</span>
-                          <span><FaTruck className="text-[#a85d37]" /></span>
+                          <span><Truck size="1em" className="text-[#a85d37]" /></span>
                         </div>
                         <div className="h-1.5 w-full bg-black/10 rounded-full overflow-hidden">
                           <div
@@ -540,7 +539,7 @@ export default function Cart() {
                       </>
                     ) : (
                       <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-green-700">
-                        <FaCheckCircle /> Free Shipping Unlocked!
+                        <CircleCheck size="1em" /> Free Shipping Unlocked!
                       </div>
                     )}
                   </div>
@@ -585,7 +584,7 @@ export default function Cart() {
 
         {error && (
           <div className="fixed bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 bg-red-50 text-red-600 px-5 py-2.5 rounded-full shadow-xl font-bold flex items-center gap-2 animate-fade-up border border-red-100 z-50 text-xs w-max">
-            <FaTimesCircle /> {error}
+            <CircleX size="1em" /> {error}
           </div>
         )}
 
@@ -603,7 +602,7 @@ export default function Cart() {
               onClick={handleProceed}
               className="px-6 h-10 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5 hover:bg-black"
             >
-              Checkout <FaArrowRight size={11} />
+              Checkout <ArrowRight size={11} />
             </button>
           </div>
         </div>

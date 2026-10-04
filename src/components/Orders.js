@@ -6,10 +6,10 @@ import axios from "./axiosInstance";
 import OrderCard from "./OrderCard";
 import { qk } from "../query/queryKeys";
 import {
-    FaBoxOpen,
-    FaShoppingBag,
-    FaArrowLeft,
-} from "react-icons/fa";
+  ArrowLeft,
+  PackageOpen,
+  ShoppingBag,
+} from "lucide-react";
 
 // Skeleton loader for orders
 const OrdersSkeleton = () => (
@@ -93,7 +93,7 @@ export default function Orders() {
                             className="h-9 w-9 rounded-xl bg-white border border-gray-200/80 text-gray-600 hover:text-gray-900 hover:bg-gray-50 flex items-center justify-center transition shrink-0"
                             title="Go back"
                         >
-                            <FaArrowLeft size={13} />
+                            <ArrowLeft size={13} />
                         </button>
                         <div className="min-w-0">
                             <h1 className="font-editorial text-xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight truncate">
@@ -106,7 +106,7 @@ export default function Orders() {
                     </div>
                     <div className="flex items-center gap-1.5 shrink-0">
                         <span className="inline-flex items-center gap-1.5 bg-slate-900 text-white px-3 py-1.5 rounded-xl text-xs font-bold ">
-                            <FaShoppingBag size={11} className="text-orange-400" />
+                            <ShoppingBag size={11} className="text-orange-400" />
                             <span>{orders.length} {orders.length === 1 ? "Order" : "Orders"}</span>
                         </span>
                     </div>
@@ -119,7 +119,7 @@ export default function Orders() {
                     ) : isError ? (
                         <div className="text-center py-12">
                             <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-400 mx-auto mb-3">
-                                <FaBoxOpen size={22} />
+                                <PackageOpen size={22} />
                             </div>
                             <h3 className="text-base font-bold text-gray-900 mb-1">
                                 Unable to load orders
@@ -135,7 +135,7 @@ export default function Orders() {
                     ) : orders.length === 0 ? (
                         <div className="text-center py-12">
                             <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-300 mx-auto mb-3 text-2xl">
-                                <FaBoxOpen />
+                                <PackageOpen size="1em" />
                             </div>
                             <h3 className="text-base font-bold text-gray-900">No orders yet</h3>
                             <p className="text-gray-500 text-xs sm:text-sm mt-0.5 mb-5">
@@ -145,7 +145,7 @@ export default function Orders() {
                                 to="/products"
                                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition"
                             >
-                                <FaShoppingBag size={12} />
+                                <ShoppingBag size={12} />
                                 <span>Browse Products</span>
                             </Link>
                         </div>
@@ -182,7 +182,7 @@ export default function Orders() {
                             to="/products"
                             className="text-xs sm:text-sm font-bold text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1.5"
                         >
-                            <FaShoppingBag size={12} />
+                            <ShoppingBag size={12} />
                             <span>Continue Shopping</span>
                         </Link>
                     </div>

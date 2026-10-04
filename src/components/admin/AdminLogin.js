@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  EyeIcon,
-  EyeOffIcon,
-  UserIcon,
-  LockClosedIcon,
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  ShieldCheckIcon,
-} from "@heroicons/react/outline";
+  CircleAlert,
+  CircleCheck,
+  Eye,
+  EyeOff,
+  Lock,
+  ShieldCheck,
+  User,
+} from "lucide-react";
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -47,7 +47,7 @@ const FieldError = ({ id, message }) =>
       id={id}
       className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-red-500"
     >
-      <ExclamationCircleIcon className="h-4 w-4 shrink-0" /> {message}
+      <CircleAlert className="h-4 w-4 shrink-0" /> {message}
     </motion.p>
   );
 
@@ -69,9 +69,9 @@ const Toast = ({ show, kind = "error", children }) => {
       role="status"
     >
       {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
+        <CircleCheck className="h-5 w-5 shrink-0 text-emerald-600" />
       ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
+        <CircleAlert className="h-5 w-5 shrink-0 text-red-600" />
       )}
       <div className="pt-0.5 font-medium">{children}</div>
     </motion.div>
@@ -210,7 +210,7 @@ export default function AdminLogin({ setIsAdmin }) {
               <div className="flex items-center gap-3 mb-8">
                 {/* Admin Icon variant */}
                 <div className="h-10 w-10 bg-linear-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg shadow-gray-500/20 text-white">
-                  <ShieldCheckIcon className="h-6 w-6" />
+                  <ShieldCheck className="h-6 w-6" />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart Admin.</span>
               </div>
@@ -252,7 +252,7 @@ export default function AdminLogin({ setIsAdmin }) {
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-8">
               <div className="h-10 w-10 bg-linear-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg text-white">
-                <ShieldCheckIcon className="h-6 w-6" />
+                <ShieldCheck className="h-6 w-6" />
               </div>
             </div>
 
@@ -294,7 +294,7 @@ export default function AdminLogin({ setIsAdmin }) {
                   <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">Admin ID</label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <UserIcon className={cx("h-5 w-5 transition-colors", errors.adminId ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <User className={cx("h-5 w-5 transition-colors", errors.adminId ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                     </div>
                     <input
                       id="adminId"
@@ -322,7 +322,7 @@ export default function AdminLogin({ setIsAdmin }) {
                   </div>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <LockClosedIcon className={cx("h-5 w-5 transition-colors", errors.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <Lock className={cx("h-5 w-5 transition-colors", errors.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                     </div>
                     <input
                       id="password"
@@ -346,7 +346,7 @@ export default function AdminLogin({ setIsAdmin }) {
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-hidden"
                     >
-                      {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                      {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                     </button>
                   </div>
 
@@ -376,7 +376,7 @@ export default function AdminLogin({ setIsAdmin }) {
 
               <motion.div variants={fadeInUp} className="mt-8 text-center">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100 text-[10px] text-gray-400">
-                  <ShieldCheckIcon className="h-3 w-3" />
+                  <ShieldCheck className="h-3 w-3" />
                   <span>Secure Admin Environment</span>
                 </div>
               </motion.div>

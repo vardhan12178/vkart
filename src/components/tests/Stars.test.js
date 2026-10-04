@@ -18,8 +18,9 @@ describe("Stars Component", () => {
 
   test("rounds a rating like 3.7 to the nearest half star (3.5)", () => {
     const { container } = render(<Stars value={3.7} />);
-    // 3 full + 1 half + 1 empty = 5 icons total, 1 of which is empty (gray).
-    expect(container.querySelectorAll("svg")).toHaveLength(5);
+    // 3 full + 1 half + 1 empty = 5 stars, 1 of which is empty (gray).
+    // (The half star is a layered outline + half fill, so count stars, not SVGs.)
+    expect(container.firstChild.children).toHaveLength(5);
     expect(container.querySelectorAll(".text-gray-200")).toHaveLength(1);
   });
 });

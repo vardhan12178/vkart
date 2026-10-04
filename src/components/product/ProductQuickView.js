@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaCartPlus, FaTimes } from "react-icons/fa";
 import Stars from "../Stars";
+import {
+  ArrowRight,
+  ShoppingCart,
+  X,
+} from "lucide-react";
 
 const formatPrice = (amount) => new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -66,7 +70,7 @@ const ProductQuickView = ({ product, onClose, onAdd }) => {
                     className="absolute right-4 top-4 z-20 grid h-10 w-10 place-items-center rounded-full border border-black/8 bg-[#fffdf8]/90 text-[#6f6b62] backdrop-blur-sm transition-colors hover:bg-[#eee8df] hover:text-[#1d1c19]"
                     aria-label="Close product preview"
                 >
-                    <FaTimes size={15} />
+                    <X size={15} />
                 </button>
 
                 <div className="flex min-h-80 shrink-0 flex-col bg-[#ece8df] p-5 sm:p-7 md:min-h-152">
@@ -142,14 +146,14 @@ const ProductQuickView = ({ product, onClose, onAdd }) => {
                             disabled={!isAvailable}
                             className="flex w-full items-center justify-center gap-2 rounded-full bg-[#1d1c19] px-5 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black disabled:cursor-not-allowed disabled:bg-[#a8a299]"
                         >
-                            <FaCartPlus aria-hidden="true" /> {isAvailable ? "Add to bag" : "Unavailable"}
+                            <ShoppingCart size="1em" aria-hidden="true" /> {isAvailable ? "Add to bag" : "Unavailable"}
                         </button>
                         <Link
                             to={`/product/${product._id}`}
                             onClick={onClose}
                             className="flex w-full items-center justify-center gap-2 rounded-full border border-black/10 px-5 py-3.5 text-sm font-bold text-[#4f4b44] transition-colors hover:bg-black/4 hover:text-[#1d1c19]"
                         >
-                            View full details <FaArrowRight size={12} aria-hidden="true" />
+                            View full details <ArrowRight size={12} aria-hidden="true" />
                         </Link>
                     </div>
                 </div>

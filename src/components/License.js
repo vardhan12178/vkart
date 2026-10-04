@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { 
-  FaBalanceScale, 
-  FaCode, 
-  FaCheck, 
-  FaTimes, 
-  FaCreativeCommons, 
-  FaLayerGroup, 
-  FaExclamationCircle, 
-  FaEnvelope 
-} from "react-icons/fa";
+import {
+  Check,
+  CircleAlert,
+  Code,
+  Copyright,
+  Layers,
+  Mail,
+  Scale,
+  X,
+} from "lucide-react";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -42,13 +42,13 @@ export default function License() {
   }, []);
 
   const sections = [
-    { id: "purpose", title: "1. Project Purpose", icon: FaLayerGroup },
-    { id: "license", title: "2. License Summary", icon: FaCreativeCommons },
-    { id: "attribution", title: "3. Attribution", icon: FaCode },
-    { id: "thirdparty", title: "4. 3rd Party Assets", icon: FaLayerGroup },
-    { id: "permissions", title: "5. Do's & Don'ts", icon: FaBalanceScale },
-    { id: "disclaimer", title: "6. Disclaimer", icon: FaExclamationCircle },
-    { id: "contact", title: "7. Contact", icon: FaEnvelope },
+    { id: "purpose", title: "1. Project Purpose", icon: Layers },
+    { id: "license", title: "2. License Summary", icon: Copyright },
+    { id: "attribution", title: "3. Attribution", icon: Code },
+    { id: "thirdparty", title: "4. 3rd Party Assets", icon: Layers },
+    { id: "permissions", title: "5. Do's & Don'ts", icon: Scale },
+    { id: "disclaimer", title: "6. Disclaimer", icon: CircleAlert },
+    { id: "contact", title: "7. Contact", icon: Mail },
   ];
 
   return (
@@ -185,7 +185,7 @@ export default function License() {
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-green-50 rounded-2xl p-6 border border-green-100">
                 <h3 className="text-green-800 font-bold flex items-center gap-2 mb-3">
-                  <FaCheck className="text-sm" /> Permitted
+                  <Check size="1em" className="text-sm" /> Permitted
                 </h3>
                 <ul className="space-y-2 text-sm text-green-700">
                   <li>• Review code for hiring.</li>
@@ -195,7 +195,7 @@ export default function License() {
               </div>
               <div className="bg-red-50 rounded-2xl p-6 border border-red-100">
                 <h3 className="text-red-800 font-bold flex items-center gap-2 mb-3">
-                  <FaTimes className="text-sm" /> Restricted
+                  <X size="1em" className="text-sm" /> Restricted
                 </h3>
                 <ul className="space-y-2 text-sm text-red-700">
                   <li>• Reselling as a template.</li>
@@ -236,7 +236,7 @@ export default function License() {
                 to="/contact" 
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition-colors"
               >
-                <FaEnvelope /> Contact Developer
+                <Mail size="1em" /> Contact Developer
               </Link>
             </div>
           </section>

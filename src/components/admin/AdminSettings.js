@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
-import {
-  OfficeBuildingIcon,
-  SaveIcon,
-  CheckCircleIcon,
-  MailIcon,
-  PhoneIcon,
-  XCircleIcon,
-  DocumentTextIcon,
-  SparklesIcon
-} from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import InputGroup from "./ui/InputGroup";
+import {
+  Building2,
+  CircleCheck,
+  CircleX,
+  FileText,
+  Mail,
+  Phone,
+  Save,
+  Sparkles,
+} from "lucide-react";
 
 export default function AdminSettings() {
   const queryClient = useQueryClient();
@@ -102,7 +102,7 @@ export default function AdminSettings() {
               {saving ? (
                 <div className="h-3.5 w-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
-                <SaveIcon className="h-4 w-4" />
+                <Save className="h-4 w-4" />
               )}
               <span className="hidden sm:inline">{saving ? "Saving..." : "Save Changes"}</span>
               <span className="sm:hidden">{saving ? "Saving" : "Save"}</span>
@@ -114,9 +114,9 @@ export default function AdminSettings() {
         {toast && (
           <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}>
             {toast.type === "error" ? (
-              <XCircleIcon className="h-5 w-5 text-red-500" />
+              <CircleX className="h-5 w-5 text-red-500" />
             ) : (
-              <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
+              <CircleCheck className="h-5 w-5 text-emerald-500" />
             )}
             <span>{toast.message}</span>
           </div>
@@ -128,7 +128,7 @@ export default function AdminSettings() {
           <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 pb-2 border-b border-slate-100">
               <div className="h-8 w-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
-                <OfficeBuildingIcon className="h-4 w-4" />
+                <Building2 className="h-4 w-4" />
               </div>
               <div>
                 <h2 className="text-sm sm:text-base sm:leading-6 font-bold text-slate-900 leading-tight">
@@ -160,7 +160,7 @@ export default function AdminSettings() {
           <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 pb-2 border-b border-slate-100">
               <div className="h-8 w-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0">
-                <PhoneIcon className="h-4 w-4" />
+                <Phone className="h-4 w-4" />
               </div>
               <div>
                 <h2 className="text-sm sm:text-base sm:leading-6 font-bold text-slate-900 leading-tight">
@@ -176,7 +176,7 @@ export default function AdminSettings() {
                 type="email"
                 value={store.supportEmail}
                 onChange={(e) => setStore({ ...store, supportEmail: e.target.value })}
-                icon={<MailIcon className="h-4 w-4" />}
+                icon={<Mail className="h-4 w-4" />}
                 placeholder="support@vkart.com"
                 disabled={!canWrite}
               />
@@ -184,7 +184,7 @@ export default function AdminSettings() {
                 label="Support Phone"
                 value={store.supportPhone}
                 onChange={(e) => setStore({ ...store, supportPhone: e.target.value })}
-                icon={<PhoneIcon className="h-4 w-4" />}
+                icon={<Phone className="h-4 w-4" />}
                 placeholder="+91 99999 12345"
                 disabled={!canWrite}
               />
@@ -194,7 +194,7 @@ export default function AdminSettings() {
           {/* Live Invoice Preview Box */}
           <div className="bg-linear-to-br from-slate-50 to-amber-50/30 rounded-2xl border border-slate-200/70 p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3">
-              <DocumentTextIcon className="h-4 w-4 text-slate-500" />
+              <FileText className="h-4 w-4 text-slate-500" />
               <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Invoice Header Preview</span>
             </div>
             <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 sm:p-4 ">
@@ -225,7 +225,7 @@ export default function AdminSettings() {
                 {saving ? (
                   <div className="h-3.5 w-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  <SaveIcon className="h-4 w-4" />
+                  <Save className="h-4 w-4" />
                 )}
                 {saving ? "Saving..." : "Save Changes"}
               </button>

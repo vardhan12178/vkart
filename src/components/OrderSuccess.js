@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import {
-  FaCheckCircle,
-  FaArrowRight,
-  FaBox,
-  FaShoppingBag,
-  FaMapMarkerAlt,
-  FaReceipt,
-  FaShieldAlt,
-  FaChevronRight,
-  FaHeadset
-} from "react-icons/fa";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
 import SupportChatWidget from "./support/SupportChatWidget";
 import { IMAGE_PLACEHOLDER } from "../utils/imagePlaceholder";
+import {
+  ArrowRight,
+  Box,
+  ChevronRight,
+  CircleCheck,
+  Headset,
+  MapPin,
+  Receipt,
+  Shield,
+  ShoppingBag,
+} from "lucide-react";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -79,7 +79,7 @@ export default function OrderSuccess() {
     return (
       <div className="premium-page premium-success min-h-screen flex flex-col items-center justify-center bg-[#f6f3ed] p-4 text-center">
         <div className="w-14 h-14 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center mb-3">
-          <FaBox size={22} />
+          <Box size={22} />
         </div>
         <h2 className="text-lg font-bold text-gray-900 mb-1">Order Details Unavailable</h2>
         <p className="text-gray-500 text-xs sm:text-sm mb-4">We couldn't locate this order in your account.</p>
@@ -113,7 +113,7 @@ export default function OrderSuccess() {
         {/* Top Header Notification */}
         <div className="text-center space-y-1.5 pt-2">
           <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto shadow-xs shadow-emerald-500/20">
-            <FaCheckCircle size={24} />
+            <CircleCheck size={24} />
           </div>
           <h1 className="font-editorial text-2xl sm:text-3xl sm:leading-9 font-bold text-slate-900 tracking-tight leading-tight">
             Thank you for your order!
@@ -174,7 +174,7 @@ export default function OrderSuccess() {
           <div className="px-4 sm:px-6 py-4 bg-slate-50/50 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
             <div>
               <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
-                <FaMapMarkerAlt className="text-orange-500" />
+                <MapPin size="1em" className="text-orange-500" />
                 <span>Shipping To</span>
               </div>
               <p className="font-medium text-slate-700 leading-relaxed truncate">
@@ -184,7 +184,7 @@ export default function OrderSuccess() {
 
             <div>
               <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
-                <FaReceipt className="text-emerald-600" />
+                <Receipt size="1em" className="text-emerald-600" />
                 <span>Payment & Total</span>
               </div>
               <div className="flex items-center justify-between">
@@ -212,7 +212,7 @@ export default function OrderSuccess() {
               to={`/orders/${order._id}`}
               className="flex-1 py-2.5 px-4 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-black transition flex items-center justify-center gap-1.5 text-center"
             >
-              <FaBox size={11} />
+              <Box size={11} />
               <span>View Order Details</span>
             </Link>
 
@@ -221,7 +221,7 @@ export default function OrderSuccess() {
               className="flex-1 py-2.5 px-4 bg-white text-slate-700 text-xs font-bold rounded-xl border border-slate-200/80 hover:bg-slate-100 transition flex items-center justify-center gap-1.5 text-center"
             >
               <span>Continue Shopping</span>
-              <FaChevronRight size={10} />
+              <ChevronRight size={10} />
             </Link>
           </div>
         </div>
@@ -232,7 +232,7 @@ export default function OrderSuccess() {
             onClick={() => setShowSupport(true)}
             className="text-xs text-slate-500 hover:text-slate-800 font-medium inline-flex items-center gap-1.5 transition"
           >
-            <FaHeadset className="text-slate-400" />
+            <Headset size="1em" className="text-slate-400" />
             <span>Have a question about your order? Chat with Support</span>
           </button>
         </div>

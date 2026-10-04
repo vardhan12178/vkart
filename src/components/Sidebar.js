@@ -3,14 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import { qk } from "../query/queryKeys";
 import {
-  FaFilter,
-  FaChevronDown,
-  FaChevronUp,
-  FaStar,
-  FaCheck,
-  FaUndo,
-  FaCircle
-} from "react-icons/fa";
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Circle,
+  Funnel,
+  RotateCcw,
+  Star,
+} from "lucide-react";
 
 export default function Sidebar({
   categoryFilter,
@@ -87,7 +87,7 @@ export default function Sidebar({
         {/* Header */}
         <div className="border-b border-gray-100 p-5 flex items-center justify-between bg-gray-50/50">
           <div className="flex items-center gap-2.5">
-            <FaFilter className="text-gray-400" size={12} />
+            <Funnel className="text-gray-400" size={12} />
             <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">Filters</h2>
           </div>
           
@@ -96,7 +96,7 @@ export default function Sidebar({
               onClick={clearAll}
               className="group flex items-center gap-1.5 rounded-md border border-[#a85d37]/15 bg-[#a85d37]/[0.07] px-2.5 py-1 text-[10px] font-bold text-[#925033] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/12 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#a85d37]/30 focus-visible:ring-offset-2"
             >
-              <FaUndo size={8} className="group-hover:-rotate-180 transition-transform duration-500" />
+              <RotateCcw size={8} className="group-hover:-rotate-180 transition-transform duration-500" />
               RESET
             </button>
           )}
@@ -113,7 +113,7 @@ export default function Sidebar({
             >
               <div className="flex items-center gap-2">Categories</div>
               <div className={`text-gray-400 transition-transform duration-300 ${expanded === "categories" ? "rotate-180" : ""}`}>
-                <FaChevronDown size={10} />
+                <ChevronDown size={10} />
               </div>
             </button>
 
@@ -138,7 +138,7 @@ export default function Sidebar({
                           className={`group w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-all duration-200 ${active ? "bg-gray-900 text-white font-medium shadow-md shadow-gray-200" : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"}`}
                         >
                           <span>{cat.label}</span>
-                          {active ? <FaCheck size={10} className="text-white" /> : <FaCircle size={6} className="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity" />}
+                          {active ? <Check size={10} className="text-white" /> : <Circle fill="currentColor" size={6} className="text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity" />}
                         </button>
                       );
                     })}
@@ -147,7 +147,7 @@ export default function Sidebar({
                         onClick={() => setShowAllCats((v) => !v)}
                         className="mt-2 text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 px-3"
                       >
-                        {showAllCats ? <>Show Less <FaChevronUp size={10} /></> : <>+ {categories.length - 16} More categories</>}
+                        {showAllCats ? <>Show Less <ChevronUp size={10} /></> : <>+ {categories.length - 16} More categories</>}
                       </button>
                     )}
                   </div>
@@ -166,7 +166,7 @@ export default function Sidebar({
             >
               <div className="flex items-center gap-2">Rating</div>
               <div className={`text-gray-400 transition-transform duration-300 ${expanded === "rating" ? "rotate-180" : ""}`}>
-                <FaChevronDown size={10} />
+                <ChevronDown size={10} />
               </div>
             </button>
 
@@ -183,7 +183,7 @@ export default function Sidebar({
                       <div className="flex items-center gap-2">
                         <div className="flex text-amber-400 gap-0.5">
                           {Array.from({ length: 5 }).map((_, i) => (
-                            <FaStar key={i} size={13} className={i < r ? "fill-amber-400" : "text-gray-200"} />
+                            <Star fill="currentColor" key={i} size={13} className={i < r ? "fill-amber-400" : "text-gray-200"} />
                           ))}
                         </div>
                         <span className={`text-xs font-medium ${active ? "text-orange-800" : "text-gray-400"}`}>& Up</span>

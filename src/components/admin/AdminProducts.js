@@ -1,32 +1,32 @@
+import {
+  Archive,
+  ArrowDownWideNarrow,
+  ArrowUpNarrowWide,
+  Box,
+  ChevronLeft,
+  ChevronRight,
+  CircleCheck,
+  ClipboardList,
+  Funnel,
+  Image,
+  IndianRupee,
+  List,
+  Plus,
+  Save,
+  Search,
+  ShieldCheck,
+  SquarePen,
+  Tag,
+  Trash2,
+  TriangleAlert,
+  Truck,
+  Upload,
+  X,
+} from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import ProductImageUploader from "../ProductImageUploader";
-import {
-  PlusIcon,
-  PencilAltIcon,
-  SearchIcon,
-  FilterIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CubeIcon,
-  CheckCircleIcon,
-  ExclamationIcon,
-  PhotographIcon,
-  SortAscendingIcon,
-  SortDescendingIcon,
-  XIcon,
-  UploadIcon,
-  CurrencyRupeeIcon,
-  TagIcon,
-  ClipboardListIcon,
-  SaveIcon,
-  TruckIcon,
-  ShieldCheckIcon,
-  ViewListIcon,
-  ArchiveIcon,
-  TrashIcon
-} from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
@@ -205,7 +205,7 @@ export default function AdminProducts() {
             className={`fixed top-5 right-5 z-200 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
               }`}
           >
-            {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <ExclamationIcon className="h-5 w-5 text-red-500" />}
+            {toast.type === "success" ? <CircleCheck className="h-5 w-5 text-emerald-500" /> : <TriangleAlert className="h-5 w-5 text-red-500" />}
             <span className="text-sm font-semibold">{toast.message}</span>
           </div>
         )}
@@ -226,7 +226,7 @@ export default function AdminProducts() {
               onClick={openAdd}
               className="group inline-flex items-center gap-1.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800 active:scale-95 transition-all duration-200 shrink-0"
             >
-              <PlusIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white/90 transition-colors" />
+              <Plus className="h-4 w-4 sm:h-5 sm:w-5 text-white/90 transition-colors" />
               <span className="font-bold text-xs sm:text-sm">Add Product</span>
             </button>
           )}
@@ -237,19 +237,19 @@ export default function AdminProducts() {
           <StatCard
             label="Total"
             value={totalCount}
-            icon={CubeIcon}
+            icon={Box}
             color="blue"
           />
           <StatCard
             label="Active"
             value={activeCount}
-            icon={CheckCircleIcon}
+            icon={CircleCheck}
             color="emerald"
           />
           <StatCard
             label="Low Stock"
             value={lowStockCount}
-            icon={ExclamationIcon}
+            icon={TriangleAlert}
             color="amber"
           />
         </div>
@@ -258,7 +258,7 @@ export default function AdminProducts() {
         <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 flex flex-col sm:flex-row gap-1.5 sm:gap-2">
           <div className="relative flex-1 group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <SearchIcon className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
+              <Search className="h-4 w-4 text-slate-400 group-focus-within:text-orange-500 transition-colors" />
             </div>
             <input
               type="text"
@@ -307,7 +307,7 @@ export default function AdminProducts() {
                 <option value="stock_low">Stock: Low to High</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-1.5 text-slate-500">
-                <FilterIcon className="h-3 w-3" />
+                <Funnel className="h-3 w-3" />
               </div>
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function AdminProducts() {
           ) : filteredAndSorted.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-12 text-center">
               <div className="h-16 w-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-3 border border-slate-100">
-                <ArchiveIcon className="h-8 w-8 text-slate-300" />
+                <Archive className="h-8 w-8 text-slate-300" />
               </div>
               <h3 className="text-base font-bold text-slate-900">No products found</h3>
               <p className="text-slate-500 max-w-xs mt-0.5 text-xs sm:text-sm">
@@ -351,7 +351,7 @@ export default function AdminProducts() {
                           <img loading="lazy" decoding="async" src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
                         ) : (
                           <div className="h-full w-full flex items-center justify-center text-slate-300 bg-slate-50 rounded-lg">
-                            <PhotographIcon className="h-5 w-5" />
+                            <Image className="h-5 w-5" />
                           </div>
                         )}
                       </div>
@@ -392,7 +392,7 @@ export default function AdminProducts() {
                               className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 transition-all text-[11px] font-bold flex items-center gap-1"
                               title="Edit Product"
                             >
-                              <PencilAltIcon className="h-3.5 w-3.5" />
+                              <SquarePen className="h-3.5 w-3.5" />
                               <span>Edit</span>
                             </button>
                           )}
@@ -429,7 +429,7 @@ export default function AdminProducts() {
                                   <img loading="lazy" decoding="async" src={p.thumbnail} alt={p.title} className="h-full w-full object-contain mix-blend-multiply" />
                                 ) : (
                                   <div className="h-full w-full flex items-center justify-center text-slate-300 bg-slate-50 rounded-lg">
-                                    <PhotographIcon className="h-6 w-6" />
+                                    <Image className="h-6 w-6" />
                                   </div>
                                 )}
                               </div>
@@ -476,7 +476,7 @@ export default function AdminProducts() {
                               className="p-2 rounded-lg text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-all"
                               title="Edit Product"
                             >
-                              <PencilAltIcon className="h-5 w-5" />
+                              <SquarePen className="h-5 w-5" />
                             </button>
                           </td>
                           )}
@@ -499,7 +499,7 @@ export default function AdminProducts() {
                     className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 transition-all border border-transparent hover:border-slate-200"
                     aria-label="Previous page"
                   >
-                    <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
+                    <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
                   <span className="text-xs font-bold text-slate-700 px-1.5 sm:hidden">{currentPage}/{totalPages}</span>
                   <button
@@ -508,7 +508,7 @@ export default function AdminProducts() {
                     className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 transition-all border border-transparent hover:border-slate-200"
                     aria-label="Next page"
                   >
-                    <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
+                    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
                 </div>
               </div>
@@ -540,7 +540,7 @@ export default function AdminProducts() {
                 onClick={() => setShowModal(false)}
                 className="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
               >
-                <XIcon className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
@@ -644,7 +644,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           {/* General Card */}
           <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 sm:gap-2">
-              <ClipboardListIcon className="h-4 w-4 text-slate-400" />
+              <ClipboardList className="h-4 w-4 text-slate-400" />
               Basic Details
             </h3>
             <div className="space-y-3 sm:space-y-4">
@@ -676,7 +676,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           {/* Pricing Card */}
           <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 sm:gap-2">
-              <CurrencyRupeeIcon className="h-4 w-4 text-slate-400" />
+              <IndianRupee className="h-4 w-4 text-slate-400" />
               Pricing & Stock
             </h3>
             <div className="grid grid-cols-3 gap-2 sm:gap-4">
@@ -774,7 +774,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           {/* Media Card */}
           <div className="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200/70 space-y-3 sm:space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 sm:gap-2">
-              <PhotographIcon className="h-4 w-4 text-slate-400" />
+              <Image className="h-4 w-4 text-slate-400" />
               Media
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
@@ -905,7 +905,7 @@ function AdminProductForm({ initialData = null, onSubmit, onCancel, categories =
           type="submit"
           className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl bg-slate-900 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white hover:bg-black active:scale-95 transition-all"
         >
-          <SaveIcon className="h-4 w-4 text-slate-300" />
+          <Save className="h-4 w-4 text-slate-300" />
           {initialData ? "Update Product" : "Save Product"}
         </button>
       </div>

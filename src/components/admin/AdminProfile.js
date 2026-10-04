@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useOutletContext } from "react-router-dom";
-import {
-  UserCircleIcon,
-  MailIcon,
-  SaveIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  ShieldCheckIcon,
-  CalendarIcon,
-  LockClosedIcon,
-} from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { ROLE_LABELS, MODULES } from "../../constants/adminRoles";
 import InputGroup from "./ui/InputGroup";
+import {
+  Calendar,
+  CircleCheck,
+  CircleUser,
+  CircleX,
+  Lock,
+  Mail,
+  Save,
+  ShieldCheck,
+} from "lucide-react";
 
 // Every logged-in admin — regardless of role or module permissions — can
 // reach this page and edit their own account. It's intentionally not wrapped
@@ -96,7 +96,7 @@ export default function AdminProfile() {
 
         {toast && (
           <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}>
-            {toast.type === "error" ? <XCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
+            {toast.type === "error" ? <CircleX className="h-5 w-5 text-red-500" /> : <CircleCheck className="h-5 w-5 text-emerald-500" />}
             <span className="font-bold">{toast.message}</span>
           </div>
         )}
@@ -104,7 +104,7 @@ export default function AdminProfile() {
         {/* Personal details */}
         <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-8">
           <h2 className="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
-            <UserCircleIcon className="h-5 w-5 text-slate-400" />
+            <CircleUser className="h-5 w-5 text-slate-400" />
             Personal Details
           </h2>
 
@@ -138,7 +138,7 @@ export default function AdminProfile() {
                 <h3 className="text-sm sm:text-base font-bold text-slate-900 truncate">{name || "Unnamed"}</h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-medium truncate">{email}</p>
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-700 mt-1">
-                  <ShieldCheckIcon className="h-3 w-3" />
+                  <ShieldCheck className="h-3 w-3" />
                   {roleLabel}
                 </span>
               </div>
@@ -157,12 +157,12 @@ export default function AdminProfile() {
               <InputGroup
                 label="Email Address"
                 value={email}
-                icon={<MailIcon className="h-4 w-4" />}
+                icon={<Mail className="h-4 w-4" />}
                 disabled
                 readOnly
               />
               <p className="mt-1.5 flex items-center gap-1 text-[11px] text-slate-400 font-medium">
-                <LockClosedIcon className="h-3 w-3" />
+                <Lock className="h-3 w-3" />
                 Email is your login ID and can't be changed here.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function AdminProfile() {
 
           {identity?.createdAt && (
             <p className="mt-6 flex items-center gap-1.5 text-xs text-slate-400 font-medium">
-              <CalendarIcon className="h-3.5 w-3.5" />
+              <Calendar className="h-3.5 w-3.5" />
               Admin since {new Date(identity.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
             </p>
           )}
@@ -184,7 +184,7 @@ export default function AdminProfile() {
               {saving ? (
                 <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
-                <SaveIcon className="h-4 w-4" />
+                <Save className="h-4 w-4" />
               )}
               {saving ? "Saving..." : "Save Changes"}
             </button>
@@ -194,7 +194,7 @@ export default function AdminProfile() {
         {/* Access summary */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-6 sm:p-8">
           <h2 className="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
-            <ShieldCheckIcon className="h-5 w-5 text-slate-400" />
+            <ShieldCheck className="h-5 w-5 text-slate-400" />
             Your Access
           </h2>
           <p className="text-sm text-slate-500 mb-6">

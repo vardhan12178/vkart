@@ -1,14 +1,14 @@
+import {
+  CircleCheck,
+  CircleX,
+  Pencil,
+  Plus,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
-import {
-  PlusIcon,
-  PencilIcon,
-  TrashIcon,
-  RefreshIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-} from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 
@@ -147,7 +147,7 @@ export default function AdminMembership() {
 
         {toast && (
           <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}>
-            {toast.type === "error" ? <XCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
+            {toast.type === "error" ? <CircleX className="h-5 w-5 text-red-500" /> : <CircleCheck className="h-5 w-5 text-emerald-500" />}
             <span>{toast.msg}</span>
           </div>
         )}
@@ -166,14 +166,14 @@ export default function AdminMembership() {
               className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition text-slate-600"
               title="Refresh"
             >
-              <RefreshIcon className={`h-4 w-4 ${plansQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshCw className={`h-4 w-4 ${plansQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
             {canWrite && (
               <button
                 onClick={openCreate}
                 className="flex items-center gap-1 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-slate-800 transition shrink-0 whitespace-nowrap"
               >
-                <PlusIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span className="hidden sm:inline">New Plan</span>
                 <span className="sm:hidden">Plan</span>
               </button>
@@ -183,7 +183,7 @@ export default function AdminMembership() {
 
         {error && (
           <div className="bg-red-50 border border-red-100 text-red-700 px-4 py-3 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2">
-            <XCircleIcon className="h-5 w-5 shrink-0" />
+            <CircleX className="h-5 w-5 shrink-0" />
             <span>{error}</span>
           </div>
         )}
@@ -223,11 +223,11 @@ export default function AdminMembership() {
                     </div>
                     {plan.isActive ? (
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full shrink-0">
-                        <CheckCircleIcon className="h-3 w-3" /> Active
+                        <CircleCheck className="h-3 w-3" /> Active
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full shrink-0">
-                        <XCircleIcon className="h-3 w-3" /> Inactive
+                        <CircleX className="h-3 w-3" /> Inactive
                       </span>
                     )}
                   </div>
@@ -260,14 +260,14 @@ export default function AdminMembership() {
                       onClick={() => openEdit(plan)}
                       className="flex-1 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition"
                     >
-                      <PencilIcon className="h-3.5 w-3.5" />
+                      <Pencil className="h-3.5 w-3.5" />
                       <span>Edit</span>
                     </button>
                     <button
                       onClick={() => handleDelete(plan._id)}
                       className="py-1.5 px-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 text-xs font-bold transition flex items-center justify-center"
                     >
-                      <TrashIcon className="h-3.5 w-3.5" />
+                      <Trash2 className="h-3.5 w-3.5" />
                     </button>
                   </div>
                 )}
@@ -325,7 +325,7 @@ export default function AdminMembership() {
                         <input value={f} onChange={(e) => handleFeature(idx, e.target.value)} placeholder="Feature perk text" className="flex-1 px-3 py-1.5 sm:py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-hidden" />
                         {form.features.length > 1 && (
                           <button type="button" onClick={() => removeFeature(idx)} className="text-red-400 hover:text-red-600 p-1 shrink-0">
-                            <TrashIcon className="h-4 w-4" />
+                            <Trash2 className="h-4 w-4" />
                           </button>
                         )}
                       </div>

@@ -2,8 +2,17 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
-import { FaTimes, FaCartPlus, FaPlus, FaLayerGroup, FaArrowRight, FaCheckCircle, FaTimesCircle, FaTrashAlt } from "react-icons/fa";
-import { Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  CircleCheck,
+  CircleX,
+  Layers,
+  Plus,
+  ShoppingCart,
+  Sparkles,
+  Trash2,
+  X,
+} from "lucide-react";
 import axios from "./axiosInstance";
 
 /* ---------- STYLES ---------- */
@@ -164,7 +173,7 @@ const Compare = () => {
         
         <div className="relative w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-orange-900/5 p-10 text-center animate-fade-in border border-white">
           <div className="w-20 h-20 bg-linear-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/30 rotate-3 text-white text-3xl">
-            <FaLayerGroup />
+            <Layers size="1em" />
           </div>
           <h1 className="text-3xl font-black text-gray-900 mb-3 tracking-tight">Compare Products</h1>
           <p className="text-gray-500 mb-8 leading-relaxed text-sm">
@@ -175,7 +184,7 @@ const Compare = () => {
             className="group relative w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-xl hover:scale-[1.02] transition-all active:scale-[0.98]"
           >
             <span>Browse Collection</span>
-            <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={12} />
+            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={12} />
           </Link>
         </div>
       </div>
@@ -192,7 +201,7 @@ const Compare = () => {
         <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-2 sm:gap-4">
           <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
             <Link to="/products" className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg sm:rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 transition-colors shrink-0">
-               <FaArrowRight className="rotate-180 text-xs sm:text-sm" />
+               <ArrowRight size="1em" className="rotate-180 text-xs sm:text-sm" />
             </Link>
             <div>
                <h1 className="compare-header-title font-editorial font-bold text-gray-900 tracking-tight leading-none">Compare</h1>
@@ -208,7 +217,7 @@ const Compare = () => {
                   onClick={() => navigate("/products")}
                   className="flex items-center gap-1.5 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gray-900 text-white text-[11px] sm:text-xs font-bold shadow-xs hover:bg-black transition-all"
                 >
-                  <FaPlus size={10} /> <span>Add <span className="hidden sm:inline">Product</span></span>
+                  <Plus size={10} /> <span>Add <span className="hidden sm:inline">Product</span></span>
                 </button>
             )}
             <button 
@@ -217,7 +226,7 @@ const Compare = () => {
               title="Clear All"
               aria-label="Clear all compared products"
             >
-              <FaTrashAlt size={11} /> <span className="hidden sm:inline">Clear All</span>
+              <Trash2 size={11} /> <span className="hidden sm:inline">Clear All</span>
             </button>
           </div>
         </div>
@@ -329,7 +338,7 @@ const Compare = () => {
                                 className="absolute -top-1.5 -right-1.5 sm:-top-3 sm:-right-3 z-10 h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-white border border-gray-200 shadow-xs flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-200 transition-all opacity-100 lg:opacity-0 lg:group-hover:opacity-100"
                                 aria-label="Remove product from comparison"
                               >
-                                <FaTimes size={10} />
+                                <X size={10} />
                               </button>
                               
                               <div className="relative w-full shrink-0 grow-0 mb-2 sm:mb-4 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-50 transition-colors group-hover:border-gray-200" style={{ paddingBottom: "75%" }}>
@@ -351,7 +360,7 @@ const Compare = () => {
                                      onClick={() => add(item)}
                                      className="w-full py-2 sm:py-3 px-2 rounded-lg sm:rounded-xl bg-gray-900 text-white text-[10px] sm:text-xs font-bold shadow-md hover:bg-black transition-transform active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2"
                                    >
-                                     <FaCartPlus /> <span>Add to Cart</span>
+                                     <ShoppingCart size="1em" /> <span>Add to Cart</span>
                                    </button>
                                 </div>
                               </div>
@@ -369,7 +378,7 @@ const Compare = () => {
                              className="w-full aspect-3/4 rounded-xl sm:rounded-2xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center gap-2 sm:gap-3 text-gray-400 hover:border-orange-300 hover:text-orange-500 hover:bg-orange-50/50 transition-all group"
                            >
                               <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-full bg-gray-100 group-hover:bg-white flex items-center justify-center text-sm sm:text-lg transition-colors shadow-xs">
-                                 <FaPlus />
+                                 <Plus size="1em" />
                               </div>
                               <span className="text-xs sm:text-sm font-bold">Add Product</span>
                            </button>
@@ -467,11 +476,11 @@ const Compare = () => {
                            {item ? (
                              item.stock > 0 ? (
                                <div className="flex items-center gap-1 sm:gap-1.5 text-green-600 font-bold text-xs sm:text-sm">
-                                 <FaCheckCircle size={12} /> <span>In Stock</span>
+                                 <CircleCheck size={12} /> <span>In Stock</span>
                                 </div>
                              ) : (
                                <div className="flex items-center gap-1 sm:gap-1.5 text-red-500 font-bold text-xs sm:text-sm">
-                                 <FaTimesCircle size={12} /> <span>Out of Stock</span>
+                                 <CircleX size={12} /> <span>Out of Stock</span>
                                 </div>
                              )
                            ) : "—"}
@@ -558,7 +567,7 @@ const Compare = () => {
                             <td key={id} className="p-3 sm:p-6 align-middle">
                               {item && isBest ? (
                                 <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-bold rounded-full">
-                                  <FaCheckCircle size={10} /> <span>Best Pick</span>
+                                  <CircleCheck size={10} /> <span>Best Pick</span>
                                 </span>
                               ) : null}
                             </td>

@@ -1,15 +1,15 @@
 import React, { useMemo, useState } from "react";
 import {
-  FaPaperPlane,
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaClock,
-  FaUser,
-  FaCommentAlt,
-  FaCheckCircle,
-  FaExclamationCircle,
-  FaQuestionCircle
-} from "react-icons/fa";
+  CircleAlert,
+  CircleCheck,
+  CircleHelp,
+  Clock,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Send,
+  User,
+} from "lucide-react";
 
 const MAX_MESSAGE = 800;
 
@@ -96,7 +96,7 @@ export default function Contact() {
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-up">
           <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${toast.ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
             }`}>
-            {toast.ok ? <FaCheckCircle /> : <FaExclamationCircle />}
+            {toast.ok ? <CircleCheck size="1em" /> : <CircleAlert size="1em" />}
             <span className="text-sm font-semibold">{toast.text}</span>
           </div>
         </div>
@@ -130,11 +130,11 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
                   <InputField
                     label="Full Name" name="name"
-                    icon={FaUser} placeholder="John Doe"
+                    icon={User} placeholder="John Doe"
                   />
                   <InputField
                     label="Email Address" name="email" type="email"
-                    icon={FaEnvelope} placeholder="john@example.com"
+                    icon={Mail} placeholder="john@example.com"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ export default function Contact() {
                   </label>
                   <div className="relative group">
                     <div className="absolute top-4 left-4 pointer-events-none text-gray-400 group-focus-within:text-orange-500 transition-colors">
-                      <FaCommentAlt />
+                      <MessageSquare size="1em" />
                     </div>
                     <textarea
                       name="message"
@@ -193,7 +193,7 @@ export default function Contact() {
                     <span className="animate-pulse">Sending...</span>
                   ) : (
                     <>
-                      <FaPaperPlane size={14} /> Send Message
+                      <Send size={14} /> Send Message
                     </>
                   )}
                 </button>
@@ -213,7 +213,7 @@ export default function Contact() {
               <div className="space-y-6 relative z-10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-white/5 backdrop-blur-xs border border-white/10">
-                    <FaEnvelope className="text-lg text-orange-400" />
+                    <Mail size="1em" className="text-lg text-orange-400" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wider opacity-80">Email</p>
@@ -224,7 +224,7 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-white/5 backdrop-blur-xs border border-white/10">
-                    <FaClock className="text-lg text-orange-400" />
+                    <Clock size="1em" className="text-lg text-orange-400" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wider opacity-80">Hours</p>
@@ -235,7 +235,7 @@ export default function Contact() {
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-white/5 backdrop-blur-xs border border-white/10">
-                    <FaMapMarkerAlt className="text-lg text-orange-400" />
+                    <MapPin size="1em" className="text-lg text-orange-400" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wider opacity-80">Location</p>
@@ -249,7 +249,7 @@ export default function Contact() {
             {/* Mini FAQ Card */}
             <div className="bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
-                <FaQuestionCircle className="text-orange-500 text-xl" />
+                <CircleHelp size="1em" className="text-orange-500 text-xl" />
                 <h3 className="text-lg font-bold text-gray-900">Quick Answers</h3>
               </div>
               <ul className="space-y-4">

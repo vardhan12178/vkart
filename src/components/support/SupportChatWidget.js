@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
-import {
-  FaTimes,
-  FaHeadset,
-  FaBoxOpen,
-  FaUndo,
-  FaCreditCard,
-  FaQuestionCircle,
-  FaChevronRight,
-  FaChevronLeft,
-  FaPaperPlane,
-} from "react-icons/fa";
 import axios from "../axiosInstance";
 import { getSocketBaseUrl } from "../../utils/notificationHelpers";
+import {
+  ChevronLeft,
+  ChevronRight,
+  CircleHelp,
+  CreditCard,
+  Headset,
+  PackageOpen,
+  RotateCcw,
+  Send,
+  X,
+} from "lucide-react";
 
 const INTENT_TO_CATEGORY = {
   track: "ORDER_STATUS",
@@ -148,7 +148,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
         {messages.length === 0 && (
           <div className="text-center py-6 px-4">
             <div className="h-10 w-10 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
-              <FaHeadset size={16} />
+              <Headset size={16} />
             </div>
             <p className="text-xs font-bold text-slate-800">You're connected to support</p>
             <p className="text-[11px] text-slate-400 mt-0.5">Send a message and our team will assist you shortly.</p>
@@ -197,7 +197,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
           disabled={!text.trim()}
           className="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-slate-900 text-white disabled:opacity-40 hover:bg-black transition-colors "
         >
-          <FaPaperPlane size={12} />
+          <Send size={12} />
         </button>
       </div>
     </div>
@@ -216,16 +216,16 @@ const STAGE_MESSAGES = {
 };
 
 const MENU_OPTIONS = [
-  { id: "track", label: "Track my order", icon: FaBoxOpen },
-  { id: "return", label: "Return or refund", icon: FaUndo },
-  { id: "payment", label: "Payment or billing", icon: FaCreditCard },
-  { id: "other", label: "Something else", icon: FaQuestionCircle },
+  { id: "track", label: "Track my order", icon: PackageOpen },
+  { id: "return", label: "Return or refund", icon: RotateCcw },
+  { id: "payment", label: "Payment or billing", icon: CreditCard },
+  { id: "other", label: "Something else", icon: CircleHelp },
 ];
 
 function BackButton({ onClick }) {
   return (
     <button type="button" onClick={onClick} className="flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors mb-1.5">
-      <FaChevronLeft size={9} /> Back
+      <ChevronLeft size={9} /> Back
     </button>
   );
 }
@@ -295,7 +295,7 @@ export default function SupportChatWidget({ open, onClose }) {
         <div className="bg-slate-900 text-white px-4 sm:px-5 py-3.5 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2.5">
             <span className="grid h-8 w-8 place-items-center rounded-xl bg-white/10 text-white">
-              <FaHeadset size={14} />
+              <Headset size={14} />
             </span>
             <div>
               <div className="flex items-center gap-1.5">
@@ -306,7 +306,7 @@ export default function SupportChatWidget({ open, onClose }) {
             </div>
           </div>
           <button type="button" onClick={onClose} className="p-1 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors">
-            <FaTimes size={15} />
+            <X size={15} />
           </button>
         </div>
 
@@ -329,7 +329,7 @@ export default function SupportChatWidget({ open, onClose }) {
                       </span>
                       <span>{label}</span>
                     </span>
-                    <FaChevronRight size={10} className="text-slate-300 group-hover:text-slate-600 transition-colors" />
+                    <ChevronRight size={10} className="text-slate-300 group-hover:text-slate-600 transition-colors" />
                   </button>
                 ))}
               </div>

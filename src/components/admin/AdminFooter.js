@@ -1,5 +1,7 @@
 import React from "react";
-import { HeartIcon } from "@heroicons/react/solid";
+import {
+  Heart,
+} from "lucide-react";
 
 export default function AdminFooter() {
   const currentYear = new Date().getFullYear();
@@ -16,7 +18,7 @@ export default function AdminFooter() {
         {/* Dev Credit */}
         <div className="flex items-center gap-1.5 text-xs font-medium text-slate-400 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-100">
           <span>Made with</span>
-          <HeartIcon className="h-3.5 w-3.5 text-red-500 animate-pulse" />
+          <Heart fill="currentColor" className="h-3.5 w-3.5 text-red-500 animate-pulse" />
           <span>by Bala Vardhan</span>
         </div>
 

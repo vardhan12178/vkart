@@ -1,15 +1,15 @@
 import React, { useMemo } from "react";
 import {
-  FaClipboardList,
-  FaCheck,
-  FaCogs,
-  FaBox,
-  FaPlane,
-  FaTruck,
-  FaHome,
-  FaTimesCircle,
-  FaCheckCircle
-} from "react-icons/fa";
+  Box,
+  Check,
+  CircleCheck,
+  CircleX,
+  ClipboardList,
+  Cog,
+  House,
+  Plane,
+  Truck,
+} from "lucide-react";
 
 // Fixed per-step column width (px) for the horizontal timeline. Kept as a
 // single constant since the connector-line math below has to match it
@@ -49,13 +49,13 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
   }, [statusHistory, createdAt]);
 
   const stages = [
-    { key: "PLACED", label: "Order Placed", icon: FaClipboardList },
-    { key: "CONFIRMED", label: "Confirmed", icon: FaCheck },
-    { key: "PROCESSING", label: "Processing", icon: FaCogs },
-    { key: "PACKED", label: "Packed", icon: FaBox },
-    { key: "SHIPPED", label: "Shipped", icon: FaPlane },
-    { key: "OUT_FOR_DELIVERY", label: "Out for Delivery", icon: FaTruck },
-    { key: "DELIVERED", label: "Delivered", icon: FaHome },
+    { key: "PLACED", label: "Order Placed", icon: ClipboardList },
+    { key: "CONFIRMED", label: "Confirmed", icon: Check },
+    { key: "PROCESSING", label: "Processing", icon: Cog },
+    { key: "PACKED", label: "Packed", icon: Box },
+    { key: "SHIPPED", label: "Shipped", icon: Plane },
+    { key: "OUT_FOR_DELIVERY", label: "Out for Delivery", icon: Truck },
+    { key: "DELIVERED", label: "Delivered", icon: House },
   ].map(stage => ({
     ...stage,
     date: formatStageDate(stageTimestampMap[stage.key])
@@ -74,7 +74,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
       <div className="max-w-3xl mx-auto my-4">
         <div className="rounded-2xl bg-red-50 border border-red-100 p-6 text-center shadow-xs">
           <div className="w-14 h-14 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-3">
-            <FaTimesCircle size={26} />
+            <CircleX size={26} />
           </div>
           <h2 className="text-lg font-black text-red-900 mb-1">Order Cancelled</h2>
           <p className="text-sm text-gray-600">
@@ -127,7 +127,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
                       : "bg-white border-2 border-gray-100 text-gray-300"
                     }`}
                 >
-                  {isCompleted ? <FaCheckCircle size={14} /> : <step.icon size={13} />}
+                  {isCompleted ? <CircleCheck size={14} /> : <step.icon size={13} />}
                 </div>
 
                 {/* Label & Date */}

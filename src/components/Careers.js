@@ -1,15 +1,15 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  HiOutlineSearch,
-  HiOutlineLocationMarker,
-  HiOutlineBriefcase,
-  HiOutlineClock,
-  HiOutlineChevronDown,
-  HiOutlineChevronRight,
-  HiOutlineX,
-  HiOutlineCheckCircle,
-} from "react-icons/hi";
+  Briefcase,
+  ChevronDown,
+  ChevronRight,
+  CircleCheck,
+  Clock,
+  MapPin,
+  Search,
+  X,
+} from "lucide-react";
 
 const ROLES = [
   {
@@ -91,10 +91,10 @@ const Toasts = ({ stack, onClose }) => (
   <div className="pointer-events-none fixed bottom-4 right-4 z-50 flex max-w-sm flex-col gap-2">
     {stack.map((t) => (
       <div key={t.id} className="pointer-events-auto flex items-start gap-3 rounded-xl border border-emerald-200 bg-white/95 p-3 shadow-lg">
-        <HiOutlineCheckCircle className="mt-0.5 h-5 w-5 text-emerald-600" />
+        <CircleCheck size="1em" className="mt-0.5 h-5 w-5 text-emerald-600" />
         <div className="text-sm text-gray-800">{t.msg}</div>
         <button onClick={() => onClose(t.id)} className="ml-auto rounded-md p-1 text-gray-500 hover:bg-gray-100" aria-label="Close">
-          <HiOutlineX className="h-4 w-4" />
+          <X size="1em" className="h-4 w-4" />
         </button>
       </div>
     ))}
@@ -157,7 +157,7 @@ export default function Careers() {
 
         <section className="mt-6 grid gap-3 md:grid-cols-[1fr_auto_auto_auto] md:items-center">
           <div className="relative w-full">
-            <HiOutlineSearch className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Search size="1em" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
@@ -253,16 +253,16 @@ export default function Careers() {
                             <p className="mt-1 text-sm text-gray-600">{r.blurb}</p>
                           </div>
                           <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs text-gray-700 ring-1 ring-gray-200">
-                            <HiOutlineBriefcase className="h-4 w-4" /> {r.dept}
+                            <Briefcase size="1em" className="h-4 w-4" /> {r.dept}
                           </span>
                         </div>
 
                         <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-700">
                           <span className="inline-flex items-center gap-1.5">
-                            <HiOutlineLocationMarker className="h-4 w-4" /> {r.location}
+                            <MapPin size="1em" className="h-4 w-4" /> {r.location}
                           </span>
                           <span className="inline-flex items-center gap-1.5">
-                            <HiOutlineClock className="h-4 w-4" /> {r.type}
+                            <Clock size="1em" className="h-4 w-4" /> {r.type}
                           </span>
                           <span className="text-gray-500">{r.level} · Posted {formatDate(r.posted)}</span>
                         </div>
@@ -275,11 +275,11 @@ export default function Careers() {
                           >
                             {isOpen ? (
                               <>
-                                Hide details <HiOutlineChevronDown className="h-4 w-4 rotate-180" />
+                                Hide details <ChevronDown size="1em" className="h-4 w-4 rotate-180" />
                               </>
                             ) : (
                               <>
-                                View details <HiOutlineChevronRight className="h-4 w-4" />
+                                View details <ChevronRight size="1em" className="h-4 w-4" />
                               </>
                             )}
                           </button>

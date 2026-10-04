@@ -3,14 +3,11 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  CubeIcon,
-  HomeIcon,
-  LightningBoltIcon,
-} from "@heroicons/react/outline";
-import {
   BadgeCheck,
+  Box,
   Crown,
   Heart,
+  House,
   LogOut,
   Menu,
   Search,
@@ -18,6 +15,7 @@ import {
   Sparkles,
   UserRound,
   X,
+  Zap,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "./axiosInstance";
@@ -196,9 +194,9 @@ const Header = () => {
   if (authPaths.includes(location.pathname)) return null;
 
   const navLinks = [
-    { label: "Home", to: "/", icon: HomeIcon },
-    { label: "Collection", to: "/products", icon: CubeIcon },
-    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sale=true", icon: LightningBoltIcon }] : []),
+    { label: "Home", to: "/", icon: House },
+    { label: "Collection", to: "/products", icon: Box },
+    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sale=true", icon: Zap }] : []),
   ];
 
   return (

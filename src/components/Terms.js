@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaFileContract, FaShieldAlt, FaUserShield, FaCreditCard, FaExclamationTriangle, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  CreditCard,
+  ExternalLink,
+  FileText,
+  Mail,
+  Shield,
+  ShieldUser,
+  TriangleAlert,
+} from "lucide-react";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -33,12 +41,12 @@ export default function Terms() {
   }, []);
 
   const sections = [
-    { id: "overview", title: "1. Overview", icon: FaFileContract },
-    { id: "usage", title: "2. Acceptable Use", icon: FaUserShield },
-    { id: "accounts", title: "3. Accounts & Content", icon: FaShieldAlt },
-    { id: "payments", title: "4. Payments (Simulated)", icon: FaCreditCard },
-    { id: "liability", title: "5. Liability & Disclaimer", icon: FaExclamationTriangle },
-    { id: "contact", title: "6. Contact Us", icon: FaEnvelope },
+    { id: "overview", title: "1. Overview", icon: FileText },
+    { id: "usage", title: "2. Acceptable Use", icon: ShieldUser },
+    { id: "accounts", title: "3. Accounts & Content", icon: Shield },
+    { id: "payments", title: "4. Payments (Simulated)", icon: CreditCard },
+    { id: "liability", title: "5. Liability & Disclaimer", icon: TriangleAlert },
+    { id: "contact", title: "6. Contact Us", icon: Mail },
   ];
 
   return (
@@ -122,7 +130,7 @@ export default function Terms() {
                   "Using automated scripts to scrape or overload the system."
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 items-start">
-                    <FaExclamationTriangle className="text-amber-500 mt-1 shrink-0 size-4" />
+                    <TriangleAlert size="1em" className="text-amber-500 mt-1 shrink-0 size-4" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -152,7 +160,7 @@ export default function Terms() {
             </h2>
             <div className="bg-orange-50 rounded-2xl p-6 sm:p-8 border border-orange-100 leading-relaxed text-gray-800">
               <div className="flex items-start gap-4">
-                <FaCreditCard className="text-3xl text-orange-500 mt-1" />
+                <CreditCard size="1em" className="text-3xl text-orange-500 mt-1" />
                 <div>
                   <h3 className="text-lg font-bold mb-2">No Real Charges</h3>
                   <p className="text-sm opacity-90">
@@ -194,7 +202,7 @@ export default function Terms() {
                   to="/contact" 
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition-colors"
                 >
-                  <FaEnvelope /> Contact Support
+                  <Mail size="1em" /> Contact Support
                 </Link>
                 <a 
                   href="https://github.com/vardhan12178/vkart" 
@@ -202,7 +210,7 @@ export default function Terms() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-xl font-bold border border-white/10 hover:bg-white/20 transition-colors"
                 >
-                  View Code <FaExternalLinkAlt size={12} />
+                  View Code <ExternalLink size={12} />
                 </a>
               </div>
             </div>

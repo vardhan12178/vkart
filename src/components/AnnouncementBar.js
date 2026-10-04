@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { XIcon } from "@heroicons/react/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import axios from "./axiosInstance";
+import {
+  X,
+} from "lucide-react";
 
 const FALLBACK = [
     { text: "Complimentary delivery on orders over ₹499", link: "/products" },
@@ -94,7 +96,7 @@ const AnnouncementBar = () => {
                         className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-[#776f64] transition-colors hover:bg-black/6 hover:text-[#1d1c19]"
                         aria-label="Close announcement"
                     >
-                        <XIcon className="h-4 w-4" />
+                        <X className="h-4 w-4" />
                     </button>
                 </div>
             </motion.div>

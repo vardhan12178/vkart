@@ -1,11 +1,17 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { BellIcon, ShoppingBagIcon, TruckIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import axiosInstance from "./axiosInstance";
 import { setNotifications, markAsRead } from "../redux/notificationSlice";
 import { normalizeNotification, normalizeNotificationTitle } from "../utils/notificationHelpers";
+import {
+  Bell,
+  CircleCheck,
+  CircleX,
+  ShoppingBag,
+  Truck,
+} from "lucide-react";
 
 const NotificationBell = () => {
     const dispatch = useDispatch();
@@ -118,24 +124,24 @@ const NotificationBell = () => {
         const titleUpper = (title || "").toUpperCase();
 
         if (textStart === "CONFIRMED" || titleUpper.includes("CONFIRMED"))
-            return <CheckCircleIcon className="h-5 w-5 text-[#59634f]" />;
+            return <CircleCheck className="h-5 w-5 text-[#59634f]" />;
 
         if (textStart === "SHIPPED" || titleUpper.includes("SHIPPED"))
-            return <TruckIcon className="h-5 w-5 text-[#776c5b]" />;
+            return <Truck className="h-5 w-5 text-[#776c5b]" />;
 
         if (textStart === "OUT_FOR_DELIVERY" || titleUpper.includes("OUT FOR DELIVERY"))
-            return <TruckIcon className="h-5 w-5 text-[#a85d37]" />;
+            return <Truck className="h-5 w-5 text-[#a85d37]" />;
 
         if (textStart === "DELIVERED" || titleUpper.includes("DELIVERED"))
-            return <CheckCircleIcon className="h-5 w-5 text-[#59634f]" />;
+            return <CircleCheck className="h-5 w-5 text-[#59634f]" />;
 
         if (textStart === "CANCELLED" || titleUpper.includes("CANCELLED"))
-            return <XCircleIcon className="h-5 w-5 text-[#75483b]" />;
+            return <CircleX className="h-5 w-5 text-[#75483b]" />;
 
         if (type === "order" || titleUpper.includes("ORDER"))
-            return <ShoppingBagIcon className="h-5 w-5 text-[#a85d37]" />;
+            return <ShoppingBag className="h-5 w-5 text-[#a85d37]" />;
 
-        return <BellIcon className="h-5 w-5 text-[#8b867d]" />;
+        return <Bell className="h-5 w-5 text-[#8b867d]" />;
     };
 
     const getTimeAgo = (dateString) => {
@@ -170,7 +176,7 @@ const NotificationBell = () => {
         `}
                 aria-label="Notifications"
             >
-                <BellIcon className="h-[1.35rem] w-[1.35rem] stroke-[1.6]" />
+                <Bell className="h-[1.35rem] w-[1.35rem] stroke-[1.6]" />
 
                 {/* Unread Badge */}
                 <AnimatePresence>
@@ -262,7 +268,7 @@ const NotificationBell = () => {
                                 ))
                             ) : (
                                 <div className="py-10 sm:py-12 text-center text-[#7b766d]">
-                                    <BellIcon className="mx-auto mb-2 sm:mb-3 h-8 w-8 sm:h-10 sm:w-10 text-[#bbb4aa]" />
+                                    <Bell className="mx-auto mb-2 sm:mb-3 h-8 w-8 sm:h-10 sm:w-10 text-[#bbb4aa]" />
                                     <p className="text-xs sm:text-sm font-medium">No notifications yet</p>
                                     <p className="mt-1 text-[11px] sm:text-xs text-[#969086]">We'll let you know when something arrives</p>
                                 </div>

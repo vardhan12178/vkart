@@ -6,16 +6,16 @@ import { GoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  EyeIcon,
-  EyeOffIcon,
-  LockClosedIcon,
-  UserIcon,
-  MailIcon,
-  IdentificationIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
+  CircleAlert,
+  CircleCheck,
+  Eye,
+  EyeOff,
+  IdCard,
+  Lock,
+  Mail,
+  ShoppingCart,
+  User,
+} from "lucide-react";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
@@ -51,7 +51,7 @@ const FieldError = ({ id, message }) =>
       id={id}
       className="mt-1 flex items-center gap-1 text-[10px] font-medium text-red-500"
     >
-      <ExclamationCircleIcon className="h-3 w-3 shrink-0" /> {message}
+      <CircleAlert className="h-3 w-3 shrink-0" /> {message}
     </motion.p>
   );
 
@@ -73,9 +73,9 @@ const Toast = ({ show, kind = "error", children }) => {
       role="status"
     >
       {isSuccess ? (
-        <CheckCircleIcon className="h-4 w-4 shrink-0 text-emerald-600" />
+        <CircleCheck className="h-4 w-4 shrink-0 text-emerald-600" />
       ) : (
-        <ExclamationCircleIcon className="h-4 w-4 shrink-0 text-red-600" />
+        <CircleAlert className="h-4 w-4 shrink-0 text-red-600" />
       )}
       <div className="pt-0.5 font-medium">{children}</div>
     </motion.div>
@@ -116,7 +116,7 @@ const PasswordStrengthIndicator = ({ password }) => {
                 : "text-gray-400 border-gray-100 bg-gray-50"
             )}
           >
-            {check.test && <CheckCircleIcon className="h-2.5 w-2.5" />}
+            {check.test && <CircleCheck className="h-2.5 w-2.5" />}
             {check.label}
           </div>
         ))}
@@ -332,7 +332,7 @@ export default function Register() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
-                  <ShoppingCartIcon className="h-6 w-6" />
+                  <ShoppingCart className="h-6 w-6" />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart.</span>
               </div>
@@ -373,7 +373,7 @@ export default function Register() {
                 {/* Mobile Logo */}
                 <div className="lg:hidden flex justify-center mb-6">
                   <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
-                    <ShoppingCartIcon className="h-6 w-6" />
+                    <ShoppingCart className="h-6 w-6" />
                   </div>
                 </div>
 
@@ -428,7 +428,7 @@ export default function Register() {
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Full Name</label>
                       <div className="relative group">
                         <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                          <UserIcon className={cx("h-4 w-4 transition-colors", errors.name && touched.name ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                          <User className={cx("h-4 w-4 transition-colors", errors.name && touched.name ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type="text"
@@ -455,7 +455,7 @@ export default function Register() {
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Username</label>
                       <div className="relative group">
                         <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                          <IdentificationIcon className={cx("h-4 w-4 transition-colors", errors.username && touched.username ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                          <IdCard className={cx("h-4 w-4 transition-colors", errors.username && touched.username ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type="text"
@@ -482,7 +482,7 @@ export default function Register() {
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Email</label>
                       <div className="relative group">
                         <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                          <MailIcon className={cx("h-4 w-4 transition-colors", errors.email && touched.email ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                          <Mail className={cx("h-4 w-4 transition-colors", errors.email && touched.email ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type="email"
@@ -509,7 +509,7 @@ export default function Register() {
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Password</label>
                       <div className="relative group">
                         <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                          <LockClosedIcon className={cx("h-4 w-4 transition-colors", errors.password && touched.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                          <Lock className={cx("h-4 w-4 transition-colors", errors.password && touched.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type={showPw ? "text" : "password"}
@@ -533,7 +533,7 @@ export default function Register() {
                           className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-hidden min-w-[44px] min-h-[44px]"
                           aria-label={showPw ? "Hide password" : "Show password"}
                         >
-                          {showPw ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
+                          {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                         </button>
                       </div>
                       <PasswordStrengthIndicator password={form.password} />
@@ -545,7 +545,7 @@ export default function Register() {
                       <label className="block text-xs font-bold text-gray-700 mb-1 ml-1">Confirm Password</label>
                       <div className="relative group">
                         <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                          <LockClosedIcon className={cx("h-4 w-4 transition-colors", errors.confirmPassword && touched.confirmPassword ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                          <Lock className={cx("h-4 w-4 transition-colors", errors.confirmPassword && touched.confirmPassword ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                         </div>
                         <input
                           type={showPw2 ? "text" : "password"}
@@ -569,7 +569,7 @@ export default function Register() {
                           className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-hidden min-w-[44px] min-h-[44px]"
                           aria-label={showPw2 ? "Hide password" : "Show password"}
                         >
-                          {showPw2 ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
+                          {showPw2 ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                         </button>
                       </div>
                       {touched.confirmPassword && <FieldError id="confirm-error" message={errors.confirmPassword} />}

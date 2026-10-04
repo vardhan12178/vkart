@@ -5,14 +5,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  LockClosedIcon,
-  EyeIcon,
-  EyeOffIcon,
-  ShoppingCartIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/outline";
+  ArrowLeft,
+  CircleAlert,
+  CircleCheck,
+  Eye,
+  EyeOff,
+  Lock,
+  ShoppingCart,
+} from "lucide-react";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
@@ -34,7 +34,7 @@ const FieldError = ({ id, message }) =>
       id={id}
       className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-red-500"
     >
-      <ExclamationCircleIcon className="h-4 w-4 shrink-0" /> {message}
+      <CircleAlert className="h-4 w-4 shrink-0" /> {message}
     </motion.p>
   );
 
@@ -56,9 +56,9 @@ const Toast = ({ show, kind = "error", children }) => {
       role="status"
     >
       {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
+        <CircleCheck className="h-5 w-5 shrink-0 text-emerald-600" />
       ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
+        <CircleAlert className="h-5 w-5 shrink-0 text-red-600" />
       )}
       <div className="pt-0.5 font-medium">{children}</div>
     </motion.div>
@@ -99,7 +99,7 @@ const PasswordStrengthIndicator = ({ password }) => {
                 : "text-gray-400 border-gray-100 bg-gray-50"
             )}
           >
-            {check.test && <CheckCircleIcon className="h-3 w-3" />}
+            {check.test && <CircleCheck className="h-3 w-3" />}
             {check.label}
           </div>
         ))}
@@ -180,7 +180,7 @@ export default function ResetPassword() {
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
                 <div className="h-12 w-12 bg-linear-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
-                  <ShoppingCartIcon className="h-7 w-7" />
+                  <ShoppingCart className="h-7 w-7" />
                 </div>
               </div>
               <motion.h1
@@ -221,7 +221,7 @@ export default function ResetPassword() {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <LockClosedIcon className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                    <Lock className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     type={showPwd ? "text" : "password"}
@@ -240,7 +240,7 @@ export default function ResetPassword() {
                     onClick={() => setShowPwd(!showPwd)}
                     className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-hidden"
                   >
-                    {showPwd ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                    {showPwd ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
                 </div>
                 <PasswordStrengthIndicator password={password} />
@@ -254,7 +254,7 @@ export default function ResetPassword() {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <LockClosedIcon className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                    <Lock className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     type={showConfirm ? "text" : "password"}
@@ -273,7 +273,7 @@ export default function ResetPassword() {
                     onClick={() => setShowConfirm(!showConfirm)}
                     className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-hidden"
                   >
-                    {showConfirm ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                    {showConfirm ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
                 </div>
                 <FieldError id="confirm-error" message={errors.confirm} />
@@ -301,7 +301,7 @@ export default function ResetPassword() {
                 onClick={() => navigate("/login")}
                 className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-gray-900 transition-colors"
               >
-                <ArrowLeftIcon className="h-4 w-4" />
+                <ArrowLeft className="h-4 w-4" />
                 Back to Sign In
               </button>
             </motion.div>

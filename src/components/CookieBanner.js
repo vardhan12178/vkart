@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaCookieBite } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import {
+  Cookie,
+  X,
+} from "lucide-react";
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,12 +53,12 @@ export default function CookieBanner() {
           className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-[#8a857b] transition-colors hover:bg-black/5 hover:text-[#1d1c19] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#a85d37]/30"
           aria-label="Close cookie preferences and use essential cookies only"
         >
-          <IoClose size={19} />
+          <X size={19} />
         </button>
 
         <div className="flex items-start gap-3.5 pr-8">
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#a85d37]/10 text-[#a85d37]">
-            <FaCookieBite size={17} />
+            <Cookie size={17} />
           </div>
           <div className="min-w-0">
             <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">

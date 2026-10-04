@@ -1,3 +1,16 @@
+import {
+  Bell,
+  ChevronDown,
+  CircleAlert,
+  LogOut,
+  Menu,
+  Search,
+  Settings,
+  ShoppingBag,
+  User,
+  UserPlus,
+  X,
+} from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -5,19 +18,6 @@ import { io } from "socket.io-client";
 import { showToast } from "../../utils/toast";
 import axiosInstance from "../axiosInstance";
 import { getSocketBaseUrl, normalizeNotification, normalizeNotificationTitle } from "../../utils/notificationHelpers";
-import {
-  MenuIcon,
-  SearchIcon,
-  BellIcon,
-  ChevronDownIcon,
-  LogoutIcon,
-  CogIcon,
-  UserIcon,
-  ShoppingBagIcon,
-  XIcon,
-  ExclamationCircleIcon,
-  UserAddIcon,
-} from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import { canAccess } from "../../utils/adminPermissions";
 import { ROLE_LABELS } from "../../constants/adminRoles";
@@ -193,15 +193,15 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
   const getNotificationIcon = (type, title = "") => {
     const titleUpper = (title || "").toUpperCase();
 
-    if (titleUpper.includes("ORDER") || type === "order") return <ShoppingBagIcon className="h-5 w-5 text-[#59634f]" />;
-    if (titleUpper.includes("ALERT") || type === "alert") return <ExclamationCircleIcon className="h-5 w-5 text-[#75483b]" />;
-    if (titleUpper.includes("USER") || type === "user") return <UserAddIcon className="h-5 w-5 text-[#b56a3f]" />;
+    if (titleUpper.includes("ORDER") || type === "order") return <ShoppingBag className="h-5 w-5 text-[#59634f]" />;
+    if (titleUpper.includes("ALERT") || type === "alert") return <CircleAlert className="h-5 w-5 text-[#75483b]" />;
+    if (titleUpper.includes("USER") || type === "user") return <UserPlus className="h-5 w-5 text-[#b56a3f]" />;
 
     // More specific checks
-    if (titleUpper.includes("STOCK")) return <ExclamationCircleIcon className="h-5 w-5 text-[#b56a3f]" />;
-    if (titleUpper.includes("PAYMENT")) return <ShoppingBagIcon className="h-5 w-5 text-[#776c5b]" />;
+    if (titleUpper.includes("STOCK")) return <CircleAlert className="h-5 w-5 text-[#b56a3f]" />;
+    if (titleUpper.includes("PAYMENT")) return <ShoppingBag className="h-5 w-5 text-[#776c5b]" />;
 
-    return <BellIcon className="h-5 w-5 text-slate-400" />;
+    return <Bell className="h-5 w-5 text-slate-400" />;
   };
 
   // Helper to get friendly time (simple implementation or use library)
@@ -243,12 +243,12 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
               className="lg:hidden p-1.5 -ml-1 rounded-xl text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors min-w-[38px] min-h-[38px] flex items-center justify-center"
               aria-label="Open menu"
             >
-              <MenuIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <Link to="/admin/dashboard" className="flex items-center gap-2 lg:hidden">
               <div className="grid h-7 w-7 sm:h-9 sm:w-9 place-items-center rounded-full bg-[#1d1c19] text-white">
-                <ShoppingBagIcon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+                <ShoppingBag className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
               </div>
               <span className="text-sm font-extrabold tracking-[-0.04em] text-[#1d1c19] sm:text-lg">VKart Ops</span>
             </Link>
@@ -268,7 +268,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
               className="lg:hidden p-1.5 sm:p-2.5 rounded-full text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all min-w-[38px] min-h-[38px] flex items-center justify-center"
               aria-label="Open search"
             >
-              <SearchIcon className="w-5 h-5" />
+              <Search className="w-5 h-5" />
             </button>
 
             {/* Notification Bell */}
@@ -284,7 +284,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                 `}
                 aria-label="Notifications"
               >
-                <BellIcon className={`w-5 h-5 ${notificationsOpen ? "fill-current" : ""}`} />
+                <Bell className={`w-5 h-5 ${notificationsOpen ? "fill-current" : ""}`} />
                 {unreadCount > 0 && (
                   <span className="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-3 flex h-2 w-2">
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#a85d37] ring-2 ring-[#fffdf8]"></span>
@@ -347,7 +347,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                       ))
                     ) : (
                       <div className="py-8 text-center text-slate-500">
-                        <BellIcon className="h-7 w-7 mx-auto text-slate-300 mb-2" />
+                        <Bell className="h-7 w-7 mx-auto text-slate-300 mb-2" />
                         <p className="text-xs font-medium">No notifications yet</p>
                       </div>
                     )}
@@ -385,7 +385,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                   <span className="text-[10px] font-medium text-slate-500 mt-0.5">{roleLabel}</span>
                 </div>
 
-                <ChevronDownIcon
+                <ChevronDown
                   className={`w-4 h-4 text-slate-400 transition-transform duration-200 hidden md:block ${profileOpen ? "rotate-180" : ""}`}
                 />
               </button>
@@ -404,7 +404,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-xl transition-colors"
                       onClick={() => setProfileOpen(false)}
                     >
-                      <UserIcon className="w-5 h-5 text-slate-400" />
+                      <User className="w-5 h-5 text-slate-400" />
                       My Profile
                     </Link>
                     {canReachSettings && (
@@ -413,7 +413,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                         className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-xl transition-colors"
                         onClick={() => setProfileOpen(false)}
                       >
-                        <CogIcon className="w-5 h-5 text-slate-400" />
+                        <Settings className="w-5 h-5 text-slate-400" />
                         Settings
                       </Link>
                     )}
@@ -425,7 +425,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                       className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold text-[#75483b] transition-colors hover:bg-[#eee2dc]"
                       aria-label="Sign out of admin"
                     >
-                      <LogoutIcon className="w-5 h-5" />
+                      <LogOut className="w-5 h-5" />
                       Sign Out
                     </button>
                   </div>
@@ -459,7 +459,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                 className="p-2.5 rounded-xl text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Close search"
               >
-                <XIcon className="w-5 h-5" />
+                <X className="w-5 h-5" />
               </button>
             </div>
           </div>

@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaChevronDown, FaCheck } from "react-icons/fa";
+import {
+  Check,
+  ChevronDown,
+} from "lucide-react";
 
 const CustomDropdown = ({ options, value, onChange, label }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +55,7 @@ const CustomDropdown = ({ options, value, onChange, label }) => {
         <span className="truncate">{selectedLabel}</span>
         
         {/* Arrow Icon with Rotation Animation */}
-        <FaChevronDown 
+        <ChevronDown size="1em" 
           className={`ml-2 h-3 w-3 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} 
         />
       </button>
@@ -84,7 +87,7 @@ const CustomDropdown = ({ options, value, onChange, label }) => {
                   
                   {/* Checkmark for active item */}
                   {active && (
-                    <FaCheck className="text-orange-500" size={10} />
+                    <Check className="text-orange-500" size={10} />
                   )}
                 </button>
               );

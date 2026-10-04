@@ -5,7 +5,13 @@ import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import { getSocketBaseUrl } from "../../utils/notificationHelpers";
-import { FaPaperPlane, FaCheck, FaUndo, FaTimes, FaChevronLeft } from "react-icons/fa";
+import {
+  Check,
+  ChevronLeft,
+  RotateCcw,
+  Send,
+  X,
+} from "lucide-react";
 
 const TABS = [
   { id: "unassigned", label: "Unassigned", mobileLabel: "New", filter: { status: "AWAITING_AGENT" } },
@@ -240,7 +246,7 @@ export default function AdminSupport() {
             {!selectedId && (
               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-slate-400">
                 <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-2 text-slate-300">
-                  <FaPaperPlane size={18} />
+                  <Send size={18} />
                 </div>
                 <p className="text-sm font-bold text-slate-700">No conversation selected</p>
                 <p className="text-xs text-slate-400 mt-0.5">Select a customer thread from the queue to start responding.</p>
@@ -258,7 +264,7 @@ export default function AdminSupport() {
                       className="lg:hidden h-8 w-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center shrink-0 transition"
                       title="Back to conversations"
                     >
-                      <FaChevronLeft size={11} className="-ml-0.5" />
+                      <ChevronLeft size={11} className="-ml-0.5" />
                     </button>
                     
                     <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-linear-to-br from-slate-800 to-slate-900 text-white font-bold flex items-center justify-center text-xs shrink-0 ">
@@ -296,7 +302,7 @@ export default function AdminSupport() {
                           onClick={() => actionMutation.mutate("resolve")}
                           className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-600 text-white text-[11px] font-bold hover:bg-emerald-700 transition "
                         >
-                          <FaCheck size={9} />
+                          <Check size={9} />
                           <span>Resolve</span>
                         </button>
                       )}
@@ -305,7 +311,7 @@ export default function AdminSupport() {
                           onClick={() => actionMutation.mutate("reopen")}
                           className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 text-slate-700 text-[11px] font-bold hover:bg-slate-50 transition "
                         >
-                          <FaUndo size={9} />
+                          <RotateCcw size={9} />
                           <span>Reopen</span>
                         </button>
                       )}
@@ -315,7 +321,7 @@ export default function AdminSupport() {
                           className="p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition"
                           title="Close conversation"
                         >
-                          <FaTimes size={12} />
+                          <X size={12} />
                         </button>
                       )}
                     </div>
@@ -395,7 +401,7 @@ export default function AdminSupport() {
                         disabled={!replyText.trim()}
                         className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center disabled:opacity-30 hover:bg-black transition-all shrink-0 "
                       >
-                        <FaPaperPlane size={11} className="-ml-0.5" />
+                        <Send size={11} className="-ml-0.5" />
                       </button>
                     </div>
                   </div>

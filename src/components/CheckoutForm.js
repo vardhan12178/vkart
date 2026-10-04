@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
-import { FaCheckCircle, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaCity, FaGlobe, FaMailBulk, FaShieldAlt, FaLock, FaArrowRight, FaCreditCard, FaUniversity, FaClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -7,6 +6,22 @@ import axios from "./axiosInstance";
 import CheckoutPreview from "./CheckoutPreview";
 import { buildVerifiedPaymentMeta, extractVerificationToken } from "../utils/checkoutPayment";
 import { qk } from "../query/queryKeys";
+import {
+  ArrowRight,
+  Building2,
+  CircleCheck,
+  Clock,
+  CreditCard,
+  Globe,
+  Landmark,
+  Lock,
+  Mail,
+  Mails,
+  MapPin,
+  Phone,
+  Shield,
+  User,
+} from "lucide-react";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -372,7 +387,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
           <button onClick={() => setShowReview(false)} className="absolute right-3 top-3 sm:right-4 sm:top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#eee8df] text-sm font-bold text-[#777168] transition-colors hover:bg-[#e4ddd3] hover:text-[#1d1c19]">&times;</button>
 
           <h2 className="mb-4 sm:mb-6 flex items-center gap-2.5 font-editorial text-xl sm:text-3xl sm:leading-9 font-bold leading-none tracking-tight text-[#1d1c19]">
-            <FaCheckCircle className="text-[#a85d37]" size={20} /> Review Your Order
+            <CircleCheck className="text-[#a85d37]" size={20} /> Review Your Order
           </h2>
 
           {/* Cart Items */}
@@ -394,7 +409,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
           {/* Shipping Address */}
           <div className="mb-4 sm:mb-6 rounded-xl border border-[#a85d37]/15 bg-[#f4eee7] p-3 sm:p-4">
-            <h3 className="mb-1.5 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#777168]"><FaMapMarkerAlt className="text-[#a85d37]" /> Shipping To</h3>
+            <h3 className="mb-1.5 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#777168]"><MapPin size="1em" className="text-[#a85d37]" /> Shipping To</h3>
             <p className="text-xs sm:text-sm font-bold text-gray-800">{data.fullName}</p>
             <p className="text-[11px] sm:text-xs text-gray-600 mt-0.5">{data.address1}{data.address2 ? `, ${data.address2}` : ""}</p>
             <p className="text-[11px] sm:text-xs text-gray-600">{data.city}, {data.state} — {data.pincode}</p>
@@ -413,7 +428,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
           <div className="flex gap-2 sm:gap-3">
             <button type="button" onClick={() => setShowReview(false)} className="flex-1 rounded-full border border-black/10 bg-transparent py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#5f5a52] transition-colors hover:bg-[#eee8df] hover:text-[#1d1c19]">Edit Details</button>
             <button type="button" onClick={proceedToPayment} disabled={busy} className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.16)] transition-all hover:-translate-y-0.5 hover:bg-[#34312c] disabled:translate-y-0 disabled:opacity-50">
-              {busy ? <><div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" /> Processing...</> : <>Confirm & Pay <FaArrowRight size={11} /></>}
+              {busy ? <><div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" /> Processing...</> : <>Confirm & Pay <ArrowRight size={11} /></>}
             </button>
           </div>
         </div>
@@ -430,7 +445,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
         {/* Test Mode Banner */}
         <div className="mb-4 sm:mb-6 rounded-xl bg-blue-50/80 border border-blue-100 px-3 py-2 sm:p-3 flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-blue-600 backdrop-blur-xs">
-          <FaShieldAlt size={13} /> <span>TEST MODE — No real money will be charged.</span>
+          <Shield size={13} /> <span>TEST MODE — No real money will be charged.</span>
         </div>
 
         <form onSubmit={onSubmit} noValidate className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
@@ -441,7 +456,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
               <div className="flex items-center gap-3 mb-4 sm:mb-6 border-b border-black/6 pb-3.5 sm:pb-5">
                 <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-orange-50 flex items-center justify-center text-orange-600 shadow-inner shrink-0">
-                  <FaLock size={15} />
+                  <Lock size={15} />
                 </div>
                 <div>
                   <h2 className="font-editorial text-lg sm:text-2xl sm:leading-8 font-bold text-[#1d1c19] leading-tight">Secure checkout.</h2>
@@ -575,20 +590,20 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
                   <InputField
                     label="Full Name" name="fullName"
-                    icon={FaUser} placeholder="Enter your name"
+                    icon={User} placeholder="Enter your name"
                     value={data.fullName} onChange={(e) => setField("fullName", e.target.value)} onBlur={() => markTouched("fullName")}
                     error={errors.fullName} touched={touched.fullName}
                   />
                   <InputField
                     label="Mobile Number" name="phone" inputMode="numeric"
-                    icon={FaPhone} placeholder="9876543210"
+                    icon={Phone} placeholder="9876543210"
                     value={data.phone} onChange={(e) => setField("phone", e.target.value)} onBlur={() => markTouched("phone")}
                     error={errors.phone} touched={touched.phone}
                   />
                   <div className="md:col-span-2">
                     <InputField
                       label="Email Address" name="email" type="email"
-                      icon={FaEnvelope} placeholder="your.email@example.com"
+                      icon={Mail} placeholder="your.email@example.com"
                       value={data.email} onChange={(e) => setField("email", e.target.value)} onBlur={() => markTouched("email")}
                       error={errors.email} touched={touched.email}
                     />
@@ -604,27 +619,27 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
                 <InputField
                   label="Address Line 1" name="address1"
-                  icon={FaMapMarkerAlt} placeholder="House No, Street, Area"
+                  icon={MapPin} placeholder="House No, Street, Area"
                   value={data.address1} onChange={(e) => setField("address1", e.target.value)} onBlur={() => markTouched("address1")}
                   error={errors.address1} touched={touched.address1}
                 />
 
                 <InputField
                   label="Address Line 2 (Optional)" name="address2"
-                  icon={FaMapMarkerAlt} placeholder="Landmark (Optional)"
+                  icon={MapPin} placeholder="Landmark (Optional)"
                   value={data.address2} onChange={(e) => setField("address2", e.target.value)}
                 />
 
                 <div className="grid grid-cols-2 gap-x-4">
                   <InputField
                     label="City" name="city"
-                    icon={FaCity} placeholder="City"
+                    icon={Building2} placeholder="City"
                     value={data.city} onChange={(e) => setField("city", e.target.value)} onBlur={() => markTouched("city")}
                     error={errors.city} touched={touched.city}
                   />
                   <InputField
                     label="State" name="state"
-                    icon={FaGlobe} placeholder="State"
+                    icon={Globe} placeholder="State"
                     value={data.state} onChange={(e) => setField("state", e.target.value)} onBlur={() => markTouched("state")}
                     error={errors.state} touched={touched.state}
                   />
@@ -632,7 +647,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                 <div className="w-1/2 pr-2">
                   <InputField
                     label="Pincode" name="pincode" inputMode="numeric"
-                    icon={FaMailBulk} placeholder="500001"
+                    icon={Mails} placeholder="500001"
                     value={data.pincode} onChange={(e) => setField("pincode", e.target.value)} onBlur={() => markTouched("pincode")}
                     error={errors.pincode} touched={touched.pincode}
                   />
@@ -687,9 +702,9 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                   <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Pay with</p>
                   <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                     {[
-                      { id: "card", icon: FaCreditCard, label: "Card", caption: "Credit / Debit" },
-                      { id: "netbanking", icon: FaUniversity, label: "Netbanking", caption: "All banks" },
-                      { id: "paylater", icon: FaClock, label: "Pay Later", caption: "BNPL" },
+                      { id: "card", icon: CreditCard, label: "Card", caption: "Credit / Debit" },
+                      { id: "netbanking", icon: Landmark, label: "Netbanking", caption: "All banks" },
+                      { id: "paylater", icon: Clock, label: "Pay Later", caption: "BNPL" },
                     ].map(({ id, icon: Icon, label, caption }) => (
                       <button
                         key={id}
@@ -727,7 +742,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                 {showTestCard && paymentMethod === "netbanking" && (
                   <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up">
                     <div className="p-1.5 bg-white/10 rounded-md shrink-0">
-                      <FaUniversity className="h-4 w-4 text-orange-500" />
+                      <Landmark size="1em" className="h-4 w-4 text-orange-500" />
                     </div>
                     <div className="text-[11px] text-gray-300">
                       <p className="text-white font-bold text-xs mb-0.5">Test bank</p>
@@ -740,7 +755,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                 {showTestCard && paymentMethod === "paylater" && (
                   <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up">
                     <div className="p-1.5 bg-white/10 rounded-md shrink-0">
-                      <FaClock className="h-4 w-4 text-orange-500" />
+                      <Clock size="1em" className="h-4 w-4 text-orange-500" />
                     </div>
                     <div className="text-[11px] text-gray-300">
                       <p className="text-white font-bold text-xs mb-0.5">Test PayLater provider</p>
@@ -753,7 +768,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                 {showTestCard && paymentMethod === "card" && (
                   <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up">
                     <div className="p-1.5 bg-white/10 rounded-md shrink-0">
-                      <FaCreditCard className="h-4 w-4 text-orange-500" />
+                      <CreditCard size="1em" className="h-4 w-4 text-orange-500" />
                     </div>
                     <div className="text-[11px] text-gray-300">
                       <p className="text-white font-bold text-xs mb-0.5">RuPay Test Card</p>
@@ -783,7 +798,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                     Processing...
                   </>
                 ) : (
-                  <>Pay Now <FaArrowRight size={12} /></>
+                  <>Pay Now <ArrowRight size={12} /></>
                 )}
               </button>
 
@@ -795,7 +810,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
 
               <div className="mt-3.5 pt-3 border-t border-white/10 text-center">
                 <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-gray-400 font-medium">
-                  <FaCheckCircle className="text-green-500" size={11} />
+                  <CircleCheck className="text-green-500" size={11} />
                   <span>Razorpay Secured (256-bit SSL)</span>
                 </div>
               </div>
@@ -815,7 +830,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount, getCheckoutDr
                 disabled={busy || !rzpReady}
                 className="px-6 h-10 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5 disabled:opacity-50 hover:bg-black"
               >
-                {busy ? "Processing..." : "Pay Now"} <FaArrowRight size={11} />
+                {busy ? "Processing..." : "Pay Now"} <ArrowRight size={11} />
               </button>
             </div>
           </div>

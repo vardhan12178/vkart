@@ -1,18 +1,18 @@
 import React, { useState, useMemo, useEffect } from "react";
 import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
-import {
-  FaBox,
-  FaChevronDown,
-  FaMapMarkerAlt,
-  FaReceipt,
-  FaShoppingBag,
-  FaFileDownload,
-  FaTimes,
-  FaUndoAlt,
-  FaCheckCircle,
-} from "react-icons/fa";
 import { IMAGE_PLACEHOLDER } from "../utils/imagePlaceholder";
+import {
+  Box,
+  ChevronDown,
+  CircleCheck,
+  FileDown,
+  MapPin,
+  Receipt,
+  ShoppingBag,
+  Undo2,
+  X,
+} from "lucide-react";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -179,7 +179,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
               <div>
                 <p className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Items</p>
                 <p className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-1">
-                  <FaShoppingBag size={10} className="text-orange-500" />
+                  <ShoppingBag size={10} className="text-orange-500" />
                   <span>{order.products?.length || 0}</span>
                 </p>
               </div>
@@ -191,7 +191,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
               }`}
               title={open ? "Collapse" : "Expand"}
             >
-              <FaChevronDown size={10} />
+              <ChevronDown size={10} />
             </button>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
             <div className="space-y-3 sm:space-y-4">
               <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 ">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  <FaMapMarkerAlt className="text-orange-500" />
+                  <MapPin size="1em" className="text-orange-500" />
                   <span>Delivery Address</span>
                 </div>
                 <p className="text-xs font-medium text-slate-700 leading-relaxed whitespace-pre-line">
@@ -215,7 +215,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
               <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 ">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  <FaReceipt className="text-emerald-500" />
+                  <Receipt size="1em" className="text-emerald-500" />
                   <span>Payment Summary</span>
                 </div>
                 <div className="space-y-1 text-xs">
@@ -226,7 +226,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                   <div className="flex justify-between">
                     <span className="text-slate-500">Payment Status</span>
                     <span className="font-bold text-emerald-600 inline-flex items-center gap-1">
-                      <FaCheckCircle size={10} /> Paid
+                      <CircleCheck size={10} /> Paid
                     </span>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
           {/* Timeline Section */}
           <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-gray-100 ">
             <h4 className="text-xs font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-1.5">
-              <FaBox className="text-orange-500" />
+              <Box size="1em" className="text-orange-500" />
               <span>Order Tracking Timeline</span>
             </h4>
             <OrderStages
@@ -286,7 +286,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
               onClick={() => window.open(`${apiBase}/api/orders/${order._id}/invoice`, "_blank")}
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 transition "
             >
-              <FaFileDownload size={11} className="text-slate-500" />
+              <FileDown size={11} className="text-slate-500" />
               <span>Download Invoice</span>
             </button>
 
@@ -307,7 +307,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                     }}
                     className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-black transition disabled:opacity-60"
                   >
-                    <FaUndoAlt size={10} />
+                    <Undo2 size={10} />
                     <span>{returnBusy ? "Submitting..." : "Request Return"}</span>
                   </button>
                 )}
@@ -323,7 +323,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 }}
                 className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition "
               >
-                <FaTimes size={10} />
+                <X size={10} />
                 <span>Cancel Order</span>
               </button>
             )}
@@ -338,7 +338,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-slate-900">Request Return / Replacement</h3>
               <button onClick={() => setShowReturn(false)} className="text-slate-400 hover:text-slate-600">
-                <FaTimes size={14} />
+                <X size={14} />
               </button>
             </div>
             <div>
@@ -419,7 +419,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-slate-900">Cancel Order</h3>
               <button onClick={() => setShowCancel(false)} className="text-slate-400 hover:text-slate-600">
-                <FaTimes size={14} />
+                <X size={14} />
               </button>
             </div>
             <div>

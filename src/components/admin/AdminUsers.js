@@ -1,24 +1,24 @@
+import {
+  Ban,
+  ChevronLeft,
+  ChevronRight,
+  CircleAlert,
+  CircleCheck,
+  Download,
+  EllipsisVertical,
+  Funnel,
+  KeyRound,
+  Lock,
+  Mail,
+  RefreshCw,
+  Search,
+  ShieldCheck,
+  Trash2,
+  Users,
+} from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {
-  SearchIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  LockClosedIcon,
-  KeyIcon,
-  TrashIcon,
-  DotsVerticalIcon,
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  UserGroupIcon,
-  BanIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  FilterIcon,
-  MailIcon,
-  DownloadIcon
-} from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
@@ -215,7 +215,7 @@ export default function AdminUsers() {
         {toast && (
           <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"
             }`}>
-            {toast.type === "error" ? <ExclamationCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
+            {toast.type === "error" ? <CircleAlert className="h-5 w-5 text-red-500" /> : <CircleCheck className="h-5 w-5 text-emerald-500" />}
             <span>{toast.message}</span>
           </div>
         )}
@@ -230,7 +230,7 @@ export default function AdminUsers() {
           </div>
           <div className="flex items-center gap-2">
             <button className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-slate-600 text-xs sm:text-sm font-semibold hover:bg-slate-50 transition-all">
-              <DownloadIcon className="h-4 w-4" />
+              <Download className="h-4 w-4" />
               <span>Export</span>
             </button>
             <button
@@ -238,7 +238,7 @@ export default function AdminUsers() {
               disabled={refreshing}
               className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-slate-800 transition-all disabled:opacity-70 active:scale-95 shrink-0"
             >
-              <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${refreshing ? "animate-spin" : ""}`} />
+              <RefreshCw className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${refreshing ? "animate-spin" : ""}`} />
               <span>{refreshing ? "Syncing..." : "Sync Users"}</span>
             </button>
           </div>
@@ -246,16 +246,16 @@ export default function AdminUsers() {
 
         {/* 3-Column Compact Metric Row */}
         <div className="grid grid-cols-3 gap-2 sm:gap-4">
-          <StatCard label="Total" fullLabel="Total Accounts" value={stats.total} icon={UserGroupIcon} color="blue" />
-          <StatCard label="2FA" fullLabel="Secured with 2FA" value={stats.twoFAEnabled} icon={ShieldCheckIcon} color="emerald" />
-          <StatCard label="Blocked" fullLabel="Blocked / Suspended" value={stats.blocked} icon={BanIcon} color="red" />
+          <StatCard label="Total" fullLabel="Total Accounts" value={stats.total} icon={Users} color="blue" />
+          <StatCard label="2FA" fullLabel="Secured with 2FA" value={stats.twoFAEnabled} icon={ShieldCheck} color="emerald" />
+          <StatCard label="Blocked" fullLabel="Blocked / Suspended" value={stats.blocked} icon={Ban} color="red" />
         </div>
 
         {/* Controls Toolbar */}
         <div className="bg-white p-1.5 sm:p-2 rounded-2xl border border-slate-200/70 flex flex-col lg:flex-row gap-2">
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <SearchIcon className="h-4 w-4 text-slate-400" />
+              <Search className="h-4 w-4 text-slate-400" />
             </div>
             <input
               type="text"
@@ -293,13 +293,13 @@ export default function AdminUsers() {
             </div>
           ) : error ? (
             <div className="p-8 text-center text-red-600 text-xs sm:text-sm">
-              <ExclamationCircleIcon className="h-8 w-8 mx-auto mb-2 opacity-50" />
+              <CircleAlert className="h-8 w-8 mx-auto mb-2 opacity-50" />
               <p>{error}</p>
             </div>
           ) : filtered.length === 0 ? (
             <div className="p-8 sm:p-12 text-center flex flex-col items-center justify-center">
               <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center mb-3 text-slate-300">
-                <FilterIcon className="h-6 w-6" />
+                <Funnel className="h-6 w-6" />
               </div>
               <h3 className="text-sm sm:text-base font-bold text-slate-900">No users found</h3>
               <p className="text-slate-500 text-xs sm:text-sm mt-0.5">Try adjusting your filters or search keyword.</p>
@@ -350,7 +350,7 @@ export default function AdminUsers() {
                           <td className="px-6 py-4">
                             <div className="flex flex-col">
                               <div className="flex items-center gap-1.5 text-sm text-slate-600 font-medium">
-                                <MailIcon className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                                <Mail className="h-3.5 w-3.5 text-slate-400 shrink-0" />
                                 {u.email}
                               </div>
                               {u.username && <span className="text-xs text-slate-400 pl-5">@{u.username}</span>}
@@ -358,7 +358,7 @@ export default function AdminUsers() {
                           </td>
                           <td className="px-6 py-4">
                             <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border ${u.twoFactorEnabled ? badgeStyles.twoFAOn : badgeStyles.twoFAOff}`}>
-                              {u.twoFactorEnabled ? <ShieldCheckIcon className="h-3.5 w-3.5 text-emerald-600" /> : <LockClosedIcon className="h-3.5 w-3.5" />}
+                              {u.twoFactorEnabled ? <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> : <Lock className="h-3.5 w-3.5" />}
                               {u.twoFactorEnabled ? "2FA On" : "Standard"}
                             </span>
                           </td>
@@ -374,7 +374,7 @@ export default function AdminUsers() {
                               onClick={() => setMenuOpenId(menuOpenId === u._id ? null : u._id)}
                               className={`p-1.5 rounded-lg transition-colors ${menuOpenId === u._id ? 'bg-slate-100 text-slate-900' : 'text-slate-400 hover:bg-slate-50 hover:text-slate-700'}`}
                             >
-                              <DotsVerticalIcon className="h-4 w-4" />
+                              <EllipsisVertical className="h-4 w-4" />
                             </button>
 
                             {/* Dropdown Menu */}
@@ -383,13 +383,13 @@ export default function AdminUsers() {
                                 <div className="fixed inset-0 z-10" onClick={() => setMenuOpenId(null)}></div>
                                 <div className={`absolute right-8 w-52 bg-white rounded-2xl shadow-2xl border border-slate-100 ring-1 ring-black/10 z-50 overflow-hidden animate-in zoom-in-95 duration-100 ${isLastRows ? 'bottom-8 mb-1 origin-bottom-right' : 'top-8 mt-1 origin-top-right'}`}>
                                   <div className="p-1 space-y-0.5">
-                                    <MenuItem onClick={() => { handleToggleBlock(u); setMenuOpenId(null); }} icon={u.blocked ? CheckCircleIcon : BanIcon} label={u.blocked ? "Unblock User" : "Block Access"} />
-                                    <MenuItem onClick={() => { setResetUser(u); setMenuOpenId(null); }} icon={KeyIcon} label="Reset Password" />
+                                    <MenuItem onClick={() => { handleToggleBlock(u); setMenuOpenId(null); }} icon={u.blocked ? CircleCheck : Ban} label={u.blocked ? "Unblock User" : "Block Access"} />
+                                    <MenuItem onClick={() => { setResetUser(u); setMenuOpenId(null); }} icon={KeyRound} label="Reset Password" />
                                     {u.twoFactorEnabled && (
-                                      <MenuItem onClick={() => { handleDisable2FA(u); setMenuOpenId(null); }} icon={LockClosedIcon} label="Disable 2FA" />
+                                      <MenuItem onClick={() => { handleDisable2FA(u); setMenuOpenId(null); }} icon={Lock} label="Disable 2FA" />
                                     )}
                                     <div className="h-px bg-slate-100 my-1"></div>
-                                    <MenuItem onClick={() => { setDeleteUser(u); setMenuOpenId(null); }} icon={TrashIcon} label="Delete Account" danger />
+                                    <MenuItem onClick={() => { setDeleteUser(u); setMenuOpenId(null); }} icon={Trash2} label="Delete Account" danger />
                                   </div>
                                 </div>
                               </>
@@ -478,8 +478,8 @@ export default function AdminUsers() {
                   <span className="text-[11px] font-bold text-slate-400 mr-1.5">
                     {currentPage}/{totalPages || 1}
                   </span>
-                  <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all "><ChevronLeftIcon className="h-4 w-4 text-slate-600" /></button>
-                  <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all "><ChevronRightIcon className="h-4 w-4 text-slate-600" /></button>
+                  <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all "><ChevronLeft className="h-4 w-4 text-slate-600" /></button>
+                  <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages} className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 transition-all "><ChevronRight className="h-4 w-4 text-slate-600" /></button>
                 </div>
               </div>
             </>
@@ -489,7 +489,7 @@ export default function AdminUsers() {
 
       {/* Modals */}
       {resetUser && (
-        <Modal title="Reset Password" icon={KeyIcon} onClose={() => !busyAction && setResetUser(null)}>
+        <Modal title="Reset Password" icon={KeyRound} onClose={() => !busyAction && setResetUser(null)}>
           <p className="text-xs sm:text-sm text-slate-600">Send a password reset email to <span className="font-bold text-slate-900">{resetUser.email}</span>?</p>
           <div className="mt-5 flex justify-end gap-2">
             <button onClick={() => setResetUser(null)} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl border border-slate-200">Cancel</button>
@@ -499,7 +499,7 @@ export default function AdminUsers() {
       )}
 
       {deleteUser && (
-        <Modal title="Delete Account" icon={TrashIcon} danger onClose={() => !busyAction && setDeleteUser(null)}>
+        <Modal title="Delete Account" icon={Trash2} danger onClose={() => !busyAction && setDeleteUser(null)}>
           <p className="text-xs sm:text-sm text-slate-600">Permanently remove <span className="font-bold text-slate-900">{deleteUser.email}</span>? This cannot be undone.</p>
           <div className="mt-5 flex justify-end gap-2">
             <button onClick={() => setDeleteUser(null)} disabled={busyAction} className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-xl border border-slate-200">Cancel</button>

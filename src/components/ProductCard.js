@@ -12,24 +12,22 @@ import { qk } from "../query/queryKeys";
 import ReviewModal from "./ReviewModal";
 
 import {
-  FaStar,
-  FaStarHalfAlt,
-  FaRegStar,
-  FaChevronLeft,
-  FaChevronRight,
-  FaBolt,
-  FaShareAlt,
-  FaTruck,
-  FaUndoAlt,
-  FaShieldAlt,
-  FaHeart,
-  FaRegHeart,
-  FaCartPlus,
-  FaPen,
-  FaCheckCircle,
-  FaUserCircle
-} from "react-icons/fa";
-import { Sparkles } from "lucide-react";
+  ChevronLeft,
+  ChevronRight,
+  CircleCheck,
+  CircleUser,
+  Heart,
+  Pen,
+  Share2,
+  Shield,
+  ShoppingCart,
+  Sparkles,
+  Star,
+  Truck,
+  Undo2,
+  Zap,
+} from "lucide-react";
+import HalfStar from "./icons/HalfStar";
 import { showToast } from "../utils/toast";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -64,9 +62,9 @@ const Stars = ({ value = 0, size = "text-base", className = "" }) => {
   return (
     <div className={`flex items-center gap-0.5 text-amber-400 ${size} ${className}`}>
       {Array.from({ length: 5 }).map((_, i) => {
-        if (i < full) return <FaStar key={i} />;
-        if (i === full && half) return <FaStarHalfAlt key={i} />;
-        return <FaRegStar key={i} className="text-gray-200" />;
+        if (i < full) return <Star fill="currentColor" size="1em" key={i} />;
+        if (i === full && half) return <HalfStar key={i} />;
+        return <Star size="1em" key={i} className="text-gray-200" />;
       })}
     </div>
   );
@@ -79,7 +77,7 @@ const Arrow = ({ onClick, direction }) => (
     className={`absolute top-1/2 -translate-y-1/2 z-20 ${direction === "next" ? "right-4" : "left-4"
       } h-10 w-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-900 hover:scale-110 transition-all active:scale-95 hidden md:flex`}
   >
-    {direction === "next" ? <FaChevronRight size={14} /> : <FaChevronLeft size={14} />}
+    {direction === "next" ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
   </button>
 );
 
@@ -114,7 +112,7 @@ const ProductSaleTimer = ({ endDate, saleName }) => {
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#eee5db] border border-[#a85d37]/20 text-[#1d1c19] my-2.5 sm:my-3.5 ">
       <div className="flex items-center gap-2.5">
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#75483b] text-white shrink-0">
-          <FaBolt size={11} />
+          <Zap fill="currentColor" size={11} />
         </span>
         <div>
           <div className="flex items-center gap-1.5">
@@ -177,7 +175,7 @@ const ReviewCard = ({ review }) => {
                 }}
               />
             ) : null}
-            <FaUserCircle size={24} className={profileImage ? "hidden" : ""} />
+            <CircleUser size={24} className={profileImage ? "hidden" : ""} />
           </div>
           <div>
             <h4 className="text-sm font-bold text-gray-900">{displayName}</h4>
@@ -185,7 +183,7 @@ const ReviewCard = ({ review }) => {
           </div>
         </div>
         <span className="inline-flex items-center gap-1 text-[10px] font-bold text-green-700 bg-green-50 px-2 py-1 rounded-full">
-          <FaCheckCircle size={10} /> Verified
+          <CircleCheck size={10} /> Verified
         </span>
       </div>
       <p className="text-gray-600 text-sm leading-relaxed">{review.comment}</p>
@@ -218,7 +216,7 @@ const ReviewSummary = ({ reviews = [], rating }) => {
           return (
             <div key={star} className="flex items-center gap-1.5 sm:gap-2 text-xs">
               <span className="w-2.5 font-bold text-gray-500 text-[11px]">{star}</span>
-              <FaStar className="text-gray-300 text-[9px]" />
+              <Star fill="currentColor" size="1em" className="text-gray-300 text-[9px]" />
               <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                 <div className="h-full bg-amber-400 rounded-full" style={{ width: `${pct}%` }} />
               </div>
@@ -711,7 +709,7 @@ export default function ProductCard() {
                 </span>
                 {product.onSale && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-[#eee2dc] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#75483b]">
-                    <FaBolt className="text-[9px]" /> {product.saleName || activeSale?.name || "Prime Day Sale"}
+                    <Zap fill="currentColor" size="1em" className="text-[9px]" /> {product.saleName || activeSale?.name || "Prime Day Sale"}
                   </span>
                 )}
                 {discountPercentage > 0 && (
@@ -811,7 +809,7 @@ export default function ProductCard() {
                       : "bg-[#1d1c19] text-white hover:bg-black active:scale-95"
                   }`}
                 >
-                  <FaCartPlus size={11} /> {stock === 0 ? "Out of Stock" : "Add to Bag"}
+                  <ShoppingCart size={11} /> {stock === 0 ? "Out of Stock" : "Add to Bag"}
                 </button>
 
                 {/* Buy Now */}
@@ -820,7 +818,7 @@ export default function ProductCard() {
                     onClick={handleBuyNow}
                     className="flex h-9 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#a85d37] text-xs sm:text-base font-bold text-white transition-colors hover:bg-[#874526] active:scale-95"
                   >
-                    <FaBolt size={10} /> Buy Now
+                    <Zap fill="currentColor" size={10} /> Buy Now
                   </button>
                 )}
               </div>
@@ -832,13 +830,13 @@ export default function ProductCard() {
                   className={`flex h-8 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full border text-[11px] sm:text-sm font-bold transition-colors ${isInWishlist ? "border-[#c9a58f] bg-[#efe3d9] text-[#874526]" : "border-black/10 text-[#5f5b52] hover:border-[#b98a70] hover:bg-[#f1e8df] hover:text-[#874526]"
                     }`}
                 >
-                  {isInWishlist ? <FaHeart size={11} /> : <FaRegHeart size={11} />} {isInWishlist ? "Saved" : "Save item"}
+                  {isInWishlist ? <Heart fill="currentColor" size={11} /> : <Heart size={11} />} {isInWishlist ? "Saved" : "Save item"}
                 </button>
                 <button
                   onClick={handleShare}
                   className="flex h-8 sm:h-12 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full border border-black/10 text-[11px] sm:text-sm font-bold text-[#5f5b52] transition-colors hover:bg-black/4 hover:text-[#1d1c19]"
                 >
-                  <FaShareAlt size={11} /> Share
+                  <Share2 size={11} /> Share
                 </button>
               </div>
             </div>
@@ -846,9 +844,9 @@ export default function ProductCard() {
             {/* Trust badges */}
             <div className="grid grid-cols-3 gap-2 sm:gap-4 py-2.5 sm:py-6 border-y border-gray-100 my-2.5 sm:my-6 bg-gray-50/50 rounded-lg sm:rounded-2xl px-2 sm:px-4">
               {[
-                { icon: <FaTruck />, title: "Free Delivery", sub: "On eligible orders" },
-                { icon: <FaShieldAlt />, title: "Protected", sub: "Secure checkout" },
-                { icon: <FaUndoAlt />, title: "Easy Returns", sub: "Within 7 days" },
+                { icon: <Truck size="1em" />, title: "Free Delivery", sub: "On eligible orders" },
+                { icon: <Shield size="1em" />, title: "Protected", sub: "Secure checkout" },
+                { icon: <Undo2 size="1em" />, title: "Easy Returns", sub: "Within 7 days" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center justify-center text-center gap-1">
                   <div className="text-gray-900 bg-white p-2 sm:p-2.5 rounded-full shadow-xs border border-gray-100 text-xs sm:text-base">
@@ -927,7 +925,7 @@ export default function ProductCard() {
               onClick={() => isAuthenticated ? setShowReviewModal(true) : navigate(`/login?redirect=${encodeURIComponent(location.pathname)}`)}
               className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gray-900 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-xs hover:bg-black transition-all active:scale-95 shrink-0"
             >
-              <FaPen size={10} /> {isAuthenticated ? "Write Review" : "Write Review"}
+              <Pen size={10} /> {isAuthenticated ? "Write Review" : "Write Review"}
             </button>
           </div>
 
@@ -1076,14 +1074,14 @@ export default function ProductCard() {
             disabled={stock === 0}
             className="flex h-10 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] px-4 text-xs font-bold text-white shrink-0 active:scale-95 transition-transform"
           >
-            <FaCartPlus size={11} /> {stock === 0 ? "No Stock" : "Add to Bag"}
+            <ShoppingCart size={11} /> {stock === 0 ? "No Stock" : "Add to Bag"}
           </button>
           {stock > 0 && (
             <button
               onClick={handleBuyNow}
               className="flex h-10 items-center justify-center gap-1.5 rounded-full bg-[#a85d37] px-4 text-xs font-bold text-white shrink-0 active:scale-95 hover:bg-[#874526] transition-all"
             >
-              <FaBolt size={11} /> Buy Now
+              <Zap fill="currentColor" size={11} /> Buy Now
             </button>
           )}
         </div>
@@ -1108,7 +1106,7 @@ export default function ProductCard() {
           </button>
           {stock > 0 && (
             <button onClick={handleBuyNow} className="inline-flex items-center gap-2 rounded-full bg-[#a85d37] px-6 py-2 font-bold text-white transition-colors hover:bg-[#874526]">
-              <FaBolt size={11} /> Buy Now
+              <Zap fill="currentColor" size={11} /> Buy Now
             </button>
           )}
         </div>

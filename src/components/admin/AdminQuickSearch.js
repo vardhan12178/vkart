@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchIcon } from "@heroicons/react/outline";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Search,
+} from "lucide-react";
 import { canAccess } from "../../utils/adminPermissions";
 import { ADMIN_NAV } from "../../constants/adminNav";
 
@@ -92,7 +94,7 @@ export default function AdminQuickSearch({ adminRole, permissions, variant = "de
   return (
     <div className="relative w-full group">
       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-        <SearchIcon
+        <Search
           className={desktop ? "h-4 w-4 text-[#8b867d] transition-colors group-focus-within:text-[#a85d37]" : "h-5 w-5 text-slate-400"}
         />
       </div>

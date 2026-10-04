@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { FaStar, FaTimes, FaPen } from "react-icons/fa";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
+import {
+  Pen,
+  Star,
+  X,
+} from "lucide-react";
 
 const RATING_LABELS = {
   1: "Poor (1/5)",
@@ -80,7 +84,7 @@ export default function ReviewModal({ isOpen, onClose, productId, onReviewAdded 
             className="h-8 w-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition shrink-0"
             title="Close"
           >
-            <FaTimes size={13} />
+            <X size={13} />
           </button>
         </div>
 
@@ -112,7 +116,7 @@ export default function ReviewModal({ isOpen, onClose, productId, onReviewAdded 
                     className="text-2xl sm:text-3xl transition-transform hover:scale-115 active:scale-95 focus:outline-hidden"
                     title={`${star} Star${star > 1 ? "s" : ""}`}
                   >
-                    <FaStar
+                    <Star fill="currentColor" size="1em"
                       className={`transition-colors duration-150 ${
                         active ? "text-amber-400" : "text-slate-200 hover:text-amber-200"
                       }`}

@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  MailIcon,
-  ArrowLeftIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
+  ArrowLeft,
+  CircleAlert,
+  CircleCheck,
+  Mail,
+  ShoppingCart,
+} from "lucide-react";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
@@ -42,9 +42,9 @@ const Toast = ({ show, kind = "error", children }) => {
       role="status"
     >
       {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
+        <CircleCheck className="h-5 w-5 shrink-0 text-emerald-600" />
       ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
+        <CircleAlert className="h-5 w-5 shrink-0 text-red-600" />
       )}
       <div className="pt-0.5 font-medium">{children}</div>
     </motion.div>
@@ -104,7 +104,7 @@ export default function ForgotPassword() {
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
                 <div className="h-12 w-12 bg-linear-to-tr from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
-                  <ShoppingCartIcon className="h-7 w-7" />
+                  <ShoppingCart className="h-7 w-7" />
                 </div>
               </div>
               <motion.h1
@@ -144,7 +144,7 @@ export default function ForgotPassword() {
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <MailIcon className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
+                    <Mail className="h-5 w-5 text-gray-400 group-focus-within:text-orange-500 transition-colors" />
                   </div>
                   <input
                     id="emailOrUsername"
@@ -180,7 +180,7 @@ export default function ForgotPassword() {
                 onClick={() => navigate("/login")}
                 className="inline-flex items-center gap-2 font-bold text-gray-500 hover:text-gray-900 transition-colors"
               >
-                <ArrowLeftIcon className="h-4 w-4" />
+                <ArrowLeft className="h-4 w-4" />
                 Back to Sign In
               </button>
 

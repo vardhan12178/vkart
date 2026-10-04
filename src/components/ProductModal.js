@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { FaStar, FaStarHalfAlt, FaRegStar, FaCartPlus, FaTimes, FaCheckCircle, FaTag } from "react-icons/fa";
+import {
+  CircleCheck,
+  ShoppingCart,
+  Star,
+  Tag,
+  X,
+} from "lucide-react";
+import HalfStar from "./icons/HalfStar";
 
 /* ---------- UTILS ---------- */
 const formatPrice = (amount) => {
@@ -29,9 +36,9 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
     return (
       <div className="flex items-center gap-0.5 text-amber-400 text-sm">
         {[...Array(5)].map((_, index) => {
-          if (index < fullStars) return <FaStar key={index} />;
-          if (index === fullStars && halfStar) return <FaStarHalfAlt key={index} />;
-          return <FaRegStar key={index} className="text-gray-200" />;
+          if (index < fullStars) return <Star fill="currentColor" size="1em" key={index} />;
+          if (index === fullStars && halfStar) return <HalfStar key={index} />;
+          return <Star size="1em" key={index} className="text-gray-200" />;
         })}
       </div>
     );
@@ -57,7 +64,7 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
           onClick={onClose}
           className="absolute top-4 right-4 z-20 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-900 transition-colors shadow-xs"
         >
-          <FaTimes size={18} />
+          <X size={18} />
         </button>
 
         {/* Left Column: Image */}
@@ -80,7 +87,7 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
           {/* Category & Rating */}
           <div className="flex items-center justify-between mb-4">
             <span className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
-              <FaTag size={10} /> {product.category}
+              <Tag size={10} /> {product.category}
             </span>
             <div className="flex items-center gap-2">
                {renderStars(product.rating)}
@@ -101,7 +108,7 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
               {formatPrice(product.price)}
             </span>
             <span className="flex items-center gap-1 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">
-              <FaCheckCircle size={10} /> In Stock
+              <CircleCheck size={10} /> In Stock
             </span>
           </div>
 
@@ -116,7 +123,7 @@ const ProductModal = ({ product, onClose, onAddToCart }) => {
               onClick={handleAddToCart}
               className="w-full py-4 rounded-xl bg-gray-900 text-white font-bold text-lg shadow-lg hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
             >
-              <FaCartPlus /> Add to Cart
+              <ShoppingCart size="1em" /> Add to Cart
             </button>
             
             <p className="text-center text-xs text-gray-400 mt-4">

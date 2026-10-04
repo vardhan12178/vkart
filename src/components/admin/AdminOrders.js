@@ -2,24 +2,24 @@
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import {
-  SearchIcon,
-  RefreshIcon,
-  FilterIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-  ShoppingBagIcon,
-  InboxIcon,
-  ChevronDownIcon,
-  SortAscendingIcon,
-  SortDescendingIcon,
-  CheckIcon,
-  CurrencyRupeeIcon,
-  ClockIcon,
-  CheckCircleIcon,
-} from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
+import {
+  ArrowDownWideNarrow,
+  ArrowUpNarrowWide,
+  Check,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  CircleCheck,
+  Clock,
+  Funnel,
+  Inbox,
+  IndianRupee,
+  RefreshCw,
+  Search,
+  ShoppingBag,
+} from "lucide-react";
 
 const STAGES = [
   "ALL",
@@ -201,7 +201,7 @@ export default function AdminOrders() {
               disabled={ordersQuery.isFetching}
               className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-slate-700 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all active:scale-95 text-xs sm:text-sm font-semibold"
             >
-              <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshCw className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
               <span>Sync</span>
             </button>
           </div>
@@ -212,21 +212,21 @@ export default function AdminOrders() {
           <StatCard
             title="Revenue"
             value={`₹${stats.totalRevenue.toLocaleString('en-IN')}`}
-            icon={CurrencyRupeeIcon}
+            icon={IndianRupee}
             color="text-emerald-700"
             bg="bg-emerald-50"
           />
           <StatCard
             title="Active"
             value={stats.activeOrders}
-            icon={ClockIcon}
+            icon={Clock}
             color="text-orange-700"
             bg="bg-orange-50"
           />
           <StatCard
             title="Completed"
             value={stats.completedOrders}
-            icon={CheckCircleIcon}
+            icon={CircleCheck}
             color="text-blue-700"
             bg="bg-blue-50"
           />
@@ -237,7 +237,7 @@ export default function AdminOrders() {
           {/* Search */}
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <SearchIcon className="h-4 w-4 text-slate-400" />
+              <Search className="h-4 w-4 text-slate-400" />
             </div>
             <input
               type="text"
@@ -262,10 +262,10 @@ export default function AdminOrders() {
                   }`}
               >
                 <div className="flex items-center gap-1.5 truncate">
-                  <FilterIcon className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                  <Funnel className="h-3.5 w-3.5 text-slate-400 shrink-0" />
                   <span className="truncate">{filterStage === "ALL" ? "Filter Status" : filterStage.replace(/_/g, " ")}</span>
                 </div>
-                <ChevronDownIcon className={`h-3.5 w-3.5 transition-transform shrink-0 ${isFilterMenuOpen ? "rotate-180" : ""}`} />
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform shrink-0 ${isFilterMenuOpen ? "rotate-180" : ""}`} />
               </button>
 
               {isFilterMenuOpen && (
@@ -286,7 +286,7 @@ export default function AdminOrders() {
                         <span className={filterStage === stage ? "font-bold text-slate-900" : ""}>
                           {stage.replace(/_/g, " ")}
                         </span>
-                        {filterStage === stage && <CheckIcon className="h-3.5 w-3.5 text-slate-900" />}
+                        {filterStage === stage && <Check className="h-3.5 w-3.5 text-slate-900" />}
                       </button>
                     ))}
                   </div>
@@ -317,7 +317,7 @@ export default function AdminOrders() {
           ) : filteredAndSortedOrders.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-16 text-center">
               <div className="h-14 w-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-3 border border-slate-100">
-                <InboxIcon className="h-7 w-7 text-slate-300" />
+                <Inbox className="h-7 w-7 text-slate-300" />
               </div>
               <h3 className="text-base font-bold text-slate-900">No orders found</h3>
               <p className="text-slate-500 text-xs sm:text-sm mt-0.5 max-w-xs">
@@ -344,7 +344,7 @@ export default function AdminOrders() {
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         <div className="h-8 w-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
-                          <ShoppingBagIcon className="h-4 w-4" />
+                          <ShoppingBag className="h-4 w-4" />
                         </div>
                         <span className="font-mono text-xs font-bold text-slate-900">
                           #{o.orderId || o._id.slice(-6).toUpperCase()}
@@ -385,7 +385,7 @@ export default function AdminOrders() {
 
                       <div className="flex items-center text-xs font-bold text-orange-600 gap-0.5">
                         <span>Details</span>
-                        <ChevronRightIcon className="h-3.5 w-3.5" />
+                        <ChevronRight className="h-3.5 w-3.5" />
                       </div>
                     </div>
                   </div>
@@ -418,7 +418,7 @@ export default function AdminOrders() {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center gap-3">
                             <div className="h-10 w-10 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600 group-hover:bg-orange-100 transition-colors">
-                              <ShoppingBagIcon className="h-5 w-5" />
+                              <ShoppingBag className="h-5 w-5" />
                             </div>
                             <div className="font-mono text-sm font-medium text-slate-700">
                               #{o.orderId || o._id.slice(-6).toUpperCase()}
@@ -479,7 +479,7 @@ export default function AdminOrders() {
 
                         {/* Action */}
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <ChevronRightIcon className="h-5 w-5 text-slate-300 group-hover:text-orange-500 transition-colors ml-auto" />
+                          <ChevronRight className="h-5 w-5 text-slate-300 group-hover:text-orange-500 transition-colors ml-auto" />
                         </td>
                       </tr>
                     ))}
@@ -500,7 +500,7 @@ export default function AdminOrders() {
                     className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
                     aria-label="Previous page"
                   >
-                    <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
+                    <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
                   <span className="text-xs font-bold text-slate-700 px-1 sm:hidden">{currentPage}/{totalPages || 1}</span>
                   <button
@@ -509,7 +509,7 @@ export default function AdminOrders() {
                     className="p-1 sm:p-1.5 rounded-lg hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
                     aria-label="Next page"
                   >
-                    <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
+                    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
                 </div>
               </div>
@@ -549,8 +549,8 @@ function SortableHeader({ label, sortKey, currentSort, onSort }) {
         {label}
         {isActive && (
           currentSort.direction === 'asc'
-            ? <SortAscendingIcon className="h-3 w-3 text-orange-500" />
-            : <SortDescendingIcon className="h-3 w-3 text-orange-500" />
+            ? <ArrowUpNarrowWide className="h-3 w-3 text-orange-500" />
+            : <ArrowDownWideNarrow className="h-3 w-3 text-orange-500" />
         )}
       </div>
     </th>

@@ -1,15 +1,15 @@
+import {
+  CircleAlert,
+  CircleCheck,
+  CircleX,
+  Pencil,
+  Plus,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
-import {
-  PlusIcon,
-  PencilIcon,
-  TrashIcon,
-  RefreshIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  ExclamationCircleIcon,
-} from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 
@@ -164,7 +164,7 @@ export default function AdminCoupons() {
 
         {toast && (
           <div className={`fixed z-50 top-5 right-5 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}>
-            {toast.type === "error" ? <ExclamationCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
+            {toast.type === "error" ? <CircleAlert className="h-5 w-5 text-red-500" /> : <CircleCheck className="h-5 w-5 text-emerald-500" />}
             <span className="text-sm font-semibold">{toast.msg}</span>
           </div>
         )}
@@ -183,14 +183,14 @@ export default function AdminCoupons() {
               className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition "
               title="Refresh"
             >
-              <RefreshIcon className={`h-4 w-4 text-slate-600 ${couponsQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshCw className={`h-4 w-4 text-slate-600 ${couponsQuery.isFetching ? "animate-spin" : ""}`} />
             </button>
             {canWrite && (
               <button
                 onClick={openCreate}
                 className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-semibold hover:bg-slate-800 transition shrink-0"
               >
-                <PlusIcon className="h-4 w-4" />
+                <Plus className="h-4 w-4" />
                 <span>New Coupon</span>
               </button>
             )}
@@ -199,7 +199,7 @@ export default function AdminCoupons() {
 
         {error && (
           <div className="bg-red-50 border border-red-100 text-red-700 px-4 py-3 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2">
-            <ExclamationCircleIcon className="h-5 w-5 shrink-0" />
+            <CircleAlert className="h-5 w-5 shrink-0" />
             <span>{error}</span>
           </div>
         )}
@@ -320,11 +320,11 @@ export default function AdminCoupons() {
                         <button onClick={() => toggleActive(c)} className="inline-flex items-center gap-1">
                           {c.isActive && !isExpired(c.validTo) ? (
                             <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full">
-                              <CheckCircleIcon className="h-3 w-3" /> Active
+                              <CircleCheck className="h-3 w-3" /> Active
                             </span>
                           ) : (
                             <span className="flex items-center gap-1 text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
-                              <XCircleIcon className="h-3 w-3" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                              <CircleX className="h-3 w-3" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
                             </span>
                           )}
                           {c.isPublic && (
@@ -335,11 +335,11 @@ export default function AdminCoupons() {
                         <div className="inline-flex items-center gap-1">
                           {c.isActive && !isExpired(c.validTo) ? (
                             <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                              <CheckCircleIcon className="h-3 w-3" /> Active
+                              <CircleCheck className="h-3 w-3" /> Active
                             </span>
                           ) : (
                             <span className="flex items-center gap-1 text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">
-                              <XCircleIcon className="h-3 w-3" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                              <CircleX className="h-3 w-3" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
                             </span>
                           )}
                           {c.isPublic && (
@@ -384,14 +384,14 @@ export default function AdminCoupons() {
                           onClick={() => openEdit(c)}
                           className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1 transition"
                         >
-                          <PencilIcon className="h-3 w-3" />
+                          <Pencil className="h-3 w-3" />
                           <span>Edit</span>
                         </button>
                         <button
                           onClick={() => handleDelete(c._id)}
                           className="px-2.5 py-1 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 text-xs font-bold flex items-center gap-1 transition"
                         >
-                          <TrashIcon className="h-3 w-3" />
+                          <Trash2 className="h-3 w-3" />
                           <span>Delete</span>
                         </button>
                       </div>
@@ -440,11 +440,11 @@ export default function AdminCoupons() {
                           <button onClick={() => toggleActive(c)} className="inline-flex items-center gap-1.5">
                             {c.isActive && !isExpired(c.validTo) ? (
                               <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                                <CheckCircleIcon className="h-3.5 w-3.5" /> Active
+                                <CircleCheck className="h-3.5 w-3.5" /> Active
                               </span>
                             ) : (
                               <span className="flex items-center gap-1 text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">
-                                <XCircleIcon className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                                <CircleX className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
                               </span>
                             )}
                             {c.isPublic && (
@@ -455,11 +455,11 @@ export default function AdminCoupons() {
                           <div className="inline-flex items-center gap-1.5">
                             {c.isActive && !isExpired(c.validTo) ? (
                               <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                                <CheckCircleIcon className="h-3.5 w-3.5" /> Active
+                                <CircleCheck className="h-3.5 w-3.5" /> Active
                               </span>
                             ) : (
                               <span className="flex items-center gap-1 text-xs font-semibold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">
-                                <XCircleIcon className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
+                                <CircleX className="h-3.5 w-3.5" /> {isExpired(c.validTo) ? "Expired" : "Inactive"}
                               </span>
                             )}
                             {c.isPublic && (
@@ -472,10 +472,10 @@ export default function AdminCoupons() {
                       <td className="px-5 py-4">
                         <div className="flex items-center justify-end gap-1.5">
                           <button onClick={() => openEdit(c)} className="p-2 rounded-lg hover:bg-slate-100 transition">
-                            <PencilIcon className="h-4 w-4 text-slate-500" />
+                            <Pencil className="h-4 w-4 text-slate-500" />
                           </button>
                           <button onClick={() => handleDelete(c._id)} className="p-2 rounded-lg hover:bg-red-50 transition">
-                            <TrashIcon className="h-4 w-4 text-red-400" />
+                            <Trash2 className="h-4 w-4 text-red-400" />
                           </button>
                         </div>
                       </td>

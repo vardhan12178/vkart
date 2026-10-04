@@ -1,5 +1,7 @@
 import React from "react";
-import { FaExclamationTriangle } from "react-icons/fa";
+import {
+  TriangleAlert,
+} from "lucide-react";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class ErrorBoundary extends React.Component {
         <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
           <div className="text-center max-w-md">
             <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FaExclamationTriangle className="text-red-400" size={32} />
+              <TriangleAlert className="text-red-400" size={32} />
             </div>
             <h1 className="text-2xl font-black text-gray-900 mb-2">Something went wrong</h1>
             <p className="text-gray-500 text-sm mb-6">

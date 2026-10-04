@@ -1,26 +1,26 @@
+import {
+  Archive,
+  ArrowLeft,
+  Box,
+  ChevronRight,
+  CircleCheck,
+  CircleX,
+  ClipboardCheck,
+  Clock,
+  Copy,
+  CreditCard,
+  Mail,
+  MapPin,
+  Phone,
+  Printer,
+  RefreshCw,
+  ShieldCheck,
+  Truck,
+  User,
+} from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {
-  ArrowLeftIcon,
-  LocationMarkerIcon,
-  UserIcon,
-  MailIcon,
-  PhoneIcon,
-  ClockIcon,
-  RefreshIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  TruckIcon,
-  ClipboardCheckIcon,
-  CubeIcon,
-  CreditCardIcon,
-  PrinterIcon,
-  DuplicateIcon,
-  ChevronRightIcon,
-  ShieldCheckIcon,
-  ArchiveIcon
-} from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
@@ -37,14 +37,14 @@ const STAGES = [
 ];
 
 const stageStyles = {
-  PLACED: { bg: "bg-slate-100", text: "text-slate-600", border: "border-slate-200", icon: ClipboardCheckIcon },
-  CONFIRMED: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200", icon: ShieldCheckIcon },
-  PROCESSING: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-200", icon: RefreshIcon },
-  PACKED: { bg: "bg-amber-50", text: "text-amber-600", border: "border-amber-200", icon: ArchiveIcon },
-  SHIPPED: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200", icon: TruckIcon },
-  OUT_FOR_DELIVERY: { bg: "bg-sky-50", text: "text-sky-600", border: "border-sky-200", icon: TruckIcon },
-  DELIVERED: { bg: "bg-emerald-50", text: "text-emerald-600", border: "border-emerald-200", icon: CheckCircleIcon },
-  CANCELLED: { bg: "bg-red-50", text: "text-red-600", border: "border-red-200", icon: XCircleIcon },
+  PLACED: { bg: "bg-slate-100", text: "text-slate-600", border: "border-slate-200", icon: ClipboardCheck },
+  CONFIRMED: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200", icon: ShieldCheck },
+  PROCESSING: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-200", icon: RefreshCw },
+  PACKED: { bg: "bg-amber-50", text: "text-amber-600", border: "border-amber-200", icon: Archive },
+  SHIPPED: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200", icon: Truck },
+  OUT_FOR_DELIVERY: { bg: "bg-sky-50", text: "text-sky-600", border: "border-sky-200", icon: Truck },
+  DELIVERED: { bg: "bg-emerald-50", text: "text-emerald-600", border: "border-emerald-200", icon: CircleCheck },
+  CANCELLED: { bg: "bg-red-50", text: "text-red-600", border: "border-red-200", icon: CircleX },
 };
 
 function formatDateTime(isoStr) {
@@ -247,7 +247,7 @@ export default function AdminOrderDetails() {
         {toast.message && (
           <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
             }`}>
-            {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <XCircleIcon className="h-5 w-5 text-red-500" />}
+            {toast.type === "success" ? <CircleCheck className="h-5 w-5 text-emerald-500" /> : <CircleX className="h-5 w-5 text-red-500" />}
             <span className="text-sm font-semibold">{toast.message}</span>
           </div>
         )}
@@ -277,7 +277,7 @@ export default function AdminOrderDetails() {
       {toast.message && (
         <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
           }`}>
-          {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <XCircleIcon className="h-5 w-5 text-red-500" />}
+          {toast.type === "success" ? <CircleCheck className="h-5 w-5 text-emerald-500" /> : <CircleX className="h-5 w-5 text-red-500" />}
           <span className="text-sm font-semibold">{toast.message}</span>
         </div>
       )}
@@ -290,7 +290,7 @@ export default function AdminOrderDetails() {
             onClick={() => navigate("/admin/orders")}
             className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-500 hover:text-slate-900 transition-colors"
           >
-            <ArrowLeftIcon className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span>Orders</span>
           </button>
 
@@ -299,7 +299,7 @@ export default function AdminOrderDetails() {
               onClick={() => window.print()}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-all active:scale-95"
             >
-              <PrinterIcon className="h-4 w-4" />
+              <Printer className="h-4 w-4" />
               <span>Invoice</span>
             </button>
             <button
@@ -312,7 +312,7 @@ export default function AdminOrderDetails() {
               onClick={() => orderQuery.refetch()}
               className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-all active:scale-95"
             >
-              <RefreshIcon className={`h-3.5 w-3.5 ${orderQuery.isFetching ? 'animate-spin' : ''}`} />
+              <RefreshCw className={`h-3.5 w-3.5 ${orderQuery.isFetching ? 'animate-spin' : ''}`} />
               <span>Refresh</span>
             </button>
           </div>
@@ -335,7 +335,7 @@ export default function AdminOrderDetails() {
                   className="text-slate-400 hover:text-orange-500 transition-colors p-1 rounded-md hover:bg-slate-100"
                   title="Copy Full ID"
                 >
-                  <DuplicateIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                  <Copy className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </button>
               </div>
               <div className="text-slate-500 text-[11px] sm:text-xs flex flex-wrap items-center gap-1.5 sm:gap-2">
@@ -392,7 +392,7 @@ export default function AdminOrderDetails() {
                 return (
                   <div key={stage} className="relative z-10 flex flex-col items-center group">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${dotClass}`}>
-                      {isCompleted || isCancelled ? <CheckCircleIcon className="h-5 w-5" /> : <div className="h-2.5 w-2.5 bg-current rounded-full opacity-50" />}
+                      {isCompleted || isCancelled ? <CircleCheck className="h-5 w-5" /> : <div className="h-2.5 w-2.5 bg-current rounded-full opacity-50" />}
                     </div>
                     <span className={`absolute top-10 text-[10px] uppercase tracking-wider whitespace-nowrap transition-colors ${textClass}`}>
                       {stage.replace(/_/g, " ")}
@@ -414,7 +414,7 @@ export default function AdminOrderDetails() {
             <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-5 space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                  <ClipboardCheckIcon className="h-4 w-4 text-orange-500" />
+                  <ClipboardCheck className="h-4 w-4 text-orange-500" />
                   Manage Order Status
                 </h3>
                 {nextLogicalStage && canWrite && !terminal && (
@@ -435,7 +435,7 @@ export default function AdminOrderDetails() {
                         className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <span>Mark as {nextLogicalStage.replace(/_/g, " ")}</span>
-                        <ChevronRightIcon className="h-3.5 w-3.5" />
+                        <ChevronRight className="h-3.5 w-3.5" />
                       </button>
                     )}
 
@@ -479,7 +479,7 @@ export default function AdminOrderDetails() {
             <div className="bg-white rounded-2xl border border-slate-200/70 overflow-hidden">
               <div className="px-4 sm:px-6 py-3 border-b border-slate-100 flex justify-between items-center bg-slate-50/30">
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                  <CubeIcon className="h-4 w-4 text-orange-500" />
+                  <Box className="h-4 w-4 text-orange-500" />
                   Order Items
                 </h3>
                 <span className="text-[11px] sm:text-xs font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">
@@ -496,7 +496,7 @@ export default function AdminOrderDetails() {
                         <img loading="lazy" decoding="async" src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
                       ) : (
                         <div className="h-full w-full flex items-center justify-center text-slate-300">
-                          <CubeIcon className="h-5 w-5" />
+                          <Box className="h-5 w-5" />
                         </div>
                       )}
                     </div>
@@ -539,7 +539,7 @@ export default function AdminOrderDetails() {
                                 <img loading="lazy" decoding="async" src={p.image} alt={p.name} className="h-full w-full object-contain" />
                               ) : (
                                 <div className="h-full w-full flex items-center justify-center text-slate-300">
-                                  <CubeIcon className="h-6 w-6" />
+                                  <Box className="h-6 w-6" />
                                 </div>
                               )}
                             </div>
@@ -564,7 +564,7 @@ export default function AdminOrderDetails() {
             {/* Activity Timeline */}
             <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 sm:mb-6 flex items-center gap-1.5">
-                <ClockIcon className="h-4 w-4 text-orange-500" />
+                <Clock className="h-4 w-4 text-orange-500" />
                 Timeline
               </h3>
               <div className="relative border-l-2 border-slate-100 ml-2.5 sm:ml-3 space-y-6 sm:space-y-8 pb-1">
@@ -603,7 +603,7 @@ export default function AdminOrderDetails() {
             <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <div className="flex items-center justify-between mb-3 sm:mb-4">
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                  <UserIcon className="h-4 w-4 text-orange-500" />
+                  <User className="h-4 w-4 text-orange-500" />
                   Customer
                 </h3>
               </div>
@@ -622,7 +622,7 @@ export default function AdminOrderDetails() {
                 {customer.email && (
                   <div className="flex items-center gap-2.5 p-2 sm:p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group cursor-pointer">
                     <div className="bg-white p-1 rounded-lg text-slate-400 group-hover:text-orange-500 transition-colors">
-                      <MailIcon className="h-3.5 w-3.5" />
+                      <Mail className="h-3.5 w-3.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-slate-600 font-medium truncate">{customer.email}</span>
                   </div>
@@ -630,7 +630,7 @@ export default function AdminOrderDetails() {
                 {customer.phone && (
                   <div className="flex items-center gap-2.5 p-2 sm:p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group cursor-pointer">
                     <div className="bg-white p-1 rounded-lg text-slate-400 group-hover:text-orange-500 transition-colors">
-                      <PhoneIcon className="h-3.5 w-3.5" />
+                      <Phone className="h-3.5 w-3.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-slate-600 font-medium">{customer.phone}</span>
                   </div>
@@ -641,7 +641,7 @@ export default function AdminOrderDetails() {
             {/* Shipping Card */}
             <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                <LocationMarkerIcon className="h-4 w-4 text-orange-500" />
+                <MapPin className="h-4 w-4 text-orange-500" />
                 Delivery Details
               </h3>
               <div className="relative p-3 sm:p-4 bg-slate-50/80 rounded-xl border border-slate-100">
@@ -655,7 +655,7 @@ export default function AdminOrderDetails() {
             {/* Payment Card */}
             <div className="bg-white rounded-2xl border border-slate-200/70 p-4 sm:p-6">
               <h3 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                <CreditCardIcon className="h-4 w-4 text-orange-500" />
+                <CreditCard className="h-4 w-4 text-orange-500" />
                 Payment
               </h3>
 

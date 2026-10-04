@@ -11,28 +11,28 @@ import imageCompression from "browser-image-compression";
 import AvatarEditor from "react-avatar-editor";
 import SupportChatWidget from "./support/SupportChatWidget";
 
-import {
-  FaCamera,
-  FaPen,
-  FaEnvelope,
-  FaInfoCircle,
-  FaSignOutAlt,
-  FaUser,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaBoxOpen,
-  FaShieldAlt,
-  FaLock,
-  FaQrcode,
-  FaChevronRight,
-  FaShoppingBag,
-  FaTimes,
-  FaMapMarkerAlt,
-  FaPlus,
-  FaTrash,
-  FaCrown
-} from "react-icons/fa";
 import { qk } from "../query/queryKeys";
+import {
+  Camera,
+  ChevronRight,
+  CircleCheck,
+  CircleX,
+  Crown,
+  Info,
+  Lock,
+  LogOut,
+  Mail,
+  MapPin,
+  PackageOpen,
+  Pen,
+  Plus,
+  QrCode,
+  Shield,
+  ShoppingBag,
+  Trash2,
+  User,
+  X,
+} from "lucide-react";
 
 const OrderCard = lazy(() => import("./OrderCard"));
 const EMPTY_ORDERS = [];
@@ -85,7 +85,7 @@ const Toast = ({ kind = "success", message }) => {
       <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
         }`}>
         <div className={`p-1 rounded-full ${ok ? 'bg-emerald-200' : 'bg-red-200'}`}>
-          {ok ? <FaCheckCircle size={14} /> : <FaTimesCircle size={14} />}
+          {ok ? <CircleCheck size={14} /> : <CircleX size={14} />}
         </div>
         <span className="text-sm font-semibold tracking-wide">{message}</span>
       </div>
@@ -481,7 +481,7 @@ export default function Profile() {
                 <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">Account security</p>
                 <h3 className="mt-1 text-lg font-bold text-[#1d1c19]">Set up two-factor authentication</h3>
               </div>
-              <button onClick={() => setTwoFAOpen(false)} aria-label="Close two-factor setup" className="grid h-9 w-9 place-items-center rounded-full bg-[#eee9df] text-[#5f5b52] transition-colors hover:bg-[#1d1c19] hover:text-white"><FaTimes /></button>
+              <button onClick={() => setTwoFAOpen(false)} aria-label="Close two-factor setup" className="grid h-9 w-9 place-items-center rounded-full bg-[#eee9df] text-[#5f5b52] transition-colors hover:bg-[#1d1c19] hover:text-white"><X size="1em" /></button>
             </div>
             <div className="flex flex-col items-center px-6 pb-7 pt-6 text-center">
               {twoFAState.qr ? (
@@ -560,7 +560,7 @@ export default function Profile() {
               </div>
 
               <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-gray-900 text-white rounded-full cursor-pointer shadow-xs hover:bg-orange-600 transition-all border-2 border-white z-10" title="Change Photo">
-                <FaCamera className="text-[9px] sm:text-xs" />
+                <Camera size="1em" className="text-[9px] sm:text-xs" />
                 <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
               </label>
             </div>
@@ -578,18 +578,18 @@ export default function Profile() {
                       className="text-base sm:text-2xl font-bold text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-hidden px-1"
                       autoFocus
                     />
-                    <button onClick={handleUpdateName} className="p-1 rounded-md bg-gray-900 text-white text-xs font-bold hover:bg-black"><FaCheckCircle size={12} /></button>
-                    <button onClick={() => setEditingName(false)} className="p-1 rounded-md text-gray-400 hover:text-gray-600"><FaTimes size={12} /></button>
+                    <button onClick={handleUpdateName} className="p-1 rounded-md bg-gray-900 text-white text-xs font-bold hover:bg-black"><CircleCheck size={12} /></button>
+                    <button onClick={() => setEditingName(false)} className="p-1 rounded-md text-gray-400 hover:text-gray-600"><X size={12} /></button>
                   </div>
                 ) : (
                   <h1 className="profile-display-name text-base sm:text-2xl font-bold text-gray-900 tracking-tight group/name cursor-pointer inline-flex items-center gap-1.5" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
                     <span className="truncate">{user?.name || "Guest User"}</span>
-                    <FaPen className="text-[10px] sm:text-xs text-gray-300 group-hover/name:text-orange-500 transition-colors shrink-0" />
+                    <Pen size="1em" className="text-[10px] sm:text-xs text-gray-300 group-hover/name:text-orange-500 transition-colors shrink-0" />
                   </h1>
                 )}
                 {user?.isPrime ? (
                   <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 text-[10px] font-bold uppercase tracking-wider border border-amber-200 shrink-0">
-                    <FaCrown size={8} className="text-amber-500" />
+                    <Crown size={8} className="text-amber-500" />
                     Prime
                   </span>
                 ) : (
@@ -609,7 +609,7 @@ export default function Profile() {
               {/* Stats Row */}
               <div className="mt-2.5">
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 rounded-lg border border-gray-100 text-xs">
-                  <FaShoppingBag className="text-orange-500 text-[11px]" />
+                  <ShoppingBag size="1em" className="text-orange-500 text-[11px]" />
                   <span className="font-bold text-gray-900">{ordersCount}</span>
                   <span className="text-[10px] text-gray-500 font-medium">Orders Placed</span>
                 </div>
@@ -645,7 +645,7 @@ export default function Profile() {
               {/* Column 1: Personal Details Card */}
               <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 space-y-3">
                 <div className="flex items-center gap-2 pb-2 border-b border-gray-50">
-                  <FaUser className="text-gray-400 text-xs" />
+                  <User size="1em" className="text-gray-400 text-xs" />
                   <h3 className="text-xs sm:text-sm font-bold text-gray-900">Personal Details</h3>
                 </div>
                 <div className="space-y-2.5">
@@ -674,12 +674,12 @@ export default function Profile() {
                     <div className="flex gap-2.5 sm:gap-4 items-center">
                       <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${user?.twoFactorEnabled ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-400'
                         }`}>
-                        <FaShieldAlt />
+                        <Shield size="1em" />
                       </div>
                       <div>
                         <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
                           Two-Factor Auth
-                          {user?.twoFactorEnabled && <FaCheckCircle className="text-emerald-500 text-xs" />}
+                          {user?.twoFactorEnabled && <CircleCheck size="1em" className="text-emerald-500 text-xs" />}
                         </h3>
                         <p className="text-gray-500 text-[11px] sm:text-xs">Enhanced account protection</p>
                       </div>
@@ -691,7 +691,7 @@ export default function Profile() {
                         disabled={twoFAState.disabling}
                         className="flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition shrink-0"
                       >
-                        <FaLock size={10} /> {twoFAState.disabling ? "..." : "Disable"}
+                        <Lock size={10} /> {twoFAState.disabling ? "..." : "Disable"}
                       </button>
                     ) : (
                       <button
@@ -699,7 +699,7 @@ export default function Profile() {
                         disabled={twoFAState.loading}
                         className="px-3 py-1.5 rounded-xl bg-gray-900 text-white font-bold hover:bg-black transition text-xs flex items-center gap-1 shrink-0"
                       >
-                        <FaQrcode size={11} /> {twoFAState.loading ? "..." : "Enable"}
+                        <QrCode size={11} /> {twoFAState.loading ? "..." : "Enable"}
                       </button>
                     )}
                   </div>
@@ -711,7 +711,7 @@ export default function Profile() {
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
                       <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${pwOpen ? 'bg-orange-50 text-orange-600' : 'bg-gray-100 text-gray-400'}`}>
-                        <FaLock />
+                        <Lock size="1em" />
                       </div>
                       <div>
                         <h3 className="text-xs sm:text-base font-bold text-gray-900">Password</h3>
@@ -722,7 +722,7 @@ export default function Profile() {
                       onClick={() => { setPwOpen((o) => !o); setPw({ current: "", next: "", confirm: "", loading: false }); }}
                       className="px-3 py-1.5 rounded-xl border border-gray-200 text-gray-700 font-bold hover:bg-gray-50 transition text-xs flex items-center gap-1 shrink-0"
                     >
-                      <FaPen size={10} /> {pwOpen ? "Cancel" : "Change"}
+                      <Pen size={10} /> {pwOpen ? "Cancel" : "Change"}
                     </button>
                   </div>
 
@@ -754,9 +754,9 @@ export default function Profile() {
                 {/* Quick Links Grid (3 Compact Tiles) */}
                 <div className="grid grid-cols-3 gap-2 sm:gap-3.5">
                   {[
-                    { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
-                    { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
-                    { action: () => setShowSupportChat(true), icon: <FaEnvelope />, title: "Support", desc: "Live chat", color: "text-purple-500", bg: "bg-purple-50" },
+                    { to: "/products", icon: <PackageOpen size="1em" />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
+                    { to: "/about", icon: <Info size="1em" />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
+                    { action: () => setShowSupportChat(true), icon: <Mail size="1em" />, title: "Support", desc: "Live chat", color: "text-purple-500", bg: "bg-purple-50" },
                   ].map((link, i) => {
                     const cardBody = (
                       <div className="text-center sm:text-left">
@@ -809,16 +809,16 @@ export default function Profile() {
                 <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 ">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
-                      <FaMapMarkerAlt className="text-orange-500 text-xs sm:text-sm" /> Saved Addresses
+                      <MapPin size="1em" className="text-orange-500 text-xs sm:text-sm" /> Saved Addresses
                     </h3>
                     <button onClick={() => openAddressForm()} className="flex items-center gap-1 text-xs font-bold text-gray-700 hover:text-black transition px-2 py-0.5 rounded-lg hover:bg-gray-100">
-                      <FaPlus size={10} /> Add
+                      <Plus size={10} /> Add
                     </button>
                   </div>
 
                   {addresses.length === 0 && !addrOpen ? (
                     <div className="text-center py-6">
-                      <FaMapMarkerAlt className="mx-auto text-gray-300 mb-2" size={22} />
+                      <MapPin className="mx-auto text-gray-300 mb-2" size={22} />
                       <p className="text-xs text-gray-500">No saved addresses yet.</p>
                       <button onClick={() => openAddressForm()} className="mt-2 text-xs font-bold text-orange-600 hover:underline">+ Add Address</button>
                     </div>
@@ -836,8 +836,8 @@ export default function Profile() {
                             <p className="text-[10px] text-gray-400 mt-0.5 font-mono">{addr.phone}</p>
                           </div>
                           <div className="flex gap-1 shrink-0">
-                            <button onClick={() => openAddressForm(addr)} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition"><FaPen size={11} /></button>
-                            <button onClick={() => handleDeleteAddress(addr._id)} className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition"><FaTrash size={11} /></button>
+                            <button onClick={() => openAddressForm(addr)} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition"><Pen size={11} /></button>
+                            <button onClick={() => handleDeleteAddress(addr._id)} className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition"><Trash2 size={11} /></button>
                           </div>
                         </div>
                       ))}
@@ -849,7 +849,7 @@ export default function Profile() {
                     <div className="mt-4 border-t border-gray-100 pt-4">
                       <div className="flex justify-between items-center mb-3">
                         <h4 className="font-bold text-gray-900 text-xs sm:text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
-                        <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-gray-400 hover:text-gray-600"><FaTimes size={12} /></button>
+                        <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-gray-400 hover:text-gray-600"><X size={12} /></button>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {[
@@ -899,7 +899,7 @@ export default function Profile() {
               <Suspense fallback={<div className="space-y-4">{[1, 2].map(i => <div key={i} className="h-24 bg-gray-50 rounded-2xl animate-pulse" />)}</div>}>
                 {orders.length === 0 ? (
                   <div className="text-center py-12">
-                    <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mx-auto mb-4 text-3xl"><FaBoxOpen /></div>
+                    <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mx-auto mb-4 text-3xl"><PackageOpen size="1em" /></div>
                     <h3 className="text-lg font-bold text-gray-900">No orders yet</h3>
                     <p className="text-gray-500 text-sm mb-6">Start shopping to fill this page.</p>
                     <Link
@@ -925,7 +925,7 @@ export default function Profile() {
             onClick={handleLogout}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-red-200/80 bg-red-50/80 hover:bg-red-100/80 text-red-700 font-bold text-xs sm:text-sm transition-all active:scale-95"
           >
-            <FaSignOutAlt className="text-xs" />
+            <LogOut size="1em" className="text-xs" />
             <span>Sign Out</span>
           </button>
         </div>

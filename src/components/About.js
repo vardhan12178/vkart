@@ -1,24 +1,20 @@
 import React, { useMemo, useState } from "react";
 import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaLock,
-  FaCheckCircle,
-  FaShieldAlt,
-  FaRocket,
-  FaCartPlus,
-  FaQuestion,
-  FaCogs,
-  FaGithub,
-  FaArrowRight,
-  FaServer,
-  FaCode,
-  FaLayerGroup,
-  FaBrain,
-  FaAws
-} from "react-icons/fa";
-import { SiRedux, SiTailwindcss, SiRazorpay, SiRedis } from "react-icons/si";
+  ArrowRight,
+  Brain,
+  CircleCheck,
+  CircleHelp,
+  Code,
+  Cog,
+  Database,
+  Layers,
+  Lock,
+  Rocket,
+  Server,
+  Shield,
+  ShoppingCart,
+} from "lucide-react";
+import { AwsIcon, GithubIcon, NodeIcon, RazorpayIcon, ReactIcon, RedisIcon, ReduxIcon, TailwindIcon } from "./icons/BrandIcons";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -67,7 +63,7 @@ export default function About() {
       <section className="relative container mx-auto px-4 pt-20 pb-24 sm:pt-32 sm:pb-32 text-center z-10">
         <div className="animate-fade-up">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest shadow-xs backdrop-blur-xs mb-8">
-            <FaRocket /> Project Case Study
+            <Rocket size="1em" /> Project Case Study
           </span>
 
           <h1 className="font-editorial text-5xl sm:text-7xl sm:leading-none lg:text-8xl lg:leading-none font-normal text-[#1d1c19] tracking-[-0.045em] leading-[0.9] mb-8">
@@ -84,15 +80,15 @@ export default function About() {
       <section className="container mx-auto px-4 pb-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
           {[
-            { icon: FaReact, name: "React.js", color: "text-blue-400" },
-            { icon: SiRedux, name: "Redux Toolkit", color: "text-purple-500" },
-            { icon: FaNodeJs, name: "Node.js", color: "text-green-500" },
-            { icon: FaDatabase, name: "MongoDB Vector", color: "text-green-600" },
-            { icon: SiRedis, name: "Redis Cache", color: "text-red-500" },
-            { icon: FaAws, name: "AWS S3", color: "text-orange-500" },
-            { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-sky-400" },
-            { icon: FaLock, name: "JWT Auth", color: "text-orange-500" },
-            { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
+            { icon: ReactIcon, name: "React.js", color: "text-blue-400" },
+            { icon: ReduxIcon, name: "Redux Toolkit", color: "text-purple-500" },
+            { icon: NodeIcon, name: "Node.js", color: "text-green-500" },
+            { icon: Database, name: "MongoDB Vector", color: "text-green-600" },
+            { icon: RedisIcon, name: "Redis Cache", color: "text-red-500" },
+            { icon: AwsIcon, name: "AWS S3", color: "text-orange-500" },
+            { icon: TailwindIcon, name: "Tailwind CSS", color: "text-sky-400" },
+            { icon: Lock, name: "JWT Auth", color: "text-orange-500" },
+            { icon: RazorpayIcon, name: "Razorpay", color: "text-blue-600" },
           ].map((tech, i) => (
             <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-xs hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
               <tech.icon className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
@@ -114,27 +110,27 @@ export default function About() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              icon: <FaCogs />,
+              icon: <Cog size="1em" />,
               title: "Admin Dashboard",
               desc: "Full CRUD capabilities for products and users protected by admin middleware."
             },
             {
-              icon: <FaShieldAlt />,
+              icon: <Shield size="1em" />,
               title: "Secure Auth",
               desc: "JWT-based sessions with HttpOnly cookies and Google OAuth integration."
             },
             {
-              icon: <FaCartPlus />,
+              icon: <ShoppingCart size="1em" />,
               title: "Checkout Flow",
               desc: "End-to-end payment processing with address management and order tracking."
             },
             {
-              icon: <FaLayerGroup />,
+              icon: <Layers size="1em" />,
               title: "State Management",
               desc: "Centralized Redux store for cart, user session, and persistent UI states."
             },
             {
-              icon: <FaBrain />,
+              icon: <Brain size="1em" />,
               title: "AI Intelligence",
               desc: "RAG-powered assistant using MongoDB Vector Search for context-aware support."
             },
@@ -157,7 +153,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FaCode className="text-2xl text-gray-600" />
+              <Code size="1em" className="text-2xl text-gray-600" />
             </div>
             <h2 className="text-3xl font-black text-gray-900 mb-12">Engineering Decisions</h2>
 
@@ -173,7 +169,7 @@ export default function About() {
                 "RESTful API best practices"
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
-                  <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
+                  <CircleCheck size="1em" className="text-green-500 mt-1 shrink-0" />
                   <span className="font-medium text-gray-700">{item}</span>
                 </div>
               ))}
@@ -249,7 +245,7 @@ export default function About() {
                 rel="noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 text-white font-bold border border-white/10 hover:bg-white/20 transition-all flex items-center justify-center gap-2"
               >
-                <FaGithub size={20} /> Source Code
+                <GithubIcon size={20} /> Source Code
               </a>
             </div>
           </div>

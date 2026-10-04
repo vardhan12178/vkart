@@ -2,9 +2,20 @@ import React, { useState } from "react";
 import axios from "./axiosInstance";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt, FaCreditCard, FaUniversity, FaClock } from "react-icons/fa";
 import { showToast } from "../utils/toast";
 import { qk } from "../query/queryKeys";
+import {
+  Check,
+  Clock,
+  CreditCard,
+  Crown,
+  Landmark,
+  Shield,
+  Star,
+  Tag,
+  Truck,
+  Zap,
+} from "lucide-react";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
@@ -140,7 +151,7 @@ export default function PrimeMembership() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.15),transparent_50%)]" />
         <div className="max-w-5xl mx-auto px-4 py-16 sm:py-24 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
-            <FaCrown className="text-amber-400" />
+            <Crown size="1em" className="text-amber-400" />
             <span className="text-sm font-bold text-amber-300">VKart Prime</span>
           </div>
           <h1 className="font-editorial text-5xl sm:text-7xl sm:leading-none lg:text-8xl lg:leading-none font-normal mb-6 leading-[0.9] tracking-[-0.04em]">
@@ -160,7 +171,7 @@ export default function PrimeMembership() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                  <FaCrown className="text-amber-600 text-xl" />
+                  <Crown size="1em" className="text-amber-600 text-xl" />
                 </div>
                 <div>
                   <p className="font-bold text-gray-900">You're a Prime Member!</p>
@@ -202,10 +213,10 @@ export default function PrimeMembership() {
         <h2 className="text-2xl font-black text-gray-900 text-center mb-10">What You Get</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: <FaTag />, title: "Extra Discounts", desc: "Exclusive Prime-only sale prices on every sale" },
-            { icon: <FaTruck />, title: "Free Shipping", desc: "Free delivery on all orders, no minimum" },
-            { icon: <FaBolt />, title: "Early Access", desc: "Shop sales 24 hours before everyone else" },
-            { icon: <FaShieldAlt />, title: "Priority Support", desc: "Dedicated support with faster resolution" },
+            { icon: <Tag size="1em" />, title: "Extra Discounts", desc: "Exclusive Prime-only sale prices on every sale" },
+            { icon: <Truck size="1em" />, title: "Free Shipping", desc: "Free delivery on all orders, no minimum" },
+            { icon: <Zap fill="currentColor" size="1em" />, title: "Early Access", desc: "Shop sales 24 hours before everyone else" },
+            { icon: <Shield size="1em" />, title: "Priority Support", desc: "Dedicated support with faster resolution" },
           ].map((b, i) => (
             <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-xs hover:shadow-md transition-shadow text-center">
               <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-amber-600 text-lg">
@@ -235,7 +246,7 @@ export default function PrimeMembership() {
             >
               {plan.isPopular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
-                  <FaStar size={8} /> Most Popular
+                  <Star fill="currentColor" size={8} /> Most Popular
                 </div>
               )}
 
@@ -252,7 +263,7 @@ export default function PrimeMembership() {
               <ul className="space-y-2 mb-6">
                 {(plan.features || []).map((f, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                    <FaCheck className="text-green-500 text-xs shrink-0" /> {f}
+                    <Check size="1em" className="text-green-500 text-xs shrink-0" /> {f}
                   </li>
                 ))}
               </ul>
@@ -301,9 +312,9 @@ export default function PrimeMembership() {
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Pay with</p>
             <div className="grid grid-cols-3 gap-2 mb-6">
               {[
-                { id: "card", icon: FaCreditCard, label: "Card" },
-                { id: "netbanking", icon: FaUniversity, label: "Netbanking" },
-                { id: "paylater", icon: FaClock, label: "Pay Later" },
+                { id: "card", icon: CreditCard, label: "Card" },
+                { id: "netbanking", icon: Landmark, label: "Netbanking" },
+                { id: "paylater", icon: Clock, label: "Pay Later" },
               ].map(({ id, icon: Icon, label }) => (
                 <button
                   key={id}

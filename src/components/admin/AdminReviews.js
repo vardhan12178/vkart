@@ -1,18 +1,17 @@
+import {
+  CircleAlert,
+  Eye,
+  EyeOff,
+  MessagesSquare,
+  RefreshCw,
+  Search,
+  Star,
+  Trash2,
+} from "lucide-react";
 import React, { useEffect, useState, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axiosInstance";
-import {
-  EyeIcon,
-  EyeOffIcon,
-  TrashIcon,
-  RefreshIcon,
-  ExclamationCircleIcon,
-  StarIcon,
-  ChatAlt2Icon,
-  SearchIcon
-} from "@heroicons/react/outline";
-import { StarIcon as StarSolidIcon } from "@heroicons/react/solid";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 
@@ -93,7 +92,7 @@ export default function AdminReviews() {
             onClick={() => reviewsQuery.refetch()}
             className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-semibold hover:bg-slate-50 transition-all active:scale-95 shrink-0"
           >
-            <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${reviewsQuery.isFetching ? "animate-spin" : ""}`} />
+            <RefreshCw className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${reviewsQuery.isFetching ? "animate-spin" : ""}`} />
             <span>Refresh</span>
           </button>
         </div>
@@ -102,7 +101,7 @@ export default function AdminReviews() {
         <div className="bg-white p-1 sm:p-1.5 rounded-2xl border border-slate-200/70 flex items-center gap-2">
           <div className="relative flex-1">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <SearchIcon className="h-4 w-4 text-slate-400" />
+              <Search className="h-4 w-4 text-slate-400" />
             </div>
             <input
               type="text"
@@ -126,13 +125,13 @@ export default function AdminReviews() {
           </div>
         ) : error ? (
           <div className="bg-white p-6 rounded-2xl border border-red-100 text-red-600 flex items-center gap-2 text-xs sm:text-sm">
-            <ExclamationCircleIcon className="h-5 w-5 shrink-0" />
+            <CircleAlert className="h-5 w-5 shrink-0" />
             <span>{error}</span>
           </div>
         ) : filteredReviews.length === 0 ? (
           <div className="bg-white p-8 sm:p-12 rounded-2xl border border-slate-200/70 text-center">
             <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-slate-300">
-              <ChatAlt2Icon className="h-6 w-6" />
+              <MessagesSquare className="h-6 w-6" />
             </div>
             <h3 className="text-sm sm:text-base font-bold text-slate-900">No reviews found</h3>
             <p className="text-slate-500 text-xs sm:text-sm mt-0.5">No reviews match your current search.</p>
@@ -149,7 +148,7 @@ export default function AdminReviews() {
                       {r.productTitle}
                     </h4>
                     <div className="flex items-center gap-0.5 bg-amber-50 border border-amber-200/60 px-1.5 py-0.5 rounded-md shrink-0">
-                      <StarSolidIcon className="h-3 w-3 text-amber-500" />
+                      <Star fill="currentColor" className="h-3 w-3 text-amber-500" />
                       <span className="text-[10px] font-black text-amber-800">{r.review.rating || 5}</span>
                     </div>
                   </div>
@@ -181,7 +180,7 @@ export default function AdminReviews() {
                               : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
                           }`}
                         >
-                          {r.review.isHidden ? <EyeIcon className="h-3 w-3" /> : <EyeOffIcon className="h-3 w-3" />}
+                          {r.review.isHidden ? <Eye className="h-3 w-3" /> : <EyeOff className="h-3 w-3" />}
                           <span>{r.review.isHidden ? "Show" : "Hide"}</span>
                         </button>
                         <button
@@ -189,7 +188,7 @@ export default function AdminReviews() {
                           disabled={deleteMutation.isPending}
                           className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[11px] font-bold border border-red-200 text-red-600 hover:bg-red-50 transition-colors"
                         >
-                          <TrashIcon className="h-3 w-3" />
+                          <Trash2 className="h-3 w-3" />
                           <span>Delete</span>
                         </button>
                       </div>
@@ -219,7 +218,7 @@ export default function AdminReviews() {
                           <span className="font-semibold text-slate-600">{r.review.reviewerName || "Anonymous"}</span>
                           <span>•</span>
                           <span className="inline-flex items-center text-amber-600 font-bold">
-                            <StarSolidIcon className="h-3.5 w-3.5 mr-0.5" />
+                            <Star fill="currentColor" className="h-3.5 w-3.5 mr-0.5" />
                             {r.review.rating}
                           </span>
                           {r.review.isHidden && (
@@ -236,7 +235,7 @@ export default function AdminReviews() {
                             disabled={toggleMutation.isPending}
                             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 text-slate-600 hover:bg-slate-50 mr-2 transition-colors"
                           >
-                            {r.review.isHidden ? <EyeIcon className="h-4 w-4" /> : <EyeOffIcon className="h-4 w-4" />}
+                            {r.review.isHidden ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
                             <span>{r.review.isHidden ? "Show" : "Hide"}</span>
                           </button>
                           <button
@@ -244,7 +243,7 @@ export default function AdminReviews() {
                             disabled={deleteMutation.isPending}
                             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border border-red-200 text-red-600 hover:bg-red-50 transition-colors"
                           >
-                            <TrashIcon className="h-4 w-4" />
+                            <Trash2 className="h-4 w-4" />
                             <span>Delete</span>
                           </button>
                         </td>

@@ -9,16 +9,16 @@ import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { loginSuccess } from "../redux/authSlice";
 import { qk } from "../query/queryKeys";
-
 import {
-  EyeIcon,
-  EyeOffIcon,
-  UserIcon,
-  LockClosedIcon,
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
+  CircleAlert,
+  CircleCheck,
+  Eye,
+  EyeOff,
+  Lock,
+  ShoppingCart,
+  User,
+} from "lucide-react";
+
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -43,7 +43,7 @@ const FieldError = ({ id, message }) =>
       id={id}
       className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-red-500"
     >
-      <ExclamationCircleIcon className="h-4 w-4 shrink-0" /> {message}
+      <CircleAlert className="h-4 w-4 shrink-0" /> {message}
     </motion.p>
   );
 
@@ -65,9 +65,9 @@ const Toast = ({ show, kind = "error", children }) => {
       role="status"
     >
       {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
+        <CircleCheck className="h-5 w-5 shrink-0 text-emerald-600" />
       ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
+        <CircleAlert className="h-5 w-5 shrink-0 text-red-600" />
       )}
       <div className="pt-0.5 font-medium">{children}</div>
     </motion.div>
@@ -310,7 +310,7 @@ export default function Login() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
-                  <ShoppingCartIcon className="h-6 w-6" />
+                  <ShoppingCart className="h-6 w-6" />
                 </div>
                 <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart.</span>
               </div>
@@ -350,7 +350,7 @@ export default function Login() {
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-6 sm:mb-8">
               <div className="h-10 w-10 bg-linear-to-tr from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg text-white">
-                <ShoppingCartIcon className="h-6 w-6" />
+                <ShoppingCart className="h-6 w-6" />
               </div>
             </div>
 
@@ -403,7 +403,7 @@ export default function Login() {
                   <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">Email</label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                      <UserIcon className={cx("h-5 w-5 transition-colors", errors.userId && touched.userId ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <User className={cx("h-5 w-5 transition-colors", errors.userId && touched.userId ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                     </div>
                     <input
                       id="userId"
@@ -436,7 +436,7 @@ export default function Login() {
                   </div>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                      <LockClosedIcon className={cx("h-5 w-5 transition-colors", errors.password && touched.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <Lock className={cx("h-5 w-5 transition-colors", errors.password && touched.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
                     </div>
                     <input
                       ref={passRef}
@@ -467,7 +467,7 @@ export default function Login() {
                       className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-hidden min-w-[44px] min-h-[44px]"
                       aria-label={showPassword ? "Hide password" : "Show password"}
                     >
-                      {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                      {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                     </button>
                   </div>
 
@@ -594,7 +594,7 @@ export default function Login() {
 
                   {twofaError && (
                     <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-3 flex items-center justify-center gap-1.5 text-xs text-red-500 font-medium">
-                      <ExclamationCircleIcon className="h-4 w-4" /> {twofaError}
+                      <CircleAlert className="h-4 w-4" /> {twofaError}
                     </motion.div>
                   )}
 

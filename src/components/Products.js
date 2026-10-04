@@ -13,22 +13,21 @@ import { qk } from "../query/queryKeys";
 import ProductSkeleton from "./product/ProductSkeleton";
 import ProductQuickView from "./product/ProductQuickView";
 
-import {
-  FaCartPlus,
-  FaHeart,
-  FaRegHeart,
-  FaStar,
-  FaFilter,
-  FaTimes,
-  FaSearch,
-  FaExpand,
-  FaArrowRight,
-  FaBolt,
-} from "react-icons/fa";
 
 import Sidebar from "./Sidebar";
 import CustomDropdown from "./CustomDropdown";
 import { IMAGE_PLACEHOLDER } from "../utils/imagePlaceholder";
+import {
+  ArrowRight,
+  Expand,
+  Funnel,
+  Heart,
+  Search,
+  ShoppingCart,
+  Star,
+  X,
+  Zap,
+} from "lucide-react";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -439,7 +438,7 @@ export default function Products() {
                 onClick={() => setShowFilters(true)}
                 className="lg:hidden flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 active:scale-95 transition-transform"
               >
-                <FaFilter className="text-gray-400 text-[10px]" /> Filters
+                <Funnel size="1em" className="text-gray-400 text-[10px]" /> Filters
               </button>
 
               <div className="hidden sm:block w-48">
@@ -485,7 +484,7 @@ export default function Products() {
                 <div className="relative z-10 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                     <div className="grid h-8 w-8 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-full border border-black/8 bg-[#fffdf8]">
-                      <FaBolt className="text-xs sm:text-sm text-[#a85d37]" />
+                      <Zap fill="currentColor" size="1em" className="text-xs sm:text-sm text-[#a85d37]" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.16em] text-[#8a604b] truncate">Limited-time sale</p>
@@ -510,7 +509,7 @@ export default function Products() {
             ) : filteredProducts.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 text-center bg-white rounded-3xl border border-dashed border-gray-200">
                 <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-gray-400 text-xl">
-                  <FaSearch />
+                  <Search size="1em" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">No products found</h3>
                 <p className="text-sm text-gray-500 mt-2">Try adjusting your filters or search terms</p>
@@ -570,7 +569,7 @@ export default function Products() {
                                 }`}
                               aria-label={inWishlist ? `Remove ${p.title} from saved items` : `Save ${p.title}`}
                             >
-                              {inWishlist ? <FaHeart size={11} /> : <FaRegHeart size={11} />}
+                              {inWishlist ? <Heart fill="currentColor" size={11} /> : <Heart size={11} />}
                             </button>
 
                             <button
@@ -578,7 +577,7 @@ export default function Products() {
                               className="hidden sm:flex w-8 h-8 rounded-full bg-white/90 text-gray-900 lg:text-gray-400 items-center justify-center shadow-xs backdrop-blur-sm hover:bg-white hover:text-gray-900 transition-all translate-x-0 lg:translate-x-10 lg:opacity-100 lg:group-hover:translate-x-0 lg:group-hover:opacity-100"
                               aria-label={`Quick view ${p.title}`}
                             >
-                              <FaExpand size={10} />
+                              <Expand size={10} />
                             </button>
                           </div>
                         </div>
@@ -592,7 +591,7 @@ export default function Products() {
                             onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
                             className="w-full py-3 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg hover:bg-black flex items-center justify-center gap-2 active:scale-95 transition-transform"
                           >
-                            <FaCartPlus /> Add
+                            <ShoppingCart size="1em" /> Add
                           </button>
                         </div>
                       </div>
@@ -625,7 +624,7 @@ export default function Products() {
                             {/* Rating Badge — Positioned next to Price */}
                             {p.rating ? (
                               <div className="inline-flex items-center gap-1 bg-amber-50/80 border border-amber-200/60 px-1.5 py-0.5 rounded-md text-[10px] font-bold text-amber-900 shrink-0">
-                                <FaStar className="text-amber-500 text-[9px]" />
+                                <Star fill="currentColor" size="1em" className="text-amber-500 text-[9px]" />
                                 <span>{p.rating}</span>
                               </div>
                             ) : null}
@@ -635,7 +634,7 @@ export default function Products() {
                           {p.onSale && (
                             <div className="mt-1 sm:mt-1.5 flex items-center">
                               <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-bold text-[#75483b] bg-[#eee2dc] px-2 py-0.5 rounded-md uppercase tracking-wide">
-                                <FaBolt className="text-[8px]" /> {p.saleName || "Prime Day Sale"}
+                                <Zap fill="currentColor" size="1em" className="text-[8px]" /> {p.saleName || "Prime Day Sale"}
                               </span>
                             </div>
                           )}
@@ -660,7 +659,7 @@ export default function Products() {
                             onClick={(e) => { e.preventDefault(); handleAddToCart(p); }}
                             className="sm:hidden w-full py-1.5 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-xs hover:bg-black flex items-center justify-center gap-1.5 active:scale-95 transition-all"
                           >
-                            <FaCartPlus size={11} /> Add to Cart
+                            <ShoppingCart size={11} /> Add to Cart
                           </button>
                         </div>
                       </div>
@@ -677,7 +676,7 @@ export default function Products() {
                   disabled={productsQuery.isFetchingNextPage}
                   className="flex items-center gap-2 rounded-full border border-black/10 bg-transparent px-6 py-2.5 text-sm font-bold text-[#1d1c19] transition-colors hover:bg-black/4"
                 >
-                  {productsQuery.isFetchingNextPage ? "Loading..." : "Show More"} <FaArrowRight size={10} />
+                  {productsQuery.isFetchingNextPage ? "Loading..." : "Show More"} <ArrowRight size={10} />
                 </button>
               </div>
             )}
@@ -725,7 +724,7 @@ export default function Products() {
         <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-sm flex-col border-r border-black/8 bg-[#fffdf8]">
           <div className="flex items-center justify-between border-b border-black/[0.07] bg-[#f3efe8] p-5">
             <h3 className="text-base font-bold text-[#1d1c19]">Refine the collection</h3>
-            <button onClick={() => setShowFilters(false)} className="grid h-9 w-9 place-items-center rounded-full border border-black/8 text-[#6f6b62]" aria-label="Close filters"><FaTimes /></button>
+            <button onClick={() => setShowFilters(false)} className="grid h-9 w-9 place-items-center rounded-full border border-black/8 text-[#6f6b62]" aria-label="Close filters"><X size="1em" /></button>
           </div>
           <div className="flex-1 overflow-y-auto p-5">
             <Sidebar
