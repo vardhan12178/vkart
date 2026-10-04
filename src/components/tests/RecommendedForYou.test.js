@@ -8,7 +8,6 @@ import RecommendedForYou from "../RecommendedForYou";
 import axios from "../axiosInstance";
 
 vi.mock("../axiosInstance");
-vi.mock("react-slick", () => ({ default: ({ children }) => <div data-testid="slider-mock">{children}</div> }));
 
 const makeProducts = (count, overrides = {}) =>
   Array.from({ length: count }, (_, i) => ({

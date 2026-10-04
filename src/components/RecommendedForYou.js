@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
+import ProductRail from "./product/ProductRail";
 import { useQuery } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import { qk } from "../query/queryKeys";
@@ -53,44 +53,34 @@ export default function RecommendedForYou() {
           </Link>
         </div>
 
-        <Slider
-          dots={false}
-          infinite={false}
-          speed={500}
-          slidesToShow={5}
-          slidesToScroll={2}
-          responsive={[
-            { breakpoint: 1280, settings: { slidesToShow: 4 } },
-            { breakpoint: 1024, settings: { slidesToShow: 3 } },
-            { breakpoint: 640, settings: { slidesToShow: 2, arrows: false } },
-          ]}
+        <ProductRail
+          label={personalized ? "Recommended for you" : "Popular picks"}
+          items={products}
           className="-mx-2"
-        >
-          {products.map((p) => (
-            <div key={p._id} className="px-2 py-2 h-full">
-              <Link
-                to={`/product/${p._id}`}
-                className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full"
-              >
-                <div className="aspect-square bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
-                  <img
-                    src={p.thumbnail}
-                    alt={p.title}
-                    loading="lazy"
-                    className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {p.discountPercentage > 0 && (
-                    <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded-sm shadow-xs">
-                      -{Math.round(p.discountPercentage)}%
-                    </span>
-                  )}
-                </div>
-                <h4 className="font-bold text-gray-900 truncate text-sm mb-1">{p.title}</h4>
-                <div className="font-bold text-gray-900">{INR(p.price)}</div>
-              </Link>
-            </div>
-          ))}
-        </Slider>
+          slideClassName="basis-1/2 sm:basis-1/3 lg:basis-1/4 xl:basis-1/5 px-2 py-2"
+          renderItem={(p) => (
+                  <Link
+                    to={`/product/${p._id}`}
+                    className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full"
+                  >
+                    <div className="aspect-square bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
+                      <img
+                        src={p.thumbnail}
+                        alt={p.title}
+                        loading="lazy"
+                        className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {p.discountPercentage > 0 && (
+                        <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded-sm shadow-xs">
+                          -{Math.round(p.discountPercentage)}%
+                        </span>
+                      )}
+                    </div>
+                    <h4 className="font-bold text-gray-900 truncate text-sm mb-1">{p.title}</h4>
+                    <div className="font-bold text-gray-900">{INR(p.price)}</div>
+                  </Link>
+          )}
+        />
       </div>
     </section>
   );

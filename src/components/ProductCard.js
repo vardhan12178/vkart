@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { addToCart } from "../redux/cartSlice";
 import { toggleWishlist } from "../redux/wishlistSlice";
-import Slider from "react-slick";
 import axios from "./axiosInstance";
 import { Helmet } from "react-helmet-async";
 import { qk } from "../query/queryKeys";
@@ -12,8 +11,6 @@ import { qk } from "../query/queryKeys";
 import ReviewModal from "./ReviewModal";
 
 import {
-  ChevronLeft,
-  ChevronRight,
   CircleCheck,
   CircleUser,
   Heart,
@@ -28,23 +25,15 @@ import {
   Zap,
 } from "lucide-react";
 import HalfStar from "./icons/HalfStar";
+import ProductGallery from "./product/ProductGallery";
+import ProductRail from "./product/ProductRail";
 import { showToast } from "../utils/toast";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 /* ---------- Animations & Styles ---------- */
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .slick-dots li button:before { font-size: 8px; color: #cbd5e1; opacity: 1; }
-    .slick-dots li.slick-active button:before { color: #111827; }
-    
-    .slick-slider { width: 100%; height: 100%; }
-    .slick-list { height: 100%; }
-    .slick-track { height: 100%; display: flex; align-items: center; }
-    .slick-slide { height: 100%; display: flex; justify-content: center; align-items: center; }
-    .slick-slide > div { width: 100%; height: 100%; }
   `}</style>
 );
 
@@ -69,17 +58,6 @@ const Stars = ({ value = 0, size = "text-base", className = "" }) => {
     </div>
   );
 };
-
-const Arrow = ({ onClick, direction }) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className={`absolute top-1/2 -translate-y-1/2 z-20 ${direction === "next" ? "right-4" : "left-4"
-      } h-10 w-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-900 hover:scale-110 transition-all active:scale-95 hidden md:flex`}
-  >
-    {direction === "next" ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
-  </button>
-);
 
 function useCountdown(targetDate) {
   const target = useMemo(() => (targetDate ? new Date(targetDate).getTime() : 0), [targetDate]);
@@ -410,16 +388,12 @@ export default function ProductCard() {
   // Wishlist from Redux
   const wishlist = useSelector((state) => state.wishlist);
   const isInWishlist = product ? wishlist.some((item) => (item._id || item.id) === product._id) : false;
-  const [zoom, setZoom] = useState({ enabled: false, x: 0, y: 0 });
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showReviewModal, setShowReviewModal] = useState(false);
   const [selectedVariants, setSelectedVariants] = useState({});
   const [reviewSort, setReviewSort] = useState("newest");
   const [reviewPage, setReviewPage] = useState(1);
   const REVIEWS_PER_PAGE = 5;
-
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
 
   const buyBoxRef = useRef(null);
 
@@ -428,8 +402,6 @@ export default function ProductCard() {
   }, [id]);
 
   useEffect(() => {
-    setNav1(null);
-    setNav2(null);
     setQuantity(1);
     setSelectedVariants({});
   }, [id]);
@@ -604,98 +576,13 @@ export default function ProductCard() {
 
           {/* Image gallery */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 shadow-xs border border-gray-100 relative">
-
-              {/* Main display area */}
-              <div className="relative group rounded-xl sm:rounded-2xl overflow-hidden bg-gray-50 aspect-square max-h-[350px] lg:max-h-[450px] w-full mx-auto">
-                <Slider
-                  asNavFor={nav2}
-                  ref={(slider) => setNav1(slider)}
-                  prevArrow={<Arrow direction="prev" />}
-                  nextArrow={<Arrow direction="next" />}
-                  fade={true}
-                  className="h-full w-full flex items-center"
-                >
-                  {imgs.map((img, i) => (
-                    <div key={i} className="relative w-full h-full outline-hidden">
-                      <div
-                        className="w-full h-full flex items-center justify-center cursor-zoom-in p-4 sm:p-6"
-                        onMouseMove={(e) => {
-                          const rect = e.currentTarget.getBoundingClientRect();
-                          const x = ((e.clientX - rect.left) / rect.width) * 100;
-                          const y = ((e.clientY - rect.top) / rect.height) * 100;
-                          setZoom((z) => ({ ...z, x, y }));
-                        }}
-                        onMouseEnter={() => setZoom((z) => ({ ...z, enabled: true }))}
-                        onMouseLeave={() => setZoom({ enabled: false, x: 0, y: 0 })}
-                      >
-                        <img
-                          src={img}
-                          alt={i === 0 ? title : `${title} — view ${i + 1}`}
-                          loading={i === 0 ? "eager" : "lazy"}
-                          fetchpriority={i === 0 ? "high" : "auto"}
-                          decoding="async"
-                          className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105"
-                        />
-                        {zoom.enabled && (
-                          <div
-                            className="hidden lg:block absolute inset-0 bg-no-repeat bg-white pointer-events-none z-10"
-                            style={{
-                              backgroundImage: `url(${img})`,
-                              backgroundPosition: `${zoom.x}% ${zoom.y}%`,
-                              backgroundSize: "200%",
-                            }}
-                          />
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </Slider>
-
-                {stock === 0 && (
-                  <div className="absolute left-3 top-3 z-20 rounded-full bg-[#75483b] px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-bold text-white">
-                    Out of Stock
-                  </div>
-                )}
-              </div>
-
-              {/* Thumbnails */}
-              {imgs.length > 1 && (
-                <div className="mt-3 sm:mt-4 px-1 sm:px-2">
-                  <Slider
-                    asNavFor={nav1}
-                    ref={(slider) => setNav2(slider)}
-                    slidesToShow={Math.min(imgs.length, 5)}
-                    swipeToSlide={true}
-                    focusOnSelect={true}
-                    arrows={false}
-                    className="thumbnail-slider"
-                    responsive={[
-                      {
-                        breakpoint: 768,
-                        settings: {
-                          slidesToShow: Math.min(imgs.length, 4)
-                        }
-                      },
-                      {
-                        breakpoint: 480,
-                        settings: {
-                          slidesToShow: Math.min(imgs.length, 4)
-                        }
-                      }
-                    ]}
-                  >
-                    {imgs.map((img, i) => (
-                      <div key={i} className="px-1 md:px-2 cursor-pointer outline-hidden">
-                        <div className="h-14 sm:h-16 w-full rounded-lg sm:rounded-xl border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden hover:border-gray-900 transition-all">
-                          <img src={img} className="h-full w-full object-contain p-1 mix-blend-multiply" alt="" />
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
+            <ProductGallery images={imgs} title={title}>
+              {stock === 0 && (
+                <div className="absolute left-3 top-3 z-20 rounded-full bg-[#75483b] px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-bold text-white">
+                  Out of Stock
                 </div>
               )}
-            </div>
+            </ProductGallery>
           </div>
 
           {/* Product details */}
@@ -1004,39 +891,29 @@ export default function ProductCard() {
               <Link to="/products" className="text-xs sm:text-sm font-bold text-gray-900 hover:underline">View All</Link>
             </div>
 
-            <Slider
-              dots={false}
-              infinite={false}
-              speed={500}
-              slidesToShow={4}
-              slidesToScroll={1}
-              responsive={[
-                { breakpoint: 1280, settings: { slidesToShow: 3 } },
-                { breakpoint: 1024, settings: { slidesToShow: 2.2 } },
-                { breakpoint: 640, settings: { slidesToShow: 1.3, arrows: false } },
-              ]}
+            <ProductRail
+              label="You might also like"
+              items={related}
               className="-mx-2 md:-mx-4"
-            >
-              {related.map((rp) => (
-                <div key={rp._id} className="px-2 md:px-4 py-2 h-full">
-                  <Link to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full">
-                    <div className="aspect-4/3 bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
-                      <img loading="lazy" decoding="async" src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
-                      {rp.discountPercentage > 0 && (
-                        <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded-sm shadow-xs">
-                          -{Math.round(rp.discountPercentage)}%
-                        </span>
-                      )}
-                    </div>
-                    <h4 className="font-bold text-gray-900 truncate text-sm mb-1">{rp.title}</h4>
-                    <div className="flex items-baseline gap-2">
-                      <div className="font-bold text-gray-900">{formatPrice(rp.price)}</div>
-                      <div className="text-xs text-gray-400 line-through">{formatPrice(rp.price * 1.2)}</div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </Slider>
+              slideClassName="basis-[76.9%] sm:basis-[45.45%] lg:basis-1/3 xl:basis-1/4 px-2 md:px-4 py-2"
+              renderItem={(rp) => (
+                <Link to={`/product/${rp._id}`} className="group block bg-white rounded-2xl border border-gray-100 p-3 hover:shadow-xl hover:shadow-gray-200/50 hover:-translate-y-1 transition-all h-full">
+                  <div className="aspect-4/3 bg-gray-50 rounded-xl mb-3 overflow-hidden relative">
+                    <img loading="lazy" decoding="async" src={rp.thumbnail} alt={rp.title} className="w-full h-full object-contain mix-blend-multiply p-4 group-hover:scale-105 transition-transform duration-500" />
+                    {rp.discountPercentage > 0 && (
+                      <span className="absolute top-2 right-2 bg-white text-gray-900 text-[10px] font-bold px-2 py-1 rounded-sm shadow-xs">
+                        -{Math.round(rp.discountPercentage)}%
+                      </span>
+                    )}
+                  </div>
+                  <h4 className="font-bold text-gray-900 truncate text-sm mb-1">{rp.title}</h4>
+                  <div className="flex items-baseline gap-2">
+                    <div className="font-bold text-gray-900">{formatPrice(rp.price)}</div>
+                    <div className="text-xs text-gray-400 line-through">{formatPrice(rp.price * 1.2)}</div>
+                  </div>
+                </Link>
+              )}
+            />
           </div>
         )}
 

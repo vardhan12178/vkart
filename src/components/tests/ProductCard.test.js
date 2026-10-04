@@ -15,7 +15,6 @@ import { showToast } from "../../utils/toast";
 
 vi.mock("../axiosInstance");
 vi.mock("../../utils/toast", () => ({ showToast: vi.fn() }));
-vi.mock("react-slick", () => ({ default: (props) => <div data-testid="slider-mock">{props.children}</div> }));
 vi.mock("../ReviewModal", () => ({ default: (props) =>
   props.isOpen ? <div data-testid="review-modal-mock">Review Modal Open</div> : null }));
 

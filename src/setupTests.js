@@ -11,3 +11,25 @@ class IntersectionObserver {
   disconnect() { return null; }
 }
 window.IntersectionObserver = IntersectionObserver;
+
+// matchMedia / ResizeObserver: used by the Embla carousels.
+if (!window.matchMedia) {
+  window.matchMedia = (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => false,
+  });
+}
+
+if (!window.ResizeObserver) {
+  window.ResizeObserver = class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+}
