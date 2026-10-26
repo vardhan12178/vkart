@@ -1,0 +1,165 @@
+{
+  "slug": "google-pixel-11-pro-fold",
+  "title": "Google Pixel 11 Pro Fold",
+  "brand": "Google",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "Foldable with an 8-inch inner and 6.5-inch outer display, Tensor G6, triple camera with 5x telephoto and IP68.",
+  "description": "Pixel 11 Pro Fold opens from a 6.5-inch outer screen to an 8-inch Super Actua Flex display, both running 1–120Hz and peaking at 3,600 nits.\n\nIt is 5 mm thin unfolded, weighs 239 g and is rated IP68 — rare for a foldable. The triple camera combines a 48MP wide, 10.5MP ultrawide and 10.8MP 5x telephoto, with 10MP cameras on both screens.\n\nGoogle Tensor G6, 16GB RAM and a 4,806 mAh battery with 25W Pixelsnap wireless charging round it out.",
+  "highlights": [
+    "8-inch inner + 6.5-inch outer Super Actua displays, 3,600 nits",
+    "Google Tensor G6, 16GB RAM",
+    "48MP wide + 10.5MP ultrawide + 10.8MP 5x telephoto",
+    "5 mm unfolded, 239 g, IP68",
+    "4,806 mAh battery, 25W Pixelsnap wireless charging",
+    "7 years of OS and security updates"
+  ],
+  "specs": {
+    "Display": {
+      "size": 8.0,
+      "type": "Super Actua Flex OLED (inner)",
+      "resolution": "2076 × 2152",
+      "ppi": 372,
+      "refreshRate": 120,
+      "outerDisplay": "6.5-inch Super Actua OLED, 1080 × 2342, 399 ppi",
+      "brightness": "3,600 nits peak"
+    },
+    "Performance": {
+      "chip": "Google Tensor G6",
+      "ram": "16GB"
+    },
+    "Camera": {
+      "rear": "48MP wide (ƒ/1.7) + 10.5MP ultrawide (ƒ/2.2, Macro Focus) + 10.8MP 5x telephoto (ƒ/3.1, OIS)",
+      "mainMP": 48,
+      "zoom": "Super Zoom up to 30x",
+      "front": "10MP outer + 10MP inner"
+    },
+    "Battery": {
+      "capacityMah": 4806,
+      "wired": "Up to 50% in about 30 min with 30W charger",
+      "wireless": "Pixelsnap (Qi2.2) up to 25W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "usb": "USB-C",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "Folded 155.2 × 76 × 10.1 mm; unfolded 155.2 × 150.4 × 5 mm",
+      "weightG": 239,
+      "materials": "Glass ceramic outer cover, Ultra Thin Glass inner",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android 17",
+      "updates": "7 years of OS, security and Pixel Drop updates",
+      "ai": "Gemini"
+    },
+    "Security": {
+      "chip": "Titan M3 security coprocessor",
+      "biometrics": "Fingerprint Unlock, Face Unlock"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 8.0,
+    "refreshRateHz": 120,
+    "mainCameraMP": 48,
+    "frontCameraMP": 10,
+    "batteryMah": 4806,
+    "chargingW": 30,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 239,
+    "chip": "Google Tensor G6",
+    "os": "Android",
+    "foldable": true,
+    "ramGB": 16
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Olive",
+          "hex": "#8D9276"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Olive": [
+        {
+          "src": "https://lh3.googleusercontent.com/7bAFKKkShy2Ml49iyisIoV-ZUFTA-DooIwE-gUlUf1voIiqExIOB1wXBroEzc4DvaiggOS80ykqHSrhFF74QZ9936JJfNXlvJg=s1600",
+          "alt": "Google Pixel 11 Pro Fold in Olive, back"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/s3czXV1F4CJ5eZIOOmGExv8eNCOE49SygQ4zDLWwIvmI_aNaiK3gOlXM-wZk8gdasI08hb44gpZchmLs-FPcB0oJ-B9C9gOYXQ=s1600",
+          "alt": "Google Pixel 11 Pro Fold in Olive, front"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/apIAgTf2_5NFGRL6mBDLfhY6E2tGGEguO5TOuoPCDWeEF-rupi0r5vsxiJFH_HHRycfvH2ooNrb2cEnE6xf678JcDltkjLrZ1Wk=s1600",
+          "alt": "Google Pixel 11 Pro Fold in Olive, side"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/0PKxBqZYhym5376eaj9CU-vooClylpwwSGR6ArTQpGM0dTC40Ooix9Ow64tM5Z9VmlSMQFKNW2d8VoHGZgAuyu5GQ6Eyjtor3o8=s1600",
+          "alt": "Google Pixel 11 Pro Fold in Olive, angled back"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/HGAk9Gp9gAIWubgwrtfrNsmC6wtOHQ03utetYtPGqZVL4KRS1LPpV7Var3r72oAPW68LoIYHkXMFxmNq5dUtoRYufwFMGMuvpOw=s1600",
+          "alt": "Google Pixel 11 Pro Fold in Olive, open"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GGL-P11PF-512-OL",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Olive"
+      },
+      "price": 186999,
+      "mrp": 186999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Pixel 11 Pro Fold",
+    "1 m USB-C to USB-C cable (USB 2.0)",
+    "Quick Switch Adapter",
+    "SIM tool"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://store.google.com/in/product/pixel_11_pro_fold_specs",
+      "https://store.google.com/in/config/pixel_11_pro_fold"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs from the Google Store India spec page; prices and images read from the rendered configurator. Only storage/colour combinations on sale with a listed price are included."
+  }
+}

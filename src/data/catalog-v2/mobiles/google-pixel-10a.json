@@ -1,0 +1,270 @@
+{
+  "slug": "google-pixel-10a",
+  "title": "Google Pixel 10a",
+  "brand": "Google",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "Affordable Pixel with Tensor G4, 6.3-inch 120Hz pOLED, 48MP camera, 5,100 mAh battery and 7 years of updates.",
+  "description": "Pixel 10a brings Google's camera and software to a lower price: a 48MP wide and 13MP ultrawide, Night Sight, Astrophotography and Add Me.\n\nThe 6.3-inch pOLED display runs at 60–120Hz and reaches 3,000 nits, protected by Gorilla Glass 7i. Google Tensor G4 with 8GB RAM handles everyday tasks and Gemini.\n\nIts 5,100 mAh battery lasts 30+ hours (up to 120 with Extreme Battery Saver), and it's IP68 rated with seven years of updates.",
+  "highlights": [
+    "6.3-inch pOLED, 60–120Hz, 3,000 nits peak",
+    "Google Tensor G4, 8GB RAM",
+    "48MP wide + 13MP ultrawide",
+    "5,100 mAh battery, 45W-capable charging",
+    "7 years of OS and security updates",
+    "IP68"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.3,
+      "type": "Actua pOLED",
+      "resolution": "1080 × 2424",
+      "ppi": 422,
+      "refreshRate": 120,
+      "brightness": "2,000 nits HDR, 3,000 nits peak",
+      "glass": "Gorilla Glass 7i"
+    },
+    "Performance": {
+      "chip": "Google Tensor G4",
+      "ram": "8GB"
+    },
+    "Camera": {
+      "rear": "48MP wide (ƒ/1.7, OIS) + 13MP ultrawide (ƒ/2.2)",
+      "mainMP": 48,
+      "zoom": "Super Zoom up to 8x",
+      "front": "13MP"
+    },
+    "Battery": {
+      "capacityMah": 5100,
+      "wired": "Up to 50% in about 30 min with 45W charger",
+      "wireless": "Qi wireless charging"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "usb": "USB-C",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "153.9 × 73 × 9 mm",
+      "weightG": 183,
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android 16",
+      "updates": "7 years of OS, security and Pixel Drop updates",
+      "ai": "Gemini"
+    },
+    "Security": {
+      "chip": "Titan M2 security coprocessor",
+      "biometrics": "Fingerprint Unlock, Face Unlock"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.3,
+    "refreshRateHz": 120,
+    "mainCameraMP": 48,
+    "frontCameraMP": 13,
+    "batteryMah": 5100,
+    "chargingW": 45,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 183,
+    "chip": "Google Tensor G4",
+    "os": "Android",
+    "ramGB": 8
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lavender",
+          "hex": "#5486E7"
+        },
+        {
+          "value": "Berry",
+          "hex": "#FE6172"
+        },
+        {
+          "value": "Fog",
+          "hex": "#ACBBAF"
+        },
+        {
+          "value": "Obsidian",
+          "hex": "#4A5050"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lavender": [
+        {
+          "src": "https://lh3.googleusercontent.com/9EjM7hLTMa6gUVkxl44VV_qHqJUBpnt9SLQpbwq9_DErsjofjDkB7phtHMwxm5G-yH0Kh7Sx6L4LauKI8v1WtBskRl5K9DRYPyc=s1600",
+          "alt": "Google Pixel 10a in Lavender, back"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/mWOBOxWax8zBV3Q5BmgH9gEb6Xh_2dzNVAUHf7pbZAOBshZ08RIHJ3srAb4kW5TZDjNzJ5RxqPUc2wC_MoaNX_Q1NyYEW5v6nevZ=s1600",
+          "alt": "Google Pixel 10a in Lavender, front"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/uPYSdh5docsvef6eSf8GVT8Bmq8g5PPoEZb3D5NJFp9P_TMWrwqGDSKXo_AbzuRpLlJd_bTIlqyGkLbvchQEUcum8VtePLYhLDw=s1600",
+          "alt": "Google Pixel 10a in Lavender, side"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/2Td1D8wskptpDBanevErXllwEYDWgoOjKo4O_rulhhYaEV6cx_TkGqtxNDc0ICfm3MlHhMunu-H5fLvm-4if6lSu0eKgSDd-XFY=s1600",
+          "alt": "Google Pixel 10a in Lavender, angled back"
+        }
+      ],
+      "Berry": [
+        {
+          "src": "https://lh3.googleusercontent.com/O5ctfwJSbrfQ4fyACTYv5cfT3AxB9hin-n8uzYgjvniskwFzpGhldSFwxJjKzKjHlWsg5I2OyJb3zBiqbTx7ucofxtuQjQDixg=s1600",
+          "alt": "Google Pixel 10a in Berry, back"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/7s-85l-q1sJIOiqvsCL7Rwz15CK1podOfzSXDywkhEFAv-oIP1MhQwPxWz6IVCJ6knVFYTTPxviBsoQQLesmFBJ1bluJY3xb0_M=s1600",
+          "alt": "Google Pixel 10a in Berry, front"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/kRf1ysW89DvPWyLHigkaFTdNImDGnNhRNpkkBsNdLxe4NWSQBXe9qOhXAj1Lgthccs0RMNu2jq2GNCAPmt453itBZmOtO1HMuJki=s1600",
+          "alt": "Google Pixel 10a in Berry, side"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/lHsHirYHO7jVex15lD39MFKARKIpjx295MRYZtqDqKXAgJWSx6Xum4RuVUYEMhsLKCrSEqmgCuOUOfYSPWK0RH9laDKi219gZ9kd=s1600",
+          "alt": "Google Pixel 10a in Berry, angled back"
+        }
+      ],
+      "Fog": [
+        {
+          "src": "https://lh3.googleusercontent.com/bdVla-ncH5TJIAjwc_fovko5kqKtbHyYcGW4NPzWn4sEwaeEFygfCxqWrIi1foYzQb6IsqfHNPF1u5IQMwJbegw3PKJsrFeLi64=s1600",
+          "alt": "Google Pixel 10a in Fog, back"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/hkEORFoOF8OWwISs7stBwDpq_Yzw78WSmkcVMA-4RruqoX5mVuFzAqzopKAIAf5SCK7SgDw-i-rKAIYLI6Jk8LUdlpRpB4xIQA=s1600",
+          "alt": "Google Pixel 10a in Fog, front"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/jgEg_O7DCpM_3V_qNQ_97iq0Xmw5JOjZuQVpvpfGP1lw5KzoLLugobjPIC9fB3lrAsgrd-1rsK-zaywCKpvLSA0MUo6LSM8PF_0=s1600",
+          "alt": "Google Pixel 10a in Fog, side"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aalucKlAm-9YDs254a6hB6L0RoWdO5LjPX4AOubEbBKXlRu1CgjCrNsMrtQadzo-wLIaccEsRAAPaHRLwZnjSC4SdQVkvZnKq7YP=s1600",
+          "alt": "Google Pixel 10a in Fog, angled back"
+        }
+      ],
+      "Obsidian": [
+        {
+          "src": "https://lh3.googleusercontent.com/Zi-CXX_GzU1VUXGcIBg_xL4WB5VVeY_TaM072xdXwUXaHgaRz23eVbq0UJ4mdiw5LuXq4CprbE-2N7dxSiWpfGxkMU2KtmB-CaI=s1600",
+          "alt": "Google Pixel 10a in Obsidian, back"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/THFGRoJi4862stlR99C6fiX3XOUCeTStEQD6o7HxkiyvgxZwSs6rYlx5yCAs5GAAenDJX2kaYABZi_KU6kSC2iM_t3GlyDiZKw=s1600",
+          "alt": "Google Pixel 10a in Obsidian, front"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/KBvC1YPHiEVGNoTiavYXuB72B7dcOItGtCvBqFu_I6mdNRlDCObURtAQtw-4BUN-_JYN6knXGOF2Nt5stdRPoXiDanVfAgflEA=s1600",
+          "alt": "Google Pixel 10a in Obsidian, side"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/8dGxtwPX3Irx_kmnAdaVZw9EEwpJ4Ce0dhIBFxF_MOSV7EE3IGdLENQGLIFVtoFDxHGFWXRoA2vX4kq7YbSlj9A4xafqfMBW9h-g=s1600",
+          "alt": "Google Pixel 10a in Obsidian, angled back"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GGL-P10A-256-BE",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Berry"
+      },
+      "price": 52999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P10A-256-FO",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Fog"
+      },
+      "price": 52999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P10A-256-LA",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Lavender"
+      },
+      "price": 52999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P10A-256-OB",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Obsidian"
+      },
+      "price": 52999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Pixel 10a",
+    "1 m USB-C to USB-C cable (USB 2.0)",
+    "Quick Switch Adapter",
+    "SIM tool"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://store.google.com/in/product/pixel_10a_specs",
+      "https://store.google.com/in/config/pixel_10a"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs from the Google Store India spec page; prices and images read from the rendered configurator. Only storage/colour combinations on sale with a listed price are included."
+  }
+}
