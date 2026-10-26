@@ -25,6 +25,8 @@ const Footer = lazy(() => import("./components/Footer"));
 const Error = lazy(() => import("./components/Error"));
 const Products = lazy(() => import("./components/Products"));
 const ProductCard = lazy(() => import("./components/ProductCard"));
+const CatalogPreviewList = lazy(() => import("./components/catalogPreview/CatalogPreviewList"));
+const CatalogPreviewProduct = lazy(() => import("./components/catalogPreview/CatalogPreviewProduct"));
 const Cart = lazy(() => import("./components/Cart"));
 const Profile = lazy(() => import("./components/Profile"));
 const Compare = lazy(() => import("./components/Compare"));
@@ -196,6 +198,8 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/product/:id" element={<ProductCard />} />
+              <Route path="/catalog-preview" element={<CatalogPreviewList />} />
+              <Route path="/catalog-preview/:slug" element={<CatalogPreviewProduct />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/compare" element={<Compare />} />

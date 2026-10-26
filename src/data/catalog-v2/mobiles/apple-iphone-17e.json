@@ -1,0 +1,256 @@
+{
+  "slug": "apple-iphone-17e",
+  "title": "Apple iPhone 17e",
+  "brand": "Apple",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "The most affordable iPhone 17: A19 chip, 6.1-inch OLED display, 48MP camera and MagSafe.",
+  "description": "iPhone 17e is the entry point to the iPhone 17 family. It has a 6.1-inch Super Retina XDR OLED display, the A19 chip and Apple Intelligence.\n\nThe 48MP Fusion camera captures detailed photos and 2x telephoto shots, and records 4K Dolby Vision video. It supports MagSafe and Qi2 wireless charging up to 15W, has an Action button, and is rated IP68.\n\nStorage starts at 256GB.",
+  "highlights": [
+    "6.1-inch Super Retina XDR OLED display",
+    "A19 chip with Apple Intelligence",
+    "48MP Fusion camera with 2x telephoto",
+    "MagSafe and Qi2 wireless charging up to 15W",
+    "Up to 26 hours video playback",
+    "Action button, IP68, 256GB base storage"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.1,
+      "type": "Super Retina XDR OLED",
+      "resolution": "2532 × 1170",
+      "ppi": 460,
+      "refreshRate": 60,
+      "brightness": "800 nits typical, 1,200 nits HDR"
+    },
+    "Performance": {
+      "chip": "A19",
+      "cpu": "6-core (2 performance + 4 efficiency)",
+      "gpu": "4-core with Neural Accelerators",
+      "neuralEngine": "16-core"
+    },
+    "Camera": {
+      "rear": "48MP Fusion (ƒ/1.6, OIS)",
+      "mainMP": 48,
+      "opticalZoom": "2x telephoto (12MP)",
+      "front": "12MP TrueDepth, ƒ/1.9"
+    },
+    "Battery": {
+      "videoPlayback": "Up to 26 hours",
+      "wired": "50% in 30 minutes with 20W adapter",
+      "wireless": "MagSafe and Qi2 up to 15W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 6 (802.11ax)",
+      "bluetooth": "Bluetooth 5.3",
+      "nfc": true,
+      "usb": "USB-C, USB 2 (480 Mbps)",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "146.7 × 71.5 × 7.80 mm",
+      "weightG": 170,
+      "materials": "Aluminium, Ceramic Shield 2 front, glass back",
+      "ipRating": "IP68 (6 m up to 30 min)"
+    },
+    "Software": {
+      "os": "iOS 27",
+      "ai": "Apple Intelligence"
+    },
+    "Security": {
+      "biometrics": "Face ID"
+    }
+  },
+  "keySpecs": {
+    "ramGB": null,
+    "displayInch": 6.1,
+    "refreshRateHz": 60,
+    "mainCameraMP": 48,
+    "frontCameraMP": 12,
+    "batteryMah": null,
+    "chargingW": 20,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 170,
+    "chip": "A19",
+    "os": "iOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Soft Pink",
+          "hex": "#FFC3C2"
+        },
+        {
+          "value": "White",
+          "hex": "#D2D7F8"
+        },
+        {
+          "value": "Black",
+          "hex": "#3A3450"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Soft Pink": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-softpink-202603?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 17e in Soft Pink"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-softpink-202603_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 17e in Soft Pink, view 2"
+        }
+      ],
+      "White": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-white-202603?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 17e in White"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-white-202603_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 17e in White, view 2"
+        }
+      ],
+      "Black": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-black-202603?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 17e in Black"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-black-202603_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 17e in Black, view 2"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-IP17E-256GB-SOPI",
+      "mpn": "MHRX4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Soft Pink"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17E-256GB-WHI",
+      "mpn": "MHRW4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "White"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17E-256GB-BLA",
+      "mpn": "MHRV4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Black"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17E-512GB-SOPI",
+      "mpn": "MHU34HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Soft Pink"
+      },
+      "price": 104900,
+      "mrp": 104900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP17E-512GB-WHI",
+      "mpn": "MHU04HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "White"
+      },
+      "price": 104900,
+      "mrp": 104900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP17E-512GB-BLA",
+      "mpn": "MHRY4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Black"
+      },
+      "price": 104900,
+      "mrp": 104900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPhone 17e with iOS 27",
+    "USB-C Charge Cable (1 m)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/iphone-17e/specs/",
+      "https://www.apple.com/in/shop/buy-iphone/iphone-17e"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Prices are Apple India MRP (inclusive of taxes). Apple does not publish RAM or battery mAh."
+  }
+}

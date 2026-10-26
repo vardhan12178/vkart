@@ -1,0 +1,337 @@
+{
+  "slug": "samsung-galaxy-s25",
+  "title": "Samsung Galaxy S25",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-01",
+  "shortDescription": "Compact flagship with Snapdragon 8 Elite for Galaxy, triple 50MP-led camera and Armor Aluminum build.",
+  "description": "Galaxy S25 is the compact member of the S25 family, with Snapdragon 8 Elite for Galaxy and Galaxy AI on One UI.\n\nThe 50MP Wide, 12MP Ultra Wide and 10MP Telephoto cameras cover everyday shots to 3x zoom. It has an Armor Aluminum frame, Gorilla Glass Victus 2 on the front and back, IP68 protection and a 4,000 mAh battery.",
+  "highlights": [
+    "Snapdragon 8 Elite for Galaxy",
+    "50MP Wide + 12MP Ultra Wide + 10MP Telephoto",
+    "4,000 mAh battery",
+    "Armor Aluminum frame, Gorilla Glass Victus 2, IP68",
+    "Galaxy AI"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Dynamic AMOLED 2X",
+      "refreshRate": 120
+    },
+    "Performance": {
+      "chip": "Snapdragon 8 Elite for Galaxy"
+    },
+    "Camera": {
+      "rear": "50MP Wide + 12MP Ultra Wide + 10MP Telephoto",
+      "mainMP": 50,
+      "front": "12MP"
+    },
+    "Battery": {
+      "capacityMah": 4000
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "materials": "Armor Aluminum frame, Gorilla Glass Victus 2 front and back",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android, One UI 7 at launch",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": null,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 12,
+    "batteryMah": 4000,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": null,
+    "chip": "Snapdragon 8 Elite for Galaxy",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 128GB"
+        },
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Mint",
+          "hex": "#CBDBD0"
+        },
+        {
+          "value": "Navy",
+          "hex": "#415B87"
+        },
+        {
+          "value": "Silver Shadow",
+          "hex": "#ACADAF"
+        },
+        {
+          "value": "Blueblack",
+          "hex": "#555A64"
+        },
+        {
+          "value": "Icyblue",
+          "hex": "#C9CFDF"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Mint": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_mint_PC.png",
+          "alt": "Samsung Galaxy S25 in Mint"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-mint.jpg",
+          "alt": "Samsung Galaxy S25 in Mint, view 2"
+        }
+      ],
+      "Navy": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_navy_PC.png",
+          "alt": "Samsung Galaxy S25 in Navy"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-navy.jpg",
+          "alt": "Samsung Galaxy S25 in Navy, view 2"
+        }
+      ],
+      "Silver Shadow": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_silverShadow_PC.png",
+          "alt": "Samsung Galaxy S25 in Silver Shadow"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-silver-shadow.jpg",
+          "alt": "Samsung Galaxy S25 in Silver Shadow, view 2"
+        }
+      ],
+      "Blueblack": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_blueBlack_PC.png",
+          "alt": "Samsung Galaxy S25 in Blueblack"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-blueblack.jpg",
+          "alt": "Samsung Galaxy S25 in Blueblack, view 2"
+        }
+      ],
+      "Icyblue": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_icyBlue_PC.png",
+          "alt": "Samsung Galaxy S25 in Icyblue"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-icyblue.jpg",
+          "alt": "Samsung Galaxy S25 in Icyblue, view 2"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-S931BLGB",
+      "mpn": "SM-S931BLGB",
+      "options": {
+        "Storage": "12GB + 128GB",
+        "Color": "Mint"
+      },
+      "price": 74999,
+      "mrp": 74999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "SAM-S931BDBB",
+      "mpn": "SM-S931BDBB",
+      "options": {
+        "Storage": "12GB + 128GB",
+        "Color": "Navy"
+      },
+      "price": 74999,
+      "mrp": 74999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "SAM-S931BZSB",
+      "mpn": "SM-S931BZSB",
+      "options": {
+        "Storage": "12GB + 128GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 74999,
+      "mrp": 74999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "SAM-S931BZKC",
+      "mpn": "SM-S931BZKC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Blueblack"
+      },
+      "price": 84999,
+      "mrp": 94999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S931BLBC",
+      "mpn": "SM-S931BLBC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Icyblue"
+      },
+      "price": 84999,
+      "mrp": 94999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S931BLGC",
+      "mpn": "SM-S931BLGC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Mint"
+      },
+      "price": 84999,
+      "mrp": 94999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S931BDBC",
+      "mpn": "SM-S931BDBC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Navy"
+      },
+      "price": 84999,
+      "mrp": 94999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S931BZSC",
+      "mpn": "SM-S931BZSC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 84999,
+      "mrp": 94999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S931BDBQ",
+      "mpn": "SM-S931BDBQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Navy"
+      },
+      "price": 104999,
+      "mrp": 114999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S931BZSQ",
+      "mpn": "SM-S931BZSQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 104999,
+      "mrp": 114999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-s25/",
+      "https://www.samsung.com/in/smartphones/galaxy-s25/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

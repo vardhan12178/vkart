@@ -1,0 +1,318 @@
+{
+  "slug": "samsung-galaxy-z-fold8-ultra",
+  "title": "Samsung Galaxy Z Fold8 Ultra",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-07",
+  "shortDescription": "The thinnest Galaxy Fold: 4.1 mm unfolded, 8-inch main screen, 200MP camera and a 5000 mAh battery.",
+  "description": "Galaxy Z Fold8 Ultra is just 4.1 mm thin unfolded and 215 g, opening from a 6.5-inch cover screen to an 8-inch main screen with 3000 nits peak brightness and anti-reflection.\n\nA 200MP Wide camera, an upgraded 50MP F1.9 Ultra Wide and a 10MP 3x Telephoto record up to 8K video. Snapdragon 8 Elite Gen 5 for Galaxy and One UI 9 make multi-window work smooth on the big screen.\n\nArmor Aluminum, dual Flex Titanium layers, Gorilla Glass Ceramic 3 and the Armor FlexHinge keep it durable, with IP48 water resistance and a 5000 mAh battery.",
+  "highlights": [
+    "8-inch main screen + 6.5-inch cover screen, 3000 nits peak",
+    "4.1 mm unfolded, 215 g",
+    "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "200MP Wide + 50MP Ultra Wide + 10MP 3x Telephoto, 8K video",
+    "5000 mAh battery",
+    "Armor FlexHinge, IP48"
+  ],
+  "specs": {
+    "Display": {
+      "size": 8.0,
+      "type": "Foldable Dynamic AMOLED",
+      "brightness": "3000 nits peak",
+      "outerDisplay": "6.5-inch cover screen"
+    },
+    "Performance": {
+      "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+      "ram": "12GB / 16GB"
+    },
+    "Camera": {
+      "rear": "200MP Wide (2x optical quality) + 50MP Ultra Wide (F1.9) + 10MP Telephoto (3x optical)",
+      "mainMP": 200,
+      "front": "10MP cover screen + 10MP main screen",
+      "video": "Up to 8K"
+    },
+    "Battery": {
+      "capacityMah": 5000
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "thicknessMm": 4.1,
+      "weightG": 215,
+      "materials": "Armor Aluminum, dual Flex Titanium layers, Gorilla Glass Ceramic 3 front, Victus 2 back",
+      "ipRating": "IP48",
+      "hinge": "Armor FlexHinge"
+    },
+    "Software": {
+      "os": "Android 17, One UI 9",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 8.0,
+    "refreshRateHz": null,
+    "mainCameraMP": 200,
+    "frontCameraMP": 10,
+    "batteryMah": 5000,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": 215,
+    "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "os": "Android",
+    "foldable": true,
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cream",
+          "hex": "#E9CCC8"
+        },
+        {
+          "value": "Graphite",
+          "hex": "#4F4F57"
+        },
+        {
+          "value": "Green Shadow",
+          "hex": "#404642"
+        },
+        {
+          "value": "Violet Shadow",
+          "hex": "#433942"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cream": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/product_color_cream_PC.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-cream.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-cream.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream, view 3"
+        }
+      ],
+      "Graphite": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/product_color_graphite_PC.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-graphite.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-graphite.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite, view 3"
+        }
+      ],
+      "Green Shadow": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-green-shadow.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Green Shadow"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-green-shadow.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Green Shadow, view 2"
+        }
+      ],
+      "Violet Shadow": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-violet-shadow.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Violet Shadow"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-violet-shadow.jpg",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Violet Shadow, view 2"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-design-start.jpg",
+        "alt": "Samsung Galaxy Z Fold8 Ultra — 4.1 mm unfolded design"
+      },
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-seamless-unfolding-start.jpg",
+        "alt": "Samsung Galaxy Z Fold8 Ultra — unfolding"
+      },
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-dual-titanium-layer.jpg",
+        "alt": "Samsung Galaxy Z Fold8 Ultra — dual Flex Titanium layers"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-F976BZWD",
+      "mpn": "SM-F976BZWD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Cream"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F976BZKD",
+      "mpn": "SM-F976BZKD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Graphite"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F976BDGD",
+      "mpn": "SM-F976BDGD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Green Shadow"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F976BZVD",
+      "mpn": "SM-F976BZVD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Violet Shadow"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F976BZWG",
+      "mpn": "SM-F976BZWG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Cream"
+      },
+      "price": 219999,
+      "mrp": 224999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F976BZKG",
+      "mpn": "SM-F976BZKG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Graphite"
+      },
+      "price": 219999,
+      "mrp": 224999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F976BDGG",
+      "mpn": "SM-F976BDGG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Green Shadow"
+      },
+      "price": 219999,
+      "mrp": 224999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F976BZVG",
+      "mpn": "SM-F976BZVG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Violet Shadow"
+      },
+      "price": 219999,
+      "mrp": 224999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-z-fold8-ultra/",
+      "https://www.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

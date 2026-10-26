@@ -1,0 +1,398 @@
+{
+  "slug": "oneplus-nord-ce6",
+  "title": "OnePlus Nord CE6",
+  "brand": "OnePlus",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Snapdragon 7s Gen 4, 6.78-inch AMOLED display up to 144Hz, 8,000 mAh battery with 80W SUPERVOOC charging and a 50MP main camera.",
+  "description": "OnePlus Nord CE6 runs on the Snapdragon 7s Gen 4 with OxygenOS 16 (Android 16). Its 6.78-inch AMOLED display refreshes up to 144Hz for smooth scrolling and gaming.\n\nThe 8,000 mAh battery with 80W SUPERVOOC charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.\n\nIt is rated IP66, IP68, IP69, IP69K for dust and water resistance.",
+  "highlights": [
+    "Snapdragon 7s Gen 4",
+    "6.78-inch AMOLED display up to 144Hz",
+    "8,000 mAh battery with 80W SUPERVOOC charging",
+    "50MP main camera",
+    "OxygenOS 16 (Android 16)",
+    "IP66, IP68, IP69, IP69K dust and water resistance"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Height": "16.25 cm",
+      "Width": "7.75 cm",
+      "Thickness": "0.85 cm",
+      "Weight": "215g"
+    },
+    "Display": {
+      "Parameters": [
+        "Size: 17.23 cm (6.78'', measured diagonally from corner to corner)",
+        "Resolution: 1.5K (FHD+), 2772 × 1272",
+        "Pixel density: 450 ppi",
+        "Aspect Ratio: 19.6:9",
+        "Screen-to-body Ratio: 93.5%",
+        "Refresh Rate: Up to 144Hz (60/90/120Hz adaptive, 144Hz for select apps only)",
+        "Panel Type: AMOLED",
+        "Adjustible / Full-screen (HBM) / Peak Brightness: 800 / 1800 / 3600 nits",
+        "Color: 10-bit (1.07 billion colors)",
+        "100% DCI-P3",
+        "Touch Response (Instantaneous): Up to 3200 Hz with dedicated Touch Reflex chip",
+        "Eye-care Pulse-Width Modulation: 3840 Hz",
+        "Sunburst HDR technology: Yes",
+        "Protective Material: Crystal Guard (exclusively co-developed material)"
+      ],
+      "Features": [
+        "Sunburst display",
+        "Eye comfort",
+        "Bed time mode",
+        "Screen color mode",
+        "Auto/Manual brightness",
+        "White point reduction",
+        "Screen color temperature",
+        "Night Mode"
+      ]
+    },
+    "Performance": {
+      "Performance": [
+        "Operating System: OxygenOS 16.0 based on Android™ 16",
+        "CPU: Qualcomm® Snapdragon™ 7s Gen 4 Mobile Platform",
+        "GPU: Qualcomm® Adreno™ 810",
+        "RAM: 8GB with OnePlus RAM-Vitalization",
+        "RAM Expansion: 4/6/8GB (8GB RAM)",
+        "Storage: 128/256GB UFS 3.1",
+        "Available configurations: 8GB + 128GB / 256GB",
+        "Heat dissipation area: 33147mm²",
+        "Battery: 8,000 mAh (non-removable)",
+        "80W SUPERVOOC Charging / 13.5W PD (55W PPS)",
+        "Reverse Charging: 27W (Wired only)",
+        "Bypass Charging: Yes",
+        "Haptics: X-axis motor",
+        "System fluency: Rated A for 72 months (Tested on a 256GB variant)"
+      ]
+    },
+    "Camera": {
+      "Main Camera": [
+        "Sensor: OmniVision OV50D40 CMOS",
+        "Sensor Size: 1/7.32cm (1/2.88\")",
+        "Megapixels: 50",
+        "Pixel Size: 0.61 µm",
+        "Lens Quantity: 5P",
+        "Dual-axis Optical Image Stabilization: Yes",
+        "Tri-axis Electronic Image Stabilization: Yes",
+        "Focal Length: 27 mm equivalent",
+        "Aperture: ƒ/1.8",
+        "Field of View: 76°",
+        "PDAF: Yes",
+        "Autofocus: Yes"
+      ],
+      "Assistance Camera": [
+        "Sensor: Galaxycore GC02M1B CMOS",
+        "Sensor size: 1/12.7cm (1/5\")",
+        "Megapixels: 2",
+        "Pixel Size: 1.75 µm",
+        "Lens Quantity: 3P",
+        "Focal Length: 22 mm equivalent",
+        "Aperture: ƒ/2.4",
+        "Field of View: 89°"
+      ],
+      "Flash": "LED",
+      "Zoom": "1-10x digital zoom",
+      "Video": [
+        "4K video at 30 fps",
+        "1080p video at 30 fps",
+        "720p video at 30 fps",
+        "EIS video: 1080p video at 30 fps (default), 720p video at 30 fps",
+        "Time-lapse at 1080p video at 1920/960/480/240/120/60/30/15 fps",
+        "Digital zoom: Up to 2x",
+        "Dual-view video capturing support"
+      ],
+      "Features": "Photo, Video, Portrait, Night, Panorama, Dual-view Video, Time-Lapse, Retouch, Screen Flash",
+      "Front Camera": [
+        "Sensor: Galaxycore GC32E2",
+        "Sensor Size: 1/7.87cm (1/3.1\")",
+        "Megapixels: 32",
+        "Lens Quantity: 5P",
+        "Pixel Size: 0.7 µm",
+        "Tri-axis Electronic Image Stabilization: Yes",
+        "Focal Length: 21 mm equivalent",
+        "Autofocus: Yes",
+        "Aperture: ƒ/2.0",
+        "Field of View: 90°"
+      ]
+    },
+    "Connectivity": {
+      "eSIM": "No",
+      "Dual SIM": "Yes (with Dual SIM Dual Active support)",
+      "LTE/LTE-A": "4×4 MIMO, Supports up to DL Cat 16/UL Cat 13 (1000Mbps/150Mbps), depending on carrier support",
+      "LTE": [
+        "GSM: 850/900/1800MHz",
+        "WCDMA: Bands 1/5/8",
+        "LTE-FDD: Bands 1/3/5/8/19/28B",
+        "LTE-TDD：Bands 38/40/41/42/48",
+        "5G NR: n1/n3/n5/n8/n28B/n38/n40/n41/n48/n77/n78",
+        "*Network connectivity may vary depending on carrier’s network and related service deployment."
+      ],
+      "Wi-Fi": "1x1 SISO, Support 2.4G/5G, Wi-Fi 6, Support WiFi 802.11 a/b/g/n/ac/ax",
+      "Bluetooth": "Bluetooth 5.2, support aptX, aptX HD, aptX Adaptive, LDAC, AAC, SBC, LHDC 5.0",
+      "NFC": "Not supported",
+      "Positioning": "GPS, GLONASS, BDS, Galileo, QZSS"
+    },
+    "Durability": {
+      "Military-grade standard": "MIL-STD-810H",
+      "IP rating": "IP66, IP68, IP69, IP69K"
+    },
+    "Sensors": {
+      "Sensors": [
+        "In-display Fingerprint Sensor",
+        "Accelerometer",
+        "Electronic Compass",
+        "\"6-axis\" Gyroscope",
+        "Ambient Light Sensor",
+        "Proximity Sensor",
+        "Color Temperature Sensor",
+        "Sensor Core",
+        "Infrared blaster"
+      ]
+    },
+    "Ports": {
+      "Ports": [
+        "USB 2.0, Type-C",
+        "Support Type-C digital headphones",
+        "Dual nano-SIM slot"
+      ]
+    },
+    "Audio": {
+      "Audio": [
+        "Dual Stereo Speakers with 300% Super Audio Mode support",
+        "OReality Audio support",
+        "Noise cancellation support"
+      ]
+    },
+    "Multimedia": {
+      "Audio Supported Formats": [
+        "Playback: MP3, AAC, AMR, APE, OGG, FLAC, WAV, MIDI",
+        "Recording: WAV, AAC, MP3"
+      ],
+      "Video Supported Formats": [
+        "HDR10",
+        "Playback: MP4, 3GP, MKV, MOV, HEVC, AVC, VP9, WEBM, TS, M2TS",
+        "Recording: MP4"
+      ],
+      "Image Supported Formats": [
+        "Playback: JPEG, BMP, PNG, HEIF, WEBP, GIF, ICO",
+        "Output: JPEG, HEIF"
+      ]
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.78,
+    "refreshRateHz": 144,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 8000,
+    "chargingW": 80,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 215,
+    "chip": "Snapdragon 7s Gen 4",
+    "os": "Android",
+    "ramGB": 8
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Fresh Blue",
+          "hex": null
+        },
+        {
+          "value": "Pitch Black",
+          "hex": null
+        },
+        {
+          "value": "Lunar Pearl",
+          "hex": null
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Fresh Blue": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/e91e06a8fb301c6558fcec2cf13a864a.png",
+          "alt": "OnePlus Nord CE6 in Fresh Blue"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/92a676168612d3b75b1fe08b796120aa.png",
+          "alt": "OnePlus Nord CE6 in Fresh Blue, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/51feec457c5bf650b20b586faa233956.png",
+          "alt": "OnePlus Nord CE6 in Fresh Blue, view 3"
+        }
+      ],
+      "Pitch Black": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/b950943e0680f47fe6ea2a1061134caa.png",
+          "alt": "OnePlus Nord CE6 in Pitch Black"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/e9dd0df19bca2fa88d4fba2074eb46db.png",
+          "alt": "OnePlus Nord CE6 in Pitch Black, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/c555afc6a30b967907b4a889386d4a7d.png",
+          "alt": "OnePlus Nord CE6 in Pitch Black, view 3"
+        }
+      ],
+      "Lunar Pearl": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/5fc7d4537c4e04612c6c0655fe801586.png",
+          "alt": "OnePlus Nord CE6 in Lunar Pearl"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/1b0465e828d49ca3b6e89dec76dcd5f1.png",
+          "alt": "OnePlus Nord CE6 in Lunar Pearl, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/53152bf5a2f34364cd14b228e4080f59.png",
+          "alt": "OnePlus Nord CE6 in Lunar Pearl, view 3"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-NCE6-8128-FRBL",
+      "mpn": "5011119177",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Fresh Blue"
+      },
+      "price": 35999,
+      "mrp": 35999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPL-NCE6-8128-PIBL",
+      "mpn": "5011119176",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Pitch Black"
+      },
+      "price": 35999,
+      "mrp": 35999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPL-NCE6-8128-LUPE",
+      "mpn": "5011119174",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Lunar Pearl"
+      },
+      "price": 35999,
+      "mrp": 35999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPL-NCE6-8256-FRBL",
+      "mpn": "5011119172",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Fresh Blue"
+      },
+      "price": 39999,
+      "mrp": 39999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-NCE6-8256-PIBL",
+      "mpn": "5011119175",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Pitch Black"
+      },
+      "price": 39999,
+      "mrp": 39999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-NCE6-8256-LUPE",
+      "mpn": "5011119173",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Lunar Pearl"
+      },
+      "price": 39999,
+      "mrp": 39999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Nord CE6",
+    "80W SUPERVOOC Power Adapter",
+    "Type-A to C Cable",
+    "Quick Start Guide",
+    "Protective Case",
+    "Screen Protector (pre-applied)",
+    "SIM Tray Ejector"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/nord-ce6/specs",
+      "https://www.oneplus.in/oneplus-nord-ce6",
+      "https://www.91mobiles.com/hub/oneplus-15r-nord-6-nord-ce-6-prices-hiked-third-time/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs, SKUs and images from oneplus.in. Prices are current Indian listing prices from the linked reports (oneplus.in loads prices from its shop API), so verify before launch. Gallery images on image01-in.oneplus.net could not be checked from the collection environment."
+  }
+}

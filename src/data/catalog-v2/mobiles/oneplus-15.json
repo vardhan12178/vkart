@@ -1,0 +1,393 @@
+{
+  "slug": "oneplus-15",
+  "title": "OnePlus 15",
+  "brand": "OnePlus",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-11",
+  "shortDescription": "Snapdragon 8 Elite Gen 5, 165Hz display, 7,300 mAh battery with 120W wired and 50W wireless charging, and triple 50MP cameras.",
+  "description": "OnePlus 15 is built for speed and stamina: Snapdragon 8 Elite Gen 5, a 6.78-inch 1.5K display that runs up to 165Hz in games, and the first 7,300 mAh battery in a OnePlus flagship.\n\nIt refills fast with 120W SUPERVOOC wired and 50W AIRVOOC wireless charging. Three 50MP cameras — main, 3.5x telephoto and ultra-wide — record up to 8K video and 4K at 120 fps.\n\nOxygenOS 16 on Android 16, an ultrasonic in-display fingerprint sensor, Wi-Fi 7 and IP-rated durability complete the package.",
+  "highlights": [
+    "Snapdragon 8 Elite Gen 5",
+    "6.78-inch 1.5K AMOLED, up to 165Hz in gaming, 1800 nits HBM",
+    "7,300 mAh battery",
+    "120W SUPERVOOC + 50W AIRVOOC wireless charging",
+    "Triple 50MP cameras with 3.5x telephoto, 8K video",
+    "OxygenOS 16 (Android 16)"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Height": "16.14 cm",
+      "Width": "7.67 cm",
+      "Thickness": [
+        "0.82 cm (Infinite Black/Ultra Violet)",
+        "0.81 cm (Sand Storm)"
+      ],
+      "Weight": [
+        "215g (Infinite Black/Ultra Violet)",
+        "211g (Sand Storm)"
+      ]
+    },
+    "Display": {
+      "Parameters": [
+        "Size: 17.23 cm (6.78 inches, measured diagonally from corner to corner)",
+        "Resolution: 2772*1272 (FHD+), 450 ppi",
+        "Aspect Ratio: 20/9",
+        "HBM: 1800 nits",
+        "Refresh Rate: 1-120Hz Adaptive, Maximum 165Hz in gaming",
+        "Display Cover Glass: Corning® Gorilla® Glass Victus® 2",
+        "Support 100% DCI-P3(Typical) 1.07 billion colors(10-bit)"
+      ],
+      "Features": [
+        "Sun display",
+        "Reduce white point",
+        "Eye comfort reminders",
+        "Motion cues",
+        "Minimum 1nit",
+        "Eye comfort for gaming"
+      ]
+    },
+    "Performance": {
+      "Operating System": "OxygenOS 16.0 based on Android™ 16",
+      "Platform": "Snapdragon® 8 Elite Gen 5 Mobile Platform",
+      "CPU": "Qualcomm® Oryon™ CPU @4.608GHz",
+      "GPU": "Adreno™ 840@1200MHZ",
+      "RAM": "12GB/16GB LPDDR5X Ultra/Ultra+",
+      "Storage": "256GB/512GB UFS 4.1",
+      "Battery": "7,300 mAh (Dual-cell 3,650 mAh, non-removable)",
+      "Vibration": "X-axis linear motor",
+      "Available configurations": "12GB+256GB / 16GB+512GB"
+    },
+    "Charge": {
+      "Charge": [
+        "120W SUPERVOOC™",
+        "50W AIRVOOC"
+      ]
+    },
+    "Camera": {
+      "Main Camera": [
+        "Sensor: Sony's IMX906",
+        "Megapixels: 50",
+        "Lens Quantity: 6P",
+        "Optical Image Stabilization: Yes",
+        "Aperture: ƒ/1.8",
+        "Field of View: 84°",
+        "Autofocus: Yes"
+      ],
+      "Telephoto Camera": [
+        "Sensor: S5KJN5 with 3.5X optical zoom, 7x optical quality zoom",
+        "Megapixels: 50",
+        "Lens Quantity: 4P",
+        "Optical Image Stabilization: Yes",
+        "Aperture: ƒ/2.8",
+        "Field of View: 30°",
+        "Autofocus: Yes",
+        "Ultra Res (digital) Zoom: up to 120x zoom"
+      ],
+      "Ultra-wide Camera": [
+        "Sensor: OV50D",
+        "Megapixels: 50",
+        "Lens Quantity: 6P",
+        "Aperture: ƒ/2.0",
+        "Field of view: 116°",
+        "Autofocus: Yes"
+      ],
+      "Flash": "LED",
+      "Autofocus": "Multi Autofocus(All pixel omni-directional PDAF+CDAF+LDAF)",
+      "Video": [
+        "4K video: 60 fps, 30 fps",
+        "1080p video: 60 fps, 30 fps(with Retouch on)",
+        "720p video: 30 fps",
+        "4K EIS/OIS video: 60 fps, 30 fps",
+        "1080P EIS/OIS video: 60 fps, 30 fps",
+        "720P EIS/OIS video: 30 fps",
+        "4K TIME-LAPSE: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "Support multi-view video shooting",
+        "Support HDR video shooting",
+        "Support video zoom shooting"
+      ],
+      "Features": "Photo, Video, Portrait, Night, Panorama, Dual-view video, TIME-LAPSE, Retouch, Screen Fill Light",
+      "Front Camera": [
+        "Sensor: Sony IMX709",
+        "Megapixels: 32",
+        "Lens Quantity: 5P",
+        "Focal Length: 21 mm equivalent",
+        "Autofocus: Supported",
+        "Aperture: f/2.4"
+      ]
+    },
+    "Connectivity": {
+      "eSIM": "Supported",
+      "LTE/LTE-A": [
+        "4×4 MIMO, Supports up to UL cat13(150Mbps)",
+        "DL cat18(1200Mbps), depending on carrier support"
+      ],
+      "Band": [
+        "GSM: 850/900/1800/1900MHz",
+        "WCDMA: Band 1/2/5/8",
+        "LTE FDD: Band 1/2/3/4/5/7/8/18/19/20/26/28/66",
+        "LTE TDD: Band 34/38/39/40/41/42/48",
+        "5G NR: n1/n2/n3/n5/n7/n8/n20/n26/n28/n38/n40/n41/n48/n66/n77/n78"
+      ],
+      "Wi-Fi": [
+        "Wi-Fi 7 (802.11be)",
+        "Wi-Fi 6 (802.11ax)",
+        "Wi-Fi 5 (802.11ac)",
+        "Wi-Fi Display",
+        "WLAN Tethering",
+        "Wi-Fi 2.4GHz 2×2+Wi-Fi 5GHz 2×2 concurrent",
+        "Wi-Fi 5GHz 160MHz",
+        "2×2 MIMO"
+      ],
+      "Bluetooth": [
+        "Bluetooth® 6.0, Low Energy",
+        "SBC, AAC, LDAC, aptX, aptX HD, aptX Adaptive, LHDC 5.0"
+      ],
+      "NFC": "NFC enabled",
+      "Positioning": "Dual band: GPS(L1+L5), GLONASS(G1), BeiDou(B1I+B1C+B2a), Galileo(E1+E5a), QZSS(L1+L5), NavIC(L5)"
+    },
+    "Sensors": {
+      "Sensors": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "Color temperature sensor",
+        "E-compass",
+        "Accelerometer",
+        "Gyroscope",
+        "In-display ultrasonic fingerprint sensor",
+        "Hall Sensor",
+        "Laser focusing sensor",
+        "Spectral sensor",
+        "Infrared remote control"
+      ]
+    },
+    "Ports": {
+      "Ports": [
+        "USB 3.2 Gen 1",
+        "Type-C",
+        "Support standard Type-C earphones",
+        "Dual nano-SIM slot"
+      ]
+    },
+    "Buttons": {
+      "Buttons": "Interface uses virtual navigation buttons and navigation gestures."
+    },
+    "Audio": {
+      "Audio": [
+        "OReality Audio",
+        "3-mic noise cancellation"
+      ]
+    },
+    "Multimedia": {
+      "HDR Supported": "HDR10+, HDRViVid",
+      "Audio Supported Formats": "MP3, AAC, AMR, APE, OGG, FLAC, WAV, MIDI",
+      "Video Supported Formats": "MP4, 3GP, MKV, MOV, AVI, FLV, HEVC, AVC, VP9, VP8, AV1, WEBM, TS, M2TS, ASF",
+      "Image Supported Formats": "JPEG, BMP, PNG, DNG, HEIF, AVIF, WEBP, GIF, WBMP, ICO"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.78,
+    "refreshRateHz": 165,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 7300,
+    "chargingW": 120,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 215,
+    "chip": "Snapdragon 8 Elite Gen 5",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sand Storm",
+          "hex": "#A59D96"
+        },
+        {
+          "value": "Infinite Black",
+          "hex": null
+        },
+        {
+          "value": "Ultra Violet",
+          "hex": "#A39CAF"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sand Storm": [
+        {
+          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/15/spec/OnePlus15-sand-1080x1080.png",
+          "alt": "OnePlus 15 in Sand Storm"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/f96761005541e8715f92bda23561aa89.png",
+          "alt": "OnePlus 15 in Sand Storm, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/ae35431d38c99cc4696fb8c76b858a69.png",
+          "alt": "OnePlus 15 in Sand Storm, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/e9a734928c75a96fd56fe48587c70304.png",
+          "alt": "OnePlus 15 in Sand Storm, view 4"
+        }
+      ],
+      "Infinite Black": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/338f5a8201e50d91d5d544ec1116ee18.png",
+          "alt": "OnePlus 15 in Infinite Black"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/dfa262e028b4ba29290ac0c2ae0fb320.png",
+          "alt": "OnePlus 15 in Infinite Black, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/0433b47f078e9b0070f5eea07aa20250.png",
+          "alt": "OnePlus 15 in Infinite Black, view 3"
+        }
+      ],
+      "Ultra Violet": [
+        {
+          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/15/spec/OnePlus15-ultra-violet-1080x1080.png",
+          "alt": "OnePlus 15 in Ultra Violet"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/84bee93e851c33f9ea027b2ddd51c2b9.png",
+          "alt": "OnePlus 15 in Ultra Violet, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/0c6aaee9afa8b6811cc152bcc88b82f8.png",
+          "alt": "OnePlus 15 in Ultra Violet, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202511/06/964f95fc789967b5649da3bac64c78bb.png",
+          "alt": "OnePlus 15 in Ultra Violet, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-15-12256-SAST",
+      "mpn": "5011116579",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Sand Storm"
+      },
+      "price": 85999,
+      "mrp": 85999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-15-12256-INBL",
+      "mpn": "5011116576",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Infinite Black"
+      },
+      "price": 85999,
+      "mrp": 85999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-15-12256-ULVI",
+      "mpn": "5011116575",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Ultra Violet"
+      },
+      "price": 85999,
+      "mrp": 85999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-15-16512-SAST",
+      "mpn": "5011116574",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Sand Storm"
+      },
+      "price": 93999,
+      "mrp": 93999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "OPL-15-16512-INBL",
+      "mpn": "5011116580",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Infinite Black"
+      },
+      "price": 93999,
+      "mrp": 93999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus 15",
+    "Charger",
+    "USB data cable",
+    "SIM Ejector Tool",
+    "Protective Case",
+    "Quick Guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/15/specs",
+      "https://www.oneplus.in/oneplus-15",
+      "https://www.smartprix.com/mobiles/oneplus-brand"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs, SKUs and images from oneplus.in. Prices are current Indian listing prices from the linked reports (oneplus.in loads prices from its shop API), so verify before launch. Gallery images on image01-in.oneplus.net could not be checked from the collection environment."
+  }
+}

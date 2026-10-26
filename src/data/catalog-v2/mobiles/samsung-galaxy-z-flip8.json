@@ -1,0 +1,325 @@
+{
+  "slug": "samsung-galaxy-z-flip8",
+  "title": "Samsung Galaxy Z Flip8",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-07",
+  "shortDescription": "Flip phone with a 6.9-inch main screen, 4.1-inch FlexWindow, 50MP camera and Exynos 2600, at 180 g.",
+  "description": "Galaxy Z Flip8 folds a 6.9-inch main screen into a pocketable square with a 4.1-inch FlexWindow cover screen for replies, widgets and FlexCam selfies.\n\nThe 50MP Wide and 12MP Ultra Wide cameras shoot even while folded, and a 10MP camera sits on the main screen. Exynos 2600 for Galaxy and One UI 9 power Galaxy AI features.\n\nIt weighs 180 g, is 6.1 mm thin unfolded, has a 4300 mAh battery, Armor Aluminum frame and IP48 water resistance.",
+  "highlights": [
+    "6.9-inch main screen + 4.1-inch FlexWindow, 2600 nits peak",
+    "Exynos 2600 for Galaxy",
+    "50MP Wide + 12MP Ultra Wide, FlexCam",
+    "4300 mAh battery",
+    "180 g, 6.1 mm unfolded",
+    "Armor FlexHinge, IP48"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.9,
+      "type": "Foldable Dynamic AMOLED",
+      "brightness": "2600 nits peak",
+      "outerDisplay": "4.1-inch FlexWindow"
+    },
+    "Performance": {
+      "chip": "Exynos 2600 for Galaxy",
+      "ram": "12GB"
+    },
+    "Camera": {
+      "rear": "50MP Wide + 12MP Ultra Wide",
+      "mainMP": 50,
+      "front": "10MP main screen camera"
+    },
+    "Battery": {
+      "capacityMah": 4300
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "thicknessMm": 6.1,
+      "weightG": 180,
+      "materials": "Armor Aluminum frame, Gorilla Glass Victus 2 front",
+      "ipRating": "IP48",
+      "hinge": "Armor FlexHinge"
+    },
+    "Software": {
+      "os": "Android 17, One UI 9",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.9,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 10,
+    "batteryMah": 4300,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": 180,
+    "chip": "Exynos 2600 for Galaxy",
+    "os": "Android",
+    "foldable": true,
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cream",
+          "hex": "#DBCCD1"
+        },
+        {
+          "value": "Graphite",
+          "hex": "#888888"
+        },
+        {
+          "value": "Mint",
+          "hex": "#EBED9B"
+        },
+        {
+          "value": "Pink",
+          "hex": "#F3D3A8"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cream": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_cream_PC.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Cream"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-cream.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Cream, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-cream.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Cream, view 3"
+        }
+      ],
+      "Graphite": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_graphite_PC.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Graphite"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-graphite.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Graphite, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-graphite.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Graphite, view 3"
+        }
+      ],
+      "Mint": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_mint_PC.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Mint"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-mint.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Mint, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-mint.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Mint, view 3"
+        }
+      ],
+      "Pink": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_pink_PC.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Pink"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-pink.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Pink, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-pink.jpg",
+          "alt": "Samsung Galaxy Z Flip8 in Pink, view 3"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-design.jpg",
+        "alt": "Samsung Galaxy Z Flip8 — design"
+      },
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-seamless-unfolding.jpg",
+        "alt": "Samsung Galaxy Z Flip8 — unfolding"
+      },
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-durability.jpg",
+        "alt": "Samsung Galaxy Z Flip8 — durability"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-F776BZWA",
+      "mpn": "SM-F776BZWA",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Cream"
+      },
+      "price": 124999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F776BZKA",
+      "mpn": "SM-F776BZKA",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Graphite"
+      },
+      "price": 124999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F776BLGA",
+      "mpn": "SM-F776BLGA",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Mint"
+      },
+      "price": 124999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F776BLIA",
+      "mpn": "SM-F776BLIA",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pink"
+      },
+      "price": 124999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F776BZWE",
+      "mpn": "SM-F776BZWE",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Cream"
+      },
+      "price": 144999,
+      "mrp": 154999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F776BZKE",
+      "mpn": "SM-F776BZKE",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Graphite"
+      },
+      "price": 144999,
+      "mrp": 154999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F776BLGE",
+      "mpn": "SM-F776BLGE",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Mint"
+      },
+      "price": 144999,
+      "mrp": 154999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F776BLIE",
+      "mpn": "SM-F776BLIE",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Pink"
+      },
+      "price": 144999,
+      "mrp": 154999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-z-flip8/",
+      "https://www.samsung.com/in/smartphones/galaxy-z-flip8/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

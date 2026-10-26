@@ -1,0 +1,294 @@
+{
+  "slug": "oneplus-nord-ce6-lite",
+  "title": "OnePlus Nord CE6 Lite",
+  "brand": "OnePlus",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "MediaTek Dimensity 7400 Apex, 6.72-inch LCD display up to 144Hz, 7,000 mAh battery with 45W SUPERVOOC charging and a 50MP main camera.",
+  "description": "OnePlus Nord CE6 Lite runs on the MediaTek Dimensity 7400 Apex with OxygenOS 16 (Android 16). Its 6.72-inch LCD display refreshes up to 144Hz for smooth scrolling and gaming.\n\nThe 7,000 mAh battery with 45W SUPERVOOC charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.",
+  "highlights": [
+    "MediaTek Dimensity 7400 Apex",
+    "6.72-inch LCD display up to 144Hz",
+    "7,000 mAh battery with 45W SUPERVOOC charging",
+    "50MP main camera",
+    "OxygenOS 16 (Android 16)"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Height": "16.60 cm",
+      "Width": "7.60 cm",
+      "Thickness": "0.85 cm",
+      "Weight": "208 g",
+      "Military-grade standard": "MIL-STD-810H"
+    },
+    "Display": {
+      "Parameters": [
+        "Size: 17.07 cm (6.72'', measured diagonally from corner to corner)",
+        "Resolution: FHD+ 1080*2400 pixels",
+        "Pixel density: 392 ppi",
+        "Aspect ratio: 20:9",
+        "Screen-to-body ratio: 91.4%",
+        "Refresh rate: Up to 144Hz",
+        "Panel type: LCD display",
+        "Normal brightness: 800 nits (Typical)",
+        "HBM: 1000 nits (Typical)",
+        "Touch sampling rate: Up to 240 Hz"
+      ],
+      "Features": [
+        "Sunlight display",
+        "Eye comfort",
+        "Screen refresh rate switching",
+        "Screen color mode",
+        "Auto/Manual brightness adjustment",
+        "Full brightness DC dimming",
+        "Screen color temperature adjustment",
+        "Dark mode / Sleep mode"
+      ]
+    },
+    "Performance": {
+      "Performance": [
+        "Operating System: OxygenOS 16.0 based on Android™ 16",
+        "Processor: MediaTek Dimensity 7400 Apex",
+        "RAM: 6/8GB",
+        "RAM expansion: 6GB+2/4/6GB，8GB+4/6/8GB",
+        "Storage: 128G/256GB UFS 3.1",
+        "Available configurations: 6GB+128GB, 8GB+128GB, 8GB+256GB",
+        "Heat dissipation area: 21683 mm²",
+        "Battery: 7,000mAh",
+        "45W SUPERVOOC Charging / 45W PPS Charging",
+        "Reverse charging: 10W (Wired only)",
+        "Bypass charging: Yes",
+        "System fluency: Fast and Smooth for 60 months"
+      ]
+    },
+    "Camera": {
+      "Main Camera": [
+        "Sensor: Omnivision OV50D40",
+        "Megapixels: 50",
+        "Dual-axis electronic image stabilization: Yes",
+        "Aperture: ƒ/1.8",
+        "PDAF: Yes",
+        "Autofocus: Yes"
+      ],
+      "Depth-assist Camera": [
+        "Megapixels: 2",
+        "Aperture: ƒ/2.4"
+      ],
+      "Flash": "LED",
+      "Zoom": "1-10x",
+      "Video": [
+        "1080P video: 30 fps (with retouch on)",
+        "720P video: 30 fps",
+        "1080P EIS video: 30 fps (with retouch on)",
+        "720P EIS video: 30 fps",
+        "1080P TIME-LAPSE 30 fps",
+        "Supports Dual-view video shooting"
+      ],
+      "Features": "Photo, Video, Portrait, Night, Panorama, Dual-view video, TIME-LAPSE, Retouch, Screen Fill Light",
+      "Front Camera": [
+        "Megapixels: 8",
+        "Supports dual-axis EIS",
+        "Aperture: ƒ/2.0"
+      ]
+    },
+    "Connectivity": {
+      "eSIM": "No",
+      "Dual SIM": "Yes (Dual nano-SIM slot)",
+      "LTE/LTE-A": [
+        "2×2 MIMO",
+        "Supports up to DL Cat 16/UL Cat 18 (1 Gbps/211 Mbps), depending on carrier support"
+      ],
+      "LTE": [
+        "GSM: 850/900/1800MHz",
+        "WCDMA: Bands 1/5/8",
+        "LTE-FDD: Bands 1/3/5/8/28B",
+        "LTE-TDD: Bands 40/41 (2535MHz-2655MHz)",
+        "5G NR: n1/n3/n5/n8/n28B/n40/n41/n77/n78",
+        "*Network connectivity may vary depending on carrier’s network and related service deployment."
+      ],
+      "Wi-Fi": [
+        "1x1 SISO",
+        "Supports Wi-Fi 2.4G/5G",
+        "Supports Wi-Fi 802.11 a/b/g/n/ac"
+      ],
+      "Bluetooth": [
+        "Bluetooth® 5.4",
+        "Supports SBC, AAC, LDAC, aptX, aptX HD, LHDC 5.0"
+      ],
+      "NFC": "No",
+      "Positioning": "GPS, GLONASS, Galileo, QZSS, BDS"
+    },
+    "Sensors": {
+      "Sensors": [
+        "Side fingerprint sensor",
+        "Accelerometer",
+        "Electronic compass",
+        "Gyroscope",
+        "Ambient light sensor",
+        "Proximity sensor"
+      ]
+    },
+    "Ports": {
+      "Ports": [
+        "USB 2.0, Type-C",
+        "Supports Type-C digital headphones & Type-C analog headphones",
+        "Hybrid slot (Dual nano-SIM/one nano-SIM & one MicroSD, up to 2TB)"
+      ]
+    },
+    "Buttons": {
+      "Buttons": [
+        "Gestures and on-screen navigation support",
+        "Right: volume key, power key"
+      ]
+    },
+    "Audio": {
+      "Audio": [
+        "Dual stereo speakers with 300% Ultra Volume Mode",
+        "OReality Audio",
+        "Noise cancellation"
+      ]
+    },
+    "Multimedia": {
+      "Audio Supported Formats": [
+        "Playback: MP3, AAC, AMR, APE, OGG, FLAC, WAV, MIDI, WMA",
+        "Recording: WAV, AAC, MP3"
+      ],
+      "Video Supported Formats": [
+        "Playback: MP4, 3GP, MKV, MOV, AVI, FLV, HEVC, AVC, VP9, VP8, AV1",
+        "Recording: MP4"
+      ],
+      "Image Supported Formats": [
+        "Playback: JPEG, BMP, PNG, HEIF, AVIF, WEBP, GIF, WBMP, ICO",
+        "Output: JPEG, HEIF"
+      ]
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.72,
+    "refreshRateHz": 144,
+    "mainCameraMP": 50,
+    "frontCameraMP": 8,
+    "batteryMah": 7000,
+    "chargingW": 45,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 208,
+    "chip": "MediaTek Dimensity 7400 Apex",
+    "os": "Android",
+    "ramGB": 6
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Vivid Mint",
+          "hex": null
+        },
+        {
+          "value": "Hyper Black",
+          "hex": null
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Vivid Mint": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/6afc82e6f256aafd2943dd66bbc00e3e.png",
+          "alt": "OnePlus Nord CE6 Lite in Vivid Mint"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/5b63a9e1c1d581d9436753617edbee4c.png",
+          "alt": "OnePlus Nord CE6 Lite in Vivid Mint, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/100c7c7cd6c6a71cb5a16c40f0abf761.png",
+          "alt": "OnePlus Nord CE6 Lite in Vivid Mint, view 3"
+        }
+      ],
+      "Hyper Black": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/81de9089666e4c293127634150bc1e73.png",
+          "alt": "OnePlus Nord CE6 Lite in Hyper Black"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/5a8bc29841369f279d6cc94629e4b8b5.png",
+          "alt": "OnePlus Nord CE6 Lite in Hyper Black, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/29/0051b5a9c602cde90ff9f70ecca6bab6.png",
+          "alt": "OnePlus Nord CE6 Lite in Hyper Black, view 3"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-NCE6L-6128-VIMI",
+      "mpn": "5011121840",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Vivid Mint"
+      },
+      "price": 28999,
+      "mrp": 28999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPL-NCE6L-6128-HYBL",
+      "mpn": "5011121835",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Hyper Black"
+      },
+      "price": 28999,
+      "mrp": 28999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Nord CE6 Lite",
+    "SUPERVOOC Power Adapter",
+    "Type-A to C Cable",
+    "Quick Start Guide",
+    "Protective Case",
+    "SIM Tray Ejector"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/nord-ce6-lite/specs",
+      "https://www.oneplus.in/oneplus-nord-ce6-lite",
+      "https://www.cashify.in/news/oneplus-festive-sale-2026-top-deals-on-oneplus-15-15r-nord-series-and-more"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs, SKUs and images from oneplus.in. Prices are current Indian listing prices from the linked reports (oneplus.in loads prices from its shop API), so verify before launch. Gallery images on image01-in.oneplus.net could not be checked from the collection environment."
+  }
+}

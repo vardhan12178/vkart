@@ -1,0 +1,248 @@
+{
+  "slug": "apple-iphone-16",
+  "title": "Apple iPhone 16",
+  "brand": "Apple",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2024-09",
+  "shortDescription": "A18 chip, 48MP Fusion camera, Camera Control and Action button in a 6.1-inch design.",
+  "description": "iPhone 16 has a 6.1-inch Super Retina XDR display with Dynamic Island and the A18 chip, which runs Apple Intelligence.\n\nThe 48MP Fusion camera takes 2x telephoto shots, the 12MP Ultra Wide adds macro photography, and Camera Control gives quick access to the camera and its settings.\n\nIt supports MagSafe and Qi2 charging up to 25W and is rated IP68.",
+  "highlights": [
+    "6.1-inch Super Retina XDR display with Dynamic Island",
+    "A18 chip with Apple Intelligence",
+    "48MP Fusion + 12MP Ultra Wide cameras",
+    "Camera Control and Action button",
+    "MagSafe and Qi2 up to 25W",
+    "Colour-infused glass back, IP68"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.1,
+      "type": "Super Retina XDR OLED",
+      "resolution": "2556 × 1179",
+      "ppi": 460,
+      "refreshRate": 60,
+      "features": "Dynamic Island, HDR",
+      "brightness": "1,000 nits typical, 1,600 nits HDR, 2,000 nits outdoor"
+    },
+    "Performance": {
+      "chip": "A18",
+      "cpu": "6-core (2 performance + 4 efficiency)",
+      "gpu": "5-core",
+      "neuralEngine": "16-core"
+    },
+    "Camera": {
+      "rear": "48MP Fusion (ƒ/1.6, sensor-shift OIS) + 12MP Ultra Wide (ƒ/2.2)",
+      "mainMP": 48,
+      "opticalZoom": "2x telephoto (12MP)",
+      "front": "12MP TrueDepth"
+    },
+    "Battery": {
+      "videoPlayback": "Up to 22 hours",
+      "wired": "50% in 30 minutes with 20W adapter",
+      "wireless": "MagSafe and Qi2 up to 25W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 5.3",
+      "nfc": true,
+      "uwb": "Apple 2nd-gen Ultra Wideband",
+      "usb": "USB-C, USB 2 (480 Mbps), DisplayPort",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "147.6 × 71.6 × 7.80 mm",
+      "weightG": 170,
+      "materials": "Aluminium, Ceramic Shield front, colour-infused glass back",
+      "ipRating": "IP68 (6 m up to 30 min)"
+    },
+    "Software": {
+      "os": "iOS 27",
+      "ai": "Apple Intelligence"
+    },
+    "Security": {
+      "biometrics": "Face ID"
+    }
+  },
+  "keySpecs": {
+    "ramGB": null,
+    "displayInch": 6.1,
+    "refreshRateHz": 60,
+    "mainCameraMP": 48,
+    "frontCameraMP": 12,
+    "batteryMah": null,
+    "chargingW": 20,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 170,
+    "chip": "A18",
+    "os": "iOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "128GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Ultramarine",
+          "hex": "#7287CD"
+        },
+        {
+          "value": "Teal",
+          "hex": "#05C4CB"
+        },
+        {
+          "value": "Pink",
+          "hex": "#C79BB5"
+        },
+        {
+          "value": "White",
+          "hex": "#9BA4AD"
+        },
+        {
+          "value": "Black",
+          "hex": "#3F4344"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Ultramarine": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 16 in Ultramarine"
+        }
+      ],
+      "Teal": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 16 in Teal"
+        }
+      ],
+      "Pink": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 16 in Pink"
+        }
+      ],
+      "White": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-white?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 16 in White"
+        }
+      ],
+      "Black": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 16 in Black"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-IP16-128GB-ULT",
+      "mpn": "MYEC3HN/A",
+      "options": {
+        "Storage": "128GB",
+        "Color": "Ultramarine"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "APL-IP16-128GB-TEA",
+      "mpn": "MYED3HN/A",
+      "options": {
+        "Storage": "128GB",
+        "Color": "Teal"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "APL-IP16-128GB-PIN",
+      "mpn": "MYEA3HN/A",
+      "options": {
+        "Storage": "128GB",
+        "Color": "Pink"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "APL-IP16-128GB-WHI",
+      "mpn": "MYE93HN/A",
+      "options": {
+        "Storage": "128GB",
+        "Color": "White"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "APL-IP16-128GB-BLA",
+      "mpn": "MYE73HN/A",
+      "options": {
+        "Storage": "128GB",
+        "Color": "Black"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPhone 16 with iOS 27",
+    "USB-C Charge Cable (1 m)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/iphone-16/specs/",
+      "https://www.apple.com/in/shop/buy-iphone/iphone-16"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Prices are Apple India MRP (inclusive of taxes). Apple does not publish RAM or battery mAh."
+  }
+}

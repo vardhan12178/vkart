@@ -1,0 +1,461 @@
+{
+  "slug": "apple-iphone-18-pro-max",
+  "title": "Apple iPhone 18 Pro Max",
+  "brand": "Apple",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Apple's biggest Pro iPhone: 6.9-inch ProMotion display, A20 Pro chip and a triple 48MP camera with 8x optical-quality zoom.",
+  "description": "The iPhone 18 Pro Max puts Apple's best camera system and longest battery life in an aluminium unibody with a 6.9-inch Super Retina XDR display.\n\nThree 48MP Fusion cameras cover ultra wide to 8x optical-quality zoom, and the main camera now has a variable aperture from ƒ/1.48 to ƒ/4.0 for more control over light and depth. Video goes up to 4K Dolby Vision at 120 fps, with ProRes RAW and Apple Log 2 for serious editing.\n\nThe A20 Pro chip powers Apple Intelligence and console-class games, and the battery lasts up to 29 hours of typical use. Fast charging reaches 50% in about 15 minutes with a 60W adapter.",
+  "highlights": [
+    "6.9-inch Super Retina XDR display with ProMotion up to 120Hz and 3,000 nits outdoor brightness",
+    "A20 Pro chip with 7-core GPU and dual 16-core Neural Engine",
+    "Triple 48MP Fusion cameras with variable aperture and 8x optical-quality zoom",
+    "Up to 29 hours typical use; 50% charge in about 15 minutes",
+    "Aluminium unibody, Ceramic Shield 2 front, IP68",
+    "Storage up to 2TB"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.9,
+      "type": "Super Retina XDR OLED",
+      "resolution": "2868 × 1320",
+      "ppi": 460,
+      "refreshRate": 120,
+      "features": "ProMotion up to 120Hz, Always-On, Dynamic Island, HDR",
+      "brightness": "1,000 nits typical, 1,600 nits HDR, 3,000 nits outdoor"
+    },
+    "Performance": {
+      "chip": "A20 Pro",
+      "cpu": "6-core (2 super + 4 efficiency)",
+      "gpu": "7-core with Neural Accelerators",
+      "neuralEngine": "Dual 16-core"
+    },
+    "Camera": {
+      "rear": "48MP Fusion Main (ƒ/1.48–ƒ/4.0 variable aperture) + 48MP Fusion Ultra Wide + 48MP Fusion Telephoto (4x, 100 mm)",
+      "mainMP": 48,
+      "opticalZoom": "8x optical-quality zoom in, 16x optical-quality range",
+      "digitalZoom": "Up to 40x",
+      "video": "4K Dolby Vision up to 120 fps, ProRes RAW, Apple Log 2",
+      "front": "18MP Center Stage, ƒ/1.9, autofocus"
+    },
+    "Battery": {
+      "typicalUse": "Up to 29 hours",
+      "videoPlayback": "Up to 43 hours",
+      "wired": "50% in about 15 minutes with 60W adapter",
+      "wireless": "MagSafe and Qi2 up to 25W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "uwb": "Apple 2nd-gen Ultra Wideband",
+      "usb": "USB-C, USB 3 (up to 10 Gbps), DisplayPort",
+      "gps": "Dual-frequency GPS, NavIC",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "163.4 × 78.0 × 8.75 mm",
+      "weightG": 249,
+      "materials": "Aluminium unibody, Ceramic Shield 2 front, Ceramic Shield back",
+      "ipRating": "IP68 (6 m up to 30 min)"
+    },
+    "Software": {
+      "os": "iOS 27",
+      "ai": "Apple Intelligence"
+    },
+    "Security": {
+      "biometrics": "Face ID"
+    }
+  },
+  "keySpecs": {
+    "ramGB": null,
+    "displayInch": 6.9,
+    "refreshRateHz": 120,
+    "mainCameraMP": 48,
+    "frontCameraMP": 18,
+    "batteryMah": null,
+    "chargingW": null,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 249,
+    "chip": "A20 Pro",
+    "os": "iOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        },
+        {
+          "value": "1TB"
+        },
+        {
+          "value": "2TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Glacier",
+          "hex": "#AFBBD1"
+        },
+        {
+          "value": "Silver",
+          "hex": "#D1D1D1"
+        },
+        {
+          "value": "Black",
+          "hex": "#252527"
+        },
+        {
+          "value": "Burgundy",
+          "hex": "#4B292D"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Glacier": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-glacier-202609?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Glacier"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-glacier-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Glacier, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-glacier-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Glacier, view 3"
+        }
+      ],
+      "Silver": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-silver-202609?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Silver"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-silver-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Silver, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-silver-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Silver, view 3"
+        }
+      ],
+      "Black": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Black"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Black, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-black-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Black, view 3"
+        }
+      ],
+      "Burgundy": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-burgundy-202609?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Burgundy"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-burgundy-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Burgundy, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-max-finish-select-burgundy-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple iPhone 18 Pro Max in Burgundy, view 3"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/colors_endframe__czfie0zmty4i_large_2x.jpg",
+        "alt": "Apple iPhone 18 Pro Max — all four finishes"
+      },
+      {
+        "src": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_large_2x.jpg",
+        "alt": "Apple iPhone 18 Pro Max — 48MP Fusion Main camera close-up"
+      },
+      {
+        "src": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/chip_startframe__cbo2noldjewi_large_2x.jpg",
+        "alt": "Apple iPhone 18 Pro Max — A20 Pro chip"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-IP18PM-256GB-GLA",
+      "mpn": "MJXR4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Glacier"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP18PM-256GB-SIL",
+      "mpn": "MJXP4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP18PM-256GB-BLA",
+      "mpn": "MJXN4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Black"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP18PM-256GB-BUR",
+      "mpn": "MJXQ4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Burgundy"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP18PM-512GB-GLA",
+      "mpn": "MJXW4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Glacier"
+      },
+      "price": 204900,
+      "mrp": 204900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP18PM-512GB-SIL",
+      "mpn": "MJXU4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 204900,
+      "mrp": 204900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP18PM-512GB-BLA",
+      "mpn": "MJXT4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Black"
+      },
+      "price": 204900,
+      "mrp": 204900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP18PM-512GB-BUR",
+      "mpn": "MJXV4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Burgundy"
+      },
+      "price": 204900,
+      "mrp": 204900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP18PM-1TB-GLA",
+      "mpn": "MJY14HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Glacier"
+      },
+      "price": 254900,
+      "mrp": 254900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IP18PM-1TB-SIL",
+      "mpn": "MJXY4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 254900,
+      "mrp": 254900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IP18PM-1TB-BLA",
+      "mpn": "MJXX4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Black"
+      },
+      "price": 254900,
+      "mrp": 254900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IP18PM-1TB-BUR",
+      "mpn": "MJY04HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Burgundy"
+      },
+      "price": 254900,
+      "mrp": 254900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IP18PM-2TB-GLA",
+      "mpn": "MJY54HN/A",
+      "options": {
+        "Storage": "2TB",
+        "Color": "Glacier"
+      },
+      "price": 329900,
+      "mrp": 329900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048
+      }
+    },
+    {
+      "sku": "APL-IP18PM-2TB-SIL",
+      "mpn": "MJY34HN/A",
+      "options": {
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 329900,
+      "mrp": 329900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048
+      }
+    },
+    {
+      "sku": "APL-IP18PM-2TB-BLA",
+      "mpn": "MJY24HN/A",
+      "options": {
+        "Storage": "2TB",
+        "Color": "Black"
+      },
+      "price": 329900,
+      "mrp": 329900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048
+      }
+    },
+    {
+      "sku": "APL-IP18PM-2TB-BUR",
+      "mpn": "MJY44HN/A",
+      "options": {
+        "Storage": "2TB",
+        "Color": "Burgundy"
+      },
+      "price": 329900,
+      "mrp": 329900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPhone 18 Pro Max with iOS 27",
+    "USB-C Charge Cable (1 m)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/iphone-18-pro/specs/",
+      "https://www.apple.com/in/shop/buy-iphone/iphone-18-pro"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Prices are Apple India MRP (inclusive of taxes). Apple does not publish RAM or battery mAh."
+  }
+}

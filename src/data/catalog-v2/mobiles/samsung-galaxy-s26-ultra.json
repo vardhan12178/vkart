@@ -1,0 +1,425 @@
+{
+  "slug": "samsung-galaxy-s26-ultra",
+  "title": "Samsung Galaxy S26 Ultra",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-02",
+  "shortDescription": "Samsung's top flagship: 6.9-inch 2600-nit display, Snapdragon 8 Elite Gen 5 for Galaxy, 200MP F1.4 camera and built-in S Pen.",
+  "description": "Galaxy S26 Ultra is Samsung's most capable phone, now 7.9 mm thin with rounded corners and an Armor Aluminum frame.\n\nThe 200MP Wide camera opens to F1.4 for 47% brighter shots, and the 50MP 5x Telephoto reaches 10x optical-quality zoom — ideal for low-light photos and concerts. The 6.9-inch Dynamic AMOLED 2X display peaks at 2600 nits with an anti-reflective finish.\n\nSnapdragon 8 Elite Gen 5 for Galaxy runs Galaxy AI and long gaming sessions with a redesigned vapor chamber, the 5000 mAh battery lasts all day, and 60W Super Fast Charging 3.0 reaches about 75% in 30 minutes. The S Pen is built in.",
+  "highlights": [
+    "6.9-inch Dynamic AMOLED 2X, 120Hz, 2600 nits peak, anti-reflective",
+    "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "200MP F1.4 Wide + 50MP Ultra Wide + 50MP 5x Telephoto (10x optical quality)",
+    "5000 mAh battery, 60W charging (≈75% in 30 min)",
+    "Built-in S Pen, Galaxy AI",
+    "7.9 mm, 214 g, Armor Aluminum, IP68"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.9,
+      "type": "Dynamic AMOLED 2X",
+      "resolution": "QHD+",
+      "refreshRate": 120,
+      "brightness": "2600 nits peak"
+    },
+    "Performance": {
+      "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+      "ram": "12GB / 16GB"
+    },
+    "Camera": {
+      "rear": "200MP Wide (F1.4) + 50MP Ultra Wide (F1.9) + 50MP Telephoto (F2.9, 5x optical, 10x optical quality)",
+      "mainMP": 200,
+      "front": "12MP"
+    },
+    "Battery": {
+      "capacityMah": 5000,
+      "wired": "60W Super Fast Charging 3.0 (≈75% in 30 min)"
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "thicknessMm": 7.9,
+      "weightG": 214,
+      "materials": "Armor Aluminum frame, Gorilla Armor 2 front, Gorilla Glass Victus 2 back",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android 16, One UI 8.5",
+      "ai": "Galaxy AI"
+    },
+    "Extras": {
+      "stylus": "Built-in S Pen"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.9,
+    "refreshRateHz": 120,
+    "mainCameraMP": 200,
+    "frontCameraMP": 12,
+    "batteryMah": 5000,
+    "chargingW": 60,
+    "is5G": true,
+    "weightG": 214,
+    "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#46494E"
+        },
+        {
+          "value": "Cobalt Violet",
+          "hex": "#767690"
+        },
+        {
+          "value": "Pink Gold",
+          "hex": "#F1D1BD"
+        },
+        {
+          "value": "Silver Shadow",
+          "hex": "#A0A1A3"
+        },
+        {
+          "value": "Sky Blue",
+          "hex": "#C2D5E3"
+        },
+        {
+          "value": "White",
+          "hex": "#D7D8DB"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_black_PC.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Black"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-black.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Black, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-black.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Black, view 3"
+        }
+      ],
+      "Cobalt Violet": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_cobaltViolet_PC.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-cobalt-violet.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-cobalt-violet.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet, view 3"
+        }
+      ],
+      "Pink Gold": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_pinkGold_PC.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Pink Gold"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-pink-gold.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Pink Gold, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-pink-gold.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Pink Gold, view 3"
+        }
+      ],
+      "Silver Shadow": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_silverShadow_PC.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-silver-shadow.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-silver-shadow.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow, view 3"
+        }
+      ],
+      "Sky Blue": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_skyBlue_PC.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Sky Blue"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-sky-blue.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Sky Blue, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-sky-blue.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in Sky Blue, view 3"
+        }
+      ],
+      "White": [
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_white_PC.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in White"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-white.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in White, view 2"
+        },
+        {
+          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-white.jpg",
+          "alt": "Samsung Galaxy S26 Ultra in White, view 3"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-slimness.jpg",
+        "alt": "Samsung Galaxy S26 Ultra — 7.9 mm slim design"
+      },
+      {
+        "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-durability-a.jpg",
+        "alt": "Samsung Galaxy S26 Ultra — Armor Aluminum frame"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-S948BZKB",
+      "mpn": "SM-S948BZKB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 154999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S948BZVB",
+      "mpn": "SM-S948BZVB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Cobalt Violet"
+      },
+      "price": 154999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S948BZDB",
+      "mpn": "SM-S948BZDB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pink Gold"
+      },
+      "price": 154999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S948BZSB",
+      "mpn": "SM-S948BZSB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 154999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S948BLBB",
+      "mpn": "SM-S948BLBB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Sky Blue"
+      },
+      "price": 154999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S948BZWB",
+      "mpn": "SM-S948BZWB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "White"
+      },
+      "price": 154999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S948BZKC",
+      "mpn": "SM-S948BZKC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Black"
+      },
+      "price": 174999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S948BZVC",
+      "mpn": "SM-S948BZVC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Cobalt Violet"
+      },
+      "price": 174999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S948BZDC",
+      "mpn": "SM-S948BZDC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Pink Gold"
+      },
+      "price": 174999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S948BZSC",
+      "mpn": "SM-S948BZSC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 174999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S948BLBC",
+      "mpn": "SM-S948BLBC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Sky Blue"
+      },
+      "price": 174999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S948BZWC",
+      "mpn": "SM-S948BZWC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "White"
+      },
+      "price": 174999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "S Pen (built-in)",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-s26-ultra/",
+      "https://www.samsung.com/in/smartphones/galaxy-s26-ultra/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}
