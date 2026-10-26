@@ -1,0 +1,386 @@
+{
+  "slug": "oppo-find-x10",
+  "title": "OPPO Find X10",
+  "brand": "OPPO",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "MediaTek Dimensity 9600M, 6.59-inch AMOLED display up to 144Hz, 8,000 mAh battery with 80W SUPERVOOC and AIRVOOC wireless charging and a 50MP main camera.",
+  "description": "OPPO Find X10 runs on the MediaTek Dimensity 9600M with ColorOS 17.0. Its 6.59-inch AMOLED display up to 144Hz keeps scrolling and games smooth.\n\nThe 8,000 mAh battery with 80W SUPERVOOC and AIRVOOC wireless charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.",
+  "highlights": [
+    "MediaTek Dimensity 9600M",
+    "6.59-inch AMOLED display up to 144Hz",
+    "8,000 mAh battery with 80W SUPERVOOC and AIRVOOC wireless charging",
+    "50MP main camera",
+    "ColorOS 17.0"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 15.65cm",
+      "Width": "about 7.43cm",
+      "Thickness": "about 0.84cm",
+      "Weight": "about 216g"
+    },
+    "Storage": {
+      "RAM and ROM Capacities": [
+        "12GB+256GB",
+        "12GB+512GB"
+      ],
+      "RAM Type": "LPDDR5X",
+      "ROM Specifications": "UFS 4.1",
+      "Phone Storage Card": "Unsupported",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "16.74 cm",
+      "Screen Ratio": "96.0%",
+      "Resolution": "FHD+ 2768×1272 Pixels",
+      "Refresh Rate": "1-120Hz Adaptive, Maximum 144Hz (144Hz only works in some game scenarios)",
+      "Touch Sampling Rate": [
+        "Maximum 288Hz",
+        "Default 120Hz",
+        "Screen instantaneous sampling rate: 1000Hz"
+      ],
+      "Colour Gamut": [
+        "Natural mode: 95% BT2020",
+        "Standard mode: 95% BT2020",
+        "Colorful mode: 95% BT2020"
+      ],
+      "Colour Depth": "1.07 billion colours(10-bit)",
+      "Pixel Density": "462 PPI",
+      "Brightness": [
+        "Normal brightness: 800 nits(Typical)",
+        "HBM: 2000 nits(Typical)"
+      ],
+      "Panel": "AMOLED flexible screen",
+      "Cover Glasses": "Crystal Guard"
+    },
+    "Camera": {
+      "Rear": [
+        "Ultra-wide angle: 50MP; f/2.0; FOV 120°; 6P lens; AF supported",
+        "Wide angle: 200MP; f/1.6; FOV 85°; 7P lens; AF supported; Supports 2-axis OIS",
+        "Telephoto: 200MP; f/2.6; FOV 36°; 5P lens; AF supported; Supports 2-axis OIS",
+        "Rear Multi-Spectral: 3.2MP; f/2.4; FOV 95°; 3P lens"
+      ],
+      "Front": "50MP; f/2.0; FOV 100°; 5P lens; AF supported",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Portrait, Night, Panorama, SLO-MO, Long Exposure, TIME-LAPSE, STICKER, XPAN, Google Lens, Underwater, Master, Hypertext, DOC SCANNER, Pro Video, HASSELBLAD HI-RES, HASSELBLAD TELECONVERTER",
+        "Front: Photo, Video, Portrait, Night, Panorama, TIME-LAPSE, STICKER, Pro Video, HASSELBLAD HI-RES"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "8K video: 30 fps",
+        "4K video: 120 fps, 60 fps, 30 fps",
+        "1080P video: 120 fps, 60 fps, 30 fps",
+        "720P video: 30 fps",
+        "4K EIS/OIS video: 60 fps, 30 fps",
+        "1080P EIS/OIS video: 60 fps, 30 fps",
+        "4K SLO-MO video: 120 fps",
+        "1080P SLO-MO video: 240 fps, 120 fps",
+        "720P SLO-MO video: 480 fps, 240 fps",
+        "4K TIME-LAPSE: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "4K Dolby Vision shooting: 120 fps, 60 fps, 30 fps",
+        "1080P Dolby Vision shooting: 120 fps, 60 fps, 30 fps",
+        "Supports professional video shooting",
+        "Supports Dual-view video shooting",
+        "Supports HDR video shooting",
+        "Supports video zoom shooting: up to 2.8x optical zoom, up to 18x digital zoom"
+      ],
+      "Front": [
+        "4K video: 60 fps, 30 fps",
+        "1080P video: 60 fps, 30 fps",
+        "720P video: 30 fps",
+        "1080P EIS video: 30 fps",
+        "720P EIS video: 30 fps",
+        "4K TIME-LAPSE: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "Supports professional video shooting",
+        "Supports Dual-view video shooting",
+        "Supports HDR video shooting",
+        "Supports video zoom shooting: 2× digital zoom"
+      ]
+    },
+    "Chips": {
+      "SoC": "MediaTek Dimensity 9600M",
+      "CPU": "8-core",
+      "GPU": "ARM@Mali Drage MC12"
+    },
+    "Battery": {
+      "Battery": [
+        "8000 mAh/30 Wh(Typical)",
+        "7770 mAh/29.14 Wh(Rated)"
+      ],
+      "Fast Charge": [
+        "Supports(Max): 80 W SUPERVOOCTM, 80 W UFCS.",
+        "Compatible with: 67 W and below SUPERVOOCTM, 44 W third-party UFCS, 55 W PPS, 13.5 W PD",
+        "Supports(Max): 50 W AIRVOOCTM"
+      ]
+    },
+    "Biometrics": {
+      "Fingerprint": "Under-screen fingerprint",
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "Front CCT Sensor",
+        "E-compass",
+        "Accelerometer",
+        "Gyroscope",
+        "In-display ultrasound fingerprint sensor",
+        "Hall sensor",
+        "Laser focusing sensor",
+        "Spectral sensor",
+        "Infrared remote control"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 7 (802.11be) supported",
+        "Wi-Fi 6 (802.11ax) supported",
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported",
+        "Wi-Fi 2.4GHz 2×2+Wi-Fi 5GHz 2×2 concurrent supported",
+        "Wi-Fi 5GHz 160MHz supported",
+        "Wi-Fi 6GHz 320MHz supported",
+        "2×2 MIMO supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 6.2, Low Energy, BLE Audio",
+      "Bluetooth® Audio Codec": "SBC, AAC, LDAC, aptX, aptX HD, LHDC 5.0",
+      "USB Interface": "USB Type-C, USB 3.2 Gen 1",
+      "Earphone Jack": "Type-C headphones: supported Type-C digital headphones, unsupported Type-C analog headphones",
+      "NFC": "Supported"
+    },
+    "Operating System": {
+      "Os": "ColorOS 17.0"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.59,
+    "refreshRateHz": 144,
+    "mainCameraMP": 50,
+    "frontCameraMP": 50,
+    "batteryMah": 8000,
+    "chargingW": 80,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 216,
+    "chip": "MediaTek Dimensity 9600M",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Glacier Blue",
+          "hex": null
+        },
+        {
+          "value": "Mist Grey",
+          "hex": null
+        },
+        {
+          "value": "Glow Coral",
+          "hex": null
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Glacier Blue": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/0fbd8daea8a27a1b99008284c9e6dc56.png",
+          "alt": "OPPO Find X10 in Glacier Blue"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/0b05a27dfc9285ac43ff6d5012156e9e.png",
+          "alt": "OPPO Find X10 in Glacier Blue, view 2"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/8138d998818d635b61c8b3c2921949ac.png",
+          "alt": "OPPO Find X10 in Glacier Blue, view 3"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/d84ac53d4017f6b9a4fb63fc001c08bf.png",
+          "alt": "OPPO Find X10 in Glacier Blue, view 4"
+        }
+      ],
+      "Mist Grey": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/a4713793ddab87a3a68a42e9edfa0d4f.png",
+          "alt": "OPPO Find X10 in Mist Grey"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/57a1c7e8ea999f766d17aa1b16535d2d.png",
+          "alt": "OPPO Find X10 in Mist Grey, view 2"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/dada698e9649bb2ac11221fe99f476b5.png",
+          "alt": "OPPO Find X10 in Mist Grey, view 3"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/df4b836ab84f0b6723ad7b50ef6fc821.png",
+          "alt": "OPPO Find X10 in Mist Grey, view 4"
+        }
+      ],
+      "Glow Coral": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/8215cdeea54b1272dad555a1ff431862.png",
+          "alt": "OPPO Find X10 in Glow Coral"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/61478c91e5f43cad183364d535fec156.png",
+          "alt": "OPPO Find X10 in Glow Coral, view 2"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/99975f375950e320f0a16ca79fa3e4cf.png",
+          "alt": "OPPO Find X10 in Glow Coral, view 3"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/1bc1f2183856d864370a0d1aa3c74a4f.png",
+          "alt": "OPPO Find X10 in Glow Coral, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-FX10-12256-GLBL",
+      "mpn": "5011110425",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Glacier Blue"
+      },
+      "price": 139999,
+      "mrp": 179999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-FX10-12256-MIGR",
+      "mpn": "5011110427",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Mist Grey"
+      },
+      "price": 139999,
+      "mrp": 179999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-FX10-12256-GLCO",
+      "mpn": "5011110429",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Glow Coral"
+      },
+      "price": 139999,
+      "mrp": 179999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-FX10-12512-GLBL",
+      "mpn": "5011110426",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Glacier Blue"
+      },
+      "price": 169999,
+      "mrp": 199999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "OPO-FX10-12512-MIGR",
+      "mpn": "5011110428",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Mist Grey"
+      },
+      "price": 169999,
+      "mrp": 199999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "OPO-FX10-12512-GLCO",
+      "mpn": "5011110430",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Glow Coral"
+      },
+      "price": 169999,
+      "mrp": 199999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone×1",
+    "Charger×1",
+    "USB Data Cable×1",
+    "SIM Ejector Tool×1",
+    "Protective Case×1",
+    "Quick Guide×1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/smartphones/series-find-x/find-x10/specs/",
+      "https://www.oppo.com/in/product/find-x10.P.P1110185"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Gallery images are on heytapimg.com and could not be checked from the collection environment; swatch colours not sampled."
+  }
+}

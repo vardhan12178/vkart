@@ -1,0 +1,297 @@
+{
+  "slug": "oppo-find-x10-pro-max",
+  "title": "OPPO Find X10 Pro Max",
+  "brand": "OPPO",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "MediaTek Dimensity 9600 Pro, 6.78-inch AMOLED display up to 144Hz, 8,000 mAh battery with 80W SUPERVOOC and AIRVOOC wireless charging and a 200MP main camera.",
+  "description": "OPPO Find X10 Pro Max runs on the MediaTek Dimensity 9600 Pro with ColorOS 17.0. Its 6.78-inch AMOLED display up to 144Hz keeps scrolling and games smooth.\n\nThe 8,000 mAh battery with 80W SUPERVOOC and AIRVOOC wireless charging is built to last more than a day, and the 200MP main camera handles everyday photos and video.",
+  "highlights": [
+    "MediaTek Dimensity 9600 Pro",
+    "6.78-inch AMOLED display up to 144Hz",
+    "8,000 mAh battery with 80W SUPERVOOC and AIRVOOC wireless charging",
+    "200MP main camera",
+    "ColorOS 17.0"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 16.13cm",
+      "Width": "about 7.66cm",
+      "Thickness": "about 0.84cm",
+      "Weight": [
+        "about 233g(Luna White)",
+        "about 235g(Titanium Grey)"
+      ]
+    },
+    "Storage": {
+      "RAM and ROM Capacities": "12GB+512GB",
+      "RAM Type": "LPDDR5X",
+      "ROM Specifications": "UFS 4.1",
+      "Phone Storage Card": "Unsupported",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "17.23 cm",
+      "Screen Ratio": "95.5%",
+      "Resolution": "FHD+ 2772×1272 Pixels",
+      "Refresh Rate": "1-120Hz Adaptive, Maximum 144Hz (144Hz only works in some game scenarios)",
+      "Touch Sampling Rate": [
+        "Maximum 288Hz",
+        "Default 120Hz",
+        "Screen instantaneous sampling rate: 1000Hz"
+      ],
+      "Colour Gamut": [
+        "Standard mode: 95% BT2020",
+        "Natural mode: 95% BT2020",
+        "Colorful mode: 95% BT2020"
+      ],
+      "Colour Depth": "1.07 billion colours(10-bit)",
+      "Pixel Density": "450 PPI",
+      "Brightness": [
+        "Normal brightness: 800 nits(Typical)",
+        "HBM: 2000 nits(Typical)"
+      ],
+      "Panel": "AMOLED flexible screen",
+      "Cover Glasses": "Crystal Guard"
+    },
+    "Camera": {
+      "Rear": [
+        "Ultra-wide angle: 200MP; f/2.2; FOV 124°; 7P lens; AF Supported",
+        "Wide angle: 200MP; f/1.5; FOV 84°; 7P lens; AF Supported; Supports 2-axis OIS",
+        "Telephoto: 200MP; f/2.1; FOV 34°; 3P+3P lens; AF Supported; Supports 2-axis OIS",
+        "Rear Multi-Spectral: 3.2MP; f/2.4; FOV 95°; 3P lens"
+      ],
+      "Front": "50MP; f/2.0; FOV 100°; 5P lens; AF Supported",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Portrait, Night, Panorama, SLO-MO, Long Exposure, TIME-LAPSE, STICKER, XPAN, Google Lens, Underwater, Master, Hypertext, DOC SCANNER, Pro Video, HASSELBLAD HI-RES, HASSELBLAD TELECONVERTER",
+        "Front: Photo, Video, Portrait, Night, Panorama, TIME-LAPSE, STICKER, AI ID photo, Pro Video, HASSELBLAD HI-RES"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "8K video: 30 fps",
+        "4K video: 120 fps, 60 fps, 30 fps",
+        "1080P video: 120 fps, 60 fps, 30 fps",
+        "720P video: 30 fps",
+        "4K EIS/OIS video: 60 fps, 30 fps",
+        "1080P EIS/OIS video: 60 fps, 30 fps",
+        "4K SLO-MO video: 120 fps",
+        "1080P SLO-MO video: 240 fps, 120 fps",
+        "720P SLO-MO video: 240 fps",
+        "4K TIME-LAPSE: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "4K Dolby Vision shooting: 120 fps, 60 fps, 30 fps",
+        "1080P Dolby Vision shooting: 120 fps, 60 fps, 30 fps",
+        "Supports professional video shooting",
+        "Supports Dual-view video shooting",
+        "Supports HDR video shooting",
+        "Supports video zoom shooting: up to 3x optical zoom, up to 18x digital zoom"
+      ],
+      "Front": [
+        "4K video: 60 fps, 30 fps",
+        "1080P video: 60 fps, 30 fps",
+        "720P video: 30 fps",
+        "1080P EIS video: 30 fps",
+        "720P EIS video: 30 fps",
+        "4K TIME-LAPSE: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "Supports professional video shooting",
+        "Supports Dual-view video shooting",
+        "Supports HDR video shooting",
+        "Supports video zoom shooting: 2× digital zoom"
+      ]
+    },
+    "Chips": {
+      "SoC": "MediaTek Dimensity 9600 Pro",
+      "CPU": "8-core",
+      "GPU": "ARM Mali G2-ultra@1.8GHz"
+    },
+    "Battery": {
+      "Battery": [
+        "8000 mAh/29.76 Wh(Typical)",
+        "7790 mAh/28.98 Wh(Rated)"
+      ],
+      "Fast Charge": [
+        "Supports(Max): 80 W SUPERVOOCTM, 80 W UFCS.",
+        "Compatible with: 67 W and below SUPERVOOCTM, 44 W third-party UFCS, 55 W PPS, 13.5 W PD",
+        "Supports(Max): 50 W AIRVOOCTM"
+      ]
+    },
+    "Biometrics": {
+      "Fingerprint": "Under-screen fingerprint",
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "Colour temperature sensor",
+        "E-compass",
+        "Accelerometer",
+        "Gyroscope",
+        "In-display ultrasound fingerprint sensor",
+        "Hall sensor",
+        "Laser focusing sensor",
+        "Spectral sensor",
+        "Infrared remote control"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 7 (802.11be) supported",
+        "Wi-Fi 6 (802.11ax) supported",
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported",
+        "Wi-Fi 2.4GHz 2×2+Wi-Fi 5GHz 2×2 concurrent supported",
+        "Wi-Fi 5GHz 160MHz supported",
+        "Wi-Fi 6GHz 320MHz supported",
+        "2×2 MIMO supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 6.2, Low Energy, BLE Audio",
+      "Bluetooth® Audio Codec": "SBC, AAC, LDAC, aptX, aptX HD, LHDC 5.0",
+      "USB Interface": "USB Type-C, USB 3.2 Gen 1",
+      "Earphone Jack": "Type-C headphones, supported Type-C digital headphones, not supported Type-C analog headphones",
+      "NFC": "Supported"
+    },
+    "Operating System": {
+      "Os": "ColorOS 17.0"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.78,
+    "refreshRateHz": 144,
+    "mainCameraMP": 200,
+    "frontCameraMP": 50,
+    "batteryMah": 8000,
+    "chargingW": 80,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 233,
+    "chip": "MediaTek Dimensity 9600 Pro",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Luna White",
+          "hex": null
+        },
+        {
+          "value": "Titanium Grey",
+          "hex": null
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Luna White": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/b138c8c415100e02ebfa51823f6aeaab.png",
+          "alt": "OPPO Find X10 Pro Max in Luna White"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/9f6aba6471cb61a610fef40ac604b88c.png",
+          "alt": "OPPO Find X10 Pro Max in Luna White, view 2"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/81b8a6a32e2a8554cef92f17f7cf280e.png",
+          "alt": "OPPO Find X10 Pro Max in Luna White, view 3"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/12e573e483cccb33d286dda2049eae07.png",
+          "alt": "OPPO Find X10 Pro Max in Luna White, view 4"
+        }
+      ],
+      "Titanium Grey": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/a39c5019aa5ca214ca85e6b6ea54926f.png",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/50a96bd931e950e6cef1c2eea5b742be.png",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 2"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/d34190b14c8906c80ffa37d26bf002a2.png",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 3"
+        },
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/db09aa62382af92b3abc3547024b7749.png",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-FX10PM-12512-LUWH",
+      "mpn": "5011110431",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Luna White"
+      },
+      "price": 199999,
+      "mrp": 239999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "OPO-FX10PM-12512-TIGR",
+      "mpn": "5011110432",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Titanium Grey"
+      },
+      "price": 199999,
+      "mrp": 239999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone×1",
+    "Charger×1",
+    "USB Data Cable×1",
+    "SIM Ejector Tool×1",
+    "Protective Case×1",
+    "Quick Guide×1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/smartphones/series-find-x/find-x10-pro-max/specs/",
+      "https://www.oppo.com/in/product/find-x10-pro-max.P.P1110186"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Gallery images are on heytapimg.com and could not be checked from the collection environment; swatch colours not sampled."
+  }
+}
