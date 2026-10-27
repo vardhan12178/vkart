@@ -1,0 +1,273 @@
+{
+  "slug": "asus-vivobook-s16-s3607",
+  "title": "ASUS Vivobook S16 (S3607)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Slim 16-inch laptop with Intel Core Ultra (Series 3) processors, an OLED or 2.5K display and a 70Wh battery.",
+  "description": "Vivobook S16 is a slim 16-inch all-rounder built around Intel Core Ultra processors with an NPU of up to 50 TOPS.\n\nIt offers FHD+ OLED or 2.5K display options, an IR camera with privacy shutter, a full keyboard with number pad and a 70Wh battery, and meets the US MIL-STD 810H durability standard.",
+  "highlights": [
+    "Intel Core Ultra 5 / 7 / 9 processors",
+    "16-inch FHD+ OLED or 2.5K display",
+    "Up to 1TB PCIe 4.0 SSD",
+    "70Wh battery, 65W USB-C charging",
+    "IR camera with privacy shutter",
+    "1.70 kg, MIL-STD 810H"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": [
+        "Intel Core Ultra 9 Processor 386H 2.1 GHz (18MB Cache, up to 4.9 GHz, 16 cores, 16 Threads); Intel NPU up to 50TOPS",
+        "Intel Core Ultra 7 Processor 355 2.3 GHz (12MB Cache, up to 4.7 GHz, 8 cores, 8 Threads); Intel NPU up to 49TOPS",
+        "Intel Core Ultra 5 Processor 325 2.1 GHz (12MB Cache, up to 4.5 GHz, 8 cores, 8 Threads); Intel NPU up to 47TOPS",
+        "Intel Core Ultra 7 Processor 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 cores, 16 Threads); Intel AI Boost NPU up to 13TOPS",
+        "Intel Core Ultra 5 Processor 225H 1.7 GHz (18MB Cache, up to 4.9 GHz, 14 cores, 14 Threads); Intel AI Boost NPU up to 13TOPS",
+        "Intel Core 7 Processor 240H 2.5 GHz (24MB Cache, up to 5.2 GHz, 10 cores, 16 Threads)",
+        "Intel Core 5 Processor 210H 2.2 GHz (12MB Cache, up to 4.8 GHz, 8 cores, 12 Threads)",
+        "Intel Core i7-13620H Processor 2.4 GHz (24MB Cache, up to 4.9 GHz, 10 cores, 16 Threads)",
+        "Intel Core i5-13420H Processor 2.1 GHz (12MB Cache, up to 4.6 GHz, 8 cores, 12 Threads)"
+      ],
+      "Neural Processor": [
+        "Intel NPU up to 50TOPS",
+        "Intel NPU up to 49TOPS",
+        "Intel NPU up to 47TOPS",
+        "Intel AI Boost NPU up to 13TOPS"
+      ]
+    },
+    "Graphics": {
+      "Graphics": [
+        "Intel UHD Graphics",
+        "Intel Graphics"
+      ]
+    },
+    "Display": {
+      "Display": [
+        "40.64 cms (16), FHD+ (1920 x 1200) OLED 16:10 aspect ratio",
+        "2.5K (2560 x 1600, WQXGA) 16:10 aspect ratio",
+        "FHD+ (1920 x 1200) 16:10 aspect ratio, 300nits, Glossy display",
+        "Anti-glare display, sRGB: 100%, 0.2ms response time, Refresh Rate:60Hz refresh rate, 1,000,000:1, 70% less harmful blue light"
+      ]
+    },
+    "Memory": {
+      "Memory": [
+        "8GB DDR5 on board",
+        "16GB DDR5 on board",
+        "16GB DDR5 SO-DIMM",
+        "8GB DDR5 SO-DIMM"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD",
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": [
+        "1x M.2 2280 PCIe 4.0x4",
+        "1x DDR5 SO-DIMM slot"
+      ]
+    },
+    "Ports": {
+      "I/O Ports": [
+        "2x USB 3.2 Gen 1 Type-C with support for display / power delivery (data speed up to 5Gbps)",
+        "2x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS",
+        "1x HDMI 1.4"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": "Backlit Chiclet Keyboard with Num-key, 1.7mm Key-travel, Precision touchpad, With Copilot key",
+      "Camera": "FHD camera with IR function to support Windows Hello, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": [
+        "Wi-Fi 6(802.11ax) (Dual band) 2*2 Wireless Card, Bluetooth 5.4",
+        "Bluetooth 5.2"
+      ]
+    },
+    "Battery": {
+      "Battery": "70WHrs, 4S1P, 4-cell Li-ion",
+      "Power Supply": [
+        "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal",
+        "TYPE-C, 68W AC Adapter, Output: 20V DC, 3.4A, 68W, Input: 100~240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+      ]
+    },
+    "Build": {
+      "Weight": "1.70 kg (3.75 lbs)",
+      "Dimensions (W x D x H)": "35.70 x 25.06 x 1.59 ~ 1.79 cm (14.06\" x 9.87\" x 0.63\" ~ 0.70\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": [
+        "Windows 11 Pro",
+        "Windows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf, No preinstalled OS"
+      ]
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "BIOS Booting User Password Protection, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 9 386H / Intel Core Ultra 7 355 / Intel Core Ultra 5 325",
+    "gpu": "Intel UHD Graphics",
+    "displayInch": 16.0,
+    "panel": "OLED",
+    "refreshRateHz": 60,
+    "weightKg": 1.7,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cool Silver",
+          "hex": "#DFDFDF"
+        },
+        {
+          "value": "Matte Gray",
+          "hex": "#5F5F5F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cool Silver": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/520eaec0-3e4d-4e59-9b48-cb077e7dd702/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view with JS wallpaper."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/f874c925-1795-4956-8253-fbfcb9b9dd81/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/17691043-4a0a-46ef-80b7-647aa3757b39/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/12364314-faed-4ee6-9e38-34ebf7612a7e/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/53ab365b-e28e-40e7-ad06-1122dc586edd/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/eab98125-5843-4147-8c8b-700cb6ee7438/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 with backlit keyboard opened at 90-degree view from above"
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/3ba032c3-954f-4814-baf9-4ecad35d8dbf/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 closed view from left."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/28b77586-fdd2-4406-a2ea-b1b88bd0c8ec/w800",
+          "alt": "Cool Silver ASUS Vivobook S16 closed view from right."
+        }
+      ],
+      "Matte Gray": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/341ce098-f374-4a08-9be7-b6150b1ac56f/w800",
+          "alt": "Matte Black ASUS Vivobook S16 opened at 90-degree from the front view with JS wallpaper."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/44b4568b-94a9-48dd-b4d6-6e7f3a96d6bb/w800",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0bba0d01-ff04-44c5-9a46-1656a52d88df/w800",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/b7fd94c3-7392-4b89-8799-ab148dabe565/w800",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/7dcc7708-1d93-44ad-9e90-510bffcec59d/w800",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/154d3ce6-c87c-45ab-bbe6-e7441b4239c6/w800",
+          "alt": "Matte Gray ASUS Vivobook S16 with backlit keyboard opened at 90-degree view from above"
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0750e73c-dca9-4f74-98b0-a5ea3b1d9d8c/w800",
+          "alt": "Matte Gray ASUS Vivobook S16 closed view from left."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/7c327808-5ade-40c1-b994-242d12fee400/w800",
+          "alt": "Matte Gray ASUS Vivobook S14 closed view from right."
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VBS16-COSI",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Cool Silver"
+      },
+      "price": 134990,
+      "mrp": 134990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VBS16-MAGR",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Matte Gray"
+      },
+      "price": 134990,
+      "mrp": 134990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s16-s3607/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s16-s3607/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

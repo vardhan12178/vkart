@@ -1,0 +1,302 @@
+{
+  "slug": "hp-omnibook-ultra-14",
+  "title": "HP OmniBook Ultra 14",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "HP's flagship 14-inch AI laptop: 3K OLED touch display, Intel Core Ultra 7 356H, Wi-Fi 7 and up to 20 hours battery.",
+  "description": "HP OmniBook Ultra 14 and OmniBook X 14 are HP's top consumer laptops, with a 14-inch 3K OLED touch display and Intel Core Ultra 7 356H.\n\nThey pair 50 TOPS of NPU performance with Thunderbolt 4, Wi-Fi 7 and a 5MP IR camera, in Silk sand, Eclipse gray or Atmospheric blue.",
+  "highlights": [
+    "14-inch 3K OLED touch display, 100% DCI-P3",
+    "Intel Core Ultra 7 356H, 50 TOPS NPU",
+    "16GB LPDDR5x, 1TB SSD",
+    "Thunderbolt 4, Wi-Fi 7",
+    "Up to 20 hours battery",
+    "About 1.3 kg"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "Intel Core Ultra 7 processor",
+      "Processor": "Intel Core Ultra 7 356H (up to 4.7 GHz with Intel Turbo Boost Technology, 18 MB L3 cache, 16 cores, 16 threads)",
+      "Chipset": "Intel integrated SoC",
+      "Processor core": "16",
+      "Processor cache": "18 MB L3",
+      "Neural Processing Unit": "Intel AI Boost (50 NPU TOPS)"
+    },
+    "Memory": {
+      "Memory": "16 GB LPDDR5x-8533 MT/s (onboard)",
+      "Memory Note": "Transfer rates up to 8533 MT/s.",
+      "Memory layout (slots \\u0026 size)": "onboard",
+      "Memory and storage": "16 GB memory;1 TB SSD storage"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "31.36 x 22.52 x 1.26 cm"
+    },
+    "Display Specifications": {
+      "Touchscreen": "Yes",
+      "Display": "14\" diagonal 3K OLED touch display",
+      "Aspect ratio": "16:10",
+      "Brightness": "500 nits",
+      "Color gamut": "100% DCI-P3",
+      "Screen-to-body ratio (without speakers)": "86.44%"
+    },
+    "Weights": {
+      "Weight": "1.3 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (integrated)": "Intel Graphics",
+      "Graphics": "Integrated"
+    },
+    "Connectivity and Communications": {
+      "Ports": "2 USB Type-A 10Gbps signaling rate; 1 HDMI 2.1; 1 headphone/microphone combo; 2 Thunderbolt 4 with USB Type-C 40Gbps signaling rate (USB Power Delivery 3.1, DisplayPort 2.1, HP Sleep and Charge)",
+      "Wireless": "MediaTek Wi-Fi 7 MT7925 (2x2) and Bluetooth 6.0 wireless card"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "DTS:X Ultra; Dual speakers; HP Audio Boost; Poly Studio",
+      "Keyboard": "Full-size, backlit, darker atmospheric blue opaque keyboard",
+      "Pointing device": "HP Imagepad",
+      "Input devices": "Accelerometer; IR thermal sensor"
+    },
+    "Appearance": {
+      "Product color": "Atmospheric blue aluminum",
+      "Product design": "Sandblasted anodized finish",
+      "Color": "Atmospheric blue"
+    },
+    "Battery and Power": {
+      "Battery life": "Up to 20 hours",
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 30 minutes",
+      "Battery type": "4-cell, 70 Wh Li-ion polymer",
+      "Power supply type": "100 W USB Type-C GaN power adapter"
+    },
+    "Security Management": {
+      "Security management": "Mic mute key; Camera privacy shutter; Trusted Platform Module (Firmware TPM) support"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "1 TB PCIe Gen4 NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    },
+    "Camera Specifications": {
+      "Camera": "5MP IR camera with HDR auto switch, temporal noise reduction and integrated dual array digital microphones"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 7 356H",
+    "gpu": "Intel Graphics",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": null,
+    "weightKg": 1.3,
+    "batteryHours": 20,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 7 356H · 16GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Atmospheric blue",
+          "hex": "#121621"
+        },
+        {
+          "value": "Silk sand",
+          "hex": "#5A7B8A"
+        },
+        {
+          "value": "Eclipse gray",
+          "hex": "#3C3F43"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Atmospheric blue": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_front_6016102.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_frontright_6016103.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_frontleft_6015953.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_rearleft_6015863.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_stackedprofile_6015908.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-x-14-laptop-ngai-pc-chiharu-atmospheric-blue-en-annotated-img-4_1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-x-14-laptop-ngai-pc-chiharu-atmospheric-blue-en-annotated-img-6.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 7"
+        }
+      ],
+      "Silk sand": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-front.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-frontright.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-frontleft.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_silksand_wlan_t_catalog_rearleft_6015858.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_silksand_wlan_t_catalog_profilestacked_6015319.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-en-annot-6_1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-silksand-in-annot-2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 7"
+        }
+      ],
+      "Eclipse gray": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-front.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-frontright.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-frontleft.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_eclipsegray_wlan__t_ircam_backlit_oled_catalog_rearleft_5757101.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_eclipsegray_wlan__t_ircam_backlit_oled_catalog_stackedprofile_5756058.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-in-annot-8.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-en-annot-6.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-D7NC7PA",
+      "mpn": "D7NC7PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 356H · 16GB · 1TB",
+        "Color": "Atmospheric blue"
+      },
+      "price": 189999,
+      "mrp": 189999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 356H",
+        "gpu": "Intel Graphics",
+        "touch": true,
+        "model": "14-ka0068TU"
+      }
+    },
+    {
+      "sku": "HP-DG0V4PA",
+      "mpn": "DG0V4PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 356H · 16GB · 1TB",
+        "Color": "Silk sand"
+      },
+      "price": 229999,
+      "mrp": 229999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 356H",
+        "gpu": "Intel Graphics",
+        "touch": true,
+        "model": "14-kd0083TU"
+      }
+    },
+    {
+      "sku": "HP-DE8P3PA",
+      "mpn": "DE8P3PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 356H · 16GB · 1TB",
+        "Color": "Eclipse gray"
+      },
+      "price": 229999,
+      "mrp": 229999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 356H",
+        "gpu": "Intel Graphics",
+        "touch": true,
+        "model": "14-kd0081TU"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-x-laptop-next-gen-ai-14-ka0068tu-d7nc7pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-ultra-laptop-next-gen-ai-14-kd0083tu-dg0v4pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-ultra-laptop-next-gen-ai-14-kd0081tu-de8p3pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "slug": "asus-vivobook-go-15-oled-e1504f",
+  "title": "ASUS Vivobook Go 15 OLED (E1504F)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Budget 15.6-inch OLED laptop with AMD Ryzen processors and a 180-degree hinge.",
+  "description": "Vivobook Go 15 OLED brings an OLED display to a budget laptop, with AMD Ryzen and Athlon processor options.\n\nIt has a lay-flat 180-degree hinge, a webcam shield and comes in three colours.",
+  "highlights": [
+    "15.6-inch FHD OLED display",
+    "AMD Ryzen / Athlon processors",
+    "180-degree lay-flat hinge",
+    "Webcam privacy shield",
+    "Lightweight design",
+    "Cool Silver, Mixed Black or Grey Green"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": "AMD Ryzen Athlon Gold 7220U Processor 2.4GHz (5MB Cache, up to 3.7 GHz, 2 cores, 4 Threads)AMD Ryzen 5 7520U Processor 2.8GHz (6MB Cache, up to 4.3GHz, 4 cores, 8 Threads)AMD Ryzen 3 7320U Processor 2.4GHz (6MB Cache, up to 4.1GHz, 4 cores, 8 Threads)"
+    },
+    "Graphics": {
+      "Graphics": "Integrated AMD Radeon Graphics"
+    },
+    "Display": {
+      "Display": "39.62cm (15.6), FHD (1920 x 1080) OLED 16:9 aspect ratio, 0.2ms response time, Refresh Rate:60Hz refresh rate, peak brightness 600nits, 100% DCI-P3 color gamut, 1.07 billion colors, PANTONE Validated, Glossy display, 70% less harmful blue light, TÜV Rheinland-certified, - (Screen-to-body ratio)84%39.62cm (15.6), FHD (1920 x 1080) OLED 16:9 aspect ratio, 0.2ms response time, Refresh Rate:60Hz refresh rate, peak brightness 600nits, 100% DCI-P3 color gamut, 1,000,000:1, 1.07 billion colors, PANTONE Validated, Glossy display, 70% less harmful blue light, TÜV Rheinland-certified, - (Screen-to-body ratio)84%39.62cm (15.6), FHD (1920 x 1080) 16:9 aspect ratio, LED Backlit, Refresh Rate:60Hz refresh rate, Anti-glare display, TÜV Rheinland-certified, - (Screen-to-body ratio)84%"
+    },
+    "Memory": {
+      "Memory": [
+        "8GB LPDDR5 on board",
+        "Max Total system memory up to:8GB8GB LPDDR5 on board",
+        "Max Total system memory up to:4GB4GB LPDDR5 on board",
+        "Max Total system memory up to:4GB16GB LPDDR5 on board",
+        "Max Total system memory up to:4GB8GB LPDDR5 on board16GB LPDDR5 on board"
+      ]
+    },
+    "Storage": {
+      "Storage": "128GB M.2 NVMe PCIe SSD1TB M.2 NVMe PCIe 3.0 SSD512GB M.2 NVMe PCIe 3.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.256GB M.2 NVMe PCIe 4.0 SSD128GB M.2 NVMe PCIe 3.0 SSD",
+      "Expansion Slots (includes used)": "1x M.2 2280 PCIe 3.0x2"
+    },
+    "Ports": {
+      "I/O Ports": [
+        "1x USB 3.2 Gen 1 Type-C with support for power delivery (data speed up to 5Gbps)",
+        "1 x USB 3.2 Type-C Gen1",
+        "1x USB 3.2 Gen 1 Type-C (data speed up to 5Gbps)",
+        "1x USB 3.2 Gen 1 Type-A",
+        "1x USB 2.0 Type-A (data speed up to 480Mbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 1.4"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": [
+        "Backlit Chiclet Keyboard with Num-key",
+        "Chiclet Keyboard with Num-key",
+        "Chiclet Keyboard, 1.4mm Key-travel, Precision touchpad"
+      ],
+      "Camera": "720p HD camera, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker",
+        "SonicMaster, with Cortana voice-recognition support"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": [
+        "Wi-Fi 6E(802.11ax) (Triple band) 1*1 Wireless Card",
+        "Wi-Fi 5(802.11ac) (Dual band) 1*1 Wireless Card, Bluetooth 5.3",
+        "Bluetooth 5.0"
+      ]
+    },
+    "Battery": {
+      "Battery": [
+        "50WHrs, 3S1P, 3-cell Li-ion",
+        "42WHrs, 3S1P, 3-cell Li-ion"
+      ],
+      "Power Supply": [
+        "TYPE-C, 45W AC Adapter, Output: 20V DC, 2.25A, 45W, Input: 100~240V AC 50/60Hz universal",
+        "ø4.5, 65W AC Adapter, Output: 19V DC, 3.42A, 65W, Input: 100~240V AC 50/60Hz universal",
+        "ø4.5, 45W AC Adapter, Output: 19V DC, 2.37A, 45W, Input: 100~240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+      ]
+    },
+    "Build": {
+      "Weight": "1.63 kg (3.59 lbs)",
+      "Dimensions (W x D x H)": "36.03 x 23.25 x 1.79 ~ 1.79 cm (14.19\" x 9.15\" x 0.70\" ~ 0.70\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": "Windows 11 ProWindows 11 Home in S Mode - ASUS recommends Windows 11 Pro for businessWindows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abfWindows 11 Home - ASUS recommends Windows 11 Pro for businessNo preinstalled OSKeep OS"
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "BIOS Booting User Password Protection"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "AMD Ryzen Athlon Gold 7220U",
+    "gpu": "Integrated AMD Radeon Graphics",
+    "displayInch": 15.6,
+    "panel": "OLED",
+    "refreshRateHz": 60,
+    "weightKg": 1.63,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 4,
+    "storageGB": 128
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cool Silver",
+          "hex": "#D6D6D9"
+        },
+        {
+          "value": "Mixed black",
+          "hex": "#292C2A"
+        },
+        {
+          "value": "Grey Green",
+          "hex": "#C5D0D1"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cool Silver": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/b6d2e59f-ed3c-49de-92b5-410c799a1858/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/9632ee3e-ffdb-4ed4-99be-221c296feefb/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/1442e785-7d0a-4004-894c-9c921f6a0caa/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/9dcc2e08-a777-4185-b70e-19749722da9b/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/4562f2e0-5606-42b9-972d-fb26097eeac4/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/6a341af9-7847-451f-9078-96e664b22c39/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened at 90-degree from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/4e0eb772-e82f-4986-b949-fa6949bea37c/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED lid view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/50056d26-cd58-43d8-8460-1326edff716b/w800",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened view from above."
+        }
+      ],
+      "Mixed black": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/b830153b-e34b-4c62-b311-a7d55d987edf/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/54b1ee3e-26f7-4b78-a21c-b2235c3252bb/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/aa9f0abc-2deb-4bc9-a480-15c5b00e9579/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/7d87dad0-9c8b-41d2-8ded-b47b3b22d927/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/6ff0c6e1-e05f-47f7-ad63-39e0d32d427a/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/c6889637-63ac-4cf6-b948-c3b4879d67d3/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened at 90-degree from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/2608cf11-6d26-449d-a857-ed874893e7fc/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED lid view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/b96f4cd3-d18c-497d-9652-5bc02cb4d2a5/w800",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened view from above."
+        }
+      ],
+      "Grey Green": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/2514abe7-a26f-4a6f-a0c4-a309499da06b/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/ea687c3f-fd85-4e9d-ba5c-b42ebfcc069e/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/8f5a8131-fad0-4f99-a74a-45e9092ebb72/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/489518b4-6ffb-4fe0-a715-55e3b529df75/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/98539aff-7e17-4912-b1af-1b402520109c/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/8f16358d-5bc3-4532-b7b7-1f3f70a74432/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened at 90-degree from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/2cbd1054-c27b-406a-9787-2ec0b4df92b1/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED lid view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/f56bde6f-ef69-42d9-a5f8-84c18951ca7d/w800",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened view from above."
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VBGO15-COSI",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Cool Silver"
+      },
+      "price": 40990,
+      "mrp": 40990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VBGO15-MIBL",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Mixed black"
+      },
+      "price": 40990,
+      "mrp": 40990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VBGO15-GRGR",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Grey Green"
+      },
+      "price": 40990,
+      "mrp": 40990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/vivobook-go-15-oled-e1504f/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/vivobook-go-15-oled-e1504f/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

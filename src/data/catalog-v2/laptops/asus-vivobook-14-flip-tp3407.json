@@ -1,0 +1,212 @@
+{
+  "slug": "asus-vivobook-14-flip-tp3407",
+  "title": "ASUS Vivobook 14 Flip (TP3407)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "360-degree convertible 14-inch laptop with a touch display and Intel Core Ultra processors.",
+  "description": "Vivobook 14 Flip has a 360-degree hinge, so it works as a laptop, tent, stand or tablet, with a touch display and stylus support.\n\nIt runs Intel Core Ultra processors and comes in Matte Gray.",
+  "highlights": [
+    "360-degree convertible design",
+    "14-inch touch display",
+    "Intel Core Ultra processors",
+    "Stylus support",
+    "Backlit keyboard",
+    "Matte Gray"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": [
+        "Intel Core Ultra 9 Processor 386H 2.1 GHz (18MB Cache, up to 4.9 GHz, 16 cores, 16 Threads); Intel NPU up to 50TOPS",
+        "Intel Core Ultra 7 Processor 355 2.3 GHz (12MB Cache, up to 4.7 GHz, 8 cores, 8 Threads); Intel NPU up to 49TOPS",
+        "Intel Core Ultra 7 Processor 258V 32GB 2.2 GHz (12MB Cache, up to 4.8 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 47TOPS",
+        "Intel Core Ultra 7 Processor 256V 16GB 2.2 GHz (12MB Cache, up to 4.8 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 47TOPS",
+        "Intel Core Ultra 5 Processor 226V 16GB 2.1 GHz (8MB Cache, up to 4.5 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 40TOPS"
+      ],
+      "Neural Processor": [
+        "Intel NPU up to 50TOPS",
+        "Intel NPU up to 49TOPS",
+        "Intel AI Boost NPU up to 49TOPS",
+        "Intel AI Boost NPU up to 40TOPS"
+      ]
+    },
+    "Graphics": {
+      "Graphics": "Intel Graphics"
+    },
+    "Display": {
+      "Display": [
+        "35.56cm (14), FHD+ (1920 x 1200) OLED 16:10 aspect ratio, 0.2ms response time, Refresh Rate:60Hz refresh rate, 500nits HDR peak brightness, 100% DCI-P3 color gamut, 1,000,000:1, VESA CERTIFIED Display HDR True Black 500, 1.07 billion colors, 70% less harmful blue light",
+        "65% less harmful blue light, TÜV Rheinland-certified, Touch screen, - (Screen-to-body ratio)85%, With stylus support, 300nits"
+      ]
+    },
+    "Memory": {
+      "Memory": [
+        "32GB LPDDR5X on board",
+        "32GB LPDDR5X Memory on Package",
+        "16GB LPDDR5X on board",
+        "16GB LPDDR5X Memory on Package"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": "1x M.2 2280 PCIe 4.0x4"
+    },
+    "Ports": {
+      "I/O Ports": [
+        "1x Thunderbolt 4 with support for display / power delivery (data speed up to 40Gbps)",
+        "1x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 20Gbps)",
+        "1x USB 3.2 Gen 1 Type-A, 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS, Micro SD card reader"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": "Backlit Chiclet Keyboard, 1.7mm Key-travel, Precision touchpad, With Copilot key",
+      "Camera": "FHD camera with IR function to support Windows Hello, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker",
+        "Smart Amp Technology"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": [
+        "Wi-Fi 7(802.11be) (Triple band)2*2 Wireless Card",
+        "Wi-Fi 7(802.11be) (Triple band) 2*2 Wireless Card, Bluetooth 6.0",
+        "Bluetooth 5.4"
+      ]
+    },
+    "Battery": {
+      "Battery": "70WHrs, 4S1P, 4-cell Li-ion",
+      "Power Supply": [
+        "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal",
+        "TYPE-C, 68W AC Adapter, Output: 20V DC, 3.4A, 68W, Input: 100~240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+      ]
+    },
+    "Build": {
+      "Weight": "1.57 kg (3.46 lbs)",
+      "Dimensions (W x D x H)": "31.26 x 22.09 x 1.69 ~ 1.71 cm (12.31\" x 8.70\" x 0.67\" ~ 0.67\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": [
+        "Windows 11 Pro",
+        "Windows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf, No preinstalled OS"
+      ]
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "Microsoft Pluton security processor",
+        "BIOS Booting User Password Protection, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 9 386H / Intel Core Ultra 7 355 / Intel Core Ultra 7 258V 32GB",
+    "gpu": "Intel Graphics",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": 60,
+    "weightKg": 1.57,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Matte Gray",
+          "hex": "#606060"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Matte Gray": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/223a5ff4-8847-468e-963c-d224182797ce/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0700e3d1-e566-418a-9f0b-26d04e4217ec/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened at 90-degree from a top-down view."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/1740ed18-53cf-4a82-8194-9653f498c025/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/3358c7a3-9512-4754-add0-654c78853538/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/cfb5b27a-18b0-45e4-bd0a-f19658a6f93d/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip in tent mode, opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/1c4a94e7-b613-4bc2-81e8-31b30393eb23/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip in stand mode, opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0a497a71-1afd-428c-b695-1187ba194b78/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip in tablet mode, opened from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/961c7223-4931-4f8a-ace1-a0c8a872257a/w800",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip shown from the back side with a visible striped-hinge design."
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VB14F-MAGR",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Matte Gray"
+      },
+      "price": 96990,
+      "mrp": 96990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-14-flip-tp3407/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-14-flip-tp3407/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

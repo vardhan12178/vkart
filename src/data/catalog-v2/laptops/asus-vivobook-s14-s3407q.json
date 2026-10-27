@@ -1,0 +1,243 @@
+{
+  "slug": "asus-vivobook-s14-s3407q",
+  "title": "ASUS Vivobook S14 (S3407Q)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Snapdragon X powered 14-inch Copilot+ PC with OLED display options and long battery life.",
+  "description": "This Vivobook S14 runs the Snapdragon X processor with a 45 TOPS Hexagon NPU, making it a Copilot+ PC.\n\nIt offers FHD+ OLED or 2.5K display options, up to 32GB LPDDR5X memory and the long battery life Snapdragon laptops are known for.",
+  "highlights": [
+    "Snapdragon X processor, 45 TOPS NPU",
+    "Copilot+ PC",
+    "14-inch FHD+ OLED or 2.5K display",
+    "Up to 32GB LPDDR5X",
+    "Long battery life",
+    "Cool Silver or Matte Gray"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": "Snapdragon X X1 26 100 Processor (30MB Cache, up to 2.97GHz, 8 cores, 8 Threads)",
+      "Neural Processor": "Qualcomm Hexagon NPU up to 45TOPS"
+    },
+    "Graphics": {
+      "Graphics": "Qualcomm Adreno GPU"
+    },
+    "Display": {
+      "Display": [
+        "35.56cm (14), FHD+ (1920 x 1200) OLED 16:10 aspect ratio",
+        "2.5K (2560 x 1600, WQXGA) 16:10 aspect ratio, Refresh Rate:60Hz refresh rate, sRGB: 100%, Anti-glare display, 0.2ms response time, 300nits, 1,000,000:1, 70% less harmful blue light, TÜV Rheinland-certified"
+      ]
+    },
+    "Memory": {
+      "Memory": [
+        "32GB LPDDR5X on board",
+        "16GB LPDDR5X on board"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": "1x M.2 2280 PCIe 4.0x4"
+    },
+    "Ports": {
+      "I/O Ports": [
+        "2x USB 4.0 Gen 3 Type-C with support for display / power delivery (data speed up to 40Gbps)",
+        "2x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": "Backlit Chiclet Keyboard, 1.7mm Key-travel, Precision touchpad, With Copilot key",
+      "Camera": "FHD camera with IR function to support Windows Hello, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker",
+        "Smart Amp Technology",
+        "SonicMaster"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": "Wi-Fi 6E(802.11ax) (Triple band) 2*2 Wireless Card, Bluetooth 5.3"
+    },
+    "Battery": {
+      "Battery": "70WHrs, 3S1P, 3-cell Li-ion",
+      "Power Supply": "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+    },
+    "Build": {
+      "Weight": "1.35 kg (2.98 lbs)",
+      "Dimensions (W x D x H)": "31.52 x 22.34 x 1.59 ~ 1.79 cm (12.41\" x 8.80\" x 0.63\" ~ 0.70\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": [
+        "Windows 11 Pro",
+        "Windows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf"
+      ]
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "Microsoft Pluton security processor",
+        "BIOS Booting User Password Protection, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Snapdragon X X1 26 100",
+    "gpu": "Qualcomm Adreno GPU",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": 60,
+    "weightKg": 1.35,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cool Silver",
+          "hex": "#E9E9E9"
+        },
+        {
+          "value": "Matte Gray",
+          "hex": "#5F5F5F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cool Silver": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/fccddb25-35cb-480a-a978-cc64b6a1af66/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree from the front view with JS wallpaper."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/53f1f1ed-5ba0-4add-b006-881113f5381c/w800",
+          "alt": "ASUS Vivobook S14 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/4c843aaf-b53f-4763-a112-6cb252ecedca/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/7b947348-1f96-42e7-b7c4-b15641d71e01/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/21953824-ab26-402d-80f5-9ea262c218de/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/30f4fd3e-1316-4e93-bfb1-b89c7b380034/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree view from above with backlit on."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/ce37f735-7556-4140-857a-e03e25e62195/w800",
+          "alt": "ASUS Vivobook S14 closed view from left."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/357fc237-f940-4590-88b6-80df7ac5da48/w800",
+          "alt": "ASUS Vivobook S14 closed view from right."
+        }
+      ],
+      "Matte Gray": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/5f48154f-559a-45a1-8e2b-b4124ad76424/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree from the front view with JS wallpaper."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/3c15552c-e3a5-4a18-93da-adbf004100ac/w800",
+          "alt": "ASUS Vivobook S14 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/e0f74a83-85e5-46be-9ad9-5f2c4f474892/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/5dc6dfca-d8c4-4f1e-9d45-13cfa7e166a5/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0da714c5-aad9-4bba-9efb-3052cee87f10/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/eda9c983-ef1d-4c64-98c3-e360432ce3ff/w800",
+          "alt": "ASUS Vivobook S14 opened at 90-degree view from above with backlit on."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/3377dffa-416d-43b1-b310-038bc012f342/w800",
+          "alt": "ASUS Vivobook S14 closed view from left."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/c2373073-03e1-4cc6-94c6-19b686cddf54/w800",
+          "alt": "ASUS Vivobook S14 closed view from right."
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VBS14Q-COSI",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Cool Silver"
+      },
+      "price": 92990,
+      "mrp": 92990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VBS14Q-MAGR",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Matte Gray"
+      },
+      "price": 92990,
+      "mrp": 92990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s14-s3407q/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s14-s3407q/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "slug": "hp-omnibook-5-14",
+  "title": "HP OmniBook 5 14",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Thin 14-inch AI laptop with a 2K OLED display, Intel Core and Core Ultra chips and colourful finishes.",
+  "description": "HP OmniBook 5 14 is a thin and light laptop built around a 14-inch 2K OLED display.\n\nIt runs Intel Core 5 and Intel Core Ultra processors with fast LPDDR5x memory and comes in several finishes, from Sahara silver to Peony pink and Starlit blue.",
+  "highlights": [
+    "14-inch 2K OLED display",
+    "Intel Core 5 or Core Ultra 5/7",
+    "Up to 16GB LPDDR5x RAM",
+    "Long battery life with fast charge",
+    "Multiple colour finishes",
+    "Windows 11 Home with Copilot key"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "Intel Core 5 processor",
+      "Processor": "Intel Core 5 320 (up to 4.6 GHz with Intel Turbo Boost Technology, 6 MB L3 cache, 6 cores, 6 threads)",
+      "Chipset": "Intel integrated SoC",
+      "Processor core": "6",
+      "Processor cache": "6 MB L3",
+      "Neural Processing Unit": "Intel AI Boost (16 NPU TOPS)"
+    },
+    "Memory": {
+      "Memory": "8 GB LPDDR5-6400 MT/s (onboard)",
+      "Memory Note": "Transfer rates up to 6400 MT/s.",
+      "Memory layout (slots \\u0026 size)": "onboard",
+      "Memory and storage": "8 GB memory;512 GB SSD storage"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "31.25 x 21.9 x 1.17 cm"
+    },
+    "Display Specifications": {
+      "Touchscreen": "No",
+      "Display": "35.6 cm (14\") diagonal 2K OLED display",
+      "Aspect ratio": "16:10",
+      "Brightness": "300 nits",
+      "Color gamut": "100% DCI-P3",
+      "Screen-to-body ratio (without speakers)": "90%"
+    },
+    "Weights": {
+      "Weight": "1.16 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (integrated)": "Intel Graphics",
+      "Graphics": "Integrated"
+    },
+    "Connectivity and Communications": {
+      "Ports": "1 HDMI-out 2.1; 1 headphone/microphone combo; 2 USB Type-C 10Gbps signaling rate (USB Power Delivery 3.1, DisplayPort 2.1, HP Sleep and Charge)",
+      "Wireless": "Intel Wi-Fi 6E AX211 (2x2) and Bluetooth 5.3 wireless card"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "Dual speakers; Poly Studio; DTS:X Ultra",
+      "Keyboard": "Full-size, backlit, darker starlit blue opaque keyboard",
+      "Pointing device": "HP Imagepad"
+    },
+    "Appearance": {
+      "Product color": "Starlit blue aluminum",
+      "Product design": "Sandblasted anodized finish",
+      "Color": "Starlit blue"
+    },
+    "Battery and Power": {
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 30 minutes",
+      "Battery type": "3-cell, 60 Wh Li-ion polymer",
+      "Power supply type": "65 W USB Type-C GaN power adapter"
+    },
+    "Security Management": {
+      "Security management": "Mic mute key; Trusted Platform Module (Firmware TPM) support"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "512 GB PCIe Gen4 NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    },
+    "Camera Specifications": {
+      "Camera": "1080p FHD IR camera with HDR auto switch, temporal noise reduction and integrated dual array digital microphones"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core 5 320",
+    "gpu": "Intel Graphics",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": null,
+    "weightKg": 1.16,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core 5 320 · 8GB · 512GB"
+        },
+        {
+          "value": "Core 5 320 · 16GB · 512GB · Touch"
+        },
+        {
+          "value": "Core 5 320 · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 5 322 · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 7 355 · 16GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Starlit blue",
+          "hex": "#CAC891"
+        },
+        {
+          "value": "Soft honeydew",
+          "hex": "#8D9B8C"
+        },
+        {
+          "value": "Smoke silver",
+          "hex": "#0B4FD3"
+        },
+        {
+          "value": "Sahara silver",
+          "hex": "#7E8285"
+        },
+        {
+          "value": "Peony pink",
+          "hex": "#2DA6FF"
+        },
+        {
+          "value": "Meteor silver",
+          "hex": "#67686A"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Starlit blue": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-starlit-blue-annot-1_1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Starlit blue"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-starlit-blue-annot-2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Starlit blue, view 2"
+        }
+      ],
+      "Soft honeydew": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_softhoneydew_tnt_bl_win11_catalog_front_8103362.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Soft honeydew"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-soft-honeydew-annot-1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Soft honeydew, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-soft-honeydew-annot-2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Soft honeydew, view 3"
+        }
+      ],
+      "Smoke silver": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_smokesilver_tnt_bl_win11_catalog_frontleft_8099256.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Smoke silver"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-smoke-silver-annot-1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Smoke silver, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-smoke-silver-annot-2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Smoke silver, view 3"
+        }
+      ],
+      "Sahara silver": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-front.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-right.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-left.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ngai_ob5_cs_saharasilver_wlan_t_fhd_ircam_backlit_oled_catalog_rearleft_5885805.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ngai_ob5_cs_saharasilver_wlan_t_fhd_ircam_backlit_oled_catalog_profilestacked_5886001.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-sahara-silver-usb-type-c-10gbps-en-annot-5.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-sahara-silver-non-ai-version-intel-in-annot-1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 7"
+        }
+      ],
+      "Peony pink": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_peonypink_tnt_bl_win11_catalog_front_8110609.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Peony pink"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-peony-pink-annot-1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Peony pink, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-peony-pink-annot-2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Peony pink, view 3"
+        }
+      ],
+      "Meteor silver": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-front.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-right.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-left.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ob5_cs_meteorsilver_t_fhd_ir_backlit_win11_catalog_rearleft_5672673.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ob5_cs_meteorsilver_nt_fhd_ir_backlit_win11_catalog_stackedprofile_5672485.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-meteor-silver-usb-type-c-10gbps-en-annot-5.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-meteor-silver-non-ai-version-intel-in-annot-1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-E77PBPA",
+      "mpn": "E77PBPA#ACJ",
+      "options": {
+        "Configuration": "Core 5 320 · 8GB · 512GB",
+        "Color": "Starlit blue"
+      },
+      "price": 109999,
+      "mrp": 116732,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Intel Core 5 320",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-mh0067TU"
+      }
+    },
+    {
+      "sku": "HP-E70FZPA",
+      "mpn": "E70FZPA#ACJ",
+      "options": {
+        "Configuration": "Core 5 320 · 8GB · 512GB",
+        "Color": "Soft honeydew"
+      },
+      "price": 109999,
+      "mrp": 116732,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Intel Core 5 320",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-mh0061TU"
+      }
+    },
+    {
+      "sku": "HP-E70D6PA",
+      "mpn": "E70D6PA#ACJ",
+      "options": {
+        "Configuration": "Core 5 320 · 8GB · 512GB",
+        "Color": "Smoke silver"
+      },
+      "price": 109999,
+      "mrp": 116732,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Intel Core 5 320",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-mh0017TU"
+      }
+    },
+    {
+      "sku": "HP-DJ6M8PA",
+      "mpn": "DJ6M8PA#ACJ",
+      "options": {
+        "Configuration": "Core 5 320 · 16GB · 512GB · Touch",
+        "Color": "Sahara silver"
+      },
+      "price": 114999,
+      "mrp": 114999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core 5 320",
+        "gpu": "Intel Graphics",
+        "touch": true,
+        "model": "14-kf0021TU"
+      }
+    },
+    {
+      "sku": "HP-E80KPPA",
+      "mpn": "E80KPPA#ACJ",
+      "options": {
+        "Configuration": "Core 5 320 · 16GB · 512GB",
+        "Color": "Peony pink"
+      },
+      "price": 129999,
+      "mrp": 138398,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core 5 320",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-mh0068TU"
+      }
+    },
+    {
+      "sku": "HP-D88KNPA",
+      "mpn": "D88KNPA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 5 322 · 16GB · 1TB",
+        "Color": "Sahara silver"
+      },
+      "price": 139999,
+      "mrp": 139999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 5 322",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-hh0082TU"
+      }
+    },
+    {
+      "sku": "HP-D5DJ7PA",
+      "mpn": "D5DJ7PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 355 · 16GB · 1TB",
+        "Color": "Meteor silver"
+      },
+      "price": 169999,
+      "mrp": 169999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 355",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-hh0030TU"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptopai-14-mh0067tu-e77pbpa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptopai-14-mh0061tu-e70fzpa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptopai-14-mh0017tu-e70d6pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptopai-14-kf0021tu-dj6m8pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptopai-14-mh0068tu-e80kppa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptop-next-gen-ai-14-hh0082tu-d88knpa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-5-laptop-next-gen-ai-14-hh0030tu-d5dj7pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

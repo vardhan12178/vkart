@@ -1,0 +1,380 @@
+{
+  "slug": "hp-omnibook-3-16",
+  "title": "HP OmniBook 3 16",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Big-screen everyday laptop with a 16-inch 2K display (OLED on top models), Intel Core Ultra or AMD Ryzen.",
+  "description": "HP OmniBook 3 16 gives you a large 16-inch 2K display with a full keyboard and number pad.\n\nConfigurations range from AMD Ryzen 3 for home use up to Intel Core Ultra 9 with an OLED panel, with up to 24GB RAM.",
+  "highlights": [
+    "16-inch 2K display, OLED on Core Ultra 9 models",
+    "Intel Core Ultra 5/7/9 or AMD Ryzen",
+    "Up to 24GB RAM, up to 1TB SSD",
+    "Full-size keyboard with number pad",
+    "Fast charge: about 50% in 30 minutes",
+    "Windows 11 Home"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "AMD Ryzen 3 processor",
+      "Processor": "AMD Ryzen 3 30 (up to 4.1 GHz max boost clock, 4 MB L3 cache, 4 cores, 8 threads)",
+      "Chipset": "AMD integrated SoC",
+      "Processor core": "4",
+      "Processor cache": "4 MB L3"
+    },
+    "Memory": {
+      "Memory": "8 GB LPDDR5-5500 MT/s (onboard)",
+      "Memory Note": "Transfer rates up to 5500 MT/s.",
+      "Memory layout (slots \\u0026 size)": "onboard",
+      "Memory and storage": "8 GB memory;512 GB SSD storage"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "35.86 x 25.18 x 1.47 cm"
+    },
+    "Display Specifications": {
+      "Touchscreen": "No",
+      "Display": "40.6 cm (16\") diagonal 2K display",
+      "Aspect ratio": "16:10",
+      "Brightness": "300 nits",
+      "Color gamut": "62.5% sRGB",
+      "Flicker-free": "Yes",
+      "Screen-to-body ratio (without speakers)": "88%"
+    },
+    "Weights": {
+      "Weight": "1.64 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (integrated)": "AMD Radeon 610M Graphics",
+      "Graphics": "Integrated"
+    },
+    "Connectivity and Communications": {
+      "Ports": "2 USB Type-A 5Gbps signaling rate; 1 HDMI-out 2.1; 1 headphone/microphone combo; 2 USB Type-C 10Gbps signaling rate (USB Power Delivery 3.1, DisplayPort 1.4, HP Sleep and Charge)",
+      "Wireless": "MediaTek Wi-Fi 6 MT7920 (2x2) and Bluetooth 5.4 wireless card"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "Dual speakers",
+      "Keyboard": "Full-size, canvas gray keyboard with numeric keypad",
+      "Pointing device": "HP Imagepad"
+    },
+    "Appearance": {
+      "Product color": "Glacier silver",
+      "Product design": "Matte paint cover and keyboard frame finish, textured base",
+      "Color": "Glacier silver and canvas gray"
+    },
+    "Battery and Power": {
+      "Battery life": "Up to 9 hours and 15 minutes",
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 45 minutes",
+      "Battery type": "3-cell, 41 Wh Li-ion polymer",
+      "Power supply type": "45 W USB Type-C GaN power adapter",
+      "Battery life video playback": "Up to 14 hours and 15 minutes"
+    },
+    "Security Management": {
+      "Security management": "Mic mute key; Camera privacy shutter; Trusted Platform Module (Firmware TPM) support"
+    },
+    "Camera Specifications": {
+      "Camera": "1080p FHD IR camera with HDR auto switch, temporal noise reduction and integrated dual array digital microphones"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "512 GB PCIe NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    }
+  },
+  "keySpecs": {
+    "processor": "AMD Ryzen 3 30",
+    "gpu": "AMD Radeon 610M Graphics",
+    "displayInch": 16.0,
+    "panel": "IPS",
+    "refreshRateHz": null,
+    "weightKg": 1.64,
+    "batteryHours": 9,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Ryzen 3 30 · 8GB · 512GB"
+        },
+        {
+          "value": "Ryzen 5 40 · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 5 225H · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 7 255H · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 9 285H · 16GB · 1TB · OLED"
+        },
+        {
+          "value": "Core Ultra 9 285H · 24GB · 1TB · OLED"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Glacier silver and canvas gray",
+          "hex": "#81AAC7"
+        },
+        {
+          "value": "Glacier silver and glacier gray",
+          "hex": "#34B5FF"
+        },
+        {
+          "value": "Glacier silver",
+          "hex": "#34B5FF"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Glacier silver and canvas gray": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_front_open_5980865.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_frontright_open_5980729.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontleft_open_5988958.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_rearleft_open_6001784.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_stacked_profile_5980773.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiea-glacier-silver-en-annot-1-backlit-keyboard.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiea-glacier-silver-en-annot-2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 7"
+        }
+      ],
+      "Glacier silver and glacier gray": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_front_open_5980565.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_frontright_open_5980764.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_frontleft_open_5980566.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_freedos_rearleft_open_6026850.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_stacked_profile_5989260.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-1-backlit-keyboard_2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-2_2.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 7"
+        }
+      ],
+      "Glacier silver": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_front_open_5989155.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontright_open_5989158.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontleft_open_5988958_1.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/r/broadcast_bantie_omnibook3_16_cs_nb_glaciersilver_60_degree__catalog_df_plus_backlit_6865558.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_stacked_profile_5989260_2.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-1-backlit-keyboard_3.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-2_3.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-E5SM3PA",
+      "mpn": "E5SM3PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 3 30 · 8GB · 512GB",
+        "Color": "Glacier silver and canvas gray"
+      },
+      "price": 71452,
+      "mrp": 90199,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 3 30",
+        "gpu": "AMD Radeon 610M Graphics",
+        "touch": false,
+        "model": "16-by0113AU"
+      }
+    },
+    {
+      "sku": "HP-DR0Y4PA",
+      "mpn": "DR0Y4PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 5 40 · 16GB · 1TB",
+        "Color": "Glacier silver and canvas gray"
+      },
+      "price": 90999,
+      "mrp": 111574,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen 5 40",
+        "gpu": "AMD Radeon 610M Graphics",
+        "touch": false,
+        "model": "16-by0091AU"
+      }
+    },
+    {
+      "sku": "HP-DR0Y1PA",
+      "mpn": "DR0Y1PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 5 225H · 16GB · 1TB",
+        "Color": "Glacier silver and glacier gray"
+      },
+      "price": 115999,
+      "mrp": 138965,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 5 225H",
+        "gpu": "Intel Arc 130T GPU",
+        "touch": false,
+        "model": "16-bu0286TU"
+      }
+    },
+    {
+      "sku": "HP-DR0Y2PA",
+      "mpn": "DR0Y2PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 255H · 16GB · 1TB",
+        "Color": "Glacier silver and glacier gray"
+      },
+      "price": 124999,
+      "mrp": 162149,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 255H",
+        "gpu": "Intel Arc 140T GPU",
+        "touch": false,
+        "model": "16-bu0287TU"
+      }
+    },
+    {
+      "sku": "HP-DL6V4PA",
+      "mpn": "DL6V4PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 9 285H · 16GB · 1TB · OLED",
+        "Color": "Glacier silver"
+      },
+      "price": 169999,
+      "mrp": 171403,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 9 285H",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "16-bu0273TU"
+      }
+    },
+    {
+      "sku": "HP-DL6V5PA",
+      "mpn": "DL6V5PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 9 285H · 24GB · 1TB · OLED",
+        "Color": "Glacier silver"
+      },
+      "price": 193699,
+      "mrp": 193699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 9 285H",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "16-bu0274TU"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-16-by0113au-e5sm3pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-16-by0091au-dr0y4pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-16-bu0286tu-dr0y1pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-16-bu0287tu-dr0y2pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-16-bu0273tu-dl6v4pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-16-bu0274tu-dl6v5pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "slug": "hp-omnibook-7-14",
+  "title": "HP OmniBook 7 14",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Premium 14-inch laptop with a 3K OLED display, Intel Core Ultra H-series processors and up to 32GB RAM.",
+  "description": "HP OmniBook 7 14 steps up to a 3K OLED display and Intel Core Ultra H-series processors in an aluminium chassis.\n\nConfigurations go up to Intel Core Ultra X7 with 32GB of memory, for heavier multitasking and creative work.",
+  "highlights": [
+    "14-inch 3K OLED display",
+    "Intel Core Ultra 5 / 7 / X7 H-series",
+    "Up to 32GB RAM",
+    "Aluminium build, Meteor silver",
+    "5MP IR camera",
+    "Windows 11 Home with Copilot key"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "Intel Core Ultra 5 processor",
+      "Processor": "Intel Core Ultra 5 225H (up to 4.9 GHz with Intel Turbo Boost Technology, 18 MB L3 cache, 14 cores, 14 threads)",
+      "Chipset": "Intel integrated SoC",
+      "Processor core": "14",
+      "Neural Processing Unit": "Intel AI Boost (13 NPU TOPS)",
+      "Processor cache": "18 MB L3"
+    },
+    "Memory": {
+      "Memory": "16 GB LPDDR5-5200 MT/s (onboard)",
+      "Memory Note": "Transfer rates up to 5200 MT/s.",
+      "Memory layout (slots \\u0026 size)": "onboard",
+      "Memory and storage": "16 GB memory;1 TB SSD storage"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "31.4 x 22.65 x 1.49 cm"
+    },
+    "Display Specifications": {
+      "Touchscreen": "No",
+      "Display": "35.6 cm (14\") diagonal 3K OLED display",
+      "Brightness": "400 nits",
+      "Flicker-free": "Yes",
+      "Aspect ratio": "16:10",
+      "Screen-to-body ratio (without speakers)": "88%",
+      "Color gamut": "100% DCI-P3"
+    },
+    "Weights": {
+      "Weight": "1.41 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (integrated)": "Intel Arc 130T GPU",
+      "Graphics": "Integrated"
+    },
+    "Connectivity and Communications": {
+      "Ports": "1 USB Type-A 10Gbps signaling rate; 1 USB Type-A 5Gbps signaling rate; 1 HDMI-out 2.1; 1 headphone/microphone combo; 1 Thunderbolt 4 with USB Type-C 40Gbps signaling rate (USB Power Delivery 3.1, DisplayPort 2.1, HP Sleep and Charge); 1 USB Type-C 10Gbps signaling rate (USB Power Delivery 3.1, DisplayPort 1.4a, HP Sleep and Charge)",
+      "Wireless": "Intel Wi-Fi 7 BE201 (2x2) and Bluetooth 5.4 wireless card, non-vPro",
+      "Expansion slots": "2 M.2 (SSD)"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "DTS:X Ultra; Dual speakers; HP Audio Boost; Poly Studio",
+      "Keyboard": "Full-size, backlit, soft gray keyboard",
+      "Pointing device": "HP Imagepad"
+    },
+    "Appearance": {
+      "Product color": "Meteor silver aluminum",
+      "Product design": "Sandblasted anodized finish",
+      "Color": "Meteor silver"
+    },
+    "Battery and Power": {
+      "Battery life": "Up to 15 hours",
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 30 minutes",
+      "Battery type": "4-cell, 68 Wh Li-ion polymer",
+      "Power supply type": "100 W USB Type-C power adapter",
+      "Battery life video playback": "Up to 18 hours and 15 minutes"
+    },
+    "Security Management": {
+      "Security management": "Mic mute key; Camera privacy shutter; Trusted Platform Module (Firmware TPM) support"
+    },
+    "Camera Specifications": {
+      "Camera": "5MP IR camera with temporal noise reduction and integrated dual array digital microphones"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "1 TB PCIe Gen4 NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 225H",
+    "gpu": "Intel Arc 130T GPU",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": null,
+    "weightKg": 1.41,
+    "batteryHours": 15,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 5 225H · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 7 255H · 32GB · 1TB"
+        },
+        {
+          "value": "Core Ultra X7 358H · 32GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Meteor silver",
+          "hex": "#815E30"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Meteor silver": [
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-front_1.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-front-1_1.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 2"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-frontleft_1.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 3"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/a/g/agusta_14_ob7_cs_meteorsilver_wlan_nt_ircam_backlit_oled_catalog_rearleft_5656905_1.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 4"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/a/g/agusta_14_ob7_cs_meteorsilver_wlan_nt_ircam_backlit_win11_catalog_profilestacked_5657250_1.png?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 5"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-agusta-en-annotated-img-1_1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 6"
+        },
+        {
+          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-agusta-in-annotated-img-2_1.jpg?store=in-en&image-type=image",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-C58RFPA",
+      "mpn": "C58RFPA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 5 225H · 16GB · 1TB",
+        "Color": "Meteor silver"
+      },
+      "price": 139999,
+      "mrp": 144999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 5 225H",
+        "gpu": "Intel Arc 130T GPU",
+        "touch": false,
+        "model": "14-fr0789TU"
+      }
+    },
+    {
+      "sku": "HP-BK6N6PA",
+      "mpn": "BK6N6PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 255H · 32GB · 1TB",
+        "Color": "Meteor silver"
+      },
+      "price": 179999,
+      "mrp": 192411,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 255H",
+        "gpu": "Intel Arc 140T GPU",
+        "touch": false,
+        "model": "14-fr0116TU"
+      }
+    },
+    {
+      "sku": "HP-DR5G8PA",
+      "mpn": "DR5G8PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra X7 358H · 32GB · 1TB",
+        "Color": "Meteor silver"
+      },
+      "price": 249999,
+      "mrp": 249999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra X7 358H",
+        "gpu": "Intel Arc B390 GPU",
+        "touch": false,
+        "model": "14-hg0062TU"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-7-laptop-ai-14-fr0789tu-c58rfpa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-7-laptop-ai-14-fr0116tu-bk6n6pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-7-laptop-next-gen-ai-14-hg0062tu-dr5g8pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

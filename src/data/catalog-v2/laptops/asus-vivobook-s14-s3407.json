@@ -1,0 +1,271 @@
+{
+  "slug": "asus-vivobook-s14-s3407",
+  "title": "ASUS Vivobook S14 (S3407)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Thin and light 14-inch laptop with Intel Core Ultra processors and OLED display options.",
+  "description": "Vivobook S14 packs Intel Core Ultra processors into a thin, light 14-inch chassis with OLED display options.\n\nIt has a backlit keyboard, Wi-Fi 6, a full set of ports including HDMI, and a Copilot key for Windows AI features.",
+  "highlights": [
+    "Intel Core Ultra processors",
+    "14-inch OLED display options",
+    "Thin and light design",
+    "Backlit keyboard with Copilot key",
+    "USB-C, USB-A and HDMI ports",
+    "Cool Silver or Matte Gray"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": [
+        "Intel Core Ultra 7 Processor 355 2.3 GHz (12MB Cache, up to 4.7 GHz, 8 cores, 8 Threads); Intel NPU up to 49TOPS",
+        "Intel Core Ultra 5 Processor 325 2.1 GHz (12MB Cache, up to 4.5 GHz, 8 cores, 8 Threads); Intel NPU up to 47TOPS",
+        "Intel Core Ultra 7 Processor 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 cores, 16 Threads); Intel AI Boost NPU up to 13TOPS",
+        "Intel Core Ultra 5 Processor 225H 1.7 GHz (18MB Cache, up to 4.9 GHz, 14 cores, 14 Threads); Intel AI Boost NPU up to 13TOPS",
+        "Intel Core 7 Processor 240H 2.5 GHz (24MB Cache, up to 5.2 GHz, 10 cores, 16 Threads)",
+        "Intel Core 5 Processor 210H 2.2 GHz (12MB Cache, up to 4.8 GHz, 8 cores, 12 Threads)",
+        "Intel Core i7-13620H Processor 2.4 GHz (24MB Cache, up to 4.9 GHz, 10 cores, 16 Threads)",
+        "Intel Core i5-13420H Processor 2.1 GHz (12MB Cache, up to 4.6 GHz, 8 cores, 12 Threads)"
+      ],
+      "Neural Processor": [
+        "Intel NPU up to 49TOPS",
+        "Intel NPU up to 47TOPS",
+        "Intel AI Boost NPU up to 13TOPS"
+      ]
+    },
+    "Graphics": {
+      "Graphics": [
+        "Intel UHD Graphics",
+        "Intel Graphics"
+      ]
+    },
+    "Display": {
+      "Display": [
+        "35.56cm (14), FHD+ (1920 x 1200) OLED 16:10 aspect ratio",
+        "2.5K (2560 x 1600, WQXGA) 16:10 aspect ratio",
+        "FHD+ (1920 x 1200) 16:10 aspect ratio, Refresh Rate:60Hz refresh rate, 300nits, Anti-glare display, TÜV Rheinland-certified, sRGB: 100%, 0.2ms response time, 1,000,000:1, 70% less harmful blue light"
+      ]
+    },
+    "Memory": {
+      "Memory": [
+        "8GB DDR5 on board",
+        "16GB DDR5 on board",
+        "16GB DDR5 SO-DIMM",
+        "8GB DDR5 SO-DIMM"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD",
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": [
+        "1x M.2 2280 PCIe 4.0x4",
+        "1x DDR5 SO-DIMM slot"
+      ]
+    },
+    "Ports": {
+      "I/O Ports": [
+        "2x USB 3.2 Gen 1 Type-C with support for display / power delivery (data speed up to 5Gbps)",
+        "2x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS",
+        "1x HDMI 1.4"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": "Backlit Chiclet Keyboard, 1.7mm Key-travel, Precision touchpad, With Copilot key",
+      "Camera": "FHD camera with IR function to support Windows Hello, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": [
+        "Wi-Fi 6(802.11ax) (Dual band) 2*2 Wireless Card, Bluetooth 5.4",
+        "Bluetooth 5.2"
+      ]
+    },
+    "Battery": {
+      "Battery": "70WHrs, 4S1P, 4-cell Li-ion",
+      "Power Supply": [
+        "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal",
+        "TYPE-C, 68W AC Adapter, Output: 20V DC, 3.4A, 68W, Input: 100~240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+      ]
+    },
+    "Build": {
+      "Weight": "1.40 kg (3.09 lbs)",
+      "Dimensions (W x D x H)": "31.52 x 22.34 x 1.59 ~ 1.79 cm (12.41\" x 8.80\" x 0.63\" ~ 0.70\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": [
+        "Windows 11 Pro",
+        "Windows 11 Home - ASUS recommends Windows 11 Pro for business, No preinstalled OS",
+        "Keep OS, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf"
+      ]
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "BIOS Booting User Password Protection, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 7 355 / Intel Core Ultra 5 325 / Intel Core Ultra 7 255H",
+    "gpu": "Intel UHD Graphics",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": 60,
+    "weightKg": 1.4,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cool Silver",
+          "hex": "#DFDFDF"
+        },
+        {
+          "value": "Matte Gray",
+          "hex": "#5F5F5F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cool Silver": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/db4d139c-69d6-4f57-91cd-46761642e137/w800",
+          "alt": "Cool Silver ASUS Vivobook S14 opened at 90-degree from the front view with JS wallpaper."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/67e1570d-3b7a-41d5-90f2-dd37f8d02ab7/w800",
+          "alt": "Cool Silver ASUS Vivobook S14 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/dc52395d-af83-4dd7-a0e1-b28ff472efdf/w800",
+          "alt": "Cool Silver ASUS Vivobook S14opened at 90-degree from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/3b7d9e3f-7b96-4934-899c-2b7f4b29d4fc/w800",
+          "alt": "Cool Silver ASUS Vivobook S14opened at 90-degree from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/dad38ad6-954d-4daf-a6d0-49039b3c1d6b/w800",
+          "alt": "Cool Silver ASUS Vivobook S14opened at 90-degree view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/9241b2fe-3d17-4416-b46f-2f055ed6a326/w800",
+          "alt": "Cool Silver ASUS Vivobook S14with backlit keyboard opened at 90-degree view from above"
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/4c283f38-ff89-467e-881d-62b941cda744/w800",
+          "alt": "Cool Silver ASUS Vivobook S14closed view from left."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/794ca6bd-8bd1-4def-bfa4-0a523a86f656/w800",
+          "alt": "Cool Silver ASUS Vivobook S14closed view from right."
+        }
+      ],
+      "Matte Gray": [
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0841f5b4-28d5-4e65-ad33-4d7b6b842f78/w800",
+          "alt": "Matte Black ASUS Vivobook S14 opened at 90-degree from the front view with JS wallpaper."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/0cfe076d-99da-4bf2-87a0-da3be5390e6d/w800",
+          "alt": "Matte Gray ASUS Vivobook S14 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/8b87599e-d3c7-41fa-9838-7415d8166d3b/w800",
+          "alt": "Matte Gray ASUS Vivobook S14opened at 90-degree from the front view, tilting at 45-degree from the right side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/a2104b11-7929-4330-9b33-ae6c96ff0656/w800",
+          "alt": "Matte Gray ASUS Vivobook S14opened at 90-degree from the front view, tilting at 45-degree from the left side."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/f5498ca6-1d76-4d91-9ac0-5f06cf26d667/w800",
+          "alt": "Matte Gray ASUS Vivobook S14opened at 90-degree view from above."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/b80d18c1-f836-4b81-8d2f-b839b6cf1d0e/w800",
+          "alt": "Matte Gray ASUS Vivobook S14with backlit keyboard opened at 90-degree view from above"
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/a282b62d-a75a-49b0-aaf0-cf622dcc5ece/w800",
+          "alt": "Matte Gray ASUS Vivobook S14closed view from left."
+        },
+        {
+          "src": "https://dlcdnwebimgs.asus.com/gain/10f4f0a8-2863-4515-a7e0-b8b88d060ba2/w800",
+          "alt": "Matte Gray ASUS Vivobook S14 closed view from right."
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VBS14-COSI",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Cool Silver"
+      },
+      "price": 80990,
+      "mrp": 80990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VBS14-MAGR",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Matte Gray"
+      },
+      "price": 80990,
+      "mrp": 80990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s14-s3407/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s14-s3407/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}
