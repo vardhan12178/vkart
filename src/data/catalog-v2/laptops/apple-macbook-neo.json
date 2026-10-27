@@ -1,0 +1,317 @@
+{
+  "slug": "apple-macbook-neo",
+  "title": "Apple MacBook Neo",
+  "brand": "Apple",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "Apple's most affordable MacBook: 13-inch Liquid Retina display, A18 Pro chip, up to 16 hours battery, in four colours.",
+  "description": "MacBook Neo brings macOS and Apple Intelligence to Apple's lowest-priced laptop, powered by the A18 Pro chip with 8GB of memory.\n\nThe 13-inch Liquid Retina display reaches 500 nits, and the aluminium body weighs 1.23 kg in Silver, Blush, Citrus or Indigo. Battery life is up to 16 hours of video streaming, and it charges over USB-C.\n\nChoose 256GB with Magic Keyboard, or 512GB with Touch ID.",
+  "highlights": [
+    "Apple A18 Pro chip, 8GB unified memory",
+    "13-inch Liquid Retina display, 500 nits",
+    "Up to 16 hours video streaming",
+    "1080p FaceTime HD camera, Wi-Fi 6E",
+    "1.23 kg aluminium design in four colours",
+    "Touch ID on 512GB model"
+  ],
+  "specs": {
+    "Processor": {
+      "chip": "Apple A18 Pro",
+      "cpu": "6-core (2 performance + 4 efficiency)",
+      "gpu": "5-core",
+      "neuralEngine": "16-core"
+    },
+    "Memory": {
+      "ram": "8GB unified memory"
+    },
+    "Storage": {
+      "ssd": "256GB or 512GB SSD"
+    },
+    "Display": {
+      "size": 13.0,
+      "type": "Liquid Retina (LED-backlit IPS)",
+      "resolution": "2408 × 1506",
+      "brightness": "500 nits"
+    },
+    "Battery": {
+      "capacity": "36.5 Wh",
+      "life": "Up to 16 hours video streaming, 11 hours web",
+      "charger": "20W USB-C"
+    },
+    "Ports": {
+      "ports": "1× USB 3 (USB-C), 1× USB 2 (USB-C), 3.5 mm headphone jack",
+      "externalDisplays": "One, up to 4K 60Hz"
+    },
+    "Connectivity": {
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "Bluetooth 6"
+    },
+    "Camera & Audio": {
+      "camera": "1080p FaceTime HD",
+      "audio": "Dual speakers, Spatial Audio"
+    },
+    "Build": {
+      "dimensions": "1.27 × 29.75 × 20.64 cm",
+      "weight": "1.23 kg",
+      "material": "Aluminium"
+    },
+    "Software": {
+      "os": "macOS",
+      "ai": "Apple Intelligence"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple A18 Pro",
+    "gpu": "Integrated 5-core",
+    "displayInch": 13.0,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": 1.23,
+    "batteryHours": 16,
+    "os": "macOS",
+    "ramGB": 8,
+    "storageGB": 256
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "A18 Pro · 8GB · 256GB"
+        },
+        {
+          "value": "A18 Pro · 8GB · 512GB · Touch ID"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Silver",
+          "hex": "#D5D6D8"
+        },
+        {
+          "value": "Blush",
+          "hex": "#E0CBCA"
+        },
+        {
+          "value": "Citrus",
+          "hex": "#DBD887"
+        },
+        {
+          "value": "Indigo",
+          "hex": "#4E596F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Silver": [
+        {
+          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_silver__bhbd7o8mxxzm_large_2x.jpg",
+          "alt": "Apple MacBook Neo in Silver"
+        }
+      ],
+      "Blush": [
+        {
+          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_blush__fji4uke74w2m_large_2x.jpg",
+          "alt": "Apple MacBook Neo in Blush"
+        }
+      ],
+      "Citrus": [
+        {
+          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_citrus__flplef60bpim_large_2x.jpg",
+          "alt": "Apple MacBook Neo in Citrus"
+        }
+      ],
+      "Indigo": [
+        {
+          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_indigo__ee1m3vsakryq_large_2x.jpg",
+          "alt": "Apple MacBook Neo in Indigo"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/welcome/hero_static__c07b68h6ap2e_large_2x.jpg",
+        "alt": "Apple MacBook Neo — held in one hand"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/highlights/highlights_colors_startframe__dsv26e58uvqu_large_2x.jpg",
+        "alt": "Apple MacBook Neo — all four colours"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/design/design_startframe__f2qfplz27cyi_large_2x.png",
+        "alt": "Apple MacBook Neo — colour lids"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-stories/new-to-mac/ntm_hero_startframe__exo0j784536u_large_2x.jpg",
+        "alt": "Apple MacBook Neo — keyboard"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_connectivity__f4pmdvbke2mq_large_2x.jpg",
+        "alt": "Apple MacBook Neo — ports"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-MBN-A18PRO8GB256GB-BLU",
+      "mpn": "MHFH4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 256GB",
+        "Color": "Blush"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB256GB-CIT",
+      "mpn": "MHFD4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 256GB",
+        "Color": "Citrus"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB256GB-IND",
+      "mpn": "MHFF4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 256GB",
+        "Color": "Indigo"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB256GB-SIL",
+      "mpn": "MHFA4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 256GB",
+        "Color": "Silver"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB512GBTOUCHID-BLU",
+      "mpn": "MHFJ4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 512GB · Touch ID",
+        "Color": "Blush"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB512GBTOUCHID-CIT",
+      "mpn": "MHFE4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 512GB · Touch ID",
+        "Color": "Citrus"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB512GBTOUCHID-IND",
+      "mpn": "MHFG4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 512GB · Touch ID",
+        "Color": "Indigo"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Apple A18 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBN-A18PRO8GB512GBTOUCHID-SIL",
+      "mpn": "MHFC4HN/A",
+      "options": {
+        "Configuration": "A18 Pro · 8GB · 512GB · Touch ID",
+        "Color": "Silver"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Apple A18 Pro"
+      }
+    }
+  ],
+  "inTheBox": [
+    "MacBook Neo",
+    "20W USB-C Power Adapter",
+    "USB-C Charge Cable (1.5 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/macbook-neo/specs/",
+      "https://www.apple.com/in/shop/buy-mac/macbook-neo"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Prices are Apple India MRP for Apple's standard configurations (custom upgrades not included). Per-colour product images are 904 px; larger marketing images are in the gallery."
+  }
+}

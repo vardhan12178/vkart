@@ -1,7 +1,7 @@
 // Preview-only loader for the catalog v2 draft data (copied from the backend
 // repo's data/catalog-v2). Images point at the brands' own servers until the
 // import script moves them to S3.
-const modules = import.meta.glob("../../data/catalog-v2/mobiles/*.json", { eager: true });
+const modules = import.meta.glob("../../data/catalog-v2/*/*.json", { eager: true });
 
 export const products = Object.values(modules)
   .map((m) => m.default || m)

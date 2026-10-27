@@ -1,0 +1,310 @@
+{
+  "slug": "apple-macbook-air-13-m5",
+  "title": "Apple MacBook Air 13\" (M5)",
+  "brand": "Apple",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "Thin, fanless 13.6-inch laptop with the M5 chip, 16GB memory, up to 18 hours battery and a 12MP Center Stage camera.",
+  "description": "MacBook Air 13\" packs the M5 chip into a 1.13 cm thin, fanless aluminium design that weighs 1.23 kg.\n\nThe 13.6-inch Liquid Retina display supports a billion colours, and battery life reaches 18 hours of video streaming. It has two Thunderbolt 4 ports, MagSafe charging, Wi-Fi 7 and a 12MP Center Stage camera.\n\nStandard configurations start at 16GB memory and 512GB SSD.",
+  "highlights": [
+    "Apple M5 chip, 16GB unified memory",
+    "13.6-inch Liquid Retina display",
+    "Up to 18 hours battery",
+    "Fanless, 1.13 cm, 1.23 kg",
+    "2× Thunderbolt 4, MagSafe 3, Wi-Fi 7",
+    "12MP Center Stage camera"
+  ],
+  "specs": {
+    "Processor": {
+      "chip": "Apple M5",
+      "cpu": "10-core (4 super + 6 efficiency)",
+      "gpu": "8-core or 10-core",
+      "neuralEngine": "16-core"
+    },
+    "Memory": {
+      "ram": "16GB or 24GB unified memory (configurable to 32GB)"
+    },
+    "Storage": {
+      "ssd": "512GB or 1TB SSD (configurable to 4TB)"
+    },
+    "Display": {
+      "size": 13.6,
+      "type": "Liquid Retina (LED-backlit IPS)",
+      "resolution": "2560 × 1664",
+      "brightness": "500 nits",
+      "colour": "1 billion colours, P3, True Tone"
+    },
+    "Battery": {
+      "capacity": "53.8 Wh",
+      "life": "Up to 18 hours video streaming",
+      "charging": "MagSafe 3, fast-charge with 70W+"
+    },
+    "Ports": {
+      "ports": "2× Thunderbolt 4 (USB-C), MagSafe 3, 3.5 mm headphone jack",
+      "externalDisplays": "Up to two"
+    },
+    "Connectivity": {
+      "wifi": "Wi-Fi 7",
+      "bluetooth": "Bluetooth 6"
+    },
+    "Camera & Audio": {
+      "camera": "12MP Center Stage camera",
+      "audio": "Four-speaker system, Spatial Audio"
+    },
+    "Build": {
+      "dimensions": "1.13 × 30.41 × 21.5 cm",
+      "weight": "1.23 kg",
+      "material": "Aluminium"
+    },
+    "Software": {
+      "os": "macOS",
+      "ai": "Apple Intelligence"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple M5",
+    "gpu": "Integrated 8/10-core",
+    "displayInch": 13.6,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": 1.23,
+    "batteryHours": 18,
+    "os": "macOS",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "M5, 10-core CPU, 8-core GPU · 16GB · 512GB"
+        },
+        {
+          "value": "M5, 10-core CPU, 10-core GPU · 16GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sky Blue",
+          "hex": "#0D3E5B"
+        },
+        {
+          "value": "Midnight",
+          "hex": "#012367"
+        },
+        {
+          "value": "Silver",
+          "hex": "#023952"
+        },
+        {
+          "value": "Starlight",
+          "hex": "#663E04"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sky Blue": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-skyblue-select-202503?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple MacBook Air 13\" (M5) in Sky Blue"
+        }
+      ],
+      "Midnight": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-midnight-select-202503?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple MacBook Air 13\" (M5) in Midnight"
+        }
+      ],
+      "Silver": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-silver-select-202503?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple MacBook Air 13\" (M5) in Silver"
+        }
+      ],
+      "Starlight": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-starlight-select-202503?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple MacBook Air 13\" (M5) in Starlight"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://www.apple.com/v/macbook-air/z/images/overview/hero/hero_static__c9sislzzicq6_large_2x.png",
+        "alt": "Apple MacBook Air 13\" (M5) — open, side angle"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-air/z/images/overview/design/design_hero_static__e56c1v71mr6u_large_2x.png",
+        "alt": "Apple MacBook Air 13\" (M5) — thin profile"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-air/z/images/overview/macos/macos_hero__et3dsrq64iwm_large_2x.jpg",
+        "alt": "Apple MacBook Air 13\" (M5) — macOS on the display"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-MBA13-M510C8G16GB512GB-MID",
+      "mpn": "MDHE4HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 8-core GPU · 16GB · 512GB",
+        "Color": "Midnight"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C8G16GB512GB-SIL",
+      "mpn": "MDH74HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 8-core GPU · 16GB · 512GB",
+        "Color": "Silver"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C8G16GB512GB-SKBL",
+      "mpn": "MDHH4HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 8-core GPU · 16GB · 512GB",
+        "Color": "Sky Blue"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C8G16GB512GB-STA",
+      "mpn": "MDHA4HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 8-core GPU · 16GB · 512GB",
+        "Color": "Starlight"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C10G16GB1TB-MID",
+      "mpn": null,
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 16GB · 1TB",
+        "Color": "Midnight"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C10G16GB1TB-SIL",
+      "mpn": null,
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 16GB · 1TB",
+        "Color": "Silver"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C10G16GB1TB-SKBL",
+      "mpn": null,
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 16GB · 1TB",
+        "Color": "Sky Blue"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA13-M510C10G16GB1TB-STA",
+      "mpn": null,
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 16GB · 1TB",
+        "Color": "Starlight"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    }
+  ],
+  "inTheBox": [
+    "13\" MacBook Air",
+    "30W or 35W USB-C Power Adapter",
+    "USB-C to MagSafe 3 Cable (2 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/macbook-air/specs/",
+      "https://www.apple.com/in/shop/buy-mac/macbook-air"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Prices are Apple India MRP for Apple's standard configurations (custom upgrades not included). Per-colour product images are 904 px; larger marketing images are in the gallery."
+  }
+}

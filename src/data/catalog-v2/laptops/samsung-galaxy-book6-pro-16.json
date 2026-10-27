@@ -1,0 +1,158 @@
+{
+  "slug": "samsung-galaxy-book6-pro-16",
+  "title": "Samsung Galaxy Book6 Pro (16\")",
+  "brand": "Samsung",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "16-inch Dynamic AMOLED 2X touch display (30–120Hz, 1,000 nits HDR), Intel Core Ultra (Series 3), up to 30 hours video, 1.59 kg.",
+  "description": "Galaxy Book6 Pro 16\" pairs a Dynamic AMOLED 2X touchscreen — adaptive 30–120Hz, 1,000 nits HDR and Gorilla Glass with DXC anti-reflection — with Intel Core Ultra (Series 3) processors and Intel Arc graphics.\n\nIt's 1.59 kg and about 11.9 mm thin, with a 78.07 Wh battery rated for up to 30 hours of video playback. A haptic touchpad, Dolby Atmos sound, Thunderbolt 4 and HDMI 2.1 round out a premium work laptop with Copilot+ PC features.",
+  "highlights": [
+    "16-inch Dynamic AMOLED 2X touch, 30–120Hz, 1,000 nits HDR",
+    "Intel Core Ultra 5 / 7 / X7 (Series 3), up to 50 TOPS NPU",
+    "Up to 32GB RAM and 1TB SSD",
+    "Up to 30 hours video playback",
+    "1.59 kg, haptic touchpad",
+    "2× Thunderbolt 4, USB 3.2, HDMI 2.1"
+  ],
+  "specs": {
+    "Processor": {
+      "cpu": "Intel Core Ultra 5 325 / Ultra 7 356H / Ultra X7 358H (Series 3)",
+      "npu": "Up to 50 TOPS"
+    },
+    "Memory": {
+      "ram": "16GB or 32GB (not upgradeable)"
+    },
+    "Storage": {
+      "ssd": "512GB or 1TB, with expansion slot"
+    },
+    "Display": {
+      "size": 16.0,
+      "type": "Dynamic AMOLED 2X, touch",
+      "refreshRate": "30–120Hz adaptive",
+      "brightness": "1,000 nits HDR",
+      "glass": "Corning Gorilla Glass with DXC"
+    },
+    "Graphics": {
+      "gpu": "Intel Arc graphics"
+    },
+    "Battery": {
+      "capacity": "78.07 Wh",
+      "life": "Up to 30 hours video playback",
+      "charging": "About 33% in 30 minutes"
+    },
+    "Ports": {
+      "ports": "2× Thunderbolt 4, 1× USB 3.2, HDMI 2.1 (8K60 / 5K120)"
+    },
+    "Audio": {
+      "speakers": "Quad speakers (2 woofers + 2 tweeters), Dolby Atmos"
+    },
+    "Build": {
+      "weight": "1.59 kg",
+      "thickness": "11.9 mm",
+      "touchpad": "Haptic touchpad"
+    },
+    "Software": {
+      "os": "Windows 11 Home",
+      "ai": "Galaxy AI, Copilot+ PC"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 325",
+    "gpu": "Intel Arc graphics",
+    "displayInch": 16.0,
+    "panel": "AMOLED",
+    "refreshRateHz": 120,
+    "weightKg": 1.59,
+    "batteryHours": 30,
+    "os": "Windows 11",
+    "ramGB": 32,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra X7 358H · Intel Arc graphics · 32GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gray",
+          "hex": "#7A7D82"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gray": [
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np960xjg-kg4in/gallery/in-galaxy-book-np960xjg-kg4in-galaxy-book--pro--------cm--ultra-x------gb--copilot--pc-gray-thumb-551801739?$2052_1641_PNG$",
+          "alt": "Samsung Galaxy Book6 Pro (16\") in Gray"
+        },
+        {
+          "src": "https://images.samsung.com/is/image/samsung/assets/in/Galaxy-Book6-Pro_Gray_IN_PC.jpg",
+          "alt": "Samsung Galaxy Book6 Pro (16\") in Gray, view 2"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Design_PC_1600x864.jpg",
+        "alt": "Samsung Galaxy Book6 Pro (16\") — slim design"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Processor_PC_1600x864.jpg",
+        "alt": "Samsung Galaxy Book6 Pro (16\") — Intel Core Ultra Series 3"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Battery_PC_1600x864.jpg",
+        "alt": "Samsung Galaxy Book6 Pro (16\") — 30-hour battery"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-NP960XJG-KG4",
+      "mpn": "NP960XJG-KG4IN",
+      "options": {
+        "Configuration": "Core Ultra X7 358H · Intel Arc graphics · 32GB · 1TB",
+        "Color": "Gray"
+      },
+      "price": 259990,
+      "mrp": 305190,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra X7 358H",
+        "touch": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "USB-C power adapter",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-series/buy/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-pro-ultra-x7-32gb-1tb-np960xjg-kg4in/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs from the model pages' FAQ and key-spec text; Samsung's full spec API refuses automated requests."
+  }
+}

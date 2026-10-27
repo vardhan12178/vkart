@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { products, minPrice, maxPrice, defaultVariant, imagesFor, discountPercent, formatPrice } from "./catalogData";
 
-const BRANDS = ["All", ...Array.from(new Set(products.map((p) => p.brand)))];
+const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops" };
+const brandsOf = (cat) => ["All", ...Array.from(new Set(products.filter((p) => p.category === cat).map((p) => p.brand)))];
 const SORTS = {
   "price-desc": { label: "Price: high to low", fn: (a, b) => minPrice(b) - minPrice(a) },
   "price-asc": { label: "Price: low to high", fn: (a, b) => minPrice(a) - minPrice(b) },
-  battery: { label: "Battery (mAh)", fn: (a, b) => (b.keySpecs.batteryMah || 0) - (a.keySpecs.batteryMah || 0) },
-  camera: { label: "Main camera (MP)", fn: (a, b) => (b.keySpecs.mainCameraMP || 0) - (a.keySpecs.mainCameraMP || 0) },
+  battery: { label: "Battery (mAh)", mobilesOnly: true, fn: (a, b) => (b.keySpecs.batteryMah || 0) - (a.keySpecs.batteryMah || 0) },
+  camera: { label: "Main camera (MP)", mobilesOnly: true, fn: (a, b) => (b.keySpecs.mainCameraMP || 0) - (a.keySpecs.mainCameraMP || 0) },
 };
 
 function Card({ p }) {
@@ -50,6 +51,7 @@ function Card({ p }) {
 }
 
 export default function CatalogPreviewList() {
+  const [category, setCategory] = useState("mobiles");
   const [brand, setBrand] = useState("All");
   const [sort, setSort] = useState("price-desc");
   const [maxBudget, setMaxBudget] = useState(0);
@@ -57,28 +59,37 @@ export default function CatalogPreviewList() {
   const shown = useMemo(
     () =>
       products
+        .filter((p) => p.category === category)
         .filter((p) => brand === "All" || p.brand === brand)
         .filter((p) => !maxBudget || minPrice(p) <= maxBudget)
         .sort(SORTS[sort].fn),
-    [brand, sort, maxBudget]
+    [category, brand, sort, maxBudget]
   );
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
       <Helmet>
-        <title>Catalog v2 preview · Mobiles | VKart</title>
+        <title>{`Catalog v2 preview · ${CATEGORIES[category]} | VKart`}</title>
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 
       <div className="mb-6 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-        <strong>Catalog v2 preview.</strong> Draft data for review: {products.length} phones,{" "}
+        <strong>Catalog v2 preview.</strong> Draft data for review: {products.length} products,{" "}
         {products.reduce((n, p) => n + p.variants.length, 0)} variants. Images load from the brands' own sites for now.
       </div>
 
-      <h1 className="text-3xl font-bold text-gray-900">Mobiles</h1>
+      <div className="flex gap-6 border-b border-gray-200">
+        {Object.entries(CATEGORIES).map(([k, label]) => (
+          <button key={k} type="button"
+            onClick={() => { setCategory(k); setBrand("All"); if (SORTS[sort].mobilesOnly) setSort("price-desc"); }}
+            className={`-mb-px border-b-2 pb-2 text-2xl font-bold ${category === k ? "border-gray-900 text-gray-900" : "border-transparent text-gray-400 hover:text-gray-600"}`}>
+            {label}
+          </button>
+        ))}
+      </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        {BRANDS.map((b) => (
+        {brandsOf(category).map((b) => (
           <button key={b} type="button" onClick={() => setBrand(b)}
             className={`rounded-full border px-4 py-1.5 text-sm ${brand === b ? "border-gray-900 bg-gray-900 text-white" : "border-gray-300 bg-white text-gray-700 hover:border-gray-500"}`}>
             {b}
@@ -91,10 +102,11 @@ export default function CatalogPreviewList() {
           <option value={60000}>Under ₹60,000</option>
           <option value={100000}>Under ₹1,00,000</option>
           <option value={150000}>Under ₹1,50,000</option>
+          <option value={250000}>Under ₹2,50,000</option>
         </select>
         <select value={sort} onChange={(e) => setSort(e.target.value)}
           className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm" aria-label="Sort">
-          {Object.entries(SORTS).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
+          {Object.entries(SORTS).filter(([, s]) => category === "mobiles" || !s.mobilesOnly).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
         </select>
       </div>
 

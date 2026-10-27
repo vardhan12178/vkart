@@ -1,0 +1,264 @@
+{
+  "slug": "apple-macbook-pro-16-m5",
+  "title": "Apple MacBook Pro 16\" (M5)",
+  "brand": "Apple",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2025-10",
+  "shortDescription": "16.2-inch Liquid Retina XDR display with ProMotion, M5 Pro / M5 Max chips, up to 24 hours battery.",
+  "description": "MacBook Pro 16\" is built for demanding work, with a 16.2-inch Liquid Retina XDR display that reaches 1,600 nits peak HDR brightness and runs at up to 120Hz with ProMotion.\n\nChoose M5 Pro or M5 Max — up to 18 CPU cores and 40 GPU cores — with up to 128GB unified memory as a custom option. M5 Pro and M5 Max models have Thunderbolt 5.\n\nIt has an HDMI port, SDXC card slot, MagSafe 3, a six-speaker sound system and a 12MP Center Stage camera, in Space Black or Silver.",
+  "highlights": [
+    "16.2-inch Liquid Retina XDR, ProMotion up to 120Hz, 1,600 nits HDR",
+    "Apple M5 Pro or M5 Max",
+    "Up to 48GB memory and 2TB SSD in standard configurations",
+    "Thunderbolt 5 (M5 Pro/Max), HDMI, SDXC, MagSafe 3",
+    "Up to 24 hours battery",
+    "Space Black or Silver"
+  ],
+  "specs": {
+    "Processor": {
+      "chip": "Apple M5 Pro or M5 Max",
+      "cpu": "Up to 18-core",
+      "gpu": "Up to 40-core"
+    },
+    "Memory": {
+      "ram": "16GB to 48GB in standard configurations (up to 128GB custom)"
+    },
+    "Storage": {
+      "ssd": "1TB or 2TB (up to 8TB custom)"
+    },
+    "Display": {
+      "size": 16.2,
+      "type": "Liquid Retina XDR (mini-LED)",
+      "resolution": "3456 × 2234",
+      "refreshRate": 120,
+      "brightness": "1,000 nits sustained, 1,600 nits peak HDR"
+    },
+    "Battery": {
+      "capacity": "100 Wh",
+      "life": "Up to 24 hours video streaming"
+    },
+    "Ports": {
+      "ports": "3× Thunderbolt 5 (Thunderbolt 4 on M5), HDMI, SDXC, MagSafe 3, 3.5 mm headphone jack"
+    },
+    "Connectivity": {
+      "wifi": "Wi-Fi 7",
+      "bluetooth": "Bluetooth 6"
+    },
+    "Camera & Audio": {
+      "camera": "12MP Center Stage",
+      "audio": "Six-speaker system, Spatial Audio"
+    },
+    "Build": {
+      "weight": "2.14–2.15 kg",
+      "material": "Aluminium",
+      "colours": "Space Black, Silver"
+    },
+    "Software": {
+      "os": "macOS",
+      "ai": "Apple Intelligence"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple M5 Pro",
+    "gpu": "Integrated up to 40-core",
+    "displayInch": 16.2,
+    "panel": "Mini-LED",
+    "refreshRateHz": 120,
+    "weightKg": 2.14,
+    "batteryHours": 24,
+    "os": "macOS",
+    "ramGB": 24,
+    "storageGB": 2048
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "M5 Pro, 18-core CPU, 20-core GPU · 24GB · 2TB"
+        },
+        {
+          "value": "M5 Max, 18-core CPU, 32-core GPU · 36GB · 2TB"
+        },
+        {
+          "value": "M5 Max, 18-core CPU, 40-core GPU · 48GB · 2TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Space Black",
+          "hex": "#101012"
+        },
+        {
+          "value": "Silver",
+          "hex": "#0F1012"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Space Black": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp16-spaceblack-select-202410?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple MacBook Pro 16\" (M5) in Space Black"
+        },
+        {
+          "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_colors_spaceblack__dwfpyrbaf4cy_large_2x.jpg",
+          "alt": "Apple MacBook Pro 16\" (M5) in Space Black, view 2"
+        }
+      ],
+      "Silver": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp16-silver-select-202410?scl=1&fmt=jpeg&qlt=90",
+          "alt": "Apple MacBook Pro 16\" (M5) in Silver"
+        },
+        {
+          "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_colors_silver__doa20s4tupaq_large_2x.jpg",
+          "alt": "Apple MacBook Pro 16\" (M5) in Silver, view 2"
+        }
+      ]
+    },
+    "common": [
+      {
+        "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_sizes_startframe__frjeunw0swy2_large_2x.jpg",
+        "alt": "Apple MacBook Pro 16\" (M5) — 14-inch and 16-inch"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_display__fv0jzlzaak2u_large_2x.jpg",
+        "alt": "Apple MacBook Pro 16\" (M5) — Liquid Retina XDR display"
+      },
+      {
+        "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_audio_startframe__fww1g0h7gn22_large_2x.jpg",
+        "alt": "Apple MacBook Pro 16\" (M5) — keyboard and speakers"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-MBP16-M5PRO18C20G24GB2TB-SIL",
+      "mpn": "MGE44HN/A",
+      "options": {
+        "Configuration": "M5 Pro, 18-core CPU, 20-core GPU · 24GB · 2TB",
+        "Color": "Silver"
+      },
+      "price": 359900,
+      "mrp": 359900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 2048,
+        "processor": "Apple M5 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBP16-M5PRO18C20G24GB2TB-SPBL",
+      "mpn": "MGEA4HN/A",
+      "options": {
+        "Configuration": "M5 Pro, 18-core CPU, 20-core GPU · 24GB · 2TB",
+        "Color": "Space Black"
+      },
+      "price": 359900,
+      "mrp": 359900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 2048,
+        "processor": "Apple M5 Pro"
+      }
+    },
+    {
+      "sku": "APL-MBP16-M5MAX18C32G36GB2TB-SIL",
+      "mpn": "MGE74HN/A",
+      "options": {
+        "Configuration": "M5 Max, 18-core CPU, 32-core GPU · 36GB · 2TB",
+        "Color": "Silver"
+      },
+      "price": 539900,
+      "mrp": 539900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 36,
+        "storageGB": 2048,
+        "processor": "Apple M5 Max"
+      }
+    },
+    {
+      "sku": "APL-MBP16-M5MAX18C32G36GB2TB-SPBL",
+      "mpn": "MGED4HN/A",
+      "options": {
+        "Configuration": "M5 Max, 18-core CPU, 32-core GPU · 36GB · 2TB",
+        "Color": "Space Black"
+      },
+      "price": 539900,
+      "mrp": 539900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 36,
+        "storageGB": 2048,
+        "processor": "Apple M5 Max"
+      }
+    },
+    {
+      "sku": "APL-MBP16-M5MAX18C40G48GB2TB-SIL",
+      "mpn": "MGE94HN/A",
+      "options": {
+        "Configuration": "M5 Max, 18-core CPU, 40-core GPU · 48GB · 2TB",
+        "Color": "Silver"
+      },
+      "price": 619900,
+      "mrp": 619900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 48,
+        "storageGB": 2048,
+        "processor": "Apple M5 Max"
+      }
+    },
+    {
+      "sku": "APL-MBP16-M5MAX18C40G48GB2TB-SPBL",
+      "mpn": "MGEE4HN/A",
+      "options": {
+        "Configuration": "M5 Max, 18-core CPU, 40-core GPU · 48GB · 2TB",
+        "Color": "Space Black"
+      },
+      "price": 619900,
+      "mrp": 619900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 48,
+        "storageGB": 2048,
+        "processor": "Apple M5 Max"
+      }
+    }
+  ],
+  "inTheBox": [
+    "16\" MacBook Pro",
+    "140W USB-C Power Adapter",
+    "USB-C to MagSafe 3 Cable (2 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/macbook-pro/specs/",
+      "https://www.apple.com/in/shop/buy-mac/macbook-pro"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Prices are Apple India MRP for Apple's standard configurations (custom upgrades not included). Per-colour product images are 904 px; larger marketing images are in the gallery."
+  }
+}
