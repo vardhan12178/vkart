@@ -1,0 +1,216 @@
+{
+  "slug": "lenovo-legion-5i-gen-10",
+  "title": "Lenovo Legion 5i Gen 10 (15\", Intel)",
+  "brand": "Lenovo",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "15.1-inch OLED gaming laptop with Intel Core Ultra HX processors and GeForce RTX 50-series graphics.",
+  "description": "Legion 5i Gen 10 pairs a 15.1-inch WQXGA OLED display at 165Hz with Intel Core Ultra 7/9 HX processors and NVIDIA GeForce RTX 50-series GPUs.\n\nIt has Wi-Fi 7, a full-size backlit keyboard (24-zone RGB on top models) and Legion's cooling for sustained gaming performance.",
+  "highlights": [
+    "Intel Core Ultra 7 255HX / Ultra 9 275HX",
+    "NVIDIA GeForce RTX 5060 / 5070",
+    "15.1-inch WQXGA OLED, 165Hz, HDR 600",
+    "Wi-Fi 7",
+    "Up to 32GB DDR5",
+    "Eclipse Black"
+  ],
+  "specs": {
+    "Configuration": {
+      "Processor": "13th Generation Intel Core i7-13650HX Processor (E-cores up to 3.60 GHz P-cores up to 4.90 GHz)",
+      "Operating System": "Windows 11 Home Single Language 64",
+      "Graphic Card": "NVIDIA GeForce RTX 5050 Laptop GPU 8GB GDDR7",
+      "Memory": "16 GB DDR5-4800MT/s (SODIMM)",
+      "Storage": "512 GB SSD M.2 2242 PCIe Gen4 TLC",
+      "Display": "38.86cms (15.3) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 100%sRGB, 300 nits, 165 Hz",
+      "Pointing Device": "ClickPad",
+      "Keyboard": "White Backlit, Eclipse Black - English (US)",
+      "WIFI": "Wi-Fi 6 2x2 AX & Bluetooth 5.2",
+      "Color": "Eclipse Black",
+      "Screen Resolution": "1920 x 1200"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core i7-13650HX",
+    "gpu": "NVIDIA GeForce RTX 5050 8GB GDDR7",
+    "displayInch": 15.3,
+    "panel": "IPS",
+    "refreshRateHz": 165,
+    "weightKg": null,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core i7-13650HX · RTX 5050 8GB GDDR7 · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 7 255HX · RTX 5060 8GB GDDR7 · 16GB · 512GB"
+        },
+        {
+          "value": "Core i7-13650HX · RTX 5060 8GB GDDR7 · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 9 275HX · RTX 5070 8GB GDDR7 · 16GB · 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Eclipse Black",
+          "hex": "#2B2D31"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Eclipse Black": [
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112549289291.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112600468413.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 2"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112609295013.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 3"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112618580673.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 4"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112628625481.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 5"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112638958979.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 6"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112648921619.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 7"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112658456545.jpg",
+          "alt": "Lenovo Legion 5i Gen 10 (15\", Intel) in Eclipse Black, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEN-83LY0105IN",
+      "mpn": "83LY0105IN",
+      "options": {
+        "Configuration": "Core i7-13650HX · RTX 5050 8GB GDDR7 · 16GB · 512GB",
+        "Color": "Eclipse Black"
+      },
+      "price": 225990,
+      "mrp": 336490,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core i7-13650HX",
+        "gpu": "NVIDIA GeForce RTX 5050 8GB GDDR7",
+        "customizable": false,
+        "display": "38.86cms (15.3) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 100%sRGB, 300 nits, 165 Hz"
+      }
+    },
+    {
+      "sku": "LEN-83F0CTO1WWIN2",
+      "mpn": "83F0CTO1WWIN2",
+      "options": {
+        "Configuration": "Core Ultra 7 255HX · RTX 5060 8GB GDDR7 · 16GB · 512GB",
+        "Color": "Eclipse Black"
+      },
+      "price": 227541,
+      "mrp": 267301,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 7 255HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB GDDR7",
+        "customizable": true,
+        "display": "38.35cms (15.1) WQXGA (2560 x 1600), OLED, Glare, Non-Touch, HDR 600, 100%DCI-P3, 500 nits, 165Hz"
+      }
+    },
+    {
+      "sku": "LEN-83LY0106IN",
+      "mpn": "83LY0106IN",
+      "options": {
+        "Configuration": "Core i7-13650HX · RTX 5060 8GB GDDR7 · 16GB · 512GB",
+        "Color": "Eclipse Black"
+      },
+      "price": 235991,
+      "mrp": 350891,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core i7-13650HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB GDDR7",
+        "customizable": false,
+        "display": "38.86cms (15.3) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 100%sRGB, 300 nits, 165 Hz"
+      }
+    },
+    {
+      "sku": "LEN-83F000BSIN",
+      "mpn": "83F000BSIN",
+      "options": {
+        "Configuration": "Core Ultra 9 275HX · RTX 5070 8GB GDDR7 · 16GB · 512GB",
+        "Color": "Eclipse Black"
+      },
+      "price": 270991,
+      "mrp": 431891,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 9 275HX",
+        "gpu": "NVIDIA GeForce RTX 5070 8GB GDDR7",
+        "customizable": false,
+        "display": "38.35cms (15.1) WQXGA (2560 x 1600), OLED, Glare, Non-Touch, HDR 600 True Black, 100%DCI-P3, 500 nits, 165 Hz"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/len101g0042",
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/83ly0105in",
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/83f0cto1wwin2",
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/83ly0106in",
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5i-gen-10-15-inch-intel/83f000bsin"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a Lenovo India model (part number in mpn); specs, images, selling price (price) and list price (mrp) from its lenovo.com/in page. Models ending in CTO are the base build of Lenovo's configure-to-order option. Product-level specs are the default (cheapest) configuration's."
+  }
+}

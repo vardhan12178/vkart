@@ -1,0 +1,196 @@
+{
+  "slug": "lenovo-yoga-slim-7i-aura-gen-10",
+  "title": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel)",
+  "brand": "Lenovo",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Thin 14-inch Copilot+ PC with Intel Core Ultra (Series 2) processors and an OLED display.",
+  "description": "Yoga Slim 7i Aura Edition is a thin and light 14-inch Copilot+ PC built with Intel, using Intel Core Ultra processors with a 40+ TOPS NPU.\n\nIt has a high-resolution OLED display, a premium aluminium chassis and Aura Edition features for smart sharing and focus modes.",
+  "highlights": [
+    "Intel Core Ultra (Series 2) processors",
+    "Copilot+ PC",
+    "14-inch OLED display",
+    "Thin and light aluminium design",
+    "Up to 32GB LPDDR5X",
+    "Aura Edition smart features"
+  ],
+  "specs": {
+    "Configuration": {
+      "Processor": "Intel Core Ultra 5 226V Processor (LPE-cores up to 3.50 GHz P-cores up to 4.50 GHz / 16 GB MOP)",
+      "Operating System": "Windows 11 Home Single Language 64",
+      "Graphic Card": "Integrated Graphics",
+      "Memory": "16 GB LPDDR5X-8533MT/s (Memory on Package)",
+      "Storage": "512 GB SSD M.2 2242 PCIe Gen4 TLC",
+      "Display": "35.56cms (14) WUXGA (1920 x 1200), OLED, Glare, Non-Touch, 100%DCI-P3, 400 nits, 60Hz",
+      "Keyboard": "Backlit, Luna Grey - English (US)",
+      "WIFI": "Wi-Fi 7 2x2 BE 320MHz & Bluetooth 5.4",
+      "Color": "Luna Grey"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 226V",
+    "gpu": "Integrated Graphics",
+    "displayInch": 14.0,
+    "panel": "OLED",
+    "refreshRateHz": 60,
+    "weightKg": null,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 5 226V · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 5 226V · 16GB · 512GB (83JX00EMIN)"
+        },
+        {
+          "value": "Core Ultra 7 256V · 16GB · 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Luna Grey",
+          "hex": "#8C8F93"
+        },
+        {
+          "value": "Seashell",
+          "hex": "#E8E2D6"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Luna Grey": [
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063255712657.png",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 2"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063358441526.png",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 3"
+        },
+        {
+          "src": "https://p2-ofp.static.pub/fes/cms/2025/04/03/ocokuaha01uxuu174rylwkkngccgnv383641.jpg",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 4"
+        }
+      ],
+      "Seashell": [
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063255712657.png",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 2"
+        },
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063358441526.png",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 3"
+        },
+        {
+          "src": "https://p2-ofp.static.pub/fes/cms/2025/04/03/ocokuaha01uxuu174rylwkkngccgnv383641.jpg",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEN-83JXCTO1WWIN1",
+      "mpn": "83JXCTO1WWIN1",
+      "options": {
+        "Configuration": "Core Ultra 5 226V · 16GB · 512GB",
+        "Color": "Luna Grey"
+      },
+      "price": 115757,
+      "mrp": 131001,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 226V",
+        "gpu": "Integrated Graphics",
+        "customizable": true,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), OLED, Glare, Non-Touch, 100%DCI-P3, 400 nits, 60Hz"
+      }
+    },
+    {
+      "sku": "LEN-83JX00EMIN",
+      "mpn": "83JX00EMIN",
+      "options": {
+        "Configuration": "Core Ultra 5 226V · 16GB · 512GB (83JX00EMIN)",
+        "Color": "Luna Grey"
+      },
+      "price": 121490,
+      "mrp": 145490,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 226V",
+        "gpu": "Integrated Intel Arc 130V GPU",
+        "customizable": false,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), OLED, Glare, Non-Touch, HDR 500 True Black, 100%DCI-P3, 400 nits, 60Hz"
+      }
+    },
+    {
+      "sku": "LEN-83JX00EVIN",
+      "mpn": "83JX00EVIN",
+      "options": {
+        "Configuration": "Core Ultra 7 256V · 16GB · 512GB",
+        "Color": "Seashell"
+      },
+      "price": 131491,
+      "mrp": 159491,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 7 256V",
+        "gpu": "Integrated Intel Arc 140V GPU",
+        "customizable": false,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), OLED, Glare, Non-Touch, HDR 500 True Black, 100%DCI-P3, 400 nits, 60Hz"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lenovo.com/in/en/p/laptops/yoga/yoga-s-series/lenovo-yoga-slim-7i-aura-edition-gen-10-14-inch-intel/len101y0053",
+      "https://www.lenovo.com/in/en/p/laptops/yoga/yoga-s-series/lenovo-yoga-slim-7i-aura-edition-gen-10-14-inch-intel/83jxcto1wwin1",
+      "https://www.lenovo.com/in/en/p/laptops/yoga/yoga-s-series/lenovo-yoga-slim-7i-aura-edition-gen-10-14-inch-intel/83jx00emin",
+      "https://www.lenovo.com/in/en/p/laptops/yoga/yoga-s-series/lenovo-yoga-slim-7i-aura-edition-gen-10-14-inch-intel/83jx00evin"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a Lenovo India model (part number in mpn); specs, images, selling price (price) and list price (mrp) from its lenovo.com/in page. Models ending in CTO are the base build of Lenovo's configure-to-order option. Product-level specs are the default (cheapest) configuration's."
+  }
+}

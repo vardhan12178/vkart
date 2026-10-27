@@ -1,0 +1,124 @@
+{
+  "slug": "lenovo-ideapad-slim-5-gen-10-14-amd",
+  "title": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD)",
+  "brand": "Lenovo",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Everyday 14-inch laptop with AMD Ryzen AI 5 330, 16GB RAM and a 512GB SSD.",
+  "description": "IdeaPad Slim 5 Gen 10 is a light 14-inch everyday laptop running AMD Ryzen AI processors with 16GB of DDR5 memory.\n\nIt has a 14-inch WUXGA anti-glare display, fast PCIe SSD storage and a slim, portable build.",
+  "highlights": [
+    "AMD Ryzen AI 5 330",
+    "14-inch WUXGA anti-glare display",
+    "16GB DDR5, 512GB SSD",
+    "Slim and light",
+    "Windows 11 Home",
+    "Copilot key"
+  ],
+  "specs": {
+    "Configuration": {
+      "Processor": "AMD Ryzen AI 5 330 Processor (2.00 GHz up to 4.50 GHz)",
+      "Operating System": "Windows 11 Home Single Language 64",
+      "Graphic Card": "Integrated AMD Radeon 820M",
+      "Memory": "16 GB DDR5-5600MT/s (SODIMM)(2 x 8 GB)",
+      "Storage": "512 GB SSD M.2 2242 PCIe Gen4 QLC",
+      "Display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 45%NTSC, 300 nits, 60 Hz",
+      "Pointing Device": "ClickPad",
+      "Keyboard": "Backlit, Luna Grey - English (US)",
+      "WIFI": "Wi-Fi 7 2x2 BE 160MHz & Bluetooth 5.4",
+      "Color": "Luna Grey",
+      "Screen Resolution": "1920x1200"
+    }
+  },
+  "keySpecs": {
+    "processor": "AMD Ryzen AI 5 330",
+    "gpu": "Integrated AMD Radeon 820M",
+    "displayInch": 14.0,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": null,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Ryzen AI 5 330 · 16GB · 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Luna Grey",
+          "hex": "#8C8F93"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Luna Grey": [
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
+          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey"
+        },
+        {
+          "src": "https://p4-ofp.static.pub/fes/cms/2025/03/27/b6mt1s5kf0ireeadrb3e62b0bqnoge929592.jpg",
+          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey, view 2"
+        },
+        {
+          "src": "https://p4-ofp.static.pub/fes/cms/2025/03/27/63ettvcnhe0nq6afokll44h4ppk29v148068.jpg",
+          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey, view 3"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEN-83HX00DCIN",
+      "mpn": "83HX00DCIN",
+      "options": {
+        "Configuration": "Ryzen AI 5 330 · 16GB · 512GB",
+        "Color": "Luna Grey"
+      },
+      "price": 95991,
+      "mrp": 185291,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "AMD Ryzen AI 5 330",
+        "gpu": "Integrated AMD Radeon 820M",
+        "customizable": false,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 45%NTSC, 300 nits, 60 Hz"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lenovo.com/in/en/p/laptops/ideapad/ideapad-slim-series/lenovo-ideapad-slim-5-gen-10-14-inch-amd/len101i0113",
+      "https://www.lenovo.com/in/en/p/laptops/ideapad/ideapad-slim-series/lenovo-ideapad-slim-5-gen-10-14-inch-amd/83hx00dcin"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a Lenovo India model (part number in mpn); specs, images, selling price (price) and list price (mrp) from its lenovo.com/in page. Models ending in CTO are the base build of Lenovo's configure-to-order option. Product-level specs are the default (cheapest) configuration's."
+  }
+}

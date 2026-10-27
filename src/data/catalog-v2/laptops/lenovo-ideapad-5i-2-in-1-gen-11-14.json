@@ -1,0 +1,142 @@
+{
+  "slug": "lenovo-ideapad-5i-2-in-1-gen-11-14",
+  "title": "Lenovo IdeaPad 5i 2-in-1 Gen 11 (14\", Intel)",
+  "brand": "Lenovo",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "14-inch convertible with a 360-degree hinge, touch display and Intel Core Ultra processors.",
+  "description": "IdeaPad 5i 2-in-1 Gen 11 folds 360 degrees between laptop, tent and tablet modes, with a 14-inch touch display and pen support.\n\nIt runs Intel Core Ultra processors and suits notes, streaming and everyday work.",
+  "highlights": [
+    "Intel Core Ultra processors",
+    "14-inch touch display",
+    "360-degree convertible",
+    "Pen support",
+    "Backlit keyboard",
+    "Windows 11 Home"
+  ],
+  "specs": {
+    "Configuration": {
+      "Processor": "Intel Core Ultra 5 322 Processor (LPE-cores up to 3.30 GHz P-cores up to 4.40 GHz)",
+      "Operating System": "Windows 11 Home Single Language 64",
+      "Graphic Card": "Integrated Graphics",
+      "Memory": "16 GB DDR5-5600MT/s (SODIMM) - (2 x 8 GB)",
+      "Storage": "512 GB SSD M.2 2242 PCIe Gen4 QLC",
+      "Display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Glare, Touch, 45%NTSC, 400 nits, 60Hz, Glass",
+      "Keyboard": "Backlit, Luna Grey - English (US)",
+      "WIFI": "Wi-Fi 6 2x2 AX & Bluetooth 5.3",
+      "Color": "Luna Grey"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 322",
+    "gpu": "Integrated Graphics",
+    "displayInch": 14.0,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": null,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 5 322 · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 5 322 · 16GB · 512GB (83UG000HIN)"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Luna Grey",
+          "hex": "#8C8F93"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Luna Grey": [
+        {
+          "src": "https://ap-img.static.pub/ss/img/2026/03/02/img.20260302111029966658.jpg",
+          "alt": "Lenovo IdeaPad 5i 2-in-1 Gen 11 (14\", Intel) in Luna Grey"
+        },
+        {
+          "src": "https://p1-ofp.static.pub/ShareResource/optimized/pdp/ideapad/ideapad-2-in-1-series/len101i0139/len101i0139-hero-laptop-tent-front-facing.png",
+          "alt": "Lenovo IdeaPad 5i 2-in-1 Gen 11 (14\", Intel) in Luna Grey, view 2"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEN-83UGCTO1WWIN2",
+      "mpn": "83UGCTO1WWIN2",
+      "options": {
+        "Configuration": "Core Ultra 5 322 · 16GB · 512GB",
+        "Color": "Luna Grey"
+      },
+      "price": 122242,
+      "mrp": 164900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 322",
+        "gpu": "Integrated Graphics",
+        "customizable": true,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Glare, Touch, 45%NTSC, 400 nits, 60Hz, Glass"
+      }
+    },
+    {
+      "sku": "LEN-83UG000HIN",
+      "mpn": "83UG000HIN",
+      "options": {
+        "Configuration": "Core Ultra 5 322 · 16GB · 512GB (83UG000HIN)",
+        "Color": "Luna Grey"
+      },
+      "price": 127991,
+      "mrp": 215891,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 322",
+        "gpu": "Integrated Intel Graphics",
+        "customizable": false,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Glare, Touch, 45%NTSC, 400 nits, 60 Hz, Glass"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lenovo.com/in/en/p/laptops/ideapad/ideapad-500-series/lenovo-ideapad-5i-2-in-1-gen-11-14-inch-intel/len101i0139",
+      "https://www.lenovo.com/in/en/p/laptops/ideapad/ideapad-500-series/lenovo-ideapad-5i-2-in-1-gen-11-14-inch-intel/83ugcto1wwin2",
+      "https://www.lenovo.com/in/en/p/laptops/ideapad/ideapad-500-series/lenovo-ideapad-5i-2-in-1-gen-11-14-inch-intel/83ug000hin"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a Lenovo India model (part number in mpn); specs, images, selling price (price) and list price (mrp) from its lenovo.com/in page. Models ending in CTO are the base build of Lenovo's configure-to-order option. Product-level specs are the default (cheapest) configuration's."
+  }
+}
