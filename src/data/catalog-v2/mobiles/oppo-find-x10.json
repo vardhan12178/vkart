@@ -195,15 +195,15 @@
       "values": [
         {
           "value": "Glacier Blue",
-          "hex": null
+          "hex": "#D2DFE4"
         },
         {
           "value": "Mist Grey",
-          "hex": null
+          "hex": "#9B9193"
         },
         {
           "value": "Glow Coral",
-          "hex": null
+          "hex": "#F0C1B2"
         }
       ]
     }
@@ -380,7 +380,7 @@
       "https://www.oppo.com/in/smartphones/series-find-x/find-x10/specs/",
       "https://www.oppo.com/in/product/find-x10.P.P1110185"
     ],
-    "fetchedAt": "2026-10-26",
-    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Gallery images are on heytapimg.com and could not be checked from the collection environment; swatch colours not sampled."
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
   }
 }

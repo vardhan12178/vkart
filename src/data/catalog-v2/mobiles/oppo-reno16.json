@@ -192,15 +192,15 @@
       "values": [
         {
           "value": "Starry White",
-          "hex": null
+          "hex": "#95C0E1"
         },
         {
           "value": "Twilight Violet",
-          "hex": null
+          "hex": "#624A9F"
         },
         {
           "value": "Stellar Purple",
-          "hex": null
+          "hex": "#ECB8EC"
         }
       ]
     }
@@ -361,7 +361,7 @@
       "https://www.oppo.com/in/smartphones/series-reno/reno16/specs/",
       "https://www.oppo.com/in/product/reno16-5g.P.P1110156"
     ],
-    "fetchedAt": "2026-10-26",
-    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Gallery images are on heytapimg.com and could not be checked from the collection environment; swatch colours not sampled."
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
   }
 }

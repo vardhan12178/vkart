@@ -192,11 +192,11 @@
       "values": [
         {
           "value": "Luna White",
-          "hex": null
+          "hex": "#C8C8C8"
         },
         {
           "value": "Titanium Grey",
-          "hex": null
+          "hex": "#93898C"
         }
       ]
     }
@@ -291,7 +291,7 @@
       "https://www.oppo.com/in/smartphones/series-find-x/find-x10-pro-max/specs/",
       "https://www.oppo.com/in/product/find-x10-pro-max.P.P1110186"
     ],
-    "fetchedAt": "2026-10-26",
-    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Gallery images are on heytapimg.com and could not be checked from the collection environment; swatch colours not sampled."
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
   }
 }

@@ -1,0 +1,333 @@
+{
+  "slug": "oppo-k14-5g",
+  "title": "OPPO K14 5G",
+  "brand": "OPPO",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "MediaTek Dimensity 6300, 6.75-inch display up to 120Hz, 7,000 mAh battery with 45W SUPERVOOC charging and a 50MP main camera.",
+  "description": "OPPO K14 5G runs on the MediaTek Dimensity 6300 with ColorOS 15.0. Its 6.75-inch display up to 120Hz keeps scrolling and games smooth.\n\nThe 7,000 mAh battery with 45W SUPERVOOC charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.",
+  "highlights": [
+    "MediaTek Dimensity 6300",
+    "6.75-inch display up to 120Hz",
+    "7,000 mAh battery with 45W SUPERVOOC charging",
+    "50MP main camera",
+    "ColorOS 15.0"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 16.66cm",
+      "Width": "about 7.85cm",
+      "Thickness": "about 0.86cm",
+      "Weight": "about 216g"
+    },
+    "Storage": {
+      "RAM and ROM Capacities": [
+        "6GB + 128GB",
+        "6GB + 256GB",
+        "8GB + 256GB"
+      ],
+      "RAM Type": "LPDDR4X",
+      "ROM Specifications": "UFS 2.2",
+      "Phone Storage Card": "Supported",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "17.15cm",
+      "Screen Ratio": "90.6%",
+      "Resolution": "HD+ 1570 × 720 Pixels",
+      "Refresh Rate": "Maximum: 120Hz",
+      "Touch Sampling Rate": [
+        "Maximum: 240Hz",
+        "Default: 120Hz"
+      ],
+      "Colour Gamut": [
+        "Vivid mode: 83% DCI-P3",
+        "Natural mode: 100% sRGB"
+      ],
+      "Colour Depth": "16.7 million colours (8-bit)",
+      "Pixel Density": "256 PPI",
+      "Brightness": [
+        "Normal brightness: 900nits (Typical)",
+        "HBM: 1125nits (Typical)"
+      ],
+      "Panel": "LCD"
+    },
+    "Camera": {
+      "Rear": [
+        "Wide angle: 50MP; f/1.8; FOV 76°; 5P lens; AF supported",
+        "Monochrome: 2MP; f/2.4; FOV 89°; 3P lens"
+      ],
+      "Front": "8MP; f/2.0; FOV 80°; 4P lens",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Portrait, Night, Panorama, SLO-MO, Dual-view video, TIME-LAPSE, STICKER, HI-RES, Google Lens, Underwater, PRO, DOC SCANNER",
+        "Front: Photo, Video, Portrait, Night, Panorama, Dual-view video, TIME-LAPSE, STICKER, Retouch, Screen Fill Light, HI-RES"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "1080P video: 60fps, 30fps",
+        "720P video: 60fps, 30fps",
+        "720P SLO-MO video: 120fps",
+        "1080P TIME-LAPSE: 30fps",
+        "Supports Dual-view video shooting",
+        "Supports video zoom shooting: up to 10× digital zoom"
+      ],
+      "Front": [
+        "1080P video: 30fps",
+        "720P video: 30fps",
+        "1080P TIME-LAPSE: 30fps",
+        "Supports Dual-view video shooting"
+      ]
+    },
+    "Chips": {
+      "SoC": "MediaTek Dimensity 6300",
+      "CPU": "8 cores",
+      "GPU": "ARM Mali-G57 MC2@1072MHz"
+    },
+    "Battery": {
+      "Battery": [
+        "7000mAh/27.44Wh (Typical)",
+        "6830mAh/26.78Wh (Rated)"
+      ],
+      "Fast Charge": [
+        "Supports(Max): 45W SUPERVOOCTM",
+        "Compatible with: 33W and below SUPERVOOCTM, 33W PPS, 13.5W PD"
+      ]
+    },
+    "Biometrics": {
+      "Fingerprint": "Supported",
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "E-compass",
+        "Accelerometer",
+        "Side fingerprint sensor"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 5.4, Low Energy",
+      "Bluetooth® Audio Codec": "SBC, AAC, LDAC, aptX, aptX HD",
+      "USB Interface": "USB Type-C",
+      "Earphone Jack": "Type-C"
+    },
+    "Operating System": {
+      "Os": "ColorOS 15.0"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.75,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 8,
+    "batteryMah": 7000,
+    "chargingW": 45,
+    "wirelessCharging": false,
+    "is5G": false,
+    "weightG": 216,
+    "chip": "MediaTek Dimensity 6300",
+    "os": "Android",
+    "ramGB": 6
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "6GB + 256GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Prism White",
+          "hex": "#ABC9D9"
+        },
+        {
+          "value": "Icy Blue",
+          "hex": "#B0CAD5"
+        },
+        {
+          "value": "Prism Violet",
+          "hex": "#524B70"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Prism White": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/EKwj5hhxX01Smjdl.png",
+          "alt": "OPPO K14 5G in Prism White"
+        }
+      ],
+      "Icy Blue": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/8wsLk43mLD3LePZg.png",
+          "alt": "OPPO K14 5G in Icy Blue"
+        }
+      ],
+      "Prism Violet": [
+        {
+          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/YBlDw5PWIJCLrzea.png",
+          "alt": "OPPO K14 5G in Prism Violet"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-K14-6128-PRWH",
+      "mpn": "5011110294",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Prism White"
+      },
+      "price": 25999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-K14-6128-ICBL",
+      "mpn": "5011110295",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Icy Blue"
+      },
+      "price": 25999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-K14-6128-PRVI",
+      "mpn": "5011110293",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Prism Violet"
+      },
+      "price": 25999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-K14-6256-ICBL",
+      "mpn": "5011110333",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Icy Blue"
+      },
+      "price": 28999,
+      "mrp": 47999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-K14-6256-PRVI",
+      "mpn": "5011110331",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Prism Violet"
+      },
+      "price": 28999,
+      "mrp": 47999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-K14-6256-PRWH",
+      "mpn": "5011110332",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Prism White"
+      },
+      "price": 28999,
+      "mrp": 47999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-K14-8256-PRVI",
+      "mpn": "5011110313",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Prism Violet"
+      },
+      "price": 28999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone × 1",
+    "Charger × 1",
+    "USB Data Cable × 1",
+    "SIM Ejector Tool × 1",
+    "Protective Case × 1",
+    "Quick Guide × 1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/smartphones/series-k/k14-5g/specs/",
+      "https://www.oppo.com/in/product/k14-5g.P.P1110128"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
+  }
+}
