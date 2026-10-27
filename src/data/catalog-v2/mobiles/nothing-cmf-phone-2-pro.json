@@ -1,0 +1,321 @@
+{
+  "slug": "nothing-cmf-phone-2-pro",
+  "title": "CMF Phone 2 Pro",
+  "brand": "Nothing",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-04",
+  "shortDescription": "Budget CMF phone with Dimensity 7300 Pro, 6.77-inch 120Hz display, 50MP camera and 5,000 mAh battery at 185 g.",
+  "description": "CMF Phone 2 Pro, from Nothing's CMF sub-brand, runs the Dimensity 7300 Pro 5G with a 6.77-inch 120Hz display that peaks at 3,000 nits.\n\nIt has a 50MP main camera and a 16MP selfie camera, a 5,000 mAh battery and weighs just 185 g. It's rated IP54.",
+  "highlights": [
+    "Dimensity 7300 Pro 5G",
+    "6.77-inch display, 120Hz, 3,000 nits peak",
+    "50MP main camera",
+    "16MP front camera",
+    "5,000 mAh battery",
+    "185 g, IP54"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.77,
+      "type": "AMOLED",
+      "refreshRate": 120,
+      "brightness": "3,000 nits peak"
+    },
+    "Performance": {
+      "chip": "MediaTek Dimensity 7300 Pro 5G"
+    },
+    "Camera": {
+      "rear": "50MP main",
+      "front": "16MP"
+    },
+    "Battery": {
+      "capacityMah": 5000
+    },
+    "Build": {
+      "weightG": 185,
+      "ipRating": "IP54"
+    },
+    "Software": {
+      "os": "Nothing OS"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.77,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 16,
+    "batteryMah": 5000,
+    "chargingW": null,
+    "wirelessCharging": false,
+    "weightG": 185,
+    "chip": "MediaTek Dimensity 7300 Pro",
+    "ramGB": 8,
+    "is5G": true,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Orange",
+          "hex": "#E23823"
+        },
+        {
+          "value": "Black",
+          "hex": "#353639"
+        },
+        {
+          "value": "White",
+          "hex": "#D2D2D6"
+        },
+        {
+          "value": "Light Green",
+          "hex": "#CEDAD3"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Orange": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0054_CMF-Phone-2-Pro-Orange.png?v=1753757344",
+          "alt": "CMF Phone 2 Pro in Orange"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Back.png?v=1745661990",
+          "alt": "CMF Phone 2 Pro in Orange, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Front.png?v=1745661990",
+          "alt": "CMF Phone 2 Pro in Orange, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-left.png?v=1745661990",
+          "alt": "CMF Phone 2 Pro in Orange, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-right.png?v=1745661990",
+          "alt": "CMF Phone 2 Pro in Orange, view 5"
+        }
+      ],
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0058_CMF-Phone-2-Pro-black.png?v=1753757371",
+          "alt": "CMF Phone 2 Pro in Black"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_Back.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in Black, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_Front.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in Black, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_left.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in Black, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_right.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in Black, view 5"
+        }
+      ],
+      "White": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0055_CMF-Phone-2-Pro-lightgrey.png?v=1753757347",
+          "alt": "CMF Phone 2 Pro in White"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_Back.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in White, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_Front_be62458c-db1f-473e-aa9c-c18dd2b65de7.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in White, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_left.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in White, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_right.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in White, view 5"
+        }
+      ],
+      "Light Green": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0056_CMF-Phone-2-Pro-Lightgreen.png?v=1753757364",
+          "alt": "CMF Phone 2 Pro in Light Green"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Light_Green_-_Back_f0d8f9bc-eb86-4b6b-a619-0990034412fc.png?v=1745845129",
+          "alt": "CMF Phone 2 Pro in Light Green, view 2"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-CMF2P-8128-ORA",
+      "mpn": "6974434225428",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Orange"
+      },
+      "price": 18999,
+      "mrp": 18999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8128-BLA",
+      "mpn": "6974434225398",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Black"
+      },
+      "price": 18999,
+      "mrp": 18999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8128-WHI",
+      "mpn": "6974434225411",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "White"
+      },
+      "price": 18999,
+      "mrp": 18999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8128-LIGR",
+      "mpn": "6974434225480",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Light Green"
+      },
+      "price": 18999,
+      "mrp": 18999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8256-ORA",
+      "mpn": "6974434225466",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Orange"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8256-BLA",
+      "mpn": "6974434225435",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8256-WHI",
+      "mpn": "6974434225459",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "White"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-CMF2P-8256-LIGR",
+      "mpn": "6974434225527",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Light Green"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "CMF Phone 2 Pro",
+    "USB-C to USB-C cable",
+    "SIM tray ejector",
+    "Safety information and warranty card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/cmf-phone-2-pro"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Variants, launch prices and images from Nothing's India store data (phones are sold through Flipkart). Nothing publishes no structured spec sheet; key specs are taken from the product page text, so some fields are missing."
+  }
+}
