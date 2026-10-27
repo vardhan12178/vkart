@@ -1,0 +1,236 @@
+{
+  "slug": "vivo-t5e",
+  "title": "vivo T5e",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Unisoc T7225, 6.74-inch display, 5,500 mAh battery with 15W FlashCharge and a dual camera.",
+  "description": "vivo T5e runs on the Unisoc T7225 with OriginOS. Its 6.74-inch display keeps scrolling and video smooth.\n\nThe 5,500 mAh battery with 15W FlashCharge lasts through long days, and the dual camera handles photos and 4K video.",
+  "highlights": [
+    "Unisoc T7225",
+    "6.74-inch display",
+    "5,500 mAh battery with 15W FlashCharge",
+    "dual camera",
+    "OriginOS"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Unisoc T7225",
+      "RAM": "4GB",
+      "Storage": "64GB",
+      "Battery": "5500 mAh",
+      "Fast Charging": "15W",
+      "Fingerprint Sensor": "Side-mounted capacitive fingerprint sensor",
+      "Color": [
+        "Shadow Grey",
+        "Aero Blue"
+      ],
+      "Operating System": "Origin OS 6.0"
+    },
+    "Display": {
+      "Size": "17.13cm (6.74'')",
+      "Resolution": "1600x720"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear camera: 8 MP",
+        "Front camera: 5 MP"
+      ],
+      "Aperture": [
+        "Rear camera: f/2",
+        "Front camera: f/2.2"
+      ],
+      "Flash": "5x Ultra-Bright Flashlight",
+      "Scene Modes": [
+        "Rear camera: Photo, Portrait, Night Mode, Video, Panorama, Documents, Time-lapse, Live Photo",
+        "Front camera:  Night Mode, Portrait, Photo, Video, Live Photo"
+      ]
+    },
+    "Build": {
+      "Dimensions": "16.730cm ×7.695cm ×0.819cm (6.587 inches × 3.030 inches × 0.322 inches)",
+      "Weight": "199g"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4 GHz, 5 GHz",
+      "Bluetooth": "5.2",
+      "USB": "Type-C (USB 2.0)",
+      "GPS": "L1",
+      "OTG": "Supported",
+      "FM": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.74,
+    "refreshRateHz": null,
+    "mainCameraMP": null,
+    "frontCameraMP": 5,
+    "batteryMah": 5500,
+    "chargingW": 15,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 199.0,
+    "chip": "Unisoc T7225",
+    "os": "Android",
+    "ramGB": 4
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "4GB + 64GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Aero Blue",
+          "hex": "#B3DCDD"
+        },
+        {
+          "value": "Shadow Grey",
+          "hex": "#4F5053"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Aero Blue": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888880413/5ad4f75de97b8c80e4c8e8e21c2d7d35.png",
+          "alt": "vivo T5e in Aero Blue"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785131957375/f8c6b54be5bcf52d06c47e5b12db33fd.jpg",
+          "alt": "vivo T5e in Aero Blue, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888880839/8f196677dde7b575a0fddb9c81c0ab50.png",
+          "alt": "vivo T5e in Aero Blue, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888880751/7703dedda21a4bfffe1931a811d218f3.png",
+          "alt": "vivo T5e in Aero Blue, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888880695/b6f9c07376cae2d645cb47a7f46f4c75.png",
+          "alt": "vivo T5e in Aero Blue, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888880681/1e1cf238fbda256492c7b9c040e2e050.png",
+          "alt": "vivo T5e in Aero Blue, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888880419/3dca3b3617054c38e23206f086786008.png",
+          "alt": "vivo T5e in Aero Blue, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888881781/aea7c138fdb7f9bd9bdaf1a4649e4531.png",
+          "alt": "vivo T5e in Aero Blue, view 8"
+        }
+      ],
+      "Shadow Grey": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888896443/a55f20ecddf9d3bd32966b585c47ba3b.png",
+          "alt": "vivo T5e in Shadow Grey"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785131969088/d9be7f9844d3a1f6d8b47de6906c08ab.jpg",
+          "alt": "vivo T5e in Shadow Grey, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888896799/03d3344e1a598aefefdb4c1c32d4ad4a.png",
+          "alt": "vivo T5e in Shadow Grey, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888896675/32f0396945d88518dea62e769321a6c5.png",
+          "alt": "vivo T5e in Shadow Grey, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888896763/974b79ca51b91906000de7d652f9f012.png",
+          "alt": "vivo T5e in Shadow Grey, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888896677/521789bf5624763a633ea9e65a069781.png",
+          "alt": "vivo T5e in Shadow Grey, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888896485/44bf5a1caa93e4c37c3c8ad045fb1e5b.png",
+          "alt": "vivo T5e in Shadow Grey, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1784888897838/8a7c43ad10a044bca885b244be68605d.png",
+          "alt": "vivo T5e in Shadow Grey, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-T5E-464-AEBL",
+      "mpn": "5674594",
+      "options": {
+        "Storage": "4GB + 64GB",
+        "Color": "Aero Blue"
+      },
+      "price": 13999,
+      "mrp": 26999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 4,
+        "storageGB": 64
+      }
+    },
+    {
+      "sku": "VIV-T5E-464-SHGR",
+      "mpn": "5674593",
+      "options": {
+        "Storage": "4GB + 64GB",
+        "Color": "Shadow Grey"
+      },
+      "price": 13999,
+      "mrp": 26999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 4,
+        "storageGB": 64
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "USB Cable",
+    "Charger",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10363"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

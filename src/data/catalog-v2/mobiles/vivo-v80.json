@@ -1,0 +1,396 @@
+{
+  "slug": "vivo-v80",
+  "title": "vivo V80",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Snapdragon 7 Gen 4, 6.59-inch AMOLED display, 7,200 mAh battery with 90W FlashCharge and a 50MP main camera.",
+  "description": "vivo V80 runs on the Snapdragon 7 Gen 4 with OriginOS 7. Its 6.59-inch AMOLED display keeps scrolling and video smooth.\n\nThe 7,200 mAh battery with 90W FlashCharge lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "Snapdragon 7 Gen 4",
+    "6.59-inch AMOLED display",
+    "7,200 mAh battery with 90W FlashCharge",
+    "50MP main camera",
+    "OriginOS 7"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Snapdragon® 7 Gen 4",
+      "RAM": "8GB",
+      "Storage": [
+        "128GB",
+        "256GB",
+        "512GB"
+      ],
+      "Battery": "7200mAh (TYP) 7015mAh (MIN) Rated",
+      "Fast Charging": "90W FlashCharge",
+      "Color": [
+        "Sunrise Anthem",
+        "Horizon Blue",
+        "Stellar Black"
+      ],
+      "Operating System": "OriginOS 7"
+    },
+    "Display": {
+      "Size": "Display: 16.74 cm(6.59″)",
+      "Resolution": "Display: 2750 × 1260",
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear: 50MP Telephoto (OIS) - Sony IMX882 Sensor, FOV 33°, 4P lens 50MP Main (OIS) - Sony LYTIA 700V Sensor, FOV 84°, 6P lens 8MP FF Wide Angle - OV08F10 Sensor,  FOV 115°, 5P lens",
+        "Front :  50MP AF, FOV 92°, 5P lens"
+      ],
+      "Aperture": [
+        "Rear Camera: Main f/1.88; Wide-Angle f/2.2; Telephoto f/2.65",
+        "Front Camera -  f/2.0"
+      ],
+      "Flash": "Single rear flash with single color temperature; rear flash with dual color temperature",
+      "Scene Modes": "AI Creation; Night; Portrait; Photo; Video; High Resolution; Pano; Ultra HD Document; Slo-mo; Time-lapse; Supermoon; Stage; Astro; Pro; Snapshot; Food; Underwater Photography; Film Camera"
+    },
+    "Build": {
+      "Dimensions": "Thickness in mm : 157.52 × 74.33 × 7.69 Thickness in cm : 15.752 cm × 7.433 cm × 0.769 cm",
+      "Weight": "203g",
+      "Material": "Glass"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4G (MIMO); 5G (MIMO)",
+      "Bluetooth": "Bluetooth 5.4",
+      "USB": "USB Type-C, USB 2.0",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.59,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 50,
+    "batteryMah": 7200,
+    "chargingW": 90,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 203.0,
+    "chip": "Snapdragon 7 Gen 4",
+    "os": "Android",
+    "ramGB": 8
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        },
+        {
+          "value": "8GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sunrise Anthem",
+          "hex": "#E79655"
+        },
+        {
+          "value": "Horizon Blue",
+          "hex": "#ADC8C6"
+        },
+        {
+          "value": "Stellar Black",
+          "hex": "#000000"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sunrise Anthem": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672442/1df610e2d782d2d2ef1c462553a0e7b0.png",
+          "alt": "vivo V80 in Sunrise Anthem"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672214/face5d4d0d10aeec90502495231fcf46.jpg",
+          "alt": "vivo V80 in Sunrise Anthem, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672064/c8dd5f2e836d908511f6be4a6bad01a3.png",
+          "alt": "vivo V80 in Sunrise Anthem, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672354/acfd86697306ebec491d7f51d44943c0.png",
+          "alt": "vivo V80 in Sunrise Anthem, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672313/9eb5616ebd700a5341263a3dd06b70ad.png",
+          "alt": "vivo V80 in Sunrise Anthem, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672809/d6c010ba6fbc1e0bea6803b86f9b4062.png",
+          "alt": "vivo V80 in Sunrise Anthem, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933673870/e85f0161f74d380c8b9ae93a894d2b96.png",
+          "alt": "vivo V80 in Sunrise Anthem, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933674018/31aee50fb5cc1400722edda6342eddf7.png",
+          "alt": "vivo V80 in Sunrise Anthem, view 8"
+        }
+      ],
+      "Horizon Blue": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919706/9d76cfd0b81e0dbe31f87d9b98bf7b25.png",
+          "alt": "vivo V80 in Horizon Blue"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919776/a0231f1d849878059e5e661dd27e46a7.jpg",
+          "alt": "vivo V80 in Horizon Blue, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919430/70572707e0a36d5feaa4264de23f9730.png",
+          "alt": "vivo V80 in Horizon Blue, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919471/432d5e00aec202b6a1a2a2ad70e72e3b.png",
+          "alt": "vivo V80 in Horizon Blue, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919726/250cc10d109734b9b2730857c0102e7b.png",
+          "alt": "vivo V80 in Horizon Blue, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919714/86a42d27262e6696c7e63ca7e66fe14c.png",
+          "alt": "vivo V80 in Horizon Blue, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933921064/e6e2edc9944411b103e09d5e5c3a3218.png",
+          "alt": "vivo V80 in Horizon Blue, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933920697/34f53e6bafbce9ad84358adb48a0e02d.png",
+          "alt": "vivo V80 in Horizon Blue, view 8"
+        }
+      ],
+      "Stellar Black": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161260/4c29ccb49887192bd1cbb343f471263d.png",
+          "alt": "vivo V80 in Stellar Black"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161779/418dbc12017dc115e839c4b25cc1f668.jpg",
+          "alt": "vivo V80 in Stellar Black, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161375/96daaf66f9690bf16a1162e061ca3229.png",
+          "alt": "vivo V80 in Stellar Black, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161453/2348767f776a0299ffb748e0263a8603.png",
+          "alt": "vivo V80 in Stellar Black, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161465/c34fe0899e3125de789abe512f2b071a.png",
+          "alt": "vivo V80 in Stellar Black, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161649/c3c98c6d830dade733afa494df6dd3fa.png",
+          "alt": "vivo V80 in Stellar Black, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934162587/c83511776c437496945bc1bdb19d2ede.png",
+          "alt": "vivo V80 in Stellar Black, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934162913/36683c13fc0d20aa73b9cb514b375878.png",
+          "alt": "vivo V80 in Stellar Black, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-V80-8128-SUAN",
+      "mpn": "5676351",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Sunrise Anthem"
+      },
+      "price": 62999,
+      "mrp": 111999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-V80-8128-HOBL",
+      "mpn": "5676352",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Horizon Blue"
+      },
+      "price": 62999,
+      "mrp": 111999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-V80-8128-STBL",
+      "mpn": "5676350",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Stellar Black"
+      },
+      "price": 62999,
+      "mrp": 111999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-V80-8256-SUAN",
+      "mpn": "5676354",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Sunrise Anthem"
+      },
+      "price": 69999,
+      "mrp": 118999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-V80-8256-HOBL",
+      "mpn": "5676355",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Horizon Blue"
+      },
+      "price": 69999,
+      "mrp": 118999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-V80-8256-STBL",
+      "mpn": "5676353",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Stellar Black"
+      },
+      "price": 69999,
+      "mrp": 118999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-V80-8512-SUAN",
+      "mpn": "5676357",
+      "options": {
+        "Storage": "8GB + 512GB",
+        "Color": "Sunrise Anthem"
+      },
+      "price": 79999,
+      "mrp": 125999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "VIV-V80-8512-HOBL",
+      "mpn": "5676358",
+      "options": {
+        "Storage": "8GB + 512GB",
+        "Color": "Horizon Blue"
+      },
+      "price": 79999,
+      "mrp": 125999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "VIV-V80-8512-STBL",
+      "mpn": "5676356",
+      "options": {
+        "Storage": "8GB + 512GB",
+        "Color": "Stellar Black"
+      },
+      "price": 79999,
+      "mrp": 125999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "Type C cable",
+    "USB Power Adapter",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10373"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

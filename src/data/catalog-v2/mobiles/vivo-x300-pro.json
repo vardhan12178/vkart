@@ -1,0 +1,235 @@
+{
+  "slug": "vivo-x300-pro",
+  "title": "vivo X300 Pro",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-12",
+  "shortDescription": "MediaTek Dimensity 9500, 6.78-inch AMOLED display, 6,510 mAh battery with 90W FlashCharge and a 50MP main camera with ZEISS optics.",
+  "description": "vivo X300 Pro runs on the MediaTek Dimensity 9500 with OriginOS 6. Its 6.78-inch AMOLED display keeps scrolling and video smooth.\n\nThe 6,510 mAh battery with 90W FlashCharge lasts through long days, and the 50MP main camera with ZEISS optics handles photos and 4K video.",
+  "highlights": [
+    "MediaTek Dimensity 9500",
+    "6.78-inch AMOLED display",
+    "6,510 mAh battery with 90W FlashCharge",
+    "50MP main camera with ZEISS optics",
+    "OriginOS 6"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "MediaTek Dimensity 9500",
+      "RAM": "16GB",
+      "Storage": "512GB",
+      "Battery": "6510mAh (TYP)",
+      "Fast Charging": "90W FlashCharge",
+      "Fingerprint Sensor": "3D ultrasonic single-point fingerprint sensor",
+      "Color": [
+        "Dune Gold",
+        "Elite Black"
+      ],
+      "Operating System": "OriginOS 6"
+    },
+    "Display": {
+      "Size": "17.22cm (6.78”)",
+      "Resolution": "Main Screen - 2800 × 1260 (1.5K+)",
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear: 50MP (OIS) Sony LYT-828 Sensor CIPA 5.5  + 50MP Wide-Angle JN1 AF 119 degree + 200MP Telephoto (OIS) 3.5x Optical Zoom HPB Sensor CIPA 5.5",
+        "Front: 50MP JN1 AF"
+      ],
+      "Aperture": "Rear: Main f/1.57; Wide-Angle f/2.0; Telephoto f/2.67",
+      "Flash": "Dual rear flash with single color temperature",
+      "Scene Modes": "Snapshot, Landscape & Night, Portrait, Photo, Video, Portrait Video, Ultra HD Document, Slo-mo, Stage, Time-lapse, Pro, AI Storyboard, Telephoto Bird Shots, ZEISS Mirotar Telephoto Style Bokeh, Telephoto Extender"
+    },
+    "Build": {
+      "Dimensions": "Thickness in cm : 16.198 cm × 7.548 cm × 0.799 cm (Dune Gold) Thickness in cm : 16.198 cm × 7.548 cm × 0.799 cm (Elite Black)",
+      "Weight": [
+        "226g (Dune Gold)",
+        "226g (Elite Black)"
+      ],
+      "Material": "Front Glass Back : Glass Fiber Middle : Aluminium Alloy"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4GHz，5.0GHz, 6.0GHz",
+      "Bluetooth": "Bluetooth 6.0",
+      "USB": "USB Type-C, USB 3.2 Gen1",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.78,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 50,
+    "batteryMah": 6510,
+    "chargingW": 90,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 226.0,
+    "chip": "MediaTek Dimensity 9500",
+    "os": "Android",
+    "ramGB": 16
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Elite Black",
+          "hex": "#5E5E5E"
+        },
+        {
+          "value": "Dune Gold",
+          "hex": "#FBEEDC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Elite Black": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764591954824/a391e2ca3c2be9463ee9a9e73c8cf35d.png",
+          "alt": "vivo X300 Pro in Elite Black"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303293/ce45b2edf47cb84c3f58ded8b8ab71f6.jpg",
+          "alt": "vivo X300 Pro in Elite Black, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303124/e8a4d0ebc636e87c595fe20bbcf663fb.png",
+          "alt": "vivo X300 Pro in Elite Black, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303085/7436e16303c5c7f6d2e6f8db40ef94e6.png",
+          "alt": "vivo X300 Pro in Elite Black, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303251/4f6012ab879776a959c929e20348dee8.png",
+          "alt": "vivo X300 Pro in Elite Black, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303557/143febd2c12624a54b54d48ebbd315a9.png",
+          "alt": "vivo X300 Pro in Elite Black, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569304055/00293c064d4d76c08824560c21ae1796.png",
+          "alt": "vivo X300 Pro in Elite Black, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569304495/672bf942cbd3c0b49a00353ba834c990.png",
+          "alt": "vivo X300 Pro in Elite Black, view 8"
+        }
+      ],
+      "Dune Gold": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764591976943/84863844faec50921202bf83d94ffacf.png",
+          "alt": "vivo X300 Pro in Dune Gold"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319601/f742f4700893f8c79d57e363a77f5b1f.jpg",
+          "alt": "vivo X300 Pro in Dune Gold, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319649/59ac633a155efe8d741af51c0580d183.png",
+          "alt": "vivo X300 Pro in Dune Gold, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319714/db7f8b4afa267b6abc316a4da7f3c5a9.png",
+          "alt": "vivo X300 Pro in Dune Gold, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319796/120fc92e273e0cc4cc45ff4e3f1ec82f.png",
+          "alt": "vivo X300 Pro in Dune Gold, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319651/1a1381d0bb41b59d662be536ae0e88aa.png",
+          "alt": "vivo X300 Pro in Dune Gold, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569320398/8d6ae97a89a713593bff3b148f5e5992.png",
+          "alt": "vivo X300 Pro in Dune Gold, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569321175/324c83440a0c5935a55485ab88b573f2.png",
+          "alt": "vivo X300 Pro in Dune Gold, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-X300PRO-16512-ELBL",
+      "mpn": "5671436",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Elite Black"
+      },
+      "price": 119999,
+      "mrp": 119999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "VIV-X300PRO-16512-DUGO",
+      "mpn": "5671437",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Dune Gold"
+      },
+      "price": 119999,
+      "mrp": 119999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Documentation",
+    "Type-C Cable",
+    "USB Power Adapter",
+    "SIM Ejector",
+    "Protective Case",
+    "Protective Film (applied)"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10329"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

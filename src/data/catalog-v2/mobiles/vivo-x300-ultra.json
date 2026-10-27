@@ -1,0 +1,242 @@
+{
+  "slug": "vivo-x300-ultra",
+  "title": "vivo X300 Ultra",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Snapdragon 8 Elite Gen 5, 6.82-inch AMOLED display, 6,600 mAh battery with 100W FlashCharge and a 200MP main camera.",
+  "description": "vivo X300 Ultra runs on the Snapdragon 8 Elite Gen 5 with OriginOS 6. Its 6.82-inch AMOLED display keeps scrolling and video smooth.\n\nThe 6,600 mAh battery with 100W FlashCharge lasts through long days, and the 200MP main camera handles photos and 4K video.",
+  "highlights": [
+    "Snapdragon 8 Elite Gen 5",
+    "6.82-inch AMOLED display",
+    "6,600 mAh battery with 100W FlashCharge",
+    "200MP main camera",
+    "OriginOS 6"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Snapdragon® 8 Elite Gen 5",
+      "RAM": "16GB",
+      "Storage": "512GB",
+      "Battery": [
+        "6600mAh (TYP)",
+        "6395mAh (MIN) Rated"
+      ],
+      "Fast Charging": "100W FlashCharge",
+      "Fingerprint Sensor": "3D ultrasonic single-point fingerprint sensor",
+      "Color": [
+        "Eclipse Black",
+        "Victory Green"
+      ],
+      "Operating System": "OriginOS 6"
+    },
+    "Display": {
+      "Size": "6.82″ (17.32 cm)",
+      "Resolution": "Main screen - 3168 × 1440 (2K)",
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear: 200MP AF (OIS) - LYTIA 901 Sensor CIPA 6.5 50 MP AF Wide angle - LYT818 Sensor CIPA 6.0 200MP Telephoto(OIS) - CIPA 7.0",
+        "Front: 50 MPAF"
+      ],
+      "Aperture": [
+        "Rear: Main f/1.85; Wide-Angle f/2.0; Telephoto f/2.67",
+        "Front Camera -  f/2.45"
+      ],
+      "Flash": "Dual rear flash with single color temperature",
+      "Scene Modes": "Snapshot, Landscape & Night, Portrait, Photo, Video, Portrait Video, Pano, Ultra HD Document, Slo-mo, Stage, Time-lapse, Pro, Underwater Photography, Spatial Camera, Food, Scan, Street Photography"
+    },
+    "Build": {
+      "Dimensions": "Thickness in cm :16.298 cm × 7.681 cm × 0.819 cm (Eclipse Black)  Thickness in cm : 16.298 cm × 7.681 cm × 0.849 cm (Victory Green)",
+      "Weight": [
+        "232 (Eclipse Black)",
+        "237 (Victory Green)"
+      ],
+      "Material": "Glass"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4G;5G;6G",
+      "Bluetooth": "Bluetooth 6.0",
+      "USB": "USB Type-C, USB 3.2",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.82,
+    "refreshRateHz": null,
+    "mainCameraMP": 200,
+    "frontCameraMP": 50,
+    "batteryMah": 6600,
+    "chargingW": 100,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": null,
+    "chip": "Snapdragon 8 Elite Gen 5",
+    "os": "Android",
+    "ramGB": 16
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Eclipse Black",
+          "hex": "#525254"
+        },
+        {
+          "value": "Victory Green",
+          "hex": "#CBD3BA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Eclipse Black": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312084/2bdf04028ad4e72224499552eb4c7762.png",
+          "alt": "vivo X300 Ultra in Eclipse Black"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777895003197/1896cb73a82ffa765dfc25bb73adcc70.jpg",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877311967/5700b7b3f3b4c6b8e1ba77dd6ea08e4c.png",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312080/23582b3d573b0f8aeab7cdb50030d4f6.png",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312075/98689c351963b1e99c75d4f087820c79.png",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877311854/7f56dd8b5925cd2b1e9b3c304985b3a8.png",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877313001/2bba28406655caa53dda5ed6311797dd.png",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877313493/08cac2b1edea17168515b912a2bbb8f6.png",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 8"
+        }
+      ],
+      "Victory Green": [
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357153/7899f893e84f82e99ef87f790bf9c215.png",
+          "alt": "vivo X300 Ultra in Victory Green"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777895019553/33fdbdb1f0755219649a9dc4a4cf1916.jpg",
+          "alt": "vivo X300 Ultra in Victory Green, view 2"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357131/398e0d1586a2789bafdb85d7c51af016.png",
+          "alt": "vivo X300 Ultra in Victory Green, view 3"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357099/553ff85d5749bb6b808f878dfc6e9293.png",
+          "alt": "vivo X300 Ultra in Victory Green, view 4"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357127/13502365813ad04a217474a33f5e7db0.png",
+          "alt": "vivo X300 Ultra in Victory Green, view 5"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877358331/aaf473641f77a006c62a6e318aa99283.png",
+          "alt": "vivo X300 Ultra in Victory Green, view 6"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357177/f34d9712756cd40fc66c8858b2a0a495.png",
+          "alt": "vivo X300 Ultra in Victory Green, view 7"
+        },
+        {
+          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357276/47b5693bcd5340f292a90f27213da924.png",
+          "alt": "vivo X300 Ultra in Victory Green, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-X300ULTR-16512-ECBL",
+      "mpn": "5673328",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Eclipse Black"
+      },
+      "price": 159999,
+      "mrp": 199999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "VIV-X300ULTR-16512-VIGR",
+      "mpn": "5673591",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Victory Green"
+      },
+      "price": 159999,
+      "mrp": 199999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "Type C cable",
+    "USB Power Adapter",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10348"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}
