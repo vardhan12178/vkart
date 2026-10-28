@@ -1,0 +1,135 @@
+{
+  "slug": "boldfit-titangrip-pull-up-bar",
+  "title": "Boldfit TitanGrip Pull Up Bar",
+  "brand": "Boldfit",
+  "category": "sports",
+  "categoryPath": [
+    "sports",
+    "fitness-equipment"
+  ],
+  "status": "draft",
+  "launchDate": "2026-04",
+  "shortDescription": "The Boldfit TitanGrip Pull Up Bar brings pull-ups, chin-ups and core work home without a single screw.",
+  "description": "The Boldfit TitanGrip Pull Up Bar brings pull-ups, chin-ups and core work home without a single screw. Its heavy-duty TitanCore steel frame holds up to 200 kg, and the MaxGrip Lock's wide anti-slip rubber pads grip the door frame firmly. Foam covers the full length of the bar, so every hand position feels secure. It fits door frames 76–96 cm wide.",
+  "highlights": [
+    "TitanCore steel frame: heavy-duty thickened steel rated for up to 200 kg.",
+    "Full-length anti-slip foam grip: comfortable and secure at every grip position, wide or narrow.",
+    "Adjustable fit: extends to fit door frames from 76 cm to 96 cm wide.",
+    "Material: Heavy-duty thickened steel (TitanCore frame)",
+    "Built-in spirit level: a bubble meter confirms the bar is perfectly horizontal before you start.",
+    "Grip: Full-length anti-slip foam"
+  ],
+  "specs": {
+    "Specifications": {
+      "TitanCore steel frame": "heavy-duty thickened steel rated for up to 200 kg.",
+      "MaxGrip Lock System": "wide anti-slip rubber pads on both ends spread your weight evenly across the door frame for a stronger, more stable hold.",
+      "Full-length anti-slip foam grip": "comfortable and secure at every grip position, wide or narrow.",
+      "Built-in spirit level": "a bubble meter confirms the bar is perfectly horizontal before you start.",
+      "Adjustable fit": "extends to fit door frames from 76 cm to 96 cm wide.",
+      "No drilling, no screws": "pressure-fit design that installs and comes off in seconds without tools or damage to your door frame.",
+      "Upper body and core in one bar": "pull-ups, chin-ups, sit-ups (bar placed low, feet hooked under) and hanging leg raises.",
+      "Material": "Heavy-duty thickened steel (TitanCore frame)",
+      "Grip": "Full-length anti-slip foam",
+      "Mounting": "No-drill, no-screw pressure fit",
+      "Weight capacity": "Up to 200 kg",
+      "Door width (adjustable range)": "76–96 cm",
+      "Locking system": "MaxGrip Lock with anti-slip rubber pads",
+      "Spirit level": "Built-in bubble meter",
+      "Colour": "Black/Red",
+      "Suitable for": "Solid wooden and concrete door frames",
+      "Country of origin": "China (imported; packed in Bengaluru, India)"
+    },
+    "Features": {
+      "points": [
+        "TitanCore steel frame: heavy-duty thickened steel rated for up to 200 kg.",
+        "MaxGrip Lock System: wide anti-slip rubber pads on both ends spread your weight evenly across the door frame for a stronger, more stable hold.",
+        "Full-length anti-slip foam grip: comfortable and secure at every grip position, wide or narrow.",
+        "Built-in spirit level: a bubble meter confirms the bar is perfectly horizontal before you start.",
+        "Adjustable fit: extends to fit door frames from 76 cm to 96 cm wide.",
+        "No drilling, no screws: pressure-fit design that installs and comes off in seconds without tools or damage to your door frame.",
+        "Upper body and core in one bar: pull-ups, chin-ups, sit-ups (bar placed low, feet hooked under) and hanging leg raises.",
+        "Material: Heavy-duty thickened steel (TitanCore frame)",
+        "Grip: Full-length anti-slip foam",
+        "Mounting: No-drill, no-screw pressure fit",
+        "Weight capacity: Up to 200 kg",
+        "Door width (adjustable range): 76–96 cm"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Pull Up Bar"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "Standard"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1_3028652a-662c-4c94-8b2b-d80ef7a10240.png?v=1787033795",
+        "alt": "Boldfit TitanGrip Pull Up Bar"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/TitanGripPullupBar2B.webp?v=1777127866",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/4TitanGripPullupBar.png?v=1783071620",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/2_283e548a-4441-461a-9c25-ad5f6bb44279.png?v=1783071620",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/3Titan.png?v=1783071620",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/5TitanPullupbar.png?v=1783071620",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/1TitanGrip.png?v=1783071620",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/TitanGripPullupBar4.webp?v=1777127866",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BFT-TITANGRIPPULLU-STANDARD",
+      "mpn": "PullUpBarTitanGripBlackRed",
+      "options": {
+        "Size": "Standard"
+      },
+      "price": 1899,
+      "mrp": 3499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.boldfit.com/products/titangrip-pull-up-bar-black-red"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Boldfit's official online store."
+  }
+}

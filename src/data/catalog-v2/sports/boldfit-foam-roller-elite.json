@@ -1,0 +1,122 @@
+{
+  "slug": "boldfit-foam-roller-elite",
+  "title": "Boldfit Foam Roller Elite",
+  "brand": "Boldfit",
+  "category": "sports",
+  "categoryPath": [
+    "sports",
+    "recovery"
+  ],
+  "status": "draft",
+  "launchDate": "2024-05",
+  "shortDescription": "Unlock your full potential with the Boldfit Elite Foam Roller, your ultimate tool for muscle recovery and relaxation.",
+  "description": "Unlock your full potential with the Boldfit Elite Foam Roller, your ultimate tool for muscle recovery and relaxation. Designed for athletes, fitness enthusiasts, and anyone seeking relief from muscle tension, this high-density foam roller is perfect for stretching, self-myofascial release, and improving flexibility.",
+  "highlights": [],
+  "specs": {},
+  "keySpecs": {
+    "productType": "Foam Roller"
+  },
+  "variantOptions": [
+    {
+      "name": "Variant",
+      "values": [
+        {
+          "value": "30 Cms"
+        },
+        {
+          "value": "45 Cms"
+        },
+        {
+          "value": "60 Cms"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71OyxtytYXL._SL1500.jpg?v=1724761463",
+        "alt": "Boldfit Foam Roller Elite"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71g2PzN4eWL._SL1500.jpg?v=1724761462",
+        "alt": "Boldfit Foam Roller Elite, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/81858JPIQ2L._SL1500.jpg?v=1724761463",
+        "alt": "Boldfit Foam Roller Elite, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71xrf2LZlCL._SL1500.jpg?v=1724761462",
+        "alt": "Boldfit Foam Roller Elite, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71WVhP7AuLL._SL1500.jpg?v=1724761462",
+        "alt": "Boldfit Foam Roller Elite, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/615VhPhtwVL.jpg?v=1714372994",
+        "alt": "Boldfit Foam Roller Elite, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71RvJkwP6_L._SL1500.jpg?v=1714372995",
+        "alt": "Boldfit Foam Roller Elite, view 7"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BFT-FOAMROLLERELIT-30CMS",
+      "mpn": "FoamRollerElite33cm",
+      "options": {
+        "Variant": "30 Cms"
+      },
+      "price": 699,
+      "mrp": 999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "BFT-FOAMROLLERELIT-45CMS",
+      "mpn": "FoamRollerElite45cm",
+      "options": {
+        "Variant": "45 Cms"
+      },
+      "price": 999,
+      "mrp": 1299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "BFT-FOAMROLLERELIT-60CMS",
+      "mpn": "FoamRollerElite60cm",
+      "options": {
+        "Variant": "60 Cms"
+      },
+      "price": 1299,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.boldfit.com/products/foam-roller-elite"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Boldfit's official online store."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "boldfit-true-balance-pickleball-paddle",
+  "title": "Boldfit True Balance Pickleball Paddle",
+  "brand": "Boldfit",
+  "category": "sports",
+  "categoryPath": [
+    "sports",
+    "racket-sports"
+  ],
+  "status": "draft",
+  "launchDate": "2025-01",
+  "shortDescription": "Elevate your pickleball game with the TrueBalance Pickleball Paddle , engineered for players who demand speed, control, and power.",
+  "description": "Elevate your pickleball game with the TrueBalance Pickleball Paddle , engineered for players who demand speed, control, and power. Designed with cutting-edge Hexa-Core Technology , this paddle ensures superior durability and stability while delivering explosive strokes with 2x StrokePower .\n\nFeaturing a Large Racquet Sweet Spot Area , the TrueBalance paddle maximizes shot accuracy and consistency, making every hit more effective. Its Aerodynamic Frame Design enhances swing speed, allowing for faster reaction times and precise shot placement.",
+  "highlights": [],
+  "specs": {
+    "Specifications": {
+      "TrueBalance Pickleball Paddle": ", engineered for players who demand speed, control, and power. Designed with cutting-edge",
+      "Hexa-Core Technology": ", this paddle ensures superior durability and stability while delivering explosive strokes with",
+      "Large Racquet Sweet Spot Area": ", the TrueBalance paddle maximizes shot accuracy and consistency, making every hit more effective. Its",
+      "Aerodynamic Frame Design": "enhances swing speed, allowing for faster reaction times and precise shot placement.",
+      "Comfort Grip Handle": "absorbs vibrations and ensures a firm hold during intense rallies. The",
+      "Adaptive Balance System (ABS)": "lets you customize the weight distribution to suit your playing style—whether you're an aggressive power-hitter or a defensive strategist.",
+      "lightweight graphite frame": ", this paddle offers high-stroke efficiency, while the",
+      "Enhanced EdgeGuard": "protects against wear and tear, extending the life of your equipment. With the",
+      "Balanced HexaCore": ", expect speedy and precise stroke play that keeps you ahead of the competition."
+    }
+  },
+  "keySpecs": {
+    "productType": "Pickleball Paddle"
+  },
+  "variantOptions": [
+    {
+      "name": "Variant",
+      "values": [
+        {
+          "value": "Black"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/A4_-_770.png?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/A4_-_768.png?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/A4_-_769.png?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_4_b3662d79-f7d7-4a14-985a-37468df827df.jpg?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_6_492a06f5-ade6-4b81-8ccd-fdc12afdaea9.jpg?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_2_d71bec5f-3f58-43e5-88ab-bb8031cba175.jpg?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_3_8d475e88-1f40-4fd9-a37b-9035ed9e4c2c.jpg?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_5_370fa26c-7e3f-44f1-a44f-840f64edb0b2.jpg?v=1738314871",
+        "alt": "Boldfit True Balance Pickleball Paddle, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BFT-BOLDFITPICKLEB-BLACK",
+      "mpn": "PickleballPaddleBlack",
+      "options": {
+        "Variant": "Black"
+      },
+      "price": 1699,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.boldfit.com/products/boldfit-pickle-ball-paddle-black-true-balance"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Boldfit's official online store."
+  }
+}

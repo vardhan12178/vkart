@@ -1,0 +1,111 @@
+{
+  "slug": "boldfit-prolift-adjustable-weight-bench",
+  "title": "Boldfit ProLift Adjustable Weight Bench",
+  "brand": "Boldfit",
+  "category": "sports",
+  "categoryPath": [
+    "sports",
+    "fitness-equipment"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Boldfit ProLift Adjustable Weight Bench",
+  "description": "An adjustable training bench with a stated 250 kg weight capacity and eight backrest positions for incline, flat and decline workouts. Its triangular steel frame supports presses, rows, core work and lower-body training; resistance ropes are included.",
+  "highlights": [
+    "Stated 250 kg weight capacity.",
+    "Eight backrest positions for incline, flat and decline workouts.",
+    "Triangular steel frame supports presses, rows, core work and lower-body training.",
+    "Resistance ropes are included.",
+    "Set the backrest to the position needed for your exercise."
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "Stated 250 kg weight capacity.",
+        "Eight backrest positions for incline, flat and decline workouts.",
+        "Triangular steel frame supports presses, rows, core work and lower-body training.",
+        "Resistance ropes are included.",
+        "Set the backrest to the position needed for your exercise.",
+        "Use on a stable floor; follow any safety notes on the product packaging.",
+        "Wipe down after training; store dry.",
+        "Compare photos and variants on www.boldfit.com before you add to cart."
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Weight Bench"
+  },
+  "variantOptions": [
+    {
+      "name": "Variant",
+      "values": [
+        {
+          "value": "One size"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench01.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench02.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench03.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench04.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench05.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench06.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench07.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/GymBench08.jpg?v=1790071517",
+        "alt": "Boldfit ProLift Adjustable Weight Bench, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BFT-BOLDFITPREMIUM-ONESIZE",
+      "mpn": "ProLiftBenchBlack",
+      "options": {
+        "Variant": "One size"
+      },
+      "price": 5299,
+      "mrp": 6999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.boldfit.com/products/boldfit-premium-adjustable-weight-bench-prolift-black"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Boldfit's official online store."
+  }
+}

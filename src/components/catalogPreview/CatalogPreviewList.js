@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { products, minPrice, maxPrice, defaultVariant, imagesFor, discountPercent, formatPrice } from "./catalogData";
 
-const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", tvs: "TVs", monitors: "Monitors", audio: "Audio", wearables: "Watches", skincare: "Skincare", "fashion-men": "Men's Fashion", "fashion-women": "Women's Fashion", appliances: "Appliances", "kitchen-appliances": "Kitchen", grooming: "Grooming" };
+const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", tvs: "TVs", monitors: "Monitors", audio: "Audio", wearables: "Watches", skincare: "Skincare", "fashion-men": "Men's Fashion", "fashion-women": "Women's Fashion", appliances: "Appliances", "kitchen-appliances": "Kitchen", grooming: "Grooming", sports: "Sports" };
 const catOf = (p) => (p.category === "fashion" ? `fashion-${(p.keySpecs?.gender || "men").toLowerCase()}` : p.categoryPath?.[0] === "home-appliances" ? "appliances" : p.category);
 const brandsOf = (cat) => ["All", ...Array.from(new Set(products.filter((p) => catOf(p) === cat).map((p) => p.brand)))];
 const SORTS = {

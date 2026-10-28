@@ -1,0 +1,92 @@
+{
+  "slug": "boldfit-butterfly-body-alignment-yoga-mat",
+  "title": "Boldfit Butterfly Body Alignment Yoga Mat",
+  "brand": "Boldfit",
+  "category": "sports",
+  "categoryPath": [
+    "sports",
+    "yoga"
+  ],
+  "status": "draft",
+  "launchDate": "2025-03",
+  "shortDescription": "Elevate your yoga practice with the Boldfit Butterfly Yoga Mat, crafted to offer the perfect blend of durability and comfort.",
+  "description": "Elevate your yoga practice with the Boldfit Butterfly Yoga Mat, crafted to offer the perfect blend of durability and comfort. Made with TrueGuide alignment to help you maintain perfect posture and alignment during each pose. Whether you're a beginner or an advanced yogi, this mat offers excellent traction and support for all your movements.",
+  "highlights": [],
+  "specs": {},
+  "keySpecs": {
+    "productType": "Yoga Mat"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Yogamat2.webp?v=1779110414",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy2_0465e932-a39a-4898-a160-76cd5fba649f.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy4_4989f40a-4640-480c-a1a9-8d35b84d0265.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy5_5d27152d-1931-46cf-bc2c-96056fa008aa.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy6_42b09c15-a372-4967-a0cb-474ce36de23a.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy7_8469ef8a-0fde-40a6-a400-344bfb8cd661.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy8.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy9.jpg?v=1771304885",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BFT-BOLDFITBUTTERF-BLACK",
+      "mpn": "ButterflyYogaMat",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 2499,
+      "mrp": 3999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.boldfit.com/products/boldfit-butterfly-body-alignment-yoga-mat-black"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Boldfit's official online store."
+  }
+}
