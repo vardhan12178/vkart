@@ -1,0 +1,137 @@
+{
+  "slug": "boat-ultima-aeris",
+  "title": "boAt Ultima Aeris",
+  "brand": "boAt",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-04",
+  "shortDescription": "boAt Ultima Aeris: 1.43\" AMOLED Smartwatch with 1000 Nits Brightness and Metal Design.",
+  "description": "boAt Ultima Aeris: 1.43\" AMOLED Smartwatch with 1000 Nits Brightness and Metal Design.",
+  "highlights": [
+    "1.43\" AMOLED Smartwatch with 1000 Nits Brightness and Metal Design",
+    "3.63cm (1.43\") display",
+    "IP68 rating",
+    "220 mAh battery"
+  ],
+  "specs": {
+    "Specifications": {
+      "IPX Rating": "IP68",
+      "Charging Time": "1 hour 45 mins",
+      "Working Time": "7 to 10 Days",
+      "Battery": "220 mAh",
+      "Display Dimensions": "3.63cm (1.43\")",
+      "Net Content": "1 UNIT Ultima Aeris, 1 UNIT USB Magnetic Charging Cable, 1 UNIT Manual & Warranty QR Card, 6 UNIT Stickers",
+      "Product Dimensions": "284.2 x 47.3 x 7.7 mm",
+      "Screen Type": "AMOLED",
+      "Brightness": "1000 nits (Max)",
+      "Bluetooth": "v5.3"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 1.43,
+    "batteryDays": 10,
+    "bluetoothCalling": false,
+    "ipRating": "IP68"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Active Black",
+          "hex": "#262626"
+        },
+        {
+          "value": "Tan Brown",
+          "hex": "#292827"
+        },
+        {
+          "value": "Cool Grey",
+          "hex": "#8A8A8A"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Active Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/black_main_image.png?v=1776353816",
+          "alt": "boAt Ultima Aeris in Active Black"
+        }
+      ],
+      "Tan Brown": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/brown_main_image.png?v=1776353527",
+          "alt": "boAt Ultima Aeris in Tan Brown"
+        }
+      ],
+      "Cool Grey": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/white_mainn_image.png?v=1776354036",
+          "alt": "boAt Ultima Aeris in Cool Grey"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOA-ULAER-ACTIVEBLACK",
+      "mpn": "8905650131789",
+      "options": {
+        "Color": "Active Black"
+      },
+      "price": 3099,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-ULAER-TANBROWN",
+      "mpn": "8905650131802",
+      "options": {
+        "Color": "Tan Brown"
+      },
+      "price": 3299,
+      "mrp": 6499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-ULAER-COOLGREY",
+      "mpn": "8905650131796",
+      "options": {
+        "Color": "Cool Grey"
+      },
+      "price": 3099,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Ultima Aeris",
+    "USB Magnetic Charging Cable",
+    "Manual & Warranty QR Card",
+    "Stickers"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boat-lifestyle.com/products/boat-ultima-aeris"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from boAt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}
