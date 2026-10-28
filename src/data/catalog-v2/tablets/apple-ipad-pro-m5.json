@@ -1,0 +1,1015 @@
+{
+  "slug": "apple-ipad-pro-m5",
+  "title": "iPad Pro (M5)",
+  "brand": "Apple",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Apple's thinnest, most powerful iPad: M5 chip, Ultra Retina XDR tandem OLED, 11- or 13-inch, optional nano-texture glass.",
+  "description": "iPad Pro with M5 is Apple's most advanced iPad, with an Ultra Retina XDR display using tandem OLED for extreme brightness and contrast.\n\nIt comes in 11-inch and 13-inch sizes, with optional nano-texture glass on 1TB and 2TB models, Wi-Fi or Wi-Fi + Cellular, and works with Apple Pencil Pro and Magic Keyboard.",
+  "highlights": [
+    "Apple M5 chip",
+    "Ultra Retina XDR tandem OLED, ProMotion 120Hz",
+    "11-inch or 13-inch",
+    "Optional nano-texture glass",
+    "Up to 2TB storage",
+    "Apple Pencil Pro and Magic Keyboard support"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Ultra Retina XDR (tandem OLED)",
+      "sizes": "11-inch or 13-inch",
+      "refreshRate": "ProMotion up to 120Hz"
+    },
+    "Performance": {
+      "chip": "Apple M5"
+    },
+    "Camera": {
+      "rear": "12MP Wide, LiDAR Scanner",
+      "front": "12MP Center Stage landscape camera"
+    },
+    "Connectivity": {
+      "port": "USB-C with Thunderbolt / USB 4",
+      "wireless": "Wi-Fi 7, optional 5G cellular"
+    },
+    "Software": {
+      "os": "iPadOS",
+      "ai": "Apple Intelligence"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple M5",
+    "displayInch": 11,
+    "panel": "OLED",
+    "refreshRateHz": 120,
+    "pencil": "Apple Pencil Pro",
+    "storageGB": 256,
+    "os": "iPadOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "11-inch · Wi-Fi"
+        },
+        {
+          "value": "11-inch · Wi-Fi + Cellular"
+        },
+        {
+          "value": "13-inch · Wi-Fi"
+        },
+        {
+          "value": "13-inch · Wi-Fi + Cellular"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        },
+        {
+          "value": "1TB"
+        },
+        {
+          "value": "2TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Silver",
+          "hex": "#0D0D0D"
+        },
+        {
+          "value": "Space Black",
+          "hex": "#0D0D0D"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Silver": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wifi-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "iPad Pro (M5) in Silver"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-13-select-wifi-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "iPad Pro (M5) in Silver, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wificell-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "iPad Pro (M5) in Silver, view 3"
+        }
+      ],
+      "Space Black": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wifi-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "iPad Pro (M5) in Space Black"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-13-select-wifi-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "iPad Pro (M5) in Space Black, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wificell-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "iPad Pro (M5) in Space Black, view 3"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-IPP-MDWL4HN",
+      "mpn": "MDWL4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 139900,
+      "mrp": 139900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWK4HN",
+      "mpn": "MDWK4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Space Black"
+      },
+      "price": 139900,
+      "mrp": 139900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWN4HN",
+      "mpn": "MDWN4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 163900,
+      "mrp": 163900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2P4HN",
+      "mpn": "ME2P4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 163900,
+      "mrp": 163900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWM4HN",
+      "mpn": "MDWM4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Space Black"
+      },
+      "price": 163900,
+      "mrp": 163900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2N4HN",
+      "mpn": "ME2N4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Space Black"
+      },
+      "price": 163900,
+      "mrp": 163900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2T4HN",
+      "mpn": "ME2T4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 187900,
+      "mrp": 187900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2Q4HN",
+      "mpn": "ME2Q4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Space Black"
+      },
+      "price": 187900,
+      "mrp": 187900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYK4HN",
+      "mpn": "MDYK4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 199900,
+      "mrp": 199900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYJ4HN",
+      "mpn": "MDYJ4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Space Black"
+      },
+      "price": 199900,
+      "mrp": 199900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWQ4HN",
+      "mpn": "MDWQ4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 211900,
+      "mrp": 211900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWP4HN",
+      "mpn": "MDWP4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 211900,
+      "mrp": 211900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWT4HN",
+      "mpn": "MDWT4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 223900,
+      "mrp": 223900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYM4HN",
+      "mpn": "MDYM4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 223900,
+      "mrp": 223900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME7X4HN",
+      "mpn": "ME7X4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 223900,
+      "mrp": 223900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWR4HN",
+      "mpn": "MDWR4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 223900,
+      "mrp": 223900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYL4HN",
+      "mpn": "MDYL4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Space Black"
+      },
+      "price": 223900,
+      "mrp": 223900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME7W4HN",
+      "mpn": "ME7W4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Space Black"
+      },
+      "price": 223900,
+      "mrp": 223900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2V4HN",
+      "mpn": "ME2V4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 235900,
+      "mrp": 235900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2U4HN",
+      "mpn": "ME2U4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 235900,
+      "mrp": 235900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2X4HN",
+      "mpn": "ME2X4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 247900,
+      "mrp": 247900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8C4HN",
+      "mpn": "ME8C4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 247900,
+      "mrp": 247900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2W4HN",
+      "mpn": "ME2W4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 247900,
+      "mrp": 247900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME7Y4HN",
+      "mpn": "ME7Y4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Space Black"
+      },
+      "price": 247900,
+      "mrp": 247900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWV4HN",
+      "mpn": "MDWV4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 271900,
+      "mrp": 271900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYP4HN",
+      "mpn": "MDYP4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 271900,
+      "mrp": 271900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWU4HN",
+      "mpn": "MDWU4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 271900,
+      "mrp": 271900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYN4HN",
+      "mpn": "MDYN4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 271900,
+      "mrp": 271900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWX4HN",
+      "mpn": "MDWX4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 283900,
+      "mrp": 283900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYR4HN",
+      "mpn": "MDYR4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 283900,
+      "mrp": 283900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDWW4HN",
+      "mpn": "MDWW4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 283900,
+      "mrp": 283900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYQ4HN",
+      "mpn": "MDYQ4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 283900,
+      "mrp": 283900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME6A4HN",
+      "mpn": "ME6A4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 295900,
+      "mrp": 295900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8F4HN",
+      "mpn": "ME8F4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 295900,
+      "mrp": 295900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME2Y4HN",
+      "mpn": "ME2Y4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 295900,
+      "mrp": 295900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8D4HN",
+      "mpn": "ME8D4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 295900,
+      "mrp": 295900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME6D4HN",
+      "mpn": "ME6D4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 307900,
+      "mrp": 307900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8H4HN",
+      "mpn": "ME8H4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Silver"
+      },
+      "price": 307900,
+      "mrp": 307900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME6C4HN",
+      "mpn": "ME6C4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 307900,
+      "mrp": 307900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8G4HN",
+      "mpn": "ME8G4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 307900,
+      "mrp": 307900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYU4HN",
+      "mpn": "MDYU4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 331900,
+      "mrp": 331900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYT4HN",
+      "mpn": "MDYT4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 331900,
+      "mrp": 331900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYW4HN",
+      "mpn": "MDYW4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 343900,
+      "mrp": 343900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-MDYV4HN",
+      "mpn": "MDYV4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 343900,
+      "mrp": 343900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8K4HN",
+      "mpn": "ME8K4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 355900,
+      "mrp": 355900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8J4HN",
+      "mpn": "ME8J4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 355900,
+      "mrp": 355900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8N4HN",
+      "mpn": "ME8N4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Silver"
+      },
+      "price": 367900,
+      "mrp": 367900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPP-ME8M4HN",
+      "mpn": "ME8M4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "2TB",
+        "Color": "Space Black"
+      },
+      "price": 367900,
+      "mrp": 367900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048,
+        "cellular": true,
+        "displayInch": 13
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPad Pro (M5)",
+    "USB-C Charge Cable (1 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-ipad/ipad-pro",
+      "https://www.apple.com/in/ipad-pro/specs/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Every variant, part number and Apple India MRP from the Apple Store India buy page; images are Apple Store product shots."
+  }
+}

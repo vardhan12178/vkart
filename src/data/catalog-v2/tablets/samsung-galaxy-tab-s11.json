@@ -1,0 +1,163 @@
+{
+  "slug": "samsung-galaxy-tab-s11",
+  "title": "Samsung Galaxy Tab S11",
+  "brand": "Samsung",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Compact 11-inch Dynamic AMOLED 2X Galaxy Tab with S Pen included, Galaxy AI and IP68.",
+  "description": "Galaxy Tab S11 is Samsung's compact flagship tablet, with an 11-inch Dynamic AMOLED 2X display at 120Hz in a slim, light body.\n\nThe S Pen is included, it runs Galaxy AI with 12GB of RAM and is rated IP68, in Gray or Silver with Wi-Fi or 5G.",
+  "highlights": [
+    "11-inch Dynamic AMOLED 2X, 120Hz",
+    "S Pen included",
+    "12GB RAM, up to 512GB",
+    "Galaxy AI",
+    "IP68",
+    "Wi-Fi or 5G"
+  ],
+  "specs": {
+    "Display": {
+      "size": 11,
+      "type": "Dynamic AMOLED 2X",
+      "refreshRate": 120
+    },
+    "Memory": {
+      "ram": "12GB",
+      "storage": "128GB / 256GB / 512GB, microSD expandable"
+    },
+    "Accessories": {
+      "sPen": "Included"
+    },
+    "Build": {
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android with One UI",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 11,
+    "panel": "AMOLED",
+    "refreshRateHz": 120,
+    "pencil": "S Pen (included)",
+    "ramGB": 12,
+    "storageGB": 256,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "5G"
+        },
+        {
+          "value": "Wi-Fi"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Silver",
+          "hex": "#C8CACC"
+        },
+        {
+          "value": "Gray",
+          "hex": "#5E6166"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Silver": [
+        {
+          "src": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Color-Selection_Silver_PC_1600x864.png",
+          "alt": "Samsung Galaxy Tab S11 in Silver"
+        },
+        {
+          "src": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Silver_WIB_Universal_PC_888x382.jpg",
+          "alt": "Samsung Galaxy Tab S11 in Silver, view 2"
+        }
+      ],
+      "Gray": [
+        {
+          "src": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Gray_WIB_Universal_PC_888x382.jpg",
+          "alt": "Samsung Galaxy Tab S11 in Gray"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-X736BZSE",
+      "mpn": "SM-X736BZSEINU",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "12GB + 256GB",
+        "Color": "Silver"
+      },
+      "price": 126999,
+      "mrp": 167999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "SAM-X730NZAI",
+      "mpn": "SM-X730NZAIINU",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 512GB",
+        "Color": "Gray"
+      },
+      "price": 127999,
+      "mrp": 163999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512,
+        "cellular": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Tablet",
+    "S Pen",
+    "USB-C data cable",
+    "Ejection pin"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/tablets/galaxy-tab-s11/buy/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Variants, model codes, selling price (price) and MRP (mrp) from the Samsung India buy page; images are Samsung's colour-selection and in-the-box shots."
+  }
+}
