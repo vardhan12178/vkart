@@ -1,0 +1,202 @@
+{
+  "slug": "neemans-kala-kicks-for-women",
+  "title": "Neeman's Kala Kicks for Women",
+  "brand": "Neeman's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sneakers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Kala. Art.",
+  "description": "Kala. Art. Not the kind you find in a gallery showcase, but the kind you'd find in shops in your local gully",
+  "highlights": [
+    "Sole Material: Rubber/EVA (Ethylene Vinyl Acetate)",
+    "Shoe Size Width: Medium",
+    "Arch Type: Low",
+    "Water-Resistant: No",
+    "Shoe Height: Low-Top"
+  ],
+  "specs": {
+    "Product details": {
+      "Sole Material": "Rubber/EVA (Ethylene Vinyl Acetate)",
+      "Shoe Size Width": "Medium",
+      "Arch Type": "Low",
+      "Water-Resistant": "No",
+      "Shoe Height": "Low-Top"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sneakers",
+    "color": "Olive",
+    "fabric": "Rubber/EVA (Ethylene Vinyl Acetate)",
+    "fit": null,
+    "sizes": [
+      "UK 4",
+      "UK 5",
+      "UK 6",
+      "UK 7",
+      "UK 8"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "UK 4"
+        },
+        {
+          "value": "UK 5"
+        },
+        {
+          "value": "UK 6"
+        },
+        {
+          "value": "UK 7"
+        },
+        {
+          "value": "UK 8"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Olive",
+          "hex": "#474B60"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Olive": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_28.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_04.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_51.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_06.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_01.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_26.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_27.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_23.jpg?v=1791531755",
+          "alt": "Neeman's Kala Kicks for Women, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NEE-KICKSFORWOMENO-UK4",
+      "mpn": "NM-KKSN-WNS-BE/OL-4",
+      "options": {
+        "Size": "UK 4",
+        "Color": "Olive"
+      },
+      "price": 4499,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-KICKSFORWOMENO-UK5",
+      "mpn": "NM-KKSN-WNS-BE/OL-5",
+      "options": {
+        "Size": "UK 5",
+        "Color": "Olive"
+      },
+      "price": 4499,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-KICKSFORWOMENO-UK6",
+      "mpn": "NM-KKSN-WNS-BE/OL-6",
+      "options": {
+        "Size": "UK 6",
+        "Color": "Olive"
+      },
+      "price": 4499,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-KICKSFORWOMENO-UK7",
+      "mpn": "NM-KKSN-WNS-BE/OL-7",
+      "options": {
+        "Size": "UK 7",
+        "Color": "Olive"
+      },
+      "price": 4499,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-KICKSFORWOMENO-UK8",
+      "mpn": "NM-KKSN-WNS-BE/OL-8",
+      "options": {
+        "Size": "UK 8",
+        "Color": "Olive"
+      },
+      "price": 4499,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://neemans.com/products/कला-kicks-for-women-olive"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Neeman's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

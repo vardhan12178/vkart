@@ -1,0 +1,178 @@
+{
+  "slug": "levis-women-s-fit-and-flare-western-dress",
+  "title": "Levi's Women's Fit and Flare Western Dress",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "dresses"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "An ultra-flattering piece with a touch of western. We designed our Short-Sleeve Fit and Flare Western Dress with western yoking, a button-up front and a snug bodice that flares out at the skirt for the perfect fit.",
+  "description": "An ultra-flattering piece with a touch of western. We designed our Short-Sleeve Fit and Flare Western Dress with western yoking, a button-up front and a snug bodice that flares out at the skirt for the perfect fit.",
+  "highlights": [
+    "Fit: Standard Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Standard Fit"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Dresses",
+    "color": "Indigo",
+    "fabric": null,
+    "fit": "Standard Fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Indigo",
+          "hex": "#CB8A61"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Indigo": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_01_Styleshot.jpg?v=1788432616",
+          "alt": "Levi's Women's Fit and Flare Western Dress"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_02_Front.jpg?v=1788432623",
+          "alt": "Levi's Women's Fit and Flare Western Dress, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_03_Back.jpg?v=1788432633",
+          "alt": "Levi's Women's Fit and Flare Western Dress, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_04_detail.jpg?v=1788432642",
+          "alt": "Levi's Women's Fit and Flare Western Dress, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-SHORTSLEEVEFIT-XS",
+      "mpn": "5401221923027",
+      "options": {
+        "Size": "XS",
+        "Color": "Indigo"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SHORTSLEEVEFIT-S",
+      "mpn": "5401221923010",
+      "options": {
+        "Size": "S",
+        "Color": "Indigo"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SHORTSLEEVEFIT-M",
+      "mpn": "5401221923003",
+      "options": {
+        "Size": "M",
+        "Color": "Indigo"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-SHORTSLEEVEFIT-L",
+      "mpn": "5401221922990",
+      "options": {
+        "Size": "L",
+        "Color": "Indigo"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-SHORTSLEEVEFIT-XL",
+      "mpn": "5401262473635",
+      "options": {
+        "Size": "XL",
+        "Color": "Indigo"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/levis-womens-short-sleeve-fit-and-flare-western-dress-0088w0001"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

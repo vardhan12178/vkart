@@ -1,0 +1,243 @@
+{
+  "slug": "rareism-guilon-gold-regular-fit-dress",
+  "title": "Rareism Guilon Gold Regular Fit Dress",
+  "brand": "Rareism",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "dresses"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Satin maxi dress in polyester with a regular fit and a sleek, fluid silhouette.",
+  "description": "Satin maxi dress in polyester with a regular fit and a sleek, fluid silhouette. Designed with a softly draped cowl neckline and flared short sleeves, it falls to a maxi hem for an elegant evening look. Style it with heels and minimal jewellery for special occasions.",
+  "highlights": [
+    "Composition: 100% Polyester",
+    "Fit: Regular Fit",
+    "Sleeve: Half Sleeve"
+  ],
+  "specs": {
+    "Product details": {
+      "Composition": "100% Polyester",
+      "Fit": "Regular Fit",
+      "Sleeve": "Half Sleeve"
+    },
+    "Highlights": {
+      "points": [
+        "100% Polyester",
+        "Regular Fit",
+        "Zipper Closure",
+        "Plain",
+        "Satin",
+        "Cowl Neck",
+        "Half Sleeve"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Dresses",
+    "color": "Gold",
+    "fabric": "100% Polyester",
+    "fit": "Regular Fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "XXS"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "XXS"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gold",
+          "hex": "#6F5840"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gold": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__1__hm.webp?v=1793101171",
+          "alt": "Rareism Guilon Gold Regular Fit Dress"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__4.webp?v=1793101171",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__7.webp?v=1793101170",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__5.webp?v=1793101171",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__6.webp?v=1793101171",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__8.webp?v=1793101171",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__3.webp?v=1793101172",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-GUILONWOMENSDR-XS",
+      "mpn": "8909196934736",
+      "options": {
+        "Size": "XS",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-GUILONWOMENSDR-S",
+      "mpn": "8909196934743",
+      "options": {
+        "Size": "S",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-GUILONWOMENSDR-M",
+      "mpn": "8909196934750",
+      "options": {
+        "Size": "M",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-GUILONWOMENSDR-L",
+      "mpn": "8909196934767",
+      "options": {
+        "Size": "L",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-GUILONWOMENSDR-XL",
+      "mpn": "8909196934774",
+      "options": {
+        "Size": "XL",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-GUILONWOMENSDR-XXL",
+      "mpn": "8909196934781",
+      "options": {
+        "Size": "XXL",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-GUILONWOMENSDR-XXS",
+      "mpn": "8909196934729",
+      "options": {
+        "Size": "XXS",
+        "Color": "Gold"
+      },
+      "price": 5499,
+      "mrp": 5499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/guilon-womens-dress-gold"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rareism's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

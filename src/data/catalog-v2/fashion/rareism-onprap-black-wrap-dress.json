@@ -1,0 +1,243 @@
+{
+  "slug": "rareism-onprap-black-wrap-dress",
+  "title": "Rareism Onprap Black Wrap Dress",
+  "brand": "Rareism",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "dresses"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Satin wrap dress in a smooth polyester blend with a flattering waist-defining silhouette.",
+  "description": "Satin wrap dress in a smooth polyester blend with a flattering waist-defining silhouette. Designed with a round neckline, sleeveless cut, and an elegant tie-up detail at the waist, finished with a midi hem. Ideal for evening events and polished occasion styling.",
+  "highlights": [
+    "Composition: 97% Polyester 3% Spandex",
+    "Fit: Wrap Fit",
+    "Sleeve: Sleeveless"
+  ],
+  "specs": {
+    "Product details": {
+      "Composition": "97% Polyester 3% Spandex",
+      "Fit": "Wrap Fit",
+      "Sleeve": "Sleeveless"
+    },
+    "Highlights": {
+      "points": [
+        "97% Polyester 3% Spandex",
+        "Wrap Fit",
+        "Button And Zip Closure",
+        "Plain",
+        "Satin",
+        "Crew Neck",
+        "Sleeveless"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Dresses",
+    "color": "Dark Black",
+    "fabric": "97% Polyester 3% Spandex",
+    "fit": "Wrap Fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "XXS"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "XXS"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Dark Black",
+          "hex": "#2E2D2B"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Dark Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__1_-hm.webp?v=1793101103",
+          "alt": "Rareism Onprap Black Wrap Dress"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__5.webp?v=1793101102",
+          "alt": "Rareism Onprap Black Wrap Dress, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__8.webp?v=1793101103",
+          "alt": "Rareism Onprap Black Wrap Dress, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__7.webp?v=1793101102",
+          "alt": "Rareism Onprap Black Wrap Dress, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__6.webp?v=1793101101",
+          "alt": "Rareism Onprap Black Wrap Dress, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__2.webp?v=1793101102",
+          "alt": "Rareism Onprap Black Wrap Dress, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__4.webp?v=1793101103",
+          "alt": "Rareism Onprap Black Wrap Dress, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-XS",
+      "mpn": "8909196913205",
+      "options": {
+        "Size": "XS",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-S",
+      "mpn": "8909196913212",
+      "options": {
+        "Size": "S",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-M",
+      "mpn": "8909196913229",
+      "options": {
+        "Size": "M",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-L",
+      "mpn": "8909196913236",
+      "options": {
+        "Size": "L",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-XL",
+      "mpn": "8909196913243",
+      "options": {
+        "Size": "XL",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-XXL",
+      "mpn": "8909196913250",
+      "options": {
+        "Size": "XXL",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ONPRAPWOMENSDR-XXS",
+      "mpn": "8909196913199",
+      "options": {
+        "Size": "XXS",
+        "Color": "Dark Black"
+      },
+      "price": 4479,
+      "mrp": 6399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/onprap-womens-dress-dark-black"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rareism's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

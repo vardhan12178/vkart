@@ -1,0 +1,235 @@
+{
+  "slug": "rareism-prerthi-floral-print-top",
+  "title": "Rareism Prerthi Floral Print Top",
+  "brand": "Rareism",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "tops"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "This womens top from RAREISM features a clean and understated design that blends naturally into everyday wear.",
+  "description": "This womens top from RAREISM features a clean and understated design that blends naturally into everyday wear. Its subtle detailing keeps the look balanced and modern. A dependable choice for achieving an effortless appearance.\n\nSIZE The model (Chest-34, Waist-28, Hips-38, Height-178 cms) is wearing a size XS.",
+  "highlights": [
+    "Fit: Regular Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Regular Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Regular Fit",
+        "Floral Print",
+        "Crew Neck SIZE"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Tops",
+    "color": "Multi",
+    "fabric": null,
+    "fit": "Regular Fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "XXS"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "XXS"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Multi",
+          "hex": "#B3ACA4"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Multi": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04592_HM_022697dd-f205-483a-bb22-aa05a8d4b6f0.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04586_a58ebf39-4c04-4eee-90fe-de0acae2d921.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04577_a04384b1-1263-4286-a2ff-ec34a3e1d29b.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04583_8117ca02-2d0b-4747-9e26-b422efbf0c38.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04580_5b5d6769-a4a6-4e51-a540-7dd802720b8a.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04585_07924b3f-7f79-4a6f-94d5-562aa813a7e0.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04576_4f6e728d-8d52-4238-8b94-d72f71f57215.webp?v=1770363228",
+          "alt": "Rareism Prerthi Floral Print Top, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-PRERTHIWOMENST-XS",
+      "mpn": "8909196315832",
+      "options": {
+        "Size": "XS",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-PRERTHIWOMENST-S",
+      "mpn": "8909196315849",
+      "options": {
+        "Size": "S",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-PRERTHIWOMENST-M",
+      "mpn": "8909196315856",
+      "options": {
+        "Size": "M",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-PRERTHIWOMENST-L",
+      "mpn": "8909196315863",
+      "options": {
+        "Size": "L",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-PRERTHIWOMENST-XL",
+      "mpn": "8909196315870",
+      "options": {
+        "Size": "XL",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-PRERTHIWOMENST-XXL",
+      "mpn": "8909196315887",
+      "options": {
+        "Size": "XXL",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-PRERTHIWOMENST-XXS",
+      "mpn": "8909196315825",
+      "options": {
+        "Size": "XXS",
+        "Color": "Multi"
+      },
+      "price": 1219,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/prerthi-womens-top-multi"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rareism's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

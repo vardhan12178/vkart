@@ -1,0 +1,239 @@
+{
+  "slug": "rareism-eleth-dark-green-tie-up-neck-top",
+  "title": "Rareism Eleth Dark Green Tie-Up Neck Top",
+  "brand": "Rareism",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "tops"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "This womens top from RAREISM features a clean and understated design that blends naturally into everyday wear.",
+  "description": "This womens top from RAREISM features a clean and understated design that blends naturally into everyday wear. Its subtle detailing keeps the look balanced and modern. A dependable choice for achieving an effortless appearance.\n\nSIZE The model (Chest-34, Waist-28, Hips-38, Height-178 cms) is wearing a size XS.",
+  "highlights": [
+    "Fit: Regular Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Regular Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Regular Fit",
+        "Printed",
+        "Tie-Up Neck SIZE"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Tops",
+    "color": "Dark Green",
+    "fabric": null,
+    "fit": "Regular Fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "XXS"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "XXS"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Dark Green",
+          "hex": "#4F5246"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Dark Green": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-HM.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08832.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08836.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08835.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08827.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08828.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08842.webp?v=1756980381",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08824.webp?v=1756980382",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-ELETHWOMENSTOP-XS",
+      "mpn": "8909196533380",
+      "options": {
+        "Size": "XS",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ELETHWOMENSTOP-S",
+      "mpn": "8909196533397",
+      "options": {
+        "Size": "S",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ELETHWOMENSTOP-M",
+      "mpn": "8909196533403",
+      "options": {
+        "Size": "M",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ELETHWOMENSTOP-L",
+      "mpn": "8909196533410",
+      "options": {
+        "Size": "L",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ELETHWOMENSTOP-XL",
+      "mpn": "8909196533427",
+      "options": {
+        "Size": "XL",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-ELETHWOMENSTOP-XXL",
+      "mpn": "8909196533434",
+      "options": {
+        "Size": "XXL",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-ELETHWOMENSTOP-XXS",
+      "mpn": "8909196533373",
+      "options": {
+        "Size": "XXS",
+        "Color": "Dark Green"
+      },
+      "price": 1007,
+      "mrp": 1799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/eleth-womens-top-dark-green"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rareism's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

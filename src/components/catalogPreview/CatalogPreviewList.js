@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { products, minPrice, maxPrice, defaultVariant, imagesFor, discountPercent, formatPrice } from "./catalogData";
 
-const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", audio: "Audio", wearables: "Watches", skincare: "Skincare", fashion: "Men's Fashion" };
-const brandsOf = (cat) => ["All", ...Array.from(new Set(products.filter((p) => p.category === cat).map((p) => p.brand)))];
+const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", audio: "Audio", wearables: "Watches", skincare: "Skincare", "fashion-men": "Men's Fashion", "fashion-women": "Women's Fashion" };
+const catOf = (p) => (p.category === "fashion" ? `fashion-${(p.keySpecs?.gender || "men").toLowerCase()}` : p.category);
+const brandsOf = (cat) => ["All", ...Array.from(new Set(products.filter((p) => catOf(p) === cat).map((p) => p.brand)))];
 const SORTS = {
   "price-desc": { label: "Price: high to low", fn: (a, b) => minPrice(b) - minPrice(a) },
   "price-asc": { label: "Price: low to high", fn: (a, b) => minPrice(a) - minPrice(b) },
@@ -59,7 +60,7 @@ export default function CatalogPreviewList() {
   const shown = useMemo(
     () =>
       products
-        .filter((p) => p.category === category)
+        .filter((p) => catOf(p) === category)
         .filter((p) => brand === "All" || p.brand === brand)
         .filter((p) => !maxBudget || minPrice(p) <= maxBudget)
         .sort(SORTS[sort].fn),

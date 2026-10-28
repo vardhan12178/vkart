@@ -1,0 +1,202 @@
+{
+  "slug": "neemans-commute-sandals-for-women",
+  "title": "Neeman's Commute Sandals for Women",
+  "brand": "Neeman's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "flats"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "The Commute Sandals are lightweight and adjustable, designed to move with your day without getting in the way.",
+  "description": "The Commute Sandals are lightweight and adjustable, designed to move with your day without getting in the way. The dual-strap design with a buckle system gives you a customizable secure fit, and the ergonomically designed foam-based cushioned footbed supports your natural posture. Nothing overdone and nothing complicated",
+  "highlights": [
+    "Outer Material: Nylon",
+    "Sole Material: EVA (Ethylene Vinyl Acetate)",
+    "Closure Type: Slip In",
+    "Size Width: Medium",
+    "Toe Style: Peep Toe"
+  ],
+  "specs": {
+    "Product details": {
+      "Outer Material": "Nylon",
+      "Sole Material": "EVA (Ethylene Vinyl Acetate)",
+      "Closure Type": "Slip In",
+      "Size Width": "Medium",
+      "Toe Style": "Peep Toe"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Flats & Sandals",
+    "color": "Green",
+    "fabric": "Nylon",
+    "fit": null,
+    "sizes": [
+      "UK 4",
+      "UK 5",
+      "UK 6",
+      "UK 7",
+      "UK 8"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "UK 4"
+        },
+        {
+          "value": "UK 5"
+        },
+        {
+          "value": "UK 6"
+        },
+        {
+          "value": "UK 7"
+        },
+        {
+          "value": "UK 8"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Green",
+          "hex": "#80573B"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Green": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_14.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_1.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/Commute_Sandals_D.GREEN_BLACK_15.jpg?v=1784116074",
+          "alt": "Neeman's Commute Sandals for Women, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_3.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_5.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_8.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_9.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_12.jpg?v=1781697234",
+          "alt": "Neeman's Commute Sandals for Women, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NEE-COMMUTESANDALS-UK4",
+      "mpn": "NM-CMS-GRBL-4",
+      "options": {
+        "Size": "UK 4",
+        "Color": "Green"
+      },
+      "price": 899,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-COMMUTESANDALS-UK5",
+      "mpn": "NM-CMS-GRBL-5",
+      "options": {
+        "Size": "UK 5",
+        "Color": "Green"
+      },
+      "price": 899,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-COMMUTESANDALS-UK6",
+      "mpn": "NM-CMS-GRBL-6",
+      "options": {
+        "Size": "UK 6",
+        "Color": "Green"
+      },
+      "price": 899,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-COMMUTESANDALS-UK7",
+      "mpn": "NM-CMS-GRBL-7",
+      "options": {
+        "Size": "UK 7",
+        "Color": "Green"
+      },
+      "price": 899,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-COMMUTESANDALS-UK8",
+      "mpn": "NM-CMS-GRBL-8",
+      "options": {
+        "Size": "UK 8",
+        "Color": "Green"
+      },
+      "price": 899,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://neemans.com/products/commute-sandals-for-women-green"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Neeman's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}
