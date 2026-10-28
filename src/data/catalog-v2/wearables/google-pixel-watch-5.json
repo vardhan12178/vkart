@@ -1,0 +1,246 @@
+{
+  "slug": "google-pixel-watch-5",
+  "title": "Google Pixel Watch 5",
+  "brand": "Google",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Google's latest watch with Gemini, an Actua 360 domed display at 3,000 nits, up to 40 hours battery and blood-pressure pattern tracking.",
+  "description": "Pixel Watch 5 is designed for Gemini, with an ultra-bright 3,000-nit Actua 360 domed display and Google's best GPS and heart-rate tracking across 50+ activities.\n\nBattery lasts up to 40 hours, with 15 hours from a 15-minute charge, and it's IP68 water and dust resistant. It comes in 41mm and 45mm.",
+  "highlights": [
+    "Designed for Gemini",
+    "Actua 360 display, 3,000 nits",
+    "Up to 40 hours battery",
+    "15 hours in 15 minutes charging",
+    "Blood pressure pattern tracking",
+    "IP68"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Actua 360 domed",
+      "brightness": "3,000 nits peak",
+      "glass": "Gorilla Glass"
+    },
+    "Battery": {
+      "life": "Up to 40 hours",
+      "fastCharge": "15 hours in 15 minutes"
+    },
+    "Health": {
+      "features": "Heart rate, blood pressure patterns, sleep"
+    },
+    "Build": {
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Wear OS",
+      "ai": "Gemini"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "Wear OS",
+    "caseSizesMm": [
+      41,
+      45
+    ],
+    "batteryHours": 40,
+    "ipRating": "IP68"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "41mm · Bluetooth/Wi-Fi"
+        },
+        {
+          "value": "45mm · Bluetooth/Wi-Fi"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Champagne Gold",
+          "hex": "#D8C3A5"
+        },
+        {
+          "value": "Matte Black",
+          "hex": "#262626"
+        },
+        {
+          "value": "Polished Silver",
+          "hex": "#D9D9D6"
+        },
+        {
+          "value": "Satin Pyrite",
+          "hex": "#8A7B5E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://lh3.googleusercontent.com/4dEjogq4h8_ccdxzhUXrn64PjQiSzs7H9XnCorINX43_vCrNZXs5A-fBwaA-9Sn76ELbAja2dkhvP_xxumO1va8_dR-LMMTv8Q=s1200",
+        "alt": "Google Pixel Watch 5"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/4mwktxf4HLF8xhPWGHxa96VK05vf_iT_sGjQbvkklNfmqOi5j5G27bhqvhWvWhX-3Eok89lrL5me1ZvE6ScAIkMfWk-6pdA04jY=s1200",
+        "alt": "Google Pixel Watch 5, view 2"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/IH8BcNrcNFnT8n-Hid3WMp5QyIZCghcbLesL5V0TI-4Z_AtyqbKZBNDTXiV3G8GVmlqIr-808anKZGgQOoBHJW57Fu2rFb7OmAEb=s1200",
+        "alt": "Google Pixel Watch 5, view 3"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/EsolNlYjvVC8ktHQV6gdQ5QkjBZpml5escbzZHB1puXpyW9_z5dHmN7aIQN8hKPn1Nou6kxbnF4rgbkc9Iar3A1AFrTgpzPwaA=s1200",
+        "alt": "Google Pixel Watch 5, view 4"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/ZkknBeufwow99Cxno4ThHKQcjiQntQY_bBaGSHEb7wDCwHttMomtRWa7I-kbwUhnO2dWXgPMb1xK3T7R1kEYrxWaSVQ10Wz0BMA=s1200",
+        "alt": "Google Pixel Watch 5, view 5"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/bg8FkM4zrh6oPr7V6z9Edeu-_4zbRo91Nf8RJUIAyxj_PuAbHNRWdHwf_z3sxju2TetgfQf4KoEkZE72uN7EpJ9GkpDwiNOcYg=s1200",
+        "alt": "Google Pixel Watch 5, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "GGL-PW5-41-CHAMPAGNEGOLD",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Champagne Gold"
+      },
+      "price": 42900,
+      "mrp": 42900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW5-41-MATTEBLACK",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Matte Black"
+      },
+      "price": 42900,
+      "mrp": 42900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW5-41-POLISHEDSILVER",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Polished Silver"
+      },
+      "price": 42900,
+      "mrp": 42900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW5-41-SATINPYRITE",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Satin Pyrite"
+      },
+      "price": 42900,
+      "mrp": 42900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW5-45-MATTEBLACK",
+      "mpn": null,
+      "options": {
+        "Configuration": "45mm · Bluetooth/Wi-Fi",
+        "Color": "Matte Black"
+      },
+      "price": 45900,
+      "mrp": 45900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 45,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW5-45-POLISHEDSILVER",
+      "mpn": null,
+      "options": {
+        "Configuration": "45mm · Bluetooth/Wi-Fi",
+        "Color": "Polished Silver"
+      },
+      "price": 45900,
+      "mrp": 45900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 45,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW5-45-SATINPYRITE",
+      "mpn": null,
+      "options": {
+        "Configuration": "45mm · Bluetooth/Wi-Fi",
+        "Color": "Satin Pyrite"
+      },
+      "price": 45900,
+      "mrp": 45900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 45,
+        "cellular": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Google Pixel Watch 5",
+    "Band",
+    "Charging cable"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://store.google.com/in/config/pixel_watch_5",
+      "https://store.google.com/in/product/pixel_watch_5"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Every variant, price and stock status from the Google Store India configure page's offer data; key specs from the product page. Images are the store's product gallery (not split by colour)."
+  }
+}

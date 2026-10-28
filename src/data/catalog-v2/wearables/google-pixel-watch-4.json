@@ -1,0 +1,251 @@
+{
+  "slug": "google-pixel-watch-4",
+  "title": "Google Pixel Watch 4",
+  "brand": "Google",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Pixel Watch with Gemini, a brighter Actua 360 domed display, dual-frequency GPS and up to 40 hours of battery.",
+  "description": "Pixel Watch 4 has a brighter, larger Actua 360 domed display with 3,000 nits, an aerospace-grade aluminium case and IP68 rating.\n\nIt brings Gemini on your wrist, dual-frequency GPS, multi-path heart-rate tracking and up to 30 hours (41mm) or 40 hours (45mm) of battery.",
+  "highlights": [
+    "Gemini on your wrist",
+    "Actua 360 display, 3,000 nits",
+    "Dual-frequency GPS",
+    "Up to 40 hours battery (45mm)",
+    "IP68, 5ATM",
+    "41mm or 45mm"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Actua 360 domed",
+      "brightness": "3,000 nits"
+    },
+    "Battery": {
+      "life": "30h (41mm) / 40h (45mm)",
+      "fastCharge": "15 hours in 15 minutes"
+    },
+    "Fitness": {
+      "gps": "Dual-frequency GPS",
+      "heartRate": "Multi-path sensor"
+    },
+    "Build": {
+      "ipRating": "IP68",
+      "material": "Aerospace-grade aluminium"
+    },
+    "Software": {
+      "os": "Wear OS",
+      "ai": "Gemini"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "Wear OS",
+    "caseSizesMm": [
+      41,
+      45
+    ],
+    "batteryHours": 40,
+    "ipRating": "IP68"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "41mm · Bluetooth/Wi-Fi"
+        },
+        {
+          "value": "45mm · Bluetooth/Wi-Fi"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Champagne Gold",
+          "hex": "#D8C3A5"
+        },
+        {
+          "value": "Matte Black",
+          "hex": "#262626"
+        },
+        {
+          "value": "Polished Silver / Iris",
+          "hex": "#D9D9D6"
+        },
+        {
+          "value": "Polished Silver / Porcelain",
+          "hex": "#D9D9D6"
+        },
+        {
+          "value": "Satin Moonstone",
+          "hex": "#8E9AA6"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://lh3.googleusercontent.com/4dEjogq4h8_ccdxzhUXrn64PjQiSzs7H9XnCorINX43_vCrNZXs5A-fBwaA-9Sn76ELbAja2dkhvP_xxumO1va8_dR-LMMTv8Q=s1200",
+        "alt": "Google Pixel Watch 4"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/4mwktxf4HLF8xhPWGHxa96VK05vf_iT_sGjQbvkklNfmqOi5j5G27bhqvhWvWhX-3Eok89lrL5me1ZvE6ScAIkMfWk-6pdA04jY=s1200",
+        "alt": "Google Pixel Watch 4, view 2"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/IH8BcNrcNFnT8n-Hid3WMp5QyIZCghcbLesL5V0TI-4Z_AtyqbKZBNDTXiV3G8GVmlqIr-808anKZGgQOoBHJW57Fu2rFb7OmAEb=s1200",
+        "alt": "Google Pixel Watch 4, view 3"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/EsolNlYjvVC8ktHQV6gdQ5QkjBZpml5escbzZHB1puXpyW9_z5dHmN7aIQN8hKPn1Nou6kxbnF4rgbkc9Iar3A1AFrTgpzPwaA=s1200",
+        "alt": "Google Pixel Watch 4, view 4"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/ZkknBeufwow99Cxno4ThHKQcjiQntQY_bBaGSHEb7wDCwHttMomtRWa7I-kbwUhnO2dWXgPMb1xK3T7R1kEYrxWaSVQ10Wz0BMA=s1200",
+        "alt": "Google Pixel Watch 4, view 5"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/bg8FkM4zrh6oPr7V6z9Edeu-_4zbRo91Nf8RJUIAyxj_PuAbHNRWdHwf_z3sxju2TetgfQf4KoEkZE72uN7EpJ9GkpDwiNOcYg=s1200",
+        "alt": "Google Pixel Watch 4, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "GGL-PW4-41-CHAMPAGNEGOLD",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Champagne Gold"
+      },
+      "price": 39900,
+      "mrp": 39900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW4-41-MATTEBLACK",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Matte Black"
+      },
+      "price": 39900,
+      "mrp": 39900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW4-41-POLISHEDSILVERIRIS",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Polished Silver / Iris"
+      },
+      "price": 39900,
+      "mrp": 39900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW4-41-POLISHEDSILVERPORCELAIN",
+      "mpn": null,
+      "options": {
+        "Configuration": "41mm · Bluetooth/Wi-Fi",
+        "Color": "Polished Silver / Porcelain"
+      },
+      "price": 39900,
+      "mrp": 39900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 41,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW4-45-MATTEBLACK",
+      "mpn": null,
+      "options": {
+        "Configuration": "45mm · Bluetooth/Wi-Fi",
+        "Color": "Matte Black"
+      },
+      "price": 43900,
+      "mrp": 43900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 45,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW4-45-POLISHEDSILVERPORCELAIN",
+      "mpn": null,
+      "options": {
+        "Configuration": "45mm · Bluetooth/Wi-Fi",
+        "Color": "Polished Silver / Porcelain"
+      },
+      "price": 43900,
+      "mrp": 43900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 45,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-PW4-45-SATINMOONSTONE",
+      "mpn": null,
+      "options": {
+        "Configuration": "45mm · Bluetooth/Wi-Fi",
+        "Color": "Satin Moonstone"
+      },
+      "price": 43900,
+      "mrp": 43900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 45,
+        "cellular": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Google Pixel Watch 4",
+    "Band",
+    "Charging cable"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://store.google.com/in/config/pixel_watch_4",
+      "https://store.google.com/in/product/pixel_watch_4"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Every variant, price and stock status from the Google Store India configure page's offer data; key specs from the product page. Images are the store's product gallery (not split by colour)."
+  }
+}

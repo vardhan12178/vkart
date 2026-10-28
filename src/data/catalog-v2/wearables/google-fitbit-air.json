@@ -1,0 +1,167 @@
+{
+  "slug": "google-fitbit-air",
+  "title": "Google Fitbit Air",
+  "brand": "Google",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "fitness-trackers"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Screen-free 24/7 health tracker with up to a week of battery and Gemini-built coaching through Google Health Premium.",
+  "description": "Google Fitbit Air is a comfortable, screen-free tracker for round-the-clock health tracking, with up to a week of battery.\n\nIt tracks sleep stages, heart rate, HRV, breathing rate, skin temperature and SpO2, with personalised coaching built with Gemini through Google Health Premium.",
+  "highlights": [
+    "24/7 screen-free tracking",
+    "Up to a week of battery",
+    "Sleep stages and sleep score",
+    "Heart rate, HRV, SpO2, skin temperature",
+    "Gemini-built coaching (Premium)",
+    "Four colours"
+  ],
+  "specs": {
+    "Health": {
+      "tracking": "Sleep, heart rate, HRV, breathing rate, skin temperature, SpO2"
+    },
+    "Battery": {
+      "life": "Up to a week"
+    },
+    "App": {
+      "companion": "Google Health app"
+    }
+  },
+  "keySpecs": {
+    "type": "Fitness tracker",
+    "batteryHours": 168
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Berry",
+          "hex": "#8A3B5C"
+        },
+        {
+          "value": "Fog",
+          "hex": "#D6D3CC"
+        },
+        {
+          "value": "Lavender",
+          "hex": "#C7B8E0"
+        },
+        {
+          "value": "Obsidian",
+          "hex": "#232426"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://lh3.googleusercontent.com/4dEjogq4h8_ccdxzhUXrn64PjQiSzs7H9XnCorINX43_vCrNZXs5A-fBwaA-9Sn76ELbAja2dkhvP_xxumO1va8_dR-LMMTv8Q=s1200",
+        "alt": "Google Fitbit Air"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/4mwktxf4HLF8xhPWGHxa96VK05vf_iT_sGjQbvkklNfmqOi5j5G27bhqvhWvWhX-3Eok89lrL5me1ZvE6ScAIkMfWk-6pdA04jY=s1200",
+        "alt": "Google Fitbit Air, view 2"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/IH8BcNrcNFnT8n-Hid3WMp5QyIZCghcbLesL5V0TI-4Z_AtyqbKZBNDTXiV3G8GVmlqIr-808anKZGgQOoBHJW57Fu2rFb7OmAEb=s1200",
+        "alt": "Google Fitbit Air, view 3"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/EsolNlYjvVC8ktHQV6gdQ5QkjBZpml5escbzZHB1puXpyW9_z5dHmN7aIQN8hKPn1Nou6kxbnF4rgbkc9Iar3A1AFrTgpzPwaA=s1200",
+        "alt": "Google Fitbit Air, view 4"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/ZkknBeufwow99Cxno4ThHKQcjiQntQY_bBaGSHEb7wDCwHttMomtRWa7I-kbwUhnO2dWXgPMb1xK3T7R1kEYrxWaSVQ10Wz0BMA=s1200",
+        "alt": "Google Fitbit Air, view 5"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/bg8FkM4zrh6oPr7V6z9Edeu-_4zbRo91Nf8RJUIAyxj_PuAbHNRWdHwf_z3sxju2TetgfQf4KoEkZE72uN7EpJ9GkpDwiNOcYg=s1200",
+        "alt": "Google Fitbit Air, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "GGL-FBAIR-BERRY",
+      "mpn": null,
+      "options": {
+        "Color": "Berry"
+      },
+      "price": 13999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": null,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-FBAIR-FOG",
+      "mpn": null,
+      "options": {
+        "Color": "Fog"
+      },
+      "price": 13999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": null,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-FBAIR-LAVENDER",
+      "mpn": null,
+      "options": {
+        "Color": "Lavender"
+      },
+      "price": 13999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": null,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "GGL-FBAIR-OBSIDIAN",
+      "mpn": null,
+      "options": {
+        "Color": "Obsidian"
+      },
+      "price": 13999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": null,
+        "cellular": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Google Fitbit Air",
+    "Band",
+    "Charging cable"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://store.google.com/in/config/google_fitbit_air",
+      "https://store.google.com/in/product/google_fitbit_air"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Every variant, price and stock status from the Google Store India configure page's offer data; key specs from the product page. Images are the store's product gallery (not split by colour)."
+  }
+}
