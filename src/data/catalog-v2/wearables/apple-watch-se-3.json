@@ -81,38 +81,46 @@
     "groups": {
       "Midnight": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-midnight-nc-se3_SW_COLOR?wid=800&hei=800&fmt=png-alpha",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-midnight-nc-se3_VW_34FR?wid=800&hei=800&fmt=png-alpha",
           "alt": "Apple Watch SE 3 in Midnight"
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-midnight-nc-se3_VW_PF?wid=800&hei=800&fmt=png-alpha",
           "alt": "Apple Watch SE 3 in Midnight, view 2"
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
           "alt": "Apple Watch SE 3 in Midnight, view 3"
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
           "alt": "Apple Watch SE 3 in Midnight, view 4"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Midnight, view 5"
         }
       ],
       "Starlight": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-starlight-cell-se3_SW_COLOR?wid=800&hei=800&fmt=png-alpha",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-starlight-cell-se3_VW_34FR?wid=800&hei=800&fmt=png-alpha",
           "alt": "Apple Watch SE 3 in Starlight"
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-starlight-cell-se3_VW_PF?wid=800&hei=800&fmt=png-alpha",
           "alt": "Apple Watch SE 3 in Starlight, view 2"
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
           "alt": "Apple Watch SE 3 in Starlight, view 3"
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
           "alt": "Apple Watch SE 3 in Starlight, view 4"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Starlight, view 5"
         }
       ]
     },
