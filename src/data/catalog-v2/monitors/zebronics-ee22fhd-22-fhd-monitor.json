@@ -1,0 +1,111 @@
+{
+  "slug": "zebronics-ee22fhd-22-fhd-monitor",
+  "title": "Zebronics EE22FHD 22\" FHD Monitor",
+  "brand": "Zebronics",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": "2026-04",
+  "shortDescription": "Zebronics EE22FHD 22\" FHD Monitor: 54.6cm Wide Screen, HDMI/VGA, FHD 1920 X 1080, Built-in Power Supply.",
+  "description": "54.6cm Wide Screen; HDMI/VGA; FHD 1920 X 1080; Built-in Power Supply; Wall Mountable.",
+  "highlights": [
+    "54.6cm Wide Screen",
+    "HDMI/VGA",
+    "FHD 1920 X 1080",
+    "Built-in Power Supply",
+    "Wall Mountable"
+  ],
+  "specs": {
+    "Specifications": {
+      "Screen Size": "54.6cm",
+      "Native Resolution": "1920 X 1080",
+      "Aspect Ratio": "16:9",
+      "Max. Brightness": "250nits",
+      "Dynamic Contrast Ratio": "2000000:1",
+      "Pixel Pitch": "0.248 x 0.248 mm",
+      "Viewing angle": "H140 / V110",
+      "Color": "16.7M",
+      "Response Time": "5ms",
+      "Input": "HDMI/VGA",
+      "Power Consumption": "26 Watts (Max.)",
+      "Product Dimension (W x D x H)": "51.6 x 2.3 x 38.2 cm",
+      "H - with stand, D - Minimum": "Net Weight (with stand)"
+    },
+    "Features": {
+      "points": [
+        "54.6cm Wide Screen",
+        "HDMI/VGA",
+        "FHD 1920 X 1080",
+        "Built-in Power Supply",
+        "Wall Mountable"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 22,
+    "resolution": "1920 X 1080",
+    "refreshRateHz": null,
+    "panel": null,
+    "responseTimeMs": 5.0,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "22\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EE22-FHD-LED-pic1.jpg?v=1775200718",
+        "alt": "Zebronics EE22FHD 22\" FHD Monitor"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EE22-FHD-LED-pic2.jpg?v=1775200718",
+        "alt": "Zebronics EE22FHD 22\" FHD Monitor, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "ZEB-ZEE22FHDLED",
+      "mpn": "MT146-ZEBSTER EEM2 21.5 EE22FHD LED (HDMI) COMPUTER MONITOR",
+      "options": {
+        "Size": "22\""
+      },
+      "price": 12799,
+      "mrp": 12799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Monitor",
+    "Base",
+    "Stem",
+    "HDMI Cable",
+    "Power Cord",
+    "User Manual"
+  ],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://zebronics.com/products/z-ee22fhd-led"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, images, features and specification table from Zebronics' official online store. Zebronics lists a single price, which appears to be the list price."
+  }
+}

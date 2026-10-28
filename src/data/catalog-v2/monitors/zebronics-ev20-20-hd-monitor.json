@@ -1,0 +1,131 @@
+{
+  "slug": "zebronics-ev20-20-hd-monitor",
+  "title": "Zebronics EV20 20\" HD Monitor",
+  "brand": "Zebronics",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": "2026-04",
+  "shortDescription": "Zebronics EV20 20\" HD Monitor: HD+ 1600x900, Dual Input, 1500000:1 Contrast Ratio (Dynamic), 16:9.",
+  "description": "HD+ 1600x900; Dual Input; 1500000:1 Contrast Ratio (Dynamic); 16:9; 16.7M Colors; Wall Mountable.",
+  "highlights": [
+    "HD+ 1600x900",
+    "Dual Input",
+    "1500000:1 Contrast Ratio (Dynamic)",
+    "16:9",
+    "16.7M Colors",
+    "Wall Mountable"
+  ],
+  "specs": {
+    "Specifications": {
+      "Screen Size": "50.8cm",
+      "Native Resolution": "1600 X 900",
+      "Aspect Ratio": "16:9",
+      "Max. Brightness": "250cd/m²",
+      "Dynamic Contrast Ratio": "1500000:1",
+      "Pixel Pitch": "0.27 x 0.27 mm",
+      "Viewing angle": "H130/V110",
+      "Color": "16.7M",
+      "Response Time": "5ms",
+      "Input": "HDMI / VGA",
+      "Power Consumption": "23 Watts(max.)",
+      "Product Dimension (W x D x H)": "47.5 x 2.1 x 35.5 cm",
+      "H - with stand, D - Minimum": "Package Dimension (W x D x H)",
+      "51.5 x 8.7 x 34 cm": "Net Weight (with stand)",
+      "2.5kg": "Country of Origin",
+      "People's Republic of China": "Package contents",
+      "Monitor": "1 U",
+      "Base": "1 U",
+      "Stem": "1 U",
+      "HDMI Cable": "1 U",
+      "Power Cord": "1 U",
+      "User Manual": "1 U"
+    },
+    "Features": {
+      "points": [
+        "HD+ 1600x900",
+        "Dual Input",
+        "1500000:1 Contrast Ratio (Dynamic)",
+        "16:9",
+        "16.7M Colors",
+        "Wall Mountable"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 20,
+    "resolution": "1600 X 900",
+    "refreshRateHz": null,
+    "panel": null,
+    "responseTimeMs": 5.0,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "20\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-1.jpg?v=1775125078",
+        "alt": "Zebronics EV20 20\" HD Monitor"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-2.jpg?v=1775125078",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-3.jpg?v=1775125078",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-4.jpg?v=1775125078",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-5.jpg?v=1775125078",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-6.jpg?v=1775125078",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "ZEB-EV20",
+      "mpn": "MT157-ZEB EV219 EV20 LED 20 INCH (HDMI) COMPUTER MONITOR - Pure Pixel",
+      "options": {
+        "Size": "20\""
+      },
+      "price": 6999,
+      "mrp": 6999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://zebronics.com/products/zeb-ev20"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, images, features and specification table from Zebronics' official online store. Zebronics lists a single price, which appears to be the list price."
+  }
+}

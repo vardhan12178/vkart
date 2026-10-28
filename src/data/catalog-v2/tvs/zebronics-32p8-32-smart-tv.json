@@ -1,0 +1,152 @@
+{
+  "slug": "zebronics-32p8-32-smart-tv",
+  "title": "Zebronics 32P8 32\" Smart TV",
+  "brand": "Zebronics",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "Zebronics 32P8 32\" Smart TV: Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input), 250 nits, 1366 x 768 HD, App support.",
+  "description": "Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input); 250 nits; 1366 x 768 HD; App support; Built-in Wi-Fi; Remote Control; 80cm; Wall Mountable; Bezel less design; A Grade Display Panel; 20W Speakers.",
+  "highlights": [
+    "Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input)",
+    "250 nits",
+    "1366 x 768 HD",
+    "App support",
+    "Built-in Wi-Fi",
+    "Remote Control"
+  ],
+  "specs": {
+    "Specifications": {
+      "Processor": "Cortex A35*4",
+      "GPU": "Mali-G31",
+      "RAM": "512MB",
+      "Internal Storage": "4GB",
+      "Wi-Fi": "2.4GHz - IEEE 802.11b/g/n",
+      "LAN (RJ45)": "10/100M Auto-Identification",
+      "Screen size": "80cm (32)",
+      "Refresh Rate": "60Hz",
+      "Native Resolution": "1366 x 768",
+      "Aspect Ratio": "16:9",
+      "Max. Brightness": "250 nits",
+      "Viewing Angle": "V:178°, H:178°",
+      "Contrast Ratio": "1200:1",
+      "Pixel Pitch": "0.49005 × 0.16335 mm",
+      "Display colors": "16.7 Million",
+      "Response Time": "8ms",
+      "Power consumption (MAX)": "60W",
+      "Speaker Output (RMS)": "10W x 2",
+      "Audio file format support": ".mp3, .m4a, .aac, .flac",
+      "Video file format support": "3GP, AVI, M4V, MKV, MP4, MPEG1, MPEG2, H.265, H.264",
+      "Image file format": "JPEG, PNG, BMP",
+      "Connectivity": "TRIPLE HDMI - 1 x HDMI(ARC) / 2 x HDMI IN  / 1 x AV IN / 2 x USB / DVB-S2/ Earphone out/ Coaxial OUT / Optical out / RJ45 / RF Input",
+      "Video System": "PAL, NTSC, SECAM",
+      "Picture Profiles": "User, Standard, Vivid, Eco, Movie, Game, Sport",
+      "Sound Profiles": "Standard, Soccer, Movie, Music, User",
+      "Product Dimension (W x D x H)": "Without Stand - 72.1 x 8.8 x 42.5 cm (W x D x H)",
+      "With Stand - 72.1 x 20.1 x 47.7 cm (W x D x H)": "Package Dimension (W x D x H)",
+      "79.3 x 13.1 x 50.1 cm": "Net Weight",
+      "3.5kg": "Country of origin"
+    },
+    "Features": {
+      "points": [
+        "Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input)",
+        "250 nits",
+        "1366 x 768 HD",
+        "App support",
+        "Built-in Wi-Fi",
+        "Remote Control",
+        "80cm",
+        "Wall Mountable",
+        "Bezel less design",
+        "A Grade Display Panel",
+        "20W Speakers"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 32,
+    "resolution": "1366 x 768",
+    "refreshRateHz": 60,
+    "panel": "LED",
+    "os": null,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "32\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-1_75ad9db6-9e1e-4436-8c5b-bbf45af83a80.jpg?v=1785133665",
+        "alt": "Zebronics 32P8 32\" Smart TV"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-2_90b53122-2243-459a-8bfc-addae9ce8896.jpg?v=1785133665",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-3.jpg?v=1785133665",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-4.jpg?v=1785133665",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-5.jpg?v=1785133665",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-6.jpg?v=1785133665",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "ZEB-32P8",
+      "mpn": "TV77- ZEB 32P8 ZEBRONICS TELEVISION WITH WALL MOUNT (80CMS)",
+      "options": {
+        "Size": "32\""
+      },
+      "price": 23999,
+      "mrp": 23999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Smart LED TV",
+    "Remote Control",
+    "Table Top Stand",
+    "Wall mounting kit",
+    "Batteries AAA",
+    "QR code guide",
+    "Warranty Card",
+    "TV Stand screws"
+  ],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://zebronics.com/products/zeb-32-p8"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, images, features and specification table from Zebronics' official online store. Zebronics lists a single price, which appears to be the list price."
+  }
+}

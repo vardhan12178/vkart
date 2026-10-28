@@ -1,0 +1,148 @@
+{
+  "slug": "zebronics-s27a-27-200hz-gaming-monitor",
+  "title": "Zebronics S27A 27\" 200Hz Gaming Monitor",
+  "brand": "Zebronics",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": "2026-05",
+  "shortDescription": "Zebronics S27A 27\" 200Hz Gaming Monitor: 68.5cm Anti-Glare Screen, 200Hz, QHD 2560x1440, Fast IPS Display.",
+  "description": "68.5cm Anti-Glare Screen; 200Hz; QHD 2560x1440; Fast IPS Display; 400nits (Max.); ZGameAid; 1ms MPRT; Adaptive Sync; 125% sRGB; 16:9; 1.07B Colors; 2 x DP / 2 x HDMI; Height | Pivot | Swivel | Tilt Adjustments; Bezel-Less Design; Built-in Speakers; Headphone Jack; Wall Mountable; Cable Management; Headphone Stand; Reading Lamp.",
+  "highlights": [
+    "68.5cm Anti-Glare Screen",
+    "200Hz",
+    "QHD 2560x1440",
+    "Fast IPS Display",
+    "400nits (Max.)",
+    "ZGameAid"
+  ],
+  "specs": {
+    "Specifications": {
+      "Screen Size": "68.5cm",
+      "Native Resolution": "2560 x 1440",
+      "Refresh Rate": "200Hz",
+      "Aspect Ratio": "16:9",
+      "Max. Brightness": "400 nits (Max.)",
+      "Contrast Ratio": "1000:1",
+      "Pixel Pitch": "0.2331(H) × 0.2331(V) mm",
+      "Viewing angle": "H178/ V178",
+      "Display Color": "1.07B",
+      "sRGB": "125%",
+      "DCI-P3": "98%",
+      "Response Time": "1ms MPRT",
+      "Input": "2 x DP/ 2 x HDMI",
+      "Power Consumption": "48 Watts (Max.)",
+      "Product Dimension (W x D x H)": "61.5 x 2.1 x 53.5 cm",
+      "H - with stand, D - Minimum": "Package Dimension (W x D x H)",
+      "70.5 x 17 x 51.5 cm": "Net Weight (with stand)",
+      "5.8 kg": "Country of Origin"
+    },
+    "Features": {
+      "points": [
+        "68.5cm Anti-Glare Screen",
+        "200Hz",
+        "QHD 2560x1440",
+        "Fast IPS Display",
+        "400nits (Max.)",
+        "ZGameAid",
+        "1ms MPRT",
+        "Adaptive Sync",
+        "125% sRGB",
+        "16:9",
+        "1.07B Colors",
+        "2 x DP / 2 x HDMI",
+        "Height | Pivot | Swivel | Tilt Adjustments",
+        "Bezel-Less Design",
+        "Built-in Speakers",
+        "Headphone Jack",
+        "Wall Mountable",
+        "Cable Management",
+        "Headphone Stand",
+        "Reading Lamp"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 27,
+    "resolution": "2560 x 1440",
+    "refreshRateHz": 200,
+    "panel": "IPS",
+    "responseTimeMs": 1.0,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "27\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic-1.jpg?v=1775904889",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic2.jpg?v=1775904889",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic3.jpg?v=1775904889",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic4.jpg?v=1775904889",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic5.jpg?v=1775904889",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic6.jpg?v=1775904889",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "ZEB-S27A200HZ",
+      "mpn": "MT153-ZEB S27A ZEBRONICS 27 COMPUTER LED (QHD) MONITOR WITH SPEAKER (200Hz)",
+      "options": {
+        "Size": "27\""
+      },
+      "price": 39999,
+      "mrp": 39999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Monitor",
+    "Base",
+    "Stem",
+    "DP Cable",
+    "Power adapter",
+    "User Manual"
+  ],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://zebronics.com/products/zeb-s27a-200hz"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, images, features and specification table from Zebronics' official online store. Zebronics lists a single price, which appears to be the list price."
+  }
+}
