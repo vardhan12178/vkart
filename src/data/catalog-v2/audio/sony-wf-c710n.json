@@ -1,0 +1,147 @@
+{
+  "slug": "sony-wf-c710n",
+  "title": "Sony WF-C710N",
+  "brand": "Sony",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2025-07",
+  "shortDescription": "Noise cancelling, longer battery life, and uncompromised sound quality.",
+  "description": "Noise cancelling, longer battery life, and uncompromised sound quality. Get all the features you need in these versatile earbuds.\n\nAdvanced Noise Canceling and Dual Noise Sensor technology filters exterior sound using two microphones and allows you to enjoy more of your music.",
+  "highlights": [
+    "Noise Canceling",
+    "Long Battery Life",
+    "Crystal Clear Call Quality",
+    "Sound Connect APP"
+  ],
+  "specs": {
+    "Features": {
+      "WF-C710N": "Noise cancelling, longer battery life, and uncompromised sound quality. Get all the features you need in these versatile earbuds.",
+      "Noise Canceling": "Advanced Noise Canceling and Dual Noise Sensor technology filters exterior sound using two microphones and allows you to enjoy more of your music.",
+      "Long Battery Life": "With up to 8.5 hours on your earbuds and up to 21.5 hours in the case, enjoy all-day comfort and up to 30 hours of listening when fully charged. Quick charging, 5 min charge for up to 1 hour of playback.",
+      "Crystal Clear Call Quality": "With Precise Voice Pickup Technology, conversations are ultra clear, even in noisy environments. Our noise reduction algorithm uses AI machine learning to suppress ambient noise and extract your voice clearly. DIGITAL SOUND ENHANCEMENT ENGINE (DSEE): Experience a powerful bass and clear vocals with ",
+      "Sound Connect APP": "Sony | Sound Connect app allows you to adjust the ambient sound in 20 levels or use the Focus on Voice setting to chat without removing your earbuds. Dial in your ideal sound and shortcut settings and keep track of your recent listening history. Contents in a box: Earbuds, Charging Case, C-Type Char"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": 30
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#333333"
+        },
+        {
+          "value": "Blue",
+          "hex": "#4D7996"
+        },
+        {
+          "value": "Pink",
+          "hex": "#D1B0A9"
+        },
+        {
+          "value": "White",
+          "hex": "#CCCCCB"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_7c35be30-ec9e-4f4f-8172-68bd850d0c18.jpg?v=1750074352",
+          "alt": "Sony WF-C710N in Black"
+        }
+      ],
+      "Blue": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_5bef80c4-2ecf-448d-aa79-64bd68c541d8.jpg?v=1751457100",
+          "alt": "Sony WF-C710N in Blue"
+        }
+      ],
+      "Pink": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_76855a50-758e-4bf6-b79c-073136b6018c.jpg?v=1751457100",
+          "alt": "Sony WF-C710N in Pink"
+        }
+      ],
+      "White": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_3475f6c8-6a40-4024-8b56-e28799aa9b14.jpg?v=1751457100",
+          "alt": "Sony WF-C710N in White"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SNY-WFC710N-BLACK",
+      "mpn": "WF-C710N/BZIN",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 6990,
+      "mrp": 12990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WFC710N-BLUE",
+      "mpn": "WF-C710N/LZIN",
+      "options": {
+        "Color": "Blue"
+      },
+      "price": 6990,
+      "mrp": 12990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WFC710N-PINK",
+      "mpn": "WF-C710N/PZIN",
+      "options": {
+        "Color": "Pink"
+      },
+      "price": 6990,
+      "mrp": 12990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WFC710N-WHITE",
+      "mpn": "WF-C710N/WZIN",
+      "options": {
+        "Color": "White"
+      },
+      "price": 6990,
+      "mrp": 12990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.shopatsc.com/products/wf-c710n-bzin"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Sony's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

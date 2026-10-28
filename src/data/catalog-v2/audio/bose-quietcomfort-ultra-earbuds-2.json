@@ -1,0 +1,165 @@
+{
+  "slug": "bose-quietcomfort-ultra-earbuds-2",
+  "title": "Bose QuietComfort Ultra Earbuds (2nd Gen)",
+  "brand": "Bose",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2025-12",
+  "shortDescription": "When music means everything, there’s the next-gen QuietComfort Ultra Earbuds.",
+  "description": "When music means everything, there’s the next-gen QuietComfort Ultra Earbuds. Because every listen deserves the premium, personalized audio of Custom Tune tech, our best in-ear noise cancellation, and the comfortable fit of our best earbuds. So you get a heart-stopping experience every time you press play.",
+  "highlights": [
+    "Bose's best in-ear noise cancellation",
+    "CustomTune personalised audio",
+    "Comfortable secure fit",
+    "Five colours"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": []
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": null
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#373737"
+        },
+        {
+          "value": "Desert Gold",
+          "hex": "#3B3B3B"
+        },
+        {
+          "value": "White Smoke",
+          "hex": "#D8D3D0"
+        },
+        {
+          "value": "Midnight Violet",
+          "hex": "#2E3971"
+        },
+        {
+          "value": "Deep Plum",
+          "hex": "#702141"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_23_QCUEII_Black_Ecomm-Gallery-1-1634x1224.png?v=1766561915",
+          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Black"
+        }
+      ],
+      "Desert Gold": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEBIILE26-DesertGold_SF_PDP_E-Comm-Gallery_1_1632x1224_ca7d7909-04b1-409c-b6f0-c81aaaf16fac.png?v=1766561939",
+          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Desert Gold"
+        }
+      ],
+      "White Smoke": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEII_White_Ecomm-Gallery-1-1634x1224.png?v=1766561953",
+          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in White Smoke"
+        }
+      ],
+      "Midnight Violet": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEBIILE26-MidnightViolet_SF_E-Comm_Gallery_1_1632x1224_32469b76-ee75-4ec4-a173-0b59cfb15cdf.png?v=1766561947",
+          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Midnight Violet"
+        }
+      ],
+      "Deep Plum": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEII_DeepPlum_Ecomm-Gallery-1-1634x1224.png?v=1766561927",
+          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Deep Plum"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOS-QCUE2-BLACK",
+      "mpn": "896637-0010",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 22900,
+      "mrp": 32900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUE2-DESERTGOLD",
+      "mpn": "896637-0040",
+      "options": {
+        "Color": "Desert Gold"
+      },
+      "price": 22900,
+      "mrp": 32900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUE2-WHITESMOKE",
+      "mpn": "896637-0020",
+      "options": {
+        "Color": "White Smoke"
+      },
+      "price": 22900,
+      "mrp": 32900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUE2-MIDNIGHTVIOLET",
+      "mpn": "896637-0050",
+      "options": {
+        "Color": "Midnight Violet"
+      },
+      "price": 22900,
+      "mrp": 32900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUE2-DEEPPLUM",
+      "mpn": "896637-0030",
+      "options": {
+        "Color": "Deep Plum"
+      },
+      "price": 22900,
+      "mrp": 32900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boseindia.com/products/bose-quietcomfort-ultra-earbuds-2nd-gen"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Bose's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "sony-wf-1000xm6",
+  "title": "Sony WF-1000XM6",
+  "brand": "Sony",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Sound mastered.",
+  "description": "Sound mastered. Noise cancelled. Crafted with mastering-engineer insight and advanced noise-cancelling technology, the WF-1000XM6 delivers faithful, detailed sound.\n\nExperience powerful, adaptive noise cancelling that keeps distractions out and your music front and center. Powered by dual processors and eight adaptive microphones, the WF-1000XM6 earbuds adapt in real time to keep your world quiet and your music pure.",
+  "highlights": [
+    "The Best Noise Cancellation",
+    "Co-created With Mastering Audio Engineers",
+    "HD Noise Cancelling Processor",
+    "Ultra Clear Call Quality",
+    "Ergonomic Design and Secure FIT",
+    "Long Battery Life and Convenient Charging"
+  ],
+  "specs": {
+    "Features": {
+      "The Best Noise Cancellation": "Experience powerful, adaptive noise cancelling that keeps distractions out and your music front and center. Powered by dual processors and eight adaptive microphones, the WF-1000XM6 earbuds adapt in real time to keep your world quiet and your music pure.",
+      "Co-created With Mastering Audio Engineers": "Developed in collaboration with mastering audio engineers, the WF-1000XM6 earbuds deliver studio-level clarity and emotion to every track—revealing subtle details and authentic sound, all in a compact earbud.",
+      "HD Noise Cancelling Processor": "The HD Noise Cancelling Processor QN3e is 3x faster than the QN2e (found in our WF-1000XM5 earbuds), paired with an improved DAC and amplifier, precisely manages microphones to block out every day sounds and deliver cleaner, richer audio that feels true to the moment.",
+      "Ultra Clear Call Quality": "Dual beamforming microphones, a bone conduction sensor, and AI-powered noise reduction technology, isolate your voice and block background and wind noise for ultra-clear calls anywhere. Intelligent algorithms ensure every word is heard clearly—even in noisy settings.",
+      "Ergonomic Design and Secure FIT": "Ergonomic earbuds contour naturally for a secure, balanced fit. Premium matte texture and smart airflow ensure all-day comfort and an elevated look, while pressure points are minimized for long listening sessions.",
+      "Long Battery Life and Convenient Charging": "Stay powered up with up to 24 hours of total playback (8 hours with the earbuds and 16 hours with the case), plus a five-minute quick charge for up to 1 hour of playback when you need it. Enable Battery Care in the Sony | Sound Connect app to help reduce battery wear, and enjoy long-lasting power fo",
+      "Intuitive Controls": "On-ear controls make it simple to switch your microphone on and off, adjust volume, and manage playback. Built-in voice control and gesture commands offer seamless operation for everyday convenience.",
+      "Adaptive NC Optimizer": "Adaptive NC Optimizer uses eight adaptive microphones to track ambient sound while the processor automatically adjusts the noise cancelling profile in real time, keeping performance strong in any environment or wearing condition.",
+      "Auto Ambient Sound Mode": "Choose from three Auto Ambient Sound modes that adapt in real time, balancing your music and the world around you. Multiple microphones filter noise or let in what matters, like announcements or conversations, with manual or automatic adjustments via the Sony | Sound Connect app.",
+      "Sound Connect APP": "The Sony | Sound Connect app lets you personalize your sound, compare settings, and fine-tune your experience. It also enables advanced features like EQ Adjustment, Adaptive Sound Control, Quick Access for Amazon Music, and Battery Care."
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": 24
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#313034"
+        },
+        {
+          "value": "Platinum Silver",
+          "hex": "#AAACA5"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_1acf2eca-cf18-4c40-9b59-c6184590c315.jpg?v=1785829763",
+          "alt": "Sony WF-1000XM6 in Black"
+        }
+      ],
+      "Platinum Silver": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_8b2e8b25-5531-4ce8-8f14-db28a2bcc3f8.jpg?v=1785829784",
+          "alt": "Sony WF-1000XM6 in Platinum Silver"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SNY-WF1000XM6-BLACK",
+      "mpn": "WF1000XM6/BZIN",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 26990,
+      "mrp": 35990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WF1000XM6-PLATINUMSILVER",
+      "mpn": "WF1000XM6/SZIN",
+      "options": {
+        "Color": "Platinum Silver"
+      },
+      "price": 26990,
+      "mrp": 35990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.shopatsc.com/products/wf1000xm6-bzin"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Sony's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

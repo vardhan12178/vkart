@@ -1,0 +1,122 @@
+{
+  "slug": "boat-rockerz-351-anc",
+  "title": "boAt Rockerz 351 ANC",
+  "brand": "boAt",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "boAt Rockerz 351 ANC: Wireless Headphones with 60H Playback, 42dB ANC & 40ms BEAST Mode.",
+  "description": "boAt Rockerz 351 ANC: Wireless Headphones with 60H Playback, 42dB ANC & 40ms BEAST Mode.",
+  "highlights": [
+    "Wireless Headphones with 60H Playback",
+    "42dB ANC & 40ms BEAST Mode"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "Wireless Headphones with 60H Playback",
+        "42dB ANC & 40ms BEAST Mode"
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "Over-ear headphones",
+    "anc": true,
+    "ancDepthDb": 42,
+    "batteryHours": 60
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cosmic Black",
+          "hex": "#4B4B4B"
+        },
+        {
+          "value": "Cosmic Blue",
+          "hex": "#435679"
+        },
+        {
+          "value": "Lunar Mist",
+          "hex": "#BBBBBB"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cosmic Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/FirstImage.png?v=1786522454",
+          "alt": "boAt Rockerz 351 ANC in Cosmic Black"
+        }
+      ],
+      "Cosmic Blue": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/First_Image.png?v=1786522591",
+          "alt": "boAt Rockerz 351 ANC in Cosmic Blue"
+        }
+      ],
+      "Lunar Mist": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/First_Image_e7b97b51-1867-461e-a0f7-c0019ea93051.png?v=1786522719",
+          "alt": "boAt Rockerz 351 ANC in Lunar Mist"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOA-RZ351-COSMICBLACK",
+      "mpn": "8905650132458",
+      "options": {
+        "Color": "Cosmic Black"
+      },
+      "price": 1599,
+      "mrp": 4490,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-RZ351-COSMICBLUE",
+      "mpn": "8905650132465",
+      "options": {
+        "Color": "Cosmic Blue"
+      },
+      "price": 1599,
+      "mrp": 4490,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-RZ351-LUNARMIST",
+      "mpn": "8905650132472",
+      "options": {
+        "Color": "Lunar Mist"
+      },
+      "price": 1599,
+      "mrp": 4490,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boat-lifestyle.com/products/boat-rockerz-351-anc"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from boAt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

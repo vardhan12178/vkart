@@ -1,0 +1,187 @@
+{
+  "slug": "bose-ultra-open-earbuds",
+  "title": "Bose Ultra Open Earbuds",
+  "brand": "Bose",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-04",
+  "shortDescription": "Ultra Open Earbuds feature a brilliant combination of innovative open-ear design, incredible audio, and all-day comfort.",
+  "description": "Ultra Open Earbuds feature a brilliant combination of innovative open-ear design, incredible audio, and all-day comfort. With a cuff-like fit, Ultra Open Earbuds leave your ears open to hear the world around you while OpenAudio technology delivers rich, private sound.",
+  "highlights": [
+    "Open-ear cuff design",
+    "OpenAudio technology for private sound",
+    "Hear your surroundings",
+    "All-day comfort"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": []
+    }
+  },
+  "keySpecs": {
+    "type": "Open-ear (TWS)",
+    "anc": false,
+    "ancDepthDb": null,
+    "batteryHours": null
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#323334"
+        },
+        {
+          "value": "White Smoke",
+          "hex": "#C9C3BC"
+        },
+        {
+          "value": "Moonstone Blue",
+          "hex": "#AABFD7"
+        },
+        {
+          "value": "Diamond 60th Edition",
+          "hex": "#DFDCD4"
+        },
+        {
+          "value": "Sunset Iridescent",
+          "hex": "#C7C5C4"
+        },
+        {
+          "value": "Chilled Lilac",
+          "hex": "#AFC9E5"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/UOEB24_Black_P_2000x2000px.png?v=1753359949",
+          "alt": "Bose Ultra Open Earbuds in Black"
+        }
+      ],
+      "White Smoke": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/UOEB24_White_P_2000x2000px_result.webp?v=1753359949",
+          "alt": "Bose Ultra Open Earbuds in White Smoke"
+        }
+      ],
+      "Moonstone Blue": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_496_51nR43.jpg?v=1753359949",
+          "alt": "Bose Ultra Open Earbuds in Moonstone Blue"
+        }
+      ],
+      "Diamond 60th Edition": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_7_SF_UOE-Q3_PDP-UOE-DIAMOND_IMG-1.webp?v=1753276676",
+          "alt": "Bose Ultra Open Earbuds in Diamond 60th Edition"
+        }
+      ],
+      "Sunset Iridescent": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/CREA-1093A_UOEBLE25_Sunset_Hero_7200_result.webp?v=1753359949",
+          "alt": "Bose Ultra Open Earbuds in Sunset Iridescent"
+        }
+      ],
+      "Chilled Lilac": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/CREA-1093A_UOEBLE25_ChilledLilac_Hero_7200_result.webp?v=1753359949",
+          "alt": "Bose Ultra Open Earbuds in Chilled Lilac"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOS-UOE-BLACK",
+      "mpn": "881046-0010",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 25900,
+      "mrp": 25900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-UOE-WHITESMOKE",
+      "mpn": "881046-0020",
+      "options": {
+        "Color": "White Smoke"
+      },
+      "price": 25900,
+      "mrp": 25900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-UOE-MOONSTONEBLUE",
+      "mpn": "881046-0030",
+      "options": {
+        "Color": "Moonstone Blue"
+      },
+      "price": 25900,
+      "mrp": 25900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-UOE-DIAMOND60THEDITION",
+      "mpn": "881046-0040",
+      "options": {
+        "Color": "Diamond 60th Edition"
+      },
+      "price": 25900,
+      "mrp": 25900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-UOE-SUNSETIRIDESCENT",
+      "mpn": "881046-0900",
+      "options": {
+        "Color": "Sunset Iridescent"
+      },
+      "price": 25900,
+      "mrp": 25900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-UOE-CHILLEDLILAC",
+      "mpn": "881046-0700",
+      "options": {
+        "Color": "Chilled Lilac"
+      },
+      "price": 25900,
+      "mrp": 25900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boseindia.com/products/bose-ultra-open-earbuds"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Bose's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}
