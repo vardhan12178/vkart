@@ -1,0 +1,100 @@
+{
+  "slug": "samsung-7-kg-semi-automatic-washing-machine-wt70c3000rr",
+  "title": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR",
+  "brand": "Samsung",
+  "category": "washing-machines",
+  "categoryPath": [
+    "home-appliances",
+    "washing-machines"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "5 Star Rating\nDouble Storm Pulsator\nAir Turbo Drying",
+  "description": "5 Star Rating\nDouble Storm Pulsator\nAir Turbo Drying",
+  "highlights": [
+    "7 kg capacity",
+    "Semi-Automatic",
+    "5-star energy rating"
+  ],
+  "specs": {
+    "Specifications": {
+      "Washing Capacity": "7.0 kg",
+      "Performance": "5 star",
+      "Physical specification": "83.0 cm x 96.50 cm x 48.50 cm",
+      "Net Weight": "22.5 kg",
+      "Washing Capacity (kg)": "7.0 kg",
+      "Body Colour": "Light Gray",
+      "Energy Efficiency Class": "5 star",
+      "Air Turbo": "Yes",
+      "Caster Wheel": "Yes",
+      "Magic Filter": "Yes",
+      "Number of Cycle": "3",
+      "Normal": "Yes",
+      "Additional Cycle": "Heavy, Gentle",
+      "Net Dimension (WxHxD)": "83.0 cm x 96.50 cm x 48.50 cm",
+      "Gross Dimension (WxHxD)": "84.0 cm x 98.50 cm x 51.50 cm",
+      "Gross Weight": "26.5 kg",
+      "Voltage/Frequency": "230V / 50Hz",
+      "Manufactured by": "Dixon Technologies (India) Ltd C 3/1 Central Hope Town, Industrial Area Selaqui , Dehradun - 248197",
+      "Country of Origin": "India",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "capacityKg": 7.0,
+    "type": "Semi-Automatic",
+    "starRating": 5,
+    "inverter": false,
+    "rpm": null
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/wt70c3000rr-tl/gallery/in-wt3000mm-wt70c3000rr-tl-thumb-539991651?$650_519_PNG$",
+        "alt": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/wt70c3000rr-tl/gallery/in-wt3000mm-wt70c3000rr-tl-539991641?$650_519_PNG$",
+        "alt": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-WT70C3000RR",
+      "mpn": "WT70C3000RR",
+      "options": {
+        "Color": "White"
+      },
+      "price": 11400,
+      "mrp": 17990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/washers-and-dryers/washing-machines/wt3000mm-twin-5-star-energy-rating-double-storm-magic-filter-7kg-white-wt70c3000rr-tl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

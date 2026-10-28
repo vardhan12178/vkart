@@ -1,0 +1,119 @@
+{
+  "slug": "samsung-7-kg-5-star-front-load-washing-machine-ww70fg4s02ax",
+  "title": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX",
+  "brand": "Samsung",
+  "category": "washing-machines",
+  "categoryPath": [
+    "home-appliances",
+    "washing-machines"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "15 min Quick Wash\n5 Star Energy Rating\nSmart Check automatic error monitoring system",
+  "description": "15 min Quick Wash\n5 Star Energy Rating\nSmart Check automatic error monitoring system",
+  "highlights": [
+    "7 kg capacity",
+    "Front Load",
+    "5-star energy rating",
+    "1200 RPM"
+  ],
+  "specs": {
+    "Specifications": {
+      "Washing Capacity": "7.0 kg",
+      "Energy Efficiency Class": "5star",
+      "Physical specification": "60.0 cm x 85.0 cm x 49.0 cm",
+      "Net Weight": "51 kg",
+      "Washing Capacity (kg)": "7.0 kg",
+      "Body Colour": "Inox",
+      "Door": "Black",
+      "Panel Display": "LED",
+      "Child Lock": "Yes",
+      "Delay End": "Yes",
+      "Drum Clean": "Yes",
+      "Drum type": "Diamond",
+      "Extra Rinse": "Yes",
+      "Hot/Cold Water Inlet": "Cold",
+      "Intensive": "Yes",
+      "Motor": "DIT",
+      "Pre Wash": "Yes",
+      "Smart Check": "Yes",
+      "Soak": "Yes",
+      "Spin Speed": "1200 rpm",
+      "StayClean Drawer": "Yes",
+      "Steam": "Yes",
+      "Quick Wash 15'": "Yes",
+      "Bedding": "Yes",
+      "Cotton": "Yes",
+      "Colours": "Yes",
+      "E Cotton": "Yes",
+      "Hygiene Steam": "Yes",
+      "Mixed Load": "Yes",
+      "Rinse + Spin": "Yes",
+      "Synthetics": "Yes",
+      "Towels": "Yes",
+      "Wool/Delicates": "Yes",
+      "Net Dimension (WxHxD)": "60.0 cm x 85.0 cm x 49.0 cm",
+      "Gross Dimension (WxHxD)": "67.5 cm x 89.0 cm x 55.0 cm",
+      "Gross Weight": "55 kg",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "capacityKg": 7.0,
+    "type": "Front Load",
+    "starRating": 5,
+    "inverter": false,
+    "rpm": 1200
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Inox"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww70fg4s02axtl/gallery/in-ww4100f-ww70fg4s02abtl-ww70fg4s02axtl-thumb-552386203?$650_519_PNG$",
+        "alt": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww70fg4s02axtl/gallery/in-ww4100f-ww70fg4s02abtl-ww70fg4s02axtl-552386195?$650_519_PNG$",
+        "alt": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-WW70FG4S02AX",
+      "mpn": "WW70FG4S02AX",
+      "options": {
+        "Color": "Inox"
+      },
+      "price": 32990,
+      "mrp": 40200,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/washers-and-dryers/washing-machines/ww4100f-5-star-energy-rating-7kg-refined-inox-ww70fg4s02axtl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "slug": "samsung-9-kg-ai-ecobubble-front-load-washing-machine-ww90dg5u24ax",
+  "title": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX",
+  "brand": "Samsung",
+  "category": "washing-machines",
+  "categoryPath": [
+    "home-appliances",
+    "washing-machines"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Superspeed\nAI EcoBubble\nSmartThings",
+  "description": "Superspeed\nAI EcoBubble\nSmartThings",
+  "highlights": [
+    "9 kg capacity",
+    "Front Load",
+    "5-star energy rating",
+    "1400 RPM"
+  ],
+  "specs": {
+    "Specifications": {
+      "Washing Capacity": "9.0 kg",
+      "Energy Efficiency Class": "5star",
+      "Bubble technology": "Yes",
+      "Physical specification": "60.0 cm x 85.0 cm x 55.0 cm",
+      "Net Weight": "65 kg",
+      "Washing Capacity (kg)": "9.0 kg",
+      "Body Colour": "Inox",
+      "Door": "Carved Door (Black)",
+      "Panel Display": "LED",
+      "AI Control": "No",
+      "AI Wash": "No",
+      "AI EcoBubble": "Yes",
+      "AI Energy Mode": "Yes",
+      "QuickDrive": "No",
+      "Auto Dispense": "No",
+      "Bubble Soak": "Yes",
+      "Child Lock": "Yes",
+      "Delay End": "Yes",
+      "Drum Clean+": "Yes",
+      "Drum type": "2nd Diamond",
+      "Easy Iron": "Yes",
+      "Extra Rinse": "Yes",
+      "Hot/Cold Water Inlet": "Cold",
+      "Intensive": "Yes",
+      "Language Setting": "No",
+      "Motor": "DIT",
+      "My Cycle": "No",
+      "Pre Wash": "Yes",
+      "Quick Wash": "Yes",
+      "Smart Control": "Yes",
+      "Smart Things": "Yes",
+      "Spin Speed": "1400 rpm",
+      "StayClean Drawer": "Yes",
+      "Steam": "Yes",
+      "Super Speed": "Yes",
+      "Quick Wash 15'": "Yes",
+      "Bedding": "Yes",
+      "Cotton": "Yes",
+      "Colours": "Yes",
+      "Downloaded": "Yes",
+      "E Cotton": "Yes",
+      "Hygiene Steam": "Yes",
+      "Intense Cold": "Yes",
+      "Less Microfiber": "Yes",
+      "Rinse + Spin": "Yes",
+      "Synthetics": "Yes",
+      "Wool/Delicates": "Yes",
+      "Net Dimension (WxHxD)": "60.0 cm x 85.0 cm x 55.0 cm",
+      "Gross Dimension (WxHxD)": "68.40 cm x 89.0 cm x 67.40 cm",
+      "Gross Weight": "69 kg",
+      "WiFi Embedded": "Yes",
+      "SmartThings App Support": "Yes",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "capacityKg": 9.0,
+    "type": "Front Load",
+    "starRating": 5,
+    "inverter": false,
+    "rpm": 1400
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Inox"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-washing-machines-ww90dg5u24axtl-l-perspective-refined-inox-thumb-545549784?$650_519_PNG$",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-washing-machines-ww90dg5u24axtl-l-perspective-refined-inox-545549783?$650_519_PNG$",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 2"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-ww5000d-529748-ww90dg5u24axtl-545550212?$650_519_PNG$",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 3"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-ww5000d-529748-ww90dg5u24axtl-thumb-545550213?$650_519_PNG$",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 4"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-WW90DG5U24AX",
+      "mpn": "WW90DG5U24AX",
+      "options": {
+        "Color": "Inox"
+      },
+      "price": 39990,
+      "mrp": 60990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/washers-and-dryers/washing-machines/ww5000d-ww6000d-front-loading-smartthings-ai-energy-mode-9kg-refined-inox-9kg-refined-inox-ww90dg5u24axtl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}
