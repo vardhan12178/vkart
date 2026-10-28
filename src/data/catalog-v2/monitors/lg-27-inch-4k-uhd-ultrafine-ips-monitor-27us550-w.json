@@ -1,0 +1,88 @@
+{
+  "slug": "lg-27-inch-4k-uhd-ultrafine-ips-monitor-27us550-w",
+  "title": "LG 27\" 4K UHD UltraFine IPS Monitor 27US550-W",
+  "brand": "LG",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "LG 68.58 cm (27) 4K UHD UltraFine IPS Monitor, 3-side Virtually Borderless, Flicker Safe, Super Resolution+, HDR 10 27US550-W",
+  "description": "Discover LG 27US550-W. Click for pictures, reviews, and tech specs for the LG LG 68.58 cm (27) 4K UHD UltraFine™ IPS Monitor, 3-side Virtually Borderless, Flicker Safe, Super Resolution+, HDR 10.",
+  "highlights": [
+    "3-side Virtually Borderless",
+    "Flicker Safe",
+    "Super Resolution+",
+    "HDR 10 27US550-W",
+    "Size [Inch]: 68.58",
+    "Resolution: 3840 x 2160"
+  ],
+  "specs": {
+    "Specifications": {
+      "Size [Inch]": "68.58",
+      "Resolution": "3840 x 2160",
+      "Panel Type": "IPS",
+      "Aspect Ratio": "16:9",
+      "Color Gamut (Typ.)": "DCI-P3 90% (CIE1976)",
+      "Brightness (Typ.) [cd/m²]": "300 cd/sq.m (300 nit)",
+      "Refresh Rate (Max.) [Hz]": "60",
+      "Response Time": "5ms (GtG at Faster)",
+      "Display Position Adjustments": "Tilt/Height/Swivel/Pivot"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 27.0,
+    "resolution": "3840 x 2160",
+    "refreshRateHz": 60,
+    "panel": "IPS",
+    "responseTimeMs": 5.0,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "27\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://www.lg.com/content/dam/channel/wcms/in/monitors/ultrafine/27us550-w/gallery/27US550-W-450X450.jpg",
+        "alt": "LG 27\" 4K UHD UltraFine IPS Monitor 27US550-W"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "LG-27US550W",
+      "mpn": "27US550-W",
+      "options": {
+        "Size": "27\""
+      },
+      "price": 20999,
+      "mrp": 35000,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lg.com/in/monitors/uhd-4k-5k/27us550-w/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Name, selling price (price), strikethrough price (mrp), stock, image and specs from the LG India product page's structured data."
+  }
+}

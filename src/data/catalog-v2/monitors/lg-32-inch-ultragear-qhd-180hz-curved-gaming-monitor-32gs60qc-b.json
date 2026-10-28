@@ -1,0 +1,85 @@
+{
+  "slug": "lg-32-inch-ultragear-qhd-180hz-curved-gaming-monitor-32gs60qc-b",
+  "title": "LG 32\" UltraGear QHD 180Hz Curved Gaming Monitor 32GS60QC-B",
+  "brand": "LG",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "LG 31.5 (80 cm) UltraGear 180Hz QHD 1ms (GtG) HDR10 1000R Curved Gaming Monitor 32GS60QC-B",
+  "description": "Discover LG 32GS60QC-B. Click for pictures, reviews, and tech specs for the LG LG 31.5 (80 cm) UltraGear™ 180Hz QHD 1ms (GtG) HDR10 1000R Curved Gaming Monitor.",
+  "highlights": [
+    "Resolution: 2560 x 1440",
+    "Panel Type: VA",
+    "Aspect Ratio: 16:9",
+    "Color Gamut (Typ.): sRGB 99% (CIE1931)"
+  ],
+  "specs": {
+    "Specifications": {
+      "Resolution": "2560 x 1440",
+      "Panel Type": "VA",
+      "Aspect Ratio": "16:9",
+      "Color Gamut (Typ.)": "sRGB 99% (CIE1931)",
+      "Brightness (Typ.) [cd/m²]": "300cd/m²",
+      "Refresh Rate (Max.) [Hz]": "180",
+      "Response Time": "1ms (GtG at Faster)",
+      "Display Position Adjustments": "Tilt"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 31.5,
+    "resolution": "2560 x 1440",
+    "refreshRateHz": 180,
+    "panel": "VA",
+    "responseTimeMs": 1.0,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "31.5\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://www.lg.com/content/dam/channel/wcms/in/monitors/gaming/lg-com-pdp-kit_32gs60qc_ultragear_2024/gallery/450x450.jpg",
+        "alt": "LG 32\" UltraGear QHD 180Hz Curved Gaming Monitor 32GS60QC-B"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "LG-32GS60QCB",
+      "mpn": "32GS60QC-B",
+      "options": {
+        "Size": "31.5\""
+      },
+      "price": 19999,
+      "mrp": 36999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lg.com/in/monitors/gaming/32gs60qc-b/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Name, selling price (price), strikethrough price (mrp), stock, image and specs from the LG India product page's structured data."
+  }
+}

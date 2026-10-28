@@ -1,0 +1,175 @@
+{
+  "slug": "benq-mobiuz-ex240n",
+  "title": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor",
+  "brand": "BenQ",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "BenQ MOBIUZ EX240N: 23.8-inch FHD VA gaming monitor with 165Hz, 1ms MPRT, HDRi and built-in speakers.",
+  "description": "MOBIUZ 1ms 23.8\" 165Hz Gaming Monitor",
+  "highlights": [
+    "23.8\" VA panel",
+    "1920x1080 resolution",
+    "165Hz refresh rate",
+    "1 ms MPRT response",
+    "HDR: HDR10",
+    "Built-in speakers 2.5Wx2"
+  ],
+  "specs": {
+    "Display": {
+      "Screen Size": "23.8 inch",
+      "Panel Type": "VA",
+      "Backlight Technology": "LED backlight",
+      "Resolution (max.)": "1920x1080",
+      "Brightness (typ.)": "250 nits",
+      "HDR": "HDR10",
+      "Viewing Angle (L/R) (CR>=10)": "178°/178°",
+      "Response Times (GtG)": "4 ms",
+      "Refresh Rate (Hz)": "165",
+      "Native Contrast": "3000:1",
+      "Response Times (MPRT)": "1 ms",
+      "Color Gamut": "72% NTSC",
+      "Color Mode": "sRGB, HDR, M-book, Cinema HDRi, Game HDRi, FPS, RPG, Racing game, ePaper",
+      "Aspect Ratio": "16:9",
+      "Display Colors": "16.7 million color",
+      "Display Screen Coating": "Matte",
+      "PPI": "93",
+      "Color Temperature": "Bluish, Normal, Reddish, User Define",
+      "Gamma": "1.8 - 2.6",
+      "HDCP": "2.2",
+      "OSD Language": "Arabic, Chinese (simplified), Chinese (traditional), Czech, Deutsch, English, French, Hungarian, Italian, Japanese, Korean, Netherlands, Polish, Portuguese, Romanian, Russian, Spanish, Swedish",
+      "AMA": "Yes"
+    },
+    "Audio": {
+      "Built-in Speaker": "2.5Wx2",
+      "Headphone Jack": "Yes"
+    },
+    "Power": {
+      "Voltage Rating": "100 - 240V",
+      "Power Supply": "Built-in",
+      "Power Consumption (normal)": "20 W",
+      "Power Consumption (max)": "40 W",
+      "Power Consumption (sleep mode)": "<0.5 W"
+    },
+    "Dimension And Weight": {
+      "Tilt (down/up)": "-5˚ - 15˚",
+      "Dimensions (HxWxD) (mm)": "421.7x540x182.6",
+      "Dimensions (HxWxD) (inch)": "16.6x21.3x7.2",
+      "Dimensions (HxWxD) (w/o Base) (mm)": "344.9x540x67.7",
+      "Dimensions (HxWxD) (w/o Base) (inch)": "13.6x21.3x2.7",
+      "Net Weight (kg)": "4.3",
+      "Net Weight (lb)": "9.5",
+      "Net Weight (w/o Base) (kg)": "3.7",
+      "Net Weight (w/o Base) (lb)": "8.2",
+      "VESA Wall Mount": "100x100 mm"
+    },
+    "Accessories": {
+      "Other Accessories": "QSG, Warranty Card, IO Cover",
+      "Signal Cable (may vary by region)": "HDMI (v2.0)"
+    },
+    "Connectivity": {
+      "HDMI (v2.0)": "1",
+      "DisplayPort (v1.2)": "1"
+    },
+    "Eye Care": {
+      "Flicker-free Technology": "Yes",
+      "Low Blue Light": "Yes",
+      "Brightness Intelligence Plus (B.I.+)": "Yes",
+      "Color Weakness": "Yes",
+      "ePaper": "Yes"
+    },
+    "Certification": {
+      "TUV Certificate": "Flicker-free, Low Blue Light"
+    },
+    "Video Enjoyment": {
+      "HDRi": "Yes"
+    },
+    "Professional": {
+      "Video Format Support": "Yes"
+    },
+    "Gaming": {
+      "FPS Mode": "Yes",
+      "Motion Blur Reduction": "Yes",
+      "Color Vibrance": "Yes",
+      "FreeSync Premium": "Yes",
+      "Light Tuner": "Yes",
+      "Black eQualizer": "Yes"
+    },
+    "Gaming Software": {
+      "Haunting Beauty Waits on the Beach!": "Download Now"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 23.8,
+    "resolution": "1920x1080",
+    "refreshRateHz": 165,
+    "panel": "VA",
+    "responseTimeMs": 1.0,
+    "gaming": true,
+    "curved": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "23.8\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://image.benq.com/is/image/benqco/ex240n-stone?$ResponsivePreset$&wid=1200",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor"
+      },
+      {
+        "src": "https://image.benq.com/is/image/benqco/ex240n-eyecare-day?$ResponsivePreset$&wid=1200",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 2"
+      },
+      {
+        "src": "https://image.benq.com/is/image/benqco/ex240n-eyecare-night?$ResponsivePreset$&wid=1200",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 3"
+      },
+      {
+        "src": "https://image.benq.com/is/image/benqco/ex240n-right45?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 4"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BNQ-EX240N",
+      "mpn": "EX240N",
+      "options": {
+        "Size": "23.8\""
+      },
+      "price": 9799,
+      "mrp": 9799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "QSG",
+    "Warranty Card",
+    "IO Cover"
+  ],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.benq.com/en-in/monitor/gaming/ex240n.html",
+      "https://www.benq.com/en-in/monitor/gaming/ex240n/spec.html"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price (and list price where shown) from the BenQ India store; full spec sheet from the BenQ spec page."
+  }
+}

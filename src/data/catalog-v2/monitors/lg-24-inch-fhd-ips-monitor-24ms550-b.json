@@ -1,0 +1,88 @@
+{
+  "slug": "lg-24-inch-fhd-ips-monitor-24ms550-b",
+  "title": "LG 24\" FHD IPS Monitor 24MS550-B",
+  "brand": "LG",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "LG 60.45 cm (23.8) UltraGear Full HD IPS Display Monitor with 100Hz Refresh Rate, 5ms (GtG), Reader Mode, Flicker Safe 24MS550-B",
+  "description": "Discover LG 24MS550-B. Click for pictures, reviews, and tech specs for the LG LG 60.45 cm (23.8) UltraGear™ Full HD IPS Display Monitor with 100Hz Refresh Rate, 5ms (GtG), Reader Mode, Flicker Safe.",
+  "highlights": [
+    "5ms (GtG)",
+    "Reader Mode",
+    "Flicker Safe 24MS550-B",
+    "Size [Inch]: 23.8",
+    "Resolution: 1920 x 1080",
+    "Panel Type: IPS"
+  ],
+  "specs": {
+    "Specifications": {
+      "Size [Inch]": "23.8",
+      "Resolution": "1920 x 1080",
+      "Panel Type": "IPS",
+      "Aspect Ratio": "16:9",
+      "Color Gamut (Typ.)": "NTSC 72% (CIE1931)",
+      "Brightness (Typ.) [cd/m²]": "250",
+      "Refresh Rate (Max.) [Hz]": "100",
+      "Response Time": "5ms (GtG at Faster)",
+      "Display Position Adjustments": "Tilt/Height"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 23.8,
+    "resolution": "1920 x 1080",
+    "refreshRateHz": 100,
+    "panel": "IPS",
+    "responseTimeMs": 5.0,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "23.8\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://www.lg.com/content/dam/channel/wcms/in/monitors/fhd-qhd/mnt_fhd_24ms550_lg-com-kit/gallery/01-basic/fhd-24ms550-basic-large.jpg",
+        "alt": "LG 24\" FHD IPS Monitor 24MS550-B"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "LG-24MS550B",
+      "mpn": "24MS550-B",
+      "options": {
+        "Size": "23.8\""
+      },
+      "price": 8399,
+      "mrp": 13500,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lg.com/in/monitors/fhd-qhd/24ms550-b/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Name, selling price (price), strikethrough price (mrp), stock, image and specs from the LG India product page's structured data."
+  }
+}

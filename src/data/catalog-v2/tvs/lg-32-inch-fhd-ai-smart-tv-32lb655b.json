@@ -1,0 +1,85 @@
+{
+  "slug": "lg-32-inch-fhd-ai-smart-tv-32lb655b",
+  "title": "LG 32\" FHD AI Smart TV 32LB655B",
+  "brand": "LG",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "81.28 cm (32) LG Full HD TV AI 32LB655BPLA FHD with α5 Processor Gen9, with HDR10 Pro 2026 32LB655BPLA",
+  "description": "Discover LG 32LB655BPLA. Click for pictures, reviews, and tech specs for the LG 81.28 cm (32) LG Full HD TV AI 32LB655BPLA FHD with α5 Processor Gen9, with HDR10 Pro 2026.",
+  "highlights": [
+    "with HDR10 Pro 2026 32LB655BPLA",
+    "PICTURE (DISPLAY) - Display Type: HD",
+    "PICTURE (DISPLAY) - Refresh Rate: 60Hz Native",
+    "PICTURE (PROCESSING) - HDR (High Dynamic Range): HDR10 / HLG",
+    "Audio Output: 10W"
+  ],
+  "specs": {
+    "Specifications": {
+      "PICTURE (DISPLAY) - Display Type": "HD",
+      "PICTURE (DISPLAY) - Refresh Rate": "60Hz Native",
+      "PICTURE (PROCESSING) - HDR (High Dynamic Range)": "HDR10 / HLG",
+      "Audio Output": "10W",
+      "Speaker System": "2.0 Channel",
+      "DIMENSIONS AND WEIGHTS - TV Dimensions without Stand (WxHxD, mm)": "719 x 430 x 75(India Only, Global : 71)",
+      "DIMENSIONS AND WEIGHTS - TV Weight without Stand (kg)": "3.5"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 32.0,
+    "resolution": null,
+    "refreshRateHz": null,
+    "panel": null,
+    "os": "webOS",
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "32\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://www.lg.com/content/dam/channel/wcms/in/images/tv-images/gallery/new-bee-levels/32lb655bpla/32LB655BPLA-450x450-1-v.jpg",
+        "alt": "LG 32\" FHD AI Smart TV 32LB655B"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "LG-32LB655BPLA",
+      "mpn": "32LB655BPLA",
+      "options": {
+        "Size": "32\""
+      },
+      "price": 18999,
+      "mrp": 25990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lg.com/in/tv-soundbars/smart-tvs/32lb655bpla/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Name, selling price (price), strikethrough price (mrp), stock, image and specs from the LG India product page's structured data."
+  }
+}
