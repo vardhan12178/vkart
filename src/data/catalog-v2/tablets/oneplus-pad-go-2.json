@@ -1,0 +1,276 @@
+{
+  "slug": "oneplus-pad-go-2",
+  "title": "OnePlus Pad Go 2",
+  "brand": "OnePlus",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": "2025",
+  "shortDescription": "OnePlus Pad Go 2: MediaTek Dimensity 7300-Ultra, 30.73cm (12.1-inches) display, 10,050 mAh battery.",
+  "description": "OnePlus Pad Go 2 runs on the MediaTek Dimensity 7300-Ultra with a 30.73cm (12.1-inches) LCD display at up to 120Hz.\n\nIts 10,050 mAh battery supports up to 33W charging, and it comes in Lavender Drift, Shadow Black.",
+  "highlights": [
+    "MediaTek Dimensity 7300-Ultra",
+    "30.73cm (12.1-inches) LCD display",
+    "2800*1980",
+    "10,050 mAh battery, 33W charging"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Height": "26.60 cm",
+      "Width": "19.28 cm",
+      "Thickness": "0.68 cm",
+      "Weight": [
+        "Wi-Fi Variant: 597g",
+        "5G Variant: 599g"
+      ]
+    },
+    "Performance": {
+      "Platform": "MediaTek Dimensity 7300-Ultra",
+      "RAM": "8GB: LPDDR5X",
+      "ROM": "128GB / 256GB (UFS 3.1)"
+    },
+    "Battery & Charging": {
+      "Capacity": "10,050mAh (Typical) / 9,800mAh (Rated)",
+      "Charging": "33W SUPERVOOC",
+      "Charging Port": "Type-C",
+      "Wireless Charging": "Unsupported"
+    },
+    "Display": {
+      "Size": "30.73cm (12.1-inches)",
+      "Screen-to-body Ratio": "88.50%",
+      "Screen Ratio": "7:5 Ratio",
+      "Type": "LCD",
+      "Screen Color Depth": "12 bit (8+4 bit)",
+      "Resolution": "2800*1980",
+      "PPI": "284",
+      "Color Gamut": "98% DCI-P3",
+      "Refresh Rate": "30/60/90/120Hz",
+      "Brightness": "600nit (HBM 900nit)"
+    },
+    "Audio": {
+      "Speakers": "4 Speakers",
+      "Bluetooth Audio": "SBC, AAC, aptX, aptX HD, LDAC"
+    },
+    "Connectivity": {
+      "Wi-Fi": "Wi-Fi 2.4G, Wi-Fi 5G, Wi-Fi 6 (802.11ax) , Wi-Fi 6 (802.11ax), 802.11a/b/g/n/ac/ax",
+      "5G": "5G cellular network (SIM card)",
+      "Bluetooth": "Bluetooth 5.4, Low Energy, BLE Audio"
+    },
+    "Camera": {
+      "Rear Camera": "8MP",
+      "Front Camera": "8MP"
+    },
+    "Operating System": {
+      "details": [
+        "OxygenOS 16"
+      ]
+    },
+    "Biometrics": {
+      "details": [
+        "Facial Recognition",
+        "Face Unlock"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "MediaTek Dimensity 7300-Ultra",
+    "displayInch": 12.1,
+    "panel": "LCD",
+    "refreshRateHz": 120,
+    "batteryMah": 10050,
+    "chargingW": 33,
+    "ramGB": 8,
+    "storageGB": 128,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        },
+        {
+          "value": "5G"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lavender Drift",
+          "hex": "#BDB3D6"
+        },
+        {
+          "value": "Shadow Black",
+          "hex": "#2A2B2E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lavender Drift": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/08/4040a6a9e79144406c554f12e598cef2.png",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/09/e4560d007bf7cef477217f5bba1192f3.png",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/09/5cd88d46690b047041705cd4cbcc9859.png",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/09/b5e666dd482cabfcda602b7d5dc5701d.png",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 4"
+        }
+      ],
+      "Shadow Black": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/08/95560b3bdb6e4b0c79f7b76eacb9e5f0.png",
+          "alt": "OnePlus Pad Go 2 in Shadow Black"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/09/129c7b2750e0e581d565f55c7b676364.png",
+          "alt": "OnePlus Pad Go 2 in Shadow Black, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/09/ceab0831a3cb8b5165ab0d498907351f.png",
+          "alt": "OnePlus Pad Go 2 in Shadow Black, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202512/08/92ca6c726ea18018f6f190217ef8bbfb.png",
+          "alt": "OnePlus Pad Go 2 in Shadow Black, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-PADGO2-8128-WF-LADR",
+      "mpn": "5511102110",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 128GB",
+        "Color": "Lavender Drift"
+      },
+      "price": 39499,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PADGO2-8128-WF-SHBL",
+      "mpn": "5511102115",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 128GB",
+        "Color": "Shadow Black"
+      },
+      "price": 39499,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PADGO2-8256-WF-LADR",
+      "mpn": "5511102114",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 256GB",
+        "Color": "Lavender Drift"
+      },
+      "price": 42499,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PADGO2-8256-WF-SHBL",
+      "mpn": "5511102112",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 256GB",
+        "Color": "Shadow Black"
+      },
+      "price": 42499,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PADGO2-8256-5G-SHBL",
+      "mpn": "5511102111",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "8GB + 256GB",
+        "Color": "Shadow Black"
+      },
+      "price": 45499,
+      "mrp": 55999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "cellular": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Pad Go 2",
+    "SUPERVOOC Power Adapter",
+    "Type-C Cable",
+    "User Guide & Safety and Warranty Booklet",
+    "SIM Tray Ejector (5G Variant Only)"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/oneplus-pad-go-2/specs",
+      "https://www.oneplus.in/buy-oneplus-pad-go-2"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oneplus.in spec page; variants, selling price (price), MRP (mrp) and images from the OnePlus India store data."
+  }
+}
