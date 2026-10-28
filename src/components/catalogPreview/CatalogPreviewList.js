@@ -79,11 +79,11 @@ export default function CatalogPreviewList() {
         {products.reduce((n, p) => n + p.variants.length, 0)} variants. Images load from the brands' own sites for now.
       </div>
 
-      <div className="flex gap-6 border-b border-gray-200">
+      <div className="flex gap-6 overflow-x-auto border-b border-gray-200">
         {Object.entries(CATEGORIES).map(([k, label]) => (
           <button key={k} type="button"
             onClick={() => { setCategory(k); setBrand("All"); if (SORTS[sort].mobilesOnly) setSort("price-desc"); }}
-            className={`-mb-px border-b-2 pb-2 text-2xl font-bold ${category === k ? "border-gray-900 text-gray-900" : "border-transparent text-gray-400 hover:text-gray-600"}`}>
+            className={`-mb-px shrink-0 whitespace-nowrap border-b-2 pb-2 text-lg font-bold sm:text-2xl ${category === k ? "border-gray-900 text-gray-900" : "border-transparent text-gray-400 hover:text-gray-600"}`}>
             {label}
           </button>
         ))}
