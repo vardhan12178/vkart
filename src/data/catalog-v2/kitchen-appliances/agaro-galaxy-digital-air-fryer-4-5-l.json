@@ -1,0 +1,106 @@
+{
+  "slug": "agaro-galaxy-digital-air-fryer-4-5-l",
+  "title": "Agaro Galaxy Digital Air Fryer 4.5 L",
+  "brand": "Agaro",
+  "category": "kitchen-appliances",
+  "categoryPath": [
+    "home-kitchen",
+    "kitchen-appliances",
+    "air-fryers"
+  ],
+  "status": "draft",
+  "launchDate": "2024-01",
+  "shortDescription": "7 Preset Program and Reheat- French fries, Chicken leg, Shrimp, Cake, Steak, Fish, Ribs",
+  "description": "7 Preset Program and Reheat- French fries, Chicken leg, Shrimp, Cake, Steak, Fish, Ribs",
+  "highlights": [
+    "7 Preset Program and Reheat- French fries, Chicken leg, Shrimp, Cake, Steak, Fish, Ribs",
+    "5L capacity helps to cook food for small families quickly. Perfect for family meals and small get together",
+    "1400 Watts power adds to fast and healthy cooking",
+    "This air fryer oven comes with built in Overheat protection & Auto Shut-off function",
+    "Includes- Inner Tray and pan with handle",
+    "2 Years Warranty"
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "7 Preset Program and Reheat- French fries, Chicken leg, Shrimp, Cake, Steak, Fish, Ribs",
+        "5L capacity helps to cook food for small families quickly. Perfect for family meals and small get together",
+        "1400 Watts power adds to fast and healthy cooking",
+        "Comes with digital display and touch control through which you can select the functions or control the temperature from 80-200?øC and timer up to 120 minutes",
+        "This air fryer oven comes with built in Overheat protection & Auto Shut-off function",
+        "Includes- Inner Tray and pan with handle",
+        "2 Years Warranty"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Air Fryer",
+    "wattage": 1400,
+    "capacity": "4.5 L"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "4.5 L"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/Web_01_ae3af268-da41-4ab6-b6b0-e0b56e048497.jpg?v=1758220327",
+        "alt": "Agaro Galaxy Digital Air Fryer 4.5 L"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_9b139036-6d0d-44cf-9d76-718ec08f8dcd.jpg?v=1764240589",
+        "alt": "Agaro Galaxy Digital Air Fryer 4.5 L, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_b1a986e3-d1f6-4d97-9883-40c8214f197f.jpg?v=1764240596",
+        "alt": "Agaro Galaxy Digital Air Fryer 4.5 L, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_5c02c7be-dd22-49c4-bca1-d99a6797caac.jpg?v=1764240602",
+        "alt": "Agaro Galaxy Digital Air Fryer 4.5 L, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_8a6a1c5d-049d-4d6b-81b0-29419cf3ab92.jpg?v=1764240609",
+        "alt": "Agaro Galaxy Digital Air Fryer 4.5 L, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_0c63545c-0eff-4cb6-8ced-6bc0ab086ab9.jpg?v=1764240613",
+        "alt": "Agaro Galaxy Digital Air Fryer 4.5 L, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "AGR-AGAROGALAXYDIG-45L",
+      "mpn": "34028",
+      "options": {
+        "Size": "4.5 L"
+      },
+      "price": 3879,
+      "mrp": 7995,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "2 Years Warranty",
+  "source": {
+    "urls": [
+      "https://www.agarolifestyle.com/products/agaro-galaxy-digital-air-fryer-for-home-4-5l-electric-air-fryer-convection-oven-1400w-7-preset-programs-reheat-360-degrees-air-circulation-digital-touch-display-bake-roast-toast-black"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Agaro's official online store."
+  }
+}

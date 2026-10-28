@@ -1,0 +1,93 @@
+{
+  "slug": "bombay-shaving-company-sensi-smart-3-razor-with-12-blades",
+  "title": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades",
+  "brand": "Bombay Shaving Company",
+  "category": "grooming",
+  "categoryPath": [
+    "beauty",
+    "grooming",
+    "razors"
+  ],
+  "status": "draft",
+  "launchDate": "2026-07",
+  "shortDescription": "SENSI SMART 3 Annual Shave Pack includes 1 razor and 12 blades for up to 1 year of Sensi shaving.",
+  "description": "SENSI SMART 3 Annual Shave Pack includes 1 razor and 12 blades for up to 1 year of Sensi shaving. The 3-blade system, Aloe Vera lubrication strip, and flexible pivoting head deliver a close, smooth shave.\n\nSmooth shave that's Sensi on your skin, and Sensi on your pocket - all year long.",
+  "highlights": [
+    "Smooth shave that's Sensi on your skin, and Sensi on your pocket - all year long."
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "Smooth shave that's Sensi on your skin, and Sensi on your pocket - all year long."
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Razor"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "Standard"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/1_c11ea9e1-72f1-47e5-88db-20128d8e0837.webp?v=1783582936",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3_207781f9-6e54-4184-9e75-a67ee410c4c1.webp?v=1783582936",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4_ab8695a3-0e1a-4cef-849c-065c072bc7c2.webp?v=1783582936",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5_f224d421-fb7c-4926-80b3-7e47d9ecbcb9.webp?v=1783582936",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6_d4230e5c-deea-4947-9bd0-782ce8594012.webp?v=1783582936",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2_e3eaccdf-4262-45bf-ab92-c6d73a59a591.webp?v=1783582936",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BSC-SENSISMART3RAZ-STANDARD",
+      "mpn": "SHAVE_SENSI_SMART-3_RAZOR_CRT_12PC",
+      "options": {
+        "Size": "Standard"
+      },
+      "price": 999,
+      "mrp": 999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.bombayshavingcompany.com/products/sensi-smart-3-razor-and-12-blades"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Bombay Shaving Company's official online store."
+  }
+}

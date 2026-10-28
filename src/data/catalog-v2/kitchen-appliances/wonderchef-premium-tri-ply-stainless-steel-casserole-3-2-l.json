@@ -1,0 +1,117 @@
+{
+  "slug": "wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l",
+  "title": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L",
+  "brand": "Wonderchef",
+  "category": "kitchen-appliances",
+  "categoryPath": [
+    "home-kitchen",
+    "cookware",
+    "casseroles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Manufacturer Address: H-180, Sector-2, Bawana Industrial Area, New Delhi-110039, INDIA",
+  "description": "Manufacturer Address: H-180, Sector-2, Bawana Industrial Area, New Delhi-110039, INDIA",
+  "highlights": [
+    "Brand: Wonderchef",
+    "Manufacturer Name: Parul Home Products",
+    "Manufacturer Address: H-180, Sector-2, Bawana Industrial Area, New Delhi-110039, INDIA"
+  ],
+  "specs": {
+    "Specifications": {
+      "Enhanced Multi-layered Construction": "The Wonderchef Premium Tri-Ply Casserole’s aluminium core is sandwiched between two non-toxic, high-grade steel layers, providing exceptional heat conduction an",
+      "Perfect Cooking Every Time": "With its 2.6mm thickness and tri-ply walls, this casserole ensures your food is cooked to perfection without burning, while the even heat distribution guarantee",
+      "Healthy & Delicious Meals": "The tri-ply construction requires less oil, so you can enjoy healthier meals without compromising on flavor.",
+      "Versatile & Multifunctional": "This casserole is your go-to for cook and serve soups, biryanis, curries, rice, pastas and much more, making it an essential addition to any kitchen.",
+      "Compatible With All Cooktops": "Designed to work with gas, electric, and induction cooktops, this versatile casserole is perfect for any cooking setup.",
+      "Riveted Stay-cool Handles": "Experience maximum comfort with stay-cool handles, ensuring safe handling and securely riveted to the casserole’s body.",
+      "Easy to Clean": "The mirror-polished exterior is stylish and easy to clean, while the brushed-finish interior prevents food from sticking, making cleanup a breeze.",
+      "Ideal For Home Chefs & Pros": "This high-quality casserole, featuring professional-grade construction, is the perfect choice for both home chefs and culinary experts.",
+      "Long-lasting 10-year Warranty": "Invest confidently in your kitchen, knowing your casserole is backed by a 10-year Wonderchef warranty, ensuring satisfaction for years to come.",
+      "Brand": "Wonderchef",
+      "Manufacturer Name": "Parul Home Products",
+      "Manufacturer Address": "H-180, Sector-2, Bawana Industrial Area, New Delhi-110039, INDIA"
+    },
+    "Features": {
+      "points": [
+        "Healthy & Delicious Meals: The tri-ply construction requires less oil, so you can enjoy healthier meals without compromising on flavor.",
+        "Compatible With All Cooktops: Designed to work with gas, electric, and induction cooktops, this versatile casserole is perfect for any cooking setup.",
+        "Riveted Stay-cool Handles: Experience maximum comfort with stay-cool handles, ensuring safe handling and securely riveted to the casserole’s body."
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Casserole",
+    "capacity": "3.2 Litres",
+    "material": "tri-ply stainless steel"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "3.2 L"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804870.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804872.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804874.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804876.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804877.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804878.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804879.jpg?v=1757415138",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 7"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "WCF-NIGELLATRIPLYC-32L",
+      "mpn": "63154781",
+      "options": {
+        "Size": "3.2 L"
+      },
+      "price": 2799,
+      "mrp": 4670,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://wonderchef.com/products/nigella-tri-ply-casserole-with-stainless-steel-lid-22-cm"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Wonderchef's official online store."
+  }
+}

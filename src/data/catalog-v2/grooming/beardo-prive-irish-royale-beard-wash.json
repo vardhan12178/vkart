@@ -1,0 +1,93 @@
+{
+  "slug": "beardo-prive-irish-royale-beard-wash",
+  "title": "Beardo Prive Irish Royale Beard Wash",
+  "brand": "Beardo",
+  "category": "grooming",
+  "categoryPath": [
+    "beauty",
+    "grooming",
+    "beard-care"
+  ],
+  "status": "draft",
+  "launchDate": "2023-08",
+  "shortDescription": "Prive Irish Royale Beard Wash",
+  "description": "Prive Irish Royale Beard Wash",
+  "highlights": [],
+  "specs": {},
+  "keySpecs": {
+    "productType": "Beard Wash"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "100ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/beardo-prive-irish-royale-beard-wash.png?v=1781675412",
+        "alt": "Beardo Prive Irish Royale Beard Wash"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/Royal_beard_wash.jpg?v=1733921157",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/2_29336676-6cd5-42c8-b363-267113a464ff.jpg?v=1692354339",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/3_334c05fb-c477-4e0c-a57e-84587e30d674.jpg?v=1692354340",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/4_600d70e5-cc2f-444b-88e4-7332c6af3943.jpg?v=1692354341",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/5_72334953-38ab-402a-bf6d-fd811e234b98.jpg?v=1692354340",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/6_105a536b-9928-4d01-be91-3c11d9d46cec.jpg?v=1692354340",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/7_202a5a0f-8ddf-40b0-a2f9-895ba3ecd92b.jpg?v=1692354339",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BRD-BEARDOPRIVEIRI-100ML",
+      "mpn": "BDCL122",
+      "options": {
+        "Size": "100ml"
+      },
+      "price": 299,
+      "mrp": 350,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://beardo.in/products/beardo-prive-irish-royale-beard-wash"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Beardo's official online store."
+  }
+}

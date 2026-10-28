@@ -1,0 +1,118 @@
+{
+  "slug": "agaro-elegant-electric-kettle-1-8-l",
+  "title": "Agaro Elegant Electric Kettle 1.8 L",
+  "brand": "Agaro",
+  "category": "kitchen-appliances",
+  "categoryPath": [
+    "home-kitchen",
+    "kitchen-appliances",
+    "kettles"
+  ],
+  "status": "draft",
+  "launchDate": "2023-05",
+  "shortDescription": "1.8 Litres large capacity",
+  "description": "1.8 Litres large capacity",
+  "highlights": [
+    "Power: 1500 Watts",
+    "1.8 Litres large capacity",
+    "Premium textured finish, stainless steel inside & cool touch the outer body",
+    "Thermostat with boil-dry protection & auto shut off",
+    "360-degree swivel power base with 1.2 Meters long cord",
+    "Concealed heating element with one-touch locking lid"
+  ],
+  "specs": {
+    "Specifications": {
+      "Power": "1500 Watts"
+    },
+    "Features": {
+      "points": [
+        "1.8 Litres large capacity",
+        "Premium textured finish, stainless steel inside & cool touch the outer body",
+        "Thermostat with boil-dry protection & auto shut off",
+        "360-degree swivel power base with 1.2 Meters long cord",
+        "Concealed heating element with one-touch locking lid",
+        "Power: 1500 Watts",
+        "1 Year manufacturer's warranty"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Electric Kettle",
+    "wattage": 1500,
+    "capacity": "1.8 L",
+    "material": "stainless steel"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "1.8 L"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/1Web_3_ad1a8896-b7bc-42c2-bcbd-f2e833ba5912.jpg?v=1763643025",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_7970be93-39db-4eb0-a91f-c2d2801bea94.jpg?v=1763643030",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_01d7e353-2ba0-40e6-9d73-6417c9bb6764.jpg?v=1763643039",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_b3e16a68-a3e1-4497-af80-fb3194573ae9.jpg?v=1763643044",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_0ee7815f-6b36-4744-80d9-0466d554e4d4.jpg?v=1763643049",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_dacf9bf2-c057-40a2-b2de-9947805d0728.jpg?v=1763643054",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/7_1d9fea18-91c2-4a7b-9e53-8d8956528c44.jpg?v=1763643061",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/8_77f5945e-2a6e-4135-8911-b5415b84bb7e.jpg?v=1763643068",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "AGR-ELEGANTELECTRI-18L",
+      "mpn": "33897",
+      "options": {
+        "Size": "1.8 L"
+      },
+      "price": 899,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 Year manufacturer's warranty",
+  "source": {
+    "urls": [
+      "https://www.agarolifestyle.com/products/elegant-electric-kettle-1-8l-black"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Agaro's official online store."
+  }
+}

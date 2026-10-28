@@ -1,0 +1,112 @@
+{
+  "slug": "agaro-royal-stand-mixer-1000w",
+  "title": "Agaro Royal Stand Mixer 1000W",
+  "brand": "Agaro",
+  "category": "kitchen-appliances",
+  "categoryPath": [
+    "home-kitchen",
+    "kitchen-appliances",
+    "mixers"
+  ],
+  "status": "draft",
+  "launchDate": "2023-05",
+  "shortDescription": "· Powerful 1000W Motor with Pure Copper Winding Delivers efficient, high-performance mixing for all your everyday kitchen needs.",
+  "description": "· Powerful 1000W Motor with Pure Copper Winding Delivers efficient, high-performance mixing for all your everyday kitchen needs.\n\n· 8 Speed Settings with LED Indicator & Pulse Function Gives you precise control for effortless beating, whisking, and kneading.",
+  "highlights": [
+    "· 2-Year Brand Warranty for Peace of Mind Reliable performance backed by trusted after-sales support.",
+    "· For Domestic Use Only"
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "· Powerful 1000W Motor with Pure Copper Winding Delivers efficient, high-performance mixing for all your everyday kitchen needs.",
+        "· 8 Speed Settings with LED Indicator & Pulse Function Gives you precise control for effortless beating, whisking, and kneading.",
+        "· Splash Guard for a Clean, Mess-Free Experience Prevents spills and splashes, keeping your kitchen neat while you mix, whisk, or knead.",
+        "· Enhanced Safety with Overheat Protection & Safety Lock Designed to ensure safe and reliable operation during every use.",
+        "· Complete Mixing Set for Versatile Use Includes main unit, dough hook, beater, whisk, and a large 5L stainless steel bowl for all your recipes.",
+        "· 2-Year Brand Warranty for Peace of Mind Reliable performance backed by trusted after-sales support.",
+        "· For Domestic Use Only",
+        "This stand mixer is designed for home use only and should not be used for commercial food preparation or continuous heavy-duty operation."
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Stand Mixer",
+    "wattage": 1000,
+    "capacity": "5 L",
+    "material": "copper"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "5 L"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/01_Web_8482d369-b579-4a32-9bc5-059b94ed4fe1.jpg?v=1781505343",
+        "alt": "Agaro Royal Stand Mixer 1000W"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/02_d6e57426-2be2-4ef0-98f3-7efd38484a79.jpg?v=1781505077",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/03_db40fb64-468f-4e7b-b0e7-ad368ecde142.jpg?v=1781505105",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/04_0d190cbd-5f54-4e71-acb1-ecae74ebc39f.jpg?v=1781505136",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/05_5a306dba-5c0e-477f-bb6b-62b8dee97a29.jpg?v=1781505164",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/06_05b86cf0-3973-4c22-8a78-dff682598c1d.jpg?v=1781505196",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/07_49a74742-cea5-41d6-9976-1e686ea28cb2.jpg?v=1781505224",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/08_09b6039f-e8ac-469d-aeeb-a0a1ad4f4212.jpg?v=1781505257",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "AGR-ROYALSTANDMIXE-5L",
+      "mpn": "33554",
+      "options": {
+        "Size": "5 L"
+      },
+      "price": 6498,
+      "mrp": 11495,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.agarolifestyle.com/products/royal-stand-mixer-1000w"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Agaro's official online store."
+  }
+}
