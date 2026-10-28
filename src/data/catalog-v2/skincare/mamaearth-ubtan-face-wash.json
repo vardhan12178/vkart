@@ -1,0 +1,114 @@
+{
+  "slug": "mamaearth-ubtan-face-wash",
+  "title": "Mamaearth Ubtan Natural Glow Face Wash",
+  "brand": "Mamaearth",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "cleanser"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Pamper your skin with the age-old tradition of Ubtan and let your dull, tanned skin rejuvenate, feel fresh & bright.",
+  "description": "Pamper your skin with the age-old tradition of Ubtan and let your dull, tanned skin rejuvenate, feel fresh & bright. Undo the effects of tan, pollution, dirt, harmful UV rays, and harsh weather conditions with Mamaearth Ubtan Face Wash.\n\nCrafted to give you glowing skin, Mamaearth Ubtan Face Wash is enriched with the natural goodness of Turmeric and Saffron. Antioxidants in Turmeric protect skin from free radical damage. It’s also traditionally known to fight sun tan and brighten skin tone. Carrot Seed Oil and Saffron clear spots and help in tan removal. Walnut Beads in this Ubtan Face Wash help exfoliate, reduce tan while brightening the skin.",
+  "highlights": [
+    "Cleanser",
+    "Key actives: Turmeric, Saffron",
+    "For sensitive skin"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Cleanser",
+      "skinType": [
+        "sensitive"
+      ],
+      "keyIngredients": [
+        "Turmeric",
+        "Saffron"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Cleanser",
+    "skinTypes": [
+      "sensitive"
+    ],
+    "keyIngredients": [
+      "Turmeric",
+      "Saffron"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "100ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ubtan_fw_100ml.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/2_182.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/3_211.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/4_233.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/7_2_691a7d30-e6d2-457e-8544-53ac3aa13f68.jpg?v=1780642073",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ubtan_face_glow100ml_white_bg.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/1_124.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/bop_1_154.jpg?v=1776317990",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "MAM-UBTNFW-100ML",
+      "mpn": "8906087770671",
+      "options": {
+        "Size": "100ml"
+      },
+      "price": 285,
+      "mrp": 285,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://mamaearth.in/products/ubtan-face-wash"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Mamaearth's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

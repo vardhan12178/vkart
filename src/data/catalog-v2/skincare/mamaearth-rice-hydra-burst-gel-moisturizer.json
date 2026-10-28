@@ -1,0 +1,115 @@
+{
+  "slug": "mamaearth-rice-hydra-burst-gel-moisturizer",
+  "title": "Mamaearth Rice Hydra Burst Gel Moisturizer",
+  "brand": "Mamaearth",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "moisturiser"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Give dull, tired skin a refreshing burst of hydration with Mamaearth Rice Hydra Burst Gel Moisturizer.",
+  "description": "Give dull, tired skin a refreshing burst of hydration with Mamaearth Rice Hydra Burst Gel Moisturizer. This lightweight water-gel formula combines the goodness of Rice Water, Rice Bran Extract, Niacinamide & Multi-Molecular Hyaluronic Acid to leave skin nourished, plump & radiant with a smooth, glass-skin glow.\n\nPowered by Burst Bead Encapsulation Technology, soft rice beads melt and burst on contact with skin to release fresh nutrients, delivering an instant boost of moisture. Its 2X Rice formulation combines Rice Water & Rice Bran Extract to brighten dull-looking skin and enhance natural radiance, while Multi-Molecular Hyaluronic Acid helps lock in moisture and Niacinamide helps improve skin texture.",
+  "highlights": [
+    "Moisturiser",
+    "Key actives: Niacinamide, Hyaluronic Acid, Rice Water"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Moisturiser",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Niacinamide",
+        "Hyaluronic Acid",
+        "Rice Water"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Moisturiser",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Niacinamide",
+      "Hyaluronic Acid",
+      "Rice Water"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "50g"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/PDP_FOP_1c0794bd-ea1c-442e-a0ac-11da64f2733a.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/2_d074af00-ec60-4c79-bdc1-f878977cdf37.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/3_3b068f09-a66d-4a62-a259-7113dd464063.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/4_0090812e-e7ae-4f06-a720-e3a4db16942e.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/5_ec126ed9-829d-481d-a83e-bbf14fafa54d.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/6_106a763e-c7fa-4e04-acea-ca5fbda29de4.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/7_678a5413-61fd-487f-ad77-05fea382bda9.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/8_975f8314-80d6-4c67-97f6-3e94faf9ba50.jpg?v=1790593220",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "MAM-RICEGM-50G",
+      "mpn": "8904417328479",
+      "options": {
+        "Size": "50g"
+      },
+      "price": 599,
+      "mrp": 599,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://mamaearth.in/products/rice-hydra-burst-gel-moisturizer-with-rice-extract-for-glass-glow-50g"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Mamaearth's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

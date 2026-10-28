@@ -1,0 +1,120 @@
+{
+  "slug": "the-derma-co-2-niacinamide-oily-skin-cleanser",
+  "title": "The Derma Co 2% Niacinamide Oily Skin Cleanser",
+  "brand": "The Derma Co",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "cleanser"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "A true savior for all the sensitive skin fam out there!",
+  "description": "A true savior for all the sensitive skin fam out there! The Derma Co. 2% Niacinamide Oily Skin Cleanser is a blend of non-irritating, gel-based formulation that is 100% soap-free. With its gentle foaming, it removes excess facial oiliness & gently cleanses pores without damaging the skin barrier. Enriched with 2% Niacinamide, Cica-Extract & Salicylic Acid, this cleanser effectively soothes sensitive skin, protects skin’s barrier & keeps it hydrated & soft. It shields your skin from environmental stressors & gently removes dirt, impurities & even makeup! The best part - this derma-approved cleanser retains skin’s moisture, ensuring optimal hydration for 24 hours post wash - making it a win-win for your skin!\n\nAs part of dermatological safety evaluation, The Derma Co. 2% Niacinamide Oily Skin Cleanser for Sensitive, Oily & Combination Skin was assessed through Primary Skin Irritation Testing and found Dermatologically Safe for use and Non-Irritant under protocol no. C3B03444 .",
+  "highlights": [
+    "Cleanser",
+    "Key actives: Niacinamide, Salicylic Acid, Cica",
+    "For oily, combination, sensitive skin"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Cleanser",
+      "skinType": [
+        "oily",
+        "combination",
+        "sensitive"
+      ],
+      "keyIngredients": [
+        "Niacinamide",
+        "Salicylic Acid",
+        "Cica"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Cleanser",
+    "skinTypes": [
+      "oily",
+      "combination",
+      "sensitive"
+    ],
+    "keyIngredients": [
+      "Niacinamide",
+      "Salicylic Acid",
+      "Cica"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "250ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_PDP_efb0546a-95fb-4827-b423-fd52fa05b070.jpg?v=1780313832",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/clinicalactives_63f422fb-7c6b-473c-abf4-840ffc2456a6.jpg?v=1780313832",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/whoisitfor_922b4a29-478e-4446-af99-b406c01611de.jpg?v=1780313832",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/wheredoesitfall_cb008eb4-c6c1-4c79-af9e-dda7d018d4ab.jpg?v=1780313832",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/howtouse_46f1e583-76b7-4116-bd42-7dd70ec98a0d.jpg?v=1780313832",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/rprs_f0d4462a-d647-4d1f-9c5e-d1a0f3dafec0.jpg?v=1780313832",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/3_FOP_158d365a-1f7a-4e8c-ba87-af9d8ff2d100.jpg?v=1780313833",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/4_BOP_ad1f3997-6d6e-4fcc-9d66-6754ab481f45.jpg?v=1780313833",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "TDC-NIA2CL-250ML",
+      "mpn": "8904417325515",
+      "options": {
+        "Size": "250ml"
+      },
+      "price": 799,
+      "mrp": 799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thedermaco.com/products/2-niacinamide-oily-skin-cleanser-for-sensitive-oily-combination-skin-250-ml"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from The Derma Co's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

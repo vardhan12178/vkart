@@ -1,0 +1,128 @@
+{
+  "slug": "dot-and-key-strawberry-bright-niacinamide-serum",
+  "title": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum",
+  "brand": "Dot & Key",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "serum"
+  ],
+  "status": "draft",
+  "launchDate": "2025-04",
+  "shortDescription": "Serum with Niacinamide, Strawberry for all skin types.",
+  "description": "Serum with Niacinamide, Strawberry for all skin types.",
+  "highlights": [
+    "Serum",
+    "Key actives: Niacinamide, Strawberry"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Serum",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Niacinamide",
+        "Strawberry"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Serum",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Niacinamide",
+      "Strawberry"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "20ml"
+        },
+        {
+          "value": "30ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_1_f94f4456-d328-4271-ab7e-94bde8c9bbd3.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_2_f8f458e1-7270-46fd-8972-084b6bbae26b.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_3_bd5648df-52cf-4a7a-8f0a-02971320541f.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_4_2eb91c9c-982d-4219-92e5-793ba73847a5.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_5_b14a56ce-efea-4e11-a376-a1f2578dd7d7.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_6_a3deb5f2-42e8-44ff-aa6d-2b53c7f74aa1.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_7_133440ac-b483-46ae-9344-90c0cd9a22c4.jpg?v=1745323515",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard_8_bb9cf949-b174-4287-95e9-c6e6d5dbef26.jpg?v=1745943941",
+        "alt": "Dot & Key Strawberry Bright 10% Niacinamide Face Serum, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "DNK-SBNIA-20ML",
+      "mpn": "DK_MNSBNS",
+      "options": {
+        "Size": "20ml"
+      },
+      "price": 449,
+      "mrp": 449,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SBNIA-30ML",
+      "mpn": "DK_SBNS",
+      "options": {
+        "Size": "30ml"
+      },
+      "price": 599,
+      "mrp": 599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.dotandkey.com/products/10-niacinamide-strawberry-brightening-face-serum"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Dot & Key's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

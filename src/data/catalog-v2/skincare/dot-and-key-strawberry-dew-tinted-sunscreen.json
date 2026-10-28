@@ -1,0 +1,578 @@
+{
+  "slug": "dot-and-key-strawberry-dew-tinted-sunscreen",
+  "title": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+",
+  "brand": "Dot & Key",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "sunscreen"
+  ],
+  "status": "draft",
+  "launchDate": "2025-08",
+  "shortDescription": "Sunscreen SPF 50+ with Niacinamide, Strawberry for all skin types.",
+  "description": "Sunscreen SPF 50+ with Niacinamide, Strawberry for all skin types.",
+  "highlights": [
+    "Sunscreen SPF 50+",
+    "Key actives: Niacinamide, Strawberry",
+    "Delivers uniform coverage",
+    "Infused with niacinamide",
+    "Protects with SPF 50+",
+    "Checks tanning"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Sunscreen",
+      "spf": "50+",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Niacinamide",
+        "Strawberry"
+      ]
+    },
+    "Details": {
+      "points": [
+        "Delivers uniform coverage",
+        "Infused with niacinamide",
+        "Protects with SPF 50+",
+        "Checks tanning",
+        "Fades dark spots overtime",
+        "Shake well & take 3 fingers full",
+        "Apply directly on the face",
+        "Blend for radiant skin instantly"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Sunscreen",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Niacinamide",
+      "Strawberry"
+    ],
+    "spf": "50+"
+  },
+  "variantOptions": [
+    {
+      "name": "Shade",
+      "values": [
+        {
+          "value": "Peony - 00 Very Light with Cool Undertone"
+        },
+        {
+          "value": "Porcelain - 01 Very Light with Warm Undertone"
+        },
+        {
+          "value": "Rose - 01A Light with Neutral Undertone"
+        },
+        {
+          "value": "Warm Ivory  - 02 Light with Warm Undertone"
+        },
+        {
+          "value": "Peach - 02A Light with Neutral Undertone"
+        },
+        {
+          "value": "Sand - 03 Light Medium with Warm Undertone"
+        },
+        {
+          "value": "Honey - 03A Light Medium with Warm Undertone"
+        },
+        {
+          "value": "Almond - 04 Medium with Cool Undertone"
+        },
+        {
+          "value": "Beige - 05 Medium with Warm Undertone"
+        },
+        {
+          "value": "Cinnamon - 06 Medium with Neutral Undertone"
+        },
+        {
+          "value": "Caramel - 07  Rich with Warm Undertone"
+        },
+        {
+          "value": "Hazelnut - 08 Rich with Neutral Undertone"
+        },
+        {
+          "value": "Mocha - 08A Rich with Warm Undertone"
+        },
+        {
+          "value": "Fudge-09 Very Rich with Warm Undertone"
+        },
+        {
+          "value": "Espresso - 10 Very Rich with Cool Undertone"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Shade",
+    "groups": {
+      "Peony - 00 Very Light with Cool Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peony - 00 Very Light with Cool Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peony - 00 Very Light with Cool Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peony - 00 Very Light with Cool Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peony - 00 Very Light with Cool Undertone, view 4"
+        }
+      ],
+      "Porcelain - 01 Very Light with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_6655186a-9e2b-41d5-8c25-6aeb8a012423.jpg?v=1786080044",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Porcelain - 01 Very Light with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Porcelain - 01 Very Light with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Porcelain - 01 Very Light with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Porcelain - 01 Very Light with Warm Undertone, view 4"
+        }
+      ],
+      "Rose - 01A Light with Neutral Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_d31ff120-1d38-4689-953e-0c95a5092f6a.jpg?v=1786364860",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Rose - 01A Light with Neutral Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Rose - 01A Light with Neutral Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Rose - 01A Light with Neutral Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Rose - 01A Light with Neutral Undertone, view 4"
+        }
+      ],
+      "Warm Ivory  - 02 Light with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_cd597d48-f01d-4055-baae-049a83f21a1b.jpg?v=1786364909",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Warm Ivory  - 02 Light with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Warm Ivory  - 02 Light with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Warm Ivory  - 02 Light with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Warm Ivory  - 02 Light with Warm Undertone, view 4"
+        }
+      ],
+      "Peach - 02A Light with Neutral Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_b9b9e6c7-a18e-41b1-b5ac-cabee3d22663.jpg?v=1785913269",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peach - 02A Light with Neutral Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peach - 02A Light with Neutral Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peach - 02A Light with Neutral Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Peach - 02A Light with Neutral Undertone, view 4"
+        }
+      ],
+      "Sand - 03 Light Medium with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_3dcb83a2-4c7c-4636-8bc7-1796dee70c5b.jpg?v=1786364995",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Sand - 03 Light Medium with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Sand - 03 Light Medium with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Sand - 03 Light Medium with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Sand - 03 Light Medium with Warm Undertone, view 4"
+        }
+      ],
+      "Honey - 03A Light Medium with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_6f214cb9-01a5-43dc-9b09-27714655b9b6.jpg?v=1785913583",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Honey - 03A Light Medium with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Honey - 03A Light Medium with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Honey - 03A Light Medium with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Honey - 03A Light Medium with Warm Undertone, view 4"
+        }
+      ],
+      "Almond - 04 Medium with Cool Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_2b49d39b-c7bd-42a3-9860-2bb282492780.jpg?v=1785913631",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Almond - 04 Medium with Cool Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Almond - 04 Medium with Cool Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Almond - 04 Medium with Cool Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Almond - 04 Medium with Cool Undertone, view 4"
+        }
+      ],
+      "Beige - 05 Medium with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_789152f7-4692-48ed-8ab6-9c2b3e7096cc.jpg?v=1786365085",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Beige - 05 Medium with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Beige - 05 Medium with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Beige - 05 Medium with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Beige - 05 Medium with Warm Undertone, view 4"
+        }
+      ],
+      "Cinnamon - 06 Medium with Neutral Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_aa0958b0-c7a8-4385-b89e-d55e3af0d2c4.jpg?v=1785913712",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Cinnamon - 06 Medium with Neutral Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Cinnamon - 06 Medium with Neutral Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Cinnamon - 06 Medium with Neutral Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Cinnamon - 06 Medium with Neutral Undertone, view 4"
+        }
+      ],
+      "Caramel - 07  Rich with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_7dddd109-1840-4f29-8a49-4b11ce299b0d.jpg?v=1786365091",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Caramel - 07  Rich with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Caramel - 07  Rich with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Caramel - 07  Rich with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Caramel - 07  Rich with Warm Undertone, view 4"
+        }
+      ],
+      "Hazelnut - 08 Rich with Neutral Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_51b0b5da-ffd1-4499-8aff-d706b6f03556.jpg?v=1785913792",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Hazelnut - 08 Rich with Neutral Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Hazelnut - 08 Rich with Neutral Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Hazelnut - 08 Rich with Neutral Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Hazelnut - 08 Rich with Neutral Undertone, view 4"
+        }
+      ],
+      "Mocha - 08A Rich with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_c1cf1cd9-913b-4579-b995-ae4504ba3acf.jpg?v=1785913803",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Mocha - 08A Rich with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Mocha - 08A Rich with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Mocha - 08A Rich with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Mocha - 08A Rich with Warm Undertone, view 4"
+        }
+      ],
+      "Fudge-09 Very Rich with Warm Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_c0664ef9-9dbf-41af-a809-c771abf1acec.jpg?v=1785913855",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Fudge-09 Very Rich with Warm Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Fudge-09 Very Rich with Warm Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Fudge-09 Very Rich with Warm Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Fudge-09 Very Rich with Warm Undertone, view 4"
+        }
+      ],
+      "Espresso - 10 Very Rich with Cool Undertone": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_7a3e02ab-57be-4d0d-a4b9-943b871b1581.jpg?v=1785913865",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Espresso - 10 Very Rich with Cool Undertone"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1_68456143-ee8a-40e9-85a3-5768a6233bb6.jpg?v=1786079947",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Espresso - 10 Very Rich with Cool Undertone, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Gemini_Generated_Image_apxev6apxev6apxe.png?v=1789200948",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Espresso - 10 Very Rich with Cool Undertone, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2_34f66df9-cff8-46ab-aa1d-83ccec20c853.jpg?v=1785913012",
+          "alt": "Dot & Key Strawberry Dew Tinted Sunscreen SPF 50+ in Espresso - 10 Very Rich with Cool Undertone, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "DNK-SDTSUN-PEONY00VER",
+      "mpn": "DK_SDTS00",
+      "options": {
+        "Shade": "Peony - 00 Very Light with Cool Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-PORCELAIN0",
+      "mpn": "DK_SDTS01",
+      "options": {
+        "Shade": "Porcelain - 01 Very Light with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-ROSE01ALIG",
+      "mpn": "DK_SDTS01A",
+      "options": {
+        "Shade": "Rose - 01A Light with Neutral Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-WARMIVORY0",
+      "mpn": "DK_SDTS02",
+      "options": {
+        "Shade": "Warm Ivory  - 02 Light with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-PEACH02ALI",
+      "mpn": "DK_SDTS02A",
+      "options": {
+        "Shade": "Peach - 02A Light with Neutral Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-SAND03LIGH",
+      "mpn": "DK_SDTS03",
+      "options": {
+        "Shade": "Sand - 03 Light Medium with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-HONEY03ALI",
+      "mpn": "DK_SDTS03A",
+      "options": {
+        "Shade": "Honey - 03A Light Medium with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-ALMOND04ME",
+      "mpn": "DK_SDTS04",
+      "options": {
+        "Shade": "Almond - 04 Medium with Cool Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-BEIGE05MED",
+      "mpn": "DK_SDTS05",
+      "options": {
+        "Shade": "Beige - 05 Medium with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-CINNAMON06",
+      "mpn": "DK_SDTS06",
+      "options": {
+        "Shade": "Cinnamon - 06 Medium with Neutral Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-CARAMEL07R",
+      "mpn": "DK_SDTS07",
+      "options": {
+        "Shade": "Caramel - 07  Rich with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-HAZELNUT08",
+      "mpn": "DK_SDTS08",
+      "options": {
+        "Shade": "Hazelnut - 08 Rich with Neutral Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-MOCHA08ARI",
+      "mpn": "DK_SDTS08A",
+      "options": {
+        "Shade": "Mocha - 08A Rich with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-FUDGE09VER",
+      "mpn": "DK_SDTS09",
+      "options": {
+        "Shade": "Fudge-09 Very Rich with Warm Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "DNK-SDTSUN-ESPRESSO10",
+      "mpn": "DK_SDTS010",
+      "options": {
+        "Shade": "Espresso - 10 Very Rich with Cool Undertone"
+      },
+      "price": 549,
+      "mrp": 549,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.dotandkey.com/products/strawberry-dew-tinted-sunscreen-spf-50-pa"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Dot & Key's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

@@ -38,7 +38,7 @@ export default function CatalogPreviewProduct() {
     );
   }
 
-  const images = imagesFor(p, opts.Color);
+  const images = imagesFor(p, opts[p.media.groupBy]);
   const main = images[Math.min(imgIdx, images.length - 1)];
   const exists = (name, value) =>
     p.variants.some((v) => v.options[name] === value &&

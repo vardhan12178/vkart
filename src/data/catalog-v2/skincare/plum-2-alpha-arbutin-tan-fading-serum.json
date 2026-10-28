@@ -1,0 +1,130 @@
+{
+  "slug": "plum-2-alpha-arbutin-tan-fading-serum",
+  "title": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum",
+  "brand": "Plum",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "serum"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "Serum with Hyaluronic Acid, Alpha Arbutin for all skin types.",
+  "description": "Serum with Hyaluronic Acid, Alpha Arbutin for all skin types.",
+  "highlights": [
+    "Serum",
+    "Key actives: Hyaluronic Acid, Alpha Arbutin",
+    "fades tan & reduces dark spots",
+    "evens out skin tone",
+    "boosts hydration",
+    "brightens skin"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Serum",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Hyaluronic Acid",
+        "Alpha Arbutin"
+      ]
+    },
+    "Details": {
+      "points": [
+        "fades tan & reduces dark spots",
+        "evens out skin tone",
+        "boosts hydration",
+        "brightens skin",
+        "soothes & calms irritated skin",
+        "lightweight",
+        "quick-absorbing",
+        "non-greasy & non-sticky",
+        "fragrance-free"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Serum",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Hyaluronic Acid",
+      "Alpha Arbutin"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "Standard"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Listing_1st_Tile_Alpha_Serum_30ml_1001x1001_px.webp?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/02_94b17f49-0277-47c8-8f79-f3f648b575be.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 2"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_03.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 3"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_04.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 4"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_05.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 5"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_06.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 6"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_07.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 7"
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_08.jpg?v=1776772274",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 8"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "PLM-AA2SER-STANDARD",
+      "mpn": "PLAH0030FSE1704",
+      "options": {
+        "Size": "Standard"
+      },
+      "price": 599,
+      "mrp": 599,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://plumgoodness.com/products/2-alpha-arbutin-hyaluronic-acid-tan-fading-face-serum-for-all-skin-types-copy"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Plum's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}
