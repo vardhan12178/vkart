@@ -1,0 +1,106 @@
+{
+  "slug": "salty-daisy-glow-sparkling-necklace",
+  "title": "Salty Daisy Glow Sparkling Necklace",
+  "brand": "Salty",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "necklaces"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Salty women's necklace in As shown.",
+  "description": "Salty women's necklace in As shown.",
+  "highlights": [],
+  "specs": {
+    "Product details": {}
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Necklaces",
+    "color": "As shown",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "As shown",
+          "hex": "#E4CFAC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "As shown": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/NS15285-G_Main.jpg?v=1792763844",
+          "alt": "Salty Daisy Glow Sparkling Necklace"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/NS15285-G_Main1.jpg?v=1792763843",
+          "alt": "Salty Daisy Glow Sparkling Necklace, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/NS15285-G_Model.png?v=1792763844",
+          "alt": "Salty Daisy Glow Sparkling Necklace, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/NS15285-G_Model.jpg?v=1792763844",
+          "alt": "Salty Daisy Glow Sparkling Necklace, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/NS15285-G_Main.png?v=1792763844",
+          "alt": "Salty Daisy Glow Sparkling Necklace, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/NS15285-G_WB.jpg?v=1792763843",
+          "alt": "Salty Daisy Glow Sparkling Necklace, view 6"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SLT-DAISYGLOWSCKLACE-ONESIZE",
+      "mpn": "NS15285-G",
+      "options": {
+        "Size": "One Size",
+        "Color": "As shown"
+      },
+      "price": 399,
+      "mrp": 799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.salty.co.in/products/daisy-glow-sparkling-necklace"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Salty's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

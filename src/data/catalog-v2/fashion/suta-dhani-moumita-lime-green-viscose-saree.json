@@ -1,0 +1,131 @@
+{
+  "slug": "suta-dhani-moumita-lime-green-viscose-saree",
+  "title": "Suta Dhani Moumita Lime Green Viscose Saree",
+  "brand": "Suta",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sarees"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Dhani Moumita is the sunshine friend who arrives at a party and somehow makes everyone a little happier.",
+  "description": "Dhani Moumita is the sunshine friend who arrives at a party and somehow makes everyone a little happier. She believes in saying yes to spontaneous plans, dancing before the music gets good, and adding a splash of colour wherever she goes. Dressed in lively lime green with tiny zari checks that catch the light, she’s always ready for another celebration. She’ll charm your relatives, win over your friends, and probably convince you to take just one more twirl for the camera. A little playful, a little sparkly, and never one to sit out the fun, Dhani Moumita is here to make every festive moment brighter!\n\nMeet Dhani Moumita, a little pop of lime green with a whole lot of festive spirit! Woven in a soft viscose blend, this cheerful saree features delicate zari checks across the body, bringing a lovely shimmer to her fresh, vibrant hue. Perfect for festive get-togethers, daytime celebrations, and those occasions when you want your outfit to feel as happy as you do. With Dhani Moumita around, a little colour goes a long way!",
+  "highlights": [
+    "Length: 6.30 m (630.00 cm)",
+    "Width: 1.19 m (119.38 cm)",
+    "Blouse Piece: Yes",
+    "Wash Care: Dry wash",
+    "Blouse: The model is wearing XS size blouse called"
+  ],
+  "specs": {
+    "Product details": {
+      "Length": "6.30 m (630.00 cm)",
+      "Width": "1.19 m (119.38 cm)",
+      "Blouse Piece": "Yes",
+      "Wash Care": "Dry wash",
+      "Blouse": "The model is wearing XS size blouse called",
+      "Fabric": "Viscose Blend",
+      "Disclaimer": "The pictures are clicked in daylight. Color may vary slightly from the image due to the screen brightness",
+      "Note": "The blouse-piece swatch is shown in the 5th image",
+      "Work": "zari",
+      "Set includes": "blouse piece"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sarees",
+    "color": "Lime Green",
+    "fabric": "Viscose Blend",
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lime Green",
+          "hex": "#4D524C"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lime Green": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-01.jpg?v=1791896822",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-05.jpg?v=1791896822",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-17.jpg?v=1791896822",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/lightGreen-7.jpg?v=1791896811",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-06.jpg?v=1791896822",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/lightGreen-4.jpg?v=1791896811",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-03.jpg?v=1791896822",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-07.jpg?v=1791896822",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SUT-DHANIMOUMIDSAREE-ONESIZE",
+      "mpn": "SUTASLKCOT44",
+      "options": {
+        "Size": "One Size",
+        "Color": "Lime Green"
+      },
+      "price": 5100,
+      "mrp": 5100,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://suta.in/products/dhani-moumita-lime-green-viscose-blend-saree"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Suta's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

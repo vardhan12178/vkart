@@ -1,0 +1,108 @@
+{
+  "slug": "giva-golden-eva-pearl-drop-earrings",
+  "title": "GIVA Golden Eva Pearl Drop Earrings",
+  "brand": "GIVA",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "earrings"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "A gold plated jewellery featuring classic hoop earrings with a luminous pearl drop, accented by a single light-catching stone above the setting.",
+  "description": "A gold plated jewellery featuring classic hoop earrings with a luminous pearl drop, accented by a single light-catching stone above the setting. The curved hooks create gentle movement, allowing the pearls to sit just below the earlobe for a refined silhouette. Polished metal surfaces enhance the soft glow of the pearls, bringing balance to the design. An ode to timeless beauty, our freshwater 'Pearl Collection' is designed to complement every woman with refined, classic elegance.\n\nComes with the GIVA Jewellery kit and authenticity certificate",
+  "highlights": [
+    "Metal: gold plated, 925 silver",
+    "Stones: pearl, pearls"
+  ],
+  "specs": {
+    "Product details": {
+      "Metal": "gold plated, 925 silver",
+      "Stones": "pearl, pearls"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Earrings",
+    "color": "Gold",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gold",
+          "hex": "#D1BE92"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gold": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_1_6ba4ed99-a798-4f16-95dd-f2c4b3d47bb1_1.jpg?v=1793082884",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_5_49a4ec44-d844-4435-93b1-f0ed43c27ca6_1.jpg?v=1793082884",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_2_ca008d04-cf66-4cd0-8f96-8487f640a973.jpg?v=1786593284",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_3_5320af47-a522-4b37-978d-d475350125db_1.jpg?v=1793083054",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_4_4faf9dd0-13dd-467c-8ba5-0a900faa8343.jpg?v=1786593284",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 5"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GIV-GOLDENEVAPRRINGS-ONESIZE",
+      "mpn": "ER03623",
+      "options": {
+        "Size": "One Size",
+        "Color": "Gold"
+      },
+      "price": 1799,
+      "mrp": 3999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.giva.co/products/golden-eva-pearl-drop-earrings"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from GIVA's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

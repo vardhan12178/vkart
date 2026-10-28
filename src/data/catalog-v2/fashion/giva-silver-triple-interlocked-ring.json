@@ -1,0 +1,108 @@
+{
+  "slug": "giva-silver-triple-interlocked-ring",
+  "title": "GIVA Silver Triple Interlocked Ring",
+  "brand": "GIVA",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "rings"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Comes with the GIVA Jewellery kit and authenticity certificate",
+  "description": "Comes with the GIVA Jewellery kit and authenticity certificate",
+  "highlights": [
+    "Metal: 925 silver",
+    "Stones: zircon"
+  ],
+  "specs": {
+    "Product details": {
+      "Metal": "925 silver",
+      "Stones": "zircon"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Rings",
+    "color": "Silver",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Silver",
+          "hex": "#CBCBCB"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Silver": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_1_08b28df9-e0fe-476b-8135-82405bc932fb.jpg?v=1786562180",
+          "alt": "GIVA Silver Triple Interlocked Ring"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_5_11716a9e-97f6-442f-8460-d906a61353a8.jpg?v=1786562180",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_2_5cc9b2de-77c6-4a30-b45b-1f5bcbfbac5a.jpg?v=1786562180",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_3_2776b902-4901-4a82-91e2-02a6d54a6136.jpg?v=1786562180",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_4_cfb6737e-b055-4fdb-bba4-01e5ff2caad4.jpg?v=1786562180",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 5"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GIV-SILVERTRIPEDRING-ONESIZE",
+      "mpn": "R01417",
+      "options": {
+        "Size": "One Size",
+        "Color": "Silver"
+      },
+      "price": 2499,
+      "mrp": 3999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.giva.co/products/silver-triple-interlocked-ring"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from GIVA's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

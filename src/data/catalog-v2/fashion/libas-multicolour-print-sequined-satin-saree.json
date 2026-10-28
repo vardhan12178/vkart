@@ -1,0 +1,122 @@
+{
+  "slug": "libas-multicolour-print-sequined-satin-saree",
+  "title": "Libas Multicolour Print Sequined Satin Saree",
+  "brand": "Libas",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sarees"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Draped in a vibrant magenta hue, this printed satin saree features captivating narrative motifs and intricate storytelling scenes along the ornate border and grand pallu, crafted for celebrations where you want to be remembered.",
+  "description": "Draped in a vibrant magenta hue, this printed satin saree features captivating narrative motifs and intricate storytelling scenes along the ornate border and grand pallu, crafted for celebrations where you want to be remembered. Rich and lustrous, the satin fabric drapes smoothly and stays comfortable throughout long functions. The vibrant print adds timeless appeal without weighing the saree down. It comes with an unstitched magenta blouse piece that can be tailored to your preferred neckline and sleeve length. Perfect for Diwali, wedding receptions, sangeet nights, mehendi ceremonies, and festive family gatherings.",
+  "highlights": [
+    "Fabric: satin",
+    "Work: printed, print, sequined",
+    "Set includes: blouse piece"
+  ],
+  "specs": {
+    "Product details": {
+      "Fabric": "satin",
+      "Work": "printed, print, sequined",
+      "Set includes": "blouse piece"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sarees",
+    "color": "Multicolour",
+    "fabric": "satin",
+    "fit": null,
+    "sizes": [
+      "Onesize"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "Onesize"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Multicolour",
+          "hex": "#4C474E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Multicolour": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Multicolour-Print-Sequined-Satin-Saree-1105196P_917a3d47-6896-48df-aa2f-9f6f9daacc9e.jpg?v=1793097290",
+          "alt": "Libas Multicolour Print Sequined Satin Saree"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_1_a6fda54f-6bec-495a-a3bb-0a292cb583ce.jpg?v=1793097290",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_2_1b220591-5deb-4aa4-8ce8-ac9096a5087f.jpg?v=1793097290",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_3_286880a3-c7b0-4b37-bdb1-b6e08229c870.jpg?v=1793097291",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_4_6baa15f5-3c7d-44ff-8b9b-3eb09dcf60e5.jpg?v=1793097290",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_5_515fb4d3-2c71-4928-bf39-e35f88d7dd26.jpg?v=1793097290",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_7_37e20ef0-66ce-4818-a74c-7398f428389c.jpg?v=1793097291",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_Blouse_9b581046-74e1-4e0a-8b50-dd193da7f4f5.jpg?v=1793097289",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LIB-LIBASMULTI05196P-ONESIZE",
+      "mpn": "1105196P",
+      "options": {
+        "Size": "Onesize",
+        "Color": "Multicolour"
+      },
+      "price": 4699,
+      "mrp": 4699,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.libas.in/products/libas-multicolour-print-sequined-satin-saree-1105196p"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Libas's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

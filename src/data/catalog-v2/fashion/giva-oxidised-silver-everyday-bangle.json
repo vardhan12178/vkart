@@ -1,0 +1,112 @@
+{
+  "slug": "giva-oxidised-silver-everyday-bangle",
+  "title": "GIVA Oxidised Silver Everyday Bangle",
+  "brand": "GIVA",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "bangles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Bring some edge to your everyday stack with this bangle, detailed with an edgy bead design around the bangle.",
+  "description": "Bring some edge to your everyday stack with this bangle, detailed with an edgy bead design around the bangle. Easy to style and full of character, it’s the piece to reach for when classic just isn’t the mood.\n\nComes with the GIVA Jewellery kit and authenticity certificate",
+  "highlights": [
+    "Metal: oxidised silver",
+    "Stones: bead"
+  ],
+  "specs": {
+    "Product details": {
+      "Metal": "oxidised silver",
+      "Stones": "bead"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Bangles & Bracelets",
+    "color": "Oxidised",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Oxidised",
+          "hex": "#A0A0A0"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Oxidised": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_1_88553c2f-373a-4126-aeab-67133762baaf.jpg?v=1789044145",
+          "alt": "GIVA Oxidised Silver Everyday Bangle"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_4_47ddca34-e24a-413e-ab24-f86b1eb8941a.jpg?v=1789045577",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_5_b8824a64-8a62-4913-9931-ecf2c3976bcd.jpg?v=1789044145",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_2_25e36a57-4185-4d64-8240-3901f5984b34.jpg?v=1789044145",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_2_dabe6748-c0a1-4ee3-9d27-86f54976c8ac.jpg?v=1789044145",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_6_ca6d9743-36f9-4aeb-a565-ae21de5ae33c.jpg?v=1789045577",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 6"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GIV-OXIDISEDSISIZE26-ONESIZE",
+      "mpn": "TLBR0328",
+      "options": {
+        "Size": "One Size",
+        "Color": "Oxidised"
+      },
+      "price": 10299,
+      "mrp": 22699,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.giva.co/products/oxidised-silver-everyday-style-bangle-size-2-6"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from GIVA's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

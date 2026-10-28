@@ -1,0 +1,140 @@
+{
+  "slug": "red-tape-women-s-colorblocked-shoulder-bag",
+  "title": "Red Tape Women's Colorblocked Shoulder Bag",
+  "brand": "Red Tape",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "handbags"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "Upgrade your everyday style with this elegant Red Tape Women’s Colorblocked Shoulder Bag, designed to blend fashion with functionality.",
+  "description": "Upgrade your everyday style with this elegant Red Tape Women’s Colorblocked Shoulder Bag, designed to blend fashion with functionality. Crafted from premium faux leather, this chic red & white handbag features a sophisticated colorblock pattern that complements both casual and formal outfits. The bag comes with a spacious main compartment secured with a smooth zipper closure, ensuring your essentials stay safe and organized. With two inner pockets, you can easily store your phone, wallet, keys, and cosmetics without clutter. The adjustable sling strap allows versatile styling—carry it as a shoulder bag or wear it crossbody for hands-free convenience. Perfect for office, outings, shopping, or daily use, this stylish handbag is a must-have accessory for modern women who value both aesthetics and practicality.\n\nVersatile Use – Ideal for casual, office & semi-formal occasions",
+  "highlights": [
+    "Premium Faux Leather: – Durable, stylish & easy to maintain",
+    "Elegant Colorblocked Design: – Trendy red & white combination",
+    "Spacious Storage: – 1 main compartment for daily essentials",
+    "Organized Interior: – 2 inner pockets for better utility",
+    "Secure Closure: – Smooth zipper for safety"
+  ],
+  "specs": {
+    "Product details": {
+      "Premium Faux Leather": "– Durable, stylish & easy to maintain",
+      "Elegant Colorblocked Design": "– Trendy red & white combination",
+      "Spacious Storage": "– 1 main compartment for daily essentials",
+      "Organized Interior": "– 2 inner pockets for better utility",
+      "Secure Closure": "– Smooth zipper for safety",
+      "Adjustable Strap": "– Wear as shoulder or crossbody bag",
+      "Versatile Use": "– Ideal for casual, office & semi-formal occasions",
+      "Brand": "Red Tape",
+      "Type": "Shoulder Bag / Sling Bag",
+      "Ideal For": "Women",
+      "Material": "Faux Leather",
+      "Color": "Red & White",
+      "Pattern": "Colorblocked",
+      "Number of Compartments": "1",
+      "Closure": "Zipper",
+      "Strap Type": "Adjustable Sling Strap",
+      "Occasion": "Casual, Formal, Daily Use",
+      "Style": "Modern / Minimalist",
+      "PREMIUM FAUX LEATHER BUILD": "– Crafted by Red Tape, this women’s shoulder bag features high-quality faux leather that offers durability, a smooth finish, and a premium look for everyday elegance",
+      "STYLISH COLORBLOCK DESIGN": "– Trendy colorblocked pattern adds a modern touch, making this sling handbag perfect for casual outings, office wear, and semi-formal occasions",
+      "SPACIOUS & ORGANIZED STORAGE": "– Designed with 1 main compartment and 2 inner pockets, this crossbody bag keeps your essentials like phone, wallet, makeup, and keys neatly arranged",
+      "ADJUSTABLE & COMFORTABLE STRAP": "– Comes with a sturdy adjustable sling strap, allowing you to carry it as a shoulder bag or crossbody bag for hands-free convenience throughout the day",
+      "SECURE ZIPPER CLOSURE": "– Smooth and reliable zipper closure ensures your belongings stay safe while offering quick and easy access on the go"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Handbags",
+    "color": "Red White",
+    "fabric": "Faux Leather",
+    "fit": null,
+    "sizes": [
+      "S"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Red White",
+          "hex": "#B76F70"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Red White": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_fa8f4389-26b3-4351-ac64-e6ef93587f16.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_4dda7958-7512-4da0-a4db-40686203cb02.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_0b901c93-7431-4c0b-9e92-95ddc061709c.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_006b5f9c-df48-4aaf-9b20-ee05a1c7c89b.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_f437ca84-06fd-451c-9849-f80a108a3e89.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/6_3100ff2a-f684-4cf4-8f8e-cf5c55efd8e4.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/7_3094e777-f4dd-489b-8cf0-1e6170d6fe4c.jpg?v=1781590854",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RDT-WOMENSCOLODERBAG-S",
+      "mpn": "RHB0234",
+      "options": {
+        "Size": "S",
+        "Color": "Red White"
+      },
+      "price": 3299,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.redtape.com/products/women-s-colorblocked-shoulder-bag"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Red Tape's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "rubans-set-of-2-gold-plated-laxmi-motif-bangles",
+  "title": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles",
+  "brand": "Rubans",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "bangles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Make every festive moment shine with this Rubans set of 2 gold plated bangles featuring Laxmi motifs and floral detailing.",
+  "description": "Make every festive moment shine with this Rubans set of 2 gold plated bangles featuring Laxmi motifs and floral detailing. Designed with rich traditional craftsmanship, these statement bangles complement sarees, lehengas and festive outfits for weddings and celebrations. A premium jewellery gift for women and girls.",
+  "highlights": [
+    "Metal: gold plated, brass"
+  ],
+  "specs": {
+    "Product details": {
+      "Metal": "gold plated, brass"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Bangles & Bracelets",
+    "color": "Gold",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "2.4",
+      "2.6",
+      "2.8"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "2.4"
+        },
+        {
+          "value": "2.6"
+        },
+        {
+          "value": "2.8"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gold",
+          "hex": "#B07540"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gold": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/yrgGJXMR.jpg?v=1791894957",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_00.jpg?v=1791894932",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_01.jpg?v=1791894932",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_03.jpg?v=1791894932",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RUB-RE16B41711711224-24",
+      "mpn": "RE16B417112-24",
+      "options": {
+        "Size": "2.4",
+        "Color": "Gold"
+      },
+      "price": 599,
+      "mrp": 1711,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RUB-RE16B41711711224-26",
+      "mpn": "RE16B417112-26",
+      "options": {
+        "Size": "2.6",
+        "Color": "Gold"
+      },
+      "price": 599,
+      "mrp": 1711,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RUB-RE16B41711711224-28",
+      "mpn": "RE16B417112-28",
+      "options": {
+        "Size": "2.8",
+        "Color": "Gold"
+      },
+      "price": 599,
+      "mrp": 1711,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.rubans.in/products/re16b417112-24"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rubans's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}
