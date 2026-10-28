@@ -1,0 +1,154 @@
+{
+  "slug": "noisefit-halo-3-ai-pro",
+  "title": "NoiseFit Halo 3 with AI Pro",
+  "brand": "Noise",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-05",
+  "shortDescription": "Discover the NoiseFit Halo 3 – a premium smartwatch powered by AI Pro, featuring a stunning AMOLED display and advanced health and safety features for everyday excellence.",
+  "description": "Discover the NoiseFit Halo 3 – a premium smartwatch powered by AI Pro, featuring a stunning AMOLED display and advanced health and safety features for everyday excellence.\n\nPerfect For: Professionals and fitness enthusiasts who want AI-powered smartwatch features with premium design. Ideal for daily wear, fitness tracking, and staying connected.",
+  "highlights": [
+    "1.43\" AMOLED display, 466x466",
+    "AI Pro smart features",
+    "Bluetooth calling",
+    "SOS emergency alert",
+    "8-day battery life",
+    "Heart rate, SpO2, stress and sleep tracking"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "1.43\" AMOLED display, 466x466",
+        "AI Pro smart features",
+        "Bluetooth calling",
+        "SOS emergency alert",
+        "8-day battery life",
+        "Heart rate, SpO2, stress and sleep tracking"
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 1.43,
+    "batteryDays": 8,
+    "bluetoothCalling": true,
+    "amoled": true
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Vintage Blue",
+          "hex": "#3F3F3F"
+        },
+        {
+          "value": "Vintage Brown",
+          "hex": "#3E3E3E"
+        },
+        {
+          "value": "Rich Black",
+          "hex": "#1F1F1F"
+        },
+        {
+          "value": "Elite Black",
+          "hex": "#1F1F1F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Vintage Blue": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_12_result_7405f2c0-15a0-4b31-8bd3-681406bbf6aa.webp?v=1778130844",
+          "alt": "NoiseFit Halo 3 with AI Pro in Vintage Blue"
+        }
+      ],
+      "Vintage Brown": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_17_result_f517d4d9-fd45-4c07-a92a-d6579a98d14e.webp?v=1778130859",
+          "alt": "NoiseFit Halo 3 with AI Pro in Vintage Brown"
+        }
+      ],
+      "Rich Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_7_result_410f0bc0-395d-420a-ab01-f60152062637.webp?v=1778130835",
+          "alt": "NoiseFit Halo 3 with AI Pro in Rich Black"
+        }
+      ],
+      "Elite Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_2_result_2601a7a4-a4a1-43b2-962f-9e552119160a.webp?v=1778130829",
+          "alt": "NoiseFit Halo 3 with AI Pro in Elite Black"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NOI-HALO3AI-VINTAGEBLUE",
+      "mpn": "wrb-sw-halo3-lthr-slvr_blu",
+      "options": {
+        "Color": "Vintage Blue"
+      },
+      "price": 4499,
+      "mrp": 6999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-HALO3AI-VINTAGEBROWN",
+      "mpn": "wrb-sw-halo3-lthr-slvr_brn",
+      "options": {
+        "Color": "Vintage Brown"
+      },
+      "price": 4499,
+      "mrp": 6999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-HALO3AI-RICHBLACK",
+      "mpn": "wrb-sw-halo3-std-blk_blk",
+      "options": {
+        "Color": "Rich Black"
+      },
+      "price": 4499,
+      "mrp": 6999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-HALO3AI-ELITEBLACK",
+      "mpn": "wrb-sw-halo3-glossymtl-blk_blk",
+      "options": {
+        "Color": "Elite Black"
+      },
+      "price": 4999,
+      "mrp": 6999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.gonoise.com/products/noisefit-halo-3-smartwatch-with-ai-pro"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Noise's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

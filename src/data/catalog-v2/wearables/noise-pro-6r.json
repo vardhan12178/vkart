@@ -1,0 +1,202 @@
+{
+  "slug": "noise-pro-6r",
+  "title": "Noise Pro 6R",
+  "brand": "Noise",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-01",
+  "shortDescription": "Experience premium smartwatch technology with the Noise ColorFit Pro 6R – your intelligent companion for fitness, connectivity, and style.",
+  "description": "Experience premium smartwatch technology with the Noise ColorFit Pro 6R – your intelligent companion for fitness, connectivity, and style.\n\nWhether you're crushing fitness goals, managing a busy schedule, or expressing your style, the Pro 6R adapts to your lifestyle. The AI-powered features learn your preferences, while comprehensive health tracking keeps you informed about your wellness.",
+  "highlights": [
+    "Stunning 1.46\" AMOLED Display",
+    "Bluetooth Calling",
+    "AI Companion",
+    "15-Day Battery Life",
+    "100+ Sports Modes",
+    "Advanced Health Monitoring"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "Stunning 1.46\" AMOLED Display",
+        "Bluetooth Calling",
+        "AI Companion",
+        "15-Day Battery Life",
+        "100+ Sports Modes",
+        "Advanced Health Monitoring",
+        "150+ Cloud Watch Faces",
+        "Premium Build",
+        "3 ATM Water Resistance",
+        "Smart Notifications"
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 1.46,
+    "batteryDays": 15,
+    "bluetoothCalling": true,
+    "amoled": true
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Classic Brown",
+          "hex": "#0C0C0C"
+        },
+        {
+          "value": "Starlight Gold",
+          "hex": "#131313"
+        },
+        {
+          "value": "Jet Black",
+          "hex": "#040404"
+        },
+        {
+          "value": "Classic Black",
+          "hex": "#050505"
+        },
+        {
+          "value": "Chrome Black",
+          "hex": "#050505"
+        },
+        {
+          "value": "Pure Titanium",
+          "hex": "#101010"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Classic Brown": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1457copy_result.webp?v=1767591556",
+          "alt": "Noise Pro 6R in Classic Brown"
+        }
+      ],
+      "Starlight Gold": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1458copy_result.webp?v=1767591556",
+          "alt": "Noise Pro 6R in Starlight Gold"
+        }
+      ],
+      "Jet Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1459copy_result.webp?v=1767591556",
+          "alt": "Noise Pro 6R in Jet Black"
+        }
+      ],
+      "Classic Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1461copy_result.webp?v=1767591556",
+          "alt": "Noise Pro 6R in Classic Black"
+        }
+      ],
+      "Chrome Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1460copy_result.webp?v=1767591556",
+          "alt": "Noise Pro 6R in Chrome Black"
+        }
+      ],
+      "Pure Titanium": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1455copy_result.webp?v=1767347889",
+          "alt": "Noise Pro 6R in Pure Titanium"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NOI-PRO6R-CLASSICBROWN",
+      "mpn": "wrb-sw-pro6r-lthr-titnum_tbrn",
+      "options": {
+        "Color": "Classic Brown"
+      },
+      "price": 6999,
+      "mrp": 9999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-PRO6R-STARLIGHTGOLD",
+      "mpn": "wrb-sw-pro6r-std-rgld_beige",
+      "options": {
+        "Color": "Starlight Gold"
+      },
+      "price": 6999,
+      "mrp": 9999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-PRO6R-JETBLACK",
+      "mpn": "wrb-sw-pro6r-std-blk_blk",
+      "options": {
+        "Color": "Jet Black"
+      },
+      "price": 6999,
+      "mrp": 9999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-PRO6R-CLASSICBLACK",
+      "mpn": "wrb-sw-pro6r-lthr-blk_blk",
+      "options": {
+        "Color": "Classic Black"
+      },
+      "price": 6999,
+      "mrp": 9999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-PRO6R-CHROMEBLACK",
+      "mpn": "wrb-sw-pro6r-glossymtl-blk_blk",
+      "options": {
+        "Color": "Chrome Black"
+      },
+      "price": 7999,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-PRO6R-PURETITANIUM",
+      "mpn": "wrb-sw-pro6r-glossymtl-gmtl_titnum",
+      "options": {
+        "Color": "Pure Titanium"
+      },
+      "price": 7999,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.gonoise.com/products/noise-pro-6r-smartwatch"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Noise's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}
