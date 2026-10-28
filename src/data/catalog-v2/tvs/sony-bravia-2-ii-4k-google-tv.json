@@ -1,0 +1,249 @@
+{
+  "slug": "sony-bravia-2-ii-4k-google-tv",
+  "title": "Sony BRAVIA 2 II 4K Google TV",
+  "brand": "Sony",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": "2025-05",
+  "shortDescription": "Sony's 4K Ultra HD Smart LED Google TV with the 4K Processor X1, in 43, 50, 55 and 65 inches.",
+  "description": "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 Hertz Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices Sound : 20 Watts Output | 2ch | Open Baffle Speaker| DTS Digital Surround | DTS:X | Dolby Atmos, Dolby Audio Smart TV Features: Google TV | Watchlist | Google Assistant |Google Cast | Game Menu | ALLM/eARC (HDMI 2.1 Compatible) | Additional Features: Apple Airplay 2 | Apple Homekit | Alexa | Energy Rating: 2 Star | Annual Energy Consumption: 134.38 kWh",
+  "highlights": [
+    "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 Hertz",
+    "Sound : 20 Watts Output | 2ch | Open Baffle Speaker| DTS Digital Surround | DTS:X | Dolby Atmos, Dolby Audio",
+    "Display : 4K LED | 4K Processor X1 | Live Color | 4K X-Reality PRO | MotionFlow XR 200 | HDR10/HLG"
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 Hertz",
+        "Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices",
+        "Sound : 20 Watts Output | 2ch | Open Baffle Speaker| DTS Digital Surround | DTS:X | Dolby Atmos, Dolby Audio",
+        "Smart TV Features: Google TV | Watchlist | Google Assistant |Google Cast | Game Menu | ALLM/eARC (HDMI 2.1 Compatible) | Additional Features: Apple Airplay 2 | Apple Homekit | Alexa | Energy Rating: 2 Star | Annual Energy Consumption: 134.38 kWh",
+        "Display : 4K LED | 4K Processor X1 | Live Color | 4K X-Reality PRO | MotionFlow XR 200 | HDR10/HLG",
+        "Warranty Information: 1 Year comprehensive warranty on product provided by the brand from the date of purchase"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 43,
+    "screenSizes": [
+      43,
+      50,
+      55,
+      65
+    ],
+    "resolution": "4K Ultra HD (3840 x 2160)",
+    "refreshRateHz": 60,
+    "panel": "LED",
+    "os": "Google TV",
+    "soundW": 20,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "43\""
+        },
+        {
+          "value": "50\""
+        },
+        {
+          "value": "55\""
+        },
+        {
+          "value": "65\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {
+      "43\"": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-43S25M2-Primary-Image-copy.jpg?v=1782977315",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\""
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-43S25M2-Main.jpg?v=1752588032",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_38c4dc35-593f-4cc0-b080-b0dd0e63c2b5.jpg?v=1752588032",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_a8473994-c488-4a00-92b2-3e5ab02426d3.jpg?v=1752588032",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage_1_7427df44-d927-4aea-b911-990510ab0eb7.jpg?v=1752588697",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-43_50_Port-image.jpg?v=1752588032",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 6"
+        }
+      ],
+      "50\"": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-50S25M2-Primary-Image-copy.jpg?v=1782977717",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\""
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-50S25M2-Main.jpg?v=1752588346",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_f77f7a08-e34a-4c81-87ce-f7ae0a063272.jpg?v=1752588346",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_532349af-5967-4bed-8c81-451782fd4781.jpg?v=1752588346",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-43_50_Port-image_82b66f42-08f3-404f-8bb6-0e6e5f4e3d59.jpg?v=1752588346",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-50S25M2-what-in-the-box.jpg?v=1752588346",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 6"
+        }
+      ],
+      "55\"": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S25M2-Primary-Image-copy.jpg?v=1782978143",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\""
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S25M2-Main.jpg?v=1752588404",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature.jpg?v=1752588404",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps.jpg?v=1752588404",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage_1_7427df44-d927-4aea-b911-990510ab0eb7.jpg?v=1752588697",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-55_65_75_Port-image.jpg?v=1752588404",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 6"
+        }
+      ],
+      "65\"": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-65S25M2-Primary-Image-copy.jpg?v=1782978875",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\""
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-65S25M2-Main.jpg?v=1752588557",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_3aa2a5c3-64a4-4a23-b0be-dd437f5ecdf9.jpg?v=1752588557",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_3324f0d5-022d-479a-95d2-71317cb8dde6.jpg?v=1752588557",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage_1_7427df44-d927-4aea-b911-990510ab0eb7.jpg?v=1752588697",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-55_65_75_Port-image_50843669-e694-462b-8cb8-d066813ba834.jpg?v=1752588557",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 6"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SNY-K43S25M2",
+      "mpn": "K-43S25M2",
+      "options": {
+        "Size": "43\""
+      },
+      "price": 55090,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "screenInch": 43,
+        "available": true
+      }
+    },
+    {
+      "sku": "SNY-K50S25M2",
+      "mpn": "K-50S25M2",
+      "options": {
+        "Size": "50\""
+      },
+      "price": 69340,
+      "mrp": 113900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "screenInch": 50,
+        "available": true
+      }
+    },
+    {
+      "sku": "SNY-K55S25M2",
+      "mpn": "K-55S25M2",
+      "options": {
+        "Size": "55\""
+      },
+      "price": 70290,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "screenInch": 55,
+        "available": true
+      }
+    },
+    {
+      "sku": "SNY-K65S25M2",
+      "mpn": "K-65S25M2",
+      "options": {
+        "Size": "65\""
+      },
+      "price": 91190,
+      "mrp": 128900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "screenInch": 65,
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.shopatsc.com/products/k-43s25m2-in5",
+      "https://www.shopatsc.com/products/k-50s25m2-in5",
+      "https://www.shopatsc.com/products/k-55s25m2-in5",
+      "https://www.shopatsc.com/products/k-65s25m2-in5"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model numbers, selling price (price), MRP (mrp), images and feature text from Sony's official India online store (ShopAtSC)."
+  }
+}

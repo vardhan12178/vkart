@@ -1,0 +1,141 @@
+{
+  "slug": "samsung-27-inch-odyssey-g5-qhd-gaming-monitor",
+  "title": "Samsung 27\" Odyssey G5 QHD Gaming Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "QHD: Boost your game with lifelike visuals\nIPS: Vivid colors acorss the whole screen\n200Hz Refresh Rate: Swift and smooth gameplay for every move",
+  "description": "QHD: Boost your game with lifelike visuals\nIPS: Vivid colors acorss the whole screen\n200Hz Refresh Rate: Swift and smooth gameplay for every move",
+  "highlights": [
+    "27-inch QHD (2,560 x 1,440) IPS",
+    "200Hz refresh rate",
+    "1ms (MPRT) response time",
+    "IPS panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Aspect Ratio": "16:9",
+      "Brightness (Typical)": "300 cd/㎡",
+      "Contrast Ratio Static": "1000 : 1 (Typ.)",
+      "Resolution": "QHD (2,560 x 1,440)",
+      "Response Time": "1ms (MPRT)",
+      "Viewing Angle (H/V)": "178/178",
+      "Refresh Rate": "Max 200Hz",
+      "Screen Size (Class)": "68.5 cm",
+      "Flat / Curved": "Flat",
+      "Active Display Size (HxV) (mm)": "59.67 cm x 33.56 cm",
+      "Panel Type": "IPS",
+      "Brightness (Min)": "240 cd/㎡",
+      "Contrast Ratio (Dynamic)": "Mega",
+      "HDR(High Dynamic Range)": "HDR10",
+      "Colour Support": "Max 16.7M",
+      "Color Gamut (NTSC 1976)": "72%↑",
+      "Eco Saving Plus": "Yes",
+      "Eye Saver Mode": "Yes",
+      "Windows Certification": "Windows11",
+      "FreeSync": "FreeSync Premium",
+      "Off Timer Plus": "Yes",
+      "Black Equalizer": "Yes",
+      "Virtual AIM Point": "Yes",
+      "Refresh Rate Optimizor": "Yes",
+      "Super Arena Gaming UX": "Yes",
+      "Auto Source Switch": "Yes",
+      "Smart Type": "No",
+      "Display Port": "1 EA",
+      "Display Port Version": "1.4",
+      "HDCP Version (DP)": "2.2",
+      "HDMI": "2 EA",
+      "HDMI Version": "2.0",
+      "HDCP Version (HDMI)": "2.2",
+      "Headphone": "Yes",
+      "USB-C": "No",
+      "Speaker": "No",
+      "Temperature": "10 ~ 40 ℃",
+      "Humidity": "10 ~ 80 (Non-Condensing)",
+      "Front Colour": "BLACK",
+      "Rear Color": "BLACK",
+      "Stand Colour": "Black",
+      "Stand Type": "SIMPLE",
+      "Tilt": "-2˚(+2˚/-1˚) ~ 20˚(±2˚)",
+      "Wall Mount": "75.0 x 75.0",
+      "Power Supply": "AC 100 - 240 V (50/60 Hz)",
+      "Power Consumption (Max)": "48 W",
+      "Type": "External Adaptor",
+      "Set Dimension with Stand (WxHxD)": "61.32 cm x 46.31cm x 21.74 cm",
+      "Set Dimension without Stand (WxHxD)": "61.32 cm x 36.45 cm x 5.04 cm",
+      "Package Dimension (WxHxD)": "70.70 cm x 16.20 cm x 43.00 cm",
+      "Set Weight with Stand": "3.9 kg",
+      "Set Weight without Stand": "3.5 kg",
+      "Package Weight": "5.7 kg",
+      "Power Cable Length": "1.5 m",
+      "DP Cable": "Yes",
+      "Manufactured by": "BOE VISION-ELECTRONIC TECHNOLOGY, (VIETNAM) CO.,LTD ROAD NO.3, NHON TRACH II-NHON PHU, INDUSTRIAL PARK, PHU HOI COMMUNE, NHON TRACH DISTRICT, DONG NAI PROVINCE, VIETNAM",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 27.0,
+    "resolution": "QHD (2,560 x 1,440)",
+    "refreshRateHz": 200,
+    "panel": "IPS",
+    "responseTimeMs": 1.0,
+    "curved": false,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "27\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27fg530ewxxl/gallery/in-odyssey-g5-27g53f-ls27fg530ewxxl-thumb-550415865?$650_519_PNG$",
+        "alt": "Samsung 27\" Odyssey G5 QHD Gaming Monitor"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27fg530ewxxl/gallery/in-odyssey-g5-27g53f-ls27fg530ewxxl-550415864?$650_519_PNG$",
+        "alt": "Samsung 27\" Odyssey G5 QHD Gaming Monitor, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS27FG530EW",
+      "mpn": "LS27FG530EW",
+      "options": {
+        "Size": "27\""
+      },
+      "price": 22500,
+      "mrp": 22500,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/gaming/odyssey-g5-g53f-27-inch-200hz-qhd-ls27fg530ewxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

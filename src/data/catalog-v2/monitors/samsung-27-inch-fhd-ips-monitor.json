@@ -1,0 +1,148 @@
+{
+  "slug": "samsung-27-inch-fhd-ips-monitor",
+  "title": "Samsung 27\" FHD IPS Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "IPS Panel delivers vivid colors across the whole screen\nSeamless gaming experience with 100 Hz refresh rate and Game Mode\nComfortable Eye Care with Eye Saver mode and Less Screen Flickering\nSuper Slim Design with height-",
+  "description": "IPS Panel delivers vivid colors across the whole screen\nSeamless gaming experience with 100 Hz refresh rate and Game Mode\nComfortable Eye Care with Eye Saver mode and Less Screen Flickering\nSuper Slim Design with height-adjustable screen and multiple Connectivity",
+  "highlights": [
+    "27-inch FHD (1,920 x 1,080) IPS",
+    "100Hz refresh rate",
+    "5(GTG) response time",
+    "IPS panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Aspect Ratio": "16:9",
+      "Brightness (Typical)": "250 cd/㎡",
+      "Contrast Ratio Static": "1000:1(Typ)",
+      "Resolution": "FHD (1,920 x 1,080)",
+      "Response Time": "5(GTG)",
+      "Viewing Angle (H/V)": "178/178",
+      "Refresh Rate": "Max 100Hz",
+      "Screen Size (Class)": "68.6 cm",
+      "Flat / Curved": "Flat",
+      "Active Display Size (HxV) (mm)": "59.78 cm × 33.63 cm",
+      "Panel Type": "IPS",
+      "Brightness (Min)": "200 cd/㎡",
+      "Contrast Ratio (Dynamic)": "Mega",
+      "Colour Support": "Max 16.7M",
+      "Color Gamut (NTSC 1976)": "72% (CIE 1931)",
+      "Energy Saving Solution": "Yes",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Image Size": "Yes",
+      "Windows Certification": "Windows11",
+      "FreeSync": "No",
+      "G-Sync": "No",
+      "Off Timer Plus": "Yes",
+      "Auto Source Switch": "Yes",
+      "Smart Type": "No",
+      "Display Port": "1 EA",
+      "Display Port Version": "1.2",
+      "HDCP Version (DP)": "1.2",
+      "HDMI": "2 EA",
+      "HDMI Version": "1.4",
+      "Headphone": "Yes",
+      "USB Hub": "2",
+      "USB Hub Version": "USB2.0x2",
+      "USB-C": "No",
+      "USB-B Upstream Port": "1",
+      "Speaker": "No",
+      "Speaker Output": "No",
+      "Temperature": "10℃~ 40℃",
+      "Humidity": "10% ~ 80%, non-condensing",
+      "Front Colour": "BLACK",
+      "Rear Color": "BLACK",
+      "Stand Colour": "BLACK",
+      "Stand Type": "HAS",
+      "HAS(Height Adjustable Stand)": "10.5 cm (±0.50 cm)",
+      "Tilt": "-3.0°(±2.0°)~25.0°(±2.0°)",
+      "Swivel": "-45.0°(±3.0°)~45.0°(±3.0°)",
+      "Pivot": "-92.0°(±2.0°)~92.0°(±2.0°)",
+      "Wall Mount": "100 x 100",
+      "TCO Certified": "Yes",
+      "Carbon Footprint": "Yes",
+      "Recycled Plastic": "16.3 %",
+      "Power Supply": "AC 100~240V",
+      "Power Consumption (Max)": "50 W",
+      "Type": "Internal Power",
+      "Set Dimension with Stand (WxHxD)": "61.27 cm x 53.83 cm x 21.90 cm",
+      "Set Dimension without Stand (WxHxD)": "61.27 cm x 36.09 cm x 3.98 cm",
+      "Package Dimension (WxHxD)": "65.50 cm x 10.90 cm x 48.80 cm",
+      "Set Weight with Stand": "4.0 kg",
+      "Set Weight without Stand": "2.7 kg",
+      "Package Weight": "5.6 kg",
+      "Power Cable Length": "1.5 m",
+      "HDMI Cable": "Yes",
+      "Manufactured by": "SAMSUNGELECTRONICS HCMC CE COMPLEX CO. LTD. I-11,D2 ROAD, TANG NHON PHU B WARD,SAIGON HI-TECH PARK DISTRICT 9, HO CHI MINH CITY, VIETNAM-70003",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 27.0,
+    "resolution": "FHD (1,920 x 1,080)",
+    "refreshRateHz": 100,
+    "panel": "IPS",
+    "responseTimeMs": null,
+    "curved": false,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "27\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27d400gawxxl/gallery/in-essential-s4-s40gd-ls27d400gawxxl-thumb-544498771?$650_519_PNG$",
+        "alt": "Samsung 27\" FHD IPS Monitor"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27d400gawxxl/gallery/in-essential-s4-s40gd-ls27d400gawxxl-544498770?$650_519_PNG$",
+        "alt": "Samsung 27\" FHD IPS Monitor, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS27D400GAW",
+      "mpn": "LS27D400GAW",
+      "options": {
+        "Size": "27\""
+      },
+      "price": 21000,
+      "mrp": 21000,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/full-hd-1080p/essential-monitor-s4-s40gd-27-inch-fhd-ips-100hz-ls27d400gawxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

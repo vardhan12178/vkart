@@ -1,0 +1,137 @@
+{
+  "slug": "samsung-32-inch-hd-h4520-smart-tv",
+  "title": "Samsung 32\" HD H4520 Smart TV",
+  "brand": "Samsung",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "HDR\nSamsung Knox Security\nOTS Lite",
+  "description": "HDR\nSamsung Knox Security\nOTS Lite",
+  "highlights": [
+    "32-inch HD (1,366 x 768) LED",
+    "Hyper Real",
+    "HDR: HDR",
+    "20W sound",
+    "Tizen™ Smart TV"
+  ],
+  "specs": {
+    "Specifications": {
+      "Product Type": "LED",
+      "Screen Size": "80 cm",
+      "Resolution": "HD (1,366 x 768)",
+      "Video": "Hyper Real",
+      "Picture Engine": "Hyper Real",
+      "HDR (High Dynamic Range)": "HDR",
+      "HDR 10+": "Support",
+      "Contrast": "Mega Contrast",
+      "Contrast Enhancer": "Yes",
+      "Object Tracking Sound": "OTS Lite",
+      "Q-Symphony": "Yes",
+      "Sound Output (RMS)": "20W",
+      "Speaker Type": "2CH",
+      "Adaptive Sound": "Yes",
+      "Operating System": "Tizen™ Smart TV",
+      "Bixby": "Yes",
+      "Works with AI Speaker": "Alexa (IN Only), Google Assistant (IN Only)",
+      "Samsung TV Plus": "Yes",
+      "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote": "Quick Remote only",
+      "Universal Guide": "Yes (India Only)",
+      "Multi Device Experience": "Mobile to TV, Sound Mirroring, Wireless TV On",
+      "Apple AirPlay": "Yes",
+      "Digital Broadcasting": "DVB-T2CS2",
+      "Analog Tuner": "Yes",
+      "Bluetooth": "Yes",
+      "HDMI": "2",
+      "HDMI Audio Return Channel": "eARC",
+      "USB": "1 x USB-A",
+      "RF In (Terrestrial / Cable input)": "1/1(Common Use for Terrestrial)/1",
+      "Design": "Slim Look",
+      "Bezel Type": "3 Bezel-less",
+      "Front Colour": "BLACK",
+      "Stand Type": "MINI ARC",
+      "Stand Color": "BLACK",
+      "EPG": "Yes",
+      "IP Control": "Yes",
+      "Accessibillity - Voice Guide": "English (UK)",
+      "Power Supply": "AC220-240V~ 50/60Hz",
+      "Power Consumption (Max)": "60 W",
+      "Energy Efficiency Class": "3",
+      "Package Size (WxHxD)": "790 x 506 x 123 mm",
+      "Set Size with Stand (WxHxD)": "N/A x N/A x N/A",
+      "Set Size without Stand (WxHxD)": "715.2 x 429.4 x 82.7 mm",
+      "VESA Spec": "20 cm x 20 cm",
+      "Package Weight": "5.1 kg",
+      "Set Weight with Stand": "N/A kg",
+      "Set Weight without Stand": "3.4 kg",
+      "Remote Controller Model": "TM2280A",
+      "User Manual": "Yes",
+      "Power Cable": "Yes",
+      "Manufactured by": "Radiant Appliances and Electronics Pvt. Ltd. Survey No.111,112, S-2 A1, Ecity, Fabcity,Maheshwaram Mandal,Raviryala village, Ranga Reddy. Telangana-501141",
+      "Country of Origin": "India",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 32.0,
+    "resolution": "HD (1,366 x 768)",
+    "refreshRateHz": null,
+    "panel": "LED",
+    "os": "Tizen™ Smart TV",
+    "soundW": 20,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "32\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32h4520fuxxl/gallery/in-hd-h4500-548524-ua32h4520fuxxl-thumb-546540763?$650_519_PNG$",
+        "alt": "Samsung 32\" HD H4520 Smart TV"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32h4520fuxxl/gallery/in-hd-h4500-548524-ua32h4520fuxxl-546540757?$650_519_PNG$",
+        "alt": "Samsung 32\" HD H4520 Smart TV, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-32H4520FU",
+      "mpn": "32H4520FU",
+      "options": {
+        "Size": "32\""
+      },
+      "price": 17400,
+      "mrp": 17900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/tvs/hd-tv/h4520-32-inch-hd-smart-tv-ua32h4520fuxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

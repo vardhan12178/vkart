@@ -1,0 +1,166 @@
+{
+  "slug": "samsung-32-inch-m8-uhd-4k-ai-smart-monitor",
+  "title": "Samsung 32\" M8 UHD 4K AI Smart Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Enjoy content directly and explore more with Click to Search\nEnhanced resolution with 4K AI Upscaling\nMulti-layered security for your sensitive data with Knox Security",
+  "description": "Enjoy content directly and explore more with Click to Search\nEnhanced resolution with 4K AI Upscaling\nMulti-layered security for your sensitive data with Knox Security",
+  "highlights": [
+    "32-inch 4K (3,840 x 2,160) VA",
+    "60Hz refresh rate",
+    "Tizen™",
+    "4ms(GTG) response time",
+    "VA panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Aspect Ratio": "16:9",
+      "Brightness (Typical)": "400 cd/㎡",
+      "Contrast Ratio Static": "3,000:1(Static)",
+      "Resolution": "4K (3,840 x 2,160)",
+      "Response Time": "4ms(GTG)",
+      "Viewing Angle (H/V)": "178/178",
+      "Refresh Rate": "Max 60Hz",
+      "Screen Size (Class)": "80 cm",
+      "Flat / Curved": "Flat",
+      "Active Display Size (HxV) (mm)": "69.73 cm x 39.22 cm",
+      "Panel Type": "VA",
+      "Brightness (Min)": "300 cd/㎡",
+      "HDR(High Dynamic Range)": "HDR10",
+      "HDR10+": "Certified (HDR10+)",
+      "Colour Support": "Max 1B",
+      "sRGB Coverage": "99% (CIE1931)",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Image Size": "Yes",
+      "Windows Certification": "Windows11",
+      "Virtual AIM Point": "Yes",
+      "Game Bar 2.0": "Yes",
+      "HDMI-CEC": "Yes",
+      "Auto Source Switch": "Auto Source Switch+",
+      "Adaptive Picture": "Yes",
+      "Ultrawide Game View": "Yes",
+      "Smart Type": "Smart",
+      "Operating System": "Tizen™",
+      "Bixby": "Yes",
+      "Far-Field Voice Interaction": "Yes",
+      "TV Plus": "Yes (IN Only)",
+      "Universal Guide": "Yes (IN Only)",
+      "Alexa Built-in": "Alexa (IN Only)",
+      "SmartThings Hub": "Yes",
+      "Multi Device Experience": "Mobile to Screen, Screen initiate mirroring, Sound Mirroring, Wireless On, Tap View",
+      "Multi View": "up to 2 Videos",
+      "Smart Calibration": "Basic",
+      "Knox Vault": "Yes",
+      "Remote Access": "Yes",
+      "Wireless Display": "Yes",
+      "HDMI": "1 EA",
+      "HDMI Version": "2.0",
+      "HDCP Version (HDMI)": "2.2",
+      "USB Hub": "2",
+      "USB Hub Version": "2.0",
+      "USB-C": "1 EA",
+      "USB-C Charging Power": "65W",
+      "HDCP Version (USB-C)": "2.2",
+      "Wireless LAN Built-in": "Wi-Fi 5",
+      "Bluetooth": "Yes (5.2)",
+      "Speaker": "Yes",
+      "Speaker Output": "10W",
+      "Adaptive Sound": "Adaptive Sound Pro",
+      "Temperature": "10℃~40℃",
+      "Humidity": "10%~80%(non-condensing)",
+      "Factory Tunning": "Yes",
+      "Front Colour": "WARM WHITE",
+      "Rear Color": "WARM WHITE",
+      "Stand Colour": "Warm White",
+      "Stand Type": "HAS PIVOT",
+      "HAS(Height Adjustable Stand)": "120.0 ± 5.0",
+      "Tilt": "-2.0˚(±2.0˚) ~ 15.0˚(±2.0˚)",
+      "Pivot": "-92.0˚(±2.0˚) ~ 92.0˚(±2.0˚)",
+      "Wall Mount": "10.0 cm x 10.0 cm",
+      "Power Supply": "AC 100~240V",
+      "Power Consumption (Max)": "140 W",
+      "Type": "External Adaptor",
+      "Set Dimension with Stand (WxHxD)": "71.34 cm x 61.62 cm x 20.01 cm",
+      "Set Dimension without Stand (WxHxD)": "71.34 cm x 42.38 cm x 2.45 cm",
+      "Package Dimension (WxHxD)": "90.90 cm x 12.20 cm x 48.30 cm",
+      "Set Weight with Stand": "7.0 kg",
+      "Set Weight without Stand": "4.0 kg",
+      "Package Weight": "10.5 kg",
+      "Power Cable Length": "1.5 m",
+      "HDMI Cable": "Yes",
+      "USB Type-C Cable": "Yes",
+      "Remote Controller": "Yes",
+      "Camera": "Yes",
+      "Pogo Gender": "Yes",
+      "Manufactured by": "SAMSUNG ELECTRONICS HCMC CE COMPLEX Co., Ltd. Lot I-11, D2 Road, Saigon Hi-Tech Park, District 9, Ho Chi Minh City, Vietnam",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 32.0,
+    "resolution": "4K (3,840 x 2,160)",
+    "refreshRateHz": 60,
+    "panel": "VA",
+    "responseTimeMs": 4.0,
+    "curved": false,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "32\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm801uwxxl/gallery/in-smart-m8-32m80f-ls32fm801uwxxl-thumb-547967923?$650_519_PNG$",
+        "alt": "Samsung 32\" M8 UHD 4K AI Smart Monitor"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm801uwxxl/gallery/in-smart-m8-32m80f-ls32fm801uwxxl-547967922?$650_519_PNG$",
+        "alt": "Samsung 32\" M8 UHD 4K AI Smart Monitor, view 2"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS32FM801UW",
+      "mpn": "LS32FM801UW",
+      "options": {
+        "Size": "32\""
+      },
+      "price": 45999,
+      "mrp": 98500,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/smart/smart-monitor-m8-32-inch-smart-tv-apps-4k-uhd-ls32fm801uwxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}
