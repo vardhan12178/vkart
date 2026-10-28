@@ -1,0 +1,177 @@
+{
+  "slug": "oneplus-buds-4",
+  "title": "OnePlus Buds 4",
+  "brand": "OnePlus",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "OnePlus Buds 4: Real-Time Adaptive Active Noise Cancellation up to 55dB, 11mm woofer + 6mm tweeter drivers, up to 45 hours with case, IP55.",
+  "description": "OnePlus Buds 4 use 11mm woofer + 6mm tweeter drivers with real-time adaptive active noise cancellation of up to Up to 55dB.\n\nYou get up to 45 hours of playback with the case, LHDC 5.0 / AAC / SBC support and IP55 dust and water resistance. Available in Storm Gray, Zen Green.",
+  "highlights": [
+    "Real-Time Adaptive Active Noise Cancellation, up to Up to 55dB",
+    "11mm woofer + 6mm tweeter",
+    "Up to 45 hours with case",
+    "LHDC 5.0 / AAC / SBC codecs",
+    "Bluetooth 5.4 with Steady Connect",
+    "IP55 dust and water resistance"
+  ],
+  "specs": {
+    "Audio": {
+      "drivers": "11mm woofer + 6mm tweeter",
+      "frequencyResponse": "15Hz~40KHz"
+    },
+    "Noise Cancellation": {
+      "type": "Real-Time Adaptive Active Noise Cancellation",
+      "depth": "Up to 55dB"
+    },
+    "Connectivity": {
+      "codecs": "LHDC 5.0 / AAC / SBC",
+      "bluetooth": "Bluetooth 5.4 with Steady Connect"
+    },
+    "Battery": {
+      "playbackAncOff": [
+        "Earbuds: 11 hours",
+        "Earbuds + Case: 45 hours"
+      ],
+      "playbackAncOn": [
+        "Earbuds: 6 hours",
+        "Earbuds + Case: 24 hours"
+      ]
+    },
+    "Features": [
+      "OnePlus 3D Audio",
+      "Sound Master EQ",
+      "Golden Sound",
+      "47ms Low Latency",
+      "AI Translation",
+      "Voice Assistant Shortcut",
+      "Find My Earbuds",
+      "Double-Tap for Camera Control",
+      "Compatibility with HeyMelody App",
+      "OTA Updates"
+    ],
+    "Build": {
+      "ipRating": "IP55"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 55,
+    "batteryHours": 45,
+    "ipRating": "IP55",
+    "connectivity": "Bluetooth 5.4 with Steady Connect",
+    "codecs": "LHDC 5.0 / AAC / SBC"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Storm Gray",
+          "hex": "#6B6E73"
+        },
+        {
+          "value": "Zen Green",
+          "hex": "#9DB3A2"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Storm Gray": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202505/23/637edc5e06f7db34265842933c208557.png",
+          "alt": "OnePlus Buds 4 in Storm Gray"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202506/19/0c78b2d0bd7767ed91213d62286b4b5f.png",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202506/19/585080e6513801a2d7441dec8b48b151.png",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202506/19/45e03cde835234b3d8550d218432a17f.png",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 4"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202505/23/78d71e8d2787dbb8c8beec1e405e33dd.png",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 5"
+        }
+      ],
+      "Zen Green": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202505/23/b77da222b14016b62986867556b4c89a.png",
+          "alt": "OnePlus Buds 4 in Zen Green"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202506/19/213aa160481eba862ef0dde90c53a177.png",
+          "alt": "OnePlus Buds 4 in Zen Green, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202506/19/d796a256d9bc6744b23c3d10fe7c205f.png",
+          "alt": "OnePlus Buds 4 in Zen Green, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202506/19/ef155cc5f2266080176aac3b8f8242e1.png",
+          "alt": "OnePlus Buds 4 in Zen Green, view 4"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202505/23/c7101aef275f6e3f7a4bc194592aca3f.png",
+          "alt": "OnePlus Buds 4 in Zen Green, view 5"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-B4-STGR",
+      "mpn": "5481158905",
+      "options": {
+        "Color": "Storm Gray"
+      },
+      "price": 6099,
+      "mrp": 6499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "OPL-B4-ZEGR",
+      "mpn": "5481158906",
+      "options": {
+        "Color": "Zen Green"
+      },
+      "price": 6099,
+      "mrp": 6499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Buds 4 x 1 pair",
+    "OnePlus Buds 4 Charging Case x 1",
+    "Type-C Charging Cable x 1",
+    "Ear Tips (S, M, L pairs; M pre-installed)",
+    "User Manual & Safety and Warranty x 1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/oneplus-buds-4/specs",
+      "https://www.oneplus.in/product/product/oneplus-buds-4"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oneplus.in spec page; colours, selling price (price), MRP (mrp) and images from the OnePlus India store data."
+  }
+}

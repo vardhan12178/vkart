@@ -1,0 +1,211 @@
+{
+  "slug": "oneplus-buds-pro-3",
+  "title": "OnePlus Buds Pro 3",
+  "brand": "OnePlus",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "OnePlus Buds Pro 3: Active Noise Cancellation up to 50dB, 11mm + 6mm drivers, up to 43 hours with case, IP55.",
+  "description": "OnePlus Buds Pro 3 use 11mm + 6mm drivers with active noise cancellation of up to 50dB.\n\nYou get up to 43 hours of playback with the case, LHDC 5.0 / AAC / SBC support and IP55 dust and water resistance. Available in Lunar Radiance, Midnight Opus, Sapphire Blue.",
+  "highlights": [
+    "Active Noise Cancellation, up to 50dB",
+    "11mm + 6mm",
+    "Up to 43 hours with case",
+    "LHDC 5.0 / AAC / SBC codecs",
+    "Bluetooth 5.4 with Steady Connect",
+    "IP55 dust and water resistance"
+  ],
+  "specs": {
+    "Audio": {
+      "drivers": "11mm + 6mm",
+      "frequencyResponse": "10Hz~40KHz"
+    },
+    "Noise Cancellation": {
+      "type": "Active Noise Cancellation",
+      "depth": "50dB"
+    },
+    "Connectivity": {
+      "codecs": "LHDC 5.0 / AAC / SBC",
+      "bluetooth": "Bluetooth 5.4 with Steady Connect"
+    },
+    "Battery": {
+      "playbackAncOff": [
+        "Earphone Only: 10 hours",
+        "Earphone + Case: 43 hours"
+      ]
+    },
+    "Build": {
+      "ipRating": "IP55"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 50,
+    "batteryHours": 43,
+    "ipRating": "IP55",
+    "connectivity": "Bluetooth 5.4 with Steady Connect",
+    "codecs": "LHDC 5.0 / AAC / SBC"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lunar Radiance",
+          "hex": "#D8D2C4"
+        },
+        {
+          "value": "Midnight Opus",
+          "hex": "#24262B"
+        },
+        {
+          "value": "Sapphire Blue",
+          "hex": "#2D4A7A"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lunar Radiance": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/1a6fba7d5b80dc79e9e547bebd9849cd.png",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/6527927e313ef7f27ab5d07da0c96c94.png",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/e4e5bc353ff74b81664b919508786af0.png",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/3ac3848f2739c285d4981244b94ca2f4.png",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 4"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/549cde42fa7e3c88490ddc5194d19838.png",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 5"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/3df9220efff841edc54258146cd88694.png",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 6"
+        }
+      ],
+      "Midnight Opus": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/ee0fbf7ee1845d4993715f01791f85a2.png",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/3970117fe72355b91f5cea29083b3a85.png",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/18e69e995f0e51f427a490c83320a796.png",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/cf620b0ec66e27ef110de1f324a595b7.png",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 4"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/4654ed2b911df62e008953b030c51346.png",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 5"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202408/16/bfcb7c7145863efdb7efb80d264a5232.png",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 6"
+        }
+      ],
+      "Sapphire Blue": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202501/07/d7144d6c06114b897eaeb29e4a246cd4.png",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202501/07/4546e79761799a198b54a0256d060a3c.png",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202501/07/2d607e44f9d07ef116ecb132cfd38c35.png",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202501/07/4ee2ba17d009a4e9bfe8ff42557e946f.png",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 4"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202501/07/84b42c4106e24e1b5e40a71cfb7df940.png",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 5"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202501/07/56b48b49dbc3ca80182e44fbe584ba72.png",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 6"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-BP3-LURA",
+      "mpn": "5481158578",
+      "options": {
+        "Color": "Lunar Radiance"
+      },
+      "price": 10999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "OPL-BP3-MIOP",
+      "mpn": "5481158577",
+      "options": {
+        "Color": "Midnight Opus"
+      },
+      "price": 10999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "OPL-BP3-SABL",
+      "mpn": "5481158842",
+      "options": {
+        "Color": "Sapphire Blue"
+      },
+      "price": 10999,
+      "mrp": 13999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Buds Pro 3 x 1 pair",
+    "OnePlus Buds Pro 3 Charging Case x 1",
+    "Type-C Charging Cable x 1",
+    "Ear Tips (XS, S, M, L pairs; M pre-installed)",
+    "User Manual x 1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/oneplus-buds-pro-3/specs",
+      "https://www.oneplus.in/product/product/oneplus-buds-pro-3"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oneplus.in spec page; colours, selling price (price), MRP (mrp) and images from the OnePlus India store data."
+  }
+}

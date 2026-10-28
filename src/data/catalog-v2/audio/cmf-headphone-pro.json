@@ -1,0 +1,128 @@
+{
+  "slug": "cmf-headphone-pro",
+  "title": "CMF Headphone Pro",
+  "brand": "Nothing",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "CMF over-ear headphones with hybrid adaptive ANC, up to 100 hours of battery and interchangeable ear cushions.",
+  "description": "CMF Headphone Pro are over-ear headphones with hybrid adaptive ANC that blocks up to 99% of noise and up to 100 hours of battery life.\n\nInterchangeable ear cushions let you change the look, with intuitive controls and Nothing X app support.",
+  "highlights": [
+    "Hybrid adaptive ANC",
+    "Up to 100 hours battery",
+    "Interchangeable ear cushions",
+    "Intuitive controls",
+    "Nothing X app",
+    "Three colours"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "Hybrid adaptive ANC, blocks up to 99% of noise"
+    },
+    "Battery": {
+      "total": "Up to 100 hours"
+    },
+    "Design": {
+      "cushions": "Interchangeable"
+    }
+  },
+  "keySpecs": {
+    "type": "Over-ear headphones",
+    "anc": true,
+    "batteryHours": 100
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Light Green",
+          "hex": "#80AFB1"
+        },
+        {
+          "value": "Light Grey",
+          "hex": "#B7BFC7"
+        },
+        {
+          "value": "Dark Grey",
+          "hex": "#313237"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Light Green": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-light-green-3_4-view-thumbnail.webp?v=1788847569",
+          "alt": "CMF Headphone Pro in Light Green"
+        }
+      ],
+      "Light Grey": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-light-grey-3_4-view-thumbnail.webp?v=1788847569",
+          "alt": "CMF Headphone Pro in Light Grey"
+        }
+      ],
+      "Dark Grey": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-dark-grey-3_4-view-thumbnail.webp?v=1788847569",
+          "alt": "CMF Headphone Pro in Dark Grey"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-CMFHP-LIGHTGREEN",
+      "mpn": "6974434226746",
+      "options": {
+        "Color": "Light Green"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-CMFHP-LIGHTGREY",
+      "mpn": "6974434226739",
+      "options": {
+        "Color": "Light Grey"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-CMFHP-DARKGREY",
+      "mpn": "6974434226722",
+      "options": {
+        "Color": "Dark Grey"
+      },
+      "price": 5999,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/cmf-headphone-pro"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, prices and images from Nothing's India store data (audio is sold through Flipkart); key specs from the product page headlines. Nothing publishes no full spec sheet here, so specs are limited."
+  }
+}

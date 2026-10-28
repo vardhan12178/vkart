@@ -1,0 +1,165 @@
+{
+  "slug": "oneplus-nord-buds-4-pro",
+  "title": "OnePlus Nord Buds 4 Pro",
+  "brand": "OnePlus",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "OnePlus Nord Buds 4 Pro: Pro-level Real-time Active Noise Cancellation, 12 mm dynamic driver, up to 54 hours with case, IP55.",
+  "description": "OnePlus Nord Buds 4 Pro use 12 mm dynamic driver drivers with pro-level real-time active noise cancellation.\n\nYou get up to 54 hours of playback with the case, LHDC 5.0/AAC/SBC support and IP55 dust and water resistance. Available in Radiant Gray, Raven Black.",
+  "highlights": [
+    "Pro-level Real-time Active Noise Cancellation",
+    "12 mm dynamic driver",
+    "Up to 54 hours with case",
+    "LHDC 5.0/AAC/SBC codecs",
+    "Bluetooth 6.0",
+    "IP55 dust and water resistance"
+  ],
+  "specs": {
+    "Audio": {
+      "drivers": "12 mm dynamic driver",
+      "frequencyResponse": "20Hz - 40kHz"
+    },
+    "Noise Cancellation": {
+      "type": "Pro-level Real-time Active Noise Cancellation"
+    },
+    "Connectivity": {
+      "codecs": "LHDC 5.0/AAC/SBC",
+      "bluetooth": "Bluetooth 6.0"
+    },
+    "Battery": {
+      "playbackAncOff": [
+        "Earbuds: 13 hours",
+        "Earbuds + Case: 54 hours"
+      ]
+    },
+    "Features": [
+      "Pro-level Real-time Active Noise Cancellation",
+      "6-mic AI Clear Call Noise Cancellation",
+      "Basswave",
+      "OnePlus 3D Spatial Audio",
+      "OnePlus Game Sound Spatial Audio",
+      "Easy Smart Control",
+      "Volume Swipe Control",
+      "Touch Control",
+      "AI Translation",
+      "AI Assistant"
+    ],
+    "Build": {
+      "ipRating": "IP55"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": 54,
+    "ipRating": "IP55",
+    "connectivity": "Bluetooth 6.0",
+    "codecs": "LHDC 5.0/AAC/SBC"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Radiant Gray",
+          "hex": "#8E9196"
+        },
+        {
+          "value": "Raven Black",
+          "hex": "#1F2023"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Radiant Gray": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202603/03/b9f3cc5281821f1a72cbc44d46e72ea8.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/20/947662e3440783b57d32fca906f0e0fc.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202603/03/4ac5434d59ebf5591919e66320134197.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202603/03/7dc7a887596e332d083b6ada16185393.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 4"
+        }
+      ],
+      "Raven Black": [
+        {
+          "src": "https://image01-in.oneplus.net/media/202603/03/e7101772f18696c5f69a19bfcbca1bad.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202604/20/4330c98c37744ffc047d389a1956a091.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 2"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202603/03/18ca7dde24e4f8f4a14bafdd23805d8a.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 3"
+        },
+        {
+          "src": "https://image01-in.oneplus.net/media/202603/03/fde4a1479e55d61acf927d4b7cc5d6bb.png",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-NB4P-RAGR",
+      "mpn": "5481159283",
+      "options": {
+        "Color": "Radiant Gray"
+      },
+      "price": 4099,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "OPL-NB4P-RABL",
+      "mpn": "5481159284",
+      "options": {
+        "Color": "Raven Black"
+      },
+      "price": 4099,
+      "mrp": 4999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Nord Buds 4 Pro x 1 pair",
+    "OnePlus Nord Buds 4 Pro Charging Case x 1",
+    "Ear Tips (S, M, L pairs; M pre-installed)",
+    "USB-C Charging Cable x 1",
+    "User Manual & Safety and Warranty x 1",
+    "Brand Sticker x 1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/oneplus-nord-buds-4-pro/specs",
+      "https://www.oneplus.in/product/product/oneplus-nord-buds-4-pro"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oneplus.in spec page; colours, selling price (price), MRP (mrp) and images from the OnePlus India store data."
+  }
+}

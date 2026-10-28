@@ -1,0 +1,180 @@
+{
+  "slug": "apple-airpods-max",
+  "title": "AirPods Max",
+  "brand": "Apple",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Apple's over-ear headphones: high-fidelity audio, Active Noise Cancellation, Spatial Audio and up to 20 hours of battery.",
+  "description": "AirPods Max deliver high-fidelity sound from custom drivers, with Active Noise Cancellation, Transparency mode and Personalised Spatial Audio.\n\nThe knit-mesh canopy and memory-foam ear cushions make them comfortable for long sessions, with up to 20 hours of battery and USB-C charging.",
+  "highlights": [
+    "Over-ear, custom acoustic design",
+    "Active Noise Cancellation",
+    "Personalised Spatial Audio",
+    "Up to 20 hours battery",
+    "USB-C",
+    "Five colours"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "Active Noise Cancellation",
+      "modes": "Transparency",
+      "spatialAudio": "Personalised Spatial Audio"
+    },
+    "Battery": {
+      "listening": "Up to 20 hours"
+    },
+    "Connectivity": {
+      "port": "USB-C"
+    }
+  },
+  "keySpecs": {
+    "type": "Over-ear headphones",
+    "anc": true,
+    "batteryHours": 20,
+    "connectivity": "Bluetooth"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blue",
+          "hex": "#85919B"
+        },
+        {
+          "value": "Purple",
+          "hex": "#BFB6CB"
+        },
+        {
+          "value": "Midnight",
+          "hex": "#46494E"
+        },
+        {
+          "value": "Starlight",
+          "hex": "#D3C7B9"
+        },
+        {
+          "value": "Orange",
+          "hex": "#D5B2A3"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Blue": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "AirPods Max in Blue"
+        }
+      ],
+      "Purple": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "AirPods Max in Purple"
+        }
+      ],
+      "Midnight": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "AirPods Max in Midnight"
+        }
+      ],
+      "Starlight": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "AirPods Max in Starlight"
+        }
+      ],
+      "Orange": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "AirPods Max in Orange"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-APMAX-MHWM4HN",
+      "mpn": "MHWM4HN/A",
+      "options": {
+        "Color": "Blue"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "APL-APMAX-MHWP4HN",
+      "mpn": "MHWP4HN/A",
+      "options": {
+        "Color": "Purple"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "APL-APMAX-MHWK4HN",
+      "mpn": "MHWK4HN/A",
+      "options": {
+        "Color": "Midnight"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "APL-APMAX-MHWL4HN",
+      "mpn": "MHWL4HN/A",
+      "options": {
+        "Color": "Starlight"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "APL-APMAX-MHWN4HN",
+      "mpn": "MHWN4HN/A",
+      "options": {
+        "Color": "Orange"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "AirPods Max",
+    "Smart Case",
+    "USB-C to USB-C Cable",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-airpods/airpods-max-2"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Variants, part numbers and Apple India MRP from the Apple Store India buy page; images are Apple Store product shots."
+  }
+}

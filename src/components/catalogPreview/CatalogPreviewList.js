@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { products, minPrice, maxPrice, defaultVariant, imagesFor, discountPercent, formatPrice } from "./catalogData";
 
-const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets" };
+const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", audio: "Audio" };
 const brandsOf = (cat) => ["All", ...Array.from(new Set(products.filter((p) => p.category === cat).map((p) => p.brand)))];
 const SORTS = {
   "price-desc": { label: "Price: high to low", fn: (a, b) => minPrice(b) - minPrice(a) },

@@ -1,0 +1,116 @@
+{
+  "slug": "nothing-ear",
+  "title": "Nothing Ear",
+  "brand": "Nothing",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2024-04",
+  "shortDescription": "Nothing's flagship earbuds: 45dB active noise cancellation, 24-bit Hi-Res audio and up to 40.5 hours of battery.",
+  "description": "Nothing Ear pairs Nothing's transparent design with 45dB active noise cancellation and 24-bit Hi-Res audio.\n\nYou get up to 40.5 hours of playback with the case, with fine tuning through the Nothing X app.",
+  "highlights": [
+    "45dB active noise cancellation",
+    "24-bit Hi-Res audio",
+    "Up to 40.5 hours with case",
+    "Nothing X app",
+    "Transparent design",
+    "Black or White"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "45dB active noise cancellation",
+      "hiRes": "24-bit Hi-Res audio"
+    },
+    "Battery": {
+      "total": "Up to 40.5 hours"
+    },
+    "App": {
+      "companion": "Nothing X"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 45,
+    "batteryHours": 40.5
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#22272A"
+        },
+        {
+          "value": "White",
+          "hex": "#DDDFDF"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0024_Ear-black.png?v=1753757359",
+          "alt": "Nothing Ear in Black"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BA_360_ENTEI_030_blackBud_rgb_00_4fdaba7c-5568-4db0-aaa5-5129d524d8bd.png?v=1713169144",
+          "alt": "Nothing Ear in Black, view 2"
+        }
+      ],
+      "White": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0023_Ear-white.png?v=1753757347",
+          "alt": "Nothing Ear in White"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BA_360_ENTEI_010_whiteBud_rgb.1001_a15d21d4-b8ce-4245-b753-c1892e1d2b4f.png?v=1713169144",
+          "alt": "Nothing Ear in White, view 2"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-EAR-BLACK",
+      "mpn": "6974434222175",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 11999,
+      "mrp": 11999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-EAR-WHITE",
+      "mpn": "6974434222182",
+      "options": {
+        "Color": "White"
+      },
+      "price": 11999,
+      "mrp": 11999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/ear"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, prices and images from Nothing's India store data (audio is sold through Flipkart); key specs from the product page headlines. Nothing publishes no full spec sheet here, so specs are limited."
+  }
+}

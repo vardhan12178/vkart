@@ -1,0 +1,100 @@
+{
+  "slug": "apple-airpods-pro-3",
+  "title": "AirPods Pro 3",
+  "brand": "Apple",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Apple's best earbuds: next-level Active Noise Cancellation, heart-rate sensing, Live Translation and up to 8 hours listening.",
+  "description": "AirPods Pro 3 bring Apple's most advanced Active Noise Cancellation, a redesigned fit with more ear-tip sizes and built-in heart-rate sensing for workouts.\n\nThey support Live Translation, Adaptive Audio and Personalised Spatial Audio, with up to 8 hours of listening on a charge and an IP57 rating.",
+  "highlights": [
+    "Active Noise Cancellation and Transparency",
+    "Heart-rate sensing",
+    "Live Translation",
+    "Personalised Spatial Audio",
+    "Up to 8 hours listening (ANC on)",
+    "IP57"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "Active Noise Cancellation",
+      "modes": "Transparency, Adaptive Audio",
+      "spatialAudio": "Personalised Spatial Audio"
+    },
+    "Health": {
+      "heartRate": "Heart-rate sensing"
+    },
+    "Battery": {
+      "listening": "Up to 8 hours (ANC on)"
+    },
+    "Build": {
+      "ipRating": "IP57"
+    },
+    "Connectivity": {
+      "bluetooth": "Bluetooth 5.3",
+      "case": "USB-C, MagSafe, Find My"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "batteryHours": 8,
+    "ipRating": "IP57",
+    "connectivity": "Bluetooth 5.3"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White",
+          "hex": "#E5E6EA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "White": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "alt": "AirPods Pro 3 in White"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-APP3-MFHP4HN",
+      "mpn": "MFHP4HN/A",
+      "options": {
+        "Color": "White"
+      },
+      "price": 27900,
+      "mrp": 27900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "AirPods Pro 3",
+    "MagSafe Charging Case (USB-C)",
+    "Ear tips (five sizes)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-airpods/airpods-pro-3"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Variants, part numbers and Apple India MRP from the Apple Store India buy page; images are Apple Store product shots."
+  }
+}
