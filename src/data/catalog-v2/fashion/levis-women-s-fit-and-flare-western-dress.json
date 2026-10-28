@@ -91,7 +91,7 @@
   },
   "variants": [
     {
-      "sku": "LEV-SHORTSLEEVEFIT-XS",
+      "sku": "LEV-SHORTSLEEV8W0001-XS",
       "mpn": "5401221923027",
       "options": {
         "Size": "XS",
@@ -106,7 +106,7 @@
       }
     },
     {
-      "sku": "LEV-SHORTSLEEVEFIT-S",
+      "sku": "LEV-SHORTSLEEV8W0001-S",
       "mpn": "5401221923010",
       "options": {
         "Size": "S",
@@ -121,7 +121,7 @@
       }
     },
     {
-      "sku": "LEV-SHORTSLEEVEFIT-M",
+      "sku": "LEV-SHORTSLEEV8W0001-M",
       "mpn": "5401221923003",
       "options": {
         "Size": "M",
@@ -136,7 +136,7 @@
       }
     },
     {
-      "sku": "LEV-SHORTSLEEVEFIT-L",
+      "sku": "LEV-SHORTSLEEV8W0001-L",
       "mpn": "5401221922990",
       "options": {
         "Size": "L",
@@ -151,7 +151,7 @@
       }
     },
     {
-      "sku": "LEV-SHORTSLEEVEFIT-XL",
+      "sku": "LEV-SHORTSLEEV8W0001-XL",
       "mpn": "5401262473635",
       "options": {
         "Size": "XL",

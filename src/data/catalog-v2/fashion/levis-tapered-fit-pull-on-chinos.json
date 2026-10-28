@@ -117,7 +117,7 @@
   },
   "variants": [
     {
-      "sku": "LEV-LIGHTBLUETAPER-S",
+      "sku": "LEV-LIGHTBLUETW20003-S",
       "mpn": "5401255864464",
       "options": {
         "Size": "S",
@@ -132,7 +132,7 @@
       }
     },
     {
-      "sku": "LEV-LIGHTBLUETAPER-M",
+      "sku": "LEV-LIGHTBLUETW20003-M",
       "mpn": "5401255864457",
       "options": {
         "Size": "M",
@@ -147,7 +147,7 @@
       }
     },
     {
-      "sku": "LEV-LIGHTBLUETAPER-L",
+      "sku": "LEV-LIGHTBLUETW20003-L",
       "mpn": "5401255864440",
       "options": {
         "Size": "L",
@@ -162,7 +162,7 @@
       }
     },
     {
-      "sku": "LEV-LIGHTBLUETAPER-XL",
+      "sku": "LEV-LIGHTBLUETW20003-XL",
       "mpn": "5401255864471",
       "options": {
         "Size": "XL",
@@ -177,7 +177,7 @@
       }
     },
     {
-      "sku": "LEV-LIGHTBLUETAPER-XXL",
+      "sku": "LEV-LIGHTBLUETW20003-XXL",
       "mpn": "5401255864495",
       "options": {
         "Size": "XXL",
@@ -192,7 +192,7 @@
       }
     },
     {
-      "sku": "LEV-LIGHTBLUETAPER-3XL",
+      "sku": "LEV-LIGHTBLUETW20003-3XL",
       "mpn": "5401255858906",
       "options": {
         "Size": "3XL",

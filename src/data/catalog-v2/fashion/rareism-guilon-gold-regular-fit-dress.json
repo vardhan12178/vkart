@@ -126,7 +126,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-GUILONWOMENSDR-XS",
+      "sku": "RRB-GUILONWOMESSGOLD-XS",
       "mpn": "8909196934736",
       "options": {
         "Size": "XS",
@@ -141,7 +141,7 @@
       }
     },
     {
-      "sku": "RRB-GUILONWOMENSDR-S",
+      "sku": "RRB-GUILONWOMESSGOLD-S",
       "mpn": "8909196934743",
       "options": {
         "Size": "S",
@@ -156,7 +156,7 @@
       }
     },
     {
-      "sku": "RRB-GUILONWOMENSDR-M",
+      "sku": "RRB-GUILONWOMESSGOLD-M",
       "mpn": "8909196934750",
       "options": {
         "Size": "M",
@@ -171,7 +171,7 @@
       }
     },
     {
-      "sku": "RRB-GUILONWOMENSDR-L",
+      "sku": "RRB-GUILONWOMESSGOLD-L",
       "mpn": "8909196934767",
       "options": {
         "Size": "L",
@@ -186,7 +186,7 @@
       }
     },
     {
-      "sku": "RRB-GUILONWOMENSDR-XL",
+      "sku": "RRB-GUILONWOMESSGOLD-XL",
       "mpn": "8909196934774",
       "options": {
         "Size": "XL",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "sku": "RRB-GUILONWOMENSDR-XXL",
+      "sku": "RRB-GUILONWOMESSGOLD-XXL",
       "mpn": "8909196934781",
       "options": {
         "Size": "XXL",
@@ -216,7 +216,7 @@
       }
     },
     {
-      "sku": "RRB-GUILONWOMENSDR-XXS",
+      "sku": "RRB-GUILONWOMESSGOLD-XXS",
       "mpn": "8909196934729",
       "options": {
         "Size": "XXS",

@@ -107,7 +107,7 @@
   },
   "variants": [
     {
-      "sku": "PWL-BEIGECORDUROYB-S",
+      "sku": "PWL-BEIGECORDUNSHIRT-S",
       "mpn": "1452121-S",
       "options": {
         "Size": "S",
@@ -122,7 +122,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-M",
+      "sku": "PWL-BEIGECORDUNSHIRT-M",
       "mpn": "1452121-M",
       "options": {
         "Size": "M",
@@ -137,7 +137,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-L",
+      "sku": "PWL-BEIGECORDUNSHIRT-L",
       "mpn": "1452121-L",
       "options": {
         "Size": "L",
@@ -152,7 +152,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-XL",
+      "sku": "PWL-BEIGECORDUNSHIRT-XL",
       "mpn": "1452121-XL",
       "options": {
         "Size": "XL",
@@ -167,7 +167,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-XXL",
+      "sku": "PWL-BEIGECORDUNSHIRT-XXL",
       "mpn": "1452121-XXL",
       "options": {
         "Size": "XXL",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-3XL",
+      "sku": "PWL-BEIGECORDUNSHIRT-3XL",
       "mpn": "1452121-3XL",
       "options": {
         "Size": "3XL",
@@ -197,7 +197,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-4XL",
+      "sku": "PWL-BEIGECORDUNSHIRT-4XL",
       "mpn": "1452121-4XL",
       "options": {
         "Size": "4XL",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "sku": "PWL-BEIGECORDUROYB-5XL",
+      "sku": "PWL-BEIGECORDUNSHIRT-5XL",
       "mpn": "1452121-5XL",
       "options": {
         "Size": "5XL",

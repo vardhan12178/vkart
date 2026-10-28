@@ -110,7 +110,7 @@
   },
   "variants": [
     {
-      "sku": "CMP-PROVEDNVYDSLAT-6",
+      "sku": "CMP-PROVEDNVYDGSHOES-6",
       "mpn": "22G-13507-G-DNVY-DSLATGRY-6",
       "options": {
         "Size": "6",
@@ -125,7 +125,7 @@
       }
     },
     {
-      "sku": "CMP-PROVEDNVYDSLAT-7",
+      "sku": "CMP-PROVEDNVYDGSHOES-7",
       "mpn": "22G-13507-G-DNVY-DSLATGRY-7",
       "options": {
         "Size": "7",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "sku": "CMP-PROVEDNVYDSLAT-8",
+      "sku": "CMP-PROVEDNVYDGSHOES-8",
       "mpn": "22G-13507-G-DNVY-DSLATGRY-8",
       "options": {
         "Size": "8",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "sku": "CMP-PROVEDNVYDSLAT-9",
+      "sku": "CMP-PROVEDNVYDGSHOES-9",
       "mpn": "22G-13507-G-DNVY-DSLATGRY-9",
       "options": {
         "Size": "9",
@@ -170,7 +170,7 @@
       }
     },
     {
-      "sku": "CMP-PROVEDNVYDSLAT-10",
+      "sku": "CMP-PROVEDNVYDGSHOES-10",
       "mpn": "22G-13507-G-DNVY-DSLATGRY-10",
       "options": {
         "Size": "10",

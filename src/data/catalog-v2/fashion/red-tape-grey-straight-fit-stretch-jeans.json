@@ -106,7 +106,7 @@
   },
   "variants": [
     {
-      "sku": "RDT-JEANSFORMENING-30",
+      "sku": "RDT-JEANSFORMEM1148B-30",
       "mpn": "RDM1148B-30",
       "options": {
         "Size": "30",
@@ -121,7 +121,7 @@
       }
     },
     {
-      "sku": "RDT-JEANSFORMENING-32",
+      "sku": "RDT-JEANSFORMEM1148B-32",
       "mpn": "RDM1148B-32",
       "options": {
         "Size": "32",
@@ -136,7 +136,7 @@
       }
     },
     {
-      "sku": "RDT-JEANSFORMENING-34",
+      "sku": "RDT-JEANSFORMEM1148B-34",
       "mpn": "RDM1148B-34",
       "options": {
         "Size": "34",
@@ -151,7 +151,7 @@
       }
     },
     {
-      "sku": "RDT-JEANSFORMENING-36",
+      "sku": "RDT-JEANSFORMEM1148B-36",
       "mpn": "RDM1148B-36",
       "options": {
         "Size": "36",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "sku": "RDT-JEANSFORMENING-38",
+      "sku": "RDT-JEANSFORMEM1148B-38",
       "mpn": "RDM1148B-38",
       "options": {
         "Size": "38",

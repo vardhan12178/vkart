@@ -125,7 +125,7 @@
   },
   "variants": [
     {
-      "sku": "LEV-SOLIDSAGEINTER-S",
+      "sku": "LEV-SOLIDSAGEILY0083-S",
       "mpn": "5401252350052",
       "options": {
         "Size": "S",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-M",
+      "sku": "LEV-SOLIDSAGEILY0083-M",
       "mpn": "5401252350021",
       "options": {
         "Size": "M",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-L",
+      "sku": "LEV-SOLIDSAGEILY0083-L",
       "mpn": "5401252349490",
       "options": {
         "Size": "L",
@@ -170,7 +170,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-XL",
+      "sku": "LEV-SOLIDSAGEILY0083-XL",
       "mpn": "5401252350083",
       "options": {
         "Size": "XL",
@@ -185,7 +185,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-XXL",
+      "sku": "LEV-SOLIDSAGEILY0083-XXL",
       "mpn": "5401252350748",
       "options": {
         "Size": "XXL",
@@ -200,7 +200,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-3XL",
+      "sku": "LEV-SOLIDSAGEILY0083-3XL",
       "mpn": "5401252342859",
       "options": {
         "Size": "3XL",
@@ -215,7 +215,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-4XL",
+      "sku": "LEV-SOLIDSAGEILY0083-4XL",
       "mpn": "5401252349438",
       "options": {
         "Size": "4XL",
@@ -230,7 +230,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDSAGEINTER-5XL",
+      "sku": "LEV-SOLIDSAGEILY0083-5XL",
       "mpn": "5401252349469",
       "options": {
         "Size": "5XL",

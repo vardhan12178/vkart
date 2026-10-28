@@ -105,7 +105,7 @@
   },
   "variants": [
     {
-      "sku": "RDT-POLOTSHIRTSFOR-S",
+      "sku": "RDT-POLOTSHIRTP1970A-S",
       "mpn": "RHP1970A-S",
       "options": {
         "Size": "S",
@@ -120,7 +120,7 @@
       }
     },
     {
-      "sku": "RDT-POLOTSHIRTSFOR-M",
+      "sku": "RDT-POLOTSHIRTP1970A-M",
       "mpn": "RHP1970A-M",
       "options": {
         "Size": "M",
@@ -135,7 +135,7 @@
       }
     },
     {
-      "sku": "RDT-POLOTSHIRTSFOR-L",
+      "sku": "RDT-POLOTSHIRTP1970A-L",
       "mpn": "RHP1970A-L",
       "options": {
         "Size": "L",
@@ -150,7 +150,7 @@
       }
     },
     {
-      "sku": "RDT-POLOTSHIRTSFOR-XL",
+      "sku": "RDT-POLOTSHIRTP1970A-XL",
       "mpn": "RHP1970A-XL",
       "options": {
         "Size": "XL",
@@ -165,7 +165,7 @@
       }
     },
     {
-      "sku": "RDT-POLOTSHIRTSFOR-XXL",
+      "sku": "RDT-POLOTSHIRTP1970A-XXL",
       "mpn": "RHP1970A-XXL",
       "options": {
         "Size": "XXL",

@@ -125,7 +125,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-KAOSMENSSHIRTP-XS36",
+      "sku": "RRB-KAOSMENSSHYBLACK-XS36",
       "mpn": "8909196912178",
       "options": {
         "Size": "XS-36",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "sku": "RRB-KAOSMENSSHIRTP-S38",
+      "sku": "RRB-KAOSMENSSHYBLACK-S38",
       "mpn": "8909196912185",
       "options": {
         "Size": "S-38",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "sku": "RRB-KAOSMENSSHIRTP-M40",
+      "sku": "RRB-KAOSMENSSHYBLACK-M40",
       "mpn": "8909196912192",
       "options": {
         "Size": "M-40",
@@ -170,7 +170,7 @@
       }
     },
     {
-      "sku": "RRB-KAOSMENSSHIRTP-L42",
+      "sku": "RRB-KAOSMENSSHYBLACK-L42",
       "mpn": "8909196912208",
       "options": {
         "Size": "L-42",
@@ -185,7 +185,7 @@
       }
     },
     {
-      "sku": "RRB-KAOSMENSSHIRTP-XL44",
+      "sku": "RRB-KAOSMENSSHYBLACK-XL44",
       "mpn": "8909196912215",
       "options": {
         "Size": "XL-44",
@@ -200,7 +200,7 @@
       }
     },
     {
-      "sku": "RRB-KAOSMENSSHIRTP-XXL46",
+      "sku": "RRB-KAOSMENSSHYBLACK-XXL46",
       "mpn": "8909196912222",
       "options": {
         "Size": "XXL-46",
@@ -215,7 +215,7 @@
       }
     },
     {
-      "sku": "RRB-KAOSMENSSHIRTP-3XL48",
+      "sku": "RRB-KAOSMENSSHYBLACK-3XL48",
       "mpn": "8909196912239",
       "options": {
         "Size": "3XL-48",

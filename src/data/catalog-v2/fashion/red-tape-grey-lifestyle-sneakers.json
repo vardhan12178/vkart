@@ -105,7 +105,7 @@
   },
   "variants": [
     {
-      "sku": "RDT-LIFESTYLESNEAK-6",
+      "sku": "RDT-LIFESTYLESL0532B-6",
       "mpn": "RSL0532B-6",
       "options": {
         "Size": "6",
@@ -120,7 +120,7 @@
       }
     },
     {
-      "sku": "RDT-LIFESTYLESNEAK-7",
+      "sku": "RDT-LIFESTYLESL0532B-7",
       "mpn": "RSL0532B-7",
       "options": {
         "Size": "7",
@@ -135,7 +135,7 @@
       }
     },
     {
-      "sku": "RDT-LIFESTYLESNEAK-8",
+      "sku": "RDT-LIFESTYLESL0532B-8",
       "mpn": "RSL0532B-8",
       "options": {
         "Size": "8",
@@ -150,7 +150,7 @@
       }
     },
     {
-      "sku": "RDT-LIFESTYLESNEAK-9",
+      "sku": "RDT-LIFESTYLESL0532B-9",
       "mpn": "RSL0532B-9",
       "options": {
         "Size": "9",
@@ -165,7 +165,7 @@
       }
     },
     {
-      "sku": "RDT-LIFESTYLESNEAK-10",
+      "sku": "RDT-LIFESTYLESL0532B-10",
       "mpn": "RSL0532B-10",
       "options": {
         "Size": "10",

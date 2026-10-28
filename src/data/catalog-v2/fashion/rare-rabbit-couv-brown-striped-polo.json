@@ -121,7 +121,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-COUVMENSPOLOBR-XS36",
+      "sku": "RRB-COUVMENSPOOBROWN-XS36",
       "mpn": "8909196884857",
       "options": {
         "Size": "XS-36",
@@ -136,7 +136,7 @@
       }
     },
     {
-      "sku": "RRB-COUVMENSPOLOBR-S38",
+      "sku": "RRB-COUVMENSPOOBROWN-S38",
       "mpn": "8909196884864",
       "options": {
         "Size": "S-38",
@@ -151,7 +151,7 @@
       }
     },
     {
-      "sku": "RRB-COUVMENSPOLOBR-M40",
+      "sku": "RRB-COUVMENSPOOBROWN-M40",
       "mpn": "8909196884871",
       "options": {
         "Size": "M-40",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "sku": "RRB-COUVMENSPOLOBR-L42",
+      "sku": "RRB-COUVMENSPOOBROWN-L42",
       "mpn": "8909196884888",
       "options": {
         "Size": "L-42",
@@ -181,7 +181,7 @@
       }
     },
     {
-      "sku": "RRB-COUVMENSPOLOBR-XL44",
+      "sku": "RRB-COUVMENSPOOBROWN-XL44",
       "mpn": "8909196884895",
       "options": {
         "Size": "XL-44",
@@ -196,7 +196,7 @@
       }
     },
     {
-      "sku": "RRB-COUVMENSPOLOBR-XXL46",
+      "sku": "RRB-COUVMENSPOOBROWN-XXL46",
       "mpn": "8909196884901",
       "options": {
         "Size": "XXL-46",

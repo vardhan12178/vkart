@@ -110,7 +110,7 @@
   },
   "variants": [
     {
-      "sku": "CMP-AZURAMAUVEPEAC-4",
+      "sku": "CMP-AZURAMAUVEEAKERS-4",
       "mpn": "22L-985-L-MAUVE-PEACH-4",
       "options": {
         "Size": "4",
@@ -125,7 +125,7 @@
       }
     },
     {
-      "sku": "CMP-AZURAMAUVEPEAC-5",
+      "sku": "CMP-AZURAMAUVEEAKERS-5",
       "mpn": "22L-985-L-MAUVE-PEACH-5",
       "options": {
         "Size": "5",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "sku": "CMP-AZURAMAUVEPEAC-6",
+      "sku": "CMP-AZURAMAUVEEAKERS-6",
       "mpn": "22L-985-L-MAUVE-PEACH-6",
       "options": {
         "Size": "6",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "sku": "CMP-AZURAMAUVEPEAC-7",
+      "sku": "CMP-AZURAMAUVEEAKERS-7",
       "mpn": "22L-985-L-MAUVE-PEACH-7",
       "options": {
         "Size": "7",
@@ -170,7 +170,7 @@
       }
     },
     {
-      "sku": "CMP-AZURAMAUVEPEAC-8",
+      "sku": "CMP-AZURAMAUVEEAKERS-8",
       "mpn": "22L-985-L-MAUVE-PEACH-8",
       "options": {
         "Size": "8",

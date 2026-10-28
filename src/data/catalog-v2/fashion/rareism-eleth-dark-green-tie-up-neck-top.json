@@ -122,7 +122,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-ELETHWOMENSTOP-XS",
+      "sku": "RRB-ELETHWOMENKGREEN-XS",
       "mpn": "8909196533380",
       "options": {
         "Size": "XS",
@@ -137,7 +137,7 @@
       }
     },
     {
-      "sku": "RRB-ELETHWOMENSTOP-S",
+      "sku": "RRB-ELETHWOMENKGREEN-S",
       "mpn": "8909196533397",
       "options": {
         "Size": "S",
@@ -152,7 +152,7 @@
       }
     },
     {
-      "sku": "RRB-ELETHWOMENSTOP-M",
+      "sku": "RRB-ELETHWOMENKGREEN-M",
       "mpn": "8909196533403",
       "options": {
         "Size": "M",
@@ -167,7 +167,7 @@
       }
     },
     {
-      "sku": "RRB-ELETHWOMENSTOP-L",
+      "sku": "RRB-ELETHWOMENKGREEN-L",
       "mpn": "8909196533410",
       "options": {
         "Size": "L",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "sku": "RRB-ELETHWOMENSTOP-XL",
+      "sku": "RRB-ELETHWOMENKGREEN-XL",
       "mpn": "8909196533427",
       "options": {
         "Size": "XL",
@@ -197,7 +197,7 @@
       }
     },
     {
-      "sku": "RRB-ELETHWOMENSTOP-XXL",
+      "sku": "RRB-ELETHWOMENKGREEN-XXL",
       "mpn": "8909196533434",
       "options": {
         "Size": "XXL",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "sku": "RRB-ELETHWOMENSTOP-XXS",
+      "sku": "RRB-ELETHWOMENKGREEN-XXS",
       "mpn": "8909196533373",
       "options": {
         "Size": "XXS",

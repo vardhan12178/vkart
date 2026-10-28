@@ -103,7 +103,7 @@
   },
   "variants": [
     {
-      "sku": "PWL-WINEPANELLEDPR-S",
+      "sku": "PWL-WINEPANELLTSHIRT-S",
       "mpn": "1673911-S",
       "options": {
         "Size": "S",
@@ -118,7 +118,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-M",
+      "sku": "PWL-WINEPANELLTSHIRT-M",
       "mpn": "1673911-M",
       "options": {
         "Size": "M",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-L",
+      "sku": "PWL-WINEPANELLTSHIRT-L",
       "mpn": "1673911-L",
       "options": {
         "Size": "L",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-XL",
+      "sku": "PWL-WINEPANELLTSHIRT-XL",
       "mpn": "1673911-XL",
       "options": {
         "Size": "XL",
@@ -163,7 +163,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-XXL",
+      "sku": "PWL-WINEPANELLTSHIRT-XXL",
       "mpn": "1673911-XXL",
       "options": {
         "Size": "XXL",
@@ -178,7 +178,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-3XL",
+      "sku": "PWL-WINEPANELLTSHIRT-3XL",
       "mpn": "1673911-3XL",
       "options": {
         "Size": "3XL",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-4XL",
+      "sku": "PWL-WINEPANELLTSHIRT-4XL",
       "mpn": "1673911-4XL",
       "options": {
         "Size": "4XL",
@@ -208,7 +208,7 @@
       }
     },
     {
-      "sku": "PWL-WINEPANELLEDPR-5XL",
+      "sku": "PWL-WINEPANELLTSHIRT-5XL",
       "mpn": "1673911-5XL",
       "options": {
         "Size": "5XL",

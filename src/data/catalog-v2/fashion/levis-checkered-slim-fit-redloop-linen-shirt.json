@@ -118,7 +118,7 @@
   },
   "variants": [
     {
-      "sku": "LEV-CHECKEREDSLIMF-S",
+      "sku": "LEV-CHECKEREDSDG0027-S",
       "mpn": "5401249983898",
       "options": {
         "Size": "S",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "sku": "LEV-CHECKEREDSLIMF-M",
+      "sku": "LEV-CHECKEREDSDG0027-M",
       "mpn": "5401249983867",
       "options": {
         "Size": "M",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "sku": "LEV-CHECKEREDSLIMF-L",
+      "sku": "LEV-CHECKEREDSDG0027-L",
       "mpn": "5401249983836",
       "options": {
         "Size": "L",
@@ -163,7 +163,7 @@
       }
     },
     {
-      "sku": "LEV-CHECKEREDSLIMF-XL",
+      "sku": "LEV-CHECKEREDSDG0027-XL",
       "mpn": "5401249984420",
       "options": {
         "Size": "XL",
@@ -178,7 +178,7 @@
       }
     },
     {
-      "sku": "LEV-CHECKEREDSLIMF-XXL",
+      "sku": "LEV-CHECKEREDSDG0027-XXL",
       "mpn": "5401249984482",
       "options": {
         "Size": "XXL",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "sku": "LEV-CHECKEREDSLIMF-3XL",
+      "sku": "LEV-CHECKEREDSDG0027-3XL",
       "mpn": "5401249976265",
       "options": {
         "Size": "3XL",

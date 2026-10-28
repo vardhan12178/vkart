@@ -122,7 +122,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-VOCAMENTSHIRTD-XS",
+      "sku": "RRB-VOCAMENTSHRKNAVY-XS",
       "mpn": "8909702004076",
       "options": {
         "Size": "XS",
@@ -137,7 +137,7 @@
       }
     },
     {
-      "sku": "RRB-VOCAMENTSHIRTD-S",
+      "sku": "RRB-VOCAMENTSHRKNAVY-S",
       "mpn": "8909702004083",
       "options": {
         "Size": "S",
@@ -152,7 +152,7 @@
       }
     },
     {
-      "sku": "RRB-VOCAMENTSHIRTD-M",
+      "sku": "RRB-VOCAMENTSHRKNAVY-M",
       "mpn": "8909702004090",
       "options": {
         "Size": "M",
@@ -167,7 +167,7 @@
       }
     },
     {
-      "sku": "RRB-VOCAMENTSHIRTD-L",
+      "sku": "RRB-VOCAMENTSHRKNAVY-L",
       "mpn": "8909702004106",
       "options": {
         "Size": "L",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "sku": "RRB-VOCAMENTSHIRTD-XL",
+      "sku": "RRB-VOCAMENTSHRKNAVY-XL",
       "mpn": "8909702004113",
       "options": {
         "Size": "XL",
@@ -197,7 +197,7 @@
       }
     },
     {
-      "sku": "RRB-VOCAMENTSHIRTD-XXL",
+      "sku": "RRB-VOCAMENTSHRKNAVY-XXL",
       "mpn": "8909702004120",
       "options": {
         "Size": "XXL",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "sku": "RRB-VOCAMENTSHIRTD-3XL",
+      "sku": "RRB-VOCAMENTSHRKNAVY-3XL",
       "mpn": "8909702004137",
       "options": {
         "Size": "3XL",

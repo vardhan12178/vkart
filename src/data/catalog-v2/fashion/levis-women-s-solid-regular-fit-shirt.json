@@ -110,7 +110,7 @@
   },
   "variants": [
     {
-      "sku": "LEV-SOLIDREGULARFI-XS",
+      "sku": "LEV-SOLIDREGULCP0003-XS",
       "mpn": "5401281271922",
       "options": {
         "Size": "XS",
@@ -125,7 +125,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDREGULARFI-S",
+      "sku": "LEV-SOLIDREGULCP0003-S",
       "mpn": "5401281271908",
       "options": {
         "Size": "S",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDREGULARFI-M",
+      "sku": "LEV-SOLIDREGULCP0003-M",
       "mpn": "5401281260094",
       "options": {
         "Size": "M",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDREGULARFI-L",
+      "sku": "LEV-SOLIDREGULCP0003-L",
       "mpn": "5401281260087",
       "options": {
         "Size": "L",
@@ -170,7 +170,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDREGULARFI-XL",
+      "sku": "LEV-SOLIDREGULCP0003-XL",
       "mpn": "5401281271915",
       "options": {
         "Size": "XL",
@@ -185,7 +185,7 @@
       }
     },
     {
-      "sku": "LEV-SOLIDREGULARFI-XXL",
+      "sku": "LEV-SOLIDREGULCP0003-XXL",
       "mpn": "5401281271939",
       "options": {
         "Size": "XXL",

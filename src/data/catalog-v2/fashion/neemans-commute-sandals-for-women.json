@@ -115,7 +115,7 @@
   },
   "variants": [
     {
-      "sku": "NEE-COMMUTESANDALS-UK4",
+      "sku": "NEE-COMMUTESANNGREEN-UK4",
       "mpn": "NM-CMS-GRBL-4",
       "options": {
         "Size": "UK 4",
@@ -130,7 +130,7 @@
       }
     },
     {
-      "sku": "NEE-COMMUTESANDALS-UK5",
+      "sku": "NEE-COMMUTESANNGREEN-UK5",
       "mpn": "NM-CMS-GRBL-5",
       "options": {
         "Size": "UK 5",
@@ -145,7 +145,7 @@
       }
     },
     {
-      "sku": "NEE-COMMUTESANDALS-UK6",
+      "sku": "NEE-COMMUTESANNGREEN-UK6",
       "mpn": "NM-CMS-GRBL-6",
       "options": {
         "Size": "UK 6",
@@ -160,7 +160,7 @@
       }
     },
     {
-      "sku": "NEE-COMMUTESANDALS-UK7",
+      "sku": "NEE-COMMUTESANNGREEN-UK7",
       "mpn": "NM-CMS-GRBL-7",
       "options": {
         "Size": "UK 7",
@@ -175,7 +175,7 @@
       }
     },
     {
-      "sku": "NEE-COMMUTESANDALS-UK8",
+      "sku": "NEE-COMMUTESANNGREEN-UK8",
       "mpn": "NM-CMS-GRBL-8",
       "options": {
         "Size": "UK 8",

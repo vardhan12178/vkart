@@ -118,7 +118,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-PRERTHIWOMENST-XS",
+      "sku": "RRB-PRERTHIWOMPMULTI-XS",
       "mpn": "8909196315832",
       "options": {
         "Size": "XS",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "sku": "RRB-PRERTHIWOMENST-S",
+      "sku": "RRB-PRERTHIWOMPMULTI-S",
       "mpn": "8909196315849",
       "options": {
         "Size": "S",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "sku": "RRB-PRERTHIWOMENST-M",
+      "sku": "RRB-PRERTHIWOMPMULTI-M",
       "mpn": "8909196315856",
       "options": {
         "Size": "M",
@@ -163,7 +163,7 @@
       }
     },
     {
-      "sku": "RRB-PRERTHIWOMENST-L",
+      "sku": "RRB-PRERTHIWOMPMULTI-L",
       "mpn": "8909196315863",
       "options": {
         "Size": "L",
@@ -178,7 +178,7 @@
       }
     },
     {
-      "sku": "RRB-PRERTHIWOMENST-XL",
+      "sku": "RRB-PRERTHIWOMPMULTI-XL",
       "mpn": "8909196315870",
       "options": {
         "Size": "XL",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "sku": "RRB-PRERTHIWOMENST-XXL",
+      "sku": "RRB-PRERTHIWOMPMULTI-XXL",
       "mpn": "8909196315887",
       "options": {
         "Size": "XXL",
@@ -208,7 +208,7 @@
       }
     },
     {
-      "sku": "RRB-PRERTHIWOMENST-XXS",
+      "sku": "RRB-PRERTHIWOMPMULTI-XXS",
       "mpn": "8909196315825",
       "options": {
         "Size": "XXS",

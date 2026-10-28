@@ -132,7 +132,7 @@
   },
   "variants": [
     {
-      "sku": "LEV-318BLUEWIDELEG-25-L28",
+      "sku": "LEV-318BLUEWID1W0030-25-L28",
       "mpn": "5401262280974",
       "options": {
         "Size": "25",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-25-L30",
+      "sku": "LEV-318BLUEWID1W0030-25-L30",
       "mpn": "5401262280998",
       "options": {
         "Size": "25",
@@ -164,7 +164,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-25-L32",
+      "sku": "LEV-318BLUEWID1W0030-25-L32",
       "mpn": "5401262281513",
       "options": {
         "Size": "25",
@@ -180,7 +180,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-26-L28",
+      "sku": "LEV-318BLUEWID1W0030-26-L28",
       "mpn": "5401262281551",
       "options": {
         "Size": "26",
@@ -196,7 +196,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-26-L30",
+      "sku": "LEV-318BLUEWID1W0030-26-L30",
       "mpn": "5401262281575",
       "options": {
         "Size": "26",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-26-L32",
+      "sku": "LEV-318BLUEWID1W0030-26-L32",
       "mpn": "5401262281599",
       "options": {
         "Size": "26",
@@ -228,7 +228,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-27-L28",
+      "sku": "LEV-318BLUEWID1W0030-27-L28",
       "mpn": "5401262282077",
       "options": {
         "Size": "27",
@@ -244,7 +244,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-27-L30",
+      "sku": "LEV-318BLUEWID1W0030-27-L30",
       "mpn": "5401262282312",
       "options": {
         "Size": "27",
@@ -260,7 +260,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-27-L32",
+      "sku": "LEV-318BLUEWID1W0030-27-L32",
       "mpn": "5401262282350",
       "options": {
         "Size": "27",
@@ -276,7 +276,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-28-L28",
+      "sku": "LEV-318BLUEWID1W0030-28-L28",
       "mpn": "5401262282749",
       "options": {
         "Size": "28",
@@ -292,7 +292,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-28-L30",
+      "sku": "LEV-318BLUEWID1W0030-28-L30",
       "mpn": "5401262282787",
       "options": {
         "Size": "28",
@@ -308,7 +308,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-28-L32",
+      "sku": "LEV-318BLUEWID1W0030-28-L32",
       "mpn": "5401262283128",
       "options": {
         "Size": "28",
@@ -324,7 +324,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-30-L28",
+      "sku": "LEV-318BLUEWID1W0030-30-L28",
       "mpn": "5401262283968",
       "options": {
         "Size": "30",
@@ -340,7 +340,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-30-L30",
+      "sku": "LEV-318BLUEWID1W0030-30-L30",
       "mpn": "5401262284217",
       "options": {
         "Size": "30",
@@ -356,7 +356,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-30-L32",
+      "sku": "LEV-318BLUEWID1W0030-30-L32",
       "mpn": "5401262284255",
       "options": {
         "Size": "30",
@@ -372,7 +372,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-32-L28",
+      "sku": "LEV-318BLUEWID1W0030-32-L28",
       "mpn": "5401262284996",
       "options": {
         "Size": "32",
@@ -388,7 +388,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-32-L30",
+      "sku": "LEV-318BLUEWID1W0030-32-L30",
       "mpn": "5401262285337",
       "options": {
         "Size": "32",
@@ -404,7 +404,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-32-L32",
+      "sku": "LEV-318BLUEWID1W0030-32-L32",
       "mpn": "5401262285375",
       "options": {
         "Size": "32",
@@ -420,7 +420,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-34-L28",
+      "sku": "LEV-318BLUEWID1W0030-34-L28",
       "mpn": "5401262286617",
       "options": {
         "Size": "34",
@@ -436,7 +436,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-34-L30",
+      "sku": "LEV-318BLUEWID1W0030-34-L30",
       "mpn": "5401262286655",
       "options": {
         "Size": "34",
@@ -452,7 +452,7 @@
       }
     },
     {
-      "sku": "LEV-318BLUEWIDELEG-34-L32",
+      "sku": "LEV-318BLUEWID1W0030-34-L32",
       "mpn": "5401262286693",
       "options": {
         "Size": "34",

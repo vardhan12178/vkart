@@ -126,7 +126,7 @@
   },
   "variants": [
     {
-      "sku": "RRB-ONPRAPWOMENSDR-XS",
+      "sku": "RRB-ONPRAPWOMEKBLACK-XS",
       "mpn": "8909196913205",
       "options": {
         "Size": "XS",
@@ -141,7 +141,7 @@
       }
     },
     {
-      "sku": "RRB-ONPRAPWOMENSDR-S",
+      "sku": "RRB-ONPRAPWOMEKBLACK-S",
       "mpn": "8909196913212",
       "options": {
         "Size": "S",
@@ -156,7 +156,7 @@
       }
     },
     {
-      "sku": "RRB-ONPRAPWOMENSDR-M",
+      "sku": "RRB-ONPRAPWOMEKBLACK-M",
       "mpn": "8909196913229",
       "options": {
         "Size": "M",
@@ -171,7 +171,7 @@
       }
     },
     {
-      "sku": "RRB-ONPRAPWOMENSDR-L",
+      "sku": "RRB-ONPRAPWOMEKBLACK-L",
       "mpn": "8909196913236",
       "options": {
         "Size": "L",
@@ -186,7 +186,7 @@
       }
     },
     {
-      "sku": "RRB-ONPRAPWOMENSDR-XL",
+      "sku": "RRB-ONPRAPWOMEKBLACK-XL",
       "mpn": "8909196913243",
       "options": {
         "Size": "XL",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "sku": "RRB-ONPRAPWOMENSDR-XXL",
+      "sku": "RRB-ONPRAPWOMEKBLACK-XXL",
       "mpn": "8909196913250",
       "options": {
         "Size": "XXL",
@@ -216,7 +216,7 @@
       }
     },
     {
-      "sku": "RRB-ONPRAPWOMENSDR-XXS",
+      "sku": "RRB-ONPRAPWOMEKBLACK-XXS",
       "mpn": "8909196913199",
       "options": {
         "Size": "XXS",
