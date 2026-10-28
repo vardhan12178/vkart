@@ -1,0 +1,197 @@
+{
+  "slug": "campus-luck-sneakers",
+  "title": "Campus Luck Sneakers",
+  "brand": "Campus",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "sneakers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Step out in effortless style with Campus LUCK casual sneakers for men.",
+  "description": "Step out in effortless style with Campus LUCK casual sneakers for men. Featuring a breathable mesh and durable PU upper with subtle geometric print, a cushioned Bubble Yoga Max insole, and a sturdy rubber outsole with Anti Slip Sole Design for enhanced grip and all-day comfort.",
+  "highlights": [
+    "Occasion: Everyday",
+    "Insole: Bubble Yoga Max",
+    "Upper Material: Pu+Mesh+Printing+Embossing",
+    "Technology: Anti-Skid;Og-Collection"
+  ],
+  "specs": {
+    "Product details": {
+      "Occasion": "Everyday",
+      "Insole": "Bubble Yoga Max",
+      "Upper Material": "Pu+Mesh+Printing+Embossing",
+      "Technology": "Anti-Skid;Og-Collection",
+      "Care Instructions": "Wipe with a damp cloth and mild soapy water, then pat dry and air dry naturally. Do not soak, rinse under running water, or expose to direct heat and harsh chemicals"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Sneakers",
+    "color": "Black",
+    "fabric": "Pu+Mesh+Printing+Embossing",
+    "fit": null,
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "9"
+        },
+        {
+          "value": "10"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#9FA09E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_01.webp?v=1792734669",
+          "alt": "Campus Luck Sneakers"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_02.jpg?v=1792734669",
+          "alt": "Campus Luck Sneakers, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_03.webp?v=1792734669",
+          "alt": "Campus Luck Sneakers, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_04.webp?v=1792734668",
+          "alt": "Campus Luck Sneakers, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_05.webp?v=1792734668",
+          "alt": "Campus Luck Sneakers, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_06.webp?v=1792734669",
+          "alt": "Campus Luck Sneakers, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_07.webp?v=1792734669",
+          "alt": "Campus Luck Sneakers, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "CMP-LUCKBLACKMENSS-6",
+      "mpn": "22G-13520-G-BLACK-6",
+      "options": {
+        "Size": "6",
+        "Color": "Black"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-LUCKBLACKMENSS-7",
+      "mpn": "22G-13520-G-BLACK-7",
+      "options": {
+        "Size": "7",
+        "Color": "Black"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-LUCKBLACKMENSS-8",
+      "mpn": "22G-13520-G-BLACK-8",
+      "options": {
+        "Size": "8",
+        "Color": "Black"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-LUCKBLACKMENSS-9",
+      "mpn": "22G-13520-G-BLACK-9",
+      "options": {
+        "Size": "9",
+        "Color": "Black"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-LUCKBLACKMENSS-10",
+      "mpn": "22G-13520-G-BLACK-10",
+      "options": {
+        "Size": "10",
+        "Color": "Black"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.campusshoes.com/products/luck-black-mens-sneakers"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Campus's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

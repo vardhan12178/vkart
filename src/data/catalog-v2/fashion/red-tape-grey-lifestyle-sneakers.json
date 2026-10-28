@@ -1,0 +1,192 @@
+{
+  "slug": "red-tape-grey-lifestyle-sneakers",
+  "title": "Red Tape Grey Lifestyle Sneakers",
+  "brand": "Red Tape",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "sneakers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Experience elevated everyday comfort with Red Tape lifestyle sneakers for men in Grey.",
+  "description": "Experience elevated everyday comfort with Red Tape lifestyle sneakers for men in Grey. Designed in a low-cut silhouette, this pair combines a PU upper with a soft MESH lining to deliver a supportive feel, breathable comfort, and a clean finish for regular wear. The EVA sole is built to offer cushioning, helping you move with better confidence across daily surfaces. A round toe shape gives the front profile a balanced look, while the flat heel supports steady movement without compromising comfort. The secure lace-up sneaker construction makes the pair easy to style and practical for daily casual wear, travel, college, weekend outings, and smart everyday styling.",
+  "highlights": [
+    "Material: Sole - EVA | Upper - PU"
+  ],
+  "specs": {
+    "Product details": {
+      "Upper": "PU upper offers structured support, a neat finish, and reliable comfort for extended wear",
+      "Sole": "EVA sole provides cushioning, durability, and dependable support for daily movement",
+      "Heel": "Flat heel design helps maintain balance, stability, and easy walking comfort",
+      "Fit": "Secure lace-up sneaker construction gives a secure, comfortable, and easy-to-wear experience",
+      "Utility": "Suitable for daily casual wear, travel, college, weekend outings, and smart everyday styling, making it a versatile addition to a modern footwear wardrobe",
+      "Material": "Sole - EVA | Upper - PU",
+      "Design": "Low-cut lifestyle sneakers silhouette with secure lace-up sneaker construction for a refined and comfortable look"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Sneakers",
+    "color": "Grey",
+    "fabric": "Sole - EVA | Upper - PU",
+    "fit": "Secure lace-up sneaker construction gives a secure, comfortable, and easy-to-wear experience",
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "9"
+        },
+        {
+          "value": "10"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Grey",
+          "hex": "#D2D2D2"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Grey": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_1.jpg?v=1784525107",
+          "alt": "Red Tape Grey Lifestyle Sneakers"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_2.jpg?v=1784525107",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_3.jpg?v=1784525107",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_4.jpg?v=1784525107",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_5.jpg?v=1784525107",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_6.jpg?v=1784525107",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 6"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RDT-LIFESTYLESNEAK-6",
+      "mpn": "RSL0532B-6",
+      "options": {
+        "Size": "6",
+        "Color": "Grey"
+      },
+      "price": 1072,
+      "mrp": 6699,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-LIFESTYLESNEAK-7",
+      "mpn": "RSL0532B-7",
+      "options": {
+        "Size": "7",
+        "Color": "Grey"
+      },
+      "price": 1072,
+      "mrp": 6699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-LIFESTYLESNEAK-8",
+      "mpn": "RSL0532B-8",
+      "options": {
+        "Size": "8",
+        "Color": "Grey"
+      },
+      "price": 1072,
+      "mrp": 6699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-LIFESTYLESNEAK-9",
+      "mpn": "RSL0532B-9",
+      "options": {
+        "Size": "9",
+        "Color": "Grey"
+      },
+      "price": 1072,
+      "mrp": 6699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-LIFESTYLESNEAK-10",
+      "mpn": "RSL0532B-10",
+      "options": {
+        "Size": "10",
+        "Color": "Grey"
+      },
+      "price": 1072,
+      "mrp": 6699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.redtape.com/products/red-tape-lifestyle-sneakers-for-men-in-grey-sneakers-rsl0532b"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Red Tape's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

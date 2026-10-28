@@ -1,0 +1,219 @@
+{
+  "slug": "levis-tapered-fit-pull-on-chinos",
+  "title": "Levi's Tapered Fit Pull-On Chinos",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "chinos"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "These blue Levi's chinos are the perfect way to upgrade your basic wardrobe.",
+  "description": "These blue Levi's chinos are the perfect way to upgrade your basic wardrobe. Featuring a mid rise waist, ankle Length and solid pattern, these tapered chinos will be a staple.",
+  "highlights": [
+    "Fit: Tapered Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Tapered Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Pair them with a crisp button-down shirt and a pair of loafers for casual weekends",
+        "Made from fine cotton"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Chinos",
+    "color": "Light Blue",
+    "fabric": null,
+    "fit": "Tapered Fit",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Light Blue",
+          "hex": "#D1D0CC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Light Blue": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_01_Styleshot.jpg?v=1792061360",
+          "alt": "Levi's Tapered Fit Pull-On Chinos"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_05_Front.jpg?v=1792061360",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_02_Front.jpg?v=1792061360",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_03_Back.jpg?v=1792061359",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_04_SIde.jpg?v=1792061359",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_07_Detail_20.jpg?v=1792061360",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/008W20003_06_Detail_20.jpg?v=1792061359",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Chinos_MS_017a55ef-f791-4c1c-be50-d6fcbac45eb1.jpg?v=1791886238",
+          "alt": "Levi's Tapered Fit Pull-On Chinos, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-LIGHTBLUETAPER-S",
+      "mpn": "5401255864464",
+      "options": {
+        "Size": "S",
+        "Color": "Light Blue"
+      },
+      "price": 2719,
+      "mrp": 3399,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUETAPER-M",
+      "mpn": "5401255864457",
+      "options": {
+        "Size": "M",
+        "Color": "Light Blue"
+      },
+      "price": 2719,
+      "mrp": 3399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUETAPER-L",
+      "mpn": "5401255864440",
+      "options": {
+        "Size": "L",
+        "Color": "Light Blue"
+      },
+      "price": 2719,
+      "mrp": 3399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUETAPER-XL",
+      "mpn": "5401255864471",
+      "options": {
+        "Size": "XL",
+        "Color": "Light Blue"
+      },
+      "price": 2719,
+      "mrp": 3399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUETAPER-XXL",
+      "mpn": "5401255864495",
+      "options": {
+        "Size": "XXL",
+        "Color": "Light Blue"
+      },
+      "price": 2719,
+      "mrp": 3399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUETAPER-3XL",
+      "mpn": "5401255858906",
+      "options": {
+        "Size": "3XL",
+        "Color": "Light Blue"
+      },
+      "price": 2719,
+      "mrp": 3399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/mens-light-blue-tapered-fit-mid-rise-chinos-008w20003"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

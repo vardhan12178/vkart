@@ -1,0 +1,220 @@
+{
+  "slug": "levis-checkered-slim-fit-redloop-linen-shirt",
+  "title": "Levi's Checkered Slim Fit Redloop Linen Shirt",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "shirts"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "How can a shirt look this good? The secret is all in the details: a slim fit, classic semi cutaway collar, full sleeves, and a checkered print.",
+  "description": "How can a shirt look this good? The secret is all in the details: a slim fit, classic semi cutaway collar, full sleeves, and a checkered print. If you love the laid-back style and crave comfort, then this Levi's shirt is for you.",
+  "highlights": [
+    "Fit: Slim Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Slim Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Lounge in style and team it with a pair of shorts and sliders.",
+        "Made from high-quality linen fabric",
+        "Casual shirt in the navy color"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Shirts",
+    "color": "Navy Blue",
+    "fabric": null,
+    "fit": "Slim Fit",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Navy Blue",
+          "hex": "#454E61"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Navy Blue": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_02_Front.jpg?v=1793082959",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_01_Styleshot.jpg?v=1793082960",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_03_Back.jpg?v=1793082959",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_04_Side.jpg?v=1793082960",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_06_Detail_20.jpg?v=1793082961",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_07_Detail.jpg?v=1793082960",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_5_Full.jpg?v=1793082961",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 7"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Redloop_Last_Image_19d50230-6156-4d91-a07f-f32f73eadfcf.jpg?v=1791886155",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 8"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-CHECKEREDSLIMF-S",
+      "mpn": "5401249983898",
+      "options": {
+        "Size": "S",
+        "Color": "Navy Blue"
+      },
+      "price": 4599,
+      "mrp": 4599,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-CHECKEREDSLIMF-M",
+      "mpn": "5401249983867",
+      "options": {
+        "Size": "M",
+        "Color": "Navy Blue"
+      },
+      "price": 4599,
+      "mrp": 4599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-CHECKEREDSLIMF-L",
+      "mpn": "5401249983836",
+      "options": {
+        "Size": "L",
+        "Color": "Navy Blue"
+      },
+      "price": 4599,
+      "mrp": 4599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-CHECKEREDSLIMF-XL",
+      "mpn": "5401249984420",
+      "options": {
+        "Size": "XL",
+        "Color": "Navy Blue"
+      },
+      "price": 4599,
+      "mrp": 4599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-CHECKEREDSLIMF-XXL",
+      "mpn": "5401249984482",
+      "options": {
+        "Size": "XXL",
+        "Color": "Navy Blue"
+      },
+      "price": 4599,
+      "mrp": 4599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-CHECKEREDSLIMF-3XL",
+      "mpn": "5401249976265",
+      "options": {
+        "Size": "3XL",
+        "Color": "Navy Blue"
+      },
+      "price": 4599,
+      "mrp": 4599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/mens-checkered-slim-fit-redloop-linen-shirt-006dg0027"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "slug": "rare-rabbit-kaos-black-floral-print-viscose-shirt",
+  "title": "Rare Rabbit Kaos Black Floral Print Viscose Shirt",
+  "brand": "Rare Rabbit",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "shirts"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "A regular fit casual shirt tailored from a breathable viscose blend weave for fluid drape and lightweight comfort.",
+  "description": "A regular fit casual shirt tailored from a breathable viscose blend weave for fluid drape and lightweight comfort. Featuring a classic spread collar, short sleeves, a clean button placket, and a straight hemline, it offers effortless daytime structure. Pair with tailored shorts or relaxed trousers for refined warm-weather styling.",
+  "highlights": [
+    "Fit: Regular fit",
+    "Sleeve: Half Sleeve",
+    "Composition: 85% Viscose 15% Nylon"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Regular fit",
+      "Sleeve": "Half Sleeve",
+      "Composition": "85% Viscose 15% Nylon"
+    },
+    "Highlights": {
+      "points": [
+        "Viscose Blend",
+        "Regular fit",
+        "Button",
+        "Half Sleeve",
+        "Floral Print",
+        "85% Viscose 15% Nylon"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Shirts",
+    "color": "Black",
+    "fabric": "85% Viscose 15% Nylon",
+    "fit": "Regular fit",
+    "sizes": [
+      "XS-36",
+      "S-38",
+      "M-40",
+      "L-42",
+      "XL-44",
+      "XXL-46",
+      "3XL-48"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS-36"
+        },
+        {
+          "value": "S-38"
+        },
+        {
+          "value": "M-40"
+        },
+        {
+          "value": "L-42"
+        },
+        {
+          "value": "XL-44"
+        },
+        {
+          "value": "XXL-46"
+        },
+        {
+          "value": "3XL-48"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#7B7577"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_1__HM.webp?v=1791802270",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_8.webp?v=1791802271",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_6.webp?v=1791802271",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_3.webp?v=1791802271",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_4.webp?v=1791802271",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_5.webp?v=1791802270",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 6"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_7.webp?v=1791802271",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 7"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-XS36",
+      "mpn": "8909196912178",
+      "options": {
+        "Size": "XS-36",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-S38",
+      "mpn": "8909196912185",
+      "options": {
+        "Size": "S-38",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-M40",
+      "mpn": "8909196912192",
+      "options": {
+        "Size": "M-40",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-L42",
+      "mpn": "8909196912208",
+      "options": {
+        "Size": "L-42",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-XL44",
+      "mpn": "8909196912215",
+      "options": {
+        "Size": "XL-44",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-XXL46",
+      "mpn": "8909196912222",
+      "options": {
+        "Size": "XXL-46",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-KAOSMENSSHIRTP-3XL48",
+      "mpn": "8909196912239",
+      "options": {
+        "Size": "3XL-48",
+        "Color": "Black"
+      },
+      "price": 2589,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/kaos-mens-shirt-primary-black"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rare Rabbit's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

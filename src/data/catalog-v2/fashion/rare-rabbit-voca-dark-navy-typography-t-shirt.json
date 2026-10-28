@@ -1,0 +1,239 @@
+{
+  "slug": "rare-rabbit-voca-dark-navy-typography-t-shirt",
+  "title": "Rare Rabbit Voca Dark Navy Typography T-Shirt",
+  "brand": "Rare Rabbit",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "tshirts"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Elevate your casual wardrobe with this relaxed-fit t-shirt from Rare Rabbit.",
+  "description": "Elevate your casual wardrobe with this relaxed-fit t-shirt from Rare Rabbit. Crafted from cotton, it offers comfort for everyday wear. The classic crew neck and dark navy base create an easy-to-style look, while the bold RARE chest graphic adds a distinctive touch. Pair it with jeans or shorts for laid-back outings and weekend wear.",
+  "highlights": [
+    "Composition: 100% Cotton",
+    "Fit: Relaxed Fit",
+    "Sleeve: Half Sleeve"
+  ],
+  "specs": {
+    "Product details": {
+      "Composition": "100% Cotton",
+      "Fit": "Relaxed Fit",
+      "Sleeve": "Half Sleeve"
+    },
+    "Highlights": {
+      "points": [
+        "100% Cotton",
+        "Relaxed Fit",
+        "Pull-on Closure",
+        "Typography Print",
+        "Terry, 220 Gsm",
+        "Crew Neck",
+        "Half Sleeve"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "T-Shirts",
+    "color": "Dark Navy",
+    "fabric": "100% Cotton",
+    "fit": "Relaxed Fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Dark Navy",
+          "hex": "#1D2E38"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Dark Navy": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__1__hm.webp?v=1793088413",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__4.webp?v=1793088414",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 2"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__5.webp?v=1793088413",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 3"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__6.webp?v=1793088414",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 4"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__7.webp?v=1793088413",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 5"
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__3.webp?v=1793088414",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 6"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-XS",
+      "mpn": "8909702004076",
+      "options": {
+        "Size": "XS",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-S",
+      "mpn": "8909702004083",
+      "options": {
+        "Size": "S",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-M",
+      "mpn": "8909702004090",
+      "options": {
+        "Size": "M",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-L",
+      "mpn": "8909702004106",
+      "options": {
+        "Size": "L",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-XL",
+      "mpn": "8909702004113",
+      "options": {
+        "Size": "XL",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-XXL",
+      "mpn": "8909702004120",
+      "options": {
+        "Size": "XXL",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-VOCAMENTSHIRTD-3XL",
+      "mpn": "8909702004137",
+      "options": {
+        "Size": "3XL",
+        "Color": "Dark Navy"
+      },
+      "price": 3299,
+      "mrp": 3299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/voca-men-t-shirt-dark-navy"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rare Rabbit's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}
