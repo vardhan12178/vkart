@@ -1,0 +1,160 @@
+{
+  "slug": "apple-watch-ultra-4",
+  "title": "Apple Watch Ultra 4",
+  "brand": "Apple",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Apple's most rugged and capable watch: 49mm titanium case, brightest display, precision GPS and the longest battery life.",
+  "description": "Apple Watch Ultra 4 is built for endurance and adventure, with a 49mm titanium case, Apple's brightest display and precision dual-frequency GPS.\n\nIt includes GPS + Cellular as standard and comes in Natural or Black titanium.",
+  "highlights": [
+    "49mm titanium case",
+    "Brightest Apple Watch display",
+    "Precision dual-frequency GPS",
+    "GPS + Cellular included",
+    "Longest Apple Watch battery life",
+    "Natural or Black titanium"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Always-On Retina",
+      "size": "49mm"
+    },
+    "Build": {
+      "materials": "Titanium"
+    },
+    "Connectivity": {
+      "options": "GPS + Cellular"
+    },
+    "Software": {
+      "os": "watchOS"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "watchOS",
+    "caseSizesMm": [
+      49
+    ],
+    "cellularOption": true
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "49mm · Titanium · GPS + Cellular"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#373634"
+        },
+        {
+          "value": "Natural",
+          "hex": "#DED1C8"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-49-titanium-black-ultra4_SW_COLOR?wid=800&hei=800&fmt=png-alpha",
+          "alt": "Apple Watch Ultra 4 in Black"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch Ultra 4 in Black, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch Ultra 4 in Black, view 3"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch Ultra 4 in Black, view 4"
+        }
+      ],
+      "Natural": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-49-titanium-natural-ultra4_SW_COLOR?wid=800&hei=800&fmt=png-alpha",
+          "alt": "Apple Watch Ultra 4 in Natural"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch Ultra 4 in Natural, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch Ultra 4 in Natural, view 3"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch Ultra 4 in Natural, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-AWU4-MJCT4HN",
+      "mpn": "MJCT4HN/A",
+      "options": {
+        "Configuration": "49mm · Titanium · GPS + Cellular",
+        "Color": "Black"
+      },
+      "price": 109900,
+      "mrp": 109900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 49,
+        "cellular": true,
+        "caseMaterial": "Titanium"
+      }
+    },
+    {
+      "sku": "APL-AWU4-MJCR4HN",
+      "mpn": "MJCR4HN/A",
+      "options": {
+        "Configuration": "49mm · Titanium · GPS + Cellular",
+        "Color": "Natural"
+      },
+      "price": 109900,
+      "mrp": 109900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 49,
+        "cellular": true,
+        "caseMaterial": "Titanium"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Apple Watch Ultra 4",
+    "Band",
+    "Magnetic Fast Charger to USB-C Cable (1 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-watch/apple-watch-ultra"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Case variants, part numbers and Apple India 'From' MRP (case with the default band) from the Apple Store India buy page. Band choice is not modelled; images are Apple Store case shots and gallery images."
+  }
+}

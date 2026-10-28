@@ -1,0 +1,272 @@
+{
+  "slug": "apple-watch-se-3",
+  "title": "Apple Watch SE 3",
+  "brand": "Apple",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "The affordable Apple Watch with essential health and safety features, in 40mm or 44mm, GPS or GPS + Cellular.",
+  "description": "Apple Watch SE 3 gives you the essential Apple Watch experience — activity tracking, heart-rate notifications, Crash Detection and Fall Detection — at a lower price.\n\nIt comes in 40mm and 44mm aluminium cases in Midnight or Starlight, with GPS or GPS + Cellular.",
+  "highlights": [
+    "Essential health and safety features",
+    "40mm or 44mm",
+    "Aluminium case",
+    "GPS or GPS + Cellular",
+    "Crash and Fall Detection",
+    "Midnight or Starlight"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Retina",
+      "sizes": "40mm / 44mm"
+    },
+    "Build": {
+      "materials": "Aluminium"
+    },
+    "Connectivity": {
+      "options": "GPS / GPS + Cellular"
+    },
+    "Software": {
+      "os": "watchOS"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "watchOS",
+    "caseSizesMm": [
+      40,
+      44
+    ],
+    "cellularOption": true
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "40mm · Aluminium · GPS"
+        },
+        {
+          "value": "44mm · Aluminium · GPS"
+        },
+        {
+          "value": "40mm · Aluminium · GPS + Cellular"
+        },
+        {
+          "value": "44mm · Aluminium · GPS + Cellular"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Midnight",
+          "hex": "#3A4149"
+        },
+        {
+          "value": "Starlight",
+          "hex": "#DED3CD"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Midnight": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-midnight-nc-se3_SW_COLOR?wid=800&hei=800&fmt=png-alpha",
+          "alt": "Apple Watch SE 3 in Midnight"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Midnight, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Midnight, view 3"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Midnight, view 4"
+        }
+      ],
+      "Starlight": [
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-44-aluminum-starlight-cell-se3_SW_COLOR?wid=800&hei=800&fmt=png-alpha",
+          "alt": "Apple Watch SE 3 in Starlight"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Starlight, view 2"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Starlight, view 3"
+        },
+        {
+          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/se-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "alt": "Apple Watch SE 3 in Starlight, view 4"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-AWSE3-MEHX4HN",
+      "mpn": "MEHX4HN/A",
+      "options": {
+        "Configuration": "40mm · Aluminium · GPS",
+        "Color": "Midnight"
+      },
+      "price": 29900,
+      "mrp": 29900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEHV4HN",
+      "mpn": "MEHV4HN/A",
+      "options": {
+        "Configuration": "40mm · Aluminium · GPS",
+        "Color": "Starlight"
+      },
+      "price": 29900,
+      "mrp": 29900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEP34HN",
+      "mpn": "MEP34HN/A",
+      "options": {
+        "Configuration": "44mm · Aluminium · GPS",
+        "Color": "Midnight"
+      },
+      "price": 33900,
+      "mrp": 33900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 44,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEP04HN",
+      "mpn": "MEP04HN/A",
+      "options": {
+        "Configuration": "44mm · Aluminium · GPS",
+        "Color": "Starlight"
+      },
+      "price": 33900,
+      "mrp": 33900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 44,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEQ24HN",
+      "mpn": "MEQ24HN/A",
+      "options": {
+        "Configuration": "40mm · Aluminium · GPS + Cellular",
+        "Color": "Midnight"
+      },
+      "price": 35900,
+      "mrp": 35900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEQ14HN",
+      "mpn": "MEQ14HN/A",
+      "options": {
+        "Configuration": "40mm · Aluminium · GPS + Cellular",
+        "Color": "Starlight"
+      },
+      "price": 35900,
+      "mrp": 35900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEQ44HN",
+      "mpn": "MEQ44HN/A",
+      "options": {
+        "Configuration": "44mm · Aluminium · GPS + Cellular",
+        "Color": "Midnight"
+      },
+      "price": 39900,
+      "mrp": 39900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 44,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWSE3-MEQ34HN",
+      "mpn": "MEQ34HN/A",
+      "options": {
+        "Configuration": "44mm · Aluminium · GPS + Cellular",
+        "Color": "Starlight"
+      },
+      "price": 39900,
+      "mrp": 39900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 44,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Apple Watch SE 3",
+    "Band",
+    "Magnetic Fast Charger to USB-C Cable (1 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-watch/apple-watch-se"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Case variants, part numbers and Apple India 'From' MRP (case with the default band) from the Apple Store India buy page. Band choice is not modelled; images are Apple Store case shots and gallery images."
+  }
+}

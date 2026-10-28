@@ -1,0 +1,219 @@
+{
+  "slug": "samsung-galaxy-watch9",
+  "title": "Samsung Galaxy Watch9",
+  "brand": "Samsung",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Samsung's latest Galaxy Watch with advanced health tracking, Galaxy AI insights and a bright AMOLED display, in 40mm or 44mm.",
+  "description": "Galaxy Watch9 tracks sleep, heart health and workouts with Samsung's BioActive sensor and Galaxy AI-powered insights.\n\nIt comes in 40mm and 44mm sizes with Bluetooth or LTE, runs Wear OS with One UI Watch, and has 32GB of storage.",
+  "highlights": [
+    "Advanced health tracking",
+    "Galaxy AI insights",
+    "AMOLED display",
+    "40mm or 44mm",
+    "Bluetooth or LTE",
+    "32GB storage"
+  ],
+  "specs": {
+    "Software": {
+      "os": "Wear OS with One UI Watch",
+      "ai": "Galaxy AI"
+    },
+    "Hardware": {
+      "NFC": "Yes",
+      "Bluetooth Version": "Bluetooth v6.0",
+      "Size (Main Display)": "3.4 cm",
+      "CPU Speed": "2.1 GHz, 1.95 GHz",
+      "Storage (GB)": "32",
+      "Body Dimension (HxWxD, mm)": "42.7 x 40.4 x 8.6",
+      "Body Weight (g)": "31.5"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "Wear OS",
+    "caseSizesMm": [
+      40,
+      44
+    ],
+    "cellularOption": true
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "40mm · Bluetooth"
+        },
+        {
+          "value": "40mm · LTE"
+        },
+        {
+          "value": "44mm · Bluetooth"
+        },
+        {
+          "value": "44mm · LTE"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Graphite",
+          "hex": "#3C3D40"
+        },
+        {
+          "value": "Black",
+          "hex": "#1E1E1E"
+        },
+        {
+          "value": "Cream",
+          "hex": "#E8DFCF"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Graphite": [
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch9-l340-sm-l340nzkains-thumb-553764021",
+          "alt": "Samsung Galaxy Watch9 in Graphite"
+        },
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch9-l340-sm-l340nzkains-553764020",
+          "alt": "Samsung Galaxy Watch9 in Graphite, view 2"
+        }
+      ],
+      "Black": [
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch9-l350-sm-l350nzkains-thumb-553764008",
+          "alt": "Samsung Galaxy Watch9 in Black"
+        },
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch9-l350-sm-l350nzkains-553764007",
+          "alt": "Samsung Galaxy Watch9 in Black, view 2"
+        }
+      ],
+      "Cream": [
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch9-l345-sm-l345fzeains-thumb-553764114",
+          "alt": "Samsung Galaxy Watch9 in Cream"
+        },
+        {
+          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch9-l345-sm-l345fzeains-553764113",
+          "alt": "Samsung Galaxy Watch9 in Cream, view 2"
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-L340NZKA",
+      "mpn": "SM-L340NZKAINS",
+      "options": {
+        "Configuration": "40mm · Bluetooth",
+        "Color": "Graphite"
+      },
+      "price": 37999,
+      "mrp": 38999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "SAM-L350NZKA",
+      "mpn": "SM-L350NZKAINS",
+      "options": {
+        "Configuration": "44mm · Bluetooth",
+        "Color": "Black"
+      },
+      "price": 40999,
+      "mrp": 41999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 44,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "SAM-L345FZKA",
+      "mpn": "SM-L345FZKAINS",
+      "options": {
+        "Configuration": "40mm · LTE",
+        "Color": "Black"
+      },
+      "price": 41999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "SAM-L345FZEA",
+      "mpn": "SM-L345FZEAINS",
+      "options": {
+        "Configuration": "40mm · LTE",
+        "Color": "Cream"
+      },
+      "price": 41999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 40,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "SAM-L355FZKA",
+      "mpn": "SM-L355FZKAINS",
+      "options": {
+        "Configuration": "44mm · LTE",
+        "Color": "Black"
+      },
+      "price": 44999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 44,
+        "cellular": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Watch",
+    "Strap",
+    "Wireless charger",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/watches/galaxy-watch/galaxy-watch9-40mm-graphite-bluetooth-sm-l340nzkains/buy/",
+      "https://www.samsung.com/in/watches/galaxy-watch/galaxy-watch9-44mm-graphite-bluetooth-sm-l350nzkains/buy/",
+      "https://www.samsung.com/in/watches/galaxy-watch/galaxy-watch9-40mm-graphite-lte-sm-l345fzkains/buy/",
+      "https://www.samsung.com/in/watches/galaxy-watch/galaxy-watch9-40mm-cream-lte-sm-l345fzeains/buy/",
+      "https://www.samsung.com/in/watches/galaxy-watch/galaxy-watch9-44mm-graphite-lte-sm-l355fzkains/buy/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Each variant's model code, selling price (price), MRP (mrp), images and hardware properties from its Samsung India buy page."
+  }
+}
