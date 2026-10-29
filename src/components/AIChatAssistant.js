@@ -62,7 +62,7 @@ const AIChatAssistant = () => {
       const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length) return parsed.map((m) => withMessageId({ ...m, ranking: false }));
+        if (Array.isArray(parsed) && parsed.length) return parsed.map(withMessageId);
       }
     } catch {}
     return [withMessageId(initGreeting)];
@@ -74,6 +74,7 @@ const AIChatAssistant = () => {
   }, [messages]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState("");
 
   // 🛡️ Rate Limit State
   const [cooldown, setCooldown] = useState(0);
@@ -156,23 +157,16 @@ const AIChatAssistant = () => {
     const botMessage = withMessageId({ type: "bot", ...payload });
     nextScrollRef.current = { type: "bot", id: botMessage.id };
     setMessages((prev) => [...prev, botMessage]);
-    return botMessage.id;
   };
 
-  const updateMessage = (id, patch) =>
-    setMessages((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch } : m)));
-
-  // Phase two of a v2 answer: the results are already on screen; swap in the model's picks
-  // and reasons when they arrive. If the model is slow or fails, the first results simply stay.
-  const fetchRanking = async (messageId, token) => {
+  // Phase two of a v2 answer: the model's picks and reasons for the search results.
+  // Returns null when the model is slow or fails, so the caller can show the search results instead.
+  const fetchRanking = async (token) => {
     try {
       const { data } = await axios.post("/api/ai/chat/rank", { token }, { timeout: 30000 });
-      if (data?.reranked && Array.isArray(data.products) && data.products.length) {
-        updateMessage(messageId, { structured: data.structured, products: data.products, ranking: false, ranked: true });
-        return;
-      }
-    } catch { /* keep the first results */ }
-    updateMessage(messageId, { ranking: false });
+      if (data?.reranked && Array.isArray(data.products) && data.products.length) return data;
+    } catch { /* fall back to the search results */ }
+    return null;
   };
 
   const sendMessage = async (rawMessage) => {
@@ -186,6 +180,7 @@ const AIChatAssistant = () => {
     nextScrollRef.current = { type: "bottom", id: null };
     setMessages((prev) => [...prev, userEntry]);
     setIsLoading(true);
+    setLoadingText("Our AI is searching…");
     setCooldown(3); // Prevent spamming
 
     try {
@@ -197,8 +192,15 @@ const AIChatAssistant = () => {
       });
 
       const { structured, products, rank } = res.data;
-      const id = appendBotMessage({ structured, products, ranking: Boolean(rank?.token) });
-      if (rank?.token) fetchRanking(id, rank.token);
+      // Two-phase v2 answers: wait for the model's picks and show one final answer
+      // (search results only if the picks don't come back).
+      if (rank?.token) {
+        setLoadingText("Our AI is picking the best matches for you…");
+        const ranked = await fetchRanking(rank.token);
+        appendBotMessage(ranked ? { structured: ranked.structured, products: ranked.products } : { structured, products });
+      } else {
+        appendBotMessage({ structured, products });
+      }
     } catch (error) {
       console.error("AI Chat Error:", error);
       appendBotMessage({
@@ -211,6 +213,7 @@ const AIChatAssistant = () => {
       });
     } finally {
       setIsLoading(false);
+      setLoadingText("");
     }
   };
 
@@ -333,15 +336,6 @@ const AIChatAssistant = () => {
                 </ul>
               )}
             </div>
-          </motion.div>
-        )}
-
-        {/* Phase two in progress: model picks on the way */}
-        {msg.ranking && (
-          <motion.div variants={itemVariants} role="status"
-            className="flex w-fit items-center gap-2 rounded-full border border-[#a85d37]/15 bg-[#efe4d9] px-3 py-1.5 text-[11px] font-semibold text-[#75462f]">
-            <Sparkles size={11} className="animate-pulse text-[#a85d37]" />
-            Picking the best matches for you…
           </motion.div>
         )}
 
@@ -575,10 +569,10 @@ const AIChatAssistant = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center gap-2 pl-2 text-xs font-bold uppercase tracking-widest text-[#8e887e]"
+                  className="flex items-center gap-2 pl-2 text-xs font-semibold text-[#8e887e]"
                 >
                   <Loader2 size={12} className="animate-spin text-[#a85d37]" />
-                  Thinking...
+                  <span role="status">{loadingText || "Thinking..."}</span>
                 </motion.div>
               )}
 

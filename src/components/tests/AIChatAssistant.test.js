@@ -130,11 +130,11 @@ describe("AIChatAssistant Component", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
-    expect(await screen.findByText(/thinking/i)).toBeInTheDocument();
+    expect(await screen.findByText(/our ai is searching/i)).toBeInTheDocument();
 
     resolveRequest({ data: { structured: { response: { summary: "done", points: [] } }, products: [] } });
     await waitFor(() => {
-      expect(screen.queryByText(/thinking/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/our ai is searching/i)).not.toBeInTheDocument();
     });
   });
 
@@ -188,7 +188,7 @@ describe("AIChatAssistant Component", () => {
     expect(store.getState().cart[0]).toMatchObject({ catalog: "v2", productId: "aaaaaaaaaaaaaaaaaaaaaaaa", sku: "BFT-MAT-1", quantity: 1 });
   });
 
-  test("shows results first, then swaps in the model's picks from the rank call", async () => {
+  test("waits for the model's picks and shows only the final answer", async () => {
     let finishRank;
     axios.post
       .mockResolvedValueOnce({
@@ -204,13 +204,12 @@ describe("AIChatAssistant Component", () => {
     fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
-    // Phase one: results and the "picking" indicator, before the model answers
-    expect(await screen.findByText("Phone A")).toBeInTheDocument();
-    expect(screen.getByText(/picking the best matches/i)).toBeInTheDocument();
+    // While the model ranks: a waiting message, and no first-pass results on screen
+    expect(await screen.findByText(/our ai is picking the best matches/i)).toBeInTheDocument();
+    expect(screen.queryByText("Phone A")).not.toBeInTheDocument();
     expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ catalog: "v2", twoPhase: true }));
     expect(axios.post).toHaveBeenLastCalledWith("/api/ai/chat/rank", { token: RANK_TOKEN }, expect.anything());
 
-    // Phase two: the model's picks replace the first results
     finishRank({
       data: {
         reranked: true,
@@ -219,11 +218,12 @@ describe("AIChatAssistant Component", () => {
       },
     });
     expect(await screen.findByText("Phone B has the bigger battery.")).toBeInTheDocument();
+    expect(screen.getByText("Phone B")).toBeInTheDocument();
     expect(screen.queryByText("Phone A")).not.toBeInTheDocument();
-    expect(screen.queryByText(/picking the best matches/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/our ai is picking/i)).not.toBeInTheDocument();
   });
 
-  test("keeps the first results when the rank call fails", async () => {
+  test("shows the search results when the rank call fails", async () => {
     axios.post
       .mockResolvedValueOnce({
         data: {
@@ -239,8 +239,8 @@ describe("AIChatAssistant Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(await screen.findByText("Phone A")).toBeInTheDocument();
-    await waitFor(() => expect(screen.queryByText(/picking the best matches/i)).not.toBeInTheDocument());
-    expect(screen.getByText("Phone A")).toBeInTheDocument();
+    expect(screen.getByText("Here are the top matches.")).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByText(/our ai is/i)).not.toBeInTheDocument());
   });
 
   test("sends multi-variant v2 products to their page to pick a variant", async () => {
