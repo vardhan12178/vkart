@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
@@ -6,7 +6,8 @@ import {
   FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiFilter, FiX, FiHeart, FiCheck,
 } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
-import { products, minPrice, defaultVariant, imagesFor, discountPercent, formatPrice, CATEGORIES, catOf } from "./catalogData";
+import { CATEGORIES } from "./catalogData";
+import { fetchProducts, formatPrice, getSource, onSourceChange } from "./catalogApi";
 
 const ACCENT = "#a85d37";
 
@@ -17,13 +18,13 @@ const ICONS = {
 };
 
 const SORTS = {
-  featured: { label: "Featured", fn: () => 0 },
-  "price-asc": { label: "Price: low to high", fn: (a, b) => minPrice(a) - minPrice(b) },
-  "price-desc": { label: "Price: high to low", fn: (a, b) => minPrice(b) - minPrice(a) },
-  discount: { label: "Biggest discount", fn: (a, b) => discountPercent(defaultVariant(b)) - discountPercent(defaultVariant(a)) },
-  newest: { label: "Newest first", fn: (a, b) => String(b.launchDate || "").localeCompare(String(a.launchDate || "")) },
+  featured: "Featured",
+  "price-asc": "Price: low to high",
+  "price-desc": "Price: high to low",
+  discount: "Biggest discount",
+  newest: "Newest first",
 };
-const SORT_OPTIONS = Object.entries(SORTS).map(([value, s]) => ({ value, label: s.label }));
+const SORT_OPTIONS = Object.entries(SORTS).map(([value, label]) => ({ value, label }));
 const DISCOUNTS = [10, 25, 40];
 
 const roundNice = (n) => {
@@ -31,35 +32,35 @@ const roundNice = (n) => {
   return Math.max(step, Math.round(n / step) * step);
 };
 
-// Four price bands from the category's own price spread
-function priceBands(list) {
-  const prices = list.map(minPrice).sort((a, b) => a - b);
-  if (prices.length < 4) return [];
-  const cuts = [0.25, 0.5, 0.75].map((q) => roundNice(prices[Math.floor(q * (prices.length - 1))]));
-  const uniq = [...new Set(cuts)];
-  const bands = [{ min: 0, max: uniq[0], label: `Under ${formatPrice(uniq[0])}` }];
-  for (let i = 1; i < uniq.length; i++) bands.push({ min: uniq[i - 1], max: uniq[i], label: `${formatPrice(uniq[i - 1])} – ${formatPrice(uniq[i])}` });
-  bands.push({ min: uniq[uniq.length - 1], max: Infinity, label: `Over ${formatPrice(uniq[uniq.length - 1])}` });
+// Four price bands between the category's cheapest and dearest product. Prices are
+// skewed (a few very expensive items), so the cuts are spaced geometrically.
+function priceBands(bounds) {
+  if (!bounds || !(bounds.max > bounds.min)) return [];
+  const lo = Math.max(100, bounds.min);
+  const cuts = [...new Set([1, 2, 3].map((k) => roundNice(lo * (bounds.max / lo) ** (k / 4))))].filter((c) => c > bounds.min && c < bounds.max);
+  if (!cuts.length) return [];
+  const bands = [{ max: cuts[0], label: `Under ${formatPrice(cuts[0])}` }];
+  for (let i = 1; i < cuts.length; i++) bands.push({ min: cuts[i - 1], max: cuts[i], label: `${formatPrice(cuts[i - 1])} – ${formatPrice(cuts[i])}` });
+  bands.push({ min: cuts[cuts.length - 1], label: `Over ${formatPrice(cuts[cuts.length - 1])}` });
   return bands;
 }
 
 /* ------------ Product card ------------ */
 function Card({ p }) {
   const [liked, setLiked] = useState(false);
-  const v = defaultVariant(p);
-  const imgs = imagesFor(p, v.options[p.media.groupBy]);
-  const off = discountPercent(v);
-  const colors = p.variantOptions.find((o) => o.name === "Color")?.values || [];
-  const price = minPrice(p);
-  const multi = p.variants.some((x) => x.price !== price);
+  const img = p.image;
+  const off = p.discountPercent;
+  const colors = p.colors || [];
+  const price = p.priceRange?.min ?? p.price;
+  const multi = p.priceRange && p.priceRange.max > p.priceRange.min;
   // Fashion photos are styled shots: fill the frame. Product renders sit on a soft background.
   const fit = p.category === "fashion" ? "object-cover" : "object-contain p-4 mix-blend-multiply";
   return (
     <Link to={`/catalog-preview/${p.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[#ebe5da] transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-12px_rgba(29,28,25,0.25)]">
       <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f3ed]">
-        {imgs[0] && (
-          <img src={imgs[0].src} alt={imgs[0].alt} loading="lazy" referrerPolicy="no-referrer"
+        {img && (
+          <img src={img.md} alt={img.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
             className={`absolute inset-0 h-full w-full ${fit} transition-transform duration-500 group-hover:scale-[1.03]`} />
         )}
         {off > 0 && (
@@ -86,7 +87,7 @@ function Card({ p }) {
           <div className="flex flex-wrap items-baseline gap-x-1.5">
             {multi && <span className="text-xs text-[#8b867d]">From</span>}
             <span className="text-base font-bold text-[#1d1c19]">{formatPrice(price)}</span>
-            {off > 0 && <span className="text-xs text-[#8b867d] line-through">{formatPrice(v.mrp)}</span>}
+            {off > 0 && <span className="text-xs text-[#8b867d] line-through">{formatPrice(p.mrp)}</span>}
           </div>
           {price >= 499 && <p className="mt-0.5 text-[11px] text-green-700">Free delivery</p>}
         </div>
@@ -118,26 +119,21 @@ function Check({ checked, onChange, children, count }) {
   );
 }
 
-function Filters({ base, f, set }) {
-  const brands = useMemo(() => {
-    const m = new Map();
-    base.forEach((p) => m.set(p.brand, (m.get(p.brand) || 0) + 1));
-    return [...m.entries()].sort((a, b) => b[1] - a[1]);
-  }, [base]);
-  const bands = useMemo(() => priceBands(base), [base]);
-  const toggle = (key, value) => set({ ...f, [key]: f[key].includes(value) ? f[key].filter((x) => x !== value) : [...f[key], value] });
+function Filters({ facets, bands, f, set }) {
+  const toggleBrand = (b) => set({ ...f, brands: f.brands.includes(b) ? f.brands.filter((x) => x !== b) : [...f.brands, b] });
+  const brands = [...new Set([...(facets?.brands || []).map((b) => b.name), ...f.brands])];
 
   return (
     <div>
       <Section title="Brand">
         <div className="max-h-64 overflow-y-auto pr-1">
-          {brands.map(([b]) => <Check key={b} checked={f.brands.includes(b)} onChange={() => toggle("brands", b)}>{b}</Check>)}
+          {brands.map((b) => <Check key={b} checked={f.brands.includes(b)} onChange={() => toggleBrand(b)}>{b}</Check>)}
         </div>
       </Section>
       {bands.length > 0 && (
         <Section title="Price">
           {bands.map((band, i) => (
-            <Check key={band.label} checked={f.bands.includes(i)} onChange={() => toggle("bands", i)}>{band.label}</Check>
+            <Check key={band.label} checked={f.band === i} onChange={() => set({ ...f, band: f.band === i ? null : i })}>{band.label}</Check>
           ))}
         </Section>
       )}
@@ -153,7 +149,7 @@ function Filters({ base, f, set }) {
   );
 }
 
-const EMPTY = { brands: [], bands: [], minOff: 0, inStock: false };
+const EMPTY = { brands: [], band: null, minOff: 0, inStock: false };
 
 /* ------------ Page ------------ */
 export default function CatalogPreviewList() {
@@ -163,25 +159,53 @@ export default function CatalogPreviewList() {
   const [sort, setSort] = useState("featured");
   const [sheet, setSheet] = useState(false);
 
-  useEffect(() => { setF(EMPTY); }, [category]);
+  const [data, setData] = useState(null); // last API response
+  const [items, setItems] = useState([]); // products across loaded pages
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [bounds, setBounds] = useState({}); // category -> price bounds without filters, for stable bands
+  const [source, setSource] = useState(getSource());
 
-  const base = useMemo(() => products.filter((p) => catOf(p) === category), [category]);
-  const bands = useMemo(() => priceBands(base), [base]);
-  const shown = useMemo(() => {
-    const list = base.filter((p) => {
-      const v = defaultVariant(p);
-      if (f.brands.length && !f.brands.includes(p.brand)) return false;
-      if (f.bands.length && !f.bands.some((i) => minPrice(p) >= bands[i].min && minPrice(p) < bands[i].max)) return false;
-      if (f.minOff && discountPercent(v) < f.minOff) return false;
-      if (f.inStock && !p.variants.some((x) => x.keySpecs?.available !== false)) return false;
-      return true;
-    });
-    return sort === "featured" ? list : [...list].sort(SORTS[sort].fn);
-  }, [base, bands, f, sort]);
+  useEffect(() => onSourceChange(setSource), []);
+  useEffect(() => { setF(EMPTY); setSort("featured"); }, [category]);
+  useEffect(() => { setPage(1); }, [category, f, sort]);
 
+  const bands = priceBands(bounds[category]);
+  const band = f.band !== null ? bands[f.band] : null;
+
+  useEffect(() => {
+    let live = true;
+    setLoading(true);
+    setError("");
+    fetchProducts({
+      category,
+      sort,
+      page,
+      limit: 24,
+      ...(f.brands.length ? { brand: f.brands.join(",") } : {}),
+      ...(band?.min ? { minPrice: band.min } : {}),
+      ...(band?.max ? { maxPrice: band.max - 1 } : {}),
+      ...(f.minOff ? { minDiscount: f.minOff } : {}),
+      ...(f.inStock ? { inStock: "true" } : {}),
+    })
+      .then((res) => {
+        if (!live) return;
+        setData(res);
+        setItems((prev) => (page === 1 ? res.products : [...prev, ...res.products]));
+        const unfiltered = !f.brands.length && f.band === null && !f.minOff && !f.inStock;
+        if (unfiltered && res.facets?.price) setBounds((b) => (b[category] ? b : { ...b, [category]: res.facets.price }));
+      })
+      .catch(() => live && setError("Couldn't load products. Please try again."))
+      .finally(() => live && setLoading(false));
+    return () => { live = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category, f, sort, page]);
+
+  const total = data?.total ?? 0;
   const chips = [
     ...f.brands.map((b) => ({ label: b, clear: () => setF({ ...f, brands: f.brands.filter((x) => x !== b) }) })),
-    ...f.bands.map((i) => ({ label: bands[i]?.label, clear: () => setF({ ...f, bands: f.bands.filter((x) => x !== i) }) })),
+    ...(band ? [{ label: band.label, clear: () => setF({ ...f, band: null }) }] : []),
     ...(f.minOff ? [{ label: `${f.minOff}%+ off`, clear: () => setF({ ...f, minOff: 0 }) }] : []),
     ...(f.inStock ? [{ label: "In stock", clear: () => setF({ ...f, inStock: false }) }] : []),
   ];
@@ -221,7 +245,7 @@ export default function CatalogPreviewList() {
               <Link to="/" className="hover:text-[#1d1c19]">Home</Link><FiChevronRight /><span className="text-[#1d1c19]">{CATEGORIES[category]}</span>
             </nav>
             <h1 className="mt-1 text-2xl font-bold text-[#1d1c19] sm:text-3xl">{CATEGORIES[category]}</h1>
-            <p className="text-sm text-[#8b867d]">{shown.length} of {base.length} products</p>
+            <p className="text-sm text-[#8b867d]">{loading && page === 1 ? "Loading…" : `${total} products`}</p>
           </div>
           <BrandSelect label="Sort by" prefix="Sort by:" value={sort} onChange={setSort} options={SORT_OPTIONS} className="hidden w-64 lg:block" />
         </div>
@@ -233,7 +257,7 @@ export default function CatalogPreviewList() {
               <span className="text-sm font-bold text-[#1d1c19]">Filters</span>
               {chips.length > 0 && <button type="button" onClick={() => setF(EMPTY)} className="text-xs font-semibold" style={{ color: ACCENT }}>Clear all</button>}
             </div>
-            <Filters base={base} f={f} set={setF} />
+            <Filters facets={data?.facets} bands={bands} f={f} set={setF} />
           </aside>
 
           <div>
@@ -247,10 +271,35 @@ export default function CatalogPreviewList() {
                 ))}
               </div>
             )}
-            {shown.length ? (
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
-                {shown.map((p) => <Card key={p.slug} p={p} />)}
+            {error ? (
+              <div className="rounded-2xl bg-[#fffdf8] p-10 text-center ring-1 ring-[#ebe5da]">
+                <p className="font-semibold text-[#1d1c19]">{error}</p>
+                <button type="button" onClick={() => setF({ ...f })} className="mt-3 text-sm font-semibold underline" style={{ color: ACCENT }}>Retry</button>
               </div>
+            ) : loading && page === 1 ? (
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
+                {Array.from({ length: 8 }, (_, i) => (
+                  <div key={i} className="overflow-hidden rounded-2xl bg-white ring-1 ring-[#ebe5da]">
+                    <div className="aspect-[4/5] animate-pulse bg-[#f1ece3]" />
+                    <div className="space-y-2 p-4"><div className="h-3 w-1/3 rounded bg-[#f1ece3]" /><div className="h-4 w-4/5 rounded bg-[#f1ece3]" /><div className="h-4 w-1/2 rounded bg-[#f1ece3]" /></div>
+                  </div>
+                ))}
+              </div>
+            ) : items.length ? (
+              <>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
+                  {items.map((p) => <Card key={p.slug} p={p} />)}
+                </div>
+                {data && page < data.pages && (
+                  <div className="mt-8 flex flex-col items-center gap-2">
+                    <p className="text-xs text-[#8b867d]">Showing {items.length} of {total}</p>
+                    <button type="button" disabled={loading} onClick={() => setPage(page + 1)}
+                      className="rounded-full border-2 border-[#1d1c19] px-8 py-2.5 text-sm font-bold text-[#1d1c19] transition hover:bg-[#1d1c19] hover:text-white disabled:opacity-50">
+                      {loading ? "Loading…" : "Load more"}
+                    </button>
+                  </div>
+                )}
+              </>
             ) : (
               <div className="rounded-2xl bg-[#fffdf8] p-10 text-center ring-1 ring-[#ebe5da]">
                 <p className="font-semibold text-[#1d1c19]">No products match these filters.</p>
@@ -258,7 +307,7 @@ export default function CatalogPreviewList() {
               </div>
             )}
             <p className="mt-8 text-center text-xs text-[#a39e94]">
-              Catalog v2 preview · {products.length} products, {products.reduce((n, p) => n + p.variants.length, 0)} variants · images from S3
+              Catalog v2 preview · data from {source === "api" ? "the v2 API" : "the bundled copy (v2 API not reachable)"} · images from S3
             </p>
           </div>
         </div>
@@ -284,11 +333,11 @@ export default function CatalogPreviewList() {
               <span className="text-base font-bold text-[#1d1c19]">Filters</span>
               <button type="button" onClick={() => setSheet(false)} aria-label="Close"><FiX className="text-xl" /></button>
             </div>
-            <Filters base={base} f={f} set={setF} />
+            <Filters facets={data?.facets} bands={bands} f={f} set={setF} />
             <div className="fixed inset-x-0 bottom-0 grid grid-cols-2 gap-3 border-t border-[#ebe5da] bg-[#fffdf8] p-3">
               <button type="button" onClick={() => setF(EMPTY)} className="rounded-full border border-[#1d1c19] py-3 text-sm font-bold">Clear</button>
               <button type="button" onClick={() => setSheet(false)} className="rounded-full py-3 text-sm font-bold text-white" style={{ background: ACCENT }}>
-                Show {shown.length} products
+                Show {total} products
               </button>
             </div>
           </div>

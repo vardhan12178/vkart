@@ -3,10 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiStar, FiShoppingCart, FiZap } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
-import { products, defaultVariant, imagesFor, discountPercent, formatPrice, minPrice, CATEGORIES, catOf } from "./catalogData";
+import { CATEGORIES, catOf } from "./catalogData";
+import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
 
-// Catalog v2 product page (preview). Data comes from the bundled JSON for now;
-// the v2 API will feed the same shape later.
+// Catalog v2 product page (preview). Data comes from /api/v2 through catalogApi.js,
+// which falls back to the bundled copy when the API isn't available.
 
 const INK = "#1d1c19";
 const ACCENT = "#a85d37";
@@ -29,11 +30,15 @@ function SpecValue({ value }) {
   return String(value);
 }
 
+// Recently viewed keeps small product cards, so the rail needs no extra requests
 function readRecent() {
-  try { return JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); } catch { return []; }
+  try {
+    const list = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+    return Array.isArray(list) ? list.filter((c) => c && typeof c === "object" && c.slug) : [];
+  } catch { return []; }
 }
-function pushRecent(slug) {
-  try { localStorage.setItem(RECENT_KEY, JSON.stringify([slug, ...readRecent().filter((s) => s !== slug)].slice(0, 12))); } catch { /* storage unavailable */ }
+function pushRecent(card) {
+  try { localStorage.setItem(RECENT_KEY, JSON.stringify([card, ...readRecent().filter((c) => c.slug !== card.slug)].slice(0, 12))); } catch { /* storage unavailable */ }
 }
 
 /* ------------ Gallery ------------ */
@@ -55,8 +60,8 @@ function Gallery({ images, idx, setIdx }) {
         <div ref={strip} className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-white [scrollbar-width:none]"
           onScroll={(e) => { const w = e.currentTarget.clientWidth; const i = Math.round(e.currentTarget.scrollLeft / w); if (i !== idx) setIdx(i); }}>
           {images.map((im, i) => (
-            <div key={`${im.src}-${i}`} className="flex aspect-square w-full flex-none snap-center items-center justify-center">
-              <img src={im.src} alt={im.alt} loading={i ? "lazy" : "eager"} referrerPolicy="no-referrer" className="h-full w-full object-contain p-6" />
+            <div key={`${im.md}-${i}`} className="flex aspect-square w-full flex-none snap-center items-center justify-center">
+              <img src={im.md} alt={im.alt} loading={i ? "lazy" : "eager"} referrerPolicy="no-referrer" className="h-full w-full object-contain p-6" />
             </div>
           ))}
         </div>
@@ -72,7 +77,7 @@ function Gallery({ images, idx, setIdx }) {
       <div className="hidden gap-4 lg:flex">
         <div className="flex max-h-[560px] w-[72px] flex-none flex-col gap-2 overflow-y-auto p-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {images.map((im, i) => (
-            <button key={`${im.src}-${i}`} type="button" onMouseEnter={() => setIdx(i)} onClick={() => setIdx(i)}
+            <button key={`${im.md}-${i}`} type="button" onMouseEnter={() => setIdx(i)} onClick={() => setIdx(i)}
               className={`aspect-square w-full flex-none overflow-hidden rounded-lg border-2 bg-white ${i === idx ? "border-[#a85d37]" : "border-transparent hover:border-gray-300"}`}>
               <img src={im.thumb} alt={im.alt} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain p-1" />
             </button>
@@ -82,7 +87,7 @@ function Gallery({ images, idx, setIdx }) {
           className="relative flex aspect-square flex-1 cursor-zoom-in items-center justify-center overflow-hidden rounded-2xl border border-[#ebe5da] bg-white"
           onMouseMove={(e) => { const r = e.currentTarget.getBoundingClientRect(); setZoom({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100 }); }}
           onMouseLeave={() => setZoom(null)}>
-          <img src={zoom ? main.lg : main.src} alt={main.alt} referrerPolicy="no-referrer"
+          <img src={zoom ? main.lg : main.md} alt={main.alt} referrerPolicy="no-referrer"
             className="h-full w-full object-contain p-8 transition-transform duration-150"
             style={zoom ? { transform: "scale(2.2)", transformOrigin: `${zoom.x}% ${zoom.y}%` } : undefined} />
         </div>
@@ -93,9 +98,8 @@ function Gallery({ images, idx, setIdx }) {
 
 /* ------------ Small cards ------------ */
 function MiniCard({ p }) {
-  const v = defaultVariant(p);
-  const img = imagesFor(p, v.options[p.media.groupBy])[0];
-  const off = discountPercent(v);
+  const img = p.image;
+  const off = p.discountPercent;
   return (
     <Link to={`/catalog-preview/${p.slug}`} className="group flex w-44 flex-none flex-col rounded-xl border border-[#ebe5da] bg-white p-3 transition hover:shadow-md sm:w-52">
       <div className="flex aspect-square items-center justify-center overflow-hidden rounded-lg bg-[#faf8f3]">
@@ -104,7 +108,7 @@ function MiniCard({ p }) {
       <p className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#8b867d]">{p.brand}</p>
       <p className="line-clamp-2 text-sm font-medium text-[#1d1c19]">{p.title.replace(`${p.brand} `, "")}</p>
       <p className="mt-1 text-sm">
-        <span className="font-bold text-[#1d1c19]">{formatPrice(minPrice(p))}</span>
+        <span className="font-bold text-[#1d1c19]">{formatPrice(p.priceRange?.min ?? p.price)}</span>
         {off > 0 && <span className="ml-1.5 text-xs font-semibold text-green-700">{off}% off</span>}
       </p>
     </Link>
@@ -126,45 +130,67 @@ function Rail({ title, items }) {
 /* ------------ Page ------------ */
 export default function CatalogPreviewProduct() {
   const { slug } = useParams();
-  const p = products.find((x) => x.slug === slug);
-  const [opts, setOpts] = useState(p ? defaultVariant(p).options : {});
+  const [p, setP] = useState(null);
+  const [status, setStatus] = useState("loading"); // loading | ready | missing | error
+  const [similar, setSimilar] = useState([]);
+  const [opts, setOpts] = useState({});
   const [imgIdx, setImgIdx] = useState(0);
   const [qty, setQty] = useState(1);
   const [notice, setNotice] = useState("");
   const [allSpecs, setAllSpecs] = useState(false);
   const [recent, setRecent] = useState([]);
+  const [attempt, setAttempt] = useState(0);
 
-  // Reset state when navigating between products
+  // Load the product (and reset per-product state) whenever the slug changes
   useEffect(() => {
-    if (!p) return;
-    setOpts(defaultVariant(p).options);
-    setImgIdx(0);
-    setQty(1);
-    setNotice("");
-    setAllSpecs(false);
-    setRecent(readRecent().filter((s) => s !== p.slug));
-    pushRecent(p.slug);
+    let live = true;
+    setStatus("loading");
+    setSimilar([]);
     window.scrollTo(0, 0);
-  }, [p]);
+    fetchProduct(slug)
+      .then((prod) => {
+        if (!live) return;
+        if (!prod) { setP(null); setStatus("missing"); return; }
+        setP(prod);
+        setOpts(defaultVariant(prod).options);
+        setImgIdx(0);
+        setQty(1);
+        setNotice("");
+        setAllSpecs(false);
+        setRecent(readRecent().filter((c) => c.slug !== prod.slug));
+        pushRecent(toCardFromDetail(prod));
+        setStatus("ready");
+        fetchSimilar(slug).then((res) => live && setSimilar(res?.products || [])).catch(() => {});
+      })
+      .catch(() => live && setStatus("error"));
+    return () => { live = false; };
+  }, [slug, attempt]);
 
   const variant = useMemo(
     () => p && p.variants.find((v) => Object.entries(opts).every(([k, val]) => v.options[k] === val)),
     [p, opts]
   );
 
-  const similar = useMemo(() => {
-    if (!p) return [];
-    const price = minPrice(p);
-    return products
-      .filter((x) => x.slug !== p.slug && catOf(x) === catOf(p))
-      .sort((a, b) => Math.abs(minPrice(a) - price) - Math.abs(minPrice(b) - price))
-      .slice(0, 12);
-  }, [p]);
-
-  if (!p) {
+  if (status === "loading") {
+    return (
+      <div className="bg-[#f7f3ec] pb-12">
+        <div className="mx-auto max-w-7xl px-4 pt-14">
+          <div className="grid grid-cols-1 gap-8 rounded-3xl bg-[#fffdf8] p-6 shadow-sm lg:grid-cols-2 lg:p-8">
+            <div className="aspect-square animate-pulse rounded-2xl bg-[#f1ece3]" />
+            <div className="space-y-4">
+              <div className="h-4 w-1/4 rounded bg-[#f1ece3]" /><div className="h-8 w-3/4 rounded bg-[#f1ece3]" />
+              <div className="h-10 w-1/3 rounded bg-[#f1ece3]" /><div className="h-24 rounded-2xl bg-[#f1ece3]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (status !== "ready" || !p) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-        <p className="text-lg">Product not found.</p>
+        <p className="text-lg">{status === "error" ? "Couldn't load this product." : "Product not found."}</p>
+        {status === "error" && <button type="button" onClick={() => setAttempt(attempt + 1)} className="mt-4 mr-4 underline">Try again</button>}
         <Link to="/catalog-preview" className="mt-4 inline-block underline">Back to the catalog</Link>
       </div>
     );
@@ -172,8 +198,8 @@ export default function CatalogPreviewProduct() {
 
   const cat = catOf(p);
   const images = imagesFor(p, opts[p.media.groupBy]);
-  const off = variant ? discountPercent(variant) : 0;
-  const available = variant && variant.keySpecs?.available !== false;
+  const off = variant?.discountPercent ?? 0;
+  const available = Boolean(variant && variant.inStock !== false && variant.keySpecs?.available !== false);
 
   const exists = (name, value) =>
     p.variants.some((v) => v.options[name] === value &&
@@ -189,8 +215,8 @@ export default function CatalogPreviewProduct() {
   };
   const buy = (kind) =>
     setNotice(kind === "cart"
-      ? "Preview only: the cart connects when this page moves to the v2 API."
-      : "Preview only: checkout connects when this page moves to the v2 API.");
+      ? "Preview only: the v2 cart is the next step."
+      : "Preview only: checkout connects with the v2 cart.");
 
   const specGroups = Object.entries(p.specs || {}).filter(([, f]) => f && Object.keys(f).length);
   // Collapsed view: first two groups, at most 12 rows in total
@@ -202,7 +228,7 @@ export default function CatalogPreviewProduct() {
     return acc;
   }, []);
   const collapsed = !allSpecs && (specGroups.length > 2 || totalRows > SPEC_ROWS);
-  const recentItems = recent.map((s) => products.find((x) => x.slug === s)).filter(Boolean);
+  const recentItems = recent;
   const policies = [
     { icon: FiTruck, text: "Free delivery over ₹499" },
     { icon: FiRotateCcw, text: "7-day easy returns" },
