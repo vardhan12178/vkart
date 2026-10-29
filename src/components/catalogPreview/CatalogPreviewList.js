@@ -1,120 +1,309 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { products, minPrice, maxPrice, defaultVariant, imagesFor, discountPercent, formatPrice, CATEGORIES, catOf } from "./catalogData";
+import {
+  FiSmartphone, FiMonitor, FiTablet, FiTv, FiHeadphones, FiWatch, FiDroplet, FiUser, FiShoppingBag,
+  FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiFilter, FiX, FiHeart, FiCheck,
+} from "react-icons/fi";
+import { products, minPrice, defaultVariant, imagesFor, discountPercent, formatPrice, CATEGORIES, catOf } from "./catalogData";
 
-const brandsOf = (cat) => ["All", ...Array.from(new Set(products.filter((p) => catOf(p) === cat).map((p) => p.brand)))];
-const SORTS = {
-  "price-desc": { label: "Price: high to low", fn: (a, b) => minPrice(b) - minPrice(a) },
-  "price-asc": { label: "Price: low to high", fn: (a, b) => minPrice(a) - minPrice(b) },
-  battery: { label: "Battery (mAh)", mobilesOnly: true, fn: (a, b) => (b.keySpecs.batteryMah || 0) - (a.keySpecs.batteryMah || 0) },
-  camera: { label: "Main camera (MP)", mobilesOnly: true, fn: (a, b) => (b.keySpecs.mainCameraMP || 0) - (a.keySpecs.mainCameraMP || 0) },
+const ACCENT = "#a85d37";
+
+const ICONS = {
+  mobiles: FiSmartphone, laptops: FiCpu, tablets: FiTablet, tvs: FiTv, monitors: FiMonitor, audio: FiHeadphones,
+  wearables: FiWatch, skincare: FiDroplet, "fashion-men": FiUser, "fashion-women": FiShoppingBag,
+  appliances: FiHome, "kitchen-appliances": FiCoffee, grooming: FiScissors, sports: FiActivity,
 };
 
+const SORTS = {
+  featured: { label: "Featured", fn: () => 0 },
+  "price-asc": { label: "Price: low to high", fn: (a, b) => minPrice(a) - minPrice(b) },
+  "price-desc": { label: "Price: high to low", fn: (a, b) => minPrice(b) - minPrice(a) },
+  discount: { label: "Biggest discount", fn: (a, b) => discountPercent(defaultVariant(b)) - discountPercent(defaultVariant(a)) },
+  newest: { label: "Newest first", fn: (a, b) => String(b.launchDate || "").localeCompare(String(a.launchDate || "")) },
+};
+const DISCOUNTS = [10, 25, 40];
+
+const roundNice = (n) => {
+  const step = n >= 100000 ? 10000 : n >= 20000 ? 5000 : n >= 5000 ? 1000 : n >= 1000 ? 500 : 100;
+  return Math.max(step, Math.round(n / step) * step);
+};
+
+// Four price bands from the category's own price spread
+function priceBands(list) {
+  const prices = list.map(minPrice).sort((a, b) => a - b);
+  if (prices.length < 4) return [];
+  const cuts = [0.25, 0.5, 0.75].map((q) => roundNice(prices[Math.floor(q * (prices.length - 1))]));
+  const uniq = [...new Set(cuts)];
+  const bands = [{ min: 0, max: uniq[0], label: `Under ${formatPrice(uniq[0])}` }];
+  for (let i = 1; i < uniq.length; i++) bands.push({ min: uniq[i - 1], max: uniq[i], label: `${formatPrice(uniq[i - 1])} – ${formatPrice(uniq[i])}` });
+  bands.push({ min: uniq[uniq.length - 1], max: Infinity, label: `Over ${formatPrice(uniq[uniq.length - 1])}` });
+  return bands;
+}
+
+/* ------------ Product card ------------ */
 function Card({ p }) {
+  const [liked, setLiked] = useState(false);
   const v = defaultVariant(p);
-  const img = imagesFor(p, v.options[p.media.groupBy])[0];
+  const imgs = imagesFor(p, v.options[p.media.groupBy]);
   const off = discountPercent(v);
-  const lo = minPrice(p);
-  const hi = maxPrice(p);
+  const colors = p.variantOptions.find((o) => o.name === "Color")?.values || [];
+  const price = minPrice(p);
+  const multi = p.variants.some((x) => x.price !== price);
+  // Fashion photos are styled shots: fill the frame. Product renders sit on a soft background.
+  const fit = p.category === "fashion" ? "object-cover" : "object-contain p-4 mix-blend-multiply";
   return (
-    <Link
-      to={`/catalog-preview/${p.slug}`}
-      className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-lg"
-    >
-      <div className="flex aspect-square items-center justify-center overflow-hidden rounded-xl bg-gray-50">
-        {img && (
-          <img src={img.src} alt={img.alt} loading="lazy" referrerPolicy="no-referrer"
-            className="h-full w-full object-contain p-3 transition group-hover:scale-105" />
+    <Link to={`/catalog-preview/${p.slug}`}
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[#ebe5da] transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-12px_rgba(29,28,25,0.25)]">
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f3ed]">
+        {imgs[0] && (
+          <img src={imgs[0].src} alt={imgs[0].alt} loading="lazy" referrerPolicy="no-referrer"
+            className={`absolute inset-0 h-full w-full ${fit} transition duration-300 ${imgs[1] ? "group-hover:opacity-0" : "group-hover:scale-105"}`} />
         )}
-      </div>
-      <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-gray-500">{p.brand}</p>
-      <h3 className="text-base font-semibold text-gray-900">{p.title.replace(`${p.brand} `, "")}</h3>
-      <p className="mt-1 line-clamp-2 text-sm text-gray-600">{p.shortDescription}</p>
-      <div className="mt-2 flex flex-wrap gap-1">
-        {p.variantOptions.find((o) => o.name === "Color")?.values.map((c) => (
-          <span key={c.value} title={c.value} className="h-4 w-4 rounded-full border border-gray-300"
-            style={{ background: c.hex || "#ddd" }} />
-        ))}
-      </div>
-      <div className="mt-auto pt-3">
-        <span className="text-lg font-bold text-gray-900">{formatPrice(lo)}</span>
-        {hi > lo && <span className="ml-1 text-sm text-gray-500">– {formatPrice(hi)}</span>}
+        {imgs[1] && (
+          <img src={imgs[1].src} alt="" loading="lazy" referrerPolicy="no-referrer"
+            className={`absolute inset-0 h-full w-full ${fit} opacity-0 transition duration-300 group-hover:opacity-100`} />
+        )}
         {off > 0 && (
-          <span className="ml-2 text-sm text-gray-400 line-through">{formatPrice(v.mrp)}</span>
+          <span className="absolute left-3 top-3 rounded-full bg-[#1d1c19] px-2.5 py-1 text-[11px] font-bold text-white">{off}% OFF</span>
         )}
-        {off > 0 && <span className="ml-1 text-sm font-semibold text-green-600">{off}% off</span>}
+        <button type="button" aria-label="Add to wishlist"
+          onClick={(e) => { e.preventDefault(); setLiked(!liked); }}
+          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#1d1c19] shadow-sm transition hover:scale-110">
+          <FiHeart className={liked ? "fill-[#a85d37] text-[#a85d37]" : ""} />
+        </button>
+      </div>
+      <div className="flex flex-1 flex-col p-3 sm:p-4">
+        <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b867d]">{p.brand}</p>
+        <h3 className="mt-0.5 line-clamp-2 text-sm font-medium leading-snug text-[#1d1c19]">{p.title.replace(`${p.brand} `, "")}</h3>
+        {colors.length > 1 && (
+          <div className="mt-2 flex items-center gap-1">
+            {colors.slice(0, 5).map((c) => (
+              <span key={c.value} title={c.value} className="h-3.5 w-3.5 rounded-full ring-1 ring-black/10" style={{ background: c.hex || "#ddd" }} />
+            ))}
+            {colors.length > 5 && <span className="text-[11px] text-[#8b867d]">+{colors.length - 5}</span>}
+          </div>
+        )}
+        <div className="mt-auto pt-2">
+          <div className="flex flex-wrap items-baseline gap-x-1.5">
+            {multi && <span className="text-xs text-[#8b867d]">From</span>}
+            <span className="text-base font-bold text-[#1d1c19]">{formatPrice(price)}</span>
+            {off > 0 && <span className="text-xs text-[#8b867d] line-through">{formatPrice(v.mrp)}</span>}
+          </div>
+          {price >= 499 && <p className="mt-0.5 text-[11px] text-green-700">Free delivery</p>}
+        </div>
       </div>
     </Link>
   );
 }
 
+/* ------------ Filters ------------ */
+function Section({ title, children }) {
+  return (
+    <div className="border-b border-[#ebe5da] py-4 last:border-0">
+      <h3 className="mb-2.5 text-xs font-bold uppercase tracking-wider text-[#1d1c19]">{title}</h3>
+      {children}
+    </div>
+  );
+}
+
+function Check({ checked, onChange, children, count }) {
+  return (
+    <label className="flex cursor-pointer items-center gap-2.5 py-1 text-sm text-[#3d3a35]">
+      <span className={`flex h-4 w-4 flex-none items-center justify-center rounded border ${checked ? "border-[#1d1c19] bg-[#1d1c19] text-white" : "border-[#cfc7b8] bg-white"}`}>
+        {checked && <FiCheck className="h-3 w-3" />}
+      </span>
+      <input type="checkbox" className="sr-only" checked={checked} onChange={onChange} />
+      <span className="flex-1">{children}</span>
+      {count != null && <span className="text-xs text-[#a39e94]">{count}</span>}
+    </label>
+  );
+}
+
+function Filters({ base, f, set }) {
+  const brands = useMemo(() => {
+    const m = new Map();
+    base.forEach((p) => m.set(p.brand, (m.get(p.brand) || 0) + 1));
+    return [...m.entries()].sort((a, b) => b[1] - a[1]);
+  }, [base]);
+  const bands = useMemo(() => priceBands(base), [base]);
+  const toggle = (key, value) => set({ ...f, [key]: f[key].includes(value) ? f[key].filter((x) => x !== value) : [...f[key], value] });
+
+  return (
+    <div>
+      <Section title="Brand">
+        <div className="max-h-64 overflow-y-auto pr-1">
+          {brands.map(([b, n]) => <Check key={b} checked={f.brands.includes(b)} onChange={() => toggle("brands", b)} count={n}>{b}</Check>)}
+        </div>
+      </Section>
+      {bands.length > 0 && (
+        <Section title="Price">
+          {bands.map((band, i) => (
+            <Check key={band.label} checked={f.bands.includes(i)} onChange={() => toggle("bands", i)}>{band.label}</Check>
+          ))}
+        </Section>
+      )}
+      <Section title="Discount">
+        {DISCOUNTS.map((d) => (
+          <Check key={d} checked={f.minOff === d} onChange={() => set({ ...f, minOff: f.minOff === d ? 0 : d })}>{d}% or more</Check>
+        ))}
+      </Section>
+      <Section title="Availability">
+        <Check checked={f.inStock} onChange={() => set({ ...f, inStock: !f.inStock })}>In stock only</Check>
+      </Section>
+    </div>
+  );
+}
+
+const EMPTY = { brands: [], bands: [], minOff: 0, inStock: false };
+
+/* ------------ Page ------------ */
 export default function CatalogPreviewList() {
   const [params, setParams] = useSearchParams();
   const category = CATEGORIES[params.get("cat")] ? params.get("cat") : "mobiles";
-  const setCategory = (k) => setParams({ cat: k }, { replace: true });
-  const [brand, setBrand] = useState("All");
-  const [sort, setSort] = useState("price-desc");
-  const [maxBudget, setMaxBudget] = useState(0);
+  const [f, setF] = useState(EMPTY);
+  const [sort, setSort] = useState("featured");
+  const [sheet, setSheet] = useState(false);
 
-  const shown = useMemo(
-    () =>
-      products
-        .filter((p) => catOf(p) === category)
-        .filter((p) => brand === "All" || p.brand === brand)
-        .filter((p) => !maxBudget || minPrice(p) <= maxBudget)
-        .sort(SORTS[sort].fn),
-    [category, brand, sort, maxBudget]
-  );
+  useEffect(() => { setF(EMPTY); }, [category]);
+
+  const base = useMemo(() => products.filter((p) => catOf(p) === category), [category]);
+  const bands = useMemo(() => priceBands(base), [base]);
+  const shown = useMemo(() => {
+    const list = base.filter((p) => {
+      const v = defaultVariant(p);
+      if (f.brands.length && !f.brands.includes(p.brand)) return false;
+      if (f.bands.length && !f.bands.some((i) => minPrice(p) >= bands[i].min && minPrice(p) < bands[i].max)) return false;
+      if (f.minOff && discountPercent(v) < f.minOff) return false;
+      if (f.inStock && !p.variants.some((x) => x.keySpecs?.available !== false)) return false;
+      return true;
+    });
+    return sort === "featured" ? list : [...list].sort(SORTS[sort].fn);
+  }, [base, bands, f, sort]);
+
+  const chips = [
+    ...f.brands.map((b) => ({ label: b, clear: () => setF({ ...f, brands: f.brands.filter((x) => x !== b) }) })),
+    ...f.bands.map((i) => ({ label: bands[i]?.label, clear: () => setF({ ...f, bands: f.bands.filter((x) => x !== i) }) })),
+    ...(f.minOff ? [{ label: `${f.minOff}%+ off`, clear: () => setF({ ...f, minOff: 0 }) }] : []),
+    ...(f.inStock ? [{ label: "In stock", clear: () => setF({ ...f, inStock: false }) }] : []),
+  ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="min-h-screen bg-[#f7f3ec] pb-24 lg:pb-12">
       <Helmet>
-        <title>{`Catalog v2 preview · ${CATEGORIES[category]} | VKart`}</title>
+        <title>{`${CATEGORIES[category]} | VKart`}</title>
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 
-      <div className="mb-6 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-        <strong>Catalog v2 preview.</strong> Draft data for review: {products.length} products,{" "}
-        {products.reduce((n, p) => n + p.variants.length, 0)} variants. Images are served from S3 as WebP.
+      {/* Category bar */}
+      <div className="border-b border-[#ebe5da] bg-[#fffdf8]">
+        <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-4">
+          {Object.entries(CATEGORIES).map(([k, name]) => {
+            const Icon = ICONS[k] || FiShoppingBag;
+            const active = k === category;
+            return (
+              <button key={k} type="button" onClick={() => setParams({ cat: k }, { replace: true })}
+                ref={active ? (el) => el?.scrollIntoView({ block: "nearest", inline: "center" }) : undefined}
+                className="group flex w-[76px] flex-none flex-col items-center gap-1.5 rounded-xl px-1 py-1.5 sm:w-[86px]">
+                <span className={`flex h-12 w-12 items-center justify-center rounded-full text-xl transition ${active ? "bg-[#1d1c19] text-white" : "bg-[#f1ece3] text-[#5f5b52] group-hover:bg-[#e8e1d4]"}`}>
+                  <Icon />
+                </span>
+                <span className={`text-center text-[11px] leading-tight ${active ? "font-bold text-[#1d1c19]" : "text-[#6f6b62]"}`}>{name}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      <div className="flex gap-6 overflow-x-auto border-b border-gray-200">
-        {Object.entries(CATEGORIES).map(([k, label]) => (
-          <button key={k} type="button"
-            onClick={() => { setCategory(k); setBrand("All"); if (SORTS[sort].mobilesOnly) setSort("price-desc"); }}
-            className={`-mb-px shrink-0 whitespace-nowrap border-b-2 pb-2 text-lg font-bold sm:text-2xl ${category === k ? "border-gray-900 text-gray-900" : "border-transparent text-gray-400 hover:text-gray-600"}`}>
-            {label}
-          </button>
-        ))}
+      <div className="mx-auto max-w-7xl px-4">
+        {/* Heading */}
+        <div className="flex flex-wrap items-end justify-between gap-3 pb-4 pt-5">
+          <div>
+            <nav className="flex items-center gap-1 text-xs text-[#8b867d]">
+              <Link to="/" className="hover:text-[#1d1c19]">Home</Link><FiChevronRight /><span className="text-[#1d1c19]">{CATEGORIES[category]}</span>
+            </nav>
+            <h1 className="mt-1 text-2xl font-bold text-[#1d1c19] sm:text-3xl">{CATEGORIES[category]}</h1>
+            <p className="text-sm text-[#8b867d]">{shown.length} of {base.length} products</p>
+          </div>
+          <label className="hidden items-center gap-2 text-sm text-[#6f6b62] lg:flex">
+            Sort by
+            <select value={sort} onChange={(e) => setSort(e.target.value)}
+              className="rounded-full border border-[#d9d2c5] bg-white px-4 py-2 text-sm font-medium text-[#1d1c19]">
+              {Object.entries(SORTS).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
+            </select>
+          </label>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
+          {/* Desktop sidebar */}
+          <aside className="hidden self-start rounded-2xl bg-[#fffdf8] px-5 py-1 ring-1 ring-[#ebe5da] lg:sticky lg:top-24 lg:block">
+            <div className="flex items-center justify-between border-b border-[#ebe5da] py-4">
+              <span className="text-sm font-bold text-[#1d1c19]">Filters</span>
+              {chips.length > 0 && <button type="button" onClick={() => setF(EMPTY)} className="text-xs font-semibold" style={{ color: ACCENT }}>Clear all</button>}
+            </div>
+            <Filters base={base} f={f} set={setF} />
+          </aside>
+
+          <div>
+            {chips.length > 0 && (
+              <div className="mb-4 flex flex-wrap gap-2">
+                {chips.map((c) => (
+                  <button key={c.label} type="button" onClick={c.clear}
+                    className="flex items-center gap-1.5 rounded-full bg-[#1d1c19] px-3 py-1.5 text-xs font-medium text-white">
+                    {c.label}<FiX />
+                  </button>
+                ))}
+              </div>
+            )}
+            {shown.length ? (
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
+                {shown.map((p) => <Card key={p.slug} p={p} />)}
+              </div>
+            ) : (
+              <div className="rounded-2xl bg-[#fffdf8] p-10 text-center ring-1 ring-[#ebe5da]">
+                <p className="font-semibold text-[#1d1c19]">No products match these filters.</p>
+                <button type="button" onClick={() => setF(EMPTY)} className="mt-3 text-sm font-semibold underline" style={{ color: ACCENT }}>Clear filters</button>
+              </div>
+            )}
+            <p className="mt-8 text-center text-xs text-[#a39e94]">
+              Catalog v2 preview · {products.length} products, {products.reduce((n, p) => n + p.variants.length, 0)} variants · images from S3
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        {brandsOf(category).map((b) => (
-          <button key={b} type="button" onClick={() => setBrand(b)}
-            className={`rounded-full border px-4 py-1.5 text-sm ${brand === b ? "border-gray-900 bg-gray-900 text-white" : "border-gray-300 bg-white text-gray-700 hover:border-gray-500"}`}>
-            {b}
-          </button>
-        ))}
-        <select value={maxBudget} onChange={(e) => setMaxBudget(Number(e.target.value))}
-          className="ml-auto rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm" aria-label="Budget">
-          <option value={0}>Any budget</option>
-          <option value={30000}>Under ₹30,000</option>
-          <option value={60000}>Under ₹60,000</option>
-          <option value={100000}>Under ₹1,00,000</option>
-          <option value={150000}>Under ₹1,50,000</option>
-          <option value={250000}>Under ₹2,50,000</option>
-        </select>
-        <select value={sort} onChange={(e) => setSort(e.target.value)}
-          className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm" aria-label="Sort">
-          {Object.entries(SORTS).filter(([, s]) => category === "mobiles" || !s.mobilesOnly).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
-        </select>
+      {/* Mobile sort / filter bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-[#ebe5da] bg-[#fffdf8] lg:hidden">
+        <label className="relative flex items-center justify-center gap-2 border-r border-[#ebe5da] py-3.5 text-sm font-semibold text-[#1d1c19]">
+          Sort: {SORTS[sort].label.replace("Price: ", "")}
+          <select value={sort} onChange={(e) => setSort(e.target.value)} className="absolute inset-0 opacity-0" aria-label="Sort">
+            {Object.entries(SORTS).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
+          </select>
+        </label>
+        <button type="button" onClick={() => setSheet(true)} className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-[#1d1c19]">
+          <FiFilter /> Filter{chips.length > 0 && <span className="rounded-full px-1.5 text-xs text-white" style={{ background: ACCENT }}>{chips.length}</span>}
+        </button>
       </div>
 
-      <p className="mt-3 text-sm text-gray-500">{shown.length} products</p>
-      <div className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {shown.map((p) => <Card key={p.slug} p={p} />)}
-      </div>
+      {/* Mobile filter sheet */}
+      {sheet && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <div className="absolute inset-0 bg-black/40" onClick={() => setSheet(false)} />
+          <div className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-[#fffdf8] px-5 pb-24">
+            <div className="sticky top-0 flex items-center justify-between bg-[#fffdf8] py-4">
+              <span className="text-base font-bold text-[#1d1c19]">Filters</span>
+              <button type="button" onClick={() => setSheet(false)} aria-label="Close"><FiX className="text-xl" /></button>
+            </div>
+            <Filters base={base} f={f} set={setF} />
+            <div className="fixed inset-x-0 bottom-0 grid grid-cols-2 gap-3 border-t border-[#ebe5da] bg-[#fffdf8] p-3">
+              <button type="button" onClick={() => setF(EMPTY)} className="rounded-full border border-[#1d1c19] py-3 text-sm font-bold">Clear</button>
+              <button type="button" onClick={() => setSheet(false)} className="rounded-full py-3 text-sm font-bold text-white" style={{ background: ACCENT }}>
+                Show {shown.length} products
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
