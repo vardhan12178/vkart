@@ -31,6 +31,9 @@ jest.mock("framer-motion", () => {
   };
 });
 
+// Placeholder rank token: the widget passes it through unchanged
+const RANK_TOKEN = "test-rank-token";
+
 describe("AIChatAssistant Component", () => {
   let store;
 
@@ -192,7 +195,7 @@ describe("AIChatAssistant Component", () => {
         data: {
           structured: { response: { summary: "Here are the top matches.", points: [] } },
           products: [{ _id: "p1", catalog: "v2", slug: "phone-a", title: "Phone A", price: 30000, thumbnail: "a.webp", stock: 1 }],
-          rank: { token: "123e4567-e89b-42d3-a456-426614174000" },
+          rank: { token: RANK_TOKEN },
         },
       })
       .mockImplementationOnce(() => new Promise((resolve) => { finishRank = resolve; }));
@@ -205,7 +208,7 @@ describe("AIChatAssistant Component", () => {
     expect(await screen.findByText("Phone A")).toBeInTheDocument();
     expect(screen.getByText(/picking the best matches/i)).toBeInTheDocument();
     expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ catalog: "v2", twoPhase: true }));
-    expect(axios.post).toHaveBeenLastCalledWith("/api/ai/chat/rank", { token: "123e4567-e89b-42d3-a456-426614174000" }, expect.anything());
+    expect(axios.post).toHaveBeenLastCalledWith("/api/ai/chat/rank", { token: RANK_TOKEN }, expect.anything());
 
     // Phase two: the model's picks replace the first results
     finishRank({
@@ -226,7 +229,7 @@ describe("AIChatAssistant Component", () => {
         data: {
           structured: { response: { summary: "Here are the top matches.", points: [] } },
           products: [{ _id: "p1", catalog: "v2", slug: "phone-a", title: "Phone A", price: 30000, thumbnail: "a.webp", stock: 1 }],
-          rank: { token: "123e4567-e89b-42d3-a456-426614174000" },
+          rank: { token: RANK_TOKEN },
         },
       })
       .mockRejectedValueOnce(new Error("busy"));
