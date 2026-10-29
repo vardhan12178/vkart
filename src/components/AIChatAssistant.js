@@ -62,7 +62,7 @@ const AIChatAssistant = () => {
       const saved = sessionStorage.getItem(CHAT_STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length) return parsed.map(withMessageId);
+        if (Array.isArray(parsed) && parsed.length) return parsed.map((m) => withMessageId({ ...m, ranking: false }));
       }
     } catch {}
     return [withMessageId(initGreeting)];
@@ -156,6 +156,23 @@ const AIChatAssistant = () => {
     const botMessage = withMessageId({ type: "bot", ...payload });
     nextScrollRef.current = { type: "bot", id: botMessage.id };
     setMessages((prev) => [...prev, botMessage]);
+    return botMessage.id;
+  };
+
+  const updateMessage = (id, patch) =>
+    setMessages((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch } : m)));
+
+  // Phase two of a v2 answer: the results are already on screen; swap in the model's picks
+  // and reasons when they arrive. If the model is slow or fails, the first results simply stay.
+  const fetchRanking = async (messageId, token) => {
+    try {
+      const { data } = await axios.post("/api/ai/chat/rank", { token }, { timeout: 30000 });
+      if (data?.reranked && Array.isArray(data.products) && data.products.length) {
+        updateMessage(messageId, { structured: data.structured, products: data.products, ranking: false, ranked: true });
+        return;
+      }
+    } catch { /* keep the first results */ }
+    updateMessage(messageId, { ranking: false });
   };
 
   const sendMessage = async (rawMessage) => {
@@ -176,10 +193,12 @@ const AIChatAssistant = () => {
         message: userMessage,
         history,
         catalog: AI_CATALOG,
+        twoPhase: AI_CATALOG === "v2",
       });
 
-      const { structured, products } = res.data;
-      appendBotMessage({ structured, products });
+      const { structured, products, rank } = res.data;
+      const id = appendBotMessage({ structured, products, ranking: Boolean(rank?.token) });
+      if (rank?.token) fetchRanking(id, rank.token);
     } catch (error) {
       console.error("AI Chat Error:", error);
       appendBotMessage({
@@ -314,6 +333,15 @@ const AIChatAssistant = () => {
                 </ul>
               )}
             </div>
+          </motion.div>
+        )}
+
+        {/* Phase two in progress: model picks on the way */}
+        {msg.ranking && (
+          <motion.div variants={itemVariants} role="status"
+            className="flex w-fit items-center gap-2 rounded-full border border-[#a85d37]/15 bg-[#efe4d9] px-3 py-1.5 text-[11px] font-semibold text-[#75462f]">
+            <Sparkles size={11} className="animate-pulse text-[#a85d37]" />
+            Picking the best matches for you…
           </motion.div>
         )}
 
