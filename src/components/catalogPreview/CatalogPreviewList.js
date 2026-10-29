@@ -5,6 +5,7 @@ import {
   FiSmartphone, FiMonitor, FiTablet, FiTv, FiHeadphones, FiWatch, FiDroplet, FiUser, FiShoppingBag,
   FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiFilter, FiX, FiHeart, FiCheck,
 } from "react-icons/fi";
+import BrandSelect from "./BrandSelect";
 import { products, minPrice, defaultVariant, imagesFor, discountPercent, formatPrice, CATEGORIES, catOf } from "./catalogData";
 
 const ACCENT = "#a85d37";
@@ -22,6 +23,7 @@ const SORTS = {
   discount: { label: "Biggest discount", fn: (a, b) => discountPercent(defaultVariant(b)) - discountPercent(defaultVariant(a)) },
   newest: { label: "Newest first", fn: (a, b) => String(b.launchDate || "").localeCompare(String(a.launchDate || "")) },
 };
+const SORT_OPTIONS = Object.entries(SORTS).map(([value, s]) => ({ value, label: s.label }));
 const DISCOUNTS = [10, 25, 40];
 
 const roundNice = (n) => {
@@ -221,13 +223,7 @@ export default function CatalogPreviewList() {
             <h1 className="mt-1 text-2xl font-bold text-[#1d1c19] sm:text-3xl">{CATEGORIES[category]}</h1>
             <p className="text-sm text-[#8b867d]">{shown.length} of {base.length} products</p>
           </div>
-          <label className="hidden items-center gap-2 text-sm text-[#6f6b62] lg:flex">
-            Sort by
-            <select value={sort} onChange={(e) => setSort(e.target.value)}
-              className="rounded-full border border-[#d9d2c5] bg-white px-4 py-2 text-sm font-medium text-[#1d1c19]">
-              {Object.entries(SORTS).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
-            </select>
-          </label>
+          <BrandSelect label="Sort by" prefix="Sort by:" value={sort} onChange={setSort} options={SORT_OPTIONS} className="hidden w-64 lg:block" />
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[240px_1fr]">
@@ -270,12 +266,10 @@ export default function CatalogPreviewList() {
 
       {/* Mobile sort / filter bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-[#ebe5da] bg-[#fffdf8] lg:hidden">
-        <label className="relative flex items-center justify-center gap-2 border-r border-[#ebe5da] py-3.5 text-sm font-semibold text-[#1d1c19]">
-          Sort: {SORTS[sort].label.replace("Price: ", "")}
-          <select value={sort} onChange={(e) => setSort(e.target.value)} className="absolute inset-0 opacity-0" aria-label="Sort">
-            {Object.entries(SORTS).map(([k, s]) => <option key={k} value={k}>{s.label}</option>)}
-          </select>
-        </label>
+        <div className="border-r border-[#ebe5da] p-1.5">
+          <BrandSelect label="Sort by" prefix="Sort:" value={sort} onChange={setSort} options={SORT_OPTIONS} up
+            buttonClassName="justify-center border-transparent bg-transparent hover:border-transparent" />
+        </div>
         <button type="button" onClick={() => setSheet(true)} className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-[#1d1c19]">
           <FiFilter /> Filter{chips.length > 0 && <span className="rounded-full px-1.5 text-xs text-white" style={{ background: ACCENT }}>{chips.length}</span>}
         </button>

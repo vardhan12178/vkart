@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiStar, FiShoppingCart, FiZap } from "react-icons/fi";
+import BrandSelect from "./BrandSelect";
 import { products, defaultVariant, imagesFor, discountPercent, formatPrice, minPrice, CATEGORIES, catOf } from "./catalogData";
 
 // Catalog v2 product page (preview). Data comes from the bundled JSON for now;
@@ -69,10 +70,10 @@ function Gallery({ images, idx, setIdx }) {
 
       {/* Desktop: thumbs + hover zoom */}
       <div className="hidden gap-4 lg:flex">
-        <div className="flex max-h-[560px] w-16 flex-none flex-col gap-2 overflow-y-auto [scrollbar-width:thin]">
+        <div className="flex max-h-[560px] w-[72px] flex-none flex-col gap-2 overflow-y-auto p-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {images.map((im, i) => (
             <button key={`${im.src}-${i}`} type="button" onMouseEnter={() => setIdx(i)} onClick={() => setIdx(i)}
-              className={`aspect-square w-16 flex-none overflow-hidden rounded-lg border-2 bg-white ${i === idx ? "border-[#a85d37]" : "border-transparent hover:border-gray-300"}`}>
+              className={`aspect-square w-full flex-none overflow-hidden rounded-lg border-2 bg-white ${i === idx ? "border-[#a85d37]" : "border-transparent hover:border-gray-300"}`}>
               <img src={im.thumb} alt={im.alt} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain p-1" />
             </button>
           ))}
@@ -115,7 +116,7 @@ function Rail({ title, items }) {
   return (
     <section className="mt-12">
       <h2 className="text-xl font-bold text-[#1d1c19]">{title}</h2>
-      <div className="-mx-4 mt-4 flex gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:thin]">
+      <div className="-mx-4 mt-4 flex gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {items.map((p) => <MiniCard key={p.slug} p={p} />)}
       </div>
     </section>
@@ -227,13 +228,13 @@ export default function CatalogPreviewProduct() {
           <span className="text-[#1d1c19]">{p.brand}</span>
         </nav>
 
-        <div className="grid gap-8 rounded-3xl bg-[#fffdf8] p-4 shadow-sm sm:p-6 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:p-8">
+        <div className="grid grid-cols-1 gap-8 rounded-3xl bg-[#fffdf8] p-4 shadow-sm sm:p-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12 lg:p-8 [&>*]:min-w-0">
           <Gallery images={images} idx={imgIdx} setIdx={setImgIdx} />
 
           {/* Buy box */}
           <div>
             <Link to={`/catalog-preview?cat=${cat}`} className="text-sm font-semibold" style={{ color: ACCENT }}>Visit the {p.brand} store</Link>
-            <h1 className="mt-1 text-2xl font-bold leading-snug text-[#1d1c19] sm:text-3xl">{p.title}</h1>
+            <h1 className="mt-1 break-words text-2xl font-bold leading-snug text-[#1d1c19] sm:text-3xl">{p.title}</h1>
             <div className="mt-2 flex items-center gap-2 text-sm text-[#8b867d]">
               <span className="flex text-gray-300">{[0, 1, 2, 3, 4].map((i) => <FiStar key={i} />)}</span>
               No ratings yet
@@ -299,11 +300,9 @@ export default function CatalogPreviewProduct() {
               </p>
               <p className="mt-1 text-sm text-[#6f6b62]">Sold by VKart · Ships from India</p>
               <div className="mt-3 flex items-center gap-3">
-                <label htmlFor="qty" className="text-sm text-[#6f6b62]">Qty</label>
-                <select id="qty" value={qty} onChange={(e) => setQty(Number(e.target.value))}
-                  className="rounded-lg border border-[#d9d2c5] bg-white px-3 py-1.5 text-sm">
-                  {[1, 2, 3, 4, 5].map((n) => <option key={n} value={n}>{n}</option>)}
-                </select>
+                <span className="text-sm text-[#6f6b62]">Qty</span>
+                <BrandSelect label="Quantity" value={qty} onChange={setQty} className="w-24"
+                  options={[1, 2, 3, 4, 5].map((n) => ({ value: n, label: String(n) }))} />
               </div>
               <div className="mt-4 hidden gap-3 lg:flex">
                 <button type="button" disabled={!available} onClick={() => buy("cart")}
@@ -320,7 +319,7 @@ export default function CatalogPreviewProduct() {
             </div>
 
             {/* Policies */}
-            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 [&>*]:min-w-0">
               {policies.map(({ icon: Icon, text }) => (
                 <div key={text} className="flex flex-col items-center gap-1.5 rounded-xl bg-[#f7f3ec] px-2 py-3 text-center text-[11px] leading-tight text-[#5f5b52]">
                   <Icon className="text-lg" style={{ color: ACCENT }} />{text}
@@ -344,7 +343,7 @@ export default function CatalogPreviewProduct() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_340px]">
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_340px] [&>*]:min-w-0">
           <div className="space-y-8">
             {/* Specifications */}
             {specGroups.length > 0 && (
@@ -441,17 +440,17 @@ export default function CatalogPreviewProduct() {
 
       {/* Mobile sticky actions */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#ebe5da] bg-[#fffdf8]/95 p-3 backdrop-blur lg:hidden">
-        <div className="mx-auto flex max-w-xl items-center gap-3">
+        <div className="mx-auto flex max-w-xl items-center gap-2 pr-16 sm:gap-3">
           <div className="min-w-0 flex-none">
             <p className="text-lg font-bold leading-none text-[#1d1c19]">{variant ? formatPrice(variant.price) : "–"}</p>
             {off > 0 && <p className="text-xs font-semibold text-green-700">{off}% off</p>}
           </div>
           <button type="button" disabled={!available} onClick={() => buy("cart")}
-            className="flex-1 rounded-full border-2 border-[#1d1c19] py-2.5 text-sm font-bold disabled:opacity-40" style={{ color: INK }}>
+            className="min-w-0 flex-1 rounded-full border-2 border-[#1d1c19] py-2.5 text-sm font-bold disabled:opacity-40" style={{ color: INK }}>
             Add to cart
           </button>
           <button type="button" disabled={!available} onClick={() => buy("buy")}
-            className="flex-1 rounded-full py-2.5 text-sm font-bold text-white disabled:opacity-40" style={{ background: ACCENT }}>
+            className="min-w-0 flex-1 rounded-full py-2.5 text-sm font-bold text-white disabled:opacity-40" style={{ background: ACCENT }}>
             Buy now
           </button>
         </div>
