@@ -36,3 +36,6 @@ export function discountPercent(v) {
 
 export const formatPrice = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);
+
+export const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", tvs: "TVs", monitors: "Monitors", audio: "Audio", wearables: "Watches", skincare: "Skincare", "fashion-men": "Men's Fashion", "fashion-women": "Women's Fashion", appliances: "Appliances", "kitchen-appliances": "Kitchen", grooming: "Grooming", sports: "Sports" };
+export const catOf = (p) => (p.category === "fashion" ? `fashion-${(p.keySpecs?.gender || "men").toLowerCase()}` : p.categoryPath?.[0] === "home-appliances" ? "appliances" : p.category);
