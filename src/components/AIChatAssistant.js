@@ -11,6 +11,9 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat } from "../redux/uiSlice";
 
+// Which catalog Ask VKart searches: "v2" (catalog_products) unless REACT_APP_AI_CATALOG says otherwise
+const AI_CATALOG = process.env.REACT_APP_AI_CATALOG || "v2";
+
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -171,7 +174,8 @@ const AIChatAssistant = () => {
     try {
       const res = await axios.post("/api/ai/chat", {
         message: userMessage,
-        history
+        history,
+        catalog: AI_CATALOG,
       });
 
       const { structured, products } = res.data;
@@ -197,13 +201,37 @@ const AIChatAssistant = () => {
     await sendMessage(prompt);
   };
 
-  const handleProductClick = (productId) => {
+  const productPath = (prod) => (prod.catalog === "v2" ? `/catalog-preview/${prod.slug}` : `/product/${prod._id}`);
+
+  const handleProductClick = (prod) => {
     dispatch(closeChat());
-    navigate(`/product/${productId}`);
+    navigate(productPath(prod));
   };
 
   const handleAddToCart = (e, prod) => {
     e.stopPropagation();
+    if (prod.catalog === "v2") {
+      // Products with several variants need a choice (size, colour, storage) first
+      if (prod.variantCount > 1 || !prod.sku) {
+        handleProductClick(prod);
+        showToast("Choose a variant to add it to your bag", "info");
+        return;
+      }
+      dispatch(addToCart({
+        catalog: "v2",
+        productId: prod._id,
+        sku: prod.sku,
+        slug: prod.slug,
+        title: prod.title,
+        price: prod.price,
+        thumbnail: prod.thumbnail,
+        category: prod.category,
+        discountPercentage: prod.discountPercent || 0,
+        quantity: 1,
+      }));
+      showToast("Added to cart", "success");
+      return;
+    }
     dispatch(addToCart({ ...prod, quantity: 1 }));
     showToast("Added to cart", "success");
   };
@@ -315,7 +343,7 @@ const AIChatAssistant = () => {
                   key={prod._id}
                   whileHover={{ scale: 1.01, y: -1 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => handleProductClick(prod._id)}
+                  onClick={() => handleProductClick(prod)}
                   className={`relative flex cursor-pointer gap-2.5 sm:gap-3.5 rounded-xl border bg-[#fffdf8] p-2.5 sm:p-3 transition-all
                     ${isBestMatch
                       ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10 shadow-sm"
@@ -343,8 +371,11 @@ const AIChatAssistant = () => {
                       )}
                     </div>
                     <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wide text-[#817c73] mt-0.5">
-                      {prod.category || 'VKart'}
+                      {prod.brand ? `${prod.brand} · ` : ""}{prod.category || 'VKart'}
                     </p>
+                    {prod.reason && !isBestMatch && (
+                      <p className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-[#5f5b52]">{prod.reason}</p>
+                    )}
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs sm:text-sm font-bold text-[#1d1c19]">{INR(prod.price)}</span>
                       <span className={`text-[9px] font-bold ${prod.stock > 0 ? 'text-[#5f6a52]' : 'text-[#a85d37]'}`}>

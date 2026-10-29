@@ -167,6 +167,43 @@ describe("AIChatAssistant Component", () => {
     expect(store.getState().ui.isChatOpen).toBe(false);
   });
 
+  test("asks the v2 catalog and adds a single-variant v2 product with its sku", async () => {
+    axios.post.mockResolvedValueOnce({
+      data: {
+        structured: { response: { summary: "Here you go", points: [] } },
+        products: [{ _id: "aaaaaaaaaaaaaaaaaaaaaaaa", catalog: "v2", slug: "yoga-mat", sku: "BFT-MAT-1", variantCount: 1, title: "Yoga Mat", price: 2499, thumbnail: "m.webp", stock: 1 }],
+      },
+    });
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "yoga mat" } });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+    await screen.findByText("Yoga Mat");
+
+    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "yoga mat", catalog: "v2" }));
+    fireEvent.click(screen.getByRole("button", { name: /add yoga mat to bag/i }));
+    expect(store.getState().cart[0]).toMatchObject({ catalog: "v2", productId: "aaaaaaaaaaaaaaaaaaaaaaaa", sku: "BFT-MAT-1", quantity: 1 });
+  });
+
+  test("sends multi-variant v2 products to their page to pick a variant", async () => {
+    axios.post.mockResolvedValueOnce({
+      data: {
+        structured: { response: { summary: "Here you go", points: [] } },
+        products: [{ _id: "bbbbbbbbbbbbbbbbbbbbbbbb", catalog: "v2", slug: "phone-x", sku: "PX-128", variantCount: 3, title: "Phone X", price: 20000, thumbnail: "p.webp", stock: 1 }],
+      },
+    });
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+    await screen.findByText("Phone X");
+
+    fireEvent.click(screen.getByRole("button", { name: /add phone x to bag/i }));
+    expect(store.getState().cart).toHaveLength(0);
+    expect(store.getState().ui.isChatOpen).toBe(false);
+    expect(showToast).toHaveBeenCalledWith("Choose a variant to add it to your bag", "info");
+  });
+
   test("adds a recommended product to the cart without navigating", async () => {
     axios.post.mockResolvedValueOnce({
       data: {
