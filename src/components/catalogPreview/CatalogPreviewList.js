@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { findSaved, toggleSaved, wishlistItemFrom } from "./v2Items";
+import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
 import {
   FiSmartphone, FiMonitor, FiTablet, FiTv, FiHeadphones, FiWatch, FiDroplet, FiUser, FiShoppingBag,
@@ -47,7 +50,9 @@ function priceBands(bounds) {
 
 /* ------------ Product card ------------ */
 function Card({ p }) {
-  const [liked, setLiked] = useState(false);
+  const dispatch = useDispatch();
+  const wishlist = useSelector((s) => s.wishlist);
+  const liked = Boolean(findSaved(wishlist, p.slug));
   const img = p.image;
   const off = p.discountPercent;
   const colors = p.colors || [];
@@ -66,8 +71,13 @@ function Card({ p }) {
         {off > 0 && (
           <span className="absolute left-3 top-3 rounded-full bg-[#1d1c19] px-2.5 py-1 text-[11px] font-bold text-white">{off}% OFF</span>
         )}
-        <button type="button" aria-label="Add to wishlist"
-          onClick={(e) => { e.preventDefault(); setLiked(!liked); }}
+        <button type="button" aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
+          aria-pressed={liked}
+          onClick={(e) => {
+            e.preventDefault();
+            const saved = toggleSaved(dispatch, wishlist, wishlistItemFrom(p));
+            showToast(saved ? "Saved to wishlist" : "Removed from wishlist", "success");
+          }}
           className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#1d1c19] shadow-sm transition hover:scale-110">
           <FiHeart className={liked ? "fill-[#a85d37] text-[#a85d37]" : ""} />
         </button>

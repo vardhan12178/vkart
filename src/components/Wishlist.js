@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { removeFromWishlist, clearWishlist } from "../redux/wishlistSlice";
 import { addToCart } from "../redux/cartSlice";
+import { cartItemFromSaved, productPath as v2Path } from "./catalogPreview/v2Items";
 import {
   FaArrowRight,
   FaCartPlus,
@@ -24,7 +25,7 @@ const keyOf = (item) =>
   item?._id || item?.productId || item?.externalId || item?.id;
 
 const productPath = (item) =>
-  `/product/${item?._id || item?.productId || item?.id}`;
+  v2Path(item) || `/product/${item?._id || item?.productId || item?.id}`;
 
 const categoryName = (category = "") =>
   category.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -35,6 +36,17 @@ export default function Wishlist() {
   const count = wishlist.length;
 
   const moveToCart = (item) => {
+    if (item.catalog === "v2") {
+      const line = cartItemFromSaved(item);
+      if (!line) {
+        showToast("Open the product to choose a variant", "info");
+        return;
+      }
+      dispatch(addToCart(line));
+      dispatch(removeFromWishlist(keyOf(item)));
+      showToast("Moved to cart", "success");
+      return;
+    }
     dispatch(addToCart({ ...item, quantity: 1 }));
     dispatch(removeFromWishlist(keyOf(item)));
     showToast("Moved to cart", "success");

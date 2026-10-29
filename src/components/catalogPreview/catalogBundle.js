@@ -42,7 +42,7 @@ function toCard(p) {
   const v = defaultOf(p);
   const first = [...((p.media.groups || {})[v.options?.[p.media.groupBy]] || []), ...(p.media.common || [])][0];
   return {
-    slug: p.slug, title: p.title, brand: p.brand, category: p.category,
+    sku: v.sku, slug: p.slug, title: p.title, brand: p.brand, category: p.category,
     image: resolveImage(first), price: v.price, mrp: v.mrp, discountPercent: discount(v),
     priceRange: priceRange(p),
     colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({ value: c.value, hex: c.hex })),

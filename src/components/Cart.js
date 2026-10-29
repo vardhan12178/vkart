@@ -34,6 +34,7 @@ import CheckoutForm from "./CheckoutForm";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
 import { buildSecureOrderPayload } from "../utils/orderPayload";
+import { cartItemFromSaved } from "./catalogPreview/v2Items";
 import { qk } from "../query/queryKeys";
 
 /* ---------- Helpers ---------- */
@@ -220,6 +221,17 @@ export default function Cart() {
   };
 
   const moveWishlistToCart = (item) => {
+    if (item.catalog === "v2") {
+      const line = cartItemFromSaved(item);
+      if (!line) {
+        showToast("Open the product to choose a variant", "info");
+        return;
+      }
+      dispatch(addToCart(line));
+      dispatch(removeFromWishlist(keyOf(item)));
+      showToast("Moved to Cart", "success");
+      return;
+    }
     dispatch(addToCart({ ...item, quantity: 1 }));
     dispatch(removeFromWishlist(keyOf(item)));
     showToast("Moved to Cart", "success");

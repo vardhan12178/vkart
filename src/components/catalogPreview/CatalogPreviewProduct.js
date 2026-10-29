@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { findSaved, toggleSaved, wishlistItemFrom } from "./v2Items";
 import { addToCart } from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
-import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiStar, FiShoppingCart, FiZap } from "react-icons/fi";
+import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiStar, FiShoppingCart, FiZap, FiHeart } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
@@ -144,6 +145,7 @@ export default function CatalogPreviewProduct() {
   const [recent, setRecent] = useState([]);
   const [attempt, setAttempt] = useState(0);
   const dispatch = useDispatch();
+  const wishlist = useSelector((s) => s.wishlist);
   const navigate = useNavigate();
 
   // Load the product (and reset per-product state) whenever the slug changes
@@ -203,6 +205,7 @@ export default function CatalogPreviewProduct() {
 
   const cat = catOf(p);
   const images = imagesFor(p, opts[p.media.groupBy]);
+  const saved = Boolean(findSaved(wishlist, p.slug));
   const off = variant?.discountPercent ?? 0;
   const available = Boolean(variant && variant.inStock !== false && variant.keySpecs?.available !== false);
 
@@ -286,7 +289,17 @@ export default function CatalogPreviewProduct() {
           {/* Buy box */}
           <div>
             <Link to={`/catalog-preview?cat=${cat}`} className="text-sm font-semibold" style={{ color: ACCENT }}>Visit the {p.brand} store</Link>
-            <h1 className="mt-1 break-words text-2xl font-bold leading-snug text-[#1d1c19] sm:text-3xl">{p.title}</h1>
+            <div className="mt-1 flex items-start justify-between gap-3">
+              <h1 className="min-w-0 break-words text-2xl font-bold leading-snug text-[#1d1c19] sm:text-3xl">{p.title}</h1>
+              <button type="button" aria-pressed={saved} aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
+                onClick={() => {
+                  const now = toggleSaved(dispatch, wishlist, wishlistItemFrom(p, variant || defaultVariant(p)));
+                  showToast(now ? "Saved to wishlist" : "Removed from wishlist", "success");
+                }}
+                className={`flex h-11 w-11 flex-none items-center justify-center rounded-full border transition ${saved ? "border-[#a85d37] bg-[#a85d37]/10 text-[#a85d37]" : "border-[#d9d2c5] bg-white text-[#1d1c19] hover:border-[#1d1c19]"}`}>
+                <FiHeart className={saved ? "fill-[#a85d37]" : ""} />
+              </button>
+            </div>
             <div className="mt-2 flex items-center gap-2 text-sm text-[#8b867d]">
               <span className="flex text-gray-300">{[0, 1, 2, 3, 4].map((i) => <FiStar key={i} />)}</span>
               No ratings yet
