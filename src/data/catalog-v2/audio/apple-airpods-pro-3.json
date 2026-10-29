@@ -62,8 +62,11 @@
     "groups": {
       "White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods Pro 3 in White"
+          "key": "audio/apple-airpods-pro-3/white-1",
+          "alt": "AirPods Pro 3 in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ]
     },

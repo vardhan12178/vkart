@@ -31,36 +31,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Yogamat2.webp?v=1779110414",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-1",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Yogamat2.webp?v=1779110414",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy2_0465e932-a39a-4898-a160-76cd5fba649f.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 2"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-2",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy2_0465e932-a39a-4898-a160-76cd5fba649f.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy4_4989f40a-4640-480c-a1a9-8d35b84d0265.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 3"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-3",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy4_4989f40a-4640-480c-a1a9-8d35b84d0265.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy5_5d27152d-1931-46cf-bc2c-96056fa008aa.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 4"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-4",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy5_5d27152d-1931-46cf-bc2c-96056fa008aa.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy6_42b09c15-a372-4967-a0cb-474ce36de23a.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 5"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-5",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy6_42b09c15-a372-4967-a0cb-474ce36de23a.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy7_8469ef8a-0fde-40a6-a400-344bfb8cd661.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 6"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-6",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy7_8469ef8a-0fde-40a6-a400-344bfb8cd661.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy8.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 7"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-7",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy8.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy9.jpg?v=1771304885",
-        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 8"
+        "key": "sports/boldfit-butterfly-body-alignment-yoga-mat/common-8",
+        "alt": "Boldfit Butterfly Body Alignment Yoga Mat, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1copy9.jpg?v=1771304885",
+        "width": 1080,
+        "height": 1080
       }
     ]
   },

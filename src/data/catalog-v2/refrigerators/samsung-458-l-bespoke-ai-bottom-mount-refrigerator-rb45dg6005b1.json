@@ -84,28 +84,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-thumb-553820039?$650_519_PNG$",
-        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1"
+        "key": "refrigerators/samsung-458-l-bespoke-ai-bottom-mount-refrigerator-rb45dg6005b1/common-1",
+        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-thumb-553820039?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-553820025?$650_519_PNG$",
-        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 2"
+        "key": "refrigerators/samsung-458-l-bespoke-ai-bottom-mount-refrigerator-rb45dg6005b1/common-2",
+        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-553820025?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-551837490?$650_519_PNG$",
-        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 3"
+        "key": "refrigerators/samsung-458-l-bespoke-ai-bottom-mount-refrigerator-rb45dg6005b1/common-3",
+        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-551837490?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-thumb-551837491?$650_519_PNG$",
-        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 4"
+        "key": "refrigerators/samsung-458-l-bespoke-ai-bottom-mount-refrigerator-rb45dg6005b1/common-4",
+        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 4",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-thumb-551837491?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-551837668?$650_519_PNG$",
-        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 5"
+        "key": "refrigerators/samsung-458-l-bespoke-ai-bottom-mount-refrigerator-rb45dg6005b1/common-5",
+        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 5",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-551837668?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-thumb-551837670?$650_519_PNG$",
-        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 6"
+        "key": "refrigerators/samsung-458-l-bespoke-ai-bottom-mount-refrigerator-rb45dg6005b1/common-6",
+        "alt": "Samsung 458 L Bespoke AI Bottom Mount Refrigerator RB45DG6005B1, view 6",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rb45dg6005b1tl/gallery/in-bottom-mount-freezer-smartthings-ai-energy-mode-and-spacemax-technology-rb45dg6005b1tl-thumb-551837670?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

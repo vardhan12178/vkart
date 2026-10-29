@@ -88,7 +88,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 27.0,
+    "screenInch": 27,
     "resolution": "QHD (2,560 x 1,440)",
     "refreshRateHz": 180,
     "panel": "QD-OLED",
@@ -111,12 +111,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27fg502swxxl/gallery/in-odyssey-oled-g5-27g50sf-ls27fg502swxxl-thumb-550047429?$650_519_PNG$",
-        "alt": "Samsung 27\" Odyssey QD-OLED G5 Gaming Monitor"
+        "key": "monitors/samsung-27-inch-odyssey-qd-oled-g5-gaming-monitor/common-1",
+        "alt": "Samsung 27\" Odyssey QD-OLED G5 Gaming Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27fg502swxxl/gallery/in-odyssey-oled-g5-27g50sf-ls27fg502swxxl-thumb-550047429?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27fg502swxxl/gallery/in-odyssey-oled-g5-27g50sf-ls27fg502swxxl-550047428?$650_519_PNG$",
-        "alt": "Samsung 27\" Odyssey QD-OLED G5 Gaming Monitor, view 2"
+        "key": "monitors/samsung-27-inch-odyssey-qd-oled-g5-gaming-monitor/common-2",
+        "alt": "Samsung 27\" Odyssey QD-OLED G5 Gaming Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27fg502swxxl/gallery/in-odyssey-oled-g5-27g50sf-ls27fg502swxxl-550047428?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

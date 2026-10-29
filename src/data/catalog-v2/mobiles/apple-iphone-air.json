@@ -126,93 +126,125 @@
     "groups": {
       "Sky Blue": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Sky Blue"
+          "key": "mobiles/apple-iphone-air/sky-blue-1",
+          "alt": "Apple iPhone Air in Sky Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Sky Blue, view 2"
+          "key": "mobiles/apple-iphone-air/sky-blue-3",
+          "alt": "Apple iPhone Air in Sky Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Sky Blue, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_ultramarine__cgfuoct82biu_large_2x.jpg",
-          "alt": "Apple iPhone Air in Sky Blue, view 4"
+          "key": "mobiles/apple-iphone-air/sky-blue-4",
+          "alt": "Apple iPhone Air in Sky Blue, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_ultramarine__cgfuoct82biu_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Light Gold": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Light Gold"
+          "key": "mobiles/apple-iphone-air/light-gold-1",
+          "alt": "Apple iPhone Air in Light Gold",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Light Gold, view 2"
+          "key": "mobiles/apple-iphone-air/light-gold-3",
+          "alt": "Apple iPhone Air in Light Gold, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Light Gold, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_gold__d1p7qgdkczo2_large_2x.jpg",
-          "alt": "Apple iPhone Air in Light Gold, view 4"
+          "key": "mobiles/apple-iphone-air/light-gold-4",
+          "alt": "Apple iPhone Air in Light Gold, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_gold__d1p7qgdkczo2_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Cloud White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Cloud White"
+          "key": "mobiles/apple-iphone-air/cloud-white-1",
+          "alt": "Apple iPhone Air in Cloud White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Cloud White, view 2"
+          "key": "mobiles/apple-iphone-air/cloud-white-3",
+          "alt": "Apple iPhone Air in Cloud White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Cloud White, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_white__bsqapwl67oj6_large_2x.jpg",
-          "alt": "Apple iPhone Air in Cloud White, view 4"
+          "key": "mobiles/apple-iphone-air/cloud-white-4",
+          "alt": "Apple iPhone Air in Cloud White, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_white__bsqapwl67oj6_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Space Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Space Black"
+          "key": "mobiles/apple-iphone-air/space-black-1",
+          "alt": "Apple iPhone Air in Space Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Space Black, view 2"
+          "key": "mobiles/apple-iphone-air/space-black-3",
+          "alt": "Apple iPhone Air in Space Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Air in Space Black, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_black__bavqefsedg82_large_2x.jpg",
-          "alt": "Apple iPhone Air in Space Black, view 4"
+          "key": "mobiles/apple-iphone-air/space-black-4",
+          "alt": "Apple iPhone Air in Space Black, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_black__bavqefsedg82_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ]
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/iphone-air/i/images/overview/welcome/hero__c8vidxwr9imq_large_2x.jpg",
-        "alt": "Apple iPhone Air — 5.64 mm thin profile"
+        "key": "mobiles/apple-iphone-air/common-1",
+        "alt": "Apple iPhone Air — 5.64 mm thin profile",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/welcome/hero__c8vidxwr9imq_large_2x.jpg",
+        "width": 2696,
+        "height": 1400
       },
       {
-        "src": "https://www.apple.com/v/iphone-air/i/images/overview/welcome/hero_startframe__ft43ohx1qiaa_large_2x.jpg",
-        "alt": "Apple iPhone Air — side profile"
+        "key": "mobiles/apple-iphone-air/common-2",
+        "alt": "Apple iPhone Air — side profile",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/welcome/hero_startframe__ft43ohx1qiaa_large_2x.jpg",
+        "width": 2696,
+        "height": 1400
       },
       {
-        "src": "https://www.apple.com/v/iphone-air/i/images/overview/highlights/highlights_rear_camera__fwea7ndmxeq2_large_2x.jpg",
-        "alt": "Apple iPhone Air — 48MP Fusion camera"
+        "key": "mobiles/apple-iphone-air/common-3",
+        "alt": "Apple iPhone Air — 48MP Fusion camera",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/highlights/highlights_rear_camera__fwea7ndmxeq2_large_2x.jpg",
+        "width": 2520,
+        "height": 1360
       },
       {
-        "src": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/titanium__e0m72tffcsuq_large_2x.jpg",
-        "alt": "Apple iPhone Air — titanium frame"
+        "key": "mobiles/apple-iphone-air/common-4",
+        "alt": "Apple iPhone Air — titanium frame",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/titanium__e0m72tffcsuq_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
       }
     ]
   },

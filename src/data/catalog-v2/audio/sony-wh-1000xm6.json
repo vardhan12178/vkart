@@ -73,38 +73,56 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_df04bf55-ea47-4444-bcea-2150286f194f.jpg?v=1758890040",
-          "alt": "Sony WH-1000XM6 in Black"
+          "key": "audio/sony-wh-1000xm6/black-1",
+          "alt": "Sony WH-1000XM6 in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_df04bf55-ea47-4444-bcea-2150286f194f.jpg?v=1758890040",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Platinum Silver": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_09d7efe4-e2b5-4da0-8ea9-dd1ca4d00518.jpg?v=1759145883",
-          "alt": "Sony WH-1000XM6 in Platinum Silver"
+          "key": "audio/sony-wh-1000xm6/platinum-silver-1",
+          "alt": "Sony WH-1000XM6 in Platinum Silver",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_09d7efe4-e2b5-4da0-8ea9-dd1ca4d00518.jpg?v=1759145883",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Midnight Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_c23cab14-8b52-4768-a2c5-aee240b3102d.jpg?v=1759145883",
-          "alt": "Sony WH-1000XM6 in Midnight Blue"
+          "key": "audio/sony-wh-1000xm6/midnight-blue-1",
+          "alt": "Sony WH-1000XM6 in Midnight Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_c23cab14-8b52-4768-a2c5-aee240b3102d.jpg?v=1759145883",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "SandPink": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_0c92947e-81b9-40b2-ab70-af22055efb76.jpg?v=1770983895",
-          "alt": "Sony WH-1000XM6 in SandPink"
+          "key": "audio/sony-wh-1000xm6/sandpink-1",
+          "alt": "Sony WH-1000XM6 in SandPink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_0c92947e-81b9-40b2-ab70-af22055efb76.jpg?v=1770983895",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Sand Stone": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_5b8a674c-c4e4-4105-ad8a-85c8b616843b.jpg?v=1780552042",
-          "alt": "Sony WH-1000XM6 in Sand Stone"
+          "key": "audio/sony-wh-1000xm6/sand-stone-1",
+          "alt": "Sony WH-1000XM6 in Sand Stone",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_5b8a674c-c4e4-4105-ad8a-85c8b616843b.jpg?v=1780552042",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Olive Gray": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_71f27818-eec2-437a-a0b7-e6033e2f61c7.jpg?v=1785756394",
-          "alt": "Sony WH-1000XM6 in Olive Gray"
+          "key": "audio/sony-wh-1000xm6/olive-gray-1",
+          "alt": "Sony WH-1000XM6 in Olive Gray",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_71f27818-eec2-437a-a0b7-e6033e2f61c7.jpg?v=1785756394",
+          "width": 1000,
+          "height": 1000
         }
       ]
     },

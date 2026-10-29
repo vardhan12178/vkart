@@ -91,20 +91,14 @@
     "groups": {
       "Silver": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Color-Selection_Silver_PC_1600x864.png",
-          "alt": "Samsung Galaxy Tab S11 in Silver"
-        },
-        {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Silver_WIB_Universal_PC_888x382.jpg",
-          "alt": "Samsung Galaxy Tab S11 in Silver, view 2"
+          "key": "tablets/samsung-galaxy-tab-s11/silver-1",
+          "alt": "Samsung Galaxy Tab S11 in Silver",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Color-Selection_Silver_PC_1600x864.png",
+          "width": 1600,
+          "height": 864
         }
       ],
-      "Gray": [
-        {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/tablets/galaxy-tab-s11/buy/TS11-Gray_WIB_Universal_PC_888x382.jpg",
-          "alt": "Samsung Galaxy Tab S11 in Gray"
-        }
-      ]
+      "Gray": []
     },
     "common": []
   },

@@ -84,11 +84,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 32.0,
+    "screenInch": 32,
     "resolution": "FHD (1,920 x 1,080)",
     "refreshRateHz": 60,
     "panel": "VA",
-    "responseTimeMs": 4.0,
+    "responseTimeMs": 4,
     "curved": false,
     "gaming": false
   },
@@ -107,12 +107,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm500ewxxl/gallery/in-smart-m5-m50f-black-ls32fm500ewxxl-thumb-549581872?$650_519_PNG$",
-        "alt": "Samsung 32\" M5 FHD Smart Monitor"
+        "key": "monitors/samsung-32-inch-m5-fhd-smart-monitor/common-1",
+        "alt": "Samsung 32\" M5 FHD Smart Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm500ewxxl/gallery/in-smart-m5-m50f-black-ls32fm500ewxxl-thumb-549581872?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm500ewxxl/gallery/in-smart-m5-m50f-black-ls32fm500ewxxl-549581696?$650_519_PNG$",
-        "alt": "Samsung 32\" M5 FHD Smart Monitor, view 2"
+        "key": "monitors/samsung-32-inch-m5-fhd-smart-monitor/common-2",
+        "alt": "Samsung 32\" M5 FHD Smart Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm500ewxxl/gallery/in-smart-m5-m50f-black-ls32fm500ewxxl-549581696?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

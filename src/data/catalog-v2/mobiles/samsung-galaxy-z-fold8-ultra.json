@@ -21,7 +21,7 @@
   ],
   "specs": {
     "Display": {
-      "size": 8.0,
+      "size": 8,
       "type": "Foldable Dynamic AMOLED",
       "brightness": "3000 nits peak",
       "outerDisplay": "6.5-inch cover screen"
@@ -56,7 +56,7 @@
     }
   },
   "keySpecs": {
-    "displayInch": 8.0,
+    "displayInch": 8,
     "refreshRateHz": null,
     "mainCameraMP": 200,
     "frontCameraMP": 10,
@@ -108,65 +108,76 @@
     "groups": {
       "Cream": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/product_color_cream_PC.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream"
+          "key": "mobiles/samsung-galaxy-z-fold8-ultra/cream-1",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/product_color_cream_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-cream.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-cream.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream, view 3"
+          "key": "mobiles/samsung-galaxy-z-fold8-ultra/cream-3",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Cream, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-cream.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Graphite": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/product_color_graphite_PC.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite"
+          "key": "mobiles/samsung-galaxy-z-fold8-ultra/graphite-1",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/buy/product_color_graphite_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-graphite.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-graphite.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite, view 3"
+          "key": "mobiles/samsung-galaxy-z-fold8-ultra/graphite-3",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Graphite, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-graphite.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Green Shadow": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-green-shadow.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Green Shadow"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-green-shadow.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Green Shadow, view 2"
+          "key": "mobiles/samsung-galaxy-z-fold8-ultra/green-shadow-2",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Green Shadow, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-green-shadow.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Violet Shadow": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-viewer-initial-violet-shadow.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Violet Shadow"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-violet-shadow.jpg",
-          "alt": "Samsung Galaxy Z Fold8 Ultra in Violet Shadow, view 2"
+          "key": "mobiles/samsung-galaxy-z-fold8-ultra/violet-shadow-2",
+          "alt": "Samsung Galaxy Z Fold8 Ultra in Violet Shadow, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-violet-shadow.jpg",
+          "width": 1392,
+          "height": 656
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-design-start.jpg",
-        "alt": "Samsung Galaxy Z Fold8 Ultra — 4.1 mm unfolded design"
+        "key": "mobiles/samsung-galaxy-z-fold8-ultra/common-1",
+        "alt": "Samsung Galaxy Z Fold8 Ultra — 4.1 mm unfolded design",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-design-start.jpg",
+        "width": 1396,
+        "height": 660
       },
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-seamless-unfolding-start.jpg",
-        "alt": "Samsung Galaxy Z Fold8 Ultra — unfolding"
+        "key": "mobiles/samsung-galaxy-z-fold8-ultra/common-2",
+        "alt": "Samsung Galaxy Z Fold8 Ultra — unfolding",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-seamless-unfolding-start.jpg",
+        "width": 1396,
+        "height": 834
       },
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-dual-titanium-layer.jpg",
-        "alt": "Samsung Galaxy Z Fold8 Ultra — dual Flex Titanium layers"
+        "key": "mobiles/samsung-galaxy-z-fold8-ultra/common-3",
+        "alt": "Samsung Galaxy Z Fold8 Ultra — dual Flex Titanium layers",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8-ultra/images/galaxy-z-fold8-ultra-features-colors-dual-titanium-layer.jpg",
+        "width": 1392,
+        "height": 656
       }
     ]
   },

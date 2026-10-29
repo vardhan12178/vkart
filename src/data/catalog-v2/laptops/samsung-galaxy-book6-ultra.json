@@ -31,7 +31,7 @@
       "ssd": "1TB (up to 2TB), with expansion slot"
     },
     "Display": {
-      "size": 16.0,
+      "size": 16,
       "type": "Dynamic AMOLED 2X, touch",
       "refreshRate": "30–120Hz adaptive",
       "brightness": "1,000 nits HDR",
@@ -63,7 +63,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra X7 358H",
     "gpu": "NVIDIA GeForce RTX / Intel Arc",
-    "displayInch": 16.0,
+    "displayInch": 16,
     "panel": "AMOLED",
     "refreshRateHz": 120,
     "weightKg": 1.89,
@@ -99,35 +99,49 @@
     "groups": {
       "Gray": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np960ujg-kg2in/gallery/in-galaxy-book-np960ujg-kg2in-galaxy-book--ultra--------cm--ultra-------gb--copilot--pc-gray-thumb-551781521?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 Ultra in Gray"
+          "key": "laptops/samsung-galaxy-book6-ultra/gray-1",
+          "alt": "Samsung Galaxy Book6 Ultra in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np960ujg-kg2in/gallery/in-galaxy-book-np960ujg-kg2in-galaxy-book--ultra--------cm--ultra-------gb--copilot--pc-gray-thumb-551781521?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         },
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np960ujh-xg3in/gallery/in-galaxy-book6-ultra-16-inch-np960ujhe-np960ujh-xg3in-thumb-551773809?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 Ultra in Gray, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/galaxy-book6-ultra-gray-pc.jpg",
-          "alt": "Samsung Galaxy Book6 Ultra in Gray, view 3"
+          "key": "laptops/samsung-galaxy-book6-ultra/gray-2",
+          "alt": "Samsung Galaxy Book6 Ultra in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np960ujh-xg3in/gallery/in-galaxy-book6-ultra-16-inch-np960ujhe-np960ujh-xg3in-thumb-551773809?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Design_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Ultra — symmetrical design"
+        "key": "laptops/samsung-galaxy-book6-ultra/common-1",
+        "alt": "Samsung Galaxy Book6 Ultra — symmetrical design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Processor_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Ultra — Intel Core Ultra + NVIDIA RTX"
+        "key": "laptops/samsung-galaxy-book6-ultra/common-2",
+        "alt": "Samsung Galaxy Book6 Ultra — Intel Core Ultra + NVIDIA RTX",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Haptic_Touchpad_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Ultra — haptic touchpad"
+        "key": "laptops/samsung-galaxy-book6-ultra/common-3",
+        "alt": "Samsung Galaxy Book6 Ultra — haptic touchpad",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Haptic_Touchpad_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Battery_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Ultra — battery life"
+        "key": "laptops/samsung-galaxy-book6-ultra/common-4",
+        "alt": "Samsung Galaxy Book6 Ultra — battery life",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Battery_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       }
     ]
   },

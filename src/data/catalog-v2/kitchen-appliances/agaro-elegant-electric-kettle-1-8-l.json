@@ -57,36 +57,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/1Web_3_ad1a8896-b7bc-42c2-bcbd-f2e833ba5912.jpg?v=1763643025",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-1",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/1Web_3_ad1a8896-b7bc-42c2-bcbd-f2e833ba5912.jpg?v=1763643025",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_7970be93-39db-4eb0-a91f-c2d2801bea94.jpg?v=1763643030",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 2"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-2",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_7970be93-39db-4eb0-a91f-c2d2801bea94.jpg?v=1763643030",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_01d7e353-2ba0-40e6-9d73-6417c9bb6764.jpg?v=1763643039",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 3"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-3",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_01d7e353-2ba0-40e6-9d73-6417c9bb6764.jpg?v=1763643039",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_b3e16a68-a3e1-4497-af80-fb3194573ae9.jpg?v=1763643044",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 4"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-4",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_b3e16a68-a3e1-4497-af80-fb3194573ae9.jpg?v=1763643044",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_0ee7815f-6b36-4744-80d9-0466d554e4d4.jpg?v=1763643049",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 5"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-5",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_0ee7815f-6b36-4744-80d9-0466d554e4d4.jpg?v=1763643049",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_dacf9bf2-c057-40a2-b2de-9947805d0728.jpg?v=1763643054",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 6"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-6",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_dacf9bf2-c057-40a2-b2de-9947805d0728.jpg?v=1763643054",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/7_1d9fea18-91c2-4a7b-9e53-8d8956528c44.jpg?v=1763643061",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 7"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-7",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/7_1d9fea18-91c2-4a7b-9e53-8d8956528c44.jpg?v=1763643061",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/8_77f5945e-2a6e-4135-8911-b5415b84bb7e.jpg?v=1763643068",
-        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 8"
+        "key": "kitchen-appliances/agaro-elegant-electric-kettle-1-8-l/common-8",
+        "alt": "Agaro Elegant Electric Kettle 1.8 L, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/8_77f5945e-2a6e-4135-8911-b5415b84bb7e.jpg?v=1763643068",
+        "width": 2048,
+        "height": 2048
       }
     ]
   },

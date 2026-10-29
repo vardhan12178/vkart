@@ -123,32 +123,47 @@
     "groups": {
       "Ultramarine": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 16 in Ultramarine"
+          "key": "mobiles/apple-iphone-16/ultramarine-1",
+          "alt": "Apple iPhone 16 in Ultramarine",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?scl=1&fmt=jpeg&qlt=90",
+          "width": 5120,
+          "height": 2880
         }
       ],
       "Teal": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 16 in Teal"
+          "key": "mobiles/apple-iphone-16/teal-1",
+          "alt": "Apple iPhone 16 in Teal",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-teal?scl=1&fmt=jpeg&qlt=90",
+          "width": 5120,
+          "height": 2880
         }
       ],
       "Pink": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 16 in Pink"
+          "key": "mobiles/apple-iphone-16/pink-1",
+          "alt": "Apple iPhone 16 in Pink",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-pink?scl=1&fmt=jpeg&qlt=90",
+          "width": 5120,
+          "height": 2880
         }
       ],
       "White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-white?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 16 in White"
+          "key": "mobiles/apple-iphone-16/white-1",
+          "alt": "Apple iPhone 16 in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-white?scl=1&fmt=jpeg&qlt=90",
+          "width": 5120,
+          "height": 2880
         }
       ],
       "Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 16 in Black"
+          "key": "mobiles/apple-iphone-16/black-1",
+          "alt": "Apple iPhone 16 in Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?scl=1&fmt=jpeg&qlt=90",
+          "width": 5120,
+          "height": 2880
         }
       ]
     },

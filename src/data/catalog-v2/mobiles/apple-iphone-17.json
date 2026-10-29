@@ -127,103 +127,134 @@
     "groups": {
       "Lavender": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Lavender"
+          "key": "mobiles/apple-iphone-17/lavender-1",
+          "alt": "Apple iPhone 17 in Lavender",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Lavender, view 2"
+          "key": "mobiles/apple-iphone-17/lavender-3",
+          "alt": "Apple iPhone 17 in Lavender, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Lavender, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_lavender__bcaie9a8npj6_large_2x.jpg",
-          "alt": "Apple iPhone 17 in Lavender, view 4"
+          "key": "mobiles/apple-iphone-17/lavender-4",
+          "alt": "Apple iPhone 17 in Lavender, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_lavender__bcaie9a8npj6_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Mist Blue": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Mist Blue"
+          "key": "mobiles/apple-iphone-17/mist-blue-1",
+          "alt": "Apple iPhone 17 in Mist Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Mist Blue, view 2"
+          "key": "mobiles/apple-iphone-17/mist-blue-3",
+          "alt": "Apple iPhone 17 in Mist Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Mist Blue, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_mist_blue__700uff6zu2qa_large_2x.jpg",
-          "alt": "Apple iPhone 17 in Mist Blue, view 4"
+          "key": "mobiles/apple-iphone-17/mist-blue-4",
+          "alt": "Apple iPhone 17 in Mist Blue, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_mist_blue__700uff6zu2qa_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Sage": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Sage"
+          "key": "mobiles/apple-iphone-17/sage-1",
+          "alt": "Apple iPhone 17 in Sage",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Sage, view 2"
+          "key": "mobiles/apple-iphone-17/sage-3",
+          "alt": "Apple iPhone 17 in Sage, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Sage, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_sage__cr1jt90v1yoi_large_2x.jpg",
-          "alt": "Apple iPhone 17 in Sage, view 4"
+          "key": "mobiles/apple-iphone-17/sage-4",
+          "alt": "Apple iPhone 17 in Sage, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_sage__cr1jt90v1yoi_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in White"
+          "key": "mobiles/apple-iphone-17/white-1",
+          "alt": "Apple iPhone 17 in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in White, view 2"
+          "key": "mobiles/apple-iphone-17/white-3",
+          "alt": "Apple iPhone 17 in White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in White, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_white__979ypubjzdum_large_2x.jpg",
-          "alt": "Apple iPhone 17 in White, view 4"
+          "key": "mobiles/apple-iphone-17/white-4",
+          "alt": "Apple iPhone 17 in White, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_white__979ypubjzdum_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Black"
+          "key": "mobiles/apple-iphone-17/black-1",
+          "alt": "Apple iPhone 17 in Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Black, view 2"
+          "key": "mobiles/apple-iphone-17/black-3",
+          "alt": "Apple iPhone 17 in Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17 in Black, view 3"
-        },
-        {
-          "src": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_black__fzuhc3kqvmq2_large_2x.jpg",
-          "alt": "Apple iPhone 17 in Black, view 4"
+          "key": "mobiles/apple-iphone-17/black-4",
+          "alt": "Apple iPhone 17 in Black, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_black__fzuhc3kqvmq2_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ]
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/iphone-17/i/images/overview/cameras/new-camera-features/selfie_intro__bczh72q34vrm_large_2x.jpg",
-        "alt": "Apple iPhone 17 — dual camera and display"
+        "key": "mobiles/apple-iphone-17/common-1",
+        "alt": "Apple iPhone 17 — dual camera and display",
+        "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/cameras/new-camera-features/selfie_intro__bczh72q34vrm_large_2x.jpg",
+        "width": 1788,
+        "height": 1820
       },
       {
-        "src": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/dynamic_island__ea23sqco06c2_large_2x.jpg",
-        "alt": "Apple iPhone 17 — Dynamic Island"
+        "key": "mobiles/apple-iphone-17/common-2",
+        "alt": "Apple iPhone 17 — Dynamic Island",
+        "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/dynamic_island__ea23sqco06c2_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
       }
     ]
   },

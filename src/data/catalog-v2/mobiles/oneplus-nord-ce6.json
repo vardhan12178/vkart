@@ -235,44 +235,71 @@
     "groups": {
       "Fresh Blue": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/e91e06a8fb301c6558fcec2cf13a864a.png",
-          "alt": "OnePlus Nord CE6 in Fresh Blue"
+          "key": "mobiles/oneplus-nord-ce6/fresh-blue-1",
+          "alt": "OnePlus Nord CE6 in Fresh Blue",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/e91e06a8fb301c6558fcec2cf13a864a.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/92a676168612d3b75b1fe08b796120aa.png",
-          "alt": "OnePlus Nord CE6 in Fresh Blue, view 2"
+          "key": "mobiles/oneplus-nord-ce6/fresh-blue-2",
+          "alt": "OnePlus Nord CE6 in Fresh Blue, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/92a676168612d3b75b1fe08b796120aa.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/51feec457c5bf650b20b586faa233956.png",
-          "alt": "OnePlus Nord CE6 in Fresh Blue, view 3"
+          "key": "mobiles/oneplus-nord-ce6/fresh-blue-3",
+          "alt": "OnePlus Nord CE6 in Fresh Blue, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/51feec457c5bf650b20b586faa233956.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Pitch Black": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/b950943e0680f47fe6ea2a1061134caa.png",
-          "alt": "OnePlus Nord CE6 in Pitch Black"
+          "key": "mobiles/oneplus-nord-ce6/pitch-black-1",
+          "alt": "OnePlus Nord CE6 in Pitch Black",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/b950943e0680f47fe6ea2a1061134caa.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/e9dd0df19bca2fa88d4fba2074eb46db.png",
-          "alt": "OnePlus Nord CE6 in Pitch Black, view 2"
+          "key": "mobiles/oneplus-nord-ce6/pitch-black-2",
+          "alt": "OnePlus Nord CE6 in Pitch Black, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/e9dd0df19bca2fa88d4fba2074eb46db.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/c555afc6a30b967907b4a889386d4a7d.png",
-          "alt": "OnePlus Nord CE6 in Pitch Black, view 3"
+          "key": "mobiles/oneplus-nord-ce6/pitch-black-3",
+          "alt": "OnePlus Nord CE6 in Pitch Black, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/c555afc6a30b967907b4a889386d4a7d.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Lunar Pearl": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/5fc7d4537c4e04612c6c0655fe801586.png",
-          "alt": "OnePlus Nord CE6 in Lunar Pearl"
+          "key": "mobiles/oneplus-nord-ce6/lunar-pearl-1",
+          "alt": "OnePlus Nord CE6 in Lunar Pearl",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/5fc7d4537c4e04612c6c0655fe801586.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/1b0465e828d49ca3b6e89dec76dcd5f1.png",
-          "alt": "OnePlus Nord CE6 in Lunar Pearl, view 2"
+          "key": "mobiles/oneplus-nord-ce6/lunar-pearl-2",
+          "alt": "OnePlus Nord CE6 in Lunar Pearl, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/1b0465e828d49ca3b6e89dec76dcd5f1.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/53152bf5a2f34364cd14b228e4080f59.png",
-          "alt": "OnePlus Nord CE6 in Lunar Pearl, view 3"
+          "key": "mobiles/oneplus-nord-ce6/lunar-pearl-3",
+          "alt": "OnePlus Nord CE6 in Lunar Pearl, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/53152bf5a2f34364cd14b228e4080f59.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

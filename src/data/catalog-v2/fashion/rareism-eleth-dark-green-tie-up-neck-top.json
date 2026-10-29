@@ -85,36 +85,60 @@
     "groups": {
       "Dark Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-HM.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-1",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-HM.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08832.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 2"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-2",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08832.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08836.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 3"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-3",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08836.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08835.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 4"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-4",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08835.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08827.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 5"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-5",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08827.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08828.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 6"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-6",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08828.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08842.webp?v=1756980381",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 7"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-7",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08842.webp?v=1756980381",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08824.webp?v=1756980382",
-          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 8"
+          "key": "fashion/rareism-eleth-dark-green-tie-up-neck-top/dark-green-8",
+          "alt": "Rareism Eleth Dark Green Tie-Up Neck Top, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/ELETHGREEN-08824.webp?v=1756980382",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

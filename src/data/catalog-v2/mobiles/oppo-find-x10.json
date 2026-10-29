@@ -213,56 +213,92 @@
     "groups": {
       "Glacier Blue": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/0fbd8daea8a27a1b99008284c9e6dc56.png",
-          "alt": "OPPO Find X10 in Glacier Blue"
+          "key": "mobiles/oppo-find-x10/glacier-blue-1",
+          "alt": "OPPO Find X10 in Glacier Blue",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/0fbd8daea8a27a1b99008284c9e6dc56.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/0b05a27dfc9285ac43ff6d5012156e9e.png",
-          "alt": "OPPO Find X10 in Glacier Blue, view 2"
+          "key": "mobiles/oppo-find-x10/glacier-blue-2",
+          "alt": "OPPO Find X10 in Glacier Blue, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/0b05a27dfc9285ac43ff6d5012156e9e.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/8138d998818d635b61c8b3c2921949ac.png",
-          "alt": "OPPO Find X10 in Glacier Blue, view 3"
+          "key": "mobiles/oppo-find-x10/glacier-blue-3",
+          "alt": "OPPO Find X10 in Glacier Blue, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/8138d998818d635b61c8b3c2921949ac.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/d84ac53d4017f6b9a4fb63fc001c08bf.png",
-          "alt": "OPPO Find X10 in Glacier Blue, view 4"
+          "key": "mobiles/oppo-find-x10/glacier-blue-4",
+          "alt": "OPPO Find X10 in Glacier Blue, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/d84ac53d4017f6b9a4fb63fc001c08bf.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Mist Grey": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/a4713793ddab87a3a68a42e9edfa0d4f.png",
-          "alt": "OPPO Find X10 in Mist Grey"
+          "key": "mobiles/oppo-find-x10/mist-grey-1",
+          "alt": "OPPO Find X10 in Mist Grey",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/a4713793ddab87a3a68a42e9edfa0d4f.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/57a1c7e8ea999f766d17aa1b16535d2d.png",
-          "alt": "OPPO Find X10 in Mist Grey, view 2"
+          "key": "mobiles/oppo-find-x10/mist-grey-2",
+          "alt": "OPPO Find X10 in Mist Grey, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/57a1c7e8ea999f766d17aa1b16535d2d.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/dada698e9649bb2ac11221fe99f476b5.png",
-          "alt": "OPPO Find X10 in Mist Grey, view 3"
+          "key": "mobiles/oppo-find-x10/mist-grey-3",
+          "alt": "OPPO Find X10 in Mist Grey, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/dada698e9649bb2ac11221fe99f476b5.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/df4b836ab84f0b6723ad7b50ef6fc821.png",
-          "alt": "OPPO Find X10 in Mist Grey, view 4"
+          "key": "mobiles/oppo-find-x10/mist-grey-4",
+          "alt": "OPPO Find X10 in Mist Grey, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/df4b836ab84f0b6723ad7b50ef6fc821.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Glow Coral": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/8215cdeea54b1272dad555a1ff431862.png",
-          "alt": "OPPO Find X10 in Glow Coral"
+          "key": "mobiles/oppo-find-x10/glow-coral-1",
+          "alt": "OPPO Find X10 in Glow Coral",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/8215cdeea54b1272dad555a1ff431862.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/61478c91e5f43cad183364d535fec156.png",
-          "alt": "OPPO Find X10 in Glow Coral, view 2"
+          "key": "mobiles/oppo-find-x10/glow-coral-2",
+          "alt": "OPPO Find X10 in Glow Coral, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/61478c91e5f43cad183364d535fec156.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/99975f375950e320f0a16ca79fa3e4cf.png",
-          "alt": "OPPO Find X10 in Glow Coral, view 3"
+          "key": "mobiles/oppo-find-x10/glow-coral-3",
+          "alt": "OPPO Find X10 in Glow Coral, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/99975f375950e320f0a16ca79fa3e4cf.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/1bc1f2183856d864370a0d1aa3c74a4f.png",
-          "alt": "OPPO Find X10 in Glow Coral, view 4"
+          "key": "mobiles/oppo-find-x10/glow-coral-4",
+          "alt": "OPPO Find X10 in Glow Coral, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/1bc1f2183856d864370a0d1aa3c74a4f.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

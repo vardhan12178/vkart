@@ -199,56 +199,92 @@
     "groups": {
       "Sunrise Orange": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/da5964c76f2d79ff7d9f16d83e2b0eb7.png",
-          "alt": "OPPO F35 Pro 5G in Sunrise Orange"
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-1",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/da5964c76f2d79ff7d9f16d83e2b0eb7.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/2fa4612e6c70251ae87e7c9411f4b264.png",
-          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 2"
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-2",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/2fa4612e6c70251ae87e7c9411f4b264.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/9d748535cb2905d5809171ed6a3236fd.png",
-          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 3"
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-3",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/9d748535cb2905d5809171ed6a3236fd.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/b258da0eabf89ee18ae7e63ff7499358.png",
-          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 4"
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-4",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/b258da0eabf89ee18ae7e63ff7499358.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Twilight Brown": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/1b23b3f169ddda33ef322bd8775461b6.png",
-          "alt": "OPPO F35 Pro 5G in Twilight Brown"
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-1",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/1b23b3f169ddda33ef322bd8775461b6.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/9488e6619b4404f6457a6f87df04579f.png",
-          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 2"
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-2",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/9488e6619b4404f6457a6f87df04579f.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/bf6d0c08175662d7fee1d3007c8ce0a5.png",
-          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 3"
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-3",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/bf6d0c08175662d7fee1d3007c8ce0a5.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/2ec84dc209116037bfaa370bdb74216e.png",
-          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 4"
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-4",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/2ec84dc209116037bfaa370bdb74216e.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Wave Blue": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/52f943283859b0b986343232a4e3110b.png",
-          "alt": "OPPO F35 Pro 5G in Wave Blue"
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-1",
+          "alt": "OPPO F35 Pro 5G in Wave Blue",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/52f943283859b0b986343232a4e3110b.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/361a841af566efa60fc5a8490f566073.png",
-          "alt": "OPPO F35 Pro 5G in Wave Blue, view 2"
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-2",
+          "alt": "OPPO F35 Pro 5G in Wave Blue, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/361a841af566efa60fc5a8490f566073.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/ddb7261b8a2cf46bba00efd266793344.png",
-          "alt": "OPPO F35 Pro 5G in Wave Blue, view 3"
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-3",
+          "alt": "OPPO F35 Pro 5G in Wave Blue, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/ddb7261b8a2cf46bba00efd266793344.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/050e47d6a20d1dd09367c92808a8439e.png",
-          "alt": "OPPO F35 Pro 5G in Wave Blue, view 4"
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-4",
+          "alt": "OPPO F35 Pro 5G in Wave Blue, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/050e47d6a20d1dd09367c92808a8439e.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

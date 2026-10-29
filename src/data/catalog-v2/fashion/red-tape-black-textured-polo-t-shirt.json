@@ -80,24 +80,39 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_65df6a1f-4986-40ad-b8b5-df462f41f6da.jpg?v=1789716552",
-          "alt": "Red Tape Black Textured Polo T-Shirt"
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-1",
+          "alt": "Red Tape Black Textured Polo T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_65df6a1f-4986-40ad-b8b5-df462f41f6da.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_3f33edd2-5805-436c-965e-cb11c8df38c7.jpg?v=1789716552",
-          "alt": "Red Tape Black Textured Polo T-Shirt, view 2"
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-2",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_3f33edd2-5805-436c-965e-cb11c8df38c7.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_05205d5b-10d0-4fdf-991d-b00fcd3b0a43.jpg?v=1789716552",
-          "alt": "Red Tape Black Textured Polo T-Shirt, view 3"
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-3",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_05205d5b-10d0-4fdf-991d-b00fcd3b0a43.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_f8952597-6b23-4e7b-b740-6483330d185f.jpg?v=1789716552",
-          "alt": "Red Tape Black Textured Polo T-Shirt, view 4"
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-4",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_f8952597-6b23-4e7b-b740-6483330d185f.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_a28ba62e-6d6a-4a1e-af3f-7020bf8abd79.jpg?v=1789716552",
-          "alt": "Red Tape Black Textured Polo T-Shirt, view 5"
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-5",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_a28ba62e-6d6a-4a1e-af3f-7020bf8abd79.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

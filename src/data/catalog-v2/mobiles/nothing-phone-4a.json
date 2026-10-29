@@ -100,26 +100,38 @@
     "groups": {
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-White.png?v=1772251226",
-          "alt": "Nothing Phone (4a) in White"
+          "key": "mobiles/nothing-phone-4a/white-1",
+          "alt": "Nothing Phone (4a) in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-White.png?v=1772251226",
+          "width": 2048,
+          "height": 2048
         }
       ],
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Black.png?v=1772251226",
-          "alt": "Nothing Phone (4a) in Black"
+          "key": "mobiles/nothing-phone-4a/black-1",
+          "alt": "Nothing Phone (4a) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Black.png?v=1772251226",
+          "width": 2048,
+          "height": 2048
         }
       ],
       "Pink": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pink.png?v=1772251226",
-          "alt": "Nothing Phone (4a) in Pink"
+          "key": "mobiles/nothing-phone-4a/pink-1",
+          "alt": "Nothing Phone (4a) in Pink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pink.png?v=1772251226",
+          "width": 2048,
+          "height": 2048
         }
       ],
       "Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Blue.png?v=1772251226",
-          "alt": "Nothing Phone (4a) in Blue"
+          "key": "mobiles/nothing-phone-4a/blue-1",
+          "alt": "Nothing Phone (4a) in Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Blue.png?v=1772251226",
+          "width": 2048,
+          "height": 2048
         }
       ]
     },

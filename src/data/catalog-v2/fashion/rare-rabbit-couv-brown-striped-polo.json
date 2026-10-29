@@ -88,32 +88,53 @@
     "groups": {
       "Brown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__1_-hm.webp?v=1787907843",
-          "alt": "Rare Rabbit Couv Brown Striped Polo"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-1",
+          "alt": "Rare Rabbit Couv Brown Striped Polo",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__1_-hm.webp?v=1787907843",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__8.webp?v=1787907842",
-          "alt": "Rare Rabbit Couv Brown Striped Polo, view 2"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-2",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__8.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__7.webp?v=1787907843",
-          "alt": "Rare Rabbit Couv Brown Striped Polo, view 3"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-3",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__7.webp?v=1787907843",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__4.webp?v=1787907842",
-          "alt": "Rare Rabbit Couv Brown Striped Polo, view 4"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-4",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__4.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__5.webp?v=1787907842",
-          "alt": "Rare Rabbit Couv Brown Striped Polo, view 5"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-5",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__5.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__6.webp?v=1787907843",
-          "alt": "Rare Rabbit Couv Brown Striped Polo, view 6"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-6",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__6.webp?v=1787907843",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__3.webp?v=1787907842",
-          "alt": "Rare Rabbit Couv Brown Striped Polo, view 7"
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-7",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__3.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

@@ -40,28 +40,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/1_c11ea9e1-72f1-47e5-88db-20128d8e0837.webp?v=1783582936",
-        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades"
+        "key": "grooming/bombay-shaving-company-sensi-smart-3-razor-with-12-blades/common-1",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/1_c11ea9e1-72f1-47e5-88db-20128d8e0837.webp?v=1783582936",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3_207781f9-6e54-4184-9e75-a67ee410c4c1.webp?v=1783582936",
-        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 2"
+        "key": "grooming/bombay-shaving-company-sensi-smart-3-razor-with-12-blades/common-2",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3_207781f9-6e54-4184-9e75-a67ee410c4c1.webp?v=1783582936",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4_ab8695a3-0e1a-4cef-849c-065c072bc7c2.webp?v=1783582936",
-        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 3"
+        "key": "grooming/bombay-shaving-company-sensi-smart-3-razor-with-12-blades/common-3",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4_ab8695a3-0e1a-4cef-849c-065c072bc7c2.webp?v=1783582936",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5_f224d421-fb7c-4926-80b3-7e47d9ecbcb9.webp?v=1783582936",
-        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 4"
+        "key": "grooming/bombay-shaving-company-sensi-smart-3-razor-with-12-blades/common-4",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5_f224d421-fb7c-4926-80b3-7e47d9ecbcb9.webp?v=1783582936",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6_d4230e5c-deea-4947-9bd0-782ce8594012.webp?v=1783582936",
-        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 5"
+        "key": "grooming/bombay-shaving-company-sensi-smart-3-razor-with-12-blades/common-5",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6_d4230e5c-deea-4947-9bd0-782ce8594012.webp?v=1783582936",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2_e3eaccdf-4262-45bf-ab92-c6d73a59a591.webp?v=1783582936",
-        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 6"
+        "key": "grooming/bombay-shaving-company-sensi-smart-3-razor-with-12-blades/common-6",
+        "alt": "Bombay Shaving Company Sensi Smart 3 Razor with 12 Blades, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2_e3eaccdf-4262-45bf-ab92-c6d73a59a591.webp?v=1783582936",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

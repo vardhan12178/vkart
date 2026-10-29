@@ -70,7 +70,7 @@
     }
   },
   "keySpecs": {
-    "capacityKg": 7.0,
+    "capacityKg": 7,
     "type": "Top Load",
     "starRating": 5,
     "inverter": true,
@@ -91,12 +91,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/wa70bg4441yytl/gallery/in-wa4000b-433542-wa70bg4441yytl-thumb-533454784?$650_519_PNG$",
-        "alt": "Samsung 7 kg Ecobubble Top Load Washing Machine WA70BG4441YY"
+        "key": "washing-machines/samsung-7-kg-ecobubble-top-load-washing-machine-wa70bg4441yy/common-1",
+        "alt": "Samsung 7 kg Ecobubble Top Load Washing Machine WA70BG4441YY",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/wa70bg4441yytl/gallery/in-wa4000b-433542-wa70bg4441yytl-thumb-533454784?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/wa70bg4441yytl/gallery/in-wa4000b-433542-wa70bg4441yytl-533454775?$650_519_PNG$",
-        "alt": "Samsung 7 kg Ecobubble Top Load Washing Machine WA70BG4441YY, view 2"
+        "key": "washing-machines/samsung-7-kg-ecobubble-top-load-washing-machine-wa70bg4441yy/common-2",
+        "alt": "Samsung 7 kg Ecobubble Top Load Washing Machine WA70BG4441YY, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/wa70bg4441yytl/gallery/in-wa4000b-433542-wa70bg4441yytl-533454775?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

@@ -71,46 +71,48 @@
     "groups": {
       "Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-49-titanium-black-ultra4_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Ultra 4 in Black"
+          "key": "wearables/apple-watch-ultra-4/black-3",
+          "alt": "Apple Watch Ultra 4 in Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-49-titanium-black-ultra4_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Ultra 4 in Black, view 2"
+          "key": "wearables/apple-watch-ultra-4/black-4",
+          "alt": "Apple Watch Ultra 4 in Black, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Ultra 4 in Black, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Ultra 4 in Black, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Ultra 4 in Black, view 5"
+          "key": "wearables/apple-watch-ultra-4/black-5",
+          "alt": "Apple Watch Ultra 4 in Black, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Natural": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-49-titanium-natural-ultra4_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Ultra 4 in Natural"
+          "key": "wearables/apple-watch-ultra-4/natural-3",
+          "alt": "Apple Watch Ultra 4 in Natural, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-49-titanium-natural-ultra4_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Ultra 4 in Natural, view 2"
+          "key": "wearables/apple-watch-ultra-4/natural-4",
+          "alt": "Apple Watch Ultra 4 in Natural, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Ultra 4 in Natural, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Ultra 4 in Natural, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Ultra 4 in Natural, view 5"
+          "key": "wearables/apple-watch-ultra-4/natural-5",
+          "alt": "Apple Watch Ultra 4 in Natural, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-3-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ]
     },

@@ -80,28 +80,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-1.jpg?v=1774597935",
-        "alt": "Zebronics PA224 Gaming Monitor"
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-1",
+        "alt": "Zebronics PA224 Gaming Monitor",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-1.jpg?v=1774597935",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-2.jpg?v=1774597936",
-        "alt": "Zebronics PA224 Gaming Monitor, view 2"
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-2",
+        "alt": "Zebronics PA224 Gaming Monitor, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-2.jpg?v=1774597936",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-3.jpg?v=1774597935",
-        "alt": "Zebronics PA224 Gaming Monitor, view 3"
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-3",
+        "alt": "Zebronics PA224 Gaming Monitor, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-3.jpg?v=1774597935",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-4.jpg?v=1774597936",
-        "alt": "Zebronics PA224 Gaming Monitor, view 4"
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-4",
+        "alt": "Zebronics PA224 Gaming Monitor, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-4.jpg?v=1774597936",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-5.jpg?v=1774597936",
-        "alt": "Zebronics PA224 Gaming Monitor, view 5"
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-5",
+        "alt": "Zebronics PA224 Gaming Monitor, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-5.jpg?v=1774597936",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-6.jpg?v=1774597935",
-        "alt": "Zebronics PA224 Gaming Monitor, view 6"
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-6",
+        "alt": "Zebronics PA224 Gaming Monitor, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-6.jpg?v=1774597935",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

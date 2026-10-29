@@ -239,52 +239,21 @@
     "groups": {
       "Sand Storm": [
         {
-          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/15/spec/OnePlus15-sand-1080x1080.png",
-          "alt": "OnePlus 15 in Sand Storm"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/f96761005541e8715f92bda23561aa89.png",
-          "alt": "OnePlus 15 in Sand Storm, view 2"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/ae35431d38c99cc4696fb8c76b858a69.png",
-          "alt": "OnePlus 15 in Sand Storm, view 3"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/e9a734928c75a96fd56fe48587c70304.png",
-          "alt": "OnePlus 15 in Sand Storm, view 4"
+          "key": "mobiles/oneplus-15/sand-storm-1",
+          "alt": "OnePlus 15 in Sand Storm",
+          "sourceUrl": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/15/spec/OnePlus15-sand-1080x1080.png",
+          "width": 2160,
+          "height": 2160
         }
       ],
-      "Infinite Black": [
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/338f5a8201e50d91d5d544ec1116ee18.png",
-          "alt": "OnePlus 15 in Infinite Black"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/dfa262e028b4ba29290ac0c2ae0fb320.png",
-          "alt": "OnePlus 15 in Infinite Black, view 2"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/0433b47f078e9b0070f5eea07aa20250.png",
-          "alt": "OnePlus 15 in Infinite Black, view 3"
-        }
-      ],
+      "Infinite Black": [],
       "Ultra Violet": [
         {
-          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/15/spec/OnePlus15-ultra-violet-1080x1080.png",
-          "alt": "OnePlus 15 in Ultra Violet"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/84bee93e851c33f9ea027b2ddd51c2b9.png",
-          "alt": "OnePlus 15 in Ultra Violet, view 2"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/0c6aaee9afa8b6811cc152bcc88b82f8.png",
-          "alt": "OnePlus 15 in Ultra Violet, view 3"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202511/06/964f95fc789967b5649da3bac64c78bb.png",
-          "alt": "OnePlus 15 in Ultra Violet, view 4"
+          "key": "mobiles/oneplus-15/ultra-violet-1",
+          "alt": "OnePlus 15 in Ultra Violet",
+          "sourceUrl": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/15/spec/OnePlus15-ultra-violet-1080x1080.png",
+          "width": 2160,
+          "height": 2160
         }
       ]
     },

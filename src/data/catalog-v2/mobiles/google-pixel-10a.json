@@ -117,74 +117,122 @@
     "groups": {
       "Lavender": [
         {
-          "src": "https://lh3.googleusercontent.com/9EjM7hLTMa6gUVkxl44VV_qHqJUBpnt9SLQpbwq9_DErsjofjDkB7phtHMwxm5G-yH0Kh7Sx6L4LauKI8v1WtBskRl5K9DRYPyc=s1600",
-          "alt": "Google Pixel 10a in Lavender, back"
+          "key": "mobiles/google-pixel-10a/lavender-1",
+          "alt": "Google Pixel 10a in Lavender, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/9EjM7hLTMa6gUVkxl44VV_qHqJUBpnt9SLQpbwq9_DErsjofjDkB7phtHMwxm5G-yH0Kh7Sx6L4LauKI8v1WtBskRl5K9DRYPyc=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/mWOBOxWax8zBV3Q5BmgH9gEb6Xh_2dzNVAUHf7pbZAOBshZ08RIHJ3srAb4kW5TZDjNzJ5RxqPUc2wC_MoaNX_Q1NyYEW5v6nevZ=s1600",
-          "alt": "Google Pixel 10a in Lavender, front"
+          "key": "mobiles/google-pixel-10a/lavender-2",
+          "alt": "Google Pixel 10a in Lavender, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/mWOBOxWax8zBV3Q5BmgH9gEb6Xh_2dzNVAUHf7pbZAOBshZ08RIHJ3srAb4kW5TZDjNzJ5RxqPUc2wC_MoaNX_Q1NyYEW5v6nevZ=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/uPYSdh5docsvef6eSf8GVT8Bmq8g5PPoEZb3D5NJFp9P_TMWrwqGDSKXo_AbzuRpLlJd_bTIlqyGkLbvchQEUcum8VtePLYhLDw=s1600",
-          "alt": "Google Pixel 10a in Lavender, side"
+          "key": "mobiles/google-pixel-10a/lavender-3",
+          "alt": "Google Pixel 10a in Lavender, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/uPYSdh5docsvef6eSf8GVT8Bmq8g5PPoEZb3D5NJFp9P_TMWrwqGDSKXo_AbzuRpLlJd_bTIlqyGkLbvchQEUcum8VtePLYhLDw=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/2Td1D8wskptpDBanevErXllwEYDWgoOjKo4O_rulhhYaEV6cx_TkGqtxNDc0ICfm3MlHhMunu-H5fLvm-4if6lSu0eKgSDd-XFY=s1600",
-          "alt": "Google Pixel 10a in Lavender, angled back"
+          "key": "mobiles/google-pixel-10a/lavender-4",
+          "alt": "Google Pixel 10a in Lavender, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/2Td1D8wskptpDBanevErXllwEYDWgoOjKo4O_rulhhYaEV6cx_TkGqtxNDc0ICfm3MlHhMunu-H5fLvm-4if6lSu0eKgSDd-XFY=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ],
       "Berry": [
         {
-          "src": "https://lh3.googleusercontent.com/O5ctfwJSbrfQ4fyACTYv5cfT3AxB9hin-n8uzYgjvniskwFzpGhldSFwxJjKzKjHlWsg5I2OyJb3zBiqbTx7ucofxtuQjQDixg=s1600",
-          "alt": "Google Pixel 10a in Berry, back"
+          "key": "mobiles/google-pixel-10a/berry-1",
+          "alt": "Google Pixel 10a in Berry, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/O5ctfwJSbrfQ4fyACTYv5cfT3AxB9hin-n8uzYgjvniskwFzpGhldSFwxJjKzKjHlWsg5I2OyJb3zBiqbTx7ucofxtuQjQDixg=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/7s-85l-q1sJIOiqvsCL7Rwz15CK1podOfzSXDywkhEFAv-oIP1MhQwPxWz6IVCJ6knVFYTTPxviBsoQQLesmFBJ1bluJY3xb0_M=s1600",
-          "alt": "Google Pixel 10a in Berry, front"
+          "key": "mobiles/google-pixel-10a/berry-2",
+          "alt": "Google Pixel 10a in Berry, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/7s-85l-q1sJIOiqvsCL7Rwz15CK1podOfzSXDywkhEFAv-oIP1MhQwPxWz6IVCJ6knVFYTTPxviBsoQQLesmFBJ1bluJY3xb0_M=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/kRf1ysW89DvPWyLHigkaFTdNImDGnNhRNpkkBsNdLxe4NWSQBXe9qOhXAj1Lgthccs0RMNu2jq2GNCAPmt453itBZmOtO1HMuJki=s1600",
-          "alt": "Google Pixel 10a in Berry, side"
+          "key": "mobiles/google-pixel-10a/berry-3",
+          "alt": "Google Pixel 10a in Berry, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/kRf1ysW89DvPWyLHigkaFTdNImDGnNhRNpkkBsNdLxe4NWSQBXe9qOhXAj1Lgthccs0RMNu2jq2GNCAPmt453itBZmOtO1HMuJki=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/lHsHirYHO7jVex15lD39MFKARKIpjx295MRYZtqDqKXAgJWSx6Xum4RuVUYEMhsLKCrSEqmgCuOUOfYSPWK0RH9laDKi219gZ9kd=s1600",
-          "alt": "Google Pixel 10a in Berry, angled back"
+          "key": "mobiles/google-pixel-10a/berry-4",
+          "alt": "Google Pixel 10a in Berry, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/lHsHirYHO7jVex15lD39MFKARKIpjx295MRYZtqDqKXAgJWSx6Xum4RuVUYEMhsLKCrSEqmgCuOUOfYSPWK0RH9laDKi219gZ9kd=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ],
       "Fog": [
         {
-          "src": "https://lh3.googleusercontent.com/bdVla-ncH5TJIAjwc_fovko5kqKtbHyYcGW4NPzWn4sEwaeEFygfCxqWrIi1foYzQb6IsqfHNPF1u5IQMwJbegw3PKJsrFeLi64=s1600",
-          "alt": "Google Pixel 10a in Fog, back"
+          "key": "mobiles/google-pixel-10a/fog-1",
+          "alt": "Google Pixel 10a in Fog, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/bdVla-ncH5TJIAjwc_fovko5kqKtbHyYcGW4NPzWn4sEwaeEFygfCxqWrIi1foYzQb6IsqfHNPF1u5IQMwJbegw3PKJsrFeLi64=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/hkEORFoOF8OWwISs7stBwDpq_Yzw78WSmkcVMA-4RruqoX5mVuFzAqzopKAIAf5SCK7SgDw-i-rKAIYLI6Jk8LUdlpRpB4xIQA=s1600",
-          "alt": "Google Pixel 10a in Fog, front"
+          "key": "mobiles/google-pixel-10a/fog-2",
+          "alt": "Google Pixel 10a in Fog, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/hkEORFoOF8OWwISs7stBwDpq_Yzw78WSmkcVMA-4RruqoX5mVuFzAqzopKAIAf5SCK7SgDw-i-rKAIYLI6Jk8LUdlpRpB4xIQA=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/jgEg_O7DCpM_3V_qNQ_97iq0Xmw5JOjZuQVpvpfGP1lw5KzoLLugobjPIC9fB3lrAsgrd-1rsK-zaywCKpvLSA0MUo6LSM8PF_0=s1600",
-          "alt": "Google Pixel 10a in Fog, side"
+          "key": "mobiles/google-pixel-10a/fog-3",
+          "alt": "Google Pixel 10a in Fog, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/jgEg_O7DCpM_3V_qNQ_97iq0Xmw5JOjZuQVpvpfGP1lw5KzoLLugobjPIC9fB3lrAsgrd-1rsK-zaywCKpvLSA0MUo6LSM8PF_0=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/aalucKlAm-9YDs254a6hB6L0RoWdO5LjPX4AOubEbBKXlRu1CgjCrNsMrtQadzo-wLIaccEsRAAPaHRLwZnjSC4SdQVkvZnKq7YP=s1600",
-          "alt": "Google Pixel 10a in Fog, angled back"
+          "key": "mobiles/google-pixel-10a/fog-4",
+          "alt": "Google Pixel 10a in Fog, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/aalucKlAm-9YDs254a6hB6L0RoWdO5LjPX4AOubEbBKXlRu1CgjCrNsMrtQadzo-wLIaccEsRAAPaHRLwZnjSC4SdQVkvZnKq7YP=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ],
       "Obsidian": [
         {
-          "src": "https://lh3.googleusercontent.com/Zi-CXX_GzU1VUXGcIBg_xL4WB5VVeY_TaM072xdXwUXaHgaRz23eVbq0UJ4mdiw5LuXq4CprbE-2N7dxSiWpfGxkMU2KtmB-CaI=s1600",
-          "alt": "Google Pixel 10a in Obsidian, back"
+          "key": "mobiles/google-pixel-10a/obsidian-1",
+          "alt": "Google Pixel 10a in Obsidian, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/Zi-CXX_GzU1VUXGcIBg_xL4WB5VVeY_TaM072xdXwUXaHgaRz23eVbq0UJ4mdiw5LuXq4CprbE-2N7dxSiWpfGxkMU2KtmB-CaI=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/THFGRoJi4862stlR99C6fiX3XOUCeTStEQD6o7HxkiyvgxZwSs6rYlx5yCAs5GAAenDJX2kaYABZi_KU6kSC2iM_t3GlyDiZKw=s1600",
-          "alt": "Google Pixel 10a in Obsidian, front"
+          "key": "mobiles/google-pixel-10a/obsidian-2",
+          "alt": "Google Pixel 10a in Obsidian, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/THFGRoJi4862stlR99C6fiX3XOUCeTStEQD6o7HxkiyvgxZwSs6rYlx5yCAs5GAAenDJX2kaYABZi_KU6kSC2iM_t3GlyDiZKw=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/KBvC1YPHiEVGNoTiavYXuB72B7dcOItGtCvBqFu_I6mdNRlDCObURtAQtw-4BUN-_JYN6knXGOF2Nt5stdRPoXiDanVfAgflEA=s1600",
-          "alt": "Google Pixel 10a in Obsidian, side"
+          "key": "mobiles/google-pixel-10a/obsidian-3",
+          "alt": "Google Pixel 10a in Obsidian, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/KBvC1YPHiEVGNoTiavYXuB72B7dcOItGtCvBqFu_I6mdNRlDCObURtAQtw-4BUN-_JYN6knXGOF2Nt5stdRPoXiDanVfAgflEA=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/8dGxtwPX3Irx_kmnAdaVZw9EEwpJ4Ce0dhIBFxF_MOSV7EE3IGdLENQGLIFVtoFDxHGFWXRoA2vX4kq7YbSlj9A4xafqfMBW9h-g=s1600",
-          "alt": "Google Pixel 10a in Obsidian, angled back"
+          "key": "mobiles/google-pixel-10a/obsidian-4",
+          "alt": "Google Pixel 10a in Obsidian, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/8dGxtwPX3Irx_kmnAdaVZw9EEwpJ4Ce0dhIBFxF_MOSV7EE3IGdLENQGLIFVtoFDxHGFWXRoA2vX4kq7YbSlj9A4xafqfMBW9h-g=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ]
     },

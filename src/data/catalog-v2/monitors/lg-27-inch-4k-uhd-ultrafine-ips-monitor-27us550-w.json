@@ -33,11 +33,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 27.0,
+    "screenInch": 27,
     "resolution": "3840 x 2160",
     "refreshRateHz": 60,
     "panel": "IPS",
-    "responseTimeMs": 5.0,
+    "responseTimeMs": 5,
     "gaming": false
   },
   "variantOptions": [
@@ -55,8 +55,11 @@
     "groups": {},
     "common": [
       {
-        "src": "https://www.lg.com/content/dam/channel/wcms/in/monitors/ultrafine/27us550-w/gallery/27US550-W-450X450.jpg",
-        "alt": "LG 27\" 4K UHD UltraFine IPS Monitor 27US550-W"
+        "key": "monitors/lg-27-inch-4k-uhd-ultrafine-ips-monitor-27us550-w/common-1",
+        "alt": "LG 27\" 4K UHD UltraFine IPS Monitor 27US550-W",
+        "sourceUrl": "https://www.lg.com/content/dam/channel/wcms/in/monitors/ultrafine/27us550-w/gallery/27US550-W-450X450.jpg",
+        "width": 450,
+        "height": 450
       }
     ]
   },

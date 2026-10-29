@@ -87,7 +87,7 @@
     "chargingW": 80,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 228.0,
+    "weightG": 228,
     "chip": "Dimensity 9500 Super Edition",
     "os": "Android",
     "ramGB": 12
@@ -120,70 +120,104 @@
     "groups": {
       "Nebula Teal": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201174015/8ba30dfe2ea920db1d64d85cec36726e.png",
-          "alt": "vivo X Fold6 in Nebula Teal"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-1",
+          "alt": "vivo X Fold6 in Nebula Teal",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201174015/8ba30dfe2ea920db1d64d85cec36726e.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173512/22955006894519b1c825c0b9cef10dd7.jpg",
-          "alt": "vivo X Fold6 in Nebula Teal, view 2"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-3",
+          "alt": "vivo X Fold6 in Nebula Teal, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173716/9180c5863ca372d3163acd471be8e1a2.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173716/9180c5863ca372d3163acd471be8e1a2.png",
-          "alt": "vivo X Fold6 in Nebula Teal, view 3"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-4",
+          "alt": "vivo X Fold6 in Nebula Teal, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173630/1f953bfd66ac1d7e02e468928a9d2128.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173630/1f953bfd66ac1d7e02e468928a9d2128.png",
-          "alt": "vivo X Fold6 in Nebula Teal, view 4"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-5",
+          "alt": "vivo X Fold6 in Nebula Teal, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173791/bc793b7cae8567287d033a0829618ad2.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173791/bc793b7cae8567287d033a0829618ad2.png",
-          "alt": "vivo X Fold6 in Nebula Teal, view 5"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-6",
+          "alt": "vivo X Fold6 in Nebula Teal, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173363/bf85fd9f77860e56ba5d7d4277b42789.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173363/bf85fd9f77860e56ba5d7d4277b42789.png",
-          "alt": "vivo X Fold6 in Nebula Teal, view 6"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-7",
+          "alt": "vivo X Fold6 in Nebula Teal, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201174975/554394893b4753f56f8a31cbc038a542.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201174975/554394893b4753f56f8a31cbc038a542.png",
-          "alt": "vivo X Fold6 in Nebula Teal, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201175046/59b027342421eb36da7df5d51908e213.jpg",
-          "alt": "vivo X Fold6 in Nebula Teal, view 8"
+          "key": "mobiles/vivo-x-fold6/nebula-teal-8",
+          "alt": "vivo X Fold6 in Nebula Teal, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201175046/59b027342421eb36da7df5d51908e213.jpg",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Prism Black": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228731/ed9fcbbca2de77dc9223fd844f05a35a.png",
-          "alt": "vivo X Fold6 in Prism Black"
+          "key": "mobiles/vivo-x-fold6/prism-black-1",
+          "alt": "vivo X Fold6 in Prism Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228731/ed9fcbbca2de77dc9223fd844f05a35a.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228926/e2507f2add61601af0055c6f032dd33c.jpg",
-          "alt": "vivo X Fold6 in Prism Black, view 2"
+          "key": "mobiles/vivo-x-fold6/prism-black-3",
+          "alt": "vivo X Fold6 in Prism Black, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228734/db60b9c7943de80e9a5161d8a632f4da.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228734/db60b9c7943de80e9a5161d8a632f4da.png",
-          "alt": "vivo X Fold6 in Prism Black, view 3"
+          "key": "mobiles/vivo-x-fold6/prism-black-4",
+          "alt": "vivo X Fold6 in Prism Black, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228804/c5f288c466dda92b57b1b3d7413bb134.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228804/c5f288c466dda92b57b1b3d7413bb134.png",
-          "alt": "vivo X Fold6 in Prism Black, view 4"
+          "key": "mobiles/vivo-x-fold6/prism-black-5",
+          "alt": "vivo X Fold6 in Prism Black, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228713/1f32dabb73950cbbf06b7e15cbee6901.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228713/1f32dabb73950cbbf06b7e15cbee6901.png",
-          "alt": "vivo X Fold6 in Prism Black, view 5"
+          "key": "mobiles/vivo-x-fold6/prism-black-6",
+          "alt": "vivo X Fold6 in Prism Black, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228757/c38bcac905d563fe75e0ca7e08906bd4.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228757/c38bcac905d563fe75e0ca7e08906bd4.png",
-          "alt": "vivo X Fold6 in Prism Black, view 6"
+          "key": "mobiles/vivo-x-fold6/prism-black-7",
+          "alt": "vivo X Fold6 in Prism Black, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201230061/e6473efb621190c46fb1422b3489f1a0.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201230061/e6473efb621190c46fb1422b3489f1a0.png",
-          "alt": "vivo X Fold6 in Prism Black, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201230330/149dd3b822cfaacfe294db16ff781df6.jpg",
-          "alt": "vivo X Fold6 in Prism Black, view 8"
+          "key": "mobiles/vivo-x-fold6/prism-black-8",
+          "alt": "vivo X Fold6 in Prism Black, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201230330/149dd3b822cfaacfe294db16ff781df6.jpg",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

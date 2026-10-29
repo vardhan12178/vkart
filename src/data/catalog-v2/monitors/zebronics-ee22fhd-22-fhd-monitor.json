@@ -49,7 +49,7 @@
     "resolution": "1920 X 1080",
     "refreshRateHz": null,
     "panel": null,
-    "responseTimeMs": 5.0,
+    "responseTimeMs": 5,
     "gaming": false
   },
   "variantOptions": [
@@ -67,12 +67,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EE22-FHD-LED-pic1.jpg?v=1775200718",
-        "alt": "Zebronics EE22FHD 22\" FHD Monitor"
+        "key": "monitors/zebronics-ee22fhd-22-fhd-monitor/common-1",
+        "alt": "Zebronics EE22FHD 22\" FHD Monitor",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EE22-FHD-LED-pic1.jpg?v=1775200718",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EE22-FHD-LED-pic2.jpg?v=1775200718",
-        "alt": "Zebronics EE22FHD 22\" FHD Monitor, view 2"
+        "key": "monitors/zebronics-ee22fhd-22-fhd-monitor/common-2",
+        "alt": "Zebronics EE22FHD 22\" FHD Monitor, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EE22-FHD-LED-pic2.jpg?v=1775200718",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

@@ -59,20 +59,29 @@
     "groups": {
       "Light Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-light-green-3_4-view-thumbnail.webp?v=1788847569",
-          "alt": "CMF Headphone Pro in Light Green"
+          "key": "audio/cmf-headphone-pro/light-green-1",
+          "alt": "CMF Headphone Pro in Light Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-light-green-3_4-view-thumbnail.webp?v=1788847569",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Light Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-light-grey-3_4-view-thumbnail.webp?v=1788847569",
-          "alt": "CMF Headphone Pro in Light Grey"
+          "key": "audio/cmf-headphone-pro/light-grey-1",
+          "alt": "CMF Headphone Pro in Light Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-light-grey-3_4-view-thumbnail.webp?v=1788847569",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Dark Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-dark-grey-3_4-view-thumbnail.webp?v=1788847569",
-          "alt": "CMF Headphone Pro in Dark Grey"
+          "key": "audio/cmf-headphone-pro/dark-grey-1",
+          "alt": "CMF Headphone Pro in Dark Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/cmf-headphone-pro-dark-grey-3_4-view-thumbnail.webp?v=1788847569",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

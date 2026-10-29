@@ -172,16 +172,25 @@
     "groups": {
       "Lavender Purple": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/669fcb0bc0596f205b20fe594d66c18c.png",
-          "alt": "OPPO Pad Mini in Lavender Purple"
+          "key": "tablets/oppo-pad-mini/lavender-purple-1",
+          "alt": "OPPO Pad Mini in Lavender Purple",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/669fcb0bc0596f205b20fe594d66c18c.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/b2dd6fec7ad33cdbfb4817180a22443f.png",
-          "alt": "OPPO Pad Mini in Lavender Purple, view 2"
+          "key": "tablets/oppo-pad-mini/lavender-purple-2",
+          "alt": "OPPO Pad Mini in Lavender Purple, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/b2dd6fec7ad33cdbfb4817180a22443f.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/ed52c5e0b17de9efd01fa6907298bf9c.png",
-          "alt": "OPPO Pad Mini in Lavender Purple, view 3"
+          "key": "tablets/oppo-pad-mini/lavender-purple-3",
+          "alt": "OPPO Pad Mini in Lavender Purple, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/ed52c5e0b17de9efd01fa6907298bf9c.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

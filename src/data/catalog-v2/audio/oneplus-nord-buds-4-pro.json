@@ -82,38 +82,62 @@
     "groups": {
       "Radiant Gray": [
         {
-          "src": "https://image01-in.oneplus.net/media/202603/03/b9f3cc5281821f1a72cbc44d46e72ea8.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray"
+          "key": "audio/oneplus-nord-buds-4-pro/radiant-gray-1",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/03/b9f3cc5281821f1a72cbc44d46e72ea8.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/20/947662e3440783b57d32fca906f0e0fc.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 2"
+          "key": "audio/oneplus-nord-buds-4-pro/radiant-gray-2",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/20/947662e3440783b57d32fca906f0e0fc.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/03/4ac5434d59ebf5591919e66320134197.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 3"
+          "key": "audio/oneplus-nord-buds-4-pro/radiant-gray-3",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/03/4ac5434d59ebf5591919e66320134197.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/03/7dc7a887596e332d083b6ada16185393.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 4"
+          "key": "audio/oneplus-nord-buds-4-pro/radiant-gray-4",
+          "alt": "OnePlus Nord Buds 4 Pro in Radiant Gray, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/03/7dc7a887596e332d083b6ada16185393.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Raven Black": [
         {
-          "src": "https://image01-in.oneplus.net/media/202603/03/e7101772f18696c5f69a19bfcbca1bad.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Raven Black"
+          "key": "audio/oneplus-nord-buds-4-pro/raven-black-1",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/03/e7101772f18696c5f69a19bfcbca1bad.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/20/4330c98c37744ffc047d389a1956a091.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 2"
+          "key": "audio/oneplus-nord-buds-4-pro/raven-black-2",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/20/4330c98c37744ffc047d389a1956a091.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/03/18ca7dde24e4f8f4a14bafdd23805d8a.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 3"
+          "key": "audio/oneplus-nord-buds-4-pro/raven-black-3",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/03/18ca7dde24e4f8f4a14bafdd23805d8a.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/03/fde4a1479e55d61acf927d4b7cc5d6bb.png",
-          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 4"
+          "key": "audio/oneplus-nord-buds-4-pro/raven-black-4",
+          "alt": "OnePlus Nord Buds 4 Pro in Raven Black, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/03/fde4a1479e55d61acf927d4b7cc5d6bb.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

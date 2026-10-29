@@ -107,69 +107,83 @@
     "groups": {
       "Cream": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_cream_PC.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Cream"
+          "key": "mobiles/samsung-galaxy-z-fold8/cream-1",
+          "alt": "Samsung Galaxy Z Fold8 in Cream",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_cream_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-viewer-initial-cream.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Cream, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-cream.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Cream, view 3"
+          "key": "mobiles/samsung-galaxy-z-fold8/cream-3",
+          "alt": "Samsung Galaxy Z Fold8 in Cream, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-cream.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Graphite": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_graphite_PC.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Graphite"
+          "key": "mobiles/samsung-galaxy-z-fold8/graphite-1",
+          "alt": "Samsung Galaxy Z Fold8 in Graphite",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_graphite_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-viewer-initial-graphite.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Graphite, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-graphite.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Graphite, view 3"
+          "key": "mobiles/samsung-galaxy-z-fold8/graphite-3",
+          "alt": "Samsung Galaxy Z Fold8 in Graphite, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-graphite.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Lavender": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_lavender_PC.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Lavender"
+          "key": "mobiles/samsung-galaxy-z-fold8/lavender-1",
+          "alt": "Samsung Galaxy Z Fold8 in Lavender",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_lavender_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-viewer-initial-lavender.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Lavender, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-lavender.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Lavender, view 3"
+          "key": "mobiles/samsung-galaxy-z-fold8/lavender-3",
+          "alt": "Samsung Galaxy Z Fold8 in Lavender, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-lavender.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Pistachio": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_pistachio_PC.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Pistachio"
+          "key": "mobiles/samsung-galaxy-z-fold8/pistachio-1",
+          "alt": "Samsung Galaxy Z Fold8 in Pistachio",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_pistachio_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-viewer-initial-pistachio.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Pistachio, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-pistachio.jpg",
-          "alt": "Samsung Galaxy Z Fold8 in Pistachio, view 3"
+          "key": "mobiles/samsung-galaxy-z-fold8/pistachio-3",
+          "alt": "Samsung Galaxy Z Fold8 in Pistachio, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-pistachio.jpg",
+          "width": 1392,
+          "height": 656
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-design-start.jpg",
-        "alt": "Samsung Galaxy Z Fold8 — 4.5 mm unfolded design"
+        "key": "mobiles/samsung-galaxy-z-fold8/common-1",
+        "alt": "Samsung Galaxy Z Fold8 — 4.5 mm unfolded design",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-design-start.jpg",
+        "width": 1396,
+        "height": 660
       },
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-seamless-unfolding-start.jpg",
-        "alt": "Samsung Galaxy Z Fold8 — unfolding"
+        "key": "mobiles/samsung-galaxy-z-fold8/common-2",
+        "alt": "Samsung Galaxy Z Fold8 — unfolding",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-seamless-unfolding-start.jpg",
+        "width": 1396,
+        "height": 860
       }
     ]
   },

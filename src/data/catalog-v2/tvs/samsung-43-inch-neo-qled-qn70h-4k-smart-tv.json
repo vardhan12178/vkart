@@ -127,7 +127,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 43.0,
+    "screenInch": 43,
     "resolution": "3840 x 2160",
     "refreshRateHz": null,
     "panel": "Neo QLED",
@@ -150,12 +150,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43qn70haulxl/gallery/in-qled-qn70h-qa43qn70haulxl-thumb-551772573?$650_519_PNG$",
-        "alt": "Samsung 43\" Neo QLED QN70H 4K Smart TV"
+        "key": "tvs/samsung-43-inch-neo-qled-qn70h-4k-smart-tv/common-1",
+        "alt": "Samsung 43\" Neo QLED QN70H 4K Smart TV",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43qn70haulxl/gallery/in-qled-qn70h-qa43qn70haulxl-thumb-551772573?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43qn70haulxl/gallery/in-qled-qn70h-qa43qn70haulxl-551772566?$650_519_PNG$",
-        "alt": "Samsung 43\" Neo QLED QN70H 4K Smart TV, view 2"
+        "key": "tvs/samsung-43-inch-neo-qled-qn70h-4k-smart-tv/common-2",
+        "alt": "Samsung 43\" Neo QLED QN70H 4K Smart TV, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43qn70haulxl/gallery/in-qled-qn70h-qa43qn70haulxl-551772566?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

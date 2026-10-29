@@ -108,7 +108,7 @@
     "resolution": "1920x1080",
     "refreshRateHz": 165,
     "panel": "VA",
-    "responseTimeMs": 1.0,
+    "responseTimeMs": 1,
     "gaming": true,
     "curved": false
   },
@@ -127,20 +127,32 @@
     "groups": {},
     "common": [
       {
-        "src": "https://image.benq.com/is/image/benqco/ex240n-stone?$ResponsivePreset$&wid=1200",
-        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor"
+        "key": "monitors/benq-mobiuz-ex240n/common-1",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex240n-stone?$ResponsivePreset$&wid=1200",
+        "width": 1200,
+        "height": 675
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex240n-eyecare-day?$ResponsivePreset$&wid=1200",
-        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 2"
+        "key": "monitors/benq-mobiuz-ex240n/common-2",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex240n-eyecare-day?$ResponsivePreset$&wid=1200",
+        "width": 1200,
+        "height": 675
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex240n-eyecare-night?$ResponsivePreset$&wid=1200",
-        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 3"
+        "key": "monitors/benq-mobiuz-ex240n/common-3",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 3",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex240n-eyecare-night?$ResponsivePreset$&wid=1200",
+        "width": 1200,
+        "height": 675
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex240n-right45?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 4"
+        "key": "monitors/benq-mobiuz-ex240n/common-4",
+        "alt": "BenQ MOBIUZ EX240N 23.8\" 165Hz Gaming Monitor, view 4",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex240n-right45?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       }
     ]
   },

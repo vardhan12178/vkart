@@ -209,38 +209,62 @@
     "groups": {
       "Tundra Umber": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/rZQlk3NmlUNgfqMl.png",
-          "alt": "OPPO Find X9 Ultra in Tundra Umber"
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-1",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/rZQlk3NmlUNgfqMl.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/IPdSidBfXNYqmnRx.png",
-          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 2"
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-2",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/IPdSidBfXNYqmnRx.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/xBwq6KeIbxDX3vyL.png",
-          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 3"
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-3",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/xBwq6KeIbxDX3vyL.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/L4ICCsaCHx2x6z7G.png",
-          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 4"
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-4",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/L4ICCsaCHx2x6z7G.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Canyon Orange": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/SQhkU3R3719l6tNb.png",
-          "alt": "OPPO Find X9 Ultra in Canyon Orange"
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-1",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/SQhkU3R3719l6tNb.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/XzUk3E2HgiQqdfsu.png",
-          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 2"
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-2",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/XzUk3E2HgiQqdfsu.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/Y3qdpQ5I94wZAJhA.png",
-          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 3"
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-3",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/Y3qdpQ5I94wZAJhA.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/OasDTujvuwVrH45f.png",
-          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 4"
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-4",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/OasDTujvuwVrH45f.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

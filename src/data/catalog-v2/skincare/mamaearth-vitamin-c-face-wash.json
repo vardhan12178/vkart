@@ -54,12 +54,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ChatGPT_Image_Jul_23_2026_01_53_09_PM.png?v=1784800143",
-        "alt": "Mamaearth Vitamin C Face Wash with Turmeric"
+        "key": "skincare/mamaearth-vitamin-c-face-wash/common-1",
+        "alt": "Mamaearth Vitamin C Face Wash with Turmeric",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ChatGPT_Image_Jul_23_2026_01_53_09_PM.png?v=1784800143",
+        "width": 1254,
+        "height": 1254
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ChatGPT_Image_Jul_23_2026_03_17_05_PM.png?v=1784800143",
-        "alt": "Mamaearth Vitamin C Face Wash with Turmeric, view 2"
+        "key": "skincare/mamaearth-vitamin-c-face-wash/common-2",
+        "alt": "Mamaearth Vitamin C Face Wash with Turmeric, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ChatGPT_Image_Jul_23_2026_03_17_05_PM.png?v=1784800143",
+        "width": 1254,
+        "height": 1254
       }
     ]
   },

@@ -64,26 +64,38 @@
     "groups": {
       "Active Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_14_21a9a84f-32e4-4c5f-8730-2b1f57de3e2c.png?v=1781613507",
-          "alt": "boAt Ultima Vogue 2 in Active Black"
+          "key": "wearables/boat-ultima-vogue-2/active-black-1",
+          "alt": "boAt Ultima Vogue 2 in Active Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_14_21a9a84f-32e4-4c5f-8730-2b1f57de3e2c.png?v=1781613507",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Jade Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_8_0c12acfb-9fed-4c4a-8a2a-6d175d05eb05.png?v=1781614351",
-          "alt": "boAt Ultima Vogue 2 in Jade Green"
+          "key": "wearables/boat-ultima-vogue-2/jade-green-1",
+          "alt": "boAt Ultima Vogue 2 in Jade Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_8_0c12acfb-9fed-4c4a-8a2a-6d175d05eb05.png?v=1781614351",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Deep Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_1_c7c633e6-4d53-4607-a664-a3d0ad2ec491.png?v=1781613965",
-          "alt": "boAt Ultima Vogue 2 in Deep Blue"
+          "key": "wearables/boat-ultima-vogue-2/deep-blue-1",
+          "alt": "boAt Ultima Vogue 2 in Deep Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_1_c7c633e6-4d53-4607-a664-a3d0ad2ec491.png?v=1781613965",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Steel Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_20_64eb1b4b-4b02-49b3-8d7e-d4913186db0c.png?v=1781613748",
-          "alt": "boAt Ultima Vogue 2 in Steel Black"
+          "key": "wearables/boat-ultima-vogue-2/steel-black-1",
+          "alt": "boAt Ultima Vogue 2 in Steel Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_20_64eb1b4b-4b02-49b3-8d7e-d4913186db0c.png?v=1781613748",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

@@ -67,106 +67,157 @@
     "groups": {
       "43\"": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-43S25M2-Primary-Image-copy.jpg?v=1782977315",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 43\""
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/43-1",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-43S25M2-Primary-Image-copy.jpg?v=1782977315",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-43S25M2-Main.jpg?v=1752588032",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 2"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/43-2",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-43S25M2-Main.jpg?v=1752588032",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_38c4dc35-593f-4cc0-b080-b0dd0e63c2b5.jpg?v=1752588032",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 3"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/43-3",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_38c4dc35-593f-4cc0-b080-b0dd0e63c2b5.jpg?v=1752588032",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_a8473994-c488-4a00-92b2-3e5ab02426d3.jpg?v=1752588032",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 4"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/43-4",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_a8473994-c488-4a00-92b2-3e5ab02426d3.jpg?v=1752588032",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage_1_7427df44-d927-4aea-b911-990510ab0eb7.jpg?v=1752588697",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 5"
-        },
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-43_50_Port-image.jpg?v=1752588032",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 6"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/43-6",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 43\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-43_50_Port-image.jpg?v=1752588032",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "50\"": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-50S25M2-Primary-Image-copy.jpg?v=1782977717",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 50\""
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/50-1",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-50S25M2-Primary-Image-copy.jpg?v=1782977717",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-50S25M2-Main.jpg?v=1752588346",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 2"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/50-2",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-50S25M2-Main.jpg?v=1752588346",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_f77f7a08-e34a-4c81-87ce-f7ae0a063272.jpg?v=1752588346",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 3"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/50-3",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_f77f7a08-e34a-4c81-87ce-f7ae0a063272.jpg?v=1752588346",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_532349af-5967-4bed-8c81-451782fd4781.jpg?v=1752588346",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 4"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/50-4",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_532349af-5967-4bed-8c81-451782fd4781.jpg?v=1752588346",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-43_50_Port-image_82b66f42-08f3-404f-8bb6-0e6e5f4e3d59.jpg?v=1752588346",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 5"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/50-5",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-43_50_Port-image_82b66f42-08f3-404f-8bb6-0e6e5f4e3d59.jpg?v=1752588346",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-50S25M2-what-in-the-box.jpg?v=1752588346",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 6"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/50-6",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 50\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-50S25M2-what-in-the-box.jpg?v=1752588346",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "55\"": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S25M2-Primary-Image-copy.jpg?v=1782978143",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 55\""
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/55-1",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S25M2-Primary-Image-copy.jpg?v=1782978143",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S25M2-Main.jpg?v=1752588404",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 2"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/55-2",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S25M2-Main.jpg?v=1752588404",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature.jpg?v=1752588404",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 3"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/55-3",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature.jpg?v=1752588404",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps.jpg?v=1752588404",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 4"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/55-4",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps.jpg?v=1752588404",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage_1_7427df44-d927-4aea-b911-990510ab0eb7.jpg?v=1752588697",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 5"
-        },
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-55_65_75_Port-image.jpg?v=1752588404",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 6"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/55-6",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 55\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-55_65_75_Port-image.jpg?v=1752588404",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "65\"": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-65S25M2-Primary-Image-copy.jpg?v=1782978875",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 65\""
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/65-1",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-65S25M2-Primary-Image-copy.jpg?v=1782978875",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-65S25M2-Main.jpg?v=1752588557",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 2"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/65-2",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-65S25M2-Main.jpg?v=1752588557",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_3aa2a5c3-64a4-4a23-b0be-dd437f5ecdf9.jpg?v=1752588557",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 3"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/65-3",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-65-S25M2-tv-feature_3aa2a5c3-64a4-4a23-b0be-dd437f5ecdf9.jpg?v=1752588557",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_3324f0d5-022d-479a-95d2-71317cb8dde6.jpg?v=1752588557",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 4"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/65-4",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-55-65-S25-Google-TV-Screen-Apps_3324f0d5-022d-479a-95d2-71317cb8dde6.jpg?v=1752588557",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage_1_7427df44-d927-4aea-b911-990510ab0eb7.jpg?v=1752588697",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 5"
-        },
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-55_65_75_Port-image_50843669-e694-462b-8cb8-d066813ba834.jpg?v=1752588557",
-          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 6"
+          "key": "tvs/sony-bravia-2-ii-4k-google-tv/65-6",
+          "alt": "Sony BRAVIA 2 II 4K Google TV 65\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-55_65_75_Port-image_50843669-e694-462b-8cb8-d066813ba834.jpg?v=1752588557",
+          "width": 1000,
+          "height": 1000
         }
       ]
     },

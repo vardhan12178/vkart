@@ -34,7 +34,7 @@
     "resolution": "2560 x 1440",
     "refreshRateHz": 180,
     "panel": "VA",
-    "responseTimeMs": 1.0,
+    "responseTimeMs": 1,
     "gaming": true
   },
   "variantOptions": [
@@ -52,8 +52,11 @@
     "groups": {},
     "common": [
       {
-        "src": "https://www.lg.com/content/dam/channel/wcms/in/monitors/gaming/lg-com-pdp-kit_32gs60qc_ultragear_2024/gallery/450x450.jpg",
-        "alt": "LG 32\" UltraGear QHD 180Hz Curved Gaming Monitor 32GS60QC-B"
+        "key": "monitors/lg-32-inch-ultragear-qhd-180hz-curved-gaming-monitor-32gs60qc-b/common-1",
+        "alt": "LG 32\" UltraGear QHD 180Hz Curved Gaming Monitor 32GS60QC-B",
+        "sourceUrl": "https://www.lg.com/content/dam/channel/wcms/in/monitors/gaming/lg-com-pdp-kit_32gs60qc_ultragear_2024/gallery/450x450.jpg",
+        "width": 450,
+        "height": 450
       }
     ]
   },

@@ -61,32 +61,53 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10New.png?v=1721398127",
-        "alt": "Minimalist Niacinamide 10% Face Serum"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-1",
+        "alt": "Minimalist Niacinamide 10% Face Serum",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10New.png?v=1721398127",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10Image2.png?v=1721398568",
-        "alt": "Minimalist Niacinamide 10% Face Serum, view 2"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-2",
+        "alt": "Minimalist Niacinamide 10% Face Serum, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10Image2.png?v=1721398568",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia_10_Image_3_1.png?v=1721379817",
-        "alt": "Minimalist Niacinamide 10% Face Serum, view 3"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-3",
+        "alt": "Minimalist Niacinamide 10% Face Serum, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia_10_Image_3_1.png?v=1721379817",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10Image4.png?v=1721398568",
-        "alt": "Minimalist Niacinamide 10% Face Serum, view 4"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-4",
+        "alt": "Minimalist Niacinamide 10% Face Serum, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10Image4.png?v=1721398568",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10Image5.png?v=1721398568",
-        "alt": "Minimalist Niacinamide 10% Face Serum, view 5"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-5",
+        "alt": "Minimalist Niacinamide 10% Face Serum, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10Image5.png?v=1721398568",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10_10ml_Listing_Image.jpg?v=1758619432",
-        "alt": "Minimalist Niacinamide 10% Face Serum, view 6"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-6",
+        "alt": "Minimalist Niacinamide 10% Face Serum, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Nia10_10ml_Listing_Image.jpg?v=1758619432",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/NiaSerum_ListingImage.png?v=1760691517",
-        "alt": "Minimalist Niacinamide 10% Face Serum, view 7"
+        "key": "skincare/minimalist-niacinamide-10-serum/common-7",
+        "alt": "Minimalist Niacinamide 10% Face Serum, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/NiaSerum_ListingImage.png?v=1760691517",
+        "width": 1100,
+        "height": 1600
       }
     ]
   },

@@ -93,28 +93,46 @@
     "groups": {
       "Dark Navy": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__1__hm.webp?v=1793088413",
-          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt"
+          "key": "fashion/rare-rabbit-voca-dark-navy-typography-t-shirt/dark-navy-1",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__1__hm.webp?v=1793088413",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__4.webp?v=1793088414",
-          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 2"
+          "key": "fashion/rare-rabbit-voca-dark-navy-typography-t-shirt/dark-navy-2",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__4.webp?v=1793088414",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__5.webp?v=1793088413",
-          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 3"
+          "key": "fashion/rare-rabbit-voca-dark-navy-typography-t-shirt/dark-navy-3",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__5.webp?v=1793088413",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__6.webp?v=1793088414",
-          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 4"
+          "key": "fashion/rare-rabbit-voca-dark-navy-typography-t-shirt/dark-navy-4",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__6.webp?v=1793088414",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__7.webp?v=1793088413",
-          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 5"
+          "key": "fashion/rare-rabbit-voca-dark-navy-typography-t-shirt/dark-navy-5",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__7.webp?v=1793088413",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__3.webp?v=1793088414",
-          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 6"
+          "key": "fashion/rare-rabbit-voca-dark-navy-typography-t-shirt/dark-navy-6",
+          "alt": "Rare Rabbit Voca Dark Navy Typography T-Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR317174__3.webp?v=1793088414",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

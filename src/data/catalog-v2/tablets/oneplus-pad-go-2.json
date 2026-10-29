@@ -128,38 +128,62 @@
     "groups": {
       "Lavender Drift": [
         {
-          "src": "https://image01-in.oneplus.net/media/202512/08/4040a6a9e79144406c554f12e598cef2.png",
-          "alt": "OnePlus Pad Go 2 in Lavender Drift"
+          "key": "tablets/oneplus-pad-go-2/lavender-drift-1",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/08/4040a6a9e79144406c554f12e598cef2.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202512/09/e4560d007bf7cef477217f5bba1192f3.png",
-          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 2"
+          "key": "tablets/oneplus-pad-go-2/lavender-drift-2",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/09/e4560d007bf7cef477217f5bba1192f3.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202512/09/5cd88d46690b047041705cd4cbcc9859.png",
-          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 3"
+          "key": "tablets/oneplus-pad-go-2/lavender-drift-3",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/09/5cd88d46690b047041705cd4cbcc9859.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202512/09/b5e666dd482cabfcda602b7d5dc5701d.png",
-          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 4"
+          "key": "tablets/oneplus-pad-go-2/lavender-drift-4",
+          "alt": "OnePlus Pad Go 2 in Lavender Drift, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/09/b5e666dd482cabfcda602b7d5dc5701d.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Shadow Black": [
         {
-          "src": "https://image01-in.oneplus.net/media/202512/08/95560b3bdb6e4b0c79f7b76eacb9e5f0.png",
-          "alt": "OnePlus Pad Go 2 in Shadow Black"
+          "key": "tablets/oneplus-pad-go-2/shadow-black-1",
+          "alt": "OnePlus Pad Go 2 in Shadow Black",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/08/95560b3bdb6e4b0c79f7b76eacb9e5f0.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202512/09/129c7b2750e0e581d565f55c7b676364.png",
-          "alt": "OnePlus Pad Go 2 in Shadow Black, view 2"
+          "key": "tablets/oneplus-pad-go-2/shadow-black-2",
+          "alt": "OnePlus Pad Go 2 in Shadow Black, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/09/129c7b2750e0e581d565f55c7b676364.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202512/09/ceab0831a3cb8b5165ab0d498907351f.png",
-          "alt": "OnePlus Pad Go 2 in Shadow Black, view 3"
+          "key": "tablets/oneplus-pad-go-2/shadow-black-3",
+          "alt": "OnePlus Pad Go 2 in Shadow Black, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/09/ceab0831a3cb8b5165ab0d498907351f.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202512/08/92ca6c726ea18018f6f190217ef8bbfb.png",
-          "alt": "OnePlus Pad Go 2 in Shadow Black, view 4"
+          "key": "tablets/oneplus-pad-go-2/shadow-black-4",
+          "alt": "OnePlus Pad Go 2 in Shadow Black, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202512/08/92ca6c726ea18018f6f190217ef8bbfb.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

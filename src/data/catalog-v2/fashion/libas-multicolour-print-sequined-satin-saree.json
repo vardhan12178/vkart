@@ -58,36 +58,60 @@
     "groups": {
       "Multicolour": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Multicolour-Print-Sequined-Satin-Saree-1105196P_917a3d47-6896-48df-aa2f-9f6f9daacc9e.jpg?v=1793097290",
-          "alt": "Libas Multicolour Print Sequined Satin Saree"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-1",
+          "alt": "Libas Multicolour Print Sequined Satin Saree",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Multicolour-Print-Sequined-Satin-Saree-1105196P_917a3d47-6896-48df-aa2f-9f6f9daacc9e.jpg?v=1793097290",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_1_a6fda54f-6bec-495a-a3bb-0a292cb583ce.jpg?v=1793097290",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 2"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-2",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_1_a6fda54f-6bec-495a-a3bb-0a292cb583ce.jpg?v=1793097290",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_2_1b220591-5deb-4aa4-8ce8-ac9096a5087f.jpg?v=1793097290",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 3"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-3",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_2_1b220591-5deb-4aa4-8ce8-ac9096a5087f.jpg?v=1793097290",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_3_286880a3-c7b0-4b37-bdb1-b6e08229c870.jpg?v=1793097291",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 4"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-4",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_3_286880a3-c7b0-4b37-bdb1-b6e08229c870.jpg?v=1793097291",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_4_6baa15f5-3c7d-44ff-8b9b-3eb09dcf60e5.jpg?v=1793097290",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 5"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-5",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_4_6baa15f5-3c7d-44ff-8b9b-3eb09dcf60e5.jpg?v=1793097290",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_5_515fb4d3-2c71-4928-bf39-e35f88d7dd26.jpg?v=1793097290",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 6"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-6",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_5_515fb4d3-2c71-4928-bf39-e35f88d7dd26.jpg?v=1793097290",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_7_37e20ef0-66ce-4818-a74c-7398f428389c.jpg?v=1793097291",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 7"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-7",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_7_37e20ef0-66ce-4818-a74c-7398f428389c.jpg?v=1793097291",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_Blouse_9b581046-74e1-4e0a-8b50-dd193da7f4f5.jpg?v=1793097289",
-          "alt": "Libas Multicolour Print Sequined Satin Saree, view 8"
+          "key": "fashion/libas-multicolour-print-sequined-satin-saree/multicolour-8",
+          "alt": "Libas Multicolour Print Sequined Satin Saree, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105196P_Blouse_9b581046-74e1-4e0a-8b50-dd193da7f4f5.jpg?v=1793097289",
+          "width": 2160,
+          "height": 2880
         }
       ]
     },

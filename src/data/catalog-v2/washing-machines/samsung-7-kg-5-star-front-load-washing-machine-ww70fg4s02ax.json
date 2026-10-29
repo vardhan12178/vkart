@@ -61,7 +61,7 @@
     }
   },
   "keySpecs": {
-    "capacityKg": 7.0,
+    "capacityKg": 7,
     "type": "Front Load",
     "starRating": 5,
     "inverter": false,
@@ -82,12 +82,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww70fg4s02axtl/gallery/in-ww4100f-ww70fg4s02abtl-ww70fg4s02axtl-thumb-552386203?$650_519_PNG$",
-        "alt": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX"
+        "key": "washing-machines/samsung-7-kg-5-star-front-load-washing-machine-ww70fg4s02ax/common-1",
+        "alt": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww70fg4s02axtl/gallery/in-ww4100f-ww70fg4s02abtl-ww70fg4s02axtl-thumb-552386203?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww70fg4s02axtl/gallery/in-ww4100f-ww70fg4s02abtl-ww70fg4s02axtl-552386195?$650_519_PNG$",
-        "alt": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX, view 2"
+        "key": "washing-machines/samsung-7-kg-5-star-front-load-washing-machine-ww70fg4s02ax/common-2",
+        "alt": "Samsung 7 kg 5-Star Front Load Washing Machine WW70FG4S02AX, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww70fg4s02axtl/gallery/in-ww4100f-ww70fg4s02abtl-ww70fg4s02axtl-552386195?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

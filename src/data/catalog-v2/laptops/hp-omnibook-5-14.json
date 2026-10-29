@@ -88,7 +88,7 @@
   "keySpecs": {
     "processor": "Intel Core 5 320",
     "gpu": "Intel Graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "OLED",
     "refreshRateHz": null,
     "weightKg": 1.16,
@@ -153,114 +153,189 @@
     "groups": {
       "Starlit blue": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-starlit-blue-annot-1_1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Starlit blue"
+          "key": "laptops/hp-omnibook-5-14/starlit-blue-1",
+          "alt": "HP OmniBook 5 14 in Starlit blue",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-starlit-blue-annot-1_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-starlit-blue-annot-2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Starlit blue, view 2"
+          "key": "laptops/hp-omnibook-5-14/starlit-blue-2",
+          "alt": "HP OmniBook 5 14 in Starlit blue, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-starlit-blue-annot-2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Soft honeydew": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_softhoneydew_tnt_bl_win11_catalog_front_8103362.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Soft honeydew"
+          "key": "laptops/hp-omnibook-5-14/soft-honeydew-1",
+          "alt": "HP OmniBook 5 14 in Soft honeydew",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_softhoneydew_tnt_bl_win11_catalog_front_8103362.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-soft-honeydew-annot-1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Soft honeydew, view 2"
+          "key": "laptops/hp-omnibook-5-14/soft-honeydew-2",
+          "alt": "HP OmniBook 5 14 in Soft honeydew, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-soft-honeydew-annot-1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-soft-honeydew-annot-2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Soft honeydew, view 3"
+          "key": "laptops/hp-omnibook-5-14/soft-honeydew-3",
+          "alt": "HP OmniBook 5 14 in Soft honeydew, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-soft-honeydew-annot-2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Smoke silver": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_smokesilver_tnt_bl_win11_catalog_frontleft_8099256.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Smoke silver"
+          "key": "laptops/hp-omnibook-5-14/smoke-silver-1",
+          "alt": "HP OmniBook 5 14 in Smoke silver",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_smokesilver_tnt_bl_win11_catalog_frontleft_8099256.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-smoke-silver-annot-1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Smoke silver, view 2"
+          "key": "laptops/hp-omnibook-5-14/smoke-silver-2",
+          "alt": "HP OmniBook 5 14 in Smoke silver, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-smoke-silver-annot-1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-smoke-silver-annot-2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Smoke silver, view 3"
+          "key": "laptops/hp-omnibook-5-14/smoke-silver-3",
+          "alt": "HP OmniBook 5 14 in Smoke silver, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-smoke-silver-annot-2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Sahara silver": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-front.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-1",
+          "alt": "HP OmniBook 5 14 in Sahara silver",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-front.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-right.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver, view 2"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-2",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-right.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-left.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver, view 3"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-3",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-pc-deso-sahara-silver-left.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ngai_ob5_cs_saharasilver_wlan_t_fhd_ircam_backlit_oled_catalog_rearleft_5885805.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver, view 4"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-4",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ngai_ob5_cs_saharasilver_wlan_t_fhd_ircam_backlit_oled_catalog_rearleft_5885805.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ngai_ob5_cs_saharasilver_wlan_t_fhd_ircam_backlit_oled_catalog_profilestacked_5886001.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver, view 5"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-5",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ngai_ob5_cs_saharasilver_wlan_t_fhd_ircam_backlit_oled_catalog_profilestacked_5886001.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-sahara-silver-usb-type-c-10gbps-en-annot-5.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver, view 6"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-6",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-sahara-silver-usb-type-c-10gbps-en-annot-5.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-sahara-silver-non-ai-version-intel-in-annot-1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Sahara silver, view 7"
+          "key": "laptops/hp-omnibook-5-14/sahara-silver-7",
+          "alt": "HP OmniBook 5 14 in Sahara silver, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-sahara-silver-non-ai-version-intel-in-annot-1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Peony pink": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_peonypink_tnt_bl_win11_catalog_front_8110609.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Peony pink"
+          "key": "laptops/hp-omnibook-5-14/peony-pink-1",
+          "alt": "HP OmniBook 5 14 in Peony pink",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/k/u/kudle_omnibook_14_cs_peonypink_tnt_bl_win11_catalog_front_8110609.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-peony-pink-annot-1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Peony pink, view 2"
+          "key": "laptops/hp-omnibook-5-14/peony-pink-2",
+          "alt": "HP OmniBook 5 14 in Peony pink, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-peony-pink-annot-1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-peony-pink-annot-2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Peony pink, view 3"
+          "key": "laptops/hp-omnibook-5-14/peony-pink-3",
+          "alt": "HP OmniBook 5 14 in Peony pink, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/f/y/fy26-c2-hp-omnibook-5-14-laptop-kudle-in-peony-pink-annot-2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Meteor silver": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-front.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-1",
+          "alt": "HP OmniBook 5 14 in Meteor silver",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-front.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-right.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver, view 2"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-2",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-right.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-left.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver, view 3"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-3",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-5-14-inch-laptop-next-gen-ai-pc-deso-meteor-silver-left.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ob5_cs_meteorsilver_t_fhd_ir_backlit_win11_catalog_rearleft_5672673.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver, view 4"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-4",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ob5_cs_meteorsilver_t_fhd_ir_backlit_win11_catalog_rearleft_5672673.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ob5_cs_meteorsilver_nt_fhd_ir_backlit_win11_catalog_stackedprofile_5672485.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver, view 5"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-5",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/d/e/deso_14_ob5_cs_meteorsilver_nt_fhd_ir_backlit_win11_catalog_stackedprofile_5672485.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-meteor-silver-usb-type-c-10gbps-en-annot-5.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver, view 6"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-6",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-meteor-silver-usb-type-c-10gbps-en-annot-5.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-meteor-silver-non-ai-version-intel-in-annot-1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 5 14 in Meteor silver, view 7"
+          "key": "laptops/hp-omnibook-5-14/meteor-silver-7",
+          "alt": "HP OmniBook 5 14 in Meteor silver, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-5-14-deso-meteor-silver-non-ai-version-intel-in-annot-1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ]
     },

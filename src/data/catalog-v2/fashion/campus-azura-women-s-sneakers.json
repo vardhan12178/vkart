@@ -77,32 +77,53 @@
     "groups": {
       "Mauve": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_01.webp?v=1792739297",
-          "alt": "Campus Azura Women's Sneakers"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-1",
+          "alt": "Campus Azura Women's Sneakers",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_01.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_02.jpg?v=1792739298",
-          "alt": "Campus Azura Women's Sneakers, view 2"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-2",
+          "alt": "Campus Azura Women's Sneakers, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_02.jpg?v=1792739298",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_03.webp?v=1792739297",
-          "alt": "Campus Azura Women's Sneakers, view 3"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-3",
+          "alt": "Campus Azura Women's Sneakers, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_03.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_04.webp?v=1792739298",
-          "alt": "Campus Azura Women's Sneakers, view 4"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-4",
+          "alt": "Campus Azura Women's Sneakers, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_04.webp?v=1792739298",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_05.webp?v=1792739297",
-          "alt": "Campus Azura Women's Sneakers, view 5"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-5",
+          "alt": "Campus Azura Women's Sneakers, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_05.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_06.webp?v=1792739297",
-          "alt": "Campus Azura Women's Sneakers, view 6"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-6",
+          "alt": "Campus Azura Women's Sneakers, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_06.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_07.webp?v=1792739297",
-          "alt": "Campus Azura Women's Sneakers, view 7"
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-7",
+          "alt": "Campus Azura Women's Sneakers, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_07.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

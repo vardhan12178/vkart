@@ -85,12 +85,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rr24h2823uz-nl/gallery/in-oen-door-stylish-crown-design-580292-rr24h2823uz-nl-thumb-551095716?$650_519_PNG$",
-        "alt": "Samsung 223 L Single Door Refrigerator RR24H2823UZ"
+        "key": "refrigerators/samsung-223-l-single-door-refrigerator-rr24h2823uz/common-1",
+        "alt": "Samsung 223 L Single Door Refrigerator RR24H2823UZ",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rr24h2823uz-nl/gallery/in-oen-door-stylish-crown-design-580292-rr24h2823uz-nl-thumb-551095716?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rr24h2823uz-nl/gallery/in-oen-door-stylish-crown-design-580292-rr24h2823uz-nl-551095715?$650_519_PNG$",
-        "alt": "Samsung 223 L Single Door Refrigerator RR24H2823UZ, view 2"
+        "key": "refrigerators/samsung-223-l-single-door-refrigerator-rr24h2823uz/common-2",
+        "alt": "Samsung 223 L Single Door Refrigerator RR24H2823UZ, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rr24h2823uz-nl/gallery/in-oen-door-stylish-crown-design-580292-rr24h2823uz-nl-551095715?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

@@ -71,36 +71,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Listing_1st_Tile_Alpha_Serum_30ml_1001x1001_px.webp?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-1",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Listing_1st_Tile_Alpha_Serum_30ml_1001x1001_px.webp?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/02_94b17f49-0277-47c8-8f79-f3f648b575be.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 2"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-2",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/02_94b17f49-0277-47c8-8f79-f3f648b575be.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_03.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 3"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-3",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_03.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_04.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 4"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-4",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_04.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_05.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 5"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-5",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_05.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_06.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 6"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-6",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_06.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_07.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 7"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-7",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_07.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_08.jpg?v=1776772274",
-        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 8"
+        "key": "skincare/plum-2-alpha-arbutin-tan-fading-serum/common-8",
+        "alt": "Plum 2% Alpha Arbutin & Hyaluronic Acid Tan Fading Serum, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Alpha-Arbutin-Serum-30ml_Amazon_1001x1001_08.jpg?v=1776772274",
+        "width": 1001,
+        "height": 1001
       }
     ]
   },

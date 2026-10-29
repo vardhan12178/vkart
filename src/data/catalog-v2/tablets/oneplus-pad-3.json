@@ -136,14 +136,20 @@
     "groups": {
       "Frosted Silver": [
         {
-          "src": "https://image01-in.oneplus.net/media/202505/23/9e30cbc6ea291d97dd58aa909b3903ac.png",
-          "alt": "OnePlus Pad 3 in Frosted Silver"
+          "key": "tablets/oneplus-pad-3/frosted-silver-1",
+          "alt": "OnePlus Pad 3 in Frosted Silver",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/9e30cbc6ea291d97dd58aa909b3903ac.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Storm Blue": [
         {
-          "src": "https://image01-in.oneplus.net/media/202505/23/73c44b96d09b0a249de49c348b25cce6.png",
-          "alt": "OnePlus Pad 3 in Storm Blue"
+          "key": "tablets/oneplus-pad-3/storm-blue-1",
+          "alt": "OnePlus Pad 3 in Storm Blue",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/73c44b96d09b0a249de49c348b25cce6.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

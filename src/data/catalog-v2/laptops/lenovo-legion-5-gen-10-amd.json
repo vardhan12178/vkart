@@ -68,36 +68,60 @@
     "groups": {
       "Eclipse Black": [
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112926477180.png",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-1",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112926477180.png",
+          "width": 400,
+          "height": 300
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112907128325.png",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 2"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-2",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 2",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112907128325.png",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112839394109.png",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 3"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-3",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 3",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112839394109.png",
+          "width": 420,
+          "height": 420
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113027494334.jpg",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 4"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-4",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 4",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113027494334.jpg",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113036653094.jpg",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 5"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-5",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 5",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113036653094.jpg",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113045333784.jpg",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 6"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-6",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 6",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113045333784.jpg",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113056760104.jpg",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 7"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-7",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 7",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113056760104.jpg",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113106544556.jpg",
-          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 8"
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-8",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 8",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113106544556.jpg",
+          "width": 585,
+          "height": 585
         }
       ]
     },

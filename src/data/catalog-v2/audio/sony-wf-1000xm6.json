@@ -59,14 +59,20 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_1acf2eca-cf18-4c40-9b59-c6184590c315.jpg?v=1785829763",
-          "alt": "Sony WF-1000XM6 in Black"
+          "key": "audio/sony-wf-1000xm6/black-1",
+          "alt": "Sony WF-1000XM6 in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_1acf2eca-cf18-4c40-9b59-c6184590c315.jpg?v=1785829763",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Platinum Silver": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_8b2e8b25-5531-4ce8-8f14-db28a2bcc3f8.jpg?v=1785829784",
-          "alt": "Sony WF-1000XM6 in Platinum Silver"
+          "key": "audio/sony-wf-1000xm6/platinum-silver-1",
+          "alt": "Sony WF-1000XM6 in Platinum Silver",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_8b2e8b25-5531-4ce8-8f14-db28a2bcc3f8.jpg?v=1785829784",
+          "width": 1000,
+          "height": 1000
         }
       ]
     },

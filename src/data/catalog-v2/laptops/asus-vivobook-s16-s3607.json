@@ -122,7 +122,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 9 386H / Intel Core Ultra 7 355 / Intel Core Ultra 5 325",
     "gpu": "Intel UHD Graphics",
-    "displayInch": 16.0,
+    "displayInch": 16,
     "panel": "OLED",
     "refreshRateHz": 60,
     "weightKg": 1.7,
@@ -159,70 +159,118 @@
     "groups": {
       "Cool Silver": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/520eaec0-3e4d-4e59-9b48-cb077e7dd702/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view with JS wallpaper."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-1",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view with JS wallpaper.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/520eaec0-3e4d-4e59-9b48-cb077e7dd702/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/f874c925-1795-4956-8253-fbfcb9b9dd81/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-2",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 45-degree from the back view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/f874c925-1795-4956-8253-fbfcb9b9dd81/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/17691043-4a0a-46ef-80b7-647aa3757b39/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-3",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/17691043-4a0a-46ef-80b7-647aa3757b39/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/12364314-faed-4ee6-9e38-34ebf7612a7e/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-4",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/12364314-faed-4ee6-9e38-34ebf7612a7e/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/53ab365b-e28e-40e7-ad06-1122dc586edd/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree view from above."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-5",
+          "alt": "Cool Silver ASUS Vivobook S16 opened at 90-degree view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/53ab365b-e28e-40e7-ad06-1122dc586edd/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/eab98125-5843-4147-8c8b-700cb6ee7438/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 with backlit keyboard opened at 90-degree view from above"
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-6",
+          "alt": "Cool Silver ASUS Vivobook S16 with backlit keyboard opened at 90-degree view from above",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/eab98125-5843-4147-8c8b-700cb6ee7438/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/3ba032c3-954f-4814-baf9-4ecad35d8dbf/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 closed view from left."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-7",
+          "alt": "Cool Silver ASUS Vivobook S16 closed view from left.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/3ba032c3-954f-4814-baf9-4ecad35d8dbf/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/28b77586-fdd2-4406-a2ea-b1b88bd0c8ec/w800",
-          "alt": "Cool Silver ASUS Vivobook S16 closed view from right."
+          "key": "laptops/asus-vivobook-s16-s3607/cool-silver-8",
+          "alt": "Cool Silver ASUS Vivobook S16 closed view from right.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/28b77586-fdd2-4406-a2ea-b1b88bd0c8ec/w800",
+          "width": 800,
+          "height": 800
         }
       ],
       "Matte Gray": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/341ce098-f374-4a08-9be7-b6150b1ac56f/w800",
-          "alt": "Matte Black ASUS Vivobook S16 opened at 90-degree from the front view with JS wallpaper."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-1",
+          "alt": "Matte Black ASUS Vivobook S16 opened at 90-degree from the front view with JS wallpaper.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/341ce098-f374-4a08-9be7-b6150b1ac56f/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/44b4568b-94a9-48dd-b4d6-6e7f3a96d6bb/w800",
-          "alt": "Matte Gray ASUS Vivobook S16 opened at 45-degree from the back view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-2",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 45-degree from the back view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/44b4568b-94a9-48dd-b4d6-6e7f3a96d6bb/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/0bba0d01-ff04-44c5-9a46-1656a52d88df/w800",
-          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-3",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/0bba0d01-ff04-44c5-9a46-1656a52d88df/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/b7fd94c3-7392-4b89-8799-ab148dabe565/w800",
-          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-4",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b7fd94c3-7392-4b89-8799-ab148dabe565/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/7dcc7708-1d93-44ad-9e90-510bffcec59d/w800",
-          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree view from above."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-5",
+          "alt": "Matte Gray ASUS Vivobook S16 opened at 90-degree view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/7dcc7708-1d93-44ad-9e90-510bffcec59d/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/154d3ce6-c87c-45ab-bbe6-e7441b4239c6/w800",
-          "alt": "Matte Gray ASUS Vivobook S16 with backlit keyboard opened at 90-degree view from above"
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-6",
+          "alt": "Matte Gray ASUS Vivobook S16 with backlit keyboard opened at 90-degree view from above",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/154d3ce6-c87c-45ab-bbe6-e7441b4239c6/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/0750e73c-dca9-4f74-98b0-a5ea3b1d9d8c/w800",
-          "alt": "Matte Gray ASUS Vivobook S16 closed view from left."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-7",
+          "alt": "Matte Gray ASUS Vivobook S16 closed view from left.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/0750e73c-dca9-4f74-98b0-a5ea3b1d9d8c/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/7c327808-5ade-40c1-b994-242d12fee400/w800",
-          "alt": "Matte Gray ASUS Vivobook S14 closed view from right."
+          "key": "laptops/asus-vivobook-s16-s3607/matte-gray-8",
+          "alt": "Matte Gray ASUS Vivobook S14 closed view from right.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/7c327808-5ade-40c1-b994-242d12fee400/w800",
+          "width": 800,
+          "height": 800
         }
       ]
     },

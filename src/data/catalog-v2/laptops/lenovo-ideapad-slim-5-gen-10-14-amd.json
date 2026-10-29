@@ -37,7 +37,7 @@
   "keySpecs": {
     "processor": "AMD Ryzen AI 5 330",
     "gpu": "Integrated AMD Radeon 820M",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "IPS",
     "refreshRateHz": 60,
     "weightKg": null,
@@ -70,16 +70,25 @@
     "groups": {
       "Luna Grey": [
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
-          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey"
+          "key": "laptops/lenovo-ideapad-slim-5-gen-10-14-amd/luna-grey-1",
+          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://p4-ofp.static.pub/fes/cms/2025/03/27/b6mt1s5kf0ireeadrb3e62b0bqnoge929592.jpg",
-          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey, view 2"
+          "key": "laptops/lenovo-ideapad-slim-5-gen-10-14-amd/luna-grey-2",
+          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey, view 2",
+          "sourceUrl": "https://p4-ofp.static.pub/fes/cms/2025/03/27/b6mt1s5kf0ireeadrb3e62b0bqnoge929592.jpg",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://p4-ofp.static.pub/fes/cms/2025/03/27/63ettvcnhe0nq6afokll44h4ppk29v148068.jpg",
-          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey, view 3"
+          "key": "laptops/lenovo-ideapad-slim-5-gen-10-14-amd/luna-grey-3",
+          "alt": "Lenovo IdeaPad Slim 5 Gen 10 (14\", AMD) in Luna Grey, view 3",
+          "sourceUrl": "https://p4-ofp.static.pub/fes/cms/2025/03/27/63ettvcnhe0nq6afokll44h4ppk29v148068.jpg",
+          "width": 420,
+          "height": 420
         }
       ]
     },

@@ -60,12 +60,18 @@
     "groups": {
       "White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-select-202609_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods 5 in White"
+          "key": "audio/apple-airpods-5/white-1",
+          "alt": "AirPods 5 in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-select-202609_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods 5 in White, view 2"
+          "key": "audio/apple-airpods-5/white-2",
+          "alt": "AirPods 5 in White, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ]
     },

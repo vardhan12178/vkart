@@ -60,26 +60,38 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_7c35be30-ec9e-4f4f-8172-68bd850d0c18.jpg?v=1750074352",
-          "alt": "Sony WF-C710N in Black"
+          "key": "audio/sony-wf-c710n/black-1",
+          "alt": "Sony WF-C710N in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_7c35be30-ec9e-4f4f-8172-68bd850d0c18.jpg?v=1750074352",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_5bef80c4-2ecf-448d-aa79-64bd68c541d8.jpg?v=1751457100",
-          "alt": "Sony WF-C710N in Blue"
+          "key": "audio/sony-wf-c710n/blue-1",
+          "alt": "Sony WF-C710N in Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_5bef80c4-2ecf-448d-aa79-64bd68c541d8.jpg?v=1751457100",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "Pink": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_76855a50-758e-4bf6-b79c-073136b6018c.jpg?v=1751457100",
-          "alt": "Sony WF-C710N in Pink"
+          "key": "audio/sony-wf-c710n/pink-1",
+          "alt": "Sony WF-C710N in Pink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_76855a50-758e-4bf6-b79c-073136b6018c.jpg?v=1751457100",
+          "width": 1000,
+          "height": 1000
         }
       ],
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_3475f6c8-6a40-4024-8b56-e28799aa9b14.jpg?v=1751457100",
-          "alt": "Sony WF-C710N in White"
+          "key": "audio/sony-wf-c710n/white-1",
+          "alt": "Sony WF-C710N in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_3475f6c8-6a40-4024-8b56-e28799aa9b14.jpg?v=1751457100",
+          "width": 1000,
+          "height": 1000
         }
       ]
     },

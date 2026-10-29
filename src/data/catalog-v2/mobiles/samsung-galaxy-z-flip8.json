@@ -107,73 +107,90 @@
     "groups": {
       "Cream": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_cream_PC.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Cream"
+          "key": "mobiles/samsung-galaxy-z-flip8/cream-1",
+          "alt": "Samsung Galaxy Z Flip8 in Cream",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_cream_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-cream.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Cream, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-cream.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Cream, view 3"
+          "key": "mobiles/samsung-galaxy-z-flip8/cream-3",
+          "alt": "Samsung Galaxy Z Flip8 in Cream, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-cream.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Graphite": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_graphite_PC.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Graphite"
+          "key": "mobiles/samsung-galaxy-z-flip8/graphite-1",
+          "alt": "Samsung Galaxy Z Flip8 in Graphite",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_graphite_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-graphite.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Graphite, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-graphite.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Graphite, view 3"
+          "key": "mobiles/samsung-galaxy-z-flip8/graphite-3",
+          "alt": "Samsung Galaxy Z Flip8 in Graphite, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-graphite.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Mint": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_mint_PC.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Mint"
+          "key": "mobiles/samsung-galaxy-z-flip8/mint-1",
+          "alt": "Samsung Galaxy Z Flip8 in Mint",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_mint_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-mint.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Mint, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-mint.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Mint, view 3"
+          "key": "mobiles/samsung-galaxy-z-flip8/mint-3",
+          "alt": "Samsung Galaxy Z Flip8 in Mint, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-mint.jpg",
+          "width": 1392,
+          "height": 656
         }
       ],
       "Pink": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_pink_PC.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Pink"
+          "key": "mobiles/samsung-galaxy-z-flip8/pink-1",
+          "alt": "Samsung Galaxy Z Flip8 in Pink",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/buy/product_color_pink_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-viewer-initial-pink.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Pink, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-pink.jpg",
-          "alt": "Samsung Galaxy Z Flip8 in Pink, view 3"
+          "key": "mobiles/samsung-galaxy-z-flip8/pink-3",
+          "alt": "Samsung Galaxy Z Flip8 in Pink, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-pink.jpg",
+          "width": 1392,
+          "height": 656
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-design.jpg",
-        "alt": "Samsung Galaxy Z Flip8 — design"
+        "key": "mobiles/samsung-galaxy-z-flip8/common-1",
+        "alt": "Samsung Galaxy Z Flip8 — design",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-design.jpg",
+        "width": 1920,
+        "height": 1155
       },
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-seamless-unfolding.jpg",
-        "alt": "Samsung Galaxy Z Flip8 — unfolding"
+        "key": "mobiles/samsung-galaxy-z-flip8/common-2",
+        "alt": "Samsung Galaxy Z Flip8 — unfolding",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-seamless-unfolding.jpg",
+        "width": 1392,
+        "height": 656
       },
       {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-durability.jpg",
-        "alt": "Samsung Galaxy Z Flip8 — durability"
+        "key": "mobiles/samsung-galaxy-z-flip8/common-3",
+        "alt": "Samsung Galaxy Z Flip8 — durability",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-flip8/images/galaxy-z-flip8-features-colors-durability.jpg",
+        "width": 1392,
+        "height": 656
       }
     ]
   },

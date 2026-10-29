@@ -92,32 +92,53 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_1__HM.webp?v=1791802270",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-1",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_1__HM.webp?v=1791802270",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_8.webp?v=1791802271",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 2"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-2",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_8.webp?v=1791802271",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_6.webp?v=1791802271",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 3"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-3",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_6.webp?v=1791802271",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_3.webp?v=1791802271",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 4"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-4",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_3.webp?v=1791802271",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_4.webp?v=1791802271",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 5"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-5",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_4.webp?v=1791802271",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_5.webp?v=1791802270",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 6"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-6",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_5.webp?v=1791802270",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_7.webp?v=1791802271",
-          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 7"
+          "key": "fashion/rare-rabbit-kaos-black-floral-print-viscose-shirt/black-7",
+          "alt": "Rare Rabbit Kaos Black Floral Print Viscose Shirt, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306384_7.webp?v=1791802271",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

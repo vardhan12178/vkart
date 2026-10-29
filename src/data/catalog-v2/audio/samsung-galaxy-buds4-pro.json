@@ -62,20 +62,29 @@
     "groups": {
       "Pink Gold": [
         {
-          "src": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_pinkGold_PC_pro.png",
-          "alt": "Samsung Galaxy Buds4 Pro in Pink Gold"
+          "key": "audio/samsung-galaxy-buds4-pro/pink-gold-1",
+          "alt": "Samsung Galaxy Buds4 Pro in Pink Gold",
+          "sourceUrl": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_pinkGold_PC_pro.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "White": [
         {
-          "src": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_white_PC_pro.png",
-          "alt": "Samsung Galaxy Buds4 Pro in White"
+          "key": "audio/samsung-galaxy-buds4-pro/white-1",
+          "alt": "Samsung Galaxy Buds4 Pro in White",
+          "sourceUrl": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_white_PC_pro.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Black": [
         {
-          "src": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_black_PC_pro.png",
-          "alt": "Samsung Galaxy Buds4 Pro in Black"
+          "key": "audio/samsung-galaxy-buds4-pro/black-1",
+          "alt": "Samsung Galaxy Buds4 Pro in Black",
+          "sourceUrl": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_black_PC_pro.png",
+          "width": 1600,
+          "height": 864
         }
       ]
     },

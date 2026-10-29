@@ -56,28 +56,46 @@
     "groups": {
       "Oxidised": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_1_88553c2f-373a-4126-aeab-67133762baaf.jpg?v=1789044145",
-          "alt": "GIVA Oxidised Silver Everyday Bangle"
+          "key": "fashion/giva-oxidised-silver-everyday-bangle/oxidised-1",
+          "alt": "GIVA Oxidised Silver Everyday Bangle",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_1_88553c2f-373a-4126-aeab-67133762baaf.jpg?v=1789044145",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_4_47ddca34-e24a-413e-ab24-f86b1eb8941a.jpg?v=1789045577",
-          "alt": "GIVA Oxidised Silver Everyday Bangle, view 2"
+          "key": "fashion/giva-oxidised-silver-everyday-bangle/oxidised-2",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_4_47ddca34-e24a-413e-ab24-f86b1eb8941a.jpg?v=1789045577",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_5_b8824a64-8a62-4913-9931-ecf2c3976bcd.jpg?v=1789044145",
-          "alt": "GIVA Oxidised Silver Everyday Bangle, view 3"
+          "key": "fashion/giva-oxidised-silver-everyday-bangle/oxidised-3",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_5_b8824a64-8a62-4913-9931-ecf2c3976bcd.jpg?v=1789044145",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_2_25e36a57-4185-4d64-8240-3901f5984b34.jpg?v=1789044145",
-          "alt": "GIVA Oxidised Silver Everyday Bangle, view 4"
+          "key": "fashion/giva-oxidised-silver-everyday-bangle/oxidised-4",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_2_25e36a57-4185-4d64-8240-3901f5984b34.jpg?v=1789044145",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_2_dabe6748-c0a1-4ee3-9d27-86f54976c8ac.jpg?v=1789044145",
-          "alt": "GIVA Oxidised Silver Everyday Bangle, view 5"
+          "key": "fashion/giva-oxidised-silver-everyday-bangle/oxidised-5",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_2_dabe6748-c0a1-4ee3-9d27-86f54976c8ac.jpg?v=1789044145",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_6_ca6d9743-36f9-4aeb-a565-ae21de5ae33c.jpg?v=1789045577",
-          "alt": "GIVA Oxidised Silver Everyday Bangle, view 6"
+          "key": "fashion/giva-oxidised-silver-everyday-bangle/oxidised-6",
+          "alt": "GIVA Oxidised Silver Everyday Bangle, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/TLBR0328_6_ca6d9743-36f9-4aeb-a565-ae21de5ae33c.jpg?v=1789045577",
+          "width": 1500,
+          "height": 2000
         }
       ]
     },

@@ -77,24 +77,39 @@
     "groups": {
       "Navy": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_01.jpg?v=1792737758",
-          "alt": "Campus Rake Running Shoes"
+          "key": "fashion/campus-rake-running-shoes/navy-1",
+          "alt": "Campus Rake Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_01.jpg?v=1792737758",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_02.webp?v=1792737757",
-          "alt": "Campus Rake Running Shoes, view 2"
+          "key": "fashion/campus-rake-running-shoes/navy-2",
+          "alt": "Campus Rake Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_02.webp?v=1792737757",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_03.webp?v=1792737758",
-          "alt": "Campus Rake Running Shoes, view 3"
+          "key": "fashion/campus-rake-running-shoes/navy-3",
+          "alt": "Campus Rake Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_03.webp?v=1792737758",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_04.webp?v=1792737757",
-          "alt": "Campus Rake Running Shoes, view 4"
+          "key": "fashion/campus-rake-running-shoes/navy-4",
+          "alt": "Campus Rake Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_04.webp?v=1792737757",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_05.webp?v=1792737757",
-          "alt": "Campus Rake Running Shoes, view 5"
+          "key": "fashion/campus-rake-running-shoes/navy-5",
+          "alt": "Campus Rake Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_05.webp?v=1792737757",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

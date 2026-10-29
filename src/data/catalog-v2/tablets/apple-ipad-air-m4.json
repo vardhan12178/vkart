@@ -111,58 +111,94 @@
     "groups": {
       "Blue": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Blue"
+          "key": "tablets/apple-ipad-air-m4/blue-1",
+          "alt": "iPad Air (M4) in Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Blue, view 2"
+          "key": "tablets/apple-ipad-air-m4/blue-2",
+          "alt": "iPad Air (M4) in Blue, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Blue, view 3"
+          "key": "tablets/apple-ipad-air-m4/blue-3",
+          "alt": "iPad Air (M4) in Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Purple": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Purple"
+          "key": "tablets/apple-ipad-air-m4/purple-1",
+          "alt": "iPad Air (M4) in Purple",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Purple, view 2"
+          "key": "tablets/apple-ipad-air-m4/purple-2",
+          "alt": "iPad Air (M4) in Purple, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Purple, view 3"
+          "key": "tablets/apple-ipad-air-m4/purple-3",
+          "alt": "iPad Air (M4) in Purple, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Space Gray": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Space Gray"
+          "key": "tablets/apple-ipad-air-m4/space-gray-1",
+          "alt": "iPad Air (M4) in Space Gray",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Space Gray, view 2"
+          "key": "tablets/apple-ipad-air-m4/space-gray-2",
+          "alt": "iPad Air (M4) in Space Gray, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Space Gray, view 3"
+          "key": "tablets/apple-ipad-air-m4/space-gray-3",
+          "alt": "iPad Air (M4) in Space Gray, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Starlight": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Starlight"
+          "key": "tablets/apple-ipad-air-m4/starlight-1",
+          "alt": "iPad Air (M4) in Starlight",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Starlight, view 2"
+          "key": "tablets/apple-ipad-air-m4/starlight-2",
+          "alt": "iPad Air (M4) in Starlight, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Air (M4) in Starlight, view 3"
+          "key": "tablets/apple-ipad-air-m4/starlight-3",
+          "alt": "iPad Air (M4) in Starlight, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ]
     },

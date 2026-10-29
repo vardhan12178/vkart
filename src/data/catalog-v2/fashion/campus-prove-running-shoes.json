@@ -77,32 +77,53 @@
     "groups": {
       "Navy": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_01.webp?v=1792734564",
-          "alt": "Campus Prove Running Shoes"
+          "key": "fashion/campus-prove-running-shoes/navy-1",
+          "alt": "Campus Prove Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_01.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_02.jpg?v=1792734565",
-          "alt": "Campus Prove Running Shoes, view 2"
+          "key": "fashion/campus-prove-running-shoes/navy-2",
+          "alt": "Campus Prove Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_02.jpg?v=1792734565",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_03.webp?v=1792734564",
-          "alt": "Campus Prove Running Shoes, view 3"
+          "key": "fashion/campus-prove-running-shoes/navy-3",
+          "alt": "Campus Prove Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_03.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_04.webp?v=1792734564",
-          "alt": "Campus Prove Running Shoes, view 4"
+          "key": "fashion/campus-prove-running-shoes/navy-4",
+          "alt": "Campus Prove Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_04.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_05.webp?v=1792734564",
-          "alt": "Campus Prove Running Shoes, view 5"
+          "key": "fashion/campus-prove-running-shoes/navy-5",
+          "alt": "Campus Prove Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_05.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_06.webp?v=1792734564",
-          "alt": "Campus Prove Running Shoes, view 6"
+          "key": "fashion/campus-prove-running-shoes/navy-6",
+          "alt": "Campus Prove Running Shoes, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_06.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_07.webp?v=1792734564",
-          "alt": "Campus Prove Running Shoes, view 7"
+          "key": "fashion/campus-prove-running-shoes/navy-7",
+          "alt": "Campus Prove Running Shoes, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_07.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

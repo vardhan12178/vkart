@@ -91,22 +91,20 @@
     "groups": {
       "Gray": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/TS12_Ultra_Color_Selection_Gray_PC_1600x864.jpg",
-          "alt": "Samsung Galaxy Tab S12 Ultra in Gray"
-        },
-        {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/TS12_Ultra_gray_wib_pc_888x382.jpg",
-          "alt": "Samsung Galaxy Tab S12 Ultra in Gray, view 2"
+          "key": "tablets/samsung-galaxy-tab-s12-ultra/gray-1",
+          "alt": "Samsung Galaxy Tab S12 Ultra in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/TS12_Ultra_Color_Selection_Gray_PC_1600x864.jpg",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Silver": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/TS12_Ultra_Color_Selection_Silver_PC_1600x864.jpg",
-          "alt": "Samsung Galaxy Tab S12 Ultra in Silver"
-        },
-        {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/TS12_Ultra_silver_wib_pc_888x382.jpg",
-          "alt": "Samsung Galaxy Tab S12 Ultra in Silver, view 2"
+          "key": "tablets/samsung-galaxy-tab-s12-ultra/silver-1",
+          "alt": "Samsung Galaxy Tab S12 Ultra in Silver",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/TS12_Ultra_Color_Selection_Silver_PC_1600x864.jpg",
+          "width": 1600,
+          "height": 864
         }
       ]
     },

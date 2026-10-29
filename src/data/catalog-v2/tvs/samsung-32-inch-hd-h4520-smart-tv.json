@@ -77,7 +77,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 32.0,
+    "screenInch": 32,
     "resolution": "HD (1,366 x 768)",
     "refreshRateHz": null,
     "panel": "LED",
@@ -100,12 +100,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32h4520fuxxl/gallery/in-hd-h4500-548524-ua32h4520fuxxl-thumb-546540763?$650_519_PNG$",
-        "alt": "Samsung 32\" HD H4520 Smart TV"
+        "key": "tvs/samsung-32-inch-hd-h4520-smart-tv/common-1",
+        "alt": "Samsung 32\" HD H4520 Smart TV",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32h4520fuxxl/gallery/in-hd-h4500-548524-ua32h4520fuxxl-thumb-546540763?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32h4520fuxxl/gallery/in-hd-h4500-548524-ua32h4520fuxxl-546540757?$650_519_PNG$",
-        "alt": "Samsung 32\" HD H4520 Smart TV, view 2"
+        "key": "tvs/samsung-32-inch-hd-h4520-smart-tv/common-2",
+        "alt": "Samsung 32\" HD H4520 Smart TV, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ua32h4520fuxxl/gallery/in-hd-h4500-548524-ua32h4520fuxxl-546540757?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

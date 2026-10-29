@@ -87,46 +87,76 @@
     "groups": {
       "Storm Gray": [
         {
-          "src": "https://image01-in.oneplus.net/media/202505/23/637edc5e06f7db34265842933c208557.png",
-          "alt": "OnePlus Buds 4 in Storm Gray"
+          "key": "audio/oneplus-buds-4/storm-gray-1",
+          "alt": "OnePlus Buds 4 in Storm Gray",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/637edc5e06f7db34265842933c208557.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202506/19/0c78b2d0bd7767ed91213d62286b4b5f.png",
-          "alt": "OnePlus Buds 4 in Storm Gray, view 2"
+          "key": "audio/oneplus-buds-4/storm-gray-2",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202506/19/0c78b2d0bd7767ed91213d62286b4b5f.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202506/19/585080e6513801a2d7441dec8b48b151.png",
-          "alt": "OnePlus Buds 4 in Storm Gray, view 3"
+          "key": "audio/oneplus-buds-4/storm-gray-3",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202506/19/585080e6513801a2d7441dec8b48b151.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202506/19/45e03cde835234b3d8550d218432a17f.png",
-          "alt": "OnePlus Buds 4 in Storm Gray, view 4"
+          "key": "audio/oneplus-buds-4/storm-gray-4",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202506/19/45e03cde835234b3d8550d218432a17f.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202505/23/78d71e8d2787dbb8c8beec1e405e33dd.png",
-          "alt": "OnePlus Buds 4 in Storm Gray, view 5"
+          "key": "audio/oneplus-buds-4/storm-gray-5",
+          "alt": "OnePlus Buds 4 in Storm Gray, view 5",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/78d71e8d2787dbb8c8beec1e405e33dd.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Zen Green": [
         {
-          "src": "https://image01-in.oneplus.net/media/202505/23/b77da222b14016b62986867556b4c89a.png",
-          "alt": "OnePlus Buds 4 in Zen Green"
+          "key": "audio/oneplus-buds-4/zen-green-1",
+          "alt": "OnePlus Buds 4 in Zen Green",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/b77da222b14016b62986867556b4c89a.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202506/19/213aa160481eba862ef0dde90c53a177.png",
-          "alt": "OnePlus Buds 4 in Zen Green, view 2"
+          "key": "audio/oneplus-buds-4/zen-green-2",
+          "alt": "OnePlus Buds 4 in Zen Green, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202506/19/213aa160481eba862ef0dde90c53a177.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202506/19/d796a256d9bc6744b23c3d10fe7c205f.png",
-          "alt": "OnePlus Buds 4 in Zen Green, view 3"
+          "key": "audio/oneplus-buds-4/zen-green-3",
+          "alt": "OnePlus Buds 4 in Zen Green, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202506/19/d796a256d9bc6744b23c3d10fe7c205f.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202506/19/ef155cc5f2266080176aac3b8f8242e1.png",
-          "alt": "OnePlus Buds 4 in Zen Green, view 4"
+          "key": "audio/oneplus-buds-4/zen-green-4",
+          "alt": "OnePlus Buds 4 in Zen Green, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202506/19/ef155cc5f2266080176aac3b8f8242e1.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202505/23/c7101aef275f6e3f7a4bc194592aca3f.png",
-          "alt": "OnePlus Buds 4 in Zen Green, view 5"
+          "key": "audio/oneplus-buds-4/zen-green-5",
+          "alt": "OnePlus Buds 4 in Zen Green, view 5",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/c7101aef275f6e3f7a4bc194592aca3f.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

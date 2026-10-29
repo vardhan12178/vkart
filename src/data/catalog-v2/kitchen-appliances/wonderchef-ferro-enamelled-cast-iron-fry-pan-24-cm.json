@@ -72,36 +72,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/63155291_WonderchefFerroEnameled24cmFryPanTeal.jpg?v=1785332903",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-1",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/63155291_WonderchefFerroEnameled24cmFryPanTeal.jpg?v=1785332903",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image02_c59a903a-749e-4b8c-919f-0a49109a1f49.jpg?v=1791452476",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 2"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-2",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image02_c59a903a-749e-4b8c-919f-0a49109a1f49.jpg?v=1791452476",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image03_dead3aa3-631c-4d09-95d7-fd1c95cf38a3.jpg?v=1791452476",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 3"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-3",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image03_dead3aa3-631c-4d09-95d7-fd1c95cf38a3.jpg?v=1791452476",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image04_d35d94e3-38cc-4382-a578-1737e3b83207.jpg?v=1791452477",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 4"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-4",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image04_d35d94e3-38cc-4382-a578-1737e3b83207.jpg?v=1791452477",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image05_48b7d423-f820-49ae-98b3-03f1f1e3de6c.jpg?v=1791452476",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 5"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-5",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image05_48b7d423-f820-49ae-98b3-03f1f1e3de6c.jpg?v=1791452476",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image06_1c64bafe-3144-4bee-a4f8-53ba6e2e1cbc.jpg?v=1791452476",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 6"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-6",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image06_1c64bafe-3144-4bee-a4f8-53ba6e2e1cbc.jpg?v=1791452476",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image07_c3321ca7-59c3-40a1-a23e-fed1a0b97430.jpg?v=1791452476",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 7"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-7",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image07_c3321ca7-59c3-40a1-a23e-fed1a0b97430.jpg?v=1791452476",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image08_105ef593-f07f-4c84-86ad-9f72eb4c3f48.jpg?v=1791452477",
-        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 8"
+        "key": "kitchen-appliances/wonderchef-ferro-enamelled-cast-iron-fry-pan-24-cm/common-8",
+        "alt": "Wonderchef Ferro Enamelled Cast-Iron Fry Pan 24 cm, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/Image08_105ef593-f07f-4c84-86ad-9f72eb4c3f48.jpg?v=1791452477",
+        "width": 1100,
+        "height": 1100
       }
     ]
   },

@@ -29,7 +29,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 32.0,
+    "screenInch": 32,
     "resolution": null,
     "refreshRateHz": null,
     "panel": null,
@@ -51,8 +51,11 @@
     "groups": {},
     "common": [
       {
-        "src": "https://www.lg.com/content/dam/channel/wcms/in/images/tv-images/gallery/new-bee-levels/32lb650bpla/32LB650BPLA-450x450-1-v.jpg",
-        "alt": "LG 32\" FHD AI Smart TV 32LB650B"
+        "key": "tvs/lg-32-inch-fhd-ai-smart-tv-32lb650b/common-1",
+        "alt": "LG 32\" FHD AI Smart TV 32LB650B",
+        "sourceUrl": "https://www.lg.com/content/dam/channel/wcms/in/images/tv-images/gallery/new-bee-levels/32lb650bpla/32LB650BPLA-450x450-1-v.jpg",
+        "width": 450,
+        "height": 450
       }
     ]
   },

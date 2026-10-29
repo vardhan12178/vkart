@@ -210,30 +210,48 @@
     "groups": {
       "Vivid Mint": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/6afc82e6f256aafd2943dd66bbc00e3e.png",
-          "alt": "OnePlus Nord CE6 Lite in Vivid Mint"
+          "key": "mobiles/oneplus-nord-ce6-lite/vivid-mint-1",
+          "alt": "OnePlus Nord CE6 Lite in Vivid Mint",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/6afc82e6f256aafd2943dd66bbc00e3e.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/5b63a9e1c1d581d9436753617edbee4c.png",
-          "alt": "OnePlus Nord CE6 Lite in Vivid Mint, view 2"
+          "key": "mobiles/oneplus-nord-ce6-lite/vivid-mint-2",
+          "alt": "OnePlus Nord CE6 Lite in Vivid Mint, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/5b63a9e1c1d581d9436753617edbee4c.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/100c7c7cd6c6a71cb5a16c40f0abf761.png",
-          "alt": "OnePlus Nord CE6 Lite in Vivid Mint, view 3"
+          "key": "mobiles/oneplus-nord-ce6-lite/vivid-mint-3",
+          "alt": "OnePlus Nord CE6 Lite in Vivid Mint, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/100c7c7cd6c6a71cb5a16c40f0abf761.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Hyper Black": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/81de9089666e4c293127634150bc1e73.png",
-          "alt": "OnePlus Nord CE6 Lite in Hyper Black"
+          "key": "mobiles/oneplus-nord-ce6-lite/hyper-black-1",
+          "alt": "OnePlus Nord CE6 Lite in Hyper Black",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/81de9089666e4c293127634150bc1e73.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/5a8bc29841369f279d6cc94629e4b8b5.png",
-          "alt": "OnePlus Nord CE6 Lite in Hyper Black, view 2"
+          "key": "mobiles/oneplus-nord-ce6-lite/hyper-black-2",
+          "alt": "OnePlus Nord CE6 Lite in Hyper Black, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/5a8bc29841369f279d6cc94629e4b8b5.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/29/0051b5a9c602cde90ff9f70ecca6bab6.png",
-          "alt": "OnePlus Nord CE6 Lite in Hyper Black, view 3"
+          "key": "mobiles/oneplus-nord-ce6-lite/hyper-black-3",
+          "alt": "OnePlus Nord CE6 Lite in Hyper Black, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/29/0051b5a9c602cde90ff9f70ecca6bab6.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

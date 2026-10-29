@@ -85,7 +85,7 @@
     "chargingW": 44,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 219.0,
+    "weightG": 219,
     "chip": "MediaTek Dimensity 7400-Turbo",
     "os": "Android",
     "ramGB": 6
@@ -128,104 +128,155 @@
     "groups": {
       "Cosmic Green": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445936/eaaa020adaa932ecb638e28dbcc702e4.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green"
+          "key": "mobiles/vivo-t5x/cosmic-green-1",
+          "alt": "vivo T5x 5G in Cosmic Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445936/eaaa020adaa932ecb638e28dbcc702e4.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593446120/143ee80651406294edb295648308f893.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 2"
+          "key": "mobiles/vivo-t5x/cosmic-green-3",
+          "alt": "vivo T5x 5G in Cosmic Green, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445955/d79cd9727460ac2db8ab04ab6d6ceadf.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445955/d79cd9727460ac2db8ab04ab6d6ceadf.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 3"
+          "key": "mobiles/vivo-t5x/cosmic-green-4",
+          "alt": "vivo T5x 5G in Cosmic Green, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445980/f000ee266731ef89dbe13c953db3f665.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445980/f000ee266731ef89dbe13c953db3f665.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 4"
+          "key": "mobiles/vivo-t5x/cosmic-green-5",
+          "alt": "vivo T5x 5G in Cosmic Green, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445706/10dcc4babd3f28bbe82f00b1ed4f9a41.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445706/10dcc4babd3f28bbe82f00b1ed4f9a41.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 5"
+          "key": "mobiles/vivo-t5x/cosmic-green-6",
+          "alt": "vivo T5x 5G in Cosmic Green, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445927/3c7cf6a6f2e543b4648c8b3399e9e677.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445927/3c7cf6a6f2e543b4648c8b3399e9e677.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 6"
+          "key": "mobiles/vivo-t5x/cosmic-green-7",
+          "alt": "vivo T5x 5G in Cosmic Green, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593447016/2863d00197ff36a64765ae80a6472c46.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593447016/2863d00197ff36a64765ae80a6472c46.jpg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593505305/6bb3d4525448130822ede6f90c2eaabe.jpeg",
-          "alt": "vivo T5x 5G in Cosmic Green, view 8"
+          "key": "mobiles/vivo-t5x/cosmic-green-8",
+          "alt": "vivo T5x 5G in Cosmic Green, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593505305/6bb3d4525448130822ede6f90c2eaabe.jpeg",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Satin Silver": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593780163/185dd4ebfa86a0727523271fbb15798c.jpg",
-          "alt": "vivo T5x 5G in Satin Silver"
+          "key": "mobiles/vivo-t5x/satin-silver-1",
+          "alt": "vivo T5x 5G in Satin Silver",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593780163/185dd4ebfa86a0727523271fbb15798c.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740894/b382e716af0390834b1b5b3d81677c1d.jpg",
-          "alt": "vivo T5x 5G in Satin Silver, view 2"
+          "key": "mobiles/vivo-t5x/satin-silver-3",
+          "alt": "vivo T5x 5G in Satin Silver, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740705/0106a0943a49d1bbe36952b2df8ae4e4.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740705/0106a0943a49d1bbe36952b2df8ae4e4.jpg",
-          "alt": "vivo T5x 5G in Satin Silver, view 3"
+          "key": "mobiles/vivo-t5x/satin-silver-4",
+          "alt": "vivo T5x 5G in Satin Silver, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740632/a4073ec9fe298aa7d18b67324fed4f95.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740632/a4073ec9fe298aa7d18b67324fed4f95.jpg",
-          "alt": "vivo T5x 5G in Satin Silver, view 4"
+          "key": "mobiles/vivo-t5x/satin-silver-5",
+          "alt": "vivo T5x 5G in Satin Silver, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740627/c877822e39033a31a87fa8f6432ddfd3.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740627/c877822e39033a31a87fa8f6432ddfd3.jpg",
-          "alt": "vivo T5x 5G in Satin Silver, view 5"
+          "key": "mobiles/vivo-t5x/satin-silver-6",
+          "alt": "vivo T5x 5G in Satin Silver, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740627/f96f40063b4f463a52721964b6af1be3.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740627/f96f40063b4f463a52721964b6af1be3.jpg",
-          "alt": "vivo T5x 5G in Satin Silver, view 6"
+          "key": "mobiles/vivo-t5x/satin-silver-7",
+          "alt": "vivo T5x 5G in Satin Silver, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593742273/e9f8006fc0e309419d77ffe0156b4bf1.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593742273/e9f8006fc0e309419d77ffe0156b4bf1.jpg",
-          "alt": "vivo T5x 5G in Satin Silver, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593741906/8f628f1b53798d230f43a8b5d65a1950.jpeg",
-          "alt": "vivo T5x 5G in Satin Silver, view 8"
+          "key": "mobiles/vivo-t5x/satin-silver-8",
+          "alt": "vivo T5x 5G in Satin Silver, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593741906/8f628f1b53798d230f43a8b5d65a1950.jpeg",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Flame Red": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425150/cdf8c20208cb75eb447ae47986945ae7.png",
-          "alt": "vivo T5x 5G in Flame Red"
+          "key": "mobiles/vivo-t5x/flame-red-1",
+          "alt": "vivo T5x 5G in Flame Red",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425150/cdf8c20208cb75eb447ae47986945ae7.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425093/cb1a9864624895d7ea23fb113afc170e.jpg",
-          "alt": "vivo T5x 5G in Flame Red, view 2"
+          "key": "mobiles/vivo-t5x/flame-red-3",
+          "alt": "vivo T5x 5G in Flame Red, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425220/041cc2e2a5c415c00f1e68c138b871a5.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425220/041cc2e2a5c415c00f1e68c138b871a5.png",
-          "alt": "vivo T5x 5G in Flame Red, view 3"
+          "key": "mobiles/vivo-t5x/flame-red-4",
+          "alt": "vivo T5x 5G in Flame Red, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425612/272dc178c1d9076a43f0b770e0c7929f.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425612/272dc178c1d9076a43f0b770e0c7929f.png",
-          "alt": "vivo T5x 5G in Flame Red, view 4"
+          "key": "mobiles/vivo-t5x/flame-red-5",
+          "alt": "vivo T5x 5G in Flame Red, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425532/df52d09d48f867f532e6be513c411e17.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425532/df52d09d48f867f532e6be513c411e17.png",
-          "alt": "vivo T5x 5G in Flame Red, view 5"
+          "key": "mobiles/vivo-t5x/flame-red-6",
+          "alt": "vivo T5x 5G in Flame Red, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594424749/484c3f8111993ac3768151775ae4ecc0.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594424749/484c3f8111993ac3768151775ae4ecc0.png",
-          "alt": "vivo T5x 5G in Flame Red, view 6"
+          "key": "mobiles/vivo-t5x/flame-red-7",
+          "alt": "vivo T5x 5G in Flame Red, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594426041/b6f58f5b4a1607b442779500897e8da4.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594426041/b6f58f5b4a1607b442779500897e8da4.png",
-          "alt": "vivo T5x 5G in Flame Red, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594426632/e231b2cc88e2c09001ccb9c9d20a932c.jpeg",
-          "alt": "vivo T5x 5G in Flame Red, view 8"
+          "key": "mobiles/vivo-t5x/flame-red-8",
+          "alt": "vivo T5x 5G in Flame Red, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594426632/e231b2cc88e2c09001ccb9c9d20a932c.jpeg",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

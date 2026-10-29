@@ -51,36 +51,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/01_Web_8482d369-b579-4a32-9bc5-059b94ed4fe1.jpg?v=1781505343",
-        "alt": "Agaro Royal Stand Mixer 1000W"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-1",
+        "alt": "Agaro Royal Stand Mixer 1000W",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/01_Web_8482d369-b579-4a32-9bc5-059b94ed4fe1.jpg?v=1781505343",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/02_d6e57426-2be2-4ef0-98f3-7efd38484a79.jpg?v=1781505077",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 2"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-2",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/02_d6e57426-2be2-4ef0-98f3-7efd38484a79.jpg?v=1781505077",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/03_db40fb64-468f-4e7b-b0e7-ad368ecde142.jpg?v=1781505105",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 3"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-3",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/03_db40fb64-468f-4e7b-b0e7-ad368ecde142.jpg?v=1781505105",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/04_0d190cbd-5f54-4e71-acb1-ecae74ebc39f.jpg?v=1781505136",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 4"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-4",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/04_0d190cbd-5f54-4e71-acb1-ecae74ebc39f.jpg?v=1781505136",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/05_5a306dba-5c0e-477f-bb6b-62b8dee97a29.jpg?v=1781505164",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 5"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-5",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/05_5a306dba-5c0e-477f-bb6b-62b8dee97a29.jpg?v=1781505164",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/06_05b86cf0-3973-4c22-8a78-dff682598c1d.jpg?v=1781505196",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 6"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-6",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/06_05b86cf0-3973-4c22-8a78-dff682598c1d.jpg?v=1781505196",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/07_49a74742-cea5-41d6-9976-1e686ea28cb2.jpg?v=1781505224",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 7"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-7",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/07_49a74742-cea5-41d6-9976-1e686ea28cb2.jpg?v=1781505224",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/08_09b6039f-e8ac-469d-aeeb-a0a1ad4f4212.jpg?v=1781505257",
-        "alt": "Agaro Royal Stand Mixer 1000W, view 8"
+        "key": "kitchen-appliances/agaro-royal-stand-mixer-1000w/common-8",
+        "alt": "Agaro Royal Stand Mixer 1000W, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/08_09b6039f-e8ac-469d-aeeb-a0a1ad4f4212.jpg?v=1781505257",
+        "width": 2048,
+        "height": 2048
       }
     ]
   },

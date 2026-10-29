@@ -90,7 +90,7 @@
   "keySpecs": {
     "processor": "AMD Ryzen 3 30",
     "gpu": "AMD Radeon 610M Graphics",
-    "displayInch": 16.0,
+    "displayInch": 16,
     "panel": "IPS",
     "refreshRateHz": null,
     "weightKg": 1.64,
@@ -146,92 +146,155 @@
     "groups": {
       "Glacier silver and canvas gray": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_front_open_5980865.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-1",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_front_open_5980865.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_frontright_open_5980729.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 2"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-2",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_frontright_open_5980729.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontleft_open_5988958.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 3"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-3",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontleft_open_5988958.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_rearleft_open_6001784.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 4"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-4",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_rearleft_open_6001784.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_stacked_profile_5980773.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 5"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-5",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_df_plus_backlit_win11_stacked_profile_5980773.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiea-glacier-silver-en-annot-1-backlit-keyboard.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 6"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-6",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiea-glacier-silver-en-annot-1-backlit-keyboard.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiea-glacier-silver-en-annot-2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 7"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-canvas-gray-7",
+          "alt": "HP OmniBook 3 16 in Glacier silver and canvas gray, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiea-glacier-silver-en-annot-2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Glacier silver and glacier gray": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_front_open_5980565.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-1",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_front_open_5980565.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_frontright_open_5980764.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 2"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-2",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_frontright_open_5980764.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_frontleft_open_5980566.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 3"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-3",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_win11_frontleft_open_5980566.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_freedos_rearleft_open_6026850.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 4"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-4",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ff_backlit_freedos_rearleft_open_6026850.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_stacked_profile_5989260.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 5"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-5",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_stacked_profile_5989260.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-1-backlit-keyboard_2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 6"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-6",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-1-backlit-keyboard_2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-2_2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 7"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-and-glacier-gray-7",
+          "alt": "HP OmniBook 3 16 in Glacier silver and glacier gray, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-2_2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Glacier silver": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_front_open_5989155.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-1",
+          "alt": "HP OmniBook 3 16 in Glacier silver",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_front_open_5989155.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontright_open_5989158.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver, view 2"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-2",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontright_open_5989158.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontleft_open_5988958_1.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver, view 3"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-3",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_frontleft_open_5988958_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/r/broadcast_bantie_omnibook3_16_cs_nb_glaciersilver_60_degree__catalog_df_plus_backlit_6865558.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver, view 4"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-4",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/r/broadcast_bantie_omnibook3_16_cs_nb_glaciersilver_60_degree__catalog_df_plus_backlit_6865558.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_stacked_profile_5989260_2.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver, view 5"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-5",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/b/a/bantie_omnibook3_16_cs_nb_gs_catalog_ffplus_backlit_win11_stacked_profile_5989260_2.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-1-backlit-keyboard_3.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver, view 6"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-6",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-1-backlit-keyboard_3.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-2_3.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 3 16 in Glacier silver, view 7"
+          "key": "laptops/hp-omnibook-3-16/glacier-silver-7",
+          "alt": "HP OmniBook 3 16 in Glacier silver, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-16-pc-bantiei-glacier-silver-en-annot-2_3.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ]
     },

@@ -70,20 +70,32 @@
     "groups": {
       "Indigo": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_01_Styleshot.jpg?v=1788432616",
-          "alt": "Levi's Women's Fit and Flare Western Dress"
+          "key": "fashion/levis-women-s-fit-and-flare-western-dress/indigo-1",
+          "alt": "Levi's Women's Fit and Flare Western Dress",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_01_Styleshot.jpg?v=1788432616",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_02_Front.jpg?v=1788432623",
-          "alt": "Levi's Women's Fit and Flare Western Dress, view 2"
+          "key": "fashion/levis-women-s-fit-and-flare-western-dress/indigo-2",
+          "alt": "Levi's Women's Fit and Flare Western Dress, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_02_Front.jpg?v=1788432623",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_03_Back.jpg?v=1788432633",
-          "alt": "Levi's Women's Fit and Flare Western Dress, view 3"
+          "key": "fashion/levis-women-s-fit-and-flare-western-dress/indigo-3",
+          "alt": "Levi's Women's Fit and Flare Western Dress, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_03_Back.jpg?v=1788432633",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_04_detail.jpg?v=1788432642",
-          "alt": "Levi's Women's Fit and Flare Western Dress, view 4"
+          "key": "fashion/levis-women-s-fit-and-flare-western-dress/indigo-4",
+          "alt": "Levi's Women's Fit and Flare Western Dress, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0088W0001_04_detail.jpg?v=1788432642",
+          "width": 1034,
+          "height": 1376
         }
       ]
     },

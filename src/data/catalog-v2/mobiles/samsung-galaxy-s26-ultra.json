@@ -118,99 +118,102 @@
     "groups": {
       "Black": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_black_PC.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Black"
+          "key": "mobiles/samsung-galaxy-s26-ultra/black-1",
+          "alt": "Samsung Galaxy S26 Ultra in Black",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_black_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-black.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Black, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-black.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Black, view 3"
+          "key": "mobiles/samsung-galaxy-s26-ultra/black-2",
+          "alt": "Samsung Galaxy S26 Ultra in Black, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-black.jpg",
+          "width": 1440,
+          "height": 688
         }
       ],
       "Cobalt Violet": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_cobaltViolet_PC.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet"
+          "key": "mobiles/samsung-galaxy-s26-ultra/cobalt-violet-1",
+          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_cobaltViolet_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-cobalt-violet.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-cobalt-violet.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet, view 3"
+          "key": "mobiles/samsung-galaxy-s26-ultra/cobalt-violet-2",
+          "alt": "Samsung Galaxy S26 Ultra in Cobalt Violet, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-cobalt-violet.jpg",
+          "width": 1440,
+          "height": 688
         }
       ],
       "Pink Gold": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_pinkGold_PC.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Pink Gold"
+          "key": "mobiles/samsung-galaxy-s26-ultra/pink-gold-1",
+          "alt": "Samsung Galaxy S26 Ultra in Pink Gold",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_pinkGold_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-pink-gold.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Pink Gold, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-pink-gold.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Pink Gold, view 3"
+          "key": "mobiles/samsung-galaxy-s26-ultra/pink-gold-2",
+          "alt": "Samsung Galaxy S26 Ultra in Pink Gold, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-pink-gold.jpg",
+          "width": 1440,
+          "height": 688
         }
       ],
       "Silver Shadow": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_silverShadow_PC.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow"
+          "key": "mobiles/samsung-galaxy-s26-ultra/silver-shadow-1",
+          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_silverShadow_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-silver-shadow.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-silver-shadow.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow, view 3"
+          "key": "mobiles/samsung-galaxy-s26-ultra/silver-shadow-2",
+          "alt": "Samsung Galaxy S26 Ultra in Silver Shadow, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-silver-shadow.jpg",
+          "width": 1440,
+          "height": 688
         }
       ],
       "Sky Blue": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_skyBlue_PC.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Sky Blue"
+          "key": "mobiles/samsung-galaxy-s26-ultra/sky-blue-1",
+          "alt": "Samsung Galaxy S26 Ultra in Sky Blue",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_skyBlue_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-sky-blue.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Sky Blue, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-sky-blue.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in Sky Blue, view 3"
+          "key": "mobiles/samsung-galaxy-s26-ultra/sky-blue-2",
+          "alt": "Samsung Galaxy S26 Ultra in Sky Blue, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-sky-blue.jpg",
+          "width": 1440,
+          "height": 688
         }
       ],
       "White": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_white_PC.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in White"
+          "key": "mobiles/samsung-galaxy-s26-ultra/white-1",
+          "alt": "Samsung Galaxy S26 Ultra in White",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/buy/product_color_white_PC.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-white.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in White, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-white.jpg",
-          "alt": "Samsung Galaxy S26 Ultra in White, view 3"
+          "key": "mobiles/samsung-galaxy-s26-ultra/white-2",
+          "alt": "Samsung Galaxy S26 Ultra in White, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-viewer-initial-white.jpg",
+          "width": 1440,
+          "height": 688
         }
       ]
     },
-    "common": [
-      {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-slimness.jpg",
-        "alt": "Samsung Galaxy S26 Ultra — 7.9 mm slim design"
-      },
-      {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-s26-ultra/images/galaxy-s26-ultra-features-colors-durability-a.jpg",
-        "alt": "Samsung Galaxy S26 Ultra — Armor Aluminum frame"
-      }
-    ]
+    "common": []
   },
   "variants": [
     {

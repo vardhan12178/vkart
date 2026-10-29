@@ -142,104 +142,176 @@
     "groups": {
       "Cool Silver": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/b6d2e59f-ed3c-49de-92b5-410c799a1858/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-1",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b6d2e59f-ed3c-49de-92b5-410c799a1858/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/9632ee3e-ffdb-4ed4-99be-221c296feefb/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-2",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/9632ee3e-ffdb-4ed4-99be-221c296feefb/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/1442e785-7d0a-4004-894c-9c921f6a0caa/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-3",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/1442e785-7d0a-4004-894c-9c921f6a0caa/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/9dcc2e08-a777-4185-b70e-19749722da9b/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-4",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/9dcc2e08-a777-4185-b70e-19749722da9b/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/4562f2e0-5606-42b9-972d-fb26097eeac4/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-5",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/4562f2e0-5606-42b9-972d-fb26097eeac4/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/6a341af9-7847-451f-9078-96e664b22c39/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened at 90-degree from the front view."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-6",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened at 90-degree from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6a341af9-7847-451f-9078-96e664b22c39/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/4e0eb772-e82f-4986-b949-fa6949bea37c/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED lid view from above."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-7",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED lid view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/4e0eb772-e82f-4986-b949-fa6949bea37c/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/50056d26-cd58-43d8-8460-1326edff716b/w800",
-          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened view from above."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/cool-silver-8",
+          "alt": "Cool Silver ASUS Vivobook Go 15 OLED opened view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/50056d26-cd58-43d8-8460-1326edff716b/w800",
+          "width": 800,
+          "height": 800
         }
       ],
       "Mixed black": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/b830153b-e34b-4c62-b311-a7d55d987edf/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-1",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b830153b-e34b-4c62-b311-a7d55d987edf/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/54b1ee3e-26f7-4b78-a21c-b2235c3252bb/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-2",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/54b1ee3e-26f7-4b78-a21c-b2235c3252bb/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/aa9f0abc-2deb-4bc9-a480-15c5b00e9579/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-3",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/aa9f0abc-2deb-4bc9-a480-15c5b00e9579/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/7d87dad0-9c8b-41d2-8ded-b47b3b22d927/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-4",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/7d87dad0-9c8b-41d2-8ded-b47b3b22d927/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/6ff0c6e1-e05f-47f7-ad63-39e0d32d427a/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-5",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6ff0c6e1-e05f-47f7-ad63-39e0d32d427a/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/c6889637-63ac-4cf6-b948-c3b4879d67d3/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened at 90-degree from the front view."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-6",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened at 90-degree from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/c6889637-63ac-4cf6-b948-c3b4879d67d3/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/2608cf11-6d26-449d-a857-ed874893e7fc/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED lid view from above."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-7",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED lid view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/2608cf11-6d26-449d-a857-ed874893e7fc/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/b96f4cd3-d18c-497d-9652-5bc02cb4d2a5/w800",
-          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened view from above."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/mixed-black-8",
+          "alt": "Mixed black ASUS Vivobook Go 15 OLED opened view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b96f4cd3-d18c-497d-9652-5bc02cb4d2a5/w800",
+          "width": 800,
+          "height": 800
         }
       ],
       "Grey Green": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/2514abe7-a26f-4a6f-a0c4-a309499da06b/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-1",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/2514abe7-a26f-4a6f-a0c4-a309499da06b/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/ea687c3f-fd85-4e9d-ba5c-b42ebfcc069e/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-2",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened at 180-degree view from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/ea687c3f-fd85-4e9d-ba5c-b42ebfcc069e/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/8f5a8131-fad0-4f99-a74a-45e9092ebb72/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-3",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED display 75-degree opened view from the reverse right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/8f5a8131-fad0-4f99-a74a-45e9092ebb72/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/489518b4-6ffb-4fe0-a715-55e3b529df75/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-4",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/489518b4-6ffb-4fe0-a715-55e3b529df75/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/98539aff-7e17-4912-b1af-1b402520109c/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-5",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/98539aff-7e17-4912-b1af-1b402520109c/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/8f16358d-5bc3-4532-b7b7-1f3f70a74432/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened at 90-degree from the front view."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-6",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened at 90-degree from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/8f16358d-5bc3-4532-b7b7-1f3f70a74432/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/2cbd1054-c27b-406a-9787-2ec0b4df92b1/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED lid view from above."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-7",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED lid view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/2cbd1054-c27b-406a-9787-2ec0b4df92b1/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/f56bde6f-ef69-42d9-a5f8-84c18951ca7d/w800",
-          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened view from above."
+          "key": "laptops/asus-vivobook-go-15-oled-e1504f/grey-green-8",
+          "alt": "Grey Green ASUS Vivobook Go 15 OLED opened view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/f56bde6f-ef69-42d9-a5f8-84c18951ca7d/w800",
+          "width": 800,
+          "height": 800
         }
       ]
     },

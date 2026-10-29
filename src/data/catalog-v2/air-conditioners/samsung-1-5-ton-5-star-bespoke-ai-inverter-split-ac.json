@@ -112,12 +112,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h18d15hnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h18d15h-4-75-kw-5-star-2026-ar50h18d15hnna-thumb-550558865?$650_519_PNG$",
-        "alt": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC"
+        "key": "air-conditioners/samsung-1-5-ton-5-star-bespoke-ai-inverter-split-ac/common-1",
+        "alt": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h18d15hnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h18d15h-4-75-kw-5-star-2026-ar50h18d15hnna-thumb-550558865?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h18d15hnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h18d15h-4-75-kw-5-star-2026-ar50h18d15hnna-550558864?$650_519_PNG$",
-        "alt": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC, view 2"
+        "key": "air-conditioners/samsung-1-5-ton-5-star-bespoke-ai-inverter-split-ac/common-2",
+        "alt": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h18d15hnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h18d15h-4-75-kw-5-star-2026-ar50h18d15hnna-550558864?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

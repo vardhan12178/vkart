@@ -95,12 +95,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://lh3.googleusercontent.com/OM8Rm_3ArrbavjhQ_jI8ko2lmqtJx_ISmu5h75gUmIGsitrESNLW_xJbSnJWd8-edEhJoA4MPLIHsX-feKYUlcnTdNxjs9fUtQw=s1200",
-        "alt": "Google Pixel Watch 4"
+        "key": "wearables/google-pixel-watch-4/common-1",
+        "alt": "Google Pixel Watch 4",
+        "sourceUrl": "https://lh3.googleusercontent.com/OM8Rm_3ArrbavjhQ_jI8ko2lmqtJx_ISmu5h75gUmIGsitrESNLW_xJbSnJWd8-edEhJoA4MPLIHsX-feKYUlcnTdNxjs9fUtQw=s1200",
+        "width": 1200,
+        "height": 958
       },
       {
-        "src": "https://lh3.googleusercontent.com/krqKw5R7vWeBZudGNBjyKG30w_RfnRE92XEbyhaPnq1FqVskbWQUOXL3l59ecZqmmZOKXoOfgS-pWXzYf-jZ4FtWoMkmTdCJY5h6=s1200",
-        "alt": "Google Pixel Watch 4, view 2"
+        "key": "wearables/google-pixel-watch-4/common-2",
+        "alt": "Google Pixel Watch 4, view 2",
+        "sourceUrl": "https://lh3.googleusercontent.com/krqKw5R7vWeBZudGNBjyKG30w_RfnRE92XEbyhaPnq1FqVskbWQUOXL3l59ecZqmmZOKXoOfgS-pWXzYf-jZ4FtWoMkmTdCJY5h6=s1200",
+        "width": 1200,
+        "height": 675
       }
     ]
   },

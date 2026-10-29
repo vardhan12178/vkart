@@ -73,12 +73,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rt41hg6a42slhl/gallery/in-top-mount-freezer-twin-cooling-plus-574723-rt41hg6a42slhl-thumb-550668570?$650_519_PNG$",
-        "alt": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL"
+        "key": "refrigerators/samsung-396-l-bespoke-ai-double-door-refrigerator-rt41hg6a42sl/common-1",
+        "alt": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt41hg6a42slhl/gallery/in-top-mount-freezer-twin-cooling-plus-574723-rt41hg6a42slhl-thumb-550668570?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rt41hg6a42slhl/gallery/in-top-mount-freezer-twin-cooling-plus-574723-rt41hg6a42slhl-550668562?$650_519_PNG$",
-        "alt": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL, view 2"
+        "key": "refrigerators/samsung-396-l-bespoke-ai-double-door-refrigerator-rt41hg6a42sl/common-2",
+        "alt": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt41hg6a42slhl/gallery/in-top-mount-freezer-twin-cooling-plus-574723-rt41hg6a42slhl-550668562?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

@@ -54,16 +54,25 @@
     "groups": {
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/ES15332-G-WH_MODEL.png?v=1792922489",
-          "alt": "Salty Royal Deepam Lantern Tassel Earrings"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-earrings/gold-1",
+          "alt": "Salty Royal Deepam Lantern Tassel Earrings",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/ES15332-G-WH_MODEL.png?v=1792922489",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/ES15332-G-WH_MAIN.png?v=1792922488",
-          "alt": "Salty Royal Deepam Lantern Tassel Earrings, view 2"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-earrings/gold-2",
+          "alt": "Salty Royal Deepam Lantern Tassel Earrings, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/ES15332-G-WH_MAIN.png?v=1792922488",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/ES15332-G-GR_WB.jpg?v=1793011300",
-          "alt": "Salty Royal Deepam Lantern Tassel Earrings, view 3"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-earrings/gold-3",
+          "alt": "Salty Royal Deepam Lantern Tassel Earrings, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/ES15332-G-GR_WB.jpg?v=1793011300",
+          "width": 2048,
+          "height": 2048
         }
       ]
     },

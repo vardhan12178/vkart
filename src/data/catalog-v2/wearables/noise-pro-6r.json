@@ -79,38 +79,56 @@
     "groups": {
       "Classic Brown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1457copy_result.webp?v=1767591556",
-          "alt": "Noise Pro 6R in Classic Brown"
+          "key": "wearables/noise-pro-6r/classic-brown-1",
+          "alt": "Noise Pro 6R in Classic Brown",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1457copy_result.webp?v=1767591556",
+          "width": 2560,
+          "height": 2560
         }
       ],
       "Starlight Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1458copy_result.webp?v=1767591556",
-          "alt": "Noise Pro 6R in Starlight Gold"
+          "key": "wearables/noise-pro-6r/starlight-gold-1",
+          "alt": "Noise Pro 6R in Starlight Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1458copy_result.webp?v=1767591556",
+          "width": 2560,
+          "height": 2560
         }
       ],
       "Jet Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1459copy_result.webp?v=1767591556",
-          "alt": "Noise Pro 6R in Jet Black"
+          "key": "wearables/noise-pro-6r/jet-black-1",
+          "alt": "Noise Pro 6R in Jet Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1459copy_result.webp?v=1767591556",
+          "width": 2560,
+          "height": 2560
         }
       ],
       "Classic Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1461copy_result.webp?v=1767591556",
-          "alt": "Noise Pro 6R in Classic Black"
+          "key": "wearables/noise-pro-6r/classic-black-1",
+          "alt": "Noise Pro 6R in Classic Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1461copy_result.webp?v=1767591556",
+          "width": 2560,
+          "height": 2560
         }
       ],
       "Chrome Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1460copy_result.webp?v=1767591556",
-          "alt": "Noise Pro 6R in Chrome Black"
+          "key": "wearables/noise-pro-6r/chrome-black-1",
+          "alt": "Noise Pro 6R in Chrome Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1460copy_result.webp?v=1767591556",
+          "width": 2560,
+          "height": 2560
         }
       ],
       "Pure Titanium": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1455copy_result.webp?v=1767347889",
-          "alt": "Noise Pro 6R in Pure Titanium"
+          "key": "wearables/noise-pro-6r/pure-titanium-1",
+          "alt": "Noise Pro 6R in Pure Titanium",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/2.1455copy_result.webp?v=1767347889",
+          "width": 2560,
+          "height": 2560
         }
       ]
     },

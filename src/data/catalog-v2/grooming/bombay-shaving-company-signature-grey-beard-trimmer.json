@@ -48,28 +48,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/Card_2.jpg?v=1752839926",
-        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer"
+        "key": "grooming/bombay-shaving-company-signature-grey-beard-trimmer/common-1",
+        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/Card_2.jpg?v=1752839926",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/Card_6.webp?v=1753350990",
-        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 2"
+        "key": "grooming/bombay-shaving-company-signature-grey-beard-trimmer/common-2",
+        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/Card_6.webp?v=1753350990",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/Card_5_72ae3e6c-978a-4f41-bc86-da332da679cf.jpg?v=1753350990",
-        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 3"
+        "key": "grooming/bombay-shaving-company-signature-grey-beard-trimmer/common-3",
+        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/Card_5_72ae3e6c-978a-4f41-bc86-da332da679cf.jpg?v=1753350990",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/card1_8a6b4766-84b4-46fb-af82-29b4e5be42ea.jpg?v=1753350990",
-        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 4"
+        "key": "grooming/bombay-shaving-company-signature-grey-beard-trimmer/common-4",
+        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/card1_8a6b4766-84b4-46fb-af82-29b4e5be42ea.jpg?v=1753350990",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/Card_7.jpg?v=1753350990",
-        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 5"
+        "key": "grooming/bombay-shaving-company-signature-grey-beard-trimmer/common-5",
+        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/products/Card_7.jpg?v=1753350990",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/Card_1.webp?v=1753350990",
-        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 6"
+        "key": "grooming/bombay-shaving-company-signature-grey-beard-trimmer/common-6",
+        "alt": "Bombay Shaving Company Signature Grey Beard Trimmer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/Card_1.webp?v=1753350990",
+        "width": 1000,
+        "height": 1000
       }
     ]
   },

@@ -77,32 +77,53 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_01.webp?v=1792734669",
-          "alt": "Campus Luck Sneakers"
+          "key": "fashion/campus-luck-sneakers/black-1",
+          "alt": "Campus Luck Sneakers",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_01.webp?v=1792734669",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_02.jpg?v=1792734669",
-          "alt": "Campus Luck Sneakers, view 2"
+          "key": "fashion/campus-luck-sneakers/black-2",
+          "alt": "Campus Luck Sneakers, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_02.jpg?v=1792734669",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_03.webp?v=1792734669",
-          "alt": "Campus Luck Sneakers, view 3"
+          "key": "fashion/campus-luck-sneakers/black-3",
+          "alt": "Campus Luck Sneakers, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_03.webp?v=1792734669",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_04.webp?v=1792734668",
-          "alt": "Campus Luck Sneakers, view 4"
+          "key": "fashion/campus-luck-sneakers/black-4",
+          "alt": "Campus Luck Sneakers, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_04.webp?v=1792734668",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_05.webp?v=1792734668",
-          "alt": "Campus Luck Sneakers, view 5"
+          "key": "fashion/campus-luck-sneakers/black-5",
+          "alt": "Campus Luck Sneakers, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_05.webp?v=1792734668",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_06.webp?v=1792734669",
-          "alt": "Campus Luck Sneakers, view 6"
+          "key": "fashion/campus-luck-sneakers/black-6",
+          "alt": "Campus Luck Sneakers, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_06.webp?v=1792734669",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_07.webp?v=1792734669",
-          "alt": "Campus Luck Sneakers, view 7"
+          "key": "fashion/campus-luck-sneakers/black-7",
+          "alt": "Campus Luck Sneakers, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/LUCK_22G-13520_BLACK_07.webp?v=1792734669",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

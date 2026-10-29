@@ -88,7 +88,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 27.0,
+    "screenInch": 27,
     "resolution": "FHD (1,920 x 1,080)",
     "refreshRateHz": 100,
     "panel": "IPS",
@@ -111,12 +111,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27d400gawxxl/gallery/in-essential-s4-s40gd-ls27d400gawxxl-thumb-544498771?$650_519_PNG$",
-        "alt": "Samsung 27\" FHD IPS Monitor"
+        "key": "monitors/samsung-27-inch-fhd-ips-monitor/common-1",
+        "alt": "Samsung 27\" FHD IPS Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27d400gawxxl/gallery/in-essential-s4-s40gd-ls27d400gawxxl-thumb-544498771?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27d400gawxxl/gallery/in-essential-s4-s40gd-ls27d400gawxxl-544498770?$650_519_PNG$",
-        "alt": "Samsung 27\" FHD IPS Monitor, view 2"
+        "key": "monitors/samsung-27-inch-fhd-ips-monitor/common-2",
+        "alt": "Samsung 27\" FHD IPS Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27d400gawxxl/gallery/in-essential-s4-s40gd-ls27d400gawxxl-544498770?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

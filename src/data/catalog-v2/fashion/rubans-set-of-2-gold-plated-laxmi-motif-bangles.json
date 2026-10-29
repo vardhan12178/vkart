@@ -62,20 +62,32 @@
     "groups": {
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/yrgGJXMR.jpg?v=1791894957",
-          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles"
+          "key": "fashion/rubans-set-of-2-gold-plated-laxmi-motif-bangles/gold-1",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/yrgGJXMR.jpg?v=1791894957",
+          "width": 1024,
+          "height": 1365
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_00.jpg?v=1791894932",
-          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 2"
+          "key": "fashion/rubans-set-of-2-gold-plated-laxmi-motif-bangles/gold-2",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_00.jpg?v=1791894932",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_01.jpg?v=1791894932",
-          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 3"
+          "key": "fashion/rubans-set-of-2-gold-plated-laxmi-motif-bangles/gold-3",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_01.jpg?v=1791894932",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_03.jpg?v=1791894932",
-          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 4"
+          "key": "fashion/rubans-set-of-2-gold-plated-laxmi-motif-bangles/gold-4",
+          "alt": "Rubans Set of 2 Gold Plated Laxmi Motif Bangles, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE16B417112-28_03.jpg?v=1791894932",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

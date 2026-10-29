@@ -35,7 +35,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 5 226V",
     "gpu": "Integrated Graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "OLED",
     "refreshRateHz": 60,
     "weightKg": null,
@@ -78,38 +78,62 @@
     "groups": {
       "Luna Grey": [
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063255712657.png",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/luna-grey-1",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063255712657.png",
+          "width": 420,
+          "height": 420
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 2"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/luna-grey-2",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 2",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063358441526.png",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 3"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/luna-grey-3",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 3",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063358441526.png",
+          "width": 400,
+          "height": 300
         },
         {
-          "src": "https://p2-ofp.static.pub/fes/cms/2025/04/03/ocokuaha01uxuu174rylwkkngccgnv383641.jpg",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 4"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/luna-grey-4",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Luna Grey, view 4",
+          "sourceUrl": "https://p2-ofp.static.pub/fes/cms/2025/04/03/ocokuaha01uxuu174rylwkkngccgnv383641.jpg",
+          "width": 585,
+          "height": 585
         }
       ],
       "Seashell": [
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063255712657.png",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/seashell-1",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063255712657.png",
+          "width": 420,
+          "height": 420
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 2"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/seashell-2",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 2",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/25/img.20260625080105461951.png",
+          "width": 585,
+          "height": 585
         },
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063358441526.png",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 3"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/seashell-3",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 3",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/06/22/img.20260622063358441526.png",
+          "width": 400,
+          "height": 300
         },
         {
-          "src": "https://p2-ofp.static.pub/fes/cms/2025/04/03/ocokuaha01uxuu174rylwkkngccgnv383641.jpg",
-          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 4"
+          "key": "laptops/lenovo-yoga-slim-7i-aura-gen-10/seashell-4",
+          "alt": "Lenovo Yoga Slim 7i Aura Edition Gen 10 (14\", Intel) in Seashell, view 4",
+          "sourceUrl": "https://p2-ofp.static.pub/fes/cms/2025/04/03/ocokuaha01uxuu174rylwkkngccgnv383641.jpg",
+          "width": 585,
+          "height": 585
         }
       ]
     },

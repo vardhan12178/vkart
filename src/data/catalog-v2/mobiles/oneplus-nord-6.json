@@ -240,44 +240,71 @@
     "groups": {
       "Fresh Mint": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/07/98a7d63d5463d9931341f816b6a7aacf.png",
-          "alt": "OnePlus Nord 6 in Fresh Mint"
+          "key": "mobiles/oneplus-nord-6/fresh-mint-1",
+          "alt": "OnePlus Nord 6 in Fresh Mint",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/98a7d63d5463d9931341f816b6a7aacf.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/07/81dc65c7b543e8d08cd7684534cc348f.png",
-          "alt": "OnePlus Nord 6 in Fresh Mint, view 2"
+          "key": "mobiles/oneplus-nord-6/fresh-mint-2",
+          "alt": "OnePlus Nord 6 in Fresh Mint, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/81dc65c7b543e8d08cd7684534cc348f.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/30/fe2091b216b5627eacbf86969478fa02.png",
-          "alt": "OnePlus Nord 6 in Fresh Mint, view 3"
+          "key": "mobiles/oneplus-nord-6/fresh-mint-3",
+          "alt": "OnePlus Nord 6 in Fresh Mint, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/30/fe2091b216b5627eacbf86969478fa02.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Quick Silver": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/07/b0f9fb50caddfe90e14e5865cf405cc7.png",
-          "alt": "OnePlus Nord 6 in Quick Silver"
+          "key": "mobiles/oneplus-nord-6/quick-silver-1",
+          "alt": "OnePlus Nord 6 in Quick Silver",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/b0f9fb50caddfe90e14e5865cf405cc7.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/07/e506782b1b80b814f18ea36f323a39be.png",
-          "alt": "OnePlus Nord 6 in Quick Silver, view 2"
+          "key": "mobiles/oneplus-nord-6/quick-silver-2",
+          "alt": "OnePlus Nord 6 in Quick Silver, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/e506782b1b80b814f18ea36f323a39be.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/30/7787170db73d6b912d4ad6cf9fddb972.png",
-          "alt": "OnePlus Nord 6 in Quick Silver, view 3"
+          "key": "mobiles/oneplus-nord-6/quick-silver-3",
+          "alt": "OnePlus Nord 6 in Quick Silver, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/30/7787170db73d6b912d4ad6cf9fddb972.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Pitch Black": [
         {
-          "src": "https://image01-in.oneplus.net/media/202604/07/cff3893a2940d169efc7d3927152c171.png",
-          "alt": "OnePlus Nord 6 in Pitch Black"
+          "key": "mobiles/oneplus-nord-6/pitch-black-1",
+          "alt": "OnePlus Nord 6 in Pitch Black",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/cff3893a2940d169efc7d3927152c171.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202604/07/f57d588b7aef9fa3d1ed3f329a3eff0c.png",
-          "alt": "OnePlus Nord 6 in Pitch Black, view 2"
+          "key": "mobiles/oneplus-nord-6/pitch-black-2",
+          "alt": "OnePlus Nord 6 in Pitch Black, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/f57d588b7aef9fa3d1ed3f329a3eff0c.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202603/30/78a50e85dcda1a363f630e141374664f.png",
-          "alt": "OnePlus Nord 6 in Pitch Black, view 3"
+          "key": "mobiles/oneplus-nord-6/pitch-black-3",
+          "alt": "OnePlus Nord 6 in Pitch Black, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/30/78a50e85dcda1a363f630e141374664f.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

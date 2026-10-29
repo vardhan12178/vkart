@@ -32,36 +32,53 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/beardo-prive-irish-royale-beard-wash.png?v=1781675412",
-        "alt": "Beardo Prive Irish Royale Beard Wash"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-2",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/Royal_beard_wash.jpg?v=1733921157",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/Royal_beard_wash.jpg?v=1733921157",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 2"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-3",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/2_29336676-6cd5-42c8-b363-267113a464ff.jpg?v=1692354339",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/2_29336676-6cd5-42c8-b363-267113a464ff.jpg?v=1692354339",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 3"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-4",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/3_334c05fb-c477-4e0c-a57e-84587e30d674.jpg?v=1692354340",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/3_334c05fb-c477-4e0c-a57e-84587e30d674.jpg?v=1692354340",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 4"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-5",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/4_600d70e5-cc2f-444b-88e4-7332c6af3943.jpg?v=1692354341",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/4_600d70e5-cc2f-444b-88e4-7332c6af3943.jpg?v=1692354341",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 5"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-6",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/5_72334953-38ab-402a-bf6d-fd811e234b98.jpg?v=1692354340",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/5_72334953-38ab-402a-bf6d-fd811e234b98.jpg?v=1692354340",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 6"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-7",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/6_105a536b-9928-4d01-be91-3c11d9d46cec.jpg?v=1692354340",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/6_105a536b-9928-4d01-be91-3c11d9d46cec.jpg?v=1692354340",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 7"
-      },
-      {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/7_202a5a0f-8ddf-40b0-a2f9-895ba3ecd92b.jpg?v=1692354339",
-        "alt": "Beardo Prive Irish Royale Beard Wash, view 8"
+        "key": "grooming/beardo-prive-irish-royale-beard-wash/common-8",
+        "alt": "Beardo Prive Irish Royale Beard Wash, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/7_202a5a0f-8ddf-40b0-a2f9-895ba3ecd92b.jpg?v=1692354339",
+        "width": 2160,
+        "height": 2160
       }
     ]
   },

@@ -79,7 +79,7 @@
     "chargingW": 90,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 226.0,
+    "weightG": 226,
     "chip": "MediaTek Dimensity 9500",
     "os": "Android",
     "ramGB": 16
@@ -112,70 +112,20 @@
     "groups": {
       "Elite Black": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764591954824/a391e2ca3c2be9463ee9a9e73c8cf35d.png",
-          "alt": "vivo X300 Pro in Elite Black"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303293/ce45b2edf47cb84c3f58ded8b8ab71f6.jpg",
-          "alt": "vivo X300 Pro in Elite Black, view 2"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303124/e8a4d0ebc636e87c595fe20bbcf663fb.png",
-          "alt": "vivo X300 Pro in Elite Black, view 3"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303085/7436e16303c5c7f6d2e6f8db40ef94e6.png",
-          "alt": "vivo X300 Pro in Elite Black, view 4"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303251/4f6012ab879776a959c929e20348dee8.png",
-          "alt": "vivo X300 Pro in Elite Black, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569303557/143febd2c12624a54b54d48ebbd315a9.png",
-          "alt": "vivo X300 Pro in Elite Black, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569304055/00293c064d4d76c08824560c21ae1796.png",
-          "alt": "vivo X300 Pro in Elite Black, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569304495/672bf942cbd3c0b49a00353ba834c990.png",
-          "alt": "vivo X300 Pro in Elite Black, view 8"
+          "key": "mobiles/vivo-x300-pro/elite-black-1",
+          "alt": "vivo X300 Pro in Elite Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764591954824/a391e2ca3c2be9463ee9a9e73c8cf35d.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Dune Gold": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764591976943/84863844faec50921202bf83d94ffacf.png",
-          "alt": "vivo X300 Pro in Dune Gold"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319601/f742f4700893f8c79d57e363a77f5b1f.jpg",
-          "alt": "vivo X300 Pro in Dune Gold, view 2"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319649/59ac633a155efe8d741af51c0580d183.png",
-          "alt": "vivo X300 Pro in Dune Gold, view 3"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319714/db7f8b4afa267b6abc316a4da7f3c5a9.png",
-          "alt": "vivo X300 Pro in Dune Gold, view 4"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319796/120fc92e273e0cc4cc45ff4e3f1ec82f.png",
-          "alt": "vivo X300 Pro in Dune Gold, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569319651/1a1381d0bb41b59d662be536ae0e88aa.png",
-          "alt": "vivo X300 Pro in Dune Gold, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569320398/8d6ae97a89a713593bff3b148f5e5992.png",
-          "alt": "vivo X300 Pro in Dune Gold, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764569321175/324c83440a0c5935a55485ab88b573f2.png",
-          "alt": "vivo X300 Pro in Dune Gold, view 8"
+          "key": "mobiles/vivo-x300-pro/dune-gold-1",
+          "alt": "vivo X300 Pro in Dune Gold",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1764591976943/84863844faec50921202bf83d94ffacf.png",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

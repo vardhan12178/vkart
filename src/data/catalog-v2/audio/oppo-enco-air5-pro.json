@@ -95,14 +95,20 @@
     "groups": {
       "Matte Black": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/Wo8Jz37ryHYVNmhf.png",
-          "alt": "OPPO Enco Air5 Pro in Matte Black"
+          "key": "audio/oppo-enco-air5-pro/matte-black-1",
+          "alt": "OPPO Enco Air5 Pro in Matte Black",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/Wo8Jz37ryHYVNmhf.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Pearl White": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/9AVR1tLCkGTJ6fBk.png",
-          "alt": "OPPO Enco Air5 Pro in Pearl White"
+          "key": "audio/oppo-enco-air5-pro/pearl-white-1",
+          "alt": "OPPO Enco Air5 Pro in Pearl White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/9AVR1tLCkGTJ6fBk.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

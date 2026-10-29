@@ -99,32 +99,53 @@
     "groups": {
       "Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_01_Styleshot.jpg?v=1793082993",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-1",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_01_Styleshot.jpg?v=1793082993",
+          "width": 1034,
+          "height": 1378
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_05_Front.jpg?v=1793082991",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 2"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-2",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_05_Front.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_02_Front.jpg?v=1793082991",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 3"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-3",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_02_Front.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_03_Back.jpg?v=1793082991",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 4"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-4",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_03_Back.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_07_Detail_20.jpg?v=1793082991",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 5"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-5",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_07_Detail_20.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_06_Detail_20.jpg?v=1793082996",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 6"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-6",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_06_Detail_20.jpg?v=1793082996",
+          "width": 1034,
+          "height": 1378
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_04_Side.jpg?v=1793082993",
-          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 7"
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-7",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_04_Side.jpg?v=1793082993",
+          "width": 1034,
+          "height": 1378
         }
       ]
     },

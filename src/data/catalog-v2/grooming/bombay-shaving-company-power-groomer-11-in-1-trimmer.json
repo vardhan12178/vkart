@@ -38,36 +38,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/1copy_262d21c1-78c3-415e-8f9e-af3c44fc731c.webp?v=1792996219",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-1",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/1copy_262d21c1-78c3-415e-8f9e-af3c44fc731c.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3copy_18e26f40-81ae-479d-a38a-785abb59afb2.webp?v=1792996219",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 2"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-2",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3copy_18e26f40-81ae-479d-a38a-785abb59afb2.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6copy_438d12d2-08ec-4b80-b0df-566d0d731ba3.webp?v=1792996218",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 3"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-3",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6copy_438d12d2-08ec-4b80-b0df-566d0d731ba3.webp?v=1792996218",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5copy_c584bb25-297a-416b-8b25-d32965680a13.webp?v=1792996219",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 4"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-4",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5copy_c584bb25-297a-416b-8b25-d32965680a13.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/7copy_8fadf8cc-9987-482e-ae02-c8535b1e549a.webp?v=1792996218",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 5"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-5",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/7copy_8fadf8cc-9987-482e-ae02-c8535b1e549a.webp?v=1792996218",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/8copy_4650e813-c2cb-4d55-9cca-0ba32c101472.webp?v=1792996219",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 6"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-6",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/8copy_4650e813-c2cb-4d55-9cca-0ba32c101472.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2copy_bd7e4d3e-c309-427c-81ce-e240f5660ec1.webp?v=1792996219",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 7"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-7",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2copy_bd7e4d3e-c309-427c-81ce-e240f5660ec1.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4copy_290ca4aa-1452-404e-aaa4-e33489847990.webp?v=1792996219",
-        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 8"
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-8",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4copy_290ca4aa-1452-404e-aaa4-e33489847990.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
       }
     ]
   },

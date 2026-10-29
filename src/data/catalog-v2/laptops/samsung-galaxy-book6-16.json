@@ -31,7 +31,7 @@
       "ssd": "512GB or 1TB, with expansion slot"
     },
     "Display": {
-      "size": 16.0,
+      "size": 16,
       "type": "IPS, anti-glare, touch option",
       "aspectRatio": "16:10"
     },
@@ -57,7 +57,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 5 325",
     "gpu": "Intel graphics",
-    "displayInch": 16.0,
+    "displayInch": 16,
     "panel": "IPS",
     "refreshRateHz": null,
     "weightKg": 1.74,
@@ -102,27 +102,42 @@
     "groups": {
       "Gray": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np760vjg-kg1in/gallery/in-galaxy-book-np760vjg-kg1in-galaxy-book---------cm--ultra-------gb--copilot--pc-gray-thumb-551797452?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 (16\") in Gray"
+          "key": "laptops/samsung-galaxy-book6-16/gray-1",
+          "alt": "Samsung Galaxy Book6 (16\") in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np760vjg-kg1in/gallery/in-galaxy-book-np760vjg-kg1in-galaxy-book---------cm--ultra-------gb--copilot--pc-gray-thumb-551797452?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         },
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np760xjg-kg1in/gallery/in-galaxy-book-np760xjg-kg1in-galaxy-book---------cm--ultra-------gb--copilot--pc-gray-thumb-551796475?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 (16\") in Gray, view 2"
+          "key": "laptops/samsung-galaxy-book6-16/gray-2",
+          "alt": "Samsung Galaxy Book6 (16\") in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np760xjg-kg1in/gallery/in-galaxy-book-np760xjg-kg1in-galaxy-book---------cm--ultra-------gb--copilot--pc-gray-thumb-551796475?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Design_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 (16\") — symmetrical design"
+        "key": "laptops/samsung-galaxy-book6-16/common-1",
+        "alt": "Samsung Galaxy Book6 (16\") — symmetrical design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Processor_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 (16\") — Intel Core Ultra Series 3"
+        "key": "laptops/samsung-galaxy-book6-16/common-2",
+        "alt": "Samsung Galaxy Book6 (16\") — Intel Core Ultra Series 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Galaxy_AI_Domoreon_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 (16\") — Galaxy AI"
+        "key": "laptops/samsung-galaxy-book6-16/common-3",
+        "alt": "Samsung Galaxy Book6 (16\") — Galaxy AI",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Galaxy_AI_Domoreon_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       }
     ]
   },

@@ -92,7 +92,7 @@
   "keySpecs": {
     "processor": "Intel Core i7-14650HX",
     "gpu": "NVIDIA GeForce RTX 5060 8GB",
-    "displayInch": 16.0,
+    "displayInch": 16,
     "panel": "IPS",
     "refreshRateHz": null,
     "weightKg": 2.43,
@@ -150,62 +150,104 @@
     "groups": {
       "Shadow black": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_front_whitebg_3970413.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black"
+          "key": "laptops/hp-omen-16/shadow-black-1",
+          "alt": "HP OMEN 16 in Shadow black",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_front_whitebg_3970413.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_frontright_whitebg_3970142.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black, view 2"
+          "key": "laptops/hp-omen-16/shadow-black-2",
+          "alt": "HP OMEN 16 in Shadow black, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_frontright_whitebg_3970142.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_frontleft_3970089.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black, view 3"
+          "key": "laptops/hp-omen-16/shadow-black-3",
+          "alt": "HP OMEN 16 in Shadow black, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_frontleft_3970089.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nonfpr_4-zone_core_set_rearleft_whitebg_3970210_1.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black, view 4"
+          "key": "laptops/hp-omen-16/shadow-black-4",
+          "alt": "HP OMEN 16 in Shadow black, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nonfpr_4-zone_core_set_rearleft_whitebg_3970210_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nonfpr_4-zone_core_set_stackedprofile_whitebg_3970141_1.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black, view 5"
+          "key": "laptops/hp-omen-16/shadow-black-5",
+          "alt": "HP OMEN 16 in Shadow black, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nonfpr_4-zone_core_set_stackedprofile_whitebg_3970141_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/o/m/omen-16-hanna-nvidia-40-50-series-shadow-black-en-annotated-img-02_1100.jpg?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black, view 6"
+          "key": "laptops/hp-omen-16/shadow-black-6",
+          "alt": "HP OMEN 16 in Shadow black, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/o/m/omen-16-hanna-nvidia-40-50-series-shadow-black-en-annotated-img-02_1100.jpg?store=in-en&image-type=image",
+          "width": 1100,
+          "height": 807
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/o/m/omen-16-hanna-khalilah-nvidia-40-50-series-shadow-black-en-annotated-img-05_1100_1.jpg?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in Shadow black, view 7"
+          "key": "laptops/hp-omen-16/shadow-black-7",
+          "alt": "HP OMEN 16 in Shadow black, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/o/m/omen-16-hanna-khalilah-nvidia-40-50-series-shadow-black-en-annotated-img-05_1100_1.jpg?store=in-en&image-type=image",
+          "width": 1100,
+          "height": 807
         }
       ],
       "RIOT blue (VALORANT Limited Edition)": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_front_7437650.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition)"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-1",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition)",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_front_7437650.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_frontright_7437602.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 2"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-2",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_frontright_7437602.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_frontleft_7437700.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 3"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-3",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_frontleft_7437700.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_rearleft_7437701.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 4"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-4",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_rearleft_7437701.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_stackedprofile_7437703.png?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 5"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-5",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_stackedprofile_7437703.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hyperx-omen-16-hannahx-khalilahhx-shadow-black-en-annot-1_1_.jpg?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 6"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-6",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hyperx-omen-16-hannahx-khalilahhx-shadow-black-en-annot-1_1_.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hyperx-omen-16-khalilahhx-shadow-black-en-annot-2_1_.jpg?store=in-en&image-type=image",
-          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 7"
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-7",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hyperx-omen-16-khalilahhx-shadow-black-en-annot-2_1_.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ]
     },

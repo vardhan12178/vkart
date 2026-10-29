@@ -78,36 +78,60 @@
     "groups": {
       "Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_14.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women"
+          "key": "fashion/neemans-commute-sandals-for-women/green-1",
+          "alt": "Neeman's Commute Sandals for Women",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_14.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_1.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women, view 2"
+          "key": "fashion/neemans-commute-sandals-for-women/green-2",
+          "alt": "Neeman's Commute Sandals for Women, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_1.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/Commute_Sandals_D.GREEN_BLACK_15.jpg?v=1784116074",
-          "alt": "Neeman's Commute Sandals for Women, view 3"
+          "key": "fashion/neemans-commute-sandals-for-women/green-3",
+          "alt": "Neeman's Commute Sandals for Women, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/Commute_Sandals_D.GREEN_BLACK_15.jpg?v=1784116074",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_3.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women, view 4"
+          "key": "fashion/neemans-commute-sandals-for-women/green-4",
+          "alt": "Neeman's Commute Sandals for Women, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_3.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_5.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women, view 5"
+          "key": "fashion/neemans-commute-sandals-for-women/green-5",
+          "alt": "Neeman's Commute Sandals for Women, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_5.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_8.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women, view 6"
+          "key": "fashion/neemans-commute-sandals-for-women/green-6",
+          "alt": "Neeman's Commute Sandals for Women, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_8.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_9.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women, view 7"
+          "key": "fashion/neemans-commute-sandals-for-women/green-7",
+          "alt": "Neeman's Commute Sandals for Women, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_9.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_12.jpg?v=1781697234",
-          "alt": "Neeman's Commute Sandals for Women, view 8"
+          "key": "fashion/neemans-commute-sandals-for-women/green-8",
+          "alt": "Neeman's Commute Sandals for Women, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/CommuteSandalsD.GREENBLACK_12.jpg?v=1781697234",
+          "width": 1600,
+          "height": 1000
         }
       ]
     },

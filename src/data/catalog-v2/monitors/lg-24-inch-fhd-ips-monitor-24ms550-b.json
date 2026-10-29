@@ -37,7 +37,7 @@
     "resolution": "1920 x 1080",
     "refreshRateHz": 100,
     "panel": "IPS",
-    "responseTimeMs": 5.0,
+    "responseTimeMs": 5,
     "gaming": true
   },
   "variantOptions": [
@@ -55,8 +55,11 @@
     "groups": {},
     "common": [
       {
-        "src": "https://www.lg.com/content/dam/channel/wcms/in/monitors/fhd-qhd/mnt_fhd_24ms550_lg-com-kit/gallery/01-basic/fhd-24ms550-basic-large.jpg",
-        "alt": "LG 24\" FHD IPS Monitor 24MS550-B"
+        "key": "monitors/lg-24-inch-fhd-ips-monitor-24ms550-b/common-1",
+        "alt": "LG 24\" FHD IPS Monitor 24MS550-B",
+        "sourceUrl": "https://www.lg.com/content/dam/channel/wcms/in/monitors/fhd-qhd/mnt_fhd_24ms550_lg-com-kit/gallery/01-basic/fhd-24ms550-basic-large.jpg",
+        "width": 450,
+        "height": 450
       }
     ]
   },

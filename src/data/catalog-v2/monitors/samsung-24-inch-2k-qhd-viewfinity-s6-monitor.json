@@ -96,11 +96,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 24.0,
+    "screenInch": 24,
     "resolution": "QHD (2,560 x 1,440)",
     "refreshRateHz": 100,
     "panel": "IPS",
-    "responseTimeMs": 5.0,
+    "responseTimeMs": 5,
     "curved": false,
     "gaming": false
   },
@@ -119,12 +119,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24d604uawxxl/gallery/in-viewfinity-s6-24s60ud--27s60ud-32s60ud-ls24d604uawxxl-thumb-541956629?$650_519_PNG$",
-        "alt": "Samsung 24\" 2K QHD ViewFinity S6 Monitor"
+        "key": "monitors/samsung-24-inch-2k-qhd-viewfinity-s6-monitor/common-1",
+        "alt": "Samsung 24\" 2K QHD ViewFinity S6 Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24d604uawxxl/gallery/in-viewfinity-s6-24s60ud--27s60ud-32s60ud-ls24d604uawxxl-thumb-541956629?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24d604uawxxl/gallery/in-viewfinity-s6-24s60ud--27s60ud-32s60ud-ls24d604uawxxl-541956628?$650_519_PNG$",
-        "alt": "Samsung 24\" 2K QHD ViewFinity S6 Monitor, view 2"
+        "key": "monitors/samsung-24-inch-2k-qhd-viewfinity-s6-monitor/common-2",
+        "alt": "Samsung 24\" 2K QHD ViewFinity S6 Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24d604uawxxl/gallery/in-viewfinity-s6-24s60ud--27s60ud-32s60ud-ls24d604uawxxl-541956628?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

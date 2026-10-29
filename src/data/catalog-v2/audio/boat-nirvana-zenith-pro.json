@@ -53,20 +53,29 @@
     "groups": {
       "Platinum Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_3_4b082e15-f8ef-4669-b20f-672c114e1513.png?v=1775545161",
-          "alt": "boAt Nirvana Zenith Pro in Platinum Gold"
+          "key": "audio/boat-nirvana-zenith-pro/platinum-gold-1",
+          "alt": "boAt Nirvana Zenith Pro in Platinum Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_3_4b082e15-f8ef-4669-b20f-672c114e1513.png?v=1775545161",
+          "width": 1044,
+          "height": 1052
         }
       ],
       "Velvet Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_2_0937e9e7-33ba-44ee-892d-ad427998ef7c.png?v=1775545161",
-          "alt": "boAt Nirvana Zenith Pro in Velvet Grey"
+          "key": "audio/boat-nirvana-zenith-pro/velvet-grey-1",
+          "alt": "boAt Nirvana Zenith Pro in Velvet Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_2_0937e9e7-33ba-44ee-892d-ad427998ef7c.png?v=1775545161",
+          "width": 1044,
+          "height": 1052
         }
       ],
       "Crimson Red": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_1_6dc90fe0-4924-4273-bbf2-263dfd4848bb.png?v=1775545161",
-          "alt": "boAt Nirvana Zenith Pro in Crimson Red"
+          "key": "audio/boat-nirvana-zenith-pro/crimson-red-1",
+          "alt": "boAt Nirvana Zenith Pro in Crimson Red",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_1_6dc90fe0-4924-4273-bbf2-263dfd4848bb.png?v=1775545161",
+          "width": 1044,
+          "height": 1052
         }
       ]
     },

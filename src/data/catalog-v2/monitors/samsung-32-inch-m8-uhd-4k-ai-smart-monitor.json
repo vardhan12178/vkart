@@ -106,11 +106,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 32.0,
+    "screenInch": 32,
     "resolution": "4K (3,840 x 2,160)",
     "refreshRateHz": 60,
     "panel": "VA",
-    "responseTimeMs": 4.0,
+    "responseTimeMs": 4,
     "curved": false,
     "gaming": false
   },
@@ -129,12 +129,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm801uwxxl/gallery/in-smart-m8-32m80f-ls32fm801uwxxl-thumb-547967923?$650_519_PNG$",
-        "alt": "Samsung 32\" M8 UHD 4K AI Smart Monitor"
+        "key": "monitors/samsung-32-inch-m8-uhd-4k-ai-smart-monitor/common-1",
+        "alt": "Samsung 32\" M8 UHD 4K AI Smart Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm801uwxxl/gallery/in-smart-m8-32m80f-ls32fm801uwxxl-thumb-547967923?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm801uwxxl/gallery/in-smart-m8-32m80f-ls32fm801uwxxl-547967922?$650_519_PNG$",
-        "alt": "Samsung 32\" M8 UHD 4K AI Smart Monitor, view 2"
+        "key": "monitors/samsung-32-inch-m8-uhd-4k-ai-smart-monitor/common-2",
+        "alt": "Samsung 32\" M8 UHD 4K AI Smart Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm801uwxxl/gallery/in-smart-m8-32m80f-ls32fm801uwxxl-547967922?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

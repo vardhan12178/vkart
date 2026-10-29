@@ -61,36 +61,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_PDP_efb0546a-95fb-4827-b423-fd52fa05b070.jpg?v=1780313832",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-1",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_PDP_efb0546a-95fb-4827-b423-fd52fa05b070.jpg?v=1780313832",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/clinicalactives_63f422fb-7c6b-473c-abf4-840ffc2456a6.jpg?v=1780313832",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 2"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-2",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/clinicalactives_63f422fb-7c6b-473c-abf4-840ffc2456a6.jpg?v=1780313832",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/whoisitfor_922b4a29-478e-4446-af99-b406c01611de.jpg?v=1780313832",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 3"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-3",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/whoisitfor_922b4a29-478e-4446-af99-b406c01611de.jpg?v=1780313832",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/wheredoesitfall_cb008eb4-c6c1-4c79-af9e-dda7d018d4ab.jpg?v=1780313832",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 4"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-4",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/wheredoesitfall_cb008eb4-c6c1-4c79-af9e-dda7d018d4ab.jpg?v=1780313832",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/howtouse_46f1e583-76b7-4116-bd42-7dd70ec98a0d.jpg?v=1780313832",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 5"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-5",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/howtouse_46f1e583-76b7-4116-bd42-7dd70ec98a0d.jpg?v=1780313832",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/rprs_f0d4462a-d647-4d1f-9c5e-d1a0f3dafec0.jpg?v=1780313832",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 6"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-6",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/rprs_f0d4462a-d647-4d1f-9c5e-d1a0f3dafec0.jpg?v=1780313832",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/3_FOP_158d365a-1f7a-4e8c-ba87-af9d8ff2d100.jpg?v=1780313833",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 7"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-7",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/3_FOP_158d365a-1f7a-4e8c-ba87-af9d8ff2d100.jpg?v=1780313833",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/4_BOP_ad1f3997-6d6e-4fcc-9d66-6754ab481f45.jpg?v=1780313833",
-        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 8"
+        "key": "skincare/the-derma-co-2-niacinamide-oily-skin-cleanser/common-8",
+        "alt": "The Derma Co 2% Niacinamide Oily Skin Cleanser, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/4_BOP_ad1f3997-6d6e-4fcc-9d66-6754ab481f45.jpg?v=1780313833",
+        "width": 1080,
+        "height": 1080
       }
     ]
   },

@@ -145,66 +145,76 @@
     "groups": {
       "Mica silver": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/v/i/victus-by-hp-15-gaming-laptop-roku-opihr-mica-silver-front_m2962619_4016016_2.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver"
+          "key": "laptops/hp-victus-15/mica-silver-5",
+          "alt": "HP Victus 15 in Mica silver, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuopihr_15_micasilver_nonodd_nonfpr_coreset_leftprofile_4794509_1_1.png?store=in-en&image-type=image",
+          "width": 1600,
+          "height": 1600
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/v/i/victus-by-hp-15-gaming-laptop-roku-opihr-mica-silver-left_m2962557_4015911_1_1.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver, view 2"
+          "key": "laptops/hp-victus-15/mica-silver-6",
+          "alt": "HP Victus 15 in Mica silver, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-micasilver-en-annotated-img-5_1_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/v/i/victus-by-hp-15-gaming-laptop-roku-opihr-mica-silver-right_m2962611_4015959_1_1.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver, view 3"
-        },
-        {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/4/24c1_ophir_15_mica_silver_nonfpr_core_set_rearleft_m1547862_4015910_1_1.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver, view 4"
-        },
-        {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuopihr_15_micasilver_nonodd_nonfpr_coreset_leftprofile_4794509_1_1.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver, view 5"
-        },
-        {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-micasilver-en-annotated-img-5_1_1.jpg?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver, view 6"
-        },
-        {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-micasilver-in-annotated-img-6_1_1.jpg?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Mica silver, view 7"
+          "key": "laptops/hp-victus-15/mica-silver-7",
+          "alt": "HP Victus 15 in Mica silver, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-micasilver-in-annotated-img-6_1_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Performance blue": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_front_4794511.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue"
+          "key": "laptops/hp-victus-15/performance-blue-1",
+          "alt": "HP Victus 15 in Performance blue",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_front_4794511.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_frontright_4794808.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 2"
+          "key": "laptops/hp-victus-15/performance-blue-2",
+          "alt": "HP Victus 15 in Performance blue, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_frontright_4794808.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_frontleft_4794512.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 3"
+          "key": "laptops/hp-victus-15/performance-blue-3",
+          "alt": "HP Victus 15 in Performance blue, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_frontleft_4794512.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/4/24c1_ophir_15_performance_blue_nonfpr_core_set_rearleft_m1547876_4016017.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 4"
+          "key": "laptops/hp-victus-15/performance-blue-5",
+          "alt": "HP Victus 15 in Performance blue, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/2/22c1-25c1_victus_rokuophir_15_performanceblue_nonodd_nonfpr_coreset_leftprofile_4794807.png?store=in-en&image-type=image",
+          "width": 1600,
+          "height": 1600
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/2/22c1-25c1_victus_rokuophir_15_performanceblue_nonodd_nonfpr_coreset_leftprofile_4794807.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 5"
+          "key": "laptops/hp-victus-15/performance-blue-6",
+          "alt": "HP Victus 15 in Performance blue, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/2/22c1-25c1_victus_rokuophir_15_performanceblue_nonodd_nonfpr_coreset_rightprofile_4794510.png?store=in-en&image-type=image",
+          "width": 1600,
+          "height": 1600
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/2/22c1-25c1_victus_rokuophir_15_performanceblue_nonodd_nonfpr_coreset_rightprofile_4794510.png?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 6"
+          "key": "laptops/hp-victus-15/performance-blue-7",
+          "alt": "HP Victus 15 in Performance blue, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-performanceblue-en-annotated-img-5_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-performanceblue-en-annotated-img-5_1.jpg?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 7"
-        },
-        {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-performance-blue-in-annotated-img-6_1.jpg?store=in-en&image-type=image",
-          "alt": "HP Victus 15 in Performance blue, view 8"
+          "key": "laptops/hp-victus-15/performance-blue-8",
+          "alt": "HP Victus 15 in Performance blue, view 8",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-performance-blue-in-annotated-img-6_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ]
     },

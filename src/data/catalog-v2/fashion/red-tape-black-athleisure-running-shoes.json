@@ -83,32 +83,53 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_1.jpg?v=1776235390",
-          "alt": "Red Tape Black Athleisure Running Shoes"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-1",
+          "alt": "Red Tape Black Athleisure Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_1.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_2.jpg?v=1776235391",
-          "alt": "Red Tape Black Athleisure Running Shoes, view 2"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-2",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_2.jpg?v=1776235391",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_3.jpg?v=1776235390",
-          "alt": "Red Tape Black Athleisure Running Shoes, view 3"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-3",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_3.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_4.jpg?v=1776235390",
-          "alt": "Red Tape Black Athleisure Running Shoes, view 4"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-4",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_4.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_5.jpg?v=1776235391",
-          "alt": "Red Tape Black Athleisure Running Shoes, view 5"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-5",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_5.jpg?v=1776235391",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_6.jpg?v=1776235390",
-          "alt": "Red Tape Black Athleisure Running Shoes, view 6"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-6",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_6.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_1_96b4b24e-7894-4a9c-b2ac-2d86b9357a60.jpg?v=1776236418",
-          "alt": "Red Tape Black Athleisure Running Shoes, view 7"
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-7",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_1_96b4b24e-7894-4a9c-b2ac-2d86b9357a60.jpg?v=1776236418",
+          "width": 1500,
+          "height": 1500
         }
       ]
     },

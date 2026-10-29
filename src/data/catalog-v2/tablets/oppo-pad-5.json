@@ -173,26 +173,41 @@
     "groups": {
       "Aurora Pink": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/06/vYy65WzCKI0g2GPj.png",
-          "alt": "OPPO Pad 5 in Aurora Pink"
+          "key": "tablets/oppo-pad-5/aurora-pink-1",
+          "alt": "OPPO Pad 5 in Aurora Pink",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/06/vYy65WzCKI0g2GPj.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Starlight Black": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/L57Kj3zbg7I6aMc0.png",
-          "alt": "OPPO Pad 5 in Starlight Black"
+          "key": "tablets/oppo-pad-5/starlight-black-1",
+          "alt": "OPPO Pad 5 in Starlight Black",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/L57Kj3zbg7I6aMc0.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/2fCb29OVo8mdRjpL.png",
-          "alt": "OPPO Pad 5 in Starlight Black, view 2"
+          "key": "tablets/oppo-pad-5/starlight-black-2",
+          "alt": "OPPO Pad 5 in Starlight Black, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/2fCb29OVo8mdRjpL.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/ClIvAf8FgRLYFOxR.png",
-          "alt": "OPPO Pad 5 in Starlight Black, view 3"
+          "key": "tablets/oppo-pad-5/starlight-black-3",
+          "alt": "OPPO Pad 5 in Starlight Black, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/ClIvAf8FgRLYFOxR.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/06/dTfzTwf86MLTxwrA.png",
-          "alt": "OPPO Pad 5 in Starlight Black, view 4"
+          "key": "tablets/oppo-pad-5/starlight-black-4",
+          "alt": "OPPO Pad 5 in Starlight Black, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/06/dTfzTwf86MLTxwrA.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

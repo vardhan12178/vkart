@@ -90,28 +90,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-1_75ad9db6-9e1e-4436-8c5b-bbf45af83a80.jpg?v=1785133665",
-        "alt": "Zebronics 32P8 32\" Smart TV"
+        "key": "tvs/zebronics-32p8-32-smart-tv/common-1",
+        "alt": "Zebronics 32P8 32\" Smart TV",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-1_75ad9db6-9e1e-4436-8c5b-bbf45af83a80.jpg?v=1785133665",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-2_90b53122-2243-459a-8bfc-addae9ce8896.jpg?v=1785133665",
-        "alt": "Zebronics 32P8 32\" Smart TV, view 2"
+        "key": "tvs/zebronics-32p8-32-smart-tv/common-2",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-2_90b53122-2243-459a-8bfc-addae9ce8896.jpg?v=1785133665",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-3.jpg?v=1785133665",
-        "alt": "Zebronics 32P8 32\" Smart TV, view 3"
+        "key": "tvs/zebronics-32p8-32-smart-tv/common-3",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-3.jpg?v=1785133665",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-4.jpg?v=1785133665",
-        "alt": "Zebronics 32P8 32\" Smart TV, view 4"
+        "key": "tvs/zebronics-32p8-32-smart-tv/common-4",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-4.jpg?v=1785133665",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-5.jpg?v=1785133665",
-        "alt": "Zebronics 32P8 32\" Smart TV, view 5"
+        "key": "tvs/zebronics-32p8-32-smart-tv/common-5",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-5.jpg?v=1785133665",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-6.jpg?v=1785133665",
-        "alt": "Zebronics 32P8 32\" Smart TV, view 6"
+        "key": "tvs/zebronics-32p8-32-smart-tv/common-6",
+        "alt": "Zebronics 32P8 32\" Smart TV, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-32p8-pic-6.jpg?v=1785133665",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

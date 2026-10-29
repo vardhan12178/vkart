@@ -85,32 +85,53 @@
     "groups": {
       "Multi": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04592_HM_022697dd-f205-483a-bb22-aa05a8d4b6f0.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-1",
+          "alt": "Rareism Prerthi Floral Print Top",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04592_HM_022697dd-f205-483a-bb22-aa05a8d4b6f0.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04586_a58ebf39-4c04-4eee-90fe-de0acae2d921.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top, view 2"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-2",
+          "alt": "Rareism Prerthi Floral Print Top, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04586_a58ebf39-4c04-4eee-90fe-de0acae2d921.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04577_a04384b1-1263-4286-a2ff-ec34a3e1d29b.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top, view 3"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-3",
+          "alt": "Rareism Prerthi Floral Print Top, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04577_a04384b1-1263-4286-a2ff-ec34a3e1d29b.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04583_8117ca02-2d0b-4747-9e26-b422efbf0c38.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top, view 4"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-4",
+          "alt": "Rareism Prerthi Floral Print Top, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04583_8117ca02-2d0b-4747-9e26-b422efbf0c38.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04580_5b5d6769-a4a6-4e51-a540-7dd802720b8a.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top, view 5"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-5",
+          "alt": "Rareism Prerthi Floral Print Top, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04580_5b5d6769-a4a6-4e51-a540-7dd802720b8a.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04585_07924b3f-7f79-4a6f-94d5-562aa813a7e0.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top, view 6"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-6",
+          "alt": "Rareism Prerthi Floral Print Top, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04585_07924b3f-7f79-4a6f-94d5-562aa813a7e0.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04576_4f6e728d-8d52-4238-8b94-d72f71f57215.webp?v=1770363228",
-          "alt": "Rareism Prerthi Floral Print Top, view 7"
+          "key": "fashion/rareism-prerthi-floral-print-top/multi-7",
+          "alt": "Rareism Prerthi Floral Print Top, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/8909196315832-04576_4f6e728d-8d52-4238-8b94-d72f71f57215.webp?v=1770363228",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

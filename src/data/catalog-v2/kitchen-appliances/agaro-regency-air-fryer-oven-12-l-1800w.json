@@ -50,28 +50,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/1_919f986c-e66b-4f87-a0a6-27f95fd068a3.jpg?v=1758219606",
-        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W"
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-1",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/1_919f986c-e66b-4f87-a0a6-27f95fd068a3.jpg?v=1758219606",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_f4802b30-fda1-45d8-9702-a5eb9082ad0d.jpg?v=1758219614",
-        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 2"
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-2",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_f4802b30-fda1-45d8-9702-a5eb9082ad0d.jpg?v=1758219614",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_6a4bd97a-5aa6-463a-82f2-facf10ec2bbe.jpg?v=1758219620",
-        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 3"
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-3",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_6a4bd97a-5aa6-463a-82f2-facf10ec2bbe.jpg?v=1758219620",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_14ece19b-d7d5-4211-a7b1-e2711e8b80ef.jpg?v=1758219625",
-        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 4"
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-4",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_14ece19b-d7d5-4211-a7b1-e2711e8b80ef.jpg?v=1758219625",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_58c43ad5-98a5-4252-99f2-e6184c1d8334.jpg?v=1758219609",
-        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 5"
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-5",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_58c43ad5-98a5-4252-99f2-e6184c1d8334.jpg?v=1758219609",
+        "width": 2048,
+        "height": 2048
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_23105993-262b-4b2f-a2e5-bf9d758fee6b.jpg?v=1758219613",
-        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 6"
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-6",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_23105993-262b-4b2f-a2e5-bf9d758fee6b.jpg?v=1758219613",
+        "width": 2048,
+        "height": 2048
       }
     ]
   },

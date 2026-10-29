@@ -80,7 +80,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 22.0,
+    "screenInch": 22,
     "resolution": "FHD (1,920 x 1,080)",
     "refreshRateHz": 100,
     "panel": "IPS",
@@ -103,12 +103,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls22d300gawxxl/gallery/in-essential-s3-s30gd-ls22d300gawxxl-thumb-544498978?$650_519_PNG$",
-        "alt": "Samsung 22\" FHD Monitor"
+        "key": "monitors/samsung-22-inch-fhd-monitor/common-1",
+        "alt": "Samsung 22\" FHD Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls22d300gawxxl/gallery/in-essential-s3-s30gd-ls22d300gawxxl-thumb-544498978?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls22d300gawxxl/gallery/in-essential-s3-s30gd-ls22d300gawxxl-544498977?$650_519_PNG$",
-        "alt": "Samsung 22\" FHD Monitor, view 2"
+        "key": "monitors/samsung-22-inch-fhd-monitor/common-2",
+        "alt": "Samsung 22\" FHD Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls22d300gawxxl/gallery/in-essential-s3-s30gd-ls22d300gawxxl-544498977?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

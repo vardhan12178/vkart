@@ -66,26 +66,38 @@
     "groups": {
       "Cosmic Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_50445a70-f39a-4c0f-a517-5ed995744445.png?v=1793087077",
-          "alt": "boAt Airdopes Prime 702 ANC in Cosmic Black"
+          "key": "audio/boat-airdopes-prime-702-anc/cosmic-black-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Cosmic Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_50445a70-f39a-4c0f-a517-5ed995744445.png?v=1793087077",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_d16ff6b4-b863-4a4a-83e1-52c66bd7d22b.png?v=1793087705",
-          "alt": "boAt Airdopes Prime 702 ANC in Gold"
+          "key": "audio/boat-airdopes-prime-702-anc/gold-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_d16ff6b4-b863-4a4a-83e1-52c66bd7d22b.png?v=1793087705",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Smart Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_0ecc3f01-3a9b-460f-b3f2-84f485514321.png?v=1793088762",
-          "alt": "boAt Airdopes Prime 702 ANC in Smart Black"
+          "key": "audio/boat-airdopes-prime-702-anc/smart-black-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Smart Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_0ecc3f01-3a9b-460f-b3f2-84f485514321.png?v=1793088762",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Smart Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_a77edeb2-6291-49ab-a39b-b69f075eb860.png?v=1793088989",
-          "alt": "boAt Airdopes Prime 702 ANC in Smart Gold"
+          "key": "audio/boat-airdopes-prime-702-anc/smart-gold-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Smart Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_a77edeb2-6291-49ab-a39b-b69f075eb860.png?v=1793088989",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

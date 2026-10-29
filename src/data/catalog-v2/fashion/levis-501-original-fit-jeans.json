@@ -90,24 +90,39 @@
     "groups": {
       "Med Indigo": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_01_Styleshot.jpg?v=1787392002",
-          "alt": "Levi's 501 Original Fit Jeans"
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-1",
+          "alt": "Levi's 501 Original Fit Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_01_Styleshot.jpg?v=1787392002",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_02_Front.jpg?v=1787392005",
-          "alt": "Levi's 501 Original Fit Jeans, view 2"
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-2",
+          "alt": "Levi's 501 Original Fit Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_02_Front.jpg?v=1787392005",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_03_Side.jpg?v=1787392009",
-          "alt": "Levi's 501 Original Fit Jeans, view 3"
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-3",
+          "alt": "Levi's 501 Original Fit Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_03_Side.jpg?v=1787392009",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_03_Back.jpg?v=1787391999",
-          "alt": "Levi's 501 Original Fit Jeans, view 4"
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-4",
+          "alt": "Levi's 501 Original Fit Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_03_Back.jpg?v=1787391999",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/501_orginal_Fit_Guide_2026_55324123-c280-464e-a4dc-9a7866d96c74.jpg?v=1791982543",
-          "alt": "Levi's 501 Original Fit Jeans, view 5"
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-5",
+          "alt": "Levi's 501 Original Fit Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/501_orginal_Fit_Guide_2026_55324123-c280-464e-a4dc-9a7866d96c74.jpg?v=1791982543",
+          "width": 1034,
+          "height": 1378
         }
       ]
     },

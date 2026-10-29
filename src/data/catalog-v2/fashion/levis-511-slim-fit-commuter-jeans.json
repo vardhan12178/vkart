@@ -100,36 +100,60 @@
     "groups": {
       "Light Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_01_Styleshot.jpg?v=1792061377",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-1",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_01_Styleshot.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_04_SIde.jpg?v=1792061378",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 2"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-2",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_04_SIde.jpg?v=1792061378",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_05_Front.jpg?v=1792061378",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 3"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-3",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_05_Front.jpg?v=1792061378",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_07_Detail_20.jpg?v=1792061377",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 4"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-4",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_07_Detail_20.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_08_Detail_20.jpg?v=1792061377",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 5"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-5",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_08_Detail_20.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_06_Detail_20.jpg?v=1792061377",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 6"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-6",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_06_Detail_20.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_03_Back.jpg?v=1792061377",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 7"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-7",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_03_Back.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_02_Front.jpg?v=1792061377",
-          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 8"
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-8",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_02_Front.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
         }
       ]
     },

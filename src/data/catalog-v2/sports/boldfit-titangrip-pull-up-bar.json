@@ -74,36 +74,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1_3028652a-662c-4c94-8b2b-d80ef7a10240.png?v=1787033795",
-        "alt": "Boldfit TitanGrip Pull Up Bar"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-1",
+        "alt": "Boldfit TitanGrip Pull Up Bar",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1_3028652a-662c-4c94-8b2b-d80ef7a10240.png?v=1787033795",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/TitanGripPullupBar2B.webp?v=1777127866",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 2"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-2",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/TitanGripPullupBar2B.webp?v=1777127866",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/4TitanGripPullupBar.png?v=1783071620",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 3"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-3",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/4TitanGripPullupBar.png?v=1783071620",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/2_283e548a-4441-461a-9c25-ad5f6bb44279.png?v=1783071620",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 4"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-4",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/2_283e548a-4441-461a-9c25-ad5f6bb44279.png?v=1783071620",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/3Titan.png?v=1783071620",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 5"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-5",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/3Titan.png?v=1783071620",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/5TitanPullupbar.png?v=1783071620",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 6"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-6",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/5TitanPullupbar.png?v=1783071620",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/1TitanGrip.png?v=1783071620",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 7"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-7",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/1TitanGrip.png?v=1783071620",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/TitanGripPullupBar4.webp?v=1777127866",
-        "alt": "Boldfit TitanGrip Pull Up Bar, view 8"
+        "key": "sports/boldfit-titangrip-pull-up-bar/common-8",
+        "alt": "Boldfit TitanGrip Pull Up Bar, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/TitanGripPullupBar4.webp?v=1777127866",
+        "width": 1500,
+        "height": 1500
       }
     ]
   },

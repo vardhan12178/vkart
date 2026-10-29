@@ -53,20 +53,29 @@
     "groups": {
       "Cosmic Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/FirstImage.png?v=1786522454",
-          "alt": "boAt Rockerz 351 ANC in Cosmic Black"
+          "key": "audio/boat-rockerz-351-anc/cosmic-black-1",
+          "alt": "boAt Rockerz 351 ANC in Cosmic Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/FirstImage.png?v=1786522454",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Cosmic Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/First_Image.png?v=1786522591",
-          "alt": "boAt Rockerz 351 ANC in Cosmic Blue"
+          "key": "audio/boat-rockerz-351-anc/cosmic-blue-1",
+          "alt": "boAt Rockerz 351 ANC in Cosmic Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/First_Image.png?v=1786522591",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Lunar Mist": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/First_Image_e7b97b51-1867-461e-a0f7-c0019ea93051.png?v=1786522719",
-          "alt": "boAt Rockerz 351 ANC in Lunar Mist"
+          "key": "audio/boat-rockerz-351-anc/lunar-mist-1",
+          "alt": "boAt Rockerz 351 ANC in Lunar Mist",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/First_Image_e7b97b51-1867-461e-a0f7-c0019ea93051.png?v=1786522719",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

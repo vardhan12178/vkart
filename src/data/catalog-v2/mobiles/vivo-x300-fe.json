@@ -88,7 +88,7 @@
     "chargingW": 90,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 191.0,
+    "weightG": 191,
     "chip": "Snapdragon 8 Gen 5",
     "os": "Android",
     "ramGB": 8
@@ -131,84 +131,127 @@
     "groups": {
       "Noir Black": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437013387/2eeef8f23c01beeadd69afd5bcd77c72.png",
-          "alt": "vivo X300 FE in Noir Black"
+          "key": "mobiles/vivo-x300-fe/noir-black-1",
+          "alt": "vivo X300 FE in Noir Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437013387/2eeef8f23c01beeadd69afd5bcd77c72.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437013079/e9a0a2c040ca21fe982be7ca5cc360ba.jpg",
-          "alt": "vivo X300 FE in Noir Black, view 2"
+          "key": "mobiles/vivo-x300-fe/noir-black-3",
+          "alt": "vivo X300 FE in Noir Black, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437015278/2da7b53bc4373faa0e3d3cb33d14aa92.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437015278/2da7b53bc4373faa0e3d3cb33d14aa92.png",
-          "alt": "vivo X300 FE in Noir Black, view 3"
+          "key": "mobiles/vivo-x300-fe/noir-black-4",
+          "alt": "vivo X300 FE in Noir Black, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437013609/c5c2e74ba4a57b0b3e44e4f133f53c90.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437013609/c5c2e74ba4a57b0b3e44e4f133f53c90.png",
-          "alt": "vivo X300 FE in Noir Black, view 4"
+          "key": "mobiles/vivo-x300-fe/noir-black-5",
+          "alt": "vivo X300 FE in Noir Black, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437012852/46a79d26238e5067fe07608024647156.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437012852/46a79d26238e5067fe07608024647156.png",
-          "alt": "vivo X300 FE in Noir Black, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437012646/1cedcb49f7038488409dc520934b2718.png",
-          "alt": "vivo X300 FE in Noir Black, view 6"
+          "key": "mobiles/vivo-x300-fe/noir-black-6",
+          "alt": "vivo X300 FE in Noir Black, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437012646/1cedcb49f7038488409dc520934b2718.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Lilac Purple": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056680/9864cb5c8605534a30fd83117cd99dc5.png",
-          "alt": "vivo X300 FE in Lilac Purple"
+          "key": "mobiles/vivo-x300-fe/lilac-purple-1",
+          "alt": "vivo X300 FE in Lilac Purple",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056680/9864cb5c8605534a30fd83117cd99dc5.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437057965/409cf78c6ec7886acf50166ffbd5edf6.png",
-          "alt": "vivo X300 FE in Lilac Purple, view 2"
+          "key": "mobiles/vivo-x300-fe/lilac-purple-2",
+          "alt": "vivo X300 FE in Lilac Purple, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437057965/409cf78c6ec7886acf50166ffbd5edf6.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056651/3038b5b6cdac64649afaa3b7a62f42fb.png",
-          "alt": "vivo X300 FE in Lilac Purple, view 3"
+          "key": "mobiles/vivo-x300-fe/lilac-purple-3",
+          "alt": "vivo X300 FE in Lilac Purple, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056651/3038b5b6cdac64649afaa3b7a62f42fb.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056683/1e2e147f452bd33f382e323ce372211d.png",
-          "alt": "vivo X300 FE in Lilac Purple, view 4"
+          "key": "mobiles/vivo-x300-fe/lilac-purple-4",
+          "alt": "vivo X300 FE in Lilac Purple, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056683/1e2e147f452bd33f382e323ce372211d.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056757/d31fe6500ae5f746853dc2b4da9fa76b.png",
-          "alt": "vivo X300 FE in Lilac Purple, view 5"
+          "key": "mobiles/vivo-x300-fe/lilac-purple-5",
+          "alt": "vivo X300 FE in Lilac Purple, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056757/d31fe6500ae5f746853dc2b4da9fa76b.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056701/f754a39fec3fd37fc3acadab8e6da7b5.png",
-          "alt": "vivo X300 FE in Lilac Purple, view 6"
+          "key": "mobiles/vivo-x300-fe/lilac-purple-6",
+          "alt": "vivo X300 FE in Lilac Purple, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437056701/f754a39fec3fd37fc3acadab8e6da7b5.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Urban Olive": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131255/bf2160cf00bbe60eaa746ee7df3c5acf.png",
-          "alt": "vivo X300 FE in Urban Olive"
+          "key": "mobiles/vivo-x300-fe/urban-olive-1",
+          "alt": "vivo X300 FE in Urban Olive",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131255/bf2160cf00bbe60eaa746ee7df3c5acf.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131207/1f7c4e4b83d06d18963f77569c5d2e2c.jpg",
-          "alt": "vivo X300 FE in Urban Olive, view 2"
+          "key": "mobiles/vivo-x300-fe/urban-olive-3",
+          "alt": "vivo X300 FE in Urban Olive, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131264/0fa37a3ffb7d734caf25a3e05bf2b055.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131264/0fa37a3ffb7d734caf25a3e05bf2b055.png",
-          "alt": "vivo X300 FE in Urban Olive, view 3"
+          "key": "mobiles/vivo-x300-fe/urban-olive-4",
+          "alt": "vivo X300 FE in Urban Olive, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131199/369ca1935f6c560f9a3ae8073e7bf1f7.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131199/369ca1935f6c560f9a3ae8073e7bf1f7.png",
-          "alt": "vivo X300 FE in Urban Olive, view 4"
+          "key": "mobiles/vivo-x300-fe/urban-olive-5",
+          "alt": "vivo X300 FE in Urban Olive, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131112/0786b6063ef2c056f7484c69fca29150.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437131112/0786b6063ef2c056f7484c69fca29150.png",
-          "alt": "vivo X300 FE in Urban Olive, view 5"
+          "key": "mobiles/vivo-x300-fe/urban-olive-6",
+          "alt": "vivo X300 FE in Urban Olive, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437133337/94306d2b2c0ffb3e64ad57e715226ad0.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437133337/94306d2b2c0ffb3e64ad57e715226ad0.png",
-          "alt": "vivo X300 FE in Urban Olive, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437133758/9f6e942b50b3d7fe52a65cd17ca27c79.png",
-          "alt": "vivo X300 FE in Urban Olive, view 7"
+          "key": "mobiles/vivo-x300-fe/urban-olive-7",
+          "alt": "vivo X300 FE in Urban Olive, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786437133758/9f6e942b50b3d7fe52a65cd17ca27c79.png",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

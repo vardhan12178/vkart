@@ -80,32 +80,53 @@
     "groups": {
       "Red White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_fa8f4389-26b3-4351-ac64-e6ef93587f16.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-1",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_fa8f4389-26b3-4351-ac64-e6ef93587f16.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_4dda7958-7512-4da0-a4db-40686203cb02.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 2"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-2",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_4dda7958-7512-4da0-a4db-40686203cb02.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_0b901c93-7431-4c0b-9e92-95ddc061709c.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 3"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-3",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_0b901c93-7431-4c0b-9e92-95ddc061709c.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_006b5f9c-df48-4aaf-9b20-ee05a1c7c89b.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 4"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-4",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_006b5f9c-df48-4aaf-9b20-ee05a1c7c89b.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_f437ca84-06fd-451c-9849-f80a108a3e89.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 5"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-5",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_f437ca84-06fd-451c-9849-f80a108a3e89.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/6_3100ff2a-f684-4cf4-8f8e-cf5c55efd8e4.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 6"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-6",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/6_3100ff2a-f684-4cf4-8f8e-cf5c55efd8e4.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/7_3094e777-f4dd-489b-8cf0-1e6170d6fe4c.jpg?v=1781590854",
-          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 7"
+          "key": "fashion/red-tape-women-s-colorblocked-shoulder-bag/red-white-7",
+          "alt": "Red Tape Women's Colorblocked Shoulder Bag, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/7_3094e777-f4dd-489b-8cf0-1e6170d6fe4c.jpg?v=1781590854",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

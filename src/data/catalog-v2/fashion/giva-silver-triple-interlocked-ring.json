@@ -56,24 +56,39 @@
     "groups": {
       "Silver": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_1_08b28df9-e0fe-476b-8135-82405bc932fb.jpg?v=1786562180",
-          "alt": "GIVA Silver Triple Interlocked Ring"
+          "key": "fashion/giva-silver-triple-interlocked-ring/silver-1",
+          "alt": "GIVA Silver Triple Interlocked Ring",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_1_08b28df9-e0fe-476b-8135-82405bc932fb.jpg?v=1786562180",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_5_11716a9e-97f6-442f-8460-d906a61353a8.jpg?v=1786562180",
-          "alt": "GIVA Silver Triple Interlocked Ring, view 2"
+          "key": "fashion/giva-silver-triple-interlocked-ring/silver-2",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_5_11716a9e-97f6-442f-8460-d906a61353a8.jpg?v=1786562180",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_2_5cc9b2de-77c6-4a30-b45b-1f5bcbfbac5a.jpg?v=1786562180",
-          "alt": "GIVA Silver Triple Interlocked Ring, view 3"
+          "key": "fashion/giva-silver-triple-interlocked-ring/silver-3",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_2_5cc9b2de-77c6-4a30-b45b-1f5bcbfbac5a.jpg?v=1786562180",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_3_2776b902-4901-4a82-91e2-02a6d54a6136.jpg?v=1786562180",
-          "alt": "GIVA Silver Triple Interlocked Ring, view 4"
+          "key": "fashion/giva-silver-triple-interlocked-ring/silver-4",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_3_2776b902-4901-4a82-91e2-02a6d54a6136.jpg?v=1786562180",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_4_cfb6737e-b055-4fdb-bba4-01e5ff2caad4.jpg?v=1786562180",
-          "alt": "GIVA Silver Triple Interlocked Ring, view 5"
+          "key": "fashion/giva-silver-triple-interlocked-ring/silver-5",
+          "alt": "GIVA Silver Triple Interlocked Ring, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/R01417_4_cfb6737e-b055-4fdb-bba4-01e5ff2caad4.jpg?v=1786562180",
+          "width": 1500,
+          "height": 2000
         }
       ]
     },

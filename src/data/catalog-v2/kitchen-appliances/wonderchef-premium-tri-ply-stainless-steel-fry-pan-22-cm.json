@@ -67,32 +67,53 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804880.jpg?v=1757415146",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-1",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804880.jpg?v=1757415146",
+        "width": 1100,
+        "height": 1100
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804881.jpg?v=1757415146",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 2"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-2",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804881.jpg?v=1757415146",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804882.jpg?v=1757415147",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 3"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-3",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804882.jpg?v=1757415147",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804883.jpg?v=1757415147",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 4"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-4",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804883.jpg?v=1757415147",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804884.jpg?v=1757415147",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 5"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-5",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804884.jpg?v=1757415147",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804885.jpg?v=1757415147",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 6"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-6",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804885.jpg?v=1757415147",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804886.jpg?v=1757415147",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 7"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-fry-pan-22-cm/common-7",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Fry Pan 22 cm, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804886.jpg?v=1757415147",
+        "width": 1600,
+        "height": 1600
       }
     ]
   },

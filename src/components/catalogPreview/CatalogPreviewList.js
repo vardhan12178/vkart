@@ -76,7 +76,7 @@ export default function CatalogPreviewList() {
 
       <div className="mb-6 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
         <strong>Catalog v2 preview.</strong> Draft data for review: {products.length} products,{" "}
-        {products.reduce((n, p) => n + p.variants.length, 0)} variants. Images load from the brands' own sites for now.
+        {products.reduce((n, p) => n + p.variants.length, 0)} variants. Images are served from S3 as WebP.
       </div>
 
       <div className="flex gap-6 overflow-x-auto border-b border-gray-200">

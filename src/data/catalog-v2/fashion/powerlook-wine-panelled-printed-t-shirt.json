@@ -78,24 +78,39 @@
     "groups": {
       "Maroon": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/1_547575d7-55ca-49a5-9299-9b362212d812.jpg?v=1792994376",
-          "alt": "Powerlook Wine Panelled Printed T-Shirt"
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-1",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/1_547575d7-55ca-49a5-9299-9b362212d812.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/4_b17b6241-8770-4e26-9cbd-2c58e8121bc1.jpg?v=1792994376",
-          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 2"
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-2",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/4_b17b6241-8770-4e26-9cbd-2c58e8121bc1.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/3_54d5585d-c523-45d6-ab20-a719d0437c3e.jpg?v=1792994376",
-          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 3"
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-3",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/3_54d5585d-c523-45d6-ab20-a719d0437c3e.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/2_8d15cc61-85bd-4bb3-99b0-143ce959da0c.jpg?v=1792994376",
-          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 4"
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-4",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/2_8d15cc61-85bd-4bb3-99b0-143ce959da0c.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/5_25910490-d933-4a86-aa5c-b1a6d0547662.jpg?v=1792994376",
-          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 5"
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-5",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/5_25910490-d933-4a86-aa5c-b1a6d0547662.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
         }
       ]
     },

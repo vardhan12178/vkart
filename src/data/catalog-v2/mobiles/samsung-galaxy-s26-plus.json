@@ -90,25 +90,22 @@
     "groups": {
       "Pink Gold": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_pinkGold_PC_plus.jpg",
-          "alt": "Samsung Galaxy S26+ in Pink Gold"
+          "key": "mobiles/samsung-galaxy-s26-plus/pink-gold-1",
+          "alt": "Samsung Galaxy S26+ in Pink Gold",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_pinkGold_PC_plus.jpg",
+          "width": 1600,
+          "height": 864
         },
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s26/images/galaxy-s26-plus-features-colors-viewer-initial-pink-gold.jpg",
-          "alt": "Samsung Galaxy S26+ in Pink Gold, view 2"
+          "key": "mobiles/samsung-galaxy-s26-plus/pink-gold-2",
+          "alt": "Samsung Galaxy S26+ in Pink Gold, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/images/galaxy-s26-plus-features-colors-viewer-initial-pink-gold.jpg",
+          "width": 1440,
+          "height": 688
         }
       ]
     },
-    "common": [
-      {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-s26/images/galaxy-s26-features-colors-slimness.jpg",
-        "alt": "Samsung Galaxy S26+ — slim design"
-      },
-      {
-        "src": "https://images.samsung.com/in/smartphones/galaxy-s26/images/galaxy-s26-features-colors-size-comparison.jpg",
-        "alt": "Samsung Galaxy S26+ — Galaxy S26 and S26+ sizes"
-      }
-    ]
+    "common": []
   },
   "variants": [
     {

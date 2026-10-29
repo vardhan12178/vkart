@@ -104,30 +104,48 @@
     "groups": {
       "Silver": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wifi-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Pro (M5) in Silver"
+          "key": "tablets/apple-ipad-pro-m5/silver-1",
+          "alt": "iPad Pro (M5) in Silver",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wifi-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-13-select-wifi-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Pro (M5) in Silver, view 2"
+          "key": "tablets/apple-ipad-pro-m5/silver-2",
+          "alt": "iPad Pro (M5) in Silver, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-13-select-wifi-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wificell-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Pro (M5) in Silver, view 3"
+          "key": "tablets/apple-ipad-pro-m5/silver-3",
+          "alt": "iPad Pro (M5) in Silver, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wificell-silver-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Space Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wifi-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Pro (M5) in Space Black"
+          "key": "tablets/apple-ipad-pro-m5/space-black-1",
+          "alt": "iPad Pro (M5) in Space Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wifi-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-13-select-wifi-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Pro (M5) in Space Black, view 2"
+          "key": "tablets/apple-ipad-pro-m5/space-black-2",
+          "alt": "iPad Pro (M5) in Space Black, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-13-select-wifi-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wificell-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad Pro (M5) in Space Black, view 3"
+          "key": "tablets/apple-ipad-pro-m5/space-black-3",
+          "alt": "iPad Pro (M5) in Space Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-select-wificell-spaceblack-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ]
     },

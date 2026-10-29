@@ -65,7 +65,7 @@
     "resolution": "2560x1440",
     "refreshRateHz": 180,
     "panel": "IPS",
-    "responseTimeMs": 1.0,
+    "responseTimeMs": 1,
     "gaming": true
   },
   "variantOptions": [
@@ -83,28 +83,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic1.jpg?v=1778242396",
-        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor"
+        "key": "monitors/zebronics-a27qhd-27-qhd-180hz-gaming-monitor/common-1",
+        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic1.jpg?v=1778242396",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic2.jpg?v=1778242396",
-        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 2"
+        "key": "monitors/zebronics-a27qhd-27-qhd-180hz-gaming-monitor/common-2",
+        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic2.jpg?v=1778242396",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic3.jpg?v=1778242396",
-        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 3"
+        "key": "monitors/zebronics-a27qhd-27-qhd-180hz-gaming-monitor/common-3",
+        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic3.jpg?v=1778242396",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic4.jpg?v=1778242396",
-        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 4"
+        "key": "monitors/zebronics-a27qhd-27-qhd-180hz-gaming-monitor/common-4",
+        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic4.jpg?v=1778242396",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic5.jpg?v=1778242396",
-        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 5"
+        "key": "monitors/zebronics-a27qhd-27-qhd-180hz-gaming-monitor/common-5",
+        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic5.jpg?v=1778242396",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic16.jpg?v=1778242396",
-        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 6"
+        "key": "monitors/zebronics-a27qhd-27-qhd-180hz-gaming-monitor/common-6",
+        "alt": "Zebronics A27QHD 27\" QHD 180Hz Gaming Monitor, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-A27QHDLED-pic16.jpg?v=1778242396",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

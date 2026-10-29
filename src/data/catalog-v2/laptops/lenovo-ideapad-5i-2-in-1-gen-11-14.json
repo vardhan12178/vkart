@@ -35,7 +35,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 5 322",
     "gpu": "Integrated Graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "IPS",
     "refreshRateHz": 60,
     "weightKg": null,
@@ -71,12 +71,11 @@
     "groups": {
       "Luna Grey": [
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/03/02/img.20260302111029966658.jpg",
-          "alt": "Lenovo IdeaPad 5i 2-in-1 Gen 11 (14\", Intel) in Luna Grey"
-        },
-        {
-          "src": "https://p1-ofp.static.pub/ShareResource/optimized/pdp/ideapad/ideapad-2-in-1-series/len101i0139/len101i0139-hero-laptop-tent-front-facing.png",
-          "alt": "Lenovo IdeaPad 5i 2-in-1 Gen 11 (14\", Intel) in Luna Grey, view 2"
+          "key": "laptops/lenovo-ideapad-5i-2-in-1-gen-11-14/luna-grey-1",
+          "alt": "Lenovo IdeaPad 5i 2-in-1 Gen 11 (14\", Intel) in Luna Grey",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/03/02/img.20260302111029966658.jpg",
+          "width": 1280,
+          "height": 591
         }
       ]
     },

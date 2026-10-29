@@ -57,22 +57,34 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0024_Ear-black.png?v=1753757359",
-          "alt": "Nothing Ear in Black"
+          "key": "audio/nothing-ear/black-1",
+          "alt": "Nothing Ear in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0024_Ear-black.png?v=1753757359",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BA_360_ENTEI_030_blackBud_rgb_00_4fdaba7c-5568-4db0-aaa5-5129d524d8bd.png?v=1713169144",
-          "alt": "Nothing Ear in Black, view 2"
+          "key": "audio/nothing-ear/black-2",
+          "alt": "Nothing Ear in Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BA_360_ENTEI_030_blackBud_rgb_00_4fdaba7c-5568-4db0-aaa5-5129d524d8bd.png?v=1713169144",
+          "width": 4096,
+          "height": 4096
         }
       ],
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0023_Ear-white.png?v=1753757347",
-          "alt": "Nothing Ear in White"
+          "key": "audio/nothing-ear/white-1",
+          "alt": "Nothing Ear in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0023_Ear-white.png?v=1753757347",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BA_360_ENTEI_010_whiteBud_rgb.1001_a15d21d4-b8ce-4245-b753-c1892e1d2b4f.png?v=1713169144",
-          "alt": "Nothing Ear in White, view 2"
+          "key": "audio/nothing-ear/white-2",
+          "alt": "Nothing Ear in White, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BA_360_ENTEI_010_whiteBud_rgb.1001_a15d21d4-b8ce-4245-b753-c1892e1d2b4f.png?v=1713169144",
+          "width": 4096,
+          "height": 4096
         }
       ]
     },

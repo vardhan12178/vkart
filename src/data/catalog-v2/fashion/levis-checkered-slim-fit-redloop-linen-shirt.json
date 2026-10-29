@@ -81,36 +81,60 @@
     "groups": {
       "Navy Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_02_Front.jpg?v=1793082959",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-1",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_02_Front.jpg?v=1793082959",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_01_Styleshot.jpg?v=1793082960",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 2"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-2",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_01_Styleshot.jpg?v=1793082960",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_03_Back.jpg?v=1793082959",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 3"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-3",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_03_Back.jpg?v=1793082959",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_04_Side.jpg?v=1793082960",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 4"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-4",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_04_Side.jpg?v=1793082960",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_06_Detail_20.jpg?v=1793082961",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 5"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-5",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_06_Detail_20.jpg?v=1793082961",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_07_Detail.jpg?v=1793082960",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 6"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-6",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_07_Detail.jpg?v=1793082960",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_5_Full.jpg?v=1793082961",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 7"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-7",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/006DG0027_5_Full.jpg?v=1793082961",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Redloop_Last_Image_19d50230-6156-4d91-a07f-f32f73eadfcf.jpg?v=1791886155",
-          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 8"
+          "key": "fashion/levis-checkered-slim-fit-redloop-linen-shirt/navy-blue-8",
+          "alt": "Levi's Checkered Slim Fit Redloop Linen Shirt, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Redloop_Last_Image_19d50230-6156-4d91-a07f-f32f73eadfcf.jpg?v=1791886155",
+          "width": 1034,
+          "height": 1378
         }
       ]
     },

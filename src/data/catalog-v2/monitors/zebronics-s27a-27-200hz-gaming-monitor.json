@@ -70,7 +70,7 @@
     "resolution": "2560 x 1440",
     "refreshRateHz": 200,
     "panel": "IPS",
-    "responseTimeMs": 1.0,
+    "responseTimeMs": 1,
     "gaming": true
   },
   "variantOptions": [
@@ -88,28 +88,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic-1.jpg?v=1775904889",
-        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor"
+        "key": "monitors/zebronics-s27a-27-200hz-gaming-monitor/common-1",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic-1.jpg?v=1775904889",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic2.jpg?v=1775904889",
-        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 2"
+        "key": "monitors/zebronics-s27a-27-200hz-gaming-monitor/common-2",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic2.jpg?v=1775904889",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic3.jpg?v=1775904889",
-        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 3"
+        "key": "monitors/zebronics-s27a-27-200hz-gaming-monitor/common-3",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic3.jpg?v=1775904889",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic4.jpg?v=1775904889",
-        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 4"
+        "key": "monitors/zebronics-s27a-27-200hz-gaming-monitor/common-4",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic4.jpg?v=1775904889",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic5.jpg?v=1775904889",
-        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 5"
+        "key": "monitors/zebronics-s27a-27-200hz-gaming-monitor/common-5",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic5.jpg?v=1775904889",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic6.jpg?v=1775904889",
-        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 6"
+        "key": "monitors/zebronics-s27a-27-200hz-gaming-monitor/common-6",
+        "alt": "Zebronics S27A 27\" 200Hz Gaming Monitor, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-S27A_200Hz_-pic6.jpg?v=1775904889",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

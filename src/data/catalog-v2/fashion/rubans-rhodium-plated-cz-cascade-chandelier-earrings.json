@@ -56,24 +56,39 @@
     "groups": {
       "Rhodium": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627Model1.jpg?v=1793000547",
-          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings"
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-1",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627Model1.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627Model2.jpg?v=1793000547",
-          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 2"
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-2",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627Model2.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_01.jpg?v=1793000547",
-          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 3"
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-3",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_01.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_02.jpg?v=1793000547",
-          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 4"
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-4",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_02.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_03.jpg?v=1793000547",
-          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 5"
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-5",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_03.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

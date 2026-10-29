@@ -55,32 +55,53 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vit16New.png?v=1721398127",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-1",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vit16New.png?v=1721398127",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_02.png?v=1726489863",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 2"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-2",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_02.png?v=1726489863",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_03.png?v=1726489864",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 3"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-3",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_03.png?v=1726489864",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_04.png?v=1726489864",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 4"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-4",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_04.png?v=1726489864",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_05.png?v=1726489864",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 5"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-5",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_05.png?v=1726489864",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_06.png?v=1726489861",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 6"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-6",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_06.png?v=1726489861",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vit_C_E_Ferulic_Serum_10ml.png?v=1783339547",
-        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 7"
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-7",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vit_C_E_Ferulic_Serum_10ml.png?v=1783339547",
+        "width": 840,
+        "height": 1260
       }
     ]
   },

@@ -116,32 +116,29 @@
     "groups": {
       "Soft Pink": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-softpink-202603?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17e in Soft Pink"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-softpink-202603_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17e in Soft Pink, view 2"
+          "key": "mobiles/apple-iphone-17e/soft-pink-1",
+          "alt": "Apple iPhone 17e in Soft Pink",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-softpink-202603?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         }
       ],
       "White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-white-202603?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17e in White"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-white-202603_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17e in White, view 2"
+          "key": "mobiles/apple-iphone-17e/white-1",
+          "alt": "Apple iPhone 17e in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-white-202603?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         }
       ],
       "Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-black-202603?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17e in Black"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-black-202603_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 17e in Black, view 2"
+          "key": "mobiles/apple-iphone-17e/black-1",
+          "alt": "Apple iPhone 17e in Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-finish-select-black-202603?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         }
       ]
     },

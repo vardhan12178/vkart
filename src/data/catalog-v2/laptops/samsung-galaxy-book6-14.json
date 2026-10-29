@@ -31,7 +31,7 @@
       "ssd": "512GB or 1TB, with expansion slot"
     },
     "Display": {
-      "size": 14.0,
+      "size": 14,
       "type": "IPS, anti-glare",
       "aspectRatio": "16:10"
     },
@@ -57,7 +57,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 5 325",
     "gpu": "Intel graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "IPS",
     "refreshRateHz": null,
     "weightKg": 1.43,
@@ -97,37 +97,58 @@
     "groups": {
       "Gray": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-kg1in/gallery/in-galaxy-book6-14-inch-np740vjgg-np740vjg-kg1in-thumb-551774486?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 (14\") in Gray"
+          "key": "laptops/samsung-galaxy-book6-14/gray-1",
+          "alt": "Samsung Galaxy Book6 (14\") in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-kg1in/gallery/in-galaxy-book6-14-inch-np740vjgg-np740vjg-kg1in-thumb-551774486?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         },
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-kg2in/gallery/in-galaxy-book6-14-inch-np740vjgf-np740vjg-kg2in-thumb-551777682?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 (14\") in Gray, view 2"
+          "key": "laptops/samsung-galaxy-book6-14/gray-2",
+          "alt": "Samsung Galaxy Book6 (14\") in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-kg2in/gallery/in-galaxy-book6-14-inch-np740vjgf-np740vjg-kg2in-thumb-551777682?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         }
       ],
       "Silver": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-ks1in/gallery/in-galaxy-book6-14-inch-np740vjgg-584304-np740vjg-ks1in-thumb-551797175?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 (14\") in Silver"
+          "key": "laptops/samsung-galaxy-book6-14/silver-1",
+          "alt": "Samsung Galaxy Book6 (14\") in Silver",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-ks1in/gallery/in-galaxy-book6-14-inch-np740vjgg-584304-np740vjg-ks1in-thumb-551797175?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         },
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-ks2in/gallery/in-galaxy-book-np740vjg-ks2in-galaxy-book---------cm--ultra-------gb--copilot--pc-silver-thumb-551797395?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 (14\") in Silver, view 2"
+          "key": "laptops/samsung-galaxy-book6-14/silver-2",
+          "alt": "Samsung Galaxy Book6 (14\") in Silver, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-ks2in/gallery/in-galaxy-book-np740vjg-ks2in-galaxy-book---------cm--ultra-------gb--copilot--pc-silver-thumb-551797395?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Design_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 (14\") — symmetrical design"
+        "key": "laptops/samsung-galaxy-book6-14/common-1",
+        "alt": "Samsung Galaxy Book6 (14\") — symmetrical design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Processor_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 (14\") — Intel Core Ultra Series 3"
+        "key": "laptops/samsung-galaxy-book6-14/common-2",
+        "alt": "Samsung Galaxy Book6 (14\") — Intel Core Ultra Series 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Battery_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 (14\") — battery life"
+        "key": "laptops/samsung-galaxy-book6-14/common-3",
+        "alt": "Samsung Galaxy Book6 (14\") — battery life",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Battery_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       }
     ]
   },

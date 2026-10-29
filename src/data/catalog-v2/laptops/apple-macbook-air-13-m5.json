@@ -115,43 +115,32 @@
   "media": {
     "groupBy": "Color",
     "groups": {
-      "Sky Blue": [
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-skyblue-select-202503?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple MacBook Air 13\" (M5) in Sky Blue"
-        }
-      ],
-      "Midnight": [
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-midnight-select-202503?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple MacBook Air 13\" (M5) in Midnight"
-        }
-      ],
-      "Silver": [
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-silver-select-202503?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple MacBook Air 13\" (M5) in Silver"
-        }
-      ],
-      "Starlight": [
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-starlight-select-202503?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple MacBook Air 13\" (M5) in Starlight"
-        }
-      ]
+      "Sky Blue": [],
+      "Midnight": [],
+      "Silver": [],
+      "Starlight": []
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/macbook-air/z/images/overview/hero/hero_static__c9sislzzicq6_large_2x.png",
-        "alt": "Apple MacBook Air 13\" (M5) — open, side angle"
+        "key": "laptops/apple-macbook-air-13-m5/common-1",
+        "alt": "Apple MacBook Air 13\" (M5) — open, side angle",
+        "sourceUrl": "https://www.apple.com/v/macbook-air/z/images/overview/hero/hero_static__c9sislzzicq6_large_2x.png",
+        "width": 1960,
+        "height": 938
       },
       {
-        "src": "https://www.apple.com/v/macbook-air/z/images/overview/design/design_hero_static__e56c1v71mr6u_large_2x.png",
-        "alt": "Apple MacBook Air 13\" (M5) — thin profile"
+        "key": "laptops/apple-macbook-air-13-m5/common-2",
+        "alt": "Apple MacBook Air 13\" (M5) — thin profile",
+        "sourceUrl": "https://www.apple.com/v/macbook-air/z/images/overview/design/design_hero_static__e56c1v71mr6u_large_2x.png",
+        "width": 3456,
+        "height": 1334
       },
       {
-        "src": "https://www.apple.com/v/macbook-air/z/images/overview/macos/macos_hero__et3dsrq64iwm_large_2x.jpg",
-        "alt": "Apple MacBook Air 13\" (M5) — macOS on the display"
+        "key": "laptops/apple-macbook-air-13-m5/common-3",
+        "alt": "Apple MacBook Air 13\" (M5) — macOS on the display",
+        "sourceUrl": "https://www.apple.com/v/macbook-air/z/images/overview/macos/macos_hero__et3dsrq64iwm_large_2x.jpg",
+        "width": 1960,
+        "height": 1192
       }
     ]
   },

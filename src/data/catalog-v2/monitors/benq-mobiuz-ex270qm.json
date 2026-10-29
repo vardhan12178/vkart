@@ -111,11 +111,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 27.0,
+    "screenInch": 27,
     "resolution": "2560x1440",
     "refreshRateHz": 240,
     "panel": "IPS",
-    "responseTimeMs": 1.0,
+    "responseTimeMs": 1,
     "gaming": true,
     "curved": false
   },
@@ -134,36 +134,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-right45-5?$ResponsivePreset$&wid=1200",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor"
+        "key": "monitors/benq-mobiuz-ex270qm/common-1",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-right45-5?$ResponsivePreset$&wid=1200",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-front-high?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 2"
+        "key": "monitors/benq-mobiuz-ex270qm/common-2",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-front-high?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-left45-1?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 3"
+        "key": "monitors/benq-mobiuz-ex270qm/common-3",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 3",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-left45-1?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-back-3?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 4"
+        "key": "monitors/benq-mobiuz-ex270qm/common-4",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 4",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-back-3?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-leftside-information?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 5"
+        "key": "monitors/benq-mobiuz-ex270qm/common-5",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 5",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-leftside-information?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-connectivity-information?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 6"
+        "key": "monitors/benq-mobiuz-ex270qm/common-6",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 6",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-connectivity-information?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-remote-control?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 7"
+        "key": "monitors/benq-mobiuz-ex270qm/common-7",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 7",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-remote-control?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       },
       {
-        "src": "https://image.benq.com/is/image/benqco/ex270qm-front-low?$ResponsivePreset$&wid=1200&fmt=png-alpha",
-        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 8"
+        "key": "monitors/benq-mobiuz-ex270qm/common-8",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 8",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-front-low?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
       }
     ]
   },

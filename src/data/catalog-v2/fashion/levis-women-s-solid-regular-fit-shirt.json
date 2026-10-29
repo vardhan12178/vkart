@@ -81,28 +81,46 @@
     "groups": {
       "Light Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_01_Styleshot.jpg?v=1791892344",
-          "alt": "Levi's Women's Solid Regular Fit Shirt"
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-1",
+          "alt": "Levi's Women's Solid Regular Fit Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_01_Styleshot.jpg?v=1791892344",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_02_Front.jpg?v=1791892342",
-          "alt": "Levi's Women's Solid Regular Fit Shirt, view 2"
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-2",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_02_Front.jpg?v=1791892342",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_03_Back.jpg?v=1791892342",
-          "alt": "Levi's Women's Solid Regular Fit Shirt, view 3"
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-3",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_03_Back.jpg?v=1791892342",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_04_Side.jpg?v=1791892344",
-          "alt": "Levi's Women's Solid Regular Fit Shirt, view 4"
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-4",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_04_Side.jpg?v=1791892344",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_05_Full.jpg?v=1791892343",
-          "alt": "Levi's Women's Solid Regular Fit Shirt, view 5"
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-5",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_05_Full.jpg?v=1791892343",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_06_Detail_20.jpg?v=1791892342",
-          "alt": "Levi's Women's Solid Regular Fit Shirt, view 6"
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-6",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_06_Detail_20.jpg?v=1791892342",
+          "width": 1034,
+          "height": 1376
         }
       ]
     },

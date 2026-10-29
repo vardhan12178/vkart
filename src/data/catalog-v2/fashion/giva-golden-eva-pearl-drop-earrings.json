@@ -56,24 +56,39 @@
     "groups": {
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_1_6ba4ed99-a798-4f16-95dd-f2c4b3d47bb1_1.jpg?v=1793082884",
-          "alt": "GIVA Golden Eva Pearl Drop Earrings"
+          "key": "fashion/giva-golden-eva-pearl-drop-earrings/gold-1",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_1_6ba4ed99-a798-4f16-95dd-f2c4b3d47bb1_1.jpg?v=1793082884",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_5_49a4ec44-d844-4435-93b1-f0ed43c27ca6_1.jpg?v=1793082884",
-          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 2"
+          "key": "fashion/giva-golden-eva-pearl-drop-earrings/gold-2",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_5_49a4ec44-d844-4435-93b1-f0ed43c27ca6_1.jpg?v=1793082884",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_2_ca008d04-cf66-4cd0-8f96-8487f640a973.jpg?v=1786593284",
-          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 3"
+          "key": "fashion/giva-golden-eva-pearl-drop-earrings/gold-3",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_2_ca008d04-cf66-4cd0-8f96-8487f640a973.jpg?v=1786593284",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_3_5320af47-a522-4b37-978d-d475350125db_1.jpg?v=1793083054",
-          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 4"
+          "key": "fashion/giva-golden-eva-pearl-drop-earrings/gold-4",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_3_5320af47-a522-4b37-978d-d475350125db_1.jpg?v=1793083054",
+          "width": 1500,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_4_4faf9dd0-13dd-467c-8ba5-0a900faa8343.jpg?v=1786593284",
-          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 5"
+          "key": "fashion/giva-golden-eva-pearl-drop-earrings/gold-5",
+          "alt": "GIVA Golden Eva Pearl Drop Earrings, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ER03623_4_4faf9dd0-13dd-467c-8ba5-0a900faa8343.jpg?v=1786593284",
+          "width": 1500,
+          "height": 2000
         }
       ]
     },

@@ -53,28 +53,39 @@
     "groups": {
       "55\"": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S30-Primary-Image-copy.jpg?v=1782972767",
-          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\""
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-1",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S30-Primary-Image-copy.jpg?v=1782972767",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-55-65-S30-Screen.jpg?v=1756187039",
-          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 2"
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-2",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-55-65-S30-Screen.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-S30-tv-feature.jpg?v=1756187039",
-          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 3"
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-3",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-S30-tv-feature.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/videoimage.jpg?v=1756191084",
-          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 4"
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-5",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-S30-tv-smart.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-S30-tv-smart.jpg?v=1756187039",
-          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 5"
-        },
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-_BRAVIA3_55inch_Dimension.jpg?v=1756187039",
-          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 6"
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-6",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-_BRAVIA3_55inch_Dimension.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
         }
       ]
     },

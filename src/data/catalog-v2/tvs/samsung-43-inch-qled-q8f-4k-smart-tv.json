@@ -113,7 +113,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 43.0,
+    "screenInch": 43,
     "resolution": "4K (3,840 x 2,160)",
     "refreshRateHz": null,
     "panel": "QLED",
@@ -136,12 +136,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43q8faaulxl/gallery/in-qled-q8f-544772-qa43q8faaulxl-thumb-546563059?$650_519_PNG$",
-        "alt": "Samsung 43\" QLED Q8F 4K Smart TV"
+        "key": "tvs/samsung-43-inch-qled-q8f-4k-smart-tv/common-1",
+        "alt": "Samsung 43\" QLED Q8F 4K Smart TV",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43q8faaulxl/gallery/in-qled-q8f-544772-qa43q8faaulxl-thumb-546563059?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43q8faaulxl/gallery/in-qled-q8f-544772-qa43q8faaulxl-546563052?$650_519_PNG$",
-        "alt": "Samsung 43\" QLED Q8F 4K Smart TV, view 2"
+        "key": "tvs/samsung-43-inch-qled-q8f-4k-smart-tv/common-2",
+        "alt": "Samsung 43\" QLED Q8F 4K Smart TV, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43q8faaulxl/gallery/in-qled-q8f-544772-qa43q8faaulxl-546563052?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

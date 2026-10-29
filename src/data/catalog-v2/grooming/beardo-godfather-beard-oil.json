@@ -32,36 +32,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/1_247e969d-a827-472c-bf67-36d1ef78c49b.jpg?v=1758444233",
-        "alt": "Beardo Godfather Beard Oil"
+        "key": "grooming/beardo-godfather-beard-oil/common-1",
+        "alt": "Beardo Godfather Beard Oil",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/1_247e969d-a827-472c-bf67-36d1ef78c49b.jpg?v=1758444233",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/1_76d2ba3e-d24f-4e03-b4af-807cbf4fbf10.jpg?v=1758444233",
-        "alt": "Beardo Godfather Beard Oil, view 2"
+        "key": "grooming/beardo-godfather-beard-oil/common-3",
+        "alt": "Beardo Godfather Beard Oil, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/3_d21bee46-a65f-4b27-9310-93b679408ec0.jpg?v=1681744298",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/3_d21bee46-a65f-4b27-9310-93b679408ec0.jpg?v=1681744298",
-        "alt": "Beardo Godfather Beard Oil, view 3"
+        "key": "grooming/beardo-godfather-beard-oil/common-4",
+        "alt": "Beardo Godfather Beard Oil, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/4_27811b68-7d73-4870-8937-44a62123342a.jpg?v=1681744298",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/4_27811b68-7d73-4870-8937-44a62123342a.jpg?v=1681744298",
-        "alt": "Beardo Godfather Beard Oil, view 4"
+        "key": "grooming/beardo-godfather-beard-oil/common-5",
+        "alt": "Beardo Godfather Beard Oil, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/5_a70f179e-4e54-46b5-9509-942382207164.jpg?v=1681744298",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/5_a70f179e-4e54-46b5-9509-942382207164.jpg?v=1681744298",
-        "alt": "Beardo Godfather Beard Oil, view 5"
+        "key": "grooming/beardo-godfather-beard-oil/common-6",
+        "alt": "Beardo Godfather Beard Oil, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/6_710f4915-045c-4096-a92a-8fbd46962061.jpg?v=1681744298",
+        "width": 2160,
+        "height": 2160
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/6_710f4915-045c-4096-a92a-8fbd46962061.jpg?v=1681744298",
-        "alt": "Beardo Godfather Beard Oil, view 6"
-      },
-      {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/Beardo_Godfather_Oil_2160x2160_06.jpg?v=1681744298",
-        "alt": "Beardo Godfather Beard Oil, view 7"
-      },
-      {
-        "src": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/Beardo_Godfather_Oil_900x900_08.jpg?v=1682587747",
-        "alt": "Beardo Godfather Beard Oil, view 8"
+        "key": "grooming/beardo-godfather-beard-oil/common-7",
+        "alt": "Beardo Godfather Beard Oil, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/products/Beardo_Godfather_Oil_2160x2160_06.jpg?v=1681744298",
+        "width": 2160,
+        "height": 2160
       }
     ]
   },

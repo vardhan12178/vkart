@@ -180,20 +180,29 @@
     "groups": {
       "Prism White": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/EKwj5hhxX01Smjdl.png",
-          "alt": "OPPO K14 5G in Prism White"
+          "key": "mobiles/oppo-k14-5g/prism-white-1",
+          "alt": "OPPO K14 5G in Prism White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/EKwj5hhxX01Smjdl.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Icy Blue": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/8wsLk43mLD3LePZg.png",
-          "alt": "OPPO K14 5G in Icy Blue"
+          "key": "mobiles/oppo-k14-5g/icy-blue-1",
+          "alt": "OPPO K14 5G in Icy Blue",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/8wsLk43mLD3LePZg.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Prism Violet": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/YBlDw5PWIJCLrzea.png",
-          "alt": "OPPO K14 5G in Prism Violet"
+          "key": "mobiles/oppo-k14-5g/prism-violet-1",
+          "alt": "OPPO K14 5G in Prism Violet",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202603/06/YBlDw5PWIJCLrzea.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

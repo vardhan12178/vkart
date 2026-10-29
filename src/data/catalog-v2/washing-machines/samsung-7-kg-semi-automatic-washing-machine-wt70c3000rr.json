@@ -42,7 +42,7 @@
     }
   },
   "keySpecs": {
-    "capacityKg": 7.0,
+    "capacityKg": 7,
     "type": "Semi-Automatic",
     "starRating": 5,
     "inverter": false,
@@ -63,12 +63,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/wt70c3000rr-tl/gallery/in-wt3000mm-wt70c3000rr-tl-thumb-539991651?$650_519_PNG$",
-        "alt": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR"
+        "key": "washing-machines/samsung-7-kg-semi-automatic-washing-machine-wt70c3000rr/common-1",
+        "alt": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/wt70c3000rr-tl/gallery/in-wt3000mm-wt70c3000rr-tl-thumb-539991651?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/wt70c3000rr-tl/gallery/in-wt3000mm-wt70c3000rr-tl-539991641?$650_519_PNG$",
-        "alt": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR, view 2"
+        "key": "washing-machines/samsung-7-kg-semi-automatic-washing-machine-wt70c3000rr/common-2",
+        "alt": "Samsung 7 kg Semi-Automatic Washing Machine WT70C3000RR, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/wt70c3000rr-tl/gallery/in-wt3000mm-wt70c3000rr-tl-539991641?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

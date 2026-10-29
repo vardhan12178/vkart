@@ -90,7 +90,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 34.0,
+    "screenInch": 34,
     "resolution": "3,440 x 1,440",
     "refreshRateHz": 165,
     "panel": "VA",
@@ -113,16 +113,25 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-thumb-467164454?$650_519_PNG$",
-        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor"
+        "key": "monitors/samsung-34-inch-odyssey-g5-curved-gaming-monitor/common-1",
+        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-thumb-467164454?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-467164472?$650_519_PNG$",
-        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor, view 2"
+        "key": "monitors/samsung-34-inch-odyssey-g5-curved-gaming-monitor/common-2",
+        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-467164472?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-467164436?$650_519_PNG$",
-        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor, view 3"
+        "key": "monitors/samsung-34-inch-odyssey-g5-curved-gaming-monitor/common-3",
+        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor, view 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-467164436?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

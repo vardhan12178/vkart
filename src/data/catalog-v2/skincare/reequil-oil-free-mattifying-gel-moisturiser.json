@@ -50,36 +50,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Oil_free_mattifying_moisturiser_4632049f-27b7-415d-a783-941c494502c4.webp?v=1788197430",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-1",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Oil_free_mattifying_moisturiser_4632049f-27b7-415d-a783-941c494502c4.webp?v=1788197430",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/New_Old_b4362159-c09c-4939-a039-7e5ab71ef91d.jpg?v=1778759555",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 2"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-2",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/New_Old_b4362159-c09c-4939-a039-7e5ab71ef91d.jpg?v=1778759555",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/2_af3b1ac1-2c13-4720-8835-77dc379a94ba.jpg?v=1778759556",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 3"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-3",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/2_af3b1ac1-2c13-4720-8835-77dc379a94ba.jpg?v=1778759556",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/3_19b1d7de-e2a4-454e-8eac-f16982f6f9ac.jpg?v=1778759555",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 4"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-4",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/3_19b1d7de-e2a4-454e-8eac-f16982f6f9ac.jpg?v=1778759555",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/4_e9a08a8e-9b9c-482e-bbab-5e1a1c8a025e.jpg?v=1778759555",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 5"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-5",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/4_e9a08a8e-9b9c-482e-bbab-5e1a1c8a025e.jpg?v=1778759555",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/5_9637a173-242d-491d-b289-98883330c139.jpg?v=1778759555",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 6"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-6",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/5_9637a173-242d-491d-b289-98883330c139.jpg?v=1778759555",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/6_f09474e9-9343-42a6-832e-8d0df43298f4.jpg?v=1778759555",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 7"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-7",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/6_f09474e9-9343-42a6-832e-8d0df43298f4.jpg?v=1778759555",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/7_8673539d-10e7-4cea-935e-1d2e6e8241e6.jpg?v=1778759555",
-        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 8"
+        "key": "skincare/reequil-oil-free-mattifying-gel-moisturiser/common-8",
+        "alt": "Re'equil Oil Free Mattifying Gel Moisturiser, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/7_8673539d-10e7-4cea-935e-1d2e6e8241e6.jpg?v=1778759555",
+        "width": 1200,
+        "height": 1200
       }
     ]
   },

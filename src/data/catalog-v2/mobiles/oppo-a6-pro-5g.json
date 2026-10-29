@@ -173,14 +173,20 @@
     "groups": {
       "Cappuccino Brown": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/05/Pw1DpwSeCP5BvfYR.png",
-          "alt": "OPPO A6 Pro 5G in Cappuccino Brown"
+          "key": "mobiles/oppo-a6-pro-5g/cappuccino-brown-1",
+          "alt": "OPPO A6 Pro 5G in Cappuccino Brown",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/05/Pw1DpwSeCP5BvfYR.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Aurora Gold": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/05/7dZXhY8KO2HjRuHj.png",
-          "alt": "OPPO A6 Pro 5G in Aurora Gold"
+          "key": "mobiles/oppo-a6-pro-5g/aurora-gold-1",
+          "alt": "OPPO A6 Pro 5G in Aurora Gold",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/05/7dZXhY8KO2HjRuHj.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

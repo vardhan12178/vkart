@@ -101,42 +101,66 @@
     "groups": {
       "Blue": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-blue-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Blue"
+          "key": "tablets/apple-ipad-a16/blue-1",
+          "alt": "iPad (A16) in Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-blue-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-blue-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Blue, view 2"
+          "key": "tablets/apple-ipad-a16/blue-2",
+          "alt": "iPad (A16) in Blue, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-blue-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Pink": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-pink-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Pink"
+          "key": "tablets/apple-ipad-a16/pink-1",
+          "alt": "iPad (A16) in Pink",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-pink-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-pink-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Pink, view 2"
+          "key": "tablets/apple-ipad-a16/pink-2",
+          "alt": "iPad (A16) in Pink, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-pink-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Silver": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Silver"
+          "key": "tablets/apple-ipad-a16/silver-1",
+          "alt": "iPad (A16) in Silver",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Silver, view 2"
+          "key": "tablets/apple-ipad-a16/silver-2",
+          "alt": "iPad (A16) in Silver, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Yellow": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-yellow-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Yellow"
+          "key": "tablets/apple-ipad-a16/yellow-1",
+          "alt": "iPad (A16) in Yellow",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-yellow-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-yellow-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "iPad (A16) in Yellow, view 2"
+          "key": "tablets/apple-ipad-a16/yellow-2",
+          "alt": "iPad (A16) in Yellow, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-yellow-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ]
     },

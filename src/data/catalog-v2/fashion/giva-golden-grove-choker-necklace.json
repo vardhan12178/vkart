@@ -54,20 +54,32 @@
     "groups": {
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_5.jpg?v=1778820772",
-          "alt": "GIVA Golden Grove Choker Necklace"
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-1",
+          "alt": "GIVA Golden Grove Choker Necklace",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_5.jpg?v=1778820772",
+          "width": 700,
+          "height": 700
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_1.jpg?v=1778820772",
-          "alt": "GIVA Golden Grove Choker Necklace, view 2"
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-2",
+          "alt": "GIVA Golden Grove Choker Necklace, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_1.jpg?v=1778820772",
+          "width": 700,
+          "height": 700
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_2.jpg?v=1778820772",
-          "alt": "GIVA Golden Grove Choker Necklace, view 3"
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-3",
+          "alt": "GIVA Golden Grove Choker Necklace, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_2.jpg?v=1778820772",
+          "width": 700,
+          "height": 700
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_4_6a128ca7-61e2-4ac4-ba6e-2e4c730a5362.jpg?v=1778820771",
-          "alt": "GIVA Golden Grove Choker Necklace, view 4"
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-4",
+          "alt": "GIVA Golden Grove Choker Necklace, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_4_6a128ca7-61e2-4ac4-ba6e-2e4c730a5362.jpg?v=1778820771",
+          "width": 700,
+          "height": 700
         }
       ]
     },

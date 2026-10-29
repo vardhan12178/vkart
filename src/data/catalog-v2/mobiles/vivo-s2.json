@@ -85,7 +85,7 @@
     "chargingW": 44,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 197.0,
+    "weightG": 197,
     "chip": "Dimensity 7360-Turbo",
     "os": "Android",
     "ramGB": 8
@@ -125,104 +125,155 @@
     "groups": {
       "Silk White": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600831082/cee2e4f00c094a18d0cc4ea780b6d87c.png",
-          "alt": "vivo S2 in Silk White"
+          "key": "mobiles/vivo-s2/silk-white-1",
+          "alt": "vivo S2 in Silk White",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600831082/cee2e4f00c094a18d0cc4ea780b6d87c.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790057091500/c8aeb529135c4dd8e900fba7e94bbe6f.jpg",
-          "alt": "vivo S2 in Silk White, view 2"
+          "key": "mobiles/vivo-s2/silk-white-2",
+          "alt": "vivo S2 in Silk White, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790057091500/c8aeb529135c4dd8e900fba7e94bbe6f.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785993427260/98e63f474567cdee66cb019f87e22157.jpg",
-          "alt": "vivo S2 in Silk White, view 3"
+          "key": "mobiles/vivo-s2/silk-white-4",
+          "alt": "vivo S2 in Silk White, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830768/00acaeb34e3a4485a5a3199eab0f9565.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830768/00acaeb34e3a4485a5a3199eab0f9565.png",
-          "alt": "vivo S2 in Silk White, view 4"
+          "key": "mobiles/vivo-s2/silk-white-5",
+          "alt": "vivo S2 in Silk White, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830954/d6ea8a3662b3b852769614526d90076f.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830954/d6ea8a3662b3b852769614526d90076f.png",
-          "alt": "vivo S2 in Silk White, view 5"
+          "key": "mobiles/vivo-s2/silk-white-6",
+          "alt": "vivo S2 in Silk White, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830745/4d3a992273c2d07c6a3b513e4fcb742d.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830745/4d3a992273c2d07c6a3b513e4fcb742d.png",
-          "alt": "vivo S2 in Silk White, view 6"
+          "key": "mobiles/vivo-s2/silk-white-7",
+          "alt": "vivo S2 in Silk White, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830781/90b5a1eb66a558ec0aca722536b23ecb.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830781/90b5a1eb66a558ec0aca722536b23ecb.png",
-          "alt": "vivo S2 in Silk White, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600831968/96dcb319a0a2671a387d68d0d9ed887e.png",
-          "alt": "vivo S2 in Silk White, view 8"
+          "key": "mobiles/vivo-s2/silk-white-8",
+          "alt": "vivo S2 in Silk White, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600831968/96dcb319a0a2671a387d68d0d9ed887e.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Sapphire Blue": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778408/fc4dbea854a7c88607dd66699c873f4b.png",
-          "alt": "vivo S2 in Sapphire Blue"
+          "key": "mobiles/vivo-s2/sapphire-blue-1",
+          "alt": "vivo S2 in Sapphire Blue",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778408/fc4dbea854a7c88607dd66699c873f4b.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785993448293/a295d98f9b59578d4bc80f5f008525be.jpg",
-          "alt": "vivo S2 in Sapphire Blue, view 2"
+          "key": "mobiles/vivo-s2/sapphire-blue-3",
+          "alt": "vivo S2 in Sapphire Blue, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778411/286596c19db21a05daa14cf5f4966df1.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778411/286596c19db21a05daa14cf5f4966df1.png",
-          "alt": "vivo S2 in Sapphire Blue, view 3"
+          "key": "mobiles/vivo-s2/sapphire-blue-4",
+          "alt": "vivo S2 in Sapphire Blue, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778976/e554f2ce3698af7a50e9f3a80f376533.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778976/e554f2ce3698af7a50e9f3a80f376533.png",
-          "alt": "vivo S2 in Sapphire Blue, view 4"
+          "key": "mobiles/vivo-s2/sapphire-blue-5",
+          "alt": "vivo S2 in Sapphire Blue, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736779028/5fc8b62fb4ebfa3e1c56c2fbe79a1797.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736779028/5fc8b62fb4ebfa3e1c56c2fbe79a1797.png",
-          "alt": "vivo S2 in Sapphire Blue, view 5"
+          "key": "mobiles/vivo-s2/sapphire-blue-6",
+          "alt": "vivo S2 in Sapphire Blue, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778621/deca89f83a3661dded5768809c1561dd.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778621/deca89f83a3661dded5768809c1561dd.png",
-          "alt": "vivo S2 in Sapphire Blue, view 6"
+          "key": "mobiles/vivo-s2/sapphire-blue-7",
+          "alt": "vivo S2 in Sapphire Blue, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778730/83a7db0e83e2be668e17ad277e6d8d0c.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778730/83a7db0e83e2be668e17ad277e6d8d0c.png",
-          "alt": "vivo S2 in Sapphire Blue, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736779686/d220f1f7049cf94ee9e8f6f3fcfb2b55.png",
-          "alt": "vivo S2 in Sapphire Blue, view 8"
+          "key": "mobiles/vivo-s2/sapphire-blue-8",
+          "alt": "vivo S2 in Sapphire Blue, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736779686/d220f1f7049cf94ee9e8f6f3fcfb2b55.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Regal Bronze": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018305/2a0b530de91658ee9236d09bcb10984d.png",
-          "alt": "vivo S2 in Regal Bronze"
+          "key": "mobiles/vivo-s2/regal-bronze-1",
+          "alt": "vivo S2 in Regal Bronze",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018305/2a0b530de91658ee9236d09bcb10984d.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785993464418/c2881782b1f399af56987d171c38b478.jpg",
-          "alt": "vivo S2 in Regal Bronze, view 2"
+          "key": "mobiles/vivo-s2/regal-bronze-3",
+          "alt": "vivo S2 in Regal Bronze, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018549/355949949d5554f960de320fe3427514.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018549/355949949d5554f960de320fe3427514.png",
-          "alt": "vivo S2 in Regal Bronze, view 3"
+          "key": "mobiles/vivo-s2/regal-bronze-4",
+          "alt": "vivo S2 in Regal Bronze, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018271/bbb1be26070522e90724c55d5471db5c.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018271/bbb1be26070522e90724c55d5471db5c.png",
-          "alt": "vivo S2 in Regal Bronze, view 4"
+          "key": "mobiles/vivo-s2/regal-bronze-5",
+          "alt": "vivo S2 in Regal Bronze, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018387/ad982e6d57dc219edc6818faa4c57801.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018387/ad982e6d57dc219edc6818faa4c57801.png",
-          "alt": "vivo S2 in Regal Bronze, view 5"
+          "key": "mobiles/vivo-s2/regal-bronze-6",
+          "alt": "vivo S2 in Regal Bronze, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018228/a875815777596beaf0b13db0d4fa963e.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018228/a875815777596beaf0b13db0d4fa963e.png",
-          "alt": "vivo S2 in Regal Bronze, view 6"
+          "key": "mobiles/vivo-s2/regal-bronze-7",
+          "alt": "vivo S2 in Regal Bronze, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018052/764c32056693dd36bb17d8d32d26c8f7.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018052/764c32056693dd36bb17d8d32d26c8f7.png",
-          "alt": "vivo S2 in Regal Bronze, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603019166/2a157a340f7d04865575c59c36f369bb.png",
-          "alt": "vivo S2 in Regal Bronze, view 8"
+          "key": "mobiles/vivo-s2/regal-bronze-8",
+          "alt": "vivo S2 in Regal Bronze, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603019166/2a157a340f7d04865575c59c36f369bb.png",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

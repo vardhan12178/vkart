@@ -121,74 +121,122 @@
     "groups": {
       "Frost": [
         {
-          "src": "https://lh3.googleusercontent.com/kyHms-QRU2yPH7fecJnDdhXdRXWYQOismjTeOPYkQAZyzuS2VM6XjcmLnK_DxKw395F45EvItfctXpBadIOZhrN6lpqhB55pCw=s1600",
-          "alt": "Google Pixel 11 in Frost, back"
+          "key": "mobiles/google-pixel-11/frost-1",
+          "alt": "Google Pixel 11 in Frost, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/kyHms-QRU2yPH7fecJnDdhXdRXWYQOismjTeOPYkQAZyzuS2VM6XjcmLnK_DxKw395F45EvItfctXpBadIOZhrN6lpqhB55pCw=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/8mhmE9H4q6GY7rEkTJaRgXfBoqWQ1basSU39-M7nEqhdexfsOP7XQMgLTJQidiuQuFFtJgW1bSEwk5sMncrR8CtvAFOqJBfxE5ie=s1600",
-          "alt": "Google Pixel 11 in Frost, front"
+          "key": "mobiles/google-pixel-11/frost-2",
+          "alt": "Google Pixel 11 in Frost, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/8mhmE9H4q6GY7rEkTJaRgXfBoqWQ1basSU39-M7nEqhdexfsOP7XQMgLTJQidiuQuFFtJgW1bSEwk5sMncrR8CtvAFOqJBfxE5ie=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/C1bh4S_grvPgsAkytvEC8vZexuCPXqkrMzDZo_SyV4NjQ0O0pmM5jRUtwXBPjtw0U1VZ3LaTutYQIV0ukKBdsH0L03JmHtv3hHk=s1600",
-          "alt": "Google Pixel 11 in Frost, side"
+          "key": "mobiles/google-pixel-11/frost-3",
+          "alt": "Google Pixel 11 in Frost, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/C1bh4S_grvPgsAkytvEC8vZexuCPXqkrMzDZo_SyV4NjQ0O0pmM5jRUtwXBPjtw0U1VZ3LaTutYQIV0ukKBdsH0L03JmHtv3hHk=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/ZTYdHmQQI1iD6-cnfVcHrkZrA2tAV9G61AFMzCtsRRF4beTOvNaQ4mDyhkYoBDE2sBfoEOwPtjfJ6B1QL6OuqOQpfSDl-mNv2w=s1600",
-          "alt": "Google Pixel 11 in Frost, angled back"
+          "key": "mobiles/google-pixel-11/frost-4",
+          "alt": "Google Pixel 11 in Frost, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/ZTYdHmQQI1iD6-cnfVcHrkZrA2tAV9G61AFMzCtsRRF4beTOvNaQ4mDyhkYoBDE2sBfoEOwPtjfJ6B1QL6OuqOQpfSDl-mNv2w=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ],
       "Hibiscus": [
         {
-          "src": "https://lh3.googleusercontent.com/0VOxObyXiZffXgacyS_cNfA69J3yoRRU18Bu5kB-0TSzp3qM_AXiYT6GVozW1GKdeUWkaQ35w1p2K3mS4gfyd9rfiZA5v04mooLP=s1600",
-          "alt": "Google Pixel 11 in Hibiscus, back"
+          "key": "mobiles/google-pixel-11/hibiscus-1",
+          "alt": "Google Pixel 11 in Hibiscus, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/0VOxObyXiZffXgacyS_cNfA69J3yoRRU18Bu5kB-0TSzp3qM_AXiYT6GVozW1GKdeUWkaQ35w1p2K3mS4gfyd9rfiZA5v04mooLP=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/s_zB_QV2DDYbK6ZtV31urUIJJlsqyGLndlihthmBEMuqmGLk7vxnq16loMZT_zx4z2GjiUL5baWOu-2ekQaEJOk2rPFVlSfQp48=s1600",
-          "alt": "Google Pixel 11 in Hibiscus, front"
+          "key": "mobiles/google-pixel-11/hibiscus-2",
+          "alt": "Google Pixel 11 in Hibiscus, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/s_zB_QV2DDYbK6ZtV31urUIJJlsqyGLndlihthmBEMuqmGLk7vxnq16loMZT_zx4z2GjiUL5baWOu-2ekQaEJOk2rPFVlSfQp48=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/heSui7Jau0CTgPj5xK9j97j3jtQucAGsu2KttRqISQo6nWdqoqnqjC8byo338JPZ_sSRmSLrTBPG0bkqPmy1nAJG6nLWeDIUuGg=s1600",
-          "alt": "Google Pixel 11 in Hibiscus, side"
+          "key": "mobiles/google-pixel-11/hibiscus-3",
+          "alt": "Google Pixel 11 in Hibiscus, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/heSui7Jau0CTgPj5xK9j97j3jtQucAGsu2KttRqISQo6nWdqoqnqjC8byo338JPZ_sSRmSLrTBPG0bkqPmy1nAJG6nLWeDIUuGg=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/JwU7SOJgPuvsCMgNmH-2GmFYYnl8yU68tpJ4XSLD__JRR8Jf8Og47NWroYOph6m0Fyo78SeLQZd68i0_Sp_itLH3bWeJ5v-sXDk=s1600",
-          "alt": "Google Pixel 11 in Hibiscus, angled back"
+          "key": "mobiles/google-pixel-11/hibiscus-4",
+          "alt": "Google Pixel 11 in Hibiscus, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/JwU7SOJgPuvsCMgNmH-2GmFYYnl8yU68tpJ4XSLD__JRR8Jf8Og47NWroYOph6m0Fyo78SeLQZd68i0_Sp_itLH3bWeJ5v-sXDk=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ],
       "Pistachio": [
         {
-          "src": "https://lh3.googleusercontent.com/LTfMTGxX6IvZ_UM1lkAEEKzPLnSyT06dxlXDaI6oO5GMYXmH5k-hQZkG-Ih7kQ-X3u1wJSjJijP5AZjVIKWsn-r5fnjmrwwypT0=s1600",
-          "alt": "Google Pixel 11 in Pistachio, back"
+          "key": "mobiles/google-pixel-11/pistachio-1",
+          "alt": "Google Pixel 11 in Pistachio, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/LTfMTGxX6IvZ_UM1lkAEEKzPLnSyT06dxlXDaI6oO5GMYXmH5k-hQZkG-Ih7kQ-X3u1wJSjJijP5AZjVIKWsn-r5fnjmrwwypT0=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/lgA-UsrwCmvVdN0GED7qhl6Y8FEyHwbCMCMKpZGOopVlFJeSQzEOKsfPxjjVUvEPOppwIKlMzdmFLonyQGLmSGgohIQblPhJGWA=s1600",
-          "alt": "Google Pixel 11 in Pistachio, front"
+          "key": "mobiles/google-pixel-11/pistachio-2",
+          "alt": "Google Pixel 11 in Pistachio, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/lgA-UsrwCmvVdN0GED7qhl6Y8FEyHwbCMCMKpZGOopVlFJeSQzEOKsfPxjjVUvEPOppwIKlMzdmFLonyQGLmSGgohIQblPhJGWA=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/eFZaPOI1pN248JQjfoTmrhRR_ukKlktLnCBOwtGWngtbqpdKJCHC1fJi5A1fDe3gNJJ9p3FKg-1tVAjmo_yeAptwi0In6Oa-TGY=s1600",
-          "alt": "Google Pixel 11 in Pistachio, side"
+          "key": "mobiles/google-pixel-11/pistachio-3",
+          "alt": "Google Pixel 11 in Pistachio, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/eFZaPOI1pN248JQjfoTmrhRR_ukKlktLnCBOwtGWngtbqpdKJCHC1fJi5A1fDe3gNJJ9p3FKg-1tVAjmo_yeAptwi0In6Oa-TGY=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/2cKSjk5zQ9Podou7dr18-X_CNW1mDpwiTHpvtSmZWUE0e7ji3WhDwa1sZqqM3cKNLoFZVHjj-QQGszbfLZl5rQ_ate6bxyJipJ0=s1600",
-          "alt": "Google Pixel 11 in Pistachio, angled back"
+          "key": "mobiles/google-pixel-11/pistachio-4",
+          "alt": "Google Pixel 11 in Pistachio, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/2cKSjk5zQ9Podou7dr18-X_CNW1mDpwiTHpvtSmZWUE0e7ji3WhDwa1sZqqM3cKNLoFZVHjj-QQGszbfLZl5rQ_ate6bxyJipJ0=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ],
       "Obsidian": [
         {
-          "src": "https://lh3.googleusercontent.com/m1Q2dS0qtngdX5gkxk02gjVTEHH43DK9d2l3RqAv0MbWwA7xKBoY30pmZH01PC9LJ88Kvhs29nSVrcF4YJcMINKSb8dwNmSaEmJW=s1600",
-          "alt": "Google Pixel 11 in Obsidian, back"
+          "key": "mobiles/google-pixel-11/obsidian-1",
+          "alt": "Google Pixel 11 in Obsidian, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/m1Q2dS0qtngdX5gkxk02gjVTEHH43DK9d2l3RqAv0MbWwA7xKBoY30pmZH01PC9LJ88Kvhs29nSVrcF4YJcMINKSb8dwNmSaEmJW=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/NpGBXZeYXudo9pjM8f3u4i1r0wCTGFHU-uew0fw4oWJIjhzcK8wmNu_OqkdyNFB5pqjocqZaKzQhkz6Gku4edr89mBmiAxEQc4Y=s1600",
-          "alt": "Google Pixel 11 in Obsidian, front"
+          "key": "mobiles/google-pixel-11/obsidian-2",
+          "alt": "Google Pixel 11 in Obsidian, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/NpGBXZeYXudo9pjM8f3u4i1r0wCTGFHU-uew0fw4oWJIjhzcK8wmNu_OqkdyNFB5pqjocqZaKzQhkz6Gku4edr89mBmiAxEQc4Y=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/z-bD9znRWGM4NjVc51b0nvvTJiADdePcaV6twrYQf4ISeUrjGqvUeuSTomi_NodgsEM0PRYO-lL_7kLN97ef1pU1f6YB1gOqPS0=s1600",
-          "alt": "Google Pixel 11 in Obsidian, side"
+          "key": "mobiles/google-pixel-11/obsidian-3",
+          "alt": "Google Pixel 11 in Obsidian, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/z-bD9znRWGM4NjVc51b0nvvTJiADdePcaV6twrYQf4ISeUrjGqvUeuSTomi_NodgsEM0PRYO-lL_7kLN97ef1pU1f6YB1gOqPS0=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/Jw_Ufd1ALI1PqhAS0MfcIROKQayCeycGib1rzwEvGYikvWGy2IndamMC5c1ppvcmU0MilwXyi4iPsj7kHgR5Dn39wKSsbAgkeAs=s1600",
-          "alt": "Google Pixel 11 in Obsidian, angled back"
+          "key": "mobiles/google-pixel-11/obsidian-4",
+          "alt": "Google Pixel 11 in Obsidian, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/Jw_Ufd1ALI1PqhAS0MfcIROKQayCeycGib1rzwEvGYikvWGy2IndamMC5c1ppvcmU0MilwXyi4iPsj7kHgR5Dn39wKSsbAgkeAs=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ]
     },

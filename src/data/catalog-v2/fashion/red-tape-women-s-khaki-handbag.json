@@ -71,32 +71,53 @@
     "groups": {
       "Khaki": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_0c4b40d5-fe97-4946-b046-7277b6fe6e72.jpg?v=1781590850",
-          "alt": "Red Tape Women's Khaki Handbag"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-1",
+          "alt": "Red Tape Women's Khaki Handbag",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_0c4b40d5-fe97-4946-b046-7277b6fe6e72.jpg?v=1781590850",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_430d5b8f-b3ce-4e61-928a-4fe606d25e2d.jpg?v=1781590849",
-          "alt": "Red Tape Women's Khaki Handbag, view 2"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-2",
+          "alt": "Red Tape Women's Khaki Handbag, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_430d5b8f-b3ce-4e61-928a-4fe606d25e2d.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_5003351c-b899-4648-9666-f0f166a503af.jpg?v=1781590849",
-          "alt": "Red Tape Women's Khaki Handbag, view 3"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-3",
+          "alt": "Red Tape Women's Khaki Handbag, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_5003351c-b899-4648-9666-f0f166a503af.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_2e162d79-7de2-49f1-ab15-d1b219cf72c3.jpg?v=1781590850",
-          "alt": "Red Tape Women's Khaki Handbag, view 4"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-4",
+          "alt": "Red Tape Women's Khaki Handbag, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_2e162d79-7de2-49f1-ab15-d1b219cf72c3.jpg?v=1781590850",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_affd74fb-77ff-4ab5-b6c6-5fba19515d3d.jpg?v=1781590849",
-          "alt": "Red Tape Women's Khaki Handbag, view 5"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-5",
+          "alt": "Red Tape Women's Khaki Handbag, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_affd74fb-77ff-4ab5-b6c6-5fba19515d3d.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/6_f65fc739-8b64-4d05-ab5a-d8b888c1c5dd.jpg?v=1781590849",
-          "alt": "Red Tape Women's Khaki Handbag, view 6"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-6",
+          "alt": "Red Tape Women's Khaki Handbag, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/6_f65fc739-8b64-4d05-ab5a-d8b888c1c5dd.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/7_15d37a99-0525-4200-a1bf-43efb9027ee1.jpg?v=1781590849",
-          "alt": "Red Tape Women's Khaki Handbag, view 7"
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-7",
+          "alt": "Red Tape Women's Khaki Handbag, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/7_15d37a99-0525-4200-a1bf-43efb9027ee1.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

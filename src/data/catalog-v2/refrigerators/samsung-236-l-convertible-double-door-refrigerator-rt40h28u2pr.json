@@ -91,12 +91,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rt40h28u2prhl/gallery/in-rt40h28u2-236-l-convertible-double-door-refrigerator-rt40h28u2p-rt40h28u2prhl-thumb-551001720?$650_519_PNG$",
-        "alt": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR"
+        "key": "refrigerators/samsung-236-l-convertible-double-door-refrigerator-rt40h28u2pr/common-1",
+        "alt": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt40h28u2prhl/gallery/in-rt40h28u2-236-l-convertible-double-door-refrigerator-rt40h28u2p-rt40h28u2prhl-thumb-551001720?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/rt40h28u2prhl/gallery/in-rt40h28u2-236-l-convertible-double-door-refrigerator-rt40h28u2p-rt40h28u2prhl-551001719?$650_519_PNG$",
-        "alt": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR, view 2"
+        "key": "refrigerators/samsung-236-l-convertible-double-door-refrigerator-rt40h28u2pr/common-2",
+        "alt": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt40h28u2prhl/gallery/in-rt40h28u2-236-l-convertible-double-door-refrigerator-rt40h28u2p-rt40h28u2prhl-551001719?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

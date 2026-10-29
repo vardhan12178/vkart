@@ -76,28 +76,46 @@
     "groups": {
       "Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_1.jpg?v=1784525107",
-          "alt": "Red Tape Grey Lifestyle Sneakers"
+          "key": "fashion/red-tape-grey-lifestyle-sneakers/grey-1",
+          "alt": "Red Tape Grey Lifestyle Sneakers",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_1.jpg?v=1784525107",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_2.jpg?v=1784525107",
-          "alt": "Red Tape Grey Lifestyle Sneakers, view 2"
+          "key": "fashion/red-tape-grey-lifestyle-sneakers/grey-2",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_2.jpg?v=1784525107",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_3.jpg?v=1784525107",
-          "alt": "Red Tape Grey Lifestyle Sneakers, view 3"
+          "key": "fashion/red-tape-grey-lifestyle-sneakers/grey-3",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_3.jpg?v=1784525107",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_4.jpg?v=1784525107",
-          "alt": "Red Tape Grey Lifestyle Sneakers, view 4"
+          "key": "fashion/red-tape-grey-lifestyle-sneakers/grey-4",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_4.jpg?v=1784525107",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_5.jpg?v=1784525107",
-          "alt": "Red Tape Grey Lifestyle Sneakers, view 5"
+          "key": "fashion/red-tape-grey-lifestyle-sneakers/grey-5",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_5.jpg?v=1784525107",
+          "width": 1500,
+          "height": 1500
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_6.jpg?v=1784525107",
-          "alt": "Red Tape Grey Lifestyle Sneakers, view 6"
+          "key": "fashion/red-tape-grey-lifestyle-sneakers/grey-6",
+          "alt": "Red Tape Grey Lifestyle Sneakers, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSL0532B_6.jpg?v=1784525107",
+          "width": 1500,
+          "height": 1500
         }
       ]
     },

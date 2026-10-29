@@ -100,38 +100,62 @@
     "groups": {
       "Aurora Violet": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202610/13/3c7SOEUQuHqGRXCH.png",
-          "alt": "OPPO Enco X4 in Aurora Violet"
+          "key": "audio/oppo-enco-x4/aurora-violet-1",
+          "alt": "OPPO Enco X4 in Aurora Violet",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202610/13/3c7SOEUQuHqGRXCH.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/6b88951dc686f87d89039f1afeccbed0.png",
-          "alt": "OPPO Enco X4 in Aurora Violet, view 2"
+          "key": "audio/oppo-enco-x4/aurora-violet-2",
+          "alt": "OPPO Enco X4 in Aurora Violet, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/6b88951dc686f87d89039f1afeccbed0.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/7e5e553a8a2ffb455b4523d9484f611d.png",
-          "alt": "OPPO Enco X4 in Aurora Violet, view 3"
+          "key": "audio/oppo-enco-x4/aurora-violet-3",
+          "alt": "OPPO Enco X4 in Aurora Violet, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/7e5e553a8a2ffb455b4523d9484f611d.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/699ce44fe0e2e255c5037610ffe66e7b.png",
-          "alt": "OPPO Enco X4 in Aurora Violet, view 4"
+          "key": "audio/oppo-enco-x4/aurora-violet-4",
+          "alt": "OPPO Enco X4 in Aurora Violet, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/699ce44fe0e2e255c5037610ffe66e7b.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Glacier White": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/01f17fd2f9f44a0548167916ef88deff.png",
-          "alt": "OPPO Enco X4 in Glacier White"
+          "key": "audio/oppo-enco-x4/glacier-white-1",
+          "alt": "OPPO Enco X4 in Glacier White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/01f17fd2f9f44a0548167916ef88deff.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/ecfeffe5d02720c33b3204abb5084017.png",
-          "alt": "OPPO Enco X4 in Glacier White, view 2"
+          "key": "audio/oppo-enco-x4/glacier-white-2",
+          "alt": "OPPO Enco X4 in Glacier White, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/ecfeffe5d02720c33b3204abb5084017.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/883df88a15a0a56971561309cef9fcf2.png",
-          "alt": "OPPO Enco X4 in Glacier White, view 3"
+          "key": "audio/oppo-enco-x4/glacier-white-3",
+          "alt": "OPPO Enco X4 in Glacier White, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/883df88a15a0a56971561309cef9fcf2.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/6f6dee054da84d8170e466e499b53310.png",
-          "alt": "OPPO Enco X4 in Glacier White, view 4"
+          "key": "audio/oppo-enco-x4/glacier-white-4",
+          "alt": "OPPO Enco X4 in Glacier White, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/6f6dee054da84d8170e466e499b53310.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

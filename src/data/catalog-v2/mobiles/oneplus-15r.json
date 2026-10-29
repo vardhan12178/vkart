@@ -204,56 +204,29 @@
     "groups": {
       "Mint Breeze": [
         {
-          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/macan/specs/imgs/OnePlus_Macan_Mint-Breeze_1080x1080.png",
-          "alt": "OnePlus 15R in Mint Breeze"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/864571bb797cacb4186dc3f01affc566.png",
-          "alt": "OnePlus 15R in Mint Breeze, view 2"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/76d51a5257a03e2f8d67d2fae19e6fd2.png",
-          "alt": "OnePlus 15R in Mint Breeze, view 3"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/c2646b75a181255808afcbb4b1a8d0be.png",
-          "alt": "OnePlus 15R in Mint Breeze, view 4"
+          "key": "mobiles/oneplus-15r/mint-breeze-1",
+          "alt": "OnePlus 15R in Mint Breeze",
+          "sourceUrl": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/macan/specs/imgs/OnePlus_Macan_Mint-Breeze_1080x1080.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Charcoal Black": [
         {
-          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/macan/specs/imgs/OnePlus_Macan_Charcoal-Black_1080x1080.png",
-          "alt": "OnePlus 15R in Charcoal Black"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/6a170dab86cd3648d17115d7b32a8470.png",
-          "alt": "OnePlus 15R in Charcoal Black, view 2"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/b40a92a5ff7bcc1ef7b4cabb9423b306.png",
-          "alt": "OnePlus 15R in Charcoal Black, view 3"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/cf341ee5c60999509bcf180695c1c28f.png",
-          "alt": "OnePlus 15R in Charcoal Black, view 4"
+          "key": "mobiles/oneplus-15r/charcoal-black-1",
+          "alt": "OnePlus 15R in Charcoal Black",
+          "sourceUrl": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/macan/specs/imgs/OnePlus_Macan_Charcoal-Black_1080x1080.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Electric Violet": [
         {
-          "src": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/macan/specs/imgs/OnePlus_Macan_Electric-Violet_1080x1080.png",
-          "alt": "OnePlus 15R in Electric Violet"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/515f7b2e234f759c3f0117a06601222c.png",
-          "alt": "OnePlus 15R in Electric Violet, view 2"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/77ff2a976e27f4b1a6bb75061ff3067d.png",
-          "alt": "OnePlus 15R in Electric Violet, view 3"
-        },
-        {
-          "src": "https://image01-in.oneplus.net/media/202512/12/f6673f3b86c3f27f3daa007ca8bbd617.png",
-          "alt": "OnePlus 15R in Electric Violet, view 4"
+          "key": "mobiles/oneplus-15r/electric-violet-1",
+          "alt": "OnePlus 15R in Electric Violet",
+          "sourceUrl": "https://www.oneplus.in/content/dam/oneplus/2025/product-station/macan/specs/imgs/OnePlus_Macan_Electric-Violet_1080x1080.png",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

@@ -54,24 +54,39 @@
     "groups": {
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Model.png?v=1792922627",
-          "alt": "Salty Royal Deepam Lantern Tassel Bangle"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-1",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Model.png?v=1792922627",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Main.png?v=1792922627",
-          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 2"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-2",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Main.png?v=1792922627",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Model1.png?v=1792922627",
-          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 3"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-3",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Model1.png?v=1792922627",
+          "width": 1254,
+          "height": 1254
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_WB.jpg?v=1793011394",
-          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 4"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-4",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_WB.jpg?v=1793011394",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/Lantern_Bracelet_GIF_Final.gif?v=1792170793",
-          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 5"
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-5",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/Lantern_Bracelet_GIF_Final.gif?v=1792170793",
+          "width": 1228,
+          "height": 1228
         }
       ]
     },

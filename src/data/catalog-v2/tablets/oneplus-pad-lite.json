@@ -67,7 +67,7 @@
   },
   "keySpecs": {
     "processor": "MediaTek Helio G100",
-    "displayInch": 11.0,
+    "displayInch": 11,
     "panel": "LCD",
     "refreshRateHz": 90,
     "batteryMah": 9340,
@@ -114,20 +114,32 @@
     "groups": {
       "Aero Blue": [
         {
-          "src": "https://image01-in.oneplus.net/media/202507/21/654176f4a08d9492994afdd215a27513.png",
-          "alt": "OnePlus Pad Lite in Aero Blue"
+          "key": "tablets/oneplus-pad-lite/aero-blue-1",
+          "alt": "OnePlus Pad Lite in Aero Blue",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/654176f4a08d9492994afdd215a27513.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202507/21/5b466423349ab1322830cbf74511cec5.png",
-          "alt": "OnePlus Pad Lite in Aero Blue, view 2"
+          "key": "tablets/oneplus-pad-lite/aero-blue-2",
+          "alt": "OnePlus Pad Lite in Aero Blue, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/5b466423349ab1322830cbf74511cec5.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202507/21/055007d4f1ecb0f19d2412d64e6ee603.png",
-          "alt": "OnePlus Pad Lite in Aero Blue, view 3"
+          "key": "tablets/oneplus-pad-lite/aero-blue-3",
+          "alt": "OnePlus Pad Lite in Aero Blue, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/055007d4f1ecb0f19d2412d64e6ee603.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202507/21/a86737401ac6d3406585b5098f1b3bca.png",
-          "alt": "OnePlus Pad Lite in Aero Blue, view 4"
+          "key": "tablets/oneplus-pad-lite/aero-blue-4",
+          "alt": "OnePlus Pad Lite in Aero Blue, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/a86737401ac6d3406585b5098f1b3bca.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

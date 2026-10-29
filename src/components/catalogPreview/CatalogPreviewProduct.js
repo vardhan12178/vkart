@@ -72,7 +72,7 @@ export default function CatalogPreviewProduct() {
             {images.map((im, i) => (
               <button key={im.src} type="button" onClick={() => setImgIdx(i)}
                 className={`h-20 w-20 flex-none overflow-hidden rounded-lg border bg-gray-50 ${i === imgIdx ? "border-gray-900" : "border-gray-200"}`}>
-                <img src={im.src} alt={im.alt} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain p-1" />
+                <img src={im.thumb} alt={im.alt} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain p-1" />
               </button>
             ))}
           </div>

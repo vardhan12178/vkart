@@ -32,11 +32,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 27.0,
+    "screenInch": 27,
     "resolution": "1920 x 1080",
     "refreshRateHz": 180,
     "panel": "IPS",
-    "responseTimeMs": 1.0,
+    "responseTimeMs": 1,
     "gaming": true
   },
   "variantOptions": [
@@ -54,8 +54,11 @@
     "groups": {},
     "common": [
       {
-        "src": "https://www.lg.com/content/dam/channel/wcms/in/images/monitors/27gs60f-b_atr_eail_in_c/gallery/27GS60F-B-Basic-450.jpg",
-        "alt": "LG 27\" UltraGear FHD 180Hz Gaming Monitor 27GS60F-B"
+        "key": "monitors/lg-27-inch-ultragear-fhd-180hz-gaming-monitor-27gs60f-b/common-1",
+        "alt": "LG 27\" UltraGear FHD 180Hz Gaming Monitor 27GS60F-B",
+        "sourceUrl": "https://www.lg.com/content/dam/channel/wcms/in/images/monitors/27gs60f-b_atr_eail_in_c/gallery/27GS60F-B-Basic-450.jpg",
+        "width": 450,
+        "height": 450
       }
     ]
   },

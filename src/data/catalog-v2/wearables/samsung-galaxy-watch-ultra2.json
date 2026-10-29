@@ -70,12 +70,11 @@
     "groups": {
       "Titanium Silver": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch-ultra2-l710-sm-l715fzsains-thumb-553717153",
-          "alt": "Samsung Galaxy Watch Ultra2 in Titanium Silver"
-        },
-        {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch-ultra2-l710-sm-l715fzsains-553717152",
-          "alt": "Samsung Galaxy Watch Ultra2 in Titanium Silver, view 2"
+          "key": "wearables/samsung-galaxy-watch-ultra2/titanium-silver-2",
+          "alt": "Samsung Galaxy Watch Ultra2 in Titanium Silver, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch-ultra2-l710-sm-l715fzsains-553717152",
+          "width": 1920,
+          "height": 1280
         }
       ]
     },

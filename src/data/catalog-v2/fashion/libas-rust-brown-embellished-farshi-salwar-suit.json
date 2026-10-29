@@ -68,28 +68,46 @@
     "groups": {
       "Rust Brown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Art-Rust-Brown-Embellished-Tissue-Farshi-Salwar-Suit-1200711A_2d6e6bd3-dd33-4032-8969-12eea0bb9ad5.jpg?v=1792839278",
-          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit"
+          "key": "fashion/libas-rust-brown-embellished-farshi-salwar-suit/rust-brown-1",
+          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Art-Rust-Brown-Embellished-Tissue-Farshi-Salwar-Suit-1200711A_2d6e6bd3-dd33-4032-8969-12eea0bb9ad5.jpg?v=1792839278",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_2_851426a8-6f87-45ab-934d-2365311f6d85.jpg?v=1792839278",
-          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 2"
+          "key": "fashion/libas-rust-brown-embellished-farshi-salwar-suit/rust-brown-2",
+          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_2_851426a8-6f87-45ab-934d-2365311f6d85.jpg?v=1792839278",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_3_f8b4b393-c7f9-467e-b196-88b669320b82.jpg?v=1792839278",
-          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 3"
+          "key": "fashion/libas-rust-brown-embellished-farshi-salwar-suit/rust-brown-3",
+          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_3_f8b4b393-c7f9-467e-b196-88b669320b82.jpg?v=1792839278",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_4_2e030581-7459-40ba-be69-deb1bcaa40a8.jpg?v=1792839278",
-          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 4"
+          "key": "fashion/libas-rust-brown-embellished-farshi-salwar-suit/rust-brown-4",
+          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_4_2e030581-7459-40ba-be69-deb1bcaa40a8.jpg?v=1792839278",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_6_09aa4e02-47a1-4197-8f56-b7e23b74f2dd.jpg?v=1792839278",
-          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 5"
+          "key": "fashion/libas-rust-brown-embellished-farshi-salwar-suit/rust-brown-5",
+          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_6_09aa4e02-47a1-4197-8f56-b7e23b74f2dd.jpg?v=1792839278",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_7_e2e00591-6797-4c81-a138-d7d82807bcf2.jpg?v=1792839278",
-          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 6"
+          "key": "fashion/libas-rust-brown-embellished-farshi-salwar-suit/rust-brown-6",
+          "alt": "Libas Rust Brown Embellished Farshi Salwar Suit, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200711A_7_e2e00591-6797-4c81-a138-d7d82807bcf2.jpg?v=1792839278",
+          "width": 2160,
+          "height": 2880
         }
       ]
     },

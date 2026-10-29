@@ -84,7 +84,7 @@
     "chargingW": null,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 209.0,
+    "weightG": 209,
     "chip": "Snapdragon 4 Gen 2",
     "os": "Android",
     "ramGB": 4
@@ -131,138 +131,66 @@
     "groups": {
       "Blush Red": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057462444/687e7762eef3a4561f4cc587ec59af3b.png",
-          "alt": "vivo Y31 5G in Blush Red"
+          "key": "mobiles/vivo-y31/blush-red-1",
+          "alt": "vivo Y31 5G in Blush Red",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057462444/687e7762eef3a4561f4cc587ec59af3b.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985106146/1e0a6830c6867457a9a50d4913dab26e.jpg",
-          "alt": "vivo Y31 5G in Blush Red, view 2"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985106066/87838d0196a0f5091e27b8900a7201ca.png",
-          "alt": "vivo Y31 5G in Blush Red, view 3"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985105902/205ff7e1b503b66b11dae98690791382.png",
-          "alt": "vivo Y31 5G in Blush Red, view 4"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985105687/97a0f793461fea39e3872842d87ebd86.png",
-          "alt": "vivo Y31 5G in Blush Red, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985106085/f85f7e38060954108368dfc81ad01673.png",
-          "alt": "vivo Y31 5G in Blush Red, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985106646/755984745d3da2495886e57d63e264fd.png",
-          "alt": "vivo Y31 5G in Blush Red, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985107062/c35d44c096e239e9a806e0397bc162bd.png",
-          "alt": "vivo Y31 5G in Blush Red, view 8"
+          "key": "mobiles/vivo-y31/blush-red-2",
+          "alt": "vivo Y31 5G in Blush Red, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985106146/1e0a6830c6867457a9a50d4913dab26e.jpg",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Coral Green": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057476743/6b3778335f7d38234e249df80542cea8.png",
-          "alt": "vivo Y31 5G in Coral Green"
+          "key": "mobiles/vivo-y31/coral-green-1",
+          "alt": "vivo Y31 5G in Coral Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057476743/6b3778335f7d38234e249df80542cea8.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571607/6f42a81178bddc3b63f606dfa2a86987.jpg",
-          "alt": "vivo Y31 5G in Coral Green, view 2"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571397/76141511b34d959cfd72a265f1a248bc.png",
-          "alt": "vivo Y31 5G in Coral Green, view 3"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571299/4ce8f1b085a577fa07071bdabae72353.png",
-          "alt": "vivo Y31 5G in Coral Green, view 4"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571059/3192ea0ee1758475c551d6b966601cb9.png",
-          "alt": "vivo Y31 5G in Coral Green, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571433/49068ec44645513cf9a05d6c753721d6.png",
-          "alt": "vivo Y31 5G in Coral Green, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571982/2178ee70a78faa3ece88dc8b84a2bb0d.png",
-          "alt": "vivo Y31 5G in Coral Green, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985572702/418cb733c7d0b56cfe92ee0385d88af4.png",
-          "alt": "vivo Y31 5G in Coral Green, view 8"
+          "key": "mobiles/vivo-y31/coral-green-2",
+          "alt": "vivo Y31 5G in Coral Green, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571607/6f42a81178bddc3b63f606dfa2a86987.jpg",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Royal Red": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068928329/d011d479d5d65f197dec53c3daddf02d.png",
-          "alt": "vivo Y31 5G in Royal Red"
+          "key": "mobiles/vivo-y31/royal-red-1",
+          "alt": "vivo Y31 5G in Royal Red",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068928329/d011d479d5d65f197dec53c3daddf02d.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783069273705/5c72b52c3d6c12b88b1f33df874b4cfa.jpg",
-          "alt": "vivo Y31 5G in Royal Red, view 2"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068927445/540b3217852cd0ce658acf63dede4ac4.png",
-          "alt": "vivo Y31 5G in Royal Red, view 3"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068927590/137661f28a09c1d1170f30b17ddca4f0.png",
-          "alt": "vivo Y31 5G in Royal Red, view 4"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068927460/1302554a06755ce2602d7b36cbf77f2d.png",
-          "alt": "vivo Y31 5G in Royal Red, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068927607/ed9f572af52906b51efb0d6cf761b29b.png",
-          "alt": "vivo Y31 5G in Royal Red, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068927414/6762890718ed3b355865f30d5616b8c2.png",
-          "alt": "vivo Y31 5G in Royal Red, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068927440/2b13360d45f6c3c0bae5c73e9d873a33.png",
-          "alt": "vivo Y31 5G in Royal Red, view 8"
+          "key": "mobiles/vivo-y31/royal-red-2",
+          "alt": "vivo Y31 5G in Royal Red, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783069273705/5c72b52c3d6c12b88b1f33df874b4cfa.jpg",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Prism Green": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057609569/d5de01f999a332d49d6c15669097ad54.png",
-          "alt": "vivo Y31 5G in Prism Green"
+          "key": "mobiles/vivo-y31/prism-green-1",
+          "alt": "vivo Y31 5G in Prism Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057609569/d5de01f999a332d49d6c15669097ad54.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536703/aaa3bd639f945be6c2ca1d5ce5ced831.jpg",
-          "alt": "vivo Y31 5G in Prism Green, view 2"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536428/81ae810fb90985a5354f9bb62e88b1f3.png",
-          "alt": "vivo Y31 5G in Prism Green, view 3"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536338/4ab47c4fb0585f8f6e397891f40c3279.png",
-          "alt": "vivo Y31 5G in Prism Green, view 4"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536168/649ceb19d22d248246b559d7e5f03044.png",
-          "alt": "vivo Y31 5G in Prism Green, view 5"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536431/85e912ddb7372bc3b6589abeb2133fed.png",
-          "alt": "vivo Y31 5G in Prism Green, view 6"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985537792/49f033f94fb8ddd43c66be64afe71668.png",
-          "alt": "vivo Y31 5G in Prism Green, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985537268/8dd2b5bfdc591806aff9e0cb7b168af3.png",
-          "alt": "vivo Y31 5G in Prism Green, view 8"
+          "key": "mobiles/vivo-y31/prism-green-2",
+          "alt": "vivo Y31 5G in Prism Green, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536703/aaa3bd639f945be6c2ca1d5ce5ced831.jpg",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

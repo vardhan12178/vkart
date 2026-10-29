@@ -88,24 +88,39 @@
     "groups": {
       "Light Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_01_Styleshot.jpg?v=1785758900",
-          "alt": "Levi's Solid Regular Fit T-Shirt"
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-1",
+          "alt": "Levi's Solid Regular Fit T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_01_Styleshot.jpg?v=1785758900",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_02_Front.jpg?v=1785758909",
-          "alt": "Levi's Solid Regular Fit T-Shirt, view 2"
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-2",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_02_Front.jpg?v=1785758909",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_03_Back.jpg?v=1785758919",
-          "alt": "Levi's Solid Regular Fit T-Shirt, view 3"
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-3",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_03_Back.jpg?v=1785758919",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_04_detail_20.jpg?v=1785758930",
-          "alt": "Levi's Solid Regular Fit T-Shirt, view 4"
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-4",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_04_detail_20.jpg?v=1785758930",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_05_Side.jpg?v=1785758942",
-          "alt": "Levi's Solid Regular Fit T-Shirt, view 5"
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-5",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_05_Side.jpg?v=1785758942",
+          "width": 1034,
+          "height": 1376
         }
       ]
     },

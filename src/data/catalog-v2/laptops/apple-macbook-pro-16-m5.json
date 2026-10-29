@@ -109,37 +109,44 @@
     "groups": {
       "Space Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp16-spaceblack-select-202410?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple MacBook Pro 16\" (M5) in Space Black"
-        },
-        {
-          "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_colors_spaceblack__dwfpyrbaf4cy_large_2x.jpg",
-          "alt": "Apple MacBook Pro 16\" (M5) in Space Black, view 2"
+          "key": "laptops/apple-macbook-pro-16-m5/space-black-2",
+          "alt": "Apple MacBook Pro 16\" (M5) in Space Black, view 2",
+          "sourceUrl": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_colors_spaceblack__dwfpyrbaf4cy_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Silver": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp16-silver-select-202410?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple MacBook Pro 16\" (M5) in Silver"
-        },
-        {
-          "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_colors_silver__doa20s4tupaq_large_2x.jpg",
-          "alt": "Apple MacBook Pro 16\" (M5) in Silver, view 2"
+          "key": "laptops/apple-macbook-pro-16-m5/silver-2",
+          "alt": "Apple MacBook Pro 16\" (M5) in Silver, view 2",
+          "sourceUrl": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_colors_silver__doa20s4tupaq_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ]
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_sizes_startframe__frjeunw0swy2_large_2x.jpg",
-        "alt": "Apple MacBook Pro 16\" (M5) — 14-inch and 16-inch"
+        "key": "laptops/apple-macbook-pro-16-m5/common-1",
+        "alt": "Apple MacBook Pro 16\" (M5) — 14-inch and 16-inch",
+        "sourceUrl": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_sizes_startframe__frjeunw0swy2_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
       },
       {
-        "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_display__fv0jzlzaak2u_large_2x.jpg",
-        "alt": "Apple MacBook Pro 16\" (M5) — Liquid Retina XDR display"
+        "key": "laptops/apple-macbook-pro-16-m5/common-2",
+        "alt": "Apple MacBook Pro 16\" (M5) — Liquid Retina XDR display",
+        "sourceUrl": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_display__fv0jzlzaak2u_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
       },
       {
-        "src": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_audio_startframe__fww1g0h7gn22_large_2x.jpg",
-        "alt": "Apple MacBook Pro 16\" (M5) — keyboard and speakers"
+        "key": "laptops/apple-macbook-pro-16-m5/common-3",
+        "alt": "Apple MacBook Pro 16\" (M5) — keyboard and speakers",
+        "sourceUrl": "https://www.apple.com/v/macbook-pro/ax/images/overview/product-viewer/pv_audio_startframe__fww1g0h7gn22_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
       }
     ]
   },

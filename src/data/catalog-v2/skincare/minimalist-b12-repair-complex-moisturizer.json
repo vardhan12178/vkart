@@ -55,36 +55,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12ListingImage.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-1",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12ListingImage.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing1.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 2"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-2",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing1.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing4.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 3"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-3",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing4.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing2.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 4"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-4",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing2.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing3.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 5"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-5",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing3.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing5.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 6"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-6",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing5.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing6.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 7"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-7",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing6.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing7.jpg?v=1756800848",
-        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 8"
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-8",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing7.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
       }
     ]
   },

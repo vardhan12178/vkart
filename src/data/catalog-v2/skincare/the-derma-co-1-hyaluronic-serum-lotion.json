@@ -55,36 +55,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_PDP_b2fd02b7-f487-4445-aab5-d15b943560ce.jpg?v=1790066214",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-1",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_PDP_b2fd02b7-f487-4445-aab5-d15b943560ce.jpg?v=1790066214",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/5_792f9bf9-57c2-4306-96c6-92ac9b0de330.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 2"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-2",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/5_792f9bf9-57c2-4306-96c6-92ac9b0de330.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/6_5be176d7-4b84-4e7e-bb2b-e191c08242ea.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 3"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-3",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/6_5be176d7-4b84-4e7e-bb2b-e191c08242ea.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/7_b0dce728-fe91-48b0-a7cb-ebfb1ca1d567.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 4"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-4",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/7_b0dce728-fe91-48b0-a7cb-ebfb1ca1d567.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/8_0dbc12db-158a-4c1a-9be8-99606bc1a8d5.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 5"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-5",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/8_0dbc12db-158a-4c1a-9be8-99606bc1a8d5.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/9_e9b70019-5d87-41d9-acc5-bebca8a6396e.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 6"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-6",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/9_e9b70019-5d87-41d9-acc5-bebca8a6396e.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/10_c7484fdc-ccb2-4dd4-9991-78a5e7ba1f97.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 7"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-7",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/10_c7484fdc-ccb2-4dd4-9991-78a5e7ba1f97.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/11_51ff7d15-3c5b-41b9-9e7d-af9638b4c388.jpg?v=1789020028",
-        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 8"
+        "key": "skincare/the-derma-co-1-hyaluronic-serum-lotion/common-8",
+        "alt": "The Derma Co 1% Hyaluronic Daily Hydrating Serum-Lotion, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/11_51ff7d15-3c5b-41b9-9e7d-af9638b4c388.jpg?v=1789020028",
+        "width": 1080,
+        "height": 1080
       }
     ]
   },

@@ -82,7 +82,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 27.0,
+    "screenInch": 27,
     "resolution": "QHD (2,560 x 1,440)",
     "refreshRateHz": 165,
     "panel": "VA",
@@ -105,12 +105,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27cg550ewxxl/gallery/in-odyssey-g5-g55c-ls27cg550ewxxl-thumb-541041257?$650_519_PNG$",
-        "alt": "Samsung 27\" Odyssey G5 QHD Curved Gaming Monitor"
+        "key": "monitors/samsung-27-inch-odyssey-g5-qhd-curved-gaming-monitor/common-1",
+        "alt": "Samsung 27\" Odyssey G5 QHD Curved Gaming Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27cg550ewxxl/gallery/in-odyssey-g5-g55c-ls27cg550ewxxl-thumb-541041257?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27cg550ewxxl/gallery/in-odyssey-g5-g55c-ls27cg550ewxxl-541041256?$650_519_PNG$",
-        "alt": "Samsung 27\" Odyssey G5 QHD Curved Gaming Monitor, view 2"
+        "key": "monitors/samsung-27-inch-odyssey-g5-qhd-curved-gaming-monitor/common-2",
+        "alt": "Samsung 27\" Odyssey G5 QHD Curved Gaming Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27cg550ewxxl/gallery/in-odyssey-g5-g55c-ls27cg550ewxxl-541041256?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

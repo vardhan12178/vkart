@@ -93,32 +93,53 @@
     "groups": {
       "Dark Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__1_-hm.webp?v=1793101103",
-          "alt": "Rareism Onprap Black Wrap Dress"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-1",
+          "alt": "Rareism Onprap Black Wrap Dress",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__1_-hm.webp?v=1793101103",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__5.webp?v=1793101102",
-          "alt": "Rareism Onprap Black Wrap Dress, view 2"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-2",
+          "alt": "Rareism Onprap Black Wrap Dress, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__5.webp?v=1793101102",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__8.webp?v=1793101103",
-          "alt": "Rareism Onprap Black Wrap Dress, view 3"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-3",
+          "alt": "Rareism Onprap Black Wrap Dress, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__8.webp?v=1793101103",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__7.webp?v=1793101102",
-          "alt": "Rareism Onprap Black Wrap Dress, view 4"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-4",
+          "alt": "Rareism Onprap Black Wrap Dress, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__7.webp?v=1793101102",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__6.webp?v=1793101101",
-          "alt": "Rareism Onprap Black Wrap Dress, view 5"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-5",
+          "alt": "Rareism Onprap Black Wrap Dress, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__6.webp?v=1793101101",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__2.webp?v=1793101102",
-          "alt": "Rareism Onprap Black Wrap Dress, view 6"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-6",
+          "alt": "Rareism Onprap Black Wrap Dress, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__2.webp?v=1793101102",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__4.webp?v=1793101103",
-          "alt": "Rareism Onprap Black Wrap Dress, view 7"
+          "key": "fashion/rareism-onprap-black-wrap-dress/dark-black-7",
+          "alt": "Rareism Onprap Black Wrap Dress, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR306528__4.webp?v=1793101103",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

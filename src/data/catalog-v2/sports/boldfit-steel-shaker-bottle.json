@@ -47,36 +47,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_1_fb330789-bdf7-42a5-98e8-8062922db88a.jpg?v=1759143787",
-        "alt": "Boldfit Steel Shaker Bottle"
+        "key": "sports/boldfit-steel-shaker-bottle/common-1",
+        "alt": "Boldfit Steel Shaker Bottle",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_1_fb330789-bdf7-42a5-98e8-8062922db88a.jpg?v=1759143787",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard4_3cce7b46-b4f4-483b-b951-9cd1c028385d.jpg?v=1759753265",
-        "alt": "Boldfit Steel Shaker Bottle, view 2"
+        "key": "sports/boldfit-steel-shaker-bottle/common-2",
+        "alt": "Boldfit Steel Shaker Bottle, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard4_3cce7b46-b4f4-483b-b951-9cd1c028385d.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard2_c966a9fb-11b5-4219-9ea0-5fcb6d2edcac.jpg?v=1759753265",
-        "alt": "Boldfit Steel Shaker Bottle, view 3"
+        "key": "sports/boldfit-steel-shaker-bottle/common-3",
+        "alt": "Boldfit Steel Shaker Bottle, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard2_c966a9fb-11b5-4219-9ea0-5fcb6d2edcac.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard5_581fec97-6733-4510-9e16-867acde44aaf.jpg?v=1759753265",
-        "alt": "Boldfit Steel Shaker Bottle, view 4"
+        "key": "sports/boldfit-steel-shaker-bottle/common-4",
+        "alt": "Boldfit Steel Shaker Bottle, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard5_581fec97-6733-4510-9e16-867acde44aaf.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard3_be1fefc6-0221-4c39-8850-b7ff837c0d0e.jpg?v=1759753265",
-        "alt": "Boldfit Steel Shaker Bottle, view 5"
+        "key": "sports/boldfit-steel-shaker-bottle/common-5",
+        "alt": "Boldfit Steel Shaker Bottle, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard3_be1fefc6-0221-4c39-8850-b7ff837c0d0e.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1_b3753cd6-db32-42fc-beb7-f4c059234dc1.jpg?v=1759143650",
-        "alt": "Boldfit Steel Shaker Bottle, view 6"
+        "key": "sports/boldfit-steel-shaker-bottle/common-6",
+        "alt": "Boldfit Steel Shaker Bottle, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1_b3753cd6-db32-42fc-beb7-f4c059234dc1.jpg?v=1759143650",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard2_b32a4e32-c544-4bb9-9410-079dc1e9177d.jpg?v=1759143655",
-        "alt": "Boldfit Steel Shaker Bottle, view 7"
+        "key": "sports/boldfit-steel-shaker-bottle/common-7",
+        "alt": "Boldfit Steel Shaker Bottle, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard2_b32a4e32-c544-4bb9-9410-079dc1e9177d.jpg?v=1759143655",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard5_f6c713bb-9ca4-4329-882f-68556ce43c7e.jpg?v=1759143705",
-        "alt": "Boldfit Steel Shaker Bottle, view 8"
+        "key": "sports/boldfit-steel-shaker-bottle/common-8",
+        "alt": "Boldfit Steel Shaker Bottle, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard5_f6c713bb-9ca4-4329-882f-68556ce43c7e.jpg?v=1759143705",
+        "width": 1500,
+        "height": 1500
       }
     ]
   },

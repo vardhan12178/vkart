@@ -109,62 +109,56 @@
     "groups": {
       "Titanium Black": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_black_PC.png",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Black"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-colors-titanium-black.jpg",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Black, view 2"
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-black-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Black",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_black_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Titanium Gray": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_gray_PC.png",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Gray"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-colors-titanium-gray.jpg",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Gray, view 2"
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-gray-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Gray",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_gray_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Titanium Jetblack": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_jetBlack_PC.png",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Jetblack"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-colors-titanium-jetblack.jpg",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Jetblack, view 2"
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-jetblack-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Jetblack",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_jetBlack_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Titanium Silverblue": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_silverBlue_PC.png",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Silverblue"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-colors-titanium-silverblue.jpg",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Silverblue, view 2"
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-silverblue-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Silverblue",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_silverBlue_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Titanium Whitesilver": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_whiteSilver_PC.png",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Whitesilver"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-colors-titanium-whitesilver.jpg",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Whitesilver, view 2"
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-whitesilver-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Whitesilver",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_whiteSilver_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Titanium Pinkgold": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_pinkGold_PC.png",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Pinkgold"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/images/galaxy-s25-ultra-features-colors-titanium-pinkgold.jpg",
-          "alt": "Samsung Galaxy S25 Ultra in Titanium Pinkgold, view 2"
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-pinkgold-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Pinkgold",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_pinkGold_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ]
     },

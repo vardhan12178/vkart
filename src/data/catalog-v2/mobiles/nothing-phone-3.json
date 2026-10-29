@@ -89,22 +89,34 @@
     "groups": {
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0011_Phone-3-white.png?v=1753757325",
-          "alt": "Nothing Phone (3) in White"
+          "key": "mobiles/nothing-phone-3/white-1",
+          "alt": "Nothing Phone (3) in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0011_Phone-3-white.png?v=1753757325",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-White.png?v=1750839180",
-          "alt": "Nothing Phone (3) in White, view 2"
+          "key": "mobiles/nothing-phone-3/white-2",
+          "alt": "Nothing Phone (3) in White, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-White.png?v=1750839180",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0012_Phone-3-black.png?v=1753757353",
-          "alt": "Nothing Phone (3) in Black"
+          "key": "mobiles/nothing-phone-3/black-1",
+          "alt": "Nothing Phone (3) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0012_Phone-3-black.png?v=1753757353",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-Black.png?v=1750839180",
-          "alt": "Nothing Phone (3) in Black, view 2"
+          "key": "mobiles/nothing-phone-3/black-2",
+          "alt": "Nothing Phone (3) in Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-Black.png?v=1750839180",
+          "width": 1352,
+          "height": 1352
         }
       ]
     },

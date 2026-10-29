@@ -206,38 +206,62 @@
     "groups": {
       "Luna White": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/b138c8c415100e02ebfa51823f6aeaab.png",
-          "alt": "OPPO Find X10 Pro Max in Luna White"
+          "key": "mobiles/oppo-find-x10-pro-max/luna-white-1",
+          "alt": "OPPO Find X10 Pro Max in Luna White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/b138c8c415100e02ebfa51823f6aeaab.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/9f6aba6471cb61a610fef40ac604b88c.png",
-          "alt": "OPPO Find X10 Pro Max in Luna White, view 2"
+          "key": "mobiles/oppo-find-x10-pro-max/luna-white-2",
+          "alt": "OPPO Find X10 Pro Max in Luna White, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/9f6aba6471cb61a610fef40ac604b88c.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/81b8a6a32e2a8554cef92f17f7cf280e.png",
-          "alt": "OPPO Find X10 Pro Max in Luna White, view 3"
+          "key": "mobiles/oppo-find-x10-pro-max/luna-white-3",
+          "alt": "OPPO Find X10 Pro Max in Luna White, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/81b8a6a32e2a8554cef92f17f7cf280e.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/12e573e483cccb33d286dda2049eae07.png",
-          "alt": "OPPO Find X10 Pro Max in Luna White, view 4"
+          "key": "mobiles/oppo-find-x10-pro-max/luna-white-4",
+          "alt": "OPPO Find X10 Pro Max in Luna White, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/12e573e483cccb33d286dda2049eae07.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Titanium Grey": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/a39c5019aa5ca214ca85e6b6ea54926f.png",
-          "alt": "OPPO Find X10 Pro Max in Titanium Grey"
+          "key": "mobiles/oppo-find-x10-pro-max/titanium-grey-1",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/a39c5019aa5ca214ca85e6b6ea54926f.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/50a96bd931e950e6cef1c2eea5b742be.png",
-          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 2"
+          "key": "mobiles/oppo-find-x10-pro-max/titanium-grey-2",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/50a96bd931e950e6cef1c2eea5b742be.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/d34190b14c8906c80ffa37d26bf002a2.png",
-          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 3"
+          "key": "mobiles/oppo-find-x10-pro-max/titanium-grey-3",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/d34190b14c8906c80ffa37d26bf002a2.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/db09aa62382af92b3abc3547024b7749.png",
-          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 4"
+          "key": "mobiles/oppo-find-x10-pro-max/titanium-grey-4",
+          "alt": "OPPO Find X10 Pro Max in Titanium Grey, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/19/db09aa62382af92b3abc3547024b7749.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

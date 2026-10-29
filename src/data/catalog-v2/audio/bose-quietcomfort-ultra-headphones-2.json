@@ -60,32 +60,47 @@
     "groups": {
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHII26-WhiteSmoke_Hero_RGB_5a852914-141c-40a1-9df4-0d4b53d929e8.jpg?v=1772695633",
-          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in White"
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/white-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHII26-WhiteSmoke_Hero_RGB_5a852914-141c-40a1-9df4-0d4b53d929e8.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "Desert Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-DesertGold_ThreeQuarterLeft_7200x7200_86a1f78c-a23b-4773-90f2-c81168c4796f.jpg?v=1772695633",
-          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Desert Gold"
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/desert-gold-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Desert Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-DesertGold_ThreeQuarterLeft_7200x7200_86a1f78c-a23b-4773-90f2-c81168c4796f.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "Midnight Violet": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-MidnightViolet_ThreeQuarterLeft_7200x7200_797e8529-03eb-47ca-a0c1-666c839551e9.jpg?v=1772695633",
-          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Midnight Violet"
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/midnight-violet-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Midnight Violet",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-MidnightViolet_ThreeQuarterLeft_7200x7200_797e8529-03eb-47ca-a0c1-666c839551e9.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "Driftwood Sand": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-DriftwoodSand_ThreeQuarterLeft_7200x7200_88863604-5a68-4333-aeb4-24369378d489.jpg?v=1772695633",
-          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Driftwood Sand"
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/driftwood-sand-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Driftwood Sand",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-DriftwoodSand_ThreeQuarterLeft_7200x7200_88863604-5a68-4333-aeb4-24369378d489.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHII26-BoseBlack_Hero_RGB_ce78dcc3-ebab-476a-9b13-c4050ba28e6d.jpg?v=1772103399",
-          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Black"
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/black-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHII26-BoseBlack_Hero_RGB_ce78dcc3-ebab-476a-9b13-c4050ba28e6d.jpg?v=1772103399",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },

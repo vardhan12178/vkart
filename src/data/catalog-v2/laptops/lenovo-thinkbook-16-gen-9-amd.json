@@ -35,7 +35,7 @@
   "keySpecs": {
     "processor": "AMD Ryzen 7 250",
     "gpu": "Integrated Graphics",
-    "displayInch": 16.0,
+    "displayInch": 16,
     "panel": "IPS",
     "refreshRateHz": 60,
     "weightKg": null,
@@ -77,12 +77,11 @@
     "groups": {
       "Arctic Grey": [
         {
-          "src": "https://ap-img.static.pub/ss/img/2026/01/21/img.20260121124641726199.jpg",
-          "alt": "Lenovo ThinkBook 16 Gen 9 (16\", AMD) in Arctic Grey"
-        },
-        {
-          "src": "https://p1-ofp.static.pub/fes/cms/2025/10/31/8qxs5qt0h6gqtwipuq5feimxogg3jd435191.png",
-          "alt": "Lenovo ThinkBook 16 Gen 9 (16\", AMD) in Arctic Grey, view 2"
+          "key": "laptops/lenovo-thinkbook-16-gen-9-amd/arctic-grey-1",
+          "alt": "Lenovo ThinkBook 16 Gen 9 (16\", AMD) in Arctic Grey",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/01/21/img.20260121124641726199.jpg",
+          "width": 1280,
+          "height": 588
         }
       ]
     },

@@ -75,38 +75,56 @@
     "groups": {
       "Sage Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Green_1.png?v=1791182389",
-          "alt": "Noise ColorFit Ultra 4 in Sage Green"
+          "key": "wearables/noise-colorfit-ultra-4/sage-green-1",
+          "alt": "Noise ColorFit Ultra 4 in Sage Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Green_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Royal Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Blue_1.png?v=1791182389",
-          "alt": "Noise ColorFit Ultra 4 in Royal Blue"
+          "key": "wearables/noise-colorfit-ultra-4/royal-blue-1",
+          "alt": "Noise ColorFit Ultra 4 in Royal Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Blue_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Jet Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_J_Black_1.png?v=1791182389",
-          "alt": "Noise ColorFit Ultra 4 in Jet Black"
+          "key": "wearables/noise-colorfit-ultra-4/jet-black-1",
+          "alt": "Noise ColorFit Ultra 4 in Jet Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_J_Black_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Starlight Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Gold_1.png?v=1791182389",
-          "alt": "Noise ColorFit Ultra 4 in Starlight Gold"
+          "key": "wearables/noise-colorfit-ultra-4/starlight-gold-1",
+          "alt": "Noise ColorFit Ultra 4 in Starlight Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Gold_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Elite Titanium": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Titanium_1.png?v=1791182389",
-          "alt": "Noise ColorFit Ultra 4 in Elite Titanium"
+          "key": "wearables/noise-colorfit-ultra-4/elite-titanium-1",
+          "alt": "Noise ColorFit Ultra 4 in Elite Titanium",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Titanium_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Elite Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Black_1.png?v=1791182389",
-          "alt": "Noise ColorFit Ultra 4 in Elite Black"
+          "key": "wearables/noise-colorfit-ultra-4/elite-black-1",
+          "alt": "Noise ColorFit Ultra 4 in Elite Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Black_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
         }
       ]
     },

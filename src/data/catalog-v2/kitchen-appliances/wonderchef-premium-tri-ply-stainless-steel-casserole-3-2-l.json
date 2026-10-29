@@ -60,32 +60,53 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804870.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-1",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804870.jpg?v=1757415138",
+        "width": 1000,
+        "height": 1000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804872.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 2"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-2",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804872.jpg?v=1757415138",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804874.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 3"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-3",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804874.jpg?v=1757415138",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804876.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 4"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-4",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804876.jpg?v=1757415138",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804877.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 5"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-5",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804877.jpg?v=1757415138",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804878.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 6"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-6",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804878.jpg?v=1757415138",
+        "width": 1600,
+        "height": 1600
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804879.jpg?v=1757415138",
-        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 7"
+        "key": "kitchen-appliances/wonderchef-premium-tri-ply-stainless-steel-casserole-3-2-l/common-7",
+        "alt": "Wonderchef Premium Tri-Ply Stainless Steel Casserole 3.2 L, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0104/9211/7092/files/6804879.jpg?v=1757415138",
+        "width": 1600,
+        "height": 1600
       }
     ]
   },

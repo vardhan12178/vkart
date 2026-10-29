@@ -63,20 +63,11 @@
     "groups": {},
     "common": [
       {
-        "src": "https://lh3.googleusercontent.com/ve-dVgLY5R7NS9zCZ17RxdoxP-xGIyxo_s6e_8TnNEN7gJfsxQegRR8MZVmwHUzvAVHM_Mmk9OkCWRuD2vpEIq330xvPD-vuoWM=s1200",
-        "alt": "Google Fitbit Air"
-      },
-      {
-        "src": "https://lh3.googleusercontent.com/f4nSUIn5tYu8GdDPsQNhg7G_HkHTqMJoSJwifdufypKkWPNWGmziqEPYwcrZ8tQ4TTJyHAqsHHoOGKqjlfM3oasF5jw27wRlHw=s1200",
-        "alt": "Google Fitbit Air, view 2"
-      },
-      {
-        "src": "https://lh3.googleusercontent.com/TRWDQzkGa8XyeTinY0kWbGFfEisr4rG6lEJU78k1t2zJp5YO8xmdL5JQAybq9sJ33AQL5choNkF9r01T-QdcT02ZK4LFxZ5B-C8v=s1200",
-        "alt": "Google Fitbit Air, view 3"
-      },
-      {
-        "src": "https://lh3.googleusercontent.com/oLio0I1ZZRLbupzcGe0oexDtHUmGOrA0uApM8N4qTzrSHh4qf9iW4ywIrpxlOOCAS1bLrs1ewhDk_vwsdZNqHOVOoi2zXvHEZSj1=s1200",
-        "alt": "Google Fitbit Air, view 4"
+        "key": "wearables/google-fitbit-air/common-1",
+        "alt": "Google Fitbit Air",
+        "sourceUrl": "https://lh3.googleusercontent.com/ve-dVgLY5R7NS9zCZ17RxdoxP-xGIyxo_s6e_8TnNEN7gJfsxQegRR8MZVmwHUzvAVHM_Mmk9OkCWRuD2vpEIq330xvPD-vuoWM=s1200",
+        "width": 1200,
+        "height": 898
       }
     ]
   },

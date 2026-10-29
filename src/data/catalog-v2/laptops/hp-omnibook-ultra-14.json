@@ -90,7 +90,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 7 356H",
     "gpu": "Intel Graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "OLED",
     "refreshRateHz": null,
     "weightKg": 1.3,
@@ -131,92 +131,155 @@
     "groups": {
       "Atmospheric blue": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_front_6016102.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-1",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_front_6016102.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_frontright_6016103.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 2"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-2",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_frontright_6016103.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_frontleft_6015953.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 3"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-3",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_frontleft_6015953.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_rearleft_6015863.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 4"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-4",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_rearleft_6015863.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_stackedprofile_6015908.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 5"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-5",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/c/h/chiharu_14_cs_omnibook_x_atmosphericblue_t_nt_oled_catalog_stackedprofile_6015908.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-x-14-laptop-ngai-pc-chiharu-atmospheric-blue-en-annotated-img-4_1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 6"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-6",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-x-14-laptop-ngai-pc-chiharu-atmospheric-blue-en-annotated-img-4_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-x-14-laptop-ngai-pc-chiharu-atmospheric-blue-en-annotated-img-6.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 7"
+          "key": "laptops/hp-omnibook-ultra-14/atmospheric-blue-7",
+          "alt": "HP OmniBook Ultra 14 in Atmospheric blue, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-x-14-laptop-ngai-pc-chiharu-atmospheric-blue-en-annotated-img-6.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Silk sand": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-front.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-1",
+          "alt": "HP OmniBook Ultra 14 in Silk sand",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-front.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-frontright.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand, view 2"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-2",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-frontright.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-frontleft.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand, view 3"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-3",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-silk-sand-frontleft.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_silksand_wlan_t_catalog_rearleft_6015858.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand, view 4"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-4",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_silksand_wlan_t_catalog_rearleft_6015858.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_silksand_wlan_t_catalog_profilestacked_6015319.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand, view 5"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-5",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_silksand_wlan_t_catalog_profilestacked_6015319.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-en-annot-6_1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand, view 6"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-6",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-en-annot-6_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-silksand-in-annot-2.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Silk sand, view 7"
+          "key": "laptops/hp-omnibook-ultra-14/silk-sand-7",
+          "alt": "HP OmniBook Ultra 14 in Silk sand, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-silksand-in-annot-2.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ],
       "Eclipse gray": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-front.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-1",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-front.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-frontright.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 2"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-2",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-frontright.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-frontleft.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 3"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-3",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-ultra-14-ngai-grahami-eclipse-gray-frontleft.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_eclipsegray_wlan__t_ircam_backlit_oled_catalog_rearleft_5757101.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 4"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-4",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_eclipsegray_wlan__t_ircam_backlit_oled_catalog_rearleft_5757101.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_eclipsegray_wlan__t_ircam_backlit_oled_catalog_stackedprofile_5756058.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 5"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-5",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/g/r/graham_14_ngai_obultra_eclipsegray_wlan__t_ircam_backlit_oled_catalog_stackedprofile_5756058.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-in-annot-8.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 6"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-6",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-in-annot-8.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-en-annot-6.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 7"
+          "key": "laptops/hp-omnibook-ultra-14/eclipse-gray-7",
+          "alt": "HP OmniBook Ultra 14 in Eclipse gray, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-ultra-14-grahami-grahamq-en-annot-6.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ]
     },

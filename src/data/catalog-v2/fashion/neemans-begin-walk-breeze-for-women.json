@@ -81,36 +81,60 @@
     "groups": {
       "Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_28.jpg?v=1792742052",
-          "alt": "Neeman's Begin Walk Breeze for Women"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-1",
+          "alt": "Neeman's Begin Walk Breeze for Women",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_28.jpg?v=1792742052",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_07.jpg?v=1792742051",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 2"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-2",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_07.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_51.jpg?v=1792742051",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 3"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-3",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_51.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_09.jpg?v=1792742051",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 4"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-4",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_09.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_01.jpg?v=1792742051",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 5"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-5",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_01.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_27.jpg?v=1792742052",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 6"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-6",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_27.jpg?v=1792742052",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_26.jpg?v=1792742051",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 7"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-7",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_26.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_23.jpg?v=1792742051",
-          "alt": "Neeman's Begin Walk Breeze for Women, view 8"
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-8",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_23.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
         }
       ]
     },

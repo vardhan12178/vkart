@@ -54,36 +54,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/pdp_2_salicylic_fw.jpg?v=1758287053",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-1",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/pdp_2_salicylic_fw.jpg?v=1758287053",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/5_2_salicylic_fw.jpg?v=1772703159",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 2"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-2",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/5_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_2_salicylic_fw.jpg?v=1772703159",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 3"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-3",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/2_2_salicylic_fw.jpg?v=1772703159",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 4"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-4",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/2_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/4_2_salicylic_fw.jpg?v=1772703159",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 5"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-5",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/4_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/3_2_salicylic_fw.jpg?v=1772703159",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 6"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-6",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/3_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/fop_2_salicylic_fw.jpg?v=1758287053",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 7"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-7",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/fop_2_salicylic_fw.jpg?v=1758287053",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/bop_2_salicylic_fw.jpg?v=1758287053",
-        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 8"
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-8",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/bop_2_salicylic_fw.jpg?v=1758287053",
+        "width": 1080,
+        "height": 1080
       }
     ]
   },

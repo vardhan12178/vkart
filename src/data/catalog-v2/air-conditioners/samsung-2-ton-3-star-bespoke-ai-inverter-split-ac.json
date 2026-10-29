@@ -92,7 +92,7 @@
     }
   },
   "keySpecs": {
-    "tonnage": 2.0,
+    "tonnage": 2,
     "starRating": 3,
     "inverter": true,
     "type": "Split AC",
@@ -114,12 +114,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h24d1xhnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h24d1xh-6-30-kw-3-star-2026-ar50h24d1xhnna-thumb-550764550?$650_519_PNG$",
-        "alt": "Samsung 2 Ton 3-Star Bespoke AI Inverter Split AC"
+        "key": "air-conditioners/samsung-2-ton-3-star-bespoke-ai-inverter-split-ac/common-1",
+        "alt": "Samsung 2 Ton 3-Star Bespoke AI Inverter Split AC",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h24d1xhnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h24d1xh-6-30-kw-3-star-2026-ar50h24d1xhnna-thumb-550764550?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h24d1xhnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h24d1xh-6-30-kw-3-star-2026-ar50h24d1xhnna-550764549?$650_519_PNG$",
-        "alt": "Samsung 2 Ton 3-Star Bespoke AI Inverter Split AC, view 2"
+        "key": "air-conditioners/samsung-2-ton-3-star-bespoke-ai-inverter-split-ac/common-2",
+        "alt": "Samsung 2 Ton 3-Star Bespoke AI Inverter Split AC, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h24d1xhnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h24d1xh-6-30-kw-3-star-2026-ar50h24d1xhnna-550764549?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

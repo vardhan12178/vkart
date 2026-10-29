@@ -210,56 +210,92 @@
     "groups": {
       "Starry White": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/P99xffyVRxqU4CrC.png",
-          "alt": "OPPO Reno16 5G in Starry White"
+          "key": "mobiles/oppo-reno16/starry-white-1",
+          "alt": "OPPO Reno16 5G in Starry White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/P99xffyVRxqU4CrC.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/HjWhML1bL124jV4s.png",
-          "alt": "OPPO Reno16 5G in Starry White, view 2"
+          "key": "mobiles/oppo-reno16/starry-white-2",
+          "alt": "OPPO Reno16 5G in Starry White, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/HjWhML1bL124jV4s.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/U5NoyiavAmZE38Zb.png",
-          "alt": "OPPO Reno16 5G in Starry White, view 3"
+          "key": "mobiles/oppo-reno16/starry-white-3",
+          "alt": "OPPO Reno16 5G in Starry White, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/U5NoyiavAmZE38Zb.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/jYmkb4B1MnrW4Rp8.png",
-          "alt": "OPPO Reno16 5G in Starry White, view 4"
+          "key": "mobiles/oppo-reno16/starry-white-4",
+          "alt": "OPPO Reno16 5G in Starry White, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/jYmkb4B1MnrW4Rp8.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Twilight Violet": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/OeAkYOA6f5mi818U.png",
-          "alt": "OPPO Reno16 5G in Twilight Violet"
+          "key": "mobiles/oppo-reno16/twilight-violet-1",
+          "alt": "OPPO Reno16 5G in Twilight Violet",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/OeAkYOA6f5mi818U.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/JfojG0CCwMh4QUdD.png",
-          "alt": "OPPO Reno16 5G in Twilight Violet, view 2"
+          "key": "mobiles/oppo-reno16/twilight-violet-2",
+          "alt": "OPPO Reno16 5G in Twilight Violet, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/JfojG0CCwMh4QUdD.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/Q8747gZAVbQaHu2y.png",
-          "alt": "OPPO Reno16 5G in Twilight Violet, view 3"
+          "key": "mobiles/oppo-reno16/twilight-violet-3",
+          "alt": "OPPO Reno16 5G in Twilight Violet, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/Q8747gZAVbQaHu2y.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/ytpGzplj5wozDxlo.png",
-          "alt": "OPPO Reno16 5G in Twilight Violet, view 4"
+          "key": "mobiles/oppo-reno16/twilight-violet-4",
+          "alt": "OPPO Reno16 5G in Twilight Violet, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/ytpGzplj5wozDxlo.png",
+          "width": 1280,
+          "height": 1280
         }
       ],
       "Stellar Purple": [
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/uqTt1s17JE58OzoX.png",
-          "alt": "OPPO Reno16 5G in Stellar Purple"
+          "key": "mobiles/oppo-reno16/stellar-purple-1",
+          "alt": "OPPO Reno16 5G in Stellar Purple",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/uqTt1s17JE58OzoX.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/DhKYdksJD5WyjdxY.png",
-          "alt": "OPPO Reno16 5G in Stellar Purple, view 2"
+          "key": "mobiles/oppo-reno16/stellar-purple-2",
+          "alt": "OPPO Reno16 5G in Stellar Purple, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/DhKYdksJD5WyjdxY.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/kM0CRaYEzRIjIE55.png",
-          "alt": "OPPO Reno16 5G in Stellar Purple, view 3"
+          "key": "mobiles/oppo-reno16/stellar-purple-3",
+          "alt": "OPPO Reno16 5G in Stellar Purple, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/kM0CRaYEzRIjIE55.png",
+          "width": 1280,
+          "height": 1280
         },
         {
-          "src": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/NtjQxt2r6TwDZYJm.png",
-          "alt": "OPPO Reno16 5G in Stellar Purple, view 4"
+          "key": "mobiles/oppo-reno16/stellar-purple-4",
+          "alt": "OPPO Reno16 5G in Stellar Purple, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202607/02/NtjQxt2r6TwDZYJm.png",
+          "width": 1280,
+          "height": 1280
         }
       ]
     },

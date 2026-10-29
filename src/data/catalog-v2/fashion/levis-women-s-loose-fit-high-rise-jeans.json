@@ -92,32 +92,53 @@
     "groups": {
       "Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_5_Front.jpg?v=1793082982",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-1",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_5_Front.jpg?v=1793082982",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_01_Styleshot.jpg?v=1793082983",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 2"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-2",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_01_Styleshot.jpg?v=1793082983",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_02_Front.jpg?v=1793082983",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 3"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-3",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_02_Front.jpg?v=1793082983",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_03_Back.jpg?v=1793082982",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 4"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-4",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_03_Back.jpg?v=1793082982",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_06_Detail_20.jpg?v=1793082984",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 5"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-5",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_06_Detail_20.jpg?v=1793082984",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_07_Detail_20.jpg?v=1793082984",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 6"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-6",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_07_Detail_20.jpg?v=1793082984",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_04_SIde.jpg?v=1793082983",
-          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 7"
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-7",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_04_SIde.jpg?v=1793082983",
+          "width": 1034,
+          "height": 1376
         }
       ]
     },

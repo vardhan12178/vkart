@@ -77,24 +77,39 @@
     "groups": {
       "Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_01.jpg?v=1792739058",
-          "alt": "Campus Noor Plus Women's Running Shoes"
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-1",
+          "alt": "Campus Noor Plus Women's Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_01.jpg?v=1792739058",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_02.webp?v=1792739057",
-          "alt": "Campus Noor Plus Women's Running Shoes, view 2"
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-2",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_02.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_03.webp?v=1792739057",
-          "alt": "Campus Noor Plus Women's Running Shoes, view 3"
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-3",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_03.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_04.webp?v=1792739057",
-          "alt": "Campus Noor Plus Women's Running Shoes, view 4"
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-4",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_04.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_05.webp?v=1792739057",
-          "alt": "Campus Noor Plus Women's Running Shoes, view 5"
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-5",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_05.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

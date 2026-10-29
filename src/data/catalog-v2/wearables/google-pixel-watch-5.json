@@ -90,24 +90,32 @@
     "groups": {},
     "common": [
       {
-        "src": "https://lh3.googleusercontent.com/buVYykSlsq8xO-1ChR1UkXg7ASh5ovW5lEuiFzBoW3JXqZOU7d4r89P4cYDdPslxASS-fmecbQE2n7MUMD_lHjZXz_Az8wmYeKwh=s1200",
-        "alt": "Google Pixel Watch 5"
+        "key": "wearables/google-pixel-watch-5/common-1",
+        "alt": "Google Pixel Watch 5",
+        "sourceUrl": "https://lh3.googleusercontent.com/buVYykSlsq8xO-1ChR1UkXg7ASh5ovW5lEuiFzBoW3JXqZOU7d4r89P4cYDdPslxASS-fmecbQE2n7MUMD_lHjZXz_Az8wmYeKwh=s1200",
+        "width": 1132,
+        "height": 1132
       },
       {
-        "src": "https://lh3.googleusercontent.com/JN22AU20SIl3tACaUBe4hO-wm2NMXolkumAOP7-Mo-1ZdmhAaPYEC1H6FQB7tL-AxoG8Muw3vEbFjqZxgcq0wejNZpDnKLhvO7c=s1200",
-        "alt": "Google Pixel Watch 5, view 2"
+        "key": "wearables/google-pixel-watch-5/common-2",
+        "alt": "Google Pixel Watch 5, view 2",
+        "sourceUrl": "https://lh3.googleusercontent.com/JN22AU20SIl3tACaUBe4hO-wm2NMXolkumAOP7-Mo-1ZdmhAaPYEC1H6FQB7tL-AxoG8Muw3vEbFjqZxgcq0wejNZpDnKLhvO7c=s1200",
+        "width": 1132,
+        "height": 906
       },
       {
-        "src": "https://lh3.googleusercontent.com/xbsNDU8k4Pl2k5mKm09B_SWX4Xbe1-HHPuTxSNTygrDhe-ClA2GltQgaBqs40FRk05zFKFq4iLdL08F0ZRAljoyJe1RmUdzpSp8=s1200",
-        "alt": "Google Pixel Watch 5, view 3"
+        "key": "wearables/google-pixel-watch-5/common-3",
+        "alt": "Google Pixel Watch 5, view 3",
+        "sourceUrl": "https://lh3.googleusercontent.com/xbsNDU8k4Pl2k5mKm09B_SWX4Xbe1-HHPuTxSNTygrDhe-ClA2GltQgaBqs40FRk05zFKFq4iLdL08F0ZRAljoyJe1RmUdzpSp8=s1200",
+        "width": 1200,
+        "height": 916
       },
       {
-        "src": "https://lh3.googleusercontent.com/qSvHd40DvBOUO-pcQwxjs0o-v2-Bsgdo_8dnfa38Xp-VEkxjS8mH0-RnzF9gyxV2xyt83nQqYHWouVE9TyY58_r0U3HPZ7Q6LKM=s1200",
-        "alt": "Google Pixel Watch 5, view 4"
-      },
-      {
-        "src": "https://lh3.googleusercontent.com/HHST08JL0Fk65dO71qi2YiMmnJSLne0vF17ayDqALTKmqgBXlAJ4Xsy7AxxjfsAY-VwV0H5-pBe1GLQn60ka_9IdyuAD0R08j4M=s1200",
-        "alt": "Google Pixel Watch 5, view 5"
+        "key": "wearables/google-pixel-watch-5/common-5",
+        "alt": "Google Pixel Watch 5, view 5",
+        "sourceUrl": "https://lh3.googleusercontent.com/HHST08JL0Fk65dO71qi2YiMmnJSLne0vF17ayDqALTKmqgBXlAJ4Xsy7AxxjfsAY-VwV0H5-pBe1GLQn60ka_9IdyuAD0R08j4M=s1200",
+        "width": 1132,
+        "height": 906
       }
     ]
   },

@@ -97,78 +97,129 @@
     "groups": {
       "Orange": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0054_CMF-Phone-2-Pro-Orange.png?v=1753757344",
-          "alt": "CMF Phone 2 Pro in Orange"
+          "key": "mobiles/nothing-cmf-phone-2-pro/orange-1",
+          "alt": "CMF Phone 2 Pro in Orange",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0054_CMF-Phone-2-Pro-Orange.png?v=1753757344",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Back.png?v=1745661990",
-          "alt": "CMF Phone 2 Pro in Orange, view 2"
+          "key": "mobiles/nothing-cmf-phone-2-pro/orange-2",
+          "alt": "CMF Phone 2 Pro in Orange, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Back.png?v=1745661990",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Front.png?v=1745661990",
-          "alt": "CMF Phone 2 Pro in Orange, view 3"
+          "key": "mobiles/nothing-cmf-phone-2-pro/orange-3",
+          "alt": "CMF Phone 2 Pro in Orange, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Front.png?v=1745661990",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-left.png?v=1745661990",
-          "alt": "CMF Phone 2 Pro in Orange, view 4"
+          "key": "mobiles/nothing-cmf-phone-2-pro/orange-4",
+          "alt": "CMF Phone 2 Pro in Orange, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-left.png?v=1745661990",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-right.png?v=1745661990",
-          "alt": "CMF Phone 2 Pro in Orange, view 5"
+          "key": "mobiles/nothing-cmf-phone-2-pro/orange-5",
+          "alt": "CMF Phone 2 Pro in Orange, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-right.png?v=1745661990",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0058_CMF-Phone-2-Pro-black.png?v=1753757371",
-          "alt": "CMF Phone 2 Pro in Black"
+          "key": "mobiles/nothing-cmf-phone-2-pro/black-1",
+          "alt": "CMF Phone 2 Pro in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0058_CMF-Phone-2-Pro-black.png?v=1753757371",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_Back.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in Black, view 2"
+          "key": "mobiles/nothing-cmf-phone-2-pro/black-2",
+          "alt": "CMF Phone 2 Pro in Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_Back.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_Front.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in Black, view 3"
+          "key": "mobiles/nothing-cmf-phone-2-pro/black-3",
+          "alt": "CMF Phone 2 Pro in Black, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_Front.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_left.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in Black, view 4"
+          "key": "mobiles/nothing-cmf-phone-2-pro/black-4",
+          "alt": "CMF Phone 2 Pro in Black, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_left.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_right.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in Black, view 5"
+          "key": "mobiles/nothing-cmf-phone-2-pro/black-5",
+          "alt": "CMF Phone 2 Pro in Black, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Black_-_right.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0055_CMF-Phone-2-Pro-lightgrey.png?v=1753757347",
-          "alt": "CMF Phone 2 Pro in White"
+          "key": "mobiles/nothing-cmf-phone-2-pro/white-1",
+          "alt": "CMF Phone 2 Pro in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0055_CMF-Phone-2-Pro-lightgrey.png?v=1753757347",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_Back.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in White, view 2"
+          "key": "mobiles/nothing-cmf-phone-2-pro/white-2",
+          "alt": "CMF Phone 2 Pro in White, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_Back.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_Front_be62458c-db1f-473e-aa9c-c18dd2b65de7.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in White, view 3"
+          "key": "mobiles/nothing-cmf-phone-2-pro/white-3",
+          "alt": "CMF Phone 2 Pro in White, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_Front_be62458c-db1f-473e-aa9c-c18dd2b65de7.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_left.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in White, view 4"
+          "key": "mobiles/nothing-cmf-phone-2-pro/white-4",
+          "alt": "CMF Phone 2 Pro in White, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_left.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_right.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in White, view 5"
+          "key": "mobiles/nothing-cmf-phone-2-pro/white-5",
+          "alt": "CMF Phone 2 Pro in White, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_White_-_right.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "Light Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0056_CMF-Phone-2-Pro-Lightgreen.png?v=1753757364",
-          "alt": "CMF Phone 2 Pro in Light Green"
+          "key": "mobiles/nothing-cmf-phone-2-pro/light-green-1",
+          "alt": "CMF Phone 2 Pro in Light Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0056_CMF-Phone-2-Pro-Lightgreen.png?v=1753757364",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Light_Green_-_Back_f0d8f9bc-eb86-4b6b-a619-0990034412fc.png?v=1745845129",
-          "alt": "CMF Phone 2 Pro in Light Green, view 2"
+          "key": "mobiles/nothing-cmf-phone-2-pro/light-green-2",
+          "alt": "CMF Phone 2 Pro in Light Green, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone_2_Pro_-_1352_x_1352_-_Light_Green_-_Back_f0d8f9bc-eb86-4b6b-a619-0990034412fc.png?v=1745845129",
+          "width": 1352,
+          "height": 1352
         }
       ]
     },

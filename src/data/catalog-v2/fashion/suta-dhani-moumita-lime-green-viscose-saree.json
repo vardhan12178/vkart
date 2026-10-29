@@ -67,36 +67,60 @@
     "groups": {
       "Lime Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-01.jpg?v=1791896822",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-1",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-01.jpg?v=1791896822",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-05.jpg?v=1791896822",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 2"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-2",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-05.jpg?v=1791896822",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-17.jpg?v=1791896822",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 3"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-3",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-17.jpg?v=1791896822",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/lightGreen-7.jpg?v=1791896811",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 4"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-4",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/lightGreen-7.jpg?v=1791896811",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-06.jpg?v=1791896822",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 5"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-5",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-06.jpg?v=1791896822",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/lightGreen-4.jpg?v=1791896811",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 6"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-6",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/lightGreen-4.jpg?v=1791896811",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-03.jpg?v=1791896822",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 7"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-7",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-03.jpg?v=1791896822",
+          "width": 1536,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-07.jpg?v=1791896822",
-          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 8"
+          "key": "fashion/suta-dhani-moumita-lime-green-viscose-saree/lime-green-8",
+          "alt": "Suta Dhani Moumita Lime Green Viscose Saree, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/DhaniMoumita-07.jpg?v=1791896822",
+          "width": 1365,
+          "height": 2048
         }
       ]
     },

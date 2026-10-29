@@ -92,7 +92,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 5 225H",
     "gpu": "Intel Arc 130T GPU",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "OLED",
     "refreshRateHz": null,
     "weightKg": 1.41,
@@ -131,32 +131,53 @@
     "groups": {
       "Meteor silver": [
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-front_1.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-1",
+          "alt": "HP OmniBook 7 14 in Meteor silver",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-front_1.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-front-1_1.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver, view 2"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-2",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-front-1_1.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-frontleft_1.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver, view 3"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-3",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-inch-laptop-ai-pc-agusta-meteorsilver-frontleft_1.png?store=in-en&image-type=image",
+          "width": 1659,
+          "height": 1244
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/a/g/agusta_14_ob7_cs_meteorsilver_wlan_nt_ircam_backlit_oled_catalog_rearleft_5656905_1.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver, view 4"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-4",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/g/agusta_14_ob7_cs_meteorsilver_wlan_nt_ircam_backlit_oled_catalog_rearleft_5656905_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/a/g/agusta_14_ob7_cs_meteorsilver_wlan_nt_ircam_backlit_win11_catalog_profilestacked_5657250_1.png?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver, view 5"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-5",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/g/agusta_14_ob7_cs_meteorsilver_wlan_nt_ircam_backlit_win11_catalog_profilestacked_5657250_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-agusta-en-annotated-img-1_1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver, view 6"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-6",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-agusta-en-annotated-img-1_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         },
         {
-          "src": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-agusta-in-annotated-img-2_1.jpg?store=in-en&image-type=image",
-          "alt": "HP OmniBook 7 14 in Meteor silver, view 7"
+          "key": "laptops/hp-omnibook-7-14/meteor-silver-7",
+          "alt": "HP OmniBook 7 14 in Meteor silver, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/p/hp-omnibook-7-14-agusta-in-annotated-img-2_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
         }
       ]
     },

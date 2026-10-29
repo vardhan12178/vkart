@@ -64,38 +64,48 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/UOEB24_Black_P_2000x2000px.png?v=1753359949",
-          "alt": "Bose Ultra Open Earbuds in Black"
+          "key": "audio/bose-ultra-open-earbuds/black-1",
+          "alt": "Bose Ultra Open Earbuds in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/UOEB24_Black_P_2000x2000px.png?v=1753359949",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "White Smoke": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/UOEB24_White_P_2000x2000px_result.webp?v=1753359949",
-          "alt": "Bose Ultra Open Earbuds in White Smoke"
+          "key": "audio/bose-ultra-open-earbuds/white-smoke-1",
+          "alt": "Bose Ultra Open Earbuds in White Smoke",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/UOEB24_White_P_2000x2000px_result.webp?v=1753359949",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "Moonstone Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_496_51nR43.jpg?v=1753359949",
-          "alt": "Bose Ultra Open Earbuds in Moonstone Blue"
+          "key": "audio/bose-ultra-open-earbuds/moonstone-blue-1",
+          "alt": "Bose Ultra Open Earbuds in Moonstone Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_496_51nR43.jpg?v=1753359949",
+          "width": 1315,
+          "height": 821
         }
       ],
-      "Diamond 60th Edition": [
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_7_SF_UOE-Q3_PDP-UOE-DIAMOND_IMG-1.webp?v=1753276676",
-          "alt": "Bose Ultra Open Earbuds in Diamond 60th Edition"
-        }
-      ],
+      "Diamond 60th Edition": [],
       "Sunset Iridescent": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/CREA-1093A_UOEBLE25_Sunset_Hero_7200_result.webp?v=1753359949",
-          "alt": "Bose Ultra Open Earbuds in Sunset Iridescent"
+          "key": "audio/bose-ultra-open-earbuds/sunset-iridescent-1",
+          "alt": "Bose Ultra Open Earbuds in Sunset Iridescent",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/CREA-1093A_UOEBLE25_Sunset_Hero_7200_result.webp?v=1753359949",
+          "width": 1200,
+          "height": 1200
         }
       ],
       "Chilled Lilac": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/CREA-1093A_UOEBLE25_ChilledLilac_Hero_7200_result.webp?v=1753359949",
-          "alt": "Bose Ultra Open Earbuds in Chilled Lilac"
+          "key": "audio/bose-ultra-open-earbuds/chilled-lilac-1",
+          "alt": "Bose Ultra Open Earbuds in Chilled Lilac",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/CREA-1093A_UOEBLE25_ChilledLilac_Hero_7200_result.webp?v=1753359949",
+          "width": 1200,
+          "height": 1200
         }
       ]
     },

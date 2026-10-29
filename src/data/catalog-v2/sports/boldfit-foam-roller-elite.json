@@ -37,32 +37,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71OyxtytYXL._SL1500.jpg?v=1724761463",
-        "alt": "Boldfit Foam Roller Elite"
+        "key": "sports/boldfit-foam-roller-elite/common-1",
+        "alt": "Boldfit Foam Roller Elite",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71OyxtytYXL._SL1500.jpg?v=1724761463",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71g2PzN4eWL._SL1500.jpg?v=1724761462",
-        "alt": "Boldfit Foam Roller Elite, view 2"
+        "key": "sports/boldfit-foam-roller-elite/common-2",
+        "alt": "Boldfit Foam Roller Elite, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71g2PzN4eWL._SL1500.jpg?v=1724761462",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/81858JPIQ2L._SL1500.jpg?v=1724761463",
-        "alt": "Boldfit Foam Roller Elite, view 3"
+        "key": "sports/boldfit-foam-roller-elite/common-3",
+        "alt": "Boldfit Foam Roller Elite, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/81858JPIQ2L._SL1500.jpg?v=1724761463",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71xrf2LZlCL._SL1500.jpg?v=1724761462",
-        "alt": "Boldfit Foam Roller Elite, view 4"
+        "key": "sports/boldfit-foam-roller-elite/common-4",
+        "alt": "Boldfit Foam Roller Elite, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71xrf2LZlCL._SL1500.jpg?v=1724761462",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71WVhP7AuLL._SL1500.jpg?v=1724761462",
-        "alt": "Boldfit Foam Roller Elite, view 5"
+        "key": "sports/boldfit-foam-roller-elite/common-5",
+        "alt": "Boldfit Foam Roller Elite, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71WVhP7AuLL._SL1500.jpg?v=1724761462",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/615VhPhtwVL.jpg?v=1714372994",
-        "alt": "Boldfit Foam Roller Elite, view 6"
-      },
-      {
-        "src": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71RvJkwP6_L._SL1500.jpg?v=1714372995",
-        "alt": "Boldfit Foam Roller Elite, view 7"
+        "key": "sports/boldfit-foam-roller-elite/common-7",
+        "alt": "Boldfit Foam Roller Elite, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/71RvJkwP6_L._SL1500.jpg?v=1714372995",
+        "width": 1500,
+        "height": 1500
       }
     ]
   },

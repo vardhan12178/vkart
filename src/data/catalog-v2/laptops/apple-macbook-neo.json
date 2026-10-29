@@ -33,7 +33,7 @@
       "ssd": "256GB or 512GB SSD"
     },
     "Display": {
-      "size": 13.0,
+      "size": 13,
       "type": "Liquid Retina (LED-backlit IPS)",
       "resolution": "2408 × 1506",
       "brightness": "500 nits"
@@ -68,7 +68,7 @@
   "keySpecs": {
     "processor": "Apple A18 Pro",
     "gpu": "Integrated 5-core",
-    "displayInch": 13.0,
+    "displayInch": 13,
     "panel": "IPS",
     "refreshRateHz": 60,
     "weightKg": 1.23,
@@ -116,49 +116,76 @@
     "groups": {
       "Silver": [
         {
-          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_silver__bhbd7o8mxxzm_large_2x.jpg",
-          "alt": "Apple MacBook Neo in Silver"
+          "key": "laptops/apple-macbook-neo/silver-1",
+          "alt": "Apple MacBook Neo in Silver",
+          "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_silver__bhbd7o8mxxzm_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Blush": [
         {
-          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_blush__fji4uke74w2m_large_2x.jpg",
-          "alt": "Apple MacBook Neo in Blush"
+          "key": "laptops/apple-macbook-neo/blush-1",
+          "alt": "Apple MacBook Neo in Blush",
+          "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_blush__fji4uke74w2m_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Citrus": [
         {
-          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_citrus__flplef60bpim_large_2x.jpg",
-          "alt": "Apple MacBook Neo in Citrus"
+          "key": "laptops/apple-macbook-neo/citrus-1",
+          "alt": "Apple MacBook Neo in Citrus",
+          "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_citrus__flplef60bpim_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ],
       "Indigo": [
         {
-          "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_indigo__ee1m3vsakryq_large_2x.jpg",
-          "alt": "Apple MacBook Neo in Indigo"
+          "key": "laptops/apple-macbook-neo/indigo-1",
+          "alt": "Apple MacBook Neo in Indigo",
+          "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_colors_indigo__ee1m3vsakryq_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
         }
       ]
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/welcome/hero_static__c07b68h6ap2e_large_2x.jpg",
-        "alt": "Apple MacBook Neo — held in one hand"
+        "key": "laptops/apple-macbook-neo/common-1",
+        "alt": "Apple MacBook Neo — held in one hand",
+        "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/welcome/hero_static__c07b68h6ap2e_large_2x.jpg",
+        "width": 1720,
+        "height": 2148
       },
       {
-        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/highlights/highlights_colors_startframe__dsv26e58uvqu_large_2x.jpg",
-        "alt": "Apple MacBook Neo — all four colours"
+        "key": "laptops/apple-macbook-neo/common-2",
+        "alt": "Apple MacBook Neo — all four colours",
+        "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/highlights/highlights_colors_startframe__dsv26e58uvqu_large_2x.jpg",
+        "width": 2520,
+        "height": 1360
       },
       {
-        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/design/design_startframe__f2qfplz27cyi_large_2x.png",
-        "alt": "Apple MacBook Neo — colour lids"
+        "key": "laptops/apple-macbook-neo/common-3",
+        "alt": "Apple MacBook Neo — colour lids",
+        "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/design/design_startframe__f2qfplz27cyi_large_2x.png",
+        "width": 2880,
+        "height": 1800
       },
       {
-        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-stories/new-to-mac/ntm_hero_startframe__exo0j784536u_large_2x.jpg",
-        "alt": "Apple MacBook Neo — keyboard"
+        "key": "laptops/apple-macbook-neo/common-4",
+        "alt": "Apple MacBook Neo — keyboard",
+        "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/product-stories/new-to-mac/ntm_hero_startframe__exo0j784536u_large_2x.jpg",
+        "width": 2152,
+        "height": 1492
       },
       {
-        "src": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_connectivity__f4pmdvbke2mq_large_2x.jpg",
-        "alt": "Apple MacBook Neo — ports"
+        "key": "laptops/apple-macbook-neo/common-5",
+        "alt": "Apple MacBook Neo — ports",
+        "sourceUrl": "https://www.apple.com/v/macbook-neo/b/images/overview/product-viewer/pv_connectivity__f4pmdvbke2mq_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
       }
     ]
   },

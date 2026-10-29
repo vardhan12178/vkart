@@ -75,80 +75,134 @@
     "groups": {
       "Lunar Radiance": [
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/1a6fba7d5b80dc79e9e547bebd9849cd.png",
-          "alt": "OnePlus Buds Pro 3 in Lunar Radiance"
+          "key": "audio/oneplus-buds-pro-3/lunar-radiance-1",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/1a6fba7d5b80dc79e9e547bebd9849cd.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/6527927e313ef7f27ab5d07da0c96c94.png",
-          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 2"
+          "key": "audio/oneplus-buds-pro-3/lunar-radiance-2",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/6527927e313ef7f27ab5d07da0c96c94.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/e4e5bc353ff74b81664b919508786af0.png",
-          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 3"
+          "key": "audio/oneplus-buds-pro-3/lunar-radiance-3",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/e4e5bc353ff74b81664b919508786af0.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/3ac3848f2739c285d4981244b94ca2f4.png",
-          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 4"
+          "key": "audio/oneplus-buds-pro-3/lunar-radiance-4",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/3ac3848f2739c285d4981244b94ca2f4.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/549cde42fa7e3c88490ddc5194d19838.png",
-          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 5"
+          "key": "audio/oneplus-buds-pro-3/lunar-radiance-5",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 5",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/549cde42fa7e3c88490ddc5194d19838.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/3df9220efff841edc54258146cd88694.png",
-          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 6"
+          "key": "audio/oneplus-buds-pro-3/lunar-radiance-6",
+          "alt": "OnePlus Buds Pro 3 in Lunar Radiance, view 6",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/3df9220efff841edc54258146cd88694.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Midnight Opus": [
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/ee0fbf7ee1845d4993715f01791f85a2.png",
-          "alt": "OnePlus Buds Pro 3 in Midnight Opus"
+          "key": "audio/oneplus-buds-pro-3/midnight-opus-1",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/ee0fbf7ee1845d4993715f01791f85a2.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/3970117fe72355b91f5cea29083b3a85.png",
-          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 2"
+          "key": "audio/oneplus-buds-pro-3/midnight-opus-2",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/3970117fe72355b91f5cea29083b3a85.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/18e69e995f0e51f427a490c83320a796.png",
-          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 3"
+          "key": "audio/oneplus-buds-pro-3/midnight-opus-3",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/18e69e995f0e51f427a490c83320a796.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/cf620b0ec66e27ef110de1f324a595b7.png",
-          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 4"
+          "key": "audio/oneplus-buds-pro-3/midnight-opus-4",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/cf620b0ec66e27ef110de1f324a595b7.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/4654ed2b911df62e008953b030c51346.png",
-          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 5"
+          "key": "audio/oneplus-buds-pro-3/midnight-opus-5",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 5",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/4654ed2b911df62e008953b030c51346.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202408/16/bfcb7c7145863efdb7efb80d264a5232.png",
-          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 6"
+          "key": "audio/oneplus-buds-pro-3/midnight-opus-6",
+          "alt": "OnePlus Buds Pro 3 in Midnight Opus, view 6",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202408/16/bfcb7c7145863efdb7efb80d264a5232.png",
+          "width": 960,
+          "height": 960
         }
       ],
       "Sapphire Blue": [
         {
-          "src": "https://image01-in.oneplus.net/media/202501/07/d7144d6c06114b897eaeb29e4a246cd4.png",
-          "alt": "OnePlus Buds Pro 3 in Sapphire Blue"
+          "key": "audio/oneplus-buds-pro-3/sapphire-blue-1",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202501/07/d7144d6c06114b897eaeb29e4a246cd4.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202501/07/4546e79761799a198b54a0256d060a3c.png",
-          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 2"
+          "key": "audio/oneplus-buds-pro-3/sapphire-blue-2",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202501/07/4546e79761799a198b54a0256d060a3c.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202501/07/2d607e44f9d07ef116ecb132cfd38c35.png",
-          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 3"
+          "key": "audio/oneplus-buds-pro-3/sapphire-blue-3",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202501/07/2d607e44f9d07ef116ecb132cfd38c35.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202501/07/4ee2ba17d009a4e9bfe8ff42557e946f.png",
-          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 4"
+          "key": "audio/oneplus-buds-pro-3/sapphire-blue-4",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202501/07/4ee2ba17d009a4e9bfe8ff42557e946f.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202501/07/84b42c4106e24e1b5e40a71cfb7df940.png",
-          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 5"
+          "key": "audio/oneplus-buds-pro-3/sapphire-blue-5",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 5",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202501/07/84b42c4106e24e1b5e40a71cfb7df940.png",
+          "width": 960,
+          "height": 960
         },
         {
-          "src": "https://image01-in.oneplus.net/media/202501/07/56b48b49dbc3ca80182e44fbe584ba72.png",
-          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 6"
+          "key": "audio/oneplus-buds-pro-3/sapphire-blue-6",
+          "alt": "OnePlus Buds Pro 3 in Sapphire Blue, view 6",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202501/07/56b48b49dbc3ca80182e44fbe584ba72.png",
+          "width": 960,
+          "height": 960
         }
       ]
     },

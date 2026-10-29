@@ -124,53 +124,86 @@
     "groups": {
       "Star White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Duo in Star White"
+          "key": "mobiles/apple-iphone-duo/star-white-1",
+          "alt": "Apple iPhone Duo in Star White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 2996
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Duo in Star White, view 2"
+          "key": "mobiles/apple-iphone-duo/star-white-2",
+          "alt": "Apple iPhone Duo in Star White, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "width": 1448,
+          "height": 1080
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Duo in Star White, view 3"
+          "key": "mobiles/apple-iphone-duo/star-white-3",
+          "alt": "Apple iPhone Duo in Star White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         }
       ],
       "Night Sky": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Duo in Night Sky"
+          "key": "mobiles/apple-iphone-duo/night-sky-1",
+          "alt": "Apple iPhone Duo in Night Sky",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 2996
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Duo in Night Sky, view 2"
+          "key": "mobiles/apple-iphone-duo/night-sky-2",
+          "alt": "Apple iPhone Duo in Night Sky, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "width": 1448,
+          "height": 1080
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone Duo in Night Sky, view 3"
+          "key": "mobiles/apple-iphone-duo/night-sky-3",
+          "alt": "Apple iPhone Duo in Night Sky, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         }
       ]
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/iphone-duo/e/images/overview/product-viewer/durability__d8uh14wcv2oi_large_2x.jpg",
-        "alt": "Apple iPhone Duo — unfolded titanium design"
+        "key": "mobiles/apple-iphone-duo/common-1",
+        "alt": "Apple iPhone Duo — unfolded titanium design",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/product-viewer/durability__d8uh14wcv2oi_large_2x.jpg",
+        "width": 2880,
+        "height": 1520
       },
       {
-        "src": "https://www.apple.com/v/iphone-duo/e/images/overview/product-stories/immersive/hero-display_startframe__r42exuol7yi6_large_2x.jpg",
-        "alt": "Apple iPhone Duo — 7.6-inch folding display"
+        "key": "mobiles/apple-iphone-duo/common-2",
+        "alt": "Apple iPhone Duo — 7.6-inch folding display",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/product-stories/immersive/hero-display_startframe__r42exuol7yi6_large_2x.jpg",
+        "width": 3576,
+        "height": 2000
       },
       {
-        "src": "https://www.apple.com/v/iphone-duo/e/images/overview/highlights/highlights_camera_startframe__ltwlwv2cm9ua_large_2x.jpg",
-        "alt": "Apple iPhone Duo — 48MP Dual Fusion camera"
+        "key": "mobiles/apple-iphone-duo/common-3",
+        "alt": "Apple iPhone Duo — 48MP Dual Fusion camera",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/highlights/highlights_camera_startframe__ltwlwv2cm9ua_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
       },
       {
-        "src": "https://www.apple.com/v/iphone-duo/e/images/overview/product-viewer/laptop__c7kl6vmsqd6q_large_2x.jpg",
-        "alt": "Apple iPhone Duo — half-folded laptop mode"
+        "key": "mobiles/apple-iphone-duo/common-4",
+        "alt": "Apple iPhone Duo — half-folded laptop mode",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/product-viewer/laptop__c7kl6vmsqd6q_large_2x.jpg",
+        "width": 2880,
+        "height": 1520
       },
       {
-        "src": "https://www.apple.com/v/iphone-duo/e/images/overview/highlights/camera__bbxzc8mkt6g2_large_2x.jpg",
-        "alt": "Apple iPhone Duo — taking a photo"
+        "key": "mobiles/apple-iphone-duo/common-5",
+        "alt": "Apple iPhone Duo — taking a photo",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/highlights/camera__bbxzc8mkt6g2_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
       }
     ]
   },

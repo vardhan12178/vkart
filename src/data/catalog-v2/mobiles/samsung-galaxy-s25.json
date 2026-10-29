@@ -106,52 +106,47 @@
     "groups": {
       "Mint": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_mint_PC.png",
-          "alt": "Samsung Galaxy S25 in Mint"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-mint.jpg",
-          "alt": "Samsung Galaxy S25 in Mint, view 2"
+          "key": "mobiles/samsung-galaxy-s25/mint-1",
+          "alt": "Samsung Galaxy S25 in Mint",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_mint_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Navy": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_navy_PC.png",
-          "alt": "Samsung Galaxy S25 in Navy"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-navy.jpg",
-          "alt": "Samsung Galaxy S25 in Navy, view 2"
+          "key": "mobiles/samsung-galaxy-s25/navy-1",
+          "alt": "Samsung Galaxy S25 in Navy",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_navy_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Silver Shadow": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_silverShadow_PC.png",
-          "alt": "Samsung Galaxy S25 in Silver Shadow"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-silver-shadow.jpg",
-          "alt": "Samsung Galaxy S25 in Silver Shadow, view 2"
+          "key": "mobiles/samsung-galaxy-s25/silver-shadow-1",
+          "alt": "Samsung Galaxy S25 in Silver Shadow",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_silverShadow_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Blueblack": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_blueBlack_PC.png",
-          "alt": "Samsung Galaxy S25 in Blueblack"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-blueblack.jpg",
-          "alt": "Samsung Galaxy S25 in Blueblack, view 2"
+          "key": "mobiles/samsung-galaxy-s25/blueblack-1",
+          "alt": "Samsung Galaxy S25 in Blueblack",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_blueBlack_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ],
       "Icyblue": [
         {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_icyBlue_PC.png",
-          "alt": "Samsung Galaxy S25 in Icyblue"
-        },
-        {
-          "src": "https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-colors-icyblue.jpg",
-          "alt": "Samsung Galaxy S25 in Icyblue, view 2"
+          "key": "mobiles/samsung-galaxy-s25/icyblue-1",
+          "alt": "Samsung Galaxy S25 in Icyblue",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25/buy/product_color_icyBlue_PC.png",
+          "width": 1600,
+          "height": 864
         }
       ]
     },

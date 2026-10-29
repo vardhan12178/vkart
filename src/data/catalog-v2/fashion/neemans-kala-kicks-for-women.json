@@ -78,36 +78,60 @@
     "groups": {
       "Olive": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_28.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-1",
+          "alt": "Neeman's Kala Kicks for Women",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_28.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_04.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 2"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-2",
+          "alt": "Neeman's Kala Kicks for Women, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_04.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_51.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 3"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-3",
+          "alt": "Neeman's Kala Kicks for Women, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_51.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_06.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 4"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-4",
+          "alt": "Neeman's Kala Kicks for Women, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_06.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_01.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 5"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-5",
+          "alt": "Neeman's Kala Kicks for Women, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_01.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_26.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 6"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-6",
+          "alt": "Neeman's Kala Kicks for Women, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_26.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_27.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 7"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-7",
+          "alt": "Neeman's Kala Kicks for Women, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_27.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_23.jpg?v=1791531755",
-          "alt": "Neeman's Kala Kicks for Women, view 8"
+          "key": "fashion/neemans-kala-kicks-for-women/olive-8",
+          "alt": "Neeman's Kala Kicks for Women, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/KICKSUnisex_Beige-Ivory-DK.Olive_23.jpg?v=1791531755",
+          "width": 1600,
+          "height": 1000
         }
       ]
     },

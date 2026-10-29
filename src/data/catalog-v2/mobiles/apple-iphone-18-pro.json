@@ -132,73 +132,90 @@
     "groups": {
       "Glacier": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Glacier"
+          "key": "mobiles/apple-iphone-18-pro/glacier-1",
+          "alt": "Apple iPhone 18 Pro in Glacier",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Glacier, view 2"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Glacier, view 3"
+          "key": "mobiles/apple-iphone-18-pro/glacier-3",
+          "alt": "Apple iPhone 18 Pro in Glacier, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-glacier-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         }
       ],
       "Silver": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Silver"
+          "key": "mobiles/apple-iphone-18-pro/silver-1",
+          "alt": "Apple iPhone 18 Pro in Silver",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Silver, view 2"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Silver, view 3"
+          "key": "mobiles/apple-iphone-18-pro/silver-3",
+          "alt": "Apple iPhone 18 Pro in Silver, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-silver-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         }
       ],
       "Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Black"
+          "key": "mobiles/apple-iphone-18-pro/black-1",
+          "alt": "Apple iPhone 18 Pro in Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Black, view 2"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Black, view 3"
+          "key": "mobiles/apple-iphone-18-pro/black-3",
+          "alt": "Apple iPhone 18 Pro in Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-black-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         }
       ],
       "Burgundy": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Burgundy"
+          "key": "mobiles/apple-iphone-18-pro/burgundy-1",
+          "alt": "Apple iPhone 18 Pro in Burgundy",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609_AV2?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Burgundy, view 2"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609_AV3?scl=1&fmt=jpeg&qlt=90",
-          "alt": "Apple iPhone 18 Pro in Burgundy, view 3"
+          "key": "mobiles/apple-iphone-18-pro/burgundy-3",
+          "alt": "Apple iPhone 18 Pro in Burgundy, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-18-pro-finish-select-burgundy-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
         }
       ]
     },
     "common": [
       {
-        "src": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/colors_endframe__czfie0zmty4i_large_2x.jpg",
-        "alt": "Apple iPhone 18 Pro — all four finishes"
+        "key": "mobiles/apple-iphone-18-pro/common-1",
+        "alt": "Apple iPhone 18 Pro — all four finishes",
+        "sourceUrl": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/colors_endframe__czfie0zmty4i_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
       },
       {
-        "src": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_large_2x.jpg",
-        "alt": "Apple iPhone 18 Pro — 48MP Fusion Main camera close-up"
+        "key": "mobiles/apple-iphone-18-pro/common-2",
+        "alt": "Apple iPhone 18 Pro — 48MP Fusion Main camera close-up",
+        "sourceUrl": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/main_camera_endframe__fcjfhs06rdme_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
       },
       {
-        "src": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/chip_startframe__cbo2noldjewi_large_2x.jpg",
-        "alt": "Apple iPhone 18 Pro — A20 Pro chip"
+        "key": "mobiles/apple-iphone-18-pro/common-3",
+        "alt": "Apple iPhone 18 Pro — A20 Pro chip",
+        "sourceUrl": "https://www.apple.com/v/iphone-18-pro/c/images/overview/highlights/chip_startframe__cbo2noldjewi_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
       }
     ]
   },

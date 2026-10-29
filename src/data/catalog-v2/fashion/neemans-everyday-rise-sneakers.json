@@ -85,36 +85,60 @@
     "groups": {
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_11.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-1",
+          "alt": "Neeman's Everyday Rise Sneakers",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_11.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_4.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 2"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-2",
+          "alt": "Neeman's Everyday Rise Sneakers, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_4.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_12.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 3"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-3",
+          "alt": "Neeman's Everyday Rise Sneakers, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_12.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_6.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 4"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-4",
+          "alt": "Neeman's Everyday Rise Sneakers, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_6.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_1.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 5"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-5",
+          "alt": "Neeman's Everyday Rise Sneakers, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_1.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_10.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 6"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-6",
+          "alt": "Neeman's Everyday Rise Sneakers, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_10.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_7.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 7"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-7",
+          "alt": "Neeman's Everyday Rise Sneakers, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_7.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_8.jpg?v=1775997066",
-          "alt": "Neeman's Everyday Rise Sneakers, view 8"
+          "key": "fashion/neemans-everyday-rise-sneakers/white-8",
+          "alt": "Neeman's Everyday Rise Sneakers, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/ERSwhite_8.jpg?v=1775997066",
+          "width": 1600,
+          "height": 1000
         }
       ]
     },

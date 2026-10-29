@@ -112,7 +112,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 9 386H / Intel Core Ultra 7 355 / Intel Core Ultra 7 258V 32GB",
     "gpu": "Intel Graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "OLED",
     "refreshRateHz": 60,
     "weightKg": 1.57,
@@ -145,36 +145,60 @@
     "groups": {
       "Matte Gray": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/223a5ff4-8847-468e-963c-d224182797ce/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-1",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/223a5ff4-8847-468e-963c-d224182797ce/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/0700e3d1-e566-418a-9f0b-26d04e4217ec/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip opened at 90-degree from a top-down view."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-2",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened at 90-degree from a top-down view.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/0700e3d1-e566-418a-9f0b-26d04e4217ec/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/1740ed18-53cf-4a82-8194-9653f498c025/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-3",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/1740ed18-53cf-4a82-8194-9653f498c025/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/3358c7a3-9512-4754-add0-654c78853538/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view, tilting at 45-degree from the left side."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-4",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip opened from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/3358c7a3-9512-4754-add0-654c78853538/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/cfb5b27a-18b0-45e4-bd0a-f19658a6f93d/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip in tent mode, opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-5",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip in tent mode, opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/cfb5b27a-18b0-45e4-bd0a-f19658a6f93d/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/1c4a94e7-b613-4bc2-81e8-31b30393eb23/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip in stand mode, opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-6",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip in stand mode, opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/1c4a94e7-b613-4bc2-81e8-31b30393eb23/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/0a497a71-1afd-428c-b695-1187ba194b78/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip in tablet mode, opened from the front view, tilting at 45-degree from the right side."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-7",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip in tablet mode, opened from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/0a497a71-1afd-428c-b695-1187ba194b78/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/961c7223-4931-4f8a-ace1-a0c8a872257a/w800",
-          "alt": "Matte Gray ASUS Vivobook 14 Flip shown from the back side with a visible striped-hinge design."
+          "key": "laptops/asus-vivobook-14-flip-tp3407/matte-gray-8",
+          "alt": "Matte Gray ASUS Vivobook 14 Flip shown from the back side with a visible striped-hinge design.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/961c7223-4931-4f8a-ace1-a0c8a872257a/w800",
+          "width": 800,
+          "height": 800
         }
       ]
     },

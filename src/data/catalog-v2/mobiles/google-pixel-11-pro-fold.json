@@ -21,7 +21,7 @@
   ],
   "specs": {
     "Display": {
-      "size": 8.0,
+      "size": 8,
       "type": "Super Actua Flex OLED (inner)",
       "resolution": "2076 × 2152",
       "ppi": 372,
@@ -69,7 +69,7 @@
     }
   },
   "keySpecs": {
-    "displayInch": 8.0,
+    "displayInch": 8,
     "refreshRateHz": 120,
     "mainCameraMP": 48,
     "frontCameraMP": 10,
@@ -107,24 +107,39 @@
     "groups": {
       "Olive": [
         {
-          "src": "https://lh3.googleusercontent.com/7bAFKKkShy2Ml49iyisIoV-ZUFTA-DooIwE-gUlUf1voIiqExIOB1wXBroEzc4DvaiggOS80ykqHSrhFF74QZ9936JJfNXlvJg=s1600",
-          "alt": "Google Pixel 11 Pro Fold in Olive, back"
+          "key": "mobiles/google-pixel-11-pro-fold/olive-1",
+          "alt": "Google Pixel 11 Pro Fold in Olive, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/7bAFKKkShy2Ml49iyisIoV-ZUFTA-DooIwE-gUlUf1voIiqExIOB1wXBroEzc4DvaiggOS80ykqHSrhFF74QZ9936JJfNXlvJg=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/s3czXV1F4CJ5eZIOOmGExv8eNCOE49SygQ4zDLWwIvmI_aNaiK3gOlXM-wZk8gdasI08hb44gpZchmLs-FPcB0oJ-B9C9gOYXQ=s1600",
-          "alt": "Google Pixel 11 Pro Fold in Olive, front"
+          "key": "mobiles/google-pixel-11-pro-fold/olive-2",
+          "alt": "Google Pixel 11 Pro Fold in Olive, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/s3czXV1F4CJ5eZIOOmGExv8eNCOE49SygQ4zDLWwIvmI_aNaiK3gOlXM-wZk8gdasI08hb44gpZchmLs-FPcB0oJ-B9C9gOYXQ=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/apIAgTf2_5NFGRL6mBDLfhY6E2tGGEguO5TOuoPCDWeEF-rupi0r5vsxiJFH_HHRycfvH2ooNrb2cEnE6xf678JcDltkjLrZ1Wk=s1600",
-          "alt": "Google Pixel 11 Pro Fold in Olive, side"
+          "key": "mobiles/google-pixel-11-pro-fold/olive-3",
+          "alt": "Google Pixel 11 Pro Fold in Olive, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/apIAgTf2_5NFGRL6mBDLfhY6E2tGGEguO5TOuoPCDWeEF-rupi0r5vsxiJFH_HHRycfvH2ooNrb2cEnE6xf678JcDltkjLrZ1Wk=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/0PKxBqZYhym5376eaj9CU-vooClylpwwSGR6ArTQpGM0dTC40Ooix9Ow64tM5Z9VmlSMQFKNW2d8VoHGZgAuyu5GQ6Eyjtor3o8=s1600",
-          "alt": "Google Pixel 11 Pro Fold in Olive, angled back"
+          "key": "mobiles/google-pixel-11-pro-fold/olive-4",
+          "alt": "Google Pixel 11 Pro Fold in Olive, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/0PKxBqZYhym5376eaj9CU-vooClylpwwSGR6ArTQpGM0dTC40Ooix9Ow64tM5Z9VmlSMQFKNW2d8VoHGZgAuyu5GQ6Eyjtor3o8=s1600",
+          "width": 1554,
+          "height": 1243
         },
         {
-          "src": "https://lh3.googleusercontent.com/HGAk9Gp9gAIWubgwrtfrNsmC6wtOHQ03utetYtPGqZVL4KRS1LPpV7Var3r72oAPW68LoIYHkXMFxmNq5dUtoRYufwFMGMuvpOw=s1600",
-          "alt": "Google Pixel 11 Pro Fold in Olive, open"
+          "key": "mobiles/google-pixel-11-pro-fold/olive-5",
+          "alt": "Google Pixel 11 Pro Fold in Olive, open",
+          "sourceUrl": "https://lh3.googleusercontent.com/HGAk9Gp9gAIWubgwrtfrNsmC6wtOHQ03utetYtPGqZVL4KRS1LPpV7Var3r72oAPW68LoIYHkXMFxmNq5dUtoRYufwFMGMuvpOw=s1600",
+          "width": 1554,
+          "height": 1243
         }
       ]
     },

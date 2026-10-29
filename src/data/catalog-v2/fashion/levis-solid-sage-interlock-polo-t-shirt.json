@@ -88,36 +88,60 @@
     "groups": {
       "Green": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_01_Styleshot.jpg?v=1792061370",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-1",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_01_Styleshot.jpg?v=1792061370",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_02_Front.jpg?v=1792061370",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 2"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-2",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_02_Front.jpg?v=1792061370",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_03_Back.jpg?v=1792061370",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 3"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-3",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_03_Back.jpg?v=1792061370",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_05_Full.jpg?v=1792061371",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 4"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-4",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_05_Full.jpg?v=1792061371",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_07_Detail_20.jpg?v=1792061371",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 5"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-5",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_07_Detail_20.jpg?v=1792061371",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_04_SIde.jpg?v=1792061371",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 6"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-6",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_04_SIde.jpg?v=1792061371",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_06_Detail_20.jpg?v=1792061373",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 7"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-7",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_06_Detail_20.jpg?v=1792061373",
+          "width": 1034,
+          "height": 1376
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Polos_MS_f5ad2554-d5aa-45f3-aa55-7a27c289c488.jpg?v=1791376824",
-          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 8"
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-8",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Polos_MS_f5ad2554-d5aa-45f3-aa55-7a27c289c488.jpg?v=1791376824",
+          "width": 1034,
+          "height": 1378
         }
       ]
     },

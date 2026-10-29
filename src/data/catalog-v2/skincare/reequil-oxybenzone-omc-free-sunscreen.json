@@ -51,36 +51,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Ultra_matte_2.webp?v=1788196435",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-1",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Ultra_matte_2.webp?v=1788196435",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/1.5.png?v=1781763318",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 2"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-2",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/1.5.png?v=1781763318",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July2.png?v=1785520075",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 3"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-3",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July2.png?v=1785520075",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July3.png?v=1785520076",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 4"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-4",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July3.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July5.png?v=1785520076",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 5"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-5",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July5.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July6.png?v=1785520076",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 6"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-6",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July6.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July7.png?v=1785520076",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 7"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-7",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July7.png?v=1785520076",
+        "width": 1500,
+        "height": 1501
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July8.png?v=1785520076",
-        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 8"
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-8",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July8.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
       }
     ]
   },

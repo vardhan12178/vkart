@@ -62,94 +62,157 @@
     "groups": {
       "Orange": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0070_CMF-Buds-Pro-2-case-lightgrey.png?v=1753757347",
-          "alt": "CMF Buds Pro 2 in Orange"
+          "key": "audio/cmf-buds-pro-2/orange-1",
+          "alt": "CMF Buds Pro 2 in Orange",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0070_CMF-Buds-Pro-2-case-lightgrey.png?v=1753757347",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_1.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Orange, view 2"
+          "key": "audio/cmf-buds-pro-2/orange-2",
+          "alt": "CMF Buds Pro 2 in Orange, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_2.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Orange, view 3"
+          "key": "audio/cmf-buds-pro-2/orange-3",
+          "alt": "CMF Buds Pro 2 in Orange, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_3.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Orange, view 4"
+          "key": "audio/cmf-buds-pro-2/orange-4",
+          "alt": "CMF Buds Pro 2 in Orange, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_4.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Orange, view 5"
+          "key": "audio/cmf-buds-pro-2/orange-5",
+          "alt": "CMF Buds Pro 2 in Orange, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "Dark Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0072_CMF-Buds-Pro-2-case-black.png?v=1753757336",
-          "alt": "CMF Buds Pro 2 in Dark Grey"
+          "key": "audio/cmf-buds-pro-2/dark-grey-1",
+          "alt": "CMF Buds Pro 2 in Dark Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0072_CMF-Buds-Pro-2-case-black.png?v=1753757336",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_1.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Dark Grey, view 2"
+          "key": "audio/cmf-buds-pro-2/dark-grey-2",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_2.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Dark Grey, view 3"
+          "key": "audio/cmf-buds-pro-2/dark-grey-3",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_3.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Dark Grey, view 4"
+          "key": "audio/cmf-buds-pro-2/dark-grey-4",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_4.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Dark Grey, view 5"
+          "key": "audio/cmf-buds-pro-2/dark-grey-5",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_5.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Dark Grey, view 6"
+          "key": "audio/cmf-buds-pro-2/dark-grey-6",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_5.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "Light Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0069_CMF-Buds-Pro-2-case-orange.png?v=1753757345",
-          "alt": "CMF Buds Pro 2 in Light Grey"
+          "key": "audio/cmf-buds-pro-2/light-grey-1",
+          "alt": "CMF Buds Pro 2 in Light Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0069_CMF-Buds-Pro-2-case-orange.png?v=1753757345",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_1.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Light Grey, view 2"
+          "key": "audio/cmf-buds-pro-2/light-grey-2",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_2.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Light Grey, view 3"
+          "key": "audio/cmf-buds-pro-2/light-grey-3",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_3.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Light Grey, view 4"
+          "key": "audio/cmf-buds-pro-2/light-grey-4",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_4.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Light Grey, view 5"
+          "key": "audio/cmf-buds-pro-2/light-grey-5",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         }
       ],
       "Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0071_CMF-Buds-Pro-2-case-blue.png?v=1753757335",
-          "alt": "CMF Buds Pro 2 in Blue"
+          "key": "audio/cmf-buds-pro-2/blue-1",
+          "alt": "CMF Buds Pro 2 in Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0071_CMF-Buds-Pro-2-case-blue.png?v=1753757335",
+          "width": 2048,
+          "height": 2048
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_1.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Blue, view 2"
+          "key": "audio/cmf-buds-pro-2/blue-2",
+          "alt": "CMF Buds Pro 2 in Blue, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_2.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Blue, view 3"
+          "key": "audio/cmf-buds-pro-2/blue-3",
+          "alt": "CMF Buds Pro 2 in Blue, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_3.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Blue, view 4"
+          "key": "audio/cmf-buds-pro-2/blue-4",
+          "alt": "CMF Buds Pro 2 in Blue, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_4.png?v=1745489690",
-          "alt": "CMF Buds Pro 2 in Blue, view 5"
+          "key": "audio/cmf-buds-pro-2/blue-5",
+          "alt": "CMF Buds Pro 2 in Blue, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
         }
       ]
     },

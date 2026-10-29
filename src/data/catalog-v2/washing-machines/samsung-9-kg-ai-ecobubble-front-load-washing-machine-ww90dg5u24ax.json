@@ -77,7 +77,7 @@
     }
   },
   "keySpecs": {
-    "capacityKg": 9.0,
+    "capacityKg": 9,
     "type": "Front Load",
     "starRating": 5,
     "inverter": false,
@@ -98,20 +98,32 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-washing-machines-ww90dg5u24axtl-l-perspective-refined-inox-thumb-545549784?$650_519_PNG$",
-        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX"
+        "key": "washing-machines/samsung-9-kg-ai-ecobubble-front-load-washing-machine-ww90dg5u24ax/common-1",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-washing-machines-ww90dg5u24axtl-l-perspective-refined-inox-thumb-545549784?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-washing-machines-ww90dg5u24axtl-l-perspective-refined-inox-545549783?$650_519_PNG$",
-        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 2"
+        "key": "washing-machines/samsung-9-kg-ai-ecobubble-front-load-washing-machine-ww90dg5u24ax/common-2",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-washing-machines-ww90dg5u24axtl-l-perspective-refined-inox-545549783?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-ww5000d-529748-ww90dg5u24axtl-545550212?$650_519_PNG$",
-        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 3"
+        "key": "washing-machines/samsung-9-kg-ai-ecobubble-front-load-washing-machine-ww90dg5u24ax/common-3",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-ww5000d-529748-ww90dg5u24axtl-545550212?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-ww5000d-529748-ww90dg5u24axtl-thumb-545550213?$650_519_PNG$",
-        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 4"
+        "key": "washing-machines/samsung-9-kg-ai-ecobubble-front-load-washing-machine-ww90dg5u24ax/common-4",
+        "alt": "Samsung 9 kg AI Ecobubble Front Load Washing Machine WW90DG5U24AX, view 4",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww90dg5u24axtl/gallery/in-ww5000d-529748-ww90dg5u24axtl-thumb-545550213?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

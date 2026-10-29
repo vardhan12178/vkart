@@ -93,20 +93,29 @@
     "groups": {
       "White": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-White.png?v=1761642504",
-          "alt": "Nothing Phone (3a) Lite in White"
+          "key": "mobiles/nothing-phone-3a-lite/white-1",
+          "alt": "Nothing Phone (3a) Lite in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-White.png?v=1761642504",
+          "width": 4096,
+          "height": 4014
         }
       ],
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-Black.png?v=1761642504",
-          "alt": "Nothing Phone (3a) Lite in Black"
+          "key": "mobiles/nothing-phone-3a-lite/black-1",
+          "alt": "Nothing Phone (3a) Lite in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-Black.png?v=1761642504",
+          "width": 4096,
+          "height": 4014
         }
       ],
       "Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-Blue.png?v=1764156508",
-          "alt": "Nothing Phone (3a) Lite in Blue"
+          "key": "mobiles/nothing-phone-3a-lite/blue-1",
+          "alt": "Nothing Phone (3a) Lite in Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-Blue.png?v=1764156508",
+          "width": 4096,
+          "height": 4014
         }
       ]
     },

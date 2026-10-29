@@ -80,7 +80,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 24.0,
+    "screenInch": 24,
     "resolution": "FHD (1920 x 1080)",
     "refreshRateHz": 200,
     "panel": "IPS",
@@ -103,12 +103,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24hg300ewxxl/gallery/in-odyssey-g3-g30h-ls24hg300ewxxl-thumb-553559481?$650_519_PNG$",
-        "alt": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor"
+        "key": "monitors/samsung-24-inch-odyssey-g3-g30h-fhd-200hz-gaming-monitor/common-1",
+        "alt": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24hg300ewxxl/gallery/in-odyssey-g3-g30h-ls24hg300ewxxl-thumb-553559481?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24hg300ewxxl/gallery/in-odyssey-g3-g30h-ls24hg300ewxxl-553559480?$650_519_PNG$",
-        "alt": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor, view 2"
+        "key": "monitors/samsung-24-inch-odyssey-g3-g30h-fhd-200hz-gaming-monitor/common-2",
+        "alt": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24hg300ewxxl/gallery/in-odyssey-g3-g30h-ls24hg300ewxxl-553559480?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

@@ -83,7 +83,7 @@
     "chargingW": 90,
     "wirelessCharging": false,
     "is5G": true,
-    "weightG": 203.0,
+    "weightG": 203,
     "chip": "Snapdragon 7 Gen 4",
     "os": "Android",
     "ramGB": 8
@@ -126,104 +126,176 @@
     "groups": {
       "Sunrise Anthem": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672442/1df610e2d782d2d2ef1c462553a0e7b0.png",
-          "alt": "vivo V80 in Sunrise Anthem"
+          "key": "mobiles/vivo-v80/sunrise-anthem-1",
+          "alt": "vivo V80 in Sunrise Anthem",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672442/1df610e2d782d2d2ef1c462553a0e7b0.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672214/face5d4d0d10aeec90502495231fcf46.jpg",
-          "alt": "vivo V80 in Sunrise Anthem, view 2"
+          "key": "mobiles/vivo-v80/sunrise-anthem-2",
+          "alt": "vivo V80 in Sunrise Anthem, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672214/face5d4d0d10aeec90502495231fcf46.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672064/c8dd5f2e836d908511f6be4a6bad01a3.png",
-          "alt": "vivo V80 in Sunrise Anthem, view 3"
+          "key": "mobiles/vivo-v80/sunrise-anthem-3",
+          "alt": "vivo V80 in Sunrise Anthem, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672064/c8dd5f2e836d908511f6be4a6bad01a3.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672354/acfd86697306ebec491d7f51d44943c0.png",
-          "alt": "vivo V80 in Sunrise Anthem, view 4"
+          "key": "mobiles/vivo-v80/sunrise-anthem-4",
+          "alt": "vivo V80 in Sunrise Anthem, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672354/acfd86697306ebec491d7f51d44943c0.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672313/9eb5616ebd700a5341263a3dd06b70ad.png",
-          "alt": "vivo V80 in Sunrise Anthem, view 5"
+          "key": "mobiles/vivo-v80/sunrise-anthem-5",
+          "alt": "vivo V80 in Sunrise Anthem, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672313/9eb5616ebd700a5341263a3dd06b70ad.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672809/d6c010ba6fbc1e0bea6803b86f9b4062.png",
-          "alt": "vivo V80 in Sunrise Anthem, view 6"
+          "key": "mobiles/vivo-v80/sunrise-anthem-6",
+          "alt": "vivo V80 in Sunrise Anthem, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933672809/d6c010ba6fbc1e0bea6803b86f9b4062.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933673870/e85f0161f74d380c8b9ae93a894d2b96.png",
-          "alt": "vivo V80 in Sunrise Anthem, view 7"
+          "key": "mobiles/vivo-v80/sunrise-anthem-7",
+          "alt": "vivo V80 in Sunrise Anthem, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933673870/e85f0161f74d380c8b9ae93a894d2b96.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933674018/31aee50fb5cc1400722edda6342eddf7.png",
-          "alt": "vivo V80 in Sunrise Anthem, view 8"
+          "key": "mobiles/vivo-v80/sunrise-anthem-8",
+          "alt": "vivo V80 in Sunrise Anthem, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933674018/31aee50fb5cc1400722edda6342eddf7.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Horizon Blue": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919706/9d76cfd0b81e0dbe31f87d9b98bf7b25.png",
-          "alt": "vivo V80 in Horizon Blue"
+          "key": "mobiles/vivo-v80/horizon-blue-1",
+          "alt": "vivo V80 in Horizon Blue",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919706/9d76cfd0b81e0dbe31f87d9b98bf7b25.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919776/a0231f1d849878059e5e661dd27e46a7.jpg",
-          "alt": "vivo V80 in Horizon Blue, view 2"
+          "key": "mobiles/vivo-v80/horizon-blue-2",
+          "alt": "vivo V80 in Horizon Blue, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919776/a0231f1d849878059e5e661dd27e46a7.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919430/70572707e0a36d5feaa4264de23f9730.png",
-          "alt": "vivo V80 in Horizon Blue, view 3"
+          "key": "mobiles/vivo-v80/horizon-blue-3",
+          "alt": "vivo V80 in Horizon Blue, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919430/70572707e0a36d5feaa4264de23f9730.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919471/432d5e00aec202b6a1a2a2ad70e72e3b.png",
-          "alt": "vivo V80 in Horizon Blue, view 4"
+          "key": "mobiles/vivo-v80/horizon-blue-4",
+          "alt": "vivo V80 in Horizon Blue, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919471/432d5e00aec202b6a1a2a2ad70e72e3b.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919726/250cc10d109734b9b2730857c0102e7b.png",
-          "alt": "vivo V80 in Horizon Blue, view 5"
+          "key": "mobiles/vivo-v80/horizon-blue-5",
+          "alt": "vivo V80 in Horizon Blue, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919726/250cc10d109734b9b2730857c0102e7b.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919714/86a42d27262e6696c7e63ca7e66fe14c.png",
-          "alt": "vivo V80 in Horizon Blue, view 6"
+          "key": "mobiles/vivo-v80/horizon-blue-6",
+          "alt": "vivo V80 in Horizon Blue, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933919714/86a42d27262e6696c7e63ca7e66fe14c.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933921064/e6e2edc9944411b103e09d5e5c3a3218.png",
-          "alt": "vivo V80 in Horizon Blue, view 7"
+          "key": "mobiles/vivo-v80/horizon-blue-7",
+          "alt": "vivo V80 in Horizon Blue, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933921064/e6e2edc9944411b103e09d5e5c3a3218.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933920697/34f53e6bafbce9ad84358adb48a0e02d.png",
-          "alt": "vivo V80 in Horizon Blue, view 8"
+          "key": "mobiles/vivo-v80/horizon-blue-8",
+          "alt": "vivo V80 in Horizon Blue, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790933920697/34f53e6bafbce9ad84358adb48a0e02d.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Stellar Black": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161260/4c29ccb49887192bd1cbb343f471263d.png",
-          "alt": "vivo V80 in Stellar Black"
+          "key": "mobiles/vivo-v80/stellar-black-1",
+          "alt": "vivo V80 in Stellar Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161260/4c29ccb49887192bd1cbb343f471263d.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161779/418dbc12017dc115e839c4b25cc1f668.jpg",
-          "alt": "vivo V80 in Stellar Black, view 2"
+          "key": "mobiles/vivo-v80/stellar-black-2",
+          "alt": "vivo V80 in Stellar Black, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161779/418dbc12017dc115e839c4b25cc1f668.jpg",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161375/96daaf66f9690bf16a1162e061ca3229.png",
-          "alt": "vivo V80 in Stellar Black, view 3"
+          "key": "mobiles/vivo-v80/stellar-black-3",
+          "alt": "vivo V80 in Stellar Black, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161375/96daaf66f9690bf16a1162e061ca3229.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161453/2348767f776a0299ffb748e0263a8603.png",
-          "alt": "vivo V80 in Stellar Black, view 4"
+          "key": "mobiles/vivo-v80/stellar-black-4",
+          "alt": "vivo V80 in Stellar Black, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161453/2348767f776a0299ffb748e0263a8603.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161465/c34fe0899e3125de789abe512f2b071a.png",
-          "alt": "vivo V80 in Stellar Black, view 5"
+          "key": "mobiles/vivo-v80/stellar-black-5",
+          "alt": "vivo V80 in Stellar Black, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161465/c34fe0899e3125de789abe512f2b071a.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161649/c3c98c6d830dade733afa494df6dd3fa.png",
-          "alt": "vivo V80 in Stellar Black, view 6"
+          "key": "mobiles/vivo-v80/stellar-black-6",
+          "alt": "vivo V80 in Stellar Black, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934161649/c3c98c6d830dade733afa494df6dd3fa.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934162587/c83511776c437496945bc1bdb19d2ede.png",
-          "alt": "vivo V80 in Stellar Black, view 7"
+          "key": "mobiles/vivo-v80/stellar-black-7",
+          "alt": "vivo V80 in Stellar Black, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934162587/c83511776c437496945bc1bdb19d2ede.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934162913/36683c13fc0d20aa73b9cb514b375878.png",
-          "alt": "vivo V80 in Stellar Black, view 8"
+          "key": "mobiles/vivo-v80/stellar-black-8",
+          "alt": "vivo V80 in Stellar Black, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790934162913/36683c13fc0d20aa73b9cb514b375878.png",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

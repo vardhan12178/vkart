@@ -38,36 +38,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/first_card_-2_1.png?v=1780914579",
-        "alt": "Bombay Shaving Company Air Trimmer"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-1",
+        "alt": "Bombay Shaving Company Air Trimmer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/first_card_-2_1.png?v=1780914579",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2_2.png?v=1780914578",
-        "alt": "Bombay Shaving Company Air Trimmer, view 2"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-2",
+        "alt": "Bombay Shaving Company Air Trimmer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2_2.png?v=1780914578",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3_1.png?v=1780914932",
-        "alt": "Bombay Shaving Company Air Trimmer, view 3"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-3",
+        "alt": "Bombay Shaving Company Air Trimmer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3_1.png?v=1780914932",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4.1_1.png?v=1780914577",
-        "alt": "Bombay Shaving Company Air Trimmer, view 4"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-4",
+        "alt": "Bombay Shaving Company Air Trimmer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4.1_1.png?v=1780914577",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5_1.png?v=1780914937",
-        "alt": "Bombay Shaving Company Air Trimmer, view 5"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-5",
+        "alt": "Bombay Shaving Company Air Trimmer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5_1.png?v=1780914937",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6_1.png?v=1780914579",
-        "alt": "Bombay Shaving Company Air Trimmer, view 6"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-6",
+        "alt": "Bombay Shaving Company Air Trimmer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6_1.png?v=1780914579",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/8_1.png?v=1780914579",
-        "alt": "Bombay Shaving Company Air Trimmer, view 7"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-7",
+        "alt": "Bombay Shaving Company Air Trimmer, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/8_1.png?v=1780914579",
+        "width": 1500,
+        "height": 1800
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/9_1.png?v=1780914578",
-        "alt": "Bombay Shaving Company Air Trimmer, view 8"
+        "key": "grooming/bombay-shaving-company-air-trimmer/common-8",
+        "alt": "Bombay Shaving Company Air Trimmer, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/9_1.png?v=1780914578",
+        "width": 1500,
+        "height": 1800
       }
     ]
   },

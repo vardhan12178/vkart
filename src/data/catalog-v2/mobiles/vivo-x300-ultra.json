@@ -118,70 +118,104 @@
     "groups": {
       "Eclipse Black": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312084/2bdf04028ad4e72224499552eb4c7762.png",
-          "alt": "vivo X300 Ultra in Eclipse Black"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-1",
+          "alt": "vivo X300 Ultra in Eclipse Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312084/2bdf04028ad4e72224499552eb4c7762.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777895003197/1896cb73a82ffa765dfc25bb73adcc70.jpg",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 2"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-3",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877311967/5700b7b3f3b4c6b8e1ba77dd6ea08e4c.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877311967/5700b7b3f3b4c6b8e1ba77dd6ea08e4c.png",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 3"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-4",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312080/23582b3d573b0f8aeab7cdb50030d4f6.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312080/23582b3d573b0f8aeab7cdb50030d4f6.png",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 4"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-5",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312075/98689c351963b1e99c75d4f087820c79.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877312075/98689c351963b1e99c75d4f087820c79.png",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 5"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-6",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877311854/7f56dd8b5925cd2b1e9b3c304985b3a8.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877311854/7f56dd8b5925cd2b1e9b3c304985b3a8.png",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 6"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-7",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877313001/2bba28406655caa53dda5ed6311797dd.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877313001/2bba28406655caa53dda5ed6311797dd.png",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877313493/08cac2b1edea17168515b912a2bbb8f6.png",
-          "alt": "vivo X300 Ultra in Eclipse Black, view 8"
+          "key": "mobiles/vivo-x300-ultra/eclipse-black-8",
+          "alt": "vivo X300 Ultra in Eclipse Black, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877313493/08cac2b1edea17168515b912a2bbb8f6.png",
+          "width": 1080,
+          "height": 1080
         }
       ],
       "Victory Green": [
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357153/7899f893e84f82e99ef87f790bf9c215.png",
-          "alt": "vivo X300 Ultra in Victory Green"
+          "key": "mobiles/vivo-x300-ultra/victory-green-1",
+          "alt": "vivo X300 Ultra in Victory Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357153/7899f893e84f82e99ef87f790bf9c215.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777895019553/33fdbdb1f0755219649a9dc4a4cf1916.jpg",
-          "alt": "vivo X300 Ultra in Victory Green, view 2"
+          "key": "mobiles/vivo-x300-ultra/victory-green-3",
+          "alt": "vivo X300 Ultra in Victory Green, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357131/398e0d1586a2789bafdb85d7c51af016.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357131/398e0d1586a2789bafdb85d7c51af016.png",
-          "alt": "vivo X300 Ultra in Victory Green, view 3"
+          "key": "mobiles/vivo-x300-ultra/victory-green-4",
+          "alt": "vivo X300 Ultra in Victory Green, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357099/553ff85d5749bb6b808f878dfc6e9293.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357099/553ff85d5749bb6b808f878dfc6e9293.png",
-          "alt": "vivo X300 Ultra in Victory Green, view 4"
+          "key": "mobiles/vivo-x300-ultra/victory-green-5",
+          "alt": "vivo X300 Ultra in Victory Green, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357127/13502365813ad04a217474a33f5e7db0.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357127/13502365813ad04a217474a33f5e7db0.png",
-          "alt": "vivo X300 Ultra in Victory Green, view 5"
+          "key": "mobiles/vivo-x300-ultra/victory-green-6",
+          "alt": "vivo X300 Ultra in Victory Green, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877358331/aaf473641f77a006c62a6e318aa99283.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877358331/aaf473641f77a006c62a6e318aa99283.png",
-          "alt": "vivo X300 Ultra in Victory Green, view 6"
+          "key": "mobiles/vivo-x300-ultra/victory-green-7",
+          "alt": "vivo X300 Ultra in Victory Green, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357177/f34d9712756cd40fc66c8858b2a0a495.png",
+          "width": 1080,
+          "height": 1080
         },
         {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357177/f34d9712756cd40fc66c8858b2a0a495.png",
-          "alt": "vivo X300 Ultra in Victory Green, view 7"
-        },
-        {
-          "src": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357276/47b5693bcd5340f292a90f27213da924.png",
-          "alt": "vivo X300 Ultra in Victory Green, view 8"
+          "key": "mobiles/vivo-x300-ultra/victory-green-8",
+          "alt": "vivo X300 Ultra in Victory Green, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1777877357276/47b5693bcd5340f292a90f27213da924.png",
+          "width": 1080,
+          "height": 1080
         }
       ]
     },

@@ -66,26 +66,38 @@
     "groups": {
       "Active Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature1_2de511a9-e578-486f-ac5e-977d0529697a.png?v=1773729697",
-          "alt": "boAt Wave Sigma 3 Curv in Active Black"
+          "key": "wearables/boat-wave-sigma-3-curv/active-black-1",
+          "alt": "boAt Wave Sigma 3 Curv in Active Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature1_2de511a9-e578-486f-ac5e-977d0529697a.png?v=1773729697",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Timber Brown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_19.png?v=1773730522",
-          "alt": "boAt Wave Sigma 3 Curv in Timber Brown"
+          "key": "wearables/boat-wave-sigma-3-curv/timber-brown-1",
+          "alt": "boAt Wave Sigma 3 Curv in Timber Brown",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_19.png?v=1773730522",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Cyan Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_10.png?v=1773730522",
-          "alt": "boAt Wave Sigma 3 Curv in Cyan Blue"
+          "key": "wearables/boat-wave-sigma-3-curv/cyan-blue-1",
+          "alt": "boAt Wave Sigma 3 Curv in Cyan Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_10.png?v=1773730522",
+          "width": 2000,
+          "height": 2000
         }
       ],
       "Steel Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_28_d8adbb2c-fe7e-4401-b6d6-2914b94b3d70.png?v=1773730144",
-          "alt": "boAt Wave Sigma 3 Curv in Steel Black"
+          "key": "wearables/boat-wave-sigma-3-curv/steel-black-1",
+          "alt": "boAt Wave Sigma 3 Curv in Steel Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_28_d8adbb2c-fe7e-4401-b6d6-2914b94b3d70.png?v=1773730144",
+          "width": 2000,
+          "height": 2000
         }
       ]
     },

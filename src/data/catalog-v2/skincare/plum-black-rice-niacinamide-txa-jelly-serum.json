@@ -81,36 +81,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/01TXAJellySerumMoodshot_Text_6c61666a-6b10-4d2d-978f-cb6703085131.webp?v=1792762693",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-1",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/01TXAJellySerumMoodshot_Text_6c61666a-6b10-4d2d-978f-cb6703085131.webp?v=1792762693",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/05-TXA-Jelly-Serum-Intro_49da603d-aecb-4f0a-91f1-d52f758266ea.webp?v=1792762694",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 2"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-2",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/05-TXA-Jelly-Serum-Intro_49da603d-aecb-4f0a-91f1-d52f758266ea.webp?v=1792762694",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/06TXAJellySerumClinicalcopy_75b45f61-3730-4135-8fec-82cb8f56dfac.webp?v=1792762694",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 3"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-3",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/06TXAJellySerumClinicalcopy_75b45f61-3730-4135-8fec-82cb8f56dfac.webp?v=1792762694",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/06-TXA-Jelly-Serum-Result_8be54197-4cc0-4225-bbb8-7b13b04562c8.webp?v=1792762694",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 4"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-4",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/06-TXA-Jelly-Serum-Result_8be54197-4cc0-4225-bbb8-7b13b04562c8.webp?v=1792762694",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/07-TXA-Jelly-Serum-Chemistry_42c765f6-f262-4624-942e-2ecfa854537d.webp?v=1792762694",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 5"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-5",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/07-TXA-Jelly-Serum-Chemistry_42c765f6-f262-4624-942e-2ecfa854537d.webp?v=1792762694",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/08-TXA-Jelly-Serum-results_155859ff-ac03-4054-80fc-d6fde752c543.webp?v=1792762694",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 6"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-6",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/08-TXA-Jelly-Serum-results_155859ff-ac03-4054-80fc-d6fde752c543.webp?v=1792762694",
+        "width": 1001,
+        "height": 1001
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/09-TXA-Jelly-Serum-Who-is-it-for_e7bdbac9-3919-4fea-acc0-edb67b77c345.webp?v=1792762693",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 7"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-7",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/09-TXA-Jelly-Serum-Who-is-it-for_e7bdbac9-3919-4fea-acc0-edb67b77c345.webp?v=1792762693",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0390/2985/files/10-TXA-Jelly-Serum-Plumsters_b67c45f4-c8cf-491b-987f-7d103019bc4b.webp?v=1792762693",
-        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 8"
+        "key": "skincare/plum-black-rice-niacinamide-txa-jelly-serum/common-8",
+        "alt": "Plum Black Rice & 10% Niacinamide-TXA Night Clarity Jelly Serum, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/10-TXA-Jelly-Serum-Plumsters_b67c45f4-c8cf-491b-987f-7d103019bc4b.webp?v=1792762693",
+        "width": 1001,
+        "height": 1001
       }
     ]
   },

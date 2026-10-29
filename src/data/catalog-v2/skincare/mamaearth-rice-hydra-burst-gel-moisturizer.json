@@ -56,36 +56,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/PDP_FOP_1c0794bd-ea1c-442e-a0ac-11da64f2733a.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-1",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/PDP_FOP_1c0794bd-ea1c-442e-a0ac-11da64f2733a.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/2_d074af00-ec60-4c79-bdc1-f878977cdf37.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 2"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-2",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/2_d074af00-ec60-4c79-bdc1-f878977cdf37.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/3_3b068f09-a66d-4a62-a259-7113dd464063.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 3"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-3",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/3_3b068f09-a66d-4a62-a259-7113dd464063.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/4_0090812e-e7ae-4f06-a720-e3a4db16942e.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 4"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-4",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/4_0090812e-e7ae-4f06-a720-e3a4db16942e.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/5_ec126ed9-829d-481d-a83e-bbf14fafa54d.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 5"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-5",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/5_ec126ed9-829d-481d-a83e-bbf14fafa54d.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/6_106a763e-c7fa-4e04-acea-ca5fbda29de4.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 6"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-6",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/6_106a763e-c7fa-4e04-acea-ca5fbda29de4.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/7_678a5413-61fd-487f-ad77-05fea382bda9.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 7"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-7",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/7_678a5413-61fd-487f-ad77-05fea382bda9.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/8_975f8314-80d6-4c67-97f6-3e94faf9ba50.jpg?v=1790593220",
-        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 8"
+        "key": "skincare/mamaearth-rice-hydra-burst-gel-moisturizer/common-8",
+        "alt": "Mamaearth Rice Hydra Burst Gel Moisturizer, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/8_975f8314-80d6-4c67-97f6-3e94faf9ba50.jpg?v=1790593220",
+        "width": 1200,
+        "height": 1200
       }
     ]
   },

@@ -99,11 +99,11 @@
     }
   },
   "keySpecs": {
-    "screenInch": 43.0,
+    "screenInch": 43,
     "resolution": "4K (3,840 x 2,160)",
     "refreshRateHz": 60,
     "panel": "VA",
-    "responseTimeMs": 4.0,
+    "responseTimeMs": 4,
     "curved": false,
     "gaming": false
   },
@@ -122,12 +122,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls43fm700uwxxl/gallery/in-smart-m7-32m70f-black-558792-ls43fm700uwxxl-thumb-547987788?$650_519_PNG$",
-        "alt": "Samsung 43\" M7 UHD 4K Smart Monitor"
+        "key": "monitors/samsung-43-inch-m7-uhd-4k-smart-monitor/common-1",
+        "alt": "Samsung 43\" M7 UHD 4K Smart Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls43fm700uwxxl/gallery/in-smart-m7-32m70f-black-558792-ls43fm700uwxxl-thumb-547987788?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ls43fm700uwxxl/gallery/in-smart-m7-32m70f-black-558792-ls43fm700uwxxl-547987787?$650_519_PNG$",
-        "alt": "Samsung 43\" M7 UHD 4K Smart Monitor, view 2"
+        "key": "monitors/samsung-43-inch-m7-uhd-4k-smart-monitor/common-2",
+        "alt": "Samsung 43\" M7 UHD 4K Smart Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls43fm700uwxxl/gallery/in-smart-m7-32m70f-black-558792-ls43fm700uwxxl-547987787?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

@@ -81,24 +81,39 @@
     "groups": {
       "Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_724c702f-5dd5-4057-b3ae-c55863fd6ee7.jpg?v=1791970885",
-          "alt": "Red Tape Grey Straight Fit Stretch Jeans"
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-1",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_724c702f-5dd5-4057-b3ae-c55863fd6ee7.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_60f00d4d-67d2-4523-828c-53bf44bdc45e.jpg?v=1791970885",
-          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 2"
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-2",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_60f00d4d-67d2-4523-828c-53bf44bdc45e.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_a3549549-a1d9-4217-8fde-6d0e0946b18a.jpg?v=1791970885",
-          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 3"
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-3",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_a3549549-a1d9-4217-8fde-6d0e0946b18a.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_f9cf1236-8f7f-4b20-893e-2ade2e5caf01.jpg?v=1791970885",
-          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 4"
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-4",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_f9cf1236-8f7f-4b20-893e-2ade2e5caf01.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_1a8a21b5-f6c7-4f04-9720-c516b9ee2aa0.jpg?v=1791970886",
-          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 5"
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-5",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_1a8a21b5-f6c7-4f04-9720-c516b9ee2aa0.jpg?v=1791970886",
+          "width": 1080,
+          "height": 1440
         }
       ]
     },

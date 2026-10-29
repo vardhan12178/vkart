@@ -101,7 +101,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 7 258V 32GB / Intel Core Ultra 7 256V 16GB / Intel Core Ultra 5 228V 32GB",
     "gpu": "Intel Graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "OLED",
     "refreshRateHz": 120,
     "weightKg": 1.3,
@@ -134,36 +134,60 @@
     "groups": {
       "Mist Blue": [
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/2e205f20-7e5e-48a5-99a2-ab30ce28948a/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 shown from the back with a visible stepped hinge design."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-1",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the back with a visible stepped hinge design.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/2e205f20-7e5e-48a5-99a2-ab30ce28948a/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/30a839b0-42ec-498c-8409-d73e6920756d/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 display opened from the front view, tilted at 45 degrees from the right side."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-2",
+          "alt": "Mist Blue ASUS Vivobook S 14 display opened from the front view, tilted at 45 degrees from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/30a839b0-42ec-498c-8409-d73e6920756d/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/e77a81af-407e-4956-b25d-816bef691015/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 display opened from the front view, tilted at 45 degrees from the left side."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-3",
+          "alt": "Mist Blue ASUS Vivobook S 14 display opened from the front view, tilted at 45 degrees from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/e77a81af-407e-4956-b25d-816bef691015/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/8f93612c-abb9-4702-bf3c-df2aaf98c0e4/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-4",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/8f93612c-abb9-4702-bf3c-df2aaf98c0e4/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/5ce7a79a-6f47-4ccd-82ec-6e5667001301/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-5",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/5ce7a79a-6f47-4ccd-82ec-6e5667001301/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/b4fba8cf-e814-4a6b-9ea5-3753dafaabba/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-6",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b4fba8cf-e814-4a6b-9ea5-3753dafaabba/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/6347a10f-4f2e-49c9-86b4-6db004ddff9e/w800",
-          "alt": "Mist Blue ASUS Vivobook S 14 shown from the left side, displaying a range of I/O ports."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-7",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the left side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6347a10f-4f2e-49c9-86b4-6db004ddff9e/w800",
+          "width": 800,
+          "height": 800
         },
         {
-          "src": "https://dlcdnwebimgs.asus.com/gain/14dbf8c8-2176-4339-81f1-91eed1910559/w800",
-          "alt": "Mist Blue ASUS Vivobook 14 lid viewed from above."
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-8",
+          "alt": "Mist Blue ASUS Vivobook 14 lid viewed from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/14dbf8c8-2176-4339-81f1-91eed1910559/w800",
+          "width": 800,
+          "height": 800
         }
       ]
     },

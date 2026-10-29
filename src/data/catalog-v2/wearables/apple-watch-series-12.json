@@ -117,178 +117,186 @@
     "groups": {
       "Dark Bronze": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-darkbronze-cell-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Dark Bronze"
+          "key": "wearables/apple-watch-series-12/dark-bronze-3",
+          "alt": "Apple Watch Series 12 in Dark Bronze, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-darkbronze-cell-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Dark Bronze, view 2"
+          "key": "wearables/apple-watch-series-12/dark-bronze-4",
+          "alt": "Apple Watch Series 12 in Dark Bronze, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Dark Bronze, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Dark Bronze, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Dark Bronze, view 5"
+          "key": "wearables/apple-watch-series-12/dark-bronze-5",
+          "alt": "Apple Watch Series 12 in Dark Bronze, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Jet Black": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-black-nc-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Jet Black"
+          "key": "wearables/apple-watch-series-12/jet-black-3",
+          "alt": "Apple Watch Series 12 in Jet Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-black-nc-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Jet Black, view 2"
+          "key": "wearables/apple-watch-series-12/jet-black-4",
+          "alt": "Apple Watch Series 12 in Jet Black, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Jet Black, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Jet Black, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Jet Black, view 5"
+          "key": "wearables/apple-watch-series-12/jet-black-5",
+          "alt": "Apple Watch Series 12 in Jet Black, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Light Gold": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-lightgold-nc-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Light Gold"
+          "key": "wearables/apple-watch-series-12/light-gold-3",
+          "alt": "Apple Watch Series 12 in Light Gold, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-lightgold-nc-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Light Gold, view 2"
+          "key": "wearables/apple-watch-series-12/light-gold-4",
+          "alt": "Apple Watch Series 12 in Light Gold, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Light Gold, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Light Gold, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Light Gold, view 5"
+          "key": "wearables/apple-watch-series-12/light-gold-5",
+          "alt": "Apple Watch Series 12 in Light Gold, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Space Gray": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-spacegray-cell-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Space Gray"
+          "key": "wearables/apple-watch-series-12/space-gray-3",
+          "alt": "Apple Watch Series 12 in Space Gray, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-aluminum-spacegray-cell-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Space Gray, view 2"
+          "key": "wearables/apple-watch-series-12/space-gray-4",
+          "alt": "Apple Watch Series 12 in Space Gray, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Space Gray, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Space Gray, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Space Gray, view 5"
+          "key": "wearables/apple-watch-series-12/space-gray-5",
+          "alt": "Apple Watch Series 12 in Space Gray, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Natural": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-46-titanium-natural-cell-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Natural"
+          "key": "wearables/apple-watch-series-12/natural-3",
+          "alt": "Apple Watch Series 12 in Natural, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-46-titanium-natural-cell-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Natural, view 2"
+          "key": "wearables/apple-watch-series-12/natural-4",
+          "alt": "Apple Watch Series 12 in Natural, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Natural, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Natural, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Natural, view 5"
+          "key": "wearables/apple-watch-series-12/natural-5",
+          "alt": "Apple Watch Series 12 in Natural, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Radiant Gold": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-46-titanium-radiantgold-cell-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Radiant Gold"
+          "key": "wearables/apple-watch-series-12/radiant-gold-3",
+          "alt": "Apple Watch Series 12 in Radiant Gold, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-46-titanium-radiantgold-cell-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Radiant Gold, view 2"
+          "key": "wearables/apple-watch-series-12/radiant-gold-4",
+          "alt": "Apple Watch Series 12 in Radiant Gold, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Radiant Gold, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Radiant Gold, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Radiant Gold, view 5"
+          "key": "wearables/apple-watch-series-12/radiant-gold-5",
+          "alt": "Apple Watch Series 12 in Radiant Gold, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Night Blue": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-ceramic-nightblue-cell-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Night Blue"
+          "key": "wearables/apple-watch-series-12/night-blue-3",
+          "alt": "Apple Watch Series 12 in Night Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-ceramic-nightblue-cell-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Night Blue, view 2"
+          "key": "wearables/apple-watch-series-12/night-blue-4",
+          "alt": "Apple Watch Series 12 in Night Blue, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Night Blue, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Night Blue, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Night Blue, view 5"
+          "key": "wearables/apple-watch-series-12/night-blue-5",
+          "alt": "Apple Watch Series 12 in Night Blue, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ],
       "Pearl White": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-ceramic-pearlwhite-cell-s12_VW_34FR?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Pearl White"
+          "key": "wearables/apple-watch-series-12/pearl-white-3",
+          "alt": "Apple Watch Series 12 in Pearl White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/watch-case-42-ceramic-pearlwhite-cell-s12_VW_PF?wid=800&hei=800&fmt=png-alpha",
-          "alt": "Apple Watch Series 12 in Pearl White, view 2"
+          "key": "wearables/apple-watch-series-12/pearl-white-4",
+          "alt": "Apple Watch Series 12 in Pearl White, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         },
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Pearl White, view 3"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Pearl White, view 4"
-        },
-        {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
-          "alt": "Apple Watch Series 12 in Pearl White, view 5"
+          "key": "wearables/apple-watch-series-12/pearl-white-5",
+          "alt": "Apple Watch Series 12 in Pearl White, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
         }
       ]
     },

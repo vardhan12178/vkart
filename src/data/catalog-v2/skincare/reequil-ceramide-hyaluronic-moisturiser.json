@@ -55,36 +55,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Ceramide_moisturiser_a928c330-56e3-489a-8cea-24ead6e065c2.webp?v=1788196389",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-1",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Ceramide_moisturiser_a928c330-56e3-489a-8cea-24ead6e065c2.webp?v=1788196389",
+        "width": 1080,
+        "height": 1080
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/pn1n9halkp6ojqjt0phg.webp?v=1785512871",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 2"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-2",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/pn1n9halkp6ojqjt0phg.webp?v=1785512871",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/xw49dczzm1yiz1oujijf.webp?v=1785512872",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 3"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-3",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/xw49dczzm1yiz1oujijf.webp?v=1785512872",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/kzofolykonofwqj2n6un.webp?v=1785512871",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 4"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-4",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/kzofolykonofwqj2n6un.webp?v=1785512871",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/tdoqb8dduph0expurtpp.webp?v=1785512871",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 5"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-5",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/tdoqb8dduph0expurtpp.webp?v=1785512871",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/wm5gujbqeqzuq1vhfyrn.webp?v=1785512871",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 6"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-6",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/wm5gujbqeqzuq1vhfyrn.webp?v=1785512871",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/x4uneruqwmartvxuflkf.webp?v=1785512871",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 7"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-7",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/x4uneruqwmartvxuflkf.webp?v=1785512871",
+        "width": 1500,
+        "height": 1500
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/kx55tyvct1rdwugbypvn.webp?v=1785512871",
-        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 8"
+        "key": "skincare/reequil-ceramide-hyaluronic-moisturiser/common-8",
+        "alt": "Re'equil Ceramide & Hyaluronic Acid Moisturiser, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/kx55tyvct1rdwugbypvn.webp?v=1785512871",
+        "width": 1500,
+        "height": 1500
       }
     ]
   },

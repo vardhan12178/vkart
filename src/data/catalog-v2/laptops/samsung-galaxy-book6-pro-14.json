@@ -31,7 +31,7 @@
       "ssd": "512GB or 1TB, with expansion slot"
     },
     "Display": {
-      "size": 14.0,
+      "size": 14,
       "type": "Dynamic AMOLED 2X, touch",
       "refreshRate": "30–120Hz adaptive",
       "brightness": "1,000 nits HDR",
@@ -64,7 +64,7 @@
   "keySpecs": {
     "processor": "Intel Core Ultra 5 325",
     "gpu": "Intel Arc graphics",
-    "displayInch": 14.0,
+    "displayInch": 14,
     "panel": "AMOLED",
     "refreshRateHz": 120,
     "weightKg": 1.24,
@@ -106,31 +106,42 @@
     "groups": {
       "Gray": [
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np940xjg-kg1in/gallery/in-galaxy-book6-pro-14-inch-np940xjgh-np940xjg-kg1in-thumb-551799038?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray"
+          "key": "laptops/samsung-galaxy-book6-pro-14/gray-1",
+          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np940xjg-kg1in/gallery/in-galaxy-book6-pro-14-inch-np940xjgh-np940xjg-kg1in-thumb-551799038?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         },
         {
-          "src": "https://images.samsung.com/is/image/samsung/p6pim/in/np940xjg-kg4in/gallery/in-galaxy-book-np940xjg-kg4in-galaxy-book--pro--------cm--ultra-------gb--copilot--pc-gray-thumb-551799366?$2052_1641_PNG$",
-          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray, view 2"
-        },
-        {
-          "src": "https://images.samsung.com/is/image/samsung/assets/in/Galaxy-Book6-Pro_Gray_IN_PC.jpg",
-          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray, view 3"
+          "key": "laptops/samsung-galaxy-book6-pro-14/gray-2",
+          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np940xjg-kg4in/gallery/in-galaxy-book-np940xjg-kg4in-galaxy-book--pro--------cm--ultra-------gb--copilot--pc-gray-thumb-551799366?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
         }
       ]
     },
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Design_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Pro (14\") — slim design"
+        "key": "laptops/samsung-galaxy-book6-pro-14/common-1",
+        "alt": "Samsung Galaxy Book6 Pro (14\") — slim design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Processor_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Pro (14\") — Intel Core Ultra Series 3"
+        "key": "laptops/samsung-galaxy-book6-pro-14/common-2",
+        "alt": "Samsung Galaxy Book6 Pro (14\") — Intel Core Ultra Series 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Battery_PC_1600x864.jpg",
-        "alt": "Samsung Galaxy Book6 Pro (14\") — 30-hour battery"
+        "key": "laptops/samsung-galaxy-book6-pro-14/common-3",
+        "alt": "Samsung Galaxy Book6 Pro (14\") — 30-hour battery",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Battery_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
       }
     ]
   },

@@ -67,26 +67,38 @@
     "groups": {
       "Vintage Blue": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_12_result_7405f2c0-15a0-4b31-8bd3-681406bbf6aa.webp?v=1778130844",
-          "alt": "NoiseFit Halo 3 with AI Pro in Vintage Blue"
+          "key": "wearables/noisefit-halo-3-ai-pro/vintage-blue-1",
+          "alt": "NoiseFit Halo 3 with AI Pro in Vintage Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_12_result_7405f2c0-15a0-4b31-8bd3-681406bbf6aa.webp?v=1778130844",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Vintage Brown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_17_result_f517d4d9-fd45-4c07-a92a-d6579a98d14e.webp?v=1778130859",
-          "alt": "NoiseFit Halo 3 with AI Pro in Vintage Brown"
+          "key": "wearables/noisefit-halo-3-ai-pro/vintage-brown-1",
+          "alt": "NoiseFit Halo 3 with AI Pro in Vintage Brown",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_17_result_f517d4d9-fd45-4c07-a92a-d6579a98d14e.webp?v=1778130859",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Rich Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_7_result_410f0bc0-395d-420a-ab01-f60152062637.webp?v=1778130835",
-          "alt": "NoiseFit Halo 3 with AI Pro in Rich Black"
+          "key": "wearables/noisefit-halo-3-ai-pro/rich-black-1",
+          "alt": "NoiseFit Halo 3 with AI Pro in Rich Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_7_result_410f0bc0-395d-420a-ab01-f60152062637.webp?v=1778130835",
+          "width": 1500,
+          "height": 1500
         }
       ],
       "Elite Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_2_result_2601a7a4-a4a1-43b2-962f-9e552119160a.webp?v=1778130829",
-          "alt": "NoiseFit Halo 3 with AI Pro in Elite Black"
+          "key": "wearables/noisefit-halo-3-ai-pro/elite-black-1",
+          "alt": "NoiseFit Halo 3 with AI Pro in Elite Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Artboard_2_result_2601a7a4-a4a1-43b2-962f-9e552119160a.webp?v=1778130829",
+          "width": 1500,
+          "height": 1500
         }
       ]
     },

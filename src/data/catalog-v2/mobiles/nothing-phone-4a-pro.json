@@ -96,20 +96,29 @@
     "groups": {
       "Silver": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-White.png?v=1772251228",
-          "alt": "Nothing Phone (4a) Pro in Silver"
+          "key": "mobiles/nothing-phone-4a-pro/silver-1",
+          "alt": "Nothing Phone (4a) Pro in Silver",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-White.png?v=1772251228",
+          "width": 2048,
+          "height": 2048
         }
       ],
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-Black.png?v=1772251228",
-          "alt": "Nothing Phone (4a) Pro in Black"
+          "key": "mobiles/nothing-phone-4a-pro/black-1",
+          "alt": "Nothing Phone (4a) Pro in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-Black.png?v=1772251228",
+          "width": 2048,
+          "height": 2048
         }
       ],
       "Pink": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-Pink.png?v=1772251228",
-          "alt": "Nothing Phone (4a) Pro in Pink"
+          "key": "mobiles/nothing-phone-4a-pro/pink-1",
+          "alt": "Nothing Phone (4a) Pro in Pink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-Pink.png?v=1772251228",
+          "width": 2048,
+          "height": 2048
         }
       ]
     },

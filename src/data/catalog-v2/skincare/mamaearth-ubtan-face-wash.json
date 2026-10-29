@@ -55,36 +55,60 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ubtan_fw_100ml.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-1",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ubtan_fw_100ml.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/2_182.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 2"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-2",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/2_182.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/3_211.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 3"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-3",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/3_211.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/4_233.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 4"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-4",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/4_233.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/7_2_691a7d30-e6d2-457e-8544-53ac3aa13f68.jpg?v=1780642073",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 5"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-5",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/7_2_691a7d30-e6d2-457e-8544-53ac3aa13f68.jpg?v=1780642073",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ubtan_face_glow100ml_white_bg.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 6"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-6",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ubtan_face_glow100ml_white_bg.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/1_124.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 7"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-7",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/1_124.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/bop_1_154.jpg?v=1776317990",
-        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 8"
+        "key": "skincare/mamaearth-ubtan-face-wash/common-8",
+        "alt": "Mamaearth Ubtan Natural Glow Face Wash, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/bop_1_154.jpg?v=1776317990",
+        "width": 1200,
+        "height": 1200
       }
     ]
   },

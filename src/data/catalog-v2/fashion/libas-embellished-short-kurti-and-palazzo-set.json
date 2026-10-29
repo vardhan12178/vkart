@@ -68,28 +68,46 @@
     "groups": {
       "As shown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Art-Embellished-Tissue-Short-Kurti-and-Palazzo-Suit-Set-1200680A_b15bcf05-1029-483c-806a-515d9c987b41.jpg?v=1792839273",
-          "alt": "Libas Embellished Short Kurti and Palazzo Set"
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-1",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Art-Embellished-Tissue-Short-Kurti-and-Palazzo-Suit-Set-1200680A_b15bcf05-1029-483c-806a-515d9c987b41.jpg?v=1792839273",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_2_33b45c7a-3643-4e6c-9767-5de346534bfd.jpg?v=1792839272",
-          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 2"
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-2",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_2_33b45c7a-3643-4e6c-9767-5de346534bfd.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_3_1952311f-b47a-4a51-8688-336c3f629b44.jpg?v=1792839273",
-          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 3"
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-3",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_3_1952311f-b47a-4a51-8688-336c3f629b44.jpg?v=1792839273",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_4_63c90563-c512-4291-9d4a-4c4018e21724.jpg?v=1792839272",
-          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 4"
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-4",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_4_63c90563-c512-4291-9d4a-4c4018e21724.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_5_6f660a38-2a01-44c5-a083-0d28ea318fb7.jpg?v=1792839272",
-          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 5"
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-5",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_5_6f660a38-2a01-44c5-a083-0d28ea318fb7.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_6_c35e168c-d670-4a4b-b478-2b1140032df6.jpg?v=1792839272",
-          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 6"
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-6",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_6_c35e168c-d670-4a4b-b478-2b1140032df6.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
         }
       ]
     },

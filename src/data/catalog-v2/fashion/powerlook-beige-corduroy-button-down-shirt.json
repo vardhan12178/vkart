@@ -78,28 +78,46 @@
     "groups": {
       "Beige": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/2_c387e41c-e4d1-418f-9fb5-8bc2a4813259.jpg?v=1764582841",
-          "alt": "Powerlook Beige Corduroy Button-Down Shirt"
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-1",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/2_c387e41c-e4d1-418f-9fb5-8bc2a4813259.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/4_e4d9c218-fac0-4ad3-9dae-fb15299cbb4a.jpg?v=1764582841",
-          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 2"
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-2",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/4_e4d9c218-fac0-4ad3-9dae-fb15299cbb4a.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/6_51effe71-4d2b-41d8-a085-8d762f276af4.jpg?v=1764582841",
-          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 3"
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-3",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/6_51effe71-4d2b-41d8-a085-8d762f276af4.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/1_7b6f9637-d6ec-4c23-89fa-9d8318ca570c.jpg?v=1764582841",
-          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 4"
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-4",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/1_7b6f9637-d6ec-4c23-89fa-9d8318ca570c.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/5_9bad6d0e-7b9a-4b73-a17f-360ae71f13e6.jpg?v=1764582841",
-          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 5"
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-5",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/5_9bad6d0e-7b9a-4b73-a17f-360ae71f13e6.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/3_2a6fe8d8-24e5-4f5a-bcda-f780905e0bca.jpg?v=1764582841",
-          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 6"
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-6",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/3_2a6fe8d8-24e5-4f5a-bcda-f780905e0bca.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
         }
       ]
     },

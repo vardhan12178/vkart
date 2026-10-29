@@ -90,7 +90,7 @@
     }
   },
   "keySpecs": {
-    "screenInch": 43.0,
+    "screenInch": 43,
     "resolution": "3840 x 2160",
     "refreshRateHz": null,
     "panel": "Crystal UHD",
@@ -113,12 +113,18 @@
     "groups": {},
     "common": [
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ua43u7900huxxl/gallery/in-uhd-u7900h-ua43u7900huxxl-thumb-554546268?$650_519_PNG$",
-        "alt": "Samsung 43\" Crystal UHD U7900H 4K Smart TV"
+        "key": "tvs/samsung-43-inch-crystal-uhd-u7900h-4k-smart-tv/common-1",
+        "alt": "Samsung 43\" Crystal UHD U7900H 4K Smart TV",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ua43u7900huxxl/gallery/in-uhd-u7900h-ua43u7900huxxl-thumb-554546268?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       },
       {
-        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ua43u7900huxxl/gallery/in-uhd-u7900h-ua43u7900huxxl-554546267?$650_519_PNG$",
-        "alt": "Samsung 43\" Crystal UHD U7900H 4K Smart TV, view 2"
+        "key": "tvs/samsung-43-inch-crystal-uhd-u7900h-4k-smart-tv/common-2",
+        "alt": "Samsung 43\" Crystal UHD U7900H 4K Smart TV, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ua43u7900huxxl/gallery/in-uhd-u7900h-ua43u7900huxxl-554546267?$650_519_PNG$",
+        "width": 650,
+        "height": 519
       }
     ]
   },

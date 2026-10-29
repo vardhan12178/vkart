@@ -93,32 +93,53 @@
     "groups": {
       "Gold": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__1__hm.webp?v=1793101171",
-          "alt": "Rareism Guilon Gold Regular Fit Dress"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-1",
+          "alt": "Rareism Guilon Gold Regular Fit Dress",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__1__hm.webp?v=1793101171",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__4.webp?v=1793101171",
-          "alt": "Rareism Guilon Gold Regular Fit Dress, view 2"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-2",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__4.webp?v=1793101171",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__7.webp?v=1793101170",
-          "alt": "Rareism Guilon Gold Regular Fit Dress, view 3"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-3",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__7.webp?v=1793101170",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__5.webp?v=1793101171",
-          "alt": "Rareism Guilon Gold Regular Fit Dress, view 4"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-4",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__5.webp?v=1793101171",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__6.webp?v=1793101171",
-          "alt": "Rareism Guilon Gold Regular Fit Dress, view 5"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-5",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__6.webp?v=1793101171",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__8.webp?v=1793101171",
-          "alt": "Rareism Guilon Gold Regular Fit Dress, view 6"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-6",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__8.webp?v=1793101171",
+          "width": 1920,
+          "height": 2379
         },
         {
-          "src": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__3.webp?v=1793101172",
-          "alt": "Rareism Guilon Gold Regular Fit Dress, view 7"
+          "key": "fashion/rareism-guilon-gold-regular-fit-dress/gold-7",
+          "alt": "Rareism Guilon Gold Regular Fit Dress, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR308768__3.webp?v=1793101172",
+          "width": 1920,
+          "height": 2379
         }
       ]
     },

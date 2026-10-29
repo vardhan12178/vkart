@@ -60,34 +60,17 @@
     "groups": {
       "Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_23_QCUEII_Black_Ecomm-Gallery-1-1634x1224.png?v=1766561915",
-          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Black"
+          "key": "audio/bose-quietcomfort-ultra-earbuds-2/black-1",
+          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_23_QCUEII_Black_Ecomm-Gallery-1-1634x1224.png?v=1766561915",
+          "width": 1634,
+          "height": 1224
         }
       ],
-      "Desert Gold": [
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEBIILE26-DesertGold_SF_PDP_E-Comm-Gallery_1_1632x1224_ca7d7909-04b1-409c-b6f0-c81aaaf16fac.png?v=1766561939",
-          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Desert Gold"
-        }
-      ],
-      "White Smoke": [
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEII_White_Ecomm-Gallery-1-1634x1224.png?v=1766561953",
-          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in White Smoke"
-        }
-      ],
-      "Midnight Violet": [
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEBIILE26-MidnightViolet_SF_E-Comm_Gallery_1_1632x1224_32469b76-ee75-4ec4-a173-0b59cfb15cdf.png?v=1766561947",
-          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Midnight Violet"
-        }
-      ],
-      "Deep Plum": [
-        {
-          "src": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/imgi_11_QCUEII_DeepPlum_Ecomm-Gallery-1-1634x1224.png?v=1766561927",
-          "alt": "Bose QuietComfort Ultra Earbuds (2nd Gen) in Deep Plum"
-        }
-      ]
+      "Desert Gold": [],
+      "White Smoke": [],
+      "Midnight Violet": [],
+      "Deep Plum": []
     },
     "common": []
   },

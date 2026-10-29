@@ -70,32 +70,47 @@
     "groups": {
       "Blue": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods Max in Blue"
+          "key": "audio/apple-airpods-max/blue-1",
+          "alt": "AirPods Max in Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Purple": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods Max in Purple"
+          "key": "audio/apple-airpods-max/purple-1",
+          "alt": "AirPods Max in Purple",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Midnight": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods Max in Midnight"
+          "key": "audio/apple-airpods-max/midnight-1",
+          "alt": "AirPods Max in Midnight",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Starlight": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods Max in Starlight"
+          "key": "audio/apple-airpods-max/starlight-1",
+          "alt": "AirPods Max in Starlight",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ],
       "Orange": [
         {
-          "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
-          "alt": "AirPods Max in Orange"
+          "key": "audio/apple-airpods-max/orange-1",
+          "alt": "AirPods Max in Orange",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
         }
       ]
     },

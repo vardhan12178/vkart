@@ -60,7 +60,7 @@
     "resolution": "1600 X 900",
     "refreshRateHz": null,
     "panel": null,
-    "responseTimeMs": 5.0,
+    "responseTimeMs": 5,
     "gaming": false
   },
   "variantOptions": [
@@ -78,28 +78,46 @@
     "groups": {},
     "common": [
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-1.jpg?v=1775125078",
-        "alt": "Zebronics EV20 20\" HD Monitor"
+        "key": "monitors/zebronics-ev20-20-hd-monitor/common-1",
+        "alt": "Zebronics EV20 20\" HD Monitor",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-1.jpg?v=1775125078",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-2.jpg?v=1775125078",
-        "alt": "Zebronics EV20 20\" HD Monitor, view 2"
+        "key": "monitors/zebronics-ev20-20-hd-monitor/common-2",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-2.jpg?v=1775125078",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-3.jpg?v=1775125078",
-        "alt": "Zebronics EV20 20\" HD Monitor, view 3"
+        "key": "monitors/zebronics-ev20-20-hd-monitor/common-3",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-3.jpg?v=1775125078",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-4.jpg?v=1775125078",
-        "alt": "Zebronics EV20 20\" HD Monitor, view 4"
+        "key": "monitors/zebronics-ev20-20-hd-monitor/common-4",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-4.jpg?v=1775125078",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-5.jpg?v=1775125078",
-        "alt": "Zebronics EV20 20\" HD Monitor, view 5"
+        "key": "monitors/zebronics-ev20-20-hd-monitor/common-5",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-5.jpg?v=1775125078",
+        "width": 2000,
+        "height": 2000
       },
       {
-        "src": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-6.jpg?v=1775125078",
-        "alt": "Zebronics EV20 20\" HD Monitor, view 6"
+        "key": "monitors/zebronics-ev20-20-hd-monitor/common-6",
+        "alt": "Zebronics EV20 20\" HD Monitor, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-EV20-pic-6.jpg?v=1775125078",
+        "width": 2000,
+        "height": 2000
       }
     ]
   },

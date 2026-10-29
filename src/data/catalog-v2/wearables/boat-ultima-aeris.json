@@ -63,20 +63,29 @@
     "groups": {
       "Active Black": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/black_main_image.png?v=1776353816",
-          "alt": "boAt Ultima Aeris in Active Black"
+          "key": "wearables/boat-ultima-aeris/active-black-1",
+          "alt": "boAt Ultima Aeris in Active Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/black_main_image.png?v=1776353816",
+          "width": 4000,
+          "height": 4000
         }
       ],
       "Tan Brown": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/brown_main_image.png?v=1776353527",
-          "alt": "boAt Ultima Aeris in Tan Brown"
+          "key": "wearables/boat-ultima-aeris/tan-brown-1",
+          "alt": "boAt Ultima Aeris in Tan Brown",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/brown_main_image.png?v=1776353527",
+          "width": 4000,
+          "height": 4000
         }
       ],
       "Cool Grey": [
         {
-          "src": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/white_mainn_image.png?v=1776354036",
-          "alt": "boAt Ultima Aeris in Cool Grey"
+          "key": "wearables/boat-ultima-aeris/cool-grey-1",
+          "alt": "boAt Ultima Aeris in Cool Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/white_mainn_image.png?v=1776354036",
+          "width": 4000,
+          "height": 4000
         }
       ]
     },
