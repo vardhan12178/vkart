@@ -17,7 +17,8 @@ import { qk } from "./query/queryKeys";
 // Lazy-loaded storefront route components
 const Login = lazy(() => import("./components/Login"));
 const Register = lazy(() => import("./components/Register"));
-const Home = lazy(() => import("./components/Home"));
+// Shop-style home on catalog v2 (the editorial components/Home.js is kept until v2 replaces v1)
+const HomeV2 = lazy(() => import("./components/home/HomeV2"));
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
 const Header = lazy(() => import("./components/Header"));
@@ -195,7 +196,7 @@ const App = () => {
             <ErrorBoundary>
             <Routes>
               {/* Public Storefront Pages */}
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<HomeV2 />} />
               <Route path="/products" element={<Products />} />
               <Route path="/product/:id" element={<ProductCard />} />
               <Route path="/catalog-preview" element={<CatalogPreviewList />} />
