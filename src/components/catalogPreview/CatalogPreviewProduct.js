@@ -50,7 +50,7 @@ function Gallery({ images, idx, setIdx }) {
   return (
     <div className="lg:sticky lg:top-24">
       {/* Mobile: swipe */}
-      <div className="lg:hidden">
+      <div className="mx-auto max-w-lg lg:hidden">
         <div ref={strip} className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-white [scrollbar-width:none]"
           onScroll={(e) => { const w = e.currentTarget.clientWidth; const i = Math.round(e.currentTarget.scrollLeft / w); if (i !== idx) setIdx(i); }}>
           {images.map((im, i) => (

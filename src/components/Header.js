@@ -228,7 +228,7 @@ const Header = () => {
               </Link>
 
               {/* Desktop Nav Links */}
-              <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+              <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
                 {navLinks.map((item) => {
                   const active = isActive(item.to);
                   return (
@@ -247,7 +247,7 @@ const Header = () => {
             </div>
 
             {/* --- CENTER: SEARCH (Desktop) --- */}
-            <div className="hidden md:flex flex-1 max-w-md mx-2 xl:mx-4">
+            <div className="hidden lg:flex flex-1 max-w-md mx-2 xl:mx-4">
               <div className="w-full relative group" ref={suggestRef}>
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   {aiParsing ? (
@@ -333,7 +333,7 @@ const Header = () => {
               {/* Mobile Search Toggle */}
               <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="lg:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
                 aria-label={showSearch ? "Close search" : "Open search"}
               >
                 <Search className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
@@ -419,7 +419,7 @@ const Header = () => {
 
               {/* Profile / Auth */}
               {isAuthenticated ? (
-                <div className="hidden md:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
+                <div className="hidden lg:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
                   <Link to="/profile" className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]" aria-label="Account profile">
                     <UserRound className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                   </Link>
@@ -435,7 +435,7 @@ const Header = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="hidden md:inline-flex items-center justify-center rounded-full bg-[#1d1c19] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
+                  className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1d1c19] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
                 >
                   Sign In
                 </Link>
@@ -443,7 +443,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="lg:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
@@ -460,7 +460,7 @@ const Header = () => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="md:hidden overflow-hidden pb-4"
+                className="lg:hidden overflow-hidden pb-4"
               >
                 <form onSubmit={handleSearch} className="relative" ref={suggestRefMobile}>
                   {aiParsing ? (
@@ -532,7 +532,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="md:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/98 backdrop-blur-xl shadow-lg"
+              className="lg:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/98 backdrop-blur-xl shadow-lg"
             >
               <div className="px-4 py-3 space-y-2.5">
 

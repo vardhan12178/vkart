@@ -58,11 +58,7 @@ function Card({ p }) {
       <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f3ed]">
         {imgs[0] && (
           <img src={imgs[0].src} alt={imgs[0].alt} loading="lazy" referrerPolicy="no-referrer"
-            className={`absolute inset-0 h-full w-full ${fit} transition duration-300 ${imgs[1] ? "group-hover:opacity-0" : "group-hover:scale-105"}`} />
-        )}
-        {imgs[1] && (
-          <img src={imgs[1].src} alt="" loading="lazy" referrerPolicy="no-referrer"
-            className={`absolute inset-0 h-full w-full ${fit} opacity-0 transition duration-300 group-hover:opacity-100`} />
+            className={`absolute inset-0 h-full w-full ${fit} transition-transform duration-500 group-hover:scale-[1.03]`} />
         )}
         {off > 0 && (
           <span className="absolute left-3 top-3 rounded-full bg-[#1d1c19] px-2.5 py-1 text-[11px] font-bold text-white">{off}% OFF</span>
@@ -133,7 +129,7 @@ function Filters({ base, f, set }) {
     <div>
       <Section title="Brand">
         <div className="max-h-64 overflow-y-auto pr-1">
-          {brands.map(([b, n]) => <Check key={b} checked={f.brands.includes(b)} onChange={() => toggle("brands", b)} count={n}>{b}</Check>)}
+          {brands.map(([b]) => <Check key={b} checked={f.brands.includes(b)} onChange={() => toggle("brands", b)}>{b}</Check>)}
         </div>
       </Section>
       {bands.length > 0 && (
