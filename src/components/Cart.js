@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector, useDispatch } from "react-redux";
 import CartPreview from "./CartPreview";
@@ -8,6 +8,7 @@ import {
   removeFromCart,
   clearCart,
   addToCart,
+  refreshCartLines,
 } from "../redux/cartSlice";
 import {
   toggleWishlist,
@@ -64,6 +65,17 @@ export default function Cart() {
   const queryClient = useQueryClient();
   const cartItems = useSelector((s) => s.cart);
   const wishlistItems = useSelector((s) => s.wishlist);
+
+  // Catalog v2 lines: refresh price and stock from the server so the cart never shows stale values
+  const v2Key = cartItems.filter((it) => it.catalog === "v2").map((it) => `${it.productId}:${it.sku}:${it.quantity}`).join("|");
+  useEffect(() => {
+    const lines = cartItems.filter((it) => it.catalog === "v2" && it.productId && it.sku);
+    if (!lines.length) return;
+    axios.post("/api/v2/cart/resolve", { items: lines.map((it) => ({ productId: String(it.productId), sku: it.sku, quantity: it.quantity })) })
+      .then(({ data }) => dispatch(refreshCartLines(data?.items || [])))
+      .catch(() => { /* keep the stored values; the server re-prices at checkout anyway */ });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [v2Key]);
 
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -158,6 +170,10 @@ export default function Cart() {
           currency: "INR",
         };
         if (it.selectedVariants) payload.selectedVariants = it.selectedVariants;
+        if (it.catalog === "v2") {
+          payload.catalog = "v2";
+          payload.sku = it.sku;
+        }
         if (mongoId) payload.productId = String(mongoId);
         if (!mongoId && extId) payload.externalId = extId;
         return payload;

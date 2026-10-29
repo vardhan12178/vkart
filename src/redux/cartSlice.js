@@ -76,6 +76,25 @@ const cartSlice = createSlice({
       return newState;
     },
 
+    // Catalog v2 lines: apply live price/stock from POST /api/v2/cart/resolve
+    refreshCartLines: (state, action) => {
+      const fresh = Array.isArray(action.payload) ? action.payload : [];
+      for (const line of fresh) {
+        const it = state.find((s) => s.catalog === "v2" && String(s.productId) === String(line.productId) && s.sku === line.sku);
+        if (!it) continue;
+        if (line.available === false && line.price == null) { it.unavailable = true; continue; }
+        Object.assign(it, {
+          title: line.title ?? it.title,
+          price: line.price ?? it.price,
+          thumbnail: line.image || it.thumbnail,
+          discountPercentage: line.discountPercent ?? it.discountPercentage,
+          stock: line.stock,
+          unavailable: line.stock === 0,
+        });
+      }
+      saveCart(state);
+    },
+
     clearCart: () => {
       saveCart([]);
       return [];
@@ -90,6 +109,7 @@ export const {
   removeFromCart,
   clearCart,
   setCart,
+  refreshCartLines,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

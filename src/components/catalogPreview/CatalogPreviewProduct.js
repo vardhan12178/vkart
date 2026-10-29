@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
 import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiStar, FiShoppingCart, FiZap } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
@@ -140,6 +143,8 @@ export default function CatalogPreviewProduct() {
   const [allSpecs, setAllSpecs] = useState(false);
   const [recent, setRecent] = useState([]);
   const [attempt, setAttempt] = useState(0);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Load the product (and reset per-product state) whenever the slug changes
   useEffect(() => {
@@ -213,10 +218,31 @@ export default function CatalogPreviewProduct() {
     if (name === p.media.groupBy) setImgIdx(0);
     setNotice("");
   };
-  const buy = (kind) =>
-    setNotice(kind === "cart"
-      ? "Preview only: the v2 cart is the next step."
-      : "Preview only: checkout connects with the v2 cart.");
+  // Cart lines store ids + SKU; the cart page and checkout re-price them from the server.
+  // The bundled fallback has no database ids, so ordering needs the v2 API.
+  const buy = (kind) => {
+    if (!variant) return;
+    if (!p.id) {
+      setNotice("Ordering works once this site's backend serves the v2 API.");
+      return;
+    }
+    const label = Object.values(variant.options || {}).filter(Boolean).join(" · ");
+    dispatch(addToCart({
+      catalog: "v2",
+      productId: p.id,
+      sku: variant.sku,
+      slug: p.slug,
+      title: p.title,
+      price: variant.price,
+      thumbnail: images[0]?.md || "",
+      category: p.category,
+      discountPercentage: variant.discountPercent || 0,
+      selectedVariants: label || undefined,
+      quantity: qty,
+    }));
+    if (kind === "buy") navigate("/cart");
+    else showToast(`Added to cart${label ? ` · ${label}` : ""}`, "success");
+  };
 
   const specGroups = Object.entries(p.specs || {}).filter(([, f]) => f && Object.keys(f).length);
   // Collapsed view: first two groups, at most 12 rows in total
