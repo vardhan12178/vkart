@@ -82,7 +82,9 @@ describe("Header Component", () => {
     renderHeader();
     expect(screen.getByRole("link", { name: /vkart home/i })).toHaveAttribute("href", "/");
     const desktopNav = screen.getByRole("navigation", { name: /main navigation/i });
-    expect(within(desktopNav).getByRole("link", { name: /collection/i })).toHaveAttribute("href", "/products");
+    expect(within(desktopNav).getByRole("link", { name: /^home$/i })).toHaveAttribute("href", "/");
+    // Browsing happens through the category strip, search and "View all"; no separate Collection link
+    expect(within(desktopNav).queryByRole("link", { name: /collection/i })).not.toBeInTheDocument();
   });
 
   test("hides the header entirely on auth pages", () => {

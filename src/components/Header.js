@@ -3,7 +3,6 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  CubeIcon,
   HomeIcon,
   LightningBoltIcon,
 } from "@heroicons/react/outline";
@@ -140,10 +139,6 @@ const Header = () => {
       const [pathname, query] = path.split("?");
       return location.pathname === pathname && location.search.includes(query);
     }
-    // For Collection (/products), only highlight when no query params
-    if (path === "/products") {
-      return location.pathname === "/products" && !location.search;
-    }
     return location.pathname.startsWith(path);
   };
 
@@ -197,7 +192,6 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", to: "/", icon: HomeIcon },
-    { label: "Collection", to: "/products", icon: CubeIcon },
     ...(hasActiveSale ? [{ label: "Sale", to: "/products?sale=true", icon: LightningBoltIcon }] : []),
   ];
 
