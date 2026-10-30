@@ -12,7 +12,7 @@ import {
 } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { CATEGORIES } from "./catalogData";
-import { fetchProducts, formatPrice, getSource, onSourceChange } from "./catalogApi";
+import { fetchProducts, formatPrice } from "./catalogApi";
 
 const ACCENT = "#a85d37";
 
@@ -82,7 +82,7 @@ function Card({ p, onChooseOptions }) {
   return (
     <Link to={`/catalog-preview/${p.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[#ebe5da] transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-12px_rgba(29,28,25,0.25)]">
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f3ed]">
+      <div className={`relative overflow-hidden bg-[#f6f3ed] ${p.category === "fashion" ? "aspect-[4/5]" : "aspect-square"}`}>
         {img && (
           <img src={img.md} alt={img.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
             className={`absolute inset-0 h-full w-full ${fit} transition-transform duration-500 group-hover:scale-[1.03]`} />
@@ -200,9 +200,7 @@ export default function CatalogPreviewList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [bounds, setBounds] = useState({}); // category -> price bounds without filters, for stable bands
-  const [source, setSource] = useState(getSource());
 
-  useEffect(() => onSourceChange(setSource), []);
   const closeQuick = useCallback(() => setQuickSlug(null), []);
   useEffect(() => { setF(EMPTY); setSort("featured"); }, [category]);
   useEffect(() => { setPage(1); }, [category, f, sort]);
@@ -328,7 +326,10 @@ export default function CatalogPreviewList() {
                 </div>
                 {data && page < data.pages && (
                   <div className="mt-8 flex flex-col items-center gap-2">
-                    <p className="text-xs text-[#8b867d]">Showing {items.length} of {total}</p>
+                    <p className="text-xs text-[#8b867d]">You've seen {items.length} of {total} products</p>
+                    <div className="h-1 w-40 overflow-hidden rounded-full bg-[#ebe5da]">
+                      <div className="h-full rounded-full bg-[#1d1c19]" style={{ width: `${Math.min(100, (items.length / total) * 100)}%` }} />
+                    </div>
                     <button type="button" disabled={loading} onClick={() => setPage(page + 1)}
                       className="rounded-full border-2 border-[#1d1c19] px-8 py-2.5 text-sm font-bold text-[#1d1c19] transition hover:bg-[#1d1c19] hover:text-white disabled:opacity-50">
                       {loading ? "Loading…" : "Load more"}
@@ -342,15 +343,12 @@ export default function CatalogPreviewList() {
                 <button type="button" onClick={() => setF(EMPTY)} className="mt-3 text-sm font-semibold underline" style={{ color: ACCENT }}>Clear filters</button>
               </div>
             )}
-            <p className="mt-8 text-center text-xs text-[#a39e94]">
-              Catalog v2 preview · data from {source === "api" ? "the v2 API" : "the bundled copy (v2 API not reachable)"} · images from S3
-            </p>
           </div>
         </div>
       </div>
 
       {/* Mobile sort / filter bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-[#ebe5da] bg-[#fffdf8] lg:hidden">
+      <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-[#ebe5da] bg-[#fffdf8] lg:hidden">
         <div className="border-r border-[#ebe5da] p-1.5">
           <BrandSelect label="Sort by" prefix="Sort:" value={sort} onChange={setSort} options={SORT_OPTIONS} up
             buttonClassName="justify-center border-transparent bg-transparent hover:border-transparent" />

@@ -483,7 +483,7 @@ export default function CatalogPreviewProduct() {
       </div>
 
       {/* Mobile sticky actions */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#ebe5da] bg-[#fffdf8]/95 p-3 backdrop-blur lg:hidden">
+      <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 border-t border-[#ebe5da] bg-[#fffdf8]/95 p-3 backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-xl items-center gap-2 pr-16 sm:gap-3">
           <div className="min-w-0 flex-none">
             <p className="text-lg font-bold leading-none text-[#1d1c19]">{variant ? formatPrice(variant.price) : "–"}</p>
