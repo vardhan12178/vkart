@@ -106,6 +106,7 @@ function Hero({ slides }) {
   const [idx, setIdx] = useState(0);
   const strip = useRef(null);
   const paused = useRef(false);
+  const settle = useRef(null);
 
   useEffect(() => {
     if (slides.length < 2) return undefined;
@@ -113,17 +114,30 @@ function Hero({ slides }) {
     return () => clearInterval(t);
   }, [slides.length]);
 
+  useEffect(() => () => clearTimeout(settle.current), []);
+
   useEffect(() => {
     const el = strip.current;
     if (el && el.clientWidth) el.scrollTo({ left: idx * el.clientWidth, behavior: "smooth" });
   }, [idx]);
+
+  // Sync the dots after a swipe once scrolling settles; reading mid-scroll positions would undo arrow/auto moves
+  const onScroll = (e) => {
+    const el = e.currentTarget;
+    clearTimeout(settle.current);
+    settle.current = setTimeout(() => {
+      const w = el.clientWidth;
+      const i = w ? Math.round(el.scrollLeft / w) : idx;
+      if (i !== idx) setIdx(i);
+    }, 150);
+  };
 
   if (!slides.length) return <div className="aspect-[16/9] animate-pulse rounded-2xl bg-[#ebe4d8] sm:aspect-[3/1]" />;
 
   return (
     <div className="relative" onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }}>
       <div ref={strip} className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        onScroll={(e) => { const w = e.currentTarget.clientWidth; const i = Math.round(e.currentTarget.scrollLeft / w); if (w && i !== idx) setIdx(i); }}>
+        onScroll={onScroll}>
         {slides.map((s) => (
           <Link key={s.key} to={s.to} className={`relative grid w-full flex-none snap-center grid-cols-[1.1fr_1fr] items-center overflow-hidden sm:grid-cols-2 ${s.bg}`}>
             <div className="z-10 px-5 py-6 sm:px-12 sm:py-12">
@@ -135,10 +149,18 @@ function Hero({ slides }) {
                 {s.cta} <FiChevronRight />
               </span>
             </div>
-            <div className="relative h-44 sm:h-72">
-              {s.image && <img src={s.image.md} alt={s.image.alt || s.title} referrerPolicy="no-referrer"
-                className={`absolute inset-0 h-full w-full ${s.cover ? "object-cover" : "object-contain p-4 sm:p-6 mix-blend-multiply"}`} />}
-            </div>
+            {s.dark ? (
+              // Dark banners: product on a light panel (multiply blending would turn it black)
+              <div className="relative mr-4 h-36 rounded-2xl bg-[#f4f0e8] sm:mr-10 sm:h-60">
+                {s.image && <img src={s.image.md} alt={s.image.alt || s.title} referrerPolicy="no-referrer"
+                  className="absolute inset-0 h-full w-full object-contain p-3 mix-blend-multiply sm:p-5" />}
+              </div>
+            ) : (
+              <div className="relative h-44 sm:h-72">
+                {s.image && <img src={s.image.md} alt={s.image.alt || s.title} referrerPolicy="no-referrer"
+                  className={`absolute inset-0 h-full w-full ${s.cover ? "object-cover" : "object-contain p-4 sm:p-6 mix-blend-multiply"}`} />}
+              </div>
+            )}
           </Link>
         ))}
       </div>
@@ -151,7 +173,9 @@ function Hero({ slides }) {
           <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
             {slides.map((s, i) => (
               <button key={s.key} type="button" aria-label={`Slide ${i + 1}`} onClick={() => setIdx(i)}
-                className={`h-1.5 rounded-full transition-all ${i === idx ? "w-6 bg-[#1d1c19]" : "w-1.5 bg-black/25"}`} />
+                className={`h-1.5 rounded-full transition-all ${slides[idx]?.dark
+                  ? (i === idx ? "w-6 bg-white" : "w-1.5 bg-white/40")
+                  : (i === idx ? "w-6 bg-[#1d1c19]" : "w-1.5 bg-black/25")}`} />
             ))}
           </div>
         </>
@@ -210,7 +234,7 @@ export default function HomeV2() {
       cta: "Shop phones", image: firstImage(phones),
     },
     audio.data?.products?.length && {
-      key: "audio", to: catLink("audio", ""), bg: "bg-[#1d1c19]", bgHex: "#1d1c19", ink: "#fffdf8", sub: "#cfc7b8", accent: "#e0a37f",
+      key: "audio", to: catLink("audio", ""), dark: true, bg: "bg-[#1d1c19]", bgHex: "#1d1c19", ink: "#fffdf8", sub: "#cfc7b8", accent: "#e0a37f",
       eyebrow: "Sound, upgraded", title: maxOff(audio) ? `Earbuds & headphones up to ${maxOff(audio)}% off` : "Earbuds & headphones",
       copy: "Noise cancelling, all-day battery, studio sound.", cta: "Explore audio", image: firstImage(audio),
     },
