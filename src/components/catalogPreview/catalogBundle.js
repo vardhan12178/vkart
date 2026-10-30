@@ -47,6 +47,9 @@ function toCard(p) {
     priceRange: priceRange(p),
     colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({ value: c.value, hex: c.hex })),
     variantCount: p.variants.length, inStock: inStock(p), launchDate: p.launchDate,
+    options: v.options || {},
+    defaultInStock: v.keySpecs?.available !== false,
+    needsSize: (((p.variantOptions || []).find((o) => o.name === "Size")?.values.length) || 0) > 1,
   };
 }
 

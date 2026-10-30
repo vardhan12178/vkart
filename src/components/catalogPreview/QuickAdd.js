@@ -7,8 +7,8 @@ import { showToast } from "../../utils/toast";
 import { fetchProduct, defaultVariant, imagesFor, formatPrice } from "./catalogApi";
 import { matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom, variantLabel } from "./v2Items";
 
-// "Choose options" sheet for listing tiles: pick storage/colour/size and add to the cart
-// without leaving the listing. Bottom sheet on phones, centred dialog from sm up.
+// Quick-add sheet for listing tiles that need a choice (clothing sizes, or a sold-out default variant)
+// Bottom sheet on phones, centred dialog from sm up.
 export default function QuickAdd({ slug, onClose }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();

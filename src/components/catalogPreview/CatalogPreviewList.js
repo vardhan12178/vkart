@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { findSaved, toggleSaved, wishlistItemFrom } from "./v2Items";
+import { findSaved, toggleSaved, wishlistItemFrom, variantLabel } from "./v2Items";
 import { addToCart } from "../../redux/cartSlice";
 import QuickAdd from "./QuickAdd";
 import { showToast } from "../../utils/toast";
@@ -62,17 +62,22 @@ function Card({ p, onChooseOptions }) {
   const multi = p.priceRange && p.priceRange.max > p.priceRange.min;
   // Fashion photos are styled shots: fill the frame. Product renders sit on a soft background.
   const fit = p.category === "fashion" ? "object-cover" : "object-contain p-4 mix-blend-multiply";
-  // One variant: straight into the cart. Several (storage, colour, size): pick them in the sheet.
+  // Add to cart adds the variant the tile shows (default storage/colour). Clothing with
+  // several sizes asks for the size in the quick-add sheet instead of guessing one.
+  const pickSize = p.needsSize || (p.needsSize === undefined && p.category === "fashion" && p.variantCount > 1);
+  const pickOther = !pickSize && p.defaultInStock === false; // shown variant sold out, others aren't
+  const label = variantLabel({ options: p.options });
   const add = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (p.variantCount > 1) return onChooseOptions(p.slug);
+    if (pickSize || pickOther) return onChooseOptions(p.slug);
     if (!p.id) return showToast("Ordering works once this site's backend serves the v2 API.", "error");
     dispatch(addToCart({
       catalog: "v2", productId: p.id, sku: p.sku, slug: p.slug, title: p.title, price: p.price,
-      thumbnail: img?.md || "", category: p.category, discountPercentage: off || 0, quantity: 1,
+      thumbnail: img?.md || "", category: p.category, discountPercentage: off || 0,
+      selectedVariants: label || undefined, quantity: 1,
     }));
-    showToast("Added to cart", "success");
+    showToast(`Added to cart${label ? ` · ${label}` : ""}`, "success");
   };
   return (
     <Link to={`/catalog-preview/${p.slug}`}
@@ -115,9 +120,9 @@ function Card({ p, onChooseOptions }) {
           </div>
           {price >= 499 && <p className="mt-0.5 text-[11px] text-green-700">Free delivery</p>}
           <button type="button" onClick={add} disabled={p.inStock === false}
-            aria-label={`${p.variantCount > 1 ? "Choose options and add" : "Add"} ${p.title} to cart`}
+            aria-label={pickSize ? `Select size for ${p.title}` : pickOther ? `See options for ${p.title}` : `Add ${p.title} to cart`}
             className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-[#1d1c19] py-2 text-xs font-bold text-[#1d1c19] transition hover:bg-[#1d1c19] hover:text-white disabled:border-[#d9d2c5] disabled:text-[#a39e94] disabled:hover:bg-transparent sm:text-sm">
-            {p.inStock === false ? "Out of stock" : <><FiShoppingCart /> Add to cart</>}
+            {p.inStock === false ? "Out of stock" : pickSize ? "Select size" : pickOther ? "See options" : <><FiShoppingCart /> Add to cart</>}
           </button>
         </div>
       </div>
