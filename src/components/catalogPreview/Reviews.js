@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { FiStar, FiThumbsUp } from "react-icons/fi";
 
-// Ratings for catalog v2: the green chip used on tiles, and the product page section.
+// Ratings for catalog v2: the ink chip used on tiles, and the product page section.
 // The reviews come from the API as sample content for this demo store, and the section says so.
 
 const fmt = (n) => Number(n || 0).toLocaleString("en-IN");
-const chipColour = (stars) => (stars >= 4 ? "bg-green-700" : stars >= 3 ? "bg-amber-500" : "bg-red-600");
 
 export function RatingChip({ rating, size = "sm", showCount = true }) {
   if (!rating?.average) return null;
   const small = size === "sm";
   return (
     <span className={`inline-flex items-center gap-1.5 ${small ? "text-[11px]" : "text-sm"}`}>
-      <span className={`inline-flex items-center gap-0.5 rounded font-bold text-white ${chipColour(rating.average)} ${small ? "px-1.5 py-0.5" : "px-2 py-0.5"}`}>
-        {rating.average.toFixed(1)} <FiStar className="fill-white" size={small ? 9 : 12} />
+      <span className={`inline-flex items-center gap-0.5 rounded bg-[#1d1c19] font-bold text-white ${small ? "px-1.5 py-0.5" : "px-2 py-0.5"}`}>
+        {rating.average.toFixed(1)} <FiStar className="fill-star text-star" size={small ? 9 : 12} />
       </span>
       {showCount && rating.count > 0 && <span className="text-[#8b867d]">({fmt(rating.count)})</span>}
     </span>
@@ -28,8 +27,8 @@ function ReviewCard({ r }) {
   return (
     <article className="border-t border-[#efe9df] py-4 first:border-t-0 first:pt-0">
       <div className="flex items-center gap-2">
-        <span className={`inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[11px] font-bold text-white ${chipColour(r.stars)}`}>
-          {r.stars} <FiStar className="fill-white" size={9} />
+        <span className="inline-flex items-center gap-0.5 rounded bg-[#1d1c19] px-1.5 py-0.5 text-[11px] font-bold text-white">
+          {r.stars} <FiStar className="fill-star text-star" size={9} />
         </span>
         <h3 className="text-sm font-semibold text-[#1d1c19]">{r.title}</h3>
       </div>
@@ -65,7 +64,7 @@ export function ReviewsSection({ data }) {
       <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:items-center">
         <div className="text-center">
           <p className="flex items-center justify-center gap-1 text-4xl font-bold text-[#1d1c19]">
-            {data.average.toFixed(1)} <FiStar className="fill-[#1d1c19]" size={26} />
+            {data.average.toFixed(1)} <FiStar className="fill-[#a85d37] text-[#a85d37]" size={26} />
           </p>
           <p className="mt-1 text-xs text-[#8b867d]">{fmt(data.count)} ratings and {fmt(data.reviewCount)} reviews</p>
         </div>
@@ -74,7 +73,7 @@ export function ReviewsSection({ data }) {
             <div key={s.stars} className="flex items-center gap-2 text-xs text-[#6f6b62]">
               <span className="w-7 shrink-0">{s.stars} ★</span>
               <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#efe9df]">
-                <div className={`h-full rounded-full ${chipColour(s.stars)}`} style={{ width: `${(s.count / max) * 100}%` }} />
+                <div className="h-full rounded-full bg-[#1d1c19]" style={{ width: `${(s.count / max) * 100}%` }} />
               </div>
               <span className="w-12 shrink-0 text-right text-[#8b867d]">{fmt(s.count)}</span>
             </div>

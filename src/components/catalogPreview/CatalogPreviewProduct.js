@@ -115,7 +115,7 @@ function MiniCard({ p }) {
       {p.rating && <div className="mt-1"><RatingChip rating={p.rating} /></div>}
       <p className="mt-1 text-sm">
         <span className="font-bold text-[#1d1c19]">{formatPrice(p.priceRange?.min ?? p.price)}</span>
-        {off > 0 && <span className="ml-1.5 text-xs font-semibold text-green-700">{off}% off</span>}
+        {off > 0 && <span className="ml-1.5 text-xs font-semibold text-ok">{off}% off</span>}
       </p>
     </Link>
   );
@@ -293,7 +293,7 @@ export default function CatalogPreviewProduct() {
             <div className="mt-5 border-t border-[#ebe5da] pt-5">
               {variant ? (
                 <>
-                  {off > 0 && <span className="mr-3 rounded-md bg-green-700 px-2 py-0.5 text-sm font-semibold text-white">{off}% off</span>}
+                  {off > 0 && <span className="mr-3 rounded-md bg-ok px-2 py-0.5 text-sm font-semibold text-white">{off}% off</span>}
                   <span className="text-3xl font-bold text-[#1d1c19]">{formatPrice(variant.price)}</span>
                   {off > 0 && <p className="mt-1 text-sm text-[#8b867d]">M.R.P.: <span className="line-through">{formatPrice(variant.mrp)}</span></p>}
                   <p className="mt-1 text-xs text-[#8b867d]">Inclusive of all taxes</p>
@@ -345,7 +345,7 @@ export default function CatalogPreviewProduct() {
 
             {/* Stock + actions */}
             <div className="mt-6 rounded-2xl border border-[#ebe5da] bg-white p-4">
-              <p className={`text-sm font-semibold ${available ? "text-green-700" : "text-red-700"}`}>
+              <p className={`text-sm font-semibold ${available ? "text-ok" : "text-alert"}`}>
                 {available ? "In stock" : "Currently unavailable"}
               </p>
               <p className="mt-1 text-sm text-[#6f6b62]">Sold by VKart · Ships from India</p>
@@ -383,7 +383,7 @@ export default function CatalogPreviewProduct() {
                 <h2 className="text-base font-bold text-[#1d1c19]">Highlights</h2>
                 <ul className="mt-2 space-y-2">
                   {p.highlights.map((h) => (
-                    <li key={h} className="flex gap-2 text-sm text-[#3d3a35]"><FiCheck className="mt-0.5 flex-none text-green-700" />{h}</li>
+                    <li key={h} className="flex gap-2 text-sm text-[#3d3a35]"><FiCheck className="mt-0.5 flex-none text-[#a85d37]" />{h}</li>
                   ))}
                 </ul>
               </div>
@@ -476,7 +476,7 @@ export default function CatalogPreviewProduct() {
         <div className="mx-auto flex max-w-xl items-center gap-2 pr-16 sm:gap-3">
           <div className="min-w-0 flex-none">
             <p className="text-lg font-bold leading-none text-[#1d1c19]">{variant ? formatPrice(variant.price) : "–"}</p>
-            {off > 0 && <p className="text-xs font-semibold text-green-700">{off}% off</p>}
+            {off > 0 && <p className="text-xs font-semibold text-ok">{off}% off</p>}
           </div>
           <button type="button" disabled={!available} onClick={() => buy("cart")}
             className="min-w-0 flex-1 rounded-full border-2 border-[#1d1c19] py-2.5 text-sm font-bold disabled:opacity-40" style={{ color: INK }}>

@@ -66,7 +66,7 @@ function Tile({ p, showOff = true }) {
             className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.04] ${fashion ? "object-cover" : "object-contain p-3 mix-blend-multiply"}`} />
         )}
         {showOff && p.discountPercent >= 5 && (
-          <span className="absolute left-2 top-2 rounded-full bg-green-700 px-2 py-0.5 text-[10px] font-bold text-white">{p.discountPercent}% off</span>
+          <span className="absolute left-2 top-2 rounded-full bg-ok px-2 py-0.5 text-[10px] font-bold text-white">{p.discountPercent}% off</span>
         )}
       </div>
       <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-[#8b867d]">{p.brand}</p>

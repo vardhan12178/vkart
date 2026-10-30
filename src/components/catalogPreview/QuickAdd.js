@@ -87,7 +87,7 @@ export default function QuickAdd({ slug, onClose }) {
                     {variant.discountPercent > 0 && (
                       <>
                         <span className="text-xs text-[#8b867d] line-through">{formatPrice(variant.mrp)}</span>
-                        <span className="text-xs font-bold text-green-700">{variant.discountPercent}% off</span>
+                        <span className="text-xs font-bold text-ok">{variant.discountPercent}% off</span>
                       </>
                     )}
                   </div>
@@ -124,7 +124,7 @@ export default function QuickAdd({ slug, onClose }) {
               </div>
             ))}
 
-            {!available && <p className="mt-4 text-sm font-semibold text-red-700">This option is out of stock.</p>}
+            {!available && <p className="mt-4 text-sm font-semibold text-alert">This option is out of stock.</p>}
 
             <div className="mt-6 grid grid-cols-2 gap-3">
               <button type="button" disabled={!available} onClick={() => buy("cart")}
