@@ -11,6 +11,7 @@ import {
 import { openChat } from "../../redux/uiSlice";
 import { fetchProducts, formatPrice } from "../catalogPreview/catalogApi";
 import { CATEGORIES } from "../catalogPreview/catalogData";
+import { RatingChip } from "../catalogPreview/Reviews";
 import TwoFactorNudge from "./TwoFactorNudge";
 
 // Shop-style home page on catalog v2 (category strip, hero carousel, deals, category cards,
@@ -64,12 +65,13 @@ function Tile({ p, showOff = true }) {
           <img src={p.image.thumb} alt={p.image.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
             className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.04] ${fashion ? "object-cover" : "object-contain p-3 mix-blend-multiply"}`} />
         )}
-        {showOff && p.discountPercent > 0 && (
+        {showOff && p.discountPercent >= 5 && (
           <span className="absolute left-2 top-2 rounded-full bg-green-700 px-2 py-0.5 text-[10px] font-bold text-white">{p.discountPercent}% off</span>
         )}
       </div>
       <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-[#8b867d]">{p.brand}</p>
       <p className="line-clamp-2 text-xs font-medium leading-snug text-[#1d1c19] sm:text-sm">{p.title.replace(`${p.brand} `, "")}</p>
+      {p.rating && <div className="mt-1"><RatingChip rating={p.rating} /></div>}
       <p className="mt-0.5 text-sm">
         <span className="font-bold text-[#1d1c19]">{formatPrice(p.priceRange?.min ?? p.price)}</span>
         {p.discountPercent > 0 && <span className="ml-1.5 text-[11px] text-[#8b867d] line-through">{formatPrice(p.mrp)}</span>}

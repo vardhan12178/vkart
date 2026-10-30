@@ -63,6 +63,7 @@ export function toCardFromDetail(p) {
     priceRange: p.priceRange || { min: Math.min(...prices), max: Math.max(...prices) },
     colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({ value: c.value, hex: c.hex })),
     variantCount: p.variants.length, inStock: p.inStock, launchDate: p.launchDate,
+    rating: p.rating || null,
   };
 }
 

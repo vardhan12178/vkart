@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { findSaved, toggleSaved, wishlistItemFrom, variantLabel } from "./v2Items";
 import { addToCart } from "../../redux/cartSlice";
 import QuickAdd from "./QuickAdd";
+import { RatingChip } from "./Reviews";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
 import {
@@ -87,7 +88,7 @@ function Card({ p, onChooseOptions }) {
           <img src={img.md} alt={img.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
             className={`absolute inset-0 h-full w-full ${fit} transition-transform duration-500 group-hover:scale-[1.03]`} />
         )}
-        {off > 0 && (
+        {off >= 5 && (
           <span className="absolute left-3 top-3 rounded-full bg-[#1d1c19] px-2.5 py-1 text-[11px] font-bold text-white">{off}% OFF</span>
         )}
         <button type="button" aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
@@ -104,6 +105,7 @@ function Card({ p, onChooseOptions }) {
       <div className="flex flex-1 flex-col p-3 sm:p-4">
         <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b867d]">{p.brand}</p>
         <h3 className="mt-0.5 line-clamp-2 text-sm font-medium leading-snug text-[#1d1c19]">{p.title.replace(`${p.brand} `, "")}</h3>
+        {p.rating && <div className="mt-1.5"><RatingChip rating={p.rating} /></div>}
         {colors.length > 1 && (
           <div className="mt-2 flex items-center gap-1">
             {colors.slice(0, 5).map((c) => (
@@ -118,7 +120,6 @@ function Card({ p, onChooseOptions }) {
             <span className="text-base font-bold text-[#1d1c19]">{formatPrice(price)}</span>
             {off > 0 && <span className="text-xs text-[#8b867d] line-through">{formatPrice(p.mrp)}</span>}
           </div>
-          {price >= 499 && <p className="mt-0.5 text-[11px] text-green-700">Free delivery</p>}
           <button type="button" onClick={add} disabled={p.inStock === false}
             aria-label={pickSize ? `Select size for ${p.title}` : pickOther ? `See options for ${p.title}` : `Add ${p.title} to cart`}
             className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-[#1d1c19] py-2 text-xs font-bold text-[#1d1c19] transition hover:bg-[#1d1c19] hover:text-white disabled:border-[#d9d2c5] disabled:text-[#a39e94] disabled:hover:bg-transparent sm:text-sm">

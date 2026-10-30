@@ -5,8 +5,9 @@ import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, p
 import { addToCart } from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
-import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiStar, FiShoppingCart, FiZap, FiHeart } from "react-icons/fi";
+import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
+import { RatingChip, ReviewsSection } from "./Reviews";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
 
@@ -111,6 +112,7 @@ function MiniCard({ p }) {
       </div>
       <p className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#8b867d]">{p.brand}</p>
       <p className="line-clamp-2 text-sm font-medium text-[#1d1c19]">{p.title.replace(`${p.brand} `, "")}</p>
+      {p.rating && <div className="mt-1"><RatingChip rating={p.rating} /></div>}
       <p className="mt-1 text-sm">
         <span className="font-bold text-[#1d1c19]">{formatPrice(p.priceRange?.min ?? p.price)}</span>
         {off > 0 && <span className="ml-1.5 text-xs font-semibold text-green-700">{off}% off</span>}
@@ -279,10 +281,14 @@ export default function CatalogPreviewProduct() {
                 <FiHeart className={saved ? "fill-[#a85d37]" : ""} />
               </button>
             </div>
-            <div className="mt-2 flex items-center gap-2 text-sm text-[#8b867d]">
-              <span className="flex text-gray-300">{[0, 1, 2, 3, 4].map((i) => <FiStar key={i} />)}</span>
-              No ratings yet
-            </div>
+            {p.rating?.average ? (
+              <a href="#reviews" className="mt-2 inline-flex items-center gap-2 text-sm text-[#6f6b62] hover:underline">
+                <RatingChip rating={p.rating} size="md" showCount={false} />
+                {p.rating.count.toLocaleString("en-IN")} ratings{p.reviews ? ` & ${p.reviews.reviewCount.toLocaleString("en-IN")} reviews` : ""}
+              </a>
+            ) : (
+              <p className="mt-2 text-sm text-[#8b867d]">No ratings yet</p>
+            )}
 
             <div className="mt-5 border-t border-[#ebe5da] pt-5">
               {variant ? (
@@ -433,24 +439,7 @@ export default function CatalogPreviewProduct() {
             )}
 
             {/* Reviews */}
-            <section className="rounded-3xl bg-[#fffdf8] p-4 shadow-sm sm:p-6">
-              <h2 className="text-xl font-bold text-[#1d1c19]">Ratings & reviews</h2>
-              <div className="mt-4 flex flex-col gap-6 sm:flex-row sm:items-center">
-                <div className="text-center sm:w-40">
-                  <p className="text-4xl font-bold text-gray-300">–</p>
-                  <p className="text-xs text-[#8b867d]">0 ratings</p>
-                </div>
-                <div className="flex-1 space-y-1.5">
-                  {[5, 4, 3, 2, 1].map((n) => (
-                    <div key={n} className="flex items-center gap-2 text-xs text-[#8b867d]">
-                      <span className="w-6">{n}★</span>
-                      <div className="h-2 flex-1 rounded-full bg-[#efe9df]" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <p className="mt-4 text-sm text-[#6f6b62]">No reviews yet. Reviews from verified buyers will appear here.</p>
-            </section>
+            <ReviewsSection data={p.reviews} />
           </div>
 
           {/* Side column */}
