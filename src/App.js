@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Helmet } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
@@ -24,8 +24,6 @@ const Contact = lazy(() => import("./components/Contact"));
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
 const Error = lazy(() => import("./components/Error"));
-const Products = lazy(() => import("./components/Products"));
-const ProductCard = lazy(() => import("./components/ProductCard"));
 const CatalogPreviewList = lazy(() => import("./components/catalogPreview/CatalogPreviewList"));
 const CatalogPreviewProduct = lazy(() => import("./components/catalogPreview/CatalogPreviewProduct"));
 const Cart = lazy(() => import("./components/Cart"));
@@ -76,6 +74,16 @@ const userScopedKeys = [
   qk.membership.status,
   qk.recommendations.forYou,
 ];
+
+function KeepQueryRedirect({ to }) {
+  const { search } = useLocation();
+  return <Navigate to={`${to}${search}`} replace />;
+}
+
+function SlugRedirect() {
+  const { slug } = useParams();
+  return <Navigate to={`/products/${slug}`} replace />;
+}
 
 const App = () => {
   const dispatch = useDispatch();
@@ -197,10 +205,12 @@ const App = () => {
             <Routes>
               {/* Public Storefront Pages */}
               <Route path="/" element={<HomeV2 />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/product/:id" element={<ProductCard />} />
-              <Route path="/catalog-preview" element={<CatalogPreviewList />} />
-              <Route path="/catalog-preview/:slug" element={<CatalogPreviewProduct />} />
+              <Route path="/products" element={<CatalogPreviewList />} />
+              <Route path="/products/:slug" element={<CatalogPreviewProduct />} />
+              {/* Old links: the preview catalog moved to /products; old-catalog product pages are retired */}
+              <Route path="/catalog-preview" element={<KeepQueryRedirect to="/products" />} />
+              <Route path="/catalog-preview/:slug" element={<SlugRedirect />} />
+              <Route path="/product/:id" element={<Navigate to="/products" replace />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/compare" element={<Compare />} />

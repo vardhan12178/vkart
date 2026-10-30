@@ -5,17 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  EyeIcon,
-  EyeOffIcon,
-  LockClosedIcon,
-  UserIcon,
-  MailIcon,
-  IdentificationIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
+import { CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, Eye as EyeIcon, EyeOff as EyeOffIcon, Lock as LockClosedIcon, User as UserIcon, Mail as MailIcon, IdCard as IdentificationIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();

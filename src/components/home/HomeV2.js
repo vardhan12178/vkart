@@ -23,8 +23,8 @@ const ICONS = {
   wearables: FiWatch, skincare: FiDroplet, "fashion-men": FiUser, "fashion-women": FiShoppingBag,
   appliances: FiHome, "kitchen-appliances": FiCoffee, grooming: FiScissors, sports: FiActivity,
 };
-const catLink = (cat, extra = "") => `/catalog-preview?cat=${cat}${extra}`;
-const productLink = (p) => `/catalog-preview/${p.slug}`;
+const catLink = (cat, extra = "") => `/products?cat=${cat}${extra}`;
+const productLink = (p) => `/products/${p.slug}`;
 
 function useProducts(key, params) {
   return useQuery({
@@ -38,14 +38,14 @@ function useProducts(key, params) {
 function Section({ title, subtitle, to, children, className = "" }) {
   return (
     <section className={`mx-auto max-w-7xl px-3 sm:px-4 ${className}`}>
-      <div className="rounded-2xl bg-[#fffdf8] p-4 ring-1 ring-[#ebe5da] sm:p-5">
+      <div className="rounded-2xl bg-paper p-4 ring-1 ring-line sm:p-5">
         <div className="mb-3 flex items-end justify-between gap-3 sm:mb-4">
           <div className="min-w-0">
-            <h2 className="text-lg font-bold text-[#1d1c19] sm:text-xl">{title}</h2>
-            {subtitle && <p className="text-xs text-[#8b867d] sm:text-sm">{subtitle}</p>}
+            <h2 className="text-lg font-bold text-ink sm:text-xl">{title}</h2>
+            {subtitle && <p className="text-xs text-muted-light sm:text-sm">{subtitle}</p>}
           </div>
           {to && (
-            <Link to={to} className="flex flex-none items-center gap-1 rounded-full bg-[#1d1c19] px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-black">
+            <Link to={to} className="flex flex-none items-center gap-1 rounded-full bg-ink px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-black">
               View all <FiChevronRight />
             </Link>
           )}
@@ -69,12 +69,12 @@ function Tile({ p, showOff = true }) {
           <span className="absolute left-2 top-2 rounded-full bg-ok px-2 py-0.5 text-[10px] font-bold text-white">{p.discountPercent}% off</span>
         )}
       </div>
-      <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-[#8b867d]">{p.brand}</p>
-      <p className="line-clamp-2 text-xs font-medium leading-snug text-[#1d1c19] sm:text-sm">{p.title.replace(`${p.brand} `, "")}</p>
+      <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-muted-light">{p.brand}</p>
+      <p className="line-clamp-2 text-xs font-medium leading-snug text-ink sm:text-sm">{p.title.replace(`${p.brand} `, "")}</p>
       {p.rating && <div className="mt-1"><RatingChip rating={p.rating} /></div>}
       <p className="mt-0.5 text-sm">
-        <span className="font-bold text-[#1d1c19]">{formatPrice(p.priceRange?.min ?? p.price)}</span>
-        {p.discountPercent > 0 && <span className="ml-1.5 text-[11px] text-[#8b867d] line-through">{formatPrice(p.mrp)}</span>}
+        <span className="font-bold text-ink">{formatPrice(p.priceRange?.min ?? p.price)}</span>
+        {p.discountPercent > 0 && <span className="ml-1.5 text-[11px] text-muted-light line-through">{formatPrice(p.mrp)}</span>}
       </p>
     </Link>
   );
@@ -87,15 +87,15 @@ function Rail({ query }) {
       <div className="flex gap-3 overflow-hidden">
         {Array.from({ length: 6 }, (_, i) => (
           <div key={i} className="w-36 flex-none sm:w-44">
-            <div className="aspect-square animate-pulse rounded-xl bg-[#f1ece3]" />
-            <div className="mt-2 h-3 w-2/3 rounded bg-[#f1ece3]" />
-            <div className="mt-1.5 h-3 w-1/2 rounded bg-[#f1ece3]" />
+            <div className="aspect-square animate-pulse rounded-xl bg-tint" />
+            <div className="mt-2 h-3 w-2/3 rounded bg-tint" />
+            <div className="mt-1.5 h-3 w-1/2 rounded bg-tint" />
           </div>
         ))}
       </div>
     );
   }
-  if (!items.length) return <p className="py-6 text-center text-sm text-[#8b867d]">Nothing to show here right now.</p>;
+  if (!items.length) return <p className="py-6 text-center text-sm text-muted-light">Nothing to show here right now.</p>;
   return (
     <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-4">
       {items.map((p) => <Tile key={p.slug} p={p} />)}
@@ -177,7 +177,7 @@ function Hero({ slides }) {
               <button key={s.key} type="button" aria-label={`Slide ${i + 1}`} onClick={() => setIdx(i)}
                 className={`h-1.5 rounded-full transition-all ${slides[idx]?.dark
                   ? (i === idx ? "w-6 bg-white" : "w-1.5 bg-white/40")
-                  : (i === idx ? "w-6 bg-[#1d1c19]" : "w-1.5 bg-black/25")}`} />
+                  : (i === idx ? "w-6 bg-ink" : "w-1.5 bg-black/25")}`} />
             ))}
           </div>
         </>
@@ -190,8 +190,8 @@ function Hero({ slides }) {
 function CategoryCard({ title, cat, query }) {
   const items = (query.data?.products || []).slice(0, 4);
   return (
-    <div className="flex min-w-0 flex-col rounded-2xl bg-[#fffdf8] p-3 ring-1 ring-[#ebe5da] sm:p-4">
-      <h3 className="text-sm font-bold text-[#1d1c19] sm:text-base">{title}</h3>
+    <div className="flex min-w-0 flex-col rounded-2xl bg-paper p-3 ring-1 ring-line sm:p-4">
+      <h3 className="text-sm font-bold text-ink sm:text-base">{title}</h3>
       <div className="mt-2 grid flex-1 grid-cols-2 gap-1.5 sm:mt-3 sm:gap-2.5">
         {(items.length ? items : Array.from({ length: 4 }, () => null)).map((p, i) => (
           p ? (
@@ -202,7 +202,7 @@ function CategoryCard({ title, cat, query }) {
               </div>
               <p className="mt-1 line-clamp-1 hidden text-[11px] text-[#5f5b52] sm:block">{p.title.replace(`${p.brand} `, "")}</p>
             </Link>
-          ) : <div key={i} className="aspect-square animate-pulse rounded-lg bg-[#f1ece3]" />
+          ) : <div key={i} className="aspect-square animate-pulse rounded-lg bg-tint" />
         ))}
       </div>
       <Link to={catLink(cat)} className="mt-2 text-[11px] font-semibold sm:mt-3 sm:text-xs" style={{ color: ACCENT }}>See more →</Link>
@@ -236,7 +236,7 @@ export default function HomeV2() {
       cta: "Shop phones", image: firstImage(phones),
     },
     audio.data?.products?.length && {
-      key: "audio", to: catLink("audio", ""), dark: true, bg: "bg-[#1d1c19]", bgHex: "#1d1c19", ink: "#fffdf8", sub: "#cfc7b8", accent: "#e0a37f",
+      key: "audio", to: catLink("audio", ""), dark: true, bg: "bg-ink", bgHex: "#1d1c19", ink: "#fffdf8", sub: "#cfc7b8", accent: "#e0a37f",
       eyebrow: "Sound, upgraded", title: maxOff(audio) ? `Earbuds & headphones up to ${maxOff(audio)}% off` : "Earbuds & headphones",
       copy: "Noise cancelling, all-day battery, studio sound.", cta: "Explore audio", image: firstImage(audio),
     },
@@ -268,16 +268,16 @@ export default function HomeV2() {
       <TwoFactorNudge />
 
       {/* Category strip */}
-      <nav aria-label="Shop by category" className="border-b border-[#ebe5da] bg-[#fffdf8]">
+      <nav aria-label="Shop by category" className="border-b border-line bg-paper">
         <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:justify-between sm:px-4">
           {Object.entries(CATEGORIES).map(([k, name]) => {
             const Icon = ICONS[k] || FiShoppingBag;
             return (
               <Link key={k} to={catLink(k)} className="group flex w-[72px] flex-none flex-col items-center gap-1.5 sm:w-[80px]">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f1ece3] text-xl text-[#5f5b52] transition group-hover:bg-[#1d1c19] group-hover:text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-tint text-xl text-[#5f5b52] transition group-hover:bg-ink group-hover:text-white">
                   <Icon />
                 </span>
-                <span className="text-center text-[11px] leading-tight text-[#3d3a35]">{name}</span>
+                <span className="text-center text-[11px] leading-tight text-ink-soft">{name}</span>
               </Link>
             );
           })}
@@ -291,11 +291,11 @@ export default function HomeV2() {
       {/* Trust strip */}
       <div className="mx-auto mt-3 grid max-w-7xl grid-cols-2 gap-2 px-3 sm:mt-4 sm:grid-cols-4 sm:px-4">
         {trust.map(({ icon: Icon, title, text }) => (
-          <div key={title} className="flex items-center gap-3 rounded-xl bg-[#fffdf8] px-3 py-3 ring-1 ring-[#ebe5da]">
+          <div key={title} className="flex items-center gap-3 rounded-xl bg-paper px-3 py-3 ring-1 ring-line">
             <Icon className="flex-none text-xl" style={{ color: ACCENT }} />
             <div className="min-w-0">
-              <p className="text-xs font-bold text-[#1d1c19] sm:text-sm">{title}</p>
-              <p className="truncate text-[11px] text-[#8b867d]">{text}</p>
+              <p className="text-xs font-bold text-ink sm:text-sm">{title}</p>
+              <p className="truncate text-[11px] text-muted-light">{text}</p>
             </div>
           </div>
         ))}
@@ -320,14 +320,14 @@ export default function HomeV2() {
 
         {/* Ask VKart banner */}
         <section className="mx-auto max-w-7xl px-3 sm:px-4">
-          <div className="flex flex-col items-start gap-4 overflow-hidden rounded-2xl bg-[#1d1c19] p-5 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
+          <div className="flex flex-col items-start gap-4 overflow-hidden rounded-2xl bg-ink p-5 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <div>
               <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#e0a37f]"><FiZap /> Ask VKart</p>
               <h2 className="mt-2 text-xl font-bold sm:text-2xl">Not sure what to buy? Just ask.</h2>
               <p className="mt-1 text-sm text-[#cfc7b8]">"Gaming phone under 40k with a big battery" · "Serum for dark spots" · "Saree for a wedding"</p>
             </div>
             <button type="button" onClick={() => dispatch(openChat())}
-              className="flex-none rounded-full bg-[#fffdf8] px-6 py-3 text-sm font-bold text-[#1d1c19] transition hover:bg-white">
+              className="flex-none rounded-full bg-paper px-6 py-3 text-sm font-bold text-ink transition hover:bg-white">
               Ask our AI
             </button>
           </div>
@@ -349,7 +349,7 @@ export default function HomeV2() {
           <Rail query={tvs} />
         </Section>
 
-        <Section title="New arrivals" subtitle="The latest additions to the catalog" to="/catalog-preview">
+        <Section title="New arrivals" subtitle="The latest additions to the catalog" to="/products">
           <Rail query={newest} />
         </Section>
       </div>

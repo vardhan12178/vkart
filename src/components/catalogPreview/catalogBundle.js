@@ -75,7 +75,7 @@ const api = {
     const min = num(params.minPrice);
     const max = num(params.maxPrice);
     const minDiscount = num(params.minDiscount);
-    const q = String(params.q || "").trim().toLowerCase();
+    const words = String(params.q || "").toLowerCase().split(/\s+/).filter((w) => w.length > 1);
     const limit = Math.min(60, num(params.limit) || PAGE_SIZE);
     const page = Math.max(1, num(params.page) || 1);
 
@@ -84,7 +84,7 @@ const api = {
       .map(toCard)
       .filter((c) => (min === null || c.priceRange.min >= min) && (max === null || c.priceRange.min <= max))
       .filter((c) => params.inStock !== "true" || c.inStock)
-      .filter((c) => !q || `${c.title} ${c.brand}`.toLowerCase().includes(q))
+      .filter((c) => !words.length || words.some((w) => `${c.title} ${c.brand} ${c.category}`.toLowerCase().includes(w)))
       .filter((c) => !minDiscount || c.discountPercent >= minDiscount);
     const items = base.filter((c) => !brands.length || brands.includes(c.brand)).sort(SORTS[params.sort] || SORTS.featured);
 

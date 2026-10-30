@@ -10,15 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { loginSuccess } from "../redux/authSlice";
 import { qk } from "../query/queryKeys";
 
-import {
-  EyeIcon,
-  EyeOffIcon,
-  UserIcon,
-  LockClosedIcon,
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
+import { Eye as EyeIcon, EyeOff as EyeOffIcon, User as UserIcon, Lock as LockClosedIcon, CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");

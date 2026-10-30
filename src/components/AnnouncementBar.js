@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { XIcon } from "@heroicons/react/outline";
+import { X as XIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import axios from "./axiosInstance";
 

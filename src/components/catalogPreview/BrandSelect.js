@@ -34,19 +34,19 @@ export default function BrandSelect({ options, value, onChange, label, prefix, u
     <div ref={ref} className={`relative ${className}`} onKeyDown={onKey}>
       <button type="button" aria-haspopup="listbox" aria-expanded={open} aria-label={label}
         onClick={() => { setOpen(!open); setHi(options.indexOf(current)); }}
-        className={`flex w-full items-center justify-between gap-2 rounded-full border bg-white px-4 py-2 text-sm font-semibold text-[#1d1c19] transition ${open ? "border-[#1d1c19] ring-2 ring-[#a85d37]/20" : "border-[#d9d2c5] hover:border-[#1d1c19]"} ${buttonClassName}`}>
-        <span className="truncate">{prefix && <span className="font-normal text-[#8b867d]">{prefix} </span>}{current?.label ?? label}</span>
-        <FiChevronDown className={`flex-none text-[#8b867d] transition-transform ${open ? "rotate-180" : ""}`} />
+        className={`flex w-full items-center justify-between gap-2 rounded-full border bg-white px-4 py-2 text-sm font-semibold text-ink transition ${open ? "border-ink ring-2 ring-accent/20" : "border-line-strong hover:border-ink"} ${buttonClassName}`}>
+        <span className="truncate">{prefix && <span className="font-normal text-muted-light">{prefix} </span>}{current?.label ?? label}</span>
+        <FiChevronDown className={`flex-none text-muted-light transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <ul role="listbox" aria-label={label}
-          className={`absolute right-0 z-50 max-h-72 min-w-full overflow-auto rounded-2xl border border-[#ebe5da] bg-[#fffdf8] p-1.5 shadow-[0_16px_40px_-12px_rgba(29,28,25,0.35)] ${up ? "bottom-full mb-2" : "top-full mt-2"}`}>
+          className={`absolute right-0 z-50 max-h-72 min-w-full overflow-auto rounded-2xl border border-line bg-paper p-1.5 shadow-[0_16px_40px_-12px_rgba(29,28,25,0.35)] ${up ? "bottom-full mb-2" : "top-full mt-2"}`}>
           {options.map((o, i) => {
             const active = o.value === value;
             return (
               <li key={o.value} role="option" aria-selected={active}>
                 <button type="button" onClick={() => choose(o)} onMouseEnter={() => setHi(i)}
-                  className={`flex w-full items-center justify-between gap-4 whitespace-nowrap rounded-xl px-3 py-2 text-left text-sm transition ${active ? "bg-[#1d1c19] font-semibold text-white" : i === hi ? "bg-[#f1ece3] text-[#1d1c19]" : "text-[#3d3a35]"}`}>
+                  className={`flex w-full items-center justify-between gap-4 whitespace-nowrap rounded-xl px-3 py-2 text-left text-sm transition ${active ? "bg-ink font-semibold text-white" : i === hi ? "bg-tint text-ink" : "text-ink-soft"}`}>
                   {o.label}
                   {active && <FiCheck className="text-[#e0a37f]" />}
                 </button>

@@ -223,7 +223,7 @@ const AIChatAssistant = () => {
     await sendMessage(prompt);
   };
 
-  const productPath = (prod) => (prod.catalog === "v2" ? `/catalog-preview/${prod.slug}` : `/product/${prod._id}`);
+  const productPath = (prod) => (prod.catalog === "v2" ? `/products/${prod.slug}` : `/product/${prod._id}`);
 
   const handleProductClick = (prod) => {
     dispatch(closeChat());

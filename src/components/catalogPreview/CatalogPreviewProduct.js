@@ -73,7 +73,7 @@ function Gallery({ images, idx, setIdx }) {
         <div className="mt-3 flex justify-center gap-1.5">
           {images.map((_, i) => (
             <button key={i} type="button" aria-label={`Image ${i + 1}`} onClick={() => setIdx(i)}
-              className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-[#1d1c19]" : "w-1.5 bg-gray-300"}`} />
+              className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-ink" : "w-1.5 bg-gray-300"}`} />
           ))}
         </div>
       </div>
@@ -83,13 +83,13 @@ function Gallery({ images, idx, setIdx }) {
         <div className="flex max-h-[560px] w-[72px] flex-none flex-col gap-2 overflow-y-auto p-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {images.map((im, i) => (
             <button key={`${im.md}-${i}`} type="button" onMouseEnter={() => setIdx(i)} onClick={() => setIdx(i)}
-              className={`aspect-square w-full flex-none overflow-hidden rounded-lg border-2 bg-white ${i === idx ? "border-[#a85d37]" : "border-transparent hover:border-gray-300"}`}>
+              className={`aspect-square w-full flex-none overflow-hidden rounded-lg border-2 bg-white ${i === idx ? "border-accent" : "border-transparent hover:border-gray-300"}`}>
               <img src={im.thumb} alt={im.alt} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain p-1" />
             </button>
           ))}
         </div>
         <div
-          className="relative flex aspect-square flex-1 cursor-zoom-in items-center justify-center overflow-hidden rounded-2xl border border-[#ebe5da] bg-white"
+          className="relative flex aspect-square flex-1 cursor-zoom-in items-center justify-center overflow-hidden rounded-2xl border border-line bg-white"
           onMouseMove={(e) => { const r = e.currentTarget.getBoundingClientRect(); setZoom({ x: ((e.clientX - r.left) / r.width) * 100, y: ((e.clientY - r.top) / r.height) * 100 }); }}
           onMouseLeave={() => setZoom(null)}>
           <img src={zoom ? main.lg : main.md} alt={main.alt} referrerPolicy="no-referrer"
@@ -106,15 +106,15 @@ function MiniCard({ p }) {
   const img = p.image;
   const off = p.discountPercent;
   return (
-    <Link to={`/catalog-preview/${p.slug}`} className="group flex w-44 flex-none flex-col rounded-xl border border-[#ebe5da] bg-white p-3 transition hover:shadow-md sm:w-52">
+    <Link to={`/products/${p.slug}`} className="group flex w-44 flex-none flex-col rounded-xl border border-line bg-white p-3 transition hover:shadow-md sm:w-52">
       <div className="flex aspect-square items-center justify-center overflow-hidden rounded-lg bg-[#faf8f3]">
         {img && <img src={img.thumb} alt={img.alt} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain p-2 transition group-hover:scale-105" />}
       </div>
-      <p className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-[#8b867d]">{p.brand}</p>
-      <p className="line-clamp-2 text-sm font-medium text-[#1d1c19]">{p.title.replace(`${p.brand} `, "")}</p>
+      <p className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-muted-light">{p.brand}</p>
+      <p className="line-clamp-2 text-sm font-medium text-ink">{p.title.replace(`${p.brand} `, "")}</p>
       {p.rating && <div className="mt-1"><RatingChip rating={p.rating} /></div>}
       <p className="mt-1 text-sm">
-        <span className="font-bold text-[#1d1c19]">{formatPrice(p.priceRange?.min ?? p.price)}</span>
+        <span className="font-bold text-ink">{formatPrice(p.priceRange?.min ?? p.price)}</span>
         {off > 0 && <span className="ml-1.5 text-xs font-semibold text-ok">{off}% off</span>}
       </p>
     </Link>
@@ -125,7 +125,7 @@ function Rail({ title, items }) {
   if (!items.length) return null;
   return (
     <section className="mt-12">
-      <h2 className="text-xl font-bold text-[#1d1c19]">{title}</h2>
+      <h2 className="text-xl font-bold text-ink">{title}</h2>
       <div className="-mx-4 mt-4 flex gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {items.map((p) => <MiniCard key={p.slug} p={p} />)}
       </div>
@@ -179,13 +179,13 @@ export default function CatalogPreviewProduct() {
 
   if (status === "loading") {
     return (
-      <div className="bg-[#f7f3ec] pb-12">
+      <div className="bg-sand pb-12">
         <div className="mx-auto max-w-7xl px-4 pt-14">
-          <div className="grid grid-cols-1 gap-8 rounded-3xl bg-[#fffdf8] p-6 shadow-sm lg:grid-cols-2 lg:p-8">
-            <div className="aspect-square animate-pulse rounded-2xl bg-[#f1ece3]" />
+          <div className="grid grid-cols-1 gap-8 rounded-3xl bg-paper p-6 shadow-sm lg:grid-cols-2 lg:p-8">
+            <div className="aspect-square animate-pulse rounded-2xl bg-tint" />
             <div className="space-y-4">
-              <div className="h-4 w-1/4 rounded bg-[#f1ece3]" /><div className="h-8 w-3/4 rounded bg-[#f1ece3]" />
-              <div className="h-10 w-1/3 rounded bg-[#f1ece3]" /><div className="h-24 rounded-2xl bg-[#f1ece3]" />
+              <div className="h-4 w-1/4 rounded bg-tint" /><div className="h-8 w-3/4 rounded bg-tint" />
+              <div className="h-10 w-1/3 rounded bg-tint" /><div className="h-24 rounded-2xl bg-tint" />
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function CatalogPreviewProduct() {
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
         <p className="text-lg">{status === "error" ? "Couldn't load this product." : "Product not found."}</p>
         {status === "error" && <button type="button" onClick={() => setAttempt(attempt + 1)} className="mt-4 mr-4 underline">Try again</button>}
-        <Link to="/catalog-preview" className="mt-4 inline-block underline">Back to the catalog</Link>
+        <Link to="/products" className="mt-4 inline-block underline">Back to the catalog</Link>
       </div>
     );
   }
@@ -247,7 +247,7 @@ export default function CatalogPreviewProduct() {
   ];
 
   return (
-    <div className="bg-[#f7f3ec] pb-28 lg:pb-12">
+    <div className="bg-sand pb-28 lg:pb-12">
       <Helmet>
         <title>{`${p.title} | VKart`}</title>
         <meta name="description" content={p.shortDescription} />
@@ -256,50 +256,50 @@ export default function CatalogPreviewProduct() {
 
       <div className="mx-auto max-w-7xl px-4">
         {/* Breadcrumbs */}
-        <nav className="flex flex-wrap items-center gap-1 py-4 text-xs text-[#6f6b62]" aria-label="Breadcrumb">
-          <Link to="/" className="hover:text-[#1d1c19]">Home</Link>
+        <nav className="flex flex-wrap items-center gap-1 py-4 text-xs text-muted" aria-label="Breadcrumb">
+          <Link to="/" className="hover:text-ink">Home</Link>
           <FiChevronRight />
-          <Link to={`/catalog-preview?cat=${cat}`} className="hover:text-[#1d1c19]">{CATEGORIES[cat] || cat}</Link>
+          <Link to={`/products?cat=${cat}`} className="hover:text-ink">{CATEGORIES[cat] || cat}</Link>
           <FiChevronRight />
-          <span className="text-[#1d1c19]">{p.brand}</span>
+          <span className="text-ink">{p.brand}</span>
         </nav>
 
-        <div className="grid grid-cols-1 gap-8 rounded-3xl bg-[#fffdf8] p-4 shadow-sm sm:p-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12 lg:p-8 [&>*]:min-w-0">
+        <div className="grid grid-cols-1 gap-8 rounded-3xl bg-paper p-4 shadow-sm sm:p-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12 lg:p-8 [&>*]:min-w-0">
           <Gallery images={images} idx={imgIdx} setIdx={setImgIdx} />
 
           {/* Buy box */}
           <div>
-            <Link to={`/catalog-preview?cat=${cat}`} className="text-sm font-semibold" style={{ color: ACCENT }}>Visit the {p.brand} store</Link>
+            <Link to={`/products?cat=${cat}`} className="text-sm font-semibold" style={{ color: ACCENT }}>Visit the {p.brand} store</Link>
             <div className="mt-1 flex items-start justify-between gap-3">
-              <h1 className="min-w-0 break-words text-2xl font-bold leading-snug text-[#1d1c19] sm:text-3xl">{p.title}</h1>
+              <h1 className="min-w-0 break-words text-2xl font-bold leading-snug text-ink sm:text-3xl">{p.title}</h1>
               <button type="button" aria-pressed={saved} aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
                 onClick={() => {
                   const now = toggleSaved(dispatch, wishlist, wishlistItemFrom(p, variant || defaultVariant(p)));
                   showToast(now ? "Saved to wishlist" : "Removed from wishlist", "success");
                 }}
-                className={`flex h-11 w-11 flex-none items-center justify-center rounded-full border transition ${saved ? "border-[#a85d37] bg-[#a85d37]/10 text-[#a85d37]" : "border-[#d9d2c5] bg-white text-[#1d1c19] hover:border-[#1d1c19]"}`}>
-                <FiHeart className={saved ? "fill-[#a85d37]" : ""} />
+                className={`flex h-11 w-11 flex-none items-center justify-center rounded-full border transition ${saved ? "border-accent bg-accent/10 text-accent" : "border-line-strong bg-white text-ink hover:border-ink"}`}>
+                <FiHeart className={saved ? "fill-accent" : ""} />
               </button>
             </div>
             {p.rating?.average ? (
-              <a href="#reviews" className="mt-2 inline-flex items-center gap-2 text-sm text-[#6f6b62] hover:underline">
+              <a href="#reviews" className="mt-2 inline-flex items-center gap-2 text-sm text-muted hover:underline">
                 <RatingChip rating={p.rating} size="md" showCount={false} />
                 {p.rating.count.toLocaleString("en-IN")} ratings{p.reviews ? ` & ${p.reviews.reviewCount.toLocaleString("en-IN")} reviews` : ""}
               </a>
             ) : (
-              <p className="mt-2 text-sm text-[#8b867d]">No ratings yet</p>
+              <p className="mt-2 text-sm text-muted-light">No ratings yet</p>
             )}
 
-            <div className="mt-5 border-t border-[#ebe5da] pt-5">
+            <div className="mt-5 border-t border-line pt-5">
               {variant ? (
                 <>
                   {off > 0 && <span className="mr-3 rounded-md bg-ok px-2 py-0.5 text-sm font-semibold text-white">{off}% off</span>}
-                  <span className="text-3xl font-bold text-[#1d1c19]">{formatPrice(variant.price)}</span>
-                  {off > 0 && <p className="mt-1 text-sm text-[#8b867d]">M.R.P.: <span className="line-through">{formatPrice(variant.mrp)}</span></p>}
-                  <p className="mt-1 text-xs text-[#8b867d]">Inclusive of all taxes</p>
+                  <span className="text-3xl font-bold text-ink">{formatPrice(variant.price)}</span>
+                  {off > 0 && <p className="mt-1 text-sm text-muted-light">M.R.P.: <span className="line-through">{formatPrice(variant.mrp)}</span></p>}
+                  <p className="mt-1 text-xs text-muted-light">Inclusive of all taxes</p>
                 </>
               ) : (
-                <p className="text-lg text-[#6f6b62]">This combination is not available</p>
+                <p className="text-lg text-muted">This combination is not available</p>
               )}
             </div>
 
@@ -308,8 +308,8 @@ export default function CatalogPreviewProduct() {
               const byImage = o.name === p.media.groupBy && Object.keys(p.media.groups || {}).length > 0;
               return (
                 <div key={o.name} className="mt-6">
-                  <p className="text-sm font-semibold text-[#1d1c19]">
-                    {o.name}: <span className="font-normal text-[#6f6b62]">{opts[o.name]}</span>
+                  <p className="text-sm font-semibold text-ink">
+                    {o.name}: <span className="font-normal text-muted">{opts[o.name]}</span>
                   </p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {o.values.map((val) => {
@@ -319,7 +319,7 @@ export default function CatalogPreviewProduct() {
                       if (thumb) {
                         return (
                           <button key={val.value} type="button" title={val.value} onClick={() => pick(o.name, val.value)}
-                            className={`h-16 w-16 overflow-hidden rounded-xl border-2 bg-white p-1 ${active ? "border-[#a85d37]" : "border-[#ebe5da] hover:border-gray-400"} ${ok ? "" : "opacity-40"}`}>
+                            className={`h-16 w-16 overflow-hidden rounded-xl border-2 bg-white p-1 ${active ? "border-accent" : "border-line hover:border-gray-400"} ${ok ? "" : "opacity-40"}`}>
                             <img src={thumb.thumb} alt={val.value} loading="lazy" referrerPolicy="no-referrer" className="h-full w-full object-contain" />
                           </button>
                         );
@@ -327,13 +327,13 @@ export default function CatalogPreviewProduct() {
                       if (o.name === "Color" && val.hex) {
                         return (
                           <button key={val.value} type="button" title={val.value} aria-label={val.value} onClick={() => pick(o.name, val.value)}
-                            className={`h-9 w-9 rounded-full border-2 ring-2 ring-offset-2 ${active ? "ring-[#a85d37]" : "ring-transparent"} border-white ${ok ? "" : "opacity-40"}`}
+                            className={`h-9 w-9 rounded-full border-2 ring-2 ring-offset-2 ${active ? "ring-accent" : "ring-transparent"} border-white ${ok ? "" : "opacity-40"}`}
                             style={{ background: val.hex }} />
                         );
                       }
                       return (
                         <button key={val.value} type="button" onClick={() => pick(o.name, val.value)}
-                          className={`min-w-[3rem] rounded-lg border px-3 py-2 text-sm transition ${active ? "border-[#1d1c19] bg-[#1d1c19] text-white" : "border-[#d9d2c5] bg-white text-[#1d1c19] hover:border-[#1d1c19]"} ${ok ? "" : "text-gray-400 line-through opacity-60"}`}>
+                          className={`min-w-[3rem] rounded-lg border px-3 py-2 text-sm transition ${active ? "border-ink bg-ink text-white" : "border-line-strong bg-white text-ink hover:border-ink"} ${ok ? "" : "text-gray-400 line-through opacity-60"}`}>
                           {val.value}
                         </button>
                       );
@@ -344,19 +344,19 @@ export default function CatalogPreviewProduct() {
             })}
 
             {/* Stock + actions */}
-            <div className="mt-6 rounded-2xl border border-[#ebe5da] bg-white p-4">
+            <div className="mt-6 rounded-2xl border border-line bg-white p-4">
               <p className={`text-sm font-semibold ${available ? "text-ok" : "text-alert"}`}>
                 {available ? "In stock" : "Currently unavailable"}
               </p>
-              <p className="mt-1 text-sm text-[#6f6b62]">Sold by VKart · Ships from India</p>
+              <p className="mt-1 text-sm text-muted">Sold by VKart · Ships from India</p>
               <div className="mt-3 flex items-center gap-3">
-                <span className="text-sm text-[#6f6b62]">Qty</span>
+                <span className="text-sm text-muted">Qty</span>
                 <BrandSelect label="Quantity" value={qty} onChange={setQty} className="w-24"
                   options={[1, 2, 3, 4, 5].map((n) => ({ value: n, label: String(n) }))} />
               </div>
               <div className="mt-4 hidden gap-3 lg:flex">
                 <button type="button" disabled={!available} onClick={() => buy("cart")}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-[#1d1c19] py-3 text-sm font-bold text-[#1d1c19] transition hover:bg-[#1d1c19] hover:text-white disabled:opacity-40">
+                  className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-ink py-3 text-sm font-bold text-ink transition hover:bg-ink hover:text-white disabled:opacity-40">
                   <FiShoppingCart /> Add to cart
                 </button>
                 <button type="button" disabled={!available} onClick={() => buy("buy")}
@@ -365,13 +365,13 @@ export default function CatalogPreviewProduct() {
                   <FiZap /> Buy now
                 </button>
               </div>
-              {notice && <p className="mt-3 rounded-lg bg-[#f7f3ec] px-3 py-2 text-xs text-[#6f6b62]">{notice}</p>}
+              {notice && <p className="mt-3 rounded-lg bg-sand px-3 py-2 text-xs text-muted">{notice}</p>}
             </div>
 
             {/* Policies */}
             <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 [&>*]:min-w-0">
               {policies.map(({ icon: Icon, text }) => (
-                <div key={text} className="flex flex-col items-center gap-1.5 rounded-xl bg-[#f7f3ec] px-2 py-3 text-center text-[11px] leading-tight text-[#5f5b52]">
+                <div key={text} className="flex flex-col items-center gap-1.5 rounded-xl bg-sand px-2 py-3 text-center text-[11px] leading-tight text-[#5f5b52]">
                   <Icon className="text-lg" style={{ color: ACCENT }} />{text}
                 </div>
               ))}
@@ -380,16 +380,16 @@ export default function CatalogPreviewProduct() {
             {/* Highlights */}
             {p.highlights?.length > 0 && (
               <div className="mt-6">
-                <h2 className="text-base font-bold text-[#1d1c19]">Highlights</h2>
+                <h2 className="text-base font-bold text-ink">Highlights</h2>
                 <ul className="mt-2 space-y-2">
                   {p.highlights.map((h) => (
-                    <li key={h} className="flex gap-2 text-sm text-[#3d3a35]"><FiCheck className="mt-0.5 flex-none text-[#a85d37]" />{h}</li>
+                    <li key={h} className="flex gap-2 text-sm text-ink-soft"><FiCheck className="mt-0.5 flex-none text-accent" />{h}</li>
                   ))}
                 </ul>
               </div>
             )}
 
-            {variant && <p className="mt-6 text-xs text-[#8b867d]">SKU {variant.sku}{variant.mpn ? ` · Model ${variant.mpn}` : ""}</p>}
+            {variant && <p className="mt-6 text-xs text-muted-light">SKU {variant.sku}{variant.mpn ? ` · Model ${variant.mpn}` : ""}</p>}
           </div>
         </div>
 
@@ -397,22 +397,22 @@ export default function CatalogPreviewProduct() {
           <div className="space-y-8">
             {/* Specifications */}
             {specGroups.length > 0 && (
-              <section className="rounded-3xl bg-[#fffdf8] p-4 shadow-sm sm:p-6">
-                <h2 className="text-xl font-bold text-[#1d1c19]">Specifications</h2>
+              <section className="rounded-3xl bg-paper p-4 shadow-sm sm:p-6">
+                <h2 className="text-xl font-bold text-ink">Specifications</h2>
                 <div className="mt-4 space-y-5">
                   {shownGroups.map(([group, fields]) => (
                     <div key={group}>
-                      <h3 className="border-b border-[#ebe5da] pb-2 text-sm font-semibold text-[#1d1c19]">{group}</h3>
+                      <h3 className="border-b border-line pb-2 text-sm font-semibold text-ink">{group}</h3>
                       <dl>
                         {Object.entries(fields).map(([k, v]) => (
                           k === "points" ? (
-                            <ul key={k} className="mt-2 list-disc space-y-1 pl-5 text-sm text-[#3d3a35]">
+                            <ul key={k} className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">
                               {[].concat(v).map((x, i) => <li key={i}>{String(x)}</li>)}
                             </ul>
                           ) : (
-                            <div key={k} className="grid grid-cols-[minmax(110px,35%)_1fr] gap-3 border-b border-[#f1ece3] py-2.5 text-sm last:border-0">
-                              <dt className="text-[#8b867d]">{label(k)}</dt>
-                              <dd className="text-[#1d1c19]"><SpecValue value={v} /></dd>
+                            <div key={k} className="grid grid-cols-[minmax(110px,35%)_1fr] gap-3 border-b border-tint py-2.5 text-sm last:border-0">
+                              <dt className="text-muted-light">{label(k)}</dt>
+                              <dd className="text-ink"><SpecValue value={v} /></dd>
                             </div>
                           )
                         ))}
@@ -432,9 +432,9 @@ export default function CatalogPreviewProduct() {
 
             {/* Description */}
             {p.description && (
-              <section className="rounded-3xl bg-[#fffdf8] p-4 shadow-sm sm:p-6">
-                <h2 className="text-xl font-bold text-[#1d1c19]">Product description</h2>
-                {p.description.split("\n\n").map((para, i) => <p key={i} className="mt-3 text-sm leading-relaxed text-[#3d3a35]">{para}</p>)}
+              <section className="rounded-3xl bg-paper p-4 shadow-sm sm:p-6">
+                <h2 className="text-xl font-bold text-ink">Product description</h2>
+                {p.description.split("\n\n").map((para, i) => <p key={i} className="mt-3 text-sm leading-relaxed text-ink-soft">{para}</p>)}
               </section>
             )}
 
@@ -445,19 +445,19 @@ export default function CatalogPreviewProduct() {
           {/* Side column */}
           <aside className="space-y-4">
             {p.inTheBox?.length > 0 && (
-              <div className="rounded-3xl bg-[#fffdf8] p-5 shadow-sm">
-                <h2 className="text-base font-bold text-[#1d1c19]">What's in the box</h2>
-                <ul className="mt-2 space-y-1.5 text-sm text-[#3d3a35]">
-                  {p.inTheBox.map((x) => <li key={x} className="flex gap-2"><FiCheck className="mt-0.5 flex-none text-[#8b867d]" />{x}</li>)}
+              <div className="rounded-3xl bg-paper p-5 shadow-sm">
+                <h2 className="text-base font-bold text-ink">What's in the box</h2>
+                <ul className="mt-2 space-y-1.5 text-sm text-ink-soft">
+                  {p.inTheBox.map((x) => <li key={x} className="flex gap-2"><FiCheck className="mt-0.5 flex-none text-muted-light" />{x}</li>)}
                 </ul>
               </div>
             )}
-            <div className="rounded-3xl bg-[#fffdf8] p-5 shadow-sm">
-              <h2 className="text-base font-bold text-[#1d1c19]">Warranty & returns</h2>
-              <p className="mt-2 text-sm text-[#3d3a35]">{p.warranty || "Covered by the brand's standard warranty."}</p>
-              <p className="mt-1 text-sm text-[#3d3a35]">Easy returns within 7 days of delivery.</p>
+            <div className="rounded-3xl bg-paper p-5 shadow-sm">
+              <h2 className="text-base font-bold text-ink">Warranty & returns</h2>
+              <p className="mt-2 text-sm text-ink-soft">{p.warranty || "Covered by the brand's standard warranty."}</p>
+              <p className="mt-1 text-sm text-ink-soft">Easy returns within 7 days of delivery.</p>
             </div>
-            <div className="rounded-3xl bg-[#fffdf8] p-5 text-xs text-[#8b867d] shadow-sm">
+            <div className="rounded-3xl bg-paper p-5 text-xs text-muted-light shadow-sm">
               Product details from{" "}
               {[...new Map(p.source.urls.map((u) => [new URL(u).hostname, u])).entries()].map(([host, u], i) => (
                 <React.Fragment key={host}>{i > 0 && ", "}<a href={u} target="_blank" rel="noreferrer" className="underline">{host}</a></React.Fragment>
@@ -472,14 +472,14 @@ export default function CatalogPreviewProduct() {
       </div>
 
       {/* Mobile sticky actions */}
-      <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 border-t border-[#ebe5da] bg-[#fffdf8]/95 p-3 backdrop-blur lg:hidden">
+      <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 p-3 backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-xl items-center gap-2 pr-16 sm:gap-3">
           <div className="min-w-0 flex-none">
-            <p className="text-lg font-bold leading-none text-[#1d1c19]">{variant ? formatPrice(variant.price) : "–"}</p>
+            <p className="text-lg font-bold leading-none text-ink">{variant ? formatPrice(variant.price) : "–"}</p>
             {off > 0 && <p className="text-xs font-semibold text-ok">{off}% off</p>}
           </div>
           <button type="button" disabled={!available} onClick={() => buy("cart")}
-            className="min-w-0 flex-1 rounded-full border-2 border-[#1d1c19] py-2.5 text-sm font-bold disabled:opacity-40" style={{ color: INK }}>
+            className="min-w-0 flex-1 rounded-full border-2 border-ink py-2.5 text-sm font-bold disabled:opacity-40" style={{ color: INK }}>
             Add to cart
           </button>
           <button type="button" disabled={!available} onClick={() => buy("buy")}

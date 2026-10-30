@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { BellIcon, ShoppingBagIcon, TruckIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/outline";
+import { Bell as BellIcon, ShoppingBag as ShoppingBagIcon, Truck as TruckIcon, CircleCheck as CheckCircleIcon, CircleX as XCircleIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import axiosInstance from "./axiosInstance";
 import { setNotifications, markAsRead } from "../redux/notificationSlice";

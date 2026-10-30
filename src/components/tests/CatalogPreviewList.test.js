@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { HelmetProvider } from "react-helmet-async";
 import cartReducer from "../../redux/cartSlice";
+import uiReducer from "../../redux/uiSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
 import CatalogPreviewList from "../catalogPreview/CatalogPreviewList";
 import { fetchProducts, fetchProduct } from "../catalogPreview/catalogApi";
@@ -28,15 +29,15 @@ describe("CatalogPreviewList tiles", () => {
   beforeEach(() => {
     showToast.mockClear();
     fetchProduct.mockReset().mockReturnValue(new Promise(() => {}));
-    store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer } });
+    store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer } });
   });
 
-  const renderList = (products) => {
+  const renderList = (products, url = "/products?cat=mobiles") => {
     fetchProducts.mockResolvedValue({ products, total: products.length, pages: 1, facets: { brands: [], price: { min: 0, max: 50000 } } });
     render(
       <HelmetProvider>
         <Provider store={store}>
-          <MemoryRouter initialEntries={["/catalog-preview?cat=mobiles"]}><CatalogPreviewList /></MemoryRouter>
+          <MemoryRouter initialEntries={[url]}><CatalogPreviewList /></MemoryRouter>
         </Provider>
       </HelmetProvider>
     );
@@ -59,5 +60,25 @@ describe("CatalogPreviewList tiles", () => {
     expect(fetchProduct).toHaveBeenCalledWith("shirt");
     expect(screen.getByRole("button", { name: "See options for Brand rare" })).toBeInTheDocument();
     expect(store.getState().cart).toEqual([]);
+  });
+
+  it("lists all products when no category is picked", async () => {
+    renderList([card("phone")], "/products");
+    expect(await screen.findByRole("heading", { name: "All products" })).toBeInTheDocument();
+    expect(fetchProducts).toHaveBeenLastCalledWith(expect.not.objectContaining({ category: expect.anything() }));
+    expect(screen.getByRole("button", { name: "All" })).toHaveAttribute("aria-pressed", "true");
+  });
+
+  it("searches with the words and price range from the URL, best match first", async () => {
+    renderList([card("phone")], "/products?q=gaming%20phone&max=30000");
+    expect(await screen.findByRole("heading", { name: 'Results for "gaming phone"' })).toBeInTheDocument();
+    expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({ q: "gaming phone", maxPrice: 30000, sort: "relevance" }));
+    expect(screen.getByText("Under ₹30,000")).toBeInTheDocument();
+  });
+
+  it("offers the AI assistant when a search finds nothing", async () => {
+    renderList([], "/products?q=flying%20car");
+    fireEvent.click(await screen.findByRole("button", { name: "Ask VKart" }));
+    expect(store.getState().ui.isChatOpen).toBe(true);
   });
 });

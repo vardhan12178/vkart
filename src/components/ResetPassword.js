@@ -4,15 +4,7 @@ import axios from "./axiosInstance";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  LockClosedIcon,
-  EyeIcon,
-  EyeOffIcon,
-  ShoppingCartIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/outline";
+import { CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, Lock as LockClosedIcon, Eye as EyeIcon, EyeOff as EyeOffIcon, ShoppingCart as ShoppingCartIcon, ArrowLeft as ArrowLeftIcon } from "lucide-react";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();

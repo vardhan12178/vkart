@@ -134,7 +134,7 @@ describe("Header Component", () => {
     });
     renderHeader();
     const desktopNav = await screen.findByRole("navigation", { name: /main navigation/i });
-    expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute("href", "/products?sale=true");
+    expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute("href", "/products?sort=discount");
   });
 
   test("submits a search and navigates using the AI-parsed filters", async () => {
@@ -153,7 +153,8 @@ describe("Header Component", () => {
       expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", { query: "cheap electronics" });
     });
     await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith(expect.stringContaining("/products?cat=electronics"));
+      // The parser's old-catalog category becomes keywords; the price limit is kept
+      expect(mockNavigate).toHaveBeenCalledWith("/products?q=electronics&max=30000");
     });
   });
 

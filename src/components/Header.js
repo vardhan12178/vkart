@@ -2,10 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  HomeIcon,
-  LightningBoltIcon,
-} from "@heroicons/react/outline";
+import { Home as HomeIcon, Zap as LightningBoltIcon } from "lucide-react";
 import {
   BadgeCheck,
   Crown,
@@ -27,6 +24,7 @@ import { toggleChat } from "../redux/uiSlice";
 import AnnouncementBar from "./AnnouncementBar";
 import NotificationBell from "./NotificationBell";
 import { qk } from "../query/queryKeys";
+import { fetchProducts, formatPrice } from "./catalogPreview/catalogApi";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -98,12 +96,12 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // 4. Fetch autocomplete suggestions
+  // 4. Fetch autocomplete suggestions (catalog keyword search, best matches first)
   const fetchSuggestions = useCallback(async (q) => {
-    if (!q || q.length < 2) { setSuggestions([]); setShowSuggestions(false); return; }
+    if (!q || q.trim().length < 2) { setSuggestions([]); setShowSuggestions(false); return; }
     try {
-      const res = await axios.get(`/api/products/suggest?q=${encodeURIComponent(q)}`);
-      setSuggestions(res.data || []);
+      const res = await fetchProducts({ q: q.trim(), limit: 6 });
+      setSuggestions(res?.products || []);
       setShowSuggestions(true);
     } catch { setSuggestions([]); }
   }, []);
@@ -148,10 +146,8 @@ const Header = () => {
   };
 
   // On explicit submit (Enter / form submit), run the query through the AI
-  // parser so free text like "red heels under 3000" resolves into real
-  // category/price/rating filters, not just a keyword match. Live typing
-  // (onChange below) stays a plain, instant `q=` navigation for responsiveness -
-  // only the deliberate "search" action pays the extra AI round trip.
+  // parser so free text like "phones under 30000" becomes keywords plus a price
+  // range on the listing. Typing only refreshes the suggestions dropdown.
   const runSearch = async (rawText) => {
     const trimmed = rawText.trim();
     if (!trimmed) return;
@@ -160,16 +156,14 @@ const Header = () => {
     setAiParsing(true);
     try {
       const res = await axios.post("/api/ai/parse-search", { query: trimmed });
-      const { q, category, minPrice, maxPrice, minRating, sort } = res.data;
-      const sortMap = { price_asc: "price-asc", price_desc: "price-desc", rating_desc: "rating-desc" };
+      const { q, category, minPrice, maxPrice, sort } = res.data;
+      const sortMap = { price_asc: "price-asc", price_desc: "price-desc" };
 
+      // The parser's category names come from the old catalog, so they are used as keywords
       const params = new URLSearchParams();
-      if (q) params.set("q", q);
-      else if (!category) params.set("q", trimmed); // AI found nothing structured - fall back to raw text
-      if (category) params.set("cat", category);
+      params.set("q", q || (category ? category.replace(/-/g, " ") : trimmed));
       if (minPrice != null) params.set("min", String(minPrice));
       if (maxPrice != null) params.set("max", String(maxPrice));
-      if (minRating != null) params.set("rating", String(minRating));
       if (sort && sortMap[sort]) params.set("sort", sortMap[sort]);
 
       navigate(`/products?${params.toString()}`);
@@ -192,7 +186,7 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", to: "/", icon: HomeIcon },
-    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sale=true", icon: LightningBoltIcon }] : []),
+    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sort=discount", icon: LightningBoltIcon }] : []),
   ];
 
   return (
@@ -252,16 +246,12 @@ const Header = () => {
                 </div>
                 <input
                   type="text"
-                  placeholder="Search, or ask e.g. 'red heels under 3000'"
+                  placeholder="Search, or ask e.g. 'phones under 30000'"
                   value={searchInput}
                   disabled={aiParsing}
                   onChange={(e) => {
                     const val = e.target.value;
                     setSearchInput(val);
-                    // Dynamic search if on products page
-                    if (location.pathname === "/products") {
-                      navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
-                    }
                     // Debounced autocomplete
                     clearTimeout(debounceRef.current);
                     debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
@@ -281,9 +271,6 @@ const Header = () => {
                       setSearchInput("");
                       setSuggestions([]);
                       setShowSuggestions(false);
-                      if (location.pathname === "/products") {
-                        navigate("/products", { replace: true });
-                      }
                     }}
                     className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
                   >
@@ -296,21 +283,21 @@ const Header = () => {
                   <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">
                     {suggestions.map((s) => (
                       <button
-                        key={s._id}
+                        key={s.slug}
                         onClick={() => {
-                          navigate(`/product/${s._id}`);
+                          navigate(`/products/${s.slug}`);
                           setShowSuggestions(false);
                           setSearchInput("");
                         }}
                         className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
                       >
-                        {s.thumbnail && (
-                          <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
+                        {s.image && (
+                          <img src={s.image.thumb} alt="" referrerPolicy="no-referrer" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
                         )}
                         <div className="min-w-0 flex-1">
                           <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
                           <div className="text-xs text-gray-500">
-                            {s.category} — ₹{Math.round(s.price)}
+                            {s.brand} · {formatPrice(s.priceRange?.min ?? s.price)}
                           </div>
                         </div>
                       </button>
@@ -465,15 +452,12 @@ const Header = () => {
                   <input
                     type="text"
                     autoFocus
-                    placeholder="Search, or ask e.g. 'red heels under 3000'"
+                    placeholder="Search, or ask e.g. 'phones under 30000'"
                     value={searchInput}
                     disabled={aiParsing}
                     onChange={(e) => {
                       const val = e.target.value;
                       setSearchInput(val);
-                      if (location.pathname === "/products") {
-                        navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
-                      }
                       clearTimeout(debounceRef.current);
                       debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
                     }}
@@ -490,22 +474,22 @@ const Header = () => {
                     <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">
                       {suggestions.map((s) => (
                         <button
-                          key={s._id}
+                          key={s.slug}
                           onClick={() => {
-                            navigate(`/product/${s._id}`);
+                            navigate(`/products/${s.slug}`);
                             setShowSuggestions(false);
                             setSearchInput("");
                             setIsMobileMenuOpen(false);
                           }}
                           className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
                         >
-                          {s.thumbnail && (
-                            <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
+                          {s.image && (
+                            <img src={s.image.thumb} alt="" referrerPolicy="no-referrer" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
                           )}
                           <div className="min-w-0 flex-1">
                             <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
                             <div className="text-xs text-gray-500">
-                              {s.category} — ₹{Math.round(s.price)}
+                              {s.brand} · {formatPrice(s.priceRange?.min ?? s.price)}
                             </div>
                           </div>
                         </button>

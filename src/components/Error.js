@@ -24,7 +24,7 @@ const AnimStyles = () => (
 export default function Error() {
   const handleSearch = (val) => {
     if (val.trim()) {
-      window.location.href = `/products?search=${encodeURIComponent(val)}`;
+      window.location.href = `/products?q=${encodeURIComponent(val)}`;
     }
   };
 
