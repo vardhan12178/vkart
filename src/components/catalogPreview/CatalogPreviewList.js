@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { findSaved, toggleSaved, wishlistItemFrom } from "./v2Items";
+import { addToCart } from "../../redux/cartSlice";
+import QuickAdd from "./QuickAdd";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
 import {
   FiSmartphone, FiMonitor, FiTablet, FiTv, FiHeadphones, FiWatch, FiDroplet, FiUser, FiShoppingBag,
-  FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiFilter, FiX, FiHeart, FiCheck,
+  FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiFilter, FiX, FiHeart, FiCheck, FiShoppingCart,
 } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { CATEGORIES } from "./catalogData";
@@ -49,7 +51,7 @@ function priceBands(bounds) {
 }
 
 /* ------------ Product card ------------ */
-function Card({ p }) {
+function Card({ p, onChooseOptions }) {
   const dispatch = useDispatch();
   const wishlist = useSelector((s) => s.wishlist);
   const liked = Boolean(findSaved(wishlist, p.slug));
@@ -60,6 +62,18 @@ function Card({ p }) {
   const multi = p.priceRange && p.priceRange.max > p.priceRange.min;
   // Fashion photos are styled shots: fill the frame. Product renders sit on a soft background.
   const fit = p.category === "fashion" ? "object-cover" : "object-contain p-4 mix-blend-multiply";
+  // One variant: straight into the cart. Several (storage, colour, size): pick them in the sheet.
+  const add = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (p.variantCount > 1) return onChooseOptions(p.slug);
+    if (!p.id) return showToast("Ordering works once this site's backend serves the v2 API.", "error");
+    dispatch(addToCart({
+      catalog: "v2", productId: p.id, sku: p.sku, slug: p.slug, title: p.title, price: p.price,
+      thumbnail: img?.md || "", category: p.category, discountPercentage: off || 0, quantity: 1,
+    }));
+    showToast("Added to cart", "success");
+  };
   return (
     <Link to={`/catalog-preview/${p.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[#ebe5da] transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-12px_rgba(29,28,25,0.25)]">
@@ -100,6 +114,11 @@ function Card({ p }) {
             {off > 0 && <span className="text-xs text-[#8b867d] line-through">{formatPrice(p.mrp)}</span>}
           </div>
           {price >= 499 && <p className="mt-0.5 text-[11px] text-green-700">Free delivery</p>}
+          <button type="button" onClick={add} disabled={p.inStock === false}
+            aria-label={`${p.variantCount > 1 ? "Choose options and add" : "Add"} ${p.title} to cart`}
+            className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-[#1d1c19] py-2 text-xs font-bold text-[#1d1c19] transition hover:bg-[#1d1c19] hover:text-white disabled:border-[#d9d2c5] disabled:text-[#a39e94] disabled:hover:bg-transparent sm:text-sm">
+            {p.inStock === false ? "Out of stock" : <><FiShoppingCart /> Add to cart</>}
+          </button>
         </div>
       </div>
     </Link>
@@ -168,6 +187,7 @@ export default function CatalogPreviewList() {
   const [f, setF] = useState(EMPTY);
   const [sort, setSort] = useState("featured");
   const [sheet, setSheet] = useState(false);
+  const [quickSlug, setQuickSlug] = useState(null); // product open in the quick-add sheet
 
   const [data, setData] = useState(null); // last API response
   const [items, setItems] = useState([]); // products across loaded pages
@@ -178,6 +198,7 @@ export default function CatalogPreviewList() {
   const [source, setSource] = useState(getSource());
 
   useEffect(() => onSourceChange(setSource), []);
+  const closeQuick = useCallback(() => setQuickSlug(null), []);
   useEffect(() => { setF(EMPTY); setSort("featured"); }, [category]);
   useEffect(() => { setPage(1); }, [category, f, sort]);
 
@@ -298,7 +319,7 @@ export default function CatalogPreviewList() {
             ) : items.length ? (
               <>
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
-                  {items.map((p) => <Card key={p.slug} p={p} />)}
+                  {items.map((p) => <Card key={p.slug} p={p} onChooseOptions={setQuickSlug} />)}
                 </div>
                 {data && page < data.pages && (
                   <div className="mt-8 flex flex-col items-center gap-2">
@@ -353,6 +374,7 @@ export default function CatalogPreviewList() {
           </div>
         </div>
       )}
+      {quickSlug && <QuickAdd slug={quickSlug} onClose={closeQuick} />}
     </div>
   );
 }

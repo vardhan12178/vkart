@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { findSaved, toggleSaved, wishlistItemFrom } from "./v2Items";
+import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom, variantLabel } from "./v2Items";
 import { addToCart } from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
@@ -173,10 +173,7 @@ export default function CatalogPreviewProduct() {
     return () => { live = false; };
   }, [slug, attempt]);
 
-  const variant = useMemo(
-    () => p && p.variants.find((v) => Object.entries(opts).every(([k, val]) => v.options[k] === val)),
-    [p, opts]
-  );
+  const variant = useMemo(() => matchVariant(p, opts), [p, opts]);
 
   if (status === "loading") {
     return (
@@ -207,17 +204,11 @@ export default function CatalogPreviewProduct() {
   const images = imagesFor(p, opts[p.media.groupBy]);
   const saved = Boolean(findSaved(wishlist, p.slug));
   const off = variant?.discountPercent ?? 0;
-  const available = Boolean(variant && variant.inStock !== false && variant.keySpecs?.available !== false);
+  const available = isAvailable(variant);
 
-  const exists = (name, value) =>
-    p.variants.some((v) => v.options[name] === value &&
-      Object.entries(opts).every(([k, val]) => k === name || v.options[k] === val));
+  const exists = (name, value) => optionExists(p, opts, name, value);
   const pick = (name, value) => {
-    let next = { ...opts, [name]: value };
-    if (!p.variants.some((v) => Object.entries(next).every(([k, val]) => v.options[k] === val))) {
-      next = p.variants.find((v) => v.options[name] === value).options;
-    }
-    setOpts(next);
+    setOpts(pickOption(p, opts, name, value));
     if (name === p.media.groupBy) setImgIdx(0);
     setNotice("");
   };
@@ -229,20 +220,8 @@ export default function CatalogPreviewProduct() {
       setNotice("Ordering works once this site's backend serves the v2 API.");
       return;
     }
-    const label = Object.values(variant.options || {}).filter(Boolean).join(" · ");
-    dispatch(addToCart({
-      catalog: "v2",
-      productId: p.id,
-      sku: variant.sku,
-      slug: p.slug,
-      title: p.title,
-      price: variant.price,
-      thumbnail: images[0]?.md || "",
-      category: p.category,
-      discountPercentage: variant.discountPercent || 0,
-      selectedVariants: label || undefined,
-      quantity: qty,
-    }));
+    const label = variantLabel(variant);
+    dispatch(addToCart(cartLineFrom(p, variant, images[0]?.md, qty)));
     if (kind === "buy") navigate("/cart");
     else showToast(`Added to cart${label ? ` · ${label}` : ""}`, "success");
   };
@@ -319,7 +298,7 @@ export default function CatalogPreviewProduct() {
             </div>
 
             {/* Options */}
-            {p.variantOptions.filter((o) => o.values.length > 1 || !/^(standard|default|one size)$/i.test(o.values[0]?.value || "")).map((o) => {
+            {visibleOptions(p).map((o) => {
               const byImage = o.name === p.media.groupBy && Object.keys(p.media.groups || {}).length > 0;
               return (
                 <div key={o.name} className="mt-6">
