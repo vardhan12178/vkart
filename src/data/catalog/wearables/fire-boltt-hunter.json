@@ -1,0 +1,435 @@
+{
+  "slug": "fire-boltt-hunter",
+  "title": "Fire-Boltt Hunter",
+  "brand": "Fire-Boltt",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-05",
+  "shortDescription": "Fire-Boltt Hunter features a 51mm (2.01-inch) HD Display, Bluetooth calling, 120+ sports modes, voice assistant, IP67 water resistance, and more.",
+  "description": "Fire-Boltt Hunter features a 51mm (2.01-inch) HD Display, Bluetooth calling, 120+ sports modes, voice assistant, IP67 water resistance, and more.",
+  "highlights": [
+    "51mm (2.01-inch) HD Display",
+    "Bluetooth calling",
+    "120+ sports modes",
+    "voice assistant",
+    "IP67 water resistance"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "51mm (2.01-inch) HD Display",
+        "Bluetooth calling",
+        "120+ sports modes",
+        "voice assistant",
+        "IP67 water resistance"
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 2.01,
+    "batteryDays": null,
+    "bluetoothCalling": true,
+    "amoled": false
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Forest Green",
+          "hex": "#2D4938"
+        },
+        {
+          "value": "Dark Blue",
+          "hex": "#203042"
+        },
+        {
+          "value": "Gold Black",
+          "hex": "#242424"
+        },
+        {
+          "value": "Starlight",
+          "hex": "#8F8680"
+        },
+        {
+          "value": "Pink",
+          "hex": "#A15B4E"
+        },
+        {
+          "value": "Grey",
+          "hex": "#5B5B5B"
+        },
+        {
+          "value": "Black",
+          "hex": "#212121"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Forest Green": [
+        {
+          "key": "wearables/fire-boltt-hunter/forest-green-1",
+          "alt": "Fire-Boltt Hunter in Forest Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/forest-green_3f7e0572-4a21-452a-adf5-b81c3b5032dd.png?v=1779097217",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/forest-green-2",
+          "alt": "Fire-Boltt Hunter in Forest Green, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_2c664a96-51fd-4636-a4b6-3fdb9b3daa5e.jpg?v=1779096181",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/forest-green-3",
+          "alt": "Fire-Boltt Hunter in Forest Green, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_c2793cd3-a380-4add-a19a-030664e4db8c.jpg?v=1779096181",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/forest-green-4",
+          "alt": "Fire-Boltt Hunter in Forest Green, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_469fdc1a-523d-48f3-8a21-53974b6bdc92.jpg?v=1779096181",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/forest-green-5",
+          "alt": "Fire-Boltt Hunter in Forest Green, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_292e265a-6d1e-433d-8450-7b0606b18a61.jpg?v=1779096182",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Dark Blue": [
+        {
+          "key": "wearables/fire-boltt-hunter/dark-blue-1",
+          "alt": "Fire-Boltt Hunter in Dark Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/blue_6f929f16-f438-4fd8-b9d5-28864f7cd8de.png?v=1779097217",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/dark-blue-2",
+          "alt": "Fire-Boltt Hunter in Dark Blue, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/1_c6911d30-e96f-4d64-981d-40d3b4d4ba9b.jpg?v=1779096005",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/dark-blue-3",
+          "alt": "Fire-Boltt Hunter in Dark Blue, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_dcdb037d-57d9-4089-9fe2-6184b87755a6.jpg?v=1779096006",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/dark-blue-4",
+          "alt": "Fire-Boltt Hunter in Dark Blue, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_5f82058d-5b04-48b0-865e-7d63d43fe477.jpg?v=1779096005",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/dark-blue-5",
+          "alt": "Fire-Boltt Hunter in Dark Blue, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_ff876a68-e0a8-4d4a-92a1-ebbdee26c8c7.jpg?v=1779096006",
+          "width": 1100,
+          "height": 1100
+        }
+      ],
+      "Gold Black": [
+        {
+          "key": "wearables/fire-boltt-hunter/gold-black-1",
+          "alt": "Fire-Boltt Hunter in Gold Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/gold-black_b6be4e5e-5938-4777-9f22-435d305d98ec.png?v=1779097217",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/gold-black-2",
+          "alt": "Fire-Boltt Hunter in Gold Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/1_0ae79860-54d2-45e8-b90a-be4f8bd572b4.jpg?v=1779095911",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/gold-black-3",
+          "alt": "Fire-Boltt Hunter in Gold Black, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_3e3b6216-bee1-44ce-b52f-033bb4740e9c.jpg?v=1779095911",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/gold-black-4",
+          "alt": "Fire-Boltt Hunter in Gold Black, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_88da0d95-f8b5-4a29-98cd-434d54d2649c.jpg?v=1779095911",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/gold-black-5",
+          "alt": "Fire-Boltt Hunter in Gold Black, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_6a57795d-371c-413f-87e7-0beb1923a09b.jpg?v=1779095911",
+          "width": 1100,
+          "height": 1100
+        }
+      ],
+      "Starlight": [
+        {
+          "key": "wearables/fire-boltt-hunter/starlight-1",
+          "alt": "Fire-Boltt Hunter in Starlight",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/starlight_a13738a3-cd31-40e9-b2fa-877aea8882e6.png?v=1779097217",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/starlight-2",
+          "alt": "Fire-Boltt Hunter in Starlight, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_409f86da-5653-4509-80c7-3160baff5266.jpg?v=1779095731",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/starlight-3",
+          "alt": "Fire-Boltt Hunter in Starlight, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/10_890d94ee-d37a-43fa-a014-ca07f205ad58.jpg?v=1779095731",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/starlight-4",
+          "alt": "Fire-Boltt Hunter in Starlight, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_56d5a990-be42-4764-94e8-3885541f7099.jpg?v=1779095732",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/starlight-5",
+          "alt": "Fire-Boltt Hunter in Starlight, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/17_cb8f4214-d31e-4155-8ed0-b5376b616145.jpg?v=1779095731",
+          "width": 1100,
+          "height": 1100
+        }
+      ],
+      "Pink": [
+        {
+          "key": "wearables/fire-boltt-hunter/pink-1",
+          "alt": "Fire-Boltt Hunter in Pink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/pink_fba36e31-b712-4903-8983-95e391ce2e94.png?v=1779097217",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/pink-2",
+          "alt": "Fire-Boltt Hunter in Pink, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/hunter_pink_2.jpg?v=1779095816",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/pink-3",
+          "alt": "Fire-Boltt Hunter in Pink, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/hunter_pink_3.jpg?v=1779095817",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/pink-4",
+          "alt": "Fire-Boltt Hunter in Pink, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/hunter_pink_4.jpg?v=1779095816",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/pink-5",
+          "alt": "Fire-Boltt Hunter in Pink, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/hunter_pink_5.jpg?v=1779095816",
+          "width": 1100,
+          "height": 1100
+        }
+      ],
+      "Grey": [
+        {
+          "key": "wearables/fire-boltt-hunter/grey-1",
+          "alt": "Fire-Boltt Hunter in Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/grey_874289d3-f19c-40f8-b16a-65b85c0fc1a5.png?v=1779097217",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/grey-2",
+          "alt": "Fire-Boltt Hunter in Grey, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/1_b1cf7183-7361-428e-b758-ec1a8ddc8a61.jpg?v=1779095858",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/grey-3",
+          "alt": "Fire-Boltt Hunter in Grey, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_c49631b3-f5eb-4317-a6dc-8add9a5416fa.jpg?v=1779095858",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/grey-4",
+          "alt": "Fire-Boltt Hunter in Grey, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_cc5914de-6f0b-42bd-865f-2800a42049f5.jpg?v=1779095858",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/grey-5",
+          "alt": "Fire-Boltt Hunter in Grey, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_d5cd2d65-57e6-4d7a-86ac-a2452f72afc7.jpg?v=1779095858",
+          "width": 1100,
+          "height": 1100
+        }
+      ],
+      "Black": [
+        {
+          "key": "wearables/fire-boltt-hunter/black-1",
+          "alt": "Fire-Boltt Hunter in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/black_9389b042-53d0-43bc-91ec-927977b63e98.png?v=1779097216",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/black-2",
+          "alt": "Fire-Boltt Hunter in Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/1_8efe53a4-ba10-48cf-a4d6-c08b015abb8b.jpg?v=1779096079",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/black-3",
+          "alt": "Fire-Boltt Hunter in Black, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_d0f11e9c-4124-4498-8b89-e489789ef029.jpg?v=1779096079",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/black-4",
+          "alt": "Fire-Boltt Hunter in Black, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_be788918-2f60-42e3-8a92-58a7ff2ca2f4.jpg?v=1779096079",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "key": "wearables/fire-boltt-hunter/black-5",
+          "alt": "Fire-Boltt Hunter in Black, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_befa0843-6fb0-48cf-89fd-44212b916fba.jpg?v=1779096079",
+          "width": 1100,
+          "height": 1100
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "FBT-HUNTER-FORESTGREEN",
+      "mpn": null,
+      "options": {
+        "Color": "Forest Green"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-HUNTER-DARKBLUE",
+      "mpn": null,
+      "options": {
+        "Color": "Dark Blue"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-HUNTER-GOLDBLACK",
+      "mpn": null,
+      "options": {
+        "Color": "Gold Black"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-HUNTER-STARLIGHT",
+      "mpn": null,
+      "options": {
+        "Color": "Starlight"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-HUNTER-PINK",
+      "mpn": null,
+      "options": {
+        "Color": "Pink"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-HUNTER-GREY",
+      "mpn": null,
+      "options": {
+        "Color": "Grey"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-HUNTER-BLACK",
+      "mpn": null,
+      "options": {
+        "Color": "Black"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.fireboltt.com/products/grp-hunter"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Fire-Boltt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "slug": "campus-azura-women-s-sneakers",
+  "title": "Campus Azura Women's Sneakers",
+  "brand": "Campus",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sneakers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Main character energy? Secured.",
+  "description": "Main character energy? Secured. The Campus AZURA Women's Sneakers are here for days when your outfit deserves a little extra attention. The sleek full-PVC upper keeps the look clean and put together, while the chunky stylised EVA sole adds height and heaps of personality. Don't let the bold silhouette fool you, though — the EVA sole and Memory Foam insole keep every step oh-so-light, soft, and comfortable. The mauve and peach combo brings playful, feel-good vibes that pair perfectly with oversized tees, co-ords, or your favourite wide-leg denims. Cute, confident, and impossible to overlook.",
+  "highlights": [
+    "Occasion: Everyday",
+    "Insole: Nitrofly Insole",
+    "Upper Material: Pvc+Printing",
+    "Technology: Pilloform"
+  ],
+  "specs": {
+    "Product details": {
+      "Occasion": "Everyday",
+      "Insole": "Nitrofly Insole",
+      "Upper Material": "Pvc+Printing",
+      "Technology": "Pilloform",
+      "Care Instructions": "Wipe with a damp cloth and mild soapy water, then pat dry and air dry naturally. Do not soak, rinse under running water, or expose to direct heat and harsh chemicals"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sneakers",
+    "color": "Mauve",
+    "fabric": "Pvc+Printing",
+    "fit": null,
+    "sizes": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "4"
+        },
+        {
+          "value": "5"
+        },
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Mauve",
+          "hex": "#AB9681"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Mauve": [
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-1",
+          "alt": "Campus Azura Women's Sneakers",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_01.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-2",
+          "alt": "Campus Azura Women's Sneakers, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_02.jpg?v=1792739298",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-3",
+          "alt": "Campus Azura Women's Sneakers, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_03.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-4",
+          "alt": "Campus Azura Women's Sneakers, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_04.webp?v=1792739298",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-5",
+          "alt": "Campus Azura Women's Sneakers, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_05.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-6",
+          "alt": "Campus Azura Women's Sneakers, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_06.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-azura-women-s-sneakers/mauve-7",
+          "alt": "Campus Azura Women's Sneakers, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/AZURA_22L-985_MAUVE-PEACH_07.webp?v=1792739297",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "CMP-AZURAMAUVEEAKERS-4",
+      "mpn": "22L-985-L-MAUVE-PEACH-4",
+      "options": {
+        "Size": "4",
+        "Color": "Mauve"
+      },
+      "price": 1249,
+      "mrp": 1249,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "CMP-AZURAMAUVEEAKERS-5",
+      "mpn": "22L-985-L-MAUVE-PEACH-5",
+      "options": {
+        "Size": "5",
+        "Color": "Mauve"
+      },
+      "price": 1249,
+      "mrp": 1249,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-AZURAMAUVEEAKERS-6",
+      "mpn": "22L-985-L-MAUVE-PEACH-6",
+      "options": {
+        "Size": "6",
+        "Color": "Mauve"
+      },
+      "price": 1249,
+      "mrp": 1249,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-AZURAMAUVEEAKERS-7",
+      "mpn": "22L-985-L-MAUVE-PEACH-7",
+      "options": {
+        "Size": "7",
+        "Color": "Mauve"
+      },
+      "price": 1249,
+      "mrp": 1249,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-AZURAMAUVEEAKERS-8",
+      "mpn": "22L-985-L-MAUVE-PEACH-8",
+      "options": {
+        "Size": "8",
+        "Color": "Mauve"
+      },
+      "price": 1249,
+      "mrp": 1249,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.campusshoes.com/products/azura-mauve-peach-womens-sneakers"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Campus's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

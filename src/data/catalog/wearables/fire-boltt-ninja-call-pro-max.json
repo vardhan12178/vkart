@@ -1,0 +1,440 @@
+{
+  "slug": "fire-boltt-ninja-call-pro-max",
+  "title": "Fire-Boltt Ninja Call Pro Max",
+  "brand": "Fire-Boltt",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-01",
+  "shortDescription": "Fire-Boltt Ninja Call Pro Max — packed with Bluetooth Calling, a vibrant 2.01” HD display, advanced health tracking with SpO₂ and heart rate monitoring, 100+ sports modes, water resistance, in-built games, and everything",
+  "description": "Fire-Boltt Ninja Call Pro Max — packed with Bluetooth Calling, a vibrant 2.01” HD display, advanced health tracking with SpO₂ and heart rate monitoring, 100+ sports modes, water resistance, in-built games, and everything you need to stay connected and active.",
+  "highlights": [
+    "Bluetooth Calling",
+    "a vibrant 2.01” HD display",
+    "advanced health tracking with SpO₂",
+    "heart rate monitoring",
+    "100+ sports modes",
+    "water resistance"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "Bluetooth Calling",
+        "a vibrant 2.01” HD display",
+        "advanced health tracking with SpO₂",
+        "heart rate monitoring",
+        "100+ sports modes",
+        "water resistance",
+        "in-built games",
+        "and everything you need to stay connected",
+        "active."
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 2.01,
+    "batteryDays": null,
+    "bluetoothCalling": true,
+    "amoled": false
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Starlight",
+          "hex": "#948C83"
+        },
+        {
+          "value": "Forest Green",
+          "hex": "#2D4838"
+        },
+        {
+          "value": "Gold Black",
+          "hex": "#252626"
+        },
+        {
+          "value": "Navy Blue",
+          "hex": "#292F3F"
+        },
+        {
+          "value": "Pink",
+          "hex": "#716F6E"
+        },
+        {
+          "value": "Grey",
+          "hex": "#707071"
+        },
+        {
+          "value": "Black",
+          "hex": "#222222"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Starlight": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/starlight-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Starlight",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/starlight.png?v=1778652624",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/starlight-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Starlight, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_51e5fd38-a4ae-406b-bc8f-abf8bb0b2d14.jpg?v=1768972263",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/starlight-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Starlight, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_d43f7c54-6872-473e-8a24-7f6dc7b3787f.jpg?v=1768972263",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/starlight-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Starlight, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_1f659e91-ac02-4209-8513-0a0f374d0ee0.jpg?v=1768972263",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/starlight-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Starlight, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_f810e920-5d3d-43cf-840e-e20ad53eab67.jpg?v=1768972263",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Forest Green": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/forest-green-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Forest Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/forest-green.png?v=1778652624",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/forest-green-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Forest Green, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_b625ea0c-7f93-4d94-b373-a39686aa727b.jpg?v=1768972057",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/forest-green-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Forest Green, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_5b41c45c-02cc-43d6-ba9f-0fbbd0d5c9fc.jpg?v=1768972057",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/forest-green-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Forest Green, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_bf8f587b-00ff-4419-ad16-56fb739c734f.jpg?v=1768972057",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/forest-green-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Forest Green, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_f5347c05-b4a4-4232-af2f-fd4f477381c5.jpg?v=1768972057",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Gold Black": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/gold-black-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Gold Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/gold-black_852b595f-6a9b-4f7c-98bc-25019f9fc6c2.png?v=1778652624",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/gold-black-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Gold Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_e3c1aea5-cce1-49a4-b88c-c07b3e39157e.jpg?v=1778653546",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/gold-black-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Gold Black, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_0d8bc9c8-329e-44ef-a9c2-3a623652dc0b.jpg?v=1778653546",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/gold-black-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Gold Black, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_aaf8fd41-c9c4-4dfd-bc1c-cf9fa7e9d961.jpg?v=1778653546",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/gold-black-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Gold Black, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/6_b1babea9-174a-4621-8235-b32a9c032ec1.jpg?v=1778653546",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Navy Blue": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/navy-blue-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Navy Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/navy.png?v=1778652625",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/navy-blue-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Navy Blue, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_7e1d443d-94ef-4fe2-a532-3ed6552a7b48.jpg?v=1768971838",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/navy-blue-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Navy Blue, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_6e2ca545-91fb-466c-9b15-63b929014fd0.jpg?v=1768971838",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/navy-blue-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Navy Blue, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_71892218-247a-4130-8388-818b9014b074.jpg?v=1768971838",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/navy-blue-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Navy Blue, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_65a74969-37ad-41ba-9996-9514e84d138b.jpg?v=1768971838",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Pink": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/pink-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Pink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/pink_19db667b-4352-4b08-bbf5-56471c5c285b.png?v=1778652624",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/pink-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Pink, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_06be164c-121c-4305-b024-24e269b15b37.jpg?v=1768971669",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/pink-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Pink, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_95a3006a-7e54-42e5-a480-3b736f1043b3.jpg?v=1768971669",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/pink-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Pink, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_e391d962-3362-4918-aece-8a3f8b03cdac.jpg?v=1768971669",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/pink-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Pink, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_678e8cfc-340f-43d8-b191-63df7c64719d.jpg?v=1768971669",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Grey": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/grey-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/grey_fe610d3c-aeb5-4e20-91c2-ecc27e63bcb6.png?v=1778652624",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/grey-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Grey, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_f91a5b60-d70e-4f27-9de8-217fd67a1cc0.jpg?v=1768971495",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/grey-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Grey, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_30d24b55-8349-44f8-924b-1bffc1e5704b.jpg?v=1768971495",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/grey-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Grey, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_57be6027-49e9-4b76-9851-0293a9ea8511.jpg?v=1768971495",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/grey-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Grey, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_dda1fff6-b806-42b5-8747-d9050e09e36f.jpg?v=1768971495",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Black": [
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/black-1",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/black_6ef81212-862c-42ed-b4bf-87551acb209a.png?v=1778652624",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/black-2",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/2_41662a9c-cb65-4eaa-aa51-8375dadb9822.jpg?v=1768971227",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/black-3",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Black, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/3_968f89e7-e2d6-4101-85d7-eadd4d63e63a.jpg?v=1768971227",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/black-4",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Black, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/4_f414f90a-a499-486e-bb19-217345ebb8af.jpg?v=1768971227",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "wearables/fire-boltt-ninja-call-pro-max/black-5",
+          "alt": "Fire-Boltt Ninja Call Pro Max in Black, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0137/0292/2286/files/5_30f801db-aaa6-4efe-ab74-569dfc408554.jpg?v=1768971227",
+          "width": 1500,
+          "height": 1500
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "FBT-NCPMAX-STARLIGHT",
+      "mpn": "128BGS#21",
+      "options": {
+        "Color": "Starlight"
+      },
+      "price": 1199,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-NCPMAX-FORESTGREEN",
+      "mpn": "128BGS#20",
+      "options": {
+        "Color": "Forest Green"
+      },
+      "price": 1199,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-NCPMAX-GOLDBLACK",
+      "mpn": "128BGS#5",
+      "options": {
+        "Color": "Gold Black"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-NCPMAX-NAVYBLUE",
+      "mpn": "128BGS#4",
+      "options": {
+        "Color": "Navy Blue"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-NCPMAX-PINK",
+      "mpn": "128BGS#3",
+      "options": {
+        "Color": "Pink"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-NCPMAX-GREY",
+      "mpn": "128BGS#2",
+      "options": {
+        "Color": "Grey"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "FBT-NCPMAX-BLACK",
+      "mpn": "128BGS#1",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 1399,
+      "mrp": 14999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.fireboltt.com/products/grp-ninja-call-pro-max"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Fire-Boltt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

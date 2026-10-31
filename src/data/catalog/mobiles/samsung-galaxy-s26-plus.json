@@ -1,0 +1,143 @@
+{
+  "slug": "samsung-galaxy-s26-plus",
+  "title": "Samsung Galaxy S26+",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-02",
+  "shortDescription": "6.7-inch 2600-nit AMOLED, Exynos 2600, triple 50MP camera system and 4900 mAh battery in a 190 g body.",
+  "description": "Galaxy S26+ pairs a 6.7-inch Dynamic AMOLED 2X display (120Hz, 2600 nits peak) with the Exynos 2600 processor and Galaxy AI.\n\nThe 50MP Wide camera handles high-resolution photos, the 12MP Ultra Wide covers landscapes and groups, and the 10MP Telephoto adds 3x optical zoom.\n\nIt is 7.3 mm thin and 190 g, framed in Armor Aluminum with Gorilla Glass Victus 2 on both sides and IP68 water resistance. The 4900 mAh battery gives up to 31 hours of video playback.",
+  "highlights": [
+    "6.7-inch Dynamic AMOLED 2X, 120Hz, 2600 nits peak",
+    "Exynos 2600 processor",
+    "50MP Wide + 12MP Ultra Wide + 10MP 3x Telephoto",
+    "4900 mAh battery, up to 31 hours video",
+    "7.3 mm, 190 g, Armor Aluminum, IP68",
+    "Galaxy AI, One UI 8.5"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.7,
+      "type": "Dynamic AMOLED 2X",
+      "refreshRate": 120,
+      "brightness": "2600 nits peak"
+    },
+    "Performance": {
+      "chip": "Exynos 2600"
+    },
+    "Camera": {
+      "rear": "50MP Wide (F1.8) + 12MP Ultra Wide (F2.2) + 10MP Telephoto (F2.4, 3x optical)",
+      "mainMP": 50,
+      "front": "12MP"
+    },
+    "Battery": {
+      "capacityMah": 4900,
+      "videoPlayback": "Up to 31 hours"
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "thicknessMm": 7.3,
+      "weightG": 190,
+      "materials": "Armor Aluminum frame, Gorilla Glass Victus 2 front and back",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android 16, One UI 8.5",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.7,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 12,
+    "batteryMah": 4900,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": 190,
+    "chip": "Exynos 2600",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Pink Gold",
+          "hex": "#E5D3C7"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Pink Gold": [
+        {
+          "key": "mobiles/samsung-galaxy-s26-plus/pink-gold-1",
+          "alt": "Samsung Galaxy S26+ in Pink Gold",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_pinkGold_PC_plus.jpg",
+          "width": 1600,
+          "height": 864
+        },
+        {
+          "key": "mobiles/samsung-galaxy-s26-plus/pink-gold-2",
+          "alt": "Samsung Galaxy S26+ in Pink Gold, view 2",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/images/galaxy-s26-plus-features-colors-viewer-initial-pink-gold.jpg",
+          "width": 1440,
+          "height": 688
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-S947BZDB",
+      "mpn": "SM-S947BZDB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pink Gold"
+      },
+      "price": 134999,
+      "mrp": 149999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-s26/",
+      "https://www.samsung.com/in/smartphones/galaxy-s26/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

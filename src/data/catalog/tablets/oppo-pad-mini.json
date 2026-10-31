@@ -1,0 +1,234 @@
+{
+  "slug": "oppo-pad-mini",
+  "title": "OPPO Pad Mini",
+  "brand": "OPPO",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "OPPO Pad Mini: 22.35 cm AMOLED flexible screen display up to 144Hz, Snapdragon 8 Gen 5, 7820 mAh battery.",
+  "description": "OPPO Pad Mini is OPPO's tablet with a 22.35 cm AMOLED flexible screen display running at up to 144Hz and 2520×1680 Pixels resolution.\n\nIt is powered by Snapdragon 8 Gen 5 with a 7820 mAh battery, and comes in Lavender Purple.",
+  "highlights": [
+    "Snapdragon 8 Gen 5",
+    "22.35 cm AMOLED flexible screen display, up to 144Hz",
+    "2520×1680 Pixels",
+    "7820 mAh battery",
+    "Wi-Fi"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 19.44cm",
+      "Width": "about 13.24cm",
+      "Thickness": "about 0.55cm",
+      "Weight": "about 279g"
+    },
+    "Storage": {
+      "RAM and ROM Capacities": "8GB+256GB",
+      "RAM Type": "LPDDR5X",
+      "ROM Specifications": "UFS 4.1",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "22.35 cm",
+      "Screen Ratio": "92.5%",
+      "Resolution": "2520×1680 Pixels",
+      "Refresh Rate": "60-144Hz Adaptive, Maximum 144Hz",
+      "Touch Sampling Rate": [
+        "Maximum 240Hz",
+        "Default 125Hz"
+      ],
+      "Colour Gamut": [
+        "Standard mode: 100% DCI-P3",
+        "Natural mode: 100% DCI-P3",
+        "Colorful mode: 100% DCI-P3"
+      ],
+      "Colour Depth": "1.07 billion colours(10-bit)",
+      "Pixel Density": "344 PPI",
+      "Brightness": [
+        "Normal brightness: 800 nits(Typical)",
+        "HBM: 1600 nits(Typical)"
+      ],
+      "Panel": "AMOLED flexible screen"
+    },
+    "Camera": {
+      "Rear": "13MP(f/2.2); FOV 81°; 5P lens; PDAF supported",
+      "Front": "8MP(f/2.0); FOV 90°; 4P lens; FF supported",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Night, Panorama, TIME-LAPSE, STICKER, Hypertext, DOC SCANNER",
+        "Front: Photo, Video, TIME-LAPSE, STICKER, Retouch"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "4K video: 30 fps",
+        "1080P video: 30 fps",
+        "720P video: 30 fps",
+        "4K EIS/OIS video: 30 fps",
+        "1080P EIS/OIS video: 30 fps",
+        "720P EIS/OIS video: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "Supports video zoom shooting: up to 10x digital zoom"
+      ],
+      "Front": [
+        "1080P video: 30 fps",
+        "720P video: 30 fps",
+        "1080P EIS video: 30 fps",
+        "720P EIS video: 30 fps",
+        "1080P TIME-LAPSE: 30 fps"
+      ]
+    },
+    "Chips": {
+      "CPU": "Snapdragon® 8 Gen 5 Mobile Platform",
+      "CPU Speed Cores": "8-core",
+      "GPU": "Adreno™829 @ 1225MHz"
+    },
+    "Battery": {
+      "Battery": [
+        "3.92 V",
+        "7820 mAh/30.66 Wh(Rated)",
+        "8000 mAh/31.36 Wh(Typ)"
+      ],
+      "Fast Charge": [
+        "Supports(Max): 67 W SUPERVOOCTM",
+        "Compatible: 65 W and below SUPERVOOCTM, 55 W PPS, 13.5 W PD, 13.5 W QC"
+      ]
+    },
+    "Biometrics": {
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "Front CCT Sensor",
+        "E-compass",
+        "Accelerometer",
+        "Gyroscope",
+        "Hall sensor"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 7 (802.11be) supported",
+        "Wi-Fi 6 (802.11ax) supported",
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported",
+        "Wi-Fi 5GHz 160MHz supported",
+        "2×2 MIMO supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 6.0, Low Energy, BLE Audio",
+      "Bluetooth® Audio Codec": "SBC, AAC, aptX, aptX HD, aptX Adaptive, LDAC, LHDC5.0",
+      "USB Interface": "USB Type-C, USB 3.2 Gen 1",
+      "Earphone Jack": "Type-C headphones, supported Type-C digital headphones, not supported Type-C analog headphones"
+    },
+    "Operating System": {
+      "Os": "ColorOS 16.0"
+    }
+  },
+  "keySpecs": {
+    "processor": "Snapdragon 8 Gen 5",
+    "displayInch": 8.8,
+    "panel": "OLED",
+    "refreshRateHz": 144,
+    "batteryMah": 7820,
+    "ramGB": 8,
+    "storageGB": 256,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lavender Purple",
+          "hex": "#C7B8DB"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lavender Purple": [
+        {
+          "key": "tablets/oppo-pad-mini/lavender-purple-1",
+          "alt": "OPPO Pad Mini in Lavender Purple",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/669fcb0bc0596f205b20fe594d66c18c.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "tablets/oppo-pad-mini/lavender-purple-2",
+          "alt": "OPPO Pad Mini in Lavender Purple, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/b2dd6fec7ad33cdbfb4817180a22443f.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "tablets/oppo-pad-mini/lavender-purple-3",
+          "alt": "OPPO Pad Mini in Lavender Purple, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/ed52c5e0b17de9efd01fa6907298bf9c.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-PADMINI-8256-WF-LAPU",
+      "mpn": "5081110438",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 256GB",
+        "Color": "Lavender Purple"
+      },
+      "price": 94999,
+      "mrp": 94999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "cellular": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Smart Tablet×1",
+    "Charger×1",
+    "Charge Cable×1",
+    "User Guide & Safety And Warranty Booklet×1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/accessories/oppo-pad-mini-matte-display-edition/specs/",
+      "https://www.oppo.com/in/product/pad-mini.P.P1110191"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oppo.com/in spec page; variants, selling price (price), list price (mrp) and images from the OPPO Store India product data."
+  }
+}

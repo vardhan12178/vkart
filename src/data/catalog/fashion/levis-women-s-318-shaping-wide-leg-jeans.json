@@ -1,0 +1,501 @@
+{
+  "slug": "levis-women-s-318-shaping-wide-leg-jeans",
+  "title": "Levi's Women's 318 Shaping Wide Leg Jeans",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "jeans"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Designed with a flattering wide-leg silhouette, the 318 Wide Leg Fit jeans offer an elongated line that elevates the look with relaxed sophistication and comfort.Finished with refined detailing, they deliver a timeless, elevated feel perfec",
+  "description": "Designed with a flattering wide-leg silhouette, the 318 Wide Leg Fit jeans offer an elongated line that elevates the look with relaxed sophistication and comfort.Finished with refined detailing, they deliver a timeless, elevated feel perfect for effortless everyday dressing.",
+  "highlights": [
+    "Fit: Comfortable waist fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Comfortable waist fit"
+    },
+    "Highlights": {
+      "points": [
+        "Wide Leg Fit for a modern look",
+        "Comfortable waist fit",
+        "Perfect for casual chic styling"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Jeans",
+    "color": "Blue",
+    "fabric": null,
+    "fit": "Comfortable waist fit",
+    "sizes": [
+      "25",
+      "26",
+      "27",
+      "28",
+      "30",
+      "32",
+      "34"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "25"
+        },
+        {
+          "value": "26"
+        },
+        {
+          "value": "27"
+        },
+        {
+          "value": "28"
+        },
+        {
+          "value": "30"
+        },
+        {
+          "value": "32"
+        },
+        {
+          "value": "34"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "value": "28"
+        },
+        {
+          "value": "30"
+        },
+        {
+          "value": "32"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blue",
+          "hex": "#D0CFCA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Blue": [
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-1",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_01_Styleshot.jpg?v=1793082993",
+          "width": 1034,
+          "height": 1378
+        },
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-2",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_05_Front.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
+        },
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-3",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_02_Front.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
+        },
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-4",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_03_Back.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
+        },
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-5",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_07_Detail_20.jpg?v=1793082991",
+          "width": 1034,
+          "height": 1378
+        },
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-6",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_06_Detail_20.jpg?v=1793082996",
+          "width": 1034,
+          "height": 1378
+        },
+        {
+          "key": "fashion/levis-women-s-318-shaping-wide-leg-jeans/blue-7",
+          "alt": "Levi's Women's 318 Shaping Wide Leg Jeans, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0031W0030_04_Side.jpg?v=1793082993",
+          "width": 1034,
+          "height": 1378
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-318BLUEWID1W0030-25-L28",
+      "mpn": "5401262280974",
+      "options": {
+        "Size": "25",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-25-L30",
+      "mpn": "5401262280998",
+      "options": {
+        "Size": "25",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-25-L32",
+      "mpn": "5401262281513",
+      "options": {
+        "Size": "25",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-26-L28",
+      "mpn": "5401262281551",
+      "options": {
+        "Size": "26",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-26-L30",
+      "mpn": "5401262281575",
+      "options": {
+        "Size": "26",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-26-L32",
+      "mpn": "5401262281599",
+      "options": {
+        "Size": "26",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-27-L28",
+      "mpn": "5401262282077",
+      "options": {
+        "Size": "27",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-27-L30",
+      "mpn": "5401262282312",
+      "options": {
+        "Size": "27",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-27-L32",
+      "mpn": "5401262282350",
+      "options": {
+        "Size": "27",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-28-L28",
+      "mpn": "5401262282749",
+      "options": {
+        "Size": "28",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-28-L30",
+      "mpn": "5401262282787",
+      "options": {
+        "Size": "28",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-28-L32",
+      "mpn": "5401262283128",
+      "options": {
+        "Size": "28",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-30-L28",
+      "mpn": "5401262283968",
+      "options": {
+        "Size": "30",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-30-L30",
+      "mpn": "5401262284217",
+      "options": {
+        "Size": "30",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-30-L32",
+      "mpn": "5401262284255",
+      "options": {
+        "Size": "30",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-32-L28",
+      "mpn": "5401262284996",
+      "options": {
+        "Size": "32",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-32-L30",
+      "mpn": "5401262285337",
+      "options": {
+        "Size": "32",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-32-L32",
+      "mpn": "5401262285375",
+      "options": {
+        "Size": "32",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-34-L28",
+      "mpn": "5401262286617",
+      "options": {
+        "Size": "34",
+        "Length": "28",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-34-L30",
+      "mpn": "5401262286655",
+      "options": {
+        "Size": "34",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-318BLUEWID1W0030-34-L32",
+      "mpn": "5401262286693",
+      "options": {
+        "Size": "34",
+        "Length": "32",
+        "Color": "Blue"
+      },
+      "price": 4499,
+      "mrp": 4499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/womens-318-blue-wide-leg-fit-mid-rise-jeans-0031w0030"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

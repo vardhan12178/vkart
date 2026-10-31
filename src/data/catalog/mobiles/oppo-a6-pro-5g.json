@@ -1,0 +1,278 @@
+{
+  "slug": "oppo-a6-pro-5g",
+  "title": "OPPO A6 Pro 5G",
+  "brand": "OPPO",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "MediaTek Dimensity 6300, 6.75-inch display up to 120Hz, 7,000 mAh battery with 80W SUPERVOOC charging and a 50MP main camera.",
+  "description": "OPPO A6 Pro 5G runs on the MediaTek Dimensity 6300 with ColorOS 15.0. Its 6.75-inch display up to 120Hz keeps scrolling and games smooth.\n\nThe 7,000 mAh battery with 80W SUPERVOOC charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.",
+  "highlights": [
+    "MediaTek Dimensity 6300",
+    "6.75-inch display up to 120Hz",
+    "7,000 mAh battery with 80W SUPERVOOC charging",
+    "50MP main camera",
+    "ColorOS 15.0"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 16.66cm",
+      "Width": "about 7.85cm",
+      "Thickness": "about 0.86cm",
+      "Weight": "about 216g"
+    },
+    "Storage": {
+      "RAM and ROM Capacities": [
+        "8GB + 128GB",
+        "8GB + 256GB"
+      ],
+      "RAM Type": "LPDDR4X",
+      "ROM Specifications": "UFS 2.2",
+      "Phone Storage Card": "Supported",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "17.15cm",
+      "Screen Ratio": "90.6%",
+      "Resolution": "HD+ 1570 × 720  Pixels",
+      "Refresh Rate": "Maximum: 120Hz",
+      "Touch Sampling Rate": [
+        "Maximum: 240Hz",
+        "Default: 120Hz"
+      ],
+      "Colour Gamut": [
+        "Vivid mode: 83% DCI-P3",
+        "Natural mode: 100% sRGB"
+      ],
+      "Colour Depth": "16.7 million colours (8-bit)",
+      "Pixel Density": "256 PPI",
+      "Brightness": [
+        "Normal brightness: 900nits (Typical)",
+        "HBM: 1125nits (Typical)"
+      ],
+      "Panel": "LCD"
+    },
+    "Camera": {
+      "Rear": [
+        "Wide angle: 50MP; f/1.8; FOV 76°; 5P lens; AF supported",
+        "Monochrome: 2MP; f/2.4; FOV 89°; 3P lens"
+      ],
+      "Front": "16MP; f/2.4; FOV 85°; 4P lens",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Portrait, Night, Panorama, SLO-MO, Dual-view video, TIME-LAPSE, STICKER, HI-RES, Google Lens, Underwater, PRO, DOC SCANNER",
+        "Front: Photo, Video, Portrait, Night, Panorama, Dual-view video, TIME-LAPSE, STICKER, Retouch, Screen Fill Light, HI-RES"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "1080P video: 60fps, 30fps",
+        "720P video: 60fps, 30fps",
+        "720P SLO-MO video: 120fps",
+        "1080P TIME-LAPSE: 30fps",
+        "Supports Dual-view video shooting",
+        "Supports video zoom shooting: up to 10× digital zoom"
+      ],
+      "Front": [
+        "1080P video: 30fps",
+        "720P video: 30fps",
+        "1080P TIME-LAPSE: 30fps",
+        "Supports Dual-view video shooting"
+      ]
+    },
+    "Chips": {
+      "SoC": "MediaTek Dimensity 6300",
+      "CPU": "8 cores",
+      "GPU": "ARM Mali-G57 MC2@1072MHz"
+    },
+    "Battery": {
+      "Battery": [
+        "7000mAh/27.44Wh (Typical)",
+        "6830mAh/26.78Wh (Rated)"
+      ],
+      "Fast Charge": [
+        "Supports (Max): 80W SUPERVOOCTM",
+        "Compatible with: 67W and below SUPERVOOCTM, 33W PPS, 13.5W PD"
+      ]
+    },
+    "Biometrics": {
+      "Fingerprint": "Supported",
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "E-compass",
+        "Accelerometer",
+        "Side fingerprint sensor"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 5.4, Low Energy",
+      "Bluetooth® Audio Codec": "SBC, AAC, LDAC, aptX, aptX HD",
+      "USB Interface": "USB Type-C",
+      "Earphone Jack": "Type-C",
+      "NFC": "Unsupported"
+    },
+    "Operating System": {
+      "Os": "ColorOS 15.0"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.75,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 16,
+    "batteryMah": 7000,
+    "chargingW": 80,
+    "wirelessCharging": false,
+    "is5G": false,
+    "weightG": 216,
+    "chip": "MediaTek Dimensity 6300",
+    "os": "Android",
+    "ramGB": 8
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cappuccino Brown",
+          "hex": "#4C3E3C"
+        },
+        {
+          "value": "Aurora Gold",
+          "hex": "#CEBDA9"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cappuccino Brown": [
+        {
+          "key": "mobiles/oppo-a6-pro-5g/cappuccino-brown-1",
+          "alt": "OPPO A6 Pro 5G in Cappuccino Brown",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/05/Pw1DpwSeCP5BvfYR.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Aurora Gold": [
+        {
+          "key": "mobiles/oppo-a6-pro-5g/aurora-gold-1",
+          "alt": "OPPO A6 Pro 5G in Aurora Gold",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/05/7dZXhY8KO2HjRuHj.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-A6P-8128-CABR",
+      "mpn": "5011110385",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Cappuccino Brown"
+      },
+      "price": 32999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-A6P-8128-AUGO",
+      "mpn": "5011110383",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Aurora Gold"
+      },
+      "price": 32999,
+      "mrp": 52999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-A6P-8256-AUGO",
+      "mpn": "5011110384",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Aurora Gold"
+      },
+      "price": 35999,
+      "mrp": 58999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-A6P-8256-CABR",
+      "mpn": "5011110386",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Cappuccino Brown"
+      },
+      "price": 35999,
+      "mrp": 58999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone × 1",
+    "Charger × 1",
+    "USB Data Cable × 1",
+    "SIM Ejector Tool × 1",
+    "Protective Case × 1",
+    "Quick Guide × 1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/smartphones/series-a/a6-pro-5g/specs/",
+      "https://www.oppo.com/in/product/a6-pro-5g.P.P1110118"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
+  }
+}

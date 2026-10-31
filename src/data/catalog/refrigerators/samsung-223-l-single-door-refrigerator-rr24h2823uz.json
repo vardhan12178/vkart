@@ -1,0 +1,128 @@
+{
+  "slug": "samsung-223-l-single-door-refrigerator-rr24h2823uz",
+  "title": "Samsung 223 L Single Door Refrigerator RR24H2823UZ",
+  "brand": "Samsung",
+  "category": "refrigerators",
+  "categoryPath": [
+    "home-appliances",
+    "refrigerators"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Online 223 L Single Door Refrigerator With Bespoke Ai Rr24H2823Uz/Nl ,Explore Specs, Features, And Purchasing Information & Shop Refrigerators At Samsung India.\n",
+  "description": "Online 223 L Single Door Refrigerator With Bespoke Ai Rr24H2823Uz/Nl ,Explore Specs, Features, And Purchasing Information & Shop Refrigerators At Samsung India.\n",
+  "highlights": [
+    "223 L capacity",
+    "Single Door",
+    "3-star energy rating",
+    "Inverter"
+  ],
+  "specs": {
+    "Specifications": {
+      "Net Width": "55.0 cm",
+      "Net Case Height with Hinge": "1.52 m",
+      "Net Depth with Door Handle": "66.50 cm",
+      "Net Weight (kg)": "36.6 kg",
+      "Cooling Type": "Direct Cooling",
+      "Net Total(Liter)": "223 L",
+      "Net for Freezer(Liter)": "18 L",
+      "Net for Fridge(Liter)": "205 L",
+      "Net Dimension (WxHxD)": "55.0 cm x 1.52 m x 66.50 cm",
+      "Net Case Height without Hinge": "1.52 m",
+      "Net Depth without Door": "54.0 cm",
+      "Net Depth with Refrigerator Door Open 90°": "1.08 m",
+      "Packing Dimension (WxHxD)": "58.30 cm x 1.58 m x 70.50 cm",
+      "Net Weight": "36.6 kg",
+      "Packing Weight(kg)": "40.6 kg",
+      "20/40/40H (Container)": "30/60/76 EA",
+      "No Frost": "No",
+      "Multi Flow": "No",
+      "Number of Shelf (Total)": "3 EA",
+      "Shelf Material": "Glass",
+      "Fresh room": "Yes",
+      "Number of Vegetable&Fruit Drawer": "1 EA",
+      "Material of Vegetable&Fruit Drawer": "Transparent (GPPS)",
+      "Number of Door Pocket": "6 EA",
+      "Door Pocket Type": "Transparent",
+      "Big Guards": "Yes",
+      "Egg Container(Egg Tray)": "Yes",
+      "Interior LED Light": "LED",
+      "Icemaker": "Ice Tray",
+      "Cyclopentane Insulation": "Yes",
+      "Lock & Key": "Yes",
+      "Compressor": "Digital Inverter Comperssor",
+      "Refrigerant": "R-600a",
+      "Display Type": "Knob",
+      "Door Handle": "Bar",
+      "Colour": "Midnight Blossom Blue",
+      "Base Stand Drawer": "Yes",
+      "Energy Star Rating": "3 Star",
+      "Free Standing": "Yes",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "capacityL": 223,
+    "type": "Single Door",
+    "starRating": 3,
+    "inverter": true,
+    "convertible": false
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blue"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "key": "refrigerators/samsung-223-l-single-door-refrigerator-rr24h2823uz/common-1",
+        "alt": "Samsung 223 L Single Door Refrigerator RR24H2823UZ",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rr24h2823uz-nl/gallery/in-oen-door-stylish-crown-design-580292-rr24h2823uz-nl-thumb-551095716?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "refrigerators/samsung-223-l-single-door-refrigerator-rr24h2823uz/common-2",
+        "alt": "Samsung 223 L Single Door Refrigerator RR24H2823UZ, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rr24h2823uz-nl/gallery/in-oen-door-stylish-crown-design-580292-rr24h2823uz-nl-551095715?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-RR24H2823UZ",
+      "mpn": "RR24H2823UZ",
+      "options": {
+        "Color": "Blue"
+      },
+      "price": 20490,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/refrigerators/one-door/rr1500mh-oen-door-stylish-crown-design-223l-blue-rr24h2823uz-nl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

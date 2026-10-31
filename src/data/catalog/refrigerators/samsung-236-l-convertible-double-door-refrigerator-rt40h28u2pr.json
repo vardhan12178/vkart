@@ -1,0 +1,134 @@
+{
+  "slug": "samsung-236-l-convertible-double-door-refrigerator-rt40h28u2pr",
+  "title": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR",
+  "brand": "Samsung",
+  "category": "refrigerators",
+  "categoryPath": [
+    "home-appliances",
+    "refrigerators"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Online 236 L Double Door Refrigerator With Bespoke Ai Rt40H28U2Prhl ,Explore Specs, Features, And Purchasing Information & Shop Refrigerators At Samsung India.\n",
+  "description": "Online 236 L Double Door Refrigerator With Bespoke Ai Rt40H28U2Prhl ,Explore Specs, Features, And Purchasing Information & Shop Refrigerators At Samsung India.\n",
+  "highlights": [
+    "236 L capacity",
+    "Convertible",
+    "2-star energy rating",
+    "Inverter",
+    "Convertible modes"
+  ],
+  "specs": {
+    "Specifications": {
+      "Net Total(Liter)": "236 L",
+      "Net Dimension (WxHxD)": "55.50 cm x 1.54 m x 65.70 cm",
+      "Net Width": "55.50 cm",
+      "Net Case Height with Hinge": "1.54 m",
+      "Net Depth with Door Handle": "65.70 cm",
+      "Net Weight (kg)": "50 kg",
+      "Net for Freezer(Liter)": "53 L",
+      "Net for Refrigerator(Liter)": "183 L",
+      "Net Height(mm)": "1.54 m",
+      "Net Case Height without Hinge": "1.53 m",
+      "Net Depth without Door Handle": "65.70 cm",
+      "Net Depth without Door": "57.20 cm",
+      "Packing Dimension (WxHxD)": "60.60 cm x 1.63 m x 70.0 cm",
+      "Net Weight": "50 kg",
+      "Packing Weight(kg)": "54 kg",
+      "Smart Conversion": "2-in-1",
+      "Power Cool Function": "Yes",
+      "Power Freeze Function": "Yes",
+      "Cooling Type": "All Around Cooling",
+      "Deodorizer": "No",
+      "Number of Shelf (Total)": "1 EA",
+      "Shelf Material": "Glass",
+      "Number of Vegetable&Fruit Drawer": "1 EA",
+      "Number of Door Pocket": "2 EA",
+      "Egg Container(Egg Tray)": "Yes",
+      "Interior LED Light": "Top LED",
+      "Icemaker": "Twist Ice Maker",
+      "Material of Shelf": "Coolpack",
+      "Refrigerant": "R-600a",
+      "Compressor": "Digital Inverter Comperssor",
+      "Door Type": "Flat Door",
+      "Display Type": "Internal",
+      "Door Handle": "Recess",
+      "Colour": "PARADISE BLOOM PURPLE",
+      "Climate Class": "T",
+      "Energy Star Rating": "2 Star",
+      "Construction": "Free Standing",
+      "Wi-Fi Embedded": "No",
+      "Camera": "No",
+      "Bluetooth": "No",
+      "Mobile Bixby": "No",
+      "Set Bixby (Mic)": "No",
+      "Speaker": "No",
+      "SmartThings App Support": "No",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "capacityL": 236,
+    "type": "Convertible",
+    "starRating": 2,
+    "inverter": true,
+    "convertible": true
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Purple"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "key": "refrigerators/samsung-236-l-convertible-double-door-refrigerator-rt40h28u2pr/common-1",
+        "alt": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt40h28u2prhl/gallery/in-rt40h28u2-236-l-convertible-double-door-refrigerator-rt40h28u2p-rt40h28u2prhl-thumb-551001720?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "refrigerators/samsung-236-l-convertible-double-door-refrigerator-rt40h28u2pr/common-2",
+        "alt": "Samsung 236 L Convertible Double Door Refrigerator RT40H28U2PR, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt40h28u2prhl/gallery/in-rt40h28u2-236-l-convertible-double-door-refrigerator-rt40h28u2p-rt40h28u2prhl-551001719?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-RT40H28U2PR",
+      "mpn": "RT40H28U2PR",
+      "options": {
+        "Color": "Purple"
+      },
+      "price": 34390,
+      "mrp": 43999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/refrigerators/double-door/convertible-double-door-refrigerator-236l-paradise-bloom-purple-rt40h28u2prhl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "slug": "vivo-y31",
+  "title": "vivo Y31 5G",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025",
+  "shortDescription": "Snapdragon 4 Gen 2, 6.68-inch display, 6,500 mAh battery and a 50MP main camera.",
+  "description": "vivo Y31 5G runs on the Snapdragon 4 Gen 2 with Funtouch OS 15. Its 6.68-inch display keeps scrolling and video smooth.\n\nThe 6,500 mAh battery lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "Snapdragon 4 Gen 2",
+    "6.68-inch display",
+    "6,500 mAh battery",
+    "50MP main camera",
+    "Funtouch OS 15"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Snapdragon 4 Gen 2",
+      "RAM": [
+        "4 GB",
+        "6 GB"
+      ],
+      "Storage": [
+        "128 GB",
+        "256 GB"
+      ],
+      "Battery": "6500 mAh (TYP)",
+      "Fingerprint Sensor": "Side-mounted capacitive fingerprint sensor",
+      "Color": [
+        "Blush Red",
+        "Royal Red",
+        "Prism Green",
+        "Coral Green"
+      ],
+      "Operating System": "Funtouch OS 15"
+    },
+    "Display": {
+      "Size": "16.96 cm  (6.68 inches)",
+      "Resolution": "1608 × 720",
+      "Type": "LCD",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear 50 MP + 0.08 MP",
+        "Front 8 MP"
+      ],
+      "Aperture": "Front f/2.0 (8 MP), Rear f/1.8 (50 MP) + f/3.0 (0.08 MP)",
+      "Flash": "Rear flash",
+      "Scene Modes": [
+        "Rear: Photo, Night, Portrait, Video, Live Photo, Slo-mo, Time-lapse, Pro, Pano, Documents, 50 MP, Underwater Photography",
+        "Front: Photo, Night, Portrait, Video, Live Photo"
+      ]
+    },
+    "Build": {
+      "Dimensions": "16.614 × 7.701 × 0.839 cm",
+      "Weight": "209g"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4 GHz / 5 GHz",
+      "Bluetooth": "Bluetooth 4.2",
+      "USB": "USB 2.0",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.68,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 8,
+    "batteryMah": 6500,
+    "chargingW": null,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 209,
+    "chip": "Snapdragon 4 Gen 2",
+    "os": "Android",
+    "ramGB": 4
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "4GB + 128GB"
+        },
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "6GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blush Red",
+          "hex": "#A1666D"
+        },
+        {
+          "value": "Coral Green",
+          "hex": "#476F72"
+        },
+        {
+          "value": "Royal Red",
+          "hex": "#A1666D"
+        },
+        {
+          "value": "Prism Green",
+          "hex": "#476F72"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Blush Red": [
+        {
+          "key": "mobiles/vivo-y31/blush-red-1",
+          "alt": "vivo Y31 5G in Blush Red",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057462444/687e7762eef3a4561f4cc587ec59af3b.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-y31/blush-red-2",
+          "alt": "vivo Y31 5G in Blush Red, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985106146/1e0a6830c6867457a9a50d4913dab26e.jpg",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Coral Green": [
+        {
+          "key": "mobiles/vivo-y31/coral-green-1",
+          "alt": "vivo Y31 5G in Coral Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057476743/6b3778335f7d38234e249df80542cea8.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-y31/coral-green-2",
+          "alt": "vivo Y31 5G in Coral Green, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985571607/6f42a81178bddc3b63f606dfa2a86987.jpg",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Royal Red": [
+        {
+          "key": "mobiles/vivo-y31/royal-red-1",
+          "alt": "vivo Y31 5G in Royal Red",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783068928329/d011d479d5d65f197dec53c3daddf02d.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-y31/royal-red-2",
+          "alt": "vivo Y31 5G in Royal Red, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783069273705/5c72b52c3d6c12b88b1f33df874b4cfa.jpg",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Prism Green": [
+        {
+          "key": "mobiles/vivo-y31/prism-green-1",
+          "alt": "vivo Y31 5G in Prism Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1783057609569/d5de01f999a332d49d6c15669097ad54.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-y31/prism-green-2",
+          "alt": "vivo Y31 5G in Prism Green, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1782985536703/aaa3bd639f945be6c2ca1d5ce5ced831.jpg",
+          "width": 2000,
+          "height": 2000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-Y315G-4128-BLRE",
+      "mpn": "5675268",
+      "options": {
+        "Storage": "4GB + 128GB",
+        "Color": "Blush Red"
+      },
+      "price": 19999,
+      "mrp": 19999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 4,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-Y315G-4128-COGR",
+      "mpn": "5675267",
+      "options": {
+        "Storage": "4GB + 128GB",
+        "Color": "Coral Green"
+      },
+      "price": 19999,
+      "mrp": 19999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 4,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6128-BLRE",
+      "mpn": "5675391",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Blush Red"
+      },
+      "price": 27999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6128-RORE",
+      "mpn": "5675392",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Royal Red"
+      },
+      "price": 27999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6128-PRGR",
+      "mpn": "5675393",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Prism Green"
+      },
+      "price": 27999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6128-COGR",
+      "mpn": "5675390",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Coral Green"
+      },
+      "price": 27999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6256-BLRE",
+      "mpn": "5675274",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Blush Red"
+      },
+      "price": 31999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6256-RORE",
+      "mpn": "5675276",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Royal Red"
+      },
+      "price": 31999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6256-PRGR",
+      "mpn": "5675275",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Prism Green"
+      },
+      "price": 31999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-Y315G-6256-COGR",
+      "mpn": "5675273",
+      "options": {
+        "Storage": "6GB + 256GB",
+        "Color": "Coral Green"
+      },
+      "price": 31999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "USB Cable",
+    "Charger",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10359"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

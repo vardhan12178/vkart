@@ -1,0 +1,384 @@
+{
+  "slug": "hp-victus-15",
+  "title": "HP Victus 15",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Value gaming laptop: 15.6-inch FHD high-refresh display, Intel Core or AMD Ryzen with NVIDIA GeForce RTX graphics.",
+  "description": "HP Victus 15 is HP's value gaming laptop, with a 15.6-inch FHD display and NVIDIA GeForce RTX graphics.\n\nChoose Intel Core or AMD Ryzen processors with up to 16GB of DDR5 memory, in Mica silver or Performance blue.",
+  "highlights": [
+    "15.6-inch FHD display",
+    "Intel Core or AMD Ryzen H-series",
+    "NVIDIA GeForce RTX graphics",
+    "Up to 16GB DDR5, 512GB SSD",
+    "Fast charge: about 50% in 30 minutes",
+    "Mica silver or Performance blue"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "AMD Ryzen 7 processor",
+      "Processor": "AMD Ryzen 7 7445HS (up to 4.7 GHz max boost clock, 16 MB L3 cache, 6 cores, 12 threads)",
+      "Chipset": "AMD integrated SoC",
+      "Processor cache": "16 MB L3",
+      "Processor core": "6"
+    },
+    "Memory": {
+      "Memory": "8 GB DDR5-5600 MT/s (1 x 8 GB)",
+      "Memory Note": "Transfer rates up to 5600 MT/s.",
+      "Memory layout (slots \\u0026 size)": "1 x 8 GB",
+      "Memory and storage": "8 GB memory;512 GB SSD storage"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "35.79 x 25.5 x 2.35 cm"
+    },
+    "Display Specifications": {
+      "Touchscreen": "No",
+      "Display": "39.6 cm (15.6\") diagonal FHD display",
+      "Flicker-free": "Yes",
+      "Aspect ratio": "16:9",
+      "Screen-to-body ratio (without speakers)": "82.23%",
+      "Color gamut": "62.5% sRGB",
+      "Brightness": "300 nits"
+    },
+    "Weights": {
+      "Weight": "2.29 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (discrete)": "NVIDIA GeForce RTX 3050 Laptop GPU (6 GB GDDR6 dedicated)",
+      "Graphics": "Discrete"
+    },
+    "Connectivity and Communications": {
+      "Ports": "1 USB Type-A 5Gbps signaling rate (HP Sleep and Charge); 1 USB Type-A 5Gbps signaling rate; 1 AC smart pin; 1 HDMI 2.1; 1 headphone/microphone combo; 1 RJ-45; 1 USB Type-C 5Gbps signaling rate (DisplayPort 1.4a, HP Sleep and Charge)",
+      "Wireless": "Realtek Wi-Fi 6 (2x2) and Bluetooth 5.4 wireless card",
+      "Network interface": "Integrated 10/100/1000 GbE LAN",
+      "Wireless Note": "Miracast compatible;HP Extended Range Wireless LAN"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "DTS:X Ultra;Dual speakers;HP Audio Boost",
+      "Keyboard": "Full-size, backlit, moonstone gray keyboard with numeric keypad",
+      "Pointing device": "HP Imagepad;Precision Touchpad support"
+    },
+    "Appearance": {
+      "Product color": "Mica silver, black chrome logo",
+      "Product design": "Paint finish",
+      "Color": "Mica silver"
+    },
+    "Battery and Power": {
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 30 minutes",
+      "Battery type": "3-cell, 52.5 Wh Li-ion polymer",
+      "Power supply type": "120 W AC power adapter"
+    },
+    "Security Management": {
+      "Security management": "Trusted Platform Module (Firmware TPM) support"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "512 GB PCIe Gen4 NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    },
+    "Camera Specifications": {
+      "Camera": "HP Wide Vision 720p HD camera with temporal noise reduction and integrated dual array digital microphones"
+    }
+  },
+  "keySpecs": {
+    "processor": "AMD Ryzen 7 7445HS",
+    "gpu": "NVIDIA GeForce RTX 3050 6GB",
+    "displayInch": 15.6,
+    "panel": "IPS",
+    "refreshRateHz": null,
+    "weightKg": 2.29,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Ryzen 7 7445HS · RTX 3050 6GB · 8GB · 512GB"
+        },
+        {
+          "value": "Ryzen 7 7445HS · RTX 3050 6GB · 12GB · 512GB"
+        },
+        {
+          "value": "Core i5-14500HX · RTX 3050 6GB · 16GB · 1TB"
+        },
+        {
+          "value": "Core 7 230H · RTX 3050 6GB · 16GB · 512GB"
+        },
+        {
+          "value": "Ryzen 7 7445H · RTX 4050 6GB · 16GB · 512GB"
+        },
+        {
+          "value": "Core 7 240H · RTX 5050 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Ryzen 7 260 · RTX 5050 8GB · 16GB · 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Mica silver",
+          "hex": "#616264"
+        },
+        {
+          "value": "Performance blue",
+          "hex": "#3F5266"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Mica silver": [
+        {
+          "key": "laptops/hp-victus-15/mica-silver-5",
+          "alt": "HP Victus 15 in Mica silver, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuopihr_15_micasilver_nonodd_nonfpr_coreset_leftprofile_4794509_1_1.png?store=in-en&image-type=image",
+          "width": 1600,
+          "height": 1600
+        },
+        {
+          "key": "laptops/hp-victus-15/mica-silver-6",
+          "alt": "HP Victus 15 in Mica silver, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-micasilver-en-annotated-img-5_1_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        },
+        {
+          "key": "laptops/hp-victus-15/mica-silver-7",
+          "alt": "HP Victus 15 in Mica silver, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-micasilver-in-annotated-img-6_1_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        }
+      ],
+      "Performance blue": [
+        {
+          "key": "laptops/hp-victus-15/performance-blue-1",
+          "alt": "HP Victus 15 in Performance blue",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_front_4794511.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-victus-15/performance-blue-2",
+          "alt": "HP Victus 15 in Performance blue, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_frontright_4794808.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-victus-15/performance-blue-3",
+          "alt": "HP Victus 15 in Performance blue, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_rokuophir_15_performance-blue_nonfpr_core-set_frontleft_4794512.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-victus-15/performance-blue-5",
+          "alt": "HP Victus 15 in Performance blue, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/2/22c1-25c1_victus_rokuophir_15_performanceblue_nonodd_nonfpr_coreset_leftprofile_4794807.png?store=in-en&image-type=image",
+          "width": 1600,
+          "height": 1600
+        },
+        {
+          "key": "laptops/hp-victus-15/performance-blue-6",
+          "alt": "HP Victus 15 in Performance blue, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/2/22c1-25c1_victus_rokuophir_15_performanceblue_nonodd_nonfpr_coreset_rightprofile_4794510.png?store=in-en&image-type=image",
+          "width": 1600,
+          "height": 1600
+        },
+        {
+          "key": "laptops/hp-victus-15/performance-blue-7",
+          "alt": "HP Victus 15 in Performance blue, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-performanceblue-en-annotated-img-5_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        },
+        {
+          "key": "laptops/hp-victus-15/performance-blue-8",
+          "alt": "HP Victus 15 in Performance blue, view 8",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1-victus-by-hp-15.6-roku-opihr-performance-blue-in-annotated-img-6_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-E20RPPA",
+      "mpn": "E20RPPA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 7 7445HS · RTX 3050 6GB · 8GB · 512GB",
+        "Color": "Mica silver"
+      },
+      "price": 99999,
+      "mrp": 105780,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 7 7445HS",
+        "gpu": "NVIDIA GeForce RTX 3050 6GB",
+        "touch": false,
+        "model": "15-fb3383AX"
+      }
+    },
+    {
+      "sku": "HP-E20RNPA",
+      "mpn": "E20RNPA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 7 7445HS · RTX 3050 6GB · 12GB · 512GB",
+        "Color": "Mica silver"
+      },
+      "price": 109999,
+      "mrp": 113835,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 7 7445HS",
+        "gpu": "NVIDIA GeForce RTX 3050 6GB",
+        "touch": false,
+        "model": "15-fb3382AX"
+      }
+    },
+    {
+      "sku": "HP-DQ1H5PA",
+      "mpn": "DQ1H5PA#ACJ",
+      "options": {
+        "Configuration": "Core i5-14500HX · RTX 3050 6GB · 16GB · 1TB",
+        "Color": "Mica silver"
+      },
+      "price": 119999,
+      "mrp": 153399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core i5-14500HX",
+        "gpu": "NVIDIA GeForce RTX 3050 6GB",
+        "touch": false,
+        "model": "15-fa2688TX"
+      }
+    },
+    {
+      "sku": "HP-E26Q2PA",
+      "mpn": "E26Q2PA#ACJ",
+      "options": {
+        "Configuration": "Core 7 230H · RTX 3050 6GB · 16GB · 512GB",
+        "Color": "Mica silver"
+      },
+      "price": 124999,
+      "mrp": 129159,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core 7 230H",
+        "gpu": "NVIDIA GeForce RTX 3050 6GB",
+        "touch": false,
+        "model": "15-fa3006TX"
+      }
+    },
+    {
+      "sku": "HP-E20RQPA",
+      "mpn": "E20RQPA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 7 7445H · RTX 4050 6GB · 16GB · 512GB",
+        "Color": "Performance blue"
+      },
+      "price": 134999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 7 7445H",
+        "gpu": "NVIDIA GeForce RTX 4050 6GB",
+        "touch": false,
+        "model": "15-fb3385AX"
+      }
+    },
+    {
+      "sku": "HP-DQ1H6PA",
+      "mpn": "DQ1H6PA#ACJ",
+      "options": {
+        "Configuration": "Core 7 240H · RTX 5050 8GB · 16GB · 1TB",
+        "Color": "Performance blue"
+      },
+      "price": 149999,
+      "mrp": 208811,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core 7 240H",
+        "gpu": "NVIDIA GeForce RTX 5050 8GB",
+        "touch": false,
+        "model": "15-fa2689TX"
+      }
+    },
+    {
+      "sku": "HP-DQ1H7PA",
+      "mpn": "DQ1H7PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 7 260 · RTX 5050 8GB · 16GB · 512GB",
+        "Color": "Mica silver"
+      },
+      "price": 150000,
+      "mrp": 197821,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 7 260",
+        "gpu": "NVIDIA GeForce RTX 5050 8GB",
+        "touch": false,
+        "model": "15-fb3096AX"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fb3383ax-e20rppa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fb3382ax-e20rnpa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fa2688tx-dq1h5pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fa3006tx-e26q2pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fb3385ax-e20rqpa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fa2689tx-dq1h6pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/victus-gaming-laptop-15-fb3096ax-dq1h7pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "slug": "samsung-43-inch-f5600f-fhd-smart-tv",
+  "title": "Samsung 43\" F5600F FHD Smart TV",
+  "brand": "Samsung",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "New & Latest Samsung 43F5650FU 1.08 (43) HD TV F5600F FHD Smart TV (2026) with Vision AI, HDR, Samsung Tizen OS & Samsung Knox Security.\n",
+  "description": "New & Latest Samsung 43F5650FU 1.08 (43) HD TV F5600F FHD Smart TV (2026) with Vision AI, HDR, Samsung Tizen OS & Samsung Knox Security.\n",
+  "highlights": [
+    "43-inch 1920 x 1080",
+    "Hyper Real",
+    "HDR: HDR",
+    "20W sound",
+    "Tizen™ Smart TV"
+  ],
+  "specs": {
+    "Specifications": {
+      "Resolution": "1920 x 1080",
+      "HDMI": "2",
+      "USB": "1 x USB-A",
+      "Screen Size": "1.08 m",
+      "Picture Engine": "Hyper Real",
+      "HDR (High Dynamic Range)": "HDR",
+      "HDR 10+": "Support",
+      "Contrast": "Mega Contrast",
+      "Contrast Enhancer": "Contrast Enhancer",
+      "Object Tracking Sound": "OTS Lite",
+      "Q-Symphony": "Yes",
+      "Sound Output (RMS)": "20 W",
+      "Speaker Type": "2ch",
+      "Adaptive Sound": "Adaptive Sound",
+      "Operating System": "Tizen™ Smart TV",
+      "Bixby": "Yes",
+      "Works with AI Speaker": "Alexa (IN Only), Google Assistant (IN Only)",
+      "Samsung TV Plus": "Yes",
+      "Multi Device Experience": "Mobile to TV, Sound Mirroring, Wireless TV On",
+      "Apple AirPlay": "Yes",
+      "Digital Broadcasting": "DVB-T2CS2",
+      "Analog Tuner": "Yes",
+      "HDMI Audio Return Channel": "eARC",
+      "Design": "Slim Look",
+      "Bezel Type": "3 Bezel-less",
+      "Front Colour": "Black",
+      "Stand Color": "Black",
+      "Accessibillity - Voice Guide": "English (UK), Hindi (India)",
+      "Low Vision Support": "Audio Description, Zoom Menu and Text, High Contrast, SeeColors, Grayscale, Auto Picture Off",
+      "Hearing Impaired Support": "Closed Caption (Subtitle), Multi-output Audio, Sign Language Zoom",
+      "Motor Impaired Support": "Slow Button Repeat, Remote Control App. for All",
+      "Power Supply": "AC220-240 V~ 50/60 Hz",
+      "Energy Efficiency Class": "5",
+      "Package Size (WxHxD)": "1.06 m x 63.60 cm x 12.40 cm",
+      "Set Size without Stand (WxHxD)": "95.45 cm x 56.23 cm x 8.38 cm",
+      "VESA Spec": "20.0 cm x 20.0 cm",
+      "Remote Controller Model": "TM2280A",
+      "User Manual": "Yes",
+      "Power Cable": "Yes",
+      "Manufactured by": "Radiant Appliances and Electronics Pvt. Ltd. Survey No.111,112, S-2 A1, Ecity, Fabcity,Maheshwaram Mandal,Raviryala village, Ranga Reddy. Telangana-501141",
+      "Country of Origin": "India",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 43,
+    "resolution": "1920 x 1080",
+    "refreshRateHz": null,
+    "panel": null,
+    "os": "Tizen™ Smart TV",
+    "soundW": 20,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "43\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "tvs/samsung-43-inch-f5600f-fhd-smart-tv/common-1",
+        "alt": "Samsung 43\" F5600F FHD Smart TV",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ua43f5600fuxxl/gallery/in-1-08-m-43-hd-tv-f6000f-fhd-smart-tv-2026-ua43f5600fuxxl-thumb-554200441?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "tvs/samsung-43-inch-f5600f-fhd-smart-tv/common-2",
+        "alt": "Samsung 43\" F5600F FHD Smart TV, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ua43f5600fuxxl/gallery/in-1-08-m-43-hd-tv-f6000f-fhd-smart-tv-2026-ua43f5600fuxxl-554200440?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-43F5600FU",
+      "mpn": "43F5600FU",
+      "options": {
+        "Size": "43\""
+      },
+      "price": 27500,
+      "mrp": 30900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/tvs/full-hd-tv/f6000f-43-inch-ua43f5600fuxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

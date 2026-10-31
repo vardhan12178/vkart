@@ -1,0 +1,413 @@
+{
+  "slug": "levis-511-slim-fit-commuter-jeans",
+  "title": "Levi's 511 Slim Fit Commuter Jeans",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "jeans"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "A modern slim with room to move, the slim fit commuter jeans are a classic, you can wear with anything.",
+  "description": "A modern slim with room to move, the slim fit commuter jeans are a classic, you can wear with anything. Complete your casual wardrobe with a splash of style with these slim fit jeans from Levi's. Cut in a cotton fabric with the right amount of stretch, these light blue jeans in solid pattern can be paired with most things to create a super cool outfit.",
+  "highlights": [
+    "Fit: Slim Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Slim Fit"
+    },
+    "Highlights": {
+      "points": [
+        "These jeans sit mid waist with a slim fit from hip to ankle.",
+        "It is woven, with a hint of stretch, to deliver maximum comfort.",
+        "Cut close to the body, the slim is a great alternative to the skinny jeans."
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Jeans",
+    "color": "Light Blue",
+    "fabric": null,
+    "fit": "Slim Fit",
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "28"
+        },
+        {
+          "value": "30"
+        },
+        {
+          "value": "32"
+        },
+        {
+          "value": "34"
+        },
+        {
+          "value": "36"
+        },
+        {
+          "value": "38"
+        },
+        {
+          "value": "40"
+        },
+        {
+          "value": "42"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "value": "32"
+        },
+        {
+          "value": "34"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Light Blue",
+          "hex": "#D0CFCB"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Light Blue": [
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-1",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_01_Styleshot.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-2",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_04_SIde.jpg?v=1792061378",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-3",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_05_Front.jpg?v=1792061378",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-4",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_07_Detail_20.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-5",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_08_Detail_20.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-6",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_06_Detail_20.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-7",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_03_Back.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-511-slim-fit-commuter-jeans/light-blue-8",
+          "alt": "Levi's 511 Slim Fit Commuter Jeans, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/0069Z0004_02_Front.jpg?v=1792061377",
+          "width": 1034,
+          "height": 1376
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-28-L32",
+      "mpn": "5401268236784",
+      "options": {
+        "Size": "28",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-30-L32",
+      "mpn": "5401268239327",
+      "options": {
+        "Size": "30",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-30-L34",
+      "mpn": "5401268239341",
+      "options": {
+        "Size": "30",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-32-L32",
+      "mpn": "5401268242006",
+      "options": {
+        "Size": "32",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-32-L34",
+      "mpn": "5401268242020",
+      "options": {
+        "Size": "32",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-34-L32",
+      "mpn": "5401268243478",
+      "options": {
+        "Size": "34",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-34-L34",
+      "mpn": "5401268243492",
+      "options": {
+        "Size": "34",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-36-L32",
+      "mpn": "5401268245960",
+      "options": {
+        "Size": "36",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-36-L34",
+      "mpn": "5401268245984",
+      "options": {
+        "Size": "36",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-38-L32",
+      "mpn": "5401268248732",
+      "options": {
+        "Size": "38",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-38-L34",
+      "mpn": "5401268248756",
+      "options": {
+        "Size": "38",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-40-L32",
+      "mpn": "5401268251602",
+      "options": {
+        "Size": "40",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-40-L34",
+      "mpn": "5401268251626",
+      "options": {
+        "Size": "40",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-42-L32",
+      "mpn": "5401268252852",
+      "options": {
+        "Size": "42",
+        "Length": "32",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-LIGHTBLUES9Z0004-42-L34",
+      "mpn": "5401268252890",
+      "options": {
+        "Size": "42",
+        "Length": "34",
+        "Color": "Light Blue"
+      },
+      "price": 4639,
+      "mrp": 5799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/mens-light-blue-slim-fit-mid-rise-commuter-jeans-0069z0004"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

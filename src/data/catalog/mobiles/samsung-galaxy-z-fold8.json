@@ -1,0 +1,335 @@
+{
+  "slug": "samsung-galaxy-z-fold8",
+  "title": "Samsung Galaxy Z Fold8",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-07",
+  "shortDescription": "201 g, 4.5 mm foldable with a 7.6-inch main screen, dual 50MP cameras and Snapdragon 8 Elite Gen 5 for Galaxy.",
+  "description": "Galaxy Z Fold8 weighs 201 g and is 4.5 mm thin unfolded (9.7 mm folded), opening to a 7.6-inch main screen. Both screens reach 3000 nits.\n\nDual 50MP Wide (F1.8) and Ultra Wide (F1.9) cameras switch seamlessly between wide and ultra-wide, with 10MP cameras on the cover and main screens.\n\nSnapdragon 8 Elite Gen 5 for Galaxy, a 4800 mAh battery, Armor Aluminum, Gorilla Glass Ceramic 3 and IP48 water resistance round it out.",
+  "highlights": [
+    "7.6-inch main screen, 3000 nits on both screens",
+    "201 g; 4.5 mm unfolded, 9.7 mm folded",
+    "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "Dual 50MP Wide + Ultra Wide cameras",
+    "4800 mAh battery",
+    "Armor FlexHinge, IP48"
+  ],
+  "specs": {
+    "Display": {
+      "size": 7.6,
+      "type": "Foldable Dynamic AMOLED",
+      "brightness": "3000 nits peak (both screens)"
+    },
+    "Performance": {
+      "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+      "ram": "12GB / 16GB"
+    },
+    "Camera": {
+      "rear": "50MP Wide (F1.8) + 50MP Ultra Wide (F1.9)",
+      "mainMP": 50,
+      "front": "10MP cover screen + 10MP main screen"
+    },
+    "Battery": {
+      "capacityMah": 4800
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "thicknessMm": 4.5,
+      "foldedThicknessMm": 9.7,
+      "weightG": 201,
+      "materials": "Armor Aluminum, Gorilla Glass Ceramic 3 front, Victus 2 back",
+      "ipRating": "IP48",
+      "hinge": "Armor FlexHinge"
+    },
+    "Software": {
+      "os": "Android 17, One UI 9",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 7.6,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 10,
+    "batteryMah": 4800,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": 201,
+    "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "os": "Android",
+    "foldable": true,
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cream",
+          "hex": "#D5D3D6"
+        },
+        {
+          "value": "Graphite",
+          "hex": "#5D5D65"
+        },
+        {
+          "value": "Lavender",
+          "hex": "#CBC4D4"
+        },
+        {
+          "value": "Pistachio",
+          "hex": "#BBC5C6"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cream": [
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/cream-1",
+          "alt": "Samsung Galaxy Z Fold8 in Cream",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_cream_PC.jpg",
+          "width": 1600,
+          "height": 864
+        },
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/cream-3",
+          "alt": "Samsung Galaxy Z Fold8 in Cream, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-cream.jpg",
+          "width": 1392,
+          "height": 656
+        }
+      ],
+      "Graphite": [
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/graphite-1",
+          "alt": "Samsung Galaxy Z Fold8 in Graphite",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_graphite_PC.jpg",
+          "width": 1600,
+          "height": 864
+        },
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/graphite-3",
+          "alt": "Samsung Galaxy Z Fold8 in Graphite, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-graphite.jpg",
+          "width": 1392,
+          "height": 656
+        }
+      ],
+      "Lavender": [
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/lavender-1",
+          "alt": "Samsung Galaxy Z Fold8 in Lavender",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_lavender_PC.jpg",
+          "width": 1600,
+          "height": 864
+        },
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/lavender-3",
+          "alt": "Samsung Galaxy Z Fold8 in Lavender, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-lavender.jpg",
+          "width": 1392,
+          "height": 656
+        }
+      ],
+      "Pistachio": [
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/pistachio-1",
+          "alt": "Samsung Galaxy Z Fold8 in Pistachio",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/buy/product_color_pistachio_PC.jpg",
+          "width": 1600,
+          "height": 864
+        },
+        {
+          "key": "mobiles/samsung-galaxy-z-fold8/pistachio-3",
+          "alt": "Samsung Galaxy Z Fold8 in Pistachio, view 3",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-pistachio.jpg",
+          "width": 1392,
+          "height": 656
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "mobiles/samsung-galaxy-z-fold8/common-1",
+        "alt": "Samsung Galaxy Z Fold8 — 4.5 mm unfolded design",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-design-start.jpg",
+        "width": 1396,
+        "height": 660
+      },
+      {
+        "key": "mobiles/samsung-galaxy-z-fold8/common-2",
+        "alt": "Samsung Galaxy Z Fold8 — unfolding",
+        "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-z-fold8/images/galaxy-z-fold8-features-colors-seamless-unfolding-start.jpg",
+        "width": 1396,
+        "height": 860
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-F971BZWD",
+      "mpn": "SM-F971BZWD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Cream"
+      },
+      "price": 179999,
+      "mrp": 184999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F971BZKD",
+      "mpn": "SM-F971BZKD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Graphite"
+      },
+      "price": 179999,
+      "mrp": 184999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F971BLVD",
+      "mpn": "SM-F971BLVD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Lavender"
+      },
+      "price": 179999,
+      "mrp": 184999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F971BZGD",
+      "mpn": "SM-F971BZGD",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pistachio"
+      },
+      "price": 179999,
+      "mrp": 184999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-F971BZWG",
+      "mpn": "SM-F971BZWG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Cream"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F971BZKG",
+      "mpn": "SM-F971BZKG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Graphite"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F971BLVG",
+      "mpn": "SM-F971BLVG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Lavender"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-F971BZGG",
+      "mpn": "SM-F971BZGG",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Pistachio"
+      },
+      "price": 199999,
+      "mrp": 204999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-z-fold8/",
+      "https://www.samsung.com/in/smartphones/galaxy-z-fold8/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

@@ -1,0 +1,1374 @@
+{
+  "slug": "apple-ipad-air-m4",
+  "title": "iPad Air (M4)",
+  "brand": "Apple",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Thin, light iPad Air with the M4 chip, Liquid Retina display in 11- and 13-inch sizes and Apple Intelligence.",
+  "description": "iPad Air with M4 brings desktop-class performance to a thin, light design, with a Liquid Retina display in 11-inch and 13-inch sizes.\n\nIt supports Apple Pencil Pro and Magic Keyboard for iPad Air, and comes in four colours with Wi-Fi or Wi-Fi + Cellular.",
+  "highlights": [
+    "Apple M4 chip",
+    "Liquid Retina display",
+    "11-inch or 13-inch",
+    "Apple Pencil Pro support",
+    "Up to 1TB storage",
+    "Four colours"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Liquid Retina",
+      "sizes": "11-inch or 13-inch"
+    },
+    "Performance": {
+      "chip": "Apple M4"
+    },
+    "Camera": {
+      "rear": "12MP Wide",
+      "front": "12MP Center Stage landscape camera"
+    },
+    "Connectivity": {
+      "port": "USB-C",
+      "wireless": "Wi-Fi, optional 5G cellular"
+    },
+    "Software": {
+      "os": "iPadOS",
+      "ai": "Apple Intelligence"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple M4",
+    "displayInch": 11,
+    "panel": "LCD",
+    "refreshRateHz": 60,
+    "pencil": "Apple Pencil Pro",
+    "storageGB": 128,
+    "os": "iPadOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "11-inch · Wi-Fi"
+        },
+        {
+          "value": "11-inch · Wi-Fi + Cellular"
+        },
+        {
+          "value": "13-inch · Wi-Fi"
+        },
+        {
+          "value": "13-inch · Wi-Fi + Cellular"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "128GB"
+        },
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        },
+        {
+          "value": "1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blue",
+          "hex": "#6CB2E2"
+        },
+        {
+          "value": "Purple",
+          "hex": "#B586EF"
+        },
+        {
+          "value": "Space Gray",
+          "hex": "#738192"
+        },
+        {
+          "value": "Starlight",
+          "hex": "#DD9F85"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Blue": [
+        {
+          "key": "tablets/apple-ipad-air-m4/blue-1",
+          "alt": "iPad Air (M4) in Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/blue-2",
+          "alt": "iPad Air (M4) in Blue, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/blue-3",
+          "alt": "iPad Air (M4) in Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-blue-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ],
+      "Purple": [
+        {
+          "key": "tablets/apple-ipad-air-m4/purple-1",
+          "alt": "iPad Air (M4) in Purple",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/purple-2",
+          "alt": "iPad Air (M4) in Purple, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/purple-3",
+          "alt": "iPad Air (M4) in Purple, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-purple-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ],
+      "Space Gray": [
+        {
+          "key": "tablets/apple-ipad-air-m4/space-gray-1",
+          "alt": "iPad Air (M4) in Space Gray",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/space-gray-2",
+          "alt": "iPad Air (M4) in Space Gray, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/space-gray-3",
+          "alt": "iPad Air (M4) in Space Gray, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-spacegray-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ],
+      "Starlight": [
+        {
+          "key": "tablets/apple-ipad-air-m4/starlight-1",
+          "alt": "iPad Air (M4) in Starlight",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-wifi-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/starlight-2",
+          "alt": "iPad Air (M4) in Starlight, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-13in-wifi-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-air-m4/starlight-3",
+          "alt": "iPad Air (M4) in Starlight, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-select-11in-cell-starlight-202405?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-IPA-MH314HN",
+      "mpn": "MH314HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Blue"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH344HN",
+      "mpn": "MH344HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Purple"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH304HN",
+      "mpn": "MH304HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Space Gray"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH334HN",
+      "mpn": "MH334HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Starlight"
+      },
+      "price": 89900,
+      "mrp": 89900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH364HN",
+      "mpn": "MH364HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Blue"
+      },
+      "price": 101900,
+      "mrp": 101900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH394HN",
+      "mpn": "MH394HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Purple"
+      },
+      "price": 101900,
+      "mrp": 101900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH354HN",
+      "mpn": "MH354HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Space Gray"
+      },
+      "price": 101900,
+      "mrp": 101900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH374HN",
+      "mpn": "MH374HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Starlight"
+      },
+      "price": 101900,
+      "mrp": 101900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH794HN",
+      "mpn": "MH794HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Blue"
+      },
+      "price": 107900,
+      "mrp": 107900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7C4HN",
+      "mpn": "MH7C4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Purple"
+      },
+      "price": 107900,
+      "mrp": 107900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH784HN",
+      "mpn": "MH784HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Space Gray"
+      },
+      "price": 107900,
+      "mrp": 107900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7A4HN",
+      "mpn": "MH7A4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Starlight"
+      },
+      "price": 107900,
+      "mrp": 107900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7E4HN",
+      "mpn": "MH7E4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Blue"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5P4HN",
+      "mpn": "MH5P4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Blue"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7G4HN",
+      "mpn": "MH7G4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Purple"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5T4HN",
+      "mpn": "MH5T4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Purple"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7D4HN",
+      "mpn": "MH7D4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Space Gray"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5N4HN",
+      "mpn": "MH5N4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Space Gray"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7F4HN",
+      "mpn": "MH7F4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Starlight"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5Q4HN",
+      "mpn": "MH5Q4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Starlight"
+      },
+      "price": 119900,
+      "mrp": 119900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3C4HN",
+      "mpn": "MH3C4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Blue"
+      },
+      "price": 125900,
+      "mrp": 125900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3E4HN",
+      "mpn": "MH3E4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Purple"
+      },
+      "price": 125900,
+      "mrp": 125900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3A4HN",
+      "mpn": "MH3A4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Space Gray"
+      },
+      "price": 125900,
+      "mrp": 125900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3D4HN",
+      "mpn": "MH3D4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Starlight"
+      },
+      "price": 125900,
+      "mrp": 125900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5V4HN",
+      "mpn": "MH5V4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Blue"
+      },
+      "price": 131900,
+      "mrp": 131900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5X4HN",
+      "mpn": "MH5X4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Purple"
+      },
+      "price": 131900,
+      "mrp": 131900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5U4HN",
+      "mpn": "MH5U4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Space Gray"
+      },
+      "price": 131900,
+      "mrp": 131900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5W4HN",
+      "mpn": "MH5W4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Starlight"
+      },
+      "price": 131900,
+      "mrp": 131900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9E4HN",
+      "mpn": "MH9E4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Blue"
+      },
+      "price": 137900,
+      "mrp": 137900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9G4HN",
+      "mpn": "MH9G4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Purple"
+      },
+      "price": 137900,
+      "mrp": 137900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9D4HN",
+      "mpn": "MH9D4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Space Gray"
+      },
+      "price": 137900,
+      "mrp": 137900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9F4HN",
+      "mpn": "MH9F4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Starlight"
+      },
+      "price": 137900,
+      "mrp": 137900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7J4HN",
+      "mpn": "MH7J4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Blue"
+      },
+      "price": 143900,
+      "mrp": 143900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7L4HN",
+      "mpn": "MH7L4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Purple"
+      },
+      "price": 143900,
+      "mrp": 143900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7H4HN",
+      "mpn": "MH7H4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Space Gray"
+      },
+      "price": 143900,
+      "mrp": 143900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7K4HN",
+      "mpn": "MH7K4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Starlight"
+      },
+      "price": 143900,
+      "mrp": 143900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9J4HN",
+      "mpn": "MH9J4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Blue"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9L4HN",
+      "mpn": "MH9L4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Purple"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9H4HN",
+      "mpn": "MH9H4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Space Gray"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9K4HN",
+      "mpn": "MH9K4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Starlight"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH604HN",
+      "mpn": "MH604HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Blue"
+      },
+      "price": 155900,
+      "mrp": 155900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH624HN",
+      "mpn": "MH624HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Purple"
+      },
+      "price": 155900,
+      "mrp": 155900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH5Y4HN",
+      "mpn": "MH5Y4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Space Gray"
+      },
+      "price": 155900,
+      "mrp": 155900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH614HN",
+      "mpn": "MH614HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Starlight"
+      },
+      "price": 155900,
+      "mrp": 155900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3H4HN",
+      "mpn": "MH3H4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Blue"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3K4HN",
+      "mpn": "MH3K4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Purple"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3G4HN",
+      "mpn": "MH3G4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Space Gray"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH3J4HN",
+      "mpn": "MH3J4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Starlight"
+      },
+      "price": 161900,
+      "mrp": 161900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9N4HN",
+      "mpn": "MH9N4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Blue"
+      },
+      "price": 173900,
+      "mrp": 173900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9Q4HN",
+      "mpn": "MH9Q4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Purple"
+      },
+      "price": 173900,
+      "mrp": 173900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9M4HN",
+      "mpn": "MH9M4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Space Gray"
+      },
+      "price": 173900,
+      "mrp": 173900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9P4HN",
+      "mpn": "MH9P4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Starlight"
+      },
+      "price": 173900,
+      "mrp": 173900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7N4HN",
+      "mpn": "MH7N4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Blue"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7Q4HN",
+      "mpn": "MH7Q4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Purple"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7M4HN",
+      "mpn": "MH7M4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Space Gray"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH7P4HN",
+      "mpn": "MH7P4HN/A",
+      "options": {
+        "Configuration": "11-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Starlight"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPA-MH644HN",
+      "mpn": "MH644HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Blue"
+      },
+      "price": 191900,
+      "mrp": 191900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MHDK4HN",
+      "mpn": "MHDK4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Purple"
+      },
+      "price": 191900,
+      "mrp": 191900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH634HN",
+      "mpn": "MH634HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Space Gray"
+      },
+      "price": 191900,
+      "mrp": 191900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH654HN",
+      "mpn": "MH654HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi",
+        "Storage": "1TB",
+        "Color": "Starlight"
+      },
+      "price": 191900,
+      "mrp": 191900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": false,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9T4HN",
+      "mpn": "MH9T4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Blue"
+      },
+      "price": 209900,
+      "mrp": 209900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9V4HN",
+      "mpn": "MH9V4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Purple"
+      },
+      "price": 209900,
+      "mrp": 209900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9R4HN",
+      "mpn": "MH9R4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Space Gray"
+      },
+      "price": 209900,
+      "mrp": 209900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    },
+    {
+      "sku": "APL-IPA-MH9U4HN",
+      "mpn": "MH9U4HN/A",
+      "options": {
+        "Configuration": "13-inch · Wi-Fi + Cellular",
+        "Storage": "1TB",
+        "Color": "Starlight"
+      },
+      "price": 209900,
+      "mrp": 209900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024,
+        "cellular": true,
+        "displayInch": 13
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPad Air (M4)",
+    "USB-C Charge Cable (1 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-ipad/ipad-air",
+      "https://www.apple.com/in/ipad-air/specs/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Every variant, part number and Apple India MRP from the Apple Store India buy page; images are Apple Store product shots."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "slug": "samsung-396-l-bespoke-ai-double-door-refrigerator-rt41hg6a42sl",
+  "title": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL",
+  "brand": "Samsung",
+  "category": "refrigerators",
+  "categoryPath": [
+    "home-appliances",
+    "refrigerators"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Online 396 L Double Door Refrigerator With Bespoke Ai Rt41Hg6A42Slhl ,Explore Specs, Features, And Purchasing Information & Shop Refrigerators At Samsung India.\n",
+  "description": "Online 396 L Double Door Refrigerator With Bespoke Ai Rt41Hg6A42Slhl ,Explore Specs, Features, And Purchasing Information & Shop Refrigerators At Samsung India.\n",
+  "highlights": [
+    "396 L capacity",
+    "Double Door",
+    "2-star energy rating"
+  ],
+  "specs": {
+    "Specifications": {
+      "Net Total(Liter)": "396 L",
+      "Net Dimension (WxHxD)": "70.00 cm x 1.71 m x 75.50 cm",
+      "Net Weight (kg)": "65.5 kg",
+      "Net for Freezer(Liter)": "95 L",
+      "Net for Fridge(Liter)": "301 L",
+      "Packing Dimension (WxHxD)": "75.00 cm x 1.81 m x 81.00 cm",
+      "Net Weight": "65.5 kg",
+      "Packing Weight(kg)": "73.5 kg",
+      "20/40/40H (Container)": "21/42/60 EA",
+      "No Frost": "Yes",
+      "Multi Flow": "Yes",
+      "Cooling Type": "Twin Cooling",
+      "Number of Shelf (Total)": "1 EA",
+      "Number of Vegetable&Fruit Drawer": "1 EA",
+      "Number of Door Pocket": "2 EA",
+      "Egg Container(Egg Tray)": "Yes",
+      "Fresh room": "Yes",
+      "Interior LED Light": "LED",
+      "Active Fresh Filter+": "Yes",
+      "Icemaker": "Twist Ice Maker",
+      "Shelf Material": "Plastic",
+      "Display Type": "Internal",
+      "Door Handle": "Recess",
+      "Colour": "EZ CLEAN STEEL",
+      "Climate Class": "T",
+      "Energy Star Rating": "2 Star",
+      "Wi-Fi Embedded": "Yes",
+      "SmartThings App Support": "Yes",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "capacityL": 396,
+    "type": "Double Door",
+    "starRating": 2,
+    "inverter": false,
+    "convertible": false
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "key": "refrigerators/samsung-396-l-bespoke-ai-double-door-refrigerator-rt41hg6a42sl/common-1",
+        "alt": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt41hg6a42slhl/gallery/in-top-mount-freezer-twin-cooling-plus-574723-rt41hg6a42slhl-thumb-550668570?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "refrigerators/samsung-396-l-bespoke-ai-double-door-refrigerator-rt41hg6a42sl/common-2",
+        "alt": "Samsung 396 L Bespoke AI Double Door Refrigerator RT41HG6A42SL, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/rt41hg6a42slhl/gallery/in-top-mount-freezer-twin-cooling-plus-574723-rt41hg6a42slhl-550668562?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-RT41HG6A42SL",
+      "mpn": "RT41HG6A42SL",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 48990,
+      "mrp": 70999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/refrigerators/double-door/rt6300dh-bespoke-ai-double-door-refrigerator-396l-black-rt41hg6a42slhl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

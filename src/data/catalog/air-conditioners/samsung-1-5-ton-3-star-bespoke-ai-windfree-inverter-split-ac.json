@@ -1,0 +1,164 @@
+{
+  "slug": "samsung-1-5-ton-3-star-bespoke-ai-windfree-inverter-split-ac",
+  "title": "Samsung 1.5 Ton 3-Star Bespoke AI WindFree Inverter Split AC",
+  "brand": "Samsung",
+  "category": "air-conditioners",
+  "categoryPath": [
+    "home-appliances",
+    "air-conditioners"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "WindFree Good Sleep\nAI Energy Mode (30% Energy Savings)\n4 Way Swing",
+  "description": "WindFree Good Sleep\nAI Energy Mode (30% Energy Savings)\n4 Way Swing",
+  "highlights": [
+    "1.5 ton",
+    "Split AC",
+    "3-star energy rating",
+    "Inverter",
+    "WindFree cooling"
+  ],
+  "specs": {
+    "Specifications": {
+      "Capacity": "16208 Btu/h",
+      "Capacity (Cooling, kW)": "4.75 kW",
+      "EER (Cooling, W/W)": "3.23 W/W",
+      "Net Dimension (Outdoor, WxHxD)": "71.00 cm x 54.00 cm x 22.00 cm",
+      "Capacity (Cooling, Btu/hr)": "16208 Btu/h",
+      "Capacity (Cooling, Min - Max, Btu/hr)": "4095 ~ 18767 Btu/h",
+      "Capacity (Cooling, Min - Max, kW)": "1.2 ~ 5.5 kW",
+      "ISEER (W/W)": "4.43 W/W",
+      "EER (Cooling, Btu/hW)": "11.03 Btu/hW",
+      "Energy Star Rating (Cooling)": "3 Star",
+      "Noise Level (Indoor, High/Low, dBA)": "45 / 26 dBA",
+      "Noise Level (Outdoor, High/Low, dBA)": "53 dBA",
+      "Power Source(Φ/V/Hz)": "1 Ph / AC 230 V / 50 Hz",
+      "Power Consumption(Cooling, W)": "1470 W",
+      "Operating Current(Cooling, A)": "6.5 A",
+      "Gross Dimension (Indoor, WxHxD)": "95.00 cm x 29.00 cm x 37.50 cm",
+      "Gross Dimension (Outdoor, WxHxD)": "84.20 cm x 62.00 cm x 35.10 cm",
+      "Net Dimension (Indoor, WxHxD)": "88.90 cm x 29.90 cm x 21.50 cm",
+      "Gross Weight (Indoor, kg)": "11.7 kg",
+      "Gross Weight (Outdoor, kg)": "27.1 kg",
+      "Net Weight (Indoor, kg)": "10 kg",
+      "Net Weight (Outdoor, kg)": "22.65 kg",
+      "Piping Length (Max, m)": "30 m",
+      "Piping Height (Max, m)": "15 m",
+      "SVC Valve (Liquid (ODxL))": "6.35",
+      "SVC Valve (Gas (ODxL))": "12.7",
+      "Moisture Removal (l/hr)": "1.9 l/hr",
+      "Air Circulation (Cooling, ㎥/min)": "15.2 ㎥/min",
+      "Refrigerant (Type)": "R32 (Fluorinated greenhouse gas, GWP 675)",
+      "Refrigerant (Charging)(kg)": "0.57 kg",
+      "Refrigerant (Charging, tCO2e)": "0.38 tCO2e",
+      "Low Ambient (Cooling, ℃)": "15 ~ 52 ℃",
+      "Outdoor Unit (Compressor Type)": "BLDC",
+      "Outdoor Unit (Anti-Corrosion Fin)": "Yes",
+      "WindFree Cooling": "Yes",
+      "Air Direction Control (Up/Down)": "Auto",
+      "Air Direction Control (Left/Right)": "Auto",
+      "Air Flow Control Step (Cool/Fan)": "5 / 4",
+      "PM 1.0 Filter": "No",
+      "Tri Care Filter": "No",
+      "4-in-1 Care Filter": "No",
+      "Copper Anti-bacterial Filter": "Yes",
+      "Auto Clean (Self Cleaning)": "Yes",
+      "SmartThings": "Yes",
+      "AI Auto Cooling": "Yes",
+      "Motion Detect Sensor": "No",
+      "Freeze Wash": "Yes",
+      "Filter Cleaning Indicatior": "Yes",
+      "Indoor Temp. Display": "Yes",
+      "Display On/Off": "Yes",
+      "Beep On/Off": "Yes",
+      "24-Hour Timer": "Yes",
+      "Auto Changeover": "No",
+      "Auto Restart": "Yes",
+      "Auto Mode": "Yes",
+      "Fast Cool": "Yes",
+      "Dry Comfort": "Yes",
+      "Turbo Mode": "No",
+      "Good Sleep": "Yes",
+      "Eco Mode (Cooling)": "No",
+      "5 Step Mode": "Yes",
+      "Max-Ampere Control": "No",
+      "Dehumidification": "Yes",
+      "Fan Mode": "Yes",
+      "Quiet": "Yes",
+      "Wi-Fi Embedded": "Yes",
+      "SmartThings App Support": "Yes",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001"
+    }
+  },
+  "keySpecs": {
+    "tonnage": 1.5,
+    "starRating": 3,
+    "inverter": true,
+    "type": "Split AC",
+    "windFree": true,
+    "coolingCapacityKw": 4.8
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Standard"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar60h18d13wnna/gallery/in-bespoke-ai-windfree%E2%84%A2-inverter-split-ac-ar60h18d13w-4-8-kw-1-5-3-star-2026-ar60h18d13wnna-549931652?$2052_1641_PNG$",
+        "alt": "Samsung 1.5 Ton 3-Star Bespoke AI WindFree Inverter Split AC"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar60h18d13wnna/gallery/in-bespoke-ai-windfree%E2%84%A2-inverter-split-ac-ar60h18d13w-4-8-kw-1-5-3-star-2026-ar60h18d13wnna-549931653?$2052_1641_PNG$",
+        "alt": "Samsung 1.5 Ton 3-Star Bespoke AI WindFree Inverter Split AC, view 2"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar60h18d13wnna/gallery/in-bespoke-ai-windfree%E2%84%A2-inverter-split-ac-ar60h18d13w-4-8-kw-1-5-3-star-2026-ar60h18d13wnna-549931654?$2052_1641_PNG$",
+        "alt": "Samsung 1.5 Ton 3-Star Bespoke AI WindFree Inverter Split AC, view 3"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar60h18d13wnna/gallery/in-bespoke-ai-windfree%E2%84%A2-inverter-split-ac-ar60h18d13w-4-8-kw-1-5-3-star-2026-ar60h18d13wnna-549931655?$2052_1641_PNG$",
+        "alt": "Samsung 1.5 Ton 3-Star Bespoke AI WindFree Inverter Split AC, view 4"
+      },
+      {
+        "src": "https://images.samsung.com/is/image/samsung/p6pim/in/ar60h18d13wnna/gallery/in-bespoke-ai-windfree%E2%84%A2-inverter-split-ac-ar60h18d13w-4-8-kw-1-5-3-star-2026-ar60h18d13wnna-549931656?$2052_1641_PNG$",
+        "alt": "Samsung 1.5 Ton 3-Star Bespoke AI WindFree Inverter Split AC, view 5"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-AR60H18D13W",
+      "mpn": "AR60H18D13W",
+      "options": {
+        "Color": "Standard"
+      },
+      "price": 41490,
+      "mrp": 82990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/air-conditioners/split-ac/bespoke-ai-windfree-inverter-split-ac-4-8-kw-3-star-ar60h18d13wnna/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

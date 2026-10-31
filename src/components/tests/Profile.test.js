@@ -153,7 +153,7 @@ describe("Profile Component", () => {
     // Delete it.
     const deleteBtn = screen
       .getAllByRole("button")
-      .find((b) => b.querySelector("svg") && b.className.includes("hover:text-red-600"));
+      .find((b) => b.querySelector("svg") && b.className.includes("hover:text-alert"));
     fireEvent.click(deleteBtn);
 
     await waitFor(() => {

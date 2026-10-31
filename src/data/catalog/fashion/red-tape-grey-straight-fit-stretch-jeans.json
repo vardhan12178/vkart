@@ -1,0 +1,208 @@
+{
+  "slug": "red-tape-grey-straight-fit-stretch-jeans",
+  "title": "Red Tape Grey Straight Fit Stretch Jeans",
+  "brand": "Red Tape",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "jeans"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Build a dependable everyday rotation with the Red Tape jeans for men in grey, created to combine authentic denim character, comfortable movement, dependable structure, and versatile casual styling.",
+  "description": "Build a dependable everyday rotation with the Red Tape jeans for men in grey, created to combine authentic denim character, comfortable movement, dependable structure, and versatile casual styling. Crafted from 77% cotton, 21% polyester, and 2% spandex knitted fabric, these jeans combine cotton comfort and polyester-supported structure with stretch-enhanced flexibility for easier movement. The straight fit creates a clean, balanced silhouette with comfortable room for natural movement, making the pair easy to wear through commutes, relaxed workdays, weekend plans, travel, and daily outings. The solid grey denim finish gives the pair a modern, easy-to-coordinate appearance, while the functional pocket design provides useful everyday storage. Pair them with T-shirts, polos, casual shirts, sweatshirts, or jackets for effortless everyday dressing.",
+  "highlights": [
+    "Knitted Construction: Provides a comfortable and dependable feel for regular wear",
+    "Solid Grey Denim: Versatile colour for effortless casual wardrobe pairing",
+    "Classic Denim Styling: Familiar jeans character with a clea"
+  ],
+  "specs": {
+    "Product details": {
+      "Knitted Construction": "Provides a comfortable and dependable feel for regular wear",
+      "Straight Fit": "Creates a clean silhouette with comfortable room for natural movement",
+      "Functional Pocket Design": "Features 2 front pockets and 2 back pockets for practical everyday storage",
+      "Solid Grey Denim": "Versatile colour for effortless casual wardrobe pairing",
+      "Classic Denim Styling": "Familiar jeans character with a clea",
+      "Fabric": "77% cotton, 21% polyester, and 2% spandex knitted fabric for comfortable and flexible everyday wear",
+      "Product Type": "Jeans | Pattern: Solid | Fit: Straight Fit | Pocket Detail: 2 Front Pockets & 2 Back Pockets | Occasion: Casual",
+      "Benefits": "Cotton-blend construction combines everyday comfort with stretch-enhanced flexibility for easier movement",
+      "Styling": "Pair with T-shirts, polos, casual shirts, sweatshirts, or jackets for versatile everyday and travel looks",
+      "Wash Care": "Wash with similar colours to help maintain the garment’s colour and finish"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Jeans",
+    "color": "Grey",
+    "fabric": "77% cotton, 21% polyester, and 2% spandex knitted fabric for comfortable and flexible everyday wear",
+    "fit": null,
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36",
+      "38"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "30"
+        },
+        {
+          "value": "32"
+        },
+        {
+          "value": "34"
+        },
+        {
+          "value": "36"
+        },
+        {
+          "value": "38"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Grey",
+          "hex": "#3E393D"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Grey": [
+        {
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-1",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_724c702f-5dd5-4057-b3ae-c55863fd6ee7.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-2",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_60f00d4d-67d2-4523-828c-53bf44bdc45e.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-3",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_a3549549-a1d9-4217-8fde-6d0e0946b18a.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-4",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_f9cf1236-8f7f-4b20-893e-2ade2e5caf01.jpg?v=1791970885",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-grey-straight-fit-stretch-jeans/grey-5",
+          "alt": "Red Tape Grey Straight Fit Stretch Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_1a8a21b5-f6c7-4f04-9720-c516b9ee2aa0.jpg?v=1791970886",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RDT-JEANSFORMEM1148B-30",
+      "mpn": "RDM1148B-30",
+      "options": {
+        "Size": "30",
+        "Color": "Grey"
+      },
+      "price": 2129,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-JEANSFORMEM1148B-32",
+      "mpn": "RDM1148B-32",
+      "options": {
+        "Size": "32",
+        "Color": "Grey"
+      },
+      "price": 2129,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-JEANSFORMEM1148B-34",
+      "mpn": "RDM1148B-34",
+      "options": {
+        "Size": "34",
+        "Color": "Grey"
+      },
+      "price": 2129,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-JEANSFORMEM1148B-36",
+      "mpn": "RDM1148B-36",
+      "options": {
+        "Size": "36",
+        "Color": "Grey"
+      },
+      "price": 2129,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-JEANSFORMEM1148B-38",
+      "mpn": "RDM1148B-38",
+      "options": {
+        "Size": "38",
+        "Color": "Grey"
+      },
+      "price": 2129,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.redtape.com/products/red-tape-jeans-for-men-in-grey-solidstraight-fit-stretch-blend-denim-rdm1148b"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Red Tape's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

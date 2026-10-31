@@ -1,0 +1,255 @@
+{
+  "slug": "nothing-phone-4a-pro",
+  "title": "Nothing Phone (4a) Pro",
+  "brand": "Nothing",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "6.83-inch 144Hz display, Snapdragon 7 Gen 4, 50MP Sony main and 50MP periscope cameras, 5,400 mAh battery.",
+  "description": "Phone (4a) Pro pairs a 6.83-inch display with slim bezels, 144Hz adaptive refresh and up to 5,000 nits with Snapdragon 7 Gen 4.\n\nA 50MP Sony main camera with OIS and a 50MP OIS periscope with up to 140x ultra zoom cover near and far, with a 32MP selfie camera.\n\nThe 5,400 mAh battery, IP65 rating and 210 g weight round it out.",
+  "highlights": [
+    "Snapdragon 7 Gen 4",
+    "6.83-inch display, 144Hz, 5,000 nits peak",
+    "50MP Sony main (OIS) + 50MP periscope (OIS), up to 140x zoom",
+    "32MP front camera",
+    "5,400 mAh battery",
+    "IP65, 210 g"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.83,
+      "type": "AMOLED",
+      "refreshRate": 144,
+      "brightness": "5,000 nits peak"
+    },
+    "Performance": {
+      "chip": "Snapdragon 7 Gen 4"
+    },
+    "Camera": {
+      "rear": "50MP Sony main (OIS) + 50MP periscope (OIS, up to 140x ultra zoom)",
+      "front": "32MP"
+    },
+    "Battery": {
+      "capacityMah": 5400
+    },
+    "Build": {
+      "weightG": 210,
+      "ipRating": "IP65"
+    },
+    "Software": {
+      "os": "Nothing OS"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.83,
+    "refreshRateHz": 144,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 5400,
+    "chargingW": null,
+    "wirelessCharging": false,
+    "weightG": 210,
+    "chip": "Snapdragon 7 Gen 4",
+    "ramGB": 8,
+    "is5G": true,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        },
+        {
+          "value": "12GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Silver",
+          "hex": "#C6C6C6"
+        },
+        {
+          "value": "Black",
+          "hex": "#20242A"
+        },
+        {
+          "value": "Pink",
+          "hex": "#DDCED6"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Silver": [
+        {
+          "key": "mobiles/nothing-phone-4a-pro/silver-1",
+          "alt": "Nothing Phone (4a) Pro in Silver",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-White.png?v=1772251228",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "Black": [
+        {
+          "key": "mobiles/nothing-phone-4a-pro/black-1",
+          "alt": "Nothing Phone (4a) Pro in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-Black.png?v=1772251228",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "Pink": [
+        {
+          "key": "mobiles/nothing-phone-4a-pro/pink-1",
+          "alt": "Nothing Phone (4a) Pro in Pink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-Pink.png?v=1772251228",
+          "width": 2048,
+          "height": 2048
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-P4AP-8128-SIL",
+      "mpn": "6974434228214",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Silver"
+      },
+      "price": 39999,
+      "mrp": 39999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-P4AP-8128-BLA",
+      "mpn": "6974434228184",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Black"
+      },
+      "price": 39999,
+      "mrp": 39999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-P4AP-8256-SIL",
+      "mpn": null,
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Silver"
+      },
+      "price": 42999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P4AP-8256-BLA",
+      "mpn": null,
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 42999,
+      "mrp": 42999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P4AP-12256-SIL",
+      "mpn": "6974434228221",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Silver"
+      },
+      "price": 45999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P4AP-12256-BLA",
+      "mpn": "6974434228207",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 45999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P4AP-12256-PIN",
+      "mpn": "6974434228238",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pink"
+      },
+      "price": 45999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Nothing Phone (4a) Pro",
+    "USB-C to USB-C cable",
+    "SIM tray ejector",
+    "Safety information and warranty card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/phone-4a-pro"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Variants, launch prices and images from Nothing's India store data (phones are sold through Flipkart). Nothing publishes no structured spec sheet; key specs are taken from the product page text, so some fields are missing."
+  }
+}

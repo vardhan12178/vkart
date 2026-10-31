@@ -3,10 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const CART_KEY = "vkart_cart";
 
+// Only catalog lines are kept; items saved before the old catalog was retired are dropped
+const catalogOnly = (items) => (Array.isArray(items) ? items.filter((it) => it?.catalog === "v2") : []);
+
 const loadCart = () => {
   try {
     const data = localStorage.getItem(CART_KEY);
-    return data ? JSON.parse(data) : [];
+    return data ? catalogOnly(JSON.parse(data)) : [];
   } catch {
     return [];
   }
@@ -28,7 +31,7 @@ const cartSlice = createSlice({
   initialState: loadCart(),
   reducers: {
     setCart: (_state, action) => {
-      const items = Array.isArray(action.payload) ? action.payload : [];
+      const items = catalogOnly(action.payload);
       // Don't persist to localStorage — server is source of truth for
       // authenticated users.  Guest cart is persisted by addToCart / etc.
       return items;
@@ -76,6 +79,25 @@ const cartSlice = createSlice({
       return newState;
     },
 
+    // Catalog lines: apply live price/stock from POST /api/v2/cart/resolve
+    refreshCartLines: (state, action) => {
+      const fresh = Array.isArray(action.payload) ? action.payload : [];
+      for (const line of fresh) {
+        const it = state.find((s) => s.catalog === "v2" && String(s.productId) === String(line.productId) && s.sku === line.sku);
+        if (!it) continue;
+        if (line.available === false && line.price == null) { it.unavailable = true; continue; }
+        Object.assign(it, {
+          title: line.title ?? it.title,
+          price: line.price ?? it.price,
+          thumbnail: line.image || it.thumbnail,
+          discountPercentage: line.discountPercent ?? it.discountPercentage,
+          stock: line.stock,
+          unavailable: line.stock === 0,
+        });
+      }
+      saveCart(state);
+    },
+
     clearCart: () => {
       saveCart([]);
       return [];
@@ -90,6 +112,7 @@ export const {
   removeFromCart,
   clearCart,
   setCart,
+  refreshCartLines,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

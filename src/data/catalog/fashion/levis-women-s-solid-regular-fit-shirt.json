@@ -1,0 +1,230 @@
+{
+  "slug": "levis-women-s-solid-regular-fit-shirt",
+  "title": "Levi's Women's Solid Regular Fit Shirt",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "tops"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Sleek, stylish, and comfortable, Levi's presents to you this regular fit blue shirt.Tailored from good quality cotton & viscose, It's easy to care for and even simpler to style, this shirt is the perfect piece to own this season.",
+  "description": "Sleek, stylish, and comfortable, Levi's presents to you this regular fit blue shirt.Tailored from good quality cotton & viscose, It's easy to care for and even simpler to style, this shirt is the perfect piece to own this season. To elevate your style game, team this shirt with a pair of mom jeans and stilettos.",
+  "highlights": [
+    "Fit: Designed for a regular fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Designed for a regular fit"
+    },
+    "Highlights": {
+      "points": [
+        "Features a spread collar and full sleeves",
+        "To elevate your style game, team this shirt with a pair of mom jeans and stilettos.",
+        "Designed for a regular fit"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Tops",
+    "color": "Light Blue",
+    "fabric": null,
+    "fit": "Designed for a regular fit",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS"
+        },
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Light Blue",
+          "hex": "#D1D0CC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Light Blue": [
+        {
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-1",
+          "alt": "Levi's Women's Solid Regular Fit Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_01_Styleshot.jpg?v=1791892344",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-2",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_02_Front.jpg?v=1791892342",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-3",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_03_Back.jpg?v=1791892342",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-4",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_04_Side.jpg?v=1791892344",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-5",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_05_Full.jpg?v=1791892343",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-solid-regular-fit-shirt/light-blue-6",
+          "alt": "Levi's Women's Solid Regular Fit Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/009CP0003_06_Detail_20.jpg?v=1791892342",
+          "width": 1034,
+          "height": 1376
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-SOLIDREGULCP0003-XS",
+      "mpn": "5401281271922",
+      "options": {
+        "Size": "XS",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGULCP0003-S",
+      "mpn": "5401281271908",
+      "options": {
+        "Size": "S",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGULCP0003-M",
+      "mpn": "5401281260094",
+      "options": {
+        "Size": "M",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGULCP0003-L",
+      "mpn": "5401281260087",
+      "options": {
+        "Size": "L",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGULCP0003-XL",
+      "mpn": "5401281271915",
+      "options": {
+        "Size": "XL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGULCP0003-XXL",
+      "mpn": "5401281271939",
+      "options": {
+        "Size": "XXL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/womens-solid-regular-fit-shirt-009cp0003"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

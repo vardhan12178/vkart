@@ -1,0 +1,151 @@
+{
+  "slug": "zebronics-pa224-gaming-monitor",
+  "title": "Zebronics PA224 Gaming Monitor",
+  "brand": "Zebronics",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "Zebronics PA224 Gaming Monitor: 59.9cm Screen Size, FHD 1920x1080, 16:9 Aspect Ratio, 16.7M Colors.",
+  "description": "59.9cm Screen Size; FHD 1920x1080; 16:9 Aspect Ratio; 16.7M Colors; 220nits Brightness; HDMI | VGA; Wall Mountable.",
+  "highlights": [
+    "59.9cm Screen Size",
+    "FHD 1920x1080",
+    "16:9 Aspect Ratio",
+    "16.7M Colors",
+    "220nits Brightness",
+    "HDMI | VGA"
+  ],
+  "specs": {
+    "Specifications": {
+      "Screen size": "59.9cm",
+      "Native resolution": "1920x1080",
+      "Aspect ratio": "16:9",
+      "Max. Brightness": "220nits",
+      "Dynamic Contrast Ratio": "500000:1",
+      "Pixel pitch": "0.2715 x 0.2715 mm",
+      "Viewing angle": "H170/ V160",
+      "Color": "16.7M",
+      "sRGB": "95%",
+      "Response time": "5ms",
+      "Input": "HDMI | VGA",
+      "Power consumption": "20 Watts (Max.)",
+      "Product dimension  (W x D x H)": "55.5 x 2.2 x 40.5 cm",
+      "H - with stand, D - Minimum": "Package Dimension ( W x D x H)",
+      "59.4 x 10.4 x 40 cm": "Net weight (with stand)",
+      "3.2 kg": "Country of Origin",
+      "People's Republic of China": "Package contents",
+      "Monitor": "1 U",
+      "Base": "1 U",
+      "Stem": "1 U",
+      "HDMI Cable": "1 U",
+      "Power Cord": "1 U",
+      "User Manual": "1 U"
+    },
+    "Features": {
+      "points": [
+        "59.9cm Screen Size",
+        "FHD 1920x1080",
+        "16:9 Aspect Ratio",
+        "16.7M Colors",
+        "220nits Brightness",
+        "HDMI | VGA",
+        "Wall Mountable"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 23.6,
+    "resolution": "1920x1080",
+    "refreshRateHz": null,
+    "panel": null,
+    "responseTimeMs": null,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "23.6\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-1",
+        "alt": "Zebronics PA224 Gaming Monitor",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-1.jpg?v=1774597935",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-2",
+        "alt": "Zebronics PA224 Gaming Monitor, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-2.jpg?v=1774597936",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-3",
+        "alt": "Zebronics PA224 Gaming Monitor, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-3.jpg?v=1774597935",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-4",
+        "alt": "Zebronics PA224 Gaming Monitor, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-4.jpg?v=1774597936",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-5",
+        "alt": "Zebronics PA224 Gaming Monitor, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-5.jpg?v=1774597936",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "monitors/zebronics-pa224-gaming-monitor/common-6",
+        "alt": "Zebronics PA224 Gaming Monitor, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-PA224-pic-6.jpg?v=1774597935",
+        "width": 2000,
+        "height": 2000
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "ZEB-PA224",
+      "mpn": "MT155-ZEB-PA224 LED 23.6 INCH (HDMI) COMPUTER MONITOR - Pure Pixel",
+      "options": {
+        "Size": "23.6\""
+      },
+      "price": 24999,
+      "mrp": 24999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://zebronics.com/products/zeb-pa224"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, images, features and specification table from Zebronics' official online store. Zebronics lists a single price, which appears to be the list price."
+  }
+}

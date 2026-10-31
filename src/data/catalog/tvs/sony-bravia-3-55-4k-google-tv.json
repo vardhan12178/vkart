@@ -1,0 +1,120 @@
+{
+  "slug": "sony-bravia-3-55-4k-google-tv",
+  "title": "Sony BRAVIA 3 55\" 4K Google TV",
+  "brand": "Sony",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": "2024-07",
+  "shortDescription": "Sony BRAVIA 3: 55-inch 4K Ultra HD Smart LED Google TV with 4K Processor X1 and Dolby Vision.",
+  "description": "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 hertz | BRAVIA 3 LED Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices Sound : 20 Watts Output | 2ch | Bass Reflex Speaker | Dolby Atmos | Ambient Optimization |2 Full Range (Bass Reflex) Smart TV Features: Google TV | Watchlist | Google Assistant | Chromecast Built In | Built In Mic |Game menu | ALLM/eARC (HDMI 2.1 Compatible) | Additional Features: Apple Airplay | Apple Homekit | Alexa | Energy Rating: 1 Star| Annual Energy Consumption: 267.62 kWh",
+  "highlights": [
+    "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 hertz | BRAVIA 3 LED"
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 hertz | BRAVIA 3 LED",
+        "Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices",
+        "Sound : 20 Watts Output | 2ch | Bass Reflex Speaker | Dolby Atmos | Ambient Optimization |2 Full Range (Bass Reflex)",
+        "Smart TV Features: Google TV | Watchlist | Google Assistant | Chromecast Built In | Built In Mic |Game menu | ALLM/eARC (HDMI 2.1 Compatible) | Additional Features: Apple Airplay | Apple Homekit | Alexa | Energy Rating: 1 Star| Annual Energy Consumption: 267.62 kWh",
+        "Display : 4K LED | 4K HDR Processor X1 | Triluminos PRO | 4K X-Reality PRO | MotionFlow XR 200 | HDR10/HLG, Dolby Vision",
+        "Warranty Information: 1 year comprehensive warranty on product provided by the brand from the date of purchase"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 55,
+    "screenSizes": [
+      55
+    ],
+    "resolution": "4K Ultra HD (3840 x 2160)",
+    "refreshRateHz": null,
+    "panel": "LED",
+    "os": "Google TV",
+    "soundW": 20,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "55\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {
+      "55\"": [
+        {
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-1",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-55S30-Primary-Image-copy.jpg?v=1782972767",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-2",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-55-65-S30-Screen.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-3",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-S30-tv-feature.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-5",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-S30-tv-smart.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-3-55-4k-google-tv/55-6",
+          "alt": "Sony BRAVIA 3 55\" 4K Google TV 55\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-_BRAVIA3_55inch_Dimension.jpg?v=1756187039",
+          "width": 1000,
+          "height": 1000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SNY-K55S30",
+      "mpn": "K-55S30",
+      "options": {
+        "Size": "55\""
+      },
+      "price": 81690,
+      "mrp": 118900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "screenInch": 55,
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.shopatsc.com/products/k-55s30-in5"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model numbers, selling price (price), MRP (mrp), images and feature text from Sony's official India online store (ShopAtSC)."
+  }
+}

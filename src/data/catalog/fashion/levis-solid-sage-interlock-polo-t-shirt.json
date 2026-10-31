@@ -1,0 +1,281 @@
+{
+  "slug": "levis-solid-sage-interlock-polo-t-shirt",
+  "title": "Levi's Solid Sage Interlock Polo T-Shirt",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "polos"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Hit refresh on your everyday wardrobe with this t-shirt from Levi's.",
+  "description": "Hit refresh on your everyday wardrobe with this t-shirt from Levi's. Whether you're going out to grab a cup of coffee with your friends or simply running errands, this regular fit t-shirt is an ideal choice to wear. Made from premium quality cotton in solid pattern.",
+  "highlights": [
+    "Fit: Regular Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Regular Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Standard polo collar and half sleeves",
+        "Team it with our joggers and sliders for a laid-back style."
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Polos",
+    "color": "Green",
+    "fabric": null,
+    "fit": "Regular Fit",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL",
+      "5XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        },
+        {
+          "value": "4XL"
+        },
+        {
+          "value": "5XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Green",
+          "hex": "#D69D7F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Green": [
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-1",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_01_Styleshot.jpg?v=1792061370",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-2",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_02_Front.jpg?v=1792061370",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-3",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_03_Back.jpg?v=1792061370",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-4",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_05_Full.jpg?v=1792061371",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-5",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_07_Detail_20.jpg?v=1792061371",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-6",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_04_SIde.jpg?v=1792061371",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-7",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/004LY0083_06_Detail_20.jpg?v=1792061373",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-sage-interlock-polo-t-shirt/green-8",
+          "alt": "Levi's Solid Sage Interlock Polo T-Shirt, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/Polos_MS_f5ad2554-d5aa-45f3-aa55-7a27c289c488.jpg?v=1791376824",
+          "width": 1034,
+          "height": 1378
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-S",
+      "mpn": "5401252350052",
+      "options": {
+        "Size": "S",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-M",
+      "mpn": "5401252350021",
+      "options": {
+        "Size": "M",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-L",
+      "mpn": "5401252349490",
+      "options": {
+        "Size": "L",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-XL",
+      "mpn": "5401252350083",
+      "options": {
+        "Size": "XL",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-XXL",
+      "mpn": "5401252350748",
+      "options": {
+        "Size": "XXL",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-3XL",
+      "mpn": "5401252342859",
+      "options": {
+        "Size": "3XL",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-4XL",
+      "mpn": "5401252349438",
+      "options": {
+        "Size": "4XL",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-SOLIDSAGEILY0083-5XL",
+      "mpn": "5401252349469",
+      "options": {
+        "Size": "5XL",
+        "Color": "Green"
+      },
+      "price": 2249,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/mens-solid-sage-interlock-polo-t-shirt-004ly0083"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

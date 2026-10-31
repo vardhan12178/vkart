@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { removeFromWishlist, clearWishlist } from "../redux/wishlistSlice";
 import { addToCart } from "../redux/cartSlice";
-import {
-  FaArrowRight,
-  FaCartPlus,
-  FaHeart,
-  FaShoppingBag,
-  FaTrash,
-} from "react-icons/fa";
+import { cartItemFromSaved, productPath as v2Path } from "./shop/shopItems";
+import { ArrowRightIcon, HeartIcon, ShoppingBagIcon, ShoppingCartIcon, Trash2Icon } from "./ui/icons";
 import { showToast } from "../utils/toast";
 
 const INR = (n) =>
@@ -24,7 +19,7 @@ const keyOf = (item) =>
   item?._id || item?.productId || item?.externalId || item?.id;
 
 const productPath = (item) =>
-  `/product/${item?._id || item?.productId || item?.id}`;
+  v2Path(item) || `/product/${item?._id || item?.productId || item?.id}`;
 
 const categoryName = (category = "") =>
   category.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -35,6 +30,17 @@ export default function Wishlist() {
   const count = wishlist.length;
 
   const moveToCart = (item) => {
+    if (item.catalog === "v2") {
+      const line = cartItemFromSaved(item);
+      if (!line) {
+        showToast("Open the product to choose a variant", "info");
+        return;
+      }
+      dispatch(addToCart(line));
+      dispatch(removeFromWishlist(keyOf(item)));
+      showToast("Moved to cart", "success");
+      return;
+    }
     dispatch(addToCart({ ...item, quantity: 1 }));
     dispatch(removeFromWishlist(keyOf(item)));
     showToast("Moved to cart", "success");
@@ -89,7 +95,7 @@ export default function Wishlist() {
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#a85d37]/10 text-[#a85d37]">
-                  <FaHeart size={13} />
+                  <HeartIcon size={13} fill="currentColor" />
                 </span>
                 <div>
                   <p className="text-sm font-bold text-[#1d1c19]">Saved collection</p>
@@ -103,7 +109,7 @@ export default function Wishlist() {
                 className="wishlist-clear-button"
                 aria-label="Clear all saved items"
               >
-                <FaTrash size={10} />
+                <Trash2Icon size={10} />
                 Clear list
               </button>
             </div>
@@ -138,7 +144,7 @@ export default function Wishlist() {
                             />
                           ) : (
                             <div className="flex h-full items-center justify-center text-[#b6b0a5]">
-                              <FaShoppingBag size={20} />
+                              <ShoppingBagIcon size={20} />
                             </div>
                           )}
 
@@ -149,7 +155,7 @@ export default function Wishlist() {
                           )}
 
                           <span className="absolute right-2 top-2 sm:right-3 sm:top-3 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full border border-black/[0.07] bg-[#fbfaf7]/90 text-[#a85d37] shadow-sm backdrop-blur-sm">
-                            <FaHeart size={10} />
+                            <HeartIcon size={10} fill="currentColor" />
                           </span>
                         </div>
                       </Link>
@@ -181,7 +187,7 @@ export default function Wishlist() {
                             onClick={() => moveToCart(item)}
                             className="flex h-8 sm:min-h-11 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#1d1c19] px-2 sm:px-4 text-[10px] sm:text-xs font-bold text-white shadow-sm transition hover:bg-black active:scale-95"
                           >
-                            <FaCartPlus size={11} /> <span className="hidden min-[380px]:inline">Move to </span>bag
+                            <ShoppingCartIcon size={11} /> <span><span className="hidden min-[380px]:inline">Move to </span>bag</span>
                           </button>
                           <button
                             type="button"
@@ -190,7 +196,7 @@ export default function Wishlist() {
                             aria-label={`Remove ${item.title} from saved items`}
                             title="Remove from saved items"
                           >
-                            <FaTrash size={10} />
+                            <Trash2Icon size={10} />
                           </button>
                         </div>
                       </div>
@@ -212,7 +218,7 @@ export default function Wishlist() {
                   to="/products"
                   className="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-full bg-[#1d1c19] px-6 text-sm font-bold text-white transition hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
                 >
-                  Continue shopping <FaArrowRight size={12} />
+                  Continue shopping <ArrowRightIcon size={12} />
                 </Link>
               </div>
             </div>
@@ -223,7 +229,7 @@ export default function Wishlist() {
           <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[1.5rem] border border-black/[0.08] bg-[#ebe6dc] lg:grid-cols-[.8fr_1.2fr]">
             <div className="flex min-h-[270px] items-center justify-center border-b border-black/[0.08] p-8 lg:border-b-0 lg:border-r">
               <div className="flex h-28 w-28 items-center justify-center rounded-full border border-[#a85d37]/15 bg-[#f6f3ed] text-[#a85d37] shadow-[0_18px_45px_rgba(29,28,25,0.08)]">
-                <FaHeart size={34} />
+                <HeartIcon size={34} />
               </div>
             </div>
             <div className="flex flex-col items-start justify-center p-8 sm:p-12 lg:p-16">
@@ -240,7 +246,7 @@ export default function Wishlist() {
                 to="/products"
                 className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#1d1c19] px-6 text-sm font-bold text-white transition hover:bg-[#34312c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1d1c19]/30 focus-visible:ring-offset-2"
               >
-                Explore the collection <FaArrowRight size={12} />
+                Explore the collection <ArrowRightIcon size={12} />
               </Link>
             </div>
           </div>

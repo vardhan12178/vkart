@@ -1,0 +1,251 @@
+{
+  "slug": "samsung-galaxy-book6-16",
+  "title": "Samsung Galaxy Book6 (16\")",
+  "brand": "Samsung",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Big-screen 16-inch Galaxy Book6 with Intel Core Ultra (Series 3), optional touchscreen and up to 24 hours video playback.",
+  "description": "Galaxy Book6 16\" gives you a large 16:10 anti-glare IPS display for documents and entertainment, with an optional touchscreen model.\n\nIntel Core Ultra (Series 3) processors and up to 1TB SSD handle everyday work, with Copilot+ PC and Galaxy AI features built in. Battery life reaches 24 hours of video playback; it weighs 1.74 kg (1.84 kg with touch).",
+  "highlights": [
+    "Intel Core Ultra 5 / Ultra 7 (Series 3)",
+    "16-inch 16:10 IPS display, touch option",
+    "16GB RAM, up to 1TB SSD",
+    "Up to 24 hours video playback",
+    "1.74 kg (1.84 kg touch)",
+    "Copilot+ PC with Galaxy AI"
+  ],
+  "specs": {
+    "Processor": {
+      "cpu": "Intel Core Ultra 5 325 or Ultra 7 355 (Series 3)",
+      "npu": "Up to 49 TOPS"
+    },
+    "Memory": {
+      "ram": "16GB (not upgradeable)"
+    },
+    "Storage": {
+      "ssd": "512GB or 1TB, with expansion slot"
+    },
+    "Display": {
+      "size": 16,
+      "type": "IPS, anti-glare, touch option",
+      "aspectRatio": "16:10"
+    },
+    "Graphics": {
+      "gpu": "Intel graphics"
+    },
+    "Battery": {
+      "life": "Up to 24 hours video playback",
+      "charging": "Up to 33% in 30 minutes"
+    },
+    "Ports": {
+      "ports": "Includes HDMI"
+    },
+    "Build": {
+      "weight": "1.74 kg (touch: 1.84 kg)",
+      "colours": "Gray"
+    },
+    "Software": {
+      "os": "Windows 11 Home",
+      "ai": "Galaxy AI, Copilot+ PC"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 325",
+    "gpu": "Intel graphics",
+    "displayInch": 16,
+    "panel": "IPS",
+    "refreshRateHz": null,
+    "weightKg": 1.74,
+    "batteryHours": 24,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB · Touch"
+        },
+        {
+          "value": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB · Touch"
+        },
+        {
+          "value": "Core Ultra 7 355 · Intel graphics · 16GB · 1TB · Touch"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gray",
+          "hex": "#7A7D82"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gray": [
+        {
+          "key": "laptops/samsung-galaxy-book6-16/gray-1",
+          "alt": "Samsung Galaxy Book6 (16\") in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np760vjg-kg1in/gallery/in-galaxy-book-np760vjg-kg1in-galaxy-book---------cm--ultra-------gb--copilot--pc-gray-thumb-551797452?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        },
+        {
+          "key": "laptops/samsung-galaxy-book6-16/gray-2",
+          "alt": "Samsung Galaxy Book6 (16\") in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np760xjg-kg1in/gallery/in-galaxy-book-np760xjg-kg1in-galaxy-book---------cm--ultra-------gb--copilot--pc-gray-thumb-551796475?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "laptops/samsung-galaxy-book6-16/common-1",
+        "alt": "Samsung Galaxy Book6 (16\") — symmetrical design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-16/common-2",
+        "alt": "Samsung Galaxy Book6 (16\") — Intel Core Ultra Series 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-16/common-3",
+        "alt": "Samsung Galaxy Book6 (16\") — Galaxy AI",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Galaxy_AI_Domoreon_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-NP760VJG-KG1",
+      "mpn": "NP760VJG-KG1IN",
+      "options": {
+        "Configuration": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB",
+        "Color": "Gray"
+      },
+      "price": 139990,
+      "mrp": 153990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 325",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP760XJG-KG1",
+      "mpn": "NP760XJG-KG1IN",
+      "options": {
+        "Configuration": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB · Touch",
+        "Color": "Gray"
+      },
+      "price": 146990,
+      "mrp": 159590,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 325",
+        "touch": true
+      }
+    },
+    {
+      "sku": "SAM-NP760VJG-KG2",
+      "mpn": "NP760VJG-KG2IN",
+      "options": {
+        "Configuration": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB",
+        "Color": "Gray"
+      },
+      "price": 149990,
+      "mrp": 165190,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 7 355",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP760XJG-KG2",
+      "mpn": "NP760XJG-KG2IN",
+      "options": {
+        "Configuration": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB · Touch",
+        "Color": "Gray"
+      },
+      "price": 153990,
+      "mrp": 170790,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 7 355",
+        "touch": true
+      }
+    },
+    {
+      "sku": "SAM-NP760XJG-KG3",
+      "mpn": "NP760XJG-KG3IN",
+      "options": {
+        "Configuration": "Core Ultra 7 355 · Intel graphics · 16GB · 1TB · Touch",
+        "Color": "Gray"
+      },
+      "price": 168990,
+      "mrp": 198790,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 355",
+        "touch": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "USB-C power adapter",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-series/buy/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-16-inch-u5-ultra-5-16gb-512gb-np760vjg-kg1in/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-16-inch-touch-u5-ultra-5-16gb-512gb-np760xjg-kg1in/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs from the model pages' FAQ and key-spec text; Samsung's full spec API refuses automated requests."
+  }
+}

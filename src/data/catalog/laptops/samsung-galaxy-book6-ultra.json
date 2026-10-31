@@ -1,0 +1,201 @@
+{
+  "slug": "samsung-galaxy-book6-ultra",
+  "title": "Samsung Galaxy Book6 Ultra",
+  "brand": "Samsung",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Samsung's most powerful laptop: 16-inch Dynamic AMOLED 2X touch display, Intel Core Ultra (Series 3) with NVIDIA GeForce RTX 50-series option.",
+  "description": "Galaxy Book6 Ultra is built for creators and gamers: Intel Core Ultra (Series 3) processors with an NVIDIA GeForce RTX 5070/5060 Laptop GPU option, DLSS 4 and ray tracing.\n\nThe 16-inch Dynamic AMOLED 2X touchscreen runs at 30–120Hz with 1,000 nits HDR and anti-reflective Gorilla Glass with DXC. A wider vapor chamber keeps performance steady, and a six-speaker Dolby Atmos system fills the room.\n\nIt's 15.4 mm thin (1.89 kg with RTX, 1.79 kg with Intel Arc) with up to 30 hours of video playback and 50%+ charge in 30 minutes.",
+  "highlights": [
+    "16-inch Dynamic AMOLED 2X touch, 30–120Hz, 1,000 nits HDR",
+    "Intel Core Ultra 7 / X7 (Series 3), 50 TOPS NPU",
+    "NVIDIA GeForce RTX 50-series option with DLSS 4",
+    "32GB RAM, 1TB SSD",
+    "Up to 30 hours video playback, 50%+ in 30 min",
+    "Six-speaker Dolby Atmos, haptic touchpad"
+  ],
+  "specs": {
+    "Processor": {
+      "cpu": "Intel Core Ultra 7 356H or Ultra X7 358H (Series 3)",
+      "npu": "50 TOPS"
+    },
+    "Memory": {
+      "ram": "32GB (up to 64GB on some models)"
+    },
+    "Storage": {
+      "ssd": "1TB (up to 2TB), with expansion slot"
+    },
+    "Display": {
+      "size": 16,
+      "type": "Dynamic AMOLED 2X, touch",
+      "refreshRate": "30–120Hz adaptive",
+      "brightness": "1,000 nits HDR",
+      "glass": "Corning Gorilla Glass with DXC"
+    },
+    "Graphics": {
+      "gpu": "NVIDIA GeForce RTX 5070/5060 Laptop GPU or Intel Arc (Xe3)"
+    },
+    "Battery": {
+      "life": "Up to 30 hours video playback",
+      "charging": "Over 50% in 30 minutes"
+    },
+    "Ports": {
+      "ports": "2× Thunderbolt 4, 1× USB 3.2, HDMI 2.1 (8K60 / 5K120)"
+    },
+    "Audio": {
+      "speakers": "Six speakers (4 woofers + 2 tweeters), Dolby Atmos"
+    },
+    "Build": {
+      "weight": "1.89 kg (RTX) / 1.79 kg (Intel Arc)",
+      "thickness": "15.4 mm",
+      "touchpad": "Haptic touchpad"
+    },
+    "Software": {
+      "os": "Windows 11 Home",
+      "ai": "Galaxy AI, Copilot+ PC"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra X7 358H",
+    "gpu": "NVIDIA GeForce RTX / Intel Arc",
+    "displayInch": 16,
+    "panel": "AMOLED",
+    "refreshRateHz": 120,
+    "weightKg": 1.89,
+    "batteryHours": 30,
+    "os": "Windows 11",
+    "ramGB": 32,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra X7 358H · Intel Arc graphics · 32GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 7 356H · NVIDIA GeForce RTX graphics · 32GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gray",
+          "hex": "#7A7D82"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gray": [
+        {
+          "key": "laptops/samsung-galaxy-book6-ultra/gray-1",
+          "alt": "Samsung Galaxy Book6 Ultra in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np960ujg-kg2in/gallery/in-galaxy-book-np960ujg-kg2in-galaxy-book--ultra--------cm--ultra-------gb--copilot--pc-gray-thumb-551781521?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        },
+        {
+          "key": "laptops/samsung-galaxy-book6-ultra/gray-2",
+          "alt": "Samsung Galaxy Book6 Ultra in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np960ujh-xg3in/gallery/in-galaxy-book6-ultra-16-inch-np960ujhe-np960ujh-xg3in-thumb-551773809?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "laptops/samsung-galaxy-book6-ultra/common-1",
+        "alt": "Samsung Galaxy Book6 Ultra — symmetrical design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-ultra/common-2",
+        "alt": "Samsung Galaxy Book6 Ultra — Intel Core Ultra + NVIDIA RTX",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-ultra/common-3",
+        "alt": "Samsung Galaxy Book6 Ultra — haptic touchpad",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Haptic_Touchpad_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-ultra/common-4",
+        "alt": "Samsung Galaxy Book6 Ultra — battery life",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Ultra_Battery_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-NP960UJG-KG2",
+      "mpn": "NP960UJG-KG2IN",
+      "options": {
+        "Configuration": "Core Ultra X7 358H · Intel Arc graphics · 32GB · 1TB",
+        "Color": "Gray"
+      },
+      "price": 282990,
+      "mrp": 333190,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra X7 358H",
+        "touch": true
+      }
+    },
+    {
+      "sku": "SAM-NP960UJH-XG3",
+      "mpn": "NP960UJH-XG3IN",
+      "options": {
+        "Configuration": "Core Ultra 7 356H · NVIDIA GeForce RTX graphics · 32GB · 1TB",
+        "Color": "Gray"
+      },
+      "price": 339990,
+      "mrp": 417190,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 356H",
+        "touch": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "USB-C power adapter",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-series/buy/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-ultra-ultra-7-32gb-1tb-np960ujg-kg2in/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-ultra-ultra-7-32gb-1tb-np960ujh-xg3in/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs from the model pages' FAQ and key-spec text; Samsung's full spec API refuses automated requests."
+  }
+}

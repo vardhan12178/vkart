@@ -1,0 +1,123 @@
+{
+  "slug": "bombay-shaving-company-power-groomer-11-in-1-trimmer",
+  "title": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer",
+  "brand": "Bombay Shaving Company",
+  "category": "grooming",
+  "categoryPath": [
+    "beauty",
+    "grooming",
+    "trimmers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "Multigroomers ka Big Daddy.",
+  "description": "Multigroomers ka Big Daddy. Full Body Grooming with 3 attachments, now including a safe-on-skin blade for body grooming. Trim. Style. Flex. Khul ke Khel.",
+  "highlights": [],
+  "specs": {
+    "Features": {
+      "points": [
+        "Multigroomers ka Big Daddy. Full Body Grooming with 3 attachments, now including a safe-on-skin blade for body grooming. Trim. Style. Flex. Khul ke Khel."
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Trimmer"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "Standard"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-1",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/1copy_262d21c1-78c3-415e-8f9e-af3c44fc731c.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-2",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/3copy_18e26f40-81ae-479d-a38a-785abb59afb2.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-3",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/6copy_438d12d2-08ec-4b80-b0df-566d0d731ba3.webp?v=1792996218",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-4",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/5copy_c584bb25-297a-416b-8b25-d32965680a13.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-5",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/7copy_8fadf8cc-9987-482e-ae02-c8535b1e549a.webp?v=1792996218",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-6",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/8copy_4650e813-c2cb-4d55-9cca-0ba32c101472.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-7",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/2copy_bd7e4d3e-c309-427c-81ce-e240f5660ec1.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
+      },
+      {
+        "key": "grooming/bombay-shaving-company-power-groomer-11-in-1-trimmer/common-8",
+        "alt": "Bombay Shaving Company Power Groomer 11-in-1 Trimmer, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0459/6563/9834/files/4copy_290ca4aa-1452-404e-aaa4-e33489847990.webp?v=1792996219",
+        "width": 1000,
+        "height": 1000
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BSC-POWERGROOMERTR-STANDARD",
+      "mpn": "APPLIANCES_POWER_GROOMER_BEARD_TRIMMER",
+      "options": {
+        "Size": "Standard"
+      },
+      "price": 899,
+      "mrp": 2000,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.bombayshavingcompany.com/products/power-groomer-trimmer"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Bombay Shaving Company's official online store."
+  }
+}

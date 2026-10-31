@@ -1,0 +1,134 @@
+{
+  "slug": "reequil-oxybenzone-omc-free-sunscreen",
+  "title": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50",
+  "brand": "Re'equil",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "sunscreen"
+  ],
+  "status": "draft",
+  "launchDate": "2026-05",
+  "shortDescription": "Oxybenzone & OMC Free Sunscreen is a lotion-based formulation with PA+++ Rating (highest grade for UVA protection) and SPF 50 (blocks 98% of UVB Rays).",
+  "description": "Oxybenzone & OMC Free Sunscreen is a lotion-based formulation with PA+++ Rating (highest grade for UVA protection) and SPF 50 (blocks 98% of UVB Rays). Formulated for oily and acne-prone skin, it has organic sunscreen filters, is non-comedogenic, & does not cause acne breakouts. This sunscreen offers long-lasting sun protection and helps prevent photo-ageing, hyperpigmentation, and dullness. Texture: Lotion like Feel: Non-greasy & spreads easily Fragrance: Mild fragrance No white cast Non-irritant",
+  "highlights": [
+    "Sunscreen SPF 50",
+    "For oily, acne-prone skin"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Sunscreen",
+      "spf": "50",
+      "skinType": [
+        "oily",
+        "acne-prone"
+      ],
+      "keyIngredients": []
+    }
+  },
+  "keySpecs": {
+    "productType": "Sunscreen",
+    "skinTypes": [
+      "oily",
+      "acne-prone"
+    ],
+    "keyIngredients": [],
+    "spf": "50"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "50g"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-1",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/Ultra_matte_2.webp?v=1788196435",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-2",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/1.5.png?v=1781763318",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-3",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July2.png?v=1785520075",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-4",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July3.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-5",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July5.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-6",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July6.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-7",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July7.png?v=1785520076",
+        "width": 1500,
+        "height": 1501
+      },
+      {
+        "key": "skincare/reequil-oxybenzone-omc-free-sunscreen/common-8",
+        "alt": "Re'equil Oxybenzone & OMC Free Sunscreen SPF 50, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0306/6262/3364/files/OMC_PDP_-_20_July8.png?v=1785520076",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "REQ-OXYSUN-50G",
+      "mpn": "ASL001",
+      "options": {
+        "Size": "50g"
+      },
+      "price": 356,
+      "mrp": 395,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.reequil.com/products/oxybenzone-free-sunscreen-spf-50-for-oily-acne-prone-skin"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Re'equil's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

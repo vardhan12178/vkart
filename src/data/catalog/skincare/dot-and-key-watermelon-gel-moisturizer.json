@@ -1,0 +1,121 @@
+{
+  "slug": "dot-and-key-watermelon-gel-moisturizer",
+  "title": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic",
+  "brand": "Dot & Key",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "moisturiser"
+  ],
+  "status": "draft",
+  "launchDate": "2025-03",
+  "shortDescription": "Moisturiser with Watermelon for all skin types.",
+  "description": "Moisturiser with Watermelon for all skin types.",
+  "highlights": [
+    "Moisturiser",
+    "Key actives: Watermelon"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Moisturiser",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Watermelon"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Moisturiser",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Watermelon"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "60g"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/dot-and-key-watermelon-gel-moisturizer/common-1",
+        "alt": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard1_c215309c-b9fa-49e9-9eb2-4956861020b3.jpg?v=1791895443",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/dot-and-key-watermelon-gel-moisturizer/common-2",
+        "alt": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard3_9439f795-446f-4a1d-a500-deecd1792c9d.jpg?v=1791895443",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/dot-and-key-watermelon-gel-moisturizer/common-3",
+        "alt": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard4_dbf154c9-f083-482a-9ccb-2e9f3a412d1b.jpg?v=1791895443",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/dot-and-key-watermelon-gel-moisturizer/common-4",
+        "alt": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard5_f1a8861a-e1ea-4ad1-aacc-7331ba961994.jpg?v=1791895443",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/dot-and-key-watermelon-gel-moisturizer/common-5",
+        "alt": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Artboard7_bee16719-2fb3-44fe-a949-8d2e5df17bfe.jpg?v=1791895443",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/dot-and-key-watermelon-gel-moisturizer/common-6",
+        "alt": "Dot & Key Watermelon Gel Moisturizer with Hyaluronic, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Listing-1080x1080_ea994ac0-b6a5-4678-9e96-270139659448.jpg?v=1776077076",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "DNK-WMGEL-60G",
+      "mpn": "DK_WCIGM",
+      "options": {
+        "Size": "60g"
+      },
+      "price": 495,
+      "mrp": 495,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.dotandkey.com/products/watermelon-moisturizer-icy-gel"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Dot & Key's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

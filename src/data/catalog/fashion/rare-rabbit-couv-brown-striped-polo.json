@@ -1,0 +1,244 @@
+{
+  "slug": "rare-rabbit-couv-brown-striped-polo",
+  "title": "Rare Rabbit Couv Brown Striped Polo",
+  "brand": "Rare Rabbit",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "polos"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Polo t-shirt crafted from a breathable cotton blend knit in a regular fit silhouette.",
+  "description": "Polo t-shirt crafted from a breathable cotton blend knit in a regular fit silhouette. Designed with a spread polo collar, a two-button placket, and cozy full sleeves with clean hems for structured definition. Ideal for everyday outings or relaxed evenings, this versatile staple pairs effortlessly with tailored trousers or dark chinos.",
+  "highlights": [
+    "Fit: Regular fit",
+    "Sleeve: Long Sleeve",
+    "Composition: 80% Cotton 20% Polyester"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Regular fit",
+      "Sleeve": "Long Sleeve",
+      "Composition": "80% Cotton 20% Polyester"
+    },
+    "Highlights": {
+      "points": [
+        "Cotton Blend",
+        "Regular fit",
+        "Button",
+        "Long Sleeve",
+        "Striped",
+        "80% Cotton 20% Polyester"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Polos",
+    "color": "Brown",
+    "fabric": "80% Cotton 20% Polyester",
+    "fit": "Regular fit",
+    "sizes": [
+      "XS-36",
+      "S-38",
+      "M-40",
+      "L-42",
+      "XL-44",
+      "XXL-46"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "XS-36"
+        },
+        {
+          "value": "S-38"
+        },
+        {
+          "value": "M-40"
+        },
+        {
+          "value": "L-42"
+        },
+        {
+          "value": "XL-44"
+        },
+        {
+          "value": "XXL-46"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Brown",
+          "hex": "#2C282B"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Brown": [
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-1",
+          "alt": "Rare Rabbit Couv Brown Striped Polo",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__1_-hm.webp?v=1787907843",
+          "width": 1920,
+          "height": 2379
+        },
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-2",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__8.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
+        },
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-3",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__7.webp?v=1787907843",
+          "width": 1920,
+          "height": 2379
+        },
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-4",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__4.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
+        },
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-5",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__5.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
+        },
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-6",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__6.webp?v=1787907843",
+          "width": 1920,
+          "height": 2379
+        },
+        {
+          "key": "fashion/rare-rabbit-couv-brown-striped-polo/brown-7",
+          "alt": "Rare Rabbit Couv Brown Striped Polo, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0752/6435/files/RR293316__3.webp?v=1787907842",
+          "width": 1920,
+          "height": 2379
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RRB-COUVMENSPOOBROWN-XS36",
+      "mpn": "8909196884857",
+      "options": {
+        "Size": "XS-36",
+        "Color": "Brown"
+      },
+      "price": 3799,
+      "mrp": 3799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "RRB-COUVMENSPOOBROWN-S38",
+      "mpn": "8909196884864",
+      "options": {
+        "Size": "S-38",
+        "Color": "Brown"
+      },
+      "price": 3799,
+      "mrp": 3799,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-COUVMENSPOOBROWN-M40",
+      "mpn": "8909196884871",
+      "options": {
+        "Size": "M-40",
+        "Color": "Brown"
+      },
+      "price": 3799,
+      "mrp": 3799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-COUVMENSPOOBROWN-L42",
+      "mpn": "8909196884888",
+      "options": {
+        "Size": "L-42",
+        "Color": "Brown"
+      },
+      "price": 3799,
+      "mrp": 3799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-COUVMENSPOOBROWN-XL44",
+      "mpn": "8909196884895",
+      "options": {
+        "Size": "XL-44",
+        "Color": "Brown"
+      },
+      "price": 3799,
+      "mrp": 3799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RRB-COUVMENSPOOBROWN-XXL46",
+      "mpn": "8909196884901",
+      "options": {
+        "Size": "XXL-46",
+        "Color": "Brown"
+      },
+      "price": 3799,
+      "mrp": 3799,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thehouseofrare.com/products/couv-mens-polo-brown"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rare Rabbit's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

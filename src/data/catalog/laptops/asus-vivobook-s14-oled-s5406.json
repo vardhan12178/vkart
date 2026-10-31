@@ -1,0 +1,225 @@
+{
+  "slug": "asus-vivobook-s14-oled-s5406",
+  "title": "ASUS Vivobook S 14 OLED (S5406)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Premium 14-inch OLED laptop with Intel Core Ultra 7 258V (Lunar Lake) and 32GB memory.",
+  "description": "Vivobook S 14 OLED pairs a vivid 14-inch OLED display with the efficient Intel Core Ultra 7 258V processor and 32GB of on-package memory.\n\nIt's a Copilot+ PC with a slim metal design in Mist Blue.",
+  "highlights": [
+    "Intel Core Ultra 7 258V",
+    "14-inch OLED display",
+    "32GB memory",
+    "Copilot+ PC",
+    "Slim metal design",
+    "Mist Blue"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": [
+        "Intel Core Ultra 7 Processor 258V 32GB 2.2 GHz (12MB Cache, up to 4.8 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 47TOPS",
+        "Intel Core Ultra 7 Processor 256V 16GB 2.2 GHz (12MB Cache, up to 4.8 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 47TOPS",
+        "Intel Core Ultra 5 Processor 228V 32GB 2.1 GHz (8MB Cache, up to 4.5 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 40TOPS",
+        "Intel Core Ultra 5 Processor 226V 16GB 2.1 GHz (8MB Cache, up to 4.5 GHz, 8 cores, 8 Threads); Intel AI Boost NPU up to 40TOPS"
+      ],
+      "Neural Processor": [
+        "Intel AI Boost NPU up to 49TOPS",
+        "Intel AI Boost NPU up to 40TOPS"
+      ]
+    },
+    "Graphics": {
+      "Graphics": "Intel Graphics"
+    },
+    "Display": {
+      "Display": [
+        "35.56cm (14), FHD+ (1920 x 1200) OLED 16:10 aspect ratio",
+        "3K (2880 x 1800) OLED 16:10 aspect ratio, Refresh Rate:60Hz refresh rate",
+        "120Hz refresh rate, peak brightness 600nits, 100% DCI-P3 color gamut, 1,000,000:1, VESA CERTIFIED Display HDR True Black 600, 1.07 billion colors, Glossy display, 70% less harmful blue light, - (Screen-to-body ratio)87%"
+      ]
+    },
+    "Memory": {
+      "Memory": [
+        "32GB LPDDR5X Memory on Package",
+        "16GB LPDDR5X Memory on Package"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD",
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": "1x M.2 2280 PCIe 4.0x4"
+    },
+    "Ports": {
+      "I/O Ports": [
+        "2x Thunderbolt 4 with support for display / power delivery (data speed up to 40Gbps)",
+        "2x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS, Micro SD card reader"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": "Backlit Chiclet Keyboard 1-Zone RGB without Num-key, 1.7mm Key-travel, Precision touchpad, With Copilot key",
+      "Camera": "FHD camera with IR function to support Windows Hello, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in microphone",
+        "Built-in speaker",
+        "Smart Amp Technology, harman/kardon (Mainstream)"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": "Wi-Fi 7(802.11be) (Triple band)2*2 Wireless Card, Bluetooth 5.4"
+    },
+    "Battery": {
+      "Battery": "75WHrs, 4S1P, 4-cell Li-ion",
+      "Power Supply": "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+    },
+    "Build": {
+      "Weight": "1.30 kg (2.87 lbs)",
+      "Dimensions (W x D x H)": "31.05 x 22.19 x 1.39 ~ 1.59 cm (12.22\" x 8.74\" x 0.55\" ~ 0.63\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": [
+        "Windows 11 Pro",
+        "Windows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf, No preinstalled OS"
+      ]
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "Microsoft Pluton security processor, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 7 258V 32GB / Intel Core Ultra 7 256V 16GB / Intel Core Ultra 5 228V 32GB",
+    "gpu": "Intel Graphics",
+    "displayInch": 14,
+    "panel": "OLED",
+    "refreshRateHz": 120,
+    "weightKg": 1.3,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Mist Blue",
+          "hex": "#989EB0"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Mist Blue": [
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-1",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the back with a visible stepped hinge design.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/2e205f20-7e5e-48a5-99a2-ab30ce28948a/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-2",
+          "alt": "Mist Blue ASUS Vivobook S 14 display opened from the front view, tilted at 45 degrees from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/30a839b0-42ec-498c-8409-d73e6920756d/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-3",
+          "alt": "Mist Blue ASUS Vivobook S 14 display opened from the front view, tilted at 45 degrees from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/e77a81af-407e-4956-b25d-816bef691015/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-4",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/8f93612c-abb9-4702-bf3c-df2aaf98c0e4/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-5",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/5ce7a79a-6f47-4ccd-82ec-6e5667001301/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-6",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the right side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b4fba8cf-e814-4a6b-9ea5-3753dafaabba/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-7",
+          "alt": "Mist Blue ASUS Vivobook S 14 shown from the left side, displaying a range of I/O ports.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6347a10f-4f2e-49c9-86b4-6db004ddff9e/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-s14-oled-s5406/mist-blue-8",
+          "alt": "Mist Blue ASUS Vivobook 14 lid viewed from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/14dbf8c8-2176-4339-81f1-91eed1910559/w800",
+          "width": 800,
+          "height": 800
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VBS14O-MIBL",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Mist Blue"
+      },
+      "price": 128990,
+      "mrp": 128990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s-14-oled-s5406/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-s-14-oled-s5406/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

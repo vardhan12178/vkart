@@ -1,0 +1,121 @@
+{
+  "slug": "agaro-regency-air-fryer-oven-12-l-1800w",
+  "title": "Agaro Regency Air Fryer Oven 12 L 1800W",
+  "brand": "Agaro",
+  "category": "kitchen-appliances",
+  "categoryPath": [
+    "home-kitchen",
+    "kitchen-appliances",
+    "air-fryers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "12L large capacity, 1800W, Temp range: 80 deg C - 200 deg C, Timer: 1-90 min, 360? ø heat circulation technology, helps you finish cooking perfectly",
+  "description": "12L large capacity, 1800W, Temp range: 80 deg C - 200 deg C, Timer: 1-90 min, 360? ø heat circulation technology, helps you finish cooking perfectly",
+  "highlights": [
+    "Warranty: 2 years on product"
+  ],
+  "specs": {
+    "Specifications": {
+      "Healthier Alternatives": "Healthy cooking with less fat can reduce your fat intake by 90%, protecting your diet healthy",
+      "Warranty": "2 years on product"
+    },
+    "Features": {
+      "points": [
+        "12L large capacity, 1800W, Temp range: 80 deg C - 200 deg C, Timer: 1-90 min, 360? ø heat circulation technology, helps you finish cooking perfectly",
+        "Special Beveled LED screen design: The simple and smart LED screen, transparent cooking window and Interior lighting, Touch control panel",
+        "Healthier Alternatives: Healthy cooking with less fat can reduce your fat intake by 90%, protecting your diet healthy",
+        "Includes: 1x Rotating Basket, 1x Handle Tool, 1x Rotisserie Fork, 1x Skewer Rack, 2x Mesh Racks 1x Drip Tray, 1x Frying Basket, 2x Gloves 1 x Recipe Book",
+        "Warranty: 2 years on product"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Air Fryer",
+    "wattage": 1800,
+    "capacity": "12 L"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "12 L"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-1",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/1_919f986c-e66b-4f87-a0a6-27f95fd068a3.jpg?v=1758219606",
+        "width": 2048,
+        "height": 2048
+      },
+      {
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-2",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/2_f4802b30-fda1-45d8-9702-a5eb9082ad0d.jpg?v=1758219614",
+        "width": 2048,
+        "height": 2048
+      },
+      {
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-3",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/3_6a4bd97a-5aa6-463a-82f2-facf10ec2bbe.jpg?v=1758219620",
+        "width": 2048,
+        "height": 2048
+      },
+      {
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-4",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/4_14ece19b-d7d5-4211-a7b1-e2711e8b80ef.jpg?v=1758219625",
+        "width": 2048,
+        "height": 2048
+      },
+      {
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-5",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/5_58c43ad5-98a5-4252-99f2-e6184c1d8334.jpg?v=1758219609",
+        "width": 2048,
+        "height": 2048
+      },
+      {
+        "key": "kitchen-appliances/agaro-regency-air-fryer-oven-12-l-1800w/common-6",
+        "alt": "Agaro Regency Air Fryer Oven 12 L 1800W, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0746/2944/7953/files/6_23105993-262b-4b2f-a2e5-bf9d758fee6b.jpg?v=1758219613",
+        "width": 2048,
+        "height": 2048
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "AGR-REGENCYAIRFRYE-12L",
+      "mpn": "33684",
+      "options": {
+        "Size": "12 L"
+      },
+      "price": 9699,
+      "mrp": 19995,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.agarolifestyle.com/products/regency-air-fryer-1800-watts-12l"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Agaro's official online store."
+  }
+}

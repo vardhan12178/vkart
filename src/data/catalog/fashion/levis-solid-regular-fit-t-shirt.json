@@ -1,0 +1,260 @@
+{
+  "slug": "levis-solid-regular-fit-t-shirt",
+  "title": "Levi's Solid Regular Fit T-Shirt",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "tshirts"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Hit refresh on your everyday wardrobe with this t-shirt from Levi's.",
+  "description": "Hit refresh on your everyday wardrobe with this t-shirt from Levi's. Whether you're going out to grab a cup of coffee with your friends or simply running errands, this regular fit t-shirt is an ideal choice to wear. Made from premium quality cotton in solid pattern.",
+  "highlights": [
+    "Fit: Regular Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Regular Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Standard crew neck and half sleeves",
+        "Team it with our joggers and sliders for a laid-back style."
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "T-Shirts",
+    "color": "Light Blue",
+    "fabric": null,
+    "fit": "Regular Fit",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL",
+      "5XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        },
+        {
+          "value": "4XL"
+        },
+        {
+          "value": "5XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Light Blue",
+          "hex": "#CECFCA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Light Blue": [
+        {
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-1",
+          "alt": "Levi's Solid Regular Fit T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_01_Styleshot.jpg?v=1785758900",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-2",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_02_Front.jpg?v=1785758909",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-3",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_03_Back.jpg?v=1785758919",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-4",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_04_detail_20.jpg?v=1785758930",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-solid-regular-fit-t-shirt/light-blue-5",
+          "alt": "Levi's Solid Regular Fit T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A79730399_05_Side.jpg?v=1785758942",
+          "width": 1034,
+          "height": 1376
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-SOLIDREGUL730399-S",
+      "mpn": "5401252616349",
+      "options": {
+        "Size": "S",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-M",
+      "mpn": "5401252616325",
+      "options": {
+        "Size": "M",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-L",
+      "mpn": "5401252616301",
+      "options": {
+        "Size": "L",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-XL",
+      "mpn": "5401252616363",
+      "options": {
+        "Size": "XL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-XXL",
+      "mpn": "5401252617209",
+      "options": {
+        "Size": "XXL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-3XL",
+      "mpn": "5401252608078",
+      "options": {
+        "Size": "3XL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-4XL",
+      "mpn": "5401252615663",
+      "options": {
+        "Size": "4XL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-SOLIDREGUL730399-5XL",
+      "mpn": "5401252615687",
+      "options": {
+        "Size": "5XL",
+        "Color": "Light Blue"
+      },
+      "price": 1799,
+      "mrp": 1999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/mens-solid-regular-fit-t-shirt-a79730399"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

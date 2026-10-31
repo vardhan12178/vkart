@@ -1,0 +1,167 @@
+{
+  "slug": "zebronics-43p8-43-smart-tv",
+  "title": "Zebronics 43P8 43\" Smart TV",
+  "brand": "Zebronics",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "Zebronics 43P8 43\" Smart TV: Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input), 280 nits, 1920x1080 FHD, Built-in Wi-Fi.",
+  "description": "Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input); 280 nits; 1920x1080 FHD; Built-in Wi-Fi; Remote Control; 108cm; Wall Mountable; A Grade Display Panel; 26W Speakers.",
+  "highlights": [
+    "Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input)",
+    "280 nits",
+    "1920x1080 FHD",
+    "Built-in Wi-Fi",
+    "Remote Control",
+    "108cm"
+  ],
+  "specs": {
+    "Specifications": {
+      "Processor": "Cortex A35*4",
+      "GPU": "Mali-G31 MP2 800 MHz",
+      "RAM": "512MB",
+      "Internal Storage": "4GB",
+      "Wi-Fi": "2.4GHz - IEEE 802.11b/g/n",
+      "LAN (RJ45)": "10/100M Auto-Identification",
+      "Screen size": "108cm (43)",
+      "Refresh Rate": "60Hz",
+      "Native Resolution": "1920 x 1080",
+      "Aspect Ratio": "16:9",
+      "Max. Brightness": "280 nits",
+      "Viewing Angle": "V:178°, H:178°",
+      "Contrast Ratio": "1200:1",
+      "Pixel Pitch": "0.49005 × 0.16335 mm",
+      "Display colors": "16.7 Million",
+      "Response Time": "8ms",
+      "Power consumption (MAX)": "75W",
+      "Speaker Output (RMS)": "13W x 2",
+      "Audio file format support": "13W x 2",
+      "Video file format support": "3GP, AVI, M4V, MKV, MP4, WEBM, MPEG1, MPEG2, H.265, H.264",
+      "Image file format": "JPEG, PNG, BMP",
+      "Connectivity": "Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input",
+      "Video System": "PAL / SECAM / NTSC / AUTO",
+      "Picture Profiles": "User, Standard, Vivid, Eco, Movie, Game, Sport",
+      "Sound Profiles": "Standard, Soccer, Movie, Music, User",
+      "Product Dimension (W x D x H)": "Without Stand - 96 x 9 x 56.2 cm",
+      "With Stand - 96 x 20.4 x 61.1 cm": "Net Weight",
+      "5.76 Kg": "Country of origin"
+    },
+    "Features": {
+      "points": [
+        "Multi Connectivity (Triple HDMI - 1 x HDMI (ARC) | 2 x HDMI IN | 2 x USB | DVB-S2 |  Earphone Out | 1 x AV IN | RJ45 | Optical Out | RF Input)",
+        "280 nits",
+        "1920x1080 FHD",
+        "Built-in Wi-Fi",
+        "Remote Control",
+        "108cm",
+        "Wall Mountable",
+        "A Grade Display Panel",
+        "26W Speakers"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 43,
+    "resolution": "1920 x 1080",
+    "refreshRateHz": 60,
+    "panel": "LED",
+    "os": null,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "43\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "tvs/zebronics-43p8-43-smart-tv/common-1",
+        "alt": "Zebronics 43P8 43\" Smart TV",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-43P8-Pic-1_555aadcf-6dac-4637-8820-b237c68ebd27.jpg?v=1784711665",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "tvs/zebronics-43p8-43-smart-tv/common-2",
+        "alt": "Zebronics 43P8 43\" Smart TV, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-43P8-Pic-2_029bbaa0-17d9-45d7-a6e9-bdce551b5247.jpg?v=1784711665",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "tvs/zebronics-43p8-43-smart-tv/common-3",
+        "alt": "Zebronics 43P8 43\" Smart TV, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-43P8-Pic-3.jpg?v=1784711665",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "tvs/zebronics-43p8-43-smart-tv/common-4",
+        "alt": "Zebronics 43P8 43\" Smart TV, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-43P8-Pic-4.jpg?v=1784711665",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "tvs/zebronics-43p8-43-smart-tv/common-5",
+        "alt": "Zebronics 43P8 43\" Smart TV, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-43P8-Pic-5.jpg?v=1784711665",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "key": "tvs/zebronics-43p8-43-smart-tv/common-6",
+        "alt": "Zebronics 43P8 43\" Smart TV, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/Zeb-43P8-Pic-6.jpg?v=1784711665",
+        "width": 2000,
+        "height": 2000
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "ZEB-43P8",
+      "mpn": "TV78-ZEB 43P8 ZEBRONICS TELEVISION WITH WALL MOUNT (109 CMS)",
+      "options": {
+        "Size": "43\""
+      },
+      "price": 43499,
+      "mrp": 43499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Smart LED TV",
+    "Remote Control",
+    "Table Top Stand",
+    "Wall mounting",
+    "AAA Batteries",
+    "User Manual",
+    "TV Stand screws",
+    "Warranty Card"
+  ],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://zebronics.com/products/zeb-43p8"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, images, features and specification table from Zebronics' official online store. Zebronics lists a single price, which appears to be the list price."
+  }
+}

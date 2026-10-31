@@ -1,0 +1,324 @@
+{
+  "slug": "oppo-find-x9-ultra",
+  "title": "OPPO Find X9 Ultra",
+  "brand": "OPPO",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Snapdragon 8 Elite Gen 5, 6.82-inch AMOLED display up to 144Hz, 7,050 mAh battery with 100W SUPERVOOC and AIRVOOC wireless charging and a 50MP main camera.",
+  "description": "OPPO Find X9 Ultra runs on the Snapdragon 8 Elite Gen 5 with ColorOS 16.0. Its 6.82-inch AMOLED display up to 144Hz keeps scrolling and games smooth.\n\nThe 7,050 mAh battery with 100W SUPERVOOC and AIRVOOC wireless charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.",
+  "highlights": [
+    "Snapdragon 8 Elite Gen 5",
+    "6.82-inch AMOLED display up to 144Hz",
+    "7,050 mAh battery with 100W SUPERVOOC and AIRVOOC wireless charging",
+    "50MP main camera",
+    "ColorOS 16.0"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 16.32cm",
+      "Width": "about 7.70cm",
+      "Thickness": [
+        "about 0.87cm(Canyon Orange)",
+        "about 0.91cm(Tundra Umber)"
+      ],
+      "Weight": [
+        "about 235g(Canyon Orange)",
+        "about 236g(Tundra Umber)"
+      ]
+    },
+    "Storage": {
+      "RAM and ROM Capacities": "12GB+512GB",
+      "RAM Type": "LPDDR5X",
+      "ROM Specifications": "UFS 4.1",
+      "Phone Storage Card": "Unsupported",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "17.32cm",
+      "Screen Ratio": "94.6%",
+      "Resolution": "QHD+ 3168×1440 Pixels",
+      "Refresh Rate": "1-120Hz Adaptive, Maximum 144Hz (144Hz only works in some game scenarios)",
+      "Touch Sampling Rate": [
+        "Maximum 300Hz",
+        "Default 120Hz"
+      ],
+      "Colour Gamut": [
+        "Standard mode: 100% DCI-P3",
+        "Natural mode: 100% DCI-P3",
+        "Vivid mode: 100% DCI-P3"
+      ],
+      "Colour Depth": "1.07 billion colours(10-bit)",
+      "Pixel Density": "510 PPI",
+      "Brightness": [
+        "Normal brightness: 800 nits(Typical)",
+        "HBM: 1800 nits(Typical)"
+      ],
+      "Panel": "AMOLED display",
+      "Cover Glasses": "Corning® Gorilla® Glass Victus® 2"
+    },
+    "Camera": {
+      "Rear": [
+        "Ultra-wide angle: 50MP; f/2.0; FOV 123°; 6P lens; AF supported",
+        "Wide angle: 200MP; f/1.5; FOV 84°; 7P lens; AF supported; Supports 2-axis OIS",
+        "Telephoto: 200MP; f/2.2; FOV 34°; Prism(OIS)+3P+3P(AF) lens; AF supported; Supports 2-axis OIS",
+        "Ultra telephoto: 50MP; f/3.5; FOV 11°; 1G3P+PRISM lens; AF supported; Supports 2-axis OIS",
+        "Monochrome: 3.2MP; f/2.4; FOV 95°; 3P lens"
+      ],
+      "Front": "50MP; f/2.4; FOV 90°; 5P lens; AF supported",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Portrait, Night, Panorama, SLO-MO, Long Exposure, Dual-view video, TIME-LAPSE, STICKER, XPAN, HASSELBLAD HI-RES, Underwater, Master, Hypertext, DOC SCANNER, Pro Video, HASSELBLAD TELECONVERTER",
+        "Front: Photo, Video, Portrait, HASSELBLAD HI-RES, Night, Panorama, Dual-view video, TIME-LAPSE, STICKER, Pro Video"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "8K video: 30 fps",
+        "4K video: 120 fps, 60 fps, 30 fps",
+        "1080P video: 120 fps, 60 fps, 30 fps",
+        "720P video: 30 fps",
+        "4K EIS/OIS video: 60 fps, 30 fps",
+        "1080P EIS/OIS video: 60 fps, 30 fps",
+        "4K SLO-MO video: 120 fps",
+        "1080P SLO-MO video: 240 fps, 120 fps",
+        "720P SLO-MO video: 480 fps, 240 fps",
+        "4K TIME-LAPSE: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "4K Dolby Vision shooting: 120 fps 60 fps, 30 fps",
+        "1080P Dolby Vision shooting: 120 fps, 60 fps, 30 fps",
+        "Supports professional video shooting",
+        "Supports Dual-view video shooting",
+        "Supports HDR video shooting",
+        "Supports video zoom shooting: up to 10x optical zoom, up to 30x digital zoom"
+      ],
+      "Front": [
+        "4K video: 60 fps, 30 fps",
+        "1080P video: 60 fps, 30 fps(with Retouch on)",
+        "720P video: 30 fps",
+        "1080P EIS video: 30 fps(with Retouch on)",
+        "720P EIS video: 30 fps",
+        "4K TIME-LAPSE:  30 fps",
+        "1080P TIME-LAPSE:  30 fps",
+        "Supports professional video shooting",
+        "Supports Dual-view video shooting",
+        "Supports HDR video shooting",
+        "Supports video zoom shooting:  2× digital zoom"
+      ]
+    },
+    "Chips": {
+      "SoC": "Snapdragon® 8 Elite Gen 5 Mobile Platform",
+      "CPU": "8-core",
+      "GPU": "Adreno™ 840@1200MHz"
+    },
+    "Battery": {
+      "Battery": [
+        "7050 mAh/26.23 Wh(Typical)",
+        "6890 mAh/25.64 Wh(Rated)"
+      ],
+      "Fast Charge": [
+        "Supports(Max): 100 W SUPERVOOCTM",
+        "Compatible with: 80 W and below SUPERVOOCTM, 18 W PD, 18 W QC, 55 W PPS",
+        "Supports: 50 W AIRVOOCTM"
+      ]
+    },
+    "Biometrics": {
+      "Fingerprint": "Under-screen fingerprint",
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "Colour temperature sensor",
+        "E-compass",
+        "Accelerometer",
+        "Gyroscope",
+        "In-display ultrasound fingerprint sensor",
+        "Hall sensor",
+        "Pressure sensor",
+        "Laser focusing sensor",
+        "Spectral sensor",
+        "Infrared remote control"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 7 (802.11be) supported",
+        "Wi-Fi 6 (802.11ax) supported",
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported",
+        "Wi-Fi 2.4GHz 2×2+Wi-Fi 5GHz 2×2 concurrent supported",
+        "Wi-Fi 5GHz 160MHz supported",
+        "2×2 MIMO supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 6.0, Low Energy",
+      "Bluetooth® Audio Codec": "SBC, AAC, aptX, aptX HD, aptX Adaptive, LDAC, LHDC5.0",
+      "USB Interface": "USB Type-C, USB 3.2 Gen 1",
+      "Earphone Jack": "Type-C headphones, supported Type-C digital headphones, not supported Type-C analog headphones",
+      "NFC": "Supported"
+    },
+    "Operating System": {
+      "Os": "ColorOS 16.0"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.82,
+    "refreshRateHz": 144,
+    "mainCameraMP": 50,
+    "frontCameraMP": 50,
+    "batteryMah": 7050,
+    "chargingW": 100,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 235,
+    "chip": "Snapdragon 8 Elite Gen 5",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Tundra Umber",
+          "hex": "#3A3A3A"
+        },
+        {
+          "value": "Canyon Orange",
+          "hex": "#E26F45"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Tundra Umber": [
+        {
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-1",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/rZQlk3NmlUNgfqMl.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-2",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/IPdSidBfXNYqmnRx.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-3",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/xBwq6KeIbxDX3vyL.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-find-x9-ultra/tundra-umber-4",
+          "alt": "OPPO Find X9 Ultra in Tundra Umber, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/L4ICCsaCHx2x6z7G.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Canyon Orange": [
+        {
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-1",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/SQhkU3R3719l6tNb.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-2",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/XzUk3E2HgiQqdfsu.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-3",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/Y3qdpQ5I94wZAJhA.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-find-x9-ultra/canyon-orange-4",
+          "alt": "OPPO Find X9 Ultra in Canyon Orange, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/OasDTujvuwVrH45f.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-FX9U-12512-TUUM",
+      "mpn": "5011110311",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Tundra Umber"
+      },
+      "price": 169999,
+      "mrp": 249999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "OPO-FX9U-12512-CAOR",
+      "mpn": "5011110312",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Canyon Orange"
+      },
+      "price": 169999,
+      "mrp": 249999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone×1",
+    "Charger×1",
+    "USB Data Cable×1",
+    "SIM Ejector Tool×1",
+    "Protective Case×1",
+    "Quick Guide×1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/smartphones/series-find-x/find-x9-ultra/specs/",
+      "https://www.oppo.com/in/product/oppo-find-x9-ultra.P.P1110142"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
+  }
+}

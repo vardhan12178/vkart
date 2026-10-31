@@ -1,0 +1,137 @@
+{
+  "slug": "the-derma-co-2-salicylic-acid-face-wash",
+  "title": "The Derma Co 2% Salicylic Acid Gel Face Wash",
+  "brand": "The Derma Co",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "cleanser"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Unleash your skin's full glow potential with our potent 2% Salicylic Acid Gel Face Wash!",
+  "description": "Unleash your skin's full glow potential with our potent 2% Salicylic Acid Gel Face Wash! This gentle yet mighty cleanser not only purifies pores but also exfoliates, banishing acne-causing bacteria and impurities for good. With Witch Hazel and Willow Bark, this dynamic trio deeply penetrates pores to reduce acne and prevent future breakouts. Salicylic Acid's anti-inflammatory properties also soothe red, inflamed skin, revealing clearer, brighter skin for a filter-free selfie game. Our lightweight, easy-to-absorb formula makes it perfect for daily use. Embrace a smoother, more radiant complexion, and own your natural beauty! Regular use will keep your skin looking and feeling its best, so you can take on the day with fearless confidence.\n\nThe Derma Co. 2% Salicylic Acid Gel Face Wash was independently tested at Sigma Test & Research Centre under report nos. 13049863/N and 13049863/Z . Testing of batch AAP6D162 found lead and arsenic below detection limits, four specified microorganisms absent, microbial counts within limits, and a measured pH of 6.54.",
+  "highlights": [
+    "Cleanser",
+    "Key actives: Salicylic Acid, Witch Hazel"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Cleanser",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Salicylic Acid",
+        "Witch Hazel"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Cleanser",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Salicylic Acid",
+      "Witch Hazel"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "100ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-1",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/pdp_2_salicylic_fw.jpg?v=1758287053",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-2",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/5_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-3",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/1_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-4",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/2_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-5",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/4_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-6",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/3_2_salicylic_fw.jpg?v=1772703159",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-7",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/fop_2_salicylic_fw.jpg?v=1758287053",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "skincare/the-derma-co-2-salicylic-acid-face-wash/common-8",
+        "alt": "The Derma Co 2% Salicylic Acid Gel Face Wash, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0888/8057/8807/files/bop_2_salicylic_fw.jpg?v=1758287053",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "TDC-SAL2FW-100ML",
+      "mpn": "8904417316056",
+      "options": {
+        "Size": "100ml"
+      },
+      "price": 329,
+      "mrp": 329,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://thedermaco.com/products/2-salicylic-acid-gel-face-wash-the-dermaco-100ml"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from The Derma Co's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

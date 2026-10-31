@@ -9,7 +9,8 @@ import {
   ChevronRight, Lightbulb, ArrowRight, ShoppingCart
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { closeChat, openChat } from "../redux/uiSlice";
+import { closeChat, openChat, clearChatPrompt } from "../redux/uiSlice";
+
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -34,6 +35,7 @@ const withMessageId = (msg) => (msg?.id ? msg : { ...msg, id: createMessageId() 
 const AIChatAssistant = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.ui.isChatOpen);
+  const chatPrompt = useSelector((state) => state.ui.chatPrompt);
   const navigate = useNavigate();
   const location = useLocation();
   const showDesktopLauncher = location.pathname === "/";
@@ -71,6 +73,7 @@ const AIChatAssistant = () => {
   }, [messages]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState("");
 
   // 🛡️ Rate Limit State
   const [cooldown, setCooldown] = useState(0);
@@ -155,6 +158,16 @@ const AIChatAssistant = () => {
     setMessages((prev) => [...prev, botMessage]);
   };
 
+  // Phase two of an answer: the model's picks and reasons for the search results.
+  // Returns null when the model is slow or fails, so the caller can show the search results instead.
+  const fetchRanking = async (token) => {
+    try {
+      const { data } = await axios.post("/api/ai/chat/rank", { token }, { timeout: 30000 });
+      if (data?.reranked && Array.isArray(data.products) && data.products.length) return data;
+    } catch { /* fall back to the search results */ }
+    return null;
+  };
+
   const sendMessage = async (rawMessage) => {
     const userMessage = String(rawMessage || "").trim();
     if (!userMessage || cooldown > 0 || isLoading) return;
@@ -166,16 +179,28 @@ const AIChatAssistant = () => {
     nextScrollRef.current = { type: "bottom", id: null };
     setMessages((prev) => [...prev, userEntry]);
     setIsLoading(true);
+    setLoadingText("Our AI is searching…");
     setCooldown(3); // Prevent spamming
 
     try {
       const res = await axios.post("/api/ai/chat", {
         message: userMessage,
-        history
+        history,
+        twoPhase: true,
+        // Ignored by the current API; older deployments answer from the right catalog only when asked
+        catalog: "v2",
       });
 
-      const { structured, products } = res.data;
-      appendBotMessage({ structured, products });
+      const { structured, products, rank } = res.data;
+      // Two-phase answers: wait for the model's picks and show one final answer
+      // (search results only if the picks don't come back).
+      if (rank?.token) {
+        setLoadingText("Our AI is picking the best matches for you…");
+        const ranked = await fetchRanking(rank.token);
+        appendBotMessage(ranked ? { structured: ranked.structured, products: ranked.products } : { structured, products });
+      } else {
+        appendBotMessage({ structured, products });
+      }
     } catch (error) {
       console.error("AI Chat Error:", error);
       appendBotMessage({
@@ -188,23 +213,52 @@ const AIChatAssistant = () => {
       });
     } finally {
       setIsLoading(false);
+      setLoadingText("");
     }
   };
 
   const handleSend = async () => sendMessage(input);
 
+  // A question handed over from search: send it, or leave it in the box while a reply is still loading
+  useEffect(() => {
+    if (!chatPrompt?.text) return;
+    dispatch(clearChatPrompt());
+    if (isLoading || cooldown > 0) setInput(chatPrompt.text);
+    else sendMessage(chatPrompt.text);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chatPrompt]);
+
   const handlePromptClick = async (prompt) => {
     await sendMessage(prompt);
   };
 
-  const handleProductClick = (productId) => {
+  const productPath = (prod) => `/products/${prod.slug}`;
+
+  const handleProductClick = (prod) => {
     dispatch(closeChat());
-    navigate(`/product/${productId}`);
+    navigate(productPath(prod));
   };
 
   const handleAddToCart = (e, prod) => {
     e.stopPropagation();
-    dispatch(addToCart({ ...prod, quantity: 1 }));
+    // Products with several variants need a choice (size, colour, storage) first
+    if (prod.variantCount > 1 || !prod.sku) {
+      handleProductClick(prod);
+      showToast("Choose a variant to add it to your bag", "info");
+      return;
+    }
+    dispatch(addToCart({
+      catalog: "v2",
+      productId: prod._id,
+      sku: prod.sku,
+      slug: prod.slug,
+      title: prod.title,
+      price: prod.price,
+      thumbnail: prod.thumbnail,
+      category: prod.category,
+      discountPercentage: prod.discountPercent || 0,
+      quantity: 1,
+    }));
     showToast("Added to cart", "success");
   };
 
@@ -315,7 +369,7 @@ const AIChatAssistant = () => {
                   key={prod._id}
                   whileHover={{ scale: 1.01, y: -1 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => handleProductClick(prod._id)}
+                  onClick={() => handleProductClick(prod)}
                   className={`relative flex cursor-pointer gap-2.5 sm:gap-3.5 rounded-xl border bg-[#fffdf8] p-2.5 sm:p-3 transition-all
                     ${isBestMatch
                       ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10 shadow-sm"
@@ -343,8 +397,11 @@ const AIChatAssistant = () => {
                       )}
                     </div>
                     <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wide text-[#817c73] mt-0.5">
-                      {prod.category || 'VKart'}
+                      {prod.brand ? `${prod.brand} · ` : ""}{prod.category || 'VKart'}
                     </p>
+                    {prod.reason && !isBestMatch && (
+                      <p className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-[#5f5b52]">{prod.reason}</p>
+                    )}
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs sm:text-sm font-bold text-[#1d1c19]">{INR(prod.price)}</span>
                       <span className={`text-[9px] font-bold ${prod.stock > 0 ? 'text-[#5f6a52]' : 'text-[#a85d37]'}`}>
@@ -516,10 +573,10 @@ const AIChatAssistant = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center gap-2 pl-2 text-xs font-bold uppercase tracking-widest text-[#8e887e]"
+                  className="flex items-center gap-2 pl-2 text-xs font-semibold text-[#8e887e]"
                 >
                   <Loader2 size={12} className="animate-spin text-[#a85d37]" />
-                  Thinking...
+                  <span role="status">{loadingText || "Thinking..."}</span>
                 </motion.div>
               )}
 

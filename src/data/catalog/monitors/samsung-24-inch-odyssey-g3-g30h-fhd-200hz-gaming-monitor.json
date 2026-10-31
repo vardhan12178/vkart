@@ -1,0 +1,146 @@
+{
+  "slug": "samsung-24-inch-odyssey-g3-g30h-fhd-200hz-gaming-monitor",
+  "title": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "New & Latest LS24HG300EW, 60.5 cm (24) Odyssey G3 G30H FHD 200Hz Gaming Monitor. Explore the benefits, features & offers of this product. Know more at Samsung India.",
+  "description": "New & Latest LS24HG300EW, 60.5 cm (24) Odyssey G3 G30H FHD 200Hz Gaming Monitor. Explore the benefits, features & offers of this product. Know more at Samsung India.",
+  "highlights": [
+    "24-inch FHD (1920 x 1080) IPS",
+    "200Hz refresh rate",
+    "1 (MPRT) response time",
+    "IPS panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Aspect Ratio": "16:9",
+      "Brightness (Typical)": "250 cd/㎡",
+      "Contrast Ratio Static": "1,000:1",
+      "Resolution": "FHD (1920 x 1080)",
+      "Response Time": "1 (MPRT)",
+      "Viewing Angle (H/V)": "178 / 178",
+      "Refresh Rate": "Max 200 Hz",
+      "Screen Size (Class)": "60.5 cm",
+      "Flat / Curved": "Flat",
+      "Active Display Size (HxV) (mm)": "52.70 cm x 29.64 cm",
+      "Panel Type": "IPS",
+      "Brightness (Min)": "200 cd/㎡",
+      "Contrast Ratio (Dynamic)": "Mega",
+      "HDR(High Dynamic Range)": "HDR10",
+      "Colour Support": "Max 16.7M",
+      "sRGB Coverage": "95 %",
+      "Eco Saving Plus": "Yes",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Windows Certification": "Windows11",
+      "FreeSync": "FreeSync Premium",
+      "Off Timer Plus": "Yes",
+      "Black Equalizer": "Yes",
+      "Virtual AIM Point": "Yes",
+      "Auto Source Switch": "Auto Source Switch",
+      "Display Port": "1 EA",
+      "Display Port Version": "1.4",
+      "HDCP Version (DP)": "2.2",
+      "HDMI": "1 EA",
+      "HDMI Version": "2.0",
+      "HDCP Version (HDMI)": "2.2",
+      "Headphone": "1",
+      "USB Service Port (Only Service)": "1",
+      "Speaker": "No",
+      "Temperature": "0 ~ 40 ℃",
+      "Humidity": "10 ~ 80 (Non-Condensing)",
+      "Uniformity Correction": "≥ 75 %",
+      "Front Colour": "Black",
+      "Rear Color": "Black",
+      "Stand Colour": "Black",
+      "Stand Type": "Simple",
+      "Tilt": "-2˚(+2˚/-1˚) ~ 20˚(±2˚)",
+      "Wall Mount": "7.50 cm x 7.50 cm",
+      "Power Supply": "AC 100 - 240 V (50/60 Hz)",
+      "Power Consumption (Max)": "35 W",
+      "Type": "External Adaptor",
+      "Set Dimension with Stand (WxHxD)": "53.95 cm x 42.08 cm x 21.74 cm",
+      "Set Dimension without Stand (WxHxD)": "53.95 cm x 32.47 cm x 5.07 cm",
+      "Package Dimension (WxHxD)": "60.40 cm x 16.60 cm x 38.0 cm",
+      "Set Weight with Stand": "2.8 kg",
+      "Set Weight without Stand": "2.4 kg",
+      "Package Weight": "4.3 kg",
+      "Power Cable Length": "1.5",
+      "DP Cable": "Yes",
+      "Manufactured by": "BOE VISION-ELECTRONIC TECHNOLOGY, (VIETNAM) CO.,LTD ROAD NO.3, NHON TRACH II-NHON PHU, INDUSTRIAL PARK, PHU HOI COMMUNE, NHON TRACH DISTRICT, DONG NAI PROVINCE, VIETNAM",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 24,
+    "resolution": "FHD (1920 x 1080)",
+    "refreshRateHz": 200,
+    "panel": "IPS",
+    "responseTimeMs": null,
+    "curved": false,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "24\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/samsung-24-inch-odyssey-g3-g30h-fhd-200hz-gaming-monitor/common-1",
+        "alt": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24hg300ewxxl/gallery/in-odyssey-g3-g30h-ls24hg300ewxxl-thumb-553559481?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "monitors/samsung-24-inch-odyssey-g3-g30h-fhd-200hz-gaming-monitor/common-2",
+        "alt": "Samsung 24\" Odyssey G3 G30H FHD 200Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls24hg300ewxxl/gallery/in-odyssey-g3-g30h-ls24hg300ewxxl-553559480?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS24HG300EW",
+      "mpn": "LS24HG300EW",
+      "options": {
+        "Size": "24\""
+      },
+      "price": 9799,
+      "mrp": 19900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/gaming/odyssey-g3-g30h-24-inch-200hz-fhd-ls24hg300ewxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

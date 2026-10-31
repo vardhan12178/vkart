@@ -1,0 +1,117 @@
+{
+  "slug": "beardo-hair-wax-xxtra-stronghold-crystal-wax",
+  "title": "Beardo Hair Wax XXTRA StrongHold Crystal Wax",
+  "brand": "Beardo",
+  "category": "grooming",
+  "categoryPath": [
+    "beauty",
+    "grooming",
+    "hair-styling"
+  ],
+  "status": "draft",
+  "launchDate": "2024-12",
+  "shortDescription": "Hair Wax XXTRA StrongHold Crystal Wax",
+  "description": "Hair Wax XXTRA StrongHold Crystal Wax",
+  "highlights": [],
+  "specs": {},
+  "keySpecs": {
+    "productType": "Hair Wax"
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "100g"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-1",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/Thumbnail.jpg?v=1694071720",
+        "width": 2160,
+        "height": 2160
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-2",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/XxtraStrong_Slide3insert.jpg?v=1698977937",
+        "width": 1280,
+        "height": 1280
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-3",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/2_a249a1e2-1b84-48b7-b8bc-d8923c3f5c31.jpg?v=1698977937",
+        "width": 2160,
+        "height": 2160
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-4",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/4_a85e59d0-d7c8-4b19-966c-634b574dced7.jpg?v=1770448381",
+        "width": 2160,
+        "height": 2160
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-5",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/5_68ff6dc6-b970-44c9-a585-92b42f2aec05.jpg?v=1770448381",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-6",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/6_c1cf1bc0-f501-47d6-92e7-f4725123abe4.jpg?v=1698977786",
+        "width": 2160,
+        "height": 2160
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-7",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/7_2da2e042-56f1-4648-b9d1-2598fb3d8598.jpg?v=1698977786",
+        "width": 2160,
+        "height": 2160
+      },
+      {
+        "key": "grooming/beardo-hair-wax-xxtra-stronghold-crystal-wax/common-8",
+        "alt": "Beardo Hair Wax XXTRA StrongHold Crystal Wax, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0745/0201/3236/files/8_53d60bb2-d949-4858-a8c5-749833ea74bc.jpg?v=1698977786",
+        "width": 2160,
+        "height": 2160
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BRD-BEARDOHAIRWAXX-100G",
+      "mpn": "BDHA012",
+      "options": {
+        "Size": "100g"
+      },
+      "price": 399,
+      "mrp": 400,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://beardo.in/products/beardo-hair-wax-xxtra-stronghold-crystal-wax-100g"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Beardo's official online store."
+  }
+}

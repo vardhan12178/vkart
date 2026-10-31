@@ -1,0 +1,129 @@
+{
+  "slug": "sony-bravia-32-hd-ready-google-tv-kd-32w835",
+  "title": "Sony BRAVIA 32\" HD Ready Google TV",
+  "brand": "Sony",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": "2024-06",
+  "shortDescription": "Compact 32-inch HD Ready Smart LED Google TV from Sony with X-Reality PRO picture processing.",
+  "description": "Resolution: HD Ready (1366 x 768) | Refresh Rate: 60 hertz | LED TV Connectivity: 3 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices Sound : 20 Watts Output | 2ch |Open Baffle Speaker | Dolby Audio |2 Full Range (44.5 x 106mm) Smart TV Features: Google TV | Watchlist | Google Assistant | Chromecast Built In | Additional Features: Apple Airplay | Apple Homekit | Alexa | Energy Rating: 1 Star| Annual Energy Consumption: 60.87 kWh",
+  "highlights": [
+    "Resolution: HD Ready (1366 x 768) | Refresh Rate: 60 hertz | LED TV",
+    "Sound : 20 Watts Output | 2ch |Open Baffle Speaker | Dolby Audio |2 Full Range (44.5 x 106mm)",
+    "Display : 2K LED | Live Color | X-Reality PRO | MotionFlow XR 200 | HDR10/HLG"
+  ],
+  "specs": {
+    "Features": {
+      "points": [
+        "Resolution: HD Ready (1366 x 768) | Refresh Rate: 60 hertz | LED TV",
+        "Connectivity: 3 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices",
+        "Sound : 20 Watts Output | 2ch |Open Baffle Speaker | Dolby Audio |2 Full Range (44.5 x 106mm)",
+        "Smart TV Features: Google TV | Watchlist | Google Assistant | Chromecast Built In | Additional Features: Apple Airplay | Apple Homekit | Alexa | Energy Rating: 1 Star| Annual Energy Consumption: 60.87 kWh",
+        "Display : 2K LED | Live Color | X-Reality PRO | MotionFlow XR 200 | HDR10/HLG",
+        "Warranty Information: 1 year comprehensive warranty on product provided by the brand from the date of purchase"
+      ]
+    }
+  },
+  "keySpecs": {
+    "screenInch": 32,
+    "screenSizes": [
+      32
+    ],
+    "resolution": "HD Ready (1366 x 768)",
+    "refreshRateHz": null,
+    "panel": "LED",
+    "os": "Google TV",
+    "soundW": 20,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "32\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {
+      "32\"": [
+        {
+          "key": "tvs/sony-bravia-32-hd-ready-google-tv-kd-32w835/32-1",
+          "alt": "Sony BRAVIA 32\" HD Ready Google TV 32\"",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/01-32W835-Primary-Image-copy.jpg?v=1782911752",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-32-hd-ready-google-tv-kd-32w835/32-2",
+          "alt": "Sony BRAVIA 32\" HD Ready Google TV 32\", view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/02-S32W835-Screen.jpg?v=1756188515",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-32-hd-ready-google-tv-kd-32w835/32-3",
+          "alt": "Sony BRAVIA 32\" HD Ready Google TV 32\", view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/03-S32W835-tv-feature.jpg?v=1756188515",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-32-hd-ready-google-tv-kd-32w835/32-4",
+          "alt": "Sony BRAVIA 32\" HD Ready Google TV 32\", view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/04-S32W835-tv-smart.jpg?v=1756188515",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-32-hd-ready-google-tv-kd-32w835/32-5",
+          "alt": "Sony BRAVIA 32\" HD Ready Google TV 32\", view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/05-W835-dimension.jpg?v=1756188515",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "key": "tvs/sony-bravia-32-hd-ready-google-tv-kd-32w835/32-6",
+          "alt": "Sony BRAVIA 32\" HD Ready Google TV 32\", view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/06-32W835-Remote.jpg?v=1756188515",
+          "width": 1000,
+          "height": 1000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SNY-KD32W835",
+      "mpn": "KD-32W835",
+      "options": {
+        "Size": "32\""
+      },
+      "price": 28490,
+      "mrp": 44900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "screenInch": 32,
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.shopatsc.com/products/kd-32w835-in5"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model numbers, selling price (price), MRP (mrp), images and feature text from Sony's official India online store (ShopAtSC)."
+  }
+}

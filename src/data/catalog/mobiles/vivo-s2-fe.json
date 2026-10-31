@@ -1,0 +1,425 @@
+{
+  "slug": "vivo-s2-fe",
+  "title": "vivo S2 FE",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Dimensity 7300e, 6.83-inch AMOLED display, 10,000 mAh battery with 44W FlashCharge and a 50MP main camera.",
+  "description": "vivo S2 FE runs on the Dimensity 7300e with OriginOS 6. Its 6.83-inch AMOLED display keeps scrolling and video smooth.\n\nThe 10,000 mAh battery with 44W FlashCharge lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "Dimensity 7300e",
+    "6.83-inch AMOLED display",
+    "10,000 mAh battery with 44W FlashCharge",
+    "50MP main camera",
+    "OriginOS 6"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Dimensity 7300e",
+      "RAM": [
+        "6GB",
+        "8GB"
+      ],
+      "Storage": "128 GB",
+      "Battery": "10000 mAh (TYP)",
+      "Fast Charging": "44W",
+      "Fingerprint Sensor": "In-display optical fingerprint sensor",
+      "Color": [
+        "Stellar Green",
+        "Titan Black",
+        "Zen White"
+      ],
+      "Operating System": "OriginOS 6"
+    },
+    "Display": {
+      "Size": "17.35 cm (6.83 inches)",
+      "Resolution": "2800 × 1260",
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear 50 MP + 2 MP",
+        "Front 32 MP"
+      ],
+      "Aperture": [
+        "Rear f/1.8 (50 MP) + f/2.4 (2 MP)",
+        "Front f/2.0 (32 MP)"
+      ],
+      "Flash": "Rear flash",
+      "Scene Modes": [
+        "Rear: Photo, Portrait, Night, Video, Dual View, High Resolution, Pano, Ultra HD Document, Slo-mo, Time-Lapse, Pro, Food, Snapshot",
+        "Front: Night, Portrait, Photo, Video, Dual View"
+      ]
+    },
+    "Build": {
+      "Dimensions": [
+        "16.39 cm × 7.65 cm × 0.869 cm (Zen White)",
+        "16.39 cm × 7.65 cm × 0.859 cm (Titan Black, Stellar Green)"
+      ],
+      "Weight": [
+        "225g (Zen White)",
+        "224g (Titan Black, Stellar Green)"
+      ]
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4 GHz /5 GHz",
+      "Bluetooth": "5.4",
+      "USB": "USB 2.0",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.83,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 10000,
+    "chargingW": 44,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 225,
+    "chip": "Dimensity 7300e",
+    "os": "Android",
+    "ramGB": 6
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "8GB + 128GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Stellar Green",
+          "hex": "#92CDDC"
+        },
+        {
+          "value": "Titan Black",
+          "hex": "#525355"
+        },
+        {
+          "value": "Zen White",
+          "hex": "#EFF0F4"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Stellar Green": [
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-1",
+          "alt": "vivo S2 FE in Stellar Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185224364/362a2f1f68ff4bbc4db9bc2d4b1d7921.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-2",
+          "alt": "vivo S2 FE in Stellar Green, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185224535/f618978b254e5d7c41d113d4e6fb7108.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-3",
+          "alt": "vivo S2 FE in Stellar Green, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185224585/ef04ec76071641b8ecbfe601f0395511.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-4",
+          "alt": "vivo S2 FE in Stellar Green, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185224580/89f5725f4501f0e4c96982724956bac8.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-5",
+          "alt": "vivo S2 FE in Stellar Green, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185224646/dd5230f63fd12b7e63e08542981651b9.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-6",
+          "alt": "vivo S2 FE in Stellar Green, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185224720/926bca763323c23f3cb60546a74110d1.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-7",
+          "alt": "vivo S2 FE in Stellar Green, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185225542/d460c696888526085d81f2abebef9cf7.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/stellar-green-8",
+          "alt": "vivo S2 FE in Stellar Green, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185225949/5a203088e2fbcf97e6c8ad5b95797775.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Titan Black": [
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-1",
+          "alt": "vivo S2 FE in Titan Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185313778/a07cd99abd6f2d3966a052973a77417e.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-2",
+          "alt": "vivo S2 FE in Titan Black, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185314029/61734f54a3f67b193a3976d57f3c875b.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-3",
+          "alt": "vivo S2 FE in Titan Black, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185313958/0b57177e1e87d51e2d7d61774c2b9640.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-4",
+          "alt": "vivo S2 FE in Titan Black, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185314016/83c6b89fac72cee4b82d4549311e6f1e.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-5",
+          "alt": "vivo S2 FE in Titan Black, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185315317/5ea09ff8f90ed888a5a63bb25991e3c5.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-6",
+          "alt": "vivo S2 FE in Titan Black, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185313985/1079eb21a5d7972a7633fcd4eba17170.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-7",
+          "alt": "vivo S2 FE in Titan Black, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185315343/5c75c631a2c8d6e9a2ade95c92145ec7.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/titan-black-8",
+          "alt": "vivo S2 FE in Titan Black, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185313842/72298afa5f5811197c22d2d0244c5b73.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Zen White": [
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-1",
+          "alt": "vivo S2 FE in Zen White",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185451396/54a76762e0cdefe36b259fb79a935f85.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-2",
+          "alt": "vivo S2 FE in Zen White, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185451241/e787383856e9f0a6c77b56efe3a067b2.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-3",
+          "alt": "vivo S2 FE in Zen White, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185451403/7f13c0ff36f6cd0947bb869edf8ae133.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-4",
+          "alt": "vivo S2 FE in Zen White, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185451395/a9d84559c1035dea603cc110756898b7.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-5",
+          "alt": "vivo S2 FE in Zen White, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185451377/5bf150c91b2655d6f1d14db6dd0b13e5.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-6",
+          "alt": "vivo S2 FE in Zen White, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185451333/1447a29a28cb6deaf1744c21507ac124.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-7",
+          "alt": "vivo S2 FE in Zen White, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185452487/72cba6e57b6448049046be563151547b.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2-fe/zen-white-8",
+          "alt": "vivo S2 FE in Zen White, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791185452971/396403f2a2b12f7ed5386ed1d30a92d6.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-S2FE-6128-STGR",
+      "mpn": "5675974",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Stellar Green"
+      },
+      "price": 38999,
+      "mrp": 65999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2FE-6128-TIBL",
+      "mpn": "5675975",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Titan Black"
+      },
+      "price": 38999,
+      "mrp": 65999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2FE-6128-ZEWH",
+      "mpn": "5675976",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Zen White"
+      },
+      "price": 38999,
+      "mrp": 65999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2FE-8128-STGR",
+      "mpn": "5675977",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Stellar Green"
+      },
+      "price": 42999,
+      "mrp": 69999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2FE-8128-TIBL",
+      "mpn": "5675978",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Titan Black"
+      },
+      "price": 42999,
+      "mrp": 69999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2FE-8128-ZEWH",
+      "mpn": "5675979",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Zen White"
+      },
+      "price": 42999,
+      "mrp": 69999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "USB Cable",
+    "Charger",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10374"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "lg-27-inch-ultragear-fhd-180hz-gaming-monitor-27gs60f-b",
+  "title": "LG 27\" UltraGear FHD 180Hz Gaming Monitor 27GS60F-B",
+  "brand": "LG",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "LG 27 (68.58 cm) UltraGear Full HD IPS gaming monitor | 180Hz, IPS 1ms (GtG), HDR10 27GS60F-B",
+  "description": "Discover LG 27GS60F-B. Click for pictures, reviews, and tech specs for the LG LG 27 (68.58 cm) UltraGear™ Full HD IPS gaming monitor | 180Hz, IPS 1ms (GtG), HDR10.",
+  "highlights": [
+    "180Hz",
+    "IPS 1ms (GtG)",
+    "HDR10 27GS60F-B",
+    "Resolution: 1920 x 1080",
+    "Panel Type: IPS",
+    "Aspect Ratio: 16:9"
+  ],
+  "specs": {
+    "Specifications": {
+      "Resolution": "1920 x 1080",
+      "Panel Type": "IPS",
+      "Aspect Ratio": "16:9",
+      "Color Gamut (Typ.)": "sRGB 99% (CIE1931)",
+      "Brightness (Typ.) [cd/m²]": "300cd/m²",
+      "Refresh Rate (Max.) [Hz]": "180",
+      "Response Time": "1ms (GtG at Faster)",
+      "Display Position Adjustments": "Tilt"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 27,
+    "resolution": "1920 x 1080",
+    "refreshRateHz": 180,
+    "panel": "IPS",
+    "responseTimeMs": 1,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "27\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/lg-27-inch-ultragear-fhd-180hz-gaming-monitor-27gs60f-b/common-1",
+        "alt": "LG 27\" UltraGear FHD 180Hz Gaming Monitor 27GS60F-B",
+        "sourceUrl": "https://www.lg.com/content/dam/channel/wcms/in/images/monitors/27gs60f-b_atr_eail_in_c/gallery/27GS60F-B-Basic-450.jpg",
+        "width": 450,
+        "height": 450
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "LG-27GS60FB",
+      "mpn": "27GS60F-B",
+      "options": {
+        "Size": "27\""
+      },
+      "price": 12999,
+      "mrp": 28500,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lg.com/in/monitors/gaming/27gs60f-b/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Name, selling price (price), strikethrough price (mrp), stock, image and specs from the LG India product page's structured data."
+  }
+}

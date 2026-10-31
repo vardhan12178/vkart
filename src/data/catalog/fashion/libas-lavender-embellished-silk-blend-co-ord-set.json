@@ -1,0 +1,194 @@
+{
+  "slug": "libas-lavender-embellished-silk-blend-co-ord-set",
+  "title": "Libas Lavender Embellished Silk Blend Co-Ord Set",
+  "brand": "Libas",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "kurtas"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Make a statement in this rich lavender-gold silk blend co-ord set, featuring a shimmering ombré effect with intricate gold embellishments that highlight both the tunic and matching palazzos, a coordinated look that's effortlessly stylish wi",
+  "description": "Make a statement in this rich lavender-gold silk blend co-ord set, featuring a shimmering ombré effect with intricate gold embellishments that highlight both the tunic and matching palazzos, a coordinated look that's effortlessly stylish with zero effort. The straight-fit tunic is crafted with a V-neckline, ornate front detailing with gold beadwork, and three-quarter sleeves finished with delicate bead-trim cuffs. The relaxed palazzos feature an elasticated waistband for all-day comfort. Together, the set offers an effortless combination of elegance and ease. Soft and flowy silk blend makes this co-ord ideal for festive gatherings, evening parties, wedding celebrations, and upscale family occasions.",
+  "highlights": [
+    "Fabric: silk blend",
+    "Work: embellished"
+  ],
+  "specs": {
+    "Product details": {
+      "Fabric": "silk blend",
+      "Work": "embellished"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Kurtas & Sets",
+    "color": "Lavender",
+    "fabric": "silk blend",
+    "fit": null,
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lavender",
+          "hex": "#A9815D"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lavender": [
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-1",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Lavender-Yoke-Design-Embellished-Silk-Blend-Co-Ord-Set-1200847_8a34da0c-f082-4eef-b8cf-153d0f890d3a.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-2",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200847_1_12143975-51f1-47de-ac4e-198030b27681.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-3",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200847_2_6a8f1029-b7b0-4d44-acc5-67f78ef966f3.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-4",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200847_3_202c5fb4-df51-4120-b462-fb2537b7aaa8.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-5",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200847_4_a0dff5bb-d7fe-4405-af93-71cd7b0063b2.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-6",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200847_5_565beb2b-3f2b-423a-8881-88558782f7b3.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-lavender-embellished-silk-blend-co-ord-set/lavender-7",
+          "alt": "Libas Lavender Embellished Silk Blend Co-Ord Set, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200847_7_fda6f7f8-be6d-4609-a792-afb16396344d.jpg?v=1792838589",
+          "width": 2160,
+          "height": 2880
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LIB-LIBASLAVEN200847-M",
+      "mpn": "1200847-M",
+      "options": {
+        "Size": "M",
+        "Color": "Lavender"
+      },
+      "price": 2619,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LIB-LIBASLAVEN200847-L",
+      "mpn": "1200847-L",
+      "options": {
+        "Size": "L",
+        "Color": "Lavender"
+      },
+      "price": 2619,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LIB-LIBASLAVEN200847-XL",
+      "mpn": "1200847-XL",
+      "options": {
+        "Size": "XL",
+        "Color": "Lavender"
+      },
+      "price": 2619,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LIB-LIBASLAVEN200847-XXL",
+      "mpn": "1200847-XXL",
+      "options": {
+        "Size": "XXL",
+        "Color": "Lavender"
+      },
+      "price": 2619,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.libas.in/products/libas-lavender-yoke-design-embellished-silk-blend-co-ord-set-1200847"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Libas's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

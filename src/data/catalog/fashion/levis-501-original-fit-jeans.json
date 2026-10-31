@@ -1,0 +1,270 @@
+{
+  "slug": "levis-501-original-fit-jeans",
+  "title": "Levi's 501 Original Fit Jeans",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "jeans"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "Close your eyes. Think “jeans.” Now open.",
+  "description": "Close your eyes. Think “jeans.” Now open. They were 501® Originals, right? With a classic straight leg and iconic styling, they’re literally the blueprint for every pair of modern jeans in existence—burned into the world’s collective cortex ever since Levi Strauss (the man himself!) introduced them in 1873. To this day they’ve never gone out of style. And they never will.\n\nMade with Comfort Stretch which features a hint of stretch for all-day comfort",
+  "highlights": [
+    "Fit: Straight Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Straight Fit"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Jeans",
+    "color": "Med Indigo",
+    "fabric": null,
+    "fit": "Straight Fit",
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "28"
+        },
+        {
+          "value": "30"
+        },
+        {
+          "value": "32"
+        },
+        {
+          "value": "34"
+        },
+        {
+          "value": "36"
+        },
+        {
+          "value": "38"
+        },
+        {
+          "value": "40"
+        },
+        {
+          "value": "42"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "value": "32"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Med Indigo",
+          "hex": "#DCD4D1"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Med Indigo": [
+        {
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-1",
+          "alt": "Levi's 501 Original Fit Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_01_Styleshot.jpg?v=1787392002",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-2",
+          "alt": "Levi's 501 Original Fit Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_02_Front.jpg?v=1787392005",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-3",
+          "alt": "Levi's 501 Original Fit Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_03_Side.jpg?v=1787392009",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-4",
+          "alt": "Levi's 501 Original Fit Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/005013909_03_Back.jpg?v=1787391999",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-501-original-fit-jeans/med-indigo-5",
+          "alt": "Levi's 501 Original Fit Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/501_orginal_Fit_Guide_2026_55324123-c280-464e-a4dc-9a7866d96c74.jpg?v=1791982543",
+          "width": 1034,
+          "height": 1378
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-501ORIGINA013909-28-L32",
+      "mpn": "5401221980723",
+      "options": {
+        "Size": "28",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-30-L32",
+      "mpn": "5401221980747",
+      "options": {
+        "Size": "30",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-32-L32",
+      "mpn": "5401221980785",
+      "options": {
+        "Size": "32",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-34-L32",
+      "mpn": "5401221980822",
+      "options": {
+        "Size": "34",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-36-L32",
+      "mpn": "5401221980846",
+      "options": {
+        "Size": "36",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-38-L32",
+      "mpn": "5401221980860",
+      "options": {
+        "Size": "38",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-40-L32",
+      "mpn": "5401221980877",
+      "options": {
+        "Size": "40",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-501ORIGINA013909-42-L32",
+      "mpn": "5401221980884",
+      "options": {
+        "Size": "42",
+        "Length": "32",
+        "Color": "Med Indigo"
+      },
+      "price": 6501,
+      "mrp": 6501,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/levis-mens-501-original-jeans-005013909"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

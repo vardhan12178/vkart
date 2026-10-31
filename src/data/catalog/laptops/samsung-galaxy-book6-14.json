@@ -1,0 +1,244 @@
+{
+  "slug": "samsung-galaxy-book6-14",
+  "title": "Samsung Galaxy Book6 (14\")",
+  "brand": "Samsung",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Everyday 14-inch Copilot+ PC with Intel Core Ultra (Series 3), 16GB RAM, up to 24 hours video playback and 1.43 kg weight.",
+  "description": "Galaxy Book6 is Samsung's everyday laptop, now with Intel Core Ultra (Series 3) processors and an NPU of up to 49 TOPS for Copilot+ PC and Galaxy AI features.\n\nThe 14-inch 16:10 IPS display has an anti-glare finish, the body weighs 1.43 kg, and battery life reaches 24 hours of video playback with fast charging to 33% in 30 minutes.\n\nIt works seamlessly with Galaxy phones and tablets through Multi Control, Quick Share and Second Screen.",
+  "highlights": [
+    "Intel Core Ultra 5 / Ultra 7 (Series 3)",
+    "14-inch 16:10 anti-glare IPS display",
+    "16GB RAM, 512GB SSD + expansion slot",
+    "Up to 24 hours video playback",
+    "1.43 kg, Gray or Silver",
+    "Copilot+ PC with Galaxy AI"
+  ],
+  "specs": {
+    "Processor": {
+      "cpu": "Intel Core Ultra 5 325 or Ultra 7 355 (Series 3)",
+      "npu": "Up to 49 TOPS"
+    },
+    "Memory": {
+      "ram": "16GB (not upgradeable)"
+    },
+    "Storage": {
+      "ssd": "512GB or 1TB, with expansion slot"
+    },
+    "Display": {
+      "size": 14,
+      "type": "IPS, anti-glare",
+      "aspectRatio": "16:10"
+    },
+    "Graphics": {
+      "gpu": "Intel graphics"
+    },
+    "Battery": {
+      "life": "Up to 24 hours video playback",
+      "charging": "Up to 33% in 30 minutes"
+    },
+    "Ports": {
+      "ports": "Includes HDMI"
+    },
+    "Build": {
+      "weight": "1.43 kg",
+      "colours": "Gray, Silver"
+    },
+    "Software": {
+      "os": "Windows 11 Home",
+      "ai": "Galaxy AI, Copilot+ PC"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 325",
+    "gpu": "Intel graphics",
+    "displayInch": 14,
+    "panel": "IPS",
+    "refreshRateHz": null,
+    "weightKg": 1.43,
+    "batteryHours": 24,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gray",
+          "hex": "#7A7D82"
+        },
+        {
+          "value": "Silver",
+          "hex": "#C9CBCD"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gray": [
+        {
+          "key": "laptops/samsung-galaxy-book6-14/gray-1",
+          "alt": "Samsung Galaxy Book6 (14\") in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-kg1in/gallery/in-galaxy-book6-14-inch-np740vjgg-np740vjg-kg1in-thumb-551774486?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        },
+        {
+          "key": "laptops/samsung-galaxy-book6-14/gray-2",
+          "alt": "Samsung Galaxy Book6 (14\") in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-kg2in/gallery/in-galaxy-book6-14-inch-np740vjgf-np740vjg-kg2in-thumb-551777682?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        }
+      ],
+      "Silver": [
+        {
+          "key": "laptops/samsung-galaxy-book6-14/silver-1",
+          "alt": "Samsung Galaxy Book6 (14\") in Silver",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-ks1in/gallery/in-galaxy-book6-14-inch-np740vjgg-584304-np740vjg-ks1in-thumb-551797175?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        },
+        {
+          "key": "laptops/samsung-galaxy-book6-14/silver-2",
+          "alt": "Samsung Galaxy Book6 (14\") in Silver, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np740vjg-ks2in/gallery/in-galaxy-book-np740vjg-ks2in-galaxy-book---------cm--ultra-------gb--copilot--pc-silver-thumb-551797395?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "laptops/samsung-galaxy-book6-14/common-1",
+        "alt": "Samsung Galaxy Book6 (14\") — symmetrical design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-14/common-2",
+        "alt": "Samsung Galaxy Book6 (14\") — Intel Core Ultra Series 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-14/common-3",
+        "alt": "Samsung Galaxy Book6 (14\") — battery life",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6_Base_Battery_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-NP740VJG-KG1",
+      "mpn": "NP740VJG-KG1IN",
+      "options": {
+        "Configuration": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB",
+        "Color": "Gray"
+      },
+      "price": 134990,
+      "mrp": 142790,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 325",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP740VJG-KS1",
+      "mpn": "NP740VJG-KS1IN",
+      "options": {
+        "Configuration": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB",
+        "Color": "Silver"
+      },
+      "price": 134990,
+      "mrp": 142790,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 325",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP740VJG-KG2",
+      "mpn": "NP740VJG-KG2IN",
+      "options": {
+        "Configuration": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB",
+        "Color": "Gray"
+      },
+      "price": 146990,
+      "mrp": 153990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 7 355",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP740VJG-KS2",
+      "mpn": "NP740VJG-KS2IN",
+      "options": {
+        "Configuration": "Core Ultra 7 355 · Intel graphics · 16GB · 512GB",
+        "Color": "Silver"
+      },
+      "price": 146990,
+      "mrp": 153990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 7 355",
+        "touch": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "USB-C power adapter",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-series/buy/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-14-inch-u5-ultra-5-16gb-512gb-np740vjg-kg1in/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-14-inch-u5-ultra-5-16gb-512gb-np740vjg-ks1in/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs from the model pages' FAQ and key-spec text; Samsung's full spec API refuses automated requests."
+  }
+}

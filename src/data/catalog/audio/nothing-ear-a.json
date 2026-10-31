@@ -1,0 +1,139 @@
+{
+  "slug": "nothing-ear-a",
+  "title": "Nothing Ear (a)",
+  "brand": "Nothing",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2024-04",
+  "shortDescription": "Colourful Nothing earbuds with 45dB ANC, Hi-Res audio with LDAC and up to 42.5 hours of battery.",
+  "description": "Nothing Ear (a) brings 45dB active noise cancellation and Hi-Res audio with LDAC in a playful design, including a bold Yellow.\n\nThey last up to 42.5 hours with the case.",
+  "highlights": [
+    "45dB active noise cancellation",
+    "Hi-Res audio with LDAC",
+    "Up to 42.5 hours with case",
+    "Nothing X app",
+    "White, Black or Yellow"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "45dB active noise cancellation",
+      "hiRes": "Hi-Res audio, LDAC"
+    },
+    "Battery": {
+      "total": "Up to 42.5 hours"
+    },
+    "App": {
+      "companion": "Nothing X"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 45,
+    "batteryHours": 42.5,
+    "codecs": "LDAC"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White",
+          "hex": "#D7D8D6"
+        },
+        {
+          "value": "Black",
+          "hex": "#2B2D30"
+        },
+        {
+          "value": "Yellow",
+          "hex": "#E7C517"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "White": [
+        {
+          "key": "audio/nothing-ear-a/white-1",
+          "alt": "Nothing Ear (a) in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0026_Ear-a-white.png?v=1753757354",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "Black": [
+        {
+          "key": "audio/nothing-ear-a/black-1",
+          "alt": "Nothing Ear (a) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0027_Ear-a-black.png?v=1753757360",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "Yellow": [
+        {
+          "key": "audio/nothing-ear-a/yellow-1",
+          "alt": "Nothing Ear (a) in Yellow",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0025_Ear-a-yellow.png?v=1753757361",
+          "width": 2048,
+          "height": 2048
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-EARA-WHITE",
+      "mpn": "6974434222199",
+      "options": {
+        "Color": "White"
+      },
+      "price": 7999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-EARA-BLACK",
+      "mpn": "6974434222205",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 7999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-EARA-YELLOW",
+      "mpn": "6974434222212",
+      "options": {
+        "Color": "Yellow"
+      },
+      "price": 7999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/ear-a"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, prices and images from Nothing's India store data (audio is sold through Flipkart); key specs from the product page headlines. Nothing publishes no full spec sheet here, so specs are limited."
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "slug": "samsung-galaxy-book6-pro-14",
+  "title": "Samsung Galaxy Book6 Pro (14\")",
+  "brand": "Samsung",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "14-inch Dynamic AMOLED 2X touch display (30–120Hz, 1,000 nits HDR), Intel Core Ultra (Series 3), up to 30 hours video, 1.24 kg.",
+  "description": "Galaxy Book6 Pro 14\" pairs a Dynamic AMOLED 2X touchscreen — adaptive 30–120Hz, 1,000 nits HDR and Gorilla Glass with DXC anti-reflection — with Intel Core Ultra (Series 3) processors and Intel Arc graphics.\n\nIt's 1.24 kg and about 11.6 mm thin, with a 67.18 Wh battery rated for up to 30 hours of video playback. A haptic touchpad, Dolby Atmos sound, Thunderbolt 4 and HDMI 2.1 round out a premium work laptop with Copilot+ PC features.",
+  "highlights": [
+    "14-inch Dynamic AMOLED 2X touch, 30–120Hz, 1,000 nits HDR",
+    "Intel Core Ultra 5 / 7 / X7 (Series 3), up to 50 TOPS NPU",
+    "Up to 32GB RAM and 1TB SSD",
+    "Up to 30 hours video playback",
+    "1.24 kg, haptic touchpad",
+    "2× Thunderbolt 4, USB 3.2, HDMI 2.1"
+  ],
+  "specs": {
+    "Processor": {
+      "cpu": "Intel Core Ultra 5 325 / Ultra 7 356H / Ultra X7 358H (Series 3)",
+      "npu": "Up to 50 TOPS"
+    },
+    "Memory": {
+      "ram": "16GB or 32GB (not upgradeable)"
+    },
+    "Storage": {
+      "ssd": "512GB or 1TB, with expansion slot"
+    },
+    "Display": {
+      "size": 14,
+      "type": "Dynamic AMOLED 2X, touch",
+      "refreshRate": "30–120Hz adaptive",
+      "brightness": "1,000 nits HDR",
+      "glass": "Corning Gorilla Glass with DXC"
+    },
+    "Graphics": {
+      "gpu": "Intel Arc graphics"
+    },
+    "Battery": {
+      "capacity": "67.18 Wh",
+      "life": "Up to 30 hours video playback",
+      "charging": "About 38% in 30 minutes"
+    },
+    "Ports": {
+      "ports": "2× Thunderbolt 4, 1× USB 3.2, HDMI 2.1 (8K60 / 5K120)"
+    },
+    "Audio": {
+      "speakers": "Stereo speakers, Dolby Atmos"
+    },
+    "Build": {
+      "weight": "1.24 kg",
+      "thickness": "11.6 mm",
+      "touchpad": "Haptic touchpad"
+    },
+    "Software": {
+      "os": "Windows 11 Home",
+      "ai": "Galaxy AI, Copilot+ PC"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 5 325",
+    "gpu": "Intel Arc graphics",
+    "displayInch": 14,
+    "panel": "AMOLED",
+    "refreshRateHz": 120,
+    "weightKg": 1.24,
+    "batteryHours": 30,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB"
+        },
+        {
+          "value": "Core Ultra 7 356H · Intel Arc graphics · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 7 356H · Intel Arc graphics · 32GB · 1TB"
+        },
+        {
+          "value": "Core Ultra X7 358H · Intel Arc graphics · 32GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gray",
+          "hex": "#7A7D82"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gray": [
+        {
+          "key": "laptops/samsung-galaxy-book6-pro-14/gray-1",
+          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np940xjg-kg1in/gallery/in-galaxy-book6-pro-14-inch-np940xjgh-np940xjg-kg1in-thumb-551799038?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        },
+        {
+          "key": "laptops/samsung-galaxy-book6-pro-14/gray-2",
+          "alt": "Samsung Galaxy Book6 Pro (14\") in Gray, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/np940xjg-kg4in/gallery/in-galaxy-book-np940xjg-kg4in-galaxy-book--pro--------cm--ultra-------gb--copilot--pc-gray-thumb-551799366?$2052_1641_PNG$",
+          "width": 2052,
+          "height": 1641
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "laptops/samsung-galaxy-book6-pro-14/common-1",
+        "alt": "Samsung Galaxy Book6 Pro (14\") — slim design",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Design_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-pro-14/common-2",
+        "alt": "Samsung Galaxy Book6 Pro (14\") — Intel Core Ultra Series 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Processor_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      },
+      {
+        "key": "laptops/samsung-galaxy-book6-pro-14/common-3",
+        "alt": "Samsung Galaxy Book6 Pro (14\") — 30-hour battery",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/Book6Pro_Battery_PC_1600x864.jpg",
+        "width": 1600,
+        "height": 864
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-NP940XJG-KG1",
+      "mpn": "NP940XJG-KG1IN",
+      "options": {
+        "Configuration": "Core Ultra 5 325 · Intel graphics · 16GB · 512GB",
+        "Color": "Gray"
+      },
+      "price": 192990,
+      "mrp": 212790,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core Ultra 5 325",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP940XJG-KG4",
+      "mpn": "NP940XJG-KG4IN",
+      "options": {
+        "Configuration": "Core Ultra 7 356H · Intel Arc graphics · 16GB · 1TB",
+        "Color": "Gray"
+      },
+      "price": 207990,
+      "mrp": 251990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 356H",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP940XJG-KG5",
+      "mpn": "NP940XJG-KG5IN",
+      "options": {
+        "Configuration": "Core Ultra 7 356H · Intel Arc graphics · 32GB · 1TB",
+        "Color": "Gray"
+      },
+      "price": 238990,
+      "mrp": 279990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 356H",
+        "touch": false
+      }
+    },
+    {
+      "sku": "SAM-NP940XJG-KG6",
+      "mpn": "NP940XJG-KG6IN",
+      "options": {
+        "Configuration": "Core Ultra X7 358H · Intel Arc graphics · 32GB · 1TB",
+        "Color": "Gray"
+      },
+      "price": 242990,
+      "mrp": 291190,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 32,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra X7 358H",
+        "touch": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "USB-C power adapter",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-series/buy/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-pro-ultra-5-16gb-512gb-np940xjg-kg1in/",
+      "https://www.samsung.com/in/computers/galaxy-book/galaxy-book6-pro-ultra-7-16gb-1tb-np940xjg-kg4in/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs from the model pages' FAQ and key-spec text; Samsung's full spec API refuses automated requests."
+  }
+}

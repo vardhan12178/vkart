@@ -457,6 +457,13 @@
   }
 }
 
+/* Catalog pages with a sticky mobile bar (sort/filter, buy box): keep the assistant above it */
+@media (max-width: 1023px) {
+  body:has(.has-bottom-bar) .premium-assistant-toggle {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom)) !important;
+  }
+}
+
 .premium-product [class*="text-4xl"][class*="font-bold"] {
   font-family: "Manrope", sans-serif;
   font-weight: 750 !important;

@@ -1,0 +1,154 @@
+{
+  "slug": "suta-son-jalebi-orange-checkered-cotton-zari-saree",
+  "title": "Suta Son Jalebi Orange Checkered Cotton Zari Saree",
+  "brand": "Suta",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sarees"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Son Jalebi never believed in taking the straight route. Why would she, when twists and turns were so much more fun?",
+  "description": "Son Jalebi never believed in taking the straight route. Why would she, when twists and turns were so much more fun? Dressed in sunny orange checks, she was already the life of the mithai box, but her heart belonged to pink. So, naturally, she saved her brightest pink pallu for the grandest entrances.\n\nShe loved a little chaos, a lot of laughter and celebrations that went on long after the sweets were gone. While everyone else tried to keep things neat and predictable, Son Jalebi twirled her way through every occasion, leaving a trail of colour and happy glances behind. Because life, according to her, was much sweeter when you added a twist.",
+  "highlights": [
+    "Length: 5.50 m (550.00 cm)",
+    "Width: 1.19 m (119.38 cm)",
+    "Piece: No",
+    "Fabric: Cotton with Zari",
+    "Wash Care: Dry Wash"
+  ],
+  "specs": {
+    "Product details": {
+      "Length": "5.50 m (550.00 cm)",
+      "Width": "1.19 m (119.38 cm)",
+      "Piece": "No",
+      "Fabric": "Cotton with Zari",
+      "Wash Care": "Dry Wash",
+      "Blouse": "The model is wearing XS size blouse called",
+      "Disclaimer": "The pictures are clicked in daylight. Colour may vary slightly from the image due to the screen brightness",
+      "Work": "zari",
+      "Set includes": "blouse piece"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sarees",
+    "color": "Orange",
+    "fabric": "Cotton with Zari",
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Orange",
+          "hex": "#CE3832"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Orange": [
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-1",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/SonJalebi-07.jpg?v=1792753468",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-2",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/GILTTRIP-19.jpg?v=1792999329",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-3",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/SonJalebi-11.jpg?v=1792753468",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-4",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/SonJalebi-01.jpg?v=1792753468",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-5",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/SonJalebi-02.jpg?v=1792753468",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-6",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/GILTTRIP-18.jpg?v=1792999329",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-7",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/SonJalebi-05.jpg?v=1792753468",
+          "width": 1536,
+          "height": 2048
+        },
+        {
+          "key": "fashion/suta-son-jalebi-orange-checkered-cotton-zari-saree/orange-8",
+          "alt": "Suta Son Jalebi Orange Checkered Cotton Zari Saree, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0026/6544/7536/files/SonJalebi-04.jpg?v=1792753468",
+          "width": 1536,
+          "height": 2048
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SUT-SONJALEBIOISAREE-ONESIZE",
+      "mpn": "SUTACZ89",
+      "options": {
+        "Size": "One Size",
+        "Color": "Orange"
+      },
+      "price": 3990,
+      "mrp": 3990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://suta.in/products/son-jalebi-orange-checkered-cotton-zari-saree"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Suta's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "slug": "boat-airdopes-prime-702-anc",
+  "title": "boAt Airdopes Prime 702 ANC",
+  "brand": "boAt",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "boAt Airdopes Prime 702 ANC: Wireless Earbuds with 48dB ANC & 50 Hours Playtime.",
+  "description": "boAt Airdopes Prime 702 ANC: Wireless Earbuds with 48dB ANC & 50 Hours Playtime.",
+  "highlights": [
+    "Wireless Earbuds with 48dB ANC & 50 Hours Playtime"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "Wireless Earbuds with 48dB ANC & 50 Hours Playtime"
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 48,
+    "batteryHours": 50
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Non AI"
+        },
+        {
+          "value": "Crest AI"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cosmic Black",
+          "hex": "#2B2B2B"
+        },
+        {
+          "value": "Gold",
+          "hex": "#B7AEA6"
+        },
+        {
+          "value": "Smart Black",
+          "hex": "#2B2B2B"
+        },
+        {
+          "value": "Smart Gold",
+          "hex": "#B7AEA6"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cosmic Black": [
+        {
+          "key": "audio/boat-airdopes-prime-702-anc/cosmic-black-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Cosmic Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_50445a70-f39a-4c0f-a517-5ed995744445.png?v=1793087077",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Gold": [
+        {
+          "key": "audio/boat-airdopes-prime-702-anc/gold-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_d16ff6b4-b863-4a4a-83e1-52c66bd7d22b.png?v=1793087705",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Smart Black": [
+        {
+          "key": "audio/boat-airdopes-prime-702-anc/smart-black-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Smart Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_0ecc3f01-3a9b-460f-b3f2-84f485514321.png?v=1793088762",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Smart Gold": [
+        {
+          "key": "audio/boat-airdopes-prime-702-anc/smart-gold-1",
+          "alt": "boAt Airdopes Prime 702 ANC in Smart Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1_a77edeb2-6291-49ab-a39b-b69f075eb860.png?v=1793088989",
+          "width": 2000,
+          "height": 2000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOA-AP702-NONAI-COSMICBLACK",
+      "mpn": null,
+      "options": {
+        "Configuration": "Non AI",
+        "Color": "Cosmic Black"
+      },
+      "price": 1899,
+      "mrp": 5990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-AP702-NONAI-GOLD",
+      "mpn": null,
+      "options": {
+        "Configuration": "Non AI",
+        "Color": "Gold"
+      },
+      "price": 1899,
+      "mrp": 5990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-AP702-CRESTAI-SMARTBLACK",
+      "mpn": null,
+      "options": {
+        "Configuration": "Crest AI",
+        "Color": "Smart Black"
+      },
+      "price": 2299,
+      "mrp": 5990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-AP702-CRESTAI-SMARTGOLD",
+      "mpn": null,
+      "options": {
+        "Configuration": "Crest AI",
+        "Color": "Smart Gold"
+      },
+      "price": 2299,
+      "mrp": 5990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boat-lifestyle.com/products/boat-airdopes-prime-702-anc"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from boAt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

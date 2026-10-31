@@ -1,0 +1,204 @@
+{
+  "slug": "campus-rake-running-shoes",
+  "title": "Campus Rake Running Shoes",
+  "brand": "Campus",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "running"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Find your pace. Own your space.",
+  "description": "Find your pace. Own your space. The Campus RAKE Men's Running Shoes bring a sharp athletic edge to your everyday movement with a bold Navy base and contrasting red slate details. The breathable mesh upper keeps the look light and sporty, while the EVA midsole adds lightweight cushioning to every step. Underneath, the anti-slip TPR outsole helps you stay confident as you move, while the PU Foam Insole adds a comfortable, cushioned feel. Whether you're chasing a personal best or simply making the most of your day, RAKE is ready to go wherever your momentum takes you.",
+  "highlights": [
+    "Occasion: Everyday",
+    "Insole: Pu Foam",
+    "Upper Material: Mesh+Printing+Welding",
+    "Technology: Anti-Slip Sole Design"
+  ],
+  "specs": {
+    "Product details": {
+      "Occasion": "Everyday",
+      "Insole": "Pu Foam",
+      "Upper Material": "Mesh+Printing+Welding",
+      "Technology": "Anti-Slip Sole Design",
+      "Care Instructions": "Gently scrub with a soft cloth or brush using mild soap and cold water, then air dry in the shade. Avoid bleach and harsh cleaners"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Running Shoes",
+    "color": "Navy",
+    "fabric": "Mesh+Printing+Welding",
+    "fit": null,
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "9"
+        },
+        {
+          "value": "10"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Navy",
+          "hex": "#485475"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Navy": [
+        {
+          "key": "fashion/campus-rake-running-shoes/navy-1",
+          "alt": "Campus Rake Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_01.jpg?v=1792737758",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-rake-running-shoes/navy-2",
+          "alt": "Campus Rake Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_02.webp?v=1792737757",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-rake-running-shoes/navy-3",
+          "alt": "Campus Rake Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_03.webp?v=1792737758",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-rake-running-shoes/navy-4",
+          "alt": "Campus Rake Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_04.webp?v=1792737757",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-rake-running-shoes/navy-5",
+          "alt": "Campus Rake Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/RAKE_22G-887_NAVY-R.SLATE_05.webp?v=1792737757",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "CMP-RAKENAVYRSGSHOES-6",
+      "mpn": "22G-887-G-NAVY-RSLATE-6",
+      "options": {
+        "Size": "6",
+        "Color": "Navy"
+      },
+      "price": 931,
+      "mrp": 2299,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-RAKENAVYRSGSHOES-7",
+      "mpn": "22G-887-G-NAVY-RSLATE-7",
+      "options": {
+        "Size": "7",
+        "Color": "Navy"
+      },
+      "price": 931,
+      "mrp": 2299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-RAKENAVYRSGSHOES-8",
+      "mpn": "22G-887-G-NAVY-RSLATE-8",
+      "options": {
+        "Size": "8",
+        "Color": "Navy"
+      },
+      "price": 931,
+      "mrp": 2299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-RAKENAVYRSGSHOES-9",
+      "mpn": "22G-887-G-NAVY-RSLATE-9",
+      "options": {
+        "Size": "9",
+        "Color": "Navy"
+      },
+      "price": 931,
+      "mrp": 2299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-RAKENAVYRSGSHOES-10",
+      "mpn": "22G-887-G-NAVY-RSLATE-10",
+      "options": {
+        "Size": "10",
+        "Color": "Navy"
+      },
+      "price": 931,
+      "mrp": 2299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.campusshoes.com/products/rake-navy-r-slate-mens-running-shoes"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Campus's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "slug": "levis-women-s-loose-fit-high-rise-jeans",
+  "title": "Levi's Women's Loose Fit High Rise Jeans",
+  "brand": "Levi's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "jeans"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Elevate your everyday look with these women's loose fit jeans.",
+  "description": "Elevate your everyday look with these women's loose fit jeans. Designed with a high rise waist these jeans offer a sleek and modern fit. Made from premium denim, they provide a comfortable yet flattering look that moves with you.",
+  "highlights": [
+    "Fit: Loose Fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Fit": "Loose Fit"
+    },
+    "Highlights": {
+      "points": [
+        "Classic loose fit; Sits at high rise",
+        "Team it with our brand logo t-shirt and denim jacket for a casual look"
+      ]
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Jeans",
+    "color": "Blue",
+    "fabric": null,
+    "fit": "Loose Fit",
+    "sizes": [
+      "25",
+      "26",
+      "27",
+      "28",
+      "30",
+      "32",
+      "34"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "25"
+        },
+        {
+          "value": "26"
+        },
+        {
+          "value": "27"
+        },
+        {
+          "value": "28"
+        },
+        {
+          "value": "30"
+        },
+        {
+          "value": "32"
+        },
+        {
+          "value": "34"
+        }
+      ]
+    },
+    {
+      "name": "Length",
+      "values": [
+        {
+          "value": "30"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blue",
+          "hex": "#D1D0CC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Blue": [
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-1",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_5_Front.jpg?v=1793082982",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-2",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_01_Styleshot.jpg?v=1793082983",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-3",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_02_Front.jpg?v=1793082983",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-4",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_03_Back.jpg?v=1793082982",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-5",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_06_Detail_20.jpg?v=1793082984",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-6",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_07_Detail_20.jpg?v=1793082984",
+          "width": 1034,
+          "height": 1376
+        },
+        {
+          "key": "fashion/levis-women-s-loose-fit-high-rise-jeans/blue-7",
+          "alt": "Levi's Women's Loose Fit High Rise Jeans, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0805/5128/0930/files/A25120108_04_SIde.jpg?v=1793082983",
+          "width": 1034,
+          "height": 1376
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEV-BLUELOOSEF120108-25-L30",
+      "mpn": "5401270288597",
+      "options": {
+        "Size": "25",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "LEV-BLUELOOSEF120108-26-L30",
+      "mpn": "5401270288672",
+      "options": {
+        "Size": "26",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-BLUELOOSEF120108-27-L30",
+      "mpn": "5401270288856",
+      "options": {
+        "Size": "27",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-BLUELOOSEF120108-28-L30",
+      "mpn": "5401270289037",
+      "options": {
+        "Size": "28",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-BLUELOOSEF120108-30-L30",
+      "mpn": "5401270289297",
+      "options": {
+        "Size": "30",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-BLUELOOSEF120108-32-L30",
+      "mpn": "5401270289754",
+      "options": {
+        "Size": "32",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LEV-BLUELOOSEF120108-34-L30",
+      "mpn": "5401270290217",
+      "options": {
+        "Size": "34",
+        "Length": "30",
+        "Color": "Blue"
+      },
+      "price": 3699,
+      "mrp": 3699,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.levi.in/products/womens-blue-loose-fit-high-rise-jeans-a25120108"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Levi's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

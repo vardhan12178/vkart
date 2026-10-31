@@ -1,0 +1,438 @@
+{
+  "slug": "hp-omen-16",
+  "title": "HP OMEN 16",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Performance gaming laptop: 16-inch 2K–2.5K display, Intel Core i9 HX or AMD Ryzen 9 HX and GeForce RTX graphics.",
+  "description": "HP OMEN 16 is HP's performance gaming laptop, with a 16-inch high-refresh 2K or 2.5K display and HX-class processors.\n\nConfigurations include Intel Core i7/i9 HX and AMD Ryzen 7/9 HX chips with NVIDIA GeForce RTX graphics, plus HyperX editions and a VALORANT Limited Edition in RIOT blue.",
+  "highlights": [
+    "16-inch 2K / 2.5K high-refresh display",
+    "Intel Core i9-14900HX or AMD Ryzen 9 9955HX",
+    "NVIDIA GeForce RTX graphics",
+    "Up to 24GB DDR5, 1TB SSD",
+    "HyperX and VALORANT Limited Edition models",
+    "Windows 11 Home"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "Intel Core i7 14th generation processor",
+      "Processor": "Intel Core i7-14650HX (up to 5.2 GHz with Intel Turbo Boost Technology, 30 MB L3 cache, 16 cores, 24 threads)",
+      "Chipset": "Intel HM770",
+      "Processor core": "16",
+      "Processor cache": "30 MB L3"
+    },
+    "Memory": {
+      "Memory": "16 GB DDR5-5600 MT/s (1 x 16 GB)",
+      "Memory Note": "Transfer rates up to 5600 MT/s.",
+      "Memory layout (slots \\u0026 size)": "1 x 16 GB",
+      "Memory and storage": "16 GB memory;1 TB SSD storage"
+    },
+    "Display Specifications": {
+      "Touchscreen": "No",
+      "Display": "40.6 cm (16\") diagonal 2K display",
+      "Screen-to-body ratio (without speakers)": "87.49%",
+      "Aspect ratio": "16:10",
+      "Flicker-free": "Yes",
+      "Color gamut": "100% sRGB",
+      "Brightness": "400 nits"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "35.75 x 26.9 x 2.37 cm (front); 35.75 x 26.9 x 2.54 cm (rear)"
+    },
+    "Weights": {
+      "Weight": "2.43 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (discrete)": "NVIDIA GeForce RTX 5060 Laptop GPU (8 GB GDDR7 dedicated)",
+      "Graphics": "Discrete"
+    },
+    "Connectivity and Communications": {
+      "Ports": "1 USB Type-A 10Gbps signaling rate; 2 USB Type-A 5Gbps signaling rate; 1 AC smart pin; 1 HDMI 2.1; 1 headphone/microphone combo; 1 RJ-45; 1 USB Type-C 10Gbps signaling rate (USB Power Delivery 3.0, DisplayPort 1.4, HP Sleep and Charge)",
+      "Wireless": "Realtek Wi-Fi 6 (2x2) and Bluetooth 5.4 wireless card",
+      "Network interface": "Integrated 10/100/1000 GbE LAN",
+      "Expansion slots": "2 M.2 (SSD)",
+      "Wireless Note": "Modern Standby (Connected)"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "Dual speakers; HP Audio Boost; HyperX; DTS:X Ultra",
+      "Keyboard": "Full-size, 4-zone RGB backlit, shadow black keyboard with numeric keypad and 26-Key Rollover Anti-Ghosting Key technology",
+      "Pointing device": "HP Imagepad",
+      "Input devices": "IR thermal sensor"
+    },
+    "Appearance": {
+      "Product color": "Shadow black, black chrome logo",
+      "Product design": "Paint finish",
+      "Color": "Shadow black"
+    },
+    "Battery and Power": {
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 30 minutes",
+      "Battery type": "6-cell, 83 Wh Li-ion polymer",
+      "Power supply type": "230 W AC power adapter"
+    },
+    "Security Management": {
+      "Security management": "Camera privacy shutter; Trusted Platform Module (Firmware TPM) support"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "1 TB PCIe Gen4 NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    },
+    "Camera Specifications": {
+      "Camera": "HP True Vision 1080p FHD camera with temporal noise reduction and integrated dual array digital microphones"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core i7-14650HX",
+    "gpu": "NVIDIA GeForce RTX 5060 8GB",
+    "displayInch": 16,
+    "panel": "IPS",
+    "refreshRateHz": null,
+    "weightKg": 2.43,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core i7-14650HX · RTX 5060 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Ryzen 9 9955HX · RTX 5060 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Ryzen 7 8745HX · RTX 5060 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Core i9-14900HX · RTX 5060 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Ryzen 9 9955HX · RTX 5060 8GB · 24GB · 1TB"
+        },
+        {
+          "value": "Core i9-14900HX · RTX 5070 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Ryzen 9 8940HX · RTX 5070 8GB · 16GB · 1TB"
+        },
+        {
+          "value": "Ryzen 9 9955HX · RTX 5070 8GB · 24GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Shadow black",
+          "hex": "#353535"
+        },
+        {
+          "value": "RIOT blue (VALORANT Limited Edition)",
+          "hex": "#152534"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Shadow black": [
+        {
+          "key": "laptops/hp-omen-16/shadow-black-1",
+          "alt": "HP OMEN 16 in Shadow black",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_front_whitebg_3970413.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/shadow-black-2",
+          "alt": "HP OMEN 16 in Shadow black, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_frontright_whitebg_3970142.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/shadow-black-3",
+          "alt": "HP OMEN 16 in Shadow black, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nt_nonfpr_4-zone_lol_art_screen_core_set_frontleft_3970089.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/shadow-black-4",
+          "alt": "HP OMEN 16 in Shadow black, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nonfpr_4-zone_core_set_rearleft_whitebg_3970210_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/shadow-black-5",
+          "alt": "HP OMEN 16 in Shadow black, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/5/25c1_omen_16_shadow_black_nonfpr_4-zone_core_set_stackedprofile_whitebg_3970141_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/shadow-black-6",
+          "alt": "HP OMEN 16 in Shadow black, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/o/m/omen-16-hanna-nvidia-40-50-series-shadow-black-en-annotated-img-02_1100.jpg?store=in-en&image-type=image",
+          "width": 1100,
+          "height": 807
+        },
+        {
+          "key": "laptops/hp-omen-16/shadow-black-7",
+          "alt": "HP OMEN 16 in Shadow black, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/o/m/omen-16-hanna-khalilah-nvidia-40-50-series-shadow-black-en-annotated-img-05_1100_1.jpg?store=in-en&image-type=image",
+          "width": 1100,
+          "height": 807
+        }
+      ],
+      "RIOT blue (VALORANT Limited Edition)": [
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-1",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition)",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_front_7437650.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-2",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_frontright_7437602.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-3",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_frontleft_7437700.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-4",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_rearleft_7437701.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-5",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/h/x/hx_omen_16_amd_valorant_non_oled_fhd_4rgb_coreset_stackedprofile_7437703.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-6",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hyperx-omen-16-hannahx-khalilahhx-shadow-black-en-annot-1_1_.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        },
+        {
+          "key": "laptops/hp-omen-16/riot-blue-valorant-limited-edition-7",
+          "alt": "HP OMEN 16 in RIOT blue (VALORANT Limited Edition), view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hyperx-omen-16-khalilahhx-shadow-black-en-annot-2_1_.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-BL2D8PA",
+      "mpn": "BL2D8PA#ACJ",
+      "options": {
+        "Configuration": "Core i7-14650HX · RTX 5060 8GB · 16GB · 1TB",
+        "Color": "Shadow black"
+      },
+      "price": 199999,
+      "mrp": 199999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core i7-14650HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB",
+        "touch": false,
+        "model": "16-am0076TX"
+      }
+    },
+    {
+      "sku": "HP-DQ1J2PA",
+      "mpn": "DQ1J2PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 9 9955HX · RTX 5060 8GB · 16GB · 1TB",
+        "Color": "Shadow black"
+      },
+      "price": 218999,
+      "mrp": 258266,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen 9 9955HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB",
+        "touch": false,
+        "model": "16-ap1096AX"
+      }
+    },
+    {
+      "sku": "HP-DL5J5PA",
+      "mpn": "DL5J5PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 7 8745HX · RTX 5060 8GB · 16GB · 1TB",
+        "Color": "RIOT blue (VALORANT Limited Edition)"
+      },
+      "price": 219990,
+      "mrp": 270180,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen 7 8745HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB",
+        "touch": false,
+        "model": "16-ap1010AX"
+      }
+    },
+    {
+      "sku": "HP-DV2S1PA",
+      "mpn": "DV2S1PA#ACJ",
+      "options": {
+        "Configuration": "Core i9-14900HX · RTX 5060 8GB · 16GB · 1TB",
+        "Color": "Shadow black"
+      },
+      "price": 229000,
+      "mrp": 300200,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core i9-14900HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB",
+        "touch": false,
+        "model": "16-am0208TX"
+      }
+    },
+    {
+      "sku": "HP-DL5J8PA",
+      "mpn": "DL5J8PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 9 9955HX · RTX 5060 8GB · 24GB · 1TB",
+        "Color": "RIOT blue (VALORANT Limited Edition)"
+      },
+      "price": 235999,
+      "mrp": 285698,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen 9 9955HX",
+        "gpu": "NVIDIA GeForce RTX 5060 8GB",
+        "touch": false,
+        "model": "16-ap1059AX"
+      }
+    },
+    {
+      "sku": "HP-DW8K9PA",
+      "mpn": "DW8K9PA#ACJ",
+      "options": {
+        "Configuration": "Core i9-14900HX · RTX 5070 8GB · 16GB · 1TB",
+        "Color": "Shadow black"
+      },
+      "price": 240990,
+      "mrp": 274760,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core i9-14900HX",
+        "gpu": "NVIDIA GeForce RTX 5070 8GB",
+        "touch": false,
+        "model": "16-am0201TX"
+      }
+    },
+    {
+      "sku": "HP-DW8L0PA",
+      "mpn": "DW8L0PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 9 8940HX · RTX 5070 8GB · 16GB · 1TB",
+        "Color": "Shadow black"
+      },
+      "price": 244990,
+      "mrp": 254407,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen 9 8940HX",
+        "gpu": "NVIDIA GeForce RTX 5070 8GB",
+        "touch": false,
+        "model": "16-ap0231AX"
+      }
+    },
+    {
+      "sku": "HP-DL5J7PA",
+      "mpn": "DL5J7PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 9 9955HX · RTX 5070 8GB · 24GB · 1TB",
+        "Color": "RIOT blue (VALORANT Limited Edition)"
+      },
+      "price": 259999,
+      "mrp": 306105,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen 9 9955HX",
+        "gpu": "NVIDIA GeForce RTX 5070 8GB",
+        "touch": false,
+        "model": "16-ap1058AX"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/omen-gaming-laptop-16-am0076tx-bl2d8pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hyperx-omen-16-inch-gaming-laptop-pc-16-ap1096ax-dq1j2pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hyperx-omen-16-inch-gaming-laptop-pc-16-ap1010ax-dl5j5pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/omen-gaming-laptop-16-am0208tx-dv2s1pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hyperx-omen-16-inch-gaming-laptop-pc-16-ap1059ax-dl5j8pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/omen-gaming-laptop-16-am0201tx-dw8k9pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/omen-gaming-laptop-16-ap0231ax-dw8l0pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hyperx-omen-16-inch-gaming-laptop-pc-16-ap1058ax-dl5j7pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

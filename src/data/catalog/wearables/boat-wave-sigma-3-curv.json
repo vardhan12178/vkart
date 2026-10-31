@@ -1,0 +1,170 @@
+{
+  "slug": "boat-wave-sigma-3-curv",
+  "title": "boAt Wave Sigma 3 Curv",
+  "brand": "boAt",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-04",
+  "shortDescription": "boAt Wave Sigma 3 Curv: Smartwatch with 2.01\" Curved HD Display & Bluetooth Calling.",
+  "description": "boAt Wave Sigma 3 Curv: Smartwatch with 2.01\" Curved HD Display & Bluetooth Calling.",
+  "highlights": [
+    "Smartwatch with 2.01\" Curved HD Display & Bluetooth Calling",
+    "5.33 cm (2.01\") display",
+    "IP68 rating",
+    "300 mAh battery"
+  ],
+  "specs": {
+    "Specifications": {
+      "IPX Rating": "IP68",
+      "Charging Time": "1 Hour 45 Minutes",
+      "Working Time": "Up to 10 days",
+      "Battery": "300 mAh",
+      "Display Dimensions": "5.33 cm (2.01\")",
+      "Net Content": "1 UNIT Wave Sigma 3 Curv, 1 UNIT USB Magnetic Charging Cable, 1 UNIT Manual & Warranty QR Card, 6 UNIT Stickers",
+      "Product Dimensions": "252.2 x 38.9 x 13.2mm",
+      "Bluetooth": "V5.4",
+      "Screen type": "HD Display"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 2.01,
+    "batteryDays": 10,
+    "bluetoothCalling": true,
+    "ipRating": "IP68"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Active Black",
+          "hex": "#1E1C1D"
+        },
+        {
+          "value": "Timber Brown",
+          "hex": "#7C533D"
+        },
+        {
+          "value": "Cyan Blue",
+          "hex": "#3D5D68"
+        },
+        {
+          "value": "Steel Black",
+          "hex": "#1F1D1E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Active Black": [
+        {
+          "key": "wearables/boat-wave-sigma-3-curv/active-black-1",
+          "alt": "boAt Wave Sigma 3 Curv in Active Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature1_2de511a9-e578-486f-ac5e-977d0529697a.png?v=1773729697",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Timber Brown": [
+        {
+          "key": "wearables/boat-wave-sigma-3-curv/timber-brown-1",
+          "alt": "boAt Wave Sigma 3 Curv in Timber Brown",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_19.png?v=1773730522",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Cyan Blue": [
+        {
+          "key": "wearables/boat-wave-sigma-3-curv/cyan-blue-1",
+          "alt": "boAt Wave Sigma 3 Curv in Cyan Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_10.png?v=1773730522",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Steel Black": [
+        {
+          "key": "wearables/boat-wave-sigma-3-curv/steel-black-1",
+          "alt": "boAt Wave Sigma 3 Curv in Steel Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Feature_28_d8adbb2c-fe7e-4401-b6d6-2914b94b3d70.png?v=1773730144",
+          "width": 2000,
+          "height": 2000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOA-WSIG3C-ACTIVEBLACK",
+      "mpn": "8905650131697",
+      "options": {
+        "Color": "Active Black"
+      },
+      "price": 1399,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-WSIG3C-TIMBERBROWN",
+      "mpn": "8905650131710",
+      "options": {
+        "Color": "Timber Brown"
+      },
+      "price": 1399,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-WSIG3C-CYANBLUE",
+      "mpn": "8905650131703",
+      "options": {
+        "Color": "Cyan Blue"
+      },
+      "price": 1399,
+      "mrp": 5999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-WSIG3C-STEELBLACK",
+      "mpn": "8905650131727",
+      "options": {
+        "Color": "Steel Black"
+      },
+      "price": 1599,
+      "mrp": 6499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Wave Sigma 3 Curv",
+    "USB Magnetic Charging Cable",
+    "Manual & Warranty QR Card",
+    "Stickers"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boat-lifestyle.com/products/boat-wave-sigma-3-curv"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from boAt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "slug": "libas-mustard-floral-applique-tissue-saree",
+  "title": "Libas Mustard Floral Applique Tissue Saree",
+  "brand": "Libas",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sarees"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Draped in a vibrant yellow hue, this embroidered tissue saree features intricate multicolor thread and sequin floral motifs along the delicate border and pallu, crafted for celebrations where you want to be remembered.",
+  "description": "Draped in a vibrant yellow hue, this embroidered tissue saree features intricate multicolor thread and sequin floral motifs along the delicate border and pallu, crafted for celebrations where you want to be remembered. Lightweight and lustrous, the tissue fabric drapes smoothly and stays comfortable throughout long functions. The delicate embroidery adds festive richness without weighing the saree down. It comes with an unstitched yellow blouse piece that can be tailored to your preferred neckline and sleeve length. Perfect for Diwali, wedding receptions, sangeet nights, mehendi ceremonies, and festive family gatherings.",
+  "highlights": [
+    "Fabric: tissue",
+    "Work: embroidered, sequin, embroidery",
+    "Set includes: blouse piece"
+  ],
+  "specs": {
+    "Product details": {
+      "Fabric": "tissue",
+      "Work": "embroidered, sequin, embroidery",
+      "Set includes": "blouse piece"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sarees",
+    "color": "Mustard",
+    "fabric": "tissue",
+    "fit": null,
+    "sizes": [
+      "Onesize"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "Onesize"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Mustard",
+          "hex": "#847A88"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Mustard": [
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-1",
+          "alt": "Libas Mustard Floral Applique Tissue Saree",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Mustard-Floral-Applique-Embellished-Tissue-Saree-1105237P_be884033-3e27-4dd2-aa43-b3c8047daef2.jpg?v=1793097301",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-2",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_1_9fff4e06-520d-4e4d-9e89-796231bb7b98.jpg?v=1793097301",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-3",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_2_49ae1f8d-bc7e-45c0-8a59-2fa7e91af697.jpg?v=1793097302",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-4",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_3_73aec588-2acc-42eb-9f87-5e0321ff7c31.jpg?v=1793097301",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-5",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_4_e02e5704-ac81-441b-b00b-ae21dc2acc60.jpg?v=1793097301",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-6",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_5_ed9c3bd0-e98d-4d3d-8364-bbe53dc17dca.jpg?v=1793097301",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-7",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_6_b14ba034-7d88-4cfd-9226-cf80873958d6.jpg?v=1793097302",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-mustard-floral-applique-tissue-saree/mustard-8",
+          "alt": "Libas Mustard Floral Applique Tissue Saree, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1105237P_Blouse_1aeb1a96-817f-491f-b08a-d62a379c0ee9.jpg?v=1793097301",
+          "width": 2160,
+          "height": 2880
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LIB-LIBASMUSTA05237P-ONESIZE",
+      "mpn": "1105237P",
+      "options": {
+        "Size": "Onesize",
+        "Color": "Mustard"
+      },
+      "price": 9199,
+      "mrp": 9199,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.libas.in/products/libas-mustard-floral-applique-embellished-tissue-saree-1105237p"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Libas's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

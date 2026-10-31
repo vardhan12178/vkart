@@ -1,0 +1,228 @@
+{
+  "slug": "apple-macbook-air-15-m5",
+  "title": "Apple MacBook Air 15\" (M5)",
+  "brand": "Apple",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "Big-screen MacBook Air: 15.3-inch Liquid Retina display, M5 chip, 24GB memory and 1TB SSD as standard.",
+  "description": "MacBook Air 15\" gives you a 15.3-inch Liquid Retina display in a thin, fanless design, powered by the M5 chip with a 10-core GPU.\n\nThe standard configuration comes with 24GB unified memory and a 1TB SSD, and the six-speaker sound system fills a room. Battery life reaches 18 hours, and it has Thunderbolt 4, MagSafe 3 and Wi-Fi 7.",
+  "highlights": [
+    "Apple M5 chip with 10-core GPU",
+    "15.3-inch Liquid Retina display",
+    "24GB memory, 1TB SSD",
+    "Up to 18 hours battery",
+    "Fanless aluminium design",
+    "2× Thunderbolt 4, MagSafe 3, Wi-Fi 7"
+  ],
+  "specs": {
+    "Processor": {
+      "chip": "Apple M5",
+      "cpu": "10-core (4 super + 6 efficiency)",
+      "gpu": "8-core or 10-core",
+      "neuralEngine": "16-core"
+    },
+    "Memory": {
+      "ram": "16GB or 24GB unified memory (configurable to 32GB)"
+    },
+    "Storage": {
+      "ssd": "512GB or 1TB SSD (configurable to 4TB)"
+    },
+    "Display": {
+      "size": 15.3,
+      "type": "Liquid Retina (LED-backlit IPS)",
+      "resolution": "2880 × 1864",
+      "brightness": "500 nits",
+      "colour": "1 billion colours, P3, True Tone"
+    },
+    "Battery": {
+      "capacity": "66.5 Wh",
+      "life": "Up to 18 hours video streaming",
+      "charging": "MagSafe 3, fast-charge with 70W+"
+    },
+    "Ports": {
+      "ports": "2× Thunderbolt 4 (USB-C), MagSafe 3, 3.5 mm headphone jack",
+      "externalDisplays": "Up to two"
+    },
+    "Connectivity": {
+      "wifi": "Wi-Fi 7",
+      "bluetooth": "Bluetooth 6"
+    },
+    "Camera & Audio": {
+      "camera": "12MP Center Stage camera",
+      "audio": "Four-speaker system, Spatial Audio"
+    },
+    "Build": {
+      "dimensions": "1.15 × 34.04 × 23.76 cm",
+      "weight": "1.51 kg",
+      "material": "Aluminium"
+    },
+    "Software": {
+      "os": "macOS",
+      "ai": "Apple Intelligence"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple M5",
+    "gpu": "Integrated 10-core",
+    "displayInch": 15.3,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": 1.51,
+    "batteryHours": 18,
+    "os": "macOS",
+    "ramGB": 24,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "M5, 10-core CPU, 10-core GPU · 24GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sky Blue",
+          "hex": "#004A61"
+        },
+        {
+          "value": "Midnight",
+          "hex": "#002070"
+        },
+        {
+          "value": "Silver",
+          "hex": "#043F51"
+        },
+        {
+          "value": "Starlight",
+          "hex": "#66430A"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sky Blue": [],
+      "Midnight": [],
+      "Silver": [],
+      "Starlight": []
+    },
+    "common": [
+      {
+        "key": "laptops/apple-macbook-air-15-m5/common-1",
+        "alt": "Apple MacBook Air 15\" (M5) — open, side angle",
+        "sourceUrl": "https://www.apple.com/v/macbook-air/z/images/overview/hero/hero_static__c9sislzzicq6_large_2x.png",
+        "width": 1960,
+        "height": 938
+      },
+      {
+        "key": "laptops/apple-macbook-air-15-m5/common-2",
+        "alt": "Apple MacBook Air 15\" (M5) — editing video",
+        "sourceUrl": "https://www.apple.com/v/macbook-air/z/images/overview/performance/performance_hero_static__fmu2opq0522q_large_2x.jpg",
+        "width": 1964,
+        "height": 1192
+      },
+      {
+        "key": "laptops/apple-macbook-air-15-m5/common-3",
+        "alt": "Apple MacBook Air 15\" (M5) — thin profile",
+        "sourceUrl": "https://www.apple.com/v/macbook-air/z/images/overview/design/design_hero_static__e56c1v71mr6u_large_2x.png",
+        "width": 3456,
+        "height": 1334
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-MBA15-M510C10G24GB1TB-MID",
+      "mpn": "MDVH4HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 24GB · 1TB",
+        "Color": "Midnight"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA15-M510C10G24GB1TB-SIL",
+      "mpn": "MDV94HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 24GB · 1TB",
+        "Color": "Silver"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA15-M510C10G24GB1TB-SKBL",
+      "mpn": "MDVQ4HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 24GB · 1TB",
+        "Color": "Sky Blue"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    },
+    {
+      "sku": "APL-MBA15-M510C10G24GB1TB-STA",
+      "mpn": "MDVD4HN/A",
+      "options": {
+        "Configuration": "M5, 10-core CPU, 10-core GPU · 24GB · 1TB",
+        "Color": "Starlight"
+      },
+      "price": 179900,
+      "mrp": 179900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 24,
+        "storageGB": 1024,
+        "processor": "Apple M5"
+      }
+    }
+  ],
+  "inTheBox": [
+    "15\" MacBook Air",
+    "35W Dual USB-C Port Power Adapter",
+    "USB-C to MagSafe 3 Cable (2 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/macbook-air/specs/",
+      "https://www.apple.com/in/shop/buy-mac/macbook-air"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Prices are Apple India MRP for Apple's standard configurations (custom upgrades not included). Per-colour product images are 904 px; larger marketing images are in the gallery."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "slug": "samsung-22-inch-fhd-monitor",
+  "title": "Samsung 22\" FHD Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "IPS Panel delivers vivid colors across the whole screen\nSeamless gaming experience with 100 Hz refresh rate and Game Mode\nComfortable Eye Care with Eye Saver mode and Less Screen Flickering\nSuper Slim Design with multipl",
+  "description": "IPS Panel delivers vivid colors across the whole screen\nSeamless gaming experience with 100 Hz refresh rate and Game Mode\nComfortable Eye Care with Eye Saver mode and Less Screen Flickering\nSuper Slim Design with multiple Connectivity",
+  "highlights": [
+    "22-inch FHD (1,920 x 1,080) IPS",
+    "100Hz refresh rate",
+    "5 (GTG） response time",
+    "IPS panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Screen Size (Class)": "54.6 cm",
+      "Flat / Curved": "Flat",
+      "Aspect Ratio": "16:9",
+      "Panel Type": "IPS",
+      "Active Display Size (HxV) (mm)": "47.6 cm x 26.77 cm",
+      "Brightness (Typical)": "250 cd/㎡",
+      "Brightness (Min)": "200 cd/㎡",
+      "Contrast Ratio Static": "1000:1(Typical)",
+      "Contrast Ratio (Dynamic)": "Mega",
+      "Resolution": "FHD (1,920 x 1,080)",
+      "Response Time": "5 (GTG）",
+      "Viewing Angle (H/V)": "178°/178°",
+      "Colour Support": "Max 16.7 M",
+      "Color Gamut (NTSC 1976)": "72% (CIE 1931)",
+      "Refresh Rate": "Max 100 Hz",
+      "Eco Saving Plus": "Yes",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Image Size": "Yes",
+      "Windows Certification": "Windows11",
+      "FreeSync": "No",
+      "G-Sync": "No",
+      "Off Timer Plus": "Yes",
+      "Smart Type": "No",
+      "D-Sub": "1 EA",
+      "HDMI": "1 EA",
+      "HDMI Version": "1.4",
+      "HDCP Version (HDMI)": "1.4",
+      "Headphone": "No",
+      "USB Hub": "No",
+      "USB Hub Version": "No",
+      "USB-C": "No",
+      "Speaker": "No",
+      "Speaker Output": "No",
+      "Temperature": "10℃~ 40℃",
+      "Humidity": "10% ~ 80%, non-condensing",
+      "Front Colour": "BLACK",
+      "Rear Color": "BLACK",
+      "Stand Colour": "BLACK",
+      "Stand Type": "SIMPLE",
+      "Tilt": "-2.0˚(±2.0˚)~21.0˚(±2.0˚)",
+      "Wall Mount": "100 x 100",
+      "Recycled Plastic": "14.2 %",
+      "Power Supply": "AC 100~240 V",
+      "Power Consumption (Max)": "25 W",
+      "Type": "External Adaptor",
+      "Set Dimension with Stand (WxHxD)": "48.99 cm x 40 cm x 17.51 cm",
+      "Set Dimension without Stand (WxHxD)": "48.99 cm x 29.19 cm x 3.62 cm",
+      "Package Dimension (WxHxD)": "58.5 cm x 10 cmx 33.4 cm",
+      "Set Weight with Stand": "2.1 kg",
+      "Set Weight without Stand": "1.6 kg",
+      "Package Weight": "3.1 kg",
+      "Power Cable Length": "1.5 m",
+      "HDMI Cable": "Yes",
+      "Manufactured by": "SAMSUNGELECTRONICS HCMC CE COMPLEX CO. LTD. I-11,D2 ROAD, TANG NHON PHU B WARD,SAIGON HI-TECH PARK DISTRICT 9, HO CHI MINH CITY, VIETNAM-70000",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 22,
+    "resolution": "FHD (1,920 x 1,080)",
+    "refreshRateHz": 100,
+    "panel": "IPS",
+    "responseTimeMs": null,
+    "curved": false,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "22\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/samsung-22-inch-fhd-monitor/common-1",
+        "alt": "Samsung 22\" FHD Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls22d300gawxxl/gallery/in-essential-s3-s30gd-ls22d300gawxxl-thumb-544498978?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "monitors/samsung-22-inch-fhd-monitor/common-2",
+        "alt": "Samsung 22\" FHD Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls22d300gawxxl/gallery/in-essential-s3-s30gd-ls22d300gawxxl-544498977?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS22D300GAW",
+      "mpn": "LS22D300GAW",
+      "options": {
+        "Size": "22\""
+      },
+      "price": 6199,
+      "mrp": 13700,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/full-hd-1080p/essential-monitor-s3-s30gd-22-inch-fhd-ips-100hz-ls22d300gawxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "slug": "oppo-enco-air5-pro",
+  "title": "OPPO Enco Air5 Pro",
+  "brand": "OPPO",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "OPPO Enco Air5 Pro: Up to 55dB active noise cancellation, 12mm drivers, Up to 54 hours with case, LHDC 5.0/AAC/SBC codecs.",
+  "description": "OPPO Enco Air5 Pro use a 12mm drivers with up to 55dB active noise cancellation.\n\nThey last up to 54 hours with the charging case, support LHDC 5.0/AAC/SBC and are rated IP55. Available in Matte Black, Pearl White.",
+  "highlights": [
+    "Up to 55dB active noise cancellation",
+    "12mm drivers",
+    "Up to 54 hours with case",
+    "LHDC 5.0/AAC/SBC codecs",
+    "Bluetooth® 6.0",
+    "IP55"
+  ],
+  "specs": {
+    "Earphone": {
+      "Model": "ETEL1",
+      "Charging Case Model": "ETEL1"
+    },
+    "Audio Quality": {
+      "Driver": "12mm drivers",
+      "Driver Sensitivity": "122dB@1kHz",
+      "Frequency Response Range": "20 Hz~40 KHz",
+      "Microphone Sensitivity": "-38 dBV/Pa"
+    },
+    "Bluetooth": {
+      "Bluetooth Codec": "LHDC 5.0/AAC/SBC",
+      "Bluetooth Version": "Bluetooth® 6.0",
+      "Bluetooth Range": "10m"
+    },
+    "Battery Life": {
+      "Battery Type": "Rechargeable lithium ion battery",
+      "Battery Capacity": "62 mAh (earbuds)/530 mAh (charging case)",
+      "Playback": [
+        "Playback (AAC, default settings, 50% volume, ANC On): 7h (earbuds)/29h (earbuds + charging case)",
+        "Playback (AAC, default settings, 50% volume, ANC Off): 13h (earbuds)/54h (earbuds + charging case)",
+        "Playback (LHDC, default settings, 50% volume, ANC On): 6h (earbuds)/26h (earbuds + charging case)",
+        "Playback (LHDC, default settings, 50% volume, ANC Off): 10.5h (earbuds)/39h (earbuds + charging case)",
+        "Playback (AAC, default settings, 50% volume, transparency mode): 8h (earbuds)/31h (earbuds + charging case)",
+        "Playback (LHDC, default settings, 50% volume, transparency mode): 6h (earbuds)/26h (earbuds + charging case)"
+      ]
+    },
+    "Charging": {
+      "Charging Time": "60mins (earbuds)/90mins (earbuds + charging case)",
+      "Charging Input": [
+        "(charging case): 5V ⎓ 1.5A",
+        "(earbuds): 5V ⎓ 0.2A"
+      ],
+      "Charging Output": "(charging case to earbuds): 5V ⎓ 0.5A",
+      "Charging Port": "USB Type-C"
+    },
+    "Water and dust resistance": {
+      "Water Resistance (Earbuds)": "IP55"
+    },
+    "Size": {
+      "Weight (Earbud)": "4.4 ± 0.2g",
+      "Weight (Earbuds + Charging Case)": "43 ± 1g",
+      "Size (Earbud)": "3.09cm * 1.71cm * 1.99cm",
+      "Size (Charging Case)": "6.34cm * 5.00cm * 2.47cm"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 55,
+    "batteryHours": 54,
+    "ipRating": "IP55",
+    "connectivity": "Bluetooth® 6.0",
+    "codecs": "LHDC 5.0/AAC/SBC"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Matte Black",
+          "hex": "#1E1F21"
+        },
+        {
+          "value": "Pearl White",
+          "hex": "#F1EFEA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Matte Black": [
+        {
+          "key": "audio/oppo-enco-air5-pro/matte-black-1",
+          "alt": "OPPO Enco Air5 Pro in Matte Black",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/Wo8Jz37ryHYVNmhf.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Pearl White": [
+        {
+          "key": "audio/oppo-enco-air5-pro/pearl-white-1",
+          "alt": "OPPO Enco Air5 Pro in Pearl White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202605/20/9AVR1tLCkGTJ6fBk.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-ENCOA5P-MABL",
+      "mpn": "5031110297",
+      "options": {
+        "Color": "Matte Black"
+      },
+      "price": 4499,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "OPO-ENCOA5P-PEWH",
+      "mpn": "5031110298",
+      "options": {
+        "Color": "Pearl White"
+      },
+      "price": 4499,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Earbuds",
+    "Charging case",
+    "Ear tips",
+    "USB-C cable",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/accessories/enco-air5-pro/specs/",
+      "https://www.oppo.com/in/product/oppo-enco-air5-pro.P.P1110134"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oppo.com/in spec page; colours, selling price (price), list price (mrp) and images from the OPPO Store India product data."
+  }
+}

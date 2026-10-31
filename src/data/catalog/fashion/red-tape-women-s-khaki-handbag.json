@@ -1,0 +1,152 @@
+{
+  "slug": "red-tape-women-s-khaki-handbag",
+  "title": "Red Tape Women's Khaki Handbag",
+  "brand": "Red Tape",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "handbags"
+  ],
+  "status": "draft",
+  "launchDate": "2026-06",
+  "shortDescription": "Upgrade your everyday style with this elegant Red Tape women’s Khaki handbag.",
+  "description": "Upgrade your everyday style with this elegant Red Tape women’s Khaki handbag. Designed in premium faux leather, this versatile sling and satchel bag features a structured silhouette with a top handle and adjustable crossbody strap for multiple carrying styles. The spacious main compartment along with two inner pockets ensures organized storage for your essentials. Perfect for both casual outings and formal occasions, this handbag blends functionality with timeless fashion.\n\nVERSATILE SLING & SATCHEL DESIGN – Carry it as a crossbody sling bag or elegant satchel with a sturdy top handle; perfect for everyday styling",
+  "highlights": [
+    "Brand: Red Tape",
+    "Color: Khaki",
+    "Material: Faux Leather",
+    "Closure Type: Twist",
+    "Compartments: 1 Main Compartment"
+  ],
+  "specs": {
+    "Product details": {
+      "Brand": "Red Tape",
+      "Color": "Khaki",
+      "Material": "Faux Leather",
+      "Closure Type": "Twist",
+      "Compartments": "1 Main Compartment",
+      "Pockets": "2 Inner Pockets",
+      "Strap Type": "Adjustable & Detachable Sling Strap",
+      "Handle Type": "Top Handle",
+      "Occasion": "Casual / Formal",
+      "VERSATILE SLING & SATCHEL DESIGN": "– Carry it as a crossbody sling bag or elegant satchel with a sturdy top handle; perfect for everyday styling",
+      "PREMIUM FAUX LEATHER FINISH": "– Smooth, durable & stylish material that adds a luxe touch to your casual and formal outfits",
+      "SMART & SPACIOUS STORAGE": "– 1 main compartment with 2 inner pockets to neatly organize phone, wallet, makeup & essentials",
+      "ADJUSTABLE CROSSBODY STRAP": "– Customize the length for comfortable all-day wear; ideal for travel, office & shopping",
+      "PERFECT FOR EVERY OCCASION": "– Chic black handbag designed for work, college, parties & daily use; suits women & girls alike"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Handbags",
+    "color": "Khaki",
+    "fabric": "Faux Leather",
+    "fit": null,
+    "sizes": [
+      "S"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Khaki",
+          "hex": "#8E3C30"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Khaki": [
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-1",
+          "alt": "Red Tape Women's Khaki Handbag",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_0c4b40d5-fe97-4946-b046-7277b6fe6e72.jpg?v=1781590850",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-2",
+          "alt": "Red Tape Women's Khaki Handbag, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_430d5b8f-b3ce-4e61-928a-4fe606d25e2d.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-3",
+          "alt": "Red Tape Women's Khaki Handbag, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_5003351c-b899-4648-9666-f0f166a503af.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-4",
+          "alt": "Red Tape Women's Khaki Handbag, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_2e162d79-7de2-49f1-ab15-d1b219cf72c3.jpg?v=1781590850",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-5",
+          "alt": "Red Tape Women's Khaki Handbag, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_affd74fb-77ff-4ab5-b6c6-5fba19515d3d.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-6",
+          "alt": "Red Tape Women's Khaki Handbag, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/6_f65fc739-8b64-4d05-ab5a-d8b888c1c5dd.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
+        },
+        {
+          "key": "fashion/red-tape-women-s-khaki-handbag/khaki-7",
+          "alt": "Red Tape Women's Khaki Handbag, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/7_15d37a99-0525-4200-a1bf-43efb9027ee1.jpg?v=1781590849",
+          "width": 2000,
+          "height": 2000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RDT-WOMENSKHAKANDBAG-S",
+      "mpn": "RHB0222",
+      "options": {
+        "Size": "S",
+        "Color": "Khaki"
+      },
+      "price": 3299,
+      "mrp": 10999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.redtape.com/products/women-s-khaki-handbag"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Red Tape's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

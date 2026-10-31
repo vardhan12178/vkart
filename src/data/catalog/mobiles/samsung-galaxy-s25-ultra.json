@@ -1,0 +1,281 @@
+{
+  "slug": "samsung-galaxy-s25-ultra",
+  "title": "Samsung Galaxy S25 Ultra",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-01",
+  "shortDescription": "Titanium flagship with a 6.9-inch display, Snapdragon 8 Elite for Galaxy, 200MP quad camera and built-in S Pen.",
+  "description": "Galaxy S25 Ultra has a titanium frame, Corning Gorilla Armor 2 anti-reflective glass and IP68 protection around a 6.9-inch display with slim bezels.\n\nIts quad camera combines a 200MP Wide, a 50MP Ultra Wide for macro shots and 50MP and 10MP telephoto lenses, with a 12MP selfie camera.\n\nSnapdragon 8 Elite for Galaxy powers Galaxy AI features, and the S Pen is built in.",
+  "highlights": [
+    "6.9-inch Dynamic AMOLED 2X, 120Hz, Gorilla Armor 2",
+    "Snapdragon 8 Elite for Galaxy",
+    "200MP Wide + 50MP Ultra Wide + 50MP and 10MP Telephoto",
+    "Titanium frame, IP68",
+    "Built-in S Pen, Galaxy AI"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.9,
+      "type": "Dynamic AMOLED 2X",
+      "refreshRate": 120
+    },
+    "Performance": {
+      "chip": "Snapdragon 8 Elite for Galaxy",
+      "ram": "12GB"
+    },
+    "Camera": {
+      "rear": "200MP Wide + 50MP Ultra Wide + 50MP Telephoto + 10MP Telephoto",
+      "mainMP": 200,
+      "front": "12MP"
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "materials": "Titanium frame, Corning Gorilla Armor 2 front",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android, One UI 7 at launch",
+      "ai": "Galaxy AI"
+    },
+    "Extras": {
+      "stylus": "Built-in S Pen"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.9,
+    "refreshRateHz": 120,
+    "mainCameraMP": 200,
+    "frontCameraMP": 12,
+    "batteryMah": null,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": null,
+    "chip": "Snapdragon 8 Elite for Galaxy",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Titanium Black",
+          "hex": "#3C3D41"
+        },
+        {
+          "value": "Titanium Gray",
+          "hex": "#A19C98"
+        },
+        {
+          "value": "Titanium Jetblack",
+          "hex": "#393C43"
+        },
+        {
+          "value": "Titanium Silverblue",
+          "hex": "#959BAB"
+        },
+        {
+          "value": "Titanium Whitesilver",
+          "hex": "#BEBEC0"
+        },
+        {
+          "value": "Titanium Pinkgold",
+          "hex": "#DDCBBC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Titanium Black": [
+        {
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-black-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Black",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_black_PC.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Titanium Gray": [
+        {
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-gray-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Gray",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_gray_PC.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Titanium Jetblack": [
+        {
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-jetblack-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Jetblack",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_jetBlack_PC.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Titanium Silverblue": [
+        {
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-silverblue-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Silverblue",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_silverBlue_PC.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Titanium Whitesilver": [
+        {
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-whitesilver-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Whitesilver",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_whiteSilver_PC.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Titanium Pinkgold": [
+        {
+          "key": "mobiles/samsung-galaxy-s25-ultra/titanium-pinkgold-1",
+          "alt": "Samsung Galaxy S25 Ultra in Titanium Pinkgold",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s25-ultra/buy/product_color_pinkGold_PC.png",
+          "width": 1600,
+          "height": 864
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-S938BZKB",
+      "mpn": "SM-S938BZKB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Titanium Black"
+      },
+      "price": 114999,
+      "mrp": 129999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S938BZTB",
+      "mpn": "SM-S938BZTB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Titanium Gray"
+      },
+      "price": 114999,
+      "mrp": 129999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S938BAKB",
+      "mpn": "SM-S938BAKB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Titanium Jetblack"
+      },
+      "price": 114999,
+      "mrp": 129999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S938BZBB",
+      "mpn": "SM-S938BZBB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Titanium Silverblue"
+      },
+      "price": 114999,
+      "mrp": 129999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S938BZSB",
+      "mpn": "SM-S938BZSB",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Titanium Whitesilver"
+      },
+      "price": 114999,
+      "mrp": 129999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S938BZDC",
+      "mpn": "SM-S938BZDC",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Titanium Pinkgold"
+      },
+      "price": 129999,
+      "mrp": 141999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "S Pen (built-in)",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+      "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "cmf-buds-pro-2",
+  "title": "CMF Buds Pro 2",
+  "brand": "Nothing",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2025-04",
+  "shortDescription": "CMF by Nothing earbuds with 50dB hybrid ANC, 11mm + 6mm dual drivers, Hi-Res certification and a customisable smart dial.",
+  "description": "CMF Buds Pro 2 pack 50dB hybrid active noise cancellation and dual 11mm + 6mm drivers with Hi-Res certification at an affordable price.\n\nA customisable smart dial on the case gives quick sound control, and six HD mics keep calls clear.",
+  "highlights": [
+    "50dB hybrid ANC",
+    "11mm + 6mm dual drivers",
+    "Hi-Res certified",
+    "Customisable smart dial",
+    "6 HD mics",
+    "Four colours"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "50dB hybrid ANC",
+      "drivers": "11mm + 6mm dual drivers",
+      "hiRes": "Hi-Res certified"
+    },
+    "Calls": {
+      "mics": "6 HD mics"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 50
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Orange",
+          "hex": "#F54234"
+        },
+        {
+          "value": "Dark Grey",
+          "hex": "#38393D"
+        },
+        {
+          "value": "Light Grey",
+          "hex": "#BDBEC2"
+        },
+        {
+          "value": "Blue",
+          "hex": "#2E3C71"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Orange": [
+        {
+          "key": "audio/cmf-buds-pro-2/orange-1",
+          "alt": "CMF Buds Pro 2 in Orange",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0070_CMF-Buds-Pro-2-case-lightgrey.png?v=1753757347",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/orange-2",
+          "alt": "CMF Buds Pro 2 in Orange, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/orange-3",
+          "alt": "CMF Buds Pro 2 in Orange, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/orange-4",
+          "alt": "CMF Buds Pro 2 in Orange, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/orange-5",
+          "alt": "CMF Buds Pro 2 in Orange, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        }
+      ],
+      "Dark Grey": [
+        {
+          "key": "audio/cmf-buds-pro-2/dark-grey-1",
+          "alt": "CMF Buds Pro 2 in Dark Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0072_CMF-Buds-Pro-2-case-black.png?v=1753757336",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/dark-grey-2",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/dark-grey-3",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/dark-grey-4",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/dark-grey-5",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/dark-grey-6",
+          "alt": "CMF Buds Pro 2 in Dark Grey, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Dark-Grey_5.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        }
+      ],
+      "Light Grey": [
+        {
+          "key": "audio/cmf-buds-pro-2/light-grey-1",
+          "alt": "CMF Buds Pro 2 in Light Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0069_CMF-Buds-Pro-2-case-orange.png?v=1753757345",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/light-grey-2",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/light-grey-3",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/light-grey-4",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/light-grey-5",
+          "alt": "CMF Buds Pro 2 in Light Grey, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Light-Grey_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        }
+      ],
+      "Blue": [
+        {
+          "key": "audio/cmf-buds-pro-2/blue-1",
+          "alt": "CMF Buds Pro 2 in Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0071_CMF-Buds-Pro-2-case-blue.png?v=1753757335",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/blue-2",
+          "alt": "CMF Buds Pro 2 in Blue, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_1.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/blue-3",
+          "alt": "CMF Buds Pro 2 in Blue, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_2.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/blue-4",
+          "alt": "CMF Buds Pro 2 in Blue, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_3.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        },
+        {
+          "key": "audio/cmf-buds-pro-2/blue-5",
+          "alt": "CMF Buds Pro 2 in Blue, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Blue_4.png?v=1745489690",
+          "width": 1352,
+          "height": 1352
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-CMFBP2-ORANGE",
+      "mpn": "6974434222816",
+      "options": {
+        "Color": "Orange"
+      },
+      "price": 4299,
+      "mrp": 4299,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-CMFBP2-DARKGREY",
+      "mpn": "6974434222793",
+      "options": {
+        "Color": "Dark Grey"
+      },
+      "price": 4299,
+      "mrp": 4299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-CMFBP2-LIGHTGREY",
+      "mpn": "6974434222779",
+      "options": {
+        "Color": "Light Grey"
+      },
+      "price": 4299,
+      "mrp": 4299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NTH-CMFBP2-BLUE",
+      "mpn": "6974434222830",
+      "options": {
+        "Color": "Blue"
+      },
+      "price": 4299,
+      "mrp": 4299,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/cmf-buds-pro-2"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, prices and images from Nothing's India store data (audio is sold through Flipkart); key specs from the product page headlines. Nothing publishes no full spec sheet here, so specs are limited."
+  }
+}

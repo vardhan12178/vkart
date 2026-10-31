@@ -1,0 +1,168 @@
+{
+  "slug": "boat-ultima-vogue-2",
+  "title": "boAt Ultima Vogue 2",
+  "brand": "boAt",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "boAt Ultima Vogue 2: India's First AMOLED Smartwatch with Type-C Charging.",
+  "description": "boAt Ultima Vogue 2: India's First AMOLED Smartwatch with Type-C Charging.",
+  "highlights": [
+    "India's First AMOLED Smartwatch with Type-C Charging",
+    "1.96” (4.97 cm) display",
+    "300 mAh battery"
+  ],
+  "specs": {
+    "Specifications": {
+      "Charging Time": "Up to 1 hour and 26 minutes",
+      "Working Time": "Up to 10 days*",
+      "Battery": "300 mAh",
+      "Net Content": "1 UNIT Ultima Vogue 2, 1 UNIT Type-C to C Charging Cable, 1 UNIT User Manual & Warranty QR Card, 6 UNIT Stickers",
+      "Screen Type": "AMOLED Display",
+      "Screen Size": "1.96” (4.97 cm)",
+      "Bluetooth": "5.4",
+      "Water Resistance": "IP68"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 1.96,
+    "batteryDays": 10,
+    "bluetoothCalling": false,
+    "ipRating": null
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Active Black",
+          "hex": "#2E2F2F"
+        },
+        {
+          "value": "Jade Green",
+          "hex": "#49543B"
+        },
+        {
+          "value": "Deep Blue",
+          "hex": "#313E4D"
+        },
+        {
+          "value": "Steel Black",
+          "hex": "#303030"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Active Black": [
+        {
+          "key": "wearables/boat-ultima-vogue-2/active-black-1",
+          "alt": "boAt Ultima Vogue 2 in Active Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_14_21a9a84f-32e4-4c5f-8730-2b1f57de3e2c.png?v=1781613507",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Jade Green": [
+        {
+          "key": "wearables/boat-ultima-vogue-2/jade-green-1",
+          "alt": "boAt Ultima Vogue 2 in Jade Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_8_0c12acfb-9fed-4c4a-8a2a-6d175d05eb05.png?v=1781614351",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Deep Blue": [
+        {
+          "key": "wearables/boat-ultima-vogue-2/deep-blue-1",
+          "alt": "boAt Ultima Vogue 2 in Deep Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_1_c7c633e6-4d53-4607-a664-a3d0ad2ec491.png?v=1781613965",
+          "width": 2000,
+          "height": 2000
+        }
+      ],
+      "Steel Black": [
+        {
+          "key": "wearables/boat-ultima-vogue-2/steel-black-1",
+          "alt": "boAt Ultima Vogue 2 in Steel Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Frame_20_64eb1b4b-4b02-49b3-8d7e-d4913186db0c.png?v=1781613748",
+          "width": 2000,
+          "height": 2000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOA-ULVOG2-ACTIVEBLACK",
+      "mpn": "8905650133233",
+      "options": {
+        "Color": "Active Black"
+      },
+      "price": 2699,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-ULVOG2-JADEGREEN",
+      "mpn": "8905650133257",
+      "options": {
+        "Color": "Jade Green"
+      },
+      "price": 2699,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-ULVOG2-DEEPBLUE",
+      "mpn": "8905650133240",
+      "options": {
+        "Color": "Deep Blue"
+      },
+      "price": 2699,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-ULVOG2-STEELBLACK",
+      "mpn": "8905650133271",
+      "options": {
+        "Color": "Steel Black"
+      },
+      "price": 2899,
+      "mrp": 8499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Ultima Vogue 2",
+    "Type-C to C Charging Cable",
+    "User Manual & Warranty QR Card",
+    "Stickers"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boat-lifestyle.com/products/boat-ultima-vogue-2"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from boAt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

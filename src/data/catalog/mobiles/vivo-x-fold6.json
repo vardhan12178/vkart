@@ -1,0 +1,278 @@
+{
+  "slug": "vivo-x-fold6",
+  "title": "vivo X Fold6",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Dimensity 9500 Super Edition, 8.02-inch AMOLED display, 6,900 mAh battery with 80W FlashCharge and a 50MP main camera.",
+  "description": "vivo X Fold6 runs on the Dimensity 9500 Super Edition with OriginOS 7. Its 8.02-inch AMOLED display keeps scrolling and video smooth.\n\nThe 6,900 mAh battery with 80W FlashCharge lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "Dimensity 9500 Super Edition",
+    "8.02-inch AMOLED display",
+    "6,900 mAh battery with 80W FlashCharge",
+    "50MP main camera",
+    "OriginOS 7"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Dimensity 9500 Super Edition",
+      "RAM": "12GB",
+      "Storage": "512GB",
+      "Battery": "6900mAh (TYP) 6670mAh (MIN) Rated",
+      "Fast Charging": "80W FlashCharge",
+      "Fingerprint Sensor": "Side-mounted capacitive fingerprint sensor",
+      "Color": [
+        "Nebula Teal",
+        "Prism Black"
+      ],
+      "Operating System": "OriginOS 7 Fold"
+    },
+    "Display": {
+      "Size": "Main Display: 8.02″(20.38 cm), Cover Display: 6.51″ (16.53 cm)",
+      "Resolution": [
+        "Main Display: 2504 × 2312",
+        "Cover Display: 2528 × 1120"
+      ],
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear: 50MP Telephoto (OIS) - LYT-602 Sensor 200MP AF (OIS) - HPB Sensor 50MP AF Wide Angle - JN1 Sensor",
+        "Front and front secondary: 20MP FF"
+      ],
+      "Aperture": [
+        "Front Main Camera / Front Secondary Camera -  f/2.4",
+        "Rear: Main f/1.68; Wide-Angle f/2.05; Telephoto f/2.57"
+      ],
+      "Flash": "Dual rear flash with single color temperature",
+      "Scene Modes": "Snapshot, Landscape & Night, Portrait, Photo, Video, Portrait Video, AI Creation,  Pano, Ultra HD Document, Slo-mo, Time-lapse, Stage, Pro, Food"
+    },
+    "Build": {
+      "Dimensions": [
+        "Folded Thickness in mm : 157.16 × 74.26 × 9.40",
+        "Folded Thickness in cm : 15.716 × 7.426 × 0.940",
+        "Unfolded Thickness in mm : 157.16 × 145.66 × 4.40",
+        "Unfolded Thickness in cm : 15.716 × 14.566 × 0.440"
+      ],
+      "Weight": "228g",
+      "Material": "Glass"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4G; 5G; 6G",
+      "Bluetooth": "Bluetooth 6.0",
+      "USB": "USB Type-C, USB 3.2",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 8.02,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 20,
+    "batteryMah": 6900,
+    "chargingW": 80,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 228,
+    "chip": "Dimensity 9500 Super Edition",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Nebula Teal",
+          "hex": "#468190"
+        },
+        {
+          "value": "Prism Black",
+          "hex": "#414A4F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Nebula Teal": [
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-1",
+          "alt": "vivo X Fold6 in Nebula Teal",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201174015/8ba30dfe2ea920db1d64d85cec36726e.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-3",
+          "alt": "vivo X Fold6 in Nebula Teal, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173716/9180c5863ca372d3163acd471be8e1a2.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-4",
+          "alt": "vivo X Fold6 in Nebula Teal, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173630/1f953bfd66ac1d7e02e468928a9d2128.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-5",
+          "alt": "vivo X Fold6 in Nebula Teal, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173791/bc793b7cae8567287d033a0829618ad2.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-6",
+          "alt": "vivo X Fold6 in Nebula Teal, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201173363/bf85fd9f77860e56ba5d7d4277b42789.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-7",
+          "alt": "vivo X Fold6 in Nebula Teal, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201174975/554394893b4753f56f8a31cbc038a542.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/nebula-teal-8",
+          "alt": "vivo X Fold6 in Nebula Teal, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201175046/59b027342421eb36da7df5d51908e213.jpg",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Prism Black": [
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-1",
+          "alt": "vivo X Fold6 in Prism Black",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228731/ed9fcbbca2de77dc9223fd844f05a35a.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-3",
+          "alt": "vivo X Fold6 in Prism Black, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228734/db60b9c7943de80e9a5161d8a632f4da.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-4",
+          "alt": "vivo X Fold6 in Prism Black, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228804/c5f288c466dda92b57b1b3d7413bb134.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-5",
+          "alt": "vivo X Fold6 in Prism Black, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228713/1f32dabb73950cbbf06b7e15cbee6901.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-6",
+          "alt": "vivo X Fold6 in Prism Black, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201228757/c38bcac905d563fe75e0ca7e08906bd4.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-7",
+          "alt": "vivo X Fold6 in Prism Black, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201230061/e6473efb621190c46fb1422b3489f1a0.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-x-fold6/prism-black-8",
+          "alt": "vivo X Fold6 in Prism Black, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1791201230330/149dd3b822cfaacfe294db16ff781df6.jpg",
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-XFOLD6-12512-NETE",
+      "mpn": "5674971",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Nebula Teal"
+      },
+      "price": 219999,
+      "mrp": 259999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "VIV-XFOLD6-12512-PRBL",
+      "mpn": "5674969",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Prism Black"
+      },
+      "price": 219999,
+      "mrp": 259999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "Type C cable",
+    "USB Power Adapter",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10372"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

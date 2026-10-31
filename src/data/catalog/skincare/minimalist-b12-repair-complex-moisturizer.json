@@ -1,0 +1,150 @@
+{
+  "slug": "minimalist-b12-repair-complex-moisturizer",
+  "title": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer",
+  "brand": "Minimalist",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "moisturiser"
+  ],
+  "status": "draft",
+  "launchDate": "2025-05",
+  "shortDescription": "A lightweight, fast-absorbing moisturizer that soothes irritation and strengthens the skin barrier.",
+  "description": "A lightweight, fast-absorbing moisturizer that soothes irritation and strengthens the skin barrier. Powered by pure Vitamin B12 to calm redness, five essential ceramides to restore protection, and Vitamin B5 for deep, lasting hydration. Skin feels calm, plump, and revitalized.",
+  "highlights": [
+    "Moisturiser",
+    "Key actives: Vitamin B12"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Moisturiser",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Vitamin B12"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Moisturiser",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Vitamin B12"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "30g"
+        },
+        {
+          "value": "50g"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-1",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12ListingImage.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-2",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing1.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-3",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing4.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-4",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing2.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-5",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing3.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-6",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing5.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-7",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing6.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-b12-repair-complex-moisturizer/common-8",
+        "alt": "Minimalist B12 + Repair Complex 5.5% Face Moisturizer, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/B12Listing7.jpg?v=1756800848",
+        "width": 1100,
+        "height": 1600
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "MIN-B12MOI-30G",
+      "mpn": "8906128101860",
+      "options": {
+        "Size": "30g"
+      },
+      "price": 284,
+      "mrp": 299,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "MIN-B12MOI-50G",
+      "mpn": "8906128101747",
+      "options": {
+        "Size": "50g"
+      },
+      "price": 379,
+      "mrp": 399,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://beminimalist.co/products/vitamin-b12-repair-complex-5-5-face-moisturizer"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Minimalist's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

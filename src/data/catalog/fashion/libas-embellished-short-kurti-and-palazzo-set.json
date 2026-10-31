@@ -1,0 +1,187 @@
+{
+  "slug": "libas-embellished-short-kurti-and-palazzo-set",
+  "title": "Libas Embellished Short Kurti and Palazzo Set",
+  "brand": "Libas",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "kurtas"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Dressed in a soft peach hue with intricate embellished detailing, this 2-piece tissue kurta set is effortlessly put-together for festive celebrations and elegant evening gatherings.",
+  "description": "Dressed in a soft peach hue with intricate embellished detailing, this 2-piece tissue kurta set is effortlessly put-together for festive celebrations and elegant evening gatherings. The fit-and-flare short kurti features a strappy neckline, sleeveless shoulder styling, and a statement embroidered yoke that adds a glamorous sparkle. Complemented with palazzo pants with a partially elasticated waistband, this set is perfect for making a refined impression at special occasions.",
+  "highlights": [
+    "Fabric: tissue",
+    "Work: embellished, embroidered"
+  ],
+  "specs": {
+    "Product details": {
+      "Fabric": "tissue",
+      "Work": "embellished, embroidered"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Kurtas & Sets",
+    "color": "As shown",
+    "fabric": "tissue",
+    "fit": null,
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "As shown",
+          "hex": "#AA756B"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "As shown": [
+        {
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-1",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/Libas-Art-Embellished-Tissue-Short-Kurti-and-Palazzo-Suit-Set-1200680A_b15bcf05-1029-483c-806a-515d9c987b41.jpg?v=1792839273",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-2",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_2_33b45c7a-3643-4e6c-9767-5de346534bfd.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-3",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_3_1952311f-b47a-4a51-8688-336c3f629b44.jpg?v=1792839273",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-4",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_4_63c90563-c512-4291-9d4a-4c4018e21724.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-5",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_5_6f660a38-2a01-44c5-a083-0d28ea318fb7.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "key": "fashion/libas-embellished-short-kurti-and-palazzo-set/as-shown-6",
+          "alt": "Libas Embellished Short Kurti and Palazzo Set, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0341/4805/7228/files/1200680A_6_c35e168c-d670-4a4b-b478-2b1140032df6.jpg?v=1792839272",
+          "width": 2160,
+          "height": 2880
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LIB-LIBASARTEM00680A-M",
+      "mpn": "1200680A-M",
+      "options": {
+        "Size": "M",
+        "Color": "As shown"
+      },
+      "price": 3899,
+      "mrp": 8499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LIB-LIBASARTEM00680A-L",
+      "mpn": "1200680A-L",
+      "options": {
+        "Size": "L",
+        "Color": "As shown"
+      },
+      "price": 3899,
+      "mrp": 8499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LIB-LIBASARTEM00680A-XL",
+      "mpn": "1200680A-XL",
+      "options": {
+        "Size": "XL",
+        "Color": "As shown"
+      },
+      "price": 3899,
+      "mrp": 8499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "LIB-LIBASARTEM00680A-XXL",
+      "mpn": "1200680A-XXL",
+      "options": {
+        "Size": "XXL",
+        "Color": "As shown"
+      },
+      "price": 3899,
+      "mrp": 8499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.libas.in/products/libas-art-embellished-tissue-short-kurti-and-palazzo-suit-set-1200680a"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Libas's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "slug": "red-tape-black-textured-polo-t-shirt",
+  "title": "Red Tape Black Textured Polo T-Shirt",
+  "brand": "Red Tape",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "polos"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Refresh your everyday rotation with the Red Tape polo t-shirt for men in black, designed to balance modern styling, comfortable movement, and versatile repeat wear.",
+  "description": "Refresh your everyday rotation with the Red Tape polo t-shirt for men in black, designed to balance modern styling, comfortable movement, and versatile repeat wear. Crafted from 100% cotton knitted fabric with 180 GSM weight, this half sleeve style offers a naturally soft, breathable feel with dependable comfort for extended everyday wear. The structured polo collar elevates the casual silhouette with a polished finish. The regular fit creates a balanced everyday silhouette with comfortable room for natural movement, while the half sleeves support easy arm movement and comfortable coverage. The textured finish adds subtle depth and a more elevated casual character. A clean no-pocket front maintains a streamlined finish and keeps the design easy to layer. Pair it with jeans, chinos, shorts, joggers, or casual trousers for weekend plans, travel, casual workdays, social outings, and everyday wear.",
+  "highlights": [
+    "Polo Collar: Adds a structured, polished detail to the casual silhouette",
+    "Regular Fit: Creates a balanced everyday silhouette with comfortable roo"
+  ],
+  "specs": {
+    "Product details": {
+      "100% Cotton Fabric": "Thoughtfully selected to support comfortable movement, dependable wear, and a refined garment feel",
+      "180 GSM Construction": "Provides a balanced fabric substance suited to the garment’s intended everyday use",
+      "Polo Collar": "Adds a structured, polished detail to the casual silhouette",
+      "Half Sleeve": "Allows easy arm movement while providing comfortable everyday coverage",
+      "Regular Fit": "Creates a balanced everyday silhouette with comfortable roo",
+      "Fabric": "100% cotton knitted fabric, 180 GSM for comfortable, dependable wear",
+      "Product Type": "Polo T-Shirt | Sleeves: Half Sleeve | Neck: Polo Collar | Pattern: Textured | Fit: Regular Fit | Pocket: Without Pocket | Occasion: Casual",
+      "Benefits": "The fabric offers a naturally soft, breathable feel with dependable comfort for extended everyday wear, while the regular fit supports comfortable movement and repeat wear",
+      "Styling": "Pair with jeans, chinos, shorts, joggers, or casual trousers for weekend plans, travel, casual workdays, social outings, and everyday wear",
+      "Wash Care": "Wash with similar colours to help maintain the garment’s colour and finish"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Polos",
+    "color": "Black",
+    "fabric": "Thoughtfully selected to support comfortable movement, dependable wear, and a refined garment feel",
+    "fit": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#2F2D33"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-1",
+          "alt": "Red Tape Black Textured Polo T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/1_65df6a1f-4986-40ad-b8b5-df462f41f6da.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-2",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/2_3f33edd2-5805-436c-965e-cb11c8df38c7.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-3",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/3_05205d5b-10d0-4fdf-991d-b00fcd3b0a43.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-4",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/4_f8952597-6b23-4e7b-b740-6483330d185f.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/red-tape-black-textured-polo-t-shirt/black-5",
+          "alt": "Red Tape Black Textured Polo T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/5_a28ba62e-6d6a-4a1e-af3f-7020bf8abd79.jpg?v=1789716552",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RDT-POLOTSHIRTP1970A-S",
+      "mpn": "RHP1970A-S",
+      "options": {
+        "Size": "S",
+        "Color": "Black"
+      },
+      "price": 841,
+      "mrp": 5099,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-POLOTSHIRTP1970A-M",
+      "mpn": "RHP1970A-M",
+      "options": {
+        "Size": "M",
+        "Color": "Black"
+      },
+      "price": 841,
+      "mrp": 5099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-POLOTSHIRTP1970A-L",
+      "mpn": "RHP1970A-L",
+      "options": {
+        "Size": "L",
+        "Color": "Black"
+      },
+      "price": 841,
+      "mrp": 5099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-POLOTSHIRTP1970A-XL",
+      "mpn": "RHP1970A-XL",
+      "options": {
+        "Size": "XL",
+        "Color": "Black"
+      },
+      "price": 841,
+      "mrp": 5099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-POLOTSHIRTP1970A-XXL",
+      "mpn": "RHP1970A-XXL",
+      "options": {
+        "Size": "XXL",
+        "Color": "Black"
+      },
+      "price": 841,
+      "mrp": 5099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.redtape.com/products/red-tape-polo-t-shirts-for-men-in-black-textured-polo-collarhalf-sleeve-t-shirt-rhp1970a"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Red Tape's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

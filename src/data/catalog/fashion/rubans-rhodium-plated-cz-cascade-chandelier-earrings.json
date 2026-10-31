@@ -1,0 +1,123 @@
+{
+  "slug": "rubans-rhodium-plated-cz-cascade-chandelier-earrings",
+  "title": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings",
+  "brand": "Rubans",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "earrings"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Rubans rhodium plated chandelier earrings feature sparkling cubic zirconia in a cascading tiered design that shimmers with every movement.",
+  "description": "Rubans rhodium plated chandelier earrings feature sparkling cubic zirconia in a cascading tiered design that shimmers with every movement. The dazzling silver-toned finish adds red-carpet glamour to weddings, cocktail parties and festive evenings, making these statement earrings a luxurious jewellery gift for women and girls.",
+  "highlights": [
+    "Metal: rhodium plated",
+    "Stones: cubic zirconia, zircon"
+  ],
+  "specs": {
+    "Product details": {
+      "Metal": "rhodium plated",
+      "Stones": "cubic zirconia, zircon"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Earrings",
+    "color": "Rhodium",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Rhodium",
+          "hex": "#EC8C8D"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Rhodium": [
+        {
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-1",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627Model1.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-2",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627Model2.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-3",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_01.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-4",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_02.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/rubans-rhodium-plated-cz-cascade-chandelier-earrings/rhodium-5",
+          "alt": "Rubans Rhodium Plated CZ Cascade Chandelier Earrings, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2015/7815/files/RE14ED413627_03.jpg?v=1793000547",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RUB-RE14ED4136413627-ONESIZE",
+      "mpn": "RE14ED413627",
+      "options": {
+        "Size": "One Size",
+        "Color": "Rhodium"
+      },
+      "price": 1150,
+      "mrp": 3286,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.rubans.in/products/re14ed413627"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Rubans's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

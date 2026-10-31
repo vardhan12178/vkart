@@ -1,0 +1,205 @@
+{
+  "slug": "nothing-phone-3",
+  "title": "Nothing Phone (3)",
+  "brand": "Nothing",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-07",
+  "shortDescription": "Nothing's flagship: Snapdragon 8s Gen 4, four 50MP cameras including a periscope, Glyph Matrix and 4,500-nit display.",
+  "description": "Phone (3) is Nothing's most powerful phone, running Snapdragon 8s Gen 4 with Nothing OS.\n\nAll four cameras are 50MP — main with OIS, ultra-wide, periscope telephoto with OIS, and front — and the redesigned back carries the new Glyph Matrix display.\n\nIts 120Hz display reaches 4,500 nits, it supports 65W wired and 15W wireless charging, and it's rated IP68.",
+  "highlights": [
+    "Snapdragon 8s Gen 4",
+    "120Hz display, 4,500 nits peak",
+    "50MP main + 50MP ultra-wide + 50MP periscope (OIS)",
+    "50MP front camera",
+    "65W wired, 15W wireless charging",
+    "IP68, 218 g"
+  ],
+  "specs": {
+    "Display": {
+      "type": "AMOLED",
+      "refreshRate": 120,
+      "brightness": "4,500 nits peak"
+    },
+    "Performance": {
+      "chip": "Snapdragon 8s Gen 4"
+    },
+    "Camera": {
+      "rear": "50MP main (OIS) + 50MP ultra-wide + 50MP periscope (OIS)",
+      "front": "50MP"
+    },
+    "Battery": {
+      "capacityMah": 5150,
+      "charging": "65W wired, 15W wireless"
+    },
+    "Build": {
+      "weightG": 218,
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Nothing OS"
+    }
+  },
+  "keySpecs": {
+    "displayInch": null,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 50,
+    "batteryMah": 5150,
+    "chargingW": 65,
+    "wirelessCharging": true,
+    "weightG": 218,
+    "chip": "Snapdragon 8s Gen 4",
+    "ramGB": 12,
+    "is5G": true,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White",
+          "hex": "#DCDCDA"
+        },
+        {
+          "value": "Black",
+          "hex": "#323136"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "White": [
+        {
+          "key": "mobiles/nothing-phone-3/white-1",
+          "alt": "Nothing Phone (3) in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0011_Phone-3-white.png?v=1753757325",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "mobiles/nothing-phone-3/white-2",
+          "alt": "Nothing Phone (3) in White, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-White.png?v=1750839180",
+          "width": 1352,
+          "height": 1352
+        }
+      ],
+      "Black": [
+        {
+          "key": "mobiles/nothing-phone-3/black-1",
+          "alt": "Nothing Phone (3) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0012_Phone-3-black.png?v=1753757353",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "mobiles/nothing-phone-3/black-2",
+          "alt": "Nothing Phone (3) in Black, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-Black.png?v=1750839180",
+          "width": 1352,
+          "height": 1352
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-P3-12256-WHI",
+      "mpn": "6974434226166",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "White"
+      },
+      "price": 79999,
+      "mrp": 79999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P3-12256-BLA",
+      "mpn": "6974434226159",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 79999,
+      "mrp": 79999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P3-16512-WHI",
+      "mpn": "6974434226180",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "White"
+      },
+      "price": 89999,
+      "mrp": 89999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "NTH-P3-16512-BLA",
+      "mpn": "6974434226173",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Black"
+      },
+      "price": 89999,
+      "mrp": 89999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Nothing Phone (3)",
+    "USB-C to USB-C cable",
+    "SIM tray ejector",
+    "Safety information and warranty card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/phone-3"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Variants, launch prices and images from Nothing's India store data (phones are sold through Flipkart). Nothing publishes no structured spec sheet; key specs are taken from the product page text, so some fields are missing."
+  }
+}

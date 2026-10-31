@@ -1,0 +1,224 @@
+{
+  "slug": "red-tape-black-athleisure-running-shoes",
+  "title": "Red Tape Black Athleisure Running Shoes",
+  "brand": "Red Tape",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "running"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Upgrade your active style with Red Tape shoes for men in black, designed for dynamic athleisure wear.",
+  "description": "Upgrade your active style with Red Tape shoes for men in black, designed for dynamic athleisure wear. Crafted with a breathable mesh upper and mesh lining, these sports shoes for men offer lightweight airflow with flexible support for all-day comfort. The EVA + TPU + TPR sole delivers responsive cushioning with enhanced stability and grip, making them suitable for training and daily activity. Built in a low-cut silhouette with a round toe and flat heel, these shoes ensure natural movement and balance. Featuring a lace-up closure and Supreme Bounce PU insole, these are reliable shoes for men from the best shoe brands for everyday wear.",
+  "highlights": [
+    "Mesh Upper: Breathable and lightweight for enhanced comfort",
+    "EVA + TPU + TPR Sole: Cushioned support with reliable traction",
+    "Supreme Bounce PU Insole: Enhanced comfort with energy return",
+    "Low-Cut Design: Flexible ankle movement for everyday wear",
+    "Lace-Up Closure: Secure and adjustable fit"
+  ],
+  "specs": {
+    "Product details": {
+      "Mesh Upper": "Breathable and lightweight for enhanced comfort",
+      "EVA + TPU + TPR Sole": "Cushioned support with reliable traction",
+      "Supreme Bounce PU Insole": "Enhanced comfort with energy return",
+      "Low-Cut Design": "Flexible ankle movement for everyday wear",
+      "Lace-Up Closure": "Secure and adjustable fit",
+      "Material": "Sole – EVA+TPU+TPR | Upper – Mesh | Lining – Mesh | Insole – Supreme Bounce PU",
+      "Design": "Low-cut athleisure shoe built for sports and active lifestyle wear",
+      "Heel": "Flat heel design ensures balanced support and stability",
+      "Fit": "Lace-up closure provides secure and adjustable support",
+      "Utility": "Suitable for sports, training, running, and everyday active wear"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Running Shoes",
+    "color": "Black",
+    "fabric": "Sole – EVA+TPU+TPR | Upper – Mesh | Lining – Mesh | Insole – Supreme Bounce PU",
+    "fit": "Lace-up closure provides secure and adjustable support",
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "9"
+        },
+        {
+          "value": "10"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#333133"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-1",
+          "alt": "Red Tape Black Athleisure Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_1.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-2",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_2.jpg?v=1776235391",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-3",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_3.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-4",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_4.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-5",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_5.jpg?v=1776235391",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-6",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_6.jpg?v=1776235390",
+          "width": 1500,
+          "height": 1500
+        },
+        {
+          "key": "fashion/red-tape-black-athleisure-running-shoes/black-7",
+          "alt": "Red Tape Black Athleisure Running Shoes, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0642/7787/2830/files/RSO4722_1_96b4b24e-7894-4a9c-b2ac-2d86b9357a60.jpg?v=1776236418",
+          "width": 1500,
+          "height": 1500
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "RDT-SPORTSSHOESO4722-6",
+      "mpn": "RSO4722-6",
+      "options": {
+        "Size": "6",
+        "Color": "Black"
+      },
+      "price": 1171,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-SPORTSSHOESO4722-7",
+      "mpn": "RSO4722-7",
+      "options": {
+        "Size": "7",
+        "Color": "Black"
+      },
+      "price": 1171,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-SPORTSSHOESO4722-8",
+      "mpn": "RSO4722-8",
+      "options": {
+        "Size": "8",
+        "Color": "Black"
+      },
+      "price": 1171,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-SPORTSSHOESO4722-9",
+      "mpn": "RSO4722-9",
+      "options": {
+        "Size": "9",
+        "Color": "Black"
+      },
+      "price": 1171,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "RDT-SPORTSSHOESO4722-10",
+      "mpn": "RSO4722-10",
+      "options": {
+        "Size": "10",
+        "Color": "Black"
+      },
+      "price": 1171,
+      "mrp": 7099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.redtape.com/products/red-tape-sports-shoesfor-men-in-black-athleisure-running-shoes-rso4722"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Red Tape's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

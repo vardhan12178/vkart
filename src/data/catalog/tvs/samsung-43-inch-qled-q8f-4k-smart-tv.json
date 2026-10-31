@@ -1,0 +1,179 @@
+{
+  "slug": "samsung-43-inch-qled-q8f-4k-smart-tv",
+  "title": "Samsung 43\" QLED Q8F 4K Smart TV",
+  "brand": "Samsung",
+  "category": "tvs",
+  "categoryPath": [
+    "electronics",
+    "tvs"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Q4 AI Processor\n100% Color Volume with Quantum Dot\nAirSlim",
+  "description": "Q4 AI Processor\n100% Color Volume with Quantum Dot\nAirSlim",
+  "highlights": [
+    "43-inch 4K (3,840 x 2,160) QLED",
+    "Q4 AI Processor",
+    "HDR: Quantum HDR+",
+    "20W sound",
+    "Tizen™ Smart TV"
+  ],
+  "specs": {
+    "Specifications": {
+      "Product Type": "QLED",
+      "Screen Size": "1.08 m",
+      "Resolution": "4K (3,840 x 2,160)",
+      "Picture Engine": "Q4 AI Processor",
+      "HDR (High Dynamic Range)": "Quantum HDR+",
+      "HDR 10+": "Yes (ADAPTIVE)",
+      "AI Upscale": "4K Upscaling",
+      "Contrast": "Dual LED",
+      "Micro Dimming": "Supreme UHD Dimming",
+      "Contrast Enhancer": "Yes",
+      "Motion Technology": "Motion Xcelerator",
+      "Smart Calibration": "Basic",
+      "Filmmaker Mode (FMM)": "Yes",
+      "HDR Brightness Optimizer": "Yes",
+      "Color Booster": "Color Booster Pro",
+      "EyeComfort Mode": "Yes",
+      "Object Tracking Sound": "OTS Lite",
+      "Q-Symphony": "Yes",
+      "Sound Output (RMS)": "20W",
+      "Speaker Type": "2CH",
+      "Active Voice Amplifier": "Yes",
+      "Adaptive Sound": "Yes (Adaptive Sound+)",
+      "Operating System": "Tizen™ Smart TV",
+      "Bixby": "Yes",
+      "Far-Field Voice Interaction": "Yes",
+      "Built-in Voice Assistant": "Alexa (IN Only)",
+      "Samsung TV Plus": "Yes",
+      "Web Browser": "Yes",
+      "Works with AI Speaker": "Alexa (IN Only), Google Assistant (IN Only)",
+      "SmartThings Hub / Matter Hub / IoT-Sensor Functionality / Quick Remote": "Yes",
+      "Universal Guide": "Yes",
+      "Multi Device Experience": "Mobile to TV, TV initiate mirroring, Sound Mirroring, Wireless TV On, Tap View",
+      "Multi-View": "upto 2 videos",
+      "Apple AirPlay": "Yes",
+      "Storage Share": "Yes",
+      "Generative Wallpaper": "Yes",
+      "Karaoke Mic": "Yes",
+      "Auto Game Mode (ALLM)": "Yes",
+      "Game Motion Plus": "Yes",
+      "Super Ultra Wide Game View": "Yes",
+      "Mini Map Zoom": "Yes",
+      "HGiG": "Yes",
+      "AI Auto Game Mode": "Yes",
+      "Digital Broadcasting": "DVB-T2CS2",
+      "Analog Tuner": "Yes",
+      "HDMI": "3",
+      "USB": "2 x USB-A",
+      "HDMI (High Frame Rate)": "4K 60Hz (for HDMI 1/2/3)",
+      "Ethernet (LAN)": "1",
+      "Digital Audio Out (Optical)": "1",
+      "RF In (Terrestrial / Cable input)": "1/1(Common Use for Terrestrial)/1",
+      "Wi-Fi": "Yes (Wi-Fi 5)",
+      "Bluetooth": "Yes(5.3)",
+      "Anynet+ (HDMI-CEC)": "Yes",
+      "HDMI Audio Return Channel": "eARC/ARC",
+      "Design": "AirSlim",
+      "Bezel Type": "3 Bezel-less",
+      "Front Colour": "BLACK",
+      "Stand Type": "AERO LINEAR",
+      "Stand Color": "BLACK",
+      "Art Store": "Yes",
+      "EPG": "Yes",
+      "Extended PVR": "Yes",
+      "IP Control": "Yes",
+      "Accessibillity - Voice Guide": "English (UK),Hindi (India)",
+      "Eco Sensor": "Yes",
+      "Power Supply": "AC220-240V~ 50/60Hz",
+      "Power Consumption (Max)": "140 W",
+      "Energy Efficiency Class": "1",
+      "Power Consumption (Stand-by)": "0.50 W",
+      "Power Consumption (Typical)": "68 W",
+      "Yearly Power Consumption (EU standard)": "157.68 kWh",
+      "Auto Power Off": "Yes",
+      "Auto Power Saving": "Yes",
+      "Package Size (WxHxD)": "1.08 m x 64.70 cm x 11.90 cm",
+      "Set Size with Stand (WxHxD)": "96.55 cm x 61.47 cm x 19.84 cm",
+      "Set Size without Stand (WxHxD)": "96.55 cm x 55.94 cm x 2.57 cm",
+      "Stand (Basic) (WxD)": "69.00 cm x 19.84 cm",
+      "VESA Spec": "20 cm x 20 cm",
+      "Package Weight": "11.0 kg",
+      "Set Weight with Stand": "8.2 kg",
+      "Set Weight without Stand": "7.9 kg",
+      "Remote Controller Model": "TM2360E",
+      "Wall-mount": "Yes",
+      "User Manual": "Yes",
+      "Zigbee / Thread Module": "Built-In",
+      "Power Cable": "Yes",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 43,
+    "resolution": "4K (3,840 x 2,160)",
+    "refreshRateHz": null,
+    "panel": "QLED",
+    "os": "Tizen™ Smart TV",
+    "soundW": 20,
+    "smart": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "43\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "tvs/samsung-43-inch-qled-q8f-4k-smart-tv/common-1",
+        "alt": "Samsung 43\" QLED Q8F 4K Smart TV",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43q8faaulxl/gallery/in-qled-q8f-544772-qa43q8faaulxl-thumb-546563059?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "tvs/samsung-43-inch-qled-q8f-4k-smart-tv/common-2",
+        "alt": "Samsung 43\" QLED Q8F 4K Smart TV, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/qa43q8faaulxl/gallery/in-qled-q8f-544772-qa43q8faaulxl-546563052?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-43Q8FAAU",
+      "mpn": "43Q8FAAU",
+      "options": {
+        "Size": "43\""
+      },
+      "price": 47290,
+      "mrp": 64400,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/tvs/qled-tv/q8f-43-inch-qled-4k-smart-tv-qa43q8faaulxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "slug": "asus-vivobook-16-x1607",
+  "title": "ASUS Vivobook 16 (X1607)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Everyday 16-inch laptop with Intel Core Ultra processors and a large display with number pad.",
+  "description": "Vivobook 16 is ASUS's everyday big-screen laptop, with Intel Core Ultra processors and a 16-inch 16:10 display.\n\nA full keyboard with number pad, Wi-Fi and a full set of ports make it a practical choice for work and study.",
+  "highlights": [
+    "Intel Core Ultra processors",
+    "16-inch 16:10 display",
+    "Full keyboard with number pad",
+    "Webcam privacy shutter",
+    "Wi-Fi 6",
+    "Cool Silver or Quiet Blue"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": [
+        "Intel Core Ultra 7 Processor 355 2.3 GHz (12MB Cache, up to 4.7 GHz, 8 cores, 8 Threads); Intel NPU up to 49TOPS",
+        "Intel Core Ultra 5 Processor 325 2.1 GHz (12MB Cache, up to 4.5 GHz, 8 cores, 8 Threads); Intel NPU up to 47TOPS",
+        "Intel Core Ultra 9 Processor 285H 2.9 GHz (24MB Cache, up to 5.4 GHz, 16 cores, 16 Threads); Intel AI Boost NPU up to 13TOPS",
+        "Intel Core Ultra 7 Processor 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 cores, 16 Threads); Intel AI Boost NPU up to 13TOPS",
+        "Intel Core Ultra 5 Processor 225H 1.7 GHz (18MB Cache, up to 4.9 GHz, 14 cores, 14 Threads); Intel AI Boost NPU up to 13TOPS"
+      ],
+      "Neural Processor": [
+        "Intel NPU up to 49TOPS",
+        "Intel NPU up to 47TOPS",
+        "Intel AI Boost NPU up to 13TOPS"
+      ]
+    },
+    "Graphics": {
+      "Graphics": "Intel Graphics"
+    },
+    "Display": {
+      "Display": [
+        "40.64 cms (16), 2.5K (2560 x 1600, WQXGA) 16:10 aspect ratio",
+        "FHD+ (1920 x 1200) 16:10 aspect ratio, Refresh Rate:60Hz refresh rate, 300nits, Anti-glare display, sRGB: 100%"
+      ]
+    },
+    "Memory": {
+      "Memory": [
+        "16GB DDR5 on board",
+        "16GB DDR5 SO-DIMM",
+        "8GB DDR5 SO-DIMM",
+        "Max Total system memory up to:8GB"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD",
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": [
+        "1x M.2 2280 PCIe 4.0x4",
+        "1x DDR5 SO-DIMM slot"
+      ]
+    },
+    "Ports": {
+      "I/O Ports": [
+        "2x USB 3.2 Gen 1 Type-C with support for display / power delivery (data speed up to 5Gbps)",
+        "2x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS",
+        "1x HDMI 1.4"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": [
+        "Backlit Chiclet Keyboard with Num-key",
+        "Backlit Chiclet Keyboard",
+        "Chiclet Keyboard with Num-key",
+        "Chiclet Keyboard, 1.7mm Key-travel, Precision touchpad, With Copilot key"
+      ],
+      "Camera": [
+        "FHD camera with IR function to support Windows Hello",
+        "1080p FHD camera, With privacy shutter"
+      ],
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker",
+        "SonicMaster"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": [
+        "Wi-Fi 6(802.11ax) (Dual band) 1*1 Wireless Card, Bluetooth 5.3",
+        "Bluetooth 5.2"
+      ]
+    },
+    "Battery": {
+      "Battery": [
+        "70WHrs, 4S1P, 4-cell Li-ion",
+        "42WHrs, 3S1P, 3-cell Li-ion"
+      ],
+      "Power Supply": [
+        "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal",
+        "TYPE-C, 68W AC Adapter, Output: 20V DC, 3.4A, 68W, Input: 100~240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+      ]
+    },
+    "Build": {
+      "Weight": [
+        "1.89 kg (4.17 lbs)",
+        "1.88 kg (4.14 lbs)"
+      ],
+      "Dimensions (W x D x H)": "35.70 x 25.06 x 1.79 ~ 1.99 cm (14.06\" x 9.87\" x 0.70\" ~ 0.78\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": [
+        "Windows 11 Pro",
+        "Windows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf, No preinstalled OS"
+      ]
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "BIOS Booting User Password Protection, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 7 355 / Intel Core Ultra 5 325 / Intel Core Ultra 9 285H",
+    "gpu": "Intel Graphics",
+    "displayInch": 16,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": 1.89,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cool Silver",
+          "hex": "#E9E9E9"
+        },
+        {
+          "value": "Quiet Blue",
+          "hex": "#545C74"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cool Silver": [
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-1",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view with JS wallpaper.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/af5a7e38-7e68-49b2-a5dd-58ecafc738fc/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-2",
+          "alt": "ASUS Vivobook 16 opened at 45-degree from the back view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/6ab94006-0a56-4fa7-a3cc-86efb34b97fb/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-3",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/b578558f-99e5-4e66-b536-aa574b024656/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-4",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/5c5c1b06-a2f3-42b2-ab71-56534883cc0f/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-5",
+          "alt": "ASUS Vivobook 16 opened at 90-degree view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/13754887-055f-487b-ab30-37209ac44203/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-6",
+          "alt": "ASUS Vivobook 16 with backlit keyboard opened at 90-degree view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/692bd65f-3b64-463a-adcb-279e834ac2be/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-7",
+          "alt": "The left shows Cool Silver ASUS Vivobook 16 opened at 90-degree from the front view, tilting at 45-degree from the right side. The right shows Cool Silver ASUS Vivobook 16 closed view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/cabe64dc-0428-4516-8e95-1c53b3843f59/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/cool-silver-8",
+          "alt": "ASUS Vivobook 16 closed view from right.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/bb5ef498-ca62-4e7b-af18-76ee2fba6297/w800",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "Quiet Blue": [
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-1",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view with JS wallpaper.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/69801ba4-baff-4cc4-bf81-73348ea06a86/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-2",
+          "alt": "ASUS Vivobook 16 opened at 45-degree from the back view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/11f4ba4a-a65e-4584-864e-a73d42364d34/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-3",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view, tilting at 45-degree from the right side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/83dd9f5e-06db-4778-9d57-3c4493ba2e91/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-4",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view, tilting at 45-degree from the left side.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/feed2229-b294-46ee-9468-d3705755e9bd/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-5",
+          "alt": "ASUS Vivobook 16 opened at 90-degree view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/eb995655-2b16-459b-b83a-5a42e6eeb433/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-6",
+          "alt": "ASUS Vivobook 16 with backlit keyboard opened at 90-degree view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/8d595234-2fd7-4ab5-8ca8-dc86ebbd3570/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-7",
+          "alt": "The left shows Quiet Blue ASUS Vivobook 16 opened at 90-degree from the front view, tilting at 45-degree from the right side. The right shows Quiet Blue ASUS Vivobook 16 closed view from above.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/eaeb70e5-bd83-4ee5-b197-a4d83479d5a7/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607/quiet-blue-8",
+          "alt": "ASUS Vivobook 16 closed view from right.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/11169972-9cee-4c4f-be70-aac2c9c45562/w800",
+          "width": 800,
+          "height": 800
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VB16-COSI",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Cool Silver"
+      },
+      "price": 88990,
+      "mrp": 88990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VB16-QUBL",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Quiet Blue"
+      },
+      "price": 88990,
+      "mrp": 88990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-16-x1607/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-16-x1607/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

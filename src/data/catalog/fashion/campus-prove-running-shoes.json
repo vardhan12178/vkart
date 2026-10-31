@@ -1,0 +1,218 @@
+{
+  "slug": "campus-prove-running-shoes",
+  "title": "Campus Prove Running Shoes",
+  "brand": "Campus",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "running"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Upgrade your running sessions with the Campus PROVE Men's Running Shoes.",
+  "description": "Upgrade your running sessions with the Campus PROVE Men's Running Shoes. Designed with a breathable mesh upper, secure lace-up closure, and responsive Nitrofly insole cushioning, these shoes offer optimal comfort. The TPR outsole with Anti Slip Sole Design ensures dependable traction and stability on every run.",
+  "highlights": [
+    "Occasion: Everyday",
+    "Insole: Campus Nitrofly",
+    "Upper Material: Mesh+Tpu Fusing+Pvc+Welding",
+    "Technology: Anti Slip Sole Design"
+  ],
+  "specs": {
+    "Product details": {
+      "Occasion": "Everyday",
+      "Insole": "Campus Nitrofly",
+      "Upper Material": "Mesh+Tpu Fusing+Pvc+Welding",
+      "Technology": "Anti Slip Sole Design",
+      "Care Instructions": "Gently scrub with a soft cloth or brush using mild soap and cold water, then air dry in the shade. Avoid bleach and harsh cleaners"
+    }
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Running Shoes",
+    "color": "Navy",
+    "fabric": "Mesh+Tpu Fusing+Pvc+Welding",
+    "fit": null,
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "9"
+        },
+        {
+          "value": "10"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Navy",
+          "hex": "#8D8578"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Navy": [
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-1",
+          "alt": "Campus Prove Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_01.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-2",
+          "alt": "Campus Prove Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_02.jpg?v=1792734565",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-3",
+          "alt": "Campus Prove Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_03.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-4",
+          "alt": "Campus Prove Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_04.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-5",
+          "alt": "Campus Prove Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_05.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-6",
+          "alt": "Campus Prove Running Shoes, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_06.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-prove-running-shoes/navy-7",
+          "alt": "Campus Prove Running Shoes, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/PROVE_22G-13507_DNVY-DSLATGRY_07.webp?v=1792734564",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "CMP-PROVEDNVYDGSHOES-6",
+      "mpn": "22G-13507-G-DNVY-DSLATGRY-6",
+      "options": {
+        "Size": "6",
+        "Color": "Navy"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-PROVEDNVYDGSHOES-7",
+      "mpn": "22G-13507-G-DNVY-DSLATGRY-7",
+      "options": {
+        "Size": "7",
+        "Color": "Navy"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-PROVEDNVYDGSHOES-8",
+      "mpn": "22G-13507-G-DNVY-DSLATGRY-8",
+      "options": {
+        "Size": "8",
+        "Color": "Navy"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-PROVEDNVYDGSHOES-9",
+      "mpn": "22G-13507-G-DNVY-DSLATGRY-9",
+      "options": {
+        "Size": "9",
+        "Color": "Navy"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-PROVEDNVYDGSHOES-10",
+      "mpn": "22G-13507-G-DNVY-DSLATGRY-10",
+      "options": {
+        "Size": "10",
+        "Color": "Navy"
+      },
+      "price": 1499,
+      "mrp": 2499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.campusshoes.com/products/prove-d-nvy-d-slat-gry-mens-running-shoes"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Campus's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

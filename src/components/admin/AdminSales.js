@@ -11,6 +11,9 @@ import {
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
+import { CATEGORIES } from "../shop/catalogData";
+
+const categoryLabel = (slug) => CATEGORIES[slug] || String(slug || "").replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
 
 const emptySale = {
   name: "",
@@ -49,11 +52,10 @@ export default function AdminSales() {
   const categoriesQuery = useQuery({
     queryKey: ["admin", "sales", "categories"],
     queryFn: async () => {
-      const res = await axiosInstance.get("/api/products/filters");
-      return (res.data?.categories || [])
-        .map((entry) => entry.slug)
-        .filter(Boolean)
-        .sort();
+      // Sales discount whole storefront categories (mobiles, fashion-women, ...)
+      const res = await axiosInstance.get("/api/v2/categories");
+      const list = Array.isArray(res.data) ? res.data : res.data?.categories || [];
+      return list.map((entry) => entry.slug).filter(Boolean);
     },
   });
 
@@ -277,7 +279,7 @@ export default function AdminSales() {
                       {s.categories.map((c, i) => (
                         <div key={i} className="flex items-center justify-between py-1 px-1 text-xs">
                           <span className="font-medium text-slate-700 capitalize truncate pr-2 text-[11px]">
-                            {c.category.replace(/-/g, ' ')}
+                            {categoryLabel(c.category)}
                           </span>
                           <div className="flex items-center gap-1 shrink-0">
                             <span className="font-bold text-orange-700 bg-orange-50 border border-orange-100 px-1.5 py-0.5 rounded text-[10px]">
@@ -340,7 +342,7 @@ export default function AdminSales() {
                         <div className="flex flex-wrap gap-1">
                           {s.categories.map((c, i) => (
                             <span key={i} className="bg-orange-50 border border-orange-100 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                              {c.category} ({c.discountPercent}%{c.primeDiscountPercent ? ` / P:${c.primeDiscountPercent}%` : ""})
+                              {categoryLabel(c.category)} ({c.discountPercent}%{c.primeDiscountPercent ? ` / P:${c.primeDiscountPercent}%` : ""})
                             </span>
                           ))}
                         </div>
@@ -438,7 +440,7 @@ export default function AdminSales() {
                           {productCategories
                             .filter((c) => c === cat.category || !form.categories.some((fc, fi) => fi !== idx && fc.category.toLowerCase() === c.toLowerCase()))
                             .map((c) => (
-                              <option key={c} value={c}>{c.replace(/-/g, ' ').replace(/\b\w/g, (ch) => ch.toUpperCase())}</option>
+                              <option key={c} value={c}>{categoryLabel(c)}</option>
                             ))}
                         </select>
                         <input

@@ -1,0 +1,202 @@
+{
+  "slug": "oneplus-pad-lite",
+  "title": "OnePlus Pad Lite",
+  "brand": "OnePlus",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": "2025",
+  "shortDescription": "OnePlus Pad Lite: MediaTek Helio G100, 27.94cm (11\") display, 9,340 mAh battery.",
+  "description": "OnePlus Pad Lite runs on the MediaTek Helio G100 with a 27.94cm (11\") LCD display at up to 90Hz.\n\nIts 9,340 mAh battery supports up to 33W charging, and it comes in Aero Blue.",
+  "highlights": [
+    "MediaTek Helio G100",
+    "27.94cm (11\") LCD display",
+    "1920 x 1200",
+    "9,340 mAh battery, 33W charging"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Height": "about 166.46mm",
+      "Width": "about 254.91mm",
+      "Thickness": "about 7.39mm",
+      "Weight": "about 530g"
+    },
+    "Display": {
+      "Size": "27.94cm (11\")",
+      "Screen-to-body Ratio": "85.3%",
+      "Screen Ratio": "16:10",
+      "Brightness": "500 nits",
+      "Color Depth": "10 bit (8+2 bit)",
+      "Colour Gamut": "70.8% NTSC",
+      "Resolution": "1920 x 1200",
+      "Pixel Density": "207 PPI",
+      "Refresh Rate": "Max 90Hz",
+      "Touch Sampling Rate": "180Hz",
+      "Type": "LCD"
+    },
+    "Audio": {
+      "Speakers": "Hi-Res Audio-certified Quad Speakers",
+      "Bluetooth® Codec": "SBC, AAC, aptX, aptX HD, LDAC"
+    },
+    "Battery & Charging": {
+      "Battery Capacity": "9340 mAh (Typical) / 9098 mAh (Rated)",
+      "Fast Charging": "Supports 33W SUPERVOOC",
+      "Charging Port": "Type-C"
+    },
+    "Performance": {
+      "Operating System": "OxygenOS 15.0.1",
+      "Platform": "MediaTek Helio G100",
+      "RAM and ROM Capacities": "6GB + 128GB WI-FI / 8GB + 128GB LTE"
+    },
+    "Connectivity": {
+      "Wi-Fi": "Wi-Fi 5 (802.11ac), 802.11a/b/g/n/",
+      "WLAN 2.4G/WLAN 5.1G/WLAN 5.8G": [
+        "Bluetooth",
+        "Bluetooth 5.4"
+      ]
+    },
+    "Camera": {
+      "Rear Camera": "Megapixels: 5MP",
+      "Video": "1080P/720P@30fps",
+      "Front Camera": "Megapixels: 5MP",
+      "Unlocking Method": "Facial Recognition"
+    }
+  },
+  "keySpecs": {
+    "processor": "MediaTek Helio G100",
+    "displayInch": 11,
+    "panel": "LCD",
+    "refreshRateHz": 90,
+    "batteryMah": 9340,
+    "chargingW": 33,
+    "ramGB": 6,
+    "storageGB": 128,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        },
+        {
+          "value": "LTE"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "8GB + 128GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Aero Blue",
+          "hex": "#A9C2DA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Aero Blue": [
+        {
+          "key": "tablets/oneplus-pad-lite/aero-blue-1",
+          "alt": "OnePlus Pad Lite in Aero Blue",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/654176f4a08d9492994afdd215a27513.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "tablets/oneplus-pad-lite/aero-blue-2",
+          "alt": "OnePlus Pad Lite in Aero Blue, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/5b466423349ab1322830cbf74511cec5.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "tablets/oneplus-pad-lite/aero-blue-3",
+          "alt": "OnePlus Pad Lite in Aero Blue, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/055007d4f1ecb0f19d2412d64e6ee603.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "tablets/oneplus-pad-lite/aero-blue-4",
+          "alt": "OnePlus Pad Lite in Aero Blue, view 4",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202507/21/a86737401ac6d3406585b5098f1b3bca.png",
+          "width": 960,
+          "height": 960
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-PADLITE-6128-WF-AEBL",
+      "mpn": "5511102314",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "6GB + 128GB",
+        "Color": "Aero Blue"
+      },
+      "price": 23499,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PADLITE-8128-LTE-AEBL",
+      "mpn": "5511100594",
+      "options": {
+        "Configuration": "LTE",
+        "Storage": "8GB + 128GB",
+        "Color": "Aero Blue"
+      },
+      "price": 26999,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128,
+        "cellular": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Pad Lite",
+    "15W SUPERVOOC Power Adapter",
+    "Type-C Cable",
+    "Quick Start Guide",
+    "Safety Information and Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/oneplus-pad-lite/specs",
+      "https://www.oneplus.in/buy-oneplus-pad-lite"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oneplus.in spec page; variants, selling price (price), MRP (mrp) and images from the OnePlus India store data."
+  }
+}

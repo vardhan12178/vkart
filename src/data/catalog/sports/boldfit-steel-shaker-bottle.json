@@ -1,0 +1,146 @@
+{
+  "slug": "boldfit-steel-shaker-bottle",
+  "title": "Boldfit Steel Shaker Bottle",
+  "brand": "Boldfit",
+  "category": "sports",
+  "categoryPath": [
+    "sports",
+    "accessories"
+  ],
+  "status": "draft",
+  "launchDate": "2021-10",
+  "shortDescription": "Boldfit Steel Shaker Bottle",
+  "description": "Stay hydrated in style with the Boldfit Stainless Steel Shaker Bottle, designed for gym enthusiasts and fitness lovers. With its leakproof design and secure lid, it’s perfect for mixing protein shakes, supplements, or any beverage you need on the go. The this colourway pairs easily with other Boldfit pieces. Use the size or variant selector on this page for the options stocked for this SKU.",
+  "highlights": [],
+  "specs": {
+    "Specifications": {
+      "Steel Shaker Bottles for Gym 700ml": "from Boldfit — built for training, sport, and everyday active use. This shakers listing expands the existing product facts so shoppers and AI shopping engines c"
+    },
+    "Features": {
+      "points": [
+        "Stay hydrated in style with the Boldfit Stainless Steel Shaker Bottle, designed for gym enthusiasts and fitness lovers.",
+        "With its leakproof design and secure lid, it’s perfect for mixing protein shakes, supplements, or any beverage you need on the go.",
+        "Follow care guidance printed on the product label or packaging; wash or wipe gently as appropriate for the material."
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Shaker",
+    "capacity": "700 ml",
+    "material": "stainless steel"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Army Green"
+        },
+        {
+          "value": "Black"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-1",
+        "alt": "Boldfit Steel Shaker Bottle",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard_1_fb330789-bdf7-42a5-98e8-8062922db88a.jpg?v=1759143787",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-2",
+        "alt": "Boldfit Steel Shaker Bottle, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard4_3cce7b46-b4f4-483b-b951-9cd1c028385d.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-3",
+        "alt": "Boldfit Steel Shaker Bottle, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard2_c966a9fb-11b5-4219-9ea0-5fcb6d2edcac.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-4",
+        "alt": "Boldfit Steel Shaker Bottle, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard5_581fec97-6733-4510-9e16-867acde44aaf.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-5",
+        "alt": "Boldfit Steel Shaker Bottle, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard3_be1fefc6-0221-4c39-8850-b7ff837c0d0e.jpg?v=1759753265",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-6",
+        "alt": "Boldfit Steel Shaker Bottle, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard1_b3753cd6-db32-42fc-beb7-f4c059234dc1.jpg?v=1759143650",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-7",
+        "alt": "Boldfit Steel Shaker Bottle, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard2_b32a4e32-c544-4bb9-9410-079dc1e9177d.jpg?v=1759143655",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "key": "sports/boldfit-steel-shaker-bottle/common-8",
+        "alt": "Boldfit Steel Shaker Bottle, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0096/4621/1123/files/Artboard5_f6c713bb-9ca4-4329-882f-68556ce43c7e.jpg?v=1759143705",
+        "width": 1500,
+        "height": 1500
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BFT-STEELSHAKER-ARMYGREEN",
+      "mpn": "SteelShakerAG",
+      "options": {
+        "Color": "Army Green"
+      },
+      "price": 699,
+      "mrp": 999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "BFT-STEELSHAKER-BLACK",
+      "mpn": "SteelShaker",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 749,
+      "mrp": 999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.boldfit.com/products/steel-shaker"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price, list price, sizes, images and product details from Boldfit's official online store."
+  }
+}

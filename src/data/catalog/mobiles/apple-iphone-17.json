@@ -1,0 +1,427 @@
+{
+  "slug": "apple-iphone-17",
+  "title": "Apple iPhone 17",
+  "brand": "Apple",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-09",
+  "shortDescription": "6.3-inch ProMotion display, A19 chip and dual 48MP cameras, starting at 256GB.",
+  "description": "iPhone 17 brings ProMotion and an Always-On display to the standard iPhone for the first time, on a 6.3-inch Super Retina XDR screen that reaches 3,000 nits outdoors.\n\nTwo 48MP cameras — Fusion Main and Ultra Wide — handle everything from 2x telephoto to macro, and the new 18MP Center Stage front camera widens automatically for group selfies.\n\nThe A19 chip runs Apple Intelligence, storage starts at 256GB, and fast charging reaches 50% in 20 minutes with a 40W adapter.",
+  "highlights": [
+    "6.3-inch Super Retina XDR display with ProMotion up to 120Hz and Always-On",
+    "A19 chip",
+    "Dual 48MP Fusion cameras (Main + Ultra Wide)",
+    "18MP Center Stage front camera",
+    "50% charge in 20 minutes; MagSafe and Qi2 up to 25W",
+    "Ceramic Shield 2, IP68"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.3,
+      "type": "Super Retina XDR OLED",
+      "resolution": "2622 × 1206",
+      "ppi": 460,
+      "refreshRate": 120,
+      "features": "ProMotion up to 120Hz, Always-On, Dynamic Island, HDR",
+      "brightness": "1,000 nits typical, 1,600 nits HDR, 3,000 nits outdoor"
+    },
+    "Performance": {
+      "chip": "A19",
+      "cpu": "6-core (2 performance + 4 efficiency)",
+      "gpu": "5-core with Neural Accelerators",
+      "neuralEngine": "16-core"
+    },
+    "Camera": {
+      "rear": "48MP Fusion Main (ƒ/1.6, sensor-shift OIS) + 48MP Fusion Ultra Wide (ƒ/2.2)",
+      "mainMP": 48,
+      "opticalZoom": "2x optical-quality",
+      "front": "18MP Center Stage, ƒ/1.9"
+    },
+    "Battery": {
+      "videoPlayback": "Up to 30 hours",
+      "wired": "50% in 20 minutes with 40W adapter",
+      "wireless": "MagSafe and Qi2 up to 25W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "uwb": "Apple 2nd-gen Ultra Wideband",
+      "usb": "USB-C, USB 2 (480 Mbps), DisplayPort",
+      "gps": "Dual-frequency GPS, NavIC",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "149.6 × 71.5 × 7.95 mm",
+      "weightG": 177,
+      "materials": "Aluminium, Ceramic Shield 2 front, colour-infused glass back",
+      "ipRating": "IP68 (6 m up to 30 min)"
+    },
+    "Software": {
+      "os": "iOS 27",
+      "ai": "Apple Intelligence"
+    },
+    "Security": {
+      "biometrics": "Face ID"
+    }
+  },
+  "keySpecs": {
+    "ramGB": null,
+    "displayInch": 6.3,
+    "refreshRateHz": 120,
+    "mainCameraMP": 48,
+    "frontCameraMP": 18,
+    "batteryMah": null,
+    "chargingW": 40,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 177,
+    "chip": "A19",
+    "os": "iOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Lavender",
+          "hex": "#D0C5D5"
+        },
+        {
+          "value": "Mist Blue",
+          "hex": "#A8B8CF"
+        },
+        {
+          "value": "Sage",
+          "hex": "#B1BC92"
+        },
+        {
+          "value": "White",
+          "hex": "#D4D4D2"
+        },
+        {
+          "value": "Black",
+          "hex": "#6A6A6A"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Lavender": [
+        {
+          "key": "mobiles/apple-iphone-17/lavender-1",
+          "alt": "Apple iPhone 17 in Lavender",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-17/lavender-3",
+          "alt": "Apple iPhone 17 in Lavender, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-lavender-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-17/lavender-4",
+          "alt": "Apple iPhone 17 in Lavender, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_lavender__bcaie9a8npj6_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "Mist Blue": [
+        {
+          "key": "mobiles/apple-iphone-17/mist-blue-1",
+          "alt": "Apple iPhone 17 in Mist Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-17/mist-blue-3",
+          "alt": "Apple iPhone 17 in Mist Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-mistblue-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-17/mist-blue-4",
+          "alt": "Apple iPhone 17 in Mist Blue, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_mist_blue__700uff6zu2qa_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "Sage": [
+        {
+          "key": "mobiles/apple-iphone-17/sage-1",
+          "alt": "Apple iPhone 17 in Sage",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-17/sage-3",
+          "alt": "Apple iPhone 17 in Sage, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-sage-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-17/sage-4",
+          "alt": "Apple iPhone 17 in Sage, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_sage__cr1jt90v1yoi_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "White": [
+        {
+          "key": "mobiles/apple-iphone-17/white-1",
+          "alt": "Apple iPhone 17 in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-17/white-3",
+          "alt": "Apple iPhone 17 in White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-white-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-17/white-4",
+          "alt": "Apple iPhone 17 in White, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_white__979ypubjzdum_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "Black": [
+        {
+          "key": "mobiles/apple-iphone-17/black-1",
+          "alt": "Apple iPhone 17 in Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-17/black-3",
+          "alt": "Apple iPhone 17 in Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-finish-select-black-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-17/black-4",
+          "alt": "Apple iPhone 17 in Black, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/colors_black__fzuhc3kqvmq2_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "mobiles/apple-iphone-17/common-1",
+        "alt": "Apple iPhone 17 — dual camera and display",
+        "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/cameras/new-camera-features/selfie_intro__bczh72q34vrm_large_2x.jpg",
+        "width": 1788,
+        "height": 1820
+      },
+      {
+        "key": "mobiles/apple-iphone-17/common-2",
+        "alt": "Apple iPhone 17 — Dynamic Island",
+        "sourceUrl": "https://www.apple.com/v/iphone-17/i/images/overview/product-viewer/dynamic_island__ea23sqco06c2_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-IP17-256GB-LAV",
+      "mpn": "MG6M4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Lavender"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17-256GB-MIBL",
+      "mpn": "MG6L4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Mist Blue"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17-256GB-SAG",
+      "mpn": "MG6N4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Sage"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17-256GB-WHI",
+      "mpn": "MG6K4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "White"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17-256GB-BLA",
+      "mpn": "MG6J4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Black"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IP17-512GB-LAV",
+      "mpn": "MG6U4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Lavender"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP17-512GB-MIBL",
+      "mpn": "MG6T4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Mist Blue"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP17-512GB-SAG",
+      "mpn": "MG6V4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Sage"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP17-512GB-WHI",
+      "mpn": "MG6Q4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "White"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IP17-512GB-BLA",
+      "mpn": "MG6P4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Black"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPhone 17 with iOS 27",
+    "USB-C Charge Cable (1 m)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/iphone-17/specs/",
+      "https://www.apple.com/in/shop/buy-iphone/iphone-17"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Prices are Apple India MRP (inclusive of taxes). Apple does not publish RAM or battery mAh."
+  }
+}

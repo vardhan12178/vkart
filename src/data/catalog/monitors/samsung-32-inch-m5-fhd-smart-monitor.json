@@ -1,0 +1,150 @@
+{
+  "slug": "samsung-32-inch-m5-fhd-smart-monitor",
+  "title": "Samsung 32\" M5 FHD Smart Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Instant access to your favorite streaming content with Smart TV Apps\nExplore a variety of free channels, including Samsung TV Plus\nYour Privacy. Secured on Samsung Monitor",
+  "description": "Instant access to your favorite streaming content with Smart TV Apps\nExplore a variety of free channels, including Samsung TV Plus\nYour Privacy. Secured on Samsung Monitor",
+  "highlights": [
+    "32-inch FHD (1,920 x 1,080) VA",
+    "60Hz refresh rate",
+    "Tizen™",
+    "4ms(GTG) response time",
+    "VA panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Aspect Ratio": "16:9",
+      "Brightness (Typical)": "250 cd/㎡",
+      "Contrast Ratio Static": "3,000:1(Typ.)",
+      "Resolution": "FHD (1,920 x 1,080)",
+      "Response Time": "4ms(GTG)",
+      "Viewing Angle (H/V)": "178/178",
+      "Refresh Rate": "Max 60Hz",
+      "Screen Size (Class)": "80 cm",
+      "Flat / Curved": "Flat",
+      "Active Display Size (HxV) (mm)": "69.84 cm x 39.28 cm",
+      "Panel Type": "VA",
+      "Brightness (Min)": "200 cd/㎡",
+      "HDR(High Dynamic Range)": "HDR10",
+      "Colour Support": "Max 16.7M",
+      "Color Gamut (NTSC 1976)": "72%",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Image Size": "Yes",
+      "Windows Certification": "Windows11",
+      "HDMI-CEC": "Yes",
+      "Smart Type": "Smart",
+      "Operating System": "Tizen™",
+      "TV Plus": "Yes (IN Only)",
+      "Universal Guide": "Yes (IN Only)",
+      "Multi Device Experience": "Mobile to Screen, Sound Mirroring, Wireless On",
+      "HDMI": "2 EA",
+      "HDMI Version": "1.4",
+      "HDCP Version (HDMI)": "2.2",
+      "USB Hub": "2",
+      "USB-C": "No",
+      "USB Type-A Downstream Port": "2",
+      "USB Type-A Downstream Version": "2.0",
+      "Wireless LAN Built-in": "Yes (Wi-Fi 5)",
+      "Bluetooth": "Yes(5.2)",
+      "Speaker": "Yes",
+      "Speaker Output": "10W",
+      "Adaptive Sound": "Adaptive Sound",
+      "Temperature": "10 - 40 ℃",
+      "Humidity": "10 - 80 (Non-Condensing)",
+      "Front Colour": "BLACK",
+      "Rear Color": "BLACK",
+      "Stand Colour": "Black",
+      "Stand Type": "SIMPLE",
+      "Tilt": "-2.0 (±2.0) - 15.0˚ (±2.0˚)",
+      "Wall Mount": "100 x 100",
+      "Power Supply": "AC 100 - 240 V",
+      "Power Consumption (Max)": "59 W",
+      "Type": "External Adaptor",
+      "Set Dimension with Stand (WxHxD)": "71.55 cm x 52.59 cm x 20.01 cm",
+      "Set Dimension without Stand (WxHxD)": "71.55 cm x 42.73 cm x 4.18 cm",
+      "Package Dimension (WxHxD)": "83.50 cm x 10.90 cm x 48.40 cm",
+      "Set Weight with Stand": "4.7 kg",
+      "Set Weight without Stand": "3.9 kg",
+      "Package Weight": "6.6 kg",
+      "Power Cable Length": "1.5 m",
+      "HDMI Cable": "Yes",
+      "Remote Controller": "Yes",
+      "Manufactured by": "SAMSUNGELECTRONICS HCMC CE COMPLEX CO. LTD. I-11,D2 ROAD, TANG NHON PHU B WARD,SAIGON HI-TECH PARK DISTRICT 9, HO CHI MINH CITY, VIETNAM-70000",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 32,
+    "resolution": "FHD (1,920 x 1,080)",
+    "refreshRateHz": 60,
+    "panel": "VA",
+    "responseTimeMs": 4,
+    "curved": false,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "32\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/samsung-32-inch-m5-fhd-smart-monitor/common-1",
+        "alt": "Samsung 32\" M5 FHD Smart Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm500ewxxl/gallery/in-smart-m5-m50f-black-ls32fm500ewxxl-thumb-549581872?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "monitors/samsung-32-inch-m5-fhd-smart-monitor/common-2",
+        "alt": "Samsung 32\" M5 FHD Smart Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls32fm500ewxxl/gallery/in-smart-m5-m50f-black-ls32fm500ewxxl-549581696?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS32FM500EW",
+      "mpn": "LS32FM500EW",
+      "options": {
+        "Size": "32\""
+      },
+      "price": 16499,
+      "mrp": 32999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/smart/smart-monitor-m5-32-inch-smart-tv-apps-ls32fm500ewxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

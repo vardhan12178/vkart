@@ -1,0 +1,166 @@
+{
+  "slug": "lenovo-legion-5-gen-10-amd",
+  "title": "Lenovo Legion 5 Gen 10 (15\", AMD)",
+  "brand": "Lenovo",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "15.1-inch OLED gaming laptop with AMD Ryzen 200-series processors and GeForce RTX graphics.",
+  "description": "Legion 5 Gen 10 with AMD Ryzen processors brings the same 15.1-inch OLED gaming display and RTX 50-series graphics with AMD efficiency.\n\nLenovo India sells it as a configurable model starting from the base build listed here.",
+  "highlights": [
+    "AMD Ryzen 200-series processors",
+    "NVIDIA GeForce RTX graphics",
+    "15.1-inch WQXGA OLED, 165Hz",
+    "Wi-Fi 7",
+    "Configurable on lenovo.com",
+    "Eclipse Black"
+  ],
+  "specs": {
+    "Configuration": {
+      "Processor": "AMD Ryzen 7 260 Processor (3.80 GHz up to 5.10 GHz)",
+      "Operating System": "Windows 11 Home Single Language 64",
+      "Graphic Card": "NVIDIA GeForce RTX 5050 Laptop GPU 8GB GDDR7",
+      "Memory": "16 GB DDR5-5600MT/s (SODIMM)",
+      "Storage": "512 GB SSD M.2 2242 PCIe Gen4 TLC",
+      "Display": "38.86cms (15.3) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 100%sRGB, 300 nits, 165Hz",
+      "Keyboard": "White Backlit, Eclipse Black - English (US)",
+      "WIFI": "Wi-Fi 6 2x2 AX & Bluetooth 5.3",
+      "Color": "Eclipse Black"
+    }
+  },
+  "keySpecs": {
+    "processor": "AMD Ryzen 7 260",
+    "gpu": "NVIDIA GeForce RTX 5050 8GB GDDR7",
+    "displayInch": 15.3,
+    "panel": "IPS",
+    "refreshRateHz": 165,
+    "weightKg": null,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Ryzen 7 260 · RTX 5050 8GB GDDR7 · 16GB · 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Eclipse Black",
+          "hex": "#2B2D31"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Eclipse Black": [
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-1",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112926477180.png",
+          "width": 400,
+          "height": 300
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-2",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 2",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112907128325.png",
+          "width": 585,
+          "height": 585
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-3",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 3",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727112839394109.png",
+          "width": 420,
+          "height": 420
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-4",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 4",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113027494334.jpg",
+          "width": 585,
+          "height": 585
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-5",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 5",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113036653094.jpg",
+          "width": 585,
+          "height": 585
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-6",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 6",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113045333784.jpg",
+          "width": 585,
+          "height": 585
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-7",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 7",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113056760104.jpg",
+          "width": 585,
+          "height": 585
+        },
+        {
+          "key": "laptops/lenovo-legion-5-gen-10-amd/eclipse-black-8",
+          "alt": "Lenovo Legion 5 Gen 10 (15\", AMD) in Eclipse Black, view 8",
+          "sourceUrl": "https://ap-img.static.pub/ss/img/2026/07/27/img.20260727113106544556.jpg",
+          "width": 585,
+          "height": 585
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEN-83M0CTO1WWIN2",
+      "mpn": "83M0CTO1WWIN2",
+      "options": {
+        "Configuration": "Ryzen 7 260 · RTX 5050 8GB GDDR7 · 16GB · 512GB",
+        "Color": "Eclipse Black"
+      },
+      "price": 181085,
+      "mrp": 221500,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 7 260",
+        "gpu": "NVIDIA GeForce RTX 5050 8GB GDDR7",
+        "customizable": true,
+        "display": "38.86cms (15.3) WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 100%sRGB, 300 nits, 165Hz"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5-gen-10-15-inch-amd/len101g0045",
+      "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-5-series/lenovo-legion-5-gen-10-15-inch-amd/83m0cto1wwin2"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a Lenovo India model (part number in mpn); specs, images, selling price (price) and list price (mrp) from its lenovo.com/in page. Models ending in CTO are the base build of Lenovo's configure-to-order option. Product-level specs are the default (cheapest) configuration's."
+  }
+}

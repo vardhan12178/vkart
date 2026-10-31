@@ -1,0 +1,118 @@
+{
+  "slug": "lenovo-thinkpad-x1-carbon-gen-13-aura",
+  "title": "Lenovo ThinkPad X1 Carbon Gen 13 Aura Edition",
+  "brand": "Lenovo",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Ultralight 14-inch flagship business laptop with Intel Core Ultra processors, under 1 kg.",
+  "description": "ThinkPad X1 Carbon Gen 13 Aura Edition is Lenovo's flagship business ultrabook, weighing under 1 kg with a carbon-fibre chassis.\n\nIt runs Intel Core Ultra (Series 2) processors and is sold as a configurable model on lenovo.com/in.",
+  "highlights": [
+    "Intel Core Ultra (Series 2) processors",
+    "Copilot+ PC",
+    "Under 1 kg carbon-fibre build",
+    "14-inch 2.8K OLED option",
+    "ThinkPad keyboard and TrackPoint",
+    "Configurable on lenovo.com"
+  ],
+  "specs": {
+    "Configuration": {
+      "Processor": "Intel Core Ultra 7 256V Processor (LPE-cores up to 3.70 GHz P-cores up to 4.80 GHz / 16 GB MOP)",
+      "Operating System": "Windows 11 Pro 64",
+      "Graphic Card": "Integrated Intel Arc Graphics",
+      "Memory": "16 GB LPDDR5X-8533MT/s (Memory on Package)",
+      "Storage": "1 TB SSD M.2 2280 PCIe Gen4 TLC Opal",
+      "Display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Anti-Glare, Touch, 100%sRGB, 500 nits, 60Hz, Low Power, Low Blue Light",
+      "Pointing Device": "Trackpad, No NFC, No WWAN",
+      "Keyboard": "Backlit, Black with Fingerprint Reader - English (US)",
+      "WIFI": "Intel Wi-Fi 7 BE201 2x2 BE vPro & Bluetooth 5.4",
+      "Color": "Black"
+    }
+  },
+  "keySpecs": {
+    "processor": "Intel Core Ultra 7 256V",
+    "gpu": "Integrated Intel Arc Graphics",
+    "displayInch": 14,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": null,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 16,
+    "storageGB": 1024
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Core Ultra 7 256V · 16GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#1E1E1E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "key": "laptops/lenovo-thinkpad-x1-carbon-gen-13-aura/black-1",
+          "alt": "Lenovo ThinkPad X1 Carbon Gen 13 Aura Edition in Black",
+          "sourceUrl": "https://p2-ofp.static.pub/ShareResource/optimized/pdp/thinkpad/thinkpad-x1-series/len101t0114/thinkpad-x1-carbon-gen-13-aura-edition-14-intel-arl.png",
+          "width": 584,
+          "height": 584
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "LEN-21NTCTO1WWIN2",
+      "mpn": "21NTCTO1WWIN2",
+      "options": {
+        "Configuration": "Core Ultra 7 256V · 16GB · 1TB",
+        "Color": "Black"
+      },
+      "price": 608801,
+      "mrp": 615801,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 256V",
+        "gpu": "Integrated Intel Arc Graphics",
+        "customizable": true,
+        "display": "35.56cms (14) WUXGA (1920 x 1200), IPS, Anti-Glare, Touch, 100%sRGB, 500 nits, 60Hz, Low Power, Low Blue Light"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.lenovo.com/in/en/p/laptops/thinkpad/thinkpadx1/thinkpad-x1-carbon-gen-13-aura-edition-14-inch-intel/len101t0108",
+      "https://www.lenovo.com/in/en/p/laptops/thinkpad/thinkpadx1/thinkpad-x1-carbon-gen-13-aura-edition-14-inch-intel/21ntcto1wwin2"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a Lenovo India model (part number in mpn); specs, images, selling price (price) and list price (mrp) from its lenovo.com/in page. Models ending in CTO are the base build of Lenovo's configure-to-order option. Product-level specs are the default (cheapest) configuration's."
+  }
+}

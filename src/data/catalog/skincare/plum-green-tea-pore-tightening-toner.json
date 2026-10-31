@@ -1,0 +1,166 @@
+{
+  "slug": "plum-green-tea-pore-tightening-toner",
+  "title": "Plum Green Tea Alcohol-Free Pore Tightening Toner",
+  "brand": "Plum",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "toner"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Toner with Green Tea for oily, dry, acne-prone skin.",
+  "description": "Toner with Green Tea for oily, dry, acne-prone skin.",
+  "highlights": [
+    "Toner",
+    "Key actives: Green Tea",
+    "For oily, dry, acne-prone skin",
+    "fights pimples",
+    "minimizes the appearance of pores",
+    "tones, refreshes, and hydrates skin"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Toner",
+      "skinType": [
+        "oily",
+        "dry",
+        "acne-prone"
+      ],
+      "keyIngredients": [
+        "Green Tea"
+      ]
+    },
+    "Details": {
+      "points": [
+        "fights pimples",
+        "minimizes the appearance of pores",
+        "tones, refreshes, and hydrates skin",
+        "alcohol-free"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Toner",
+    "skinTypes": [
+      "oily",
+      "dry",
+      "acne-prone"
+    ],
+    "keyIngredients": [
+      "Green Tea"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "150 ml"
+        },
+        {
+          "value": "200 ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-1",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Listing_1st_Tile_GT_Toner_200ml_1001x1001_px_c93eaf1e-d084-4779-bce8-6a976cadbed7.webp?v=1782212495",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-2",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Green-Tea-Toner_150ml_Amazon_1001x1001_04.jpg?v=1776771394",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-3",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Green-Tea-Toner_150ml_Amazon_1001x1001_05.jpg?v=1776771394",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-4",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Green-Tea-Toner_150ml_Amazon_1001x1001_06.jpg?v=1776771394",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-5",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Green-Tea-Toner_150ml_Amazon_1001x1001_07.jpg?v=1776771394",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-6",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Green-Tea-Toner_150ml_Amazon_1001x1001_08.jpg?v=1776771394",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-7",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Green-Tea-Toner_150ml_Amazon_1001x1001_09.jpg?v=1776771394",
+        "width": 1001,
+        "height": 1001
+      },
+      {
+        "key": "skincare/plum-green-tea-pore-tightening-toner/common-8",
+        "alt": "Plum Green Tea Alcohol-Free Pore Tightening Toner, view 8",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0390/2985/files/Listing_1st_Tile_GT_Toner_150ml_1001x1001_px.webp?v=1781760429",
+        "width": 1001,
+        "height": 1001
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "PLM-GTTON-150ML",
+      "mpn": "PLGT1150FTN4750",
+      "options": {
+        "Size": "150 ml"
+      },
+      "price": 331,
+      "mrp": 390,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "PLM-GTTON-200ML",
+      "mpn": "PLGT2200FTN0058",
+      "options": {
+        "Size": "200 ml"
+      },
+      "price": 357,
+      "mrp": 420,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://plumgoodness.com/products/green-tea-alcohol-free-pore-tightening-face-toner-for-oily-acne-prone-skin-1"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Plum's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

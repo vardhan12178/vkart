@@ -1,0 +1,115 @@
+{
+  "slug": "samsung-galaxy-watch-ultra2",
+  "title": "Samsung Galaxy Watch Ultra2",
+  "brand": "Samsung",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Samsung's toughest watch: titanium case, LTE, long battery life and advanced outdoor and health features.",
+  "description": "Galaxy Watch Ultra2 is built for the outdoors, with a titanium case, LTE connectivity and Samsung's longest Galaxy Watch battery life.\n\nIt brings advanced health tracking and Galaxy AI features with a bright display you can read in sunlight.",
+  "highlights": [
+    "Titanium case",
+    "LTE included",
+    "Long battery life",
+    "Advanced health tracking",
+    "Galaxy AI features",
+    "Titanium Silver"
+  ],
+  "specs": {
+    "Software": {
+      "os": "Wear OS with One UI Watch",
+      "ai": "Galaxy AI"
+    },
+    "Build": {
+      "material": "Titanium"
+    },
+    "Hardware": {
+      "NFC": "Yes",
+      "Bluetooth Version": "Bluetooth v6.0",
+      "Size (Main Display)": "3.85 cm",
+      "CPU Speed": "2.1 GHz, 1.95 GHz",
+      "Storage (GB)": "64",
+      "Body Dimension (HxWxD, mm)": "47.4 x 47.1 x 10.7",
+      "Body Weight (g)": "61.5"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "Wear OS",
+    "caseSizesMm": [
+      47
+    ],
+    "cellularOption": true
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "47mm · LTE"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Titanium Silver",
+          "hex": "#B9B8B5"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Titanium Silver": [
+        {
+          "key": "wearables/samsung-galaxy-watch-ultra2/titanium-silver-2",
+          "alt": "Samsung Galaxy Watch Ultra2 in Titanium Silver, view 2",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/f2607/gallery/in-galaxy-watch-ultra2-l710-sm-l715fzsains-553717152",
+          "width": 1920,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-L715FZSA",
+      "mpn": "SM-L715FZSAINS",
+      "options": {
+        "Configuration": "47mm · LTE",
+        "Color": "Titanium Silver"
+      },
+      "price": 64999,
+      "mrp": 69999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 47,
+        "cellular": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Watch",
+    "Strap",
+    "Wireless charger",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/watches/galaxy-watch/galaxy-watch-ultra2-titanium-silver-lte-sm-l715fzsains/buy/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Each variant's model code, selling price (price), MRP (mrp), images and hardware properties from its Samsung India buy page."
+  }
+}

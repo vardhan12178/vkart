@@ -1,0 +1,114 @@
+{
+  "slug": "giva-golden-grove-choker-necklace",
+  "title": "GIVA Golden Grove Choker Necklace",
+  "brand": "GIVA",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "necklaces"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Designed to shine from every angle, this choker necklace for women gives your look a graceful golden touch that works beautifully from brunch plans to evening dinners.",
+  "description": "Designed to shine from every angle, this choker necklace for women gives your look a graceful golden touch that works beautifully from brunch plans to evening dinners.\n\nComes with the GIVA Jewellery kit and authenticity certificate",
+  "highlights": [
+    "Metal: 925 silver"
+  ],
+  "specs": {
+    "Product details": {
+      "Metal": "925 silver"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Necklaces",
+    "color": "Gold",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gold",
+          "hex": "#233F66"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gold": [
+        {
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-1",
+          "alt": "GIVA Golden Grove Choker Necklace",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_5.jpg?v=1778820772",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-2",
+          "alt": "GIVA Golden Grove Choker Necklace, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_1.jpg?v=1778820772",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-3",
+          "alt": "GIVA Golden Grove Choker Necklace, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_2.jpg?v=1778820772",
+          "width": 700,
+          "height": 700
+        },
+        {
+          "key": "fashion/giva-golden-grove-choker-necklace/gold-4",
+          "alt": "GIVA Golden Grove Choker Necklace, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0061/8378/0442/files/PD03250_4_6a128ca7-61e2-4ac4-ba6e-2e4c730a5362.jpg?v=1778820771",
+          "width": 700,
+          "height": 700
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GIV-GOLDENGROVCKLACE-ONESIZE",
+      "mpn": "PD03250",
+      "options": {
+        "Size": "One Size",
+        "Color": "Gold"
+      },
+      "price": 20299,
+      "mrp": 44699,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.giva.co/products/golden-grove-choker-necklace"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from GIVA's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

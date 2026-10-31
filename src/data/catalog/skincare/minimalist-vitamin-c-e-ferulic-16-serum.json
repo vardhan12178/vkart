@@ -1,0 +1,143 @@
+{
+  "slug": "minimalist-vitamin-c-e-ferulic-16-serum",
+  "title": "Minimalist Vitamin C + E + Ferulic 16% Face Serum",
+  "brand": "Minimalist",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "serum"
+  ],
+  "status": "draft",
+  "launchDate": "2022-04",
+  "shortDescription": "Serum with Vitamin C for all skin types.",
+  "description": "Serum with Vitamin C for all skin types.",
+  "highlights": [
+    "Serum",
+    "Key actives: Vitamin C"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Serum",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Vitamin C"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Serum",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Vitamin C"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "10ml"
+        },
+        {
+          "value": "20ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-1",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vit16New.png?v=1721398127",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-2",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_02.png?v=1726489863",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-3",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 3",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_03.png?v=1726489864",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-4",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 4",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_04.png?v=1726489864",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-5",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 5",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_05.png?v=1726489864",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-6",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 6",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vitamin_C_E_06.png?v=1726489861",
+        "width": 1100,
+        "height": 1600
+      },
+      {
+        "key": "skincare/minimalist-vitamin-c-e-ferulic-16-serum/common-7",
+        "alt": "Minimalist Vitamin C + E + Ferulic 16% Face Serum, view 7",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0410/9608/5665/files/Vit_C_E_Ferulic_Serum_10ml.png?v=1783339547",
+        "width": 840,
+        "height": 1260
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "MIN-VITC16-10ML",
+      "mpn": "8906128101907",
+      "options": {
+        "Size": "10ml"
+      },
+      "price": 332,
+      "mrp": 349,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "MIN-VITC16-20ML",
+      "mpn": "8906128100504",
+      "options": {
+        "Size": "20ml"
+      },
+      "price": 569,
+      "mrp": 599,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://beminimalist.co/products/vitamin-c-e-ferulic-16"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Minimalist's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

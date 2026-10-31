@@ -1,0 +1,432 @@
+{
+  "slug": "hp-omnibook-3-14",
+  "title": "HP OmniBook 3 14",
+  "brand": "HP",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Everyday 14-inch laptop with a 2K display, Intel Core or AMD Ryzen chips and up to 16GB RAM.",
+  "description": "HP OmniBook 3 is HP's everyday laptop, with a 14-inch 2K anti-glare display in a slim two-tone chassis.\n\nIt comes with a choice of Intel Core, Intel Core Ultra or AMD Ryzen AI processors, up to 16GB of RAM and fast PCIe SSD storage, plus a backlit keyboard, a privacy-shutter webcam and USB-C charging.",
+  "highlights": [
+    "14-inch 2K display",
+    "Intel Core, Core Ultra or AMD Ryzen AI processors",
+    "Up to 16GB RAM, up to 1TB SSD",
+    "Fast charge: about 50% in 30 minutes",
+    "Privacy camera shutter",
+    "Windows 11 Home"
+  ],
+  "specs": {
+    "Supported Operating Systems": {
+      "Operating system": "Windows 11 Home Single Language"
+    },
+    "Processor": {
+      "Processor family": "AMD Ryzen 3 processor",
+      "Processor": "AMD Ryzen 3 30 (up to 4.1 GHz max boost clock, 4 MB L3 cache, 4 cores, 8 threads)",
+      "Chipset": "AMD integrated SoC",
+      "Processor cache": "4 MB L3",
+      "Processor core": "4"
+    },
+    "Memory": {
+      "Memory": "8 GB LPDDR5-5500 MT/s (onboard)",
+      "Memory Note": "Transfer rates up to 5500 MT/s.",
+      "Memory layout (slots \\u0026 size)": "onboard",
+      "Memory and storage": "8 GB memory;512 GB SSD storage"
+    },
+    "Dimensions": {
+      "Dimensions (W x D x H)": "31.45 x 22.6 x 1.48 cm"
+    },
+    "Display Specifications": {
+      "Touchscreen": "No",
+      "Display": "14\" diagonal 2K display",
+      "Aspect ratio": "16:10",
+      "Brightness": "300 nits",
+      "Color gamut": "62.5% sRGB",
+      "Flicker-free": "Yes",
+      "Screen-to-body ratio (without speakers)": "88%"
+    },
+    "Weights": {
+      "Weight": "1.42 kg"
+    },
+    "Graphic Subsystem": {
+      "Graphics (integrated)": "AMD Radeon 610M Graphics",
+      "Graphics": "Integrated"
+    },
+    "Connectivity and Communications": {
+      "Ports": "2 USB Type-A 5Gbps signaling rate; 1 HDMI-out 2.1; 1 headphone/microphone combo; 2 USB Type-C 10Gbps signaling rate (USB Power Delivery 3.1, DisplayPort 1.4, HP Sleep and Charge)",
+      "Wireless": "MediaTek Wi-Fi 6 MT7920 (2x2) and Bluetooth 5.4 wireless card"
+    },
+    "Multimedia and Input Devices": {
+      "Audio": "Dual speakers",
+      "Keyboard": "Full-size, iron gray keyboard",
+      "Pointing device": "HP Imagepad"
+    },
+    "Appearance": {
+      "Product color": "Mica silver cover and keyboard frame, iron gray base",
+      "Product design": "Matte paint cover and keyboard frame finish, textured base",
+      "Color": "Mica silver and iron gray"
+    },
+    "Battery and Power": {
+      "Battery life": "Up to 8 hours and 45 minutes",
+      "Battery recharge time": "Supports battery fast charge: approximately 50% in 45 minutes",
+      "Battery type": "3-cell, 41 Wh Li-ion polymer",
+      "Power supply type": "45 W USB Type-C GaN power adapter",
+      "Battery life video playback": "Up to 12 hours"
+    },
+    "Security Management": {
+      "Security management": "Mic mute key; Camera privacy shutter; Trusted Platform Module (Firmware TPM) support"
+    },
+    "Drives and Storage Specifications": {
+      "Internal Storage": "512 GB PCIe Gen4 NVMe M.2 SSD",
+      "Cloud service": "100 GB Dropbox storage for 3 months"
+    },
+    "Camera Specifications": {
+      "Camera": "1080p FHD camera with HDR auto switch, temporal noise reduction and integrated dual array digital microphones"
+    }
+  },
+  "keySpecs": {
+    "processor": "AMD Ryzen 3 30",
+    "gpu": "AMD Radeon 610M Graphics",
+    "displayInch": 14,
+    "panel": "IPS",
+    "refreshRateHz": null,
+    "weightKg": 1.42,
+    "batteryHours": 8,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 512
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Ryzen 3 30 · 8GB · 512GB"
+        },
+        {
+          "value": "Core 3 304 · 8GB · 512GB"
+        },
+        {
+          "value": "Core 5 120U · 16GB · 512GB"
+        },
+        {
+          "value": "Ryzen AI 5 330 · 16GB · 1TB"
+        },
+        {
+          "value": "Core 5 120U · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 5 225U · 16GB · 1TB"
+        },
+        {
+          "value": "Core Ultra 7 255U · 16GB · 1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Mica silver and iron gray",
+          "hex": "#BC9878"
+        },
+        {
+          "value": "Glacier silver and canvas gray",
+          "hex": "#81AEC8"
+        },
+        {
+          "value": "Glacier silver and glacier gray",
+          "hex": "#81AEC8"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Mica silver and iron gray": [
+        {
+          "key": "laptops/hp-omnibook-3-14/mica-silver-and-iron-gray-1",
+          "alt": "HP OmniBook 3 14 in Mica silver and iron gray",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-14-pc-abea-mica-silver-en-annot-6.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/mica-silver-and-iron-gray-2",
+          "alt": "HP OmniBook 3 14 in Mica silver and iron gray, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-14-pc-abea-mica-silver-en-annot-5.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        }
+      ],
+      "Glacier silver and canvas gray": [
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-1",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_front_5867402_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-2",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_frontright_5867500_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-3",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_frontleft_5867551_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-4",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_rearleft_5867502_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-5",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_backlit_non-oled_catalog_profilestacked_5840103_1.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-6",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-14-pc-abei-glacier-silver-en-annot-5_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-canvas-gray-7",
+          "alt": "HP OmniBook 3 14 in Glacier silver and canvas gray, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-14-pc-abei-glacier-silver-en-annot-8_1.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        }
+      ],
+      "Glacier silver and glacier gray": [
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-1",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_front_5867402.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-2",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray, view 2",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_frontright_5867500.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-3",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray, view 3",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_frontleft_5867551.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-4",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray, view 4",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_non-backlit_non-oled_catalog_rearleft_5867502.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-5",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray, view 5",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/a/b/abe_ngai_14_ffplus_omnibook3_cs_glaciersilver_t_fhd_ir_backlit_non-oled_catalog_profilestacked_5840103.png?store=in-en&image-type=image",
+          "width": 3300,
+          "height": 2805
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-6",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray, view 6",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-14-pc-abei-glacier-silver-en-annot-8.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        },
+        {
+          "key": "laptops/hp-omnibook-3-14/glacier-silver-and-glacier-gray-7",
+          "alt": "HP OmniBook 3 14 in Glacier silver and glacier gray, view 7",
+          "sourceUrl": "https://www.hp.com/in-en/shop/media/catalog/product/2/6/26c1-hp-omnibook-3-14-pc-abei-glacier-silver-en-annot-6.jpg?store=in-en&image-type=image",
+          "width": 2100,
+          "height": 1542
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "HP-D88PPPA",
+      "mpn": "D88PPPA#ACJ",
+      "options": {
+        "Configuration": "Ryzen 3 30 · 8GB · 512GB",
+        "Color": "Mica silver and iron gray"
+      },
+      "price": 62999,
+      "mrp": 62999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "AMD Ryzen 3 30",
+        "gpu": "AMD Radeon 610M Graphics",
+        "touch": false,
+        "model": "14-hy0030AU"
+      }
+    },
+    {
+      "sku": "HP-E5SM2PA",
+      "mpn": "E5SM2PA#ACJ",
+      "options": {
+        "Configuration": "Core 3 304 · 8GB · 512GB",
+        "Color": "Glacier silver and canvas gray"
+      },
+      "price": 72999,
+      "mrp": 105899,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 512,
+        "processor": "Intel Core 3 304",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-ht0218TU"
+      }
+    },
+    {
+      "sku": "HP-DW0R1PA",
+      "mpn": "DW0R1PA#ACJ",
+      "options": {
+        "Configuration": "Core 5 120U · 16GB · 512GB",
+        "Color": "Glacier silver and glacier gray"
+      },
+      "price": 89999,
+      "mrp": 115161,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "processor": "Intel Core 5 120U",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-hu0062TU"
+      }
+    },
+    {
+      "sku": "HP-DR0Y0PA",
+      "mpn": "DR0Y0PA#ACJ",
+      "options": {
+        "Configuration": "Ryzen AI 5 330 · 16GB · 1TB",
+        "Color": "Glacier silver and glacier gray"
+      },
+      "price": 94999,
+      "mrp": 120661,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "AMD Ryzen AI 5 330",
+        "gpu": "AMD Radeon 820M Graphics",
+        "touch": false,
+        "model": "14-hv0052AU"
+      }
+    },
+    {
+      "sku": "HP-DW0R8PA",
+      "mpn": "DW0R8PA#ACJ",
+      "options": {
+        "Configuration": "Core 5 120U · 16GB · 1TB",
+        "Color": "Glacier silver and canvas gray"
+      },
+      "price": 99999,
+      "mrp": 122929,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core 5 120U",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-hu0123TU"
+      }
+    },
+    {
+      "sku": "HP-DR0X8PA",
+      "mpn": "DR0X8PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 5 225U · 16GB · 1TB",
+        "Color": "Glacier silver and glacier gray"
+      },
+      "price": 114999,
+      "mrp": 129203,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 5 225U",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-ht0138TU"
+      }
+    },
+    {
+      "sku": "HP-DR0X9PA",
+      "mpn": "DR0X9PA#ACJ",
+      "options": {
+        "Configuration": "Core Ultra 7 255U · 16GB · 1TB",
+        "Color": "Glacier silver and glacier gray"
+      },
+      "price": 124999,
+      "mrp": 152387,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 1024,
+        "processor": "Intel Core Ultra 7 255U",
+        "gpu": "Intel Graphics",
+        "touch": false,
+        "model": "14-ht0139TU"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year limited manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-14-hy0030au-d88pppa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-ai-14-ht0218tu-e5sm2pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-14-hu0062tu-dw0r1pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-14-hv0052au-dr0y0pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-14-hu0123tu-dw0r8pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-ai-14-ht0138tu-dr0x8pa-acj",
+      "https://www.hp.com/in-en/shop/products/laptops/hp-omnibook-3-laptop-ai-14-ht0139tu-dr0x9pa-acj"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Each configuration is a separate HP India store model (model number in keySpecs.model, part number in mpn). Specs, images, selling price (price) and list price (mrp) from the HP India online store; product-level specs are the default configuration's."
+  }
+}

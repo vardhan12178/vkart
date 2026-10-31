@@ -1,0 +1,447 @@
+{
+  "slug": "apple-iphone-air",
+  "title": "Apple iPhone Air",
+  "brand": "Apple",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-09",
+  "shortDescription": "The thinnest iPhone ever at 5.64 mm, with a 6.5-inch ProMotion display, A19 Pro chip and titanium frame.",
+  "description": "iPhone Air is just 5.64 mm thin and 165 g, built around a polished titanium frame with Ceramic Shield on both sides.\n\nIts 6.5-inch Super Retina XDR display has ProMotion up to 120Hz and reaches 3,000 nits outdoors. Inside is the A19 Pro chip, the same class of chip as the Pro models, plus Apple's N1 wireless chip for Wi-Fi 7.\n\nA single 48MP Fusion camera also gives 2x optical-quality telephoto shots, and the 18MP Center Stage front camera keeps groups in frame. It uses eSIM only.",
+  "highlights": [
+    "5.64 mm thin, 165 g titanium design",
+    "6.5-inch Super Retina XDR display with ProMotion up to 120Hz",
+    "A19 Pro chip",
+    "48MP Fusion camera with 2x optical-quality telephoto",
+    "18MP Center Stage front camera",
+    "Up to 27 hours video playback; MagSafe up to 20W"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.5,
+      "type": "Super Retina XDR OLED",
+      "resolution": "2736 × 1260",
+      "ppi": 460,
+      "refreshRate": 120,
+      "features": "ProMotion up to 120Hz, Always-On, Dynamic Island, HDR",
+      "brightness": "1,000 nits typical, 1,600 nits HDR, 3,000 nits outdoor"
+    },
+    "Performance": {
+      "chip": "A19 Pro",
+      "cpu": "6-core (2 performance + 4 efficiency)",
+      "gpu": "5-core with Neural Accelerators",
+      "neuralEngine": "16-core"
+    },
+    "Camera": {
+      "rear": "48MP Fusion (ƒ/1.6, sensor-shift OIS)",
+      "mainMP": 48,
+      "opticalZoom": "2x optical-quality",
+      "front": "18MP Center Stage, ƒ/1.9"
+    },
+    "Battery": {
+      "videoPlayback": "Up to 27 hours (40 hours with iPhone Air MagSafe Battery)",
+      "wired": "50% in 30 minutes with 20W adapter",
+      "wireless": "MagSafe up to 20W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "uwb": "Apple 2nd-gen Ultra Wideband",
+      "usb": "USB-C, USB 2 (480 Mbps)",
+      "gps": "Dual-frequency GPS, NavIC",
+      "sim": "Dual eSIM (no physical SIM)"
+    },
+    "Build": {
+      "dimensions": "156.2 × 74.7 × 5.64 mm",
+      "weightG": 165,
+      "materials": "Titanium frame, Ceramic Shield 2 front, Ceramic Shield back",
+      "ipRating": "IP68 (6 m up to 30 min)"
+    },
+    "Software": {
+      "os": "iOS 27",
+      "ai": "Apple Intelligence"
+    },
+    "Security": {
+      "biometrics": "Face ID"
+    }
+  },
+  "keySpecs": {
+    "ramGB": null,
+    "displayInch": 6.5,
+    "refreshRateHz": 120,
+    "mainCameraMP": 48,
+    "frontCameraMP": 18,
+    "batteryMah": null,
+    "chargingW": 20,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 165,
+    "chip": "A19 Pro",
+    "os": "iOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        },
+        {
+          "value": "1TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sky Blue",
+          "hex": "#D6E0E8"
+        },
+        {
+          "value": "Light Gold",
+          "hex": "#E9E5DA"
+        },
+        {
+          "value": "Cloud White",
+          "hex": "#E0E1DC"
+        },
+        {
+          "value": "Space Black",
+          "hex": "#282425"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sky Blue": [
+        {
+          "key": "mobiles/apple-iphone-air/sky-blue-1",
+          "alt": "Apple iPhone Air in Sky Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-air/sky-blue-3",
+          "alt": "Apple iPhone Air in Sky Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-skyblue-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-air/sky-blue-4",
+          "alt": "Apple iPhone Air in Sky Blue, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_ultramarine__cgfuoct82biu_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "Light Gold": [
+        {
+          "key": "mobiles/apple-iphone-air/light-gold-1",
+          "alt": "Apple iPhone Air in Light Gold",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-air/light-gold-3",
+          "alt": "Apple iPhone Air in Light Gold, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-lightgold-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-air/light-gold-4",
+          "alt": "Apple iPhone Air in Light Gold, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_gold__d1p7qgdkczo2_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "Cloud White": [
+        {
+          "key": "mobiles/apple-iphone-air/cloud-white-1",
+          "alt": "Apple iPhone Air in Cloud White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-air/cloud-white-3",
+          "alt": "Apple iPhone Air in Cloud White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-cloudwhite-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-air/cloud-white-4",
+          "alt": "Apple iPhone Air in Cloud White, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_white__bsqapwl67oj6_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ],
+      "Space Black": [
+        {
+          "key": "mobiles/apple-iphone-air/space-black-1",
+          "alt": "Apple iPhone Air in Space Black",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 3794
+        },
+        {
+          "key": "mobiles/apple-iphone-air/space-black-3",
+          "alt": "Apple iPhone Air in Space Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-finish-select-spaceblack-202509_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        },
+        {
+          "key": "mobiles/apple-iphone-air/space-black-4",
+          "alt": "Apple iPhone Air in Space Black, view 4",
+          "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/color_static_black__bavqefsedg82_large_2x.jpg",
+          "width": 3456,
+          "height": 1824
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "mobiles/apple-iphone-air/common-1",
+        "alt": "Apple iPhone Air — 5.64 mm thin profile",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/welcome/hero__c8vidxwr9imq_large_2x.jpg",
+        "width": 2696,
+        "height": 1400
+      },
+      {
+        "key": "mobiles/apple-iphone-air/common-2",
+        "alt": "Apple iPhone Air — side profile",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/welcome/hero_startframe__ft43ohx1qiaa_large_2x.jpg",
+        "width": 2696,
+        "height": 1400
+      },
+      {
+        "key": "mobiles/apple-iphone-air/common-3",
+        "alt": "Apple iPhone Air — 48MP Fusion camera",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/highlights/highlights_rear_camera__fwea7ndmxeq2_large_2x.jpg",
+        "width": 2520,
+        "height": 1360
+      },
+      {
+        "key": "mobiles/apple-iphone-air/common-4",
+        "alt": "Apple iPhone Air — titanium frame",
+        "sourceUrl": "https://www.apple.com/v/iphone-air/i/images/overview/product-viewer/titanium__e0m72tffcsuq_large_2x.jpg",
+        "width": 3456,
+        "height": 1824
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-IPAIR-256GB-SKBL",
+      "mpn": "MG2P4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Sky Blue"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IPAIR-256GB-LIGO",
+      "mpn": "MG2N4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Light Gold"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IPAIR-256GB-CLWH",
+      "mpn": "MG2M4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Cloud White"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IPAIR-256GB-SPBL",
+      "mpn": "MG2L4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Space Black"
+      },
+      "price": 149900,
+      "mrp": 149900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IPAIR-512GB-SKBL",
+      "mpn": "MG2V4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Sky Blue"
+      },
+      "price": 174900,
+      "mrp": 174900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IPAIR-512GB-LIGO",
+      "mpn": "MG2U4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Light Gold"
+      },
+      "price": 174900,
+      "mrp": 174900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IPAIR-512GB-CLWH",
+      "mpn": "MG2T4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Cloud White"
+      },
+      "price": 174900,
+      "mrp": 174900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IPAIR-512GB-SPBL",
+      "mpn": "MG2Q4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Space Black"
+      },
+      "price": 174900,
+      "mrp": 174900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IPAIR-1TB-SKBL",
+      "mpn": "MG304HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Sky Blue"
+      },
+      "price": 224900,
+      "mrp": 224900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IPAIR-1TB-LIGO",
+      "mpn": "MG2Y4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Light Gold"
+      },
+      "price": 224900,
+      "mrp": 224900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IPAIR-1TB-CLWH",
+      "mpn": "MG2X4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Cloud White"
+      },
+      "price": 224900,
+      "mrp": 224900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IPAIR-1TB-SPBL",
+      "mpn": "MG2W4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Space Black"
+      },
+      "price": 224900,
+      "mrp": 224900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPhone Air with iOS 27",
+    "USB-C Charge Cable (1 m)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/iphone-air/specs/",
+      "https://www.apple.com/in/shop/buy-iphone/iphone-air"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Prices are Apple India MRP (inclusive of taxes). Apple does not publish RAM or battery mAh."
+  }
+}

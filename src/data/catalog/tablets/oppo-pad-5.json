@@ -1,0 +1,305 @@
+{
+  "slug": "oppo-pad-5",
+  "title": "OPPO Pad 5",
+  "brand": "OPPO",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": "2026-01",
+  "shortDescription": "OPPO Pad 5: 30.73cm LCD display up to 120Hz, MediaTek Dimensity 7300-Ultra, 10050 mAh battery.",
+  "description": "OPPO Pad 5 is OPPO's tablet with a 30.73cm LCD display running at up to 120Hz and 2800 × 1980 Pixels resolution.\n\nIt is powered by MediaTek Dimensity 7300-Ultra with a 10050 mAh battery, and comes in Aurora Pink, Starlight Black.",
+  "highlights": [
+    "MediaTek Dimensity 7300-Ultra",
+    "30.73cm LCD display, up to 120Hz",
+    "2800 × 1980 Pixels",
+    "10050 mAh battery",
+    "Wi-Fi or 5G"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 26.60cm",
+      "Width": "about 19.28cm",
+      "Thickness": "about 0.68cm",
+      "Weight": "about 597g"
+    },
+    "Storage": {
+      "RAM and ROM Capacities": "8GB + 128GB",
+      "RAM Type": "LPDDR5X",
+      "ROM Specifications": "UFS 3.1",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "30.73cm",
+      "Screen Ratio": "88.5%",
+      "Resolution": "2800 × 1980 Pixels",
+      "Refresh Rate": [
+        "Maximum: 120Hz",
+        "Adaptive: 30/60/90/120Hz"
+      ],
+      "Touch Sampling Rate": [
+        "Maximum: 540Hz",
+        "Default: 120Hz"
+      ],
+      "Colour Gamut": [
+        "Vivid mode: 98% DCI-P3",
+        "Natural mode: 100% sRGB"
+      ],
+      "Colour Depth": "12bit (8bit + 4bit)",
+      "Pixel Density": "284 PPI",
+      "Brightness": [
+        "Normal brightness: 600nits (Typical)",
+        "HBM: 900nits (Typical)"
+      ],
+      "Panel": "LCD"
+    },
+    "Camera": {
+      "Rear": "8MP (f/2.0);  FOV 77°; 4P lens; PDAF supported",
+      "Front": "8MP (f/2.0);  FOV 77°; 4P lens; FF supported",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Panorama, TIME-LAPSE, STICKER, DOC SCANNER",
+        "Front: Photo, Video, Selfie, TIME-LAPSE, STICKER"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "1080P: 30fps",
+        "720P: 30fps",
+        "1080P TIME-LAPSE: 30fps"
+      ],
+      "Front": [
+        "1080P: 30fps",
+        "720P: 30fps",
+        "1080P TIME-LAPSE: 30fps"
+      ]
+    },
+    "Chips": {
+      "CPU": "MediaTek Dimensity 7300-Ultra",
+      "CPU Speed Cores": "8 cores",
+      "GPU": "Arm Mali-G615 MC2"
+    },
+    "Battery": {
+      "Battery": [
+        "DC/3.86 V",
+        "10050mAh/38.80Wh (Typical)",
+        "9800mAh/37.83Wh (Rated)"
+      ],
+      "Fast Charge": [
+        "Supports (Max): 33W SUPERVOOCTM, 33W UFCS",
+        "Compatible with: 33W third-party UFCS, 33W PPS, 13.5W PD"
+      ]
+    },
+    "Biometrics": {
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Ambient light sensor",
+        "Color temperature sensor",
+        "Accelerometer",
+        "Hall sensor"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 6 (802.11ax) supported",
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "WLAN Tethering supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 5.4, Low Energy, BLE Audio",
+      "Bluetooth® Audio Codec": "SBC, AAC, aptX, aptX HD, LDAC",
+      "USB Interface": "USB Type-C",
+      "Earphone Jack": [
+        "Type-C headphones",
+        "* Supported Type-C digital headphones, unsupported Type-C analog headphones"
+      ]
+    },
+    "Operating System": {
+      "Os": "ColorOS 16.0"
+    }
+  },
+  "keySpecs": {
+    "processor": "MediaTek Dimensity 7300-Ultra",
+    "displayInch": 12.1,
+    "panel": "LCD",
+    "refreshRateHz": 120,
+    "batteryMah": 10050,
+    "ramGB": 8,
+    "storageGB": 128,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        },
+        {
+          "value": "5G"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Aurora Pink",
+          "hex": "#E9C9CF"
+        },
+        {
+          "value": "Starlight Black",
+          "hex": "#22252B"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Aurora Pink": [
+        {
+          "key": "tablets/oppo-pad-5/aurora-pink-1",
+          "alt": "OPPO Pad 5 in Aurora Pink",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/06/vYy65WzCKI0g2GPj.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Starlight Black": [
+        {
+          "key": "tablets/oppo-pad-5/starlight-black-1",
+          "alt": "OPPO Pad 5 in Starlight Black",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/L57Kj3zbg7I6aMc0.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "tablets/oppo-pad-5/starlight-black-2",
+          "alt": "OPPO Pad 5 in Starlight Black, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/2fCb29OVo8mdRjpL.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "tablets/oppo-pad-5/starlight-black-3",
+          "alt": "OPPO Pad 5 in Starlight Black, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/08/ClIvAf8FgRLYFOxR.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "tablets/oppo-pad-5/starlight-black-4",
+          "alt": "OPPO Pad 5 in Starlight Black, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202601/06/dTfzTwf86MLTxwrA.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-PAD5-8128-WF-AUPI",
+      "mpn": "5081110236",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 128GB",
+        "Color": "Aurora Pink"
+      },
+      "price": 29999,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPO-PAD5-8128-WF-STBL",
+      "mpn": "5081110234",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "8GB + 128GB",
+        "Color": "Starlight Black"
+      },
+      "price": 29999,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPO-PAD5-8256-5G-AUPI",
+      "mpn": "5081110235",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "8GB + 256GB",
+        "Color": "Aurora Pink"
+      },
+      "price": 34999,
+      "mrp": 34999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "OPO-PAD5-8256-5G-STBL",
+      "mpn": "5081110233",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "8GB + 256GB",
+        "Color": "Starlight Black"
+      },
+      "price": 34999,
+      "mrp": 34999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256,
+        "cellular": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Tablet × 1",
+    "Charger × 1",
+    "USB Data Cable × 1",
+    "User Guide & Safety and Warranty Booklet × 1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/accessories/oppo-pad-5/specs-wifi",
+      "https://www.oppo.com/in/product/oppo-pad-5.P.P1110114"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oppo.com/in spec page; variants, selling price (price), list price (mrp) and images from the OPPO Store India product data."
+  }
+}

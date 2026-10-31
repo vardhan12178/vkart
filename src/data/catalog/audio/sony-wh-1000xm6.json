@@ -1,0 +1,214 @@
+{
+  "slug": "sony-wh-1000xm6",
+  "title": "Sony WH-1000XM6",
+  "brand": "Sony",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2025-09",
+  "shortDescription": "Powered by advanced processors and an adaptive microphone system, the WH-1000XM6 headphones deliver real-time noise cancellation for an immersive, distraction-free listening experience.",
+  "description": "Powered by advanced processors and an adaptive microphone system, the WH-1000XM6 headphones deliver real-time noise cancellation for an immersive, distraction-free listening experience.\n\nDeveloped in collaboration with world-renowned mastering audio engineers, these headphones deliver unparalleled sound clarity and precision. A specially designed driver with a lightweight carbon fiber dome delivers high fidelity sound, where rich vocals and every instrument remains pure and balanced.",
+  "highlights": [
+    "The Best Noise Cancellation",
+    "Co-created With Mastering Audio Engineers",
+    "HD Noise Canceling Processor QN3",
+    "Compact Carrying Case & Foldable Design",
+    "Long Battery Life and Convenient Charging",
+    "Adaptive NC Optimizer"
+  ],
+  "specs": {
+    "Features": {
+      "The Best Noise Cancellation": "Powered by advanced processors and an adaptive microphone system, the WH-1000XM6 headphones deliver real-time noise cancellation for an immersive, distraction-free listening experience.",
+      "Co-created With Mastering Audio Engineers": "Developed in collaboration with world-renowned mastering audio engineers, these headphones deliver unparalleled sound clarity and precision. A specially designed driver with a lightweight carbon fiber dome delivers high fidelity sound, where rich vocals and every instrument remains pure and balanced",
+      "HD Noise Canceling Processor QN3": "The HD Noise Canceling Processor QN3 is 7x faster than the QN1 (found in our WH-1000XM5 headphones), optimizing 12 microphones in real time for superior noise cancellation, sound quality, and call clarity. With more microphones than ever, we can precisely detect external noise and counteracts it wit",
+      "Compact Carrying Case & Foldable Design": "Crafted for durability and style, the foldable design features precision metalwork and a compact case with a magnetic closure—ready to go wherever you do. TAILORED COMFORT, THOUGHTFULLY DESIGNED: A wider, asymmetrical headband with smooth synthetic leather ensures a pressure-free, all-day fit, while",
+      "Long Battery Life and Convenient Charging": "With up to 30 hours of battery life, these headphones ensure you’re powered for even the longest trips. When you’re running low, simply plug in the USB charging cable and keep listening, with both Bluetooth and audio cable connections supported. Charge for 3 minutes and you’ll get up to 3 hours of p",
+      "Adaptive NC Optimizer": "Our new Adaptive NC Optimizer intelligently adjusts to a variety of factors, including external noise, air pressure, and your wearing style, even while wearing a hat or glasses, for uninterrupted, immersive sound. This technology monitors your environment to ensure you enjoy the purest, most immersi",
+      "Auto Ambient Sound Mode": "Our Auto Ambient Sound mode adapts to your surroundings in real time by balancing music and external sound. The multiple microphones can filter out the noise or let in what matters: announcements, conversations, or the world around you.",
+      "High-resolution Audio": "The WH-1000XM6 headphones support High-Resolution Audio and High-Resolution Audio Wireless, thanks to LDAC, our industry-adopted audio coding technology. LDAC transmits approximately three times more data than conventional Bluetooth audio for exceptional High-Resolution Audio quality."
+    }
+  },
+  "keySpecs": {
+    "type": "Over-ear headphones",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": 30
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#353535"
+        },
+        {
+          "value": "Platinum Silver",
+          "hex": "#B4B5B0"
+        },
+        {
+          "value": "Midnight Blue",
+          "hex": "#34404C"
+        },
+        {
+          "value": "SandPink",
+          "hex": "#B0A0A1"
+        },
+        {
+          "value": "Sand Stone",
+          "hex": "#A89B95"
+        },
+        {
+          "value": "Olive Gray",
+          "hex": "#787A6D"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "key": "audio/sony-wh-1000xm6/black-1",
+          "alt": "Sony WH-1000XM6 in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_df04bf55-ea47-4444-bcea-2150286f194f.jpg?v=1758890040",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "Platinum Silver": [
+        {
+          "key": "audio/sony-wh-1000xm6/platinum-silver-1",
+          "alt": "Sony WH-1000XM6 in Platinum Silver",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_09d7efe4-e2b5-4da0-8ea9-dd1ca4d00518.jpg?v=1759145883",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "Midnight Blue": [
+        {
+          "key": "audio/sony-wh-1000xm6/midnight-blue-1",
+          "alt": "Sony WH-1000XM6 in Midnight Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/Image-1_c23cab14-8b52-4768-a2c5-aee240b3102d.jpg?v=1759145883",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "SandPink": [
+        {
+          "key": "audio/sony-wh-1000xm6/sandpink-1",
+          "alt": "Sony WH-1000XM6 in SandPink",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_0c92947e-81b9-40b2-ab70-af22055efb76.jpg?v=1770983895",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "Sand Stone": [
+        {
+          "key": "audio/sony-wh-1000xm6/sand-stone-1",
+          "alt": "Sony WH-1000XM6 in Sand Stone",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_5b8a674c-c4e4-4105-ad8a-85c8b616843b.jpg?v=1780552042",
+          "width": 1000,
+          "height": 1000
+        }
+      ],
+      "Olive Gray": [
+        {
+          "key": "audio/sony-wh-1000xm6/olive-gray-1",
+          "alt": "Sony WH-1000XM6 in Olive Gray",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0301/2263/9499/files/1_71f27818-eec2-437a-a0b7-e6033e2f61c7.jpg?v=1785756394",
+          "width": 1000,
+          "height": 1000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SNY-WH1000XM6-BLACK",
+      "mpn": "WH-1000XM6/BM   IN",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 35990,
+      "mrp": 49990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WH1000XM6-PLATINUMSILVER",
+      "mpn": "WH-1000XM6/SM   IN",
+      "options": {
+        "Color": "Platinum Silver"
+      },
+      "price": 35990,
+      "mrp": 49990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WH1000XM6-MIDNIGHTBLUE",
+      "mpn": "WH-1000XM6/LM   IN",
+      "options": {
+        "Color": "Midnight Blue"
+      },
+      "price": 35990,
+      "mrp": 49990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WH1000XM6-SANDPINK",
+      "mpn": "WH-1000XM6/PMIN",
+      "options": {
+        "Color": "SandPink"
+      },
+      "price": 35990,
+      "mrp": 49990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WH1000XM6-SANDSTONE",
+      "mpn": "WH-1000XM6/TMIN",
+      "options": {
+        "Color": "Sand Stone"
+      },
+      "price": 35990,
+      "mrp": 49990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SNY-WH1000XM6-OLIVEGRAY",
+      "mpn": "WH-1000XM6/GM IN5",
+      "options": {
+        "Color": "Olive Gray"
+      },
+      "price": 35990,
+      "mrp": 49990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.shopatsc.com/products/wh-1000xm6-bm-in"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Sony's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

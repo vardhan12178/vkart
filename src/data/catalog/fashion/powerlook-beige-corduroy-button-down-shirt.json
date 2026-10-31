@@ -1,0 +1,257 @@
+{
+  "slug": "powerlook-beige-corduroy-button-down-shirt",
+  "title": "Powerlook Beige Corduroy Button-Down Shirt",
+  "brand": "Powerlook",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "shirts"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Clean, calm, and endlessly wearable. This beige corduroy shirt keeps things minimal but elevated with its fine texture and relaxed structure.",
+  "description": "Clean, calm, and endlessly wearable. This beige corduroy shirt keeps things minimal but elevated with its fine texture and relaxed structure. Perfect for days when you want to look put-together",
+  "highlights": [],
+  "specs": {
+    "Product details": {}
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "Shirts",
+    "color": "Beige",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL",
+      "5XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        },
+        {
+          "value": "4XL"
+        },
+        {
+          "value": "5XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Beige",
+          "hex": "#927C66"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Beige": [
+        {
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-1",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/2_c387e41c-e4d1-418f-9fb5-8bc2a4813259.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-2",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/4_e4d9c218-fac0-4ad3-9dae-fb15299cbb4a.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-3",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/6_51effe71-4d2b-41d8-a085-8d762f276af4.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-4",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/1_7b6f9637-d6ec-4c23-89fa-9d8318ca570c.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-5",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/5_9bad6d0e-7b9a-4b73-a17f-360ae71f13e6.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-beige-corduroy-button-down-shirt/beige-6",
+          "alt": "Powerlook Beige Corduroy Button-Down Shirt, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/3_2a6fe8d8-24e5-4f5a-bcda-f780905e0bca.jpg?v=1764582841",
+          "width": 810,
+          "height": 990
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-S",
+      "mpn": "1452121-S",
+      "options": {
+        "Size": "S",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-M",
+      "mpn": "1452121-M",
+      "options": {
+        "Size": "M",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-L",
+      "mpn": "1452121-L",
+      "options": {
+        "Size": "L",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-XL",
+      "mpn": "1452121-XL",
+      "options": {
+        "Size": "XL",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-XXL",
+      "mpn": "1452121-XXL",
+      "options": {
+        "Size": "XXL",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-3XL",
+      "mpn": "1452121-3XL",
+      "options": {
+        "Size": "3XL",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-4XL",
+      "mpn": "1452121-4XL",
+      "options": {
+        "Size": "4XL",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    },
+    {
+      "sku": "PWL-BEIGECORDUNSHIRT-5XL",
+      "mpn": "1452121-5XL",
+      "options": {
+        "Size": "5XL",
+        "Color": "Beige"
+      },
+      "price": 1199,
+      "mrp": 1199,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.powerlook.in/products/beige-corduroy-buttondown-shirt"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Powerlook's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

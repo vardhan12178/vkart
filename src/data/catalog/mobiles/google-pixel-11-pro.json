@@ -1,0 +1,382 @@
+{
+  "slug": "google-pixel-11-pro",
+  "title": "Google Pixel 11 Pro",
+  "brand": "Google",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-08",
+  "shortDescription": "6.3-inch Super Actua LTPO display, Tensor G6, 50MP + 48MP + 48MP 5x pro cameras and a 42MP selfie camera.",
+  "description": "Pixel 11 Pro is Google's compact pro phone, with a 6.3-inch Super Actua LTPO OLED display that peaks at 3,600 nits.\n\nThe pro triple camera pairs a 50MP wide with a 48MP ultrawide (with Macro Focus) and a 48MP 5x telephoto, reaching Pro Zoom up to 120x. The 42MP selfie camera has autofocus.\n\nGoogle Tensor G6 with the Titan M3 security chip runs Gemini features, and Google promises seven years of OS and security updates. The 4,850 mAh battery supports fast charging and 25W Pixelsnap (Qi2.2) wireless charging.",
+  "highlights": [
+    "6.3-inch Super Actua LTPO OLED, 1–120Hz, 3,600 nits peak",
+    "Google Tensor G6 + Titan M3",
+    "50MP wide + 48MP ultrawide + 48MP 5x telephoto, Pro Zoom up to 120x",
+    "42MP autofocus selfie camera",
+    "4,850 mAh battery, 25W Pixelsnap wireless charging",
+    "7 years of OS and security updates, IP68"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.3,
+      "type": "Super Actua LTPO OLED",
+      "resolution": "1280 × 2856",
+      "ppi": 495,
+      "refreshRate": 120,
+      "brightness": "2,400 nits HDR, 3,600 nits peak",
+      "glass": "Gorilla Glass Victus 2"
+    },
+    "Performance": {
+      "chip": "Google Tensor G6",
+      "ram": "12GB / 16GB"
+    },
+    "Camera": {
+      "rear": "50MP wide (ƒ/1.68) + 48MP ultrawide (ƒ/1.7, Macro Focus) + 48MP 5x telephoto (ƒ/2.8, OIS)",
+      "mainMP": 50,
+      "zoom": "Pro Zoom up to 120x",
+      "front": "42MP, autofocus"
+    },
+    "Battery": {
+      "capacityMah": 4850,
+      "wired": "Up to 55% in about 30 min with 30W charger",
+      "wireless": "Pixelsnap (Qi2.2) up to 25W"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "usb": "USB-C",
+      "sim": "Dual SIM (nano-SIM + eSIM)"
+    },
+    "Build": {
+      "dimensions": "152.7 × 71.9 × 8.4 mm",
+      "weightG": 204,
+      "materials": "Aluminium frame, Gorilla Glass Victus 2",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android 17",
+      "updates": "7 years of OS, security and Pixel Drop updates",
+      "ai": "Gemini"
+    },
+    "Security": {
+      "chip": "Titan M3 security coprocessor",
+      "biometrics": "Fingerprint Unlock, Face Unlock"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.3,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 42,
+    "batteryMah": 4850,
+    "chargingW": 30,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 204,
+    "chip": "Google Tensor G6",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Canyon",
+          "hex": "#E48677"
+        },
+        {
+          "value": "Olive",
+          "hex": "#84886F"
+        },
+        {
+          "value": "Fog",
+          "hex": "#C6D2CA"
+        },
+        {
+          "value": "Obsidian (matte)",
+          "hex": "#333736"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Canyon": [
+        {
+          "key": "mobiles/google-pixel-11-pro/canyon-1",
+          "alt": "Google Pixel 11 Pro in Canyon, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/lpfGf03oOHLWt_ZLnQxcmkGtPG8V1Oa1H-7YGp_TTkil3QWiZERY1WfhPHEhj8cDzZJ_ygYt-1MguOYSxDdVWNUfQpnx4J8C9bf8=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/canyon-2",
+          "alt": "Google Pixel 11 Pro in Canyon, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/DBuZ3d4TSVYS6TPo0slLBqzb2EZ2zkykfZNOUVJQZcWD56iGzr-K2UQnLI2KUzn-hmX01HDzE7eA_pGk6V3HKpgSf9K6STWOY7fT=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/canyon-3",
+          "alt": "Google Pixel 11 Pro in Canyon, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/MhItVs2rDe4IVu12k7oMf29U5I9Pmdi6_FQLC9-wvw0enRjdnFye-2JsZtdaP0_MVpDcNUlE3dOry70LA53pgML2JFrTNGyjvw=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/canyon-4",
+          "alt": "Google Pixel 11 Pro in Canyon, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/unL7-Ysz3LLLnIapEdRPRXQTGxgXNzZwYVeuJbLh6Yt8AtBOjhLWqNQ8bTsFsPjf2Dgv5VSe4qYrcUFZiccN0ur-pMvpfm876A=s1600",
+          "width": 1554,
+          "height": 1243
+        }
+      ],
+      "Olive": [
+        {
+          "key": "mobiles/google-pixel-11-pro/olive-1",
+          "alt": "Google Pixel 11 Pro in Olive, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/tVFgCRdJalTzpO-snfPSnaAvnnITU9BOQKoo_-WloTUJ_qDCg-tiCuyVulUC6tuNZciZenqq1OOtksBAaPFqrKnwf_fKOVD14A=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/olive-2",
+          "alt": "Google Pixel 11 Pro in Olive, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/BKx-UNcj3lA88IyGmZdU5to71JY5KCaAsrwaWBQOY4dELDAfpcc2xyKM7rzyN5bMwDGdBC9LYKTa6B5Fv-wnErguHDK1dn4hB2CA=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/olive-3",
+          "alt": "Google Pixel 11 Pro in Olive, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/pco7JOU58LJb4zSu51-o59In27uL4z-4nAKrMPCb6TF_ZSebgQKRXTkQPFHfoaobjdPNSSt0mIG9dzVsQcj69tgUianYC3FLyPE=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/olive-4",
+          "alt": "Google Pixel 11 Pro in Olive, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/HwmN06OMAYafpJTDaMCm6IUsn1iONPLz7K0iu1EolxNaTakWROo7SFwfdAGS5nG5VsasE7m-17enNP7WGbW_6CyoGoUFDWH3_Hg=s1600",
+          "width": 1554,
+          "height": 1243
+        }
+      ],
+      "Fog": [
+        {
+          "key": "mobiles/google-pixel-11-pro/fog-1",
+          "alt": "Google Pixel 11 Pro in Fog, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/z9YDvMS3im_9IxTkZrqOpFKbnsR7NwOJ6anTSxUJmuj7MxNPD6D0lZIAXnqGk33QNnI2sEpe1w3kNosJHy8yuZgA85M1BFJXvxA=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/fog-2",
+          "alt": "Google Pixel 11 Pro in Fog, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/NjsIE4dhO3c3zSHglEJDjKWZlaXS92TnjoUCXyKumttGOzBGauXJSVQtO2xschcmeTz1Y9iniYcG_M3AALDmO1QbD1fL23NSUuY=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/fog-3",
+          "alt": "Google Pixel 11 Pro in Fog, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/U19P3YeP5glUf1V3Z5UK8vwO7lSdA9hAx6A400pBW8Wy06Fblbtzat7S5W9ht-C0Zx8UUa97qzKKQcvYut89TZVJWhX9XbstPuw=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/fog-4",
+          "alt": "Google Pixel 11 Pro in Fog, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/M4CZ9OUSTB5ADlTEkoN39vaNkHujRv-JqNvOJ5UCUra9QbHvlHs1zT3-ElUy6TP6wmy0vRNLJphJzXupeaba2-Zu-D0UOSrvA3c=s1600",
+          "width": 1554,
+          "height": 1243
+        }
+      ],
+      "Obsidian (matte)": [
+        {
+          "key": "mobiles/google-pixel-11-pro/obsidian-matte-1",
+          "alt": "Google Pixel 11 Pro in Obsidian, back",
+          "sourceUrl": "https://lh3.googleusercontent.com/gpbBXzjLYB_aEpldnNTAhV1i5y9U59wyiopML6Wv3rQ1Mdj_J2CbHwGbscP5UbE4xsgxKoRf2dKSCvwVrScOINc60xXoxKiI055D=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/obsidian-matte-2",
+          "alt": "Google Pixel 11 Pro in Obsidian, front",
+          "sourceUrl": "https://lh3.googleusercontent.com/TJ21WGAnWPrkMHf2m_z8io85olkoh-VffMiqdGM8g3wOZHM2qiQfzPCEP7xO29hn6oMZRwCjVdGFYs8BEBZiVFAyugS9xkzoaB4=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/obsidian-matte-3",
+          "alt": "Google Pixel 11 Pro in Obsidian, side",
+          "sourceUrl": "https://lh3.googleusercontent.com/sjSjWYnKwS8FSGwd9o0To8oCCf0PJLtnipigVJ08ZRXQXoS2kpvlGOZyoABko2nD2wwc59iWChEx_FPiaF50LFh07kEvRMRxNk8=s1600",
+          "width": 1554,
+          "height": 1243
+        },
+        {
+          "key": "mobiles/google-pixel-11-pro/obsidian-matte-4",
+          "alt": "Google Pixel 11 Pro in Obsidian, angled back",
+          "sourceUrl": "https://lh3.googleusercontent.com/pNUa-aZ3Ek6YiXZGdNZMGeO9S8mR9qfc4fDMoJn_BxZiqCN78NHUNH50qpEdd2_Yg-hfrkbuLires-vwAJMarBax0zomE3H8apU=s1600",
+          "width": 1554,
+          "height": 1243
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "GGL-P11P-256-CA",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Canyon"
+      },
+      "price": 119999,
+      "mrp": 119999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P11P-256-FO",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Fog"
+      },
+      "price": 119999,
+      "mrp": 119999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P11P-256-OBMA",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Obsidian (matte)"
+      },
+      "price": 119999,
+      "mrp": 119999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P11P-256-OL",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Olive"
+      },
+      "price": 119999,
+      "mrp": 119999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "GGL-P11P-512-CA",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Canyon"
+      },
+      "price": 134999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "GGL-P11P-512-FO",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Fog"
+      },
+      "price": 134999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "GGL-P11P-512-OBMA",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Obsidian (matte)"
+      },
+      "price": 134999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "GGL-P11P-512-OL",
+      "options": {
+        "Storage": "16GB + 512GB",
+        "Color": "Olive"
+      },
+      "price": 134999,
+      "mrp": 134999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Pixel 11 Pro",
+    "1 m USB-C to USB-C cable (USB 2.0)",
+    "Quick Switch Adapter",
+    "SIM tool"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://store.google.com/in/product/pixel_11_pro_specs",
+      "https://store.google.com/in/config/pixel_11_pro"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs from the Google Store India spec page; prices and images read from the rendered configurator. Only storage/colour combinations on sale with a listed price are included."
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "slug": "oneplus-nord-6",
+  "title": "OnePlus Nord 6",
+  "brand": "OnePlus",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Snapdragon 8s Gen 4, 6.78-inch AMOLED display up to 165Hz, 9,000 mAh battery with 80W SUPERVOOC charging and a 50MP main camera.",
+  "description": "OnePlus Nord 6 runs on the Snapdragon 8s Gen 4 with OxygenOS 16 (Android 16). Its 6.78-inch AMOLED display refreshes up to 165Hz for smooth scrolling and gaming.\n\nThe 9,000 mAh battery with 80W SUPERVOOC charging is built to last more than a day, and the 50MP main camera handles everyday photos and video.\n\nIt is rated IP66, IP68, IP69, IP69K for dust and water resistance.",
+  "highlights": [
+    "Snapdragon 8s Gen 4",
+    "6.78-inch AMOLED display up to 165Hz",
+    "9,000 mAh battery with 80W SUPERVOOC charging",
+    "50MP main camera",
+    "OxygenOS 16 (Android 16)",
+    "IP66, IP68, IP69, IP69K dust and water resistance"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Height": "16.25 cm",
+      "Width": "7.75 cm",
+      "Thickness": "0.85 cm",
+      "Weight": "217g",
+      "Military-grade standard": "MIL-STD-810H"
+    },
+    "Display": {
+      "Parameters": [
+        "Size: 17.23 cm (6.78\", measured diagonally from corner to corner)",
+        "Resolution: 1.5K (FHD+), 2772 x 1272",
+        "Pixel density: 450 ppi",
+        "Aspect Ratio: 19.6:9",
+        "Screen-to-body Ratio: 93.5%",
+        "Refresh Rate: Up to 165Hz (60/90/120/144/165Hz)",
+        "Panel Type: Sunburst AMOLED (Flex)",
+        "Adjustable / Full-screen (HBM) / Peak Brightness: 800 / 1800 / 3600 nits",
+        "Color: 1.07 billion colors(10-bit)",
+        "Support sRGB, DCI-P3",
+        "100% sRGB, 100% DCI-P3",
+        "Touch Response (Instantaneous): Up to 3200 Hz with dedicated Touch Reflex chip",
+        "Eye-care Pulse-Width Modulation: 3840 Hz",
+        "Sunburst HDR technology: Yes",
+        "Protective Material: Crystal Guard (exclusively co-developed material)",
+        "IP 'Dust-water resistance' rating: IP66, IP68, IP69, IP69K"
+      ],
+      "Features": [
+        "Sunburst display",
+        "Eye comfort",
+        "Bed time mode",
+        "Screen color mode",
+        "Color personalization",
+        "Color vision enhancement",
+        "Auto/Manual brightness",
+        "White point reduction",
+        "Screen color temperature",
+        "Night Mode"
+      ]
+    },
+    "Performance": {
+      "Performance": [
+        "Operating System: OxygenOS 16.0 based on Android™ 16",
+        "CPU: Qualcomm® Snapdragon™ 8s Gen 4 Mobile Platform",
+        "GPU: Qualcomm® Adreno™ 825",
+        "RAM: 8 / 12GB LPDDR5X with OnePlus RAM-Vitalization",
+        "RAM Expansion: 4/6/8GB (8GB RAM), 4/8/12GB (12GB RAM)",
+        "Storage: 256GB UFS 4.1",
+        "Available configurations: 8GB + 256GB / 12GB + 256GB",
+        "Heat dissipation area: 33147 mm²",
+        "SiCarbon Battery: 9,000 mAh (non-removable)",
+        "80W SUPERVOOC Charging / 13.5W PD（55W PPS）",
+        "Reverse Charging: 27W (Wired only)",
+        "Bypass Charging: Yes",
+        "Haptics: X-axis motor",
+        "System fluency: Rated A for 72 months"
+      ]
+    },
+    "Camera": {
+      "Main Camera": [
+        "Sensor: Sony LYTIA-600 CMOS",
+        "Sensor Size: 1/4.96 cm (1.953\")",
+        "Megapixels: 50",
+        "Pixel Size: 0.8 µm",
+        "Lens Quantity: 5P",
+        "Dual-axis Optical Image Stabilization: Yes",
+        "Dual-axis Electronic Image Stabilization: Yes",
+        "Focal Length: 26 mm equivalent",
+        "Aperture: ƒ/1.8",
+        "Field of View: 79°",
+        "PDAF: Yes",
+        "Autofocus: Yes"
+      ],
+      "Ultra-Wide": [
+        "Sensor: OmniVision OV08F",
+        "Sensor size: 1/10.16 cm (4\")",
+        "Megapixels: 8",
+        "Pixel Size: 1.12 µm",
+        "Lens Quantity: 5P",
+        "Focal Length: 16 mm equivalent",
+        "Aperture: ƒ/2.2",
+        "Field of View: 112°"
+      ],
+      "Flash": "LED",
+      "Zoom": "0.6-20x digital zoom",
+      "Video": [
+        "4K video at 30 FPS, 1080p video at 30 FPS, 720p video at 30 FPS (beautification on 1080p 30 FPS only)",
+        "Time-lapse: 4K video at 30 FPS, 1080p at 30 FPS",
+        "Steady Mode: 1080p video at 60 FPS",
+        "HDR video capturing: Yes",
+        "Video zoom capturing: Up to 2x digital zoom"
+      ],
+      "Features": "Photo, Video, Portrait, Nightscape, Panorama, Dual-view Video, Time-lapse, Retouch, Screen Flash",
+      "Front Camera": [
+        "Sensor Size: 1/7.87 cm (3.1\")",
+        "Megapixels: 32",
+        "Lens Quantity: 5P",
+        "Pixel Size: 0.7 µm",
+        "Electronic Image Stabilization: Yes",
+        "Focal Length: 21 mm equivalent",
+        "PDAF: Yes",
+        "Autofocus: Yes",
+        "Aperture: ƒ/2.0",
+        "Field of View: 90°"
+      ]
+    },
+    "Connectivity": {
+      "eSIM": "No",
+      "Dual SIM": "Yes (with Dual SIM Dual Active support)",
+      "LTE/LTE-A": "4×4 MIMO, Supports up to DL Cat 16/UL Cat 13 (1000Mbps/150Mbps), depending on carrier support",
+      "LTE": [
+        "GSM: 850/900/1800MHz",
+        "WCDMA: Bands 1/5/8",
+        "LTE-FDD: Bands 1/3/5/8/19/28B",
+        "LTE-TDD：Bands 38/40/41/42/48",
+        "5G NR: n1/n3/n5/n8/n28/n38/n40/n41/n48/n77/n78",
+        "*Network connectivity may vary depending on carrier’s network and related service deployment."
+      ],
+      "Wi-Fi": "2x2 MIMO, Support Wi-Fi 2.4G/5G, Wi-Fi 7, Support WiFi 802.11 a/b/g/n/ac/ax/be",
+      "Bluetooth": "Bluetooth 6, supports aptX, aptX HD, aptX Adaptive, LDAC, AAC, SBC, LHDC 5.0",
+      "NFC": "NFC enabled",
+      "Positioning": "GPS, GLONASS, BDS, Galileo, QZSS, NavIC"
+    },
+    "Sensors": {
+      "Sensors": [
+        "In-display Fingerprint Sensor",
+        "Accelerometer",
+        "Electronic Compass",
+        "\"6-axis\" Gyroscope",
+        "Ambient Light Sensor",
+        "Proximity Sensor",
+        "Color Temperature Sensor",
+        "Sensor Core",
+        "Infrared blaster"
+      ]
+    },
+    "Ports": {
+      "Ports": [
+        "USB 2.0, Type-C",
+        "Support standard Type-C digital headphones only",
+        "Dual nano-SIM slot"
+      ]
+    },
+    "Buttons": {
+      "Buttons": [
+        "Gestures and on-screen navigation support",
+        "Plus Key"
+      ]
+    },
+    "Audio": {
+      "Audio": [
+        "Dual Stereo Speakers with 300% Super Audio Mode support",
+        "OReality Audio support",
+        "Noise cancellation support"
+      ]
+    },
+    "Multimedia": {
+      "Audio Supported Formats": [
+        "Playback: AAC, AMR, MIDI, MP3, OGG, WAV, FLAC, APE",
+        "Recording: WAV, AAC, MP3"
+      ],
+      "Multimedia": "HDR10",
+      "Video Supported Formats": [
+        "Playback: 3GP, MP4, MKV, HEVC, AVC, VP9, AV1, TS, MOV, M2TS",
+        "Recording: MP4"
+      ],
+      "Image Supported Formats": [
+        "Playback: JPEG, PNG, AVIF, WEBP, GIF, BMP, WBMP, HEIF, DNG, ICO",
+        "Output: JPEG, HEIF, RAW"
+      ]
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.78,
+    "refreshRateHz": 165,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 9000,
+    "chargingW": 80,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 217,
+    "chip": "Snapdragon 8s Gen 4",
+    "os": "Android",
+    "ramGB": 8
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 256GB"
+        },
+        {
+          "value": "12GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Fresh Mint",
+          "hex": null
+        },
+        {
+          "value": "Quick Silver",
+          "hex": null
+        },
+        {
+          "value": "Pitch Black",
+          "hex": null
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Fresh Mint": [
+        {
+          "key": "mobiles/oneplus-nord-6/fresh-mint-1",
+          "alt": "OnePlus Nord 6 in Fresh Mint",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/98a7d63d5463d9931341f816b6a7aacf.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "mobiles/oneplus-nord-6/fresh-mint-2",
+          "alt": "OnePlus Nord 6 in Fresh Mint, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/81dc65c7b543e8d08cd7684534cc348f.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "mobiles/oneplus-nord-6/fresh-mint-3",
+          "alt": "OnePlus Nord 6 in Fresh Mint, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/30/fe2091b216b5627eacbf86969478fa02.png",
+          "width": 960,
+          "height": 960
+        }
+      ],
+      "Quick Silver": [
+        {
+          "key": "mobiles/oneplus-nord-6/quick-silver-1",
+          "alt": "OnePlus Nord 6 in Quick Silver",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/b0f9fb50caddfe90e14e5865cf405cc7.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "mobiles/oneplus-nord-6/quick-silver-2",
+          "alt": "OnePlus Nord 6 in Quick Silver, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/e506782b1b80b814f18ea36f323a39be.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "mobiles/oneplus-nord-6/quick-silver-3",
+          "alt": "OnePlus Nord 6 in Quick Silver, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/30/7787170db73d6b912d4ad6cf9fddb972.png",
+          "width": 960,
+          "height": 960
+        }
+      ],
+      "Pitch Black": [
+        {
+          "key": "mobiles/oneplus-nord-6/pitch-black-1",
+          "alt": "OnePlus Nord 6 in Pitch Black",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/cff3893a2940d169efc7d3927152c171.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "mobiles/oneplus-nord-6/pitch-black-2",
+          "alt": "OnePlus Nord 6 in Pitch Black, view 2",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202604/07/f57d588b7aef9fa3d1ed3f329a3eff0c.png",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "key": "mobiles/oneplus-nord-6/pitch-black-3",
+          "alt": "OnePlus Nord 6 in Pitch Black, view 3",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202603/30/78a50e85dcda1a363f630e141374664f.png",
+          "width": 960,
+          "height": 960
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-N6-8256-FRMI",
+      "mpn": "5011118854",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Fresh Mint"
+      },
+      "price": 44999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-N6-8256-QUSI",
+      "mpn": "5011118856",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Quick Silver"
+      },
+      "price": 44999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-N6-8256-PIBL",
+      "mpn": "5011118851",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Pitch Black"
+      },
+      "price": 44999,
+      "mrp": 44999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-N6-12256-FRMI",
+      "mpn": "5011118853",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Fresh Mint"
+      },
+      "price": 50999,
+      "mrp": 50999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-N6-12256-QUSI",
+      "mpn": "5011118855",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Quick Silver"
+      },
+      "price": 50999,
+      "mrp": 50999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPL-N6-12256-PIBL",
+      "mpn": "5011118852",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pitch Black"
+      },
+      "price": 50999,
+      "mrp": 50999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Nord 6",
+    "80W SUPERVOOC Power Adapter",
+    "Type-A to C Cable",
+    "Quick Start Guide",
+    "Protective Case",
+    "Screen Protector (pre-applied)",
+    "SIM Tray Ejector"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/nord-6/specs",
+      "https://www.oneplus.in/oneplus-nord-6",
+      "https://www.91mobiles.com/hub/oneplus-15r-nord-6-nord-ce-6-prices-hiked-third-time/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Specs, SKUs and images from oneplus.in. Prices are current Indian listing prices from the linked reports (oneplus.in loads prices from its shop API), so verify before launch. Gallery images on image01-in.oneplus.net could not be checked from the collection environment."
+  }
+}

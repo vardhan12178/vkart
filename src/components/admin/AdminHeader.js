@@ -110,7 +110,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
         navigate("/admin/users");
         break;
       case "alert":
-        navigate("/admin/products");
+        navigate("/admin/catalog");
         break;
       case "return":
       case "refund":

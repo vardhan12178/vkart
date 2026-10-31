@@ -1,0 +1,146 @@
+{
+  "slug": "samsung-galaxy-buds4-pro",
+  "title": "Samsung Galaxy Buds4 Pro",
+  "brand": "Samsung",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Samsung's flagship earbuds with intelligent ANC, 24-bit Hi-Fi audio and Galaxy AI features like Interpreter.",
+  "description": "Galaxy Buds4 Pro are Samsung's best earbuds, with intelligent Active Noise Cancellation that adapts to your surroundings and 24-bit Hi-Fi sound on Galaxy phones.\n\nThey support Galaxy AI features such as live Interpreter, have an IP57 rating and come in Pink Gold, White or Black.",
+  "highlights": [
+    "Intelligent Active Noise Cancellation",
+    "24-bit Hi-Fi audio",
+    "Galaxy AI Interpreter",
+    "360 Audio",
+    "IP57",
+    "Pink Gold, White or Black"
+  ],
+  "specs": {
+    "Audio": {
+      "anc": "Intelligent ANC",
+      "hiFi": "24-bit Hi-Fi (Galaxy devices)",
+      "spatial": "360 Audio"
+    },
+    "Build": {
+      "ipRating": "IP57"
+    },
+    "Smart features": {
+      "ai": "Galaxy AI Interpreter"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ipRating": "IP57",
+    "connectivity": "Bluetooth"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Pink Gold",
+          "hex": "#E3C2B4"
+        },
+        {
+          "value": "White",
+          "hex": "#F2F2F2"
+        },
+        {
+          "value": "Black",
+          "hex": "#1F1F1F"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Pink Gold": [
+        {
+          "key": "audio/samsung-galaxy-buds4-pro/pink-gold-1",
+          "alt": "Samsung Galaxy Buds4 Pro in Pink Gold",
+          "sourceUrl": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_pinkGold_PC_pro.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "White": [
+        {
+          "key": "audio/samsung-galaxy-buds4-pro/white-1",
+          "alt": "Samsung Galaxy Buds4 Pro in White",
+          "sourceUrl": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_white_PC_pro.png",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Black": [
+        {
+          "key": "audio/samsung-galaxy-buds4-pro/black-1",
+          "alt": "Samsung Galaxy Buds4 Pro in Black",
+          "sourceUrl": "https://images.samsung.com/in/galaxy-buds4/buy/product_color_black_PC_pro.png",
+          "width": 1600,
+          "height": 864
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-R640NZDA",
+      "mpn": "SM-R640NZDAINU",
+      "options": {
+        "Color": "Pink Gold"
+      },
+      "price": 22999,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SAM-R640NZWA",
+      "mpn": "SM-R640NZWAINU",
+      "options": {
+        "Color": "White"
+      },
+      "price": 22999,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "SAM-R640NZKA",
+      "mpn": "SM-R640NZKAINU",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 22999,
+      "mrp": 29999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Earbuds",
+    "Charging case",
+    "Ear tips",
+    "USB-C cable",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/audio-sound/galaxy-buds4-pro/buy/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, model codes, selling price (price) and MRP (mrp) from the Samsung India buy page."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "slug": "bose-quietcomfort-ultra-headphones-2",
+  "title": "Bose QuietComfort Ultra Headphones (2nd Gen)",
+  "brand": "Bose",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-03",
+  "shortDescription": "Obsessively engineered with our best noise cancellation and spatialized audio for immersive listening, the QuietComfort Ultra Headphones (2nd Gen) make every note expand, every piece of dialogue hit harder, and every mel",
+  "description": "Obsessively engineered with our best noise cancellation and spatialized audio for immersive listening, the QuietComfort Ultra Headphones (2nd Gen) make every note expand, every piece of dialogue hit harder, and every melody take up more space. They’re crafted with luxe materials for unrivaled comfort and premium design, letting you sink deeper than ever into your favorite songs and video content.",
+  "highlights": [
+    "Bose's best noise cancellation",
+    "Immersive spatialised audio",
+    "Premium materials and comfort",
+    "Five colours"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": []
+    }
+  },
+  "keySpecs": {
+    "type": "Over-ear headphones",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": null
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White",
+          "hex": "#CBC7C6"
+        },
+        {
+          "value": "Desert Gold",
+          "hex": "#202020"
+        },
+        {
+          "value": "Midnight Violet",
+          "hex": "#3A4177"
+        },
+        {
+          "value": "Driftwood Sand",
+          "hex": "#CFB494"
+        },
+        {
+          "value": "Black",
+          "hex": "#2A2A2A"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "White": [
+        {
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/white-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHII26-WhiteSmoke_Hero_RGB_5a852914-141c-40a1-9df4-0d4b53d929e8.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "Desert Gold": [
+        {
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/desert-gold-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Desert Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-DesertGold_ThreeQuarterLeft_7200x7200_86a1f78c-a23b-4773-90f2-c81168c4796f.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "Midnight Violet": [
+        {
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/midnight-violet-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Midnight Violet",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-MidnightViolet_ThreeQuarterLeft_7200x7200_797e8529-03eb-47ca-a0c1-666c839551e9.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "Driftwood Sand": [
+        {
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/driftwood-sand-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Driftwood Sand",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHIILE26-DriftwoodSand_ThreeQuarterLeft_7200x7200_88863604-5a68-4333-aeb4-24369378d489.jpg?v=1772695633",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "Black": [
+        {
+          "key": "audio/bose-quietcomfort-ultra-headphones-2/black-1",
+          "alt": "Bose QuietComfort Ultra Headphones (2nd Gen) in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0904/2873/5761/files/QCUHII26-BoseBlack_Hero_RGB_ce78dcc3-ebab-476a-9b13-c4050ba28e6d.jpg?v=1772103399",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOS-QCUH2-WHITE",
+      "mpn": "890101-0200",
+      "options": {
+        "Color": "White"
+      },
+      "price": 31990,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUH2-DESERTGOLD",
+      "mpn": "890101-0400",
+      "options": {
+        "Color": "Desert Gold"
+      },
+      "price": 31990,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUH2-MIDNIGHTVIOLET",
+      "mpn": "890101-0300",
+      "options": {
+        "Color": "Midnight Violet"
+      },
+      "price": 31990,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUH2-DRIFTWOODSAND",
+      "mpn": "890101-0500",
+      "options": {
+        "Color": "Driftwood Sand"
+      },
+      "price": 31990,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOS-QCUH2-BLACK",
+      "mpn": "890101-0100",
+      "options": {
+        "Color": "Black"
+      },
+      "price": 31990,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boseindia.com/products/bose-quietcomfort-ultra-headphones-2nd-gen"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Bose's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

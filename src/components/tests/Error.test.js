@@ -36,7 +36,7 @@ describe("Error (404) Component", () => {
     fireEvent.change(input, { target: { value: "shoes" } });
     fireEvent.click(screen.getByRole("button", { name: /^search$/i }));
 
-    expect(window.location.href).toBe("/products?search=shoes");
+    expect(window.location.href).toBe("/products?q=shoes");
   });
 
   test("does not navigate when the search box is empty", () => {

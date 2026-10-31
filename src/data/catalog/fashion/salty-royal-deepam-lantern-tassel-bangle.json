@@ -1,0 +1,121 @@
+{
+  "slug": "salty-royal-deepam-lantern-tassel-bangle",
+  "title": "Salty Royal Deepam Lantern Tassel Bangle",
+  "brand": "Salty",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "bangles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Salty women's bangles & bracelet in Gold.",
+  "description": "Salty women's bangles & bracelet in Gold.",
+  "highlights": [
+    "Stones: pearl, beads"
+  ],
+  "specs": {
+    "Product details": {
+      "Stones": "pearl, beads"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Bangles & Bracelets",
+    "color": "Gold",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "One Size"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "One Size"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gold",
+          "hex": "#8C5233"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gold": [
+        {
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-1",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Model.png?v=1792922627",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-2",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Main.png?v=1792922627",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-3",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_Model1.png?v=1792922627",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-4",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/BS15332-G-BU_WB.jpg?v=1793011394",
+          "width": 2048,
+          "height": 2048
+        },
+        {
+          "key": "fashion/salty-royal-deepam-lantern-tassel-bangle/gold-5",
+          "alt": "Salty Royal Deepam Lantern Tassel Bangle, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0644/2457/5191/files/Lantern_Bracelet_GIF_Final.gif?v=1792170793",
+          "width": 1228,
+          "height": 1228
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SLT-TRADITIONALDBLUE-ONESIZE",
+      "mpn": "BS15332-G-BU",
+      "options": {
+        "Size": "One Size",
+        "Color": "Gold"
+      },
+      "price": 649,
+      "mrp": 859,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.salty.co.in/products/traditional-royal-deepam-cascade-drop-lantern-tassel-bangle-gold-blue"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Salty's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

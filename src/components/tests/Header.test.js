@@ -82,7 +82,9 @@ describe("Header Component", () => {
     renderHeader();
     expect(screen.getByRole("link", { name: /vkart home/i })).toHaveAttribute("href", "/");
     const desktopNav = screen.getByRole("navigation", { name: /main navigation/i });
-    expect(within(desktopNav).getByRole("link", { name: /collection/i })).toHaveAttribute("href", "/products");
+    expect(within(desktopNav).getByRole("link", { name: /^home$/i })).toHaveAttribute("href", "/");
+    // Browsing happens through the category strip, search and "View all"; no separate Collection link
+    expect(within(desktopNav).queryByRole("link", { name: /collection/i })).not.toBeInTheDocument();
   });
 
   test("hides the header entirely on auth pages", () => {
@@ -132,26 +134,112 @@ describe("Header Component", () => {
     });
     renderHeader();
     const desktopNav = await screen.findByRole("navigation", { name: /main navigation/i });
-    expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute("href", "/products?sale=true");
+    expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute("href", "/products?sort=discount");
   });
 
-  test("submits a search and navigates using the AI-parsed filters", async () => {
+  test("submits a search and navigates using the AI-parsed category and price", async () => {
     axios.post.mockResolvedValueOnce({
-      data: { q: null, category: "electronics", minPrice: null, maxPrice: 30000, minRating: null, sort: null },
+      data: { q: "", category: "mobiles", minPrice: null, maxPrice: 30000, minRating: null, sort: null },
     });
     renderHeader();
 
     // The always-visible desktop search input triggers the search on Enter
-    // (it isn't wrapped in a <form>; only the mobile overlay's input is).
     const searchInput = screen.getAllByPlaceholderText(/search, or ask/i)[0];
-    fireEvent.change(searchInput, { target: { value: "cheap electronics" } });
+    fireEvent.change(searchInput, { target: { value: "phones under 30000" } });
     fireEvent.keyDown(searchInput, { key: "Enter" });
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", { query: "cheap electronics" });
+      expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", { query: "phones under 30000" });
     });
-    await waitFor(() => {
-      expect(mockNavigate).toHaveBeenCalledWith(expect.stringContaining("/products?cat=electronics"));
+    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/products?cat=mobiles&max=30000"));
+  });
+
+  test("keeps keywords when the parser finds no category", async () => {
+    axios.post.mockResolvedValueOnce({ data: { q: "sony", category: null, minPrice: null, maxPrice: null, sort: "price_asc" } });
+    renderHeader();
+    const searchInput = screen.getAllByPlaceholderText(/search, or ask/i)[0];
+    fireEvent.change(searchInput, { target: { value: "sony cheapest first" } });
+    fireEvent.keyDown(searchInput, { key: "Enter" });
+    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/products?q=sony&sort=price-asc"));
+  });
+
+  test("opens the Categories menu with links into the listing", async () => {
+    renderHeader();
+    const desktopNav = screen.getByRole("navigation", { name: /main navigation/i });
+    const button = within(desktopNav).getByRole("button", { name: /categories/i });
+    expect(button).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(button);
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    expect(within(desktopNav).getByRole("link", { name: /mobiles/i })).toHaveAttribute("href", "/products?cat=mobiles");
+    expect(within(desktopNav).getByRole("link", { name: /women's fashion/i })).toHaveAttribute("href", "/products?cat=fashion-women");
+    expect(within(desktopNav).getByRole("link", { name: /browse all products/i })).toHaveAttribute("href", "/products");
+
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(button).toHaveAttribute("aria-expanded", "false");
+  });
+
+  describe("search suggestions", () => {
+    const product = { slug: "samsung-galaxy-s26", title: "Samsung Galaxy S26", brand: "Samsung", price: 79999, image: null };
+
+    beforeEach(() => {
+      localStorage.clear();
+      jest.useFakeTimers();
+      axios.get.mockImplementation((url) => {
+        if (url === "/api/v2/products") return Promise.resolve({ data: { products: [product], total: 1 } });
+        if (url === "/api/sales/active") return Promise.resolve({ data: { sale: null } });
+        return Promise.resolve({ data: {} });
+      });
+    });
+    afterEach(() => jest.useRealTimers());
+
+    const type = async (input, value) => {
+      fireEvent.change(input, { target: { value } });
+      jest.advanceTimersByTime(300);
+      await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/v2/products", expect.objectContaining({ params: { q: value, limit: 5 } })));
+    };
+
+    test("offers the matching category, products and an Ask VKart hand-off", async () => {
+      const { store } = renderHeader();
+      const input = screen.getAllByRole("combobox", { name: /search products/i })[0];
+      await type(input, "samsung phone");
+
+      const list = await screen.findByRole("listbox", { name: /search suggestions/i });
+      const options = within(list).getAllByRole("option");
+      expect(options[0]).toHaveTextContent(/samsung in mobiles/i);
+      await waitFor(() => expect(within(list).getByRole("option", { name: /samsung galaxy s26/i })).toBeInTheDocument());
+
+      fireEvent.click(within(list).getByRole("option", { name: /ask vkart about "samsung phone"/i }));
+      expect(store.getState().ui.isChatOpen).toBe(true);
+      expect(store.getState().ui.chatPrompt.text).toBe("samsung phone");
+    });
+
+    test("arrow keys pick a suggestion and the search is remembered", async () => {
+      renderHeader();
+      const input = screen.getAllByRole("combobox", { name: /search products/i })[0];
+      await type(input, "samsung phone");
+      await screen.findByRole("option", { name: /samsung galaxy s26/i });
+
+      fireEvent.keyDown(input, { key: "ArrowDown" });
+      expect(input).toHaveAttribute("aria-activedescendant");
+      fireEvent.keyDown(input, { key: "Enter" });
+      expect(mockNavigate).toHaveBeenCalledWith("/products?cat=mobiles&q=samsung");
+      expect(JSON.parse(localStorage.getItem("vkart:recent-searches"))).toEqual(["samsung phone"]);
+    });
+
+    test("an empty box shows recent searches and popular categories", () => {
+      localStorage.setItem("vkart:recent-searches", JSON.stringify(["earbuds under 5000"]));
+      renderHeader();
+      const input = screen.getAllByRole("combobox", { name: /search products/i })[0];
+      fireEvent.focus(input);
+
+      const list = screen.getByRole("listbox", { name: /search suggestions/i });
+      expect(within(list).getByRole("option", { name: /earbuds under 5000/i })).toBeInTheDocument();
+      expect(within(list).getByRole("option", { name: /^audio$/i })).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: /remove "earbuds under 5000"/i }));
+      expect(within(list).queryByRole("option", { name: /earbuds under 5000/i })).not.toBeInTheDocument();
+      expect(localStorage.getItem("vkart:recent-searches")).toBe("[]");
     });
   });
 
@@ -160,5 +248,7 @@ describe("Header Component", () => {
     const toggle = screen.getByLabelText(/open menu/i);
     fireEvent.click(toggle);
     expect(screen.getByLabelText(/close menu/i)).toBeInTheDocument();
+    // The drawer lists every category
+    expect(screen.getAllByRole("link", { name: /kitchen/i }).some((a) => a.getAttribute("href") === "/products?cat=kitchen-appliances")).toBe(true);
   });
 });

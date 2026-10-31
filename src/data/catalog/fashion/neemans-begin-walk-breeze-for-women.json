@@ -1,0 +1,229 @@
+{
+  "slug": "neemans-begin-walk-breeze-for-women",
+  "title": "Neeman's Begin Walk Breeze for Women",
+  "brand": "Neeman's",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "flats"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Still snoozing your morning alarms? Dragging yourself to walks like it’s an early morning meeting?",
+  "description": "Still snoozing your morning alarms? Dragging yourself to walks like it’s an early morning meeting? It’s not you; it’s your shoes. Meet the Begin Walk ‘Breeze’. With a breathable knit upper, energy-returning insole, responsive cushioning & compression midsole, and a pressure-mapped outsole, these shoes offer you the most comfortable walking experience, all while managing the stiffness and stress on your joints & muscles.",
+  "highlights": [
+    "Outer Material: Recycled PET Knit",
+    "Sole Material: EVA (Ethylene Vinyl Acetate)",
+    "Closure Type: Slip On",
+    "Shoe Size Width: Medium",
+    "Toe Style: Almond Toe"
+  ],
+  "specs": {
+    "Product details": {
+      "Outer Material": "Recycled PET Knit",
+      "Sole Material": "EVA (Ethylene Vinyl Acetate)",
+      "Closure Type": "Slip On",
+      "Shoe Size Width": "Medium",
+      "Toe Style": "Almond Toe",
+      "Arch Type": "Medium Arch",
+      "Water-Resistant": "No",
+      "Shoe Height": "Low Top"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Flats & Sandals",
+    "color": "Green",
+    "fabric": "Recycled PET Knit",
+    "fit": null,
+    "sizes": [
+      "UK 4",
+      "UK 5",
+      "UK 6",
+      "UK 7",
+      "UK 8"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "UK 4"
+        },
+        {
+          "value": "UK 5"
+        },
+        {
+          "value": "UK 6"
+        },
+        {
+          "value": "UK 7"
+        },
+        {
+          "value": "UK 8"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Green",
+          "hex": "#4D8979"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Green": [
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-1",
+          "alt": "Neeman's Begin Walk Breeze for Women",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_28.jpg?v=1792742052",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-2",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_07.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-3",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_51.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-4",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_09.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-5",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_01.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-6",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 6",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_27.jpg?v=1792742052",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-7",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 7",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_26.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "key": "fashion/neemans-begin-walk-breeze-for-women/green-8",
+          "alt": "Neeman's Begin Walk Breeze for Women, view 8",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/2428/5565/files/BeginWalkBreeze_Men__Terracotta-Ecru_23.jpg?v=1792742051",
+          "width": 1600,
+          "height": 1000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NEE-BEGINWALKBPGREEN-UK4",
+      "mpn": "NF-BWBA19-991F99-4",
+      "options": {
+        "Size": "UK 4",
+        "Color": "Green"
+      },
+      "price": 2499,
+      "mrp": 3899,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-BEGINWALKBPGREEN-UK5",
+      "mpn": "NF-BWBA19-991F99-5",
+      "options": {
+        "Size": "UK 5",
+        "Color": "Green"
+      },
+      "price": 2499,
+      "mrp": 3899,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-BEGINWALKBPGREEN-UK6",
+      "mpn": "NF-BWBA19-991F99-6",
+      "options": {
+        "Size": "UK 6",
+        "Color": "Green"
+      },
+      "price": 2499,
+      "mrp": 3899,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-BEGINWALKBPGREEN-UK7",
+      "mpn": "NF-BWBA19-991F99-7",
+      "options": {
+        "Size": "UK 7",
+        "Color": "Green"
+      },
+      "price": 2499,
+      "mrp": 3899,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "NEE-BEGINWALKBPGREEN-UK8",
+      "mpn": "NF-BWBA19-991F99-8",
+      "options": {
+        "Size": "UK 8",
+        "Color": "Green"
+      },
+      "price": 2499,
+      "mrp": 3899,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://neemans.com/products/begin-walk-breeze-for-women-deep-green"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Neeman's's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

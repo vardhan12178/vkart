@@ -1,17 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
-import {
-  FaBox,
-  FaChevronDown,
-  FaMapMarkerAlt,
-  FaReceipt,
-  FaShoppingBag,
-  FaFileDownload,
-  FaTimes,
-  FaUndoAlt,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { ChevronDownIcon, CircleCheckIcon, FileDownIcon, MapPinIcon, PackageIcon, ReceiptIcon, ShoppingBagIcon, Undo2Icon, XIcon } from "./ui/icons";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -22,14 +12,14 @@ const INR = (n) =>
 
 /* ---- MODERN STAGE STYLES ---- */
 const stageStyles = {
-  PLACED: { bg: "bg-slate-100", text: "text-slate-700", dot: "bg-slate-500", border: "border-slate-200" },
-  CONFIRMED: { bg: "bg-blue-50", text: "text-blue-700", dot: "bg-blue-500", border: "border-blue-200" },
-  PROCESSING: { bg: "bg-amber-50", text: "text-amber-700", dot: "bg-amber-500", border: "border-amber-200" },
-  PACKED: { bg: "bg-indigo-50", text: "text-indigo-700", dot: "bg-indigo-500", border: "border-indigo-200" },
-  SHIPPED: { bg: "bg-purple-50", text: "text-purple-700", dot: "bg-purple-500", border: "border-purple-200" },
-  OUT_FOR_DELIVERY: { bg: "bg-orange-50", text: "text-orange-700", dot: "bg-orange-500", border: "border-orange-200" },
-  DELIVERED: { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500", border: "border-emerald-200" },
-  CANCELLED: { bg: "bg-red-50", text: "text-red-700", dot: "bg-red-500", border: "border-red-200" },
+  PLACED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-muted", border: "border-line-strong" },
+  CONFIRMED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
+  PROCESSING: { bg: "bg-accent/10", text: "text-accent", dot: "bg-accent", border: "border-accent/30" },
+  PACKED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
+  SHIPPED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
+  OUT_FOR_DELIVERY: { bg: "bg-accent/10", text: "text-accent", dot: "bg-accent", border: "border-accent/30" },
+  DELIVERED: { bg: "bg-ok/10", text: "text-ok", dot: "bg-ok", border: "border-ok/30" },
+  CANCELLED: { bg: "bg-alert/10", text: "text-alert", dot: "bg-alert", border: "border-alert/30" },
 };
 
 const apiBase =
@@ -76,8 +66,8 @@ export default function OrderCard({ order, defaultOpen = false }) {
     <div
       className={`group relative rounded-2xl sm:rounded-3xl border transition-all duration-300 overflow-hidden ${
         open
-          ? "bg-white border-slate-200 shadow-sm"
-          : "bg-white border-gray-200/80 shadow-2xs hover:border-gray-300 hover:shadow-xs"
+          ? "bg-white border-line-strong shadow-sm"
+          : "bg-white border-line-strong/80 shadow-2xs hover:border-line-strong hover:shadow-xs"
       }`}
     >
       {/* --- SUMMARY HEADER --- */}
@@ -88,17 +78,21 @@ export default function OrderCard({ order, defaultOpen = false }) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           {/* Left: Thumbnail + Name + Date + Status */}
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 max-w-[56px] max-h-[56px] sm:max-w-[64px] sm:max-h-[64px] rounded-xl bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
-              <img
-                src={firstProduct.image || firstProduct.thumbnail || "https://via.placeholder.com/80"}
-                alt="Product"
-                className="w-full h-full max-w-full max-h-full object-contain mix-blend-multiply"
-              />
+            <div className="w-14 h-14 sm:w-16 sm:h-16 max-w-[56px] max-h-[56px] sm:max-w-[64px] sm:max-h-[64px] rounded-xl bg-sand border border-line p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
+              {firstProduct.image || firstProduct.thumbnail ? (
+                <img
+                  src={firstProduct.image || firstProduct.thumbnail}
+                  alt={firstProduct.name || "Product"}
+                  className="w-full h-full max-w-full max-h-full object-contain mix-blend-multiply"
+                />
+              ) : (
+                <PackageIcon className="text-2xl text-muted-light" aria-label="No image" />
+              )}
             </div>
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 tracking-tight truncate">
+                <h3 className="text-xs sm:text-sm font-bold text-ink tracking-tight truncate">
                   {(() => {
                     const products = order.products || [];
                     if (products.length === 0) return "Order";
@@ -112,14 +106,14 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 {(() => {
                   if (hasRefund) {
                     return (
-                      <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-ok/10 text-ok border border-ok/30">
                         Refund {order.refundStatus}
                       </span>
                     );
                   }
                   if (hasReturn) {
                     return (
-                      <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200">
+                      <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-accent/10 text-accent border border-accent/30">
                         Return {order.returnStatus}
                       </span>
                     );
@@ -135,10 +129,10 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 })()}
               </div>
 
-              <div className="flex items-center gap-2 text-[11px] text-slate-400 font-medium">
+              <div className="flex items-center gap-2 text-[11px] text-muted-light font-medium">
                 <span>{orderDate}</span>
                 {order._id && (
-                  <span className="hidden sm:inline font-mono text-[10px] text-slate-300">
+                  <span className="hidden sm:inline font-mono text-[10px] text-muted-faint">
                     #{order._id.substring(order._id.length - 8)}
                   </span>
                 )}
@@ -147,11 +141,11 @@ export default function OrderCard({ order, defaultOpen = false }) {
               {/* Status Badge on Mobile */}
               <div className="sm:hidden mt-1.5">
                 {hasRefund ? (
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-ok/10 text-ok border border-ok/30">
                     Refund {order.refundStatus}
                   </span>
                 ) : hasReturn ? (
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-accent/10 text-accent border border-accent/30">
                     Return {order.returnStatus}
                   </span>
                 ) : (
@@ -167,16 +161,16 @@ export default function OrderCard({ order, defaultOpen = false }) {
           </div>
 
           {/* Right: Total + Items + Toggle */}
-          <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-6 border-t sm:border-t-0 border-gray-100 pt-2 sm:pt-0">
+          <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-6 border-t sm:border-t-0 border-line pt-2 sm:pt-0">
             <div className="flex items-center gap-4 sm:gap-6">
               <div>
-                <p className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Total</p>
-                <p className="text-xs sm:text-sm font-bold text-slate-900">{INR(order.totalPrice)}</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">Total</p>
+                <p className="text-xs sm:text-sm font-bold text-ink">{INR(order.totalPrice)}</p>
               </div>
               <div>
-                <p className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Items</p>
-                <p className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-1">
-                  <FaShoppingBag size={10} className="text-orange-500" />
+                <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">Items</p>
+                <p className="text-xs sm:text-sm font-bold text-ink flex items-center gap-1">
+                  <ShoppingBagIcon size={10} className="text-accent" />
                   <span>{order.products?.length || 0}</span>
                 </p>
               </div>
@@ -184,11 +178,11 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             <button
               className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all ${
-                open ? "bg-slate-900 text-white rotate-180 shadow-2xs" : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                open ? "bg-ink text-white rotate-180 shadow-2xs" : "bg-tint text-muted hover:bg-line"
               }`}
               title={open ? "Collapse" : "Expand"}
             >
-              <FaChevronDown size={10} />
+              <ChevronDownIcon size={10} />
             </button>
           </div>
         </div>
@@ -196,34 +190,34 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
       {/* --- EXPANDED DETAILS --- */}
       {open && (
-        <div className="border-t border-gray-100 bg-slate-50/60 p-3.5 sm:p-6 space-y-4 sm:space-y-6 animate-fade-in">
+        <div className="border-t border-line bg-sand/60 p-3.5 sm:p-6 space-y-4 sm:space-y-6 animate-fade-in">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 sm:gap-5">
             {/* Column 1: Delivery & Payment Details */}
             <div className="space-y-3 sm:space-y-4">
-              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 shadow-2xs">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  <FaMapMarkerAlt className="text-orange-500" />
+              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-line shadow-2xs">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-muted-light uppercase tracking-wider mb-2">
+                  <MapPinIcon className="text-accent" />
                   <span>Delivery Address</span>
                 </div>
-                <p className="text-xs font-medium text-slate-700 leading-relaxed whitespace-pre-line">
+                <p className="text-xs font-medium text-ink-soft leading-relaxed whitespace-pre-line">
                   {order.shippingAddress || "No shipping address specified"}
                 </p>
               </div>
 
-              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 shadow-2xs">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  <FaReceipt className="text-emerald-500" />
+              <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-line shadow-2xs">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-muted-light uppercase tracking-wider mb-2">
+                  <ReceiptIcon className="text-ok" />
                   <span>Payment Summary</span>
                 </div>
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Payment Method</span>
-                    <span className="font-bold text-slate-900">Online (Prepaid)</span>
+                    <span className="text-muted">Payment Method</span>
+                    <span className="font-bold text-ink">Online (Prepaid)</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Payment Status</span>
-                    <span className="font-bold text-emerald-600 inline-flex items-center gap-1">
-                      <FaCheckCircle size={10} /> Paid
+                    <span className="text-muted">Payment Status</span>
+                    <span className="font-bold text-ok inline-flex items-center gap-1">
+                      <CircleCheckIcon size={10} /> Paid
                     </span>
                   </div>
                 </div>
@@ -232,27 +226,31 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             {/* Column 2: Items Ordered List */}
             <div>
-              <div className="bg-white rounded-xl border border-gray-100 shadow-2xs overflow-hidden">
-                <div className="px-3.5 py-2.5 border-b border-gray-100 bg-slate-50/50">
-                  <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+              <div className="bg-white rounded-xl border border-line shadow-2xs overflow-hidden">
+                <div className="px-3.5 py-2.5 border-b border-line bg-sand/50">
+                  <h4 className="text-[11px] font-bold text-muted-light uppercase tracking-wider">
                     Items Ordered ({order.products?.length || 0})
                   </h4>
                 </div>
-                <div className="divide-y divide-gray-50 max-h-56 overflow-y-auto">
+                <div className="divide-y divide-line max-h-56 overflow-y-auto">
                   {(order.products || []).map((p, i) => (
-                    <div key={i} className="p-2.5 sm:p-3 flex items-center gap-3 hover:bg-slate-50/80 transition">
-                      <div className="w-10 h-10 max-w-[40px] max-h-[40px] rounded-lg bg-slate-50 border border-slate-100 p-1 flex items-center justify-center shrink-0 overflow-hidden">
-                        <img
-                          src={p.image || p.thumbnail}
-                          alt={p.name}
-                          className="w-full h-full max-w-full max-h-full object-contain mix-blend-multiply"
-                        />
+                    <div key={i} className="p-2.5 sm:p-3 flex items-center gap-3 hover:bg-sand/80 transition">
+                      <div className="w-10 h-10 max-w-[40px] max-h-[40px] rounded-lg bg-sand border border-line p-1 flex items-center justify-center shrink-0 overflow-hidden">
+                        {p.image || p.thumbnail ? (
+                          <img
+                            src={p.image || p.thumbnail}
+                            alt={p.name}
+                            className="w-full h-full max-w-full max-h-full object-contain mix-blend-multiply"
+                          />
+                        ) : (
+                          <PackageIcon className="text-xl text-muted-light" aria-label="No image" />
+                        )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs font-bold text-slate-900 truncate">{p.name}</p>
-                        <p className="text-[11px] text-slate-400">Qty: {p.quantity}</p>
+                        <p className="text-xs font-bold text-ink truncate">{p.name}</p>
+                        <p className="text-[11px] text-muted-light">Qty: {p.quantity}</p>
                       </div>
-                      <div className="text-xs font-bold text-slate-900 shrink-0">
+                      <div className="text-xs font-bold text-ink shrink-0">
                         {INR(p.lineTotal ?? p.price * p.quantity)}
                       </div>
                     </div>
@@ -263,9 +261,9 @@ export default function OrderCard({ order, defaultOpen = false }) {
           </div>
 
           {/* Timeline Section */}
-          <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-gray-100 shadow-2xs">
-            <h4 className="text-xs font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-1.5">
-              <FaBox className="text-orange-500" />
+          <div className="bg-white p-3.5 sm:p-5 rounded-xl border border-line shadow-2xs">
+            <h4 className="text-xs font-bold text-ink mb-3 sm:mb-4 flex items-center gap-1.5">
+              <PackageIcon className="text-accent" />
               <span>Order Tracking Timeline</span>
             </h4>
             <OrderStages
@@ -279,16 +277,16 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap pt-1">
             <button
               onClick={() => window.open(`${apiBase}/api/orders/${order._id}/invoice`, "_blank")}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 transition shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-line-strong text-xs font-bold text-ink-soft hover:bg-tint transition shadow-2xs"
             >
-              <FaFileDownload size={11} className="text-slate-500" />
+              <FileDownIcon size={11} className="text-muted" />
               <span>Download Invoice</span>
             </button>
 
             {stage === "DELIVERED" && (
               <>
                 {order.returnStatus && order.returnStatus !== "NONE" ? (
-                  <span className="text-xs font-bold text-amber-700 px-3 py-1.5 bg-amber-50 rounded-xl border border-amber-200">
+                  <span className="text-xs font-bold text-accent px-3 py-1.5 bg-accent/10 rounded-xl border border-accent/30">
                     Return: {order.returnStatus}
                   </span>
                 ) : (
@@ -300,9 +298,9 @@ export default function OrderCard({ order, defaultOpen = false }) {
                       setReturnType("REFUND");
                       setShowReturn(true);
                     }}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-2xs hover:bg-black transition disabled:opacity-60"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-ink text-white text-xs font-bold shadow-2xs hover:bg-black transition disabled:opacity-60"
                   >
-                    <FaUndoAlt size={10} />
+                    <Undo2Icon size={10} />
                     <span>{returnBusy ? "Submitting..." : "Request Return"}</span>
                   </button>
                 )}
@@ -316,9 +314,9 @@ export default function OrderCard({ order, defaultOpen = false }) {
                   setRefundMethod("ORIGINAL");
                   setShowCancel(true);
                 }}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-red-200 bg-red-50 text-xs font-bold text-red-700 hover:bg-red-100 transition shadow-2xs"
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-alert/30 bg-alert/10 text-xs font-bold text-alert hover:bg-alert/10 transition shadow-2xs"
               >
-                <FaTimes size={10} />
+                <XIcon size={10} />
                 <span>Cancel Order</span>
               </button>
             )}
@@ -331,30 +329,30 @@ export default function OrderCard({ order, defaultOpen = false }) {
         <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md shadow-2xl space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
-              <h3 className="text-base font-bold text-slate-900">Request Return / Replacement</h3>
-              <button onClick={() => setShowReturn(false)} className="text-slate-400 hover:text-slate-600">
-                <FaTimes size={14} />
+              <h3 className="text-base font-bold text-ink">Request Return / Replacement</h3>
+              <button onClick={() => setShowReturn(false)} className="text-muted-light hover:text-muted">
+                <XIcon size={14} />
               </button>
             </div>
             <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Reason for Return</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">Reason for Return</label>
               <textarea
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Explain the issue with the item..."
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-100"
+                className="w-full p-2.5 rounded-xl border border-line-strong text-xs focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30"
                 rows={3}
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Return Type</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">Return Type</label>
               <div className="flex items-center gap-4 text-xs">
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={returnType === "REFUND"} onChange={() => setReturnType("REFUND")} className="text-orange-500" />
+                  <input type="radio" checked={returnType === "REFUND"} onChange={() => setReturnType("REFUND")} className="text-accent" />
                   Refund
                 </label>
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={returnType === "REPLACEMENT"} onChange={() => setReturnType("REPLACEMENT")} className="text-orange-500" />
+                  <input type="radio" checked={returnType === "REPLACEMENT"} onChange={() => setReturnType("REPLACEMENT")} className="text-accent" />
                   Replacement
                 </label>
               </div>
@@ -362,14 +360,14 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             {returnType === "REFUND" && (
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Refund Destination</label>
+                <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">Refund Destination</label>
                 <div className="space-y-1.5 text-xs">
                   <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                    <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} className="text-orange-500" />
+                    <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} className="text-accent" />
                     Original Payment Method (5-7 business days)
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                    <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} className="text-orange-500" />
+                    <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} className="text-accent" />
                     VKart Wallet (Instant credit)
                   </label>
                 </div>
@@ -377,7 +375,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
             )}
 
             <div className="flex justify-end gap-2 pt-2">
-              <button onClick={() => setShowReturn(false)} className="px-3.5 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50">
+              <button onClick={() => setShowReturn(false)} className="px-3.5 py-1.5 rounded-xl border border-line-strong text-xs font-bold text-ink-soft hover:bg-sand">
                 Cancel
               </button>
               <button
@@ -398,7 +396,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                     setShowReturn(false);
                   }
                 }}
-                className="px-4 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-black transition disabled:opacity-50"
+                className="px-4 py-1.5 rounded-xl bg-ink text-white text-xs font-bold hover:bg-black transition disabled:opacity-50"
               >
                 {returnBusy ? "Submitting..." : "Submit Return"}
               </button>
@@ -412,36 +410,36 @@ export default function OrderCard({ order, defaultOpen = false }) {
         <div className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md shadow-2xl space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
-              <h3 className="text-base font-bold text-slate-900">Cancel Order</h3>
-              <button onClick={() => setShowCancel(false)} className="text-slate-400 hover:text-slate-600">
-                <FaTimes size={14} />
+              <h3 className="text-base font-bold text-ink">Cancel Order</h3>
+              <button onClick={() => setShowCancel(false)} className="text-muted-light hover:text-muted">
+                <XIcon size={14} />
               </button>
             </div>
             <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Reason for Cancellation</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">Reason for Cancellation</label>
               <textarea
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Why do you wish to cancel this order?"
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-100"
+                className="w-full p-2.5 rounded-xl border border-line-strong text-xs focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30"
                 rows={3}
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Refund Destination</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">Refund Destination</label>
               <div className="space-y-1.5 text-xs">
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} className="text-orange-500" />
+                  <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} className="text-accent" />
                   Original Payment Method (5-7 business days)
                 </label>
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} className="text-orange-500" />
+                  <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} className="text-accent" />
                   VKart Wallet (Instant credit)
                 </label>
               </div>
             </div>
             <div className="flex justify-end gap-2 pt-2">
-              <button onClick={() => setShowCancel(false)} className="px-3.5 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50">
+              <button onClick={() => setShowCancel(false)} className="px-3.5 py-1.5 rounded-xl border border-line-strong text-xs font-bold text-ink-soft hover:bg-sand">
                 Close
               </button>
               <button
@@ -459,7 +457,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                     setShowCancel(false);
                   }
                 }}
-                className="px-4 py-1.5 rounded-xl bg-red-600 text-white text-xs font-bold hover:bg-red-700 transition disabled:opacity-50"
+                className="px-4 py-1.5 rounded-xl bg-alert text-white text-xs font-bold hover:bg-alert transition disabled:opacity-50"
               >
                 Confirm Cancel
               </button>

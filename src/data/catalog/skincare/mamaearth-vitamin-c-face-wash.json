@@ -1,0 +1,95 @@
+{
+  "slug": "mamaearth-vitamin-c-face-wash",
+  "title": "Mamaearth Vitamin C Face Wash with Turmeric",
+  "brand": "Mamaearth",
+  "category": "skincare",
+  "categoryPath": [
+    "beauty",
+    "skincare",
+    "cleanser"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "The first step in a skincare routine, cleansing or washing your face helps in eliminating excess oil, dirt, and lethargy.Mamaearth vitamin c face wash with the goodness of Vitamin C and Turmeric has brightening propertie",
+  "description": "The first step in a skincare routine, cleansing or washing your face helps in eliminating excess oil, dirt, and lethargy.Mamaearth vitamin c face wash with the goodness of Vitamin C and Turmeric has brightening properties to give your skin a natural glow. It also helps in skin repair by boosting collagen production and blood circulation, leaving the skin radiant and healthy. Perfect for daily use, this face wash suits all skin types, retains moisture, controls excess oil, and fights free radical damage.Dermatologically tested, this vitamin c face wash has no harmful chemicals and is free of Toxins, Parabens, and Mineral Oils",
+  "highlights": [
+    "Cleanser",
+    "Key actives: Vitamin C, Turmeric"
+  ],
+  "specs": {
+    "Product": {
+      "type": "Cleanser",
+      "skinType": [
+        "all"
+      ],
+      "keyIngredients": [
+        "Vitamin C",
+        "Turmeric"
+      ]
+    }
+  },
+  "keySpecs": {
+    "productType": "Cleanser",
+    "skinTypes": [
+      "all"
+    ],
+    "keyIngredients": [
+      "Vitamin C",
+      "Turmeric"
+    ],
+    "spf": null
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "100ml"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "skincare/mamaearth-vitamin-c-face-wash/common-1",
+        "alt": "Mamaearth Vitamin C Face Wash with Turmeric",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ChatGPT_Image_Jul_23_2026_01_53_09_PM.png?v=1784800143",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "key": "skincare/mamaearth-vitamin-c-face-wash/common-2",
+        "alt": "Mamaearth Vitamin C Face Wash with Turmeric, view 2",
+        "sourceUrl": "https://cdn.shopify.com/s/files/1/0721/7558/3279/files/ChatGPT_Image_Jul_23_2026_03_17_05_PM.png?v=1784800143",
+        "width": 1254,
+        "height": 1254
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "MAM-VITCFW-100ML",
+      "mpn": "8904417305425",
+      "options": {
+        "Size": "100ml"
+      },
+      "price": 570,
+      "mrp": 570,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://mamaearth.in/products/vitamin-c-face-wash-with-vitamin-c-and-turmeric-for-skin-illumination-pack-of-2"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Pack sizes/shades, selling price (price), list price (mrp), images and description from Mamaearth's official online store. Product type, skin types and key ingredients are detected from the store's product text."
+  }
+}

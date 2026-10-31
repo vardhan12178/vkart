@@ -1,0 +1,273 @@
+{
+  "slug": "samsung-galaxy-tab-s12-plus",
+  "title": "Samsung Galaxy Tab S12+",
+  "brand": "Samsung",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "12.4-inch Dynamic AMOLED 2X tablet with S Pen in the box, Galaxy AI and IP68.",
+  "description": "Galaxy Tab S12+ brings the flagship Tab experience to a 12.4-inch Dynamic AMOLED 2X display at 120Hz.\n\nThe S Pen is included, it runs Galaxy AI features with 12GB of RAM and is rated IP68, in Gray or Silver with Wi-Fi or 5G.",
+  "highlights": [
+    "12.4-inch Dynamic AMOLED 2X, 120Hz",
+    "S Pen included",
+    "12GB RAM",
+    "Galaxy AI",
+    "IP68",
+    "Wi-Fi or 5G"
+  ],
+  "specs": {
+    "Display": {
+      "size": 12.4,
+      "type": "Dynamic AMOLED 2X",
+      "refreshRate": 120
+    },
+    "Memory": {
+      "ram": "12GB",
+      "storage": "256GB / 512GB, microSD expandable"
+    },
+    "Accessories": {
+      "sPen": "Included"
+    },
+    "Build": {
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android with One UI",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 12.4,
+    "panel": "AMOLED",
+    "refreshRateHz": 120,
+    "pencil": "S Pen (included)",
+    "ramGB": 12,
+    "storageGB": 256,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        },
+        {
+          "value": "5G"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Gray",
+          "hex": "#5E6166"
+        },
+        {
+          "value": "Silver",
+          "hex": "#C8CACC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Gray": [
+        {
+          "key": "tablets/samsung-galaxy-tab-s12-plus/gray-1",
+          "alt": "Samsung Galaxy Tab S12+ in Gray",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/TS12_plus_Color_Selection_Gray_PC_1600x864.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Silver": [
+        {
+          "key": "tablets/samsung-galaxy-tab-s12-plus/silver-1",
+          "alt": "Samsung Galaxy Tab S12+ in Silver",
+          "sourceUrl": "https://images.samsung.com/is/image/samsung/assets/in/TS12_plus_Color_Selection_Silver_PC_1600x864.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-X840NZAA",
+      "mpn": "SM-X840NZAAINU",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 256GB",
+        "Color": "Gray"
+      },
+      "price": 129999,
+      "mrp": 194999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "SAM-X840NZSA",
+      "mpn": "SM-X840NZSAINU",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 256GB",
+        "Color": "Silver"
+      },
+      "price": 129999,
+      "mrp": 194999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "SAM-X846BZAA",
+      "mpn": "SM-X846BZAAINU",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "12GB + 256GB",
+        "Color": "Gray"
+      },
+      "price": 144999,
+      "mrp": 217499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "SAM-X846BZSA",
+      "mpn": "SM-X846BZSAINU",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "12GB + 256GB",
+        "Color": "Silver"
+      },
+      "price": 144999,
+      "mrp": 217499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "SAM-X840NZAE",
+      "mpn": "SM-X840NZAEINU",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 512GB",
+        "Color": "Gray"
+      },
+      "price": 149999,
+      "mrp": 224999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "SAM-X840NZSE",
+      "mpn": "SM-X840NZSEINU",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 512GB",
+        "Color": "Silver"
+      },
+      "price": 149999,
+      "mrp": 224999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "SAM-X846BZAE",
+      "mpn": "SM-X846BZAEINU",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "12GB + 512GB",
+        "Color": "Gray"
+      },
+      "price": 164999,
+      "mrp": 247499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512,
+        "cellular": true
+      }
+    },
+    {
+      "sku": "SAM-X846BZSE",
+      "mpn": "SM-X846BZSEINU",
+      "options": {
+        "Configuration": "5G",
+        "Storage": "12GB + 512GB",
+        "Color": "Silver"
+      },
+      "price": 164999,
+      "mrp": 247499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512,
+        "cellular": true
+      }
+    }
+  ],
+  "inTheBox": [
+    "Tablet",
+    "S Pen",
+    "USB-C data cable",
+    "Ejection pin"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/tablets/galaxy-tab-s12/buy/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Variants, model codes, selling price (price) and MRP (mrp) from the Samsung India buy page; images are Samsung's colour-selection and in-the-box shots."
+  }
+}

@@ -115,7 +115,7 @@ describe("AdminDashboard Component", () => {
     expect(mockNavigate).toHaveBeenCalledWith("/admin/orders");
 
     fireEvent.click(screen.getByRole("button", { name: /view all products/i }));
-    expect(mockNavigate).toHaveBeenCalledWith("/admin/products");
+    expect(mockNavigate).toHaveBeenCalledWith("/admin/catalog");
   });
 
   test("switches the analytics time range", async () => {

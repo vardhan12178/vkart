@@ -1,0 +1,131 @@
+{
+  "slug": "boat-nirvana-zenith-pro",
+  "title": "boAt Nirvana Zenith Pro",
+  "brand": "boAt",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": "2026-07",
+  "shortDescription": "boAt Nirvana Zenith Pro: TWS Earbuds with Spatial Audio, 80H Playback & 50dB Hybrid Adaptive ANC \"Awarded Best TWS by Gadgets 360\".",
+  "description": "boAt Nirvana Zenith Pro: TWS Earbuds with Spatial Audio, 80H Playback & 50dB Hybrid Adaptive ANC \"Awarded Best TWS by Gadgets 360\".",
+  "highlights": [
+    "TWS Earbuds with Spatial Audio",
+    "80H Playback & 50dB Hybrid Adaptive ANC \"Awarded Best TWS by Gadgets 360\""
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "TWS Earbuds with Spatial Audio",
+        "80H Playback & 50dB Hybrid Adaptive ANC \"Awarded Best TWS by Gadgets 360\""
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": 50,
+    "batteryHours": 80
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Platinum Gold",
+          "hex": "#A1937F"
+        },
+        {
+          "value": "Velvet Grey",
+          "hex": "#505152"
+        },
+        {
+          "value": "Crimson Red",
+          "hex": "#7E5252"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Platinum Gold": [
+        {
+          "key": "audio/boat-nirvana-zenith-pro/platinum-gold-1",
+          "alt": "boAt Nirvana Zenith Pro in Platinum Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_3_4b082e15-f8ef-4669-b20f-672c114e1513.png?v=1775545161",
+          "width": 1044,
+          "height": 1052
+        }
+      ],
+      "Velvet Grey": [
+        {
+          "key": "audio/boat-nirvana-zenith-pro/velvet-grey-1",
+          "alt": "boAt Nirvana Zenith Pro in Velvet Grey",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_2_0937e9e7-33ba-44ee-892d-ad427998ef7c.png?v=1775545161",
+          "width": 1044,
+          "height": 1052
+        }
+      ],
+      "Crimson Red": [
+        {
+          "key": "audio/boat-nirvana-zenith-pro/crimson-red-1",
+          "alt": "boAt Nirvana Zenith Pro in Crimson Red",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0057/8938/4802/files/Artboard_1_6dc90fe0-4924-4273-bbf2-263dfd4848bb.png?v=1775545161",
+          "width": 1044,
+          "height": 1052
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "BOA-NZP-PLATINUMGOLD",
+      "mpn": "8905650102758",
+      "options": {
+        "Color": "Platinum Gold"
+      },
+      "price": 3199,
+      "mrp": 14990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-NZP-VELVETGREY",
+      "mpn": "8905650102741",
+      "options": {
+        "Color": "Velvet Grey"
+      },
+      "price": 3249,
+      "mrp": 14990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "BOA-NZP-CRIMSONRED",
+      "mpn": "8905650102765",
+      "options": {
+        "Color": "Crimson Red"
+      },
+      "price": 3249,
+      "mrp": 14990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.boat-lifestyle.com/products/boat-nirvana-zenith-pro-ss-edition"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from boAt's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

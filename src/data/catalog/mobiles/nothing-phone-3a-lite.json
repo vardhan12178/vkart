@@ -1,0 +1,236 @@
+{
+  "slug": "nothing-phone-3a-lite",
+  "title": "Nothing Phone (3a) Lite",
+  "brand": "Nothing",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2025-11",
+  "shortDescription": "Affordable Nothing phone with Dimensity 7300 Pro, 6.77-inch 120Hz display, 50MP triple camera and 5,000 mAh battery.",
+  "description": "Phone (3a) Lite brings Nothing's transparent design to a lower price, with a glass finish and the Dimensity 7300 Pro 5G chip.\n\nThe 6.77-inch display runs at up to 120Hz with 3,000 nits peak brightness. A 50MP main camera and 8MP ultra-wide handle everyday shots, with a 16MP selfie camera.\n\nIt has a 5,000 mAh battery, weighs 199 g and is rated IP54.",
+  "highlights": [
+    "Dimensity 7300 Pro 5G",
+    "6.77-inch display, 120Hz, 3,000 nits peak",
+    "50MP main + 8MP ultra-wide",
+    "16MP front camera",
+    "5,000 mAh battery",
+    "IP54, 199 g"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.77,
+      "type": "AMOLED",
+      "refreshRate": 120,
+      "brightness": "3,000 nits peak"
+    },
+    "Performance": {
+      "chip": "MediaTek Dimensity 7300 Pro 5G"
+    },
+    "Camera": {
+      "rear": "50MP main + 8MP ultra-wide",
+      "front": "16MP"
+    },
+    "Battery": {
+      "capacityMah": 5000
+    },
+    "Build": {
+      "weightG": 199,
+      "ipRating": "IP54"
+    },
+    "Software": {
+      "os": "Nothing OS 3.5"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.77,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 16,
+    "batteryMah": 5000,
+    "chargingW": null,
+    "wirelessCharging": false,
+    "weightG": 199,
+    "chip": "MediaTek Dimensity 7300 Pro",
+    "ramGB": 8,
+    "is5G": true,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White",
+          "hex": "#DBDBDA"
+        },
+        {
+          "value": "Black",
+          "hex": "#2C2F33"
+        },
+        {
+          "value": "Blue",
+          "hex": "#28738E"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "White": [
+        {
+          "key": "mobiles/nothing-phone-3a-lite/white-1",
+          "alt": "Nothing Phone (3a) Lite in White",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-White.png?v=1761642504",
+          "width": 4096,
+          "height": 4014
+        }
+      ],
+      "Black": [
+        {
+          "key": "mobiles/nothing-phone-3a-lite/black-1",
+          "alt": "Nothing Phone (3a) Lite in Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-Black.png?v=1761642504",
+          "width": 4096,
+          "height": 4014
+        }
+      ],
+      "Blue": [
+        {
+          "key": "mobiles/nothing-phone-3a-lite/blue-1",
+          "alt": "Nothing Phone (3a) Lite in Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-Blue.png?v=1764156508",
+          "width": 4096,
+          "height": 4014
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NTH-P3AL-8128-WHI",
+      "mpn": "6974434227033",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "White"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-P3AL-8128-BLA",
+      "mpn": "6974434227026",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Black"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-P3AL-8128-BLU",
+      "mpn": null,
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Blue"
+      },
+      "price": 20999,
+      "mrp": 20999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "NTH-P3AL-8256-WHI",
+      "mpn": "6974434227057",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "White"
+      },
+      "price": 22999,
+      "mrp": 22999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P3AL-8256-BLA",
+      "mpn": "6974434227040",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 22999,
+      "mrp": 22999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "NTH-P3AL-8256-BLU",
+      "mpn": null,
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Blue"
+      },
+      "price": 22999,
+      "mrp": 22999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Nothing Phone (3a) Lite",
+    "USB-C to USB-C cable",
+    "SIM tray ejector",
+    "Safety information and warranty card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://in.nothing.tech/products/phone-3a-lite"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Variants, launch prices and images from Nothing's India store data (phones are sold through Flipkart). Nothing publishes no structured spec sheet; key specs are taken from the product page text, so some fields are missing."
+  }
+}

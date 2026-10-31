@@ -90,12 +90,12 @@ describe("Cart Component", () => {
     expect(screen.getByText("Test Widget")).toBeInTheDocument();
     // subtotal 500, shipping 50 (below 999 threshold), total 550
     expect(screen.getAllByText("₹550").length).toBeGreaterThan(0);
-    expect(screen.getByText(/add .*for free shipping/i)).toBeInTheDocument();
+    expect(screen.getByText(/more for free delivery/i)).toBeInTheDocument();
   });
 
   test("shows free shipping once subtotal reaches 999", () => {
     renderCart({ cart: [{ ...PRODUCT, price: 1000 }] });
-    expect(screen.getByText(/free shipping unlocked/i)).toBeInTheDocument();
+    expect(screen.getByText(/unlocked free delivery/i)).toBeInTheDocument();
   });
 
   test("increments and decrements item quantity", () => {

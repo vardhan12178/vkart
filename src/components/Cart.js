@@ -1,4 +1,5 @@
-import React, { useMemo, useState, useRef } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
+import { shippingFor } from "../utils/shipping";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector, useDispatch } from "react-redux";
 import CartPreview from "./CartPreview";
@@ -8,31 +9,21 @@ import {
   removeFromCart,
   clearCart,
   addToCart,
+  refreshCartLines,
 } from "../redux/cartSlice";
 import {
   toggleWishlist,
   removeFromWishlist,
   clearWishlist,
 } from "../redux/wishlistSlice";
-import { Link } from "react-router-dom";
-import {
-  FaShoppingCart,
-  FaTrash,
-  FaHeart,
-  FaCartPlus,
-  FaTag,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaArrowRight,
-  FaTruck,
-  FaMinus,
-  FaPlus,
-  FaShoppingBag,
-} from "react-icons/fa";
+import { Link, useSearchParams } from "react-router-dom";
+import { ArrowRightIcon, CircleXIcon, HeartIcon, MinusIcon, PlusIcon, ShoppingBagIcon, ShoppingCartIcon, TagIcon, Trash2Icon } from "./ui/icons";
 import CheckoutForm from "./CheckoutForm";
+import { FreeDeliveryProgress } from "./MiniCart";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
 import { buildSecureOrderPayload } from "../utils/orderPayload";
+import { cartItemFromSaved } from "./shop/shopItems";
 import { qk } from "../query/queryKeys";
 
 /* ---------- Helpers ---------- */
@@ -65,6 +56,17 @@ export default function Cart() {
   const cartItems = useSelector((s) => s.cart);
   const wishlistItems = useSelector((s) => s.wishlist);
 
+  // Catalog lines: refresh price and stock from the server so the cart never shows stale values
+  const v2Key = cartItems.filter((it) => it.catalog === "v2").map((it) => `${it.productId}:${it.sku}:${it.quantity}`).join("|");
+  useEffect(() => {
+    const lines = cartItems.filter((it) => it.catalog === "v2" && it.productId && it.sku);
+    if (!lines.length) return;
+    axios.post("/api/v2/cart/resolve", { items: lines.map((it) => ({ productId: String(it.productId), sku: it.sku, quantity: it.quantity })) })
+      .then(({ data }) => dispatch(refreshCartLines(data?.items || [])))
+      .catch(() => { /* keep the stored values; the server re-prices at checkout anyway */ });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [v2Key]);
+
   const [showPaymentDetails, setShowPaymentDetails] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -94,7 +96,7 @@ export default function Cart() {
     const promoOff = promoApplied?.discount || 0;
 
     const subtotal = round2(rawSell - promoOff);
-    const shipping = subtotal >= 999 ? 0 : 50;
+    const shipping = shippingFor(subtotal);
 
     // Tax included in subtotal
     const tax = round2(subtotal * (TAX_RATE / (1 + TAX_RATE)));
@@ -158,6 +160,10 @@ export default function Cart() {
           currency: "INR",
         };
         if (it.selectedVariants) payload.selectedVariants = it.selectedVariants;
+        if (it.catalog === "v2") {
+          payload.catalog = "v2";
+          payload.sku = it.sku;
+        }
         if (mongoId) payload.productId = String(mongoId);
         if (!mongoId && extId) payload.externalId = extId;
         return payload;
@@ -204,6 +210,17 @@ export default function Cart() {
   };
 
   const moveWishlistToCart = (item) => {
+    if (item.catalog === "v2") {
+      const line = cartItemFromSaved(item);
+      if (!line) {
+        showToast("Open the product to choose a variant", "info");
+        return;
+      }
+      dispatch(addToCart(line));
+      dispatch(removeFromWishlist(keyOf(item)));
+      showToast("Moved to Cart", "success");
+      return;
+    }
     dispatch(addToCart({ ...item, quantity: 1 }));
     dispatch(removeFromWishlist(keyOf(item)));
     showToast("Moved to Cart", "success");
@@ -215,6 +232,15 @@ export default function Cart() {
       checkoutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 200);
   };
+
+  // "Checkout" in the mini cart lands here with ?checkout=1: open the payment step straight away
+  const [params, setParams] = useSearchParams();
+  useEffect(() => {
+    if (params.get("checkout") !== "1") return;
+    setParams({}, { replace: true });
+    if (cartItems.length) handleProceed();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const hasCartItems = cartItems.length > 0;
   const hasWishlistItems = wishlistItems.length > 0;
@@ -228,8 +254,8 @@ export default function Cart() {
       <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] flex items-center justify-center p-4">
         <AnimStyles />
         <div className="text-center animate-fade-up max-w-md">
-          <div className="w-20 h-20 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
-            <FaShoppingCart className="text-3xl text-orange-400" />
+          <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
+            <ShoppingCartIcon className="text-3xl text-accent" />
           </div>
           <h2 className="font-editorial text-3xl sm:text-5xl font-normal text-[#1d1c19] mb-2">Your bag is waiting.</h2>
           <p className="text-[#777269] text-xs sm:text-sm mb-6">You haven’t added anything yet. Start with the latest edit.</p>
@@ -237,7 +263,7 @@ export default function Cart() {
             to="/products"
             className="inline-flex items-center justify-center gap-2 bg-[#1d1c19] text-white px-6 py-3 rounded-full text-xs font-bold shadow-lg hover:bg-black transition-colors"
           >
-            Explore the collection <FaArrowRight size={12} />
+            Explore the collection <ArrowRightIcon size={12} />
           </Link>
         </div>
       </div>
@@ -306,10 +332,10 @@ export default function Cart() {
                             </div>
                             <button
                               onClick={() => setConfirmRemoveId(k)}
-                              className="text-gray-300 hover:text-red-500 transition-colors p-1 shrink-0"
+                              className="text-muted-faint hover:text-alert transition-colors p-1 shrink-0"
                               aria-label="Remove item"
                             >
-                              <FaTrash size={12} />
+                              <Trash2Icon size={12} />
                             </button>
                           </div>
 
@@ -319,16 +345,16 @@ export default function Cart() {
                               <button
                                 onClick={() => dispatch(decrementQuantity(k))}
                                 disabled={item.quantity <= 1}
-                                className="w-7 sm:w-9 h-full flex items-center justify-center text-gray-500 hover:text-gray-900 rounded-l-lg transition disabled:opacity-30"
+                                className="w-7 sm:w-9 h-full flex items-center justify-center text-muted hover:text-ink rounded-l-lg transition disabled:opacity-30"
                               >
-                                <FaMinus size={9} />
+                                <MinusIcon size={9} />
                               </button>
                               <span className="w-5 sm:w-7 text-center font-bold text-xs">{item.quantity}</span>
                               <button
                                 onClick={() => dispatch(incrementQuantity(k))}
-                                className="w-7 sm:w-9 h-full flex items-center justify-center text-gray-500 hover:text-gray-900 rounded-r-lg transition"
+                                className="w-7 sm:w-9 h-full flex items-center justify-center text-muted hover:text-ink rounded-r-lg transition"
                               >
-                                <FaPlus size={9} />
+                                <PlusIcon size={9} />
                               </button>
                             </div>
 
@@ -349,7 +375,7 @@ export default function Cart() {
                           onClick={() => moveToWishlist(item)}
                           className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#716c63] hover:text-[#a85d37] transition-colors"
                         >
-                          <FaHeart size={11} className="text-gray-300 group-hover:text-[#a85d37]" />
+                          <HeartIcon size={11} className="text-muted-faint group-hover:text-[#a85d37]" />
                           Save for Later
                         </button>
 
@@ -357,7 +383,7 @@ export default function Cart() {
                           <div className="flex items-center gap-2 animate-fade-up ml-auto">
                             <span className="text-[11px] font-bold text-[#75483b]">Remove?</span>
                             <button onClick={() => dispatch(removeFromCart(k))} className="rounded-full bg-[#eee2dc] px-2.5 py-0.5 text-[11px] font-bold text-[#75483b]">Yes</button>
-                            <button onClick={() => setConfirmRemoveId(null)} className="text-[11px] font-bold text-gray-500 px-1.5 py-0.5">Cancel</button>
+                            <button onClick={() => setConfirmRemoveId(null)} className="text-[11px] font-bold text-muted px-1.5 py-0.5">Cancel</button>
                           </div>
                         )}
                       </div>
@@ -367,13 +393,13 @@ export default function Cart() {
               </div>
             ) : (
               /* Empty Cart Banner (Show only if Wishlist has items) */
-              <div className="bg-white rounded-2xl p-6 text-center border border-dashed border-gray-300">
-                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-400">
-                  <FaShoppingBag size={20} />
+              <div className="bg-white rounded-2xl p-6 text-center border border-dashed border-line-strong">
+                <div className="w-12 h-12 bg-sand rounded-full flex items-center justify-center mx-auto mb-3 text-muted-light">
+                  <ShoppingBagIcon size={20} />
                 </div>
-                <h3 className="text-base font-bold text-gray-900">Your cart is empty</h3>
-                <p className="text-xs text-gray-500 mb-3">You have items saved for later!</p>
-                <Link to="/products" className="text-xs font-bold text-orange-600 hover:underline">Continue Shopping</Link>
+                <h3 className="text-base font-bold text-ink">Your cart is empty</h3>
+                <p className="text-xs text-muted mb-3">You have items saved for later!</p>
+                <Link to="/products" className="text-xs font-bold text-accent hover:underline">Continue Shopping</Link>
               </div>
             )}
 
@@ -382,7 +408,7 @@ export default function Cart() {
               <div className={hasCartItems ? "mt-6 sm:mt-10" : "mt-4"}>
                 <div className="flex items-center justify-between mb-2.5 sm:mb-4">
                   <h2 className="font-editorial text-lg sm:text-xl font-bold text-[#1d1c19] flex items-center gap-2">
-                    <FaHeart size={13} className="text-[#a85d37]" /> Saved for Later
+                    <HeartIcon size={13} fill="currentColor" className="text-[#a85d37]" /> Saved for Later
                   </h2>
                   <button onClick={() => dispatch(clearWishlist())} className="rounded-full border border-black/10 bg-[#eee8df] px-2.5 py-1 text-[10px] sm:text-xs font-bold text-[#6f6b62] transition-colors hover:bg-[#e6ddd2] hover:text-[#1d1c19]">Clear all</button>
                 </div>
@@ -402,7 +428,7 @@ export default function Cart() {
                         onClick={() => moveWishlistToCart(w)}
                         className="mt-2 text-[10px] sm:text-xs font-bold text-[#a85d37] hover:text-white hover:bg-[#a85d37] bg-[#fbf3ee] py-1.5 px-2 rounded-lg transition-colors flex items-center justify-center gap-1 w-full"
                       >
-                        <FaCartPlus size={10} /> Move to Cart
+                        <ShoppingCartIcon size={10} /> Move to Cart
                       </button>
                     </div>
                   ))}
@@ -429,12 +455,12 @@ export default function Cart() {
                     </div>
                     <div className="flex justify-between">
                       <span>Shipping</span>
-                      <span className={calc.shipping === 0 ? "text-green-600 font-bold" : "text-[#1d1c19] font-semibold"}>
+                      <span className={calc.shipping === 0 ? "text-ok font-bold" : "text-[#1d1c19] font-semibold"}>
                         {calc.shipping === 0 ? "Free" : INR(calc.shipping)}
                       </span>
                     </div>
                     {calc.promoOff > 0 && (
-                      <div className="flex justify-between text-green-600 font-bold">
+                      <div className="flex justify-between text-ok font-bold">
                         <span>Discount</span>
                         <span>-{INR(calc.promoOff)}</span>
                       </div>
@@ -451,28 +477,28 @@ export default function Cart() {
                   {/* Promo Input */}
                   <div className="mt-4 sm:mt-6">
                     {promoApplied ? (
-                      <div className="flex items-center justify-between bg-green-50 px-3.5 py-2.5 rounded-xl border border-green-200">
+                      <div className="flex items-center justify-between bg-ok/10 px-3.5 py-2.5 rounded-xl border border-ok/30">
                         <div className="flex items-center gap-2">
-                          <FaTag className="text-green-600 text-xs" />
-                          <span className="text-xs font-bold text-green-700">{promoApplied.code}</span>
-                          <span className="text-[11px] text-green-600">-{INR(promoApplied.discount)}</span>
+                          <TagIcon className="text-ok text-xs" />
+                          <span className="text-xs font-bold text-ok">{promoApplied.code}</span>
+                          <span className="text-[11px] text-ok">-{INR(promoApplied.discount)}</span>
                         </div>
                         <button onClick={removePromo} className="text-xs font-bold text-[#75483b] hover:underline">Remove</button>
                       </div>
                     ) : (
                       <div className="relative">
-                        <FaTag className="absolute left-3.5 top-3 text-gray-400 text-xs" />
+                        <TagIcon className="absolute left-3.5 top-3 text-muted-light text-xs" />
                         <input
                           value={promo}
                           onChange={(e) => setPromo(e.target.value)}
                           onKeyDown={(e) => e.key === "Enter" && applyPromo()}
                           placeholder="Coupon Code"
-                          className="w-full pl-9 pr-16 py-2.5 rounded-xl bg-[#f6f3ed] border border-black/[0.06] text-xs font-bold text-[#1d1c19] focus:outline-none focus:ring-1 focus:ring-[#a85d37] placeholder:text-gray-400"
+                          className="w-full pl-9 pr-16 py-2.5 rounded-xl bg-[#f6f3ed] border border-black/[0.06] text-xs font-bold text-[#1d1c19] focus:outline-none focus:ring-1 focus:ring-[#a85d37] placeholder:text-muted-light"
                         />
                         <button
                           onClick={applyPromo}
                           disabled={promoLoading}
-                          className="absolute right-1.5 top-1.5 bottom-1.5 px-2.5 bg-white rounded-lg text-xs font-bold text-[#1d1c19] shadow-sm hover:bg-gray-50 transition disabled:opacity-50"
+                          className="absolute right-1.5 top-1.5 bottom-1.5 px-2.5 bg-white rounded-lg text-xs font-bold text-[#1d1c19] shadow-sm hover:bg-sand transition disabled:opacity-50"
                         >
                           {promoLoading ? "..." : "Apply"}
                         </button>
@@ -507,7 +533,7 @@ export default function Cart() {
                       </div>
                     )}
                     {showCoupons && !promoApplied && availableCoupons.length === 0 && (
-                      <p className="mt-2 text-xs text-gray-400 text-center">No coupons available right now</p>
+                      <p className="mt-2 text-xs text-muted-light text-center">No coupons available right now</p>
                     )}
                   </div>
 
@@ -516,30 +542,11 @@ export default function Cart() {
                     onClick={handleProceed}
                     className="hidden lg:flex w-full mt-6 py-3.5 rounded-full bg-[#1d1c19] text-white font-bold text-sm shadow-lg hover:bg-black transition-all items-center justify-center gap-2"
                   >
-                    Checkout <FaArrowRight size={12} />
+                    Checkout <ArrowRightIcon size={12} />
                   </button>
 
-                  {/* Free Shipping Bar */}
-                  <div className="mt-4 bg-[#fbf3ee] p-3 rounded-xl border border-[#a85d37]/15">
-                    {calc.subtotal < 999 ? (
-                      <>
-                        <div className="flex justify-between text-[11px] font-bold text-[#6f6b62] mb-1.5">
-                          <span>Add {INR(999 - calc.subtotal)} for Free Shipping</span>
-                          <span><FaTruck className="text-[#a85d37]" /></span>
-                        </div>
-                        <div className="h-1.5 w-full bg-black/10 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-[#a85d37] rounded-full transition-all"
-                            style={{ width: `${Math.min(100, (calc.subtotal / 999) * 100)}%` }}
-                          />
-                        </div>
-                      </>
-                    ) : (
-                      <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-green-700">
-                        <FaCheckCircle /> Free Shipping Unlocked!
-                      </div>
-                    )}
-                  </div>
+                  {/* Free delivery progress (same bar as the mini cart) */}
+                  <FreeDeliveryProgress subtotal={calc.subtotal} className="mt-4 rounded-xl border border-line bg-sand p-3" />
                 </div>
               </div>
             ) : (
@@ -576,8 +583,8 @@ export default function Cart() {
         )}
 
         {error && (
-          <div className="fixed bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 bg-red-50 text-red-600 px-5 py-2.5 rounded-full shadow-xl font-bold flex items-center gap-2 animate-fade-up border border-red-100 z-50 text-xs w-max">
-            <FaTimesCircle /> {error}
+          <div className="fixed bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 bg-alert/10 text-alert px-5 py-2.5 rounded-full shadow-xl font-bold flex items-center gap-2 animate-fade-up border border-alert/30 z-50 text-xs w-max">
+            <CircleXIcon /> {error}
           </div>
         )}
 
@@ -595,7 +602,7 @@ export default function Cart() {
               onClick={handleProceed}
               className="px-6 h-10 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5 hover:bg-black"
             >
-              Checkout <FaArrowRight size={11} />
+              Checkout <ArrowRightIcon size={11} />
             </button>
           </div>
         </div>

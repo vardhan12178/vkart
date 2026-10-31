@@ -1,0 +1,449 @@
+{
+  "slug": "vivo-t5x",
+  "title": "vivo T5x 5G",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "MediaTek Dimensity 7400-Turbo, 6.76-inch display, 7,200 mAh battery with 44W FlashCharge and a 50MP main camera.",
+  "description": "vivo T5x 5G runs on the MediaTek Dimensity 7400-Turbo with OriginOS. Its 6.76-inch display keeps scrolling and video smooth.\n\nThe 7,200 mAh battery with 44W FlashCharge lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "MediaTek Dimensity 7400-Turbo",
+    "6.76-inch display",
+    "7,200 mAh battery with 44W FlashCharge",
+    "50MP main camera",
+    "OriginOS"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "MediaTek Dimensity 7400-Turbo",
+      "RAM": [
+        "6 GB",
+        "8 GB"
+      ],
+      "Storage": [
+        "128 GB",
+        "256 GB"
+      ],
+      "Battery": "7200 mAh",
+      "Fast Charging": "44W",
+      "Fingerprint Sensor": "Side fingerprint sensor",
+      "Color": [
+        "Star Silver",
+        "Cyber Green",
+        "Fusion Red"
+      ],
+      "Operating System": "Origin OS 6.0"
+    },
+    "Display": {
+      "Size": "17.17cm (6.76'')",
+      "Resolution": "2344x1080",
+      "Type": "LCD",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear camera: 50 MP (Sony IMX852) + 2 MP（Bokeh)",
+        "Front camera: 32 MP"
+      ],
+      "Aperture": "f/2.45",
+      "Flash": "Rear flash supported",
+      "Scene Modes": [
+        "Rear camera:  Photo,Portrait,Night,  Video, 50MP,  Pano, Documents,  Slo-mo, Time-lapse, Supermoon,  Pro, Food, Dual View, Underwater photography",
+        "Front camera:  Photo,Video, Dual View"
+      ]
+    },
+    "Build": {
+      "Dimensions": "16.664cm ×7.843cm ×0.839cm (6.56in ×3.09in ×0.33in)",
+      "Weight": "219g"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4 GHz, 5 GHz",
+      "Bluetooth": "5.4",
+      "USB": "Type-C",
+      "GPS": "L1",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.76,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 7200,
+    "chargingW": 44,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 219,
+    "chip": "MediaTek Dimensity 7400-Turbo",
+    "os": "Android",
+    "ramGB": 6
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cosmic Green",
+          "hex": "#646F54"
+        },
+        {
+          "value": "Satin Silver",
+          "hex": "#DADCE2"
+        },
+        {
+          "value": "Flame Red",
+          "hex": "#A34E54"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cosmic Green": [
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-1",
+          "alt": "vivo T5x 5G in Cosmic Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445936/eaaa020adaa932ecb638e28dbcc702e4.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-3",
+          "alt": "vivo T5x 5G in Cosmic Green, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445955/d79cd9727460ac2db8ab04ab6d6ceadf.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-4",
+          "alt": "vivo T5x 5G in Cosmic Green, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445980/f000ee266731ef89dbe13c953db3f665.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-5",
+          "alt": "vivo T5x 5G in Cosmic Green, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445706/10dcc4babd3f28bbe82f00b1ed4f9a41.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-6",
+          "alt": "vivo T5x 5G in Cosmic Green, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593445927/3c7cf6a6f2e543b4648c8b3399e9e677.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-7",
+          "alt": "vivo T5x 5G in Cosmic Green, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593447016/2863d00197ff36a64765ae80a6472c46.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/cosmic-green-8",
+          "alt": "vivo T5x 5G in Cosmic Green, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593505305/6bb3d4525448130822ede6f90c2eaabe.jpeg",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Satin Silver": [
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-1",
+          "alt": "vivo T5x 5G in Satin Silver",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593780163/185dd4ebfa86a0727523271fbb15798c.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-3",
+          "alt": "vivo T5x 5G in Satin Silver, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740705/0106a0943a49d1bbe36952b2df8ae4e4.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-4",
+          "alt": "vivo T5x 5G in Satin Silver, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740632/a4073ec9fe298aa7d18b67324fed4f95.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-5",
+          "alt": "vivo T5x 5G in Satin Silver, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740627/c877822e39033a31a87fa8f6432ddfd3.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-6",
+          "alt": "vivo T5x 5G in Satin Silver, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593740627/f96f40063b4f463a52721964b6af1be3.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-7",
+          "alt": "vivo T5x 5G in Satin Silver, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593742273/e9f8006fc0e309419d77ffe0156b4bf1.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/satin-silver-8",
+          "alt": "vivo T5x 5G in Satin Silver, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790593741906/8f628f1b53798d230f43a8b5d65a1950.jpeg",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Flame Red": [
+        {
+          "key": "mobiles/vivo-t5x/flame-red-1",
+          "alt": "vivo T5x 5G in Flame Red",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425150/cdf8c20208cb75eb447ae47986945ae7.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/flame-red-3",
+          "alt": "vivo T5x 5G in Flame Red, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425220/041cc2e2a5c415c00f1e68c138b871a5.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/flame-red-4",
+          "alt": "vivo T5x 5G in Flame Red, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425612/272dc178c1d9076a43f0b770e0c7929f.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/flame-red-5",
+          "alt": "vivo T5x 5G in Flame Red, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594425532/df52d09d48f867f532e6be513c411e17.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/flame-red-6",
+          "alt": "vivo T5x 5G in Flame Red, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594424749/484c3f8111993ac3768151775ae4ecc0.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/flame-red-7",
+          "alt": "vivo T5x 5G in Flame Red, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594426041/b6f58f5b4a1607b442779500897e8da4.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5x/flame-red-8",
+          "alt": "vivo T5x 5G in Flame Red, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790594426632/e231b2cc88e2c09001ccb9c9d20a932c.jpeg",
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-T5X5G-6128-COGR",
+      "mpn": "5676769",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Cosmic Green"
+      },
+      "price": 27999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-6128-SASI",
+      "mpn": "5676770",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Satin Silver"
+      },
+      "price": 27999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-6128-FLRE",
+      "mpn": "5676771",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Flame Red"
+      },
+      "price": 27999,
+      "mrp": 45999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-8128-COGR",
+      "mpn": "5676772",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Cosmic Green"
+      },
+      "price": 30999,
+      "mrp": 50999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-8128-SASI",
+      "mpn": "5676818",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Satin Silver"
+      },
+      "price": 30999,
+      "mrp": 50999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-8128-FLRE",
+      "mpn": "5676774",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Flame Red"
+      },
+      "price": 30999,
+      "mrp": 50999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-8256-COGR",
+      "mpn": "5676775",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Cosmic Green"
+      },
+      "price": 34999,
+      "mrp": 56999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-8256-SASI",
+      "mpn": "5676776",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Satin Silver"
+      },
+      "price": 34999,
+      "mrp": 56999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-T5X5G-8256-FLRE",
+      "mpn": "5676820",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Flame Red"
+      },
+      "price": 34999,
+      "mrp": 56999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "USB Cable",
+    "Charger",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10371"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

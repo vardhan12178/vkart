@@ -1,0 +1,165 @@
+{
+  "slug": "samsung-43-inch-m7-uhd-4k-smart-monitor",
+  "title": "Samsung 43\" M7 UHD 4K Smart Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Enjoy content directly and explore more with Click To Search\nOptimal picture tailored for your intended use with AI Picture Optimizer\nSimple control for your smart home with SmartThings",
+  "description": "Enjoy content directly and explore more with Click To Search\nOptimal picture tailored for your intended use with AI Picture Optimizer\nSimple control for your smart home with SmartThings",
+  "highlights": [
+    "43-inch 4K (3,840 x 2,160) VA",
+    "60Hz refresh rate",
+    "Tizen™",
+    "4ms(GTG) response time",
+    "VA panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Aspect Ratio": "16:9",
+      "Brightness (Typical)": "300 cd/㎡",
+      "Contrast Ratio Static": "5,000:1(static)",
+      "Resolution": "4K (3,840 x 2,160)",
+      "Response Time": "4ms(GTG)",
+      "Viewing Angle (H/V)": "178/178",
+      "Refresh Rate": "Max 60Hz",
+      "Screen Size (Class)": "1.08 m",
+      "Flat / Curved": "Flat",
+      "Active Display Size (HxV) (mm)": "94.11 cm x 52.94 cm",
+      "Panel Type": "VA",
+      "Brightness (Min)": "240 cd/㎡",
+      "HDR(High Dynamic Range)": "HDR10",
+      "Colour Support": "Max 1B",
+      "Color Gamut (NTSC 1976)": "72%",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Image Size": "Yes",
+      "Windows Certification": "Windows11",
+      "Virtual AIM Point": "Yes",
+      "Game Bar 2.0": "Yes",
+      "HDMI-CEC": "Yes",
+      "Auto Source Switch": "Auto Source Switch+",
+      "Adaptive Picture": "Yes",
+      "Ultrawide Game View": "Yes",
+      "Smart Type": "Smart",
+      "Operating System": "Tizen™",
+      "Bixby": "Yes",
+      "Far-Field Voice Interaction": "Yes",
+      "TV Plus": "Yes (IN Only)",
+      "Universal Guide": "Yes (IN Only)",
+      "Alexa Built-in": "Alexa (IN Only)",
+      "SmartThings Hub": "Yes",
+      "Multi Device Experience": "Mobile to Screen, Screen initiate mirroring, Sound Mirroring, Wireless On, Tap View",
+      "Multi View": "up to 2 Videos",
+      "Smart Calibration": "Basic",
+      "Remote Access": "Yes",
+      "Wireless Display": "Yes",
+      "HDMI": "2 EA",
+      "HDMI Version": "2.0",
+      "HDCP Version (HDMI)": "2.2",
+      "USB Hub": "3",
+      "USB Hub Version": "2.0",
+      "USB-C": "1 EA",
+      "USB-C Charging Power": "65W",
+      "HDCP Version (USB-C)": "2.2",
+      "Wireless LAN Built-in": "Wi-Fi 5",
+      "Bluetooth": "Yes (5.2)",
+      "Speaker": "Yes",
+      "Speaker Output": "20W",
+      "Adaptive Sound": "Adaptive Sound+",
+      "Temperature": "10 ~ 40 ℃",
+      "Humidity": "10 ~ 80 (Non-Condensing)",
+      "Factory Tunning": "Yes",
+      "Front Colour": "BLACK",
+      "Rear Color": "BLACK",
+      "Stand Colour": "Black",
+      "Stand Type": "SIMPLE",
+      "Tilt": "-2˚(±2˚) ~ 20˚(±2˚)",
+      "Wall Mount": "20.0 cm x 20.0 cm",
+      "Power Supply": "AC 100 - 240 V",
+      "Power Consumption (Max)": "210 W",
+      "Type": "Internal Power",
+      "Set Dimension with Stand (WxHxD)": "96.55 cm x 62.93 cm x 24.72 cm",
+      "Set Dimension without Stand (WxHxD)": "96.55 cm x 55.98 cm x 2.57 cm",
+      "Package Dimension (WxHxD)": "1.19 m x 67.70 cm x 15.90 cm",
+      "Set Weight with Stand": "10.6 kg",
+      "Set Weight without Stand": "8.5 kg",
+      "Package Weight": "13.7 kg",
+      "Power Cable Length": "1.5 m",
+      "HDMI Cable": "Yes",
+      "Remote Controller": "Yes",
+      "Manufactured by": "SAMSUNG ELECTRONICS HCMC CE COMPLEX Co., Ltd. Lot I-11, D2 Road, Saigon Hi-Tech Park, District 9, Ho Chi Minh City, Vietnam",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 43,
+    "resolution": "4K (3,840 x 2,160)",
+    "refreshRateHz": 60,
+    "panel": "VA",
+    "responseTimeMs": 4,
+    "curved": false,
+    "gaming": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "43\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/samsung-43-inch-m7-uhd-4k-smart-monitor/common-1",
+        "alt": "Samsung 43\" M7 UHD 4K Smart Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls43fm700uwxxl/gallery/in-smart-m7-32m70f-black-558792-ls43fm700uwxxl-thumb-547987788?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "monitors/samsung-43-inch-m7-uhd-4k-smart-monitor/common-2",
+        "alt": "Samsung 43\" M7 UHD 4K Smart Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ls43fm700uwxxl/gallery/in-smart-m7-32m70f-black-558792-ls43fm700uwxxl-547987787?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LS43FM700UW",
+      "mpn": "LS43FM700UW",
+      "options": {
+        "Size": "43\""
+      },
+      "price": 67740,
+      "mrp": 67740,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/smart/smart-monitor-m7-43-inch-smart-tv-apps-4k-uhd-ls43fm700uwxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

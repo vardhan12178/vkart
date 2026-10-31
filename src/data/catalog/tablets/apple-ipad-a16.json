@@ -1,0 +1,616 @@
+{
+  "slug": "apple-ipad-a16",
+  "title": "iPad (A16)",
+  "brand": "Apple",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "The everyday iPad: 11-inch Liquid Retina display, A16 chip, 128GB to start, in four bright colours.",
+  "description": "iPad with the A16 chip is Apple's everyday tablet, with an 11-inch Liquid Retina display, all-day battery life and USB-C.\n\nIt starts at 128GB of storage, works with Apple Pencil (USB-C) and Magic Keyboard Folio, and comes in Blue, Pink, Yellow and Silver.",
+  "highlights": [
+    "A16 chip",
+    "11-inch Liquid Retina display",
+    "128GB, 256GB or 512GB",
+    "Landscape front camera",
+    "USB-C",
+    "Blue, Pink, Yellow or Silver"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Liquid Retina",
+      "size": "11-inch"
+    },
+    "Performance": {
+      "chip": "A16"
+    },
+    "Camera": {
+      "rear": "12MP Wide",
+      "front": "12MP landscape camera"
+    },
+    "Connectivity": {
+      "port": "USB-C",
+      "wireless": "Wi-Fi 6, optional 5G cellular"
+    },
+    "Software": {
+      "os": "iPadOS"
+    }
+  },
+  "keySpecs": {
+    "processor": "Apple A16",
+    "displayInch": 11,
+    "panel": "LCD",
+    "refreshRateHz": 60,
+    "pencil": "Apple Pencil (USB-C)",
+    "storageGB": 128,
+    "os": "iPadOS"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        },
+        {
+          "value": "Wi-Fi + Cellular"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "128GB"
+        },
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Blue",
+          "hex": "#24A8FF"
+        },
+        {
+          "value": "Pink",
+          "hex": "#F27185"
+        },
+        {
+          "value": "Silver",
+          "hex": "#B4B6B5"
+        },
+        {
+          "value": "Yellow",
+          "hex": "#FFD831"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Blue": [
+        {
+          "key": "tablets/apple-ipad-a16/blue-1",
+          "alt": "iPad (A16) in Blue",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-blue-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-a16/blue-2",
+          "alt": "iPad (A16) in Blue, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-blue-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ],
+      "Pink": [
+        {
+          "key": "tablets/apple-ipad-a16/pink-1",
+          "alt": "iPad (A16) in Pink",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-pink-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-a16/pink-2",
+          "alt": "iPad (A16) in Pink, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-pink-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ],
+      "Silver": [
+        {
+          "key": "tablets/apple-ipad-a16/silver-1",
+          "alt": "iPad (A16) in Silver",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-a16/silver-2",
+          "alt": "iPad (A16) in Silver, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ],
+      "Yellow": [
+        {
+          "key": "tablets/apple-ipad-a16/yellow-1",
+          "alt": "iPad (A16) in Yellow",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-yellow-wifi-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "tablets/apple-ipad-a16/yellow-2",
+          "alt": "iPad (A16) in Yellow, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-yellow-cell-select?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-IPD-MD4A4HN",
+      "mpn": "MD4A4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Blue"
+      },
+      "price": 49900,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4E4HN",
+      "mpn": "MD4E4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Pink"
+      },
+      "price": 49900,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD3Y4HN",
+      "mpn": "MD3Y4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Silver"
+      },
+      "price": 49900,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4D4HN",
+      "mpn": "MD4D4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "128GB",
+        "Color": "Yellow"
+      },
+      "price": 49900,
+      "mrp": 49900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4H4HN",
+      "mpn": "MD4H4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Blue"
+      },
+      "price": 61900,
+      "mrp": 61900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4P4HN",
+      "mpn": "MD4P4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Pink"
+      },
+      "price": 61900,
+      "mrp": 61900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4G4HN",
+      "mpn": "MD4G4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 61900,
+      "mrp": 61900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4J4HN",
+      "mpn": "MD4J4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "256GB",
+        "Color": "Yellow"
+      },
+      "price": 61900,
+      "mrp": 61900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7G4HN",
+      "mpn": "MD7G4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Blue"
+      },
+      "price": 67900,
+      "mrp": 67900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7J4HN",
+      "mpn": "MD7J4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Pink"
+      },
+      "price": 67900,
+      "mrp": 67900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7F4HN",
+      "mpn": "MD7F4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Silver"
+      },
+      "price": 67900,
+      "mrp": 67900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7H4HN",
+      "mpn": "MD7H4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "128GB",
+        "Color": "Yellow"
+      },
+      "price": 67900,
+      "mrp": 67900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 128,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7L4HN",
+      "mpn": "MD7L4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Blue"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7N4HN",
+      "mpn": "MD7N4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Pink"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7K4HN",
+      "mpn": "MD7K4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Silver"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7M4HN",
+      "mpn": "MD7M4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "256GB",
+        "Color": "Yellow"
+      },
+      "price": 79900,
+      "mrp": 79900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4Y4HN",
+      "mpn": "MD4Y4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Blue"
+      },
+      "price": 85900,
+      "mrp": 85900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD5C4HN",
+      "mpn": "MD5C4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Pink"
+      },
+      "price": 85900,
+      "mrp": 85900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD4Q4HN",
+      "mpn": "MD4Q4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 85900,
+      "mrp": 85900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD5A4HN",
+      "mpn": "MD5A4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "512GB",
+        "Color": "Yellow"
+      },
+      "price": 85900,
+      "mrp": 85900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": false,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7Q4HN",
+      "mpn": "MD7Q4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Blue"
+      },
+      "price": 103900,
+      "mrp": 103900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7T4HN",
+      "mpn": "MD7T4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Pink"
+      },
+      "price": 103900,
+      "mrp": 103900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7P4HN",
+      "mpn": "MD7P4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Silver"
+      },
+      "price": 103900,
+      "mrp": 103900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    },
+    {
+      "sku": "APL-IPD-MD7R4HN",
+      "mpn": "MD7R4HN/A",
+      "options": {
+        "Configuration": "Wi-Fi + Cellular",
+        "Storage": "512GB",
+        "Color": "Yellow"
+      },
+      "price": 103900,
+      "mrp": 103900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512,
+        "cellular": true,
+        "displayInch": 11
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPad (A16)",
+    "USB-C Charge Cable (1 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-ipad/ipad",
+      "https://www.apple.com/in/ipad/specs/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Every variant, part number and Apple India MRP from the Apple Store India buy page; images are Apple Store product shots."
+  }
+}

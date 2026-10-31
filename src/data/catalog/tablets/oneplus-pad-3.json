@@ -1,0 +1,248 @@
+{
+  "slug": "oneplus-pad-3",
+  "title": "OnePlus Pad 3",
+  "brand": "OnePlus",
+  "category": "tablets",
+  "categoryPath": [
+    "electronics",
+    "tablets"
+  ],
+  "status": "draft",
+  "launchDate": "2025",
+  "shortDescription": "OnePlus Pad 3: Snapdragon 8 Elite Mobile Platform, 13.2-inch, 3.4K resolution, 8-speaker system (4 woofers + 4 tweeters), Aluminum unibody design.",
+  "description": "OnePlus Pad 3 runs on the Snapdragon 8 Elite with a 13.2 in, 33.53cm LCD (LTPS) display at up to 144Hz.\n\nIts 12,140 mAh battery supports up to 80W charging, and it comes in Frosted Silver, Storm Blue.",
+  "highlights": [
+    "Snapdragon 8 Elite Mobile Platform",
+    "13.2-inch, 3.4K resolution",
+    "8-speaker system (4 woofers + 4 tweeters)",
+    "Aluminum unibody design",
+    "12,140 mAh battery, 80W charging"
+  ],
+  "specs": {
+    "Dimensions": {
+      "Length": "289.61 mm",
+      "Width": "209.66 mm",
+      "Thickness": "5.97 mm",
+      "Weight": "675g"
+    },
+    "Performance": {
+      "Chipset": "Snapdragon 8 Elite Mobile Platform",
+      "GPU": "Adreno 830 @ up to 1.1GHz",
+      "CPU": "Qualcomm Oryon CPU @ up to 4.32GHz",
+      "RAM": "12GB: LPDDR5X @ 4266MHz (4×16-bit) / 16GB: Faster LPDDR5X @ 4800MHz (4×16-bit)",
+      "ROM": "256GB / 512GB (UFS 4.0)",
+      "Architecture": "64-bit"
+    },
+    "Battery & Charging": {
+      "Capacity": "12.140mAh",
+      "Charging": "Up to 80W"
+    },
+    "Display": {
+      "Size": "13.2 in, 33.53cm",
+      "Screen Ratio": [
+        "7:5 Ratio",
+        "89.3%"
+      ],
+      "Type": "LCD (LTPS)",
+      "Screen Color Depth": "12bit (8bit hardware +4bit FRC)",
+      "Resolution": "3392*2400",
+      "PPI": "315",
+      "Color Gamut": "96% NTSC",
+      "DCI-P3 coverage 98%": "DeltaE≈0.7",
+      "Refresh Rate": "Up to 144 Hz, adaptive refresh",
+      "Touch Sampling Rate": "Up to 540 Hz",
+      "Default 120 Hz": [
+        "Brightness",
+        "600nits (HBM 900 nits)"
+      ]
+    },
+    "Audio": {
+      "Speakers": "8 Speakers (4 Woofers + 4 Tweeters)",
+      "Microphones": "2",
+      "Bluetooth Audio": "SBC, AAC, aptX, aptX HD, LDAC, LHDC"
+    },
+    "Connectivity": {
+      "Wi-Fi": "Wi-Fi2.4G, Wi-Fi 5G, Wi-Fi 7 (802.11be), Wi-Fi 6 (802.11ax), Wi-Fi 5 (802.11ac), 802.11a/b/g/n/",
+      "Bluetooth": "BR/EDR/BLE, Bluetooth 5.4, Bluetooth Low Energy, Bluetooth High Power",
+      "Ports": "Type-C (USB3.2 Gen1 @ 5Gbps)",
+      "Audio Device Ports": "Type-C"
+    },
+    "Camera": {
+      "Rear Camera": "13MP",
+      "Front Camera": "8MP",
+      "Rear Camera Shooting": "Video Recording: 4K/1080P/720P @ 30fps (default: 1080P @ 30fps)",
+      "EIS (Electronic Image Stabilization) supported": "Digital Zoom"
+    },
+    "Operating System": {
+      "details": [
+        "Android 15",
+        "Oxygen OS 15"
+      ]
+    },
+    "Biometrics": {
+      "details": [
+        "Facial Recognition",
+        "Face Unlock"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Snapdragon 8 Elite",
+    "displayInch": 13.2,
+    "panel": "LCD",
+    "refreshRateHz": 144,
+    "batteryMah": 12140,
+    "chargingW": 80,
+    "ramGB": 12,
+    "storageGB": 256,
+    "os": "Android"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Wi-Fi"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "16GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Frosted Silver",
+          "hex": "#C9CCD0"
+        },
+        {
+          "value": "Storm Blue",
+          "hex": "#3E4E66"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Frosted Silver": [
+        {
+          "key": "tablets/oneplus-pad-3/frosted-silver-1",
+          "alt": "OnePlus Pad 3 in Frosted Silver",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/9e30cbc6ea291d97dd58aa909b3903ac.png",
+          "width": 960,
+          "height": 960
+        }
+      ],
+      "Storm Blue": [
+        {
+          "key": "tablets/oneplus-pad-3/storm-blue-1",
+          "alt": "OnePlus Pad 3 in Storm Blue",
+          "sourceUrl": "https://image01-in.oneplus.net/media/202505/23/73c44b96d09b0a249de49c348b25cce6.png",
+          "width": 960,
+          "height": 960
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPL-PAD3-12256-WF-FRSI",
+      "mpn": "5511100386",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 256GB",
+        "Color": "Frosted Silver"
+      },
+      "price": 49999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PAD3-12256-WF-STBL",
+      "mpn": "5511100389",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "12GB + 256GB",
+        "Color": "Storm Blue"
+      },
+      "price": 49999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PAD3-16512-WF-FRSI",
+      "mpn": "5511100387",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "16GB + 512GB",
+        "Color": "Frosted Silver"
+      },
+      "price": 54999,
+      "mrp": 54999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "cellular": false
+      }
+    },
+    {
+      "sku": "OPL-PAD3-16512-WF-STBL",
+      "mpn": "5511100388",
+      "options": {
+        "Configuration": "Wi-Fi",
+        "Storage": "16GB + 512GB",
+        "Color": "Storm Blue"
+      },
+      "price": 54999,
+      "mrp": 54999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 16,
+        "storageGB": 512,
+        "cellular": false
+      }
+    }
+  ],
+  "inTheBox": [
+    "OnePlus Pad 3",
+    "SUPERVOOC Power Adapter",
+    "Type-C Cable",
+    "Quick Start Guide",
+    "Safety Information and Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oneplus.in/oneplus-pad-3/specs",
+      "https://www.oneplus.in/buy-oneplus-pad-3"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oneplus.in spec page; variants, selling price (price), MRP (mrp) and images from the OnePlus India store data."
+  }
+}

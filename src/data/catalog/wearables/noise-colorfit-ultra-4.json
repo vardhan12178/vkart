@@ -1,0 +1,216 @@
+{
+  "slug": "noise-colorfit-ultra-4",
+  "title": "Noise ColorFit Ultra 4",
+  "brand": "Noise",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Read everything clearly on a 1.96\" AMOLED display running at 600 nits peak brightness, with an Always-On Display that keeps time and stats visible without a tap.",
+  "description": "Read everything clearly on a 1.96\" AMOLED display running at 600 nits peak brightness, with an Always-On Display that keeps time and stats visible without a tap. Let the Noise AI Suite work through your day: AI Transcription types your meetings, Voice Commands take your orders, AI Watch Faces design your look and the AI Companion answers your health questions. Keep the day’s admin on the wrist with Morning Briefs, Super Notifications and Noise Vault. Scroll with the functional crown, keep your go-to feature on the shortcut button, track heart rate, SpO₂, stress and sleep with the Noise Health Suite™, and go up to 7 days on a single charge with the Type-C dock charger.",
+  "highlights": [
+    "1.96\" AMOLED display, 600 nits",
+    "Always-On Display",
+    "Noise AI Suite: transcription, voice commands, AI watch faces",
+    "Functional crown and shortcut button",
+    "Heart rate, SpO2, stress and sleep tracking",
+    "Up to 7 days battery, Type-C dock charger"
+  ],
+  "specs": {
+    "Features": {
+      "highlights": [
+        "1.96\" AMOLED display, 600 nits",
+        "Always-On Display",
+        "Noise AI Suite: transcription, voice commands, AI watch faces",
+        "Functional crown and shortcut button",
+        "Heart rate, SpO2, stress and sleep tracking",
+        "Up to 7 days battery, Type-C dock charger"
+      ]
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "displayInch": 1.96,
+    "batteryDays": 7,
+    "bluetoothCalling": false,
+    "amoled": true
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sage Green",
+          "hex": "#485544"
+        },
+        {
+          "value": "Royal Blue",
+          "hex": "#323946"
+        },
+        {
+          "value": "Jet Black",
+          "hex": "#404040"
+        },
+        {
+          "value": "Starlight Gold",
+          "hex": "#B1AAA2"
+        },
+        {
+          "value": "Elite Titanium",
+          "hex": "#8B8782"
+        },
+        {
+          "value": "Elite Black",
+          "hex": "#474747"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sage Green": [
+        {
+          "key": "wearables/noise-colorfit-ultra-4/sage-green-1",
+          "alt": "Noise ColorFit Ultra 4 in Sage Green",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Green_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Royal Blue": [
+        {
+          "key": "wearables/noise-colorfit-ultra-4/royal-blue-1",
+          "alt": "Noise ColorFit Ultra 4 in Royal Blue",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Blue_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Jet Black": [
+        {
+          "key": "wearables/noise-colorfit-ultra-4/jet-black-1",
+          "alt": "Noise ColorFit Ultra 4 in Jet Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_J_Black_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Starlight Gold": [
+        {
+          "key": "wearables/noise-colorfit-ultra-4/starlight-gold-1",
+          "alt": "Noise ColorFit Ultra 4 in Starlight Gold",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Gold_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Elite Titanium": [
+        {
+          "key": "wearables/noise-colorfit-ultra-4/elite-titanium-1",
+          "alt": "Noise ColorFit Ultra 4 in Elite Titanium",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Titanium_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
+        }
+      ],
+      "Elite Black": [
+        {
+          "key": "wearables/noise-colorfit-ultra-4/elite-black-1",
+          "alt": "Noise ColorFit Ultra 4 in Elite Black",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0997/6284/files/Ultra_4_Black_1.png?v=1791182389",
+          "width": 1500,
+          "height": 1500
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "NOI-CFU4-SAGEGREEN",
+      "mpn": "wrb-sw-colorfitultra4-ny-ttnm_grn",
+      "options": {
+        "Color": "Sage Green"
+      },
+      "price": 4999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-CFU4-ROYALBLUE",
+      "mpn": "wrb-sw-colorfitultra4-ny-blk_blu",
+      "options": {
+        "Color": "Royal Blue"
+      },
+      "price": 4999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-CFU4-JETBLACK",
+      "mpn": "wrb-sw-colorfitultra4-std-blk_blk",
+      "options": {
+        "Color": "Jet Black"
+      },
+      "price": 4999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-CFU4-STARLIGHTGOLD",
+      "mpn": "wrb-sw-colorfitultra4-std-ttnm_bge",
+      "options": {
+        "Color": "Starlight Gold"
+      },
+      "price": 4999,
+      "mrp": 7999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-CFU4-ELITETITANIUM",
+      "mpn": "wrb-sw-colorfitultra4-mtl-ttnm_ttnm",
+      "options": {
+        "Color": "Elite Titanium"
+      },
+      "price": 5499,
+      "mrp": 8999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    },
+    {
+      "sku": "NOI-CFU4-ELITEBLACK",
+      "mpn": "wrb-sw-colorfitultra4-mtl-blk_blk",
+      "options": {
+        "Color": "Elite Black"
+      },
+      "price": 5499,
+      "mrp": 8999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.gonoise.com/products/noise-colorfit-ultra-4-smartwatch"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Colours, selling price (price), list price (mrp), images and description from Noise's official India online store. Specs are the store's feature text, not a full spec sheet."
+  }
+}

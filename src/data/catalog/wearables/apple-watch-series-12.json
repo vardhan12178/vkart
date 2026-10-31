@@ -1,0 +1,728 @@
+{
+  "slug": "apple-watch-series-12",
+  "title": "Apple Watch Series 12",
+  "brand": "Apple",
+  "category": "wearables",
+  "categoryPath": [
+    "electronics",
+    "wearables",
+    "smartwatches"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Apple's most popular watch: always-on Retina display, advanced health sensors, in 42mm or 46mm aluminium, titanium or new ceramic.",
+  "description": "Apple Watch Series 12 brings a bright always-on Retina display, advanced health features and the latest watchOS in 42mm and 46mm sizes.\n\nChoose aluminium with GPS or GPS + Cellular, or titanium and new ceramic cases with GPS + Cellular and a sapphire crystal display.",
+  "highlights": [
+    "Always-on Retina display",
+    "42mm or 46mm",
+    "Aluminium, titanium or ceramic",
+    "GPS or GPS + Cellular",
+    "Advanced health and fitness sensors",
+    "watchOS"
+  ],
+  "specs": {
+    "Display": {
+      "type": "Always-On Retina",
+      "sizes": "42mm / 46mm"
+    },
+    "Build": {
+      "materials": "Aluminium, Titanium, Ceramic"
+    },
+    "Connectivity": {
+      "options": "GPS / GPS + Cellular"
+    },
+    "Software": {
+      "os": "watchOS"
+    }
+  },
+  "keySpecs": {
+    "type": "Smartwatch",
+    "os": "watchOS",
+    "caseSizesMm": [
+      42,
+      46
+    ],
+    "cellularOption": true
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "42mm · Aluminium · GPS"
+        },
+        {
+          "value": "46mm · Aluminium · GPS"
+        },
+        {
+          "value": "42mm · Aluminium · GPS + Cellular"
+        },
+        {
+          "value": "46mm · Aluminium · GPS + Cellular"
+        },
+        {
+          "value": "42mm · Titanium · GPS + Cellular"
+        },
+        {
+          "value": "46mm · Titanium · GPS + Cellular"
+        },
+        {
+          "value": "42mm · Ceramic · GPS + Cellular"
+        },
+        {
+          "value": "46mm · Ceramic · GPS + Cellular"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Dark Bronze",
+          "hex": "#554E48"
+        },
+        {
+          "value": "Jet Black",
+          "hex": "#484441"
+        },
+        {
+          "value": "Light Gold",
+          "hex": "#A99886"
+        },
+        {
+          "value": "Space Gray",
+          "hex": "#8D8C8A"
+        },
+        {
+          "value": "Natural",
+          "hex": "#BDB7B1"
+        },
+        {
+          "value": "Radiant Gold",
+          "hex": "#AE9B7B"
+        },
+        {
+          "value": "Night Blue",
+          "hex": "#808284"
+        },
+        {
+          "value": "Pearl White",
+          "hex": "#E6DDD6"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Dark Bronze": [
+        {
+          "key": "wearables/apple-watch-series-12/dark-bronze-3",
+          "alt": "Apple Watch Series 12 in Dark Bronze, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/dark-bronze-4",
+          "alt": "Apple Watch Series 12 in Dark Bronze, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/dark-bronze-5",
+          "alt": "Apple Watch Series 12 in Dark Bronze, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Jet Black": [
+        {
+          "key": "wearables/apple-watch-series-12/jet-black-3",
+          "alt": "Apple Watch Series 12 in Jet Black, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/jet-black-4",
+          "alt": "Apple Watch Series 12 in Jet Black, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/jet-black-5",
+          "alt": "Apple Watch Series 12 in Jet Black, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Light Gold": [
+        {
+          "key": "wearables/apple-watch-series-12/light-gold-3",
+          "alt": "Apple Watch Series 12 in Light Gold, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/light-gold-4",
+          "alt": "Apple Watch Series 12 in Light Gold, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/light-gold-5",
+          "alt": "Apple Watch Series 12 in Light Gold, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Space Gray": [
+        {
+          "key": "wearables/apple-watch-series-12/space-gray-3",
+          "alt": "Apple Watch Series 12 in Space Gray, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/space-gray-4",
+          "alt": "Apple Watch Series 12 in Space Gray, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/space-gray-5",
+          "alt": "Apple Watch Series 12 in Space Gray, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Natural": [
+        {
+          "key": "wearables/apple-watch-series-12/natural-3",
+          "alt": "Apple Watch Series 12 in Natural, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/natural-4",
+          "alt": "Apple Watch Series 12 in Natural, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/natural-5",
+          "alt": "Apple Watch Series 12 in Natural, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Radiant Gold": [
+        {
+          "key": "wearables/apple-watch-series-12/radiant-gold-3",
+          "alt": "Apple Watch Series 12 in Radiant Gold, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/radiant-gold-4",
+          "alt": "Apple Watch Series 12 in Radiant Gold, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/radiant-gold-5",
+          "alt": "Apple Watch Series 12 in Radiant Gold, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Night Blue": [
+        {
+          "key": "wearables/apple-watch-series-12/night-blue-3",
+          "alt": "Apple Watch Series 12 in Night Blue, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/night-blue-4",
+          "alt": "Apple Watch Series 12 in Night Blue, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/night-blue-5",
+          "alt": "Apple Watch Series 12 in Night Blue, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ],
+      "Pearl White": [
+        {
+          "key": "wearables/apple-watch-series-12/pearl-white-3",
+          "alt": "Apple Watch Series 12 in Pearl White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-1-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/pearl-white-4",
+          "alt": "Apple Watch Series 12 in Pearl White, view 4",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-2-202609_GEO_IN?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        },
+        {
+          "key": "wearables/apple-watch-series-12/pearl-white-5",
+          "alt": "Apple Watch Series 12 in Pearl White, view 5",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/s12-case-unselect-gallery-3-202609?wid=1200&hei=1000&fmt=jpeg&qlt=90",
+          "width": 1200,
+          "height": 1000
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-AWS12-MJFR4HN",
+      "mpn": "MJFR4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS",
+        "Color": "Dark Bronze"
+      },
+      "price": 56900,
+      "mrp": 56900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFP4HN",
+      "mpn": "MJFP4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS",
+        "Color": "Jet Black"
+      },
+      "price": 56900,
+      "mrp": 56900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFQ4HN",
+      "mpn": "MJFQ4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS",
+        "Color": "Light Gold"
+      },
+      "price": 56900,
+      "mrp": 56900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFN4HN",
+      "mpn": "MJFN4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS",
+        "Color": "Space Gray"
+      },
+      "price": 56900,
+      "mrp": 56900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFW4HN",
+      "mpn": "MJFW4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS",
+        "Color": "Dark Bronze"
+      },
+      "price": 62900,
+      "mrp": 62900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFU4HN",
+      "mpn": "MJFU4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS",
+        "Color": "Jet Black"
+      },
+      "price": 62900,
+      "mrp": 62900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFV4HN",
+      "mpn": "MJFV4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS",
+        "Color": "Light Gold"
+      },
+      "price": 62900,
+      "mrp": 62900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJFT4HN",
+      "mpn": "MJFT4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS",
+        "Color": "Space Gray"
+      },
+      "price": 62900,
+      "mrp": 62900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": false,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJG4HN",
+      "mpn": "MJJG4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS + Cellular",
+        "Color": "Dark Bronze"
+      },
+      "price": 68900,
+      "mrp": 68900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJE4HN",
+      "mpn": "MJJE4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS + Cellular",
+        "Color": "Jet Black"
+      },
+      "price": 68900,
+      "mrp": 68900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJF4HN",
+      "mpn": "MJJF4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS + Cellular",
+        "Color": "Light Gold"
+      },
+      "price": 68900,
+      "mrp": 68900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJD4HN",
+      "mpn": "MJJD4HN/A",
+      "options": {
+        "Configuration": "42mm · Aluminium · GPS + Cellular",
+        "Color": "Space Gray"
+      },
+      "price": 68900,
+      "mrp": 68900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJL4HN",
+      "mpn": "MJJL4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS + Cellular",
+        "Color": "Dark Bronze"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJJ4HN",
+      "mpn": "MJJJ4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS + Cellular",
+        "Color": "Jet Black"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJK4HN",
+      "mpn": "MJJK4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS + Cellular",
+        "Color": "Light Gold"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJH4HN",
+      "mpn": "MJJH4HN/A",
+      "options": {
+        "Configuration": "46mm · Aluminium · GPS + Cellular",
+        "Color": "Space Gray"
+      },
+      "price": 74900,
+      "mrp": 74900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Aluminium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJM4HN",
+      "mpn": "MJJM4HN/A",
+      "options": {
+        "Configuration": "42mm · Titanium · GPS + Cellular",
+        "Color": "Natural"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Titanium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJN4HN",
+      "mpn": "MJJN4HN/A",
+      "options": {
+        "Configuration": "42mm · Titanium · GPS + Cellular",
+        "Color": "Radiant Gold"
+      },
+      "price": 99900,
+      "mrp": 99900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Titanium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJP4HN",
+      "mpn": "MJJP4HN/A",
+      "options": {
+        "Configuration": "46mm · Titanium · GPS + Cellular",
+        "Color": "Natural"
+      },
+      "price": 104900,
+      "mrp": 104900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Titanium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJQ4HN",
+      "mpn": "MJJQ4HN/A",
+      "options": {
+        "Configuration": "46mm · Titanium · GPS + Cellular",
+        "Color": "Radiant Gold"
+      },
+      "price": 104900,
+      "mrp": 104900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Titanium"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJU4HN",
+      "mpn": "MJJU4HN/A",
+      "options": {
+        "Configuration": "42mm · Ceramic · GPS + Cellular",
+        "Color": "Night Blue"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Ceramic"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJT4HN",
+      "mpn": "MJJT4HN/A",
+      "options": {
+        "Configuration": "42mm · Ceramic · GPS + Cellular",
+        "Color": "Pearl White"
+      },
+      "price": 124900,
+      "mrp": 124900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 42,
+        "cellular": true,
+        "caseMaterial": "Ceramic"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJW4HN",
+      "mpn": "MJJW4HN/A",
+      "options": {
+        "Configuration": "46mm · Ceramic · GPS + Cellular",
+        "Color": "Night Blue"
+      },
+      "price": 130900,
+      "mrp": 130900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Ceramic"
+      }
+    },
+    {
+      "sku": "APL-AWS12-MJJV4HN",
+      "mpn": "MJJV4HN/A",
+      "options": {
+        "Configuration": "46mm · Ceramic · GPS + Cellular",
+        "Color": "Pearl White"
+      },
+      "price": 130900,
+      "mrp": 130900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "caseSizeMm": 46,
+        "cellular": true,
+        "caseMaterial": "Ceramic"
+      }
+    }
+  ],
+  "inTheBox": [
+    "Apple Watch Series 12",
+    "Band",
+    "Magnetic Fast Charger to USB-C Cable (1 m)"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-watch/apple-watch"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Case variants, part numbers and Apple India 'From' MRP (case with the default band) from the Apple Store India buy page. Band choice is not modelled; images are Apple Store case shots and gallery images."
+  }
+}

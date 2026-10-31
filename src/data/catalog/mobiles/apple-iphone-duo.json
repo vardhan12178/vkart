@@ -1,0 +1,346 @@
+{
+  "slug": "apple-iphone-duo",
+  "title": "Apple iPhone Duo",
+  "brand": "Apple",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-09",
+  "shortDescription": "Apple's first foldable iPhone: a 7.6-inch inner display that folds to a 5.4-inch phone, in a titanium design.",
+  "description": "iPhone Duo opens into a 7.6-inch display for reading, video and multitasking, and folds shut into a 5.4-inch phone that fits a pocket. Both displays use ProMotion up to 120Hz.\n\nThe titanium frame is just 5.2 mm thin when open, rated IP68, and powered by the A20 Pro chip. Half-fold it into laptop or tent mode for video calls and hands-free viewing.\n\nDual 48MP Fusion cameras handle wide and ultra wide shots, and dual batteries give up to 24 hours of typical use. It uses eSIM only and unlocks with Touch ID.",
+  "highlights": [
+    "7.6-inch folding OLED inner display + 5.4-inch outer display, both ProMotion up to 120Hz",
+    "Titanium foldable design, 5.2 mm thin unfolded, IP68",
+    "A20 Pro chip",
+    "48MP Fusion Main + 48MP Ultra Wide cameras",
+    "Up to 24 hours typical use; 50% in about 20 minutes with 60W",
+    "Touch ID, dual eSIM"
+  ],
+  "specs": {
+    "Display": {
+      "size": 7.6,
+      "type": "OLED folding (inner)",
+      "resolution": "1878 × 2670",
+      "ppi": 430,
+      "refreshRate": 120,
+      "outerDisplay": "5.4-inch OLED, 1398 × 2034, 460 ppi",
+      "features": "ProMotion up to 120Hz"
+    },
+    "Performance": {
+      "chip": "A20 Pro",
+      "cpu": "6-core (2 super + 4 efficiency)",
+      "gpu": "7-core with Neural Accelerators",
+      "neuralEngine": "Dual 16-core"
+    },
+    "Camera": {
+      "rear": "48MP Fusion Main (ƒ/1.6, sensor-shift OIS) + 48MP Fusion Ultra Wide",
+      "mainMP": 48,
+      "opticalZoom": "2x optical-quality",
+      "front": "12MP Center Stage (outer)"
+    },
+    "Battery": {
+      "typicalUse": "Up to 24 hours",
+      "videoPlayback": "Up to 44 hours (outer display), 31 hours (inner display)",
+      "wired": "50% in about 20 minutes with 60W adapter",
+      "wireless": "MagSafe and Qi2 up to 25W",
+      "cells": "Dual batteries"
+    },
+    "Connectivity": {
+      "network": "5G (sub-6 GHz)",
+      "wifi": "Wi-Fi 7 (802.11be)",
+      "bluetooth": "Bluetooth 6",
+      "nfc": true,
+      "uwb": "Apple 2nd-gen Ultra Wideband",
+      "usb": "USB-C, USB 3 (up to 10 Gbps), DisplayPort",
+      "gps": "Dual-frequency GPS, NavIC",
+      "sim": "Dual eSIM (no physical SIM)"
+    },
+    "Build": {
+      "dimensions": "Unfolded 117.8 × 164.6 × 5.2 mm; folded 84.1 mm wide, 11.3 mm thick",
+      "weightG": 254,
+      "materials": "Titanium foldable design, Ceramic Shield 2 front, Ceramic Shield back",
+      "ipRating": "IP68 (6 m up to 30 min)"
+    },
+    "Software": {
+      "os": "iOS 27",
+      "ai": "Apple Intelligence"
+    },
+    "Security": {
+      "biometrics": "Touch ID"
+    }
+  },
+  "keySpecs": {
+    "ramGB": null,
+    "displayInch": 7.6,
+    "refreshRateHz": 120,
+    "mainCameraMP": 48,
+    "frontCameraMP": 12,
+    "batteryMah": null,
+    "chargingW": null,
+    "wirelessCharging": true,
+    "is5G": true,
+    "weightG": 254,
+    "chip": "A20 Pro",
+    "os": "iOS",
+    "foldable": true
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "256GB"
+        },
+        {
+          "value": "512GB"
+        },
+        {
+          "value": "1TB"
+        },
+        {
+          "value": "2TB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Star White",
+          "hex": "#B2C6D2"
+        },
+        {
+          "value": "Night Sky",
+          "hex": "#363D47"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Star White": [
+        {
+          "key": "mobiles/apple-iphone-duo/star-white-1",
+          "alt": "Apple iPhone Duo in Star White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 2996
+        },
+        {
+          "key": "mobiles/apple-iphone-duo/star-white-2",
+          "alt": "Apple iPhone Duo in Star White, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "width": 1448,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/apple-iphone-duo/star-white-3",
+          "alt": "Apple iPhone Duo in Star White, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-star-white-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        }
+      ],
+      "Night Sky": [
+        {
+          "key": "mobiles/apple-iphone-duo/night-sky-1",
+          "alt": "Apple iPhone Duo in Night Sky",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609?scl=1&fmt=jpeg&qlt=90",
+          "width": 4000,
+          "height": 2996
+        },
+        {
+          "key": "mobiles/apple-iphone-duo/night-sky-2",
+          "alt": "Apple iPhone Duo in Night Sky, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV2?scl=1&fmt=jpeg&qlt=90",
+          "width": 1448,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/apple-iphone-duo/night-sky-3",
+          "alt": "Apple iPhone Duo in Night Sky, view 3",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-duo-finish-select-night-sky-202609_AV3?scl=1&fmt=jpeg&qlt=90",
+          "width": 1246,
+          "height": 518
+        }
+      ]
+    },
+    "common": [
+      {
+        "key": "mobiles/apple-iphone-duo/common-1",
+        "alt": "Apple iPhone Duo — unfolded titanium design",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/product-viewer/durability__d8uh14wcv2oi_large_2x.jpg",
+        "width": 2880,
+        "height": 1520
+      },
+      {
+        "key": "mobiles/apple-iphone-duo/common-2",
+        "alt": "Apple iPhone Duo — 7.6-inch folding display",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/product-stories/immersive/hero-display_startframe__r42exuol7yi6_large_2x.jpg",
+        "width": 3576,
+        "height": 2000
+      },
+      {
+        "key": "mobiles/apple-iphone-duo/common-3",
+        "alt": "Apple iPhone Duo — 48MP Dual Fusion camera",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/highlights/highlights_camera_startframe__ltwlwv2cm9ua_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
+      },
+      {
+        "key": "mobiles/apple-iphone-duo/common-4",
+        "alt": "Apple iPhone Duo — half-folded laptop mode",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/product-viewer/laptop__c7kl6vmsqd6q_large_2x.jpg",
+        "width": 2880,
+        "height": 1520
+      },
+      {
+        "key": "mobiles/apple-iphone-duo/common-5",
+        "alt": "Apple iPhone Duo — taking a photo",
+        "sourceUrl": "https://www.apple.com/v/iphone-duo/e/images/overview/highlights/camera__bbxzc8mkt6g2_large_2x.jpg",
+        "width": 2520,
+        "height": 1224
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "APL-IPDUO-256GB-STWH",
+      "mpn": "MK2D4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Star White"
+      },
+      "price": 299900,
+      "mrp": 299900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IPDUO-256GB-NISK",
+      "mpn": "MK2E4HN/A",
+      "options": {
+        "Storage": "256GB",
+        "Color": "Night Sky"
+      },
+      "price": 299900,
+      "mrp": 299900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "APL-IPDUO-512GB-STWH",
+      "mpn": "MK2F4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Star White"
+      },
+      "price": 324900,
+      "mrp": 324900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IPDUO-512GB-NISK",
+      "mpn": "MK2G4HN/A",
+      "options": {
+        "Storage": "512GB",
+        "Color": "Night Sky"
+      },
+      "price": 324900,
+      "mrp": 324900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "APL-IPDUO-1TB-STWH",
+      "mpn": "MK2H4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Star White"
+      },
+      "price": 374900,
+      "mrp": 374900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IPDUO-1TB-NISK",
+      "mpn": "MK2J4HN/A",
+      "options": {
+        "Storage": "1TB",
+        "Color": "Night Sky"
+      },
+      "price": 374900,
+      "mrp": 374900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 1024
+      }
+    },
+    {
+      "sku": "APL-IPDUO-2TB-STWH",
+      "mpn": "MK2K4HN/A",
+      "options": {
+        "Storage": "2TB",
+        "Color": "Star White"
+      },
+      "price": 449900,
+      "mrp": 449900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048
+      }
+    },
+    {
+      "sku": "APL-IPDUO-2TB-NISK",
+      "mpn": "MK2L4HN/A",
+      "options": {
+        "Storage": "2TB",
+        "Color": "Night Sky"
+      },
+      "price": 449900,
+      "mrp": 449900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "storageGB": 2048
+      }
+    }
+  ],
+  "inTheBox": [
+    "iPhone Duo with iOS 27",
+    "USB-C Charge Cable (1 m)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/iphone-duo/specs/",
+      "https://www.apple.com/in/shop/buy-iphone/iphone-duo"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "Prices are Apple India MRP (inclusive of taxes). Apple does not publish RAM or battery mAh."
+  }
+}

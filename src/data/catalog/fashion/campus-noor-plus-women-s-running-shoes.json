@@ -1,0 +1,204 @@
+{
+  "slug": "campus-noor-plus-women-s-running-shoes",
+  "title": "Campus Noor Plus Women's Running Shoes",
+  "brand": "Campus",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "women",
+    "sneakers"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Good energy. Great moves.",
+  "description": "Good energy. Great moves. Even better shoes. The Campus NOOR PLUS Women's Running Shoes bring Grey and Pink together for a sporty look with just the right pop of colour. The breathable mesh upper keeps things light and airy, while PVC detailing along the sides adds structure and support to the design. Underfoot, the lightweight EVA sole makes every step feel easy, while the Memory Foam Insole and PilloFoam team up to deliver a soft, cushioned feel. For the days you show up for yourself, keep your momentum going, and make every move count.",
+  "highlights": [
+    "Occasion: Everyday",
+    "Insole: Memory Foam",
+    "Upper Material: Mesh+Pvc+Embossing",
+    "Technology: Pillo Foam"
+  ],
+  "specs": {
+    "Product details": {
+      "Occasion": "Everyday",
+      "Insole": "Memory Foam",
+      "Upper Material": "Mesh+Pvc+Embossing",
+      "Technology": "Pillo Foam",
+      "Care Instructions": "Gently scrub with a soft cloth or brush using mild soap and cold water, then air dry in the shade. Avoid bleach and harsh cleaners"
+    }
+  },
+  "keySpecs": {
+    "gender": "Women",
+    "productType": "Sneakers",
+    "color": "Grey",
+    "fabric": "Mesh+Pvc+Embossing",
+    "fit": null,
+    "sizes": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "4"
+        },
+        {
+          "value": "5"
+        },
+        {
+          "value": "6"
+        },
+        {
+          "value": "7"
+        },
+        {
+          "value": "8"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Grey",
+          "hex": "#B0AFB4"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Grey": [
+        {
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-1",
+          "alt": "Campus Noor Plus Women's Running Shoes",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_01.jpg?v=1792739058",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-2",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_02.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-3",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_03.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-4",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_04.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
+        },
+        {
+          "key": "fashion/campus-noor-plus-women-s-running-shoes/grey-5",
+          "alt": "Campus Noor Plus Women's Running Shoes, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0607/6678/1671/files/NOORPLUS-GRY-PINK_05.webp?v=1792739057",
+          "width": 1080,
+          "height": 1440
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "CMP-NOORPLUSGRGSHOES-4",
+      "mpn": "NOOR-PLUS-L-GRY-PINK-4",
+      "options": {
+        "Size": "4",
+        "Color": "Grey"
+      },
+      "price": 725,
+      "mrp": 1099,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-NOORPLUSGRGSHOES-5",
+      "mpn": "NOOR-PLUS-L-GRY-PINK-5",
+      "options": {
+        "Size": "5",
+        "Color": "Grey"
+      },
+      "price": 725,
+      "mrp": 1099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-NOORPLUSGRGSHOES-6",
+      "mpn": "NOOR-PLUS-L-GRY-PINK-6",
+      "options": {
+        "Size": "6",
+        "Color": "Grey"
+      },
+      "price": 725,
+      "mrp": 1099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-NOORPLUSGRGSHOES-7",
+      "mpn": "NOOR-PLUS-L-GRY-PINK-7",
+      "options": {
+        "Size": "7",
+        "Color": "Grey"
+      },
+      "price": 725,
+      "mrp": 1099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "CMP-NOORPLUSGRGSHOES-8",
+      "mpn": "NOOR-PLUS-L-GRY-PINK-8",
+      "options": {
+        "Size": "8",
+        "Color": "Grey"
+      },
+      "price": 725,
+      "mrp": 1099,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.campusshoes.com/products/noor-plus-gry-pink-womens-running-shoes"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Campus's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "slug": "vivo-t5",
+  "title": "vivo T5 5G",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "MediaTek Dimensity 7500 Turbo Processor, 6.83-inch AMOLED display, 7,050 mAh battery with 44W FlashCharge and a 50MP main camera.",
+  "description": "vivo T5 5G runs on the MediaTek Dimensity 7500 Turbo Processor with OriginOS. Its 6.83-inch AMOLED display keeps scrolling and video smooth.\n\nThe 7,050 mAh battery with 44W FlashCharge lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "MediaTek Dimensity 7500 Turbo Processor",
+    "6.83-inch AMOLED display",
+    "7,050 mAh battery with 44W FlashCharge",
+    "50MP main camera",
+    "OriginOS"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "MediaTek Dimensity 7500 Turbo Processor",
+      "RAM": [
+        "6GB",
+        "8GB",
+        "12GB"
+      ],
+      "Storage": [
+        "128GB",
+        "256GB"
+      ],
+      "Battery": "7050 mAh",
+      "Fast Charging": "44W",
+      "Fingerprint Sensor": "In-display optical fingerprint sensor",
+      "Color": [
+        "Royal Bronze",
+        "Silver Green"
+      ],
+      "Operating System": "Origin OS 6.0"
+    },
+    "Display": {
+      "Size": "17.35cm (6.83 inches)",
+      "Resolution": "2800x1260",
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear camera: 50 MP (Sony IMX882) + 8 MP（Ultra-Wide）",
+        "Front camera: 32 MP"
+      ],
+      "Aperture": [
+        "Rear camera: f/1.79 + f/2.2",
+        "Front camera: f/2.0"
+      ],
+      "Flash": "Rear flash supported",
+      "Scene Modes": [
+        "Rear camera: Snapshot, Night Mode, Portrait, Photo, Video recording, 50 MP, Pano, Ultra HD Document, Slo-mo, Time-lapse, Supermoon, Professional",
+        "Front camera:  Night Mode, Portrait, Photo,Video"
+      ]
+    },
+    "Build": {
+      "Dimensions": "16.442cm ×7.525cm ×0.799cm (6.473 × 2.963 × 0.315 inches)",
+      "Weight": "199g"
+    },
+    "Connectivity": {
+      "Wi-Fi": "Wi-Fi 6",
+      "Bluetooth": "5.4",
+      "USB": "USB 2.0, Type-C",
+      "GPS": "L1",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.83,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 7050,
+    "chargingW": 44,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 199,
+    "chip": "MediaTek Dimensity 7500 Turbo Processor",
+    "os": "Android",
+    "ramGB": 6
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        },
+        {
+          "value": "12GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Royal Bronze",
+          "hex": "#C59D91"
+        },
+        {
+          "value": "Silver Green",
+          "hex": "#EEF4F4"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Royal Bronze": [
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-1",
+          "alt": "vivo T5 5G in Royal Bronze",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155358625/6372f934b547a8ef2d25da54b2544a15.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-3",
+          "alt": "vivo T5 5G in Royal Bronze, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155357914/b8273a92f7d050be3e4163f8032ad5e2.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-4",
+          "alt": "vivo T5 5G in Royal Bronze, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155358364/2e4b1756c397aec5c005956955f775c6.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-5",
+          "alt": "vivo T5 5G in Royal Bronze, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155357692/1f3aee5e02044754904695b9a0bc13e5.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-6",
+          "alt": "vivo T5 5G in Royal Bronze, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155358120/8603df479bee7109d396d2496bc62bfd.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-7",
+          "alt": "vivo T5 5G in Royal Bronze, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155357017/c30231e9d1362f2cb65d377b4c189fc7.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/royal-bronze-8",
+          "alt": "vivo T5 5G in Royal Bronze, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155358589/2eea9dec3ae1e3d6daec0733d15f9a83.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Silver Green": [
+        {
+          "key": "mobiles/vivo-t5/silver-green-1",
+          "alt": "vivo T5 5G in Silver Green",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788335502068/5806d3774e27594df10a180c60a75263.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/silver-green-3",
+          "alt": "vivo T5 5G in Silver Green, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155785545/1fd90b0c8e9f66e398e5d58b94193e4e.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/silver-green-4",
+          "alt": "vivo T5 5G in Silver Green, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155785925/5316f1e87b972caa304b4097b4f36414.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/silver-green-5",
+          "alt": "vivo T5 5G in Silver Green, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155785893/4f32daa9819fd5496a367a02720b242c.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/silver-green-6",
+          "alt": "vivo T5 5G in Silver Green, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155786052/e43805f778bb592d8159ad67f60bf55d.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/silver-green-7",
+          "alt": "vivo T5 5G in Silver Green, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155784800/157d6978fbc9dfa5da100837b2cf01b3.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-t5/silver-green-8",
+          "alt": "vivo T5 5G in Silver Green, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1788155785993/fa951cd44d8ed1403ad7fe120c8d5551.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-T55G-6128-ROBR",
+      "mpn": "5675225",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Royal Bronze"
+      },
+      "price": 34999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T55G-6128-SIGR",
+      "mpn": "5675226",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Silver Green"
+      },
+      "price": 34999,
+      "mrp": 49999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T55G-8128-ROBR",
+      "mpn": "5675227",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Royal Bronze"
+      },
+      "price": 39999,
+      "mrp": 55999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T55G-8128-SIGR",
+      "mpn": "5675228",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Silver Green"
+      },
+      "price": 39999,
+      "mrp": 55999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-T55G-8256-ROBR",
+      "mpn": "5675229",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Royal Bronze"
+      },
+      "price": 44999,
+      "mrp": 61999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-T55G-8256-SIGR",
+      "mpn": "5675230",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Silver Green"
+      },
+      "price": 44999,
+      "mrp": 61999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-T55G-12256-ROBR",
+      "mpn": "5675231",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Royal Bronze"
+      },
+      "price": 49999,
+      "mrp": 69999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-T55G-12256-SIGR",
+      "mpn": "5675232",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Silver Green"
+      },
+      "price": 49999,
+      "mrp": 69999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "USB Cable",
+    "Charger",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10366"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

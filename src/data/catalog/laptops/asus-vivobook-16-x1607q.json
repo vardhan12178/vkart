@@ -1,0 +1,290 @@
+{
+  "slug": "asus-vivobook-16-x1607q",
+  "title": "ASUS Vivobook 16 (X1607Q)",
+  "brand": "ASUS",
+  "category": "laptops",
+  "categoryPath": [
+    "electronics",
+    "laptops"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Affordable Snapdragon X Copilot+ PC with a 16-inch display and long battery life.",
+  "description": "This Vivobook 16 uses the Snapdragon X processor with a 45 TOPS NPU, bringing Copilot+ PC features to an affordable 16-inch laptop.\n\nIt has a full keyboard with number pad and comes in Cool Silver or Quiet Blue.",
+  "highlights": [
+    "Snapdragon X processor, 45 TOPS NPU",
+    "Copilot+ PC",
+    "16-inch display",
+    "Long battery life",
+    "Full keyboard with number pad",
+    "Cool Silver or Quiet Blue"
+  ],
+  "specs": {
+    "Processor": {
+      "Processor": "Snapdragon X X1 26 100 Processor (30MB Cache, up to 2.97GHz, 8 cores, 8 Threads)",
+      "Neural Processor": "Qualcomm Hexagon NPU up to 45TOPS"
+    },
+    "Graphics": {
+      "Graphics": "Qualcomm Adreno GPU"
+    },
+    "Display": {
+      "Display": "40.64 cms (16), FHD+ (1920 x 1200) 16:10 aspect ratio, Refresh Rate:60Hz refresh rate, 300nits, Anti-glare display"
+    },
+    "Memory": {
+      "Memory": [
+        "8GB LPDDR5X on board",
+        "16GB LPDDR5X on board",
+        "Max Total system memory up to:8GB"
+      ]
+    },
+    "Storage": {
+      "Storage": [
+        "1TB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "512GB M.2 NVMe PCIe 4.0 SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*.",
+        "256GB M.2 NVMe PCIe SSD + 100GB Cloud Storage with Microsoft 365 Basic for 1 Year*."
+      ],
+      "Expansion Slots (includes used)": "1x M.2 2280 PCIe 4.0x4"
+    },
+    "Ports": {
+      "I/O Ports": [
+        "2x USB 4.0 Gen 3 Type-C with support for display / power delivery (data speed up to 40Gbps)",
+        "2x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps), 1x 3.5mm Combo Audio Jack",
+        "1x HDMI 2.1 TMDS"
+      ]
+    },
+    "Input": {
+      "Keyboard & Touchpad": [
+        "Backlit Chiclet Keyboard with Num-key",
+        "Chiclet Keyboard with Num-key, 1.7mm Key-travel, Precision touchpad, With Copilot key"
+      ],
+      "Camera": "FHD camera with IR function to support Windows Hello, With privacy shutter",
+      "Audio": [
+        "Built-in array microphone",
+        "Built-in speaker",
+        "Smart Amp Technology",
+        "SonicMaster"
+      ]
+    },
+    "Connectivity": {
+      "Network and Communication": "Wi-Fi 6E(802.11ax) (Triple band) 2*2 Wireless Card, Bluetooth 5.3"
+    },
+    "Battery": {
+      "Battery": "50WHrs, 3S1P, 3-cell Li-ion",
+      "Power Supply": "TYPE-C, 65W AC Adapter, Output: 20V DC, 3.25A, 65W, Input: 100-240V AC 50/60Hz universal, *Whether a charger is included varies according to country, region and model. Please check with your local ASUS retailer for details."
+    },
+    "Build": {
+      "Weight": "1.88 kg (4.14 lbs)",
+      "Dimensions (W x D x H)": "35.70 x 25.06 x 1.79 ~ 1.99 cm (14.06\" x 9.87\" x 0.70\" ~ 0.78\")",
+      "Military Grade": "US MIL-STD 810H military-grade standard"
+    },
+    "Software": {
+      "Operating System": "Windows 11 Home - ASUS recommends Windows 11 Pro for business, *Windows 11 Home is available only as the Single Language edition in selected markets. Learn more about Windows 11 Home Single language: https://support.microsoft.com/article/eaf060a6-3642-4612-6b75-b34e57a08abf"
+    },
+    "Security": {
+      "Security": [
+        "Trusted Platform Module (Firmware TPM)",
+        "Microsoft Pluton security processor",
+        "BIOS Booting User Password Protection, IR webcam with Windows Hello support"
+      ]
+    }
+  },
+  "keySpecs": {
+    "processor": "Snapdragon X X1 26 100",
+    "gpu": "Qualcomm Adreno GPU",
+    "displayInch": 16,
+    "panel": "IPS",
+    "refreshRateHz": 60,
+    "weightKg": 1.88,
+    "batteryHours": null,
+    "os": "Windows 11",
+    "ramGB": 8,
+    "storageGB": 256
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "Starting configuration"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Cool Silver",
+          "hex": "#E9E9E9"
+        },
+        {
+          "value": "Quiet Blue",
+          "hex": "#545C74"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Cool Silver": [
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-1",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view with JS wallpaper.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/3fb8b452-71ea-4783-a2a5-83121e47afc3/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-2",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/af0b81ef-8d51-4f80-a50c-8b4e4e9feefa/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-3",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/cc327f80-e78e-457f-b893-606c1fff103a/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-4",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/da8d9e92-f89a-4ff5-ad9e-89be21d6642e/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-5",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/7d9910f5-1540-4752-ae19-6d21e52c43e2/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-6",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/e86a1270-2d4f-40fa-9c30-2d3e1be9ac6c/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-7",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/04236671-a7f0-4763-a464-accb1ba74a60/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/cool-silver-8",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Cool Silver",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/7a74ef7b-3955-41c1-8720-870c3138e972/w800",
+          "width": 800,
+          "height": 800
+        }
+      ],
+      "Quiet Blue": [
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-1",
+          "alt": "ASUS Vivobook 16 opened at 90-degree from the front view with JS wallpaper.",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/4a1f9365-e104-46f2-8fac-bc5ce39f0f88/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-2",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/101931fa-5b84-4d89-a467-bb54ab52a07f/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-3",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/efb0911e-972d-43db-87dc-be963daf42d9/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-4",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/81f93f62-67af-4ac5-8ae1-021646c7b18e/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-5",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/9670ba2f-0f14-4f0d-b296-f145a2ec295f/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-6",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/482508db-81d8-4f8f-870f-51621f349292/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-7",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/aa3691c8-9c81-494b-8bdb-f967364518ce/w800",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "key": "laptops/asus-vivobook-16-x1607q/quiet-blue-8",
+          "alt": "ASUS Vivobook 16 (X1607Q) in Quiet Blue",
+          "sourceUrl": "https://dlcdnwebimgs.asus.com/gain/2447e8de-1f4c-4c0e-bc7f-5018ad37dbcf/w800",
+          "width": 800,
+          "height": 800
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "ASU-VB16Q-COSI",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Cool Silver"
+      },
+      "price": 68990,
+      "mrp": 68990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "ASU-VB16Q-QUBL",
+      "mpn": null,
+      "options": {
+        "Configuration": "Starting configuration",
+        "Color": "Quiet Blue"
+      },
+      "price": 68990,
+      "mrp": 68990,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Laptop",
+    "Power adapter",
+    "Documentation"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-16-x1607q/",
+      "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-16-x1607q/techspec/"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs and colour galleries from asus.com/in. ASUS's spec sheet lists every configuration sold worldwide (multi-value fields are the available options), and asus.com/in publishes only a 'starting at' price, so each colour is one variant at that price. Per-configuration India prices are on in.store.asus.com, which blocks automated access."
+  }
+}

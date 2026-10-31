@@ -1,0 +1,223 @@
+{
+  "slug": "benq-mobiuz-ex270qm",
+  "title": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor",
+  "brand": "BenQ",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "BenQ MOBIUZ EX270QM: 27-inch QHD gaming monitor with 240Hz, HDRi, treVolo speakers and a remote.",
+  "description": "1ms 27\" 240Hz QHD Gaming Monitor",
+  "highlights": [
+    "27\" IPS panel",
+    "2560x1440 resolution",
+    "240Hz refresh rate",
+    "1 ms MPRT response",
+    "HDR: HDR10, VESA DisplayHDR 600",
+    "Built-in speakers 2.1 Channel (2Wx2 + 5W woofer)"
+  ],
+  "specs": {
+    "Display": {
+      "Screen Size": "27 inch",
+      "Panel Type": "IPS",
+      "Backlight Technology": "Local Dimming",
+      "Resolution (max.)": "2560x1440",
+      "Brightness (typ.)": "400 nits",
+      "Brightness (peak)(HDR)": "600 nits",
+      "HDR": "HDR10, VESA DisplayHDR 600",
+      "Viewing Angle (L/R) (CR>=10)": "178°/178°",
+      "Response Times (GtG)": "1 ms",
+      "Refresh Rate (Hz)": "240",
+      "Native Contrast": "1000:1",
+      "Response Times (MPRT)": "1 ms",
+      "Color Gamut": "98% P3",
+      "Color Mode": "sRGB, M-book, Custom, Cinema HDRi, Game HDRi, FPS, RPG, Racing game, ePaper, DisplayHDR",
+      "Aspect Ratio": "16:9",
+      "Display Colors": "1.07 billion colors",
+      "Display Screen Coating": "Matte",
+      "PPI": "109",
+      "Color Temperature": "Bluish, Normal, Reddish, User Define",
+      "Gamma": "1.8 - 2.6",
+      "HDCP": "2.2",
+      "OSD Language": "Arabic, Chinese (simplified), Chinese (traditional), Czech, Deutsch, English, French, Hungarian, Italian, Japanese, Korean, Netherlands, Polish, Portuguese, Romanian, Russian, Spanish, Swedish",
+      "AMA": "Yes"
+    },
+    "Audio": {
+      "Built-in Speaker": "2.1 Channel (2Wx2 + 5W woofer)",
+      "Headphone Jack": "Yes"
+    },
+    "Power": {
+      "Voltage Rating": "100 - 240V",
+      "Power Supply": "Adapter",
+      "Power Consumption (normal)": "28 W",
+      "Power Consumption (max)": "98 W",
+      "Power Consumption (sleep mode)": "<0.5 W"
+    },
+    "Dimension And Weight": {
+      "Tilt (down/up)": "-5˚ - 15˚",
+      "Swivel (left/right)": "15˚/ 15˚",
+      "Height Adjustment Stand": "100 mm",
+      "Dimensions (HxWxD) (mm)": "422.1 - 522.1x609x194",
+      "Dimensions (HxWxD) (inch)": "16.6 - 20.6x24x7.6",
+      "Dimensions (HxWxD) (w/o Base) (mm)": "371.6x609x70.6",
+      "Dimensions (HxWxD) (w/o Base) (inch)": "14.6x23.8x2.8",
+      "Net Weight (kg)": "7.6",
+      "Net Weight (lb)": "16.8",
+      "Net Weight (w/o Base) (kg)": "5.5",
+      "Net Weight (w/o Base) (lb)": "12.1",
+      "VESA Wall Mount": "100x100 mm"
+    },
+    "Accessories": {
+      "Other Accessories": "QSG, Warranty Card, Remote Control, IO Cover",
+      "Signal Cable (may vary by region)": "DP, HDMI (v2.1), USB 3.0"
+    },
+    "Connectivity": {
+      "HDMI (v2.1)": "2",
+      "DisplayPort (v1.4)": "1",
+      "USB Type B ( Upstream )": "1",
+      "USB 3.0 ( Downstream )": "2"
+    },
+    "Eye Care": {
+      "Flicker-free Technology": "Yes",
+      "Low Blue Light": "Yes",
+      "Brightness Intelligence Plus (B.I.+)": "Yes",
+      "Color Weakness": "Yes",
+      "ePaper": "Yes"
+    },
+    "Certification": {
+      "TUV Certificate": "Flicker-free, Low Blue Light"
+    },
+    "Video Enjoyment": {
+      "HDRi": "Yes"
+    },
+    "Professional": {
+      "Video Format Support": "Yes"
+    },
+    "Gaming": {
+      "FPS Mode": "Yes",
+      "Motion Blur Reduction": "Yes",
+      "Color Vibrance": "Yes",
+      "Light Tuner": "Yes",
+      "FreeSync Premium Pro": "Yes"
+    },
+    "Software": {
+      "Color Shuttle": "Yes"
+    },
+    "Gaming Software": {
+      "Haunting Beauty Waits on the Beach!": "Download Now"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 27,
+    "resolution": "2560x1440",
+    "refreshRateHz": 240,
+    "panel": "IPS",
+    "responseTimeMs": 1,
+    "gaming": true,
+    "curved": false
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "27\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-1",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-right45-5?$ResponsivePreset$&wid=1200",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-2",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 2",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-front-high?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-3",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 3",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-left45-1?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-4",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 4",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-back-3?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-5",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 5",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-leftside-information?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-6",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 6",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-connectivity-information?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-7",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 7",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-remote-control?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      },
+      {
+        "key": "monitors/benq-mobiuz-ex270qm/common-8",
+        "alt": "BenQ MOBIUZ EX270QM 27\" QHD 240Hz Gaming Monitor, view 8",
+        "sourceUrl": "https://image.benq.com/is/image/benqco/ex270qm-front-low?$ResponsivePreset$&wid=1200&fmt=png-alpha",
+        "width": 1200,
+        "height": 1000
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "BNQ-EX270QM",
+      "mpn": "EX270QM",
+      "options": {
+        "Size": "27\""
+      },
+      "price": 59990,
+      "mrp": 82500,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "QSG",
+    "Warranty Card",
+    "Remote Control",
+    "IO Cover"
+  ],
+  "warranty": "Manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.benq.com/en-in/monitor/gaming/ex270qm.html",
+      "https://www.benq.com/en-in/monitor/gaming/ex270qm/spec.html"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Price (and list price where shown) from the BenQ India store; full spec sheet from the BenQ spec page."
+  }
+}

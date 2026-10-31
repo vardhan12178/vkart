@@ -1,0 +1,364 @@
+{
+  "slug": "samsung-galaxy-s26",
+  "title": "Samsung Galaxy S26",
+  "brand": "Samsung",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026-02",
+  "shortDescription": "6.3-inch 2600-nit AMOLED, Exynos 2600, triple 50MP camera system and 4300 mAh battery in a 167 g body.",
+  "description": "Galaxy S26 pairs a 6.3-inch Dynamic AMOLED 2X display (120Hz, 2600 nits peak) with the Exynos 2600 processor and Galaxy AI.\n\nThe 50MP Wide camera handles high-resolution photos, the 12MP Ultra Wide covers landscapes and groups, and the 10MP Telephoto adds 3x optical zoom.\n\nIt is 7.2 mm thin and 167 g, framed in Armor Aluminum with Gorilla Glass Victus 2 on both sides and IP68 water resistance. The 4300 mAh battery gives up to 30 hours of video playback.",
+  "highlights": [
+    "6.3-inch Dynamic AMOLED 2X, 120Hz, 2600 nits peak",
+    "Exynos 2600 processor",
+    "50MP Wide + 12MP Ultra Wide + 10MP 3x Telephoto",
+    "4300 mAh battery, up to 30 hours video",
+    "7.2 mm, 167 g, Armor Aluminum, IP68",
+    "Galaxy AI, One UI 8.5"
+  ],
+  "specs": {
+    "Display": {
+      "size": 6.3,
+      "type": "Dynamic AMOLED 2X",
+      "refreshRate": 120,
+      "brightness": "2600 nits peak"
+    },
+    "Performance": {
+      "chip": "Exynos 2600"
+    },
+    "Camera": {
+      "rear": "50MP Wide (F1.8) + 12MP Ultra Wide (F2.2) + 10MP Telephoto (F2.4, 3x optical)",
+      "mainMP": 50,
+      "front": "12MP"
+    },
+    "Battery": {
+      "capacityMah": 4300,
+      "videoPlayback": "Up to 30 hours"
+    },
+    "Connectivity": {
+      "network": "5G",
+      "usb": "USB-C"
+    },
+    "Build": {
+      "thicknessMm": 7.2,
+      "weightG": 167,
+      "materials": "Armor Aluminum frame, Gorilla Glass Victus 2 front and back",
+      "ipRating": "IP68"
+    },
+    "Software": {
+      "os": "Android 16, One UI 8.5",
+      "ai": "Galaxy AI"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.3,
+    "refreshRateHz": 120,
+    "mainCameraMP": 50,
+    "frontCameraMP": 12,
+    "batteryMah": 4300,
+    "chargingW": null,
+    "is5G": true,
+    "weightG": 167,
+    "chip": "Exynos 2600",
+    "os": "Android",
+    "ramGB": 12
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "12GB + 256GB"
+        },
+        {
+          "value": "12GB + 512GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Black",
+          "hex": "#46494E"
+        },
+        {
+          "value": "Cobalt Violet",
+          "hex": "#72728C"
+        },
+        {
+          "value": "Pink Gold",
+          "hex": "#E5D3C7"
+        },
+        {
+          "value": "Silver Shadow",
+          "hex": "#A2A3A5"
+        },
+        {
+          "value": "Sky Blue",
+          "hex": "#C4D6E2"
+        },
+        {
+          "value": "White",
+          "hex": "#DDD3DC"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Black": [
+        {
+          "key": "mobiles/samsung-galaxy-s26/black-1",
+          "alt": "Samsung Galaxy S26 in Black",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_black_PC.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Cobalt Violet": [
+        {
+          "key": "mobiles/samsung-galaxy-s26/cobalt-violet-1",
+          "alt": "Samsung Galaxy S26 in Cobalt Violet",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_cobaltViolet_PC.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Pink Gold": [
+        {
+          "key": "mobiles/samsung-galaxy-s26/pink-gold-1",
+          "alt": "Samsung Galaxy S26 in Pink Gold",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_pinkGold_PC.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Silver Shadow": [
+        {
+          "key": "mobiles/samsung-galaxy-s26/silver-shadow-1",
+          "alt": "Samsung Galaxy S26 in Silver Shadow",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_silverShadow_PC.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "Sky Blue": [
+        {
+          "key": "mobiles/samsung-galaxy-s26/sky-blue-1",
+          "alt": "Samsung Galaxy S26 in Sky Blue",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_skyBlue_PC.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ],
+      "White": [
+        {
+          "key": "mobiles/samsung-galaxy-s26/white-1",
+          "alt": "Samsung Galaxy S26 in White",
+          "sourceUrl": "https://images.samsung.com/in/smartphones/galaxy-s26/buy/product_color_white_PC.jpg",
+          "width": 1600,
+          "height": 864
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "SAM-S942BZKC",
+      "mpn": "SM-S942BZKC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Black"
+      },
+      "price": 102999,
+      "mrp": 117999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S942BZVC",
+      "mpn": "SM-S942BZVC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Cobalt Violet"
+      },
+      "price": 102999,
+      "mrp": 117999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S942BZDC",
+      "mpn": "SM-S942BZDC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Pink Gold"
+      },
+      "price": 102999,
+      "mrp": 117999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S942BZSC",
+      "mpn": "SM-S942BZSC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 102999,
+      "mrp": 117999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S942BLBC",
+      "mpn": "SM-S942BLBC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "Sky Blue"
+      },
+      "price": 102999,
+      "mrp": 117999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S942BZWC",
+      "mpn": "SM-S942BZWC",
+      "options": {
+        "Storage": "12GB + 256GB",
+        "Color": "White"
+      },
+      "price": 102999,
+      "mrp": 117999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "SAM-S942BZKQ",
+      "mpn": "SM-S942BZKQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Black"
+      },
+      "price": 122999,
+      "mrp": 137999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S942BZVQ",
+      "mpn": "SM-S942BZVQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Cobalt Violet"
+      },
+      "price": 122999,
+      "mrp": 137999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S942BZSQ",
+      "mpn": "SM-S942BZSQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Silver Shadow"
+      },
+      "price": 122999,
+      "mrp": 137999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S942BLBQ",
+      "mpn": "SM-S942BLBQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "Sky Blue"
+      },
+      "price": 122999,
+      "mrp": 137999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    },
+    {
+      "sku": "SAM-S942BZWQ",
+      "mpn": "SM-S942BZWQ",
+      "options": {
+        "Storage": "12GB + 512GB",
+        "Color": "White"
+      },
+      "price": 122999,
+      "mrp": 137999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 12,
+        "storageGB": 512
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Data cable (USB-C)",
+    "Ejection pin",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/smartphones/galaxy-s26/",
+      "https://www.samsung.com/in/smartphones/galaxy-s26/buy/"
+    ],
+    "fetchedAt": "2026-10-26",
+    "notes": "mrp = Samsung India MRP, price = samsung.com/in selling price. Specs taken from the overview page text; Samsung's full spec sheet API refuses automated requests, so some fields are missing."
+  }
+}

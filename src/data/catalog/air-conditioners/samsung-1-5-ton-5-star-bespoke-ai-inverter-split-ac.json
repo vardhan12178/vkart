@@ -1,0 +1,155 @@
+{
+  "slug": "samsung-1-5-ton-5-star-bespoke-ai-inverter-split-ac",
+  "title": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC",
+  "brand": "Samsung",
+  "category": "air-conditioners",
+  "categoryPath": [
+    "home-appliances",
+    "air-conditioners"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "AI Energy Mode (30% Energy Savings)\nAI Auto Cooling\nSmartThings Homecare",
+  "description": "AI Energy Mode (30% Energy Savings)\nAI Auto Cooling\nSmartThings Homecare",
+  "highlights": [
+    "1.5 ton",
+    "Split AC",
+    "5-star energy rating",
+    "Inverter"
+  ],
+  "specs": {
+    "Specifications": {
+      "Capacity": "16208 Btu/h",
+      "Capacity (Cooling, kW)": "4.75 kW",
+      "EER (Cooling, W/W)": "4.52 W/W",
+      "Net Dimension (Outdoor, WxHxD)": "88.00 cm x 63.80 cm x 31.00 cm",
+      "Capacity (Cooling, Btu/hr)": "16208 Btu/h",
+      "Capacity (Cooling, Min - Max, Btu/hr)": "5459 ~ 22861 Btu/h",
+      "Capacity (Cooling, Min - Max, kW)": "1.6 ~ 6.7 kW",
+      "ISEER (W/W)": "5.77 W/W",
+      "EER (Cooling, Btu/hW)": "15.44 Btu/hW",
+      "Energy Star Rating (Cooling)": "5 Star",
+      "Noise Level (Indoor, High/Low, dBA)": "45 / 24 dBA",
+      "Noise Level (Outdoor, High/Low, dBA)": "47 dBA",
+      "Power Source(Φ/V/Hz)": "1 Ph / AC 230 V / 50 Hz",
+      "Power Consumption(Cooling, W)": "1050 W",
+      "Operating Current(Cooling, A)": "4.7 A",
+      "Gross Dimension (Indoor, WxHxD)": "1.11 m x 29.00 cm x 37.50 cm",
+      "Gross Dimension (Outdoor, WxHxD)": "1.02 m x 72.40 cm x 45.10 cm",
+      "Net Dimension (Indoor, WxHxD)": "1.05 m x 29.90 cm x 21.50 cm",
+      "Gross Weight (Indoor, kg)": "14.2 kg",
+      "Gross Weight (Outdoor, kg)": "39.6 kg",
+      "Net Weight (Indoor, kg)": "12.2 kg",
+      "Net Weight (Outdoor, kg)": "33.6 kg",
+      "Piping Length (Max, m)": "30 m",
+      "Piping Height (Max, m)": "15 m",
+      "SVC Valve (Liquid (ODxL))": "6.35",
+      "SVC Valve (Gas (ODxL))": "12.7",
+      "Moisture Removal (l/hr)": "1.9 l/hr",
+      "Air Circulation (Cooling, ㎥/min)": "19.1 ㎥/min",
+      "Refrigerant (Type)": "R32 (Fluorinated greenhouse gas, GWP 675)",
+      "Refrigerant (Charging)(kg)": "0.89 kg",
+      "Refrigerant (Charging, tCO2e)": "0.6 tCO2e",
+      "Low Ambient (Cooling, ℃)": "15 ~ 52 ℃",
+      "Outdoor Unit (Compressor Type)": "BLDC",
+      "Outdoor Unit (Anti-Corrosion Fin)": "Yes",
+      "WindFree Cooling": "No",
+      "Air Direction Control (Up/Down)": "Auto",
+      "Air Direction Control (Left/Right)": "Auto",
+      "Air Flow Control Step (Cool/Fan)": "5 / 4",
+      "PM 1.0 Filter": "No",
+      "Tri Care Filter": "No",
+      "4-in-1 Care Filter": "No",
+      "Copper Anti-bacterial Filter": "Yes",
+      "Auto Clean (Self Cleaning)": "Yes",
+      "SmartThings": "Yes",
+      "AI Auto Cooling": "Yes",
+      "Motion Detect Sensor": "No",
+      "Freeze Wash": "No",
+      "Filter Cleaning Indicatior": "Yes",
+      "Indoor Temp. Display": "Yes",
+      "Display On/Off": "Yes",
+      "Beep On/Off": "Yes",
+      "24-Hour Timer": "Yes",
+      "Auto Changeover": "No",
+      "Auto Restart": "Yes",
+      "Auto Mode": "Yes",
+      "Fast Cool": "Yes",
+      "Dry Comfort": "No",
+      "Good Sleep": "Yes",
+      "Eco Mode (Cooling)": "No",
+      "5 Step Mode": "Yes",
+      "Dehumidification": "Yes",
+      "Fan Mode": "Yes",
+      "Quiet": "Yes",
+      "Wi-Fi Embedded": "Yes",
+      "SmartThings App Support": "Yes",
+      "Manufactured by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Country of Origin": "India",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "tonnage": 1.5,
+    "starRating": 5,
+    "inverter": true,
+    "type": "Split AC",
+    "windFree": false,
+    "coolingCapacityKw": 4.7
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Standard"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {},
+    "common": [
+      {
+        "key": "air-conditioners/samsung-1-5-ton-5-star-bespoke-ai-inverter-split-ac/common-1",
+        "alt": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h18d15hnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h18d15h-4-75-kw-5-star-2026-ar50h18d15hnna-thumb-550558865?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "air-conditioners/samsung-1-5-ton-5-star-bespoke-ai-inverter-split-ac/common-2",
+        "alt": "Samsung 1.5 Ton 5-Star Bespoke AI Inverter Split AC, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ar50h18d15hnna/gallery/in-bespoke-ai-inverter-split-ac-ar50h18d15h-4-75-kw-5-star-2026-ar50h18d15hnna-550558864?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-AR50H18D15H",
+      "mpn": "AR50H18D15H",
+      "options": {
+        "Color": "Standard"
+      },
+      "price": 52490,
+      "mrp": 87990,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year comprehensive manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/air-conditioners/split-ac/bespoke-ai-inverter-split-ac-4-7-kw-5-star-ar50h18d15hnna/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

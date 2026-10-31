@@ -1,0 +1,206 @@
+{
+  "slug": "oppo-enco-x4",
+  "title": "OPPO Enco X4",
+  "brand": "OPPO",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "OPPO Enco X4: Active noise cancellation, Dual-Driver Design: 11mm Woofer + 6mm Tweeter, Up to 53 hours with case, AAC, SBC, LHDC, LC3 codecs.",
+  "description": "OPPO Enco X4 use a dual-driver design: 11mm woofer + 6mm tweeter with active noise cancellation.\n\nThey last up to 53 hours with the charging case, support AAC, SBC, LHDC, LC3 and are rated IP55. Available in Aurora Violet, Glacier White.",
+  "highlights": [
+    "Active noise cancellation",
+    "Dual-Driver Design: 11mm Woofer + 6mm Tweeter",
+    "Up to 53 hours with case",
+    "AAC, SBC, LHDC, LC3 codecs",
+    "Bluetooth® 6.1",
+    "IP55"
+  ],
+  "specs": {
+    "Earphone": {
+      "Model": "ETEM1"
+    },
+    "Audio Quality": {
+      "Driver": "Dual-Driver Design: 11mm Woofer + 6mm Tweeter",
+      "Driver Sensitivity": [
+        "Woofer: 122±2dB, 0.3V 711 @1kHz",
+        "Tweeter: 108dB±8dB, 0.3V 711 @10KHz"
+      ],
+      "Frequency Response Range": "10 Hz~40 KHz",
+      "Microphone Sensitivity": "-37 dBFS"
+    },
+    "Bluetooth": {
+      "Bluetooth Codec": "AAC, SBC, LHDC, LC3",
+      "Bluetooth Version": "Bluetooth® 6.1",
+      "Bluetooth Range": "10m"
+    },
+    "Battery Life": {
+      "Battery Type": "Rechargeable Li-ion Battery",
+      "Battery Capacity": "65 mAh (earbuds)/576 mAh (charging case)",
+      "Playback": [
+        "Playback (AAC, default settings, 50% volume, ANC On): 6h (earbuds)/26h (earbuds + charging case)",
+        "Playback (AAC, default settings, 50% volume, ANC Off): 13h (earbuds)/53h (earbuds + charging case)",
+        "Playback (LHDC, default settings, 50% volume, ANC On): 5.5h (earbuds)/22h (earbuds + charging case)",
+        "Playback (LHDC, default settings, 50% volume, ANC Off): 10h (earbuds)/42h (earbuds + charging case)",
+        "Playback (AAC, default settings, 50% volume, transparency mode): 5.5h (earbuds)/22h (earbuds + charging case)",
+        "Playback (LHDC, default settings, 50% volume, transparency mode): 5h (earbuds)/21h (earbuds + charging case)"
+      ]
+    },
+    "Charging": {
+      "Charging Time": [
+        "Wired charging time: 55mins (earbuds)/65mins (earbuds + charging case)",
+        "Wireless charging time: 150mins (earbuds + charging case)"
+      ],
+      "Charging Input": [
+        "(charging case): 5V ⎓ 1.5A",
+        "(earbuds): 5V ⎓ 0.2A"
+      ],
+      "Charging Output": "(charging case to earbuds): 5V ⎓ 0.4A",
+      "Charging Port": "USB Type-C"
+    },
+    "Water and dust resistance": {
+      "Water Resistance (Earbuds)": "IP55"
+    },
+    "Size": {
+      "Weight (Earbud)": "5.6 g (±0.3 g)",
+      "Weight (Earbuds + Charging Case)": "53.0 g (±2 g)",
+      "Size (Earbud)": "3.21×1.81×2.10 cm",
+      "Size (Charging Case)": "6.34×4.95×2.55 cm"
+    }
+  },
+  "keySpecs": {
+    "type": "In-ear (TWS)",
+    "anc": true,
+    "ancDepthDb": null,
+    "batteryHours": 53,
+    "ipRating": "IP55",
+    "connectivity": "Bluetooth® 6.1",
+    "codecs": "AAC, SBC, LHDC, LC3"
+  },
+  "variantOptions": [
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Aurora Violet",
+          "hex": "#9D8FC4"
+        },
+        {
+          "value": "Glacier White",
+          "hex": "#EEF0F2"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Aurora Violet": [
+        {
+          "key": "audio/oppo-enco-x4/aurora-violet-1",
+          "alt": "OPPO Enco X4 in Aurora Violet",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/epb/202610/13/3c7SOEUQuHqGRXCH.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "audio/oppo-enco-x4/aurora-violet-2",
+          "alt": "OPPO Enco X4 in Aurora Violet, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/6b88951dc686f87d89039f1afeccbed0.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "audio/oppo-enco-x4/aurora-violet-3",
+          "alt": "OPPO Enco X4 in Aurora Violet, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/7e5e553a8a2ffb455b4523d9484f611d.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "audio/oppo-enco-x4/aurora-violet-4",
+          "alt": "OPPO Enco X4 in Aurora Violet, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/699ce44fe0e2e255c5037610ffe66e7b.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Glacier White": [
+        {
+          "key": "audio/oppo-enco-x4/glacier-white-1",
+          "alt": "OPPO Enco X4 in Glacier White",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/01f17fd2f9f44a0548167916ef88deff.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "audio/oppo-enco-x4/glacier-white-2",
+          "alt": "OPPO Enco X4 in Glacier White, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/ecfeffe5d02720c33b3204abb5084017.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "audio/oppo-enco-x4/glacier-white-3",
+          "alt": "OPPO Enco X4 in Glacier White, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/883df88a15a0a56971561309cef9fcf2.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "audio/oppo-enco-x4/glacier-white-4",
+          "alt": "OPPO Enco X4 in Glacier White, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202610/12/6f6dee054da84d8170e466e499b53310.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-ENCOX4-AUVI",
+      "mpn": "5031110437",
+      "options": {
+        "Color": "Aurora Violet"
+      },
+      "price": 19999,
+      "mrp": 21999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "OPO-ENCOX4-GLWH",
+      "mpn": "5031110436",
+      "options": {
+        "Color": "Glacier White"
+      },
+      "price": 19999,
+      "mrp": 21999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "Earbuds",
+    "Charging case",
+    "Ear tips",
+    "USB-C cable",
+    "Quick start guide"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/accessories/enco-x4/specs/",
+      "https://www.oppo.com/in/product/enco-x4-true-wireless-noise-cancelling-earbuds-etem1-glacier-white-in.P.P1110190"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Specs from the oppo.com/in spec page; colours, selling price (price), list price (mrp) and images from the OPPO Store India product data."
+  }
+}

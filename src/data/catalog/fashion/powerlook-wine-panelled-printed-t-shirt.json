@@ -1,0 +1,250 @@
+{
+  "slug": "powerlook-wine-panelled-printed-t-shirt",
+  "title": "Powerlook Wine Panelled Printed T-Shirt",
+  "brand": "Powerlook",
+  "category": "fashion",
+  "categoryPath": [
+    "fashion",
+    "men",
+    "tshirts"
+  ],
+  "status": "draft",
+  "launchDate": "2026-10",
+  "shortDescription": "Wine tones establish the base for the panelled construction and printed artwork on this T shirt, combining colour variation with graphic detailing.",
+  "description": "Wine tones establish the base for the panelled construction and printed artwork on this T shirt, combining colour variation with graphic detailing. The knitted body features a crew neckline and short sleeves, while the contrasting panels create defined sections across the silhouette. The print adds another layer of surface detail without replacing the panel structure. Add this POWERLOOK T shirt when colour blocking and printed graphics work together in the design.",
+  "highlights": [],
+  "specs": {
+    "Product details": {}
+  },
+  "keySpecs": {
+    "gender": "Men",
+    "productType": "T-Shirts",
+    "color": "Maroon",
+    "fabric": null,
+    "fit": null,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL",
+      "5XL"
+    ]
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "S"
+        },
+        {
+          "value": "M"
+        },
+        {
+          "value": "L"
+        },
+        {
+          "value": "XL"
+        },
+        {
+          "value": "XXL"
+        },
+        {
+          "value": "3XL"
+        },
+        {
+          "value": "4XL"
+        },
+        {
+          "value": "5XL"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Maroon",
+          "hex": "#562133"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Maroon": [
+        {
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-1",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/1_547575d7-55ca-49a5-9299-9b362212d812.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-2",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 2",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/4_b17b6241-8770-4e26-9cbd-2c58e8121bc1.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-3",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 3",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/3_54d5585d-c523-45d6-ab20-a719d0437c3e.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-4",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 4",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/2_8d15cc61-85bd-4bb3-99b0-143ce959da0c.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
+        },
+        {
+          "key": "fashion/powerlook-wine-panelled-printed-t-shirt/maroon-5",
+          "alt": "Powerlook Wine Panelled Printed T-Shirt, view 5",
+          "sourceUrl": "https://cdn.shopify.com/s/files/1/0750/2685/8234/files/5_25910490-d933-4a86-aa5c-b1a6d0547662.jpg?v=1792994376",
+          "width": 810,
+          "height": 990
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-S",
+      "mpn": "1673911-S",
+      "options": {
+        "Size": "S",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-M",
+      "mpn": "1673911-M",
+      "options": {
+        "Size": "M",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-L",
+      "mpn": "1673911-L",
+      "options": {
+        "Size": "L",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-XL",
+      "mpn": "1673911-XL",
+      "options": {
+        "Size": "XL",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-XXL",
+      "mpn": "1673911-XXL",
+      "options": {
+        "Size": "XXL",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-3XL",
+      "mpn": "1673911-3XL",
+      "options": {
+        "Size": "3XL",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-4XL",
+      "mpn": "1673911-4XL",
+      "options": {
+        "Size": "4XL",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": true
+      }
+    },
+    {
+      "sku": "PWL-WINEPANELLTSHIRT-5XL",
+      "mpn": "1673911-5XL",
+      "options": {
+        "Size": "5XL",
+        "Color": "Maroon"
+      },
+      "price": 1499,
+      "mrp": 1499,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": null,
+  "source": {
+    "urls": [
+      "https://www.powerlook.in/products/wine-panelled-printed-t-shirt"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Sizes, availability, selling price (price), list price (mrp), images and product details from Powerlook's official online store. Each listing is one colour; other colours are separate listings on the store."
+  }
+}

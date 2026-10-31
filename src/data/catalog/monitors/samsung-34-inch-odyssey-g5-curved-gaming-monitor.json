@@ -1,0 +1,163 @@
+{
+  "slug": "samsung-34-inch-odyssey-g5-curved-gaming-monitor",
+  "title": "Samsung 34\" Odyssey G5 Curved Gaming Monitor",
+  "brand": "Samsung",
+  "category": "monitors",
+  "categoryPath": [
+    "electronics",
+    "monitors"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "All-encompassing 1000R display with 21:9 aspect ratio\nPin-sharp images with ultra WQHD (3440 x 1440) resolution\n165Hz refresh rate with low input lag",
+  "description": "All-encompassing 1000R display with 21:9 aspect ratio\nPin-sharp images with ultra WQHD (3440 x 1440) resolution\n165Hz refresh rate with low input lag",
+  "highlights": [
+    "34-inch 3,440 x 1,440 VA",
+    "165Hz refresh rate",
+    "1 (MPRT) response time",
+    "VA panel"
+  ],
+  "specs": {
+    "Specifications": {
+      "Screen Curvature": "1000R",
+      "Aspect Ratio": "21:9",
+      "Brightness (Typical)": "250 cd/㎡",
+      "Contrast Ratio Static": "2,500:1(Typ.)",
+      "Resolution": "3,440 x 1,440",
+      "Response Time": "1 (MPRT)",
+      "Viewing Angle (H/V)": "178°(H)/178°(V)",
+      "Refresh Rate": "Max 165Hz",
+      "Screen Size (Class)": "86 cm",
+      "Flat / Curved": "Curved",
+      "Active Display Size (HxV) (mm)": "79.72 cm x 33.3 7 cm",
+      "Panel Type": "VA",
+      "Brightness (Min)": "200 cd/㎡",
+      "Contrast Ratio (Dynamic)": "Mega ∞ DCR",
+      "HDR(High Dynamic Range)": "HDR10",
+      "Colour Support": "Max 16.7M",
+      "Color Gamut (NTSC 1976)": "72%",
+      "Eye Saver Mode": "Yes",
+      "Flicker Free": "Yes",
+      "Picture-By-Picture": "Yes",
+      "Windows Certification": "Windows 10",
+      "FreeSync Premium": "Yes",
+      "Off Timer Plus": "Yes",
+      "Screen Size Optimizer": "Yes",
+      "Black Equalizer": "Yes",
+      "Low Input Lag Mode": "Yes",
+      "Refresh Rate Optimizor": "Yes",
+      "Super Arena Gaming UX": "Yes",
+      "Wireless Display": "No",
+      "D-Sub": "No",
+      "DVI": "No",
+      "Dual Link DVI": "No",
+      "Display Port": "1 EA",
+      "Display Port Version": "1.4",
+      "Display Port Out": "No",
+      "Mini-Display Port": "No",
+      "HDMI": "1 EA",
+      "HDMI Version": "2",
+      "Audio In": "No",
+      "Headphone": "Yes",
+      "USB Ports": "No",
+      "USB-C": "No",
+      "Speaker": "No",
+      "USB Sound Bar (Ready)": "No",
+      "Temperature": "10~40 ℃",
+      "Humidity": "10~80,non-condensing",
+      "Color Mode": "Custom/FPS/RTS/RPG/AOS/Cinema/Dynamic Contrast",
+      "Colour": "BLACK",
+      "Stand Type": "SIMPLE",
+      "Tilt": "-2 ~ 18",
+      "Wall Mount": "75 x 75",
+      "Power Supply": "AC 100~240V",
+      "Power Consumption (Max)": "50W",
+      "Type": "External Adaptor",
+      "Set Dimension with Stand (WxHxD)": "80.66 cm x 47.53 cm x 27.26 cm",
+      "Set Dimension without Stand (WxHxD)": "80.66 cm x 38.09 cm x 15.27 cm",
+      "Package Dimension (WxHxD)": "90.1 cm x 21.6 cm x 44.1 cm",
+      "Set Weight with Stand": "5.6 kg",
+      "Set Weight without Stand": "5.2 kg",
+      "Package Weight": "7.9 kg",
+      "Power Cable Length": "1.5 m",
+      "DP Cable": "Yes",
+      "Mini-Display Gender": "No",
+      "Disclaimer": "Yes",
+      "Manufactured by": "Samsung Electronics Hcmc Ce Complex Co. Ltd. I11, D2 ROAD, TANG NHON PHU B WARD, SAIGON HITECH PARK DISTRICT 9, HO CHI MINH CITY, VIETNAM70000 HO CHI MINH CITY,Vietnam70000",
+      "Country of Origin": "Vietnam",
+      "Imported by": "Samsung India Electronics Pvt. Ltd. having its Registered Office at: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001",
+      "Contact us": "For All Product Related Complaints/assistance, please contact Manager, Customer Care Samsung India Electronics Pvt. Ltd., 6th Floor, DLF Centre, Sansad Marg, New Delhi - 110001 Email us at: support.india@samsung.com Tel (Toll Free): 1800 40 7267864 (1800 40 SAMSUNG)"
+    }
+  },
+  "keySpecs": {
+    "screenInch": 34,
+    "resolution": "3,440 x 1,440",
+    "refreshRateHz": 165,
+    "panel": "VA",
+    "responseTimeMs": null,
+    "curved": true,
+    "gaming": true
+  },
+  "variantOptions": [
+    {
+      "name": "Size",
+      "values": [
+        {
+          "value": "34\""
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Size",
+    "groups": {},
+    "common": [
+      {
+        "key": "monitors/samsung-34-inch-odyssey-g5-curved-gaming-monitor/common-1",
+        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-thumb-467164454?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "monitors/samsung-34-inch-odyssey-g5-curved-gaming-monitor/common-2",
+        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor, view 2",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-467164472?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      },
+      {
+        "key": "monitors/samsung-34-inch-odyssey-g5-curved-gaming-monitor/common-3",
+        "alt": "Samsung 34\" Odyssey G5 Curved Gaming Monitor, view 3",
+        "sourceUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/lc34g55twwwxxl/gallery/in-odyssey-g5-34g5-lc34g55twwwxxl-467164436?$650_519_PNG$",
+        "width": 650,
+        "height": 519
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "SAM-LC34G55TWWW",
+      "mpn": "LC34G55TWWW",
+      "options": {
+        "Size": "34\""
+      },
+      "price": 27999,
+      "mrp": 55300,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "available": false
+      }
+    }
+  ],
+  "inTheBox": [],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.samsung.com/in/monitors/gaming/odyssey-g5-34-inch-165hz-curved-ultra-wqhd-lc34g55twwwxxl/"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Model, selling price (price), MRP (mrp), images and spec table from the Samsung India product page."
+  }
+}

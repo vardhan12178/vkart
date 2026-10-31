@@ -1,0 +1,398 @@
+{
+  "slug": "vivo-s2",
+  "title": "vivo S2",
+  "brand": "vivo",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "Dimensity 7360-Turbo, 6.83-inch AMOLED display, 7,050 mAh battery with 44W FlashCharge and a 50MP main camera.",
+  "description": "vivo S2 runs on the Dimensity 7360-Turbo with OriginOS 6. Its 6.83-inch AMOLED display keeps scrolling and video smooth.\n\nThe 7,050 mAh battery with 44W FlashCharge lasts through long days, and the 50MP main camera handles photos and 4K video.",
+  "highlights": [
+    "Dimensity 7360-Turbo",
+    "6.83-inch AMOLED display",
+    "7,050 mAh battery with 44W FlashCharge",
+    "50MP main camera",
+    "OriginOS 6"
+  ],
+  "specs": {
+    "Performance": {
+      "Processor": "Dimensity 7360-Turbo",
+      "RAM": "8GB",
+      "Storage": [
+        "128GB",
+        "256GB"
+      ],
+      "Battery": "7050 mAh (TYP)",
+      "Fast Charging": "44W",
+      "Fingerprint Sensor": "In-display optical fingerprint sensor",
+      "Color": [
+        "Sapphire Blue",
+        "Regal Bronze",
+        "Silk White"
+      ],
+      "Operating System": "OriginOS 6"
+    },
+    "Display": {
+      "Size": "17.35 cm (6.83 inches)",
+      "Resolution": "2800 × 1260",
+      "Type": "AMOLED",
+      "Touch Screen": "Capacitive multi-touch"
+    },
+    "Camera": {
+      "Camera": [
+        "Rear camera:  50 MP main camera 2 MP secondary camera",
+        "Front camera:  32 MP"
+      ],
+      "Aperture": [
+        "Rear f/1.8(50 MP) +f/2.4(2MP)",
+        "Front f/2.0(32 MP)"
+      ],
+      "Flash": "Rear flash supported",
+      "Scene Modes": [
+        "Rear: Night, Portrait, Photo, Video, 50MP high resolution, Panorama, Ultra-HD document, Slow motion, Time-lapse photography, Super moon, Professional, Food, Dual-view video",
+        "Front: Night, Portrait, Photo, Video, Dual-view video"
+      ]
+    },
+    "Build": {
+      "Dimensions": "16.442*7.525*0.799 cm (Sapphire Blue, Regal Bronze), 16.442 x 7.525 x 0.810 cm (Silk White)",
+      "Weight": "197 g (Sapphire Blue, Regal Bronze), 199 g (Silk White)"
+    },
+    "Connectivity": {
+      "Wi-Fi": "2.4GHz /5GHz",
+      "Bluetooth": "Bluetooth 5.4",
+      "USB": "USB 2.0, Type-C",
+      "GPS": "Supported",
+      "OTG": "Supported"
+    },
+    "Sensors": {
+      "Accelerometer": "Supported",
+      "Ambient Light Sensor": "Supported",
+      "Proximity Sensor": "Supported",
+      "E-compass": "Supported",
+      "Gyroscope": "Supported"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.83,
+    "refreshRateHz": null,
+    "mainCameraMP": 50,
+    "frontCameraMP": 32,
+    "batteryMah": 7050,
+    "chargingW": 44,
+    "wirelessCharging": false,
+    "is5G": true,
+    "weightG": 197,
+    "chip": "Dimensity 7360-Turbo",
+    "os": "Android",
+    "ramGB": 8
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Silk White",
+          "hex": "#F8F6F7"
+        },
+        {
+          "value": "Sapphire Blue",
+          "hex": "#011075"
+        },
+        {
+          "value": "Regal Bronze",
+          "hex": "#AB877B"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Silk White": [
+        {
+          "key": "mobiles/vivo-s2/silk-white-1",
+          "alt": "vivo S2 in Silk White",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600831082/cee2e4f00c094a18d0cc4ea780b6d87c.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/silk-white-2",
+          "alt": "vivo S2 in Silk White, view 2",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1790057091500/c8aeb529135c4dd8e900fba7e94bbe6f.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/silk-white-4",
+          "alt": "vivo S2 in Silk White, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830768/00acaeb34e3a4485a5a3199eab0f9565.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/silk-white-5",
+          "alt": "vivo S2 in Silk White, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830954/d6ea8a3662b3b852769614526d90076f.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/silk-white-6",
+          "alt": "vivo S2 in Silk White, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830745/4d3a992273c2d07c6a3b513e4fcb742d.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/silk-white-7",
+          "alt": "vivo S2 in Silk White, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600830781/90b5a1eb66a558ec0aca722536b23ecb.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/silk-white-8",
+          "alt": "vivo S2 in Silk White, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786600831968/96dcb319a0a2671a387d68d0d9ed887e.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Sapphire Blue": [
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-1",
+          "alt": "vivo S2 in Sapphire Blue",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778408/fc4dbea854a7c88607dd66699c873f4b.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-3",
+          "alt": "vivo S2 in Sapphire Blue, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778411/286596c19db21a05daa14cf5f4966df1.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-4",
+          "alt": "vivo S2 in Sapphire Blue, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778976/e554f2ce3698af7a50e9f3a80f376533.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-5",
+          "alt": "vivo S2 in Sapphire Blue, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736779028/5fc8b62fb4ebfa3e1c56c2fbe79a1797.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-6",
+          "alt": "vivo S2 in Sapphire Blue, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778621/deca89f83a3661dded5768809c1561dd.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-7",
+          "alt": "vivo S2 in Sapphire Blue, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736778730/83a7db0e83e2be668e17ad277e6d8d0c.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/sapphire-blue-8",
+          "alt": "vivo S2 in Sapphire Blue, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1785736779686/d220f1f7049cf94ee9e8f6f3fcfb2b55.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "Regal Bronze": [
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-1",
+          "alt": "vivo S2 in Regal Bronze",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018305/2a0b530de91658ee9236d09bcb10984d.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-3",
+          "alt": "vivo S2 in Regal Bronze, view 3",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018549/355949949d5554f960de320fe3427514.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-4",
+          "alt": "vivo S2 in Regal Bronze, view 4",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018271/bbb1be26070522e90724c55d5471db5c.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-5",
+          "alt": "vivo S2 in Regal Bronze, view 5",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018387/ad982e6d57dc219edc6818faa4c57801.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-6",
+          "alt": "vivo S2 in Regal Bronze, view 6",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018228/a875815777596beaf0b13db0d4fa963e.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-7",
+          "alt": "vivo S2 in Regal Bronze, view 7",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603018052/764c32056693dd36bb17d8d32d26c8f7.png",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "key": "mobiles/vivo-s2/regal-bronze-8",
+          "alt": "vivo S2 in Regal Bronze, view 8",
+          "sourceUrl": "https://in-exstatic-vivofs.vivo.com/Oz84QB3Wo0uns8j1/in/1786603019166/2a157a340f7d04865575c59c36f369bb.png",
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "VIV-S2-8128-SIWH",
+      "mpn": "5674630",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Silk White"
+      },
+      "price": 42999,
+      "mrp": 66999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2-8128-SABL",
+      "mpn": "5674628",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Sapphire Blue"
+      },
+      "price": 42999,
+      "mrp": 66999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2-8128-REBR",
+      "mpn": "5674629",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Regal Bronze"
+      },
+      "price": 42999,
+      "mrp": 66999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "VIV-S2-8256-SABL",
+      "mpn": "5674631",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Sapphire Blue"
+      },
+      "price": 48999,
+      "mrp": 70999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-S2-8256-SIWH",
+      "mpn": "5674633",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Silk White"
+      },
+      "price": 48999,
+      "mrp": 70999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "VIV-S2-8256-REBR",
+      "mpn": "5674632",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Regal Bronze"
+      },
+      "price": 48999,
+      "mrp": 70999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone",
+    "Quick Start Guide",
+    "USB Cable",
+    "Charger",
+    "Eject Tool",
+    "Phone Case",
+    "Protective Film (applied)",
+    "Warranty Card"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://shop.vivo.com/in/product/10364"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs, SKUs, colours, images, selling price (price) and MRP (mrp) from the vivo India e-store product data."
+  }
+}

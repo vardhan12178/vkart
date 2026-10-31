@@ -1,0 +1,456 @@
+{
+  "slug": "oppo-f35-pro-5g",
+  "title": "OPPO F35 Pro 5G",
+  "brand": "OPPO",
+  "category": "mobiles",
+  "categoryPath": [
+    "electronics",
+    "mobiles"
+  ],
+  "status": "draft",
+  "launchDate": "2026",
+  "shortDescription": "MediaTek Dimensity 7360 MAX, 6.78-inch AMOLED display up to 144Hz, 8,000 mAh battery with 80W SUPERVOOC charging and a 8MP main camera.",
+  "description": "OPPO F35 Pro 5G runs on the MediaTek Dimensity 7360 MAX with ColorOS 16.5. Its 6.78-inch AMOLED display up to 144Hz keeps scrolling and games smooth.\n\nThe 8,000 mAh battery with 80W SUPERVOOC charging is built to last more than a day, and the 8MP main camera handles everyday photos and video.",
+  "highlights": [
+    "MediaTek Dimensity 7360 MAX",
+    "6.78-inch AMOLED display up to 144Hz",
+    "8,000 mAh battery with 80W SUPERVOOC charging",
+    "8MP main camera",
+    "ColorOS 16.5"
+  ],
+  "specs": {
+    "Size and Weight": {
+      "Height": "about 16.26cm",
+      "Width": "about 7.76cm",
+      "Thickness": "about 0.84cm",
+      "Weight": "about 210g"
+    },
+    "Storage": {
+      "RAM and ROM Capacities": [
+        "6GB+128GB",
+        "8GB+128GB",
+        "8GB+256GB"
+      ],
+      "RAM Type": "LPDDR4X",
+      "ROM Specifications": "UFS 3.1",
+      "Phone Storage Card": "Unsupported",
+      "USB OTG": "Supported"
+    },
+    "Display": {
+      "Size": "17.22 cm",
+      "Screen Ratio": "93.6%",
+      "Resolution": "FHD+ 2772×1272 Pixels",
+      "Refresh Rate": [
+        "60/90/120Hz Adaptive",
+        "Maximum 144Hz"
+      ],
+      "Touch Sampling Rate": [
+        "Maximum 240Hz",
+        "Default 120Hz",
+        "Screen instantaneous sampling rate: 4000Hz"
+      ],
+      "Colour Gamut": [
+        "Standard mode: 100% DCI-P3",
+        "Natural mode: 100% DCI-P3"
+      ],
+      "Colour Depth": "1.07 billion colours(10-bit)",
+      "Pixel Density": "450 PPI",
+      "Brightness": [
+        "Normal brightness: 800 nits(Typical)",
+        "HBM: 1800 nits(Typical)"
+      ],
+      "Panel": "AMOLED flexible screen",
+      "Cover Glasses": "AGC DT-Star D+"
+    },
+    "Camera": {
+      "Rear": [
+        "Ultra-wide angle: 8MP; f/2.2; FOV 116°; 5P lens; AF supported",
+        "Wide angle: 50MP; f/1.8; FOV 79°; 5P lens; AF supported; Supports 2-axis OIS"
+      ],
+      "Front": "50MP; f/2.0; FOV 100°; 5P lens; AF supported",
+      "Shooting Mode": [
+        "Rear: Photo, Video, Portrait, Night, Panorama, SLO-MO, TIME-LAPSE, STICKER, HI-RES, Google Lens, Underwater, PRO, DOC SCANNER",
+        "Front: Photo, Video, Portrait, Night, Panorama, Dual-view, TIME-LAPSE, STICKER, Retouch, Screen Fill Light, HI-RES"
+      ]
+    },
+    "Video": {
+      "Rear": [
+        "4K video: 30 fps",
+        "1080P video: 60 fps, 30 fps",
+        "720P video: 30 fps",
+        "4K EIS/OIS video: 30 fps",
+        "1080P EIS/OIS video: 60 fps, 30 fps",
+        "720P EIS/OIS video: 30 fps",
+        "1080P SLO-MO video: 120 fps",
+        "720P SLO-MO video: 240 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "Supports Dual-view video shooting"
+      ],
+      "Front": [
+        "4K video: 30 fps",
+        "1080P video: 30 fps",
+        "720P video: 30 fps",
+        "4K EIS video: 30 fps",
+        "1080P EIS video: 30 fps",
+        "720P EIS video: 30 fps",
+        "1080P TIME-LAPSE: 30 fps",
+        "Supports Dual-view video shooting",
+        "Supports video zoom shooting: up to 2× digital zoom"
+      ]
+    },
+    "Chips": {
+      "SoC": "MediaTek Dimensity 7360 MAX",
+      "CPU": "8-core",
+      "GPU": "Arm Mali-G615@1.047GHz"
+    },
+    "Battery": {
+      "Battery": [
+        "8000 mAh/31.36 Wh(Typical)",
+        "7780 mAh/30.50 Wh(Rated)"
+      ],
+      "Fast Charge": [
+        "Supports(Max): 80 W SUPERVOOCTM, 44 W UFCS.",
+        "Compatible with: 65 W and below SUPERVOOCTM, 44 W third-party UFCS, 55 W PPS, 13.5 W PD"
+      ]
+    },
+    "Biometrics": {
+      "Fingerprint": "Under-screen fingerprint",
+      "Facial Recognition": "Supported"
+    },
+    "Sensors": {
+      "Sensor": [
+        "Proximity sensor",
+        "Ambient light sensor",
+        "Colour temperature sensor",
+        "E-compass",
+        "Accelerometer",
+        "Gyroscope",
+        "In-display optical fingerprint sensor",
+        "Infrared remote control"
+      ]
+    },
+    "Connectivity": {
+      "WLAN": [
+        "Wi-Fi 6 (802.11ax) supported",
+        "Wi-Fi 5 (802.11ac) supported",
+        "802.11a/b/g/n supported",
+        "Wi-Fi Display supported",
+        "WLAN Tethering supported"
+      ],
+      "Bluetooth® Version": "Bluetooth® 5.4, Low Energy",
+      "Bluetooth® Audio Codec": "SBC, AAC, LDAC, aptX, aptX HD",
+      "USB Interface": "USB Type-C",
+      "Earphone Jack": "Type-C headphones, supported Type-C digital headphones, not supported Type-C analog headphones",
+      "NFC": "Unsupported"
+    },
+    "Operating System": {
+      "Os": "ColorOS 16.5"
+    }
+  },
+  "keySpecs": {
+    "displayInch": 6.78,
+    "refreshRateHz": 144,
+    "mainCameraMP": 8,
+    "frontCameraMP": 50,
+    "batteryMah": 8000,
+    "chargingW": 80,
+    "wirelessCharging": false,
+    "is5G": false,
+    "weightG": 210,
+    "chip": "MediaTek Dimensity 7360 MAX",
+    "os": "Android",
+    "ramGB": 6
+  },
+  "variantOptions": [
+    {
+      "name": "Storage",
+      "values": [
+        {
+          "value": "6GB + 128GB"
+        },
+        {
+          "value": "8GB + 128GB"
+        },
+        {
+          "value": "8GB + 256GB"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "Sunrise Orange",
+          "hex": "#FF9667"
+        },
+        {
+          "value": "Twilight Brown",
+          "hex": "#8D6845"
+        },
+        {
+          "value": "Wave Blue",
+          "hex": "#B5D0ED"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "Sunrise Orange": [
+        {
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-1",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/da5964c76f2d79ff7d9f16d83e2b0eb7.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-2",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/2fa4612e6c70251ae87e7c9411f4b264.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-3",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/9d748535cb2905d5809171ed6a3236fd.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/sunrise-orange-4",
+          "alt": "OPPO F35 Pro 5G in Sunrise Orange, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/b258da0eabf89ee18ae7e63ff7499358.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Twilight Brown": [
+        {
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-1",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/1b23b3f169ddda33ef322bd8775461b6.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-2",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/9488e6619b4404f6457a6f87df04579f.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-3",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/bf6d0c08175662d7fee1d3007c8ce0a5.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/twilight-brown-4",
+          "alt": "OPPO F35 Pro 5G in Twilight Brown, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/2ec84dc209116037bfaa370bdb74216e.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ],
+      "Wave Blue": [
+        {
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-1",
+          "alt": "OPPO F35 Pro 5G in Wave Blue",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/52f943283859b0b986343232a4e3110b.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-2",
+          "alt": "OPPO F35 Pro 5G in Wave Blue, view 2",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/361a841af566efa60fc5a8490f566073.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-3",
+          "alt": "OPPO F35 Pro 5G in Wave Blue, view 3",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/ddb7261b8a2cf46bba00efd266793344.png",
+          "width": 1280,
+          "height": 1280
+        },
+        {
+          "key": "mobiles/oppo-f35-pro-5g/wave-blue-4",
+          "alt": "OPPO F35 Pro 5G in Wave Blue, view 4",
+          "sourceUrl": "https://opsg-img-cdn-gl.heytapimg.com/media/202609/21/050e47d6a20d1dd09367c92808a8439e.png",
+          "width": 1280,
+          "height": 1280
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "OPO-F35P-6128-SUOR",
+      "mpn": "5011110409",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Sunrise Orange"
+      },
+      "price": 45999,
+      "mrp": 74999,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-F35P-6128-TWBR",
+      "mpn": "5011110413",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Twilight Brown"
+      },
+      "price": 45999,
+      "mrp": 74999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-F35P-6128-WABL",
+      "mpn": "5011110405",
+      "options": {
+        "Storage": "6GB + 128GB",
+        "Color": "Wave Blue"
+      },
+      "price": 45999,
+      "mrp": 74999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 6,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-F35P-8128-SUOR",
+      "mpn": "5011110410",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Sunrise Orange"
+      },
+      "price": 49999,
+      "mrp": 79999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-F35P-8128-TWBR",
+      "mpn": "5011110414",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Twilight Brown"
+      },
+      "price": 49999,
+      "mrp": 79999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-F35P-8128-WABL",
+      "mpn": "5011110406",
+      "options": {
+        "Storage": "8GB + 128GB",
+        "Color": "Wave Blue"
+      },
+      "price": 49999,
+      "mrp": 79999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 128
+      }
+    },
+    {
+      "sku": "OPO-F35P-8256-TWBR",
+      "mpn": "5011110415",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Twilight Brown"
+      },
+      "price": 54999,
+      "mrp": 84999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-F35P-8256-SUOR",
+      "mpn": "5011110412",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Sunrise Orange"
+      },
+      "price": 54999,
+      "mrp": 84999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    },
+    {
+      "sku": "OPO-F35P-8256-WABL",
+      "mpn": "5011110408",
+      "options": {
+        "Storage": "8GB + 256GB",
+        "Color": "Wave Blue"
+      },
+      "price": 54999,
+      "mrp": 84999,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {
+        "ramGB": 8,
+        "storageGB": 256
+      }
+    }
+  ],
+  "inTheBox": [
+    "Phone×1",
+    "Charger×1",
+    "USB Data Cable×1",
+    "SIM Ejector Tool×1",
+    "Protective Case×1",
+    "Quick Guide×1"
+  ],
+  "warranty": "1 year manufacturer warranty",
+  "source": {
+    "urls": [
+      "https://www.oppo.com/in/smartphones/series-f/f35-pro-5g/specs/",
+      "https://www.oppo.com/in/product/f35-pro-5g.P.P1110180"
+    ],
+    "fetchedAt": "2026-10-27",
+    "notes": "Specs from oppo.com/in spec page; variants, selling price (price) and list price (mrp) from the OPPO Store product data. Swatch colours are sampled from the first product image."
+  }
+}

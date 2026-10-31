@@ -1,12 +1,8 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  CubeIcon,
-  HomeIcon,
-  LightningBoltIcon,
-} from "@heroicons/react/outline";
+import { Home as HomeIcon, Zap as LightningBoltIcon } from "lucide-react";
 import {
   BadgeCheck,
   Crown,
@@ -28,6 +24,10 @@ import { toggleChat } from "../redux/uiSlice";
 import AnnouncementBar from "./AnnouncementBar";
 import NotificationBell from "./NotificationBell";
 import { qk } from "../query/queryKeys";
+import HeaderSearch from "./header/HeaderSearch";
+import CategoriesMenu, { CATEGORY_GROUPS, useCategoryCounts } from "./header/CategoriesMenu";
+import { CATEGORIES } from "./shop/catalogData";
+import { iconFor } from "./shop/categoryIcons";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -49,14 +49,8 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
   const [hasActiveSale, setHasActiveSale] = useState(false);
-  const [aiParsing, setAiParsing] = useState(false);
-  const suggestRef = useRef(null);
-  const suggestRefMobile = useRef(null);
-  const debounceRef = useRef(null);
+  const categoryCounts = useCategoryCounts(isMobileMenuOpen);
 
   // --- Effects ---
 
@@ -83,31 +77,7 @@ const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setShowSearch(false);
-    setShowSuggestions(false);
-  }, [location.pathname]);
-
-  // 3. Close suggestions on outside click
-  useEffect(() => {
-    const handler = (e) => {
-      const clickOutsideDesktop = suggestRef.current && !suggestRef.current.contains(e.target);
-      const clickOutsideMobile = suggestRefMobile.current && !suggestRefMobile.current.contains(e.target);
-      if (clickOutsideDesktop && clickOutsideMobile) {
-        setShowSuggestions(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  // 4. Fetch autocomplete suggestions
-  const fetchSuggestions = useCallback(async (q) => {
-    if (!q || q.length < 2) { setSuggestions([]); setShowSuggestions(false); return; }
-    try {
-      const res = await axios.get(`/api/products/suggest?q=${encodeURIComponent(q)}`);
-      setSuggestions(res.data || []);
-      setShowSuggestions(true);
-    } catch { setSuggestions([]); }
-  }, []);
+  }, [location.pathname, location.search]);
 
   const handleLogout = async () => {
     try {
@@ -140,10 +110,6 @@ const Header = () => {
       const [pathname, query] = path.split("?");
       return location.pathname === pathname && location.search.includes(query);
     }
-    // For Collection (/products), only highlight when no query params
-    if (path === "/products") {
-      return location.pathname === "/products" && !location.search;
-    }
     return location.pathname.startsWith(path);
   };
 
@@ -152,53 +118,13 @@ const Header = () => {
     dispatch(toggleChat());
   };
 
-  // On explicit submit (Enter / form submit), run the query through the AI
-  // parser so free text like "red heels under 3000" resolves into real
-  // category/price/rating filters, not just a keyword match. Live typing
-  // (onChange below) stays a plain, instant `q=` navigation for responsiveness -
-  // only the deliberate "search" action pays the extra AI round trip.
-  const runSearch = async (rawText) => {
-    const trimmed = rawText.trim();
-    if (!trimmed) return;
-    setShowSearch(false);
-    setShowSuggestions(false);
-    setAiParsing(true);
-    try {
-      const res = await axios.post("/api/ai/parse-search", { query: trimmed });
-      const { q, category, minPrice, maxPrice, minRating, sort } = res.data;
-      const sortMap = { price_asc: "price-asc", price_desc: "price-desc", rating_desc: "rating-desc" };
-
-      const params = new URLSearchParams();
-      if (q) params.set("q", q);
-      else if (!category) params.set("q", trimmed); // AI found nothing structured - fall back to raw text
-      if (category) params.set("cat", category);
-      if (minPrice != null) params.set("min", String(minPrice));
-      if (maxPrice != null) params.set("max", String(maxPrice));
-      if (minRating != null) params.set("rating", String(minRating));
-      if (sort && sortMap[sort]) params.set("sort", sortMap[sort]);
-
-      navigate(`/products?${params.toString()}`);
-    } catch (err) {
-      // AI search is a nice-to-have, never a blocker - fall back to plain search.
-      navigate(`/products?q=${encodeURIComponent(trimmed)}`);
-    } finally {
-      setAiParsing(false);
-    }
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    runSearch(searchInput);
-  };
-
   // Hide header on auth pages
   const authPaths = ["/login", "/register", "/forgot-password", "/reset-password"];
   if (authPaths.includes(location.pathname)) return null;
 
   const navLinks = [
     { label: "Home", to: "/", icon: HomeIcon },
-    { label: "Collection", to: "/products", icon: CubeIcon },
-    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sale=true", icon: LightningBoltIcon }] : []),
+    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sort=discount", icon: LightningBoltIcon }] : []),
   ];
 
   return (
@@ -228,7 +154,8 @@ const Header = () => {
               </Link>
 
               {/* Desktop Nav Links */}
-              <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+              <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+                <CategoriesMenu />
                 {navLinks.map((item) => {
                   const active = isActive(item.to);
                   return (
@@ -247,83 +174,8 @@ const Header = () => {
             </div>
 
             {/* --- CENTER: SEARCH (Desktop) --- */}
-            <div className="hidden md:flex flex-1 max-w-md mx-2 xl:mx-4">
-              <div className="w-full relative group" ref={suggestRef}>
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  {aiParsing ? (
-                    <Sparkles className="h-4 w-4 text-[#a85d37] animate-pulse" strokeWidth={1.8} />
-                  ) : (
-                    <Search className="h-4 w-4 text-gray-400 group-focus-within:text-gray-900 transition-colors" strokeWidth={1.8} />
-                  )}
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search, or ask e.g. 'red heels under 3000'"
-                  value={searchInput}
-                  disabled={aiParsing}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    setSearchInput(val);
-                    // Dynamic search if on products page
-                    if (location.pathname === "/products") {
-                      navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
-                    }
-                    // Debounced autocomplete
-                    clearTimeout(debounceRef.current);
-                    debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
-                  }}
-                  onFocus={() => { if (suggestions.length) setShowSuggestions(true); }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      e.preventDefault();
-                      runSearch(searchInput);
-                    }
-                  }}
-                  className="block w-full rounded-full border border-black/[0.06] bg-[#f2eee6] pl-10 pr-10 py-2.5 text-sm font-medium text-[#1d1c19] focus:border-[#9b5330]/40 focus:bg-white focus:ring-0 transition-all placeholder:text-[#99948a] disabled:opacity-60"
-                />
-                {searchInput && (
-                  <button
-                    onClick={() => {
-                      setSearchInput("");
-                      setSuggestions([]);
-                      setShowSuggestions(false);
-                      if (location.pathname === "/products") {
-                        navigate("/products", { replace: true });
-                      }
-                    }}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
-                  >
-                    <X className="h-4 w-4" strokeWidth={1.8} />
-                  </button>
-                )}
-
-                {/* Autocomplete dropdown */}
-                {showSuggestions && suggestions.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">
-                    {suggestions.map((s) => (
-                      <button
-                        key={s._id}
-                        onClick={() => {
-                          navigate(`/product/${s._id}`);
-                          setShowSuggestions(false);
-                          setSearchInput("");
-                        }}
-                        className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
-                      >
-                        {s.thumbnail && (
-                          <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
-                        )}
-                        <div className="min-w-0 flex-1">
-                          <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
-                          <div className="text-xs text-gray-500">
-                            {s.category} — ₹{Math.round(s.price)}
-                          </div>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+            <div className="hidden lg:flex flex-1 max-w-md mx-2 xl:mx-4">
+              <HeaderSearch variant="desktop" />
             </div>
 
 
@@ -333,7 +185,7 @@ const Header = () => {
               {/* Mobile Search Toggle */}
               <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="lg:hidden grid h-10 w-10 place-items-center rounded-full text-[#6f6b62] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
                 aria-label={showSearch ? "Close search" : "Open search"}
               >
                 <Search className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
@@ -419,7 +271,7 @@ const Header = () => {
 
               {/* Profile / Auth */}
               {isAuthenticated ? (
-                <div className="hidden md:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
+                <div className="hidden lg:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
                   <Link to="/profile" className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]" aria-label="Account profile">
                     <UserRound className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                   </Link>
@@ -435,7 +287,7 @@ const Header = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="hidden md:inline-flex items-center justify-center rounded-full bg-[#1d1c19] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
+                  className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1d1c19] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
                 >
                   Sign In
                 </Link>
@@ -443,7 +295,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                className="lg:hidden grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
@@ -460,65 +312,9 @@ const Header = () => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="md:hidden overflow-hidden pb-4"
+                className="lg:hidden overflow-hidden pb-4 pt-1"
               >
-                <form onSubmit={handleSearch} className="relative" ref={suggestRefMobile}>
-                  {aiParsing ? (
-                    <Sparkles className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#a85d37] animate-pulse" strokeWidth={1.8} />
-                  ) : (
-                    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" strokeWidth={1.8} />
-                  )}
-                  <input
-                    type="text"
-                    autoFocus
-                    placeholder="Search, or ask e.g. 'red heels under 3000'"
-                    value={searchInput}
-                    disabled={aiParsing}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      setSearchInput(val);
-                      if (location.pathname === "/products") {
-                        navigate(`/products?q=${encodeURIComponent(val)}`, { replace: true });
-                      }
-                      clearTimeout(debounceRef.current);
-                      debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
-                    }}
-                    onFocus={() => { if (suggestions.length) setShowSuggestions(true); }}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        e.preventDefault();
-                        runSearch(searchInput);
-                      }
-                    }}
-                    className="w-full rounded-full border border-black/10 bg-[#f1ede5] py-3 pl-10 pr-4 text-sm font-medium text-[#1d1c19] placeholder:text-[#8b867d] focus:border-[#a85d37]/40 focus:bg-[#fffdf8] focus:ring-0 disabled:opacity-60"
-                  />
-                  {showSuggestions && suggestions.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl border border-gray-200 shadow-xl z-50 max-h-80 overflow-y-auto">
-                      {suggestions.map((s) => (
-                        <button
-                          key={s._id}
-                          onClick={() => {
-                            navigate(`/product/${s._id}`);
-                            setShowSuggestions(false);
-                            setSearchInput("");
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-left"
-                        >
-                          {s.thumbnail && (
-                            <img src={s.thumbnail} alt="" className="h-10 w-10 rounded-lg object-contain bg-gray-50 shrink-0" />
-                          )}
-                          <div className="min-w-0 flex-1">
-                            <div className="text-sm font-bold text-gray-900 truncate">{s.title}</div>
-                            <div className="text-xs text-gray-500">
-                              {s.category} — ₹{Math.round(s.price)}
-                            </div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </form>
+                <HeaderSearch variant="mobile" autoFocus onDone={() => setShowSearch(false)} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -532,7 +328,7 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="md:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/98 backdrop-blur-xl shadow-lg"
+              className="lg:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/98 backdrop-blur-xl shadow-lg"
             >
               <div className="px-4 py-3 space-y-2.5">
 
@@ -569,6 +365,32 @@ const Header = () => {
                       Profile
                     </Link>
                   )}
+                </div>
+
+                {/* Mobile categories */}
+                <div className="border-t border-black/[0.06] pt-2.5">
+                  {CATEGORY_GROUPS.map((g) => (
+                    <div key={g.title} className="mb-2 last:mb-0">
+                      <p className="px-2.5 pb-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-light">{g.title}</p>
+                      <div className="grid grid-cols-2 gap-1">
+                        {g.keys.map((key) => {
+                          const Icon = iconFor(key);
+                          return (
+                            <Link
+                              key={key}
+                              to={`/products?cat=${key}`}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-xs font-semibold text-ink-soft transition-colors hover:bg-black/[0.04] hover:text-ink"
+                            >
+                              <Icon size={14} className="shrink-0 text-muted" />
+                              <span className="min-w-0 flex-1 truncate">{CATEGORIES[key]}</span>
+                              {categoryCounts[key] > 0 && <span className="text-[10px] text-muted-faint">{categoryCounts[key]}</span>}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 {/* Mobile Prime Banner */}

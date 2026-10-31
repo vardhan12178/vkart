@@ -1,12 +1,12 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import "@testing-library/jest-dom";
 import AIChatAssistant from "../AIChatAssistant";
 import axios from "../axiosInstance";
-import uiReducer, { openChat } from "../../redux/uiSlice";
+import uiReducer, { openChat, askChat } from "../../redux/uiSlice";
 import cartReducer from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 
@@ -30,6 +30,9 @@ jest.mock("framer-motion", () => {
     AnimatePresence: ({ children }) => <>{children}</>,
   };
 });
+
+// Placeholder rank token: the widget passes it through unchanged
+const RANK_TOKEN = "test-rank-token";
 
 describe("AIChatAssistant Component", () => {
   let store;
@@ -127,11 +130,11 @@ describe("AIChatAssistant Component", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
-    expect(await screen.findByText(/thinking/i)).toBeInTheDocument();
+    expect(await screen.findByText(/our ai is searching/i)).toBeInTheDocument();
 
     resolveRequest({ data: { structured: { response: { summary: "done", points: [] } }, products: [] } });
     await waitFor(() => {
-      expect(screen.queryByText(/thinking/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/our ai is searching/i)).not.toBeInTheDocument();
     });
   });
 
@@ -167,11 +170,103 @@ describe("AIChatAssistant Component", () => {
     expect(store.getState().ui.isChatOpen).toBe(false);
   });
 
+  test("adds a single-variant product with its sku", async () => {
+    axios.post.mockResolvedValueOnce({
+      data: {
+        structured: { response: { summary: "Here you go", points: [] } },
+        products: [{ _id: "aaaaaaaaaaaaaaaaaaaaaaaa", catalog: "v2", slug: "yoga-mat", sku: "BFT-MAT-1", variantCount: 1, title: "Yoga Mat", price: 2499, thumbnail: "m.webp", stock: 1 }],
+      },
+    });
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "yoga mat" } });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+    await screen.findByText("Yoga Mat");
+
+    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "yoga mat", twoPhase: true }));
+    fireEvent.click(screen.getByRole("button", { name: /add yoga mat to bag/i }));
+    expect(store.getState().cart[0]).toMatchObject({ catalog: "v2", productId: "aaaaaaaaaaaaaaaaaaaaaaaa", sku: "BFT-MAT-1", quantity: 1 });
+  });
+
+  test("waits for the model's picks and shows only the final answer", async () => {
+    let finishRank;
+    axios.post
+      .mockResolvedValueOnce({
+        data: {
+          structured: { response: { summary: "Here are the top matches.", points: [] } },
+          products: [{ _id: "p1", catalog: "v2", slug: "phone-a", title: "Phone A", price: 30000, thumbnail: "a.webp", stock: 1 }],
+          rank: { token: RANK_TOKEN },
+        },
+      })
+      .mockImplementationOnce(() => new Promise((resolve) => { finishRank = resolve; }));
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+
+    // While the model ranks: a waiting message, and no first-pass results on screen
+    expect(await screen.findByText(/our ai is picking the best matches/i)).toBeInTheDocument();
+    expect(screen.queryByText("Phone A")).not.toBeInTheDocument();
+    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ twoPhase: true }));
+    expect(axios.post).toHaveBeenLastCalledWith("/api/ai/chat/rank", { token: RANK_TOKEN }, expect.anything());
+
+    finishRank({
+      data: {
+        reranked: true,
+        structured: { response: { summary: "Phone B has the bigger battery.", points: [] } },
+        products: [{ _id: "p2", catalog: "v2", slug: "phone-b", title: "Phone B", price: 28000, thumbnail: "b.webp", stock: 1, reason: "Biggest battery" }],
+      },
+    });
+    expect(await screen.findByText("Phone B has the bigger battery.")).toBeInTheDocument();
+    expect(screen.getByText("Phone B")).toBeInTheDocument();
+    expect(screen.queryByText("Phone A")).not.toBeInTheDocument();
+    expect(screen.queryByText(/our ai is picking/i)).not.toBeInTheDocument();
+  });
+
+  test("shows the search results when the rank call fails", async () => {
+    axios.post
+      .mockResolvedValueOnce({
+        data: {
+          structured: { response: { summary: "Here are the top matches.", points: [] } },
+          products: [{ _id: "p1", catalog: "v2", slug: "phone-a", title: "Phone A", price: 30000, thumbnail: "a.webp", stock: 1 }],
+          rank: { token: RANK_TOKEN },
+        },
+      })
+      .mockRejectedValueOnce(new Error("busy"));
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+
+    expect(await screen.findByText("Phone A")).toBeInTheDocument();
+    expect(screen.getByText("Here are the top matches.")).toBeInTheDocument();
+    await waitFor(() => expect(screen.queryByText(/our ai is/i)).not.toBeInTheDocument());
+  });
+
+  test("sends multi-variant products to their page to pick a variant", async () => {
+    axios.post.mockResolvedValueOnce({
+      data: {
+        structured: { response: { summary: "Here you go", points: [] } },
+        products: [{ _id: "bbbbbbbbbbbbbbbbbbbbbbbb", catalog: "v2", slug: "phone-x", sku: "PX-128", variantCount: 3, title: "Phone X", price: 20000, thumbnail: "p.webp", stock: 1 }],
+      },
+    });
+    renderAssistant();
+
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+    await screen.findByText("Phone X");
+
+    fireEvent.click(screen.getByRole("button", { name: /add phone x to bag/i }));
+    expect(store.getState().cart).toHaveLength(0);
+    expect(store.getState().ui.isChatOpen).toBe(false);
+    expect(showToast).toHaveBeenCalledWith("Choose a variant to add it to your bag", "info");
+  });
+
   test("adds a recommended product to the cart without navigating", async () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
-        products: [{ _id: "prod1", title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 }],
+        products: [{ _id: "cccccccccccccccccccccccc", catalog: "v2", slug: "gaming-phone-x", sku: "GPX-1", variantCount: 1, title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 }],
       },
     });
     renderAssistant();
@@ -192,5 +287,17 @@ describe("AIChatAssistant Component", () => {
   test("hides the floating launcher on the cart and checkout pages", () => {
     renderAssistant(false, "/cart");
     expect(screen.queryByRole("button", { name: /ask vkart assistant/i })).not.toBeInTheDocument();
+  });
+
+  test("sends a question handed over from search", async () => {
+    axios.post.mockResolvedValueOnce({ data: { structured: { response: { summary: "Here you go", points: [] } }, products: [] } });
+    renderAssistant(false);
+    act(() => { store.dispatch(askChat("best earbuds under 5000")); });
+
+    await waitFor(() => {
+      expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "best earbuds under 5000" }));
+    });
+    expect(store.getState().ui.isChatOpen).toBe(true);
+    expect(store.getState().ui.chatPrompt).toBeNull();
   });
 });

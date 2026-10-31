@@ -470,7 +470,7 @@ export default function AdminDashboard() {
               <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
                 <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
                   <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
-                  <button onClick={() => navigate("/admin/products")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all products">
+                  <button onClick={() => navigate("/admin/catalog")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all products">
                     <ExternalLinkIcon className="h-4 w-4" />
                   </button>
                 </div>

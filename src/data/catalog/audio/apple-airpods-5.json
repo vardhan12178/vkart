@@ -1,0 +1,121 @@
+{
+  "slug": "apple-airpods-5",
+  "title": "AirPods 5",
+  "brand": "Apple",
+  "category": "audio",
+  "categoryPath": [
+    "electronics",
+    "audio"
+  ],
+  "status": "draft",
+  "launchDate": null,
+  "shortDescription": "Open-fit AirPods with the H-series chip, Personalised Spatial Audio and a USB-C case; wireless charging case option available.",
+  "description": "AirPods 5 have Apple's comfortable open-fit design, Personalised Spatial Audio and voice isolation for clear calls.\n\nChoose the standard USB-C charging case or the wireless charging case that also works with Find My.",
+  "highlights": [
+    "Open-fit design",
+    "Personalised Spatial Audio",
+    "Voice isolation for calls",
+    "USB-C charging case",
+    "Wireless charging case option",
+    "Dust, sweat and water resistant"
+  ],
+  "specs": {
+    "Audio": {
+      "spatialAudio": "Personalised Spatial Audio",
+      "calls": "Voice isolation"
+    },
+    "Connectivity": {
+      "case": "USB-C; wireless charging option"
+    }
+  },
+  "keySpecs": {
+    "type": "Earbuds (TWS, open-fit)",
+    "anc": false,
+    "connectivity": "Bluetooth"
+  },
+  "variantOptions": [
+    {
+      "name": "Configuration",
+      "values": [
+        {
+          "value": "USB-C charging case"
+        },
+        {
+          "value": "With wireless charging case"
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "values": [
+        {
+          "value": "White",
+          "hex": "#E5E6EA"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "groupBy": "Color",
+    "groups": {
+      "White": [
+        {
+          "key": "audio/apple-airpods-5/white-1",
+          "alt": "AirPods 5 in White",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-select-202609_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        },
+        {
+          "key": "audio/apple-airpods-5/white-2",
+          "alt": "AirPods 5 in White, view 2",
+          "sourceUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=904&hei=840&fmt=jpeg&qlt=90",
+          "width": 904,
+          "height": 840
+        }
+      ]
+    },
+    "common": []
+  },
+  "variants": [
+    {
+      "sku": "APL-AP5-MKFW4HN",
+      "mpn": "MKFW4HN/A",
+      "options": {
+        "Configuration": "USB-C charging case",
+        "Color": "White"
+      },
+      "price": 14900,
+      "mrp": 14900,
+      "stock": null,
+      "isDefault": true,
+      "keySpecs": {}
+    },
+    {
+      "sku": "APL-AP5-MKFT4HN",
+      "mpn": "MKFT4HN/A",
+      "options": {
+        "Configuration": "With wireless charging case",
+        "Color": "White"
+      },
+      "price": 17900,
+      "mrp": 17900,
+      "stock": null,
+      "isDefault": false,
+      "keySpecs": {}
+    }
+  ],
+  "inTheBox": [
+    "AirPods 5",
+    "Charging Case (USB-C)",
+    "Documentation"
+  ],
+  "warranty": "1 year Apple limited warranty",
+  "source": {
+    "urls": [
+      "https://www.apple.com/in/shop/buy-airpods/airpods-5"
+    ],
+    "fetchedAt": "2026-10-28",
+    "notes": "Variants, part numbers and Apple India MRP from the Apple Store India buy page; images are Apple Store product shots."
+  }
+}
