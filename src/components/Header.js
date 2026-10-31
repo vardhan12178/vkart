@@ -26,8 +26,8 @@ import NotificationBell from "./NotificationBell";
 import { qk } from "../query/queryKeys";
 import HeaderSearch from "./header/HeaderSearch";
 import CategoriesMenu, { CATEGORY_GROUPS, useCategoryCounts } from "./header/CategoriesMenu";
-import { CATEGORIES } from "./catalogPreview/catalogData";
-import { iconFor } from "./catalogPreview/categoryIcons";
+import { CATEGORIES } from "./shop/catalogData";
+import { iconFor } from "./shop/categoryIcons";
 
 const Header = () => {
   const dispatch = useDispatch();

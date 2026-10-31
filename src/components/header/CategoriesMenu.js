@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ChevronDown, ArrowRight } from "lucide-react";
-import { CATEGORIES } from "../catalogPreview/catalogData";
-import { iconFor } from "../catalogPreview/categoryIcons";
-import { fetchCategories } from "../catalogPreview/catalogApi";
+import { CATEGORIES } from "../shop/catalogData";
+import { iconFor } from "../shop/categoryIcons";
+import { fetchCategories } from "../shop/catalogApi";
 
 export const CATEGORY_GROUPS = [
   { title: "Electronics", keys: ["mobiles", "laptops", "tablets", "tvs", "monitors", "audio", "wearables"] },
@@ -14,7 +14,7 @@ export const CATEGORY_GROUPS = [
 
 export const useCategoryCounts = (enabled = true) => {
   const { data } = useQuery({
-    queryKey: ["catalog-v2", "categories"],
+    queryKey: ["catalog", "categories"],
     queryFn: fetchCategories,
     enabled,
     staleTime: 10 * 60 * 1000,

@@ -1,4 +1,4 @@
-import { CATEGORIES } from "../catalogPreview/catalogData";
+import { CATEGORIES } from "../shop/catalogData";
 
 // Words shoppers type for each storefront category. Multi-word phrases match anywhere in the query;
 // single words match whole query words, or as a prefix while the shopper is still typing.

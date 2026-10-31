@@ -1,6 +1,6 @@
 import { removeFromWishlist, toggleWishlist, wishlistItemKey } from "../../redux/wishlistSlice";
 
-// Shapes catalog v2 products into wishlist entries and toggles them.
+// Shapes catalog products into wishlist entries and toggles them.
 // Entries carry { catalog: "v2", productId, sku, slug }; the bundled fallback has no
 // database ids, so those entries use externalId "v2:<slug>" until the API is live.
 
@@ -40,7 +40,7 @@ export function toggleSaved(dispatch, wishlist, item) {
 export const productPath = (item) =>
   item?.catalog === "v2" ? `/products/${item.slug}${item.sku ? `?variant=${encodeURIComponent(item.sku)}` : ""}` : null;
 
-/** Cart entry for a saved v2 item, or null when it can't be ordered yet (bundled data, no sku). */
+/** Cart entry for a saved item, or null when it can't be ordered yet (bundled data, no sku). */
 export function cartItemFromSaved(item, quantity = 1) {
   if (item?.catalog !== "v2" || !item.productId || !item.sku) return null;
   return {

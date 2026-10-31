@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "../../redux/cartSlice";
 import uiReducer from "../../redux/uiSlice";
-import QuickAdd from "../catalogPreview/QuickAdd";
-import { fetchProduct } from "../catalogPreview/catalogApi";
+import QuickAdd from "../shop/QuickAdd";
+import { fetchProduct } from "../shop/catalogApi";
 import { showToast } from "../../utils/toast";
 
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
-jest.mock("../catalogPreview/catalogApi", () => {
-  const actual = jest.requireActual("../catalogPreview/catalogApi");
+jest.mock("../shop/catalogApi", () => {
+  const actual = jest.requireActual("../shop/catalogApi");
   return { ...actual, fetchProduct: jest.fn() };
 });
 

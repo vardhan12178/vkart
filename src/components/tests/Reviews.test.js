@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { RatingChip, ReviewsSection } from "../catalogPreview/Reviews";
+import { RatingChip, ReviewsSection } from "../shop/Reviews";
 
 const data = {
   average: 4.4, count: 1591, reviewCount: 175, sample: true,

@@ -5,8 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Minus, Plus, ShoppingBag, Trash2, Truck, X } from "lucide-react";
 import { closeMiniCart } from "../redux/uiSlice";
 import { cartItemKey, decrementQuantity, incrementQuantity, removeFromCart } from "../redux/cartSlice";
-import { productPath } from "./catalogPreview/v2Items";
-import { formatPrice } from "./catalogPreview/catalogApi";
+import { productPath } from "./shop/shopItems";
+import { formatPrice } from "./shop/catalogApi";
 import { FREE_SHIPPING_THRESHOLD } from "../utils/shipping";
 
 export function FreeDeliveryProgress({ subtotal, className = "" }) {

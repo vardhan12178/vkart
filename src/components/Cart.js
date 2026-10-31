@@ -23,7 +23,7 @@ import { FreeDeliveryProgress } from "./MiniCart";
 import axios from "./axiosInstance";
 import { showToast } from "../utils/toast";
 import { buildSecureOrderPayload } from "../utils/orderPayload";
-import { cartItemFromSaved } from "./catalogPreview/v2Items";
+import { cartItemFromSaved } from "./shop/shopItems";
 import { qk } from "../query/queryKeys";
 
 /* ---------- Helpers ---------- */
@@ -56,7 +56,7 @@ export default function Cart() {
   const cartItems = useSelector((s) => s.cart);
   const wishlistItems = useSelector((s) => s.wishlist);
 
-  // Catalog v2 lines: refresh price and stock from the server so the cart never shows stale values
+  // Catalog lines: refresh price and stock from the server so the cart never shows stale values
   const v2Key = cartItems.filter((it) => it.catalog === "v2").map((it) => `${it.productId}:${it.sku}:${it.quantity}`).join("|");
   useEffect(() => {
     const lines = cartItems.filter((it) => it.catalog === "v2" && it.productId && it.sku);

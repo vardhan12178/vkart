@@ -6,7 +6,7 @@ import { addToCart, cartItemKey } from "../../redux/cartSlice";
 import { openMiniCart } from "../../redux/uiSlice";
 import { showToast } from "../../utils/toast";
 import { fetchProduct, defaultVariant, imagesFor, formatPrice } from "./catalogApi";
-import { matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom } from "./v2Items";
+import { matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom } from "./shopItems";
 
 // Quick-add sheet for listing tiles that need a choice (clothing sizes, or a sold-out default variant)
 // Bottom sheet on phones, centred dialog from sm up.
@@ -46,7 +46,7 @@ export default function QuickAdd({ slug, onClose }) {
   const buy = (kind) => {
     if (!variant || !available) return;
     if (!p.id) {
-      showToast("Ordering works once this site's backend serves the v2 API.", "error");
+      showToast("Ordering is paused while the store reconnects. Please try again in a moment.", "error");
       return;
     }
     const line = cartLineFrom(p, variant, image?.md);

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { removeFromWishlist, clearWishlist } from "../redux/wishlistSlice";
 import { addToCart } from "../redux/cartSlice";
-import { cartItemFromSaved, productPath as v2Path } from "./catalogPreview/v2Items";
+import { cartItemFromSaved, productPath as v2Path } from "./shop/shopItems";
 import { ArrowRightIcon, HeartIcon, ShoppingBagIcon, ShoppingCartIcon, Trash2Icon } from "./ui/icons";
 import { showToast } from "../utils/toast";
 

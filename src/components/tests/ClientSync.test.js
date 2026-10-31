@@ -43,26 +43,26 @@ describe("ClientSync Component", () => {
 
   test("adopts the server cart/wishlist directly when there is no local guest data", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/profile/cart") return Promise.resolve({ data: { cart: [{ _id: "p1", quantity: 2 }] } });
-      if (url === "/api/profile/wishlist") return Promise.resolve({ data: { wishlist: [{ _id: "p2" }] } });
+      if (url === "/api/profile/cart") return Promise.resolve({ data: { cart: [{ catalog: "v2", _id: "p1", quantity: 2 }] } });
+      if (url === "/api/profile/wishlist") return Promise.resolve({ data: { wishlist: [{ catalog: "v2", _id: "p2" }] } });
       return Promise.resolve({ data: {} });
     });
     const { store } = renderSync({ isAuthenticated: true });
 
     await waitFor(() => {
-      expect(store.getState().cart).toEqual([{ _id: "p1", quantity: 2 }]);
+      expect(store.getState().cart).toEqual([{ catalog: "v2", _id: "p1", quantity: 2 }]);
     });
-    expect(store.getState().wishlist).toEqual([{ _id: "p2" }]);
+    expect(store.getState().wishlist).toEqual([{ catalog: "v2", _id: "p2" }]);
     // No guest data existed, so nothing should be pushed back to the server.
     expect(axios.put).not.toHaveBeenCalled();
   });
 
   test("merges local guest cart/wishlist into the server data and pushes the merge back", async () => {
-    localStorage.setItem("vkart_cart", JSON.stringify([{ _id: "guest1", quantity: 1 }]));
-    localStorage.setItem("vkart_wishlist", JSON.stringify([{ _id: "guestw1" }]));
+    localStorage.setItem("vkart_cart", JSON.stringify([{ catalog: "v2", _id: "guest1", quantity: 1 }]));
+    localStorage.setItem("vkart_wishlist", JSON.stringify([{ catalog: "v2", _id: "guestw1" }]));
     axios.get.mockImplementation((url) => {
-      if (url === "/api/profile/cart") return Promise.resolve({ data: { cart: [{ _id: "server1", quantity: 1 }] } });
-      if (url === "/api/profile/wishlist") return Promise.resolve({ data: { wishlist: [{ _id: "serverw1" }] } });
+      if (url === "/api/profile/cart") return Promise.resolve({ data: { cart: [{ catalog: "v2", _id: "server1", quantity: 1 }] } });
+      if (url === "/api/profile/wishlist") return Promise.resolve({ data: { wishlist: [{ catalog: "v2", _id: "serverw1" }] } });
       return Promise.resolve({ data: {} });
     });
     axios.put.mockResolvedValue({ data: {} });
@@ -86,9 +86,9 @@ describe("ClientSync Component", () => {
   });
 
   test("combines quantities for the same item present in both guest and server carts", async () => {
-    localStorage.setItem("vkart_cart", JSON.stringify([{ _id: "shared", quantity: 3 }]));
+    localStorage.setItem("vkart_cart", JSON.stringify([{ catalog: "v2", _id: "shared", quantity: 3 }]));
     axios.get.mockImplementation((url) => {
-      if (url === "/api/profile/cart") return Promise.resolve({ data: { cart: [{ _id: "shared", quantity: 1 }] } });
+      if (url === "/api/profile/cart") return Promise.resolve({ data: { cart: [{ catalog: "v2", _id: "shared", quantity: 1 }] } });
       if (url === "/api/profile/wishlist") return Promise.resolve({ data: { wishlist: [] } });
       return Promise.resolve({ data: {} });
     });

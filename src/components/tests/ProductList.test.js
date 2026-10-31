@@ -7,13 +7,13 @@ import { HelmetProvider } from "react-helmet-async";
 import cartReducer from "../../redux/cartSlice";
 import uiReducer from "../../redux/uiSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
-import CatalogPreviewList from "../catalogPreview/CatalogPreviewList";
-import { fetchProducts, fetchProduct } from "../catalogPreview/catalogApi";
+import ProductList from "../shop/ProductList";
+import { fetchProducts, fetchProduct } from "../shop/catalogApi";
 import { showToast } from "../../utils/toast";
 
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
-jest.mock("../catalogPreview/catalogApi", () => {
-  const actual = jest.requireActual("../catalogPreview/catalogApi");
+jest.mock("../shop/catalogApi", () => {
+  const actual = jest.requireActual("../shop/catalogApi");
   return { ...actual, fetchProducts: jest.fn(), fetchProduct: jest.fn(), getSource: () => "api", onSourceChange: () => () => {} };
 });
 
@@ -23,7 +23,7 @@ const card = (slug, extra = {}) => ({
   colors: [], variantCount: 4, inStock: true, options: { Storage: "128GB", Color: "Black" }, needsSize: false, defaultInStock: true, ...extra,
 });
 
-describe("CatalogPreviewList tiles", () => {
+describe("ProductList tiles", () => {
   let store;
   beforeAll(() => { Element.prototype.scrollIntoView = jest.fn(); }); // category bar scrolls the active tab into view
   beforeEach(() => {
@@ -42,7 +42,7 @@ describe("CatalogPreviewList tiles", () => {
     render(
       <HelmetProvider>
         <Provider store={store}>
-          <MemoryRouter initialEntries={[url]}><CatalogPreviewList /><Where /></MemoryRouter>
+          <MemoryRouter initialEntries={[url]}><ProductList /><Where /></MemoryRouter>
         </Provider>
       </HelmetProvider>
     );

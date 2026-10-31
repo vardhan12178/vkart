@@ -1,10 +1,9 @@
 import axios from "../axiosInstance";
 import { CATEGORIES, catOf } from "./catalogData";
 
-// Data access for the catalog v2 pages. Everything goes through /api/v2; when the
-// backend serving this site doesn't have the v2 routes yet (or is unreachable),
-// the same response shapes are built from the JSON bundled with the preview.
-// Responses match backend services/catalogV2.service.js.
+// Data access for the catalog pages. Everything goes through /api/v2; when the API is
+// unreachable, the same response shapes are built from the JSON bundled with the site.
+// Responses match backend services/catalog.service.js.
 
 let bundled;
 async function bundle() {
@@ -22,10 +21,10 @@ async function viaApi(path, params, local) {
     try {
       const { data } = await axios.get(`/api/v2${path}`, { params, timeout: 15000 });
       if (data && typeof data === "object") return data;
-      throw new Error("Unexpected v2 response");
+      throw new Error("Unexpected catalog response");
     } catch (err) {
       const status = err?.response?.status;
-      if (status === 404 && err.response.data?.error === "Product not found") return null; // real v2 "not found"
+      if (status === 404 && err.response.data?.error === "Product not found") return null; // a real "not found"
       if (status === 400) throw err;
       // Anything else (route missing on an older backend, network error, 5xx): use the bundled data
       apiDown = true;

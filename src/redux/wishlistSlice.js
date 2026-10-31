@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const WISHLIST_KEY = "vkart_wishlist";
 
+// Only catalog items are kept; items saved before the old catalog was retired are dropped
+const catalogOnly = (items) => (Array.isArray(items) ? items.filter((it) => it?.catalog === "v2") : []);
+
 const loadWishlist = () => {
   try {
     const data = localStorage.getItem(WISHLIST_KEY);
-    return data ? JSON.parse(data) : [];
+    return data ? catalogOnly(JSON.parse(data)) : [];
   } catch {
     return [];
   }
@@ -25,7 +28,7 @@ const wishlistSlice = createSlice({
   initialState: loadWishlist(),
   reducers: {
     setWishlist: (_state, action) => {
-      const items = Array.isArray(action.payload) ? action.payload : [];
+      const items = catalogOnly(action.payload);
       // Don't persist — server is source of truth once authenticated.
       return items;
     },

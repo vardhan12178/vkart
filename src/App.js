@@ -17,18 +17,16 @@ import { qk } from "./query/queryKeys";
 // Lazy-loaded storefront route components
 const Login = lazy(() => import("./components/Login"));
 const Register = lazy(() => import("./components/Register"));
-// Shop-style home on catalog v2 (the editorial components/Home.js is kept until v2 replaces v1)
-const HomeV2 = lazy(() => import("./components/home/HomeV2"));
+const Home = lazy(() => import("./components/home/Home"));
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
 const Error = lazy(() => import("./components/Error"));
-const CatalogPreviewList = lazy(() => import("./components/catalogPreview/CatalogPreviewList"));
-const CatalogPreviewProduct = lazy(() => import("./components/catalogPreview/CatalogPreviewProduct"));
+const ProductList = lazy(() => import("./components/shop/ProductList"));
+const ProductPage = lazy(() => import("./components/shop/ProductPage"));
 const Cart = lazy(() => import("./components/Cart"));
 const Profile = lazy(() => import("./components/Profile"));
-const Compare = lazy(() => import("./components/Compare"));
 const BlogIndex = lazy(() => import("./components/blog/BlogIndex"));
 const PostPage = lazy(() => import("./components/blog/PostPage"));
 const Careers = lazy(() => import("./components/Careers"));
@@ -54,11 +52,9 @@ const AdminLayout = lazy(() => import("./components/admin/AdminLayout"));
 const AdminSettings = lazy(() => import("./components/admin/AdminSettings"));
 const AdminUsers = lazy(() => import("./components/admin/AdminUsers"));
 const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
-const AdminProducts = lazy(() => import("./components/admin/AdminProducts"));
 const AdminCatalog = lazy(() => import("./components/admin/AdminCatalog"));
 const AdminOrders = lazy(() => import("./components/admin/AdminOrders"));
 const AdminOrderDetails = lazy(() => import("./components/admin/AdminOrderDetails"));
-const AdminReviews = lazy(() => import("./components/admin/AdminReviews"));
 const AdminCoupons = lazy(() => import("./components/admin/AdminCoupons"));
 const AdminSales = lazy(() => import("./components/admin/AdminSales"));
 const AdminMembership = lazy(() => import("./components/admin/AdminMembership"));
@@ -206,16 +202,16 @@ const App = () => {
             <ErrorBoundary>
             <Routes>
               {/* Public Storefront Pages */}
-              <Route path="/" element={<HomeV2 />} />
-              <Route path="/products" element={<CatalogPreviewList />} />
-              <Route path="/products/:slug" element={<CatalogPreviewProduct />} />
-              {/* Old links: the preview catalog moved to /products; old-catalog product pages are retired */}
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<ProductList />} />
+              <Route path="/products/:slug" element={<ProductPage />} />
+              {/* Old links: /catalog-preview and /product/:id pages now live under /products */}
               <Route path="/catalog-preview" element={<KeepQueryRedirect to="/products" />} />
               <Route path="/catalog-preview/:slug" element={<SlugRedirect />} />
               <Route path="/product/:id" element={<Navigate to="/products" replace />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/compare" element={<Compare />} />
+              <Route path="/compare" element={<Navigate to="/products" replace />} />
               <Route path="/blog" element={<BlogIndex />} />
               <Route path="/blog/:id" element={<PostPage />} />
               <Route path="/careers" element={<Careers />} />
@@ -248,11 +244,10 @@ const App = () => {
                 <Route path="dashboard" element={<AdminDashboard />} />
                 <Route path="profile" element={<AdminProfile />} />
                 <Route path="catalog" element={<RequireModule module="products"><AdminCatalog /></RequireModule>} />
-                <Route path="products" element={<RequireModule module="products"><AdminProducts /></RequireModule>} />
+                <Route path="products" element={<Navigate to="/admin/catalog" replace />} />
                 <Route path="orders" element={<RequireModule module="orders"><AdminOrders /></RequireModule>} />
                 <Route path="orders/:id" element={<RequireModule module="orders"><AdminOrderDetails /></RequireModule>} />
                 <Route path="users" element={<RequireModule module="users"><AdminUsers /></RequireModule>} />
-                <Route path="reviews" element={<RequireModule module="reviews"><AdminReviews /></RequireModule>} />
                 <Route path="coupons" element={<RequireModule module="coupons"><AdminCoupons /></RequireModule>} />
                 <Route path="sales" element={<RequireModule module="sales"><AdminSales /></RequireModule>} />
                 <Route path="membership" element={<RequireModule module="membership"><AdminMembership /></RequireModule>} />

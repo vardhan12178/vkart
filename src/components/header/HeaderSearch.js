@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import { Clock, Search, Sparkles, X, ArrowUpRight } from "lucide-react";
 import axios from "../axiosInstance";
 import { askChat } from "../../redux/uiSlice";
-import { fetchProducts, formatPrice } from "../catalogPreview/catalogApi";
-import { iconFor } from "../catalogPreview/categoryIcons";
+import { fetchProducts, formatPrice } from "../shop/catalogApi";
+import { iconFor } from "../shop/categoryIcons";
+import { CATEGORIES } from "../shop/catalogData";
 import { buildItems, categoryHref, readRecent, saveRecent, removeRecent, clearRecent } from "./searchSuggest";
 
 const SORT_MAP = { price_asc: "price-asc", price_desc: "price-desc" };
@@ -67,9 +68,11 @@ export default function HeaderSearch({ variant = "desktop", autoFocus = false, o
     try {
       const res = await axios.post("/api/ai/parse-search", { query: trimmed });
       const { q, category, minPrice, maxPrice, sort } = res.data;
-      // The parser's category names come from the old catalog, so they are used as keywords
+      // The parser picks one of the storefront categories; the rest of the words stay a keyword search
       const params = new URLSearchParams();
-      params.set("q", q || (category ? category.replace(/-/g, " ") : trimmed));
+      if (category && CATEGORIES[category]) params.set("cat", category);
+      if (q) params.set("q", q);
+      else if (!params.has("cat")) params.set("q", trimmed);
       if (minPrice != null) params.set("min", String(minPrice));
       if (maxPrice != null) params.set("max", String(maxPrice));
       if (sort && SORT_MAP[sort]) params.set("sort", SORT_MAP[sort]);

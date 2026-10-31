@@ -31,8 +31,8 @@ describe("AdminSales Component", () => {
   const mockGet = (sales) => {
     axios.get.mockImplementation((url) => {
       if (url === "/api/sales") return Promise.resolve({ data: sales });
-      if (url === "/api/products/filters") {
-        return Promise.resolve({ data: { categories: [{ slug: "electronics" }, { slug: "fashion" }] } });
+      if (url === "/api/v2/categories") {
+        return Promise.resolve({ data: [{ slug: "mobiles", name: "Mobiles", count: 48 }, { slug: "electronics", name: "Electronics", count: 1 }] });
       }
       return Promise.resolve({ data: {} });
     });

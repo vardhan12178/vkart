@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { findSaved, toggleSaved, wishlistItemFrom, variantLabel } from "./v2Items";
+import { findSaved, toggleSaved, wishlistItemFrom, variantLabel } from "./shopItems";
 import { addToCart, cartItemKey } from "../../redux/cartSlice";
 import { openChat, openMiniCart } from "../../redux/uiSlice";
 import QuickAdd from "./QuickAdd";
@@ -75,7 +75,7 @@ function Card({ p, onChooseOptions }) {
     e.preventDefault();
     e.stopPropagation();
     if (pickSize || pickOther) return onChooseOptions(p.slug);
-    if (!p.id) return showToast("Ordering works once this site's backend serves the v2 API.", "error");
+    if (!p.id) return showToast("Ordering is paused while the store reconnects. Please try again in a moment.", "error");
     const line = {
       catalog: "v2", productId: p.id, sku: p.sku, slug: p.slug, title: p.title, price: p.price,
       thumbnail: img?.md || "", category: p.category, discountPercentage: off || 0,
@@ -92,8 +92,10 @@ function Card({ p, onChooseOptions }) {
           <img src={img.md} alt={img.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
             className={`absolute inset-0 h-full w-full ${fit} transition-transform duration-500 group-hover:scale-[1.03]`} />
         )}
-        {off >= 5 && (
-          <span className="absolute left-3 top-3 rounded-full bg-ink px-2.5 py-1 text-[11px] font-bold text-white">{off}% OFF</span>
+        {(off >= 5 || p.sale) && (
+          <span className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-bold text-white ${p.sale ? "bg-accent" : "bg-ink"}`}>
+            {p.sale ? `${p.sale.name} · ${off}% OFF` : `${off}% OFF`}
+          </span>
         )}
         <button type="button" aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
           aria-pressed={liked}
@@ -229,7 +231,7 @@ const isFilterParam = (k) => FILTER_PARAMS.includes(k) || k.startsWith("f_");
 const listOf = (v) => (v || "").split(",").map((x) => x.trim()).filter(Boolean);
 
 /* ------------ Page ------------ */
-export default function CatalogPreviewList() {
+export default function ProductList() {
   const dispatch = useDispatch();
   const [params, setParams] = useSearchParams();
   // URL state: ?cat= (category, absent for all products), ?q= (search), ?sort=, ?min= / ?max= (from header search)

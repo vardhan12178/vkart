@@ -10,12 +10,12 @@ import {
   FiShield, FiCheckCircle, FiZap,
 } from "react-icons/fi";
 import { openChat } from "../../redux/uiSlice";
-import { fetchProducts, formatPrice } from "../catalogPreview/catalogApi";
-import { CATEGORIES } from "../catalogPreview/catalogData";
-import { RatingChip } from "../catalogPreview/Reviews";
+import { fetchProducts, formatPrice } from "../shop/catalogApi";
+import { CATEGORIES } from "../shop/catalogData";
+import { RatingChip } from "../shop/Reviews";
 import TwoFactorNudge from "./TwoFactorNudge";
 
-// Shop-style home page on catalog v2 (category strip, hero carousel, deals, category cards,
+// Shop-style home page on catalog (category strip, hero carousel, deals, category cards,
 // product rails). Every number shown comes from the catalog; nothing is a made-up offer.
 
 const ACCENT = "#a85d37";
@@ -216,7 +216,7 @@ const minPriceOf = (q) => q.data?.facets?.price?.min;
 const firstImage = (q, i = 0) => q.data?.products?.[i]?.image || q.data?.products?.[0]?.image;
 
 /* ------------ Page ------------ */
-export default function HomeV2() {
+export default function Home() {
   const dispatch = useDispatch();
 
   const deals = useProducts("deals", { sort: "discount", minDiscount: 10, limit: 12 });

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom } from "./v2Items";
+import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom } from "./shopItems";
 import { addToCart, cartItemKey } from "../../redux/cartSlice";
 import { openMiniCart } from "../../redux/uiSlice";
 import { showToast } from "../../utils/toast";
@@ -16,12 +16,12 @@ import OffersEmi from "./OffersEmi";
 import SizeGuide, { sizeGuideFor } from "./SizeGuide";
 import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 
-// Catalog v2 product page (preview). Data comes from /api/v2 through catalogApi.js,
+// Product page. Data comes from /api/v2 through catalogApi.js,
 // which falls back to the bundled copy when the API isn't available.
 
 const INK = "#1d1c19";
 const ACCENT = "#a85d37";
-const RECENT_KEY = "cv2-recent";
+const RECENT_KEY = "vkart:recently-viewed";
 
 const ACRONYMS = /^(ppi|cpu|gpu|ram|ssd|hdr|usb|nfc|os|ip|led|oled|lcd|anc|spf|gps|sim|esim|bt|wifi|ai|mrp)$/i;
 const label = (k) =>
@@ -139,7 +139,7 @@ function Rail({ title, items }) {
 }
 
 /* ------------ Page ------------ */
-export default function CatalogPreviewProduct() {
+export default function ProductPage() {
   const { slug } = useParams();
   const [p, setP] = useState(null);
   const [status, setStatus] = useState("loading"); // loading | ready | missing | error
@@ -242,11 +242,11 @@ export default function CatalogPreviewProduct() {
   };
   const sizeGuide = sizeGuideFor(p);
   // Cart lines store ids + SKU; the cart page and checkout re-price them from the server.
-  // The bundled fallback has no database ids, so ordering needs the v2 API.
+  // The bundled fallback (used when the API is unreachable) has no database ids, so it can't order.
   const buy = (kind) => {
     if (!variant) return;
     if (!p.id) {
-      setNotice("Ordering works once this site's backend serves the v2 API.");
+      setNotice("Ordering is paused while the store reconnects. Please try again in a moment.");
       return;
     }
     const line = cartLineFrom(p, variant, images[0]?.md, qty);
@@ -278,7 +278,6 @@ export default function CatalogPreviewProduct() {
       <Helmet>
         <title>{`${p.title} | VKart`}</title>
         <meta name="description" content={p.shortDescription} />
-        <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 
       <div className="mx-auto max-w-7xl px-4">
@@ -330,6 +329,12 @@ export default function CatalogPreviewProduct() {
                   <span className="text-3xl font-bold text-ink">{formatPrice(variant.price)}</span>
                   {off > 0 && <p className="mt-1 text-sm text-muted-light">M.R.P.: <span className="line-through">{formatPrice(variant.mrp)}</span></p>}
                   <p className="mt-1 text-xs text-muted-light">Inclusive of all taxes</p>
+                  {p.sale && (
+                    <p className="mt-3 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent">
+                      {p.sale.name}: {p.sale.percent}% off MRP
+                      {p.sale.primePercent && <span className="font-normal text-ink-soft">· Prime members get {p.sale.primePercent}% off at checkout</span>}
+                    </p>
+                  )}
                 </>
               ) : (
                 <p className="text-lg text-muted">This combination is not available</p>

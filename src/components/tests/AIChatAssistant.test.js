@@ -170,7 +170,7 @@ describe("AIChatAssistant Component", () => {
     expect(store.getState().ui.isChatOpen).toBe(false);
   });
 
-  test("asks the v2 catalog and adds a single-variant v2 product with its sku", async () => {
+  test("adds a single-variant product with its sku", async () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
@@ -183,7 +183,7 @@ describe("AIChatAssistant Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
     await screen.findByText("Yoga Mat");
 
-    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "yoga mat", catalog: "v2" }));
+    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "yoga mat", twoPhase: true }));
     fireEvent.click(screen.getByRole("button", { name: /add yoga mat to bag/i }));
     expect(store.getState().cart[0]).toMatchObject({ catalog: "v2", productId: "aaaaaaaaaaaaaaaaaaaaaaaa", sku: "BFT-MAT-1", quantity: 1 });
   });
@@ -207,7 +207,7 @@ describe("AIChatAssistant Component", () => {
     // While the model ranks: a waiting message, and no first-pass results on screen
     expect(await screen.findByText(/our ai is picking the best matches/i)).toBeInTheDocument();
     expect(screen.queryByText("Phone A")).not.toBeInTheDocument();
-    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ catalog: "v2", twoPhase: true }));
+    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ twoPhase: true }));
     expect(axios.post).toHaveBeenLastCalledWith("/api/ai/chat/rank", { token: RANK_TOKEN }, expect.anything());
 
     finishRank({
@@ -243,7 +243,7 @@ describe("AIChatAssistant Component", () => {
     await waitFor(() => expect(screen.queryByText(/our ai is/i)).not.toBeInTheDocument());
   });
 
-  test("sends multi-variant v2 products to their page to pick a variant", async () => {
+  test("sends multi-variant products to their page to pick a variant", async () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
@@ -266,7 +266,7 @@ describe("AIChatAssistant Component", () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
-        products: [{ _id: "prod1", title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 }],
+        products: [{ _id: "cccccccccccccccccccccccc", catalog: "v2", slug: "gaming-phone-x", sku: "GPX-1", variantCount: 1, title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 }],
       },
     });
     renderAssistant();

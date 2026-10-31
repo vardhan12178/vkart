@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiStar, FiThumbsUp } from "react-icons/fi";
 
-// Ratings for catalog v2: the ink chip used on tiles, and the product page section.
+// Ratings for catalog: the ink chip used on tiles, and the product page section.
 // The reviews come from the API as sample content for this demo store, and the section says so.
 
 const fmt = (n) => Number(n || 0).toLocaleString("en-IN");

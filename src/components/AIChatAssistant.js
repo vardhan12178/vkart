@@ -11,8 +11,6 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat, clearChatPrompt } from "../redux/uiSlice";
 
-// Which catalog Ask VKart searches: "v2" (catalog_products) unless REACT_APP_AI_CATALOG says otherwise
-const AI_CATALOG = process.env.REACT_APP_AI_CATALOG || "v2";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -160,7 +158,7 @@ const AIChatAssistant = () => {
     setMessages((prev) => [...prev, botMessage]);
   };
 
-  // Phase two of a v2 answer: the model's picks and reasons for the search results.
+  // Phase two of an answer: the model's picks and reasons for the search results.
   // Returns null when the model is slow or fails, so the caller can show the search results instead.
   const fetchRanking = async (token) => {
     try {
@@ -188,12 +186,13 @@ const AIChatAssistant = () => {
       const res = await axios.post("/api/ai/chat", {
         message: userMessage,
         history,
-        catalog: AI_CATALOG,
-        twoPhase: AI_CATALOG === "v2",
+        twoPhase: true,
+        // Ignored by the current API; older deployments answer from the right catalog only when asked
+        catalog: "v2",
       });
 
       const { structured, products, rank } = res.data;
-      // Two-phase v2 answers: wait for the model's picks and show one final answer
+      // Two-phase answers: wait for the model's picks and show one final answer
       // (search results only if the picks don't come back).
       if (rank?.token) {
         setLoadingText("Our AI is picking the best matches for you…");
@@ -233,7 +232,7 @@ const AIChatAssistant = () => {
     await sendMessage(prompt);
   };
 
-  const productPath = (prod) => (prod.catalog === "v2" ? `/products/${prod.slug}` : `/product/${prod._id}`);
+  const productPath = (prod) => `/products/${prod.slug}`;
 
   const handleProductClick = (prod) => {
     dispatch(closeChat());
@@ -242,29 +241,24 @@ const AIChatAssistant = () => {
 
   const handleAddToCart = (e, prod) => {
     e.stopPropagation();
-    if (prod.catalog === "v2") {
-      // Products with several variants need a choice (size, colour, storage) first
-      if (prod.variantCount > 1 || !prod.sku) {
-        handleProductClick(prod);
-        showToast("Choose a variant to add it to your bag", "info");
-        return;
-      }
-      dispatch(addToCart({
-        catalog: "v2",
-        productId: prod._id,
-        sku: prod.sku,
-        slug: prod.slug,
-        title: prod.title,
-        price: prod.price,
-        thumbnail: prod.thumbnail,
-        category: prod.category,
-        discountPercentage: prod.discountPercent || 0,
-        quantity: 1,
-      }));
-      showToast("Added to cart", "success");
+    // Products with several variants need a choice (size, colour, storage) first
+    if (prod.variantCount > 1 || !prod.sku) {
+      handleProductClick(prod);
+      showToast("Choose a variant to add it to your bag", "info");
       return;
     }
-    dispatch(addToCart({ ...prod, quantity: 1 }));
+    dispatch(addToCart({
+      catalog: "v2",
+      productId: prod._id,
+      sku: prod.sku,
+      slug: prod.slug,
+      title: prod.title,
+      price: prod.price,
+      thumbnail: prod.thumbnail,
+      category: prod.category,
+      discountPercentage: prod.discountPercent || 0,
+      quantity: 1,
+    }));
     showToast("Added to cart", "success");
   };
 

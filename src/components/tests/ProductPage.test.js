@@ -7,13 +7,13 @@ import { HelmetProvider } from "react-helmet-async";
 import cartReducer from "../../redux/cartSlice";
 import uiReducer from "../../redux/uiSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
-import CatalogPreviewProduct from "../catalogPreview/CatalogPreviewProduct";
-import { fetchProduct, fetchDelivery } from "../catalogPreview/catalogApi";
+import ProductPage from "../shop/ProductPage";
+import { fetchProduct, fetchDelivery } from "../shop/catalogApi";
 import { showToast } from "../../utils/toast";
 
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
-jest.mock("../catalogPreview/catalogApi", () => {
-  const actual = jest.requireActual("../catalogPreview/catalogApi");
+jest.mock("../shop/catalogApi", () => {
+  const actual = jest.requireActual("../shop/catalogApi");
   return { ...actual, fetchProduct: jest.fn(), fetchSimilar: jest.fn(() => Promise.resolve({ products: [] })), fetchDelivery: jest.fn() };
 });
 
@@ -39,7 +39,7 @@ const renderPage = (url) => {
     <HelmetProvider>
       <Provider store={store}>
         <MemoryRouter initialEntries={[url]}>
-          <Routes><Route path="/products/:slug" element={<><CatalogPreviewProduct /><Where /></>} /></Routes>
+          <Routes><Route path="/products/:slug" element={<><ProductPage /><Where /></>} /></Routes>
         </MemoryRouter>
       </Provider>
     </HelmetProvider>
@@ -47,7 +47,7 @@ const renderPage = (url) => {
   return store;
 };
 
-describe("CatalogPreviewProduct", () => {
+describe("ProductPage", () => {
   beforeAll(() => { window.scrollTo = jest.fn(); });
   beforeEach(() => {
     localStorage.clear();

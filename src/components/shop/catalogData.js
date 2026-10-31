@@ -1,4 +1,4 @@
-// Shared catalog v2 constants. Product data comes from /api/v2 (see catalogApi.js);
+// Shared catalog constants. Product data comes from /api/v2 (see catalogApi.js);
 // catalogBundle.js holds the bundled fallback copy.
 
 export const CATEGORIES = { mobiles: "Mobiles", laptops: "Laptops", tablets: "Tablets", tvs: "TVs", monitors: "Monitors", audio: "Audio", wearables: "Watches", skincare: "Skincare", "fashion-men": "Men's Fashion", "fashion-women": "Women's Fashion", appliances: "Appliances", "kitchen-appliances": "Kitchen", grooming: "Grooming", sports: "Sports" };

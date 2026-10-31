@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   AlertTriangle, ChevronDown, ChevronLeft, ChevronRight, ExternalLink, Package, RefreshCw, Search, Star, X,
@@ -7,9 +6,9 @@ import {
 import axiosInstance from "../axiosInstance";
 import usePermission from "./usePermission";
 import { showToast } from "../../utils/toast";
-import { CATEGORIES } from "../catalogPreview/catalogData";
+import { CATEGORIES } from "../shop/catalogData";
 
-// Catalog v2 admin: every storefront product with its variants. Status, featured flag and
+// Catalog admin: every storefront product with its variants. Status, featured flag and
 // per-variant price / MRP / stock are edited inline; status can also be changed in bulk.
 
 const API = "/api/admin/v2/products";
@@ -109,7 +108,7 @@ export default function AdminCatalog() {
   }), [q, category, t, sort, page]);
   useEffect(() => { setPage(1); setSelected(new Set()); }, [q, category, tab, sort]);
 
-  const listKey = ["admin", "catalog-v2", params];
+  const listKey = ["admin", "catalog", params];
   const list = useQuery({
     queryKey: listKey,
     queryFn: () => axiosInstance.get(API, { params }).then((r) => r.data),
@@ -121,7 +120,7 @@ export default function AdminCatalog() {
   // Swap an edited row into the current page, then refresh counts in the background
   const replaceRow = (row) => {
     queryClient.setQueryData(listKey, (old) => old && { ...old, products: old.products.map((p) => (p.id === row.id ? row : p)) });
-    queryClient.invalidateQueries({ queryKey: ["admin", "catalog-v2"], refetchType: "inactive" });
+    queryClient.invalidateQueries({ queryKey: ["admin", "catalog"], refetchType: "inactive" });
   };
 
   const patchProduct = useMutation({
@@ -135,7 +134,7 @@ export default function AdminCatalog() {
     onSuccess: (res) => {
       showToast(`${res.updated} product${res.updated === 1 ? "" : "s"} set to ${res.status}`, "success");
       setSelected(new Set());
-      queryClient.invalidateQueries({ queryKey: ["admin", "catalog-v2"] });
+      queryClient.invalidateQueries({ queryKey: ["admin", "catalog"] });
     },
     onError: (err) => showToast(errorText(err), "error"),
   });
@@ -157,7 +156,6 @@ export default function AdminCatalog() {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Link to="/admin/products" className="text-xs font-semibold text-slate-500 underline-offset-4 hover:text-slate-800 hover:underline">Legacy catalog</Link>
             <button type="button" onClick={() => list.refetch()}
               className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-xs transition hover:bg-slate-50 sm:text-sm">
               <RefreshCw className={`h-3.5 w-3.5 ${list.isFetching ? "animate-spin" : ""}`} /> Refresh
@@ -165,7 +163,7 @@ export default function AdminCatalog() {
           </div>
         </div>
 
-        {/* Drafts notice: the storefront shows drafts until CATALOG_V2_ACTIVE_ONLY=true */}
+        {/* Drafts notice: the storefront shows drafts until CATALOG_ACTIVE_ONLY=true */}
         {canWrite && counts.draft > 0 && tab === "all" && !q && !category && (
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3">
             <p className="flex items-start gap-2 text-sm text-amber-900">

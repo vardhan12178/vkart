@@ -137,25 +137,30 @@ describe("Header Component", () => {
     expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute("href", "/products?sort=discount");
   });
 
-  test("submits a search and navigates using the AI-parsed filters", async () => {
+  test("submits a search and navigates using the AI-parsed category and price", async () => {
     axios.post.mockResolvedValueOnce({
-      data: { q: null, category: "electronics", minPrice: null, maxPrice: 30000, minRating: null, sort: null },
+      data: { q: "", category: "mobiles", minPrice: null, maxPrice: 30000, minRating: null, sort: null },
     });
     renderHeader();
 
     // The always-visible desktop search input triggers the search on Enter
-    // (it isn't wrapped in a <form>; only the mobile overlay's input is).
     const searchInput = screen.getAllByPlaceholderText(/search, or ask/i)[0];
-    fireEvent.change(searchInput, { target: { value: "cheap electronics" } });
+    fireEvent.change(searchInput, { target: { value: "phones under 30000" } });
     fireEvent.keyDown(searchInput, { key: "Enter" });
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", { query: "cheap electronics" });
+      expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", { query: "phones under 30000" });
     });
-    await waitFor(() => {
-      // The parser's old-catalog category becomes keywords; the price limit is kept
-      expect(mockNavigate).toHaveBeenCalledWith("/products?q=electronics&max=30000");
-    });
+    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/products?cat=mobiles&max=30000"));
+  });
+
+  test("keeps keywords when the parser finds no category", async () => {
+    axios.post.mockResolvedValueOnce({ data: { q: "sony", category: null, minPrice: null, maxPrice: null, sort: "price_asc" } });
+    renderHeader();
+    const searchInput = screen.getAllByPlaceholderText(/search, or ask/i)[0];
+    fireEvent.change(searchInput, { target: { value: "sony cheapest first" } });
+    fireEvent.keyDown(searchInput, { key: "Enter" });
+    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/products?q=sony&sort=price-asc"));
   });
 
   test("opens the Categories menu with links into the listing", async () => {

@@ -1,10 +1,10 @@
 import { CATEGORIES, catOf } from "./catalogData";
 
-// Fallback data source: the catalog v2 JSON copied from the backend repo, answered
+// Fallback data source: the catalog JSON copied from the backend repo, answered
 // in the same shapes as /api/v2 (backend services/catalogV2.service.js). Loaded as a
 // separate chunk, only when the API is unavailable.
 
-const modules = import.meta.glob("../../data/catalog-v2/*/*.json", { eager: true });
+const modules = import.meta.glob("../../data/catalog/*/*.json", { eager: true });
 const raw = Object.values(modules).map((m) => m.default || m);
 
 const IMAGE_BASE = import.meta.env.VITE_CATALOG_IMAGE_BASE || "https://vkart-assets-mumbai.s3.ap-south-1.amazonaws.com/catalog-v2";
