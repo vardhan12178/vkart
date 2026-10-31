@@ -32,7 +32,7 @@ export default function AdminSidebar({
 
   const allNavLinks = [
     { name: "Dashboard", icon: LayoutDashboard, path: "/admin/dashboard", module: null },
-    { name: "Products", icon: Package, path: "/admin/products", module: "products" },
+    { name: "Products", icon: Package, path: "/admin/catalog", module: "products" },
     { name: "Orders", icon: ClipboardList, path: "/admin/orders", module: "orders" },
     { name: "Reviews", icon: Star, path: "/admin/reviews", module: "reviews" },
     { name: "Coupons", icon: Tag, path: "/admin/coupons", module: "coupons" },
