@@ -8,21 +8,13 @@ import QuickAdd from "./QuickAdd";
 import { RatingChip } from "./Reviews";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
-import {
-  FiSmartphone, FiMonitor, FiTablet, FiTv, FiHeadphones, FiWatch, FiDroplet, FiUser, FiShoppingBag,
-  FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiFilter, FiX, FiHeart, FiCheck, FiShoppingCart, FiGrid,
-} from "react-icons/fi";
+import { FiChevronRight, FiFilter, FiX, FiHeart, FiCheck, FiShoppingCart, FiGrid } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { CATEGORIES } from "./catalogData";
+import { iconFor } from "./categoryIcons";
 import { fetchProducts, formatPrice } from "./catalogApi";
 
 const ACCENT = "#a85d37";
-
-const ICONS = {
-  mobiles: FiSmartphone, laptops: FiCpu, tablets: FiTablet, tvs: FiTv, monitors: FiMonitor, audio: FiHeadphones,
-  wearables: FiWatch, skincare: FiDroplet, "fashion-men": FiUser, "fashion-women": FiShoppingBag,
-  appliances: FiHome, "kitchen-appliances": FiCoffee, grooming: FiScissors, sports: FiActivity,
-};
 
 const SORTS = {
   relevance: "Best match",
@@ -294,7 +286,7 @@ export default function CatalogPreviewList() {
       <div className="border-b border-line bg-paper">
         <div className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-2 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-4">
           {[[null, "All"], ...Object.entries(CATEGORIES)].map(([k, name]) => {
-            const Icon = k ? ICONS[k] || FiShoppingBag : FiGrid;
+            const Icon = k ? iconFor(k) : FiGrid;
             const active = k === category;
             return (
               <button key={k || "all"} type="button" onClick={() => pickCategory(k)} aria-pressed={active}

@@ -158,10 +158,92 @@ describe("Header Component", () => {
     });
   });
 
+  test("opens the Categories menu with links into the listing", async () => {
+    renderHeader();
+    const desktopNav = screen.getByRole("navigation", { name: /main navigation/i });
+    const button = within(desktopNav).getByRole("button", { name: /categories/i });
+    expect(button).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(button);
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    expect(within(desktopNav).getByRole("link", { name: /mobiles/i })).toHaveAttribute("href", "/products?cat=mobiles");
+    expect(within(desktopNav).getByRole("link", { name: /women's fashion/i })).toHaveAttribute("href", "/products?cat=fashion-women");
+    expect(within(desktopNav).getByRole("link", { name: /browse all products/i })).toHaveAttribute("href", "/products");
+
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(button).toHaveAttribute("aria-expanded", "false");
+  });
+
+  describe("search suggestions", () => {
+    const product = { slug: "samsung-galaxy-s26", title: "Samsung Galaxy S26", brand: "Samsung", price: 79999, image: null };
+
+    beforeEach(() => {
+      localStorage.clear();
+      jest.useFakeTimers();
+      axios.get.mockImplementation((url) => {
+        if (url === "/api/v2/products") return Promise.resolve({ data: { products: [product], total: 1 } });
+        if (url === "/api/sales/active") return Promise.resolve({ data: { sale: null } });
+        return Promise.resolve({ data: {} });
+      });
+    });
+    afterEach(() => jest.useRealTimers());
+
+    const type = async (input, value) => {
+      fireEvent.change(input, { target: { value } });
+      jest.advanceTimersByTime(300);
+      await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/v2/products", expect.objectContaining({ params: { q: value, limit: 5 } })));
+    };
+
+    test("offers the matching category, products and an Ask VKart hand-off", async () => {
+      const { store } = renderHeader();
+      const input = screen.getAllByRole("combobox", { name: /search products/i })[0];
+      await type(input, "samsung phone");
+
+      const list = await screen.findByRole("listbox", { name: /search suggestions/i });
+      const options = within(list).getAllByRole("option");
+      expect(options[0]).toHaveTextContent(/samsung in mobiles/i);
+      await waitFor(() => expect(within(list).getByRole("option", { name: /samsung galaxy s26/i })).toBeInTheDocument());
+
+      fireEvent.click(within(list).getByRole("option", { name: /ask vkart about "samsung phone"/i }));
+      expect(store.getState().ui.isChatOpen).toBe(true);
+      expect(store.getState().ui.chatPrompt.text).toBe("samsung phone");
+    });
+
+    test("arrow keys pick a suggestion and the search is remembered", async () => {
+      renderHeader();
+      const input = screen.getAllByRole("combobox", { name: /search products/i })[0];
+      await type(input, "samsung phone");
+      await screen.findByRole("option", { name: /samsung galaxy s26/i });
+
+      fireEvent.keyDown(input, { key: "ArrowDown" });
+      expect(input).toHaveAttribute("aria-activedescendant");
+      fireEvent.keyDown(input, { key: "Enter" });
+      expect(mockNavigate).toHaveBeenCalledWith("/products?cat=mobiles&q=samsung");
+      expect(JSON.parse(localStorage.getItem("vkart:recent-searches"))).toEqual(["samsung phone"]);
+    });
+
+    test("an empty box shows recent searches and popular categories", () => {
+      localStorage.setItem("vkart:recent-searches", JSON.stringify(["earbuds under 5000"]));
+      renderHeader();
+      const input = screen.getAllByRole("combobox", { name: /search products/i })[0];
+      fireEvent.focus(input);
+
+      const list = screen.getByRole("listbox", { name: /search suggestions/i });
+      expect(within(list).getByRole("option", { name: /earbuds under 5000/i })).toBeInTheDocument();
+      expect(within(list).getByRole("option", { name: /^audio$/i })).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: /remove "earbuds under 5000"/i }));
+      expect(within(list).queryByRole("option", { name: /earbuds under 5000/i })).not.toBeInTheDocument();
+      expect(localStorage.getItem("vkart:recent-searches")).toBe("[]");
+    });
+  });
+
   test("toggles the mobile menu", () => {
     renderHeader();
     const toggle = screen.getByLabelText(/open menu/i);
     fireEvent.click(toggle);
     expect(screen.getByLabelText(/close menu/i)).toBeInTheDocument();
+    // The drawer lists every category
+    expect(screen.getAllByRole("link", { name: /kitchen/i }).some((a) => a.getAttribute("href") === "/products?cat=kitchen-appliances")).toBe(true);
   });
 });

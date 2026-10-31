@@ -9,7 +9,7 @@ import {
   ChevronRight, Lightbulb, ArrowRight, ShoppingCart
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { closeChat, openChat } from "../redux/uiSlice";
+import { closeChat, openChat, clearChatPrompt } from "../redux/uiSlice";
 
 // Which catalog Ask VKart searches: "v2" (catalog_products) unless REACT_APP_AI_CATALOG says otherwise
 const AI_CATALOG = process.env.REACT_APP_AI_CATALOG || "v2";
@@ -37,6 +37,7 @@ const withMessageId = (msg) => (msg?.id ? msg : { ...msg, id: createMessageId() 
 const AIChatAssistant = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.ui.isChatOpen);
+  const chatPrompt = useSelector((state) => state.ui.chatPrompt);
   const navigate = useNavigate();
   const location = useLocation();
   const showDesktopLauncher = location.pathname === "/";
@@ -218,6 +219,15 @@ const AIChatAssistant = () => {
   };
 
   const handleSend = async () => sendMessage(input);
+
+  // A question handed over from search: send it, or leave it in the box while a reply is still loading
+  useEffect(() => {
+    if (!chatPrompt?.text) return;
+    dispatch(clearChatPrompt());
+    if (isLoading || cooldown > 0) setInput(chatPrompt.text);
+    else sendMessage(chatPrompt.text);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chatPrompt]);
 
   const handlePromptClick = async (prompt) => {
     await sendMessage(prompt);

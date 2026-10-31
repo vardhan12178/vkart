@@ -1,12 +1,12 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import "@testing-library/jest-dom";
 import AIChatAssistant from "../AIChatAssistant";
 import axios from "../axiosInstance";
-import uiReducer, { openChat } from "../../redux/uiSlice";
+import uiReducer, { openChat, askChat } from "../../redux/uiSlice";
 import cartReducer from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 
@@ -287,5 +287,17 @@ describe("AIChatAssistant Component", () => {
   test("hides the floating launcher on the cart and checkout pages", () => {
     renderAssistant(false, "/cart");
     expect(screen.queryByRole("button", { name: /ask vkart assistant/i })).not.toBeInTheDocument();
+  });
+
+  test("sends a question handed over from search", async () => {
+    axios.post.mockResolvedValueOnce({ data: { structured: { response: { summary: "Here you go", points: [] } }, products: [] } });
+    renderAssistant(false);
+    act(() => { store.dispatch(askChat("best earbuds under 5000")); });
+
+    await waitFor(() => {
+      expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "best earbuds under 5000" }));
+    });
+    expect(store.getState().ui.isChatOpen).toBe(true);
+    expect(store.getState().ui.chatPrompt).toBeNull();
   });
 });
