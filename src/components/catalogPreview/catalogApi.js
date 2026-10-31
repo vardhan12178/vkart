@@ -38,6 +38,9 @@ async function viaApi(path, params, local) {
 export const fetchCategories = () => viaApi("/categories", undefined, (b) => b.categories());
 export const fetchProducts = (params) => viaApi("/products", params, (b) => b.listProducts(params));
 export const fetchProduct = (slug) => viaApi(`/products/${encodeURIComponent(slug)}`, undefined, (b) => b.getProduct(slug));
+// Delivery estimate for a PIN code; there is no bundled fallback, so this needs the API
+export const fetchDelivery = (pincode, category) =>
+  axios.get(`/api/v2/delivery/${encodeURIComponent(pincode)}`, { params: category ? { category } : undefined, timeout: 10000 }).then((r) => r.data);
 export const fetchSimilar = (slug, limit = 12) => viaApi(`/products/${encodeURIComponent(slug)}/similar`, { limit }, (b) => b.getSimilar(slug, limit));
 
 /* ------------ Helpers for API-shaped data ------------ */

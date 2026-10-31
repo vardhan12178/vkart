@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { shippingFor } from "../utils/shipping";
 import { useQueryClient } from "@tanstack/react-query";
 import { useSelector, useDispatch } from "react-redux";
 import CartPreview from "./CartPreview";
@@ -107,7 +108,7 @@ export default function Cart() {
     const promoOff = promoApplied?.discount || 0;
 
     const subtotal = round2(rawSell - promoOff);
-    const shipping = subtotal >= 999 ? 0 : 50;
+    const shipping = shippingFor(subtotal);
 
     // Tax included in subtotal
     const tax = round2(subtotal * (TAX_RATE / (1 + TAX_RATE)));

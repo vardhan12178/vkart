@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useDispatch } from "react-redux";
@@ -253,7 +254,7 @@ export default function HomeV2() {
   ].filter(Boolean);
 
   const trust = [
-    { icon: FiTruck, title: "Free delivery", text: "On orders over ₹499" },
+    { icon: FiTruck, title: "Free delivery", text: `On orders over ₹${FREE_SHIPPING_THRESHOLD}` },
     { icon: FiRotateCcw, title: "7-day returns", text: "Easy, no-fuss returns" },
     { icon: FiShield, title: "Secure payments", text: "UPI, cards & netbanking" },
     { icon: FiCheckCircle, title: "Genuine brands", text: "Sourced from official stores" },

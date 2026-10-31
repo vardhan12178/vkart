@@ -1,15 +1,19 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom, variantLabel } from "./v2Items";
 import { addToCart } from "../../redux/cartSlice";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
-import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart } from "react-icons/fi";
+import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart, FiShare2 } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { RatingChip, ReviewsSection } from "./Reviews";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
+import DeliveryCheck from "./DeliveryCheck";
+import OffersEmi from "./OffersEmi";
+import SizeGuide, { sizeGuideFor } from "./SizeGuide";
+import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 
 // Catalog v2 product page (preview). Data comes from /api/v2 through catalogApi.js,
 // which falls back to the bundled copy when the API isn't available.
@@ -146,6 +150,8 @@ export default function CatalogPreviewProduct() {
   const [allSpecs, setAllSpecs] = useState(false);
   const [recent, setRecent] = useState([]);
   const [attempt, setAttempt] = useState(0);
+  const [showSizes, setShowSizes] = useState(false);
+  const [params, setParams] = useSearchParams();
   const dispatch = useDispatch();
   const wishlist = useSelector((s) => s.wishlist);
   const navigate = useNavigate();
@@ -161,7 +167,9 @@ export default function CatalogPreviewProduct() {
         if (!live) return;
         if (!prod) { setP(null); setStatus("missing"); return; }
         setP(prod);
-        setOpts(defaultVariant(prod).options);
+        // ?variant=<sku> opens that exact option (shared links, refreshes)
+        const linked = prod.variants.find((v) => v.sku === params.get("variant"));
+        setOpts((linked || defaultVariant(prod)).options);
         setImgIdx(0);
         setQty(1);
         setNotice("");
@@ -210,10 +218,28 @@ export default function CatalogPreviewProduct() {
 
   const exists = (name, value) => optionExists(p, opts, name, value);
   const pick = (name, value) => {
-    setOpts(pickOption(p, opts, name, value));
+    const next = pickOption(p, opts, name, value);
+    setOpts(next);
     if (name === p.media.groupBy) setImgIdx(0);
     setNotice("");
+    const sku = matchVariant(p, next)?.sku;
+    if (sku) setParams((prev) => { const q = new URLSearchParams(prev); q.set("variant", sku); return q; }, { replace: true });
   };
+
+  const share = async () => {
+    const url = window.location.href;
+    try {
+      if (navigator.share && window.matchMedia?.("(pointer: coarse)").matches) {
+        await navigator.share({ title: p.title, text: `${p.title} on VKart`, url });
+        return;
+      }
+      await navigator.clipboard.writeText(url);
+      showToast("Link copied", "success");
+    } catch (err) {
+      if (err?.name !== "AbortError") showToast("Couldn't share this link", "error");
+    }
+  };
+  const sizeGuide = sizeGuideFor(p);
   // Cart lines store ids + SKU; the cart page and checkout re-price them from the server.
   // The bundled fallback has no database ids, so ordering needs the v2 API.
   const buy = (kind) => {
@@ -240,7 +266,7 @@ export default function CatalogPreviewProduct() {
   const collapsed = !allSpecs && (specGroups.length > 2 || totalRows > SPEC_ROWS);
   const recentItems = recent;
   const policies = [
-    { icon: FiTruck, text: "Free delivery over ₹499" },
+    { icon: FiTruck, text: `Free delivery over ₹${FREE_SHIPPING_THRESHOLD}` },
     { icon: FiRotateCcw, text: "7-day easy returns" },
     { icon: FiShield, text: p.warranty ? p.warranty.replace(/^./, (c) => c.toUpperCase()) : "Brand warranty" },
     { icon: FiLock, text: "Secure checkout" },
@@ -272,14 +298,20 @@ export default function CatalogPreviewProduct() {
             <Link to={`/products?cat=${cat}`} className="text-sm font-semibold" style={{ color: ACCENT }}>Visit the {p.brand} store</Link>
             <div className="mt-1 flex items-start justify-between gap-3">
               <h1 className="min-w-0 break-words text-2xl font-bold leading-snug text-ink sm:text-3xl">{p.title}</h1>
-              <button type="button" aria-pressed={saved} aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
-                onClick={() => {
-                  const now = toggleSaved(dispatch, wishlist, wishlistItemFrom(p, variant || defaultVariant(p)));
-                  showToast(now ? "Saved to wishlist" : "Removed from wishlist", "success");
-                }}
-                className={`flex h-11 w-11 flex-none items-center justify-center rounded-full border transition ${saved ? "border-accent bg-accent/10 text-accent" : "border-line-strong bg-white text-ink hover:border-ink"}`}>
-                <FiHeart className={saved ? "fill-accent" : ""} />
-              </button>
+              <div className="flex flex-none gap-2">
+                <button type="button" aria-label="Share" onClick={share}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-line-strong bg-white text-ink transition hover:border-ink">
+                  <FiShare2 />
+                </button>
+                <button type="button" aria-pressed={saved} aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
+                  onClick={() => {
+                    const now = toggleSaved(dispatch, wishlist, wishlistItemFrom(p, variant || defaultVariant(p)));
+                    showToast(now ? "Saved to wishlist" : "Removed from wishlist", "success");
+                  }}
+                  className={`flex h-11 w-11 flex-none items-center justify-center rounded-full border transition ${saved ? "border-accent bg-accent/10 text-accent" : "border-line-strong bg-white text-ink hover:border-ink"}`}>
+                  <FiHeart className={saved ? "fill-accent" : ""} />
+                </button>
+              </div>
             </div>
             {p.rating?.average ? (
               <a href="#reviews" className="mt-2 inline-flex items-center gap-2 text-sm text-muted hover:underline">
@@ -308,9 +340,16 @@ export default function CatalogPreviewProduct() {
               const byImage = o.name === p.media.groupBy && Object.keys(p.media.groups || {}).length > 0;
               return (
                 <div key={o.name} className="mt-6">
-                  <p className="text-sm font-semibold text-ink">
-                    {o.name}: <span className="font-normal text-muted">{opts[o.name]}</span>
-                  </p>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <p className="text-sm font-semibold text-ink">
+                      {o.name}: <span className="font-normal text-muted">{opts[o.name]}</span>
+                    </p>
+                    {o.name === "Size" && sizeGuide && (
+                      <button type="button" onClick={() => setShowSizes(true)} className="text-xs font-semibold text-accent underline underline-offset-4">
+                        Size guide
+                      </button>
+                    )}
+                  </div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {o.values.map((val) => {
                       const active = opts[o.name] === val.value;
@@ -343,6 +382,8 @@ export default function CatalogPreviewProduct() {
               );
             })}
 
+            <DeliveryCheck category={cat} price={variant ? variant.price * qty : 0} />
+
             {/* Stock + actions */}
             <div className="mt-6 rounded-2xl border border-line bg-white p-4">
               <p className={`text-sm font-semibold ${available ? "text-ok" : "text-alert"}`}>
@@ -367,6 +408,8 @@ export default function CatalogPreviewProduct() {
               </div>
               {notice && <p className="mt-3 rounded-lg bg-sand px-3 py-2 text-xs text-muted">{notice}</p>}
             </div>
+
+            <OffersEmi price={variant?.price} />
 
             {/* Policies */}
             <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 [&>*]:min-w-0">
@@ -470,6 +513,8 @@ export default function CatalogPreviewProduct() {
         <Rail title={`Similar ${CATEGORIES[cat] || "products"}`} items={similar} />
         <Rail title="Recently viewed" items={recentItems} />
       </div>
+
+      {showSizes && sizeGuide && <SizeGuide guide={sizeGuide} selected={opts.Size} onClose={() => setShowSizes(false)} />}
 
       {/* Mobile sticky actions */}
       <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 p-3 backdrop-blur lg:hidden">

@@ -36,7 +36,9 @@ export function toggleSaved(dispatch, wishlist, item) {
   return true;
 }
 
-export const productPath = (item) => (item?.catalog === "v2" ? `/products/${item.slug}` : null);
+// Links to the saved option when the item has one
+export const productPath = (item) =>
+  item?.catalog === "v2" ? `/products/${item.slug}${item.sku ? `?variant=${encodeURIComponent(item.sku)}` : ""}` : null;
 
 /** Cart entry for a saved v2 item, or null when it can't be ordered yet (bundled data, no sku). */
 export function cartItemFromSaved(item, quantity = 1) {

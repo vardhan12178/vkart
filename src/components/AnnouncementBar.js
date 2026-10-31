@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { X as XIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import axios from "./axiosInstance";
+import { FREE_SHIPPING_THRESHOLD } from "../utils/shipping";
 
 const FALLBACK = [
-    { text: "Complimentary delivery on orders over ₹499", link: "/products" },
+    { text: `Complimentary delivery on orders over ₹${FREE_SHIPPING_THRESHOLD}`, link: "/products" },
 ];
 
 const AnnouncementBar = () => {
