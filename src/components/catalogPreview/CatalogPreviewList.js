@@ -8,7 +8,7 @@ import QuickAdd from "./QuickAdd";
 import { RatingChip } from "./Reviews";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
-import { FiChevronRight, FiFilter, FiX, FiHeart, FiCheck, FiShoppingCart, FiGrid } from "react-icons/fi";
+import { FiChevronRight, FiFilter, FiX, FiHeart, FiCheck, FiShoppingCart, FiGrid, FiStar } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { CATEGORIES } from "./catalogData";
 import { iconFor } from "./categoryIcons";
@@ -22,11 +22,19 @@ const SORTS = {
   "price-asc": "Price: low to high",
   "price-desc": "Price: high to low",
   discount: "Biggest discount",
+  rating: "Customer rating",
   newest: "Newest first",
 };
 const SORT_OPTIONS = Object.entries(SORTS).map(([value, label]) => ({ value, label }));
 const SORTS_BROWSE = SORT_OPTIONS.filter((o) => o.value !== "relevance"); // "Best match" only applies to searches
 const DISCOUNTS = [10, 25, 40];
+const RATINGS = [4, 3];
+// Swatches for the colour families the API groups clothing colours into
+const SWATCH = {
+  Black: "#1d1c19", White: "#ffffff", Grey: "#9b978f", Blue: "#3d5a8a", Green: "#4f7a52", Red: "#a8402f", Pink: "#e3a6b4",
+  Purple: "#7d5ba6", Yellow: "#e0b13a", Orange: "#d9772b", Brown: "#8a6243", Gold: "#c9a24a", Silver: "#c4c4c4",
+  Multicolour: "conic-gradient(#e0b13a, #a8402f, #7d5ba6, #3d5a8a, #4f7a52, #e0b13a)",
+};
 
 const roundNice = (n) => {
   const step = n >= 100000 ? 10000 : n >= 20000 ? 5000 : n >= 5000 ? 1000 : n >= 1000 ? 500 : 100;
@@ -149,37 +157,75 @@ function Check({ checked, onChange, children, count }) {
   );
 }
 
-function Filters({ facets, bands, f, set }) {
-  const toggleBrand = (b) => set({ ...f, brands: f.brands.includes(b) ? f.brands.filter((x) => x !== b) : [...f.brands, b] });
-  const brands = [...new Set([...(facets?.brands || []).map((b) => b.name), ...f.brands])];
+function SpecSection({ facet, selected, toggle }) {
+  const [all, setAll] = useState(false);
+  const LIMIT = 8;
+  const options = all ? facet.options : facet.options.slice(0, LIMIT);
+  return (
+    <Section title={facet.label}>
+      {options.map((o) => (
+        <Check key={o.value} checked={selected.includes(o.value)} onChange={() => toggle(facet.key, o.value)} count={o.count}>
+          {facet.key === "color" && SWATCH[o.label] && (
+            <span className="mr-2 inline-block h-3 w-3 rounded-full align-[-1px] ring-1 ring-black/15" style={{ background: SWATCH[o.label] }} />
+          )}
+          {o.label}
+        </Check>
+      ))}
+      {facet.options.length > LIMIT && (
+        <button type="button" onClick={() => setAll(!all)} className="mt-1 text-xs font-semibold text-accent">
+          {all ? "Show fewer" : `Show all ${facet.options.length}`}
+        </button>
+      )}
+    </Section>
+  );
+}
+
+function Filters({ facets, bands, sel, act }) {
+  const brands = [...new Set([...(facets?.brands || []).map((b) => b.name), ...sel.brands])];
+  const ratingCount = (min) => facets?.ratings?.find((r) => r.min === min)?.count;
 
   return (
     <div>
       <Section title="Brand">
         <div className="max-h-64 overflow-y-auto pr-1">
-          {brands.map((b) => <Check key={b} checked={f.brands.includes(b)} onChange={() => toggleBrand(b)}>{b}</Check>)}
+          {brands.map((b) => <Check key={b} checked={sel.brands.includes(b)} onChange={() => act.toggleBrand(b)}>{b}</Check>)}
         </div>
       </Section>
       {bands.length > 0 && (
         <Section title="Price">
-          {bands.map((band, i) => (
-            <Check key={band.label} checked={f.band === i} onChange={() => set({ ...f, band: f.band === i ? null : i })}>{band.label}</Check>
+          {bands.map((band) => (
+            <Check key={band.label} checked={sel.band === band} onChange={() => act.pickBand(sel.band === band ? null : band)}>{band.label}</Check>
+          ))}
+        </Section>
+      )}
+      {(facets?.specs || []).map((facet) => (
+        <SpecSection key={facet.key} facet={facet} selected={sel.specs[facet.key] || []} toggle={act.toggleSpec} />
+      ))}
+      {facets?.ratings && (
+        <Section title="Customer rating">
+          {RATINGS.map((r) => (
+            <Check key={r} checked={sel.minRating === r} onChange={() => act.setOne("rating", sel.minRating === r ? null : r)} count={ratingCount(r)}>
+              <span className="inline-flex items-center gap-1">{r}<FiStar className="fill-star text-star" size={12} /> & above</span>
+            </Check>
           ))}
         </Section>
       )}
       <Section title="Discount">
         {DISCOUNTS.map((d) => (
-          <Check key={d} checked={f.minOff === d} onChange={() => set({ ...f, minOff: f.minOff === d ? 0 : d })}>{d}% or more</Check>
+          <Check key={d} checked={sel.minOff === d} onChange={() => act.setOne("off", sel.minOff === d ? null : d)}>{d}% or more</Check>
         ))}
       </Section>
       <Section title="Availability">
-        <Check checked={f.inStock} onChange={() => set({ ...f, inStock: !f.inStock })}>In stock only</Check>
+        <Check checked={sel.inStock} onChange={() => act.setOne("stock", sel.inStock ? null : 1)}>In stock only</Check>
       </Section>
     </div>
   );
 }
 
-const EMPTY = { brands: [], band: null, minOff: 0, inStock: false };
+// Filters live in the URL: brand=a,b · min/max · off · stock=1 · rating · f_<key>=a,b (category filters)
+const FILTER_PARAMS = ["brand", "min", "max", "off", "stock", "rating"];
+const isFilterParam = (k) => FILTER_PARAMS.includes(k) || k.startsWith("f_");
+const listOf = (v) => (v || "").split(",").map((x) => x.trim()).filter(Boolean);
 
 /* ------------ Page ------------ */
 export default function CatalogPreviewList() {
@@ -193,7 +239,13 @@ export default function CatalogPreviewList() {
   const urlMin = Number(params.get("min")) || null;
   const urlMax = Number(params.get("max")) || null;
   const scope = category || "all";
-  const [f, setF] = useState(EMPTY);
+  const brandSel = listOf(params.get("brand"));
+  const minOff = Number(params.get("off")) || 0;
+  const inStock = params.get("stock") === "1";
+  const minRating = Number(params.get("rating")) || 0;
+  const specSel = {};
+  params.forEach((v, k) => { if (k.startsWith("f_")) specSel[k.slice(2)] = listOf(v); });
+  const filterKey = [...params.entries()].filter(([k]) => isFilterParam(k)).map(([k, v]) => `${k}=${v}`).sort().join("&");
   const [sheet, setSheet] = useState(false);
   const [quickSlug, setQuickSlug] = useState(null); // product open in the quick-add sheet
 
@@ -203,6 +255,7 @@ export default function CatalogPreviewList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [bounds, setBounds] = useState({}); // category -> price bounds without filters, for stable bands
+  const [attempt, setAttempt] = useState(0);
 
   const closeQuick = useCallback(() => setQuickSlug(null), []);
   const setParam = (key, value) => {
@@ -211,20 +264,33 @@ export default function CatalogPreviewList() {
     setParams(next, { replace: true });
   };
   const setSort = (value) => setParam("sort", value === (q ? "relevance" : "featured") ? null : value);
-  const clearUrlPrice = () => {
+  const update = (mutate) => {
     const next = new URLSearchParams(params);
-    next.delete("min"); next.delete("max");
+    mutate(next);
     setParams(next, { replace: true });
   };
-  const clearAll = () => { setF(EMPTY); if (urlMin || urlMax) clearUrlPrice(); };
-  useEffect(() => { setF(EMPTY); }, [category, q]);
-  useEffect(() => { setPage(1); }, [category, q, f, sort, urlMin, urlMax]);
+  const toggleIn = (next, key, value) => {
+    const list = listOf(next.get(key));
+    const out = list.includes(value) ? list.filter((x) => x !== value) : [...list, value];
+    if (out.length) next.set(key, out.join(",")); else next.delete(key);
+  };
+  const clearUrlPrice = () => update((n) => { n.delete("min"); n.delete("max"); });
+  const clearAll = () => update((n) => [...n.keys()].filter(isFilterParam).forEach((k) => n.delete(k)));
+  useEffect(() => { setPage(1); }, [category, q, filterKey, sort]);
 
   const bands = priceBands(bounds[scope]);
-  const band = f.band !== null ? bands[f.band] : null;
-  // A price band from the sidebar wins over a range that came from the header search
-  const minPrice = band ? band.min : urlMin;
-  const maxPrice = band ? (band.max ? band.max - 1 : null) : urlMax;
+  // A sidebar price band is just a min/max pair in the URL; the header search can set any range
+  const band = bands.find((b) => (b.min || null) === urlMin && (b.max || null) === urlMax) || null;
+  const act = {
+    toggleBrand: (b) => update((n) => toggleIn(n, "brand", b)),
+    toggleSpec: (key, value) => update((n) => toggleIn(n, `f_${key}`, value)),
+    setOne: (key, value) => update((n) => (value ? n.set(key, String(value)) : n.delete(key))),
+    pickBand: (b) => update((n) => {
+      if (b?.min) n.set("min", String(b.min)); else n.delete("min");
+      if (b?.max) n.set("max", String(b.max)); else n.delete("max");
+    }),
+  };
+  const sel = { brands: brandSel, band, minOff, inStock, minRating, specs: specSel };
 
   useEffect(() => {
     let live = true;
@@ -236,24 +302,27 @@ export default function CatalogPreviewList() {
       sort,
       page,
       limit: 24,
-      ...(f.brands.length ? { brand: f.brands.join(",") } : {}),
-      ...(minPrice ? { minPrice } : {}),
-      ...(maxPrice ? { maxPrice } : {}),
-      ...(f.minOff ? { minDiscount: f.minOff } : {}),
-      ...(f.inStock ? { inStock: "true" } : {}),
+      ...(brandSel.length ? { brand: brandSel.join(",") } : {}),
+      ...(urlMin ? { minPrice: urlMin } : {}),
+      ...(urlMax ? { maxPrice: urlMax } : {}),
+      ...(minOff ? { minDiscount: minOff } : {}),
+      ...(inStock ? { inStock: "true" } : {}),
+      ...(minRating ? { minRating } : {}),
+      // Category filters only apply inside their category
+      ...(category ? Object.fromEntries(Object.entries(specSel).map(([k, v]) => [`f_${k}`, v.join(",")])) : {}),
     })
       .then((res) => {
         if (!live) return;
         setData(res);
         setItems((prev) => (page === 1 ? res.products : [...prev, ...res.products]));
-        const unfiltered = !q && !urlMin && !urlMax && !f.brands.length && f.band === null && !f.minOff && !f.inStock;
+        const unfiltered = !q && !filterKey;
         if (unfiltered && res.facets?.price) setBounds((b) => (b[scope] ? b : { ...b, [scope]: res.facets.price }));
       })
       .catch(() => live && setError("Couldn't load products. Please try again."))
       .finally(() => live && setLoading(false));
     return () => { live = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, q, f, sort, page, urlMin, urlMax]);
+  }, [category, q, filterKey, sort, page, attempt]);
 
   const total = data?.total ?? 0;
   const heading = q ? `Results for "${q}"` : category ? CATEGORIES[category] : "All products";
@@ -264,15 +333,21 @@ export default function CatalogPreviewList() {
     if (q) next.set("q", q);
     setParams(next, { replace: true });
   };
+  const specLabel = (key, value) => {
+    const facet = data?.facets?.specs?.find((x) => x.key === key);
+    const option = facet?.options.find((o) => o.value === value);
+    return option?.label || value;
+  };
   const chips = [
-    ...f.brands.map((b) => ({ label: b, clear: () => setF({ ...f, brands: f.brands.filter((x) => x !== b) }) })),
-    ...(band ? [{ label: band.label, clear: () => setF({ ...f, band: null }) }] : []),
-    ...(!band && (urlMin || urlMax) ? [{
-      label: urlMin && urlMax ? `${formatPrice(urlMin)} – ${formatPrice(urlMax)}` : urlMax ? `Under ${formatPrice(urlMax)}` : `Over ${formatPrice(urlMin)}`,
+    ...brandSel.map((b) => ({ label: b, clear: act.toggleBrand.bind(null, b) })),
+    ...(urlMin || urlMax ? [{
+      label: band ? band.label : urlMin && urlMax ? `${formatPrice(urlMin)} – ${formatPrice(urlMax)}` : urlMax ? `Under ${formatPrice(urlMax)}` : `Over ${formatPrice(urlMin)}`,
       clear: clearUrlPrice,
     }] : []),
-    ...(f.minOff ? [{ label: `${f.minOff}%+ off`, clear: () => setF({ ...f, minOff: 0 }) }] : []),
-    ...(f.inStock ? [{ label: "In stock", clear: () => setF({ ...f, inStock: false }) }] : []),
+    ...(category ? Object.entries(specSel).flatMap(([key, values]) => values.map((v) => ({ label: specLabel(key, v), clear: () => act.toggleSpec(key, v) }))) : []),
+    ...(minRating ? [{ label: `${minRating}★ & above`, clear: () => act.setOne("rating", null) }] : []),
+    ...(minOff ? [{ label: `${minOff}%+ off`, clear: () => act.setOne("off", null) }] : []),
+    ...(inStock ? [{ label: "In stock", clear: () => act.setOne("stock", null) }] : []),
   ];
 
   return (
@@ -325,7 +400,7 @@ export default function CatalogPreviewList() {
               <span className="text-sm font-bold text-ink">Filters</span>
               {chips.length > 0 && <button type="button" onClick={clearAll} className="text-xs font-semibold" style={{ color: ACCENT }}>Clear all</button>}
             </div>
-            <Filters facets={data?.facets} bands={bands} f={f} set={setF} />
+            <Filters facets={data?.facets} bands={bands} sel={sel} act={act} />
           </aside>
 
           <div>
@@ -342,7 +417,7 @@ export default function CatalogPreviewList() {
             {error ? (
               <div className="rounded-2xl bg-paper p-10 text-center ring-1 ring-line">
                 <p className="font-semibold text-ink">{error}</p>
-                <button type="button" onClick={() => setF({ ...f })} className="mt-3 text-sm font-semibold underline" style={{ color: ACCENT }}>Retry</button>
+                <button type="button" onClick={() => setAttempt((n) => n + 1)} className="mt-3 text-sm font-semibold underline" style={{ color: ACCENT }}>Retry</button>
               </div>
             ) : loading && page === 1 ? (
               <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
@@ -412,7 +487,7 @@ export default function CatalogPreviewList() {
               <span className="text-base font-bold text-ink">Filters</span>
               <button type="button" onClick={() => setSheet(false)} aria-label="Close"><FiX className="text-xl" /></button>
             </div>
-            <Filters facets={data?.facets} bands={bands} f={f} set={setF} />
+            <Filters facets={data?.facets} bands={bands} sel={sel} act={act} />
             <div className="fixed inset-x-0 bottom-0 grid grid-cols-2 gap-3 border-t border-line bg-paper p-3">
               <button type="button" onClick={clearAll} className="rounded-full border border-ink py-3 text-sm font-bold">Clear</button>
               <button type="button" onClick={() => setSheet(false)} className="rounded-full py-3 text-sm font-bold text-white" style={{ background: ACCENT }}>

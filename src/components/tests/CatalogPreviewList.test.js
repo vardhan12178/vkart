@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { render, screen, fireEvent, within, waitFor } from "@testing-library/react";
+import { MemoryRouter, useLocation } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { HelmetProvider } from "react-helmet-async";
@@ -32,12 +32,17 @@ describe("CatalogPreviewList tiles", () => {
     store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer } });
   });
 
-  const renderList = (products, url = "/products?cat=mobiles") => {
-    fetchProducts.mockResolvedValue({ products, total: products.length, pages: 1, facets: { brands: [], price: { min: 0, max: 50000 } } });
+  function Where() {
+    const loc = useLocation();
+    return <p data-testid="where">{loc.search}</p>;
+  }
+
+  const renderList = (products, url = "/products?cat=mobiles", facets = {}) => {
+    fetchProducts.mockResolvedValue({ products, total: products.length, pages: 1, facets: { brands: [], price: { min: 0, max: 50000 }, ...facets } });
     render(
       <HelmetProvider>
         <Provider store={store}>
-          <MemoryRouter initialEntries={[url]}><CatalogPreviewList /></MemoryRouter>
+          <MemoryRouter initialEntries={[url]}><CatalogPreviewList /><Where /></MemoryRouter>
         </Provider>
       </HelmetProvider>
     );
@@ -80,5 +85,45 @@ describe("CatalogPreviewList tiles", () => {
     renderList([], "/products?q=flying%20car");
     fireEvent.click(await screen.findByRole("button", { name: "Ask VKart" }));
     expect(store.getState().ui.isChatOpen).toBe(true);
+  });
+
+  const specs = [
+    { key: "ram", label: "RAM", kind: "multi", options: [{ value: "8", label: "8 GB", count: 17 }, { value: "12", label: "12 GB", count: 24 }] },
+    { key: "5g", label: "Network", kind: "flag", options: [{ value: "1", label: "5G", count: 45 }] },
+  ];
+  const ratings = [{ min: 4, count: 46 }, { min: 3, count: 48 }];
+
+  it("shows the category's filters and keeps choices in the URL", async () => {
+    renderList([card("phone")], "/products?cat=mobiles", { specs, ratings });
+    const sidebar = (await screen.findAllByText("RAM"))[0].closest("aside");
+    expect(within(sidebar).getByText("Network")).toBeInTheDocument();
+
+    fireEvent.click(within(sidebar).getByText("12 GB"));
+    expect(screen.getByTestId("where")).toHaveTextContent("f_ram=12");
+    await waitFor(() => expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({ category: "mobiles", f_ram: "12" })));
+
+    fireEvent.click(within(sidebar).getByText("8 GB"));
+    fireEvent.click(within(sidebar).getByText(/4\s*& above/));
+    await waitFor(() => expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({ f_ram: "12,8", minRating: 4 })));
+    // Chips use the option labels; Clear all empties the URL's filters but keeps the category
+    expect(screen.getByRole("button", { name: "12 GB" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "4★ & above" })).toBeInTheDocument();
+    fireEvent.click(within(sidebar).getByRole("button", { name: "Clear all" }));
+    expect(screen.getByTestId("where")).toHaveTextContent(/^\?cat=mobiles$/);
+  });
+
+  it("opens a shared link with its filters applied", async () => {
+    renderList([card("phone")], "/products?cat=mobiles&brand=Apple,Samsung&f_5g=1&off=25&sort=rating", { specs, ratings });
+    await waitFor(() => expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({
+      brand: "Apple,Samsung", f_5g: "1", minDiscount: 25, sort: "rating",
+    })));
+    expect(await screen.findByRole("button", { name: "5G" })).toBeInTheDocument(); // chip
+    expect(screen.getByRole("button", { name: "25%+ off" })).toBeInTheDocument();
+  });
+
+  it("drops category filters when switching category", async () => {
+    renderList([card("phone")], "/products?cat=mobiles&f_ram=8&q=pro", { specs, ratings });
+    fireEvent.click(await screen.findByRole("button", { name: "Laptops" }));
+    expect(screen.getByTestId("where")).toHaveTextContent(/^\?cat=laptops&q=pro$/);
   });
 });
