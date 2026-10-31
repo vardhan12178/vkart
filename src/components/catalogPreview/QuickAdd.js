@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FiX, FiShoppingCart, FiZap } from "react-icons/fi";
-import { addToCart } from "../../redux/cartSlice";
+import { addToCart, cartItemKey } from "../../redux/cartSlice";
+import { openMiniCart } from "../../redux/uiSlice";
 import { showToast } from "../../utils/toast";
 import { fetchProduct, defaultVariant, imagesFor, formatPrice } from "./catalogApi";
-import { matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom, variantLabel } from "./v2Items";
+import { matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom } from "./v2Items";
 
 // Quick-add sheet for listing tiles that need a choice (clothing sizes, or a sold-out default variant)
 // Bottom sheet on phones, centred dialog from sm up.
@@ -48,10 +49,11 @@ export default function QuickAdd({ slug, onClose }) {
       showToast("Ordering works once this site's backend serves the v2 API.", "error");
       return;
     }
-    dispatch(addToCart(cartLineFrom(p, variant, image?.md)));
+    const line = cartLineFrom(p, variant, image?.md);
+    dispatch(addToCart(line));
     onClose();
     if (kind === "buy") navigate("/cart");
-    else showToast(`Added to cart${variantLabel(variant) ? ` · ${variantLabel(variant)}` : ""}`, "success");
+    else dispatch(openMiniCart(cartItemKey(line)));
   };
 
   return (

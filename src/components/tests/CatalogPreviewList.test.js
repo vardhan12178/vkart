@@ -54,7 +54,7 @@ describe("CatalogPreviewList tiles", () => {
     expect(store.getState().cart).toEqual([expect.objectContaining({
       catalog: "v2", productId: "id-phone", sku: "phone-1", price: 30000, selectedVariants: "128GB · Black", quantity: 1,
     })]);
-    expect(showToast).toHaveBeenCalledWith("Added to cart · 128GB · Black", "success");
+    expect(store.getState().ui.miniCart).toEqual({ open: true, lastKey: "id-phone::128GB · Black" });
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 

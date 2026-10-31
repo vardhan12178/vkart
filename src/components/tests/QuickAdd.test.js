@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "../../redux/cartSlice";
+import uiReducer from "../../redux/uiSlice";
 import QuickAdd from "../catalogPreview/QuickAdd";
 import { fetchProduct } from "../catalogPreview/catalogApi";
 import { showToast } from "../../utils/toast";
@@ -41,7 +42,7 @@ describe("QuickAdd", () => {
   beforeEach(() => {
     showToast.mockClear();
     fetchProduct.mockResolvedValue(phone);
-    store = configureStore({ reducer: { cart: cartReducer } });
+    store = configureStore({ reducer: { cart: cartReducer, ui: uiReducer } });
   });
 
   const renderSheet = (onClose = jest.fn()) => {
@@ -63,7 +64,8 @@ describe("QuickAdd", () => {
       catalog: "v2", productId: "p1", sku: "tp-512-black", price: 60000, thumbnail: "b-md.webp", selectedVariants: "512GB · Black", quantity: 1,
     })]);
     expect(onClose).toHaveBeenCalled();
-    expect(showToast).toHaveBeenCalledWith("Added to cart · 512GB · Black", "success");
+    // The mini cart opens with the new line highlighted, instead of a toast
+    expect(store.getState().ui.miniCart).toEqual({ open: true, lastKey: expect.stringContaining("512GB · Black") });
   });
 
   it("blocks out-of-stock variants", async () => {

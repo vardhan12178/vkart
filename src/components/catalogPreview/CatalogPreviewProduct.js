@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom, variantLabel } from "./v2Items";
-import { addToCart } from "../../redux/cartSlice";
+import { findSaved, toggleSaved, wishlistItemFrom, matchVariant, optionExists, pickOption, visibleOptions, isAvailable, cartLineFrom } from "./v2Items";
+import { addToCart, cartItemKey } from "../../redux/cartSlice";
+import { openMiniCart } from "../../redux/uiSlice";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
 import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart, FiShare2 } from "react-icons/fi";
@@ -248,10 +249,10 @@ export default function CatalogPreviewProduct() {
       setNotice("Ordering works once this site's backend serves the v2 API.");
       return;
     }
-    const label = variantLabel(variant);
-    dispatch(addToCart(cartLineFrom(p, variant, images[0]?.md, qty)));
+    const line = cartLineFrom(p, variant, images[0]?.md, qty);
+    dispatch(addToCart(line));
     if (kind === "buy") navigate("/cart");
-    else showToast(`Added to cart${label ? ` · ${label}` : ""}`, "success");
+    else dispatch(openMiniCart(cartItemKey(line)));
   };
 
   const specGroups = Object.entries(p.specs || {}).filter(([, f]) => f && Object.keys(f).length);

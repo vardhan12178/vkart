@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { findSaved, toggleSaved, wishlistItemFrom, variantLabel } from "./v2Items";
-import { addToCart } from "../../redux/cartSlice";
-import { openChat } from "../../redux/uiSlice";
+import { addToCart, cartItemKey } from "../../redux/cartSlice";
+import { openChat, openMiniCart } from "../../redux/uiSlice";
 import QuickAdd from "./QuickAdd";
 import { RatingChip } from "./Reviews";
 import { showToast } from "../../utils/toast";
@@ -76,12 +76,13 @@ function Card({ p, onChooseOptions }) {
     e.stopPropagation();
     if (pickSize || pickOther) return onChooseOptions(p.slug);
     if (!p.id) return showToast("Ordering works once this site's backend serves the v2 API.", "error");
-    dispatch(addToCart({
+    const line = {
       catalog: "v2", productId: p.id, sku: p.sku, slug: p.slug, title: p.title, price: p.price,
       thumbnail: img?.md || "", category: p.category, discountPercentage: off || 0,
       selectedVariants: label || undefined, quantity: 1,
-    }));
-    showToast(`Added to cart${label ? ` · ${label}` : ""}`, "success");
+    };
+    dispatch(addToCart(line));
+    dispatch(openMiniCart(cartItemKey(line)));
   };
   return (
     <Link to={`/products/${p.slug}`}

@@ -1,15 +1,5 @@
 import React, { useMemo } from "react";
-import {
-  FaClipboardList,
-  FaCheck,
-  FaCogs,
-  FaBox,
-  FaPlane,
-  FaTruck,
-  FaHome,
-  FaTimesCircle,
-  FaCheckCircle
-} from "react-icons/fa";
+import { CheckIcon, CircleCheckIcon, CircleXIcon, ClipboardListIcon, HouseIcon, PackageIcon, PlaneIcon, SettingsIcon, TruckIcon } from "./ui/icons";
 
 // Fixed per-step column width (px) for the horizontal timeline. Kept as a
 // single constant since the connector-line math below has to match it
@@ -49,13 +39,13 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
   }, [statusHistory, createdAt]);
 
   const stages = [
-    { key: "PLACED", label: "Order Placed", icon: FaClipboardList },
-    { key: "CONFIRMED", label: "Confirmed", icon: FaCheck },
-    { key: "PROCESSING", label: "Processing", icon: FaCogs },
-    { key: "PACKED", label: "Packed", icon: FaBox },
-    { key: "SHIPPED", label: "Shipped", icon: FaPlane },
-    { key: "OUT_FOR_DELIVERY", label: "Out for Delivery", icon: FaTruck },
-    { key: "DELIVERED", label: "Delivered", icon: FaHome },
+    { key: "PLACED", label: "Order Placed", icon: ClipboardListIcon },
+    { key: "CONFIRMED", label: "Confirmed", icon: CheckIcon },
+    { key: "PROCESSING", label: "Processing", icon: SettingsIcon },
+    { key: "PACKED", label: "Packed", icon: PackageIcon },
+    { key: "SHIPPED", label: "Shipped", icon: PlaneIcon },
+    { key: "OUT_FOR_DELIVERY", label: "Out for Delivery", icon: TruckIcon },
+    { key: "DELIVERED", label: "Delivered", icon: HouseIcon },
   ].map(stage => ({
     ...stage,
     date: formatStageDate(stageTimestampMap[stage.key])
@@ -72,12 +62,12 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
   if (isCancelled) {
     return (
       <div className="max-w-3xl mx-auto my-4">
-        <div className="rounded-2xl bg-red-50 border border-red-100 p-6 text-center shadow-sm">
-          <div className="w-14 h-14 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-3">
-            <FaTimesCircle size={26} />
+        <div className="rounded-2xl bg-alert/10 border border-alert/30 p-6 text-center shadow-sm">
+          <div className="w-14 h-14 bg-alert/10 text-alert rounded-full flex items-center justify-center mx-auto mb-3">
+            <CircleXIcon size={26} />
           </div>
-          <h2 className="text-lg font-black text-red-900 mb-1">Order Cancelled</h2>
-          <p className="text-sm text-gray-600">
+          <h2 className="text-lg font-black text-alert mb-1">Order Cancelled</h2>
+          <p className="text-sm text-muted">
             This order has been cancelled and the refund process has been initiated.
           </p>
         </div>
@@ -89,7 +79,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
 
   /* --- PROGRESS TIMELINE (horizontal at every breakpoint, scrolls on narrow screens) --- */
   return (
-    <div className="w-full bg-white rounded-2xl border border-gray-100 shadow-2xs p-3.5 sm:p-5 relative overflow-hidden">
+    <div className="w-full bg-white rounded-2xl border border-line shadow-2xs p-3.5 sm:p-5 relative overflow-hidden">
       <div className="overflow-x-auto -mx-1 px-1 pt-1 pb-1">
         <div
           className="relative flex items-start"
@@ -97,13 +87,13 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
         >
           {/* Background Line */}
           <div
-            className="absolute top-[18px] h-0.5 bg-gray-100 rounded-full -z-10"
+            className="absolute top-[18px] h-0.5 bg-tint rounded-full -z-10"
             style={{ left: STEP_WIDTH / 2, right: STEP_WIDTH / 2 }}
           />
 
           {/* Active Progress Line */}
           <div
-            className="absolute top-[18px] left-[46px] h-0.5 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full -z-10 transition-all duration-1000 ease-out"
+            className="absolute top-[18px] left-[46px] h-0.5 bg-gradient-to-r from-accent to-accent rounded-full -z-10 transition-all duration-1000 ease-out"
             style={{ width: `calc((100% - ${STEP_WIDTH}px) * ${progressFraction})` }}
           />
 
@@ -121,23 +111,23 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
                 {/* Icon Node */}
                 <div
                   className={`w-9 h-9 rounded-full flex items-center justify-center z-10 transition-all duration-500 ${isCompleted
-                    ? "bg-green-500 text-white shadow-md shadow-green-500/30"
+                    ? "bg-ok text-white shadow-md shadow-ok/30"
                     : isCurrent
-                      ? "bg-orange-500 text-white shadow-lg shadow-orange-500/40 scale-110 ring-4 ring-orange-100"
-                      : "bg-white border-2 border-gray-100 text-gray-300"
+                      ? "bg-accent text-white shadow-lg shadow-accent/40 scale-110 ring-4 ring-accent/30"
+                      : "bg-white border-2 border-line text-muted-faint"
                     }`}
                 >
-                  {isCompleted ? <FaCheckCircle size={14} /> : <step.icon size={13} />}
+                  {isCompleted ? <CircleCheckIcon size={14} /> : <step.icon size={13} />}
                 </div>
 
                 {/* Label & Date */}
                 <div className={`mt-2 flex flex-col items-center text-center px-1 transition-all duration-500 ${isPending ? "opacity-40" : "opacity-100"
                   }`}>
-                  <span className={`text-[11px] font-bold leading-tight ${isCurrent ? "text-orange-600" : "text-gray-700"}`}>
+                  <span className={`text-[11px] font-bold leading-tight ${isCurrent ? "text-accent" : "text-ink-soft"}`}>
                     {step.label}
                   </span>
                   {!isPending && (
-                    <span className="text-[9px] text-gray-400 font-semibold mt-0.5">
+                    <span className="text-[9px] text-muted-light font-semibold mt-0.5">
                       {step.date}
                     </span>
                   )}

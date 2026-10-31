@@ -45,6 +45,7 @@ const Wishlist = lazy(() => import("./components/Wishlist"));
 const ErrorBoundary = lazy(() => import("./components/ErrorBoundary"));
 const CookieBanner = lazy(() => import("./components/CookieBanner"));
 const AIChatAssistant = lazy(() => import("./components/AIChatAssistant"));
+const MiniCart = lazy(() => import("./components/MiniCart"));
 const ClientSync = lazy(() => import("./components/ClientSync"));
 
 // Lazy-loaded admin route components
@@ -272,6 +273,7 @@ const App = () => {
         {!isAdminRoute && (
           <Suspense fallback={null}>
             <AIChatAssistant />
+            <MiniCart />
             <Footer />
           </Suspense>
         )}

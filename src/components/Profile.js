@@ -11,27 +11,7 @@ import imageCompression from "browser-image-compression";
 import AvatarEditor from "react-avatar-editor";
 import SupportChatWidget from "./support/SupportChatWidget";
 
-import {
-  FaCamera,
-  FaPen,
-  FaEnvelope,
-  FaInfoCircle,
-  FaSignOutAlt,
-  FaUser,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaBoxOpen,
-  FaShieldAlt,
-  FaLock,
-  FaQrcode,
-  FaChevronRight,
-  FaShoppingBag,
-  FaTimes,
-  FaMapMarkerAlt,
-  FaPlus,
-  FaTrash,
-  FaCrown
-} from "react-icons/fa";
+import { CameraIcon, ChevronRightIcon, CircleCheckIcon, CircleXIcon, CrownIcon, InfoIcon, LockIcon, LogOutIcon, MailIcon, MapPinIcon, PackageOpenIcon, PencilIcon, PlusIcon, QrCodeIcon, ShieldCheckIcon, ShoppingBagIcon, Trash2Icon, UserIcon, XIcon } from "./ui/icons";
 import { qk } from "../query/queryKeys";
 
 const OrderCard = lazy(() => import("./OrderCard"));
@@ -52,24 +32,24 @@ const getInitials = (name) => {
 
 // --- MODERN SKELETON LOADER ---
 const Skeleton = () => (
-  <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div className="min-h-screen bg-sand py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-5xl mx-auto space-y-6">
       {/* Header Skeleton */}
-      <div className="rounded-[2.5rem] bg-white p-8 shadow-sm border border-gray-100 flex flex-col sm:flex-row items-center gap-8 animate-pulse">
-        <div className="h-32 w-32 rounded-full bg-gray-200 shrink-0" />
+      <div className="rounded-[2.5rem] bg-white p-8 shadow-sm border border-line flex flex-col sm:flex-row items-center gap-8 animate-pulse">
+        <div className="h-32 w-32 rounded-full bg-line shrink-0" />
         <div className="flex-1 space-y-4 w-full">
-          <div className="h-8 w-48 bg-gray-200 rounded-lg" />
-          <div className="h-4 w-32 bg-gray-200 rounded-lg" />
+          <div className="h-8 w-48 bg-line rounded-lg" />
+          <div className="h-4 w-32 bg-line rounded-lg" />
           <div className="flex gap-2 pt-2">
-            <div className="h-10 w-24 bg-gray-200 rounded-lg" />
-            <div className="h-10 w-24 bg-gray-200 rounded-lg" />
+            <div className="h-10 w-24 bg-line rounded-lg" />
+            <div className="h-10 w-24 bg-line rounded-lg" />
           </div>
         </div>
       </div>
       {/* Grid Skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="h-40 bg-white rounded-3xl shadow-sm border border-gray-100 animate-pulse" />
+          <div key={i} className="h-40 bg-white rounded-3xl shadow-sm border border-line animate-pulse" />
         ))}
       </div>
     </div>
@@ -82,10 +62,10 @@ const Toast = ({ kind = "success", message }) => {
   const ok = kind === "success";
   return (
     <div className="fixed top-6 left-1/2 z-[100] -translate-x-1/2 animate-fade-in-down">
-      <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${ok ? "bg-emerald-50/90 border-emerald-100 text-emerald-800" : "bg-red-50/90 border-red-100 text-red-800"
+      <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${ok ? "bg-ok/10 border-ok/30 text-ok" : "bg-alert/10 border-alert/30 text-alert"
         }`}>
-        <div className={`p-1 rounded-full ${ok ? 'bg-emerald-200' : 'bg-red-200'}`}>
-          {ok ? <FaCheckCircle size={14} /> : <FaTimesCircle size={14} />}
+        <div className={`p-1 rounded-full ${ok ? 'bg-ok/20' : 'bg-alert/20'}`}>
+          {ok ? <CircleCheckIcon size={14} /> : <CircleXIcon size={14} />}
         </div>
         <span className="text-sm font-semibold tracking-wide">{message}</span>
       </div>
@@ -481,7 +461,7 @@ export default function Profile() {
                 <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">Account security</p>
                 <h3 className="mt-1 text-lg font-bold text-[#1d1c19]">Set up two-factor authentication</h3>
               </div>
-              <button onClick={() => setTwoFAOpen(false)} aria-label="Close two-factor setup" className="grid h-9 w-9 place-items-center rounded-full bg-[#eee9df] text-[#5f5b52] transition-colors hover:bg-[#1d1c19] hover:text-white"><FaTimes /></button>
+              <button onClick={() => setTwoFAOpen(false)} aria-label="Close two-factor setup" className="grid h-9 w-9 place-items-center rounded-full bg-[#eee9df] text-[#5f5b52] transition-colors hover:bg-[#1d1c19] hover:text-white"><XIcon /></button>
             </div>
             <div className="flex flex-col items-center px-6 pb-7 pt-6 text-center">
               {twoFAState.qr ? (
@@ -525,20 +505,20 @@ export default function Profile() {
       ), document.body)}
 
       {/* --- BACKGROUND DECOR --- */}
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-gray-50 to-white opacity-70" />
+      <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-tint via-sand to-white opacity-70" />
 
       <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 sm:pt-10">
 
         {/* --- HEADER CARD --- */}
-        <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100/90 overflow-hidden">
+        <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-line/90 overflow-hidden">
           {/* Decorative Gradient Blur */}
-          <div className="absolute -top-20 -right-20 w-48 h-48 sm:w-64 sm:h-64 bg-orange-100 rounded-full blur-3xl opacity-40 pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-48 h-48 sm:w-64 sm:h-64 bg-accent/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
           <div className="relative flex flex-row items-center gap-3.5 sm:gap-6 z-10">
 
             {/* Avatar Group */}
             <div className="relative group shrink-0">
-              <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full p-1 bg-white shadow-sm ring-1 ring-gray-100 overflow-hidden">
+              <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full p-1 bg-white shadow-sm ring-1 ring-line overflow-hidden">
                 {user?.profileImage && (
                   <img
                     src={user.profileImage}
@@ -552,15 +532,15 @@ export default function Profile() {
                     }}
                   />
                 )}
-                <div className={`avatar-fallback h-full w-full rounded-full bg-gradient-to-tr from-orange-100 to-amber-200 flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}>
-                  <span className="text-xl sm:text-3xl font-black text-orange-600/80 tracking-wide select-none">
+                <div className={`avatar-fallback h-full w-full rounded-full bg-gradient-to-tr from-tint to-tint flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}>
+                  <span className="text-xl sm:text-3xl font-black text-accent/80 tracking-wide select-none">
                     {getInitials(user?.name)}
                   </span>
                 </div>
               </div>
 
-              <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-gray-900 text-white rounded-full cursor-pointer shadow-sm hover:bg-orange-600 transition-all border-2 border-white z-10" title="Change Photo">
-                <FaCamera className="text-[9px] sm:text-xs" />
+              <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-ink text-white rounded-full cursor-pointer shadow-sm hover:bg-accent transition-all border-2 border-white z-10" title="Change Photo">
+                <CameraIcon className="text-[9px] sm:text-xs" />
                 <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
               </label>
             </div>
@@ -575,43 +555,43 @@ export default function Profile() {
                       value={nameInput}
                       onChange={(e) => setNameInput(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && handleUpdateName()}
-                      className="text-base sm:text-2xl font-bold text-gray-900 tracking-tight bg-transparent border-b-2 border-orange-400 focus:outline-none px-1"
+                      className="text-base sm:text-2xl font-bold text-ink tracking-tight bg-transparent border-b-2 border-accent focus:outline-none px-1"
                       autoFocus
                     />
-                    <button onClick={handleUpdateName} className="p-1 rounded-md bg-gray-900 text-white text-xs font-bold hover:bg-black"><FaCheckCircle size={12} /></button>
-                    <button onClick={() => setEditingName(false)} className="p-1 rounded-md text-gray-400 hover:text-gray-600"><FaTimes size={12} /></button>
+                    <button onClick={handleUpdateName} className="p-1 rounded-md bg-ink text-white text-xs font-bold hover:bg-black"><CircleCheckIcon size={12} /></button>
+                    <button onClick={() => setEditingName(false)} className="p-1 rounded-md text-muted-light hover:text-muted"><XIcon size={12} /></button>
                   </div>
                 ) : (
-                  <h1 className="profile-display-name text-base sm:text-2xl font-bold text-gray-900 tracking-tight group/name cursor-pointer inline-flex items-center gap-1.5" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
+                  <h1 className="profile-display-name text-base sm:text-2xl font-bold text-ink tracking-tight group/name cursor-pointer inline-flex items-center gap-1.5" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
                     <span className="truncate">{user?.name || "Guest User"}</span>
-                    <FaPen className="text-[10px] sm:text-xs text-gray-300 group-hover/name:text-orange-500 transition-colors shrink-0" />
+                    <PencilIcon className="text-[10px] sm:text-xs text-muted-faint group-hover/name:text-accent transition-colors shrink-0" />
                   </h1>
                 )}
                 {user?.isPrime ? (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 text-[10px] font-bold uppercase tracking-wider border border-amber-200 shadow-2xs shrink-0">
-                    <FaCrown size={8} className="text-amber-500" />
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-wider border border-accent/30 shadow-2xs shrink-0">
+                    <CrownIcon size={8} className="text-accent" />
                     Prime
                   </span>
                 ) : (
-                  <span className="px-2 py-0.5 rounded-full bg-orange-50 text-orange-700 text-[10px] font-bold uppercase tracking-wider border border-orange-100 shrink-0">
+                  <span className="px-2 py-0.5 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-wider border border-accent/30 shrink-0">
                     Member
                   </span>
                 )}
               </div>
 
-              <div className="text-gray-500 font-medium flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 text-xs">
+              <div className="text-muted font-medium flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 text-xs">
                 <span className="truncate">{user?.email}</span>
                 {user?.username && (
-                  <span className="text-gray-400 text-[11px] hidden sm:inline">@{user.username}</span>
+                  <span className="text-muted-light text-[11px] hidden sm:inline">@{user.username}</span>
                 )}
               </div>
 
               {/* Stats Row */}
               <div className="mt-2.5">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 rounded-lg border border-gray-100 text-xs">
-                  <FaShoppingBag className="text-orange-500 text-[11px]" />
-                  <span className="font-bold text-gray-900">{ordersCount}</span>
-                  <span className="text-[10px] text-gray-500 font-medium">Orders Placed</span>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-sand rounded-lg border border-line text-xs">
+                  <ShoppingBagIcon className="text-accent text-[11px]" />
+                  <span className="font-bold text-ink">{ordersCount}</span>
+                  <span className="text-[10px] text-muted font-medium">Orders Placed</span>
                 </div>
               </div>
             </div>
@@ -621,14 +601,14 @@ export default function Profile() {
 
         {/* --- TABS --- */}
         <div className="mt-3.5 sm:mt-6 flex justify-center sm:justify-start mb-3 sm:mb-5">
-          <div className="bg-white p-1 rounded-xl shadow-2xs border border-gray-100 inline-flex">
+          <div className="bg-white p-1 rounded-xl shadow-2xs border border-line inline-flex">
             {['overview', 'orders'].map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 sm:px-6 py-1.5 rounded-lg text-xs sm:text-sm font-bold capitalize transition-all ${activeTab === tab
-                  ? "bg-gray-900 text-white shadow-xs"
-                  : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+                  ? "bg-ink text-white shadow-xs"
+                  : "text-muted hover:text-ink hover:bg-sand"
                   }`}
               >
                 {tab}
@@ -643,23 +623,23 @@ export default function Profile() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 sm:gap-5">
 
               {/* Column 1: Personal Details Card */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-xs p-4 sm:p-5 space-y-3">
-                <div className="flex items-center gap-2 pb-2 border-b border-gray-50">
-                  <FaUser className="text-gray-400 text-xs" />
-                  <h3 className="text-xs sm:text-sm font-bold text-gray-900">Personal Details</h3>
+              <div className="bg-white rounded-2xl border border-line shadow-xs p-4 sm:p-5 space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-line">
+                  <UserIcon className="text-muted-light text-xs" />
+                  <h3 className="text-xs sm:text-sm font-bold text-ink">Personal Details</h3>
                 </div>
                 <div className="space-y-2.5">
                   <div>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Full Name</p>
-                    <p className="text-xs sm:text-sm font-bold text-gray-900 truncate mt-0.5">{user?.name || "—"}</p>
+                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">Full Name</p>
+                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">{user?.name || "—"}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Email</p>
-                    <p className="text-xs sm:text-sm font-bold text-gray-900 truncate mt-0.5">{user?.email || "—"}</p>
+                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">Email</p>
+                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">{user?.email || "—"}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Username</p>
-                    <p className="text-xs sm:text-sm font-bold text-gray-900 truncate mt-0.5">{user?.username ? `@${user.username}` : "Not set"}</p>
+                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">Username</p>
+                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">{user?.username ? `@${user.username}` : "Not set"}</p>
                   </div>
                 </div>
               </div>
@@ -668,20 +648,20 @@ export default function Profile() {
               <div className="lg:col-span-2 space-y-3.5 sm:space-y-5">
 
                 {/* Security Box */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${user?.twoFactorEnabled ? 'bg-emerald-500' : 'bg-gray-200'}`} />
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs relative overflow-hidden">
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${user?.twoFactorEnabled ? 'bg-ok' : 'bg-line'}`} />
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
-                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${user?.twoFactorEnabled ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-400'
+                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${user?.twoFactorEnabled ? 'bg-ok/10 text-ok' : 'bg-tint text-muted-light'
                         }`}>
-                        <FaShieldAlt />
+                        <ShieldCheckIcon />
                       </div>
                       <div>
-                        <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
+                        <h3 className="text-xs sm:text-base font-bold text-ink flex items-center gap-1.5">
                           Two-Factor Auth
-                          {user?.twoFactorEnabled && <FaCheckCircle className="text-emerald-500 text-xs" />}
+                          {user?.twoFactorEnabled && <CircleCheckIcon className="text-ok text-xs" />}
                         </h3>
-                        <p className="text-gray-500 text-[11px] sm:text-xs">Enhanced account protection</p>
+                        <p className="text-muted text-[11px] sm:text-xs">Enhanced account protection</p>
                       </div>
                     </div>
 
@@ -689,61 +669,61 @@ export default function Profile() {
                       <button
                         onClick={disableTwoFA}
                         disabled={twoFAState.disabling}
-                        className="flex items-center gap-1 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition shadow-2xs shrink-0"
+                        className="flex items-center gap-1 rounded-xl border border-line-strong px-3 py-1.5 text-xs font-bold text-ink-soft hover:bg-sand transition shadow-2xs shrink-0"
                       >
-                        <FaLock size={10} /> {twoFAState.disabling ? "..." : "Disable"}
+                        <LockIcon size={10} /> {twoFAState.disabling ? "..." : "Disable"}
                       </button>
                     ) : (
                       <button
                         onClick={startTwoFASetup}
                         disabled={twoFAState.loading}
-                        className="px-3 py-1.5 rounded-xl bg-gray-900 text-white font-bold shadow-2xs hover:bg-black transition text-xs flex items-center gap-1 shrink-0"
+                        className="px-3 py-1.5 rounded-xl bg-ink text-white font-bold shadow-2xs hover:bg-black transition text-xs flex items-center gap-1 shrink-0"
                       >
-                        <FaQrcode size={11} /> {twoFAState.loading ? "..." : "Enable"}
+                        <QrCodeIcon size={11} /> {twoFAState.loading ? "..." : "Enable"}
                       </button>
                     )}
                   </div>
                 </div>
 
                 {/* Password Change Box */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${pwOpen ? 'bg-orange-400' : 'bg-gray-200'}`} />
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs relative overflow-hidden">
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${pwOpen ? 'bg-accent' : 'bg-line'}`} />
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
-                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${pwOpen ? 'bg-orange-50 text-orange-600' : 'bg-gray-100 text-gray-400'}`}>
-                        <FaLock />
+                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${pwOpen ? 'bg-accent/10 text-accent' : 'bg-tint text-muted-light'}`}>
+                        <LockIcon />
                       </div>
                       <div>
-                        <h3 className="text-xs sm:text-base font-bold text-gray-900">Password</h3>
-                        <p className="text-gray-500 text-[11px] sm:text-xs">Update your security password</p>
+                        <h3 className="text-xs sm:text-base font-bold text-ink">Password</h3>
+                        <p className="text-muted text-[11px] sm:text-xs">Update your security password</p>
                       </div>
                     </div>
                     <button
                       onClick={() => { setPwOpen((o) => !o); setPw({ current: "", next: "", confirm: "", loading: false }); }}
-                      className="px-3 py-1.5 rounded-xl border border-gray-200 text-gray-700 font-bold hover:bg-gray-50 transition text-xs flex items-center gap-1 shrink-0"
+                      className="px-3 py-1.5 rounded-xl border border-line-strong text-ink-soft font-bold hover:bg-sand transition text-xs flex items-center gap-1 shrink-0"
                     >
-                      <FaPen size={10} /> {pwOpen ? "Cancel" : "Change"}
+                      <PencilIcon size={10} /> {pwOpen ? "Cancel" : "Change"}
                     </button>
                   </div>
 
                   {pwOpen && (
                     <div className="mt-3.5 sm:mt-5 space-y-2.5 max-w-sm">
                       <div>
-                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">Current Password</label>
-                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="••••••••" />
+                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">Current Password</label>
+                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all" placeholder="••••••••" />
                       </div>
                       <div>
-                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">New Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="Min 8 characters" />
+                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">New Password</label>
+                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all" placeholder="Min 8 characters" />
                       </div>
                       <div>
-                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">Confirm Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all" placeholder="Re-enter new password" />
+                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">Confirm Password</label>
+                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all" placeholder="Re-enter new password" />
                       </div>
                       <button
                         onClick={handleChangePassword}
                         disabled={pw.loading}
-                        className="w-full py-2 rounded-xl bg-gray-900 text-white font-bold shadow-xs hover:bg-black transition-all disabled:opacity-50 text-xs"
+                        className="w-full py-2 rounded-xl bg-ink text-white font-bold shadow-xs hover:bg-black transition-all disabled:opacity-50 text-xs"
                       >
                         {pw.loading ? "Saving..." : "Update Password"}
                       </button>
@@ -754,18 +734,18 @@ export default function Profile() {
                 {/* Quick Links Grid (3 Compact Tiles) */}
                 <div className="grid grid-cols-3 gap-2 sm:gap-3.5">
                   {[
-                    { to: "/products", icon: <FaBoxOpen />, title: "Shop", desc: "Browse items", color: "text-orange-500", bg: "bg-orange-50" },
-                    { to: "/about", icon: <FaInfoCircle />, title: "About", desc: "Our story", color: "text-blue-500", bg: "bg-blue-50" },
-                    { action: () => setShowSupportChat(true), icon: <FaEnvelope />, title: "Support", desc: "Live chat", color: "text-purple-500", bg: "bg-purple-50" },
+                    { to: "/products", icon: <PackageOpenIcon />, title: "Shop", desc: "Browse items", color: "text-accent", bg: "bg-accent/10" },
+                    { to: "/about", icon: <InfoIcon />, title: "About", desc: "Our story", color: "text-ink-soft", bg: "bg-tint" },
+                    { action: () => setShowSupportChat(true), icon: <MailIcon />, title: "Support", desc: "Live chat", color: "text-ink-soft", bg: "bg-tint" },
                   ].map((link, i) => {
                     const cardBody = (
                       <div className="text-center sm:text-left">
                         <div className={`p-2 rounded-xl ${link.bg} ${link.color} text-sm sm:text-base inline-flex mb-1.5`}>{link.icon}</div>
-                        <h4 className="font-bold text-gray-900 text-xs sm:text-sm">{link.title}</h4>
-                        <p className="text-[10px] text-gray-400 truncate hidden sm:block mt-0.5">{link.desc}</p>
+                        <h4 className="font-bold text-ink text-xs sm:text-sm">{link.title}</h4>
+                        <p className="text-[10px] text-muted-light truncate hidden sm:block mt-0.5">{link.desc}</p>
                       </div>
                     );
-                    const cardClass = "group bg-white p-3 sm:p-4 rounded-2xl border border-gray-100 shadow-2xs hover:shadow-md transition-all text-left w-full";
+                    const cardClass = "group bg-white p-3 sm:p-4 rounded-2xl border border-line shadow-2xs hover:shadow-md transition-all text-left w-full";
                     return link.action ? (
                       <button key={i} type="button" onClick={link.action} className={cardClass}>
                         {cardBody}
@@ -781,22 +761,22 @@ export default function Profile() {
                 <SupportChatWidget open={showSupportChat} onClose={() => setShowSupportChat(false)} />
 
                 {/* Wallet */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xs sm:text-base font-bold text-gray-900">VKart Wallet</h3>
-                    <div className="text-base sm:text-xl font-bold text-gray-900">₹{Math.round(wallet.balance)}</div>
+                    <h3 className="text-xs sm:text-base font-bold text-ink">VKart Wallet</h3>
+                    <div className="text-base sm:text-xl font-bold text-ink">₹{Math.round(wallet.balance)}</div>
                   </div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">
+                  <div className="text-[10px] font-bold text-muted-light uppercase tracking-wider mb-2">
                     Recent Activity
                   </div>
                   <div className="space-y-1.5">
                     {wallet.transactions.length === 0 ? (
-                      <div className="text-xs text-gray-400">No wallet activity yet.</div>
+                      <div className="text-xs text-muted-light">No wallet activity yet.</div>
                     ) : (
                       wallet.transactions.slice(0, 4).map((t, i) => (
-                        <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-gray-50 last:border-0">
-                          <span className="text-gray-600 truncate mr-2">{t.reason || t.type}</span>
-                          <span className={`font-bold shrink-0 ${t.type === "CREDIT" ? "text-emerald-600" : "text-red-600"}`}>
+                        <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-line last:border-0">
+                          <span className="text-muted truncate mr-2">{t.reason || t.type}</span>
+                          <span className={`font-bold shrink-0 ${t.type === "CREDIT" ? "text-ok" : "text-alert"}`}>
                             {t.type === "CREDIT" ? "+" : "-"}₹{Math.round(t.amount)}
                           </span>
                         </div>
@@ -806,38 +786,38 @@ export default function Profile() {
                 </div>
 
                 {/* Address Book */}
-                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-gray-100 shadow-xs">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xs sm:text-base font-bold text-gray-900 flex items-center gap-1.5">
-                      <FaMapMarkerAlt className="text-orange-500 text-xs sm:text-sm" /> Saved Addresses
+                    <h3 className="text-xs sm:text-base font-bold text-ink flex items-center gap-1.5">
+                      <MapPinIcon className="text-accent text-xs sm:text-sm" /> Saved Addresses
                     </h3>
-                    <button onClick={() => openAddressForm()} className="flex items-center gap-1 text-xs font-bold text-gray-700 hover:text-black transition px-2 py-0.5 rounded-lg hover:bg-gray-100">
-                      <FaPlus size={10} /> Add
+                    <button onClick={() => openAddressForm()} className="flex items-center gap-1 text-xs font-bold text-ink-soft hover:text-black transition px-2 py-0.5 rounded-lg hover:bg-tint">
+                      <PlusIcon size={10} /> Add
                     </button>
                   </div>
 
                   {addresses.length === 0 && !addrOpen ? (
                     <div className="text-center py-6">
-                      <FaMapMarkerAlt className="mx-auto text-gray-300 mb-2" size={22} />
-                      <p className="text-xs text-gray-500">No saved addresses yet.</p>
-                      <button onClick={() => openAddressForm()} className="mt-2 text-xs font-bold text-orange-600 hover:underline">+ Add Address</button>
+                      <MapPinIcon className="mx-auto text-muted-faint mb-2" size={22} />
+                      <p className="text-xs text-muted">No saved addresses yet.</p>
+                      <button onClick={() => openAddressForm()} className="mt-2 text-xs font-bold text-accent hover:underline">+ Add Address</button>
                     </div>
                   ) : (
                     <div className="space-y-2.5">
                       {addresses.map((addr) => (
-                        <div key={addr._id} className={`p-3 rounded-xl border ${addr.isDefault ? 'border-orange-200 bg-orange-50/40' : 'border-gray-100'} flex justify-between items-start gap-2.5`}>
+                        <div key={addr._id} className={`p-3 rounded-xl border ${addr.isDefault ? 'border-accent/30 bg-accent/10' : 'border-line'} flex justify-between items-start gap-2.5`}>
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-1.5 mb-0.5">
-                              <span className="font-bold text-gray-900 text-xs sm:text-sm">{addr.fullName || addr.name}</span>
-                              {addr.isDefault && <span className="text-[9px] font-bold text-orange-600 bg-orange-100 px-1.5 py-0.2 rounded-full">Default</span>}
+                              <span className="font-bold text-ink text-xs sm:text-sm">{addr.fullName || addr.name}</span>
+                              {addr.isDefault && <span className="text-[9px] font-bold text-accent bg-accent/10 px-1.5 py-0.2 rounded-full">Default</span>}
                             </div>
-                            <p className="text-[11px] text-gray-600">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
-                            <p className="text-[11px] text-gray-500">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>
-                            <p className="text-[10px] text-gray-400 mt-0.5 font-mono">{addr.phone}</p>
+                            <p className="text-[11px] text-muted">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
+                            <p className="text-[11px] text-muted">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>
+                            <p className="text-[10px] text-muted-light mt-0.5 font-mono">{addr.phone}</p>
                           </div>
                           <div className="flex gap-1 shrink-0">
-                            <button onClick={() => openAddressForm(addr)} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition"><FaPen size={11} /></button>
-                            <button onClick={() => handleDeleteAddress(addr._id)} className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition"><FaTrash size={11} /></button>
+                            <button onClick={() => openAddressForm(addr)} className="p-1.5 rounded-lg text-muted-light hover:text-ink-soft hover:bg-tint transition"><PencilIcon size={11} /></button>
+                            <button onClick={() => handleDeleteAddress(addr._id)} className="p-1.5 rounded-lg text-muted-light hover:text-alert hover:bg-alert/10 transition"><Trash2Icon size={11} /></button>
                           </div>
                         </div>
                       ))}
@@ -846,10 +826,10 @@ export default function Profile() {
 
                   {/* Address Form (inline) */}
                   {addrOpen && (
-                    <div className="mt-4 border-t border-gray-100 pt-4">
+                    <div className="mt-4 border-t border-line pt-4">
                       <div className="flex justify-between items-center mb-3">
-                        <h4 className="font-bold text-gray-900 text-xs sm:text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
-                        <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-gray-400 hover:text-gray-600"><FaTimes size={12} /></button>
+                        <h4 className="font-bold text-ink text-xs sm:text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
+                        <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-muted-light hover:text-muted"><XIcon size={12} /></button>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {[
@@ -862,21 +842,21 @@ export default function Profile() {
                           { key: "pincode", label: "Pincode", span: 1 },
                         ].map((f) => (
                           <div key={f.key} className={f.span === 2 ? "sm:col-span-2" : ""}>
-                            <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1 block">{f.label}</label>
+                            <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">{f.label}</label>
                             <input
                               type="text"
                               value={addrForm[f.key]}
                               onChange={(e) => setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))}
-                              className="w-full px-3 py-2 rounded-xl border border-gray-200 focus:border-orange-400 focus:ring-1 focus:ring-orange-100 outline-none text-xs transition-all"
+                              className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all"
                             />
                           </div>
                         ))}
                       </div>
-                      <label className="flex items-center gap-2 mt-2.5 text-xs text-gray-600 cursor-pointer">
-                        <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-gray-300 text-orange-500 focus:ring-orange-200" />
+                      <label className="flex items-center gap-2 mt-2.5 text-xs text-muted cursor-pointer">
+                        <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-line-strong text-accent focus:ring-accent/30" />
                         Set as default address
                       </label>
-                      <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-3.5 w-full py-2.5 rounded-xl bg-gray-900 text-white font-bold text-xs shadow-xs hover:bg-black transition-all disabled:opacity-50">
+                      <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-3.5 w-full py-2.5 rounded-xl bg-ink text-white font-bold text-xs shadow-xs hover:bg-black transition-all disabled:opacity-50">
                         {addrLoading ? "Saving..." : (editAddr ? "Update Address" : "Save Address")}
                       </button>
                     </div>
@@ -887,24 +867,24 @@ export default function Profile() {
             </div>
           ) : (
             // --- ORDERS TAB ---
-            <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm border border-gray-100 min-h-[400px] p-4 sm:p-8">
-              <div className="flex justify-between items-center mb-6 sm:mb-8 border-b border-gray-100 pb-4">
+            <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm border border-line min-h-[400px] p-4 sm:p-8">
+              <div className="flex justify-between items-center mb-6 sm:mb-8 border-b border-line pb-4">
                 <div>
-                  <h2 className="text-lg sm:text-xl font-bold text-gray-900">Order History</h2>
-                  <p className="text-gray-500 text-xs sm:text-sm">Track your recent purchases</p>
+                  <h2 className="text-lg sm:text-xl font-bold text-ink">Order History</h2>
+                  <p className="text-muted text-xs sm:text-sm">Track your recent purchases</p>
                 </div>
-                <span className="bg-gray-900 text-white px-2.5 py-1 sm:px-3 rounded-lg text-[10px] sm:text-xs font-bold">{ordersCount} Total</span>
+                <span className="bg-ink text-white px-2.5 py-1 sm:px-3 rounded-lg text-[10px] sm:text-xs font-bold">{ordersCount} Total</span>
               </div>
 
-              <Suspense fallback={<div className="space-y-4">{[1, 2].map(i => <div key={i} className="h-24 bg-gray-50 rounded-2xl animate-pulse" />)}</div>}>
+              <Suspense fallback={<div className="space-y-4">{[1, 2].map(i => <div key={i} className="h-24 bg-sand rounded-2xl animate-pulse" />)}</div>}>
                 {orders.length === 0 ? (
                   <div className="text-center py-12">
-                    <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-300 mx-auto mb-4 text-3xl"><FaBoxOpen /></div>
-                    <h3 className="text-lg font-bold text-gray-900">No orders yet</h3>
-                    <p className="text-gray-500 text-sm mb-6">Start shopping to fill this page.</p>
+                    <div className="w-20 h-20 bg-sand rounded-full flex items-center justify-center text-muted-faint mx-auto mb-4 text-3xl"><PackageOpenIcon /></div>
+                    <h3 className="text-lg font-bold text-ink">No orders yet</h3>
+                    <p className="text-muted text-sm mb-6">Start shopping to fill this page.</p>
                     <Link
                       to="/products"
-                      className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold shadow-lg hover:bg-black transition-all"
+                      className="px-6 py-3 rounded-xl bg-ink text-white font-bold shadow-lg hover:bg-black transition-all"
                     >
                       Browse Products
                     </Link>
@@ -923,9 +903,9 @@ export default function Profile() {
         <div className="mt-8 pb-12 flex justify-center">
           <button
             onClick={handleLogout}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-red-200/80 bg-red-50/80 hover:bg-red-100/80 text-red-700 font-bold text-xs sm:text-sm transition-all shadow-2xs active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-alert/30 bg-alert/10 hover:bg-alert/15 text-alert font-bold text-xs sm:text-sm transition-all shadow-2xs active:scale-95"
           >
-            <FaSignOutAlt className="text-xs" />
+            <LogOutIcon className="text-xs" />
             <span>Sign Out</span>
           </button>
         </div>
@@ -935,7 +915,7 @@ export default function Profile() {
       {showEditor && selectedFile && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[100] animate-fade-in">
           <div className="bg-white p-6 rounded-3xl shadow-2xl space-y-6 w-[320px]">
-            <h3 className="text-lg font-bold text-center text-gray-900">Adjust Photo</h3>
+            <h3 className="text-lg font-bold text-center text-ink">Adjust Photo</h3>
 
             <div className="flex justify-center">
               <AvatarEditor
@@ -947,12 +927,12 @@ export default function Profile() {
                 borderRadius={120}
                 scale={scale}
                 rotate={0}
-                className="rounded-full bg-gray-100"
+                className="rounded-full bg-tint"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-wider text-center">Zoom</label>
+              <label className="text-xs font-bold text-muted mb-2 block uppercase tracking-wider text-center">Zoom</label>
               <input
                 type="range"
                 min="1"
@@ -960,21 +940,21 @@ export default function Profile() {
                 step="0.01"
                 value={scale}
                 onChange={(e) => setScale(parseFloat(e.target.value))}
-                className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gray-900"
+                className="w-full h-1.5 bg-line rounded-lg appearance-none cursor-pointer accent-gray-900"
               />
             </div>
 
             <div className="flex gap-3 pt-2">
               <button
                 onClick={() => setShowEditor(false)}
-                className="flex-1 py-2.5 rounded-xl border border-gray-200 text-gray-600 font-bold text-sm hover:bg-gray-50 transition-colors"
+                className="flex-1 py-2.5 rounded-xl border border-line-strong text-muted font-bold text-sm hover:bg-sand transition-colors"
               >
                 Cancel
               </button>
 
               <button
                 onClick={handleUpload}
-                className="flex-1 py-2.5 rounded-xl bg-gray-900 text-white font-bold text-sm shadow-md hover:bg-black transition-transform active:scale-95"
+                className="flex-1 py-2.5 rounded-xl bg-ink text-white font-bold text-sm shadow-md hover:bg-black transition-transform active:scale-95"
               >
                 Save Photo
               </button>
