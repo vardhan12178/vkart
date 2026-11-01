@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "./axiosInstance";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -6,6 +6,7 @@ import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt, FaCredit
 import { showToast } from "../utils/toast";
 import { qk } from "../query/queryKeys";
 import { Bone, SkeletonRegion } from "./ui/Skeleton";
+import { loadRazorpay } from "../utils/loadRazorpay";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
@@ -14,6 +15,9 @@ export default function PrimeMembership() {
   const queryClient = useQueryClient();
   const [purchasing, setPurchasing] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
+
+  // Start fetching Razorpay now so the payment window opens without a wait
+  useEffect(() => { loadRazorpay().catch(() => {}); }, []);
   const [paymentMethod, setPaymentMethod] = useState("card");
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
 
@@ -118,6 +122,7 @@ export default function PrimeMembership() {
         },
       };
 
+      await loadRazorpay();
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch {
