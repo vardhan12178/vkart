@@ -10,7 +10,8 @@ import {
   FiShield, FiCheckCircle, FiZap,
 } from "react-icons/fi";
 import { openChat } from "../../redux/uiSlice";
-import { fetchProducts, formatPrice } from "../shop/catalogApi";
+import { fetchProducts, fetchSimilar, formatPrice } from "../shop/catalogApi";
+import { readRecent } from "../shop/recentlyViewed";
 import { CATEGORIES } from "../shop/catalogData";
 import { RatingChip } from "../shop/Reviews";
 import TwoFactorNudge from "./TwoFactorNudge";
@@ -101,6 +102,45 @@ function Rail({ query }) {
     <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-4">
       {items.map((p) => <Tile key={p.slug} p={p} />)}
     </div>
+  );
+}
+
+/* ------------ Personal rows ------------ */
+// "Recently viewed" comes from this device's history. "Recommended for you" is what is most similar
+// (by the catalog's embeddings) to the last two products viewed, minus anything already seen.
+function PersonalRows() {
+  const [recent] = useState(readRecent);
+  const seeds = recent.slice(0, 2).map((p) => p.slug);
+  const similar = useQuery({
+    queryKey: ["home", "recommended", ...seeds],
+    queryFn: async () => {
+      const lists = await Promise.all(seeds.map((slug) => fetchSimilar(slug, 8).catch(() => null)));
+      const seen = new Set(recent.map((p) => p.slug));
+      const out = [];
+      for (let i = 0; out.length < 12 && i < 8; i++) {
+        for (const list of lists) {
+          const p = list?.products?.[i];
+          if (p && !seen.has(p.slug)) { seen.add(p.slug); out.push(p); }
+        }
+      }
+      return { products: out };
+    },
+    enabled: seeds.length > 0,
+    staleTime: 10 * 60 * 1000,
+  });
+  if (!recent.length) return null;
+  const recs = similar.data?.products || [];
+  return (
+    <>
+      <Section title="Recently viewed" subtitle="Pick up where you left off">
+        <Rail query={{ data: { products: recent } }} />
+      </Section>
+      {(similar.isLoading || recs.length > 0) && (
+        <Section title="Recommended for you" subtitle="Based on what you've been looking at">
+          <Rail query={similar} />
+        </Section>
+      )}
+    </>
   );
 }
 
@@ -303,6 +343,8 @@ export default function Home() {
       </div>
 
       <div className="mt-3 space-y-3 sm:mt-4 sm:space-y-4">
+        <PersonalRows />
+
         <Section title="Top deals" subtitle="The biggest discounts across the store">
           <Rail query={deals} />
         </Section>

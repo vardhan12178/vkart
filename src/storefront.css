@@ -464,6 +464,16 @@
   }
 }
 
+/* With the tab bar showing, the assistant sits above it (and above the sort/filter bar on listings) */
+@media (max-width: 1023px) {
+  body:has(.mobile-tabbar) .premium-assistant-toggle {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom)) !important;
+  }
+  body:has(.mobile-tabbar):has(.has-bottom-bar) .premium-assistant-toggle {
+    bottom: calc(8.25rem + env(safe-area-inset-bottom)) !important;
+  }
+}
+
 .premium-product [class*="text-4xl"][class*="font-bold"] {
   font-family: "Manrope", sans-serif;
   font-weight: 750 !important;

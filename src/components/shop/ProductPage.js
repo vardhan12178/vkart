@@ -12,6 +12,7 @@ import { RatingChip, ReviewsSection } from "./Reviews";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
 import DeliveryCheck from "./DeliveryCheck";
+import { readRecent, pushRecent } from "./recentlyViewed";
 import OffersEmi from "./OffersEmi";
 import SizeGuide, { sizeGuideFor } from "./SizeGuide";
 import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
@@ -21,7 +22,6 @@ import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 
 const INK = "#1d1c19";
 const ACCENT = "#a85d37";
-const RECENT_KEY = "vkart:recently-viewed";
 
 const ACRONYMS = /^(ppi|cpu|gpu|ram|ssd|hdr|usb|nfc|os|ip|led|oled|lcd|anc|spf|gps|sim|esim|bt|wifi|ai|mrp)$/i;
 const label = (k) =>
@@ -38,17 +38,6 @@ function SpecValue({ value }) {
   if (typeof value === "boolean") return value ? "Yes" : "No";
   if (value && typeof value === "object") return Object.entries(value).map(([k, v]) => `${label(k)}: ${v}`).join(", ");
   return String(value);
-}
-
-// Recently viewed keeps small product cards, so the rail needs no extra requests
-function readRecent() {
-  try {
-    const list = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
-    return Array.isArray(list) ? list.filter((c) => c && typeof c === "object" && c.slug) : [];
-  } catch { return []; }
-}
-function pushRecent(card) {
-  try { localStorage.setItem(RECENT_KEY, JSON.stringify([card, ...readRecent().filter((c) => c.slug !== card.slug)].slice(0, 12))); } catch { /* storage unavailable */ }
 }
 
 /* ------------ Gallery ------------ */
