@@ -6,12 +6,16 @@ import { addToCart, cartItemKey } from "../../redux/cartSlice";
 import { openMiniCart } from "../../redux/uiSlice";
 import { showToast } from "../../utils/toast";
 import { Helmet } from "react-helmet-async";
-import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart, FiShare2 } from "react-icons/fi";
+import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart, FiShare2, FiColumns } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { RatingChip, ReviewsSection } from "./Reviews";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
 import DeliveryCheck from "./DeliveryCheck";
+import AlertButton from "./AlertButton";
+import { label, SpecValue } from "./specFormat";
+import { addToCompare, compareUrl } from "./compareList";
+import { readRecent, pushRecent } from "./recentlyViewed";
 import OffersEmi from "./OffersEmi";
 import SizeGuide, { sizeGuideFor } from "./SizeGuide";
 import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
@@ -21,35 +25,6 @@ import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 
 const INK = "#1d1c19";
 const ACCENT = "#a85d37";
-const RECENT_KEY = "vkart:recently-viewed";
-
-const ACRONYMS = /^(ppi|cpu|gpu|ram|ssd|hdr|usb|nfc|os|ip|led|oled|lcd|anc|spf|gps|sim|esim|bt|wifi|ai|mrp)$/i;
-const label = (k) =>
-  k.replace(/([a-z])([A-Z])/g, "$1 $2").split(" ").map((w) => (ACRONYMS.test(w) ? w.toUpperCase() : w)).join(" ").replace(/^./, (c) => c.toUpperCase());
-
-function SpecValue({ value }) {
-  if (Array.isArray(value)) {
-    return (
-      <ul className="list-disc space-y-0.5 pl-4">
-        {value.map((x, i) => <li key={i}>{String(x)}</li>)}
-      </ul>
-    );
-  }
-  if (typeof value === "boolean") return value ? "Yes" : "No";
-  if (value && typeof value === "object") return Object.entries(value).map(([k, v]) => `${label(k)}: ${v}`).join(", ");
-  return String(value);
-}
-
-// Recently viewed keeps small product cards, so the rail needs no extra requests
-function readRecent() {
-  try {
-    const list = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
-    return Array.isArray(list) ? list.filter((c) => c && typeof c === "object" && c.slug) : [];
-  } catch { return []; }
-}
-function pushRecent(card) {
-  try { localStorage.setItem(RECENT_KEY, JSON.stringify([card, ...readRecent().filter((c) => c.slug !== card.slug)].slice(0, 12))); } catch { /* storage unavailable */ }
-}
 
 /* ------------ Gallery ------------ */
 function Gallery({ images, idx, setIdx }) {
@@ -321,6 +296,10 @@ export default function ProductPage() {
             ) : (
               <p className="mt-2 text-sm text-muted-light">No ratings yet</p>
             )}
+            <button type="button" onClick={() => navigate(compareUrl(addToCompare(p.slug)))}
+              className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-accent underline-offset-4 hover:underline">
+              <FiColumns /> Compare with other products
+            </button>
 
             <div className="mt-5 border-t border-line pt-5">
               {variant ? (
@@ -396,6 +375,7 @@ export default function ProductPage() {
                 {available ? "In stock" : "Currently unavailable"}
               </p>
               <p className="mt-1 text-sm text-muted">Sold by VKart · Ships from India</p>
+              {p.id && variant && <AlertButton productId={p.id} sku={variant.sku} outOfStock={!available} />}
               <div className="mt-3 flex items-center gap-3">
                 <span className="text-sm text-muted">Qty</span>
                 <BrandSelect label="Quantity" value={qty} onChange={setQty} className="w-24"

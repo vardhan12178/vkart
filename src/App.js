@@ -44,6 +44,8 @@ const ErrorBoundary = lazy(() => import("./components/ErrorBoundary"));
 const CookieBanner = lazy(() => import("./components/CookieBanner"));
 const AIChatAssistant = lazy(() => import("./components/AIChatAssistant"));
 const MiniCart = lazy(() => import("./components/MiniCart"));
+const MobileTabBar = lazy(() => import("./components/MobileTabBar"));
+const ComparePage = lazy(() => import("./components/shop/ComparePage"));
 const ClientSync = lazy(() => import("./components/ClientSync"));
 
 // Lazy-loaded admin route components
@@ -211,7 +213,7 @@ const App = () => {
               <Route path="/product/:id" element={<Navigate to="/products" replace />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/compare" element={<Navigate to="/products" replace />} />
+              <Route path="/compare" element={<ComparePage />} />
               <Route path="/blog" element={<BlogIndex />} />
               <Route path="/blog/:id" element={<PostPage />} />
               <Route path="/careers" element={<Careers />} />
@@ -272,6 +274,7 @@ const App = () => {
             <AIChatAssistant />
             <MiniCart />
             <Footer />
+            <MobileTabBar />
           </Suspense>
         )}
       </div>

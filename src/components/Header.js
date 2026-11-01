@@ -25,6 +25,7 @@ import AnnouncementBar from "./AnnouncementBar";
 import NotificationBell from "./NotificationBell";
 import { qk } from "../query/queryKeys";
 import HeaderSearch from "./header/HeaderSearch";
+import { OPEN_SEARCH_EVENT } from "../utils/uiEvents";
 import CategoriesMenu, { CATEGORY_GROUPS, useCategoryCounts } from "./header/CategoriesMenu";
 import { CATEGORIES } from "./shop/catalogData";
 import { iconFor } from "./shop/categoryIcons";
@@ -71,6 +72,13 @@ const Header = () => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // The mobile tab bar's Search tab asks for the search box to open
+  useEffect(() => {
+    const open = () => { setIsMobileMenuOpen(false); setShowSearch(true); };
+    window.addEventListener(OPEN_SEARCH_EVENT, open);
+    return () => window.removeEventListener(OPEN_SEARCH_EVENT, open);
   }, []);
 
   // 2. Close mobile menu on route change

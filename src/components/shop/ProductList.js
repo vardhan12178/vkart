@@ -471,7 +471,7 @@ export default function ProductList() {
       </div>
 
       {/* Mobile sort / filter bar */}
-      <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-line bg-paper lg:hidden">
+      <div className="has-bottom-bar fixed inset-x-0 bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-40 grid grid-cols-2 border-t border-line bg-paper lg:hidden">
         <div className="border-r border-line p-1.5">
           <BrandSelect label="Sort by" prefix="Sort:" value={sort} onChange={setSort} options={sortOptions} up
             buttonClassName="justify-center border-transparent bg-transparent hover:border-transparent" />
