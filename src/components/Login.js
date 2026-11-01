@@ -12,6 +12,7 @@ import { qk } from "../query/queryKeys";
 
 import { Eye as EyeIcon, EyeOff as EyeOffIcon, User as UserIcon, Lock as LockClosedIcon, CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
 import { Dots } from "./ui/Skeleton";
+import DemoLogin from "./DemoLogin";
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -358,6 +359,10 @@ export default function Login() {
               <AnimatePresence>
                 {formError && <Toast show={!!formError}>{formError}</Toast>}
               </AnimatePresence>
+
+              <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">
+                <DemoLogin kind="shopper" onSignedIn={(data) => { dispatch(loginSuccess(requireUserSession(data))); navigate(redirect); }} />
+              </motion.div>
 
               {/* Google Button */}
               <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">

@@ -141,11 +141,10 @@ describe("AdminLogin Component", () => {
   });
 
   test("toggles password visibility", () => {
-    const { container } = renderAdminLogin();
+    renderAdminLogin();
     expect(screen.getByPlaceholderText("••••••••••••")).toHaveAttribute("type", "password");
 
-    const toggleBtn = container.querySelector('button[type="button"]');
-    fireEvent.click(toggleBtn);
+    fireEvent.click(screen.getByRole("button", { name: /show password/i }));
     // React swaps the <input> node when its `type` changes, so re-query
     // rather than reuse the earlier (now-detached) element reference.
     expect(screen.getByPlaceholderText("••••••••••••")).toHaveAttribute("type", "text");

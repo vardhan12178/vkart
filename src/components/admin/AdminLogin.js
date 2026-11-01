@@ -15,6 +15,7 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/outline";
 import { Dots } from "../ui/Skeleton";
+import DemoLogin from "../DemoLogin";
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -269,6 +270,10 @@ export default function AdminLogin({ setIsAdmin }) {
                 {formError && <Toast show={!!formError}>{formError}</Toast>}
               </AnimatePresence>
 
+              <motion.div variants={fadeInUp} className="mb-6">
+                <DemoLogin kind="admin" onSignedIn={() => { setIsAdmin?.(true); navigate("/admin/dashboard"); }} />
+              </motion.div>
+
               {/* Google Button */}
               <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
                 <div className="w-full flex justify-center transform transition-transform hover:scale-[1.01]">
@@ -341,6 +346,7 @@ export default function AdminLogin({ setIsAdmin }) {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
+                      aria-label={showPassword ? "Hide password" : "Show password"}
                       className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
                     >
                       {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
