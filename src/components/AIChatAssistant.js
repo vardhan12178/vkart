@@ -500,7 +500,7 @@ const AIChatAssistant = () => {
             </div>
             {showDesktopLauncher && (
               <span className="hidden flex-col items-start leading-none md:flex">
-                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">Product concierge</span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">Product concierge</span>{" "}
                 <span className="mt-1.5 text-sm font-bold tracking-[-0.01em] text-[#1d1c19]">Ask VKart</span>
               </span>
             )}

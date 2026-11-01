@@ -111,7 +111,7 @@ function Card({ p, onChooseOptions }) {
       </div>
       <div className="flex flex-1 flex-col p-3 sm:p-4">
         <p className="text-[11px] font-bold uppercase tracking-wider text-muted-light">{p.brand}</p>
-        <h3 className="mt-0.5 line-clamp-2 text-sm font-medium leading-snug text-ink">{p.title.replace(`${p.brand} `, "")}</h3>
+        <h2 className="mt-0.5 line-clamp-2 text-sm font-medium leading-snug text-ink">{p.title.replace(`${p.brand} `, "")}</h2>
         {p.rating && <div className="mt-1.5"><RatingChip rating={p.rating} /></div>}
         {colors.length > 1 && (
           <div className="mt-2 flex items-center gap-1">
