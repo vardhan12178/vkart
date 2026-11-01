@@ -221,7 +221,7 @@ const Header = () => {
                     : "text-[#4f4b44] hover:text-[#a85d37]"
                     }`}
                   aria-pressed={isChatOpen}
-                  aria-label={isChatOpen ? "Close VKart concierge" : "Open VKart concierge"}
+                  aria-label={isChatOpen ? "Close Ask VKart" : "Ask VKart"}
                 >
                   <span className={`grid h-7 w-7 place-items-center rounded-full transition-colors ${isChatOpen ? "bg-[#1d1c19] text-white" : "bg-black/[0.045]"}`}>
                     <Sparkles className="h-3.5 w-3.5" strokeWidth={1.8} />

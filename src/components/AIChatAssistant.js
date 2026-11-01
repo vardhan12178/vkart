@@ -493,14 +493,14 @@ const AIChatAssistant = () => {
             whileTap={{ scale: 0.95 }}
             onClick={() => dispatch(openChat())}
             className={`premium-assistant-toggle pointer-events-auto absolute bottom-5 right-5 flex h-14 w-14 items-center justify-center overflow-hidden rounded-[1.15rem] border border-black/10 bg-[#f0e8dd] text-[#1d1c19] shadow-[0_16px_42px_rgba(29,28,25,.14)] transition-colors hover:bg-[#fffdf8] ${showDesktopLauncher ? "md:h-auto md:w-auto md:gap-3 md:p-2 md:pr-5" : "sm:hidden"}`}
-            aria-label="Ask VKart assistant"
+            aria-label={showDesktopLauncher ? "Product concierge Ask VKart" : "Ask VKart assistant"}
           >
             <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[0.8rem] bg-[#3f493d] text-[#fffdf8]">
               <MessageCircleMore size={18} strokeWidth={1.8} />
             </div>
             {showDesktopLauncher && (
               <span className="hidden flex-col items-start leading-none md:flex">
-                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">Product concierge</span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">Product concierge</span>{" "}
                 <span className="mt-1.5 text-sm font-bold tracking-[-0.01em] text-[#1d1c19]">Ask VKart</span>
               </span>
             )}

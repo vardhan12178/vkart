@@ -32,7 +32,7 @@ export default function BrandSelect({ options, value, onChange, label, prefix, u
 
   return (
     <div ref={ref} className={`relative ${className}`} onKeyDown={onKey}>
-      <button type="button" aria-haspopup="listbox" aria-expanded={open} aria-label={label}
+      <button type="button" aria-haspopup="listbox" aria-expanded={open} aria-label={`${prefix ? `${prefix} ` : ""}${current?.label ?? label}`}
         onClick={() => { setOpen(!open); setHi(options.indexOf(current)); }}
         className={`flex w-full items-center justify-between gap-2 rounded-full border bg-white px-4 py-2 text-sm font-semibold text-ink transition ${open ? "border-ink ring-2 ring-accent/20" : "border-line-strong hover:border-ink"} ${buttonClassName}`}>
         <span className="truncate">{prefix && <span className="font-normal text-muted-light">{prefix} </span>}{current?.label ?? label}</span>

@@ -20,6 +20,8 @@ import TwoFactorNudge from "./TwoFactorNudge";
 // product rails). Every number shown comes from the catalog; nothing is a made-up offer.
 
 const ACCENT = "#a85d37";
+// Terracotta for small text on the tinted hero slides (the brand accent is 3.8:1 there; this is 5:1)
+const ACCENT_TEXT = "#8f4c2b";
 const ICONS = {
   mobiles: FiSmartphone, laptops: FiCpu, tablets: FiTablet, tvs: FiTv, monitors: FiMonitor, audio: FiHeadphones,
   wearables: FiWatch, skincare: FiDroplet, "fashion-men": FiUser, "fashion-women": FiShoppingBag,
@@ -272,7 +274,7 @@ export default function Home() {
 
   const slides = [
     phones.data?.products?.length && {
-      key: "phones", to: catLink("mobiles"), bg: "bg-[#e9e3d8]", bgHex: "#e9e3d8", ink: "#1d1c19", sub: "#5f5b52", accent: ACCENT,
+      key: "phones", to: catLink("mobiles"), bg: "bg-[#e9e3d8]", bgHex: "#e9e3d8", ink: "#1d1c19", sub: "#5f5b52", accent: ACCENT_TEXT,
       eyebrow: "New season phones", title: "Flagships to everyday 5G", copy: `${phones.data.total} phones from top brands, from ${formatPrice(minPriceOf(phones))}.`,
       cta: "Shop phones", image: firstImage(phones),
     },
@@ -282,7 +284,7 @@ export default function Home() {
       copy: "Noise cancelling, all-day battery, studio sound.", cta: "Explore audio", image: firstImage(audio),
     },
     women.data?.products?.length && {
-      key: "women", to: catLink("fashion-women"), bg: "bg-[#f1e4da]", bgHex: "#f1e4da", ink: "#3b2a22", sub: "#75483b", accent: ACCENT,
+      key: "women", to: catLink("fashion-women"), bg: "bg-[#f1e4da]", bgHex: "#f1e4da", ink: "#3b2a22", sub: "#75483b", accent: ACCENT_TEXT,
       eyebrow: "The festive edit", title: "Sarees, kurtas & jewellery", copy: `From ${formatPrice(minPriceOf(women))}. Handpicked from Indian labels.`,
       cta: "Shop women", image: firstImage(women), cover: true,
     },
@@ -302,6 +304,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f2eee6] pb-12">
+      <h1 className="sr-only">VKart: curated shopping with fast delivery</h1>
       <Helmet>
         <title>VKart | Phones, fashion, beauty & more</title>
         <meta name="description" content="Shop phones, laptops, audio, fashion, skincare and home appliances from top brands on VKart." />

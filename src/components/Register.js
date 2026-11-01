@@ -318,7 +318,7 @@ export default function Register() {
         >
           {/* --- LEFT PANEL (Visual) --- */}
           <div className="premium-auth-visual hidden lg:flex w-5/12 relative flex-col justify-between bg-[#ded2c2] p-8 xl:p-10 overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
 
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
