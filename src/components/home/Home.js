@@ -301,7 +301,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f2eee6] pb-12">
+    <div className="min-h-screen bg-[#f2eee6] pb-12">
       <Helmet>
         <title>VKart | Phones, fashion, beauty & more</title>
         <meta name="description" content="Shop phones, laptops, audio, fashion, skincare and home appliances from top brands on VKart." />
@@ -396,6 +396,6 @@ export default function Home() {
           <Rail query={newest} />
         </Section>
       </div>
-    </main>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ export default function MemberGate({
   icon: Icon = LockKeyhole,
 }) {
   return (
-    <main className="premium-page min-h-[calc(100vh-7rem)] bg-[#f6f3ed] px-4 py-8 text-[#1d1c19] sm:px-6 sm:py-12 lg:px-8">
+    <div className="premium-page min-h-[calc(100vh-7rem)] bg-[#f6f3ed] px-4 py-8 text-[#1d1c19] sm:px-6 sm:py-12 lg:px-8">
       <section className="mx-auto grid w-full max-w-6xl overflow-hidden rounded-[1.6rem] border border-black/[0.08] bg-[#fffdf8] md:min-h-[36rem] md:grid-cols-[1.1fr_.9fr]">
         <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-14">
           <div>
@@ -72,6 +72,6 @@ export default function MemberGate({
           </div>
         </aside>
       </section>
-    </main>
+    </div>
   );
 }

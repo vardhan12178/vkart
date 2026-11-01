@@ -57,7 +57,7 @@ export default function About() {
   );
 
   return (
-    <main className="premium-page premium-about relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
+    <div className="premium-page premium-about relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
 
       {/* Ambient Background Blobs */}
@@ -75,7 +75,7 @@ export default function About() {
             A real storefront,<br className="hidden sm:block" /> engineered end to end.
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 leading-relaxed font-medium">
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed font-medium">
             VKart is designed as a convincing consumer product and built as a complete full-stack system—with secure identity, commerce workflows, and resilient state management.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function About() {
             { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
           ].map((tech, i) => (
             <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
-              <tech.icon className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
+              <tech.icon aria-hidden="true" className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
               <span className="font-bold text-gray-700 text-sm">{tech.name}</span>
             </div>
           ))}
@@ -126,7 +126,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
             <h2 className="text-3xl font-black text-gray-900 tracking-tight">Core Architecture</h2>
-            <p className="text-gray-500 mt-2">Built to handle real-world scenarios.</p>
+            <p className="text-gray-600 mt-2">Built to handle real-world scenarios.</p>
           </div>
         </div>
 
@@ -205,7 +205,7 @@ export default function About() {
       <section className="container mx-auto px-4 py-24">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-orange-600 font-bold tracking-widest text-xs uppercase">Questions</span>
+            <span className="text-[#8f4a28] font-bold tracking-widest text-xs uppercase">Questions</span>
             <h2 className="text-3xl font-black text-gray-900 mt-2">Common Queries</h2>
           </div>
 
@@ -275,6 +275,6 @@ export default function About() {
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }

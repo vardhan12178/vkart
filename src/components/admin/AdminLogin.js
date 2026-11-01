@@ -286,7 +286,7 @@ export default function AdminLogin({ setIsAdmin }) {
 
               <motion.div variants={fadeInUp} className="relative flex items-center gap-4 mb-6">
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">or login with ID</span>
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">or login with ID</span>
                 <div className="h-px bg-gray-200 flex-1" />
               </motion.div>
 
@@ -378,7 +378,7 @@ export default function AdminLogin({ setIsAdmin }) {
               </form>
 
               <motion.div variants={fadeInUp} className="mt-8 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100 text-[10px] text-gray-400">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100 text-[10px] text-gray-500">
                   <ShieldCheckIcon className="h-3 w-3" />
                   <span>Secure Admin Environment</span>
                 </div>

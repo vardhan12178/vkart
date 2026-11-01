@@ -57,7 +57,7 @@ export default function Wishlist() {
   };
 
   return (
-    <main className="premium-page premium-wishlist min-h-screen bg-[#f6f3ed] text-[#1d1c19]">
+    <div className="premium-page premium-wishlist min-h-screen bg-[#f6f3ed] text-[#1d1c19]">
       <Helmet>
         <title>Saved Items | VKart</title>
         <meta
@@ -252,6 +252,6 @@ export default function Wishlist() {
           </div>
         </section>
       )}
-    </main>
+    </div>
   );
 }

@@ -402,7 +402,7 @@ export default function Register() {
 
                   <motion.div variants={fadeInUp} className="relative flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
                     <div className="h-px bg-gray-200 flex-1" />
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
                       or register with email
                     </span>
                     <div className="h-px bg-gray-200 flex-1" />
@@ -588,7 +588,7 @@ export default function Register() {
                         Sign in
                       </button>
                     </p>
-                    <p className="mt-3 sm:mt-4 text-[10px] text-gray-400 max-w-xs mx-auto">
+                    <p className="mt-3 sm:mt-4 text-[10px] text-gray-500 max-w-xs mx-auto">
                       By registering, you agree to our{" "}
                       <a href="/terms" className="hover:text-gray-600 underline">Terms</a> &{" "}
                       <a href="/privacy" className="hover:text-gray-600 underline">Privacy Policy</a>.

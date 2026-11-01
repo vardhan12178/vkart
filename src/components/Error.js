@@ -29,7 +29,7 @@ export default function Error() {
   };
 
   return (
-    <main className="premium-page premium-error relative min-h-screen w-full overflow-hidden bg-[#f6f3ed] font-sans text-[#1d1c19] flex items-center justify-center p-4">
+    <div className="premium-page premium-error relative min-h-screen w-full overflow-hidden bg-[#f6f3ed] font-sans text-[#1d1c19] flex items-center justify-center p-4">
       <AnimStyles />
 
       {/* Ambient Background Blobs */}
@@ -108,6 +108,6 @@ export default function Error() {
         </div>
 
       </div>
-    </main>
+    </div>
   );
 }

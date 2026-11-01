@@ -44,7 +44,7 @@ export default function DemoLogin({ kind = "shopper", onSignedIn, className = ""
         onClick={start}
         disabled={busy}
         data-testid={`demo-${kind}`}
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-ink px-4 py-3 text-sm font-bold text-white transition hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-70"
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-ink px-4 py-3 text-sm font-bold !text-white transition hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-70"
       >
         {busy ? <><span>Signing you in</span><Dots /></> : <><Icon className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />{copy.title}</>}
       </button>
