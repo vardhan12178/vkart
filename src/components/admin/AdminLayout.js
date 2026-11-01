@@ -55,7 +55,7 @@ export default function AdminLayout({ setIsAdmin }) {
        SCROLL RESET ON NAVIGATE
   ---------------------------------------------------- */
   useEffect(() => {
-    const mainContent = document.getElementById("main-content");
+    const mainContent = document.getElementById("admin-content");
     if (mainContent) mainContent.scrollTop = 0;
   }, [location.pathname]);
 
@@ -117,8 +117,8 @@ export default function AdminLayout({ setIsAdmin }) {
         />
 
         {/* Page Content */}
-        <main
-          id="main-content"
+        <div
+          id="admin-content"
           className="flex-1 overflow-y-auto focus:outline-none scroll-smooth flex flex-col"
         >
           <div className="flex-1">
@@ -132,7 +132,7 @@ export default function AdminLayout({ setIsAdmin }) {
             />
           </div>
           <AdminFooter />
-        </main>
+        </div>
       </div>
     </div>
   );

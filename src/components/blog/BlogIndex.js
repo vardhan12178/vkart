@@ -70,7 +70,7 @@ export default function BlogIndex() {
   const rest = hasPosts ? filtered.slice(1) : [];
 
   return (
-    <main className="premium-page premium-blog min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden selection:bg-[#1d1c19] selection:text-white">
+    <div className="premium-page premium-blog min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
       
       {/* Ambient Background Blobs - Fixed Z-Index to stay behind */}
@@ -249,6 +249,6 @@ export default function BlogIndex() {
         </section>
 
       </div>
-    </main>
+    </div>
   );
 }

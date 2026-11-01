@@ -500,7 +500,7 @@ const AIChatAssistant = () => {
             </div>
             {showDesktopLauncher && (
               <span className="hidden flex-col items-start leading-none md:flex">
-                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#817a70]">Product concierge</span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">Product concierge</span>
                 <span className="mt-1.5 text-sm font-bold tracking-[-0.01em] text-[#1d1c19]">Ask VKart</span>
               </span>
             )}
@@ -534,13 +534,13 @@ const AIChatAssistant = () => {
                   <h3 className="font-editorial text-base sm:text-xl text-[#1d1c19] leading-tight font-bold tracking-tight">Ask VKart</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#59634f]" />
-                    <p className="text-[9px] text-[#777269] font-bold uppercase tracking-[0.14em]">Product concierge</p>
+                    <p className="text-[9px] text-[#625c53] font-bold uppercase tracking-[0.14em]">Product concierge</p>
                   </div>
                 </div>
               </div>
               <button
                 onClick={() => dispatch(closeChat())}
-                className="h-8 w-8 rounded-full text-[#777269] hover:text-[#1d1c19] hover:bg-black/5 flex items-center justify-center transition-all active:scale-95"
+                className="h-8 w-8 rounded-full text-[#625c53] hover:text-[#1d1c19] hover:bg-black/5 flex items-center justify-center transition-all active:scale-95"
                 aria-label="Close product concierge"
               >
                 <X size={18} />

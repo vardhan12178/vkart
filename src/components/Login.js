@@ -12,6 +12,7 @@ import { qk } from "../query/queryKeys";
 
 import { Eye as EyeIcon, EyeOff as EyeOffIcon, User as UserIcon, Lock as LockClosedIcon, CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
 import { Dots } from "./ui/Skeleton";
+import DemoLogin from "./DemoLogin";
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -359,6 +360,10 @@ export default function Login() {
                 {formError && <Toast show={!!formError}>{formError}</Toast>}
               </AnimatePresence>
 
+              <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">
+                <DemoLogin kind="shopper" onSignedIn={(data) => { dispatch(loginSuccess(requireUserSession(data))); navigate(redirect); }} />
+              </motion.div>
+
               {/* Google Button */}
               <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">
                 <div className="w-full relative flex justify-center transform transition-transform hover:scale-[1.01]">
@@ -382,7 +387,7 @@ export default function Login() {
 
               <motion.div variants={fadeInUp} className="relative flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-[10px] sm:text-xs font-medium text-gray-400 uppercase tracking-wider">or sign in with email</span>
+                <span className="text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wider">or sign in with email</span>
                 <div className="h-px bg-gray-200 flex-1" />
               </motion.div>
 
@@ -518,7 +523,7 @@ export default function Login() {
             </motion.div>
 
             {/* Footer Links */}
-            <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 flex justify-center gap-4 sm:gap-6 text-[10px] sm:text-xs text-gray-400">
+            <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 flex justify-center gap-4 sm:gap-6 text-[10px] sm:text-xs text-gray-500">
               {/* <a href="/privacy" className="hover:text-gray-600 transition-colors">Privacy Policy</a>
                <a href="/terms" className="hover:text-gray-600 transition-colors">Terms of Service</a> */}
             </div>

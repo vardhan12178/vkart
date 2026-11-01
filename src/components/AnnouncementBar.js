@@ -41,6 +41,8 @@ const AnnouncementBar = () => {
     return (
         <AnimatePresence>
             <motion.div
+                role="region"
+                aria-label="Store announcements"
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -84,7 +86,7 @@ const AnnouncementBar = () => {
                         </div>
                     )}
 
-                    <div className="hidden items-center gap-4 whitespace-nowrap text-[#7c756b] sm:flex">
+                    <div className="hidden items-center gap-4 whitespace-nowrap text-[#625c53] sm:flex">
                         <span>Secure checkout</span>
                         <span className="h-3 w-px bg-black/10" aria-hidden="true" />
                         <span>Easy 7-day returns</span>

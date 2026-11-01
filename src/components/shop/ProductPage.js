@@ -17,6 +17,7 @@ import { label, SpecValue } from "./specFormat";
 import { addToCompare, compareUrl } from "./compareList";
 import { readRecent, pushRecent } from "./recentlyViewed";
 import OffersEmi from "./OffersEmi";
+import { productJsonLd, breadcrumbJsonLd } from "./productJsonLd";
 import SizeGuide, { sizeGuideFor } from "./SizeGuide";
 import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 
@@ -248,11 +249,22 @@ export default function ProductPage() {
     { icon: FiLock, text: "Secure checkout" },
   ];
 
+  const origin = window.location.origin;
+  const ldProduct = productJsonLd(p, variant, { origin, images: images.slice(0, 4).map((im) => im.lg || im.md), inStock: available });
+  const ldCrumbs = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: CATEGORIES[cat] || cat, path: `/products?cat=${cat}` },
+    { name: p.title, path: `/products/${p.slug}` },
+  ], origin);
+
   return (
     <div className="bg-sand pb-28 lg:pb-12">
       <Helmet>
         <title>{`${p.title} | VKart`}</title>
         <meta name="description" content={p.shortDescription} />
+        <link rel="canonical" href={`${window.location.origin}/products/${p.slug}`} />
+        {ldProduct && <script type="application/ld+json">{JSON.stringify(ldProduct)}</script>}
+        <script type="application/ld+json">{JSON.stringify(ldCrumbs)}</script>
       </Helmet>
 
       <div className="mx-auto max-w-7xl px-4">

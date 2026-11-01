@@ -18,6 +18,7 @@ import {
   FaBrain,
   FaAws
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { SiRedux, SiTailwindcss, SiRazorpay, SiRedis } from "react-icons/si";
 
 /* ---------- Animation Styles ---------- */
@@ -45,7 +46,7 @@ export default function About() {
       },
       {
         q: "Is there an admin panel?",
-        a: "Yes. VKart has a full admin dashboard for managing products, users, and orders. Access is restricted for security, but code is available on GitHub.",
+        a: "Yes. Open the admin login and press \"Explore the admin demo\" for a read-only tour of products, orders, coupons, sales and membership. Customer data stays hidden, and nothing you click can change the store.",
       },
       {
         q: "Why did you build VKart?",
@@ -56,7 +57,7 @@ export default function About() {
   );
 
   return (
-    <main className="premium-page premium-about relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
+    <div className="premium-page premium-about relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
 
       {/* Ambient Background Blobs */}
@@ -74,9 +75,27 @@ export default function About() {
             A real storefront,<br className="hidden sm:block" /> engineered end to end.
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-500 leading-relaxed font-medium">
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed font-medium">
             VKart is designed as a convincing consumer product and built as a complete full-stack system—with secure identity, commerce workflows, and resilient state management.
           </p>
+        </div>
+      </section>
+
+      {/* --- TRY IT --- */}
+      <section className="container mx-auto px-4 pb-16">
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
+          <Link to="/login" className="group rounded-3xl border border-black/10 bg-white/80 p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]">
+            <p className="text-xs font-bold uppercase tracking-widest text-orange-600">No sign-up</p>
+            <h2 className="mt-2 text-xl font-black text-gray-900">Shop as the demo shopper</h2>
+            <p className="mt-1 text-sm text-gray-500">One click on the login page. Search in plain language, compare phones, check out with Razorpay test cards.</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900">Open login <FaArrowRight className="transition group-hover:translate-x-1" /></span>
+          </Link>
+          <Link to="/admin/login" className="group rounded-3xl border border-black/10 bg-white/80 p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]">
+            <p className="text-xs font-bold uppercase tracking-widest text-orange-600">Read-only</p>
+            <h2 className="mt-2 text-xl font-black text-gray-900">Tour the admin panel</h2>
+            <p className="mt-1 text-sm text-gray-500">Products, orders, coupons, sales and membership. Customer data is hidden and every write is blocked.</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900">Open admin login <FaArrowRight className="transition group-hover:translate-x-1" /></span>
+          </Link>
         </div>
       </section>
 
@@ -95,7 +114,7 @@ export default function About() {
             { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
           ].map((tech, i) => (
             <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
-              <tech.icon className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
+              <tech.icon aria-hidden="true" className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
               <span className="font-bold text-gray-700 text-sm">{tech.name}</span>
             </div>
           ))}
@@ -107,7 +126,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
             <h2 className="text-3xl font-black text-gray-900 tracking-tight">Core Architecture</h2>
-            <p className="text-gray-500 mt-2">Built to handle real-world scenarios.</p>
+            <p className="text-gray-600 mt-2">Built to handle real-world scenarios.</p>
           </div>
         </div>
 
@@ -163,14 +182,14 @@ export default function About() {
 
             <div className="grid sm:grid-cols-2 text-left gap-x-12 gap-y-6">
               {[
-                "Modular component architecture for reusability",
-                "Optimistic UI updates for snappy feel",
-                "Data validation via Mongoose Schemas",
-                "MongoDB indexing for faster queries",
-                "Responsive mobile-first Tailwind styling",
-                "Secure environment variable management",
-                "Image optimization and lazy loading",
-                "RESTful API best practices"
+                "Hybrid AI search: vector + keyword results fused with Reciprocal Rank Fusion, then reranked",
+                "A labelled eval set (24 queries) that scores Recall@4 and MRR for every search change",
+                "Atomic stock reservation per variant at checkout, restored on cancellation",
+                "Sale prices computed from MRP per request, cached per active sale, never raised",
+                "Webhook-confirmed Razorpay payments with refunds on cancellation",
+                "RBAC re-checked against the database on every admin request",
+                "Skeleton loading states, reduced-motion support and keyboard-friendly menus",
+                "Installable PWA with offline page; ~415 frontend and ~370 backend tests run in CI",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
                   <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
@@ -186,7 +205,7 @@ export default function About() {
       <section className="container mx-auto px-4 py-24">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-orange-600 font-bold tracking-widest text-xs uppercase">Questions</span>
+            <span className="text-[#8f4a28] font-bold tracking-widest text-xs uppercase">Questions</span>
             <h2 className="text-3xl font-black text-gray-900 mt-2">Common Queries</h2>
           </div>
 
@@ -256,6 +275,6 @@ export default function About() {
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }

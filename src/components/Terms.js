@@ -42,7 +42,7 @@ export default function Terms() {
   ];
 
   return (
-    <main className="premium-page premium-legal min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden">
+    <div className="premium-page premium-legal min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden">
       <AnimStyles />
       
       {/* Ambient Background */}
@@ -210,6 +210,6 @@ export default function Terms() {
 
         </div>
       </div>
-    </main>
+    </div>
   );
 }

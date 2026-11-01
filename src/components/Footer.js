@@ -122,7 +122,7 @@ export default function Footer() {
             </span>
             <span className="text-base sm:text-lg font-extrabold tracking-tight">VKart</span>
           </Link>
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-white/65">
             A considered destination for technology, style, and everyday essentials.
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright strip */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-white/10 pt-4 text-[10px] text-white/30">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-white/10 pt-4 text-[10px] text-white/60">
           <p>© {new Date().getFullYear()} VKart. All rights reserved.</p>
           <p>Curated with care in India.</p>
         </div>

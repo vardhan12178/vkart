@@ -84,7 +84,7 @@ export default function Contact() {
   );
 
   return (
-    <main className="premium-page premium-contact relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
+    <div className="premium-page premium-contact relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
       <AnimStyles />
 
       {/* Ambient Background Blobs */}
@@ -270,6 +270,6 @@ export default function Contact() {
 
         </div>
       </div>
-    </main>
+    </div>
   );
 }

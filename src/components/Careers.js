@@ -137,7 +137,7 @@ export default function Careers() {
   const onApply = (role) => add(`Application submitted for ${role.title}. We'll be in touch!`);
 
   return (
-    <main className="premium-page premium-careers relative min-h-[70vh] bg-[#f6f3ed]">
+    <div className="premium-page premium-careers relative min-h-[70vh] bg-[#f6f3ed]">
       <div aria-hidden className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200/60 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl" />
 
@@ -370,6 +370,6 @@ export default function Careers() {
       </div>
 
       <Toasts stack={toasts} onClose={remove} />
-    </main>
+    </div>
   );
 }
