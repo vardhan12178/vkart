@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import cartReducer from "../../redux/cartSlice";
 import uiReducer from "../../redux/uiSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
+import authReducer from "../../redux/authSlice";
 import ProductPage from "../shop/ProductPage";
 import { fetchProduct, fetchDelivery } from "../shop/catalogApi";
 import { showToast } from "../../utils/toast";
@@ -34,7 +35,7 @@ function Where() {
 }
 
 const renderPage = (url) => {
-  const store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer } });
+  const store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer, auth: authReducer } });
   render(
     <HelmetProvider>
       <Provider store={store}>

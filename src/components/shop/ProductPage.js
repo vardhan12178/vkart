@@ -12,6 +12,7 @@ import { RatingChip, ReviewsSection } from "./Reviews";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
 import DeliveryCheck from "./DeliveryCheck";
+import AlertButton from "./AlertButton";
 import { readRecent, pushRecent } from "./recentlyViewed";
 import OffersEmi from "./OffersEmi";
 import SizeGuide, { sizeGuideFor } from "./SizeGuide";
@@ -385,6 +386,7 @@ export default function ProductPage() {
                 {available ? "In stock" : "Currently unavailable"}
               </p>
               <p className="mt-1 text-sm text-muted">Sold by VKart · Ships from India</p>
+              {p.id && variant && <AlertButton productId={p.id} sku={variant.sku} outOfStock={!available} />}
               <div className="mt-3 flex items-center gap-3">
                 <span className="text-sm text-muted">Qty</span>
                 <BrandSelect label="Quantity" value={qty} onChange={setQty} className="w-24"
