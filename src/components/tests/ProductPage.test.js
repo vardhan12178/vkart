@@ -4,6 +4,7 @@ import { MemoryRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { HelmetProvider } from "react-helmet-async";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import cartReducer from "../../redux/cartSlice";
 import uiReducer from "../../redux/uiSlice";
 import wishlistReducer from "../../redux/wishlistSlice";
@@ -12,6 +13,7 @@ import ProductPage from "../shop/ProductPage";
 import { fetchProduct, fetchDelivery } from "../shop/catalogApi";
 import { showToast } from "../../utils/toast";
 
+jest.mock("../axiosInstance", () => ({ __esModule: true, default: { get: jest.fn(() => Promise.reject(new Error("offline"))), post: jest.fn(), put: jest.fn(), delete: jest.fn() } }));
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 jest.mock("../shop/catalogApi", () => {
   const actual = jest.requireActual("../shop/catalogApi");
@@ -38,11 +40,13 @@ const renderPage = (url) => {
   const store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer, auth: authReducer } });
   render(
     <HelmetProvider>
-      <Provider store={store}>
-        <MemoryRouter initialEntries={[url]}>
-          <Routes><Route path="/products/:slug" element={<><ProductPage /><Where /></>} /></Routes>
-        </MemoryRouter>
-      </Provider>
+      <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+        <Provider store={store}>
+          <MemoryRouter initialEntries={[url]}>
+            <Routes><Route path="/products/:slug" element={<><ProductPage /><Where /></>} /></Routes>
+          </MemoryRouter>
+        </Provider>
+      </QueryClientProvider>
     </HelmetProvider>
   );
   return store;

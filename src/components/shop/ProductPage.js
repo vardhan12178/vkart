@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 import { FiChevronRight, FiChevronDown, FiTruck, FiRotateCcw, FiShield, FiLock, FiCheck, FiShoppingCart, FiZap, FiHeart, FiShare2, FiColumns } from "react-icons/fi";
 import BrandSelect from "./BrandSelect";
 import { RatingChip, ReviewsSection } from "./Reviews";
+import ShopperReviews from "./ShopperReviews";
 import { CATEGORIES, catOf } from "./catalogData";
 import { fetchProduct, fetchSimilar, defaultVariant, imagesFor, toCardFromDetail, formatPrice } from "./catalogApi";
 import DeliveryCheck from "./DeliveryCheck";
@@ -480,6 +481,7 @@ export default function ProductPage() {
             )}
 
             {/* Reviews */}
+            <ShopperReviews slug={p.slug} />
             <ReviewsSection data={p.reviews} />
           </div>
 

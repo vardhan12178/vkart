@@ -54,6 +54,7 @@ const AdminLayout = lazy(() => import("./components/admin/AdminLayout"));
 const AdminSettings = lazy(() => import("./components/admin/AdminSettings"));
 const AdminUsers = lazy(() => import("./components/admin/AdminUsers"));
 const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
+const AdminReviews = lazy(() => import("./components/admin/AdminReviews"));
 const AdminCatalog = lazy(() => import("./components/admin/AdminCatalog"));
 const AdminOrders = lazy(() => import("./components/admin/AdminOrders"));
 const AdminOrderDetails = lazy(() => import("./components/admin/AdminOrderDetails"));
@@ -250,6 +251,7 @@ const App = () => {
                 <Route path="orders" element={<RequireModule module="orders"><AdminOrders /></RequireModule>} />
                 <Route path="orders/:id" element={<RequireModule module="orders"><AdminOrderDetails /></RequireModule>} />
                 <Route path="users" element={<RequireModule module="users"><AdminUsers /></RequireModule>} />
+                <Route path="reviews" element={<RequireModule module="reviews"><AdminReviews /></RequireModule>} />
                 <Route path="coupons" element={<RequireModule module="coupons"><AdminCoupons /></RequireModule>} />
                 <Route path="sales" element={<RequireModule module="sales"><AdminSales /></RequireModule>} />
                 <Route path="membership" element={<RequireModule module="membership"><AdminMembership /></RequireModule>} />
