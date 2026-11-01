@@ -12,7 +12,7 @@ module.exports = {
       colors: {
         // Brand palette
         ink: { DEFAULT: '#1d1c19', soft: '#3d3a35' }, // headings and primary buttons / body text
-        muted: { DEFAULT: '#6f6b62', light: '#8b867d', faint: '#a39e94' }, // secondary text
+        muted: { DEFAULT: '#6f6b62', light: '#736e65', faint: '#736e65' }, // secondary text
         paper: '#fffdf8', // cards and panels
         sand: '#f7f3ec', // page background
         tint: '#f1ece3', // chips, image placeholders

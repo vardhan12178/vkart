@@ -65,7 +65,7 @@ describe("AIChatAssistant Component", () => {
 
   test("shows the floating launcher when closed, and opens the panel on click", () => {
     renderAssistant(false);
-    const launcher = screen.getByRole("button", { name: /ask vkart assistant/i });
+    const launcher = screen.getByRole("button", { name: /product concierge ask vkart/i });
     expect(launcher).toBeInTheDocument();
 
     fireEvent.click(launcher);
@@ -286,7 +286,7 @@ describe("AIChatAssistant Component", () => {
 
   test("hides the floating launcher on the cart and checkout pages", () => {
     renderAssistant(false, "/cart");
-    expect(screen.queryByRole("button", { name: /ask vkart assistant/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /product concierge ask vkart/i })).not.toBeInTheDocument();
   });
 
   test("sends a question handed over from search", async () => {

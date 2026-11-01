@@ -44,11 +44,11 @@ function Gallery({ images, idx, setIdx }) {
     <div className="lg:sticky lg:top-24">
       {/* Mobile: swipe */}
       <div className="mx-auto max-w-lg lg:hidden">
-        <div ref={strip} className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-white [scrollbar-width:none]"
+        <div ref={strip} tabIndex={0} role="region" aria-label="Product images" className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-white [scrollbar-width:none]"
           onScroll={(e) => { const w = e.currentTarget.clientWidth; const i = Math.round(e.currentTarget.scrollLeft / w); if (i !== idx) setIdx(i); }}>
           {images.map((im, i) => (
             <div key={`${im.md}-${i}`} className="flex aspect-square w-full flex-none snap-center items-center justify-center">
-              <img src={im.md} alt={im.alt} loading={i ? "lazy" : "eager"} referrerPolicy="no-referrer" className="h-full w-full object-contain p-6" />
+              <img src={im.md} alt={im.alt} loading={i ? "lazy" : "eager"} fetchpriority={i ? undefined : "high"} referrerPolicy="no-referrer" className="h-full w-full object-contain p-6" />
             </div>
           ))}
         </div>

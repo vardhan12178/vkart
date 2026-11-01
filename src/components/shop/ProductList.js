@@ -128,7 +128,7 @@ function Card({ p, onChooseOptions }) {
             {off > 0 && <span className="text-xs text-muted-light line-through">{formatPrice(p.mrp)}</span>}
           </div>
           <button type="button" onClick={add} disabled={p.inStock === false}
-            aria-label={pickSize ? `Select size for ${p.title}` : pickOther ? `See options for ${p.title}` : `Add ${p.title} to cart`}
+            aria-label={p.inStock === false ? `Out of stock, ${p.title}` : pickSize ? `Select size, ${p.title}` : pickOther ? `See options, ${p.title}` : `Add to cart, ${p.title}`}
             className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-ink py-2 text-xs font-bold text-ink transition hover:bg-ink hover:text-white disabled:border-line-strong disabled:text-muted-faint disabled:hover:bg-transparent sm:text-sm">
             {p.inStock === false ? "Out of stock" : pickSize ? "Select size" : pickOther ? "See options" : <><FiShoppingCart /> Add to cart</>}
           </button>
@@ -142,7 +142,7 @@ function Card({ p, onChooseOptions }) {
 function Section({ title, children }) {
   return (
     <div className="border-b border-line py-4 last:border-0">
-      <h3 className="mb-2.5 text-xs font-bold uppercase tracking-wider text-ink">{title}</h3>
+      <h2 className="mb-2.5 text-xs font-bold uppercase tracking-wider text-ink">{title}</h2>
       {children}
     </div>
   );
@@ -392,7 +392,7 @@ export default function ProductList() {
               )}
             </nav>
             <h1 className="mt-1 break-words text-2xl font-bold text-ink sm:text-3xl">{heading}</h1>
-            <p className="text-sm text-muted-light">{loading && page === 1 ? <Bone className="inline-block h-4 w-24 align-middle" /> : `${total} products`}</p>
+            <div className="text-sm text-muted-light">{loading && page === 1 ? <Bone className="inline-block h-4 w-24 align-middle" /> : `${total} products`}</div>
           </div>
           <BrandSelect label="Sort by" prefix="Sort by:" value={sort} onChange={setSort} options={sortOptions} className="hidden w-64 lg:block" />
         </div>

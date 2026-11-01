@@ -50,7 +50,7 @@ describe("ProductList tiles", () => {
 
   it("adds the variant the tile shows straight to the cart", async () => {
     renderList([card("phone")]);
-    fireEvent.click(await screen.findByRole("button", { name: "Add Brand phone to cart" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Add to cart, Brand phone" }));
     expect(store.getState().cart).toEqual([expect.objectContaining({
       catalog: "v2", productId: "id-phone", sku: "phone-1", price: 30000, selectedVariants: "128GB · Black", quantity: 1,
     })]);
@@ -60,10 +60,10 @@ describe("ProductList tiles", () => {
 
   it("asks for a size on clothing and for options when the shown variant is sold out", async () => {
     renderList([card("shirt", { category: "fashion", needsSize: true }), card("rare", { defaultInStock: false })]);
-    fireEvent.click(await screen.findByRole("button", { name: "Select size for Brand shirt" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Select size, Brand shirt" }));
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(fetchProduct).toHaveBeenCalledWith("shirt");
-    expect(screen.getByRole("button", { name: "See options for Brand rare" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "See options, Brand rare" })).toBeInTheDocument();
     expect(store.getState().cart).toEqual([]);
   });
 
