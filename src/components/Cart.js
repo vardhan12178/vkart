@@ -10,11 +10,13 @@ import {
   clearCart,
   addToCart,
   refreshCartLines,
+  cartItemKey,
 } from "../redux/cartSlice";
 import {
   toggleWishlist,
   removeFromWishlist,
   clearWishlist,
+  wishlistItemKey,
 } from "../redux/wishlistSlice";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRightIcon, CircleXIcon, HeartIcon, MinusIcon, PlusIcon, ShoppingBagIcon, ShoppingCartIcon, TagIcon, Trash2Icon } from "./ui/icons";
@@ -37,10 +39,9 @@ const INR = (n) =>
 
 const TAX_RATE = 0.18;
 const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
-const keyOf = (it) => {
-  const base = it?._id || it?.productId || it?.externalId || it?.id;
-  return it?.selectedVariants ? `${base}::${it.selectedVariants}` : base;
-};
+// Must be the reducer's own key: lines loaded from the server also carry a database _id that is not
+// the product's id, and a key built from it never matches, so remove and quantity did nothing.
+const keyOf = cartItemKey;
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -148,7 +149,8 @@ export default function Cart() {
     setError(null);
     try {
       const productsPayload = cartItems.map((it) => {
-        const mongoId = it._id || it.productId || null;
+        // For catalog lines _id is the saved cart row, not the product the backend must find
+        const mongoId = it.catalog === "v2" ? it.productId || null : it._id || it.productId || null;
         const extId = it.externalId || (it.id != null ? String(it.id) : null);
         const unitPrice = round2(it.price);
         const lineTotal = round2(unitPrice * it.quantity);
@@ -218,12 +220,12 @@ export default function Cart() {
         return;
       }
       dispatch(addToCart(line));
-      dispatch(removeFromWishlist(keyOf(item)));
+      dispatch(removeFromWishlist(wishlistItemKey(item)));
       showToast("Moved to Cart", "success");
       return;
     }
     dispatch(addToCart({ ...item, quantity: 1 }));
-    dispatch(removeFromWishlist(keyOf(item)));
+    dispatch(removeFromWishlist(wishlistItemKey(item)));
     showToast("Moved to Cart", "success");
   };
 
