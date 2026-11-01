@@ -183,7 +183,7 @@ export default function About() {
             <div className="grid sm:grid-cols-2 text-left gap-x-12 gap-y-6">
               {[
                 "Hybrid AI search: vector + keyword results fused with Reciprocal Rank Fusion, then reranked",
-                "A labelled eval set (24 queries) that scores Recall@4 and MRR for every search change",
+                "A labelled eval set (24 queries) scores Recall@4 and MRR for every search change. Latest run: hybrid 95.8% / 0.91, vector-only 100% / 0.95, keyword-only 87.5% / 0.79",
                 "Atomic stock reservation per variant at checkout, restored on cancellation",
                 "Sale prices computed from MRP per request, cached per active sale, never raised",
                 "Webhook-confirmed Razorpay payments with refunds on cancellation",
