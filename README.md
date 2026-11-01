@@ -49,6 +49,16 @@ flowchart LR
 3. **Rerank and answer:** the top 10 are reranked into at most 4 picks with a reason for each; invalid model output falls back to the fused order. If the filters leave nothing, they are relaxed and the answer says so.
 4. **Measure:** `npm run catalog:eval` in the backend runs 24 labelled queries and prints Recall@4 and MRR for keyword-only, vector-only and hybrid, so changes can be compared with numbers instead of opinions.
 
+Latest run (1 Nov 2026, 264 products, retrieval only, before the rerank step):
+
+| Mode | Recall@4 | MRR |
+| --- | --- | --- |
+| Keyword only | 87.5% (21/24) | 0.79 |
+| Vector only | 100% (24/24) | 0.95 |
+| Hybrid (vector + keyword, RRF) | 95.8% (23/24) | 0.91 |
+
+These are small-sample numbers: 24 queries, so one query is worth 4.2 points. On this set vector-only scored highest, and hybrid trailed it by one query ("phone with the biggest battery that lasts two days", which hybrid ranked 7th). Exact-name queries (6/6) and typos (2/2) were solved by every mode. A larger query set is needed before drawing conclusions about which mode is best.
+
 ## Engineering notes
 
 - **Prices stay honest:** sale prices are computed from MRP per request and cached per active sale, so a sale ending can't leave stale prices behind.
