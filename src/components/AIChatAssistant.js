@@ -5,11 +5,12 @@ import axios from "./axiosInstance";
 import { addToCart } from "../redux/cartSlice";
 import { showToast } from "../utils/toast";
 import {
-  X, Send, Loader2, Sparkles, MessageCircleMore,
+  X, Send, Sparkles, MessageCircleMore,
   ChevronRight, Lightbulb, ArrowRight, ShoppingCart
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat, clearChatPrompt } from "../redux/uiSlice";
+import { Dots } from "./ui/Skeleton";
 
 
 const INR = (n) =>
@@ -575,7 +576,7 @@ const AIChatAssistant = () => {
                   animate={{ opacity: 1 }}
                   className="flex items-center gap-2 pl-2 text-xs font-semibold text-[#8e887e]"
                 >
-                  <Loader2 size={12} className="animate-spin text-[#a85d37]" />
+                  <span className="text-[#a85d37]"><Dots /></span>
                   <span role="status">{loadingText || "Thinking..."}</span>
                 </motion.div>
               )}
@@ -606,7 +607,7 @@ const AIChatAssistant = () => {
                     }`}
                   aria-label="Send message"
                 >
-                  {isLoading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
+                  {isLoading ? <Dots /> : <Send size={14} />}
                 </button>
               </div>
             </div>

@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
+import { SkeletonRegion, TableSkeleton } from "../ui/Skeleton";
 
 const emptyPlan = {
   name: "",
@@ -189,7 +190,7 @@ export default function AdminMembership() {
         )}
 
         {loading ? (
-          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">Loading...</div>
+          <SkeletonRegion label="Loading plans"><TableSkeleton rows={4} cols={4} /></SkeletonRegion>
         ) : plans.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs">
             <p className="text-base font-bold text-slate-900 mb-1">No plans created yet</p>

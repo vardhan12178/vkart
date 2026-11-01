@@ -56,7 +56,7 @@ describe("PrimeMembership Component", () => {
     );
   };
 
-  test("shows a loading spinner before plans resolve", () => {
+  test("shows a skeleton before plans resolve", () => {
     axios.get.mockReturnValue(new Promise(() => {}));
     const store = configureStore({
       reducer: { auth: (state = { isAuthenticated: true, isAdmin: false, user: null }) => state },
@@ -68,7 +68,8 @@ describe("PrimeMembership Component", () => {
         </Provider>
       </QueryClientProvider>
     );
-    expect(container.querySelector(".animate-spin")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveAttribute("aria-busy", "true");
+    expect(container.querySelector(".animate-spin")).not.toBeInTheDocument();
   });
 
   test("renders plan pricing and features", async () => {

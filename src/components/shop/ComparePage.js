@@ -7,6 +7,7 @@ import { fetchProduct, fetchProducts, defaultVariant, imagesFor, formatPrice } f
 import { RatingChip } from "./Reviews";
 import { SpecValue, label } from "./specFormat";
 import { MAX_COMPARE, writeCompare } from "./compareList";
+import { Bone } from "../ui/Skeleton";
 
 // Side-by-side comparison of up to four products: price, rating and every spec, with an option to show only
 // the rows where the products differ. The chosen products live in the URL (?p=slug,slug).
@@ -113,7 +114,7 @@ export default function ComparePage() {
                   <th scope="col" className="sticky left-0 z-10 w-28 bg-paper p-3 sm:w-40" />
                   {queries.map((q, i) => {
                     const p = q.data;
-                    if (!p) return <th key={slugs[i]} scope="col" className="min-w-[10rem] p-3 text-muted">{q.isLoading ? "Loading…" : "Not found"}</th>;
+                    if (!p) return <th key={slugs[i]} scope="col" className="min-w-[10rem] p-3 text-muted">{q.isLoading ? <><Bone className="aspect-square w-full" rounded="rounded-xl" /><Bone className="mt-2 h-3 w-1/3" /><Bone className="mt-2 h-4 w-4/5" /></> : "Not found"}</th>;
                     const v = defaultVariant(p);
                     const img = imagesFor(p, v.options[p.media?.groupBy])[0];
                     return (
@@ -138,7 +139,7 @@ export default function ComparePage() {
                 </tr>
               </thead>
               <tbody>
-                {loading && <tr><td colSpan={slugs.length + 1} className="p-6 text-center text-muted">Loading specifications…</td></tr>}
+                {loading && Array.from({ length: 5 }, (_, i) => <tr key={i} role="presentation"><td colSpan={slugs.length + 1} className="p-3"><Bone className="h-5 w-full" /></td></tr>)}
                 {!loading && loaded.length > 0 && shown.length === 0 && (
                   <tr><td colSpan={slugs.length + 1} className="p-6 text-center text-muted">These products have the same specifications.</td></tr>
                 )}

@@ -12,6 +12,7 @@ import {
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import { CATEGORIES } from "../shop/catalogData";
+import { SkeletonRegion, TableSkeleton } from "../ui/Skeleton";
 
 const categoryLabel = (slug) => CATEGORIES[slug] || String(slug || "").replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
 
@@ -224,7 +225,7 @@ export default function AdminSales() {
 
         {/* Content Area */}
         {loading ? (
-          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">Loading...</div>
+          <SkeletonRegion label="Loading sales"><TableSkeleton rows={4} cols={4} /></SkeletonRegion>
         ) : sales.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs">
             <p className="text-base font-bold text-slate-900 mb-1">No sales created yet</p>

@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 
 import axios from "./components/axiosInstance";
 import ScrollToTop from "./components/ScrollToTop";
-import LoadingSpinner from "./components/LoadingSpinner";
+import { RouteSkeleton } from "./components/ui/Skeleton";
 import NotificationSocket from "./components/NotificationSocket";
 import RouteSeo from "./seo/RouteSeo";
 import RequireModule from "./components/admin/RequireModule";
@@ -149,7 +149,7 @@ const App = () => {
 
   const authLoading = isAdminRoute ? adminVerifyQuery.isLoading : sessionQuery.isLoading;
 
-  if (authLoading) return <LoadingSpinner />;
+  if (authLoading) return <RouteSkeleton />;
 
   return (
 
@@ -200,7 +200,7 @@ const App = () => {
             containerClassName="premium-toast-region"
             toastOptions={{ duration: 2800 }}
           />
-          <Suspense fallback={<LoadingSpinner />}>
+          <Suspense fallback={<RouteSkeleton />}>
             <ErrorBoundary>
             <Routes>
               {/* Public Storefront Pages */}

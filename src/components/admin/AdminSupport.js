@@ -6,6 +6,7 @@ import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import { getSocketBaseUrl } from "../../utils/notificationHelpers";
 import { FaPaperPlane, FaCheck, FaUndo, FaTimes, FaChevronLeft } from "react-icons/fa";
+import { Bone, SkeletonRegion } from "../ui/Skeleton";
 
 const TABS = [
   { id: "unassigned", label: "Unassigned", mobileLabel: "New", filter: { status: "AWAITING_AGENT" } },
@@ -195,7 +196,7 @@ export default function AdminSupport() {
             {/* List Body */}
             <div className="flex-1 overflow-y-auto divide-y divide-slate-100">
               {listQuery.isLoading && (
-                <div className="p-8 text-center text-xs text-slate-400 animate-pulse">Loading conversations...</div>
+                <SkeletonRegion label="Loading conversations" className="space-y-1 p-3">{Array.from({ length: 6 }, (_, i) => <div key={i} className="flex items-center gap-3 p-2"><Bone className="h-9 w-9 shrink-0" rounded="rounded-full" /><div className="flex-1"><Bone className="h-3 w-2/3" /><Bone className="mt-2 h-3 w-1/2" /></div></div>)}</SkeletonRegion>
               )}
               {!listQuery.isLoading && conversations.length === 0 && (
                 <div className="p-8 text-center text-xs text-slate-400">No conversations in this queue.</div>

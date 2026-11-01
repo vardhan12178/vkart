@@ -7,6 +7,7 @@ import axios from "./axiosInstance";
 import CheckoutPreview from "./CheckoutPreview";
 import { buildVerifiedPaymentMeta, extractVerificationToken } from "../utils/checkoutPayment";
 import { qk } from "../query/queryKeys";
+import { Dots } from "./ui/Skeleton";
 
 /* ---------- Animation Styles ---------- */
 const AnimStyles = () => (
@@ -404,7 +405,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           <div className="flex gap-2 sm:gap-3">
             <button type="button" onClick={() => setShowReview(false)} className="flex-1 rounded-full border border-black/10 bg-transparent py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#5f5a52] transition-colors hover:bg-[#eee8df] hover:text-[#1d1c19]">Edit Details</button>
             <button type="button" onClick={proceedToPayment} disabled={busy} className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.16)] transition-all hover:-translate-y-0.5 hover:bg-[#34312c] disabled:translate-y-0 disabled:opacity-50">
-              {busy ? <><div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" /> Processing...</> : <>Confirm & Pay <ArrowRightIcon size={11} /></>}
+              {busy ? <>Processing <Dots /></> : <>Confirm & Pay <ArrowRightIcon size={11} /></>}
             </button>
           </div>
         </div>
@@ -770,8 +771,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               >
                 {busy ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-ink border-t-transparent rounded-full animate-spin" />
-                    Processing...
+                    Processing <Dots />
                   </>
                 ) : (
                   <>Pay Now <ArrowRightIcon size={12} /></>

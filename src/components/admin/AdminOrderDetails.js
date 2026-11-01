@@ -24,6 +24,7 @@ import {
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
+import { Bone, SkeletonRegion, TableSkeleton } from "../ui/Skeleton";
 
 const STAGES = [
   "PLACED",
@@ -228,11 +229,14 @@ export default function AdminOrderDetails() {
 
   if (loading) {
     return (
-      <div className="premium-admin-page min-h-screen bg-transparent flex items-center justify-center p-6">
-        <div className="flex flex-col items-center gap-4 animate-pulse">
-          <div className="h-12 w-12 bg-slate-200 rounded-xl"></div>
-          <div className="h-4 w-32 bg-slate-200 rounded-lg"></div>
-        </div>
+      <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-6">
+        <SkeletonRegion label="Loading order">
+          <Bone className="h-8 w-64" />
+          <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_20rem]">
+            <div className="space-y-5"><Bone className="h-40" rounded="rounded-2xl" /><TableSkeleton rows={3} cols={4} /></div>
+            <Bone className="h-72" rounded="rounded-2xl" />
+          </div>
+        </SkeletonRegion>
       </div>
     );
   }

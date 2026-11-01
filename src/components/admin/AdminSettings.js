@@ -14,6 +14,7 @@ import {
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import InputGroup from "./ui/InputGroup";
+import { Dots } from "../ui/Skeleton";
 
 export default function AdminSettings() {
   const queryClient = useQueryClient();
@@ -100,7 +101,7 @@ export default function AdminSettings() {
               className="flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-xs active:scale-95 text-xs sm:text-sm font-bold shrink-0 disabled:opacity-60"
             >
               {saving ? (
-                <div className="h-3.5 w-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <Dots />
               ) : (
                 <SaveIcon className="h-4 w-4" />
               )}
@@ -223,7 +224,7 @@ export default function AdminSettings() {
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-xs active:scale-95 text-xs sm:text-sm font-bold disabled:opacity-60"
               >
                 {saving ? (
-                  <div className="h-3.5 w-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <Dots />
                 ) : (
                   <SaveIcon className="h-4 w-4" />
                 )}

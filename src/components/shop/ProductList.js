@@ -13,6 +13,7 @@ import BrandSelect from "./BrandSelect";
 import { CATEGORIES } from "./catalogData";
 import { iconFor } from "./categoryIcons";
 import { fetchProducts, formatPrice } from "./catalogApi";
+import { Bone, Dots, GridSkeleton, SkeletonRegion } from "../ui/Skeleton";
 
 const ACCENT = "#a85d37";
 
@@ -391,7 +392,7 @@ export default function ProductList() {
               )}
             </nav>
             <h1 className="mt-1 break-words text-2xl font-bold text-ink sm:text-3xl">{heading}</h1>
-            <p className="text-sm text-muted-light">{loading && page === 1 ? "Loading…" : `${total} products`}</p>
+            <p className="text-sm text-muted-light">{loading && page === 1 ? <Bone className="inline-block h-4 w-24 align-middle" /> : `${total} products`}</p>
           </div>
           <BrandSelect label="Sort by" prefix="Sort by:" value={sort} onChange={setSort} options={sortOptions} className="hidden w-64 lg:block" />
         </div>
@@ -423,14 +424,9 @@ export default function ProductList() {
                 <button type="button" onClick={() => setAttempt((n) => n + 1)} className="mt-3 text-sm font-semibold underline" style={{ color: ACCENT }}>Retry</button>
               </div>
             ) : loading && page === 1 ? (
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
-                {Array.from({ length: 8 }, (_, i) => (
-                  <div key={i} className="overflow-hidden rounded-2xl bg-white ring-1 ring-line">
-                    <div className="aspect-[4/5] animate-pulse bg-tint" />
-                    <div className="space-y-2 p-4"><div className="h-3 w-1/3 rounded bg-tint" /><div className="h-4 w-4/5 rounded bg-tint" /><div className="h-4 w-1/2 rounded bg-tint" /></div>
-                  </div>
-                ))}
-              </div>
+              <SkeletonRegion label="Loading products">
+                <GridSkeleton count={8} className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4" />
+              </SkeletonRegion>
             ) : items.length ? (
               <>
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
@@ -444,7 +440,7 @@ export default function ProductList() {
                     </div>
                     <button type="button" disabled={loading} onClick={() => setPage(page + 1)}
                       className="rounded-full border-2 border-ink px-8 py-2.5 text-sm font-bold text-ink transition hover:bg-ink hover:text-white disabled:opacity-50">
-                      {loading ? "Loading…" : "Load more"}
+                      {loading ? <Dots /> : "Load more"}
                     </button>
                   </div>
                 )}

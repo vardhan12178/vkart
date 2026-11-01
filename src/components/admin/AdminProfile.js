@@ -14,6 +14,7 @@ import {
 import axiosInstance from "../axiosInstance";
 import { ROLE_LABELS, MODULES } from "../../constants/adminRoles";
 import InputGroup from "./ui/InputGroup";
+import { Dots } from "../ui/Skeleton";
 
 // Every logged-in admin — regardless of role or module permissions — can
 // reach this page and edit their own account. It's intentionally not wrapped
@@ -182,7 +183,7 @@ export default function AdminProfile() {
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-lg shadow-slate-200 active:scale-95 text-sm font-bold disabled:opacity-70"
             >
               {saving ? (
-                <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <Dots />
               ) : (
                 <SaveIcon className="h-4 w-4" />
               )}

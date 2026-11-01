@@ -14,6 +14,7 @@ import {
   CheckCircleIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/outline";
+import { Dots } from "../ui/Skeleton";
 
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -364,7 +365,7 @@ export default function AdminLogin({ setIsAdmin }) {
                   className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+                    {loading && <Dots />}
                     {loading ? "Authenticating..." : "Access Dashboard"}
                   </span>
                 </motion.button>
