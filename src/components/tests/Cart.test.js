@@ -118,6 +118,53 @@ describe("Cart Component", () => {
     expect(store.getState().cart).toHaveLength(0);
   });
 
+  // A line loaded from the server carries its own database _id, which is not the product's id
+  const SAVED_LINE = { ...PRODUCT, _id: "row-1", catalog: "v2", sku: "SKU-1", selectedVariants: "Color: Black" };
+  // Catalog lines are re-priced on load, so the price-refresh call needs an answer
+  const stubServer = () =>
+    axios.post.mockImplementation((url) =>
+      Promise.resolve({ data: url === "/api/v2/cart/resolve" ? { items: [] } : { _id: "order-1" } })
+    );
+
+  test("changes quantity and removes a line that was loaded from the server", () => {
+    stubServer();
+    const { store } = renderCart({ cart: [SAVED_LINE] });
+
+    const qtyButtons = screen.getByText("1").parentElement.querySelectorAll("button");
+    fireEvent.click(qtyButtons[1]);
+    expect(store.getState().cart[0].quantity).toBe(2);
+    fireEvent.click(qtyButtons[0]);
+    expect(store.getState().cart[0].quantity).toBe(1);
+
+    fireEvent.click(screen.getByLabelText(/remove item/i));
+    fireEvent.click(screen.getByRole("button", { name: "Yes" }));
+    expect(store.getState().cart).toHaveLength(0);
+  });
+
+  test("saves a server-loaded line for later and moves it back to the cart", () => {
+    stubServer();
+    const { store } = renderCart({ cart: [SAVED_LINE] });
+    fireEvent.click(screen.getByRole("button", { name: /save for later/i }));
+    expect(store.getState().cart).toHaveLength(0);
+    expect(store.getState().wishlist).toHaveLength(1);
+
+    fireEvent.click(screen.getByRole("button", { name: /move to cart/i }));
+    expect(store.getState().cart).toHaveLength(1);
+    expect(store.getState().wishlist).toHaveLength(0);
+  });
+
+  test("orders by the product's id, not the id of the saved cart row", async () => {
+    stubServer();
+    renderCart({ cart: [SAVED_LINE] });
+
+    fireEvent.click(screen.getAllByRole("button", { name: /^checkout/i })[0]);
+    fireEvent.click(screen.getByText("Simulate Order Placed"));
+
+    await waitFor(() => expect(axios.post).toHaveBeenCalledWith("/api/orders", expect.anything()));
+    const sent = axios.post.mock.calls.find(([url]) => url === "/api/orders")[1];
+    expect(sent.products[0]).toMatchObject({ productId: "p1", sku: "SKU-1", catalog: "v2" });
+  });
+
   test("moves an item to the wishlist", () => {
     const { store } = renderCart({ cart: [PRODUCT] });
     fireEvent.click(screen.getByRole("button", { name: /save for later/i }));
