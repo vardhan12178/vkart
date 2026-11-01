@@ -7,6 +7,7 @@ import { showToast } from "../utils/toast";
 import { qk } from "../query/queryKeys";
 import { Bone, SkeletonRegion } from "./ui/Skeleton";
 import { loadRazorpay } from "../utils/loadRazorpay";
+import { prefillFrom, withBranding } from "../utils/razorpayBranding";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
@@ -20,6 +21,7 @@ export default function PrimeMembership() {
   useEffect(() => { loadRazorpay().catch(() => {}); }, []);
   const [paymentMethod, setPaymentMethod] = useState("card");
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+  const authUser = useSelector((s) => s.auth.user);
 
   const { data: plans = [], isLoading: plansLoading } = useQuery({
     queryKey: qk.membership.plans,
@@ -86,8 +88,9 @@ export default function PrimeMembership() {
       // Close our own picker now — Razorpay's modal takes over from here.
       setSelectedPlan(null);
 
-      const options = {
+      const options = withBranding({
         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+        prefill: prefillFrom({ name: authUser?.name, email: authUser?.email }),
         amount: data.amount,
         currency: data.currency,
         name: "VKart Prime",
@@ -120,7 +123,7 @@ export default function PrimeMembership() {
           wallet: false,
           emi: false,
         },
-      };
+      });
 
       await loadRazorpay();
       const rzp = new window.Razorpay(options);
@@ -259,7 +262,7 @@ export default function PrimeMembership() {
               <div className="flex items-baseline gap-2 mb-6">
                 <span className="text-3xl font-black text-gray-900">{INR(plan.price)}</span>
                 {plan.originalPrice > plan.price && (
-                  <span className="text-sm text-gray-400 line-through">{INR(plan.originalPrice)}</span>
+                  <span className="text-sm text-muted-light line-through">{INR(plan.originalPrice)}</span>
                 )}
               </div>
 

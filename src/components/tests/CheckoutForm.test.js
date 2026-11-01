@@ -107,7 +107,7 @@ describe("CheckoutForm Component", () => {
     renderCheckout();
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/profile/addresses"));
 
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
 
     await waitFor(() => {
@@ -122,7 +122,7 @@ describe("CheckoutForm Component", () => {
     fireEvent.change(screen.getByLabelText(/mobile number/i), { target: { value: "12345" } });
     fireEvent.change(screen.getByLabelText(/pincode/i), { target: { value: "12" } });
 
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
 
     await waitFor(() => {
@@ -234,11 +234,11 @@ describe("CheckoutForm Component", () => {
     fireEvent.click(screen.getByLabelText(/use wallet balance/i));
     fillValidForm();
 
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
 
     expect(await screen.findByText(/review your order/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /confirm & pay/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^confirm (& pay|order)/i }));
 
     await waitFor(() => {
       expect(onOrderPlaced).toHaveBeenCalledWith(
@@ -271,10 +271,10 @@ describe("CheckoutForm Component", () => {
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
     fillValidForm();
 
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
     expect(await screen.findByText(/review your order/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /confirm & pay/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^confirm (& pay|order)/i }));
 
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith("/api/razorpay/create-order", {
@@ -285,6 +285,17 @@ describe("CheckoutForm Component", () => {
     await waitFor(() => expect(window.Razorpay).toHaveBeenCalled());
     expect(capturedOptions.order_id).toBe("rzp_order_1");
     expect(capturedOptions.amount).toBe(20000);
+    // Same look as the other Razorpay windows, and closing it frees the Pay button
+    expect(capturedOptions.theme).toEqual({ color: "#1d1c19" });
+    expect(capturedOptions.modal.confirm_close).toBe(true);
+    expect(typeof capturedOptions.modal.ondismiss).toBe("function");
+  });
+
+  test("shows the amount on the pay buttons, and says a Razorpay window opens on the page", async () => {
+    renderCheckout({ totalAmount: 200 });
+    await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
+    expect(screen.getByRole("button", { name: "Pay ₹200" })).toBeInTheDocument();
+    expect(screen.getByText(/secure razorpay window opens on this page/i)).toBeInTheDocument();
   });
 
   test("completes the order after the Razorpay handler verifies payment", async () => {
@@ -310,10 +321,10 @@ describe("CheckoutForm Component", () => {
     renderCheckout({ totalAmount: 200, onOrderPlaced });
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
     fillValidForm();
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
     expect(await screen.findByText(/review your order/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /confirm & pay/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^confirm (& pay|order)/i }));
     await waitFor(() => expect(window.Razorpay).toHaveBeenCalled());
 
     await act(async () => {
@@ -365,10 +376,10 @@ describe("CheckoutForm Component", () => {
     renderCheckout({ totalAmount: 200, onOrderPlaced });
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
     fillValidForm();
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
     expect(await screen.findByText(/review your order/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /confirm & pay/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^confirm (& pay|order)/i }));
     await waitFor(() => expect(window.Razorpay).toHaveBeenCalled());
 
     await act(async () => {
@@ -398,10 +409,10 @@ describe("CheckoutForm Component", () => {
     renderCheckout({ totalAmount: 200 });
     await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/wallet"));
     fillValidForm();
-    const submitButtons = screen.getAllByRole("button", { name: /pay now/i });
+    const submitButtons = screen.getAllByRole("button", { name: /^(pay |place order)/i });
     fireEvent.click(submitButtons[submitButtons.length - 1]);
     expect(await screen.findByText(/review your order/i)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: /confirm & pay/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^confirm (& pay|order)/i }));
 
     await waitFor(() => {
       expect(screen.getByText(/unable to initialize payment/i)).toBeInTheDocument();
