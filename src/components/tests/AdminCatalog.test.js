@@ -70,9 +70,11 @@ describe("AdminCatalog", () => {
   test("publishes all drafts and changes status in bulk", async () => {
     axios.get.mockResolvedValue(page([row(), row({ id: "p2", title: "Phone B", slug: "phone-b" })], { all: 2, active: 0, draft: 2, archived: 0, low: 0, out: 0 }));
     axios.post.mockResolvedValue({ data: { matched: 2, updated: 2, status: "active" } });
+    window.confirm = jest.fn(() => true);
     renderPage();
 
-    fireEvent.click(await screen.findByRole("button", { name: "Publish all drafts" }));
+    fireEvent.click(await screen.findByRole("button", { name: /^Publish all \d+ drafts$/ }));
+    expect(window.confirm).toHaveBeenCalledWith(expect.stringMatching(/Publish all 2 draft products/));
     await waitFor(() => expect(axios.post).toHaveBeenCalledWith("/api/admin/v2/products/bulk-status", { ids: "all", filter: { status: "draft" }, status: "active" }));
 
     fireEvent.click(screen.getByLabelText("Select Phone B"));
@@ -97,7 +99,8 @@ describe("AdminCatalog", () => {
     fireEvent.click(await screen.findByRole("button", { name: /^Phone A Brand/ }));
     expect(screen.getByLabelText("Price for 128GB")).toBeDisabled();
     expect(screen.queryByRole("button", { name: "Save" })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Publish all drafts" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^Publish all \d+ drafts$/ })).not.toBeInTheDocument();
+    expect(screen.getByRole("note")).toHaveTextContent(/read-only access to products/i);
     expect(screen.getByLabelText("Status of Phone A")).toBeDisabled();
   });
 });
