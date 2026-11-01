@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import axios from "../axiosInstance";
 import { getSocketBaseUrl } from "../../utils/notificationHelpers";
+import { Bone, SkeletonRegion } from "../ui/Skeleton";
 
 const INTENT_TO_CATEGORY = {
   track: "ORDER_STATUS",
@@ -135,7 +136,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
   };
 
   if (loading) {
-    return <p className="text-xs text-gray-400">Connecting you to support...</p>;
+    return <SkeletonRegion label="Connecting you to support" className="space-y-2"><Bone className="h-8 w-2/3" rounded="rounded-2xl" /><Bone className="ml-auto h-8 w-1/2" rounded="rounded-2xl" /><Bone className="h-8 w-3/5" rounded="rounded-2xl" /></SkeletonRegion>;
   }
 
   if (!conversation) {
@@ -340,7 +341,7 @@ export default function SupportChatWidget({ open, onClose }) {
             <>
               <BackButton onClick={() => setStep("MENU")} />
               <p className="text-xs sm:text-sm font-bold text-slate-800 mb-1">Select an order:</p>
-              {ordersLoading && <p className="text-xs text-slate-400 py-4 text-center">Loading your recent orders...</p>}
+              {ordersLoading && <SkeletonRegion label="Loading your recent orders" className="space-y-2 py-2">{Array.from({ length: 3 }, (_, i) => <Bone key={i} className="h-12 w-full" rounded="rounded-xl" />)}</SkeletonRegion>}
               {!ordersLoading && orders.length === 0 && (
                 <p className="text-xs text-slate-400 py-4 text-center">No orders found on your account.</p>
               )}

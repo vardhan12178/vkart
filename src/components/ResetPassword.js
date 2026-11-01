@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, Lock as LockClosedIcon, Eye as EyeIcon, EyeOff as EyeOffIcon, ShoppingCart as ShoppingCartIcon, ArrowLeft as ArrowLeftIcon } from "lucide-react";
+import { Dots } from "./ui/Skeleton";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
@@ -281,7 +282,7 @@ export default function ResetPassword() {
                 className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3.5 text-base font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-4"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+                  {loading && <Dots />}
                   {loading ? "Updating Password..." : "Update Password"}
                 </span>
               </motion.button>

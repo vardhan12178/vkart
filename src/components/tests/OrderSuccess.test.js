@@ -48,10 +48,11 @@ describe("OrderSuccess Component", () => {
     axios.get.mockReset();
   });
 
-  test("shows a loading spinner while the order is being fetched", () => {
+  test("shows a skeleton while the order is being fetched", () => {
     axios.get.mockReturnValue(new Promise(() => {}));
     const { container } = renderWithOrderId();
-    expect(container.querySelector(".animate-spin")).toBeInTheDocument();
+    expect(screen.getByRole("status")).toHaveAttribute("aria-busy", "true");
+    expect(container.querySelector(".animate-spin")).not.toBeInTheDocument();
   });
 
   test("shows an error state when the order id is not found in the account's orders", async () => {

@@ -25,6 +25,7 @@ import { showToast } from "../utils/toast";
 import { buildSecureOrderPayload } from "../utils/orderPayload";
 import { cartItemFromSaved } from "./shop/shopItems";
 import { qk } from "../query/queryKeys";
+import { Bone, Dots } from "./ui/Skeleton";
 
 /* ---------- Helpers ---------- */
 const INR = (n) =>
@@ -574,10 +575,12 @@ export default function Cart() {
 
         {/* Global Loader Overlay */}
         {isLoading && (
-          <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-10 h-10 border-4 border-[#a85d37] border-t-transparent rounded-full animate-spin" />
-              <span className="font-bold text-sm text-[#1d1c19]">Processing Order...</span>
+          <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center" role="status" aria-live="polite">
+            <div className="w-72 max-w-[85vw] rounded-3xl border border-line bg-paper p-6 shadow-xl">
+              <Bone className="h-4 w-2/3" />
+              <Bone className="mt-3 h-3 w-full" />
+              <Bone className="mt-2 h-3 w-4/5" />
+              <p className="mt-5 flex items-center gap-2 text-sm font-bold text-ink">Processing order <Dots /></p>
             </div>
           </div>
         )}

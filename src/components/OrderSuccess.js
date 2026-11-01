@@ -6,6 +6,7 @@ import { useWindowSize } from "react-use";
 import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
 import SupportChatWidget from "./support/SupportChatWidget";
+import { Bone, SkeletonRegion } from "./ui/Skeleton";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -58,8 +59,15 @@ export default function OrderSuccess() {
 
   if (loading) {
     return (
-      <div className="premium-page premium-success min-h-screen flex items-center justify-center bg-[#f6f3ed]">
-        <div className="w-10 h-10 border-2 border-line-strong border-t-slate-900 rounded-full animate-spin" />
+      <div className="premium-page premium-success min-h-screen bg-[#f6f3ed]">
+        <SkeletonRegion label="Confirming your order">
+          <div className="mx-auto max-w-2xl px-4 py-14">
+            <Bone className="mx-auto h-16 w-16" rounded="rounded-full" />
+            <Bone className="mx-auto mt-6 h-8 w-72 max-w-full" />
+            <Bone className="mx-auto mt-3 h-4 w-56" />
+            <Bone className="mt-10 h-64 w-full" rounded="rounded-3xl" />
+          </div>
+        </SkeletonRegion>
       </div>
     );
   }

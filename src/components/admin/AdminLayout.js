@@ -6,6 +6,7 @@ import AdminSidebar from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
 import AdminFooter from "./AdminFooter";
 import { qk } from "../../query/queryKeys";
+import { AdminSkeleton } from "../ui/Skeleton";
 
 // 1. Receive the setIsAdmin prop
 export default function AdminLayout({ setIsAdmin }) {
@@ -75,9 +76,7 @@ export default function AdminLayout({ setIsAdmin }) {
   // Don't render until auth is verified
   if (adminVerifyQuery.isLoading) {
     return (
-      <div className="premium-admin flex h-screen items-center justify-center bg-[#f2f0eb]">
-        <div className="animate-spin h-8 w-8 border-4 border-orange-500 border-t-transparent rounded-full"></div>
-      </div>
+      <div className="premium-admin"><AdminSkeleton /></div>
     );
   }
 

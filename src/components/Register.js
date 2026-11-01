@@ -6,6 +6,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, Eye as EyeIcon, EyeOff as EyeOffIcon, Lock as LockClosedIcon, User as UserIcon, Mail as MailIcon, IdCard as IdentificationIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
+import { Dots } from "./ui/Skeleton";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
@@ -382,8 +383,8 @@ export default function Register() {
                   <motion.div variants={fadeInUp} className="mb-4 sm:mb-5 flex justify-center">
                     <div className="w-full max-w-[400px] flex justify-center transform transition-transform hover:scale-[1.01] relative">
                       {googleLoading && (
-                        <div className="absolute inset-0 z-10 grid place-items-center bg-white/60 backdrop-blur-[2px] rounded-lg">
-                          <span className="h-5 w-5 animate-spin rounded-full border-2 border-gray-400 border-t-transparent" />
+                        <div className="absolute inset-0 z-10 grid place-items-center bg-white/60 backdrop-blur-[2px] rounded-lg text-ink">
+                          <Dots />
                         </div>
                       )}
                       <GoogleLogin
@@ -571,7 +572,7 @@ export default function Register() {
                       className="w-full relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-gray-900/20 hover:shadow-gray-900/40 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed transition-all mt-2"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
-                        {loading && <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+                        {loading && <Dots />}
                         {loading ? "Creating Account..." : "Create Account"}
                       </span>
                     </motion.button>

@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt, FaCreditCard, FaUniversity, FaClock } from "react-icons/fa";
 import { showToast } from "../utils/toast";
 import { qk } from "../query/queryKeys";
+import { Bone, SkeletonRegion } from "./ui/Skeleton";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
@@ -127,8 +128,16 @@ export default function PrimeMembership() {
 
   if (isLoading) {
     return (
-      <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed] flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
+      <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed]">
+        <SkeletonRegion label="Loading membership plans">
+          <div className="mx-auto max-w-5xl px-4 py-12">
+            <Bone className="mx-auto h-9 w-72" />
+            <Bone className="mx-auto mt-3 h-4 w-96 max-w-full" />
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {Array.from({ length: 3 }, (_, i) => <Bone key={i} className="h-80" rounded="rounded-3xl" />)}
+            </div>
+          </div>
+        </SkeletonRegion>
       </div>
     );
   }

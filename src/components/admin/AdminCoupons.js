@@ -12,6 +12,7 @@ import {
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
+import { SkeletonRegion, TableSkeleton } from "../ui/Skeleton";
 
 const empty = {
   code: "",
@@ -295,9 +296,7 @@ export default function AdminCoupons() {
 
         {/* Coupons List / Table */}
         {loading ? (
-          <div className="flex justify-center py-20">
-            <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-600 rounded-full animate-spin" />
-          </div>
+          <SkeletonRegion label="Loading coupons"><TableSkeleton rows={5} cols={5} /></SkeletonRegion>
         ) : coupons.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs text-slate-400">
             <p className="text-base font-bold text-slate-900">No coupons yet</p>
