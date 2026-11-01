@@ -69,11 +69,11 @@ export default function Wishlist() {
       <section className="wishlist-masthead border-b border-black/[0.08] px-4 py-5 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <div className="mx-auto max-w-7xl">
           <div className="mb-3 sm:mb-5 flex flex-wrap items-center gap-3">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#a85d37]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#8f4c2b]">
               Your personal edit
             </p>
             <span className="h-3 w-px bg-black/15" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#8a857b]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-light">
               {count} {count === 1 ? "item" : "items"}
             </span>
           </div>
@@ -99,7 +99,7 @@ export default function Wishlist() {
                 </span>
                 <div>
                   <p className="text-sm font-bold text-[#1d1c19]">Saved collection</p>
-                  <p className="hidden text-xs text-[#8a857b] sm:block">Ready when you are</p>
+                  <p className="hidden text-xs text-muted-light sm:block">Ready when you are</p>
                 </div>
               </div>
 
@@ -192,7 +192,7 @@ export default function Wishlist() {
                           <button
                             type="button"
                             onClick={() => removeItem(item)}
-                            className="flex h-8 w-8 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-black/[0.09] bg-transparent text-[#8a857b] transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#925033]"
+                            className="flex h-8 w-8 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-full border border-black/[0.09] bg-transparent text-muted-light transition-colors hover:border-[#a85d37]/25 hover:bg-[#a85d37]/[0.07] hover:text-[#925033]"
                             aria-label={`Remove ${item.title} from saved items`}
                             title="Remove from saved items"
                           >
@@ -233,13 +233,13 @@ export default function Wishlist() {
               </div>
             </div>
             <div className="flex flex-col items-start justify-center p-8 sm:p-12 lg:p-16">
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.22em] text-[#a85d37]">
+              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.22em] text-[#8f4c2b]">
                 Start your edit
               </p>
               <h2 className="max-w-xl font-editorial text-3xl leading-[1] tracking-[-0.035em] text-[#1d1c19] sm:text-5xl">
                 Nothing saved—yet.
               </h2>
-              <p className="mt-4 max-w-lg text-sm leading-6 text-[#6f6b62] sm:text-[15px] sm:leading-7">
+              <p className="mt-4 max-w-lg text-sm leading-6 text-[#5f5b52] sm:text-[15px] sm:leading-7">
                 Tap the heart on anything worth remembering. We will keep it here so it is easy to find again.
               </p>
               <Link
