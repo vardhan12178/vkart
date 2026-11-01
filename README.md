@@ -22,6 +22,7 @@ Try asking the search bar something in plain language, like *"phones under 30000
 - **Catalog:** variants (colour, storage, size) with their own price, stock and images; faceted filters that update with the other filters applied; rating and discount sorting; sale pricing per category that never raises a price.
 - **Search:** header suggestions (recent searches, categories, products), natural-language queries parsed into filters, and a hybrid AI assistant (below).
 - **Shopping:** quick add, mini cart with a free-delivery meter, delivery estimate by pincode (India Post data), offers and EMI, size guide, Compare (up to four products), recently viewed and recommended rows, wishlist.
+- **Reviews:** only shoppers whose order was delivered can review a product (verified-buyer badge, one review each, edit/delete, helpful votes, sorting); moderators can hide a review from the admin panel, which also removes it from the product rating.
 - **Alerts:** price-drop and back-in-stock alerts by email.
 - **Checkout:** Razorpay with webhook-confirmed payments, wallet, coupons, refunds on cancellation.
 - **Admin:** catalog manager with bulk publish, orders, coupons, sales, membership, employees with per-module permissions, support inbox, live notifications over Socket.io.
