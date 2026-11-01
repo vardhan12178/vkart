@@ -164,7 +164,15 @@ export default function AdminCatalog() {
         </div>
 
         {/* Drafts notice: the storefront shows drafts until CATALOG_ACTIVE_ONLY=true */}
-        {canWrite && counts.draft > 0 && tab === "all" && !q && !category && (
+        {/* Signed in without write access: say why there is no publish button */}
+        {!canWrite && counts.draft > 0 && (
+          <div role="note" className="flex items-start gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+            <AlertTriangle className="mt-0.5 h-4 w-4 flex-none" />
+            <span>{counts.draft} products are drafts, but this account has read-only access to products, so it can't publish them. Sign in with an admin that has write access (the demo admin is read-only).</span>
+          </div>
+        )}
+
+        {canWrite && counts.draft > 0 && (
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3">
             <p className="flex items-start gap-2 text-sm text-amber-900">
               <AlertTriangle className="mt-0.5 h-4 w-4 flex-none" />
@@ -173,9 +181,9 @@ export default function AdminCatalog() {
                 The shop shows drafts for now; publish them so it can switch to active products only.
               </span>
             </p>
-            <button type="button" disabled={bulk.isPending} onClick={() => bulk.mutate({ ids: "all", filter: { status: "draft" }, status: "active" })}
+            <button type="button" disabled={bulk.isPending} onClick={() => window.confirm(`Publish all ${counts.draft} draft products? You can move them back to draft any time.`) && bulk.mutate({ ids: "all", filter: { status: "draft" }, status: "active" })}
               className="rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-bold text-white hover:bg-black disabled:opacity-50">
-              Publish all drafts
+              Publish all {counts.draft} drafts
             </button>
           </div>
         )}
