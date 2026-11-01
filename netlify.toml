@@ -16,3 +16,14 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# The service worker and manifest must always be re-checked so updates reach shoppers quickly
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache"
