@@ -48,7 +48,7 @@ export default function CookieBanner() {
         <button
           type="button"
           onClick={() => saveChoice("essential")}
-          className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-[#8a857b] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30"
+          className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-muted-light transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]/30"
           aria-label="Close cookie preferences and use essential cookies only"
         >
           <IoClose size={19} />

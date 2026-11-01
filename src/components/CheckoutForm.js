@@ -6,6 +6,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "./axiosInstance";
 import CheckoutPreview from "./CheckoutPreview";
 import { buildVerifiedPaymentMeta, extractVerificationToken } from "../utils/checkoutPayment";
+import { prefillFrom, withBranding } from "../utils/razorpayBranding";
 import { qk } from "../query/queryKeys";
 import { Dots } from "./ui/Skeleton";
 
@@ -282,7 +283,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
 
       const { orderId, amount: amountPaise, currency } = res.data;
 
-      const options = {
+      const options = withBranding({
         key: RZP_KEY,
         amount: amountPaise,
         currency,
@@ -295,6 +296,8 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           contact: data.phone || "9999999999",
         },
         notes: { shipping_address: fullAddress },
+        // Closing the window (after the confirm prompt) frees the Pay button again
+        modal: { ondismiss: () => setBusy(false) },
         // Matches VKart's primary CTA color (the "Confirm & Pay" button right
         // behind this modal) rather than the leftover stock Tailwind orange.
         theme: { color: "#1d1c19" },
@@ -332,7 +335,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
             setStatus(getErrorMessage(err, "Payment verification failed. Please contact support."));
           }
         },
-      };
+      });
 
       const rzp = new window.Razorpay(options);
       rzp.on("payment.failed", function () {
@@ -405,7 +408,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           <div className="flex gap-2 sm:gap-3">
             <button type="button" onClick={() => setShowReview(false)} className="flex-1 rounded-full border border-black/10 bg-transparent py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-[#5f5a52] transition-colors hover:bg-[#eee8df] hover:text-[#1d1c19]">Edit Details</button>
             <button type="button" onClick={proceedToPayment} disabled={busy} className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-[#1d1c19] py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white shadow-[0_12px_28px_rgba(29,28,25,.16)] transition-all hover:-translate-y-0.5 hover:bg-[#34312c] disabled:translate-y-0 disabled:opacity-50">
-              {busy ? <>Processing <Dots /></> : <>Confirm & Pay <ArrowRightIcon size={11} /></>}
+              {busy ? <>Processing <Dots /></> : <>{payablePreview > 0 ? `Confirm & Pay ${INR(payablePreview)}` : "Confirm order"} <ArrowRightIcon size={11} /></>}
             </button>
           </div>
         </div>
@@ -521,13 +524,14 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                         setStatus("");
                         try {
                           const { orderId, amount: amountPaise, currency } = await createWalletTopupMutation.mutateAsync(amt);
-                          const options = {
+                          const options = withBranding({
                             key: RZP_KEY,
                             amount: amountPaise,
                             currency,
                             name: "VKart Wallet",
                             description: "Wallet Top-up",
                             order_id: orderId,
+                            prefill: prefillFrom({ name: data.fullName, email: data.email, contact: data.phone }),
                             theme: { color: "#1d1c19" },
                             handler: async function (response) {
                               try {
@@ -541,7 +545,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                                 setStatus(getErrorMessage(err, "Wallet top-up verification failed."));
                               }
                             },
-                          };
+                          });
                           const rzp = new window.Razorpay(options);
                           rzp.on("payment.failed", function () {
                             setStatus("Wallet top-up payment failed. Please try again.");
@@ -660,7 +664,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               </h3>
 
               <div className="relative z-10 space-y-2.5 sm:space-y-4 mb-4 sm:mb-6">
-                <div className="flex justify-between text-xs sm:text-sm text-muted-light font-medium">
+                <div className="flex justify-between text-xs sm:text-sm text-muted-ondark font-medium">
                   <span>Order Total</span>
                   <span className="text-white font-semibold">{INR(Number(totalAmount) || 0)}</span>
                 </div>
@@ -668,7 +672,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                 <div className="h-px bg-white/10" />
 
                 <div className="flex justify-between items-baseline">
-                  <span className="text-muted-faint text-xs sm:text-sm font-medium">Payable Amount</span>
+                  <span className="text-muted-ondark text-xs sm:text-sm font-medium">Payable Amount</span>
                   <span className="text-xl sm:text-2xl font-black text-white tracking-tight">{INR(Number(totalAmount) || 0)}</span>
                 </div>
               </div>
@@ -676,7 +680,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               {/* Payment Method Picker */}
               {payablePreview > 0 && (
                 <div className="relative z-10 mb-3.5 sm:mb-6">
-                  <p className="text-[10px] sm:text-xs font-bold text-muted-light uppercase tracking-wider mb-2">Pay with</p>
+                  <p className="text-[10px] sm:text-xs font-bold text-muted-ondark uppercase tracking-wider mb-2">Pay with</p>
                   <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                     {[
                       { id: "card", icon: CreditCardIcon, label: "Card", caption: "Credit / Debit" },
@@ -694,12 +698,13 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                             : "border-white/10 bg-white/5 hover:border-white/20"
                         }`}
                       >
-                        <Icon className={paymentMethod === id ? "text-accent" : "text-muted-light"} size={15} />
+                        <Icon className={paymentMethod === id ? "text-accent" : "text-muted-ondark"} size={15} />
                         <span className="text-[11px] sm:text-xs font-bold text-white leading-tight">{label}</span>
-                        <span className="text-[8px] sm:text-[9px] leading-tight text-muted-light truncate">{caption}</span>
+                        <span className="text-[8px] sm:text-[9px] leading-tight text-muted-ondark truncate">{caption}</span>
                       </button>
                     ))}
                   </div>
+                  <p className="mt-2 text-[10px] sm:text-[11px] leading-snug text-muted-ondark">A secure Razorpay window opens on this page to finish your payment. Your card details go to Razorpay, not to VKart.</p>
                 </div>
               )}
 
@@ -710,10 +715,10 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   onClick={() => setShowTestCard((v) => !v)}
                   className="w-full flex items-center justify-between gap-2 p-2.5 sm:p-3 text-left"
                 >
-                  <span className="text-[10px] sm:text-xs font-bold text-muted-light uppercase tracking-wider truncate">
+                  <span className="text-[10px] sm:text-xs font-bold text-muted-ondark uppercase tracking-wider truncate">
                     Test Mode: {paymentMethod === "card" ? "Use test card" : paymentMethod === "netbanking" ? "Test netbanking" : "Test PayLater"}
                   </span>
-                  <span className={`text-muted-light text-xs transition-transform ${showTestCard ? "rotate-180" : ""}`}>▾</span>
+                  <span className={`text-muted-ondark text-xs transition-transform ${showTestCard ? "rotate-180" : ""}`}>▾</span>
                 </button>
 
                 {showTestCard && paymentMethod === "netbanking" && (
@@ -721,7 +726,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     <div className="p-1.5 bg-white/10 rounded-md shrink-0">
                       <LandmarkIcon className="h-4 w-4 text-accent" />
                     </div>
-                    <div className="text-[11px] text-muted-faint">
+                    <div className="text-[11px] text-muted-ondark">
                       <p className="text-white font-bold text-xs mb-0.5">Test bank</p>
                       <p className="mb-0.5">Pick any bank — test mode auto-approves it.</p>
                       <p className="mt-0.5 text-ok">No real bank login needed</p>
@@ -734,7 +739,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     <div className="p-1.5 bg-white/10 rounded-md shrink-0">
                       <ClockIcon className="h-4 w-4 text-accent" />
                     </div>
-                    <div className="text-[11px] text-muted-faint">
+                    <div className="text-[11px] text-muted-ondark">
                       <p className="text-white font-bold text-xs mb-0.5">Test PayLater provider</p>
                       <p className="mb-0.5">Pick any provider — test mode auto-approves it.</p>
                       <p className="mt-0.5 text-ok">No real account needed</p>
@@ -747,7 +752,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     <div className="p-1.5 bg-white/10 rounded-md shrink-0">
                       <CreditCardIcon className="h-4 w-4 text-accent" />
                     </div>
-                    <div className="text-[11px] text-muted-faint">
+                    <div className="text-[11px] text-muted-ondark">
                       <p className="text-white font-bold text-xs mb-0.5">RuPay Test Card</p>
                       <p className="mb-0.5">Card: <span className="text-white font-mono font-semibold">6070 1010 1010 1010</span></p>
                       <div className="flex gap-2.5">
@@ -774,7 +779,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     Processing <Dots />
                   </>
                 ) : (
-                  <>Pay Now <ArrowRightIcon size={12} /></>
+                  <>{payablePreview > 0 ? `Pay ${INR(payablePreview)}` : "Place order"} <ArrowRightIcon size={12} /></>
                 )}
               </button>
 
@@ -785,7 +790,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               )}
 
               <div className="mt-3.5 pt-3 border-t border-white/10 text-center">
-                <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-muted-light font-medium">
+                <div className="flex items-center justify-center gap-1.5 text-[10px] sm:text-xs text-muted-ondark font-medium">
                   <CircleCheckIcon className="text-ok" size={11} />
                   <span>Razorpay Secured (256-bit SSL)</span>
                 </div>
@@ -798,7 +803,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-black/10 p-3 lg:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
             <div className="flex gap-3 items-center max-w-6xl mx-auto">
               <div className="flex-1">
-                <div className="text-[9px] text-[#8c887e] font-bold uppercase tracking-wider">Total Payable</div>
+                <div className="text-[9px] text-muted-light font-bold uppercase tracking-wider">Total Payable</div>
                 <div className="text-lg font-black text-[#1d1c19] leading-none">{INR(Number(totalAmount) || 0)}</div>
               </div>
               <button
@@ -806,7 +811,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                 disabled={busy || !rzpReady}
                 className="px-6 h-10 bg-[#1d1c19] text-white rounded-full text-xs font-bold shadow-lg active:scale-95 transition-transform flex items-center gap-1.5 disabled:opacity-50 hover:bg-black"
               >
-                {busy ? "Processing..." : "Pay Now"} <ArrowRightIcon size={11} />
+                {busy ? "Processing..." : payablePreview > 0 ? "Pay Now" : "Place order"} <ArrowRightIcon size={11} />
               </button>
             </div>
           </div>

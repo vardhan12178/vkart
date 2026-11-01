@@ -573,7 +573,7 @@ export default function Profile() {
                     Prime
                   </span>
                 ) : (
-                  <span className="px-2 py-0.5 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-wider border border-accent/30 shrink-0">
+                  <span className="px-2 py-0.5 rounded-full bg-accent/10 text-[#8f4c2b] text-[10px] font-bold uppercase tracking-wider border border-accent/30 shrink-0">
                     Member
                   </span>
                 )}

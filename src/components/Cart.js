@@ -326,7 +326,7 @@ export default function Cart() {
                           <div className="flex justify-between items-start gap-2 sm:gap-4">
                             <div className="min-w-0">
                               <h3 className="text-xs sm:text-base font-bold text-[#1d1c19] leading-snug line-clamp-2">{item.title}</h3>
-                              <p className="text-[10px] sm:text-xs text-[#8c887e] mt-0.5 capitalize truncate">{item.category}</p>
+                              <p className="text-[10px] sm:text-xs text-muted-light mt-0.5 capitalize truncate">{item.category}</p>
                               {item.selectedVariants && (
                                 <p className="text-[10px] sm:text-xs text-[#a85d37] font-semibold mt-0.5">{item.selectedVariants}</p>
                               )}
@@ -363,7 +363,7 @@ export default function Cart() {
                             <div className="text-right">
                               <div className="text-sm sm:text-lg font-bold text-[#1d1c19]">{INR(lineSell)}</div>
                               {lineMrp > lineSell && (
-                                <div className="text-[10px] sm:text-xs text-[#9b978d] line-through font-medium">{INR(lineMrp)}</div>
+                                <div className="text-[10px] sm:text-xs text-muted-light line-through font-medium">{INR(lineMrp)}</div>
                               )}
                             </div>
                           </div>
@@ -450,7 +450,7 @@ export default function Cart() {
                       <span>Subtotal</span>
                       <span className="text-[#1d1c19] font-semibold">{INR(calc.subtotal)}</span>
                     </div>
-                    <div className="flex justify-between text-[#9b978d]">
+                    <div className="flex justify-between text-muted-light">
                       <span className="text-[11px]">Tax (Included 18%)</span>
                       <span className="text-[11px]">{INR(calc.tax)}</span>
                     </div>
@@ -528,7 +528,7 @@ export default function Cart() {
                               </span>
                             </div>
                             {c.description && <p className="text-[10px] text-[#6f6b62] mt-0.5">{c.description}</p>}
-                            {c.minOrder > 0 && <p className="text-[9px] text-[#9b978d] mt-0.5">Min order: {INR(c.minOrder)}</p>}
+                            {c.minOrder > 0 && <p className="text-[9px] text-muted-light mt-0.5">Min order: {INR(c.minOrder)}</p>}
                           </button>
                         ))}
                       </div>
@@ -598,7 +598,7 @@ export default function Cart() {
         <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-black/10 p-3 lg:hidden z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex gap-3 items-center max-w-7xl mx-auto">
             <div className="flex-1">
-              <div className="text-[10px] text-[#8c887e] font-bold uppercase tracking-wide">Total</div>
+              <div className="text-[10px] text-muted-light font-bold uppercase tracking-wide">Total</div>
               <div className="text-lg font-black text-[#1d1c19] leading-none">{INR(calc.total)}</div>
             </div>
             <button

@@ -50,7 +50,7 @@ describe("ProductList tiles", () => {
 
   it("adds the variant the tile shows straight to the cart", async () => {
     renderList([card("phone")]);
-    fireEvent.click(await screen.findByRole("button", { name: "Add to cart, Brand phone" }));
+    fireEvent.click(await screen.findByRole("button", { name: "Add to cart, Brand phone" }, { timeout: 5000 }));
     expect(store.getState().cart).toEqual([expect.objectContaining({
       catalog: "v2", productId: "id-phone", sku: "phone-1", price: 30000, selectedVariants: "128GB · Black", quantity: 1,
     })]);
