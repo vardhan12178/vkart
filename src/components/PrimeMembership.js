@@ -1,411 +1,47 @@
-import React, { useEffect, useState } from "react";
-import axios from "./axiosInstance";
-import { useSelector } from "react-redux";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import {
-  FaCrown,
-  FaCheck,
-  FaShieldAlt,
-  FaTruck,
-  FaStar,
-  FaTag,
-  FaBolt,
-  FaCreditCard,
-  FaUniversity,
-  FaClock,
-} from "react-icons/fa";
-import { showToast } from "../utils/toast";
-import { qk } from "../query/queryKeys";
-import { Bone, SkeletonRegion } from "./ui/Skeleton";
-import { loadRazorpay } from "../utils/loadRazorpay";
-import { prefillFrom, withBranding } from "../utils/razorpayBranding";
-import { formatINR } from "../utils/format";
+import React from "react";
+import ActiveMembershipBanner from "./prime/ActiveMembershipBanner";
+import BenefitsGrid from "./prime/BenefitsGrid";
+import PaymentPicker from "./prime/PaymentPicker";
+import PlansSection from "./prime/PlansSection";
+import PrimeHero from "./prime/PrimeHero";
+import PrimeSkeleton from "./prime/PrimeSkeleton";
+import usePrime from "./prime/usePrime";
+
 export default function PrimeMembership() {
-  const queryClient = useQueryClient();
-  const [purchasing, setPurchasing] = useState(null);
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const p = usePrime();
 
-  // Start fetching Razorpay now so the payment window opens without a wait
-  useEffect(() => {
-    loadRazorpay().catch(() => {});
-  }, []);
-  const [paymentMethod, setPaymentMethod] = useState("card");
-  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
-  const authUser = useSelector((s) => s.auth.user);
-
-  const { data: plans = [], isLoading: plansLoading } = useQuery({
-    queryKey: qk.membership.plans,
-    queryFn: async () => {
-      const res = await axios.get("/api/membership/plans");
-      return res.data || [];
-    },
-    staleTime: 5 * 60 * 1000,
-  });
-
-  const { data: membership = null, isLoading: statusLoading } = useQuery({
-    queryKey: qk.membership.status,
-    enabled: isAuthenticated,
-    retry: false,
-    queryFn: async () => {
-      const res = await axios.get("/api/membership/status");
-      return res.data || null;
-    },
-  });
-
-  const purchaseMutation = useMutation({
-    mutationFn: async (planId) => {
-      const { data } = await axios.post("/api/membership/purchase", { planId });
-      return data;
-    },
-  });
-
-  const verifyMutation = useMutation({
-    mutationFn: async ({ paymentResponse, planId }) => {
-      const res = await axios.post("/api/membership/verify", {
-        razorpay_order_id: paymentResponse.razorpay_order_id,
-        razorpay_payment_id: paymentResponse.razorpay_payment_id,
-        razorpay_signature: paymentResponse.razorpay_signature,
-        planId,
-      });
-      return res.data;
-    },
-    onSuccess: (data) => {
-      if (!data?.success) return;
-      queryClient.setQueryData(qk.membership.status, {
-        membership: data.membership,
-        isPrime: data.isPrime,
-      });
-      queryClient.invalidateQueries({ queryKey: qk.membership.status });
-      queryClient.invalidateQueries({ queryKey: qk.profile.root });
-      showToast("Welcome to VKart Prime!", "success");
-    },
-  });
-
-  const isLoading = plansLoading || (isAuthenticated && statusLoading);
-  const membershipData = isAuthenticated ? membership : null;
-  const isPrime = membershipData?.isPrime;
-
-  const handlePurchase = async (planId) => {
-    if (!isAuthenticated) {
-      showToast("Please login first", "error");
-      return;
-    }
-    setPurchasing(planId);
-    try {
-      const data = await purchaseMutation.mutateAsync(planId);
-      if (!data?.orderId) throw new Error("No orderId returned");
-
-      // Close our own picker now: Razorpay's modal takes over from here.
-      setSelectedPlan(null);
-
-      const options = withBranding({
-        key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-        prefill: prefillFrom({ name: authUser?.name, email: authUser?.email }),
-        amount: data.amount,
-        currency: data.currency,
-        name: "VKart Prime",
-        description: `${data.plan.name} Membership`,
-        order_id: data.orderId,
-        handler: async (response) => {
-          try {
-            await verifyMutation.mutateAsync({
-              paymentResponse: response,
-              planId,
-            });
-          } catch {
-            showToast("Verification failed", "error");
-          } finally {
-            setPurchasing(null);
-          }
-        },
-        modal: { ondismiss: () => setPurchasing(null) },
-        // Matches the checkout flow's Razorpay look, the primary CTA color
-        // rather than Prime's own amber, so the payment step itself feels
-        // consistent regardless of which flow got you there.
-        theme: { color: "#1D1C19" },
-        // Pre-selects the method chosen in the picker below, same as
-        // checkout: skips Razorpay's own method-list screen.
-        method: {
-          card: paymentMethod === "card",
-          netbanking: paymentMethod === "netbanking",
-          paylater: paymentMethod === "paylater",
-          upi: false,
-          wallet: false,
-          emi: false,
-        },
-      });
-
-      await loadRazorpay();
-      const rzp = new window.Razorpay(options);
-      rzp.open();
-    } catch {
-      showToast("Failed to initiate payment", "error");
-      setPurchasing(null);
-    }
-  };
-
-  if (isLoading) {
-    return (
-      <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed]">
-        <SkeletonRegion label="Loading membership plans">
-          <div className="mx-auto max-w-5xl px-4 py-12">
-            <Bone className="mx-auto h-9 w-72" />
-            <Bone className="mx-auto mt-3 h-4 w-96 max-w-full" />
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {Array.from({ length: 3 }, (_, i) => (
-                <Bone key={i} className="h-80" rounded="rounded-3xl" />
-              ))}
-            </div>
-          </div>
-        </SkeletonRegion>
-      </div>
-    );
-  }
+  if (p.isLoading) return <PrimeSkeleton />;
 
   return (
     <div className="premium-page premium-prime min-h-screen bg-[#f6f3ed]">
-      {/* Hero */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,158,11,0.15),transparent_50%)]" />
-        <div className="max-w-5xl mx-auto px-4 py-16 sm:py-24 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
-            <FaCrown className="text-amber-400" />
-            <span className="text-sm font-bold text-amber-300">VKart Prime</span>
-          </div>
-          <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal mb-6 leading-[0.9] tracking-[-0.04em]">
-            More of what matters.
-            <br />
-            Less of what doesn’t.
-          </h1>
-          <p className="text-white/55 text-lg max-w-xl mx-auto">
-            Considered benefits, earlier access, and better value across the things you already
-            want.
-          </p>
-        </div>
-      </div>
+      <PrimeHero />
 
-      {/* Active Membership Banner */}
-      {isPrime && membershipData?.membership && (
-        <div className="max-w-5xl mx-auto px-4 -mt-8 relative z-20">
-          <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-6 shadow-lg">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                  <FaCrown className="text-amber-600 text-xl" />
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">You're a Prime Member!</p>
-                  <p className="text-sm text-gray-600">
-                    Active until{" "}
-                    {new Date(membershipData.membership.endDate).toLocaleDateString("en-IN", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </p>
-                </div>
-              </div>
-              <span className="bg-amber-500 text-white text-xs font-bold px-4 py-2 rounded-full">
-                ACTIVE
-              </span>
-            </div>
-            {membershipData.membership.history?.length > 0 && (
-              <div className="mt-4 pt-4 border-t border-amber-200/50">
-                <p className="text-xs font-bold text-amber-700 uppercase tracking-wider mb-2">
-                  Membership History
-                </p>
-                <div className="space-y-1">
-                  {membershipData.membership.history
-                    .slice(-3)
-                    .reverse()
-                    .map((h, i) => (
-                      <div key={i} className="flex justify-between text-xs text-gray-600">
-                        <span>{h.plan || "Prime Plan"}</span>
-                        <span>
-                          {new Date(h.startDate).toLocaleDateString("en-IN")}
-                          {" -> "}
-                          {new Date(h.endDate).toLocaleDateString("en-IN")}
-                        </span>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
+      {p.isPrime && p.membershipData?.membership && (
+        <ActiveMembershipBanner membership={p.membershipData.membership} />
       )}
 
-      {/* Benefits */}
-      <div className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="text-2xl font-black text-gray-900 text-center mb-10">What You Get</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              icon: <FaTag />,
-              title: "Extra Discounts",
-              desc: "Exclusive Prime-only sale prices on every sale",
-            },
-            {
-              icon: <FaTruck />,
-              title: "Free Shipping",
-              desc: "Free delivery on all orders, no minimum",
-            },
-            {
-              icon: <FaBolt />,
-              title: "Early Access",
-              desc: "Shop sales 24 hours before everyone else",
-            },
-            {
-              icon: <FaShieldAlt />,
-              title: "Priority Support",
-              desc: "Dedicated support with faster resolution",
-            },
-          ].map((b, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center"
-            >
-              <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-amber-600 text-lg">
-                {b.icon}
-              </div>
-              <h3 className="font-bold text-gray-900 mb-1">{b.title}</h3>
-              <p className="text-sm text-gray-500">{b.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <BenefitsGrid />
 
-      {/* Plans */}
-      <div className="max-w-5xl mx-auto px-4 pb-20">
-        <h2 className="text-2xl font-black text-gray-900 text-center mb-3">Choose Your Plan</h2>
-        <p className="text-gray-500 text-center mb-10">
-          One-time payment. No auto-renewal. Cancel anytime.
-        </p>
+      <PlansSection
+        plans={p.plans}
+        isAuthenticated={p.isAuthenticated}
+        isPrime={p.isPrime}
+        purchasing={p.purchasing}
+        onChoose={(plan) => {
+          p.setPaymentMethod("card");
+          p.setSelectedPlan(plan);
+        }}
+      />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {plans.map((plan) => (
-            <div
-              key={plan._id}
-              className={`relative bg-white rounded-2xl p-6 border-2 transition-all ${
-                plan.isPopular
-                  ? "border-amber-400 shadow-xl shadow-amber-500/10 scale-[1.02]"
-                  : "border-gray-100 shadow-sm hover:shadow-md"
-              }`}
-            >
-              {plan.isPopular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
-                  <FaStar size={8} /> Most Popular
-                </div>
-              )}
-
-              <h3 className="text-lg font-bold text-gray-900 mb-1">{plan.name}</h3>
-              <p className="text-xs text-gray-500 mb-4">{plan.durationDays} days</p>
-
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-3xl font-black text-gray-900">{formatINR(plan.price)}</span>
-                {plan.originalPrice > plan.price && (
-                  <span className="text-sm text-muted-light line-through">
-                    {formatINR(plan.originalPrice)}
-                  </span>
-                )}
-              </div>
-
-              <ul className="space-y-2 mb-6">
-                {(plan.features || []).map((f, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                    <FaCheck className="text-green-500 text-xs shrink-0" /> {f}
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                onClick={() => {
-                  if (!isAuthenticated) {
-                    showToast("Please login first", "error");
-                    return;
-                  }
-                  setPaymentMethod("card");
-                  setSelectedPlan(plan);
-                }}
-                disabled={purchasing === plan._id}
-                className={`w-full py-3 rounded-xl font-bold transition-all text-sm ${
-                  plan.isPopular
-                    ? "bg-amber-500 text-white hover:bg-amber-600 shadow-lg shadow-amber-500/20"
-                    : "bg-gray-900 text-white hover:bg-black"
-                }`}
-              >
-                {purchasing === plan._id
-                  ? "Processing..."
-                  : isPrime
-                    ? "Extend Membership"
-                    : "Get Prime"}
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Payment method picker: intentionally lightweight compared to the
-          full checkout form (no address to collect here), but the Razorpay
-          look and available methods match checkout exactly. */}
-      {selectedPlan && (
-        <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
-          onClick={() => !purchasing && setSelectedPlan(null)}
-        >
-          <div
-            className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between mb-1">
-              <h3 className="text-lg font-bold text-gray-900">{selectedPlan.name}</h3>
-              <span className="text-lg font-black text-gray-900">
-                {formatINR(selectedPlan.price)}
-              </span>
-            </div>
-            <p className="text-xs text-gray-500 mb-5">
-              {selectedPlan.durationDays} days of VKart Prime
-            </p>
-
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
-              Pay with
-            </p>
-            <div className="grid grid-cols-3 gap-2 mb-6">
-              {[
-                { id: "card", icon: FaCreditCard, label: "Card" },
-                { id: "netbanking", icon: FaUniversity, label: "Netbanking" },
-                { id: "paylater", icon: FaClock, label: "Pay Later" },
-              ].map(({ id, icon: Icon, label }) => (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setPaymentMethod(id)}
-                  className={`flex flex-col items-center gap-1.5 rounded-xl border p-3 text-center transition-all ${
-                    paymentMethod === id
-                      ? "border-amber-400 bg-amber-50"
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
-                >
-                  <Icon
-                    className={paymentMethod === id ? "text-amber-500" : "text-gray-400"}
-                    size={16}
-                  />
-                  <span className="text-[11px] font-bold text-gray-700">{label}</span>
-                </button>
-              ))}
-            </div>
-
-            <button
-              onClick={() => handlePurchase(selectedPlan._id)}
-              disabled={purchasing === selectedPlan._id}
-              className="w-full py-3 rounded-xl bg-gray-900 text-white font-bold text-sm hover:bg-black transition-colors disabled:opacity-60"
-            >
-              {purchasing === selectedPlan._id
-                ? "Processing..."
-                : `Confirm & Pay ${formatINR(selectedPlan.price)}`}
-            </button>
-          </div>
-        </div>
+      {p.selectedPlan && (
+        <PaymentPicker
+          plan={p.selectedPlan}
+          purchasing={p.purchasing}
+          paymentMethod={p.paymentMethod}
+          setPaymentMethod={p.setPaymentMethod}
+          onClose={() => p.setSelectedPlan(null)}
+          onPay={p.handlePurchase}
+        />
       )}
     </div>
   );
