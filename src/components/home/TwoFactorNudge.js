@@ -14,9 +14,12 @@ export default function TwoFactorNudge() {
   const [hidden, setHidden] = useState(false);
 
   const dismissMutation = useMutation({
-    mutationFn: async () => axios.post("/api/2fa/suppress", {}, { withCredentials: true, __skipAuthRedirect: true }),
+    mutationFn: async () =>
+      axios.post("/api/2fa/suppress", {}, { withCredentials: true, __skipAuthRedirect: true }),
     onSuccess: () => {
-      queryClient.setQueryData(qk.profile.root, (previous) => (previous ? { ...previous, suppress2faPrompt: true } : previous));
+      queryClient.setQueryData(qk.profile.root, (previous) =>
+        previous ? { ...previous, suppress2faPrompt: true } : previous
+      );
     },
   });
 
@@ -24,7 +27,8 @@ export default function TwoFactorNudge() {
 
   const dismiss = async () => {
     setHidden(true);
-    const persist = process.env.NODE_ENV === "production" || process.env.REACT_APP_PERSIST_2FA_NUDGE === "true";
+    const persist =
+      process.env.NODE_ENV === "production" || process.env.REACT_APP_PERSIST_2FA_NUDGE === "true";
     if (!persist || !profile?._id) return;
     try {
       await dismissMutation.mutateAsync();
@@ -47,14 +51,31 @@ export default function TwoFactorNudge() {
           </div>
           <div className="min-w-0 flex-1">
             <h3 className="pr-5 text-sm font-bold leading-5 text-ink">Protect your account</h3>
-            <p className="mt-1 text-xs leading-5 text-[#706c63]">Enable two-factor authentication for a safer account.</p>
+            <p className="mt-1 text-xs leading-5 text-[#706c63]">
+              Enable two-factor authentication for a safer account.
+            </p>
             <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <Link to="/profile" className="text-xs font-bold text-[#925033] underline decoration-[#925033]/30 underline-offset-4">Enable 2FA</Link>
-              <button type="button" onClick={dismiss} className="text-xs font-semibold text-[#858177]">Maybe later</button>
+              <Link
+                to="/profile"
+                className="text-xs font-bold text-[#925033] underline decoration-[#925033]/30 underline-offset-4"
+              >
+                Enable 2FA
+              </Link>
+              <button
+                type="button"
+                onClick={dismiss}
+                className="text-xs font-semibold text-[#858177]"
+              >
+                Maybe later
+              </button>
             </div>
           </div>
-          <button type="button" onClick={dismiss} aria-label="Dismiss security suggestion"
-            className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full text-[#858177] transition-colors hover:bg-black/[0.05] hover:text-black">
+          <button
+            type="button"
+            onClick={dismiss}
+            aria-label="Dismiss security suggestion"
+            className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full text-[#858177] transition-colors hover:bg-black/[0.05] hover:text-black"
+          >
             <X size={17} />
           </button>
         </motion.aside>

@@ -1,9 +1,23 @@
-import { matchCategories, buildItems, categoryHref, saveRecent, readRecent, removeRecent } from "./searchSuggest";
+import {
+  matchCategories,
+  buildItems,
+  categoryHref,
+  saveRecent,
+  readRecent,
+  removeRecent,
+} from "./searchSuggest";
 
 describe("matchCategories", () => {
   test("finds the category and keeps the other words as the search", () => {
-    expect(matchCategories("samsung phone")[0]).toEqual({ key: "mobiles", label: "Mobiles", rest: "samsung" });
-    expect(matchCategories("earbuds under 5000")[0]).toMatchObject({ key: "audio", rest: "under 5000" });
+    expect(matchCategories("samsung phone")[0]).toEqual({
+      key: "mobiles",
+      label: "Mobiles",
+      rest: "samsung",
+    });
+    expect(matchCategories("earbuds under 5000")[0]).toMatchObject({
+      key: "audio",
+      rest: "under 5000",
+    });
     expect(matchCategories("air fryer")[0]).toMatchObject({ key: "kitchen-appliances", rest: "" });
   });
 

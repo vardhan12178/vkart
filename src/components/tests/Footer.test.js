@@ -21,7 +21,10 @@ describe("Footer Component", () => {
 
   test("renders footer navigation links", () => {
     renderFooter();
-    expect(screen.getByRole("link", { name: /all products/i })).toHaveAttribute("href", "/products");
+    expect(screen.getByRole("link", { name: /all products/i })).toHaveAttribute(
+      "href",
+      "/products"
+    );
     expect(screen.getByRole("link", { name: /^privacy$/i })).toHaveAttribute("href", "/privacy");
   });
 
@@ -35,7 +38,9 @@ describe("Footer Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /join the list/i }));
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith("/api/newsletter/subscribe", { email: "reader@example.com" });
+      expect(axios.post).toHaveBeenCalledWith("/api/newsletter/subscribe", {
+        email: "reader@example.com",
+      });
     });
     expect(await screen.findByText(/you.re on the list/i)).toBeInTheDocument();
   });

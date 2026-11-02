@@ -14,9 +14,18 @@ export default function CheckoutPreview() {
       secondaryTo="/cart"
       icon={ShieldCheck}
       benefits={[
-        { title: "Verified totals", description: "Prices, offers, and wallet benefits are checked before payment." },
-        { title: "Secure payment", description: "Protected payment verification from bag to confirmation." },
-        { title: "Order continuity", description: "Receipts and delivery updates stay connected to your account." },
+        {
+          title: "Verified totals",
+          description: "Prices, offers, and wallet benefits are checked before payment.",
+        },
+        {
+          title: "Secure payment",
+          description: "Protected payment verification from bag to confirmation.",
+        },
+        {
+          title: "Order continuity",
+          description: "Receipts and delivery updates stay connected to your account.",
+        },
       ]}
     />
   );

@@ -14,6 +14,9 @@ describe("CartPreview Component", () => {
 
     const signInLink = screen.getByRole("link", { name: /sign in to your bag/i });
     expect(signInLink).toHaveAttribute("href", "/login?redirect=/cart");
-    expect(screen.getByRole("link", { name: /browse the collection/i })).toHaveAttribute("href", "/products");
+    expect(screen.getByRole("link", { name: /browse the collection/i })).toHaveAttribute(
+      "href",
+      "/products"
+    );
   });
 });

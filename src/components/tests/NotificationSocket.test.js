@@ -59,7 +59,9 @@ describe("NotificationSocket Component", () => {
   test("dispatches a notification and shows a toast on user_notification events", () => {
     const { store } = renderSocket({ isAuthenticated: true, user: { _id: "user1" } });
 
-    const notifHandler = mockSocket.on.mock.calls.find(([event]) => event === "user_notification")[1];
+    const notifHandler = mockSocket.on.mock.calls.find(
+      ([event]) => event === "user_notification"
+    )[1];
     notifHandler({ status: "SHIPPED", message: "Your order has shipped", title: "Order Shipped!" });
 
     expect(store.getState().notifications.notifications).toHaveLength(1);
@@ -68,7 +70,9 @@ describe("NotificationSocket Component", () => {
 
   test("falls back to a generic alert label for an unrecognized status", () => {
     renderSocket({ isAuthenticated: true, user: { _id: "user1" } });
-    const notifHandler = mockSocket.on.mock.calls.find(([event]) => event === "user_notification")[1];
+    const notifHandler = mockSocket.on.mock.calls.find(
+      ([event]) => event === "user_notification"
+    )[1];
     notifHandler({ status: "SOME_UNKNOWN_STATUS", message: "Something happened" });
 
     expect(showToast).toHaveBeenCalledWith("[Alert] Something happened", "success");
@@ -95,7 +99,11 @@ describe("NotificationSocket Component", () => {
         notifications: notificationReducer,
       },
       preloadedState: {
-        notifications: { notifications: [{ _id: "n1", title: "x", isRead: false }], unreadCount: 1, isLoading: false },
+        notifications: {
+          notifications: [{ _id: "n1", title: "x", isRead: false }],
+          unreadCount: 1,
+          isLoading: false,
+        },
       },
     });
     rerender(

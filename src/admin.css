@@ -440,8 +440,7 @@
 /* Admin authentication */
 .premium-admin-login {
   font-family: "Manrope", sans-serif;
-  background:
-    radial-gradient(circle at 90% 10%, rgba(181, 106, 63, 0.08), transparent 25rem),
+  background: radial-gradient(circle at 90% 10%, rgba(181, 106, 63, 0.08), transparent 25rem),
     var(--admin-canvas) !important;
 }
 

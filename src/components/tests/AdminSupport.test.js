@@ -44,7 +44,10 @@ describe("AdminSupport Component", () => {
     axios.post.mockReset();
     axios.patch.mockReset();
     queryClient = new QueryClient({
-      defaultOptions: { queries: { retry: false, refetchInterval: false }, mutations: { retry: false } },
+      defaultOptions: {
+        queries: { retry: false, refetchInterval: false },
+        mutations: { retry: false },
+      },
     });
   });
 
@@ -75,7 +78,8 @@ describe("AdminSupport Component", () => {
 
   test("opens a conversation thread and shows its messages", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/admin/support/conversations") return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
+      if (url === "/api/admin/support/conversations")
+        return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
       return Promise.resolve({ data: { conversation: CONVERSATION_DETAIL } });
     });
     renderSupport();
@@ -87,7 +91,8 @@ describe("AdminSupport Component", () => {
 
   test("sends a reply message", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/admin/support/conversations") return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
+      if (url === "/api/admin/support/conversations")
+        return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
       return Promise.resolve({ data: { conversation: CONVERSATION_DETAIL } });
     });
     axios.post.mockResolvedValueOnce({ data: { ok: true } });
@@ -100,16 +105,16 @@ describe("AdminSupport Component", () => {
     fireEvent.click(screen.getByRole("button", { name: "" })); // send button (icon only)
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith(
-        "/api/admin/support/conversations/conv1/messages",
-        { text: "On it, one moment!" }
-      );
+      expect(axios.post).toHaveBeenCalledWith("/api/admin/support/conversations/conv1/messages", {
+        text: "On it, one moment!",
+      });
     });
   });
 
   test("claims an unassigned conversation", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/admin/support/conversations") return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
+      if (url === "/api/admin/support/conversations")
+        return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
       return Promise.resolve({ data: { conversation: CONVERSATION_DETAIL } });
     });
     axios.patch.mockResolvedValueOnce({ data: { ok: true } });
@@ -119,14 +124,25 @@ describe("AdminSupport Component", () => {
     fireEvent.click(await screen.findByRole("button", { name: /claim/i }));
 
     await waitFor(() => {
-      expect(axios.patch).toHaveBeenCalledWith("/api/admin/support/conversations/conv1", { action: "claim" });
+      expect(axios.patch).toHaveBeenCalledWith("/api/admin/support/conversations/conv1", {
+        action: "claim",
+      });
     });
   });
 
   test("resolves an in-progress conversation", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/admin/support/conversations") return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
-      return Promise.resolve({ data: { conversation: { ...CONVERSATION_DETAIL, assignedAgentId: "agent1", status: "IN_PROGRESS" } } });
+      if (url === "/api/admin/support/conversations")
+        return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
+      return Promise.resolve({
+        data: {
+          conversation: {
+            ...CONVERSATION_DETAIL,
+            assignedAgentId: "agent1",
+            status: "IN_PROGRESS",
+          },
+        },
+      });
     });
     axios.patch.mockResolvedValueOnce({ data: { ok: true } });
     renderSupport();
@@ -137,13 +153,16 @@ describe("AdminSupport Component", () => {
     fireEvent.click(await screen.findByRole("button", { name: /^resolve$/i }));
 
     await waitFor(() => {
-      expect(axios.patch).toHaveBeenCalledWith("/api/admin/support/conversations/conv1", { action: "resolve" });
+      expect(axios.patch).toHaveBeenCalledWith("/api/admin/support/conversations/conv1", {
+        action: "resolve",
+      });
     });
   });
 
   test("hides the reply box and action buttons for a viewer without write access", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/admin/support/conversations") return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
+      if (url === "/api/admin/support/conversations")
+        return Promise.resolve({ data: { conversations: [CONVERSATION_SUMMARY] } });
       return Promise.resolve({ data: { conversation: CONVERSATION_DETAIL } });
     });
     renderSupport({ adminRole: "customer_service", permissions: { support: "read" } });

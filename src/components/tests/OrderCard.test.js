@@ -59,7 +59,9 @@ describe("OrderCard Component", () => {
   });
 
   test("shows the cancel button only for cancellable stages", () => {
-    const { rerender } = render(<OrderCard order={{ ...baseOrder, stage: "PLACED" }} defaultOpen />);
+    const { rerender } = render(
+      <OrderCard order={{ ...baseOrder, stage: "PLACED" }} defaultOpen />
+    );
     expect(screen.getByRole("button", { name: /cancel order/i })).toBeInTheDocument();
 
     rerender(<OrderCard order={{ ...baseOrder, stage: "DELIVERED" }} defaultOpen />);
@@ -98,7 +100,9 @@ describe("OrderCard Component", () => {
     const submitBtn = screen.getByRole("button", { name: /submit return/i });
     expect(submitBtn).toBeDisabled();
 
-    fireEvent.change(screen.getByPlaceholderText(/explain the issue/i), { target: { value: "Broken item" } });
+    fireEvent.change(screen.getByPlaceholderText(/explain the issue/i), {
+      target: { value: "Broken item" },
+    });
     expect(submitBtn).not.toBeDisabled();
   });
 
@@ -107,7 +111,9 @@ describe("OrderCard Component", () => {
     render(<OrderCard order={{ ...baseOrder, stage: "DELIVERED" }} defaultOpen />);
     fireEvent.click(screen.getByRole("button", { name: /request return/i }));
 
-    fireEvent.change(screen.getByPlaceholderText(/explain the issue/i), { target: { value: "Item arrived damaged" } });
+    fireEvent.change(screen.getByPlaceholderText(/explain the issue/i), {
+      target: { value: "Item arrived damaged" },
+    });
     fireEvent.click(screen.getByLabelText(/replacement/i));
     fireEvent.click(screen.getByRole("button", { name: /submit return/i }));
 
@@ -125,7 +131,9 @@ describe("OrderCard Component", () => {
     axios.post.mockRejectedValueOnce(new Error("network error"));
     render(<OrderCard order={{ ...baseOrder, stage: "DELIVERED" }} defaultOpen />);
     fireEvent.click(screen.getByRole("button", { name: /request return/i }));
-    fireEvent.change(screen.getByPlaceholderText(/explain the issue/i), { target: { value: "Item is faulty" } });
+    fireEvent.change(screen.getByPlaceholderText(/explain the issue/i), {
+      target: { value: "Item is faulty" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /submit return/i }));
 
     await waitFor(() => {

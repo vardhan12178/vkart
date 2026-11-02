@@ -87,17 +87,24 @@ export default function AdminProfile() {
   return (
     <div className="premium-admin-page min-h-screen bg-transparent p-4 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-3xl mx-auto space-y-6">
-
         <div>
           <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
             My Profile
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Your personal admin account details and access.</p>
+          <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">
+            Your personal admin account details and access.
+          </p>
         </div>
 
         {toast && (
-          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}>
-            {toast.type === "error" ? <XCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
+          <div
+            className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}
+          >
+            {toast.type === "error" ? (
+              <XCircleIcon className="h-5 w-5 text-red-500" />
+            ) : (
+              <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
+            )}
             <span className="font-bold">{toast.message}</span>
           </div>
         )}
@@ -136,7 +143,9 @@ export default function AdminProfile() {
                 />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 truncate">{name || "Unnamed"}</h3>
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 truncate">
+                  {name || "Unnamed"}
+                </h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-medium truncate">{email}</p>
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-700 mt-1">
                   <ShieldCheckIcon className="h-3 w-3" />
@@ -172,7 +181,12 @@ export default function AdminProfile() {
           {identity?.createdAt && (
             <p className="mt-6 flex items-center gap-1.5 text-xs text-slate-400 font-medium">
               <CalendarIcon className="h-3.5 w-3.5" />
-              Admin since {new Date(identity.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
+              Admin since{" "}
+              {new Date(identity.createdAt).toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              })}
             </p>
           )}
 
@@ -182,11 +196,7 @@ export default function AdminProfile() {
               disabled={saving}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-lg shadow-slate-200 active:scale-95 text-sm font-bold disabled:opacity-70"
             >
-              {saving ? (
-                <Dots />
-              ) : (
-                <SaveIcon className="h-4 w-4" />
-              )}
+              {saving ? <Dots /> : <SaveIcon className="h-4 w-4" />}
               {saving ? "Saving..." : "Save Changes"}
             </button>
           </div>
@@ -207,7 +217,10 @@ export default function AdminProfile() {
           {isSuperAdmin ? (
             <div className="flex flex-wrap gap-2">
               {MODULES.map((mod) => (
-                <span key={mod.key} className="text-xs font-semibold bg-slate-900 text-white px-3 py-1.5 rounded-lg">
+                <span
+                  key={mod.key}
+                  className="text-xs font-semibold bg-slate-900 text-white px-3 py-1.5 rounded-lg"
+                >
                   {mod.label} · write
                 </span>
               ))}
@@ -223,8 +236,8 @@ export default function AdminProfile() {
                       level === "write"
                         ? "bg-slate-900 text-white border-slate-900"
                         : level === "read"
-                        ? "bg-slate-100 text-slate-700 border-slate-200"
-                        : "bg-slate-50 text-slate-300 border-slate-100"
+                          ? "bg-slate-100 text-slate-700 border-slate-200"
+                          : "bg-slate-50 text-slate-300 border-slate-100"
                     }`}
                   >
                     <span>{mod.label}</span>

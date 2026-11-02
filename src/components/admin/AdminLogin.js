@@ -112,9 +112,7 @@ export default function AdminLogin({ setIsAdmin }) {
                 navigate("/admin/dashboard");
               }
             } catch (err) {
-              setFormError(
-                err?.response?.data?.message || "Google admin login failed."
-              );
+              setFormError(err?.response?.data?.message || "Google admin login failed.");
             }
           },
         });
@@ -214,7 +212,9 @@ export default function AdminLogin({ setIsAdmin }) {
                 <div className="h-10 w-10 bg-gradient-to-tr from-gray-900 to-gray-700 rounded-xl flex items-center justify-center shadow-lg shadow-gray-500/20 text-white">
                   <ShieldCheckIcon className="h-6 w-6" />
                 </div>
-                <span className="text-2xl font-bold text-gray-900 tracking-tight">VKart Admin.</span>
+                <span className="text-2xl font-bold text-gray-900 tracking-tight">
+                  VKart Admin.
+                </span>
               </div>
 
               <motion.h2
@@ -223,7 +223,9 @@ export default function AdminLogin({ setIsAdmin }) {
                 transition={{ delay: 0.2 }}
                 className="font-editorial text-5xl font-normal text-white leading-[0.95] tracking-[-0.035em]"
               >
-                The considered side<br />of store operations.
+                The considered side
+                <br />
+                of store operations.
               </motion.h2>
             </div>
 
@@ -261,7 +263,9 @@ export default function AdminLogin({ setIsAdmin }) {
               className="w-full max-w-sm mx-auto"
             >
               <motion.div variants={fadeInUp} className="text-center mb-8">
-                <h1 className="font-editorial text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">Operations.</h1>
+                <h1 className="font-editorial text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">
+                  Operations.
+                </h1>
                 <p className="mt-3 text-[#777269]">Secure entry for the VKart team.</p>
               </motion.div>
 
@@ -271,32 +275,46 @@ export default function AdminLogin({ setIsAdmin }) {
               </AnimatePresence>
 
               <motion.div variants={fadeInUp} className="mb-6">
-                <DemoLogin kind="admin" onSignedIn={() => { setIsAdmin?.(true); navigate("/admin/dashboard"); }} />
+                <DemoLogin
+                  kind="admin"
+                  onSignedIn={() => {
+                    setIsAdmin?.(true);
+                    navigate("/admin/dashboard");
+                  }}
+                />
               </motion.div>
 
               {/* Google Button */}
               <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
                 <div className="w-full flex justify-center transform transition-transform hover:scale-[1.01]">
-                  <div
-                    id="adminGoogleBtn"
-                    className="w-full flex justify-center"
-                  />
+                  <div id="adminGoogleBtn" className="w-full flex justify-center" />
                 </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="relative flex items-center gap-4 mb-6">
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">or login with ID</span>
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  or login with ID
+                </span>
                 <div className="h-px bg-gray-200 flex-1" />
               </motion.div>
 
               <form onSubmit={onSubmit} className="space-y-5" noValidate>
                 {/* Admin ID Field */}
                 <motion.div variants={fadeInUp}>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">Admin ID</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">
+                    Admin ID
+                  </label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <UserIcon className={cx("h-5 w-5 transition-colors", errors.adminId ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <UserIcon
+                        className={cx(
+                          "h-5 w-5 transition-colors",
+                          errors.adminId
+                            ? "text-red-400"
+                            : "text-gray-400 group-focus-within:text-orange-500"
+                        )}
+                      />
                     </div>
                     <input
                       id="adminId"
@@ -324,7 +342,14 @@ export default function AdminLogin({ setIsAdmin }) {
                   </div>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <LockClosedIcon className={cx("h-5 w-5 transition-colors", errors.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <LockClosedIcon
+                        className={cx(
+                          "h-5 w-5 transition-colors",
+                          errors.password
+                            ? "text-red-400"
+                            : "text-gray-400 group-focus-within:text-orange-500"
+                        )}
+                      />
                     </div>
                     <input
                       id="password"
@@ -349,12 +374,20 @@ export default function AdminLogin({ setIsAdmin }) {
                       aria-label={showPassword ? "Hide password" : "Show password"}
                       className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
                     >
-                      {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                      {showPassword ? (
+                        <EyeOffIcon className="h-5 w-5" />
+                      ) : (
+                        <EyeIcon className="h-5 w-5" />
+                      )}
                     </button>
                   </div>
 
                   {capsOn && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block"
+                    >
                       ⚠️ Caps Lock is ON
                     </motion.div>
                   )}
@@ -383,7 +416,6 @@ export default function AdminLogin({ setIsAdmin }) {
                   <span>Secure Admin Environment</span>
                 </div>
               </motion.div>
-
             </motion.div>
           </div>
         </motion.div>

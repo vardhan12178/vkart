@@ -61,7 +61,9 @@ describe("AdminSettings Component", () => {
     renderSettings();
     await screen.findByDisplayValue("VKart");
 
-    fireEvent.change(screen.getByPlaceholderText("e.g. VKart"), { target: { value: "VKart Prime" } });
+    fireEvent.change(screen.getByPlaceholderText("e.g. VKart"), {
+      target: { value: "VKart Prime" },
+    });
     fireEvent.click(screen.getAllByRole("button", { name: /save changes/i })[0]);
 
     await waitFor(() => {
@@ -106,7 +108,9 @@ describe("AdminSettings Component", () => {
     renderSettings();
     await screen.findByDisplayValue("VKart");
 
-    fireEvent.change(screen.getByPlaceholderText("e.g. VKart"), { target: { value: "Acme Store" } });
+    fireEvent.change(screen.getByPlaceholderText("e.g. VKart"), {
+      target: { value: "Acme Store" },
+    });
     expect(screen.getByText("Acme Store")).toBeInTheDocument();
   });
 });

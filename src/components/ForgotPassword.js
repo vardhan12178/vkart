@@ -4,7 +4,13 @@ import axios from "./axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import { CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, Mail as MailIcon, ArrowLeft as ArrowLeftIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
+import {
+  CircleAlert as ExclamationCircleIcon,
+  CircleCheck as CheckCircleIcon,
+  Mail as MailIcon,
+  ArrowLeft as ArrowLeftIcon,
+  ShoppingCart as ShoppingCartIcon,
+} from "lucide-react";
 import { Dots } from "./ui/Skeleton";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -82,7 +88,7 @@ export default function ForgotPassword() {
       </Helmet>
 
       {/* BACKGROUND */}
-    <div className="premium-page premium-auth premium-auth-compact min-h-screen w-full flex items-center justify-center p-4 bg-[#f6f3ed] relative overflow-hidden">
+      <div className="premium-page premium-auth premium-auth-compact min-h-screen w-full flex items-center justify-center p-4 bg-[#f6f3ed] relative overflow-hidden">
         {/* Abstract Orbs */}
         <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-orange-200/40 rounded-full blur-3xl" />
         <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
@@ -94,7 +100,6 @@ export default function ForgotPassword() {
           className="relative w-full max-w-[480px] bg-white rounded-[32px] shadow-2xl border border-white/50 overflow-hidden"
         >
           <div className="px-8 py-12 sm:px-10">
-
             {/* Header with Logo */}
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
@@ -134,7 +139,10 @@ export default function ForgotPassword() {
               noValidate
             >
               <motion.div variants={fadeInUp}>
-                <label htmlFor="emailOrUsername" className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">
+                <label
+                  htmlFor="emailOrUsername"
+                  className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1"
+                >
                   Email or Username
                 </label>
                 <div className="relative group">
@@ -170,7 +178,10 @@ export default function ForgotPassword() {
             </motion.form>
 
             {/* Footer Actions */}
-            <motion.div variants={fadeInUp} className="mt-8 flex flex-col items-center gap-4 text-sm">
+            <motion.div
+              variants={fadeInUp}
+              className="mt-8 flex flex-col items-center gap-4 text-sm"
+            >
               <button
                 onClick={() => navigate("/login")}
                 className="inline-flex items-center gap-2 font-bold text-gray-500 hover:text-gray-900 transition-colors"
@@ -193,9 +204,7 @@ export default function ForgotPassword() {
             </motion.div>
 
             <div className="mt-8 text-center">
-              <p className="text-[10px] text-gray-400">
-                © {currentYear} VKart Inc.
-              </p>
+              <p className="text-[10px] text-gray-400">© {currentYear} VKart Inc.</p>
             </div>
           </div>
         </motion.div>

@@ -1,5 +1,15 @@
 import React, { useMemo } from "react";
-import { CheckIcon, CircleCheckIcon, CircleXIcon, ClipboardListIcon, HouseIcon, PackageIcon, PlaneIcon, SettingsIcon, TruckIcon } from "./ui/icons";
+import {
+  CheckIcon,
+  CircleCheckIcon,
+  CircleXIcon,
+  ClipboardListIcon,
+  HouseIcon,
+  PackageIcon,
+  PlaneIcon,
+  SettingsIcon,
+  TruckIcon,
+} from "./ui/icons";
 
 // Fixed per-step column width (px) for the horizontal timeline. Kept as a
 // single constant since the connector-line math below has to match it
@@ -46,9 +56,9 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
     { key: "SHIPPED", label: "Shipped", icon: PlaneIcon },
     { key: "OUT_FOR_DELIVERY", label: "Out for Delivery", icon: TruckIcon },
     { key: "DELIVERED", label: "Delivered", icon: HouseIcon },
-  ].map(stage => ({
+  ].map((stage) => ({
     ...stage,
-    date: formatStageDate(stageTimestampMap[stage.key])
+    date: formatStageDate(stageTimestampMap[stage.key]),
   }));
 
   const isCancelled = currentStage === "CANCELLED";
@@ -110,20 +120,26 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
               >
                 {/* Icon Node */}
                 <div
-                  className={`w-9 h-9 rounded-full flex items-center justify-center z-10 transition-all duration-500 ${isCompleted
-                    ? "bg-ok text-white shadow-md shadow-ok/30"
-                    : isCurrent
-                      ? "bg-accent text-white shadow-lg shadow-accent/40 scale-110 ring-4 ring-accent/30"
-                      : "bg-white border-2 border-line text-muted-faint"
-                    }`}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center z-10 transition-all duration-500 ${
+                    isCompleted
+                      ? "bg-ok text-white shadow-md shadow-ok/30"
+                      : isCurrent
+                        ? "bg-accent text-white shadow-lg shadow-accent/40 scale-110 ring-4 ring-accent/30"
+                        : "bg-white border-2 border-line text-muted-faint"
+                  }`}
                 >
                   {isCompleted ? <CircleCheckIcon size={14} /> : <step.icon size={13} />}
                 </div>
 
                 {/* Label & Date */}
-                <div className={`mt-2 flex flex-col items-center text-center px-1 transition-all duration-500 ${isPending ? "opacity-40" : "opacity-100"
-                  }`}>
-                  <span className={`text-[11px] font-bold leading-tight ${isCurrent ? "text-accent" : "text-ink-soft"}`}>
+                <div
+                  className={`mt-2 flex flex-col items-center text-center px-1 transition-all duration-500 ${
+                    isPending ? "opacity-40" : "opacity-100"
+                  }`}
+                >
+                  <span
+                    className={`text-[11px] font-bold leading-tight ${isCurrent ? "text-accent" : "text-ink-soft"}`}
+                  >
                     {step.label}
                   </span>
                   {!isPending && (

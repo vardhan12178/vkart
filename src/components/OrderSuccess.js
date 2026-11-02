@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowRightIcon, ChevronRightIcon, CircleCheckIcon, HeadsetIcon, MapPinIcon, PackageIcon, ReceiptIcon, ShieldCheckIcon, ShoppingBagIcon } from "./ui/icons";
+import {
+  ArrowRightIcon,
+  ChevronRightIcon,
+  CircleCheckIcon,
+  HeadsetIcon,
+  MapPinIcon,
+  PackageIcon,
+  ReceiptIcon,
+  ShieldCheckIcon,
+  ShoppingBagIcon,
+} from "./ui/icons";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import axios from "./axiosInstance";
@@ -79,8 +89,13 @@ export default function OrderSuccess() {
           <PackageIcon size={22} />
         </div>
         <h2 className="text-lg font-bold text-ink mb-1">Order Details Unavailable</h2>
-        <p className="text-muted text-xs sm:text-sm mb-4">We couldn't locate this order in your account.</p>
-        <Link to="/" className="px-5 py-2.5 bg-ink text-white rounded-xl font-bold text-xs shadow-xs">
+        <p className="text-muted text-xs sm:text-sm mb-4">
+          We couldn't locate this order in your account.
+        </p>
+        <Link
+          to="/"
+          className="px-5 py-2.5 bg-ink text-white rounded-xl font-bold text-xs shadow-xs"
+        >
           Back to Home
         </Link>
       </div>
@@ -88,7 +103,8 @@ export default function OrderSuccess() {
   }
 
   const products = order.products || [];
-  const orderDisplayId = order.orderId || (order._id ? `#${order._id.slice(-8).toUpperCase()}` : "VKART-ORDER");
+  const orderDisplayId =
+    order.orderId || (order._id ? `#${order._id.slice(-8).toUpperCase()}` : "VKART-ORDER");
 
   return (
     <div className="premium-page premium-success min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] py-6 sm:py-10 px-3.5 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -106,7 +122,6 @@ export default function OrderSuccess() {
       <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-tint/60 via-sand to-white opacity-80" />
 
       <div className="max-w-xl mx-auto space-y-4 relative z-10">
-
         {/* Top Header Notification */}
         <div className="text-center space-y-1.5 pt-2">
           <div className="w-12 h-12 bg-ok text-white rounded-full flex items-center justify-center mx-auto shadow-sm shadow-ok/20">
@@ -116,13 +131,13 @@ export default function OrderSuccess() {
             Thank you for your order!
           </h1>
           <p className="text-xs sm:text-sm text-muted font-medium">
-            Order <span className="font-mono font-bold text-ink-soft">{orderDisplayId}</span> is confirmed and being prepared.
+            Order <span className="font-mono font-bold text-ink-soft">{orderDisplayId}</span> is
+            confirmed and being prepared.
           </p>
         </div>
 
         {/* Unified Receipt Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-line-strong/80 shadow-xs overflow-hidden">
-
           {/* Card Header Bar */}
           <div className="px-4 sm:px-6 py-3.5 bg-sand/80 border-b border-line flex items-center justify-between gap-2 flex-wrap">
             <div className="flex items-center gap-2">
@@ -135,7 +150,7 @@ export default function OrderSuccess() {
                 day: "numeric",
                 year: "numeric",
                 hour: "numeric",
-                minute: "2-digit"
+                minute: "2-digit",
               })}
             </span>
           </div>
@@ -231,7 +246,6 @@ export default function OrderSuccess() {
             <span>Have a question about your order? Chat with Support</span>
           </button>
         </div>
-
       </div>
 
       <SupportChatWidget open={showSupport} onClose={() => setShowSupport(false)} />

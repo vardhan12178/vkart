@@ -14,9 +14,15 @@ export default function ProfilePreview() {
       secondaryTo="/register"
       icon={UserRound}
       benefits={[
-        { title: "Orders at a glance", description: "Track delivery progress and review every purchase." },
+        {
+          title: "Orders at a glance",
+          description: "Track delivery progress and review every purchase.",
+        },
         { title: "Your saved edit", description: "Keep a considered shortlist ready for later." },
-        { title: "Account protection", description: "Manage passwords and two-factor authentication." },
+        {
+          title: "Account protection",
+          description: "Manage passwords and two-factor authentication.",
+        },
       ]}
     />
   );

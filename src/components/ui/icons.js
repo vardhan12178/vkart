@@ -1,18 +1,62 @@
 import React, { forwardRef } from "react";
 import {
-  ArrowLeft, ArrowRight, Building2, Camera, Check, ChevronDown, ChevronRight, CircleCheck,
-  CircleX, ClipboardList, Clock, CreditCard, Crown, FileDown, Globe, Headset,
-  Heart, House, Info, Landmark, Lock, LogOut, Mail, Mailbox,
-  MapPin, Minus, Package, PackageOpen, Pencil, Phone, Plane, Plus,
-  QrCode, Receipt, Settings, ShieldCheck, ShoppingBag, ShoppingCart, Tag, Trash2,
-  Truck, Undo2, User, X,
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  Camera,
+  Check,
+  ChevronDown,
+  ChevronRight,
+  CircleCheck,
+  CircleX,
+  ClipboardList,
+  Clock,
+  CreditCard,
+  Crown,
+  FileDown,
+  Globe,
+  Headset,
+  Heart,
+  House,
+  Info,
+  Landmark,
+  Lock,
+  LogOut,
+  Mail,
+  Mailbox,
+  MapPin,
+  Minus,
+  Package,
+  PackageOpen,
+  Pencil,
+  Phone,
+  Plane,
+  Plus,
+  QrCode,
+  Receipt,
+  Settings,
+  ShieldCheck,
+  ShoppingBag,
+  ShoppingCart,
+  Tag,
+  Trash2,
+  Truck,
+  Undo2,
+  User,
+  X,
 } from "lucide-react";
 
 // Lucide icons for the account pages, sized like text (1em) so they line up with the
 // font-size classes those pages already use. Pass size to override.
 const em = (Icon, name) => {
   const Sized = forwardRef(({ size = "1em", strokeWidth = 2, ...props }, ref) => (
-    <Icon ref={ref} size={size} strokeWidth={strokeWidth} aria-hidden={props["aria-label"] ? undefined : true} {...props} />
+    <Icon
+      ref={ref}
+      size={size}
+      strokeWidth={strokeWidth}
+      aria-hidden={props["aria-label"] ? undefined : true}
+      {...props}
+    />
   ));
   Sized.displayName = name;
   return Sized;

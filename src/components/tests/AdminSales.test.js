@@ -32,7 +32,12 @@ describe("AdminSales Component", () => {
     axios.get.mockImplementation((url) => {
       if (url === "/api/sales") return Promise.resolve({ data: sales });
       if (url === "/api/v2/categories") {
-        return Promise.resolve({ data: [{ slug: "mobiles", name: "Mobiles", count: 48 }, { slug: "electronics", name: "Electronics", count: 1 }] });
+        return Promise.resolve({
+          data: [
+            { slug: "mobiles", name: "Mobiles", count: 48 },
+            { slug: "electronics", name: "Electronics", count: 1 },
+          ],
+        });
       }
       return Promise.resolve({ data: {} });
     });
@@ -94,10 +99,18 @@ describe("AdminSales Component", () => {
     await screen.findByText(/no sales created yet/i);
 
     fireEvent.click(screen.getByRole("button", { name: /new sale/i }));
-    fireEvent.change(screen.getByText("Name *").nextElementSibling, { target: { value: "Diwali Sale" } });
-    fireEvent.change(screen.getByPlaceholderText("republic-day-sale"), { target: { value: "diwali-sale" } });
-    fireEvent.change(screen.getByText("Start Date *").nextElementSibling, { target: { value: "2025-01-01T00:00" } });
-    fireEvent.change(screen.getByText("End Date *").nextElementSibling, { target: { value: "2025-01-15T00:00" } });
+    fireEvent.change(screen.getByText("Name *").nextElementSibling, {
+      target: { value: "Diwali Sale" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("republic-day-sale"), {
+      target: { value: "diwali-sale" },
+    });
+    fireEvent.change(screen.getByText("Start Date *").nextElementSibling, {
+      target: { value: "2025-01-01T00:00" },
+    });
+    fireEvent.change(screen.getByText("End Date *").nextElementSibling, {
+      target: { value: "2025-01-15T00:00" },
+    });
 
     fireEvent.change(screen.getByRole("combobox"), { target: { value: "electronics" } });
     fireEvent.change(screen.getByPlaceholderText("Disc %"), { target: { value: "25" } });

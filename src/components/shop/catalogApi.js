@@ -14,7 +14,10 @@ async function bundle() {
 let apiDown = false;
 const listeners = new Set();
 export const getSource = () => (apiDown ? "bundled" : "api");
-export function onSourceChange(fn) { listeners.add(fn); return () => listeners.delete(fn); }
+export function onSourceChange(fn) {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
 
 async function viaApi(path, params, local) {
   if (!apiDown) {
@@ -36,11 +39,20 @@ async function viaApi(path, params, local) {
 
 export const fetchCategories = () => viaApi("/categories", undefined, (b) => b.categories());
 export const fetchProducts = (params) => viaApi("/products", params, (b) => b.listProducts(params));
-export const fetchProduct = (slug) => viaApi(`/products/${encodeURIComponent(slug)}`, undefined, (b) => b.getProduct(slug));
+export const fetchProduct = (slug) =>
+  viaApi(`/products/${encodeURIComponent(slug)}`, undefined, (b) => b.getProduct(slug));
 // Delivery estimate for a PIN code; there is no bundled fallback, so this needs the API
 export const fetchDelivery = (pincode, category) =>
-  axios.get(`/api/v2/delivery/${encodeURIComponent(pincode)}`, { params: category ? { category } : undefined, timeout: 10000 }).then((r) => r.data);
-export const fetchSimilar = (slug, limit = 12) => viaApi(`/products/${encodeURIComponent(slug)}/similar`, { limit }, (b) => b.getSimilar(slug, limit));
+  axios
+    .get(`/api/v2/delivery/${encodeURIComponent(pincode)}`, {
+      params: category ? { category } : undefined,
+      timeout: 10000,
+    })
+    .then((r) => r.data);
+export const fetchSimilar = (slug, limit = 12) =>
+  viaApi(`/products/${encodeURIComponent(slug)}/similar`, { limit }, (b) =>
+    b.getSimilar(slug, limit)
+  );
 
 /* ------------ Helpers for API-shaped data ------------ */
 export const categoryName = (slug) => CATEGORIES[slug] || slug;
@@ -59,15 +71,29 @@ export function toCardFromDetail(p) {
   const v = defaultVariant(p);
   const prices = p.variants.map((x) => x.price);
   return {
-    slug: p.slug, title: p.title, brand: p.brand, category: p.category,
+    slug: p.slug,
+    title: p.title,
+    brand: p.brand,
+    category: p.category,
     image: imagesFor(p, v.options?.[p.media?.groupBy])[0] || null,
-    price: v.price, mrp: v.mrp, discountPercent: v.discountPercent ?? 0,
+    price: v.price,
+    mrp: v.mrp,
+    discountPercent: v.discountPercent ?? 0,
     priceRange: p.priceRange || { min: Math.min(...prices), max: Math.max(...prices) },
-    colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({ value: c.value, hex: c.hex })),
-    variantCount: p.variants.length, inStock: p.inStock, launchDate: p.launchDate,
+    colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({
+      value: c.value,
+      hex: c.hex,
+    })),
+    variantCount: p.variants.length,
+    inStock: p.inStock,
+    launchDate: p.launchDate,
     rating: p.rating || null,
   };
 }
 
 export const formatPrice = (n) =>
-  new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(n);

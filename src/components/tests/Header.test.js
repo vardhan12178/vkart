@@ -24,13 +24,19 @@ jest.mock("react-router-dom", () => ({
 jest.mock("framer-motion", () => {
   const mockReact = require("react");
   const strip = (props) => {
-    const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...rest } = props;
+    const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...rest } =
+      props;
     return rest;
   };
   return {
     motion: new Proxy(
       {},
-      { get: (_t, tag) => ({ children, ...props }) => mockReact.createElement(tag, strip(props), children) }
+      {
+        get:
+          (_t, tag) =>
+          ({ children, ...props }) =>
+            mockReact.createElement(tag, strip(props), children),
+      }
     ),
     AnimatePresence: ({ children }) => <>{children}</>,
   };
@@ -45,7 +51,8 @@ describe("Header Component", () => {
     mockNavigate.mockClear();
     axios.get.mockImplementation((url) => {
       if (url === "/api/sales/active") return Promise.resolve({ data: { sale: null } });
-      if (url === "/api/user/notifications") return Promise.resolve({ data: { success: true, notifications: [], unreadCount: 0 } });
+      if (url === "/api/user/notifications")
+        return Promise.resolve({ data: { success: true, notifications: [], unreadCount: 0 } });
       return Promise.resolve({ data: {} });
     });
     queryClient = new QueryClient({
@@ -53,7 +60,12 @@ describe("Header Component", () => {
     });
   });
 
-  const renderHeader = ({ isAuthenticated = false, cart = [], wishlist = [], initialPath = "/" } = {}) => {
+  const renderHeader = ({
+    isAuthenticated = false,
+    cart = [],
+    wishlist = [],
+    initialPath = "/",
+  } = {}) => {
     const store = configureStore({
       reducer: {
         auth: authReducer,
@@ -129,17 +141,28 @@ describe("Header Component", () => {
 
   test("shows the Sale nav link only when there is an active sale", async () => {
     axios.get.mockImplementation((url) => {
-      if (url === "/api/sales/active") return Promise.resolve({ data: { sale: { name: "Big Sale" } } });
+      if (url === "/api/sales/active")
+        return Promise.resolve({ data: { sale: { name: "Big Sale" } } });
       return Promise.resolve({ data: {} });
     });
     renderHeader();
     const desktopNav = await screen.findByRole("navigation", { name: /main navigation/i });
-    expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute("href", "/products?sort=discount");
+    expect(within(desktopNav).getByRole("link", { name: /sale/i })).toHaveAttribute(
+      "href",
+      "/products?sort=discount"
+    );
   });
 
   test("submits a search and navigates using the AI-parsed category and price", async () => {
     axios.post.mockResolvedValueOnce({
-      data: { q: "", category: "mobiles", minPrice: null, maxPrice: 30000, minRating: null, sort: null },
+      data: {
+        q: "",
+        category: "mobiles",
+        minPrice: null,
+        maxPrice: 30000,
+        minRating: null,
+        sort: null,
+      },
     });
     renderHeader();
 
@@ -149,18 +172,26 @@ describe("Header Component", () => {
     fireEvent.keyDown(searchInput, { key: "Enter" });
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", { query: "phones under 30000" });
+      expect(axios.post).toHaveBeenCalledWith("/api/ai/parse-search", {
+        query: "phones under 30000",
+      });
     });
-    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/products?cat=mobiles&max=30000"));
+    await waitFor(() =>
+      expect(mockNavigate).toHaveBeenCalledWith("/products?cat=mobiles&max=30000")
+    );
   });
 
   test("keeps keywords when the parser finds no category", async () => {
-    axios.post.mockResolvedValueOnce({ data: { q: "sony", category: null, minPrice: null, maxPrice: null, sort: "price_asc" } });
+    axios.post.mockResolvedValueOnce({
+      data: { q: "sony", category: null, minPrice: null, maxPrice: null, sort: "price_asc" },
+    });
     renderHeader();
     const searchInput = screen.getAllByPlaceholderText(/search, or ask/i)[0];
     fireEvent.change(searchInput, { target: { value: "sony cheapest first" } });
     fireEvent.keyDown(searchInput, { key: "Enter" });
-    await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith("/products?q=sony&sort=price-asc"));
+    await waitFor(() =>
+      expect(mockNavigate).toHaveBeenCalledWith("/products?q=sony&sort=price-asc")
+    );
   });
 
   test("opens the Categories menu with links into the listing", async () => {
@@ -171,22 +202,38 @@ describe("Header Component", () => {
 
     fireEvent.click(button);
     expect(button).toHaveAttribute("aria-expanded", "true");
-    expect(within(desktopNav).getByRole("link", { name: /mobiles/i })).toHaveAttribute("href", "/products?cat=mobiles");
-    expect(within(desktopNav).getByRole("link", { name: /women's fashion/i })).toHaveAttribute("href", "/products?cat=fashion-women");
-    expect(within(desktopNav).getByRole("link", { name: /browse all products/i })).toHaveAttribute("href", "/products");
+    expect(within(desktopNav).getByRole("link", { name: /mobiles/i })).toHaveAttribute(
+      "href",
+      "/products?cat=mobiles"
+    );
+    expect(within(desktopNav).getByRole("link", { name: /women's fashion/i })).toHaveAttribute(
+      "href",
+      "/products?cat=fashion-women"
+    );
+    expect(within(desktopNav).getByRole("link", { name: /browse all products/i })).toHaveAttribute(
+      "href",
+      "/products"
+    );
 
     fireEvent.keyDown(document, { key: "Escape" });
     expect(button).toHaveAttribute("aria-expanded", "false");
   });
 
   describe("search suggestions", () => {
-    const product = { slug: "samsung-galaxy-s26", title: "Samsung Galaxy S26", brand: "Samsung", price: 79999, image: null };
+    const product = {
+      slug: "samsung-galaxy-s26",
+      title: "Samsung Galaxy S26",
+      brand: "Samsung",
+      price: 79999,
+      image: null,
+    };
 
     beforeEach(() => {
       localStorage.clear();
       jest.useFakeTimers();
       axios.get.mockImplementation((url) => {
-        if (url === "/api/v2/products") return Promise.resolve({ data: { products: [product], total: 1 } });
+        if (url === "/api/v2/products")
+          return Promise.resolve({ data: { products: [product], total: 1 } });
         if (url === "/api/sales/active") return Promise.resolve({ data: { sale: null } });
         return Promise.resolve({ data: {} });
       });
@@ -196,7 +243,12 @@ describe("Header Component", () => {
     const type = async (input, value) => {
       fireEvent.change(input, { target: { value } });
       jest.advanceTimersByTime(300);
-      await waitFor(() => expect(axios.get).toHaveBeenCalledWith("/api/v2/products", expect.objectContaining({ params: { q: value, limit: 5 } })));
+      await waitFor(() =>
+        expect(axios.get).toHaveBeenCalledWith(
+          "/api/v2/products",
+          expect.objectContaining({ params: { q: value, limit: 5 } })
+        )
+      );
     };
 
     test("offers the matching category, products and an Ask VKart hand-off", async () => {
@@ -207,9 +259,15 @@ describe("Header Component", () => {
       const list = await screen.findByRole("listbox", { name: /search suggestions/i });
       const options = within(list).getAllByRole("option");
       expect(options[0]).toHaveTextContent(/samsung in mobiles/i);
-      await waitFor(() => expect(within(list).getByRole("option", { name: /samsung galaxy s26/i })).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          within(list).getByRole("option", { name: /samsung galaxy s26/i })
+        ).toBeInTheDocument()
+      );
 
-      fireEvent.click(within(list).getByRole("option", { name: /ask vkart about "samsung phone"/i }));
+      fireEvent.click(
+        within(list).getByRole("option", { name: /ask vkart about "samsung phone"/i })
+      );
       expect(store.getState().ui.isChatOpen).toBe(true);
       expect(store.getState().ui.chatPrompt.text).toBe("samsung phone");
     });
@@ -238,7 +296,9 @@ describe("Header Component", () => {
       expect(within(list).getByRole("option", { name: /^audio$/i })).toBeInTheDocument();
 
       fireEvent.click(screen.getByRole("button", { name: /remove "earbuds under 5000"/i }));
-      expect(within(list).queryByRole("option", { name: /earbuds under 5000/i })).not.toBeInTheDocument();
+      expect(
+        within(list).queryByRole("option", { name: /earbuds under 5000/i })
+      ).not.toBeInTheDocument();
       expect(localStorage.getItem("vkart:recent-searches")).toBe("[]");
     });
   });
@@ -249,6 +309,10 @@ describe("Header Component", () => {
     fireEvent.click(toggle);
     expect(screen.getByLabelText(/close menu/i)).toBeInTheDocument();
     // The drawer lists every category
-    expect(screen.getAllByRole("link", { name: /kitchen/i }).some((a) => a.getAttribute("href") === "/products?cat=kitchen-appliances")).toBe(true);
+    expect(
+      screen
+        .getAllByRole("link", { name: /kitchen/i })
+        .some((a) => a.getAttribute("href") === "/products?cat=kitchen-appliances")
+    ).toBe(true);
   });
 });

@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const CART_KEY = "vkart_cart";
 
 // Only catalog lines are kept; items saved before the old catalog was retired are dropped
-const catalogOnly = (items) => (Array.isArray(items) ? items.filter((it) => it?.catalog === "v2") : []);
+const catalogOnly = (items) =>
+  Array.isArray(items) ? items.filter((it) => it?.catalog === "v2") : [];
 
 const loadCart = () => {
   try {
@@ -83,9 +84,17 @@ const cartSlice = createSlice({
     refreshCartLines: (state, action) => {
       const fresh = Array.isArray(action.payload) ? action.payload : [];
       for (const line of fresh) {
-        const it = state.find((s) => s.catalog === "v2" && String(s.productId) === String(line.productId) && s.sku === line.sku);
+        const it = state.find(
+          (s) =>
+            s.catalog === "v2" &&
+            String(s.productId) === String(line.productId) &&
+            s.sku === line.sku
+        );
         if (!it) continue;
-        if (line.available === false && line.price == null) { it.unavailable = true; continue; }
+        if (line.available === false && line.price == null) {
+          it.unavailable = true;
+          continue;
+        }
         Object.assign(it, {
           title: line.title ?? it.title,
           price: line.price ?? it.price,

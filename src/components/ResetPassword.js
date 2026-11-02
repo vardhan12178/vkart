@@ -4,7 +4,15 @@ import axios from "./axiosInstance";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
-import { CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, Lock as LockClosedIcon, Eye as EyeIcon, EyeOff as EyeOffIcon, ShoppingCart as ShoppingCartIcon, ArrowLeft as ArrowLeftIcon } from "lucide-react";
+import {
+  CircleAlert as ExclamationCircleIcon,
+  CircleCheck as CheckCircleIcon,
+  Lock as LockClosedIcon,
+  Eye as EyeIcon,
+  EyeOff as EyeOffIcon,
+  ShoppingCart as ShoppingCartIcon,
+  ArrowLeft as ArrowLeftIcon,
+} from "lucide-react";
 import { Dots } from "./ui/Skeleton";
 
 const cx = (...c) => c.filter(Boolean).join(" ");
@@ -74,7 +82,11 @@ const PasswordStrengthIndicator = ({ password }) => {
     passed === 5 ? "bg-emerald-500" : passed >= 3 ? "bg-amber-500" : "bg-red-500";
 
   return (
-    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-3 space-y-2">
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      className="mt-3 space-y-2"
+    >
       <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
         <div
           className={`h-full transition-all duration-500 ${strengthColor}`}
@@ -160,7 +172,7 @@ export default function ResetPassword() {
       </Helmet>
 
       {/* BACKGROUND */}
-    <div className="premium-page premium-auth premium-auth-compact min-h-screen w-full flex items-center justify-center p-4 bg-[#f6f3ed] relative overflow-hidden">
+      <div className="premium-page premium-auth premium-auth-compact min-h-screen w-full flex items-center justify-center p-4 bg-[#f6f3ed] relative overflow-hidden">
         <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-orange-200/40 rounded-full blur-3xl" />
         <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-amber-100/40 rounded-full blur-3xl" />
 
@@ -184,10 +196,7 @@ export default function ResetPassword() {
               >
                 Reset Password
               </motion.h1>
-              <motion.p
-                variants={fadeInUp}
-                className="mt-2 text-sm text-gray-500"
-              >
+              <motion.p variants={fadeInUp} className="mt-2 text-sm text-gray-500">
                 Enter your new password below.
               </motion.p>
             </div>
@@ -268,7 +277,11 @@ export default function ResetPassword() {
                     onClick={() => setShowConfirm(!showConfirm)}
                     className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
                   >
-                    {showConfirm ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                    {showConfirm ? (
+                      <EyeOffIcon className="h-5 w-5" />
+                    ) : (
+                      <EyeIcon className="h-5 w-5" />
+                    )}
                   </button>
                 </div>
                 <FieldError id="confirm-error" message={errors.confirm} />

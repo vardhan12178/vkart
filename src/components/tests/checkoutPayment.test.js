@@ -9,9 +9,9 @@ describe("checkoutPayment utils", () => {
   });
 
   test("extractVerificationToken throws for invalid response", () => {
-    expect(() =>
-      extractVerificationToken({ data: { success: true } })
-    ).toThrow(/payment verification failed/i);
+    expect(() => extractVerificationToken({ data: { success: true } })).toThrow(
+      /payment verification failed/i
+    );
   });
 
   test("extractVerificationToken throws when success is false even if a token is present", () => {

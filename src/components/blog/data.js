@@ -1,5 +1,5 @@
 const POSTS = [
-   {
+  {
     id: "1",
     title: "Top 10 Smart Desk Upgrades for 2025",
     summary:
@@ -21,10 +21,10 @@ const POSTS = [
       "Multi-port GaN chargers are replacing large power bricks on many desks. They offer fast charging for laptops, phones, tablets, and headphones — all from a compact, efficient block.",
       "If you take a lot of video calls, a good-quality webcam and a tabletop microphone can improve your presence dramatically. These tools help you appear clear, confident, and professional.",
       "Wrist rests and extended mousepads add comfort while offering space for smoother mouse tracking and keyboard stability. They also help define your workspace visually.",
-      "Ultimately, the best desk upgrades are the ones that match your daily routine. Start small, focus on utility, and build your setup piece by piece. A smart desk is one that stays comfortable, clutter-free, and ready to support your best work every day."
+      "Ultimately, the best desk upgrades are the ones that match your daily routine. Start small, focus on utility, and build your setup piece by piece. A smart desk is one that stays comfortable, clutter-free, and ready to support your best work every day.",
     ],
   },
-    {
+  {
     id: "2",
     title: "Minimal Workspace Guide: Build a Clean, Calm Desk Setup",
     summary:
@@ -45,7 +45,7 @@ const POSTS = [
       "Add one or two decor elements — not more. A small plant, a minimal clock, or a clean framed quote adds personality without clutter.",
       "Lighting matters too. Warm LEDs make your space feel calm and inviting, while adjustable lamps help you switch between focus and relaxation modes easily.",
       "Finally, practice daily reset habits. Spend two minutes at the end of each day putting things back in place. Minimalism only works long-term when your system is easy to maintain.",
-      "A minimal workspace isn’t about owning fewer things — it’s about choosing better things that support clear thinking and effortless productivity."
+      "A minimal workspace isn’t about owning fewer things — it’s about choosing better things that support clear thinking and effortless productivity.",
     ],
   },
 
@@ -69,11 +69,11 @@ const POSTS = [
       "Portable laptop stands fold flat and weigh almost nothing. They improve posture instantly and help keep your device cool during long work sessions.",
       "Organizers like cable pouches or slim tech kits help you avoid tangled wires and misplaced adapters. These small accessories keep your bag neat and make it easier to find what you need quickly.",
       "Noise-free EDC also includes lightweight earphones for calls and media. True wireless earbuds with ENC (Environmental Noise Cancellation) are a great balance of sound and practicality.",
-      "Your EDC should be built around your lifestyle — whether you're a student, developer, traveler, or creator. Start with the basics, then refine your kit over time until it feels effortless."
+      "Your EDC should be built around your lifestyle — whether you're a student, developer, traveler, or creator. Start with the basics, then refine your kit over time until it feels effortless.",
     ],
   },
 
-    {
+  {
     id: "4",
     title: "Choosing the Best Bluetooth Speakers Under ₹2,000",
     summary:
@@ -93,7 +93,7 @@ const POSTS = [
       "Waterproof ratings like IPX5 or IPX7 are extremely useful, especially if you plan to use your speaker in the bathroom, near pools, or during travel.",
       "Bluetooth 5.0 or newer ensures stable connection and lower lag. Older versions may drop connection more frequently or show delay during videos.",
       "Finally, check the build quality. Rubberized exteriors provide better grip and shock resistance. A speaker should feel solid in hand, not hollow or flimsy.",
-      "Budget speakers are no longer just backup devices — they’re everyday essentials. With the right pick, you can enjoy great sound without stretching your budget."
+      "Budget speakers are no longer just backup devices — they’re everyday essentials. With the right pick, you can enjoy great sound without stretching your budget.",
     ],
   },
 
@@ -117,7 +117,7 @@ const POSTS = [
       "A built-in noise-canceling microphone is a huge advantage. Even if you don't use dedicated audio gear, a decent mic helps your voice stand out during calls.",
       "Webcams with flexible mounts or tripod threads offer better positioning options, especially if your laptop screen sits too low.",
       "Before buying, check compatibility with your work apps. Most modern webcams work flawlessly with Zoom, Meet, Teams, and Slack.",
-      "A good budget webcam enhances confidence and professionalism — and it’s one of the simplest upgrades for any remote setup."
+      "A good budget webcam enhances confidence and professionalism — and it’s one of the simplest upgrades for any remote setup.",
     ],
   },
 
@@ -141,7 +141,7 @@ const POSTS = [
       "Always look at wattage output. Phones charge well at 20–30W, tablets at 30–45W, and laptops typically require 60–100W depending on the model.",
       "Not all cables are equal. USB-C to USB-C cables support higher wattage and faster data transfer, while USB-A options are more limited.",
       "E-Marked cables are recommended for high-wattage charging, ensuring safe power delivery for laptops and large devices.",
-      "A good charger setup is an investment. It protects your device battery, improves speed, and reduces clutter by replacing multiple adapters with one powerful block."
+      "A good charger setup is an investment. It protects your device battery, improves speed, and reduces clutter by replacing multiple adapters with one powerful block.",
     ],
   },
 
@@ -163,7 +163,7 @@ const POSTS = [
       "We also added portable foldable laptop stands. These are lightweight, adjustable, and perfect for students and hybrid workers who switch between locations.",
       "For music lovers, compact Bluetooth speakers with improved drivers and longer battery life have just landed in our catalog.",
       "If you're building a home office, the latest LED strip kits help upgrade your desk aesthetics with soft, customizable lighting.",
-      "Our Weekly Drops list is curated to save you time — from useful daily tools to niche accessories, only the best make it here."
+      "Our Weekly Drops list is curated to save you time — from useful daily tools to niche accessories, only the best make it here.",
     ],
   },
 
@@ -186,7 +186,7 @@ const POSTS = [
       "LED strip lights are one of the easiest ways to improve room ambiance. They consume very little power and can be placed behind TVs, under shelves, or around desks.",
       "Desk organizers and multi-functional trays help manage keys, remotes, accessories, and stationery. Small upgrades like these reduce visual clutter significantly.",
       "Collapsible baskets and foldable storage boxes are perfect for storing seasonal or rarely used items. They fit neatly under beds or inside tight wardrobes.",
-      "The key to small-space optimization is choosing items that offer multiple uses. A well-planned setup makes your home feel bigger, brighter, and far more comfortable."
+      "The key to small-space optimization is choosing items that offer multiple uses. A well-planned setup makes your home feel bigger, brighter, and far more comfortable.",
     ],
   },
 
@@ -210,7 +210,7 @@ const POSTS = [
       "Monitor size depends on your desk depth. For most users, 27 inches is ideal. Larger 32-inch screens offer more space but require deeper desks for comfortable viewing.",
       "Adjustable stands are underrated but essential. Height, tilt, and swivel adjustments reduce neck and eye strain during long sessions.",
       "USB-C monitors that support power delivery are becoming popular. They let you charge your laptop and connect display output through a single cable.",
-      "A well-chosen monitor enhances your daily workflow and entertainment — making it one of the best long-term tech investments."
+      "A well-chosen monitor enhances your daily workflow and entertainment — making it one of the best long-term tech investments.",
     ],
   },
 
@@ -232,11 +232,9 @@ const POSTS = [
       "Protective sleeves prevent physical damage when you're traveling or commuting. Look for padded designs with water-resistant exteriors.",
       "Laptop stands raise your device to a comfortable viewing height, improving posture and increasing airflow underneath.",
       "Cleaning kits with microfiber cloths and safe screen solutions keep your display dust-free and crystal clear. Avoid using household cleaners — they can damage coatings.",
-      "Finally, consider a backup drive for regular data storage. Hardware can fail unexpectedly, but a simple backup routine prevents major data loss."
+      "Finally, consider a backup drive for regular data storage. Hardware can fail unexpectedly, but a simple backup routine prevents major data loss.",
     ],
   },
-
-
 
   {
     id: "11",
@@ -256,7 +254,7 @@ const POSTS = [
       "Adhesive cable clips keep charging cables within reach and prevent them from falling behind your desk.",
       "Under-desk sleeves and trays hide large clusters of power adapters and wires, giving your desk a floating, minimalist appearance.",
       "Labeling your wires, especially for multi-device setups, helps during maintenance and upgrades.",
-      "Good cable management makes your workspace look cleaner, safer, and much easier to maintain — all with minimal effort."
+      "Good cable management makes your workspace look cleaner, safer, and much easier to maintain — all with minimal effort.",
     ],
   },
 
@@ -278,7 +276,7 @@ const POSTS = [
       "Portable selfie lights and clip-on ring lamps help improve video calls, making them ideal for creators and remote workers.",
       "Bluetooth trackers are perfect for people who misplace their bags, wallets, or keys frequently.",
       "Cleaning kits with microfiber cloths and safe sprays help maintain gadgets without damaging their screens or lenses.",
-      "Small gifts can make a big impact — especially when they’re practical enough to use every day."
+      "Small gifts can make a big impact — especially when they’re practical enough to use every day.",
     ],
   },
 ];

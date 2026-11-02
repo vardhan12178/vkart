@@ -7,20 +7,32 @@ import { CATEGORIES, catOf } from "./catalogData";
 const modules = import.meta.glob("../../data/catalog/*/*.json", { eager: true });
 const raw = Object.values(modules).map((m) => m.default || m);
 
-const IMAGE_BASE = import.meta.env.VITE_CATALOG_IMAGE_BASE || "https://vkart-assets-mumbai.s3.ap-south-1.amazonaws.com/catalog-v2";
+const IMAGE_BASE =
+  import.meta.env.VITE_CATALOG_IMAGE_BASE ||
+  "https://vkart-assets-mumbai.s3.ap-south-1.amazonaws.com/catalog-v2";
 const PAGE_SIZE = 24;
 
 const resolveImage = (im) => {
   if (!im) return null;
   if (im.key) {
     const base = `${IMAGE_BASE}/${im.key}`;
-    return { alt: im.alt, thumb: `${base}-thumb.webp`, md: `${base}-md.webp`, lg: `${base}-lg.webp`, width: im.width, height: im.height };
+    return {
+      alt: im.alt,
+      thumb: `${base}-thumb.webp`,
+      md: `${base}-md.webp`,
+      lg: `${base}-lg.webp`,
+      width: im.width,
+      height: im.height,
+    };
   }
   return { alt: im.alt, thumb: im.src, md: im.src, lg: im.src };
 };
 const discount = (v) => (v && v.mrp > v.price ? Math.round(((v.mrp - v.price) / v.mrp) * 100) : 0);
 const defaultOf = (p) => p.variants.find((v) => v.isDefault) || p.variants[0];
-const priceRange = (p) => ({ min: Math.min(...p.variants.map((v) => v.price)), max: Math.max(...p.variants.map((v) => v.price)) });
+const priceRange = (p) => ({
+  min: Math.min(...p.variants.map((v) => v.price)),
+  max: Math.max(...p.variants.map((v) => v.price)),
+});
 const inStock = (p) => p.variants.some((v) => v.keySpecs?.available !== false);
 
 function toDetail(p) {
@@ -29,10 +41,16 @@ function toDetail(p) {
     ...p,
     media: {
       groupBy: p.media.groupBy,
-      groups: Object.fromEntries(Object.entries(p.media.groups || {}).map(([k, l]) => [k, list(l)])),
+      groups: Object.fromEntries(
+        Object.entries(p.media.groups || {}).map(([k, l]) => [k, list(l)])
+      ),
       common: list(p.media.common),
     },
-    variants: p.variants.map((v) => ({ ...v, discountPercent: discount(v), inStock: v.keySpecs?.available !== false })),
+    variants: p.variants.map((v) => ({
+      ...v,
+      discountPercent: discount(v),
+      inStock: v.keySpecs?.available !== false,
+    })),
     priceRange: priceRange(p),
     inStock: inStock(p),
   };
@@ -40,16 +58,31 @@ function toDetail(p) {
 
 function toCard(p) {
   const v = defaultOf(p);
-  const first = [...((p.media.groups || {})[v.options?.[p.media.groupBy]] || []), ...(p.media.common || [])][0];
+  const first = [
+    ...((p.media.groups || {})[v.options?.[p.media.groupBy]] || []),
+    ...(p.media.common || []),
+  ][0];
   return {
-    sku: v.sku, slug: p.slug, title: p.title, brand: p.brand, category: p.category,
-    image: resolveImage(first), price: v.price, mrp: v.mrp, discountPercent: discount(v),
+    sku: v.sku,
+    slug: p.slug,
+    title: p.title,
+    brand: p.brand,
+    category: p.category,
+    image: resolveImage(first),
+    price: v.price,
+    mrp: v.mrp,
+    discountPercent: discount(v),
     priceRange: priceRange(p),
-    colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({ value: c.value, hex: c.hex })),
-    variantCount: p.variants.length, inStock: inStock(p), launchDate: p.launchDate,
+    colors: ((p.variantOptions || []).find((o) => o.name === "Color")?.values || []).map((c) => ({
+      value: c.value,
+      hex: c.hex,
+    })),
+    variantCount: p.variants.length,
+    inStock: inStock(p),
+    launchDate: p.launchDate,
     options: v.options || {},
     defaultInStock: v.keySpecs?.available !== false,
-    needsSize: (((p.variantOptions || []).find((o) => o.name === "Size")?.values.length) || 0) > 1,
+    needsSize: ((p.variantOptions || []).find((o) => o.name === "Size")?.values.length || 0) > 1,
   };
 }
 
@@ -71,32 +104,51 @@ const api = {
   },
 
   listProducts(params = {}) {
-    const brands = String(params.brand || "").split(",").filter(Boolean);
+    const brands = String(params.brand || "")
+      .split(",")
+      .filter(Boolean);
     const min = num(params.minPrice);
     const max = num(params.maxPrice);
     const minDiscount = num(params.minDiscount);
-    const words = String(params.q || "").toLowerCase().split(/\s+/).filter((w) => w.length > 1);
+    const words = String(params.q || "")
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((w) => w.length > 1);
     const limit = Math.min(60, num(params.limit) || PAGE_SIZE);
     const page = Math.max(1, num(params.page) || 1);
 
     const base = raw
       .filter((p) => !params.category || catOf(p) === params.category)
       .map(toCard)
-      .filter((c) => (min === null || c.priceRange.min >= min) && (max === null || c.priceRange.min <= max))
+      .filter(
+        (c) =>
+          (min === null || c.priceRange.min >= min) && (max === null || c.priceRange.min <= max)
+      )
       .filter((c) => params.inStock !== "true" || c.inStock)
-      .filter((c) => !words.length || words.some((w) => `${c.title} ${c.brand} ${c.category}`.toLowerCase().includes(w)))
+      .filter(
+        (c) =>
+          !words.length ||
+          words.some((w) => `${c.title} ${c.brand} ${c.category}`.toLowerCase().includes(w))
+      )
       .filter((c) => !minDiscount || c.discountPercent >= minDiscount);
-    const items = base.filter((c) => !brands.length || brands.includes(c.brand)).sort(SORTS[params.sort] || SORTS.featured);
+    const items = base
+      .filter((c) => !brands.length || brands.includes(c.brand))
+      .sort(SORTS[params.sort] || SORTS.featured);
 
     const counts = new Map();
     base.forEach((c) => counts.set(c.brand, (counts.get(c.brand) || 0) + 1));
     const prices = base.map((c) => c.priceRange.min);
     return {
       products: items.slice((page - 1) * limit, page * limit),
-      page, limit, total: items.length, pages: Math.max(1, Math.ceil(items.length / limit)),
+      page,
+      limit,
+      total: items.length,
+      pages: Math.max(1, Math.ceil(items.length / limit)),
       sort: SORTS[params.sort] ? params.sort : "featured",
       facets: {
-        brands: [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, count]) => ({ name, count })),
+        brands: [...counts.entries()]
+          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+          .map(([name, count]) => ({ name, count })),
         price: prices.length ? { min: Math.min(...prices), max: Math.max(...prices) } : null,
       },
     };

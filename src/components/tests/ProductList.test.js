@@ -14,22 +14,47 @@ import { showToast } from "../../utils/toast";
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 jest.mock("../shop/catalogApi", () => {
   const actual = jest.requireActual("../shop/catalogApi");
-  return { ...actual, fetchProducts: jest.fn(), fetchProduct: jest.fn(), getSource: () => "api", onSourceChange: () => () => {} };
+  return {
+    ...actual,
+    fetchProducts: jest.fn(),
+    fetchProduct: jest.fn(),
+    getSource: () => "api",
+    onSourceChange: () => () => {},
+  };
 });
 
 const card = (slug, extra = {}) => ({
-  id: `id-${slug}`, sku: `${slug}-1`, slug, title: `Brand ${slug}`, brand: "Brand", category: "mobiles",
-  image: { md: `${slug}.webp` }, price: 30000, mrp: 40000, discountPercent: 25, priceRange: { min: 30000, max: 35000 },
-  colors: [], variantCount: 4, inStock: true, options: { Storage: "128GB", Color: "Black" }, needsSize: false, defaultInStock: true, ...extra,
+  id: `id-${slug}`,
+  sku: `${slug}-1`,
+  slug,
+  title: `Brand ${slug}`,
+  brand: "Brand",
+  category: "mobiles",
+  image: { md: `${slug}.webp` },
+  price: 30000,
+  mrp: 40000,
+  discountPercent: 25,
+  priceRange: { min: 30000, max: 35000 },
+  colors: [],
+  variantCount: 4,
+  inStock: true,
+  options: { Storage: "128GB", Color: "Black" },
+  needsSize: false,
+  defaultInStock: true,
+  ...extra,
 });
 
 describe("ProductList tiles", () => {
   let store;
-  beforeAll(() => { Element.prototype.scrollIntoView = jest.fn(); }); // category bar scrolls the active tab into view
+  beforeAll(() => {
+    Element.prototype.scrollIntoView = jest.fn();
+  }); // category bar scrolls the active tab into view
   beforeEach(() => {
     showToast.mockClear();
     fetchProduct.mockReset().mockReturnValue(new Promise(() => {}));
-    store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer } });
+    store = configureStore({
+      reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer },
+    });
   });
 
   function Where() {
@@ -38,11 +63,19 @@ describe("ProductList tiles", () => {
   }
 
   const renderList = (products, url = "/products?cat=mobiles", facets = {}) => {
-    fetchProducts.mockResolvedValue({ products, total: products.length, pages: 1, facets: { brands: [], price: { min: 0, max: 50000 }, ...facets } });
+    fetchProducts.mockResolvedValue({
+      products,
+      total: products.length,
+      pages: 1,
+      facets: { brands: [], price: { min: 0, max: 50000 }, ...facets },
+    });
     render(
       <HelmetProvider>
         <Provider store={store}>
-          <MemoryRouter initialEntries={[url]}><ProductList /><Where /></MemoryRouter>
+          <MemoryRouter initialEntries={[url]}>
+            <ProductList />
+            <Where />
+          </MemoryRouter>
         </Provider>
       </HelmetProvider>
     );
@@ -50,16 +83,31 @@ describe("ProductList tiles", () => {
 
   it("adds the variant the tile shows straight to the cart", async () => {
     renderList([card("phone")]);
-    fireEvent.click(await screen.findByRole("button", { name: "Add to cart, Brand phone" }, { timeout: 5000 }));
-    expect(store.getState().cart).toEqual([expect.objectContaining({
-      catalog: "v2", productId: "id-phone", sku: "phone-1", price: 30000, selectedVariants: "128GB · Black", quantity: 1,
-    })]);
-    expect(store.getState().ui.miniCart).toEqual({ open: true, lastKey: "id-phone::128GB · Black" });
+    fireEvent.click(
+      await screen.findByRole("button", { name: "Add to cart, Brand phone" }, { timeout: 5000 })
+    );
+    expect(store.getState().cart).toEqual([
+      expect.objectContaining({
+        catalog: "v2",
+        productId: "id-phone",
+        sku: "phone-1",
+        price: 30000,
+        selectedVariants: "128GB · Black",
+        quantity: 1,
+      }),
+    ]);
+    expect(store.getState().ui.miniCart).toEqual({
+      open: true,
+      lastKey: "id-phone::128GB · Black",
+    });
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
   it("asks for a size on clothing and for options when the shown variant is sold out", async () => {
-    renderList([card("shirt", { category: "fashion", needsSize: true }), card("rare", { defaultInStock: false })]);
+    renderList([
+      card("shirt", { category: "fashion", needsSize: true }),
+      card("rare", { defaultInStock: false }),
+    ]);
     fireEvent.click(await screen.findByRole("button", { name: "Select size, Brand shirt" }));
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(fetchProduct).toHaveBeenCalledWith("shirt");
@@ -70,14 +118,20 @@ describe("ProductList tiles", () => {
   it("lists all products when no category is picked", async () => {
     renderList([card("phone")], "/products");
     expect(await screen.findByRole("heading", { name: "All products" })).toBeInTheDocument();
-    expect(fetchProducts).toHaveBeenLastCalledWith(expect.not.objectContaining({ category: expect.anything() }));
+    expect(fetchProducts).toHaveBeenLastCalledWith(
+      expect.not.objectContaining({ category: expect.anything() })
+    );
     expect(screen.getByRole("button", { name: "All" })).toHaveAttribute("aria-pressed", "true");
   });
 
   it("searches with the words and price range from the URL, best match first", async () => {
     renderList([card("phone")], "/products?q=gaming%20phone&max=30000");
-    expect(await screen.findByRole("heading", { name: 'Results for "gaming phone"' })).toBeInTheDocument();
-    expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({ q: "gaming phone", maxPrice: 30000, sort: "relevance" }));
+    expect(
+      await screen.findByRole("heading", { name: 'Results for "gaming phone"' })
+    ).toBeInTheDocument();
+    expect(fetchProducts).toHaveBeenLastCalledWith(
+      expect.objectContaining({ q: "gaming phone", maxPrice: 30000, sort: "relevance" })
+    );
     expect(screen.getByText("Under ₹30,000")).toBeInTheDocument();
   });
 
@@ -88,10 +142,26 @@ describe("ProductList tiles", () => {
   });
 
   const specs = [
-    { key: "ram", label: "RAM", kind: "multi", options: [{ value: "8", label: "8 GB", count: 17 }, { value: "12", label: "12 GB", count: 24 }] },
-    { key: "5g", label: "Network", kind: "flag", options: [{ value: "1", label: "5G", count: 45 }] },
+    {
+      key: "ram",
+      label: "RAM",
+      kind: "multi",
+      options: [
+        { value: "8", label: "8 GB", count: 17 },
+        { value: "12", label: "12 GB", count: 24 },
+      ],
+    },
+    {
+      key: "5g",
+      label: "Network",
+      kind: "flag",
+      options: [{ value: "1", label: "5G", count: 45 }],
+    },
   ];
-  const ratings = [{ min: 4, count: 46 }, { min: 3, count: 48 }];
+  const ratings = [
+    { min: 4, count: 46 },
+    { min: 3, count: 48 },
+  ];
 
   it("shows the category's filters and keeps choices in the URL", async () => {
     renderList([card("phone")], "/products?cat=mobiles", { specs, ratings });
@@ -100,11 +170,19 @@ describe("ProductList tiles", () => {
 
     fireEvent.click(within(sidebar).getByText("12 GB"));
     expect(screen.getByTestId("where")).toHaveTextContent("f_ram=12");
-    await waitFor(() => expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({ category: "mobiles", f_ram: "12" })));
+    await waitFor(() =>
+      expect(fetchProducts).toHaveBeenLastCalledWith(
+        expect.objectContaining({ category: "mobiles", f_ram: "12" })
+      )
+    );
 
     fireEvent.click(within(sidebar).getByText("8 GB"));
     fireEvent.click(within(sidebar).getByText(/4\s*& above/));
-    await waitFor(() => expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({ f_ram: "12,8", minRating: 4 })));
+    await waitFor(() =>
+      expect(fetchProducts).toHaveBeenLastCalledWith(
+        expect.objectContaining({ f_ram: "12,8", minRating: 4 })
+      )
+    );
     // Chips use the option labels; Clear all empties the URL's filters but keeps the category
     expect(screen.getByRole("button", { name: "12 GB" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "4★ & above" })).toBeInTheDocument();
@@ -113,10 +191,21 @@ describe("ProductList tiles", () => {
   });
 
   it("opens a shared link with its filters applied", async () => {
-    renderList([card("phone")], "/products?cat=mobiles&brand=Apple,Samsung&f_5g=1&off=25&sort=rating", { specs, ratings });
-    await waitFor(() => expect(fetchProducts).toHaveBeenLastCalledWith(expect.objectContaining({
-      brand: "Apple,Samsung", f_5g: "1", minDiscount: 25, sort: "rating",
-    })));
+    renderList(
+      [card("phone")],
+      "/products?cat=mobiles&brand=Apple,Samsung&f_5g=1&off=25&sort=rating",
+      { specs, ratings }
+    );
+    await waitFor(() =>
+      expect(fetchProducts).toHaveBeenLastCalledWith(
+        expect.objectContaining({
+          brand: "Apple,Samsung",
+          f_5g: "1",
+          minDiscount: 25,
+          sort: "rating",
+        })
+      )
+    );
     expect(await screen.findByRole("button", { name: "5G" })).toBeInTheDocument(); // chip
     expect(screen.getByRole("button", { name: "25%+ off" })).toBeInTheDocument();
   });

@@ -20,7 +20,8 @@ const ROLES = [
     type: "Full-time",
     level: "Mid–Senior",
     posted: "2025-07-20",
-    blurb: "Ship delightful interfaces in React, own component quality, and collaborate with design.",
+    blurb:
+      "Ship delightful interfaces in React, own component quality, and collaborate with design.",
     details: {
       responsibilities: [
         "Build and maintain reusable React components",
@@ -49,7 +50,11 @@ const ROLES = [
         "Run lightweight usability tests",
         "Partner with PM + Eng on delivery",
       ],
-      requirements: ["2+ years in product design", "Portfolio showing shipped work", "Figma proficiency"],
+      requirements: [
+        "2+ years in product design",
+        "Portfolio showing shipped work",
+        "Figma proficiency",
+      ],
     },
   },
   {
@@ -60,7 +65,8 @@ const ROLES = [
     type: "Contract",
     level: "Junior",
     posted: "2025-06-30",
-    blurb: "Build APIs, tune performance, and work with Node + PostgreSQL on core commerce features.",
+    blurb:
+      "Build APIs, tune performance, and work with Node + PostgreSQL on core commerce features.",
     details: {
       responsibilities: [
         "Design REST/GraphQL endpoints",
@@ -90,10 +96,17 @@ function useToasts() {
 const Toasts = ({ stack, onClose }) => (
   <div className="pointer-events-none fixed bottom-4 right-4 z-50 flex max-w-sm flex-col gap-2">
     {stack.map((t) => (
-      <div key={t.id} className="pointer-events-auto flex items-start gap-3 rounded-xl border border-emerald-200 bg-white/95 p-3 shadow-lg">
+      <div
+        key={t.id}
+        className="pointer-events-auto flex items-start gap-3 rounded-xl border border-emerald-200 bg-white/95 p-3 shadow-lg"
+      >
         <HiOutlineCheckCircle className="mt-0.5 h-5 w-5 text-emerald-600" />
         <div className="text-sm text-gray-800">{t.msg}</div>
-        <button onClick={() => onClose(t.id)} className="ml-auto rounded-md p-1 text-gray-500 hover:bg-gray-100" aria-label="Close">
+        <button
+          onClick={() => onClose(t.id)}
+          className="ml-auto rounded-md p-1 text-gray-500 hover:bg-gray-100"
+          aria-label="Close"
+        >
           <HiOutlineX className="h-4 w-4" />
         </button>
       </div>
@@ -138,8 +151,14 @@ export default function Careers() {
 
   return (
     <div className="premium-page premium-careers relative min-h-[70vh] bg-[#f6f3ed]">
-      <div aria-hidden className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200/60 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200/60 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-amber-100/70 blur-3xl"
+      />
 
       <div className="container mx-auto px-5 sm:px-6 lg:px-10 py-10 lg:py-14">
         <section className="max-w-3xl">
@@ -148,7 +167,10 @@ export default function Careers() {
             We’re hiring for a few key roles
           </div>
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-            Join <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">Vkart</span>
+            Join{" "}
+            <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
+              Vkart
+            </span>
           </h1>
           <p className="mt-3 text-lg text-gray-700">
             Not a real hiring board for this portfolio — but here’s how our careers page would feel.
@@ -205,7 +227,9 @@ export default function Careers() {
                 key={t}
                 onClick={() => setType(t)}
                 className={`rounded-full px-3 py-1.5 text-xs font-semibold ring-1 ${
-                  type === t ? "bg-orange-600 text-white ring-orange-600" : "bg-white/80 text-gray-700 ring-gray-200 hover:bg-white"
+                  type === t
+                    ? "bg-orange-600 text-white ring-orange-600"
+                    : "bg-white/80 text-gray-700 ring-gray-200 hover:bg-white"
                 }`}
               >
                 {t === "All" ? "Any type" : t}
@@ -233,7 +257,9 @@ export default function Careers() {
             <div className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/70 via-amber-200/70 to-white">
               <div className="rounded-3xl bg-white/80 p-8 text-center ring-1 ring-gray-200 backdrop-blur">
                 <h3 className="text-xl font-semibold text-gray-900">No roles match</h3>
-                <p className="mt-1 text-gray-600">Try a different search, department, or location.</p>
+                <p className="mt-1 text-gray-600">
+                  Try a different search, department, or location.
+                </p>
               </div>
             </div>
           ) : (
@@ -249,7 +275,9 @@ export default function Careers() {
                       <div className="p-6">
                         <div className="flex items-start justify-between gap-4">
                           <div className="min-w-0">
-                            <h3 className="truncate text-lg font-extrabold text-gray-900">{r.title}</h3>
+                            <h3 className="truncate text-lg font-extrabold text-gray-900">
+                              {r.title}
+                            </h3>
                             <p className="mt-1 text-sm text-gray-600">{r.blurb}</p>
                           </div>
                           <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs text-gray-700 ring-1 ring-gray-200">
@@ -264,7 +292,9 @@ export default function Careers() {
                           <span className="inline-flex items-center gap-1.5">
                             <HiOutlineClock className="h-4 w-4" /> {r.type}
                           </span>
-                          <span className="text-gray-500">{r.level} · Posted {formatDate(r.posted)}</span>
+                          <span className="text-gray-500">
+                            {r.level} · Posted {formatDate(r.posted)}
+                          </span>
                         </div>
 
                         <div className="mt-5 flex items-center justify-between">
@@ -319,9 +349,15 @@ export default function Careers() {
                               </div>
                             </div>
                             <div className="mt-4 flex flex-wrap items-center gap-2">
-                              <span className="rounded-full bg-orange-100 px-2.5 py-1 text-xs font-semibold text-orange-700">Great communication</span>
-                              <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">Ownership mindset</span>
-                              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">Team player</span>
+                              <span className="rounded-full bg-orange-100 px-2.5 py-1 text-xs font-semibold text-orange-700">
+                                Great communication
+                              </span>
+                              <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+                                Ownership mindset
+                              </span>
+                              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                                Team player
+                              </span>
                             </div>
                           </div>
                         )}
@@ -336,16 +372,24 @@ export default function Careers() {
 
         <section className="mt-12">
           <div className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-gray-800">
-            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.2 22 12 18.56 5.8 22 7 14.14l-5-4.87 7.1-1.01L12 2z"/></svg>
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.2 22 12 18.56 5.8 22 7 14.14l-5-4.87 7.1-1.01L12 2z" />
+            </svg>
             Life at Vkart
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { t: "Remote-first", d: "Work from anywhere, sync async, and meet quarterly for team onsites." },
+              {
+                t: "Remote-first",
+                d: "Work from anywhere, sync async, and meet quarterly for team onsites.",
+              },
               { t: "Learning budget", d: "Annual stipend for courses, books, and conferences." },
               { t: "Flexible hours", d: "Own your calendar — outcomes over hours." },
             ].map((p) => (
-              <div key={p.t} className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/70 via-amber-200/70 to-white">
+              <div
+                key={p.t}
+                className="rounded-3xl p-[1px] bg-gradient-to-br from-orange-200/70 via-amber-200/70 to-white"
+              >
                 <div className="rounded-3xl bg-white p-5 ring-1 ring-gray-200">
                   <h4 className="font-semibold text-gray-900">{p.t}</h4>
                   <p className="mt-1 text-gray-700">{p.d}</p>
@@ -357,15 +401,31 @@ export default function Careers() {
 
         <section className="relative mx-0 mt-12 rounded-3xl bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-10 text-center shadow-2xl ring-1 ring-orange-300 sm:mx-auto sm:max-w-4xl">
           <h3 className="text-2xl font-extrabold text-white">Don’t see the right role?</h3>
-          <p className="mt-2 text-white/90">Send us your portfolio and a note. We read every application.</p>
+          <p className="mt-2 text-white/90">
+            Send us your portfolio and a note. We read every application.
+          </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href="mailto:careers@vkart.com" className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow hover:opacity-95">Email Careers</a>
-            <Link to="/about" className="rounded-xl ring-1 ring-white/80 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Learn about us</Link>
+            <a
+              href="mailto:careers@vkart.com"
+              className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow hover:opacity-95"
+            >
+              Email Careers
+            </a>
+            <Link
+              to="/about"
+              className="rounded-xl ring-1 ring-white/80 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+            >
+              Learn about us
+            </Link>
           </div>
         </section>
 
         <p className="mt-8 text-sm text-gray-600">
-          Curious about our work? Check the <Link to="/about" className="text-orange-700 hover:underline">About</Link> page.
+          Curious about our work? Check the{" "}
+          <Link to="/about" className="text-orange-700 hover:underline">
+            About
+          </Link>{" "}
+          page.
         </p>
       </div>
 

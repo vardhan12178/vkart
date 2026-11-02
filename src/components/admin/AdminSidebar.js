@@ -61,7 +61,9 @@ export default function AdminSidebar({
       <aside
         className={`premium-admin-sidebar fixed inset-y-0 left-0 z-50 flex flex-col border-r border-black/[0.08] bg-[#fffdf8] transition-all duration-300 lg:static ${collapsed ? "w-[4.75rem]" : "w-72"} ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
-        <div className={`relative flex h-[4.5rem] items-center border-b border-black/[0.07] ${collapsed ? "justify-center px-0" : "px-5"}`}>
+        <div
+          className={`relative flex h-[4.5rem] items-center border-b border-black/[0.07] ${collapsed ? "justify-center px-0" : "px-5"}`}
+        >
           <button
             type="button"
             onClick={() => navigate("/admin/dashboard")}
@@ -85,24 +87,38 @@ export default function AdminSidebar({
             className="absolute -right-3 top-1/2 z-50 hidden h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-[#fffdf8] text-[#6f6b62] transition-colors hover:text-[#1d1c19] lg:flex"
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
-            {collapsed ? <ChevronRight className="h-3.5 w-3.5" /> : <ChevronLeft className="h-3.5 w-3.5" />}
+            {collapsed ? (
+              <ChevronRight className="h-3.5 w-3.5" />
+            ) : (
+              <ChevronLeft className="h-3.5 w-3.5" />
+            )}
           </button>
         </div>
 
-        <nav className="flex-1 space-y-1 overflow-y-auto overflow-x-hidden px-3 py-5" aria-label="Admin navigation">
+        <nav
+          className="flex-1 space-y-1 overflow-y-auto overflow-x-hidden px-3 py-5"
+          aria-label="Admin navigation"
+        >
           {navLinks.map(({ name, icon: Icon, path }) => (
             <NavLink
               key={path}
               to={path}
               end
               onClick={() => setMobileOpen(false)}
-              className={({ isActive }) => `group relative flex min-h-11 items-center gap-3 rounded-xl text-sm font-bold transition-colors ${collapsed ? "mx-auto w-11 justify-center px-0" : "px-3.5"} ${isActive ? "bg-[#eee8df] text-[#1d1c19]" : "text-[#777269] hover:bg-black/[0.035] hover:text-[#1d1c19]"}`}
+              className={({ isActive }) =>
+                `group relative flex min-h-11 items-center gap-3 rounded-xl text-sm font-bold transition-colors ${collapsed ? "mx-auto w-11 justify-center px-0" : "px-3.5"} ${isActive ? "bg-[#eee8df] text-[#1d1c19]" : "text-[#777269] hover:bg-black/[0.035] hover:text-[#1d1c19]"}`
+              }
             >
               {({ isActive }) => (
                 <>
-                  <Icon className={`h-[1.15rem] w-[1.15rem] shrink-0 ${isActive ? "text-[#a85d37]" : "text-[#817c73]"}`} strokeWidth={1.7} />
+                  <Icon
+                    className={`h-[1.15rem] w-[1.15rem] shrink-0 ${isActive ? "text-[#a85d37]" : "text-[#817c73]"}`}
+                    strokeWidth={1.7}
+                  />
                   {!collapsed && <span className="whitespace-nowrap">{name}</span>}
-                  {isActive && !collapsed && <span className="absolute right-3 h-1.5 w-1.5 rounded-full bg-[#a85d37]" />}
+                  {isActive && !collapsed && (
+                    <span className="absolute right-3 h-1.5 w-1.5 rounded-full bg-[#a85d37]" />
+                  )}
                   {collapsed && (
                     <span className="pointer-events-none absolute left-full z-50 ml-3 whitespace-nowrap rounded-full bg-[#1d1c19] px-3 py-1.5 text-[10px] font-bold text-white opacity-0 transition-opacity group-hover:opacity-100">
                       {name}
@@ -125,7 +141,9 @@ export default function AdminSidebar({
             {!collapsed && (
               <span className="text-left">
                 <span className="block">Sign out</span>
-                <span className="block text-[9px] font-semibold uppercase tracking-[0.1em] text-[#9a7667]">Admin session</span>
+                <span className="block text-[9px] font-semibold uppercase tracking-[0.1em] text-[#9a7667]">
+                  Admin session
+                </span>
               </span>
             )}
           </button>

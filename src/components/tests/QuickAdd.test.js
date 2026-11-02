@@ -16,7 +16,13 @@ jest.mock("../shop/catalogApi", () => {
 });
 
 const variant = (sku, storage, color, extra = {}) => ({
-  sku, options: { Storage: storage, Color: color }, price: storage === "256GB" ? 50000 : 60000, mrp: 70000, discountPercent: 10, inStock: true, ...extra,
+  sku,
+  options: { Storage: storage, Color: color },
+  price: storage === "256GB" ? 50000 : 60000,
+  mrp: 70000,
+  discountPercent: 10,
+  inStock: true,
+  ...extra,
 });
 
 const phone = {
@@ -25,10 +31,23 @@ const phone = {
   title: "Brand Test Phone",
   brand: "Brand",
   category: "mobiles",
-  media: { groupBy: "Color", groups: { Black: [{ thumb: "b-t.webp", md: "b-md.webp" }], Blue: [{ thumb: "u-t.webp", md: "u-md.webp" }] }, common: [] },
+  media: {
+    groupBy: "Color",
+    groups: {
+      Black: [{ thumb: "b-t.webp", md: "b-md.webp" }],
+      Blue: [{ thumb: "u-t.webp", md: "u-md.webp" }],
+    },
+    common: [],
+  },
   variantOptions: [
     { name: "Storage", values: [{ value: "256GB" }, { value: "512GB" }] },
-    { name: "Color", values: [{ value: "Black", hex: "#000" }, { value: "Blue", hex: "#00f" }] },
+    {
+      name: "Color",
+      values: [
+        { value: "Black", hex: "#000" },
+        { value: "Blue", hex: "#00f" },
+      ],
+    },
   ],
   variants: [
     { ...variant("tp-256-black", "256GB", "Black"), isDefault: true },
@@ -48,7 +67,9 @@ describe("QuickAdd", () => {
   const renderSheet = (onClose = jest.fn()) => {
     render(
       <Provider store={store}>
-        <MemoryRouter><QuickAdd slug="test-phone" onClose={onClose} /></MemoryRouter>
+        <MemoryRouter>
+          <QuickAdd slug="test-phone" onClose={onClose} />
+        </MemoryRouter>
       </Provider>
     );
     return onClose;
@@ -60,12 +81,23 @@ describe("QuickAdd", () => {
     expect(screen.getByText("₹60,000")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /add to cart/i }));
 
-    expect(store.getState().cart).toEqual([expect.objectContaining({
-      catalog: "v2", productId: "p1", sku: "tp-512-black", price: 60000, thumbnail: "b-md.webp", selectedVariants: "512GB · Black", quantity: 1,
-    })]);
+    expect(store.getState().cart).toEqual([
+      expect.objectContaining({
+        catalog: "v2",
+        productId: "p1",
+        sku: "tp-512-black",
+        price: 60000,
+        thumbnail: "b-md.webp",
+        selectedVariants: "512GB · Black",
+        quantity: 1,
+      }),
+    ]);
     expect(onClose).toHaveBeenCalled();
     // The mini cart opens with the new line highlighted, instead of a toast
-    expect(store.getState().ui.miniCart).toEqual({ open: true, lastKey: expect.stringContaining("512GB · Black") });
+    expect(store.getState().ui.miniCart).toEqual({
+      open: true,
+      lastKey: expect.stringContaining("512GB · Black"),
+    });
   });
 
   it("blocks out-of-stock variants", async () => {

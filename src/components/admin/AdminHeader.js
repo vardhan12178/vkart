@@ -4,7 +4,11 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { io } from "socket.io-client";
 import { showToast } from "../../utils/toast";
 import axiosInstance from "../axiosInstance";
-import { getSocketBaseUrl, normalizeNotification, normalizeNotificationTitle } from "../../utils/notificationHelpers";
+import {
+  getSocketBaseUrl,
+  normalizeNotification,
+  normalizeNotificationTitle,
+} from "../../utils/notificationHelpers";
 import {
   MenuIcon,
   SearchIcon,
@@ -23,7 +27,13 @@ import { canAccess } from "../../utils/adminPermissions";
 import { ROLE_LABELS } from "../../constants/adminRoles";
 import Avatar from "./ui/Avatar";
 
-export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adminRole, permissions }) {
+export default function AdminHeader({
+  setMobileOpen,
+  onLogout,
+  adminProfile,
+  adminRole,
+  permissions,
+}) {
   const queryClient = useQueryClient();
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -40,7 +50,13 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
   const adminName = adminProfile?.name || "Admin User";
   const adminEmail = adminProfile?.email || "admin@vkart.com";
   const adminAvatar = adminProfile?.profileImage;
-  const adminInitials = adminName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || "AD";
+  const adminInitials =
+    adminName
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .substring(0, 2)
+      .toUpperCase() || "AD";
   const roleLabel = ROLE_LABELS[adminRole] || "Team Member";
   const canReachSettings = canAccess(adminRole, permissions, "settings", "read");
 
@@ -192,13 +208,18 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
   const getNotificationIcon = (type, title = "") => {
     const titleUpper = (title || "").toUpperCase();
 
-    if (titleUpper.includes("ORDER") || type === "order") return <ShoppingBagIcon className="h-5 w-5 text-[#59634f]" />;
-    if (titleUpper.includes("ALERT") || type === "alert") return <ExclamationCircleIcon className="h-5 w-5 text-[#75483b]" />;
-    if (titleUpper.includes("USER") || type === "user") return <UserAddIcon className="h-5 w-5 text-[#b56a3f]" />;
+    if (titleUpper.includes("ORDER") || type === "order")
+      return <ShoppingBagIcon className="h-5 w-5 text-[#59634f]" />;
+    if (titleUpper.includes("ALERT") || type === "alert")
+      return <ExclamationCircleIcon className="h-5 w-5 text-[#75483b]" />;
+    if (titleUpper.includes("USER") || type === "user")
+      return <UserAddIcon className="h-5 w-5 text-[#b56a3f]" />;
 
     // More specific checks
-    if (titleUpper.includes("STOCK")) return <ExclamationCircleIcon className="h-5 w-5 text-[#b56a3f]" />;
-    if (titleUpper.includes("PAYMENT")) return <ShoppingBagIcon className="h-5 w-5 text-[#776c5b]" />;
+    if (titleUpper.includes("STOCK"))
+      return <ExclamationCircleIcon className="h-5 w-5 text-[#b56a3f]" />;
+    if (titleUpper.includes("PAYMENT"))
+      return <ShoppingBagIcon className="h-5 w-5 text-[#776c5b]" />;
 
     return <BellIcon className="h-5 w-5 text-slate-400" />;
   };
@@ -227,14 +248,14 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
           transition-all duration-300 ease-in-out
           border-b
           z-30
-          ${isScrolled
-            ? "bg-[#fffdf8]/95 backdrop-blur-xl border-black/[0.08]"
-            : "bg-[#fffdf8]/90 backdrop-blur-md border-black/[0.07]"
+          ${
+            isScrolled
+              ? "bg-[#fffdf8]/95 backdrop-blur-xl border-black/[0.08]"
+              : "bg-[#fffdf8]/90 backdrop-blur-md border-black/[0.07]"
           }
         `}
       >
         <div className="flex h-14 sm:h-[4.5rem] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-5 lg:px-7">
-
           {/* --- LEFT: Mobile Toggle & Brand --- */}
           <div className="flex items-center gap-1.5 sm:gap-4">
             <button
@@ -249,7 +270,9 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
               <div className="grid h-7 w-7 sm:h-9 sm:w-9 place-items-center rounded-full bg-[#1d1c19] text-white">
                 <ShoppingBagIcon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
               </div>
-              <span className="text-sm font-extrabold tracking-[-0.04em] text-[#1d1c19] sm:text-lg">VKart Ops</span>
+              <span className="text-sm font-extrabold tracking-[-0.04em] text-[#1d1c19] sm:text-lg">
+                VKart Ops
+              </span>
             </Link>
           </div>
 
@@ -282,7 +305,6 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
 
           {/* --- RIGHT: Actions & Profile --- */}
           <div className="flex items-center gap-1 sm:gap-3 ml-auto">
-
             {/* Mobile Search Button */}
             <button
               onClick={() => setMobileSearchOpen(true)}
@@ -322,8 +344,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                       <p className="text-[10px] sm:text-xs text-slate-500 mt-0.5">
                         {unreadCount > 0
                           ? `You have ${unreadCount} new alerts`
-                          : "Recent activity & updates"
-                        }
+                          : "Recent activity & updates"}
                       </p>
                     </div>
                     {unreadCount > 0 && (
@@ -347,17 +368,25 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                             ${!item.isRead ? "bg-slate-50/50" : ""}
                           `}
                         >
-                          <div className={`mt-0.5 h-8 w-8 sm:h-9 sm:w-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${!item.isRead ? "bg-white shadow-sm ring-1 ring-slate-100" : "bg-slate-100"}`}>
+                          <div
+                            className={`mt-0.5 h-8 w-8 sm:h-9 sm:w-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${!item.isRead ? "bg-white shadow-sm ring-1 ring-slate-100" : "bg-slate-100"}`}
+                          >
                             {getNotificationIcon(item.type, item.title)}
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-start">
-                              <p className={`text-xs sm:text-sm ${!item.isRead ? "font-bold text-slate-900" : "font-medium text-slate-700"}`}>
+                              <p
+                                className={`text-xs sm:text-sm ${!item.isRead ? "font-bold text-slate-900" : "font-medium text-slate-700"}`}
+                              >
                                 {normalizeNotificationTitle(item.title)}
                               </p>
-                              <span className="text-[9px] sm:text-[10px] text-slate-400 whitespace-nowrap ml-2">{getTimeAgo(item.createdAt || Date.now())}</span>
+                              <span className="text-[9px] sm:text-[10px] text-slate-400 whitespace-nowrap ml-2">
+                                {getTimeAgo(item.createdAt || Date.now())}
+                              </span>
                             </div>
-                            <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 line-clamp-2">{item.message}</p>
+                            <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 line-clamp-2">
+                              {item.message}
+                            </p>
                           </div>
                           {!item.isRead && (
                             <div className="flex-shrink-0 self-center">
@@ -386,9 +415,10 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                 onClick={() => setProfileOpen(!profileOpen)}
                 className={`
                   flex items-center gap-2 sm:gap-3 p-1 sm:p-1.5 pr-2 sm:pr-3 rounded-full border transition-all duration-200
-                  ${profileOpen
-                    ? "bg-[#fffdf8] border-[#a85d37]/25 ring-2 ring-[#a85d37]/8"
-                    : "bg-[#fffdf8] border-black/10 hover:border-black/20"
+                  ${
+                    profileOpen
+                      ? "bg-[#fffdf8] border-[#a85d37]/25 ring-2 ring-[#a85d37]/8"
+                      : "bg-[#fffdf8] border-black/10 hover:border-black/20"
                   }
                 `}
                 aria-label="Profile menu"
@@ -402,7 +432,9 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                 />
 
                 <div className="hidden md:flex flex-col items-start text-left">
-                  <span className="text-sm font-bold text-slate-800 leading-none max-w-[100px] truncate">{adminName}</span>
+                  <span className="text-sm font-bold text-slate-800 leading-none max-w-[100px] truncate">
+                    {adminName}
+                  </span>
                   <span className="text-[10px] font-medium text-slate-500 mt-0.5">{roleLabel}</span>
                 </div>
 
@@ -453,7 +485,6 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                 </div>
               )}
             </div>
-
           </div>
         </div>
       </header>
@@ -480,7 +511,7 @@ export default function AdminHeader({ setMobileOpen, onLogout, adminProfile, adm
                     focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10
                     transition-all duration-200 text-sm font-medium outline-none
                   "
-                placeholder="Search the operation"
+                  placeholder="Search the operation"
                 />
               </div>
               <button

@@ -12,8 +12,21 @@ import { showToast } from "../../utils/toast";
 
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 
-const ITEM_A = { _id: "p1", title: "Saved Widget", price: 500, discountPercentage: 20, category: "gadgets", thumbnail: "a.png" };
-const ITEM_B = { _id: "p2", title: "Saved Gadget", price: 300, category: "accessories", thumbnail: "b.png" };
+const ITEM_A = {
+  _id: "p1",
+  title: "Saved Widget",
+  price: 500,
+  discountPercentage: 20,
+  category: "gadgets",
+  thumbnail: "a.png",
+};
+const ITEM_B = {
+  _id: "p2",
+  title: "Saved Gadget",
+  price: 300,
+  category: "accessories",
+  thumbnail: "b.png",
+};
 
 describe("Wishlist Component", () => {
   const renderWishlist = (wishlist = []) => {
@@ -42,7 +55,10 @@ describe("Wishlist Component", () => {
   test("shows the empty state when there are no saved items", () => {
     renderWishlist([]);
     expect(screen.getByText("Nothing saved—yet.")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /explore the collection/i })).toHaveAttribute("href", "/products");
+    expect(screen.getByRole("link", { name: /explore the collection/i })).toHaveAttribute(
+      "href",
+      "/products"
+    );
   });
 
   test("renders saved items with pricing and discount", () => {

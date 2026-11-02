@@ -31,11 +31,15 @@ export const showToast = (msg, type = "success") => {
         }`}
         role={type === "error" ? "alert" : "status"}
       >
-        <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-[0.8rem] ${tone.iconClass}`}>
+        <span
+          className={`grid h-10 w-10 shrink-0 place-items-center rounded-[0.8rem] ${tone.iconClass}`}
+        >
           <ToastIcon size={17} strokeWidth={1.9} />
         </span>
         <div className="min-w-0 flex-1">
-          <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#8a8379]">{tone.label}</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.17em] text-[#8a8379]">
+            {tone.label}
+          </p>
           <p className="mt-1 text-sm font-semibold leading-snug text-[#37342f]">{msg}</p>
         </div>
         <button

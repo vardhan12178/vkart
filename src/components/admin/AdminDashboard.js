@@ -13,7 +13,7 @@ import {
   ClockIcon,
   PhotographIcon,
   CalendarIcon,
-  ExternalLinkIcon
+  ExternalLinkIcon,
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
@@ -50,7 +50,14 @@ const INR = (n) =>
   }).format(Math.round(Number(n) || 0));
 
 const STAGES = [
-  "PLACED", "CONFIRMED", "PROCESSING", "PACKED", "SHIPPED", "OUT_FOR_DELIVERY", "DELIVERED", "CANCELLED",
+  "PLACED",
+  "CONFIRMED",
+  "PROCESSING",
+  "PACKED",
+  "SHIPPED",
+  "OUT_FOR_DELIVERY",
+  "DELIVERED",
+  "CANCELLED",
 ];
 
 const stageLabels = {
@@ -107,18 +114,24 @@ export default function AdminDashboard() {
   const filteredOrders = useMemo(() => {
     if (!orders.length) return [];
     const now = new Date();
-    const days = timeRange === '7d' ? 7 : timeRange === '30d' ? 30 : 90;
+    const days = timeRange === "7d" ? 7 : timeRange === "30d" ? 30 : 90;
     const cutoff = new Date(now.setDate(now.getDate() - days));
 
-    return orders.filter(o => new Date(o.createdAt) >= cutoff);
+    return orders.filter((o) => new Date(o.createdAt) >= cutoff);
   }, [orders, timeRange]);
-
 
   /* ---------------------------- Metrics Logic --------------------------- */
   const stats = useMemo(() => {
     const sourceData = orders;
 
-    if (!sourceData.length) return { totalRevenue: 0, totalOrders: 0, avgOrderValue: 0, activeCustomers: 0, thisMonthOrders: 0 };
+    if (!sourceData.length)
+      return {
+        totalRevenue: 0,
+        totalOrders: 0,
+        avgOrderValue: 0,
+        activeCustomers: 0,
+        thisMonthOrders: 0,
+      };
 
     let totalRevenue = 0;
     const customerSet = new Set();
@@ -130,7 +143,11 @@ export default function AdminDashboard() {
       const total = Number(o.totalPrice || 0);
       totalRevenue += total;
       const created = o.createdAt ? new Date(o.createdAt) : null;
-      if (created && created.getMonth() === thisMonth && created.getFullYear() === now.getFullYear()) {
+      if (
+        created &&
+        created.getMonth() === thisMonth &&
+        created.getFullYear() === now.getFullYear()
+      ) {
         thisMonthOrders += 1;
       }
       if (o.userId) customerSet.add(String(o.userId));
@@ -154,14 +171,28 @@ export default function AdminDashboard() {
       if (counts[s] != null) counts[s] += 1;
     });
 
-    const colors = ["#cbd5e1", "#93c5fd", "#fcd34d", "#c084fc", "#818cf8", "#fb923c", "#34d399", "#f87171"];
-    return STAGES.map((s, idx) => ({ stage: stageLabels[s], key: s, count: counts[s] || 0, color: colors[idx] }));
+    const colors = [
+      "#cbd5e1",
+      "#93c5fd",
+      "#fcd34d",
+      "#c084fc",
+      "#818cf8",
+      "#fb923c",
+      "#34d399",
+      "#f87171",
+    ];
+    return STAGES.map((s, idx) => ({
+      stage: stageLabels[s],
+      key: s,
+      count: counts[s] || 0,
+      color: colors[idx],
+    }));
   }, [filteredOrders]);
 
   const revenueSeries = useMemo(() => {
     const map = new Map();
     const now = new Date();
-    const days = timeRange === '7d' ? 7 : timeRange === '30d' ? 30 : 90;
+    const days = timeRange === "7d" ? 7 : timeRange === "30d" ? 30 : 90;
 
     for (let i = days - 1; i >= 0; i--) {
       const d = new Date();
@@ -190,18 +221,29 @@ export default function AdminDashboard() {
         const name = p.name || "Unknown";
         const prev = agg.get(name) || { name, qty: 0, revenue: 0, image: p.image || "" };
         prev.qty += Number(p.quantity || 0);
-        prev.revenue += p.lineTotal != null ? Number(p.lineTotal) : Number(p.price || 0) * Number(p.quantity || 0);
-        if ((!prev.image || prev.image.includes('fakestore')) && p.image && !p.image.includes('fakestore')) {
+        prev.revenue +=
+          p.lineTotal != null
+            ? Number(p.lineTotal)
+            : Number(p.price || 0) * Number(p.quantity || 0);
+        if (
+          (!prev.image || prev.image.includes("fakestore")) &&
+          p.image &&
+          !p.image.includes("fakestore")
+        ) {
           prev.image = p.image;
         }
         agg.set(name, prev);
       });
     }
-    return Array.from(agg.values()).sort((a, b) => b.revenue - a.revenue).slice(0, 5);
+    return Array.from(agg.values())
+      .sort((a, b) => b.revenue - a.revenue)
+      .slice(0, 5);
   }, [filteredOrders]);
 
   const recentOrders = useMemo(() => {
-    return [...orders].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)).slice(0, 10);
+    return [...orders]
+      .sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0))
+      .slice(0, 10);
   }, [orders]);
 
   const greeting = useMemo(() => {
@@ -211,7 +253,8 @@ export default function AdminDashboard() {
     return "Good Evening";
   }, []);
 
-  const fadeInClass = (delay) => `animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-${delay}`;
+  const fadeInClass = (delay) =>
+    `animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both delay-${delay}`;
 
   return (
     <div className="premium-admin-page min-h-screen bg-transparent font-sans text-[#24231f] pb-10">
@@ -232,16 +275,17 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-2 self-start sm:self-auto">
             {/* Date Filter - Segmented Control */}
             <div className="bg-slate-200/60 p-0.5 sm:p-1 rounded-xl flex items-center">
-              {['7d', '30d', '90d'].map((range) => (
+              {["7d", "30d", "90d"].map((range) => (
                 <button
                   key={range}
                   onClick={() => setTimeRange(range)}
-                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${timeRange === range
-                    ? "bg-white text-slate-900 shadow-xs scale-102"
-                    : "text-slate-500 hover:text-slate-700"
-                    }`}
+                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold rounded-lg transition-all ${
+                    timeRange === range
+                      ? "bg-white text-slate-900 shadow-xs scale-102"
+                      : "text-slate-500 hover:text-slate-700"
+                  }`}
                 >
-                  {range === '7d' ? '7 Days' : range === '30d' ? '30 Days' : '3 Months'}
+                  {range === "7d" ? "7 Days" : range === "30d" ? "30 Days" : "3 Months"}
                 </button>
               ))}
             </div>
@@ -252,14 +296,15 @@ export default function AdminDashboard() {
               className="p-1.5 sm:p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-orange-600 hover:border-orange-200 transition-all shadow-xs active:scale-95"
               title="Sync Data"
             >
-              <RefreshIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshIcon
+                className={`h-4 w-4 sm:h-5 sm:w-5 ${dashboardQuery.isFetching ? "animate-spin" : ""}`}
+              />
             </button>
           </div>
         </div>
       </div>
 
       <div className="max-w-[1600px] mx-auto space-y-4 sm:space-y-8 px-3.5 sm:px-8 mt-4 sm:mt-8">
-
         {error && (
           <div className="rounded-2xl bg-red-50 border border-red-100 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm text-red-600 flex items-center gap-2 animate-in fade-in shadow-xs">
             <StatusOnlineIcon className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -322,7 +367,6 @@ export default function AdminDashboard() {
 
             {/* Main Charts Section */}
             <div className={`grid grid-cols-1 xl:grid-cols-3 gap-3.5 sm:gap-6 ${fadeInClass(400)}`}>
-
               {/* Revenue Chart */}
               <div className="xl:col-span-2 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6 hover:shadow-md transition-all duration-300">
                 <div className="flex items-center justify-between mb-4 sm:mb-8">
@@ -342,9 +386,12 @@ export default function AdminDashboard() {
                 </div>
 
                 <div className="h-[220px] sm:h-[320px] w-full">
-                  {revenueSeries.length > 0 && revenueSeries.some(d => d.revenue > 0) ? (
+                  {revenueSeries.length > 0 && revenueSeries.some((d) => d.revenue > 0) ? (
                     <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={revenueSeries} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
+                      <AreaChart
+                        data={revenueSeries}
+                        margin={{ top: 10, right: 10, left: -15, bottom: 0 }}
+                      >
                         <defs>
                           <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="#f97316" stopOpacity={0.1} />
@@ -363,11 +410,19 @@ export default function AdminDashboard() {
                           axisLine={false}
                           tickLine={false}
                           tick={{ fontSize: 9, fill: "#94a3b8", fontWeight: 500 }}
-                          tickFormatter={(val) => `₹${val >= 1000 ? (val / 1000).toFixed(0) + 'k' : val}`}
+                          tickFormatter={(val) =>
+                            `₹${val >= 1000 ? (val / 1000).toFixed(0) + "k" : val}`
+                          }
                         />
                         <Tooltip
-                          contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', padding: '8px 12px', fontSize: '12px' }}
-                          cursor={{ stroke: '#f97316', strokeWidth: 1, strokeDasharray: '4 4' }}
+                          contentStyle={{
+                            borderRadius: "12px",
+                            border: "none",
+                            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+                            padding: "8px 12px",
+                            fontSize: "12px",
+                          }}
+                          cursor={{ stroke: "#f97316", strokeWidth: 1, strokeDasharray: "4 4" }}
                         />
                         <Area
                           type="monotone"
@@ -388,13 +443,21 @@ export default function AdminDashboard() {
 
               {/* Order Stages Bar Chart */}
               <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs p-4 sm:p-6 hover:shadow-md transition-all duration-300 flex flex-col">
-                <h2 className="text-sm sm:text-lg font-bold text-slate-900 mb-0.5 sm:mb-1 tracking-tight">Pipeline</h2>
-                <p className="text-[10px] sm:text-xs font-medium text-slate-400 mb-3 sm:mb-6">Order status distribution</p>
+                <h2 className="text-sm sm:text-lg font-bold text-slate-900 mb-0.5 sm:mb-1 tracking-tight">
+                  Pipeline
+                </h2>
+                <p className="text-[10px] sm:text-xs font-medium text-slate-400 mb-3 sm:mb-6">
+                  Order status distribution
+                </p>
 
                 <div className="flex-1 min-h-[180px] sm:min-h-[220px]">
-                  {stageData.some(s => s.count > 0) ? (
+                  {stageData.some((s) => s.count > 0) ? (
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={stageData} layout="vertical" margin={{ left: -10, right: 10 }}>
+                      <BarChart
+                        data={stageData}
+                        layout="vertical"
+                        margin={{ left: -10, right: 10 }}
+                      >
                         <CartesianGrid horizontal={false} stroke="#f1f5f9" />
                         <XAxis type="number" hide />
                         <YAxis
@@ -406,10 +469,20 @@ export default function AdminDashboard() {
                           tick={{ fontSize: 9, fill: "#64748b", fontWeight: 600 }}
                         />
                         <Tooltip
-                          cursor={{ fill: 'transparent' }}
-                          contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', fontSize: '12px' }}
+                          cursor={{ fill: "transparent" }}
+                          contentStyle={{
+                            borderRadius: "8px",
+                            border: "none",
+                            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                            fontSize: "12px",
+                          }}
                         />
-                        <Bar dataKey="count" radius={[0, 4, 4, 0]} barSize={14} animationDuration={1500}>
+                        <Bar
+                          dataKey="count"
+                          radius={[0, 4, 4, 0]}
+                          barSize={14}
+                          animationDuration={1500}
+                        >
                           {stageData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
                           ))}
@@ -425,37 +498,56 @@ export default function AdminDashboard() {
 
             {/* Bottom Section - Lists with Premium "Invisible" Scroll */}
             <div className={`grid grid-cols-1 xl:grid-cols-2 gap-3.5 sm:gap-6 ${fadeInClass(500)}`}>
-
               {/* Recent Orders List */}
               <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
                 <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
-                  <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Recent Orders</h2>
-                  <button onClick={() => navigate("/admin/orders")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all orders">
+                  <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">
+                    Recent Orders
+                  </h2>
+                  <button
+                    onClick={() => navigate("/admin/orders")}
+                    className="text-slate-400 hover:text-orange-600 transition-colors p-1"
+                    aria-label="View all orders"
+                  >
                     <ExternalLinkIcon className="h-4 w-4" />
                   </button>
                 </div>
 
                 {/* Scrollable Content Area */}
                 <div className="overflow-y-auto no-scrollbar flex-1 p-2 sm:p-3">
-                  {recentOrders.length > 0 ? recentOrders.map((order) => (
-                    <div key={order._id} className="p-2.5 sm:p-3 hover:bg-slate-50/80 rounded-xl sm:rounded-2xl transition-colors flex items-center gap-2.5 sm:gap-4 group/item cursor-pointer mb-1" onClick={() => navigate(`/admin/orders/${order._id}`)}>
-                      <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 group-hover/item:bg-orange-100 group-hover/item:text-orange-600 transition-colors shrink-0">
-                        <ShoppingBagIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-0.5">
-                          <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">#{order.orderId || order._id.slice(-6).toUpperCase()}</p>
-                          <p className="text-xs sm:text-sm font-black text-slate-900">{INR(order.totalPrice)}</p>
+                  {recentOrders.length > 0 ? (
+                    recentOrders.map((order) => (
+                      <div
+                        key={order._id}
+                        className="p-2.5 sm:p-3 hover:bg-slate-50/80 rounded-xl sm:rounded-2xl transition-colors flex items-center gap-2.5 sm:gap-4 group/item cursor-pointer mb-1"
+                        onClick={() => navigate(`/admin/orders/${order._id}`)}
+                      >
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 group-hover/item:bg-orange-100 group-hover/item:text-orange-600 transition-colors shrink-0">
+                          <ShoppingBagIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                         </div>
-                        <div className="flex items-center justify-between">
-                          <p className="text-[10px] sm:text-xs font-medium text-slate-500 truncate">{order.customer?.name || "Guest"}</p>
-                          <span className={`text-[8px] sm:text-[9px] uppercase tracking-wide px-1.5 py-0.5 rounded-full font-bold border ${stageColors[order.stage]}`}>
-                            {stageLabels[order.stage]}
-                          </span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between mb-0.5">
+                            <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">
+                              #{order.orderId || order._id.slice(-6).toUpperCase()}
+                            </p>
+                            <p className="text-xs sm:text-sm font-black text-slate-900">
+                              {INR(order.totalPrice)}
+                            </p>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <p className="text-[10px] sm:text-xs font-medium text-slate-500 truncate">
+                              {order.customer?.name || "Guest"}
+                            </p>
+                            <span
+                              className={`text-[8px] sm:text-[9px] uppercase tracking-wide px-1.5 py-0.5 rounded-full font-bold border ${stageColors[order.stage]}`}
+                            >
+                              {stageLabels[order.stage]}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )) : (
+                    ))
+                  ) : (
                     <EmptyState message="No recent orders found" />
                   )}
                   {/* Spacer for bottom scroll */}
@@ -469,28 +561,51 @@ export default function AdminDashboard() {
               {/* Top Products List */}
               <div className="bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-200/60 shadow-xs h-[380px] sm:h-[450px] flex flex-col relative group">
                 <div className="p-4 sm:p-6 border-b border-slate-50 flex items-center justify-between bg-white rounded-t-2xl sm:rounded-t-[1.5rem]">
-                  <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">Top Products</h2>
-                  <button onClick={() => navigate("/admin/catalog")} className="text-slate-400 hover:text-orange-600 transition-colors p-1" aria-label="View all products">
+                  <h2 className="text-sm sm:text-lg font-bold text-slate-900 tracking-tight">
+                    Top Products
+                  </h2>
+                  <button
+                    onClick={() => navigate("/admin/catalog")}
+                    className="text-slate-400 hover:text-orange-600 transition-colors p-1"
+                    aria-label="View all products"
+                  >
                     <ExternalLinkIcon className="h-4 w-4" />
                   </button>
                 </div>
 
                 <div className="overflow-y-auto no-scrollbar flex-1 p-2.5 sm:p-4 space-y-2 sm:space-y-3">
-                  {topProducts.length > 0 ? topProducts.map((p, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-xs transition-all bg-white group/item">
-                      <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-100 relative">
-                        <ImageWithFallback src={p.image} alt={p.name} className="h-full w-full object-contain p-1 group-hover/item:scale-110 transition-transform duration-500 mix-blend-multiply" />
-                        <div className="absolute top-0 left-0 bg-slate-900 text-white text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded-br-lg">#{idx + 1}</div>
+                  {topProducts.length > 0 ? (
+                    topProducts.map((p, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-slate-100 hover:border-orange-200 hover:shadow-xs transition-all bg-white group/item"
+                      >
+                        <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 overflow-hidden border border-slate-100 relative">
+                          <ImageWithFallback
+                            src={p.image}
+                            alt={p.name}
+                            className="h-full w-full object-contain p-1 group-hover/item:scale-110 transition-transform duration-500 mix-blend-multiply"
+                          />
+                          <div className="absolute top-0 left-0 bg-slate-900 text-white text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded-br-lg">
+                            #{idx + 1}
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-xs sm:text-sm font-bold text-slate-900 truncate group-hover/item:text-orange-600 transition-colors">
+                            {p.name}
+                          </h4>
+                          <p className="text-[10px] sm:text-xs font-medium text-slate-500">
+                            {p.qty} units sold
+                          </p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-xs sm:text-sm font-black text-slate-900">
+                            {INR(p.revenue)}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-900 truncate group-hover/item:text-orange-600 transition-colors">{p.name}</h4>
-                        <p className="text-[10px] sm:text-xs font-medium text-slate-500">{p.qty} units sold</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-xs sm:text-sm font-black text-slate-900">{INR(p.revenue)}</p>
-                      </div>
-                    </div>
-                  )) : (
+                    ))
+                  ) : (
                     <EmptyState message={`No sales in this period`} />
                   )}
                   <div className="h-10"></div>
@@ -499,7 +614,6 @@ export default function AdminDashboard() {
                 {/* Premium Fade Overlay - Bottom */}
                 <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl sm:rounded-b-[1.5rem]" />
               </div>
-
             </div>
           </>
         )}
@@ -517,35 +631,42 @@ function ImageWithFallback({ src, alt, className }) {
     return <PhotographIcon className="h-6 w-6 text-slate-300" />;
   }
 
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className={className}
-      onError={() => setError(true)}
-    />
-  );
+  return <img src={src} alt={alt} className={className} onError={() => setError(true)} />;
 }
 
 function StatCard({ title, value, subtitle, icon, gradient, trend, trendUp }) {
   return (
     <div className="relative overflow-hidden rounded-2xl sm:rounded-[1.5rem] bg-white p-3 sm:p-6 shadow-xs border border-slate-200/60 group hover:shadow-md transition-all duration-300">
       {/* Subtle Gradient Background */}
-      <div className={`absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-6 -mt-6 sm:-mr-8 sm:-mt-8 transition-transform group-hover:scale-110 duration-700 pointer-events-none`}></div>
+      <div
+        className={`absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br ${gradient} opacity-[0.08] rounded-bl-full -mr-6 -mt-6 sm:-mr-8 sm:-mt-8 transition-transform group-hover:scale-110 duration-700 pointer-events-none`}
+      ></div>
 
       <div className="flex justify-between items-start relative z-10 gap-1.5 sm:gap-2">
         <div className="min-w-0 flex-1">
-          <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5 sm:mb-1 truncate">{title}</p>
-          <h3 className="text-base sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight leading-tight truncate">{value}</h3>
+          <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-0.5 sm:mb-1 truncate">
+            {title}
+          </p>
+          <h3 className="text-base sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight leading-tight truncate">
+            {value}
+          </h3>
         </div>
-        <div className={`h-7 w-7 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-xs text-white shrink-0 transform group-hover:rotate-6 transition-transform duration-300`}>
+        <div
+          className={`h-7 w-7 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-xs text-white shrink-0 transform group-hover:rotate-6 transition-transform duration-300`}
+        >
           {icon}
         </div>
       </div>
 
       <div className="mt-2 sm:mt-4 flex items-center gap-1.5 text-[9px] sm:text-xs font-medium relative z-10 truncate">
-        <span className={`flex items-center gap-0.5 px-1 sm:px-1.5 py-0.5 rounded-md shrink-0 font-bold ${trendUp ? "text-emerald-700 bg-emerald-50" : "text-red-700 bg-red-50"}`}>
-          {trendUp ? <ArrowSmUpIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> : <ArrowSmDownIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />}
+        <span
+          className={`flex items-center gap-0.5 px-1 sm:px-1.5 py-0.5 rounded-md shrink-0 font-bold ${trendUp ? "text-emerald-700 bg-emerald-50" : "text-red-700 bg-red-50"}`}
+        >
+          {trendUp ? (
+            <ArrowSmUpIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+          ) : (
+            <ArrowSmDownIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+          )}
           {trend}
         </span>
         <span className="text-slate-400 truncate hidden sm:inline">{subtitle}</span>
@@ -569,8 +690,11 @@ function DashboardSkeleton() {
   return (
     <div className="animate-pulse space-y-6">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
-        {[1, 2, 3, 4].map(i => (
-          <div key={i} className="h-28 sm:h-36 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 shadow-xs p-3 sm:p-6 relative overflow-hidden">
+        {[1, 2, 3, 4].map((i) => (
+          <div
+            key={i}
+            className="h-28 sm:h-36 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 shadow-xs p-3 sm:p-6 relative overflow-hidden"
+          >
             <div className="flex justify-between">
               <div className="h-3 w-16 bg-slate-100 rounded mb-2"></div>
               <div className="h-7 w-7 sm:h-10 sm:w-10 bg-slate-100 rounded-xl"></div>
@@ -588,7 +712,9 @@ function DashboardSkeleton() {
         <div className="h-64 sm:h-80 bg-white rounded-2xl sm:rounded-[1.5rem] border border-slate-100 p-4 sm:p-6">
           <div className="h-5 w-24 bg-slate-100 rounded mb-6"></div>
           <div className="space-y-2.5">
-            {[1, 2, 3, 4].map(j => <div key={j} className="h-8 sm:h-10 bg-slate-50 rounded-xl"></div>)}
+            {[1, 2, 3, 4].map((j) => (
+              <div key={j} className="h-8 sm:h-10 bg-slate-50 rounded-xl"></div>
+            ))}
           </div>
         </div>
       </div>

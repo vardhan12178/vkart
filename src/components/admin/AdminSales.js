@@ -14,7 +14,11 @@ import usePermission from "./usePermission";
 import { CATEGORIES } from "../shop/catalogData";
 import { SkeletonRegion, TableSkeleton } from "../ui/Skeleton";
 
-const categoryLabel = (slug) => CATEGORIES[slug] || String(slug || "").replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
+const categoryLabel = (slug) =>
+  CATEGORIES[slug] ||
+  String(slug || "")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (ch) => ch.toUpperCase());
 
 const emptySale = {
   name: "",
@@ -137,7 +141,10 @@ export default function AdminSales() {
   const addCategory = () =>
     setForm((p) => ({
       ...p,
-      categories: [...p.categories, { category: "", discountPercent: "", primeDiscountPercent: "" }],
+      categories: [
+        ...p.categories,
+        { category: "", discountPercent: "", primeDiscountPercent: "" },
+      ],
     }));
 
   const removeCategory = (idx) =>
@@ -174,15 +181,21 @@ export default function AdminSales() {
     }
   };
 
-  const isActive = (s) => s.isActive && new Date() >= new Date(s.startDate) && new Date() <= new Date(s.endDate);
+  const isActive = (s) =>
+    s.isActive && new Date() >= new Date(s.startDate) && new Date() <= new Date(s.endDate);
 
   return (
     <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
-
         {toast && (
-          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}>
-            {toast.type === "error" ? <XCircleIcon className="h-5 w-5 text-red-500" /> : <CheckCircleIcon className="h-5 w-5 text-emerald-500" />}
+          <div
+            className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "bg-white border-red-100 text-red-800" : "bg-white border-emerald-100 text-emerald-800"}`}
+          >
+            {toast.type === "error" ? (
+              <XCircleIcon className="h-5 w-5 text-red-500" />
+            ) : (
+              <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
+            )}
             <span>{toast.msg}</span>
           </div>
         )}
@@ -193,7 +206,9 @@ export default function AdminSales() {
             <h1 className="font-editorial text-lg sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight truncate">
               Sales & Promotions
             </h1>
-            <p className="text-[11px] sm:text-sm text-slate-500 mt-0.5 font-medium">{sales.length} promotional events</p>
+            <p className="text-[11px] sm:text-sm text-slate-500 mt-0.5 font-medium">
+              {sales.length} promotional events
+            </p>
           </div>
           <div className="flex items-center gap-1.5 shrink-0">
             <button
@@ -225,13 +240,22 @@ export default function AdminSales() {
 
         {/* Content Area */}
         {loading ? (
-          <SkeletonRegion label="Loading sales"><TableSkeleton rows={4} cols={4} /></SkeletonRegion>
+          <SkeletonRegion label="Loading sales">
+            <TableSkeleton rows={4} cols={4} />
+          </SkeletonRegion>
         ) : sales.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-slate-200/70 shadow-xs">
             <p className="text-base font-bold text-slate-900 mb-1">No sales created yet</p>
-            <p className="text-xs sm:text-sm text-slate-500 mb-4">Set up a seasonal or promotional discount event.</p>
+            <p className="text-xs sm:text-sm text-slate-500 mb-4">
+              Set up a seasonal or promotional discount event.
+            </p>
             {canWrite && (
-              <button onClick={openCreate} className="text-xs sm:text-sm font-bold text-orange-600 hover:underline">Create your first sale</button>
+              <button
+                onClick={openCreate}
+                className="text-xs sm:text-sm font-bold text-orange-600 hover:underline"
+              >
+                Create your first sale
+              </button>
             )}
           </div>
         ) : (
@@ -244,7 +268,9 @@ export default function AdminSales() {
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <h4 className="text-sm font-bold text-slate-900 leading-snug">{s.name}</h4>
-                      <span className="font-mono text-[10px] text-slate-400 block mt-0.5">{s.slug}</span>
+                      <span className="font-mono text-[10px] text-slate-400 block mt-0.5">
+                        {s.slug}
+                      </span>
                     </div>
 
                     <div className="shrink-0">
@@ -253,7 +279,9 @@ export default function AdminSales() {
                           <CheckCircleIcon className="h-3 w-3" /> Live
                         </span>
                       ) : s.isActive ? (
-                        <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-full">Scheduled</span>
+                        <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-full">
+                          Scheduled
+                        </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
                           <XCircleIcon className="h-3 w-3" /> Inactive
@@ -264,9 +292,20 @@ export default function AdminSales() {
 
                   {/* Duration Banner */}
                   <div className="text-[11px] text-slate-600 font-medium bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100 flex items-center justify-between">
-                    <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider">Duration</span>
+                    <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider">
+                      Duration
+                    </span>
                     <span className="font-semibold text-slate-700">
-                      {new Date(s.startDate).toLocaleDateString("en-IN", { day: "numeric", month: "short" })} → {new Date(s.endDate).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                      {new Date(s.startDate).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "short",
+                      })}{" "}
+                      →{" "}
+                      {new Date(s.endDate).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
                     </span>
                   </div>
 
@@ -278,7 +317,10 @@ export default function AdminSales() {
                     </div>
                     <div className="divide-y divide-slate-200/50">
                       {s.categories.map((c, i) => (
-                        <div key={i} className="flex items-center justify-between py-1 px-1 text-xs">
+                        <div
+                          key={i}
+                          className="flex items-center justify-between py-1 px-1 text-xs"
+                        >
                           <span className="font-medium text-slate-700 capitalize truncate pr-2 text-[11px]">
                             {categoryLabel(c.category)}
                           </span>
@@ -342,8 +384,12 @@ export default function AdminSales() {
                       <td className="px-6 py-4">
                         <div className="flex flex-wrap gap-1">
                           {s.categories.map((c, i) => (
-                            <span key={i} className="bg-orange-50 border border-orange-100 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                              {categoryLabel(c.category)} ({c.discountPercent}%{c.primeDiscountPercent ? ` / P:${c.primeDiscountPercent}%` : ""})
+                            <span
+                              key={i}
+                              className="bg-orange-50 border border-orange-100 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full"
+                            >
+                              {categoryLabel(c.category)} ({c.discountPercent}%
+                              {c.primeDiscountPercent ? ` / P:${c.primeDiscountPercent}%` : ""})
                             </span>
                           ))}
                         </div>
@@ -358,7 +404,9 @@ export default function AdminSales() {
                             <CheckCircleIcon className="h-3.5 w-3.5" /> Live
                           </span>
                         ) : s.isActive ? (
-                          <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-100 px-3 py-1 rounded-full">Scheduled</span>
+                          <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-100 px-3 py-1 rounded-full">
+                            Scheduled
+                          </span>
                         ) : (
                           <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">
                             <XCircleIcon className="h-3.5 w-3.5" /> Inactive
@@ -366,16 +414,22 @@ export default function AdminSales() {
                         )}
                       </td>
                       {canWrite && (
-                      <td className="px-6 py-4">
-                        <div className="flex justify-end gap-1.5">
-                          <button onClick={() => openEdit(s)} className="p-2 rounded-lg hover:bg-slate-100 transition">
-                            <PencilIcon className="h-4 w-4 text-slate-500" />
-                          </button>
-                          <button onClick={() => handleDelete(s._id)} className="p-2 rounded-lg hover:bg-red-50 transition">
-                            <TrashIcon className="h-4 w-4 text-red-400" />
-                          </button>
-                        </div>
-                      </td>
+                        <td className="px-6 py-4">
+                          <div className="flex justify-end gap-1.5">
+                            <button
+                              onClick={() => openEdit(s)}
+                              className="p-2 rounded-lg hover:bg-slate-100 transition"
+                            >
+                              <PencilIcon className="h-4 w-4 text-slate-500" />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(s._id)}
+                              className="p-2 rounded-lg hover:bg-red-50 transition"
+                            >
+                              <TrashIcon className="h-4 w-4 text-red-400" />
+                            </button>
+                          </div>
+                        </td>
                       )}
                     </tr>
                   ))}
@@ -387,47 +441,103 @@ export default function AdminSales() {
 
         {/* Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowForm(false)}>
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[94vh] overflow-y-auto border border-slate-200 animate-in zoom-in-95 duration-150" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4"
+            onClick={() => setShowForm(false)}
+          >
+            <div
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[94vh] overflow-y-auto border border-slate-200 animate-in zoom-in-95 duration-150"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100 flex items-center justify-between">
-                <h2 className="text-base sm:text-lg font-bold text-slate-900">{editing ? "Edit Sale" : "Create Sale"}</h2>
-                <button onClick={() => setShowForm(false)} className="text-slate-400 hover:text-slate-600 p-1">
+                <h2 className="text-base sm:text-lg font-bold text-slate-900">
+                  {editing ? "Edit Sale" : "Create Sale"}
+                </h2>
+                <button
+                  onClick={() => setShowForm(false)}
+                  className="text-slate-400 hover:text-slate-600 p-1"
+                >
                   ✕
                 </button>
               </div>
               <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
-                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Name *</label>
-                    <input value={form.name} onChange={(e) => handleField("name", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" />
+                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">
+                      Name *
+                    </label>
+                    <input
+                      value={form.name}
+                      onChange={(e) => handleField("name", e.target.value)}
+                      required
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none"
+                    />
                   </div>
                   <div>
-                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Slug *</label>
-                    <input value={form.slug} onChange={(e) => handleField("slug", e.target.value)} required className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" placeholder="republic-day-sale" />
+                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">
+                      Slug *
+                    </label>
+                    <input
+                      value={form.slug}
+                      onChange={(e) => handleField("slug", e.target.value)}
+                      required
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-mono focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none"
+                      placeholder="republic-day-sale"
+                    />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Description</label>
-                  <input value={form.description} onChange={(e) => handleField("description", e.target.value)} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none" />
+                  <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">
+                    Description
+                  </label>
+                  <input
+                    value={form.description}
+                    onChange={(e) => handleField("description", e.target.value)}
+                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-slate-500/20 bg-slate-50/50 focus:bg-white outline-none"
+                  />
                 </div>
 
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
                   <div>
-                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">Start Date *</label>
-                    <input type="datetime-local" value={form.startDate} onChange={(e) => handleField("startDate", e.target.value)} required className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">
+                      Start Date *
+                    </label>
+                    <input
+                      type="datetime-local"
+                      value={form.startDate}
+                      onChange={(e) => handleField("startDate", e.target.value)}
+                      required
+                      className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none"
+                    />
                   </div>
                   <div>
-                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">End Date *</label>
-                    <input type="datetime-local" value={form.endDate} onChange={(e) => handleField("endDate", e.target.value)} required className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none" />
+                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 block">
+                      End Date *
+                    </label>
+                    <input
+                      type="datetime-local"
+                      value={form.endDate}
+                      onChange={(e) => handleField("endDate", e.target.value)}
+                      required
+                      className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white outline-none"
+                    />
                   </div>
                 </div>
 
                 {/* Categories */}
                 <div className="pt-1">
                   <div className="flex items-center justify-between mb-2">
-                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase">Category Discounts</label>
-                    <button type="button" onClick={addCategory} className="text-xs font-bold text-orange-600 hover:underline">+ Add Category</button>
+                    <label className="text-[11px] sm:text-xs font-bold text-slate-700 uppercase">
+                      Category Discounts
+                    </label>
+                    <button
+                      type="button"
+                      onClick={addCategory}
+                      className="text-xs font-bold text-orange-600 hover:underline"
+                    >
+                      + Add Category
+                    </button>
                   </div>
                   <div className="space-y-2">
                     {form.categories.map((cat, idx) => (
@@ -439,9 +549,18 @@ export default function AdminSales() {
                         >
                           <option value="">Select category</option>
                           {productCategories
-                            .filter((c) => c === cat.category || !form.categories.some((fc, fi) => fi !== idx && fc.category.toLowerCase() === c.toLowerCase()))
+                            .filter(
+                              (c) =>
+                                c === cat.category ||
+                                !form.categories.some(
+                                  (fc, fi) =>
+                                    fi !== idx && fc.category.toLowerCase() === c.toLowerCase()
+                                )
+                            )
                             .map((c) => (
-                              <option key={c} value={c}>{categoryLabel(c)}</option>
+                              <option key={c} value={c}>
+                                {categoryLabel(c)}
+                              </option>
                             ))}
                         </select>
                         <input
@@ -456,14 +575,20 @@ export default function AdminSales() {
                         <input
                           type="number"
                           value={cat.primeDiscountPercent}
-                          onChange={(e) => handleCatField(idx, "primeDiscountPercent", e.target.value)}
+                          onChange={(e) =>
+                            handleCatField(idx, "primeDiscountPercent", e.target.value)
+                          }
                           placeholder="Prime %"
                           min="0"
                           max="95"
                           className="w-16 sm:w-20 px-2 py-1.5 sm:py-2 rounded-xl border border-slate-200 text-xs sm:text-sm bg-slate-50/50 focus:bg-white"
                         />
                         {form.categories.length > 1 && (
-                          <button type="button" onClick={() => removeCategory(idx)} className="text-red-400 hover:text-red-600 transition p-1 shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => removeCategory(idx)}
+                            className="text-red-400 hover:text-red-600 transition p-1 shrink-0"
+                          >
                             <TrashIcon className="h-4 w-4" />
                           </button>
                         )}
@@ -473,13 +598,28 @@ export default function AdminSales() {
                 </div>
 
                 <label className="flex items-center gap-2 cursor-pointer pt-1">
-                  <input type="checkbox" checked={form.isActive} onChange={(e) => handleField("isActive", e.target.checked)} className="rounded border-slate-300 text-orange-500 focus:ring-orange-500" />
+                  <input
+                    type="checkbox"
+                    checked={form.isActive}
+                    onChange={(e) => handleField("isActive", e.target.checked)}
+                    className="rounded border-slate-300 text-orange-500 focus:ring-orange-500"
+                  />
                   <span className="text-xs sm:text-sm font-bold text-slate-700">Active</span>
                 </label>
 
                 <div className="flex justify-end gap-2.5 pt-3 border-t border-slate-100">
-                  <button type="button" onClick={() => setShowForm(false)} className="px-4 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 transition">Cancel</button>
-                  <button type="submit" disabled={saving} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition disabled:opacity-50 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setShowForm(false)}
+                    className="px-4 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-50 transition"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={saving}
+                    className="px-5 py-2 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-bold hover:bg-black transition disabled:opacity-50 shadow-xs"
+                  >
                     {saving ? "Saving..." : editing ? "Update Sale" : "Create Sale"}
                   </button>
                 </div>

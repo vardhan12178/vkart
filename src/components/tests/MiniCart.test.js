@@ -11,13 +11,30 @@ jest.mock("framer-motion", () => {
   const mockReact = require("react");
   const strip = ({ initial, animate, exit, transition, ...rest }) => rest;
   return {
-    motion: new Proxy({}, { get: (_t, tag) => ({ children, ...props }) => mockReact.createElement(tag, strip(props), children) }),
+    motion: new Proxy(
+      {},
+      {
+        get:
+          (_t, tag) =>
+          ({ children, ...props }) =>
+            mockReact.createElement(tag, strip(props), children),
+      }
+    ),
     AnimatePresence: ({ children }) => <>{children}</>,
   };
 });
 
 const line = (id, price, extra = {}) => ({
-  catalog: "v2", productId: id, sku: `${id}-1`, slug: id, title: `Item ${id}`, price, thumbnail: "", quantity: 1, selectedVariants: "Black", ...extra,
+  catalog: "v2",
+  productId: id,
+  sku: `${id}-1`,
+  slug: id,
+  title: `Item ${id}`,
+  price,
+  thumbnail: "",
+  quantity: 1,
+  selectedVariants: "Black",
+  ...extra,
 });
 
 function Where() {
@@ -26,12 +43,25 @@ function Where() {
 }
 
 const renderCart = (cart, lastKey = null) => {
-  const store = configureStore({ reducer: { cart: cartReducer, ui: uiReducer }, preloadedState: { cart } });
+  const store = configureStore({
+    reducer: { cart: cartReducer, ui: uiReducer },
+    preloadedState: { cart },
+  });
   store.dispatch(openMiniCart(lastKey));
   render(
     <Provider store={store}>
       <MemoryRouter initialEntries={["/products"]}>
-        <Routes><Route path="*" element={<><MiniCart /><Where /></>} /></Routes>
+        <Routes>
+          <Route
+            path="*"
+            element={
+              <>
+                <MiniCart />
+                <Where />
+              </>
+            }
+          />
+        </Routes>
       </MemoryRouter>
     </Provider>
   );
@@ -47,7 +77,10 @@ describe("MiniCart", () => {
     expect(screen.getByText("₹700")).toBeInTheDocument();
     expect(screen.getByText("₹299")).toBeInTheDocument(); // ₹999 - ₹700 left for free delivery
     expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "70");
-    expect(screen.getAllByRole("link", { name: /Item/ })[0]).toHaveAttribute("href", "/products/b?variant=b-1");
+    expect(screen.getAllByRole("link", { name: /Item/ })[0]).toHaveAttribute(
+      "href",
+      "/products/b?variant=b-1"
+    );
   });
 
   test("changes quantities, removes lines and unlocks free delivery", () => {

@@ -6,7 +6,7 @@ import {
   FaArrowLeft,
   FaSearch,
   FaEnvelope,
-  FaGhost
+  FaGhost,
 } from "react-icons/fa";
 
 /* ---------- Animation Styles ---------- */
@@ -37,7 +37,6 @@ export default function Error() {
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-200/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-2xl text-center">
-        
         {/* 404 Visual */}
         <div className="relative mx-auto w-40 h-40 mb-6 animate-float">
           <div className="absolute inset-0 bg-gradient-to-tr from-orange-500 to-amber-500 rounded-[2.5rem] rotate-6 opacity-20 blur-xl animate-pulse-glow" />
@@ -72,7 +71,9 @@ export default function Error() {
               onKeyDown={(e) => e.key === "Enter" && handleSearch(e.currentTarget.value)}
             />
             <button
-              onClick={(e) => handleSearch(e.currentTarget.parentElement?.querySelector("input")?.value || "")}
+              onClick={(e) =>
+                handleSearch(e.currentTarget.parentElement?.querySelector("input")?.value || "")
+              }
               className="absolute right-2 top-2 bottom-2 rounded-xl bg-gray-900 px-4 text-xs font-bold text-white shadow-lg hover:bg-black transition-all active:scale-95"
             >
               Search
@@ -81,7 +82,10 @@ export default function Error() {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        <div
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
+          style={{ animationDelay: "0.2s" }}
+        >
           <Link
             to="/"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-orange-500/40 active:scale-95"
@@ -90,7 +94,9 @@ export default function Error() {
           </Link>
           <button
             type="button"
-            onClick={() => window.history.length > 1 ? window.history.back() : (window.location.href = "/")}
+            onClick={() =>
+              window.history.length > 1 ? window.history.back() : (window.location.href = "/")
+            }
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-3.5 text-sm font-bold text-gray-700 border border-gray-200 shadow-sm transition-all hover:bg-gray-50 hover:border-gray-300 active:scale-95"
           >
             <FaArrowLeft /> Go Back
@@ -106,7 +112,6 @@ export default function Error() {
             <FaEnvelope /> Need help? Contact Support
           </Link>
         </div>
-
       </div>
     </div>
   );

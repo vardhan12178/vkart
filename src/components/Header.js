@@ -62,9 +62,13 @@ const Header = () => {
       try {
         const res = await axios.get("/api/sales/active");
         if (!cancelled) setHasActiveSale(!!res.data?.sale);
-      } catch { if (!cancelled) setHasActiveSale(false); }
+      } catch {
+        if (!cancelled) setHasActiveSale(false);
+      }
     })();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [location.pathname]);
 
   // 1. Handle Scroll styling
@@ -76,7 +80,10 @@ const Header = () => {
 
   // The mobile tab bar's Search tab asks for the search box to open
   useEffect(() => {
-    const open = () => { setIsMobileMenuOpen(false); setShowSearch(true); };
+    const open = () => {
+      setIsMobileMenuOpen(false);
+      setShowSearch(true);
+    };
     window.addEventListener(OPEN_SEARCH_EVENT, open);
     return () => window.removeEventListener(OPEN_SEARCH_EVENT, open);
   }, []);
@@ -132,7 +139,9 @@ const Header = () => {
 
   const navLinks = [
     { label: "Home", to: "/", icon: HomeIcon },
-    ...(hasActiveSale ? [{ label: "Sale", to: "/products?sort=discount", icon: LightningBoltIcon }] : []),
+    ...(hasActiveSale
+      ? [{ label: "Sale", to: "/products?sort=discount", icon: LightningBoltIcon }]
+      : []),
   ];
 
   return (
@@ -141,17 +150,19 @@ const Header = () => {
       <header
         role="banner"
         data-scrolled={scrolled ? "true" : "false"}
-        className={`vkart-site-header sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
-          ? "backdrop-blur-xl"
-          : ""
-          }`}
+        className={`vkart-site-header sticky top-0 z-50 w-full transition-all duration-300 ${
+          scrolled ? "backdrop-blur-xl" : ""
+        }`}
       >
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 md:h-[4.75rem] items-center justify-between gap-4">
-
             {/* --- LEFT: BRAND & NAV --- */}
             <div className="flex items-center gap-5 xl:gap-8">
-              <Link to="/" className="group flex items-center gap-2.5 shrink-0" aria-label="VKart home">
+              <Link
+                to="/"
+                className="group flex items-center gap-2.5 shrink-0"
+                aria-label="VKart home"
+              >
                 <div className="relative flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-full bg-[#1d1c19] text-white transition-transform group-hover:-rotate-3 group-hover:scale-95">
                   <ShoppingBag className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.8} />
                   <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#b66a3c] border-2 border-[#fffdf8]" />
@@ -174,7 +185,9 @@ const Header = () => {
                       className="relative px-3 xl:px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#5f5b52] hover:text-[#1d1c19] transition-colors group"
                     >
                       {item.label}
-                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#1d1c19] transition-all duration-300 group-hover:w-1/2 ${active ? "w-1/2" : ""}`} />
+                      <span
+                        className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-[#1d1c19] transition-all duration-300 group-hover:w-1/2 ${active ? "w-1/2" : ""}`}
+                      />
                     </Link>
                   );
                 })}
@@ -186,10 +199,8 @@ const Header = () => {
               <HeaderSearch variant="desktop" />
             </div>
 
-
             {/* --- RIGHT: ACTIONS --- */}
             <div className="flex items-center gap-1.5 xl:gap-3 shrink-0">
-
               {/* Mobile Search Toggle */}
               <button
                 onClick={() => setShowSearch(!showSearch)}
@@ -206,9 +217,13 @@ const Header = () => {
                 aria-label={isPrime ? "View Prime membership" : "Explore Prime membership"}
               >
                 {isPrime ? (
-                  <><BadgeCheck className="h-3.5 w-3.5" strokeWidth={1.8} /> Prime</>
+                  <>
+                    <BadgeCheck className="h-3.5 w-3.5" strokeWidth={1.8} /> Prime
+                  </>
                 ) : (
-                  <><Crown className="h-3.5 w-3.5" strokeWidth={1.8} /> Prime</>
+                  <>
+                    <Crown className="h-3.5 w-3.5" strokeWidth={1.8} /> Prime
+                  </>
                 )}
               </Link>
 
@@ -216,14 +231,15 @@ const Header = () => {
               {location.pathname !== "/" && (
                 <button
                   onClick={() => dispatch(toggleChat())}
-                  className={`hidden sm:flex h-9 items-center gap-2 border-l border-black/10 pl-3 pr-1 text-[11px] font-extrabold uppercase tracking-[0.08em] transition-colors ${isChatOpen
-                    ? "text-[#a85d37]"
-                    : "text-[#4f4b44] hover:text-[#a85d37]"
-                    }`}
+                  className={`hidden sm:flex h-9 items-center gap-2 border-l border-black/10 pl-3 pr-1 text-[11px] font-extrabold uppercase tracking-[0.08em] transition-colors ${
+                    isChatOpen ? "text-[#a85d37]" : "text-[#4f4b44] hover:text-[#a85d37]"
+                  }`}
                   aria-pressed={isChatOpen}
                   aria-label={isChatOpen ? "Close Ask VKart" : "Ask VKart"}
                 >
-                  <span className={`grid h-7 w-7 place-items-center rounded-full transition-colors ${isChatOpen ? "bg-[#1d1c19] text-white" : "bg-black/[0.045]"}`}>
+                  <span
+                    className={`grid h-7 w-7 place-items-center rounded-full transition-colors ${isChatOpen ? "bg-[#1d1c19] text-white" : "bg-black/[0.045]"}`}
+                  >
                     <Sparkles className="h-3.5 w-3.5" strokeWidth={1.8} />
                   </span>
                   <span className="text-xs font-bold uppercase tracking-wide">Ask VKart</span>
@@ -280,7 +296,11 @@ const Header = () => {
               {/* Profile / Auth */}
               {isAuthenticated ? (
                 <div className="hidden lg:flex items-center gap-1 xl:gap-2 pl-2 border-l border-black/15">
-                  <Link to="/profile" className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]" aria-label="Account profile">
+                  <Link
+                    to="/profile"
+                    className="grid h-10 w-10 place-items-center rounded-full text-[#656159] transition-colors hover:bg-black/[0.05] hover:text-[#1d1c19]"
+                    aria-label="Account profile"
+                  >
                     <UserRound className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
                   </Link>
                   <button
@@ -308,7 +328,11 @@ const Header = () => {
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
               >
-                {isMobileMenuOpen ? <X className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} /> : <Menu className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />}
+                {isMobileMenuOpen ? (
+                  <X className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
+                ) : (
+                  <Menu className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
+                )}
               </button>
             </div>
           </div>
@@ -339,7 +363,6 @@ const Header = () => {
               className="lg:hidden overflow-hidden border-t border-black/[0.07] bg-[#fffdf8]/98 backdrop-blur-xl shadow-lg"
             >
               <div className="px-4 py-3 space-y-2.5">
-
                 {/* Mobile Nav Links */}
                 <div className="space-y-0.5">
                   {navLinks.map((item) => {
@@ -350,10 +373,11 @@ const Header = () => {
                         key={item.to}
                         to={item.to}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${active
-                          ? "bg-[#1d1c19] text-white"
-                          : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
-                          }`}
+                        className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${
+                          active
+                            ? "bg-[#1d1c19] text-white"
+                            : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                        }`}
                       >
                         <Icon className="h-4 w-4" />
                         {item.label}
@@ -364,10 +388,11 @@ const Header = () => {
                     <Link
                       to="/profile"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${isActive("/profile")
-                        ? "bg-[#1d1c19] text-white"
-                        : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
-                        }`}
+                      className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs font-bold transition-colors ${
+                        isActive("/profile")
+                          ? "bg-[#1d1c19] text-white"
+                          : "text-[#6f6b62] hover:bg-black/[0.04] hover:text-[#1d1c19]"
+                      }`}
                     >
                       <UserRound className="h-4 w-4" strokeWidth={1.8} />
                       Profile
@@ -379,7 +404,9 @@ const Header = () => {
                 <div className="border-t border-black/[0.06] pt-2.5">
                   {CATEGORY_GROUPS.map((g) => (
                     <div key={g.title} className="mb-2 last:mb-0">
-                      <p className="px-2.5 pb-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-light">{g.title}</p>
+                      <p className="px-2.5 pb-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-light">
+                        {g.title}
+                      </p>
                       <div className="grid grid-cols-2 gap-1">
                         {g.keys.map((key) => {
                           const Icon = iconFor(key);
@@ -392,7 +419,11 @@ const Header = () => {
                             >
                               <Icon size={14} className="shrink-0 text-muted" />
                               <span className="min-w-0 flex-1 truncate">{CATEGORIES[key]}</span>
-                              {categoryCounts[key] > 0 && <span className="text-[10px] text-muted-faint">{categoryCounts[key]}</span>}
+                              {categoryCounts[key] > 0 && (
+                                <span className="text-[10px] text-muted-faint">
+                                  {categoryCounts[key]}
+                                </span>
+                              )}
                             </Link>
                           );
                         })}
@@ -407,7 +438,11 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 rounded-xl border border-[#a85d37]/15 bg-[#efe4d9] px-3 py-2 text-xs font-bold text-[#79462f] transition-colors hover:bg-[#e9dace]"
                 >
-                  {isPrime ? <BadgeCheck className="h-4 w-4" strokeWidth={1.8} /> : <Crown className="h-4 w-4" strokeWidth={1.8} />}
+                  {isPrime ? (
+                    <BadgeCheck className="h-4 w-4" strokeWidth={1.8} />
+                  ) : (
+                    <Crown className="h-4 w-4" strokeWidth={1.8} />
+                  )}
                   {isPrime ? "Prime Member" : "Get Prime"}
                 </Link>
 
@@ -422,7 +457,10 @@ const Header = () => {
 
                   {isAuthenticated ? (
                     <button
-                      onClick={() => { setIsMobileMenuOpen(false); handleLogout(); }}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        handleLogout();
+                      }}
                       className="flex h-9 items-center justify-center gap-1.5 rounded-full border border-black/10 bg-[#eee8df] px-3 text-xs font-bold text-[#75483b] transition-colors hover:bg-[#e6ddd2] active:scale-95"
                     >
                       <LogOut className="h-3.5 w-3.5" strokeWidth={1.8} /> Logout
@@ -437,7 +475,6 @@ const Header = () => {
                     </Link>
                   )}
                 </div>
-
               </div>
             </motion.div>
           )}

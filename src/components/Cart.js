@@ -19,7 +19,17 @@ import {
   wishlistItemKey,
 } from "../redux/wishlistSlice";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowRightIcon, CircleXIcon, HeartIcon, MinusIcon, PlusIcon, ShoppingBagIcon, ShoppingCartIcon, TagIcon, Trash2Icon } from "./ui/icons";
+import {
+  ArrowRightIcon,
+  CircleXIcon,
+  HeartIcon,
+  MinusIcon,
+  PlusIcon,
+  ShoppingBagIcon,
+  ShoppingCartIcon,
+  TagIcon,
+  Trash2Icon,
+} from "./ui/icons";
 import CheckoutForm from "./CheckoutForm";
 import { FreeDeliveryProgress } from "./MiniCart";
 import axios from "./axiosInstance";
@@ -59,13 +69,25 @@ export default function Cart() {
   const wishlistItems = useSelector((s) => s.wishlist);
 
   // Catalog lines: refresh price and stock from the server so the cart never shows stale values
-  const v2Key = cartItems.filter((it) => it.catalog === "v2").map((it) => `${it.productId}:${it.sku}:${it.quantity}`).join("|");
+  const v2Key = cartItems
+    .filter((it) => it.catalog === "v2")
+    .map((it) => `${it.productId}:${it.sku}:${it.quantity}`)
+    .join("|");
   useEffect(() => {
     const lines = cartItems.filter((it) => it.catalog === "v2" && it.productId && it.sku);
     if (!lines.length) return;
-    axios.post("/api/v2/cart/resolve", { items: lines.map((it) => ({ productId: String(it.productId), sku: it.sku, quantity: it.quantity })) })
+    axios
+      .post("/api/v2/cart/resolve", {
+        items: lines.map((it) => ({
+          productId: String(it.productId),
+          sku: it.sku,
+          quantity: it.quantity,
+        })),
+      })
       .then(({ data }) => dispatch(refreshCartLines(data?.items || [])))
-      .catch(() => { /* keep the stored values; the server re-prices at checkout anyway */ });
+      .catch(() => {
+        /* keep the stored values; the server re-prices at checkout anyway */
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [v2Key]);
 
@@ -83,7 +105,16 @@ export default function Cart() {
 
   const calc = useMemo(() => {
     if (!cartItems?.length)
-      return { mrp: 0, rawSell: 0, subtotal: 0, promoOff: 0, tax: 0, total: 0, savingsMrpVsSell: 0, shipping: 0 };
+      return {
+        mrp: 0,
+        rawSell: 0,
+        subtotal: 0,
+        promoOff: 0,
+        tax: 0,
+        total: 0,
+        savingsMrpVsSell: 0,
+        shipping: 0,
+      };
 
     const lines = cartItems.map((it) => {
       const unitSell = round2(it.price);
@@ -120,7 +151,11 @@ export default function Cart() {
     try {
       const { data } = await axios.post("/api/coupons/validate", { code, subtotal: calc.rawSell });
       if (data.valid) {
-        setPromoApplied({ code: data.code, discount: data.discount, description: data.description });
+        setPromoApplied({
+          code: data.code,
+          discount: data.discount,
+          description: data.description,
+        });
         showToast(`${data.code} applied — ${INR(data.discount)} off!`, "success");
       }
     } catch (err) {
@@ -141,7 +176,9 @@ export default function Cart() {
     try {
       const { data } = await axios.get("/api/coupons/public");
       setAvailableCoupons(data.coupons || []);
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
   };
 
   const handleOrderPlaced = async (orderDetails) => {
@@ -260,8 +297,12 @@ export default function Cart() {
           <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
             <ShoppingCartIcon className="text-3xl text-accent" />
           </div>
-          <h2 className="font-editorial text-3xl sm:text-5xl font-normal text-[#1d1c19] mb-2">Your bag is waiting.</h2>
-          <p className="text-[#777269] text-xs sm:text-sm mb-6">You haven’t added anything yet. Start with the latest edit.</p>
+          <h2 className="font-editorial text-3xl sm:text-5xl font-normal text-[#1d1c19] mb-2">
+            Your bag is waiting.
+          </h2>
+          <p className="text-[#777269] text-xs sm:text-sm mb-6">
+            You haven’t added anything yet. Start with the latest edit.
+          </p>
           <Link
             to="/products"
             className="inline-flex items-center justify-center gap-2 bg-[#1d1c19] text-white px-6 py-3 rounded-full text-xs font-bold shadow-lg hover:bg-black transition-colors"
@@ -279,10 +320,11 @@ export default function Cart() {
       <AnimStyles />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-10 relative z-10">
-
         {/* Header */}
         <div className="flex items-center justify-between mb-3 sm:mb-6">
-          <h1 className="font-editorial text-2xl sm:text-4xl font-bold text-[#1d1c19] tracking-tight">Your bag.</h1>
+          <h1 className="font-editorial text-2xl sm:text-4xl font-bold text-[#1d1c19] tracking-tight">
+            Your bag.
+          </h1>
           {hasCartItems && (
             <span className="bg-white border border-black/10 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold text-[#5c574e] shadow-sm whitespace-nowrap">
               {cartItems.length} {cartItems.length === 1 ? "Item" : "Items"}
@@ -291,10 +333,8 @@ export default function Cart() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12">
-
           {/* --- LEFT COLUMN: Cart Items & Wishlist --- */}
           <div className="lg:col-span-8 space-y-6 sm:space-y-8">
-
             {/* 1. Cart Items List */}
             {hasCartItems ? (
               <div className="space-y-3 sm:space-y-4">
@@ -327,10 +367,16 @@ export default function Cart() {
                         <div className="flex-1 flex flex-col justify-between min-w-0">
                           <div className="flex justify-between items-start gap-2 sm:gap-4">
                             <div className="min-w-0">
-                              <h3 className="text-xs sm:text-base font-bold text-[#1d1c19] leading-snug line-clamp-2">{item.title}</h3>
-                              <p className="text-[10px] sm:text-xs text-muted-light mt-0.5 capitalize truncate">{item.category}</p>
+                              <h3 className="text-xs sm:text-base font-bold text-[#1d1c19] leading-snug line-clamp-2">
+                                {item.title}
+                              </h3>
+                              <p className="text-[10px] sm:text-xs text-muted-light mt-0.5 capitalize truncate">
+                                {item.category}
+                              </p>
                               {item.selectedVariants && (
-                                <p className="text-[10px] sm:text-xs text-[#a85d37] font-semibold mt-0.5">{item.selectedVariants}</p>
+                                <p className="text-[10px] sm:text-xs text-[#a85d37] font-semibold mt-0.5">
+                                  {item.selectedVariants}
+                                </p>
                               )}
                             </div>
                             <button
@@ -352,7 +398,9 @@ export default function Cart() {
                               >
                                 <MinusIcon size={9} />
                               </button>
-                              <span className="w-5 sm:w-7 text-center font-bold text-xs">{item.quantity}</span>
+                              <span className="w-5 sm:w-7 text-center font-bold text-xs">
+                                {item.quantity}
+                              </span>
                               <button
                                 onClick={() => dispatch(incrementQuantity(k))}
                                 className="w-7 sm:w-9 h-full flex items-center justify-center text-muted hover:text-ink rounded-r-lg transition"
@@ -363,9 +411,13 @@ export default function Cart() {
 
                             {/* Price */}
                             <div className="text-right">
-                              <div className="text-sm sm:text-lg font-bold text-[#1d1c19]">{INR(lineSell)}</div>
+                              <div className="text-sm sm:text-lg font-bold text-[#1d1c19]">
+                                {INR(lineSell)}
+                              </div>
                               {lineMrp > lineSell && (
-                                <div className="text-[10px] sm:text-xs text-muted-light line-through font-medium">{INR(lineMrp)}</div>
+                                <div className="text-[10px] sm:text-xs text-muted-light line-through font-medium">
+                                  {INR(lineMrp)}
+                                </div>
                               )}
                             </div>
                           </div>
@@ -378,15 +430,28 @@ export default function Cart() {
                           onClick={() => moveToWishlist(item)}
                           className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#716c63] hover:text-[#a85d37] transition-colors"
                         >
-                          <HeartIcon size={11} className="text-muted-faint group-hover:text-[#a85d37]" />
+                          <HeartIcon
+                            size={11}
+                            className="text-muted-faint group-hover:text-[#a85d37]"
+                          />
                           Save for Later
                         </button>
 
                         {confirming && (
                           <div className="flex items-center gap-2 animate-fade-up ml-auto">
                             <span className="text-[11px] font-bold text-[#75483b]">Remove?</span>
-                            <button onClick={() => dispatch(removeFromCart(k))} className="rounded-full bg-[#eee2dc] px-2.5 py-0.5 text-[11px] font-bold text-[#75483b]">Yes</button>
-                            <button onClick={() => setConfirmRemoveId(null)} className="text-[11px] font-bold text-muted px-1.5 py-0.5">Cancel</button>
+                            <button
+                              onClick={() => dispatch(removeFromCart(k))}
+                              className="rounded-full bg-[#eee2dc] px-2.5 py-0.5 text-[11px] font-bold text-[#75483b]"
+                            >
+                              Yes
+                            </button>
+                            <button
+                              onClick={() => setConfirmRemoveId(null)}
+                              className="text-[11px] font-bold text-muted px-1.5 py-0.5"
+                            >
+                              Cancel
+                            </button>
                           </div>
                         )}
                       </div>
@@ -402,7 +467,9 @@ export default function Cart() {
                 </div>
                 <h3 className="text-base font-bold text-ink">Your cart is empty</h3>
                 <p className="text-xs text-muted mb-3">You have items saved for later!</p>
-                <Link to="/products" className="text-xs font-bold text-accent hover:underline">Continue Shopping</Link>
+                <Link to="/products" className="text-xs font-bold text-accent hover:underline">
+                  Continue Shopping
+                </Link>
               </div>
             )}
 
@@ -411,20 +478,37 @@ export default function Cart() {
               <div className={hasCartItems ? "mt-6 sm:mt-10" : "mt-4"}>
                 <div className="flex items-center justify-between mb-2.5 sm:mb-4">
                   <h2 className="font-editorial text-lg sm:text-xl font-bold text-[#1d1c19] flex items-center gap-2">
-                    <HeartIcon size={13} fill="currentColor" className="text-[#a85d37]" /> Saved for Later
+                    <HeartIcon size={13} fill="currentColor" className="text-[#a85d37]" /> Saved for
+                    Later
                   </h2>
-                  <button onClick={() => dispatch(clearWishlist())} className="rounded-full border border-black/10 bg-[#eee8df] px-2.5 py-1 text-[10px] sm:text-xs font-bold text-[#6f6b62] transition-colors hover:bg-[#e6ddd2] hover:text-[#1d1c19]">Clear all</button>
+                  <button
+                    onClick={() => dispatch(clearWishlist())}
+                    className="rounded-full border border-black/10 bg-[#eee8df] px-2.5 py-1 text-[10px] sm:text-xs font-bold text-[#6f6b62] transition-colors hover:bg-[#e6ddd2] hover:text-[#1d1c19]"
+                  >
+                    Clear all
+                  </button>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-2 gap-2.5 sm:gap-4">
-                  {wishlistItems.map(w => (
-                    <div key={keyOf(w)} className="bg-white p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-black/[0.06] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                  {wishlistItems.map((w) => (
+                    <div
+                      key={keyOf(w)}
+                      className="bg-white p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-black/[0.06] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+                    >
                       <div className="flex items-center gap-2 sm:gap-3">
                         <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#fbfaf7] rounded-lg p-1.5 shrink-0 border border-black/[0.04]">
-                          <img src={w.thumbnail} className="w-full h-full object-contain mix-blend-multiply" alt="" />
+                          <img
+                            src={w.thumbnail}
+                            className="w-full h-full object-contain mix-blend-multiply"
+                            alt=""
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-xs font-bold text-[#1d1c19] line-clamp-1">{w.title}</h4>
-                          <div className="text-[11px] font-bold text-[#716c63] mt-0.5">{INR(w.price)}</div>
+                          <h4 className="text-xs font-bold text-[#1d1c19] line-clamp-1">
+                            {w.title}
+                          </h4>
+                          <div className="text-[11px] font-bold text-[#716c63] mt-0.5">
+                            {INR(w.price)}
+                          </div>
                         </div>
                       </div>
                       <button
@@ -445,7 +529,9 @@ export default function Cart() {
             {hasCartItems ? (
               <div className="sticky top-24 space-y-4 sm:space-y-6">
                 <div className="bg-white rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-8 shadow-sm border border-black/[0.06]">
-                  <h2 className="font-editorial text-lg sm:text-xl font-bold text-[#1d1c19] mb-3 sm:mb-5">Order Summary</h2>
+                  <h2 className="font-editorial text-lg sm:text-xl font-bold text-[#1d1c19] mb-3 sm:mb-5">
+                    Order Summary
+                  </h2>
 
                   <div className="space-y-3 text-xs sm:text-sm font-medium text-[#6f6b62]">
                     <div className="flex justify-between">
@@ -458,7 +544,11 @@ export default function Cart() {
                     </div>
                     <div className="flex justify-between">
                       <span>Shipping</span>
-                      <span className={calc.shipping === 0 ? "text-ok font-bold" : "text-[#1d1c19] font-semibold"}>
+                      <span
+                        className={
+                          calc.shipping === 0 ? "text-ok font-bold" : "text-[#1d1c19] font-semibold"
+                        }
+                      >
                         {calc.shipping === 0 ? "Free" : INR(calc.shipping)}
                       </span>
                     </div>
@@ -486,7 +576,12 @@ export default function Cart() {
                           <span className="text-xs font-bold text-ok">{promoApplied.code}</span>
                           <span className="text-[11px] text-ok">-{INR(promoApplied.discount)}</span>
                         </div>
-                        <button onClick={removePromo} className="text-xs font-bold text-[#75483b] hover:underline">Remove</button>
+                        <button
+                          onClick={removePromo}
+                          className="text-xs font-bold text-[#75483b] hover:underline"
+                        >
+                          Remove
+                        </button>
                       </div>
                     ) : (
                       <div className="relative">
@@ -509,7 +604,10 @@ export default function Cart() {
                     )}
                     {!promoApplied && (
                       <button
-                        onClick={() => { if (!showCoupons) fetchCoupons(); setShowCoupons(!showCoupons); }}
+                        onClick={() => {
+                          if (!showCoupons) fetchCoupons();
+                          setShowCoupons(!showCoupons);
+                        }}
                         className="mt-1.5 text-[11px] font-bold text-[#a85d37] hover:underline"
                       >
                         {showCoupons ? "Hide coupons" : "View available coupons"}
@@ -520,7 +618,10 @@ export default function Cart() {
                         {availableCoupons.map((c) => (
                           <button
                             key={c.code}
-                            onClick={() => { setPromo(c.code); setShowCoupons(false); }}
+                            onClick={() => {
+                              setPromo(c.code);
+                              setShowCoupons(false);
+                            }}
                             className="w-full text-left p-2.5 rounded-xl bg-[#fbf3ee] border border-[#a85d37]/15 hover:bg-[#f6eee8] transition"
                           >
                             <div className="flex items-center justify-between">
@@ -529,14 +630,22 @@ export default function Cart() {
                                 {c.type === "percent" ? `${c.value}% off` : `${INR(c.value)} off`}
                               </span>
                             </div>
-                            {c.description && <p className="text-[10px] text-[#6f6b62] mt-0.5">{c.description}</p>}
-                            {c.minOrder > 0 && <p className="text-[9px] text-muted-light mt-0.5">Min order: {INR(c.minOrder)}</p>}
+                            {c.description && (
+                              <p className="text-[10px] text-[#6f6b62] mt-0.5">{c.description}</p>
+                            )}
+                            {c.minOrder > 0 && (
+                              <p className="text-[9px] text-muted-light mt-0.5">
+                                Min order: {INR(c.minOrder)}
+                              </p>
+                            )}
                           </button>
                         ))}
                       </div>
                     )}
                     {showCoupons && !promoApplied && availableCoupons.length === 0 && (
-                      <p className="mt-2 text-xs text-muted-light text-center">No coupons available right now</p>
+                      <p className="mt-2 text-xs text-muted-light text-center">
+                        No coupons available right now
+                      </p>
                     )}
                   </div>
 
@@ -549,7 +658,10 @@ export default function Cart() {
                   </button>
 
                   {/* Free delivery progress (same bar as the mini cart) */}
-                  <FreeDeliveryProgress subtotal={calc.subtotal} className="mt-4 rounded-xl border border-line bg-sand p-3" />
+                  <FreeDeliveryProgress
+                    subtotal={calc.subtotal}
+                    className="mt-4 rounded-xl border border-line bg-sand p-3"
+                  />
                 </div>
               </div>
             ) : (
@@ -557,9 +669,12 @@ export default function Cart() {
               <div className="bg-white rounded-2xl p-5 border border-black/[0.06] sticky top-24">
                 <h3 className="font-bold text-[#1d1c19] text-sm mb-1.5">Need Help?</h3>
                 <p className="text-xs text-[#6f6b62] mb-3">
-                  If you are looking for items you previously added, try checking your order history.
+                  If you are looking for items you previously added, try checking your order
+                  history.
                 </p>
-                <Link to="/profile" className="text-xs font-bold text-[#a85d37] hover:underline">Go to Profile</Link>
+                <Link to="/profile" className="text-xs font-bold text-[#a85d37] hover:underline">
+                  Go to Profile
+                </Link>
               </div>
             )}
           </div>
@@ -568,7 +683,9 @@ export default function Cart() {
         {/* Checkout Form Section */}
         {showPaymentDetails && hasCartItems && (
           <div ref={checkoutRef} className="mt-6 pt-6 sm:mt-10 sm:pt-10 border-t border-black/10">
-            <h2 className="text-lg sm:text-2xl font-editorial font-bold text-[#1d1c19] mb-3 sm:mb-6 text-center">Secure Checkout</h2>
+            <h2 className="text-lg sm:text-2xl font-editorial font-bold text-[#1d1c19] mb-3 sm:mb-6 text-center">
+              Secure Checkout
+            </h2>
             <div className="max-w-6xl mx-auto">
               <CheckoutForm onOrderPlaced={handleOrderPlaced} totalAmount={calc.total} />
             </div>
@@ -577,12 +694,18 @@ export default function Cart() {
 
         {/* Global Loader Overlay */}
         {isLoading && (
-          <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center" role="status" aria-live="polite">
+          <div
+            className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center"
+            role="status"
+            aria-live="polite"
+          >
             <div className="w-72 max-w-[85vw] rounded-3xl border border-line bg-paper p-6 shadow-xl">
               <Bone className="h-4 w-2/3" />
               <Bone className="mt-3 h-3 w-full" />
               <Bone className="mt-2 h-3 w-4/5" />
-              <p className="mt-5 flex items-center gap-2 text-sm font-bold text-ink">Processing order <Dots /></p>
+              <p className="mt-5 flex items-center gap-2 text-sm font-bold text-ink">
+                Processing order <Dots />
+              </p>
             </div>
           </div>
         )}
@@ -592,7 +715,6 @@ export default function Cart() {
             <CircleXIcon /> {error}
           </div>
         )}
-
       </div>
 
       {/* --- MOBILE STICKY FOOTER --- */}
@@ -600,8 +722,12 @@ export default function Cart() {
         <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-black/10 p-3 lg:hidden z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex gap-3 items-center max-w-7xl mx-auto">
             <div className="flex-1">
-              <div className="text-[10px] text-muted-light font-bold uppercase tracking-wide">Total</div>
-              <div className="text-lg font-black text-[#1d1c19] leading-none">{INR(calc.total)}</div>
+              <div className="text-[10px] text-muted-light font-bold uppercase tracking-wide">
+                Total
+              </div>
+              <div className="text-lg font-black text-[#1d1c19] leading-none">
+                {INR(calc.total)}
+              </div>
             </div>
             <button
               onClick={handleProceed}
@@ -612,7 +738,6 @@ export default function Cart() {
           </div>
         </div>
       )}
-
     </div>
   );
 }

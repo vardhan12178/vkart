@@ -3,7 +3,12 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { RouteSkeleton, Dots, GridSkeleton } from "../ui/Skeleton";
 
-const at = (path) => render(<MemoryRouter initialEntries={[path]}><RouteSkeleton /></MemoryRouter>);
+const at = (path) =>
+  render(
+    <MemoryRouter initialEntries={[path]}>
+      <RouteSkeleton />
+    </MemoryRouter>
+  );
 
 describe("Skeleton loaders", () => {
   test.each([
@@ -26,7 +31,9 @@ describe("Skeleton loaders", () => {
 
   test("skeleton blocks are hidden from assistive tech", () => {
     const { container } = render(<GridSkeleton count={2} />);
-    container.querySelectorAll(".skeleton").forEach((el) => expect(el).toHaveAttribute("aria-hidden", "true"));
+    container
+      .querySelectorAll(".skeleton")
+      .forEach((el) => expect(el).toHaveAttribute("aria-hidden", "true"));
   });
 
   test("Dots is decorative", () => {

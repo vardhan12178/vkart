@@ -5,26 +5,50 @@ import OffersEmi, { emi, emiPlans } from "./OffersEmi";
 import { sizeGuideFor } from "./SizeGuide";
 import { fetchDelivery } from "./catalogApi";
 
-jest.mock("./catalogApi", () => ({ ...jest.requireActual("./catalogApi"), fetchDelivery: jest.fn() }));
+jest.mock("./catalogApi", () => ({
+  ...jest.requireActual("./catalogApi"),
+  fetchDelivery: jest.fn(),
+}));
 
 const fashion = (sub, gender, sizes) => ({
-  category: "fashion", categoryPath: ["fashion", gender.toLowerCase(), sub], keySpecs: { gender },
+  category: "fashion",
+  categoryPath: ["fashion", gender.toLowerCase(), sub],
+  keySpecs: { gender },
   variantOptions: [{ name: "Size", values: sizes.map((value) => ({ value })) }],
 });
 
 describe("size guides", () => {
   test("picks the chart from the category and the size values", () => {
-    expect(sizeGuideFor(fashion("jeans", "Men", ["30", "32"]))).toMatchObject({ kind: "waist", rows: [["30", { n: 30 }, { n: 38 }], ["32", { n: 32 }, { n: 40 }]] });
-    expect(sizeGuideFor(fashion("running", "Men", ["UK 8", "UK 9"])).rows[0]).toEqual(["UK 8", "9", "42", "26.2"]);
+    expect(sizeGuideFor(fashion("jeans", "Men", ["30", "32"]))).toMatchObject({
+      kind: "waist",
+      rows: [
+        ["30", { n: 30 }, { n: 38 }],
+        ["32", { n: 32 }, { n: 40 }],
+      ],
+    });
+    expect(sizeGuideFor(fashion("running", "Men", ["UK 8", "UK 9"])).rows[0]).toEqual([
+      "UK 8",
+      "9",
+      "42",
+      "26.2",
+    ]);
     expect(sizeGuideFor(fashion("dresses", "Women", ["XS", "S"])).kind).toBe("women");
-    expect(sizeGuideFor(fashion("shirts", "Men", ["XS-36", "S-38"])).rows[1]).toEqual(["S-38", { unit: "in", n: 38 }]);
+    expect(sizeGuideFor(fashion("shirts", "Men", ["XS-36", "S-38"])).rows[1]).toEqual([
+      "S-38",
+      { unit: "in", n: 38 },
+    ]);
     expect(sizeGuideFor(fashion("chinos", "Men", ["S", "M"])).kind).toBe("men-bottoms");
-    expect(sizeGuideFor(fashion("bangles", "Women", ["2.4", "2.6"])).rows[0]).toEqual(["2.4", "57.2"]);
+    expect(sizeGuideFor(fashion("bangles", "Women", ["2.4", "2.6"])).rows[0]).toEqual([
+      "2.4",
+      "57.2",
+    ]);
   });
 
   test("no guide for one-size items or other categories", () => {
     expect(sizeGuideFor(fashion("earrings", "Women", ["One Size"]))).toBeNull();
-    expect(sizeGuideFor({ ...fashion("shirts", "Men", ["S", "M"]), category: "mobiles" })).toBeNull();
+    expect(
+      sizeGuideFor({ ...fashion("shirts", "Men", ["S", "M"]), category: "mobiles" })
+    ).toBeNull();
   });
 });
 
@@ -49,17 +73,29 @@ describe("EMI", () => {
 });
 
 describe("delivery check", () => {
-  beforeEach(() => { localStorage.clear(); fetchDelivery.mockReset(); });
+  beforeEach(() => {
+    localStorage.clear();
+    fetchDelivery.mockReset();
+  });
 
   test("date window and place labels", () => {
     const today = new Date(2026, 9, 31); // Sat 31 Oct
     expect(deliveryWindow({ min: 1, max: 2 }, today)).toBe("Tomorrow, Sun, 1 Nov – Mon, 2 Nov");
     expect(deliveryWindow({ min: 3, max: 3 }, today)).toBe("Tue, 3 Nov");
-    expect(placeLabel({ area: "Imphal", district: "Imphal", state: "Manipur" })).toBe("Imphal, Manipur");
+    expect(placeLabel({ area: "Imphal", district: "Imphal", state: "Manipur" })).toBe(
+      "Imphal, Manipur"
+    );
   });
 
   test("validates the PIN code before asking the server, then remembers a good one", async () => {
-    fetchDelivery.mockResolvedValue({ pincode: "302001", valid: true, serviceable: true, days: { min: 3, max: 5 }, place: { district: "Jaipur", state: "Rajasthan" }, installation: true });
+    fetchDelivery.mockResolvedValue({
+      pincode: "302001",
+      valid: true,
+      serviceable: true,
+      days: { min: 3, max: 5 },
+      place: { district: "Jaipur", state: "Rajasthan" },
+      installation: true,
+    });
     render(<DeliveryCheck category="appliances" price={45000} />);
     const input = screen.getByLabelText("PIN code");
 
@@ -78,7 +114,12 @@ describe("delivery check", () => {
   });
 
   test("explains when an address can't be served", async () => {
-    fetchDelivery.mockResolvedValue({ pincode: "901234", valid: true, serviceable: false, reason: "We don't deliver to Army Postal Service (APO/FPO) addresses yet." });
+    fetchDelivery.mockResolvedValue({
+      pincode: "901234",
+      valid: true,
+      serviceable: false,
+      reason: "We don't deliver to Army Postal Service (APO/FPO) addresses yet.",
+    });
     render(<DeliveryCheck category="mobiles" price={20000} />);
     fireEvent.change(screen.getByLabelText("PIN code"), { target: { value: "901234" } });
     fireEvent.click(screen.getByRole("button", { name: "Check" }));

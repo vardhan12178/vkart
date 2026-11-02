@@ -9,7 +9,7 @@ import {
   PhoneIcon,
   XCircleIcon,
   DocumentTextIcon,
-  SparklesIcon
+  SparklesIcon,
 } from "@heroicons/react/outline";
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
@@ -83,7 +83,6 @@ export default function AdminSettings() {
   return (
     <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
-
         {/* Header with Inline Responsive Save CTA */}
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0 flex-1">
@@ -100,11 +99,7 @@ export default function AdminSettings() {
               disabled={saving}
               className="flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-xs active:scale-95 text-xs sm:text-sm font-bold shrink-0 disabled:opacity-60"
             >
-              {saving ? (
-                <Dots />
-              ) : (
-                <SaveIcon className="h-4 w-4" />
-              )}
+              {saving ? <Dots /> : <SaveIcon className="h-4 w-4" />}
               <span className="hidden sm:inline">{saving ? "Saving..." : "Save Changes"}</span>
               <span className="sm:hidden">{saving ? "Saving" : "Save"}</span>
             </button>
@@ -113,7 +108,9 @@ export default function AdminSettings() {
 
         {/* Toast Notification */}
         {toast && (
-          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}>
+          <div
+            className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl bg-white border shadow-xl flex items-center gap-3 text-xs sm:text-sm font-semibold animate-in fade-in slide-in-from-top-2 ${toast.type === "error" ? "border-red-100 text-red-800" : "border-emerald-100 text-emerald-800"}`}
+          >
             {toast.type === "error" ? (
               <XCircleIcon className="h-5 w-5 text-red-500" />
             ) : (
@@ -124,7 +121,6 @@ export default function AdminSettings() {
         )}
 
         <div className="space-y-4 sm:space-y-6">
-
           {/* Store Identity Card */}
           <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 pb-2 border-b border-slate-100">
@@ -135,7 +131,9 @@ export default function AdminSettings() {
                 <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
                   Store Identity
                 </h2>
-                <p className="text-[11px] sm:text-xs text-slate-400 font-medium">Business branding used on receipts and invoices.</p>
+                <p className="text-[11px] sm:text-xs text-slate-400 font-medium">
+                  Business branding used on receipts and invoices.
+                </p>
               </div>
             </div>
 
@@ -167,7 +165,9 @@ export default function AdminSettings() {
                 <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
                   Support Contact
                 </h2>
-                <p className="text-[11px] sm:text-xs text-slate-400 font-medium">Customer assistance contacts printed on invoices.</p>
+                <p className="text-[11px] sm:text-xs text-slate-400 font-medium">
+                  Customer assistance contacts printed on invoices.
+                </p>
               </div>
             </div>
 
@@ -196,13 +196,19 @@ export default function AdminSettings() {
           <div className="bg-gradient-to-br from-slate-50 to-amber-50/30 rounded-2xl border border-slate-200/70 shadow-2xs p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3">
               <DocumentTextIcon className="h-4 w-4 text-slate-500" />
-              <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Invoice Header Preview</span>
+              <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                Invoice Header Preview
+              </span>
             </div>
             <div className="bg-white rounded-xl border border-slate-200/80 p-3.5 sm:p-4 shadow-xs">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-dashed border-slate-200 pb-3">
                 <div>
-                  <p className="text-sm font-black text-slate-900 tracking-tight">{store.storeName || "Store Name"}</p>
-                  <p className="text-[11px] text-slate-500 font-medium">{store.tagline || "Tagline"}</p>
+                  <p className="text-sm font-black text-slate-900 tracking-tight">
+                    {store.storeName || "Store Name"}
+                  </p>
+                  <p className="text-[11px] text-slate-500 font-medium">
+                    {store.tagline || "Tagline"}
+                  </p>
                 </div>
                 <div className="text-[11px] text-slate-500 sm:text-right font-medium">
                   <p>{store.supportEmail || "support@example.com"}</p>
@@ -223,16 +229,11 @@ export default function AdminSettings() {
                 disabled={saving}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-black transition-all shadow-xs active:scale-95 text-xs sm:text-sm font-bold disabled:opacity-60"
               >
-                {saving ? (
-                  <Dots />
-                ) : (
-                  <SaveIcon className="h-4 w-4" />
-                )}
+                {saving ? <Dots /> : <SaveIcon className="h-4 w-4" />}
                 {saving ? "Saving..." : "Save Changes"}
               </button>
             </div>
           )}
-
         </div>
       </div>
     </div>

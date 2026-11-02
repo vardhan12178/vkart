@@ -2,7 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "./axiosInstance";
 import { useSelector } from "react-redux";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { FaCrown, FaCheck, FaShieldAlt, FaTruck, FaStar, FaTag, FaBolt, FaCreditCard, FaUniversity, FaClock } from "react-icons/fa";
+import {
+  FaCrown,
+  FaCheck,
+  FaShieldAlt,
+  FaTruck,
+  FaStar,
+  FaTag,
+  FaBolt,
+  FaCreditCard,
+  FaUniversity,
+  FaClock,
+} from "react-icons/fa";
 import { showToast } from "../utils/toast";
 import { qk } from "../query/queryKeys";
 import { Bone, SkeletonRegion } from "./ui/Skeleton";
@@ -10,7 +21,11 @@ import { loadRazorpay } from "../utils/loadRazorpay";
 import { prefillFrom, withBranding } from "../utils/razorpayBranding";
 
 const INR = (n) =>
-  new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Math.round(n));
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(Math.round(n));
 
 export default function PrimeMembership() {
   const queryClient = useQueryClient();
@@ -18,7 +33,9 @@ export default function PrimeMembership() {
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   // Start fetching Razorpay now so the payment window opens without a wait
-  useEffect(() => { loadRazorpay().catch(() => {}); }, []);
+  useEffect(() => {
+    loadRazorpay().catch(() => {});
+  }, []);
   const [paymentMethod, setPaymentMethod] = useState("card");
   const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
   const authUser = useSelector((s) => s.auth.user);
@@ -142,7 +159,9 @@ export default function PrimeMembership() {
             <Bone className="mx-auto h-9 w-72" />
             <Bone className="mx-auto mt-3 h-4 w-96 max-w-full" />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {Array.from({ length: 3 }, (_, i) => <Bone key={i} className="h-80" rounded="rounded-3xl" />)}
+              {Array.from({ length: 3 }, (_, i) => (
+                <Bone key={i} className="h-80" rounded="rounded-3xl" />
+              ))}
             </div>
           </div>
         </SkeletonRegion>
@@ -162,10 +181,12 @@ export default function PrimeMembership() {
           </div>
           <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal mb-6 leading-[0.9] tracking-[-0.04em]">
             More of what matters.
-            <br />Less of what doesn’t.
+            <br />
+            Less of what doesn’t.
           </h1>
           <p className="text-white/55 text-lg max-w-xl mx-auto">
-            Considered benefits, earlier access, and better value across the things you already want.
+            Considered benefits, earlier access, and better value across the things you already
+            want.
           </p>
         </div>
       </div>
@@ -191,22 +212,29 @@ export default function PrimeMembership() {
                   </p>
                 </div>
               </div>
-              <span className="bg-amber-500 text-white text-xs font-bold px-4 py-2 rounded-full">ACTIVE</span>
+              <span className="bg-amber-500 text-white text-xs font-bold px-4 py-2 rounded-full">
+                ACTIVE
+              </span>
             </div>
             {membershipData.membership.history?.length > 0 && (
               <div className="mt-4 pt-4 border-t border-amber-200/50">
-                <p className="text-xs font-bold text-amber-700 uppercase tracking-wider mb-2">Membership History</p>
+                <p className="text-xs font-bold text-amber-700 uppercase tracking-wider mb-2">
+                  Membership History
+                </p>
                 <div className="space-y-1">
-                  {membershipData.membership.history.slice(-3).reverse().map((h, i) => (
-                    <div key={i} className="flex justify-between text-xs text-gray-600">
-                      <span>{h.plan || "Prime Plan"}</span>
-                      <span>
-                        {new Date(h.startDate).toLocaleDateString("en-IN")}
-                        {" -> "}
-                        {new Date(h.endDate).toLocaleDateString("en-IN")}
-                      </span>
-                    </div>
-                  ))}
+                  {membershipData.membership.history
+                    .slice(-3)
+                    .reverse()
+                    .map((h, i) => (
+                      <div key={i} className="flex justify-between text-xs text-gray-600">
+                        <span>{h.plan || "Prime Plan"}</span>
+                        <span>
+                          {new Date(h.startDate).toLocaleDateString("en-IN")}
+                          {" -> "}
+                          {new Date(h.endDate).toLocaleDateString("en-IN")}
+                        </span>
+                      </div>
+                    ))}
                 </div>
               </div>
             )}
@@ -219,12 +247,31 @@ export default function PrimeMembership() {
         <h2 className="text-2xl font-black text-gray-900 text-center mb-10">What You Get</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: <FaTag />, title: "Extra Discounts", desc: "Exclusive Prime-only sale prices on every sale" },
-            { icon: <FaTruck />, title: "Free Shipping", desc: "Free delivery on all orders, no minimum" },
-            { icon: <FaBolt />, title: "Early Access", desc: "Shop sales 24 hours before everyone else" },
-            { icon: <FaShieldAlt />, title: "Priority Support", desc: "Dedicated support with faster resolution" },
+            {
+              icon: <FaTag />,
+              title: "Extra Discounts",
+              desc: "Exclusive Prime-only sale prices on every sale",
+            },
+            {
+              icon: <FaTruck />,
+              title: "Free Shipping",
+              desc: "Free delivery on all orders, no minimum",
+            },
+            {
+              icon: <FaBolt />,
+              title: "Early Access",
+              desc: "Shop sales 24 hours before everyone else",
+            },
+            {
+              icon: <FaShieldAlt />,
+              title: "Priority Support",
+              desc: "Dedicated support with faster resolution",
+            },
           ].map((b, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center">
+            <div
+              key={i}
+              className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center"
+            >
               <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4 text-amber-600 text-lg">
                 {b.icon}
               </div>
@@ -238,7 +285,9 @@ export default function PrimeMembership() {
       {/* Plans */}
       <div className="max-w-5xl mx-auto px-4 pb-20">
         <h2 className="text-2xl font-black text-gray-900 text-center mb-3">Choose Your Plan</h2>
-        <p className="text-gray-500 text-center mb-10">One-time payment. No auto-renewal. Cancel anytime.</p>
+        <p className="text-gray-500 text-center mb-10">
+          One-time payment. No auto-renewal. Cancel anytime.
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {plans.map((plan) => (
@@ -262,7 +311,9 @@ export default function PrimeMembership() {
               <div className="flex items-baseline gap-2 mb-6">
                 <span className="text-3xl font-black text-gray-900">{INR(plan.price)}</span>
                 {plan.originalPrice > plan.price && (
-                  <span className="text-sm text-muted-light line-through">{INR(plan.originalPrice)}</span>
+                  <span className="text-sm text-muted-light line-through">
+                    {INR(plan.originalPrice)}
+                  </span>
                 )}
               </div>
 
@@ -290,7 +341,11 @@ export default function PrimeMembership() {
                     : "bg-gray-900 text-white hover:bg-black"
                 }`}
               >
-                {purchasing === plan._id ? "Processing..." : isPrime ? "Extend Membership" : "Get Prime"}
+                {purchasing === plan._id
+                  ? "Processing..."
+                  : isPrime
+                    ? "Extend Membership"
+                    : "Get Prime"}
               </button>
             </div>
           ))}
@@ -313,9 +368,13 @@ export default function PrimeMembership() {
               <h3 className="text-lg font-bold text-gray-900">{selectedPlan.name}</h3>
               <span className="text-lg font-black text-gray-900">{INR(selectedPlan.price)}</span>
             </div>
-            <p className="text-xs text-gray-500 mb-5">{selectedPlan.durationDays} days of VKart Prime</p>
+            <p className="text-xs text-gray-500 mb-5">
+              {selectedPlan.durationDays} days of VKart Prime
+            </p>
 
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Pay with</p>
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+              Pay with
+            </p>
             <div className="grid grid-cols-3 gap-2 mb-6">
               {[
                 { id: "card", icon: FaCreditCard, label: "Card" },
@@ -332,7 +391,10 @@ export default function PrimeMembership() {
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
-                  <Icon className={paymentMethod === id ? "text-amber-500" : "text-gray-400"} size={16} />
+                  <Icon
+                    className={paymentMethod === id ? "text-amber-500" : "text-gray-400"}
+                    size={16}
+                  />
                   <span className="text-[11px] font-bold text-gray-700">{label}</span>
                 </button>
               ))}
@@ -343,7 +405,9 @@ export default function PrimeMembership() {
               disabled={purchasing === selectedPlan._id}
               className="w-full py-3 rounded-xl bg-gray-900 text-white font-bold text-sm hover:bg-black transition-colors disabled:opacity-60"
             >
-              {purchasing === selectedPlan._id ? "Processing..." : `Confirm & Pay ${INR(selectedPlan.price)}`}
+              {purchasing === selectedPlan._id
+                ? "Processing..."
+                : `Confirm & Pay ${INR(selectedPlan.price)}`}
             </button>
           </div>
         </div>

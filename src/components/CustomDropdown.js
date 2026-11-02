@@ -32,28 +32,26 @@ const CustomDropdown = ({ options, value, onChange, label }) => {
   const selectedLabel = options.find((o) => o.value === value)?.label || label;
 
   return (
-    <div
-      ref={dropdownRef}
-      className="relative inline-block w-full sm:w-48 text-left align-top"
-    >
+    <div ref={dropdownRef} className="relative inline-block w-full sm:w-48 text-left align-top">
       <button
         type="button"
         onClick={handleToggle}
         className={`
           group inline-flex w-full items-center justify-between rounded-xl border bg-white px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-gray-700 shadow-sm transition-all duration-200
-          ${isOpen 
-            ? "border-gray-900 ring-1 ring-gray-900" 
-            : "border-gray-200 hover:border-gray-300"
+          ${
+            isOpen
+              ? "border-gray-900 ring-1 ring-gray-900"
+              : "border-gray-200 hover:border-gray-300"
           }
         `}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
         <span className="truncate">{selectedLabel}</span>
-        
+
         {/* Arrow Icon with Rotation Animation */}
-        <FaChevronDown 
-          className={`ml-2 h-3 w-3 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} 
+        <FaChevronDown
+          className={`ml-2 h-3 w-3 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -72,20 +70,19 @@ const CustomDropdown = ({ options, value, onChange, label }) => {
                   onClick={() => handleOptionClick(option)}
                   className={`
                     relative flex w-full items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 text-left text-xs sm:text-sm transition-colors
-                    ${active
-                      ? "bg-gray-50 text-gray-900 font-bold"
-                      : "text-gray-500 hover:bg-gray-50 hover:text-gray-900 font-medium"
+                    ${
+                      active
+                        ? "bg-gray-50 text-gray-900 font-bold"
+                        : "text-gray-500 hover:bg-gray-50 hover:text-gray-900 font-medium"
                     }
                   `}
                   role="option"
                   aria-selected={active}
                 >
                   <span>{option.label}</span>
-                  
+
                   {/* Checkmark for active item */}
-                  {active && (
-                    <FaCheck className="text-orange-500" size={10} />
-                  )}
+                  {active && <FaCheck className="text-orange-500" size={10} />}
                 </button>
               );
             })}

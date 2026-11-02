@@ -11,23 +11,45 @@ import { OPEN_SEARCH_EVENT } from "../../utils/uiEvents";
 
 const renderBar = (path = "/", { signedIn = false, cart = [] } = {}) =>
   render(
-    <Provider store={configureStore({ reducer: { cart: cartReducer, auth: authReducer }, preloadedState: { cart, auth: { isAuthenticated: signedIn, isAdmin: false, user: null } } })}>
-      <MemoryRouter initialEntries={[path]}><MobileTabBar /></MemoryRouter>
+    <Provider
+      store={configureStore({
+        reducer: { cart: cartReducer, auth: authReducer },
+        preloadedState: { cart, auth: { isAuthenticated: signedIn, isAdmin: false, user: null } },
+      })}
+    >
+      <MemoryRouter initialEntries={[path]}>
+        <MobileTabBar />
+      </MemoryRouter>
     </Provider>
   );
 
 describe("MobileTabBar", () => {
-  beforeAll(() => { window.scrollTo = jest.fn(); });
+  beforeAll(() => {
+    window.scrollTo = jest.fn();
+  });
 
   test("shows on browsing pages and hides where something else owns the bottom edge", () => {
-    expect(["/", "/products", "/products?cat=mobiles", "/wishlist", "/orders", "/profile"].every(showsTabBar)).toBe(true);
-    expect(["/products/iphone-17", "/cart", "/order-success/abc", "/login", "/admin/catalog"].some(showsTabBar)).toBe(false);
+    expect(
+      ["/", "/products", "/products?cat=mobiles", "/wishlist", "/orders", "/profile"].every(
+        showsTabBar
+      )
+    ).toBe(true);
+    expect(
+      ["/products/iphone-17", "/cart", "/order-success/abc", "/login", "/admin/catalog"].some(
+        showsTabBar
+      )
+    ).toBe(false);
     renderBar("/products/iphone-17");
     expect(screen.queryByRole("navigation", { name: "Mobile navigation" })).not.toBeInTheDocument();
   });
 
   test("links, bag count and sign-in state", () => {
-    renderBar("/products", { cart: [{ catalog: "v2", productId: "a", sku: "A", quantity: 2 }, { catalog: "v2", productId: "b", sku: "B", quantity: 1 }] });
+    renderBar("/products", {
+      cart: [
+        { catalog: "v2", productId: "a", sku: "A", quantity: 2 },
+        { catalog: "v2", productId: "b", sku: "B", quantity: 1 },
+      ],
+    });
     expect(screen.getByRole("link", { name: "Shop" })).toHaveAttribute("aria-current", "page");
     expect(screen.getByRole("link", { name: "Bag, 3 items" })).toHaveAttribute("href", "/cart");
     expect(screen.getByRole("link", { name: "Sign in" })).toHaveAttribute("href", "/login");

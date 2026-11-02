@@ -75,8 +75,8 @@ export default function AdminOrders() {
   // --- derived stats for the top cards ---
   const stats = useMemo(() => {
     const totalRevenue = orders.reduce((acc, order) => acc + (order.totalPrice || 0), 0);
-    const activeOrders = orders.filter(o => !['DELIVERED', 'CANCELLED'].includes(o.stage)).length;
-    const completedOrders = orders.filter(o => o.stage === 'DELIVERED').length;
+    const activeOrders = orders.filter((o) => !["DELIVERED", "CANCELLED"].includes(o.stage)).length;
+    const completedOrders = orders.filter((o) => o.stage === "DELIVERED").length;
     return { totalRevenue, activeOrders, completedOrders };
   }, [orders]);
 
@@ -85,10 +85,11 @@ export default function AdminOrders() {
 
     const q = search.trim().toLowerCase();
     if (q) {
-      result = result.filter((o) =>
-        o._id.toLowerCase().includes(q) ||
-        (o.customer?.name || "").toLowerCase().includes(q) ||
-        (o.customer?.email || "").toLowerCase().includes(q)
+      result = result.filter(
+        (o) =>
+          o._id.toLowerCase().includes(q) ||
+          (o.customer?.name || "").toLowerCase().includes(q) ||
+          (o.customer?.email || "").toLowerCase().includes(q)
       );
     }
 
@@ -165,7 +166,9 @@ export default function AdminOrders() {
     const config = configs[stage] || configs.PLACED;
 
     return (
-      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold ${config.bg} ${config.text}`}>
+      <span
+        className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold ${config.bg} ${config.text}`}
+      >
         <span className={`w-1.5 h-1.5 rounded-full mr-1 ${config.dot}`}></span>
         {stage.replace(/_/g, " ")}
       </span>
@@ -174,13 +177,17 @@ export default function AdminOrders() {
 
   const getInitials = (name) => {
     if (!name) return "??";
-    return name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
   };
 
   return (
     <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-7xl mx-auto space-y-4 sm:space-y-8">
-
         {/* Header Section */}
         <div className="flex items-center justify-between gap-3">
           <div>
@@ -197,7 +204,9 @@ export default function AdminOrders() {
               disabled={ordersQuery.isFetching}
               className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-slate-700 border border-slate-200 rounded-xl shadow-xs hover:bg-slate-50 transition-all active:scale-95 text-xs sm:text-sm font-semibold"
             >
-              <RefreshIcon className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`} />
+              <RefreshIcon
+                className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${ordersQuery.isFetching ? "animate-spin" : ""}`}
+              />
               <span>Sync</span>
             </button>
           </div>
@@ -207,7 +216,7 @@ export default function AdminOrders() {
         <div className="grid grid-cols-3 gap-2 sm:gap-4">
           <StatCard
             title="Revenue"
-            value={`₹${stats.totalRevenue.toLocaleString('en-IN')}`}
+            value={`₹${stats.totalRevenue.toLocaleString("en-IN")}`}
             icon={CurrencyRupeeIcon}
             color="text-emerald-700"
             bg="bg-emerald-50"
@@ -252,16 +261,21 @@ export default function AdminOrders() {
               <button
                 onClick={() => setIsFilterMenuOpen(!isFilterMenuOpen)}
                 className={`flex items-center justify-between gap-1.5 px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-xl transition-all w-full sm:w-44
-                  ${isFilterMenuOpen || filterStage !== 'ALL'
-                    ? "bg-slate-100 text-slate-900"
-                    : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                  ${
+                    isFilterMenuOpen || filterStage !== "ALL"
+                      ? "bg-slate-100 text-slate-900"
+                      : "bg-slate-50 text-slate-600 hover:bg-slate-100"
                   }`}
               >
                 <div className="flex items-center gap-1.5 truncate">
                   <FilterIcon className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                  <span className="truncate">{filterStage === "ALL" ? "Filter Status" : filterStage.replace(/_/g, " ")}</span>
+                  <span className="truncate">
+                    {filterStage === "ALL" ? "Filter Status" : filterStage.replace(/_/g, " ")}
+                  </span>
                 </div>
-                <ChevronDownIcon className={`h-3.5 w-3.5 transition-transform shrink-0 ${isFilterMenuOpen ? "rotate-180" : ""}`} />
+                <ChevronDownIcon
+                  className={`h-3.5 w-3.5 transition-transform shrink-0 ${isFilterMenuOpen ? "rotate-180" : ""}`}
+                />
               </button>
 
               {isFilterMenuOpen && (
@@ -282,7 +296,9 @@ export default function AdminOrders() {
                         <span className={filterStage === stage ? "font-bold text-slate-900" : ""}>
                           {stage.replace(/_/g, " ")}
                         </span>
-                        {filterStage === stage && <CheckIcon className="h-3.5 w-3.5 text-slate-900" />}
+                        {filterStage === stage && (
+                          <CheckIcon className="h-3.5 w-3.5 text-slate-900" />
+                        )}
                       </button>
                     ))}
                   </div>
@@ -293,7 +309,9 @@ export default function AdminOrders() {
             <button
               onClick={() => setFilterReturns((v) => !v)}
               className={`px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap ${
-                filterReturns ? "bg-amber-100 text-amber-800" : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                filterReturns
+                  ? "bg-amber-100 text-amber-800"
+                  : "bg-slate-50 text-slate-600 hover:bg-slate-100"
               }`}
             >
               Returns
@@ -303,7 +321,6 @@ export default function AdminOrders() {
 
         {/* Main Table / Mobile List Area */}
         <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs overflow-hidden flex flex-col min-h-[350px]">
-
           {loading ? (
             <div className="p-8 space-y-3 animate-pulse">
               {[1, 2, 3].map((i) => (
@@ -320,7 +337,11 @@ export default function AdminOrders() {
                 Try adjusting your search or filter to find what you're looking for.
               </p>
               <button
-                onClick={() => { setSearch(''); setFilterStage('ALL'); setFilterReturns(false); }}
+                onClick={() => {
+                  setSearch("");
+                  setFilterStage("ALL");
+                  setFilterReturns(false);
+                }}
                 className="mt-4 text-orange-600 font-bold text-xs sm:text-sm hover:underline"
               >
                 Clear filters
@@ -363,7 +384,9 @@ export default function AdminOrders() {
                         {getInitials(o.customer?.name)}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-xs font-medium text-slate-800 truncate">{o.customer?.name || "Guest"}</p>
+                        <p className="text-xs font-medium text-slate-800 truncate">
+                          {o.customer?.name || "Guest"}
+                        </p>
                         <p className="text-[10px] text-slate-400 truncate">{o.customer?.email}</p>
                       </div>
                     </div>
@@ -372,10 +395,14 @@ export default function AdminOrders() {
                     <div className="flex items-center justify-between pt-1.5 pl-10 border-t border-slate-50">
                       <div className="flex items-center gap-2">
                         <span className="text-xs sm:text-sm font-black text-slate-900">
-                          ₹{o.totalPrice?.toLocaleString('en-IN')}
+                          ₹{o.totalPrice?.toLocaleString("en-IN")}
                         </span>
                         <span className="text-[10px] text-slate-400 font-medium">
-                          · {new Date(o.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short" })}
+                          ·{" "}
+                          {new Date(o.createdAt).toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                          })}
                         </span>
                       </div>
 
@@ -393,11 +420,36 @@ export default function AdminOrders() {
                 <table className="min-w-full divide-y divide-slate-100">
                   <thead className="bg-slate-50/50">
                     <tr>
-                      <SortableHeader label="Order ID" sortKey="_id" currentSort={sortConfig} onSort={handleSort} />
-                      <SortableHeader label="Customer" sortKey="customer" currentSort={sortConfig} onSort={handleSort} />
-                      <SortableHeader label="Total" sortKey="totalPrice" currentSort={sortConfig} onSort={handleSort} />
-                      <SortableHeader label="Status" sortKey="stage" currentSort={sortConfig} onSort={handleSort} />
-                      <SortableHeader label="Date" sortKey="createdAt" currentSort={sortConfig} onSort={handleSort} />
+                      <SortableHeader
+                        label="Order ID"
+                        sortKey="_id"
+                        currentSort={sortConfig}
+                        onSort={handleSort}
+                      />
+                      <SortableHeader
+                        label="Customer"
+                        sortKey="customer"
+                        currentSort={sortConfig}
+                        onSort={handleSort}
+                      />
+                      <SortableHeader
+                        label="Total"
+                        sortKey="totalPrice"
+                        currentSort={sortConfig}
+                        onSort={handleSort}
+                      />
+                      <SortableHeader
+                        label="Status"
+                        sortKey="stage"
+                        currentSort={sortConfig}
+                        onSort={handleSort}
+                      />
+                      <SortableHeader
+                        label="Date"
+                        sortKey="createdAt"
+                        currentSort={sortConfig}
+                        onSort={handleSort}
+                      />
                       <th className="relative px-6 py-4">
                         <span className="sr-only">Actions</span>
                       </th>
@@ -440,7 +492,7 @@ export default function AdminOrders() {
                         {/* Price */}
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm font-semibold text-slate-900 tabular-nums">
-                            ₹{o.totalPrice?.toLocaleString('en-IN')}
+                            ₹{o.totalPrice?.toLocaleString("en-IN")}
                           </div>
                         </td>
 
@@ -465,11 +517,15 @@ export default function AdminOrders() {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm text-slate-500 tabular-nums">
                             {new Date(o.createdAt).toLocaleDateString("en-IN", {
-                              day: "2-digit", month: "short"
+                              day: "2-digit",
+                              month: "short",
                             })}
                           </div>
                           <div className="text-xs text-slate-400 tabular-nums">
-                            {new Date(o.createdAt).toLocaleTimeString("en-IN", { hour: '2-digit', minute: '2-digit' })}
+                            {new Date(o.createdAt).toLocaleTimeString("en-IN", {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
                           </div>
                         </td>
 
@@ -486,7 +542,14 @@ export default function AdminOrders() {
               {/* Pagination */}
               <div className="px-3.5 sm:px-6 py-2.5 sm:py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/30">
                 <div className="text-xs sm:text-sm text-slate-500">
-                  Showing <span className="font-medium text-slate-900">{startIndex + 1}</span> to <span className="font-medium text-slate-900">{Math.min(endIndex, filteredAndSortedOrders.length)}</span> of <span className="font-medium text-slate-900">{filteredAndSortedOrders.length}</span>
+                  Showing <span className="font-medium text-slate-900">{startIndex + 1}</span> to{" "}
+                  <span className="font-medium text-slate-900">
+                    {Math.min(endIndex, filteredAndSortedOrders.length)}
+                  </span>{" "}
+                  of{" "}
+                  <span className="font-medium text-slate-900">
+                    {filteredAndSortedOrders.length}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-1">
@@ -498,7 +561,9 @@ export default function AdminOrders() {
                   >
                     <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
                   </button>
-                  <span className="text-xs font-bold text-slate-700 px-1 sm:hidden">{currentPage}/{totalPages || 1}</span>
+                  <span className="text-xs font-bold text-slate-700 px-1 sm:hidden">
+                    {currentPage}/{totalPages || 1}
+                  </span>
                   <button
                     onClick={() => goToPage(currentPage + 1)}
                     disabled={currentPage === totalPages || totalPages === 0}
@@ -522,10 +587,16 @@ function StatCard({ title, value, icon: Icon, color, bg }) {
   return (
     <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">
       <div className="min-w-0 flex-1">
-        <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate">{title}</p>
-        <h3 className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5">{value}</h3>
+        <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate">
+          {title}
+        </p>
+        <h3 className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5">
+          {value}
+        </h3>
       </div>
-      <div className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl ${bg} ${color} shrink-0 self-end sm:self-center`}>
+      <div
+        className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl ${bg} ${color} shrink-0 self-end sm:self-center`}
+      >
         <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
       </div>
     </div>
@@ -543,11 +614,12 @@ function SortableHeader({ label, sortKey, currentSort, onSort }) {
     >
       <div className="flex items-center gap-1 group-hover:text-slate-800 transition-colors">
         {label}
-        {isActive && (
-          currentSort.direction === 'asc'
-            ? <SortAscendingIcon className="h-3 w-3 text-orange-500" />
-            : <SortDescendingIcon className="h-3 w-3 text-orange-500" />
-        )}
+        {isActive &&
+          (currentSort.direction === "asc" ? (
+            <SortAscendingIcon className="h-3 w-3 text-orange-500" />
+          ) : (
+            <SortDescendingIcon className="h-3 w-3 text-orange-500" />
+          ))}
       </div>
     </th>
   );

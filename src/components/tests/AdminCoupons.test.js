@@ -87,7 +87,9 @@ describe("AdminCoupons Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /new coupon/i }));
     fireEvent.click(screen.getByRole("button", { name: /^create$/i }));
 
-    expect(await screen.findByText(/code, type, value and expiry date are required/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/code, type, value and expiry date are required/i)
+    ).toBeInTheDocument();
     expect(axios.post).not.toHaveBeenCalled();
   });
 
@@ -98,7 +100,9 @@ describe("AdminCoupons Component", () => {
     await screen.findByText(/no coupons yet/i);
 
     fireEvent.click(screen.getByRole("button", { name: /new coupon/i }));
-    fireEvent.change(screen.getByPlaceholderText("e.g. SAVE10"), { target: { value: "welcome20" } });
+    fireEvent.change(screen.getByPlaceholderText("e.g. SAVE10"), {
+      target: { value: "welcome20" },
+    });
     fireEvent.change(screen.getByPlaceholderText("e.g. 10"), { target: { value: "20" } });
     fireEvent.change(screen.getByText("Valid To *").nextElementSibling, {
       target: { value: "2030-06-01T00:00" },

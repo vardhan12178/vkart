@@ -33,6 +33,12 @@ export const ROLE_PRESETS = {
   customer_service: { users: "write", notifications: "read" },
   reviewer: { reviews: "write", notifications: "read" },
   order_manager: { orders: "write", notifications: "read" },
-  sales_manager: { coupons: "write", sales: "write", membership: "write", marketing: "write", notifications: "read" },
+  sales_manager: {
+    coupons: "write",
+    sales: "write",
+    membership: "write",
+    marketing: "write",
+    notifications: "read",
+  },
   customer_support: { support: "write", orders: "read", notifications: "read" },
 };

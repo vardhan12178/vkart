@@ -85,9 +85,15 @@ describe("AdminMembership Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /new plan/i }));
     fireEvent.change(screen.getByPlaceholderText("Monthly"), { target: { value: "Quarterly" } });
     fireEvent.change(screen.getByPlaceholderText("monthly"), { target: { value: "quarterly" } });
-    fireEvent.change(screen.getByText("Duration (days)").nextElementSibling, { target: { value: "90" } });
-    fireEvent.change(screen.getByText("Price (₹)").nextElementSibling, { target: { value: "499" } });
-    fireEvent.change(screen.getByPlaceholderText("Feature perk text"), { target: { value: "Priority support" } });
+    fireEvent.change(screen.getByText("Duration (days)").nextElementSibling, {
+      target: { value: "90" },
+    });
+    fireEvent.change(screen.getByText("Price (₹)").nextElementSibling, {
+      target: { value: "499" },
+    });
+    fireEvent.change(screen.getByPlaceholderText("Feature perk text"), {
+      target: { value: "Priority support" },
+    });
 
     fireEvent.click(screen.getByRole("button", { name: /^create plan$/i }));
 

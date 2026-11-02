@@ -17,12 +17,16 @@ jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 jest.mock("../CheckoutForm", () => (props) => (
   <div data-testid="checkout-form-mock">
     <div data-testid="checkout-total">{props.totalAmount}</div>
-    <button onClick={() => props.onOrderPlaced({ address: "123 Test St", method: "CARD", walletUsed: 0 })}>
+    <button
+      onClick={() => props.onOrderPlaced({ address: "123 Test St", method: "CARD", walletUsed: 0 })}
+    >
       Simulate Order Placed
     </button>
     <button
       onClick={() =>
-        props.onOrderPlaced({ address: "123 Test St", method: "CARD", walletUsed: 0 }).catch(() => {})
+        props
+          .onOrderPlaced({ address: "123 Test St", method: "CARD", walletUsed: 0 })
+          .catch(() => {})
       }
     >
       Simulate Order Placed (swallow error)
@@ -119,7 +123,13 @@ describe("Cart Component", () => {
   });
 
   // A line loaded from the server carries its own database _id, which is not the product's id
-  const SAVED_LINE = { ...PRODUCT, _id: "row-1", catalog: "v2", sku: "SKU-1", selectedVariants: "Color: Black" };
+  const SAVED_LINE = {
+    ...PRODUCT,
+    _id: "row-1",
+    catalog: "v2",
+    sku: "SKU-1",
+    selectedVariants: "Color: Black",
+  };
   // Catalog lines are re-priced on load, so the price-refresh call needs an answer
   const stubServer = () =>
     axios.post.mockImplementation((url) =>
@@ -267,7 +277,9 @@ describe("Cart Component", () => {
   });
 
   test("recovers gracefully from a duplicate-order (409) response by clearing the cart anyway", async () => {
-    axios.post.mockRejectedValueOnce({ response: { status: 409, data: { orderId: "existing-order" } } });
+    axios.post.mockRejectedValueOnce({
+      response: { status: 409, data: { orderId: "existing-order" } },
+    });
     const { store } = renderCart({ cart: [PRODUCT] });
 
     fireEvent.click(screen.getAllByRole("button", { name: /^checkout/i })[0]);

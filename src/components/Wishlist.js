@@ -5,7 +5,13 @@ import { Helmet } from "react-helmet-async";
 import { removeFromWishlist, clearWishlist } from "../redux/wishlistSlice";
 import { addToCart } from "../redux/cartSlice";
 import { cartItemFromSaved, productPath as v2Path } from "./shop/shopItems";
-import { ArrowRightIcon, HeartIcon, ShoppingBagIcon, ShoppingCartIcon, Trash2Icon } from "./ui/icons";
+import {
+  ArrowRightIcon,
+  HeartIcon,
+  ShoppingBagIcon,
+  ShoppingCartIcon,
+  Trash2Icon,
+} from "./ui/icons";
 import { showToast } from "../utils/toast";
 
 const INR = (n) =>
@@ -15,8 +21,7 @@ const INR = (n) =>
     maximumFractionDigits: 0,
   }).format(Math.round(n));
 
-const keyOf = (item) =>
-  item?._id || item?.productId || item?.externalId || item?.id;
+const keyOf = (item) => item?._id || item?.productId || item?.externalId || item?.id;
 
 const productPath = (item) =>
   v2Path(item) || `/product/${item?._id || item?.productId || item?.id}`;
@@ -83,7 +88,8 @@ export default function Wishlist() {
               Worth another look.
             </h1>
             <p className="max-w-xl text-xs leading-relaxed text-[#6f6b62] sm:text-sm lg:pb-1">
-              A considered shortlist of the pieces that caught your eye—kept together until you are ready to choose.
+              A considered shortlist of the pieces that caught your eye—kept together until you are
+              ready to choose.
             </p>
           </div>
         </div>
@@ -187,7 +193,10 @@ export default function Wishlist() {
                             onClick={() => moveToCart(item)}
                             className="flex h-8 sm:min-h-11 flex-1 items-center justify-center gap-1 sm:gap-2 rounded-full bg-[#1d1c19] px-2 sm:px-4 text-[10px] sm:text-xs font-bold text-white shadow-sm transition hover:bg-black active:scale-95"
                           >
-                            <ShoppingCartIcon size={11} /> <span><span className="hidden min-[380px]:inline">Move to </span>bag</span>
+                            <ShoppingCartIcon size={11} />{" "}
+                            <span>
+                              <span className="hidden min-[380px]:inline">Move to </span>bag
+                            </span>
                           </button>
                           <button
                             type="button"
@@ -240,7 +249,8 @@ export default function Wishlist() {
                 Nothing saved—yet.
               </h2>
               <p className="mt-4 max-w-lg text-sm leading-6 text-[#5f5b52] sm:text-[15px] sm:leading-7">
-                Tap the heart on anything worth remembering. We will keep it here so it is easy to find again.
+                Tap the heart on anything worth remembering. We will keep it here so it is easy to
+                find again.
               </p>
               <Link
                 to="/products"

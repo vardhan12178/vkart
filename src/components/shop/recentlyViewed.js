@@ -13,6 +13,11 @@ export function readRecent() {
 
 export function pushRecent(card) {
   try {
-    localStorage.setItem(KEY, JSON.stringify([card, ...readRecent().filter((c) => c.slug !== card.slug)].slice(0, MAX)));
-  } catch { /* storage unavailable */ }
+    localStorage.setItem(
+      KEY,
+      JSON.stringify([card, ...readRecent().filter((c) => c.slug !== card.slug)].slice(0, MAX))
+    );
+  } catch {
+    /* storage unavailable */
+  }
 }

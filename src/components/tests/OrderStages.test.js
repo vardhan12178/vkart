@@ -46,7 +46,9 @@ describe("OrderStages Component", () => {
   });
 
   test("falls back to createdAt for the PLACED stage when statusHistory omits it", () => {
-    render(<OrderStages currentStage="PLACED" createdAt="2024-05-10T00:00:00.000Z" statusHistory={[]} />);
+    render(
+      <OrderStages currentStage="PLACED" createdAt="2024-05-10T00:00:00.000Z" statusHistory={[]} />
+    );
     expect(screen.getByText(/May 10/)).toBeInTheDocument();
   });
 

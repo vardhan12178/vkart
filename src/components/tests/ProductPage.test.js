@@ -13,22 +13,57 @@ import ProductPage from "../shop/ProductPage";
 import { fetchProduct, fetchDelivery } from "../shop/catalogApi";
 import { showToast } from "../../utils/toast";
 
-jest.mock("../axiosInstance", () => ({ __esModule: true, default: { get: jest.fn(() => Promise.reject(new Error("offline"))), post: jest.fn(), put: jest.fn(), delete: jest.fn() } }));
+jest.mock("../axiosInstance", () => ({
+  __esModule: true,
+  default: {
+    get: jest.fn(() => Promise.reject(new Error("offline"))),
+    post: jest.fn(),
+    put: jest.fn(),
+    delete: jest.fn(),
+  },
+}));
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 jest.mock("../shop/catalogApi", () => {
   const actual = jest.requireActual("../shop/catalogApi");
-  return { ...actual, fetchProduct: jest.fn(), fetchSimilar: jest.fn(() => Promise.resolve({ products: [] })), fetchDelivery: jest.fn() };
+  return {
+    ...actual,
+    fetchProduct: jest.fn(),
+    fetchSimilar: jest.fn(() => Promise.resolve({ products: [] })),
+    fetchDelivery: jest.fn(),
+  };
 });
 
 const variant = (size, extra = {}) => ({
-  sku: `SHIRT-${size}`, options: { Size: size }, price: 1499, mrp: 2499, discountPercent: 40, stock: 5, isDefault: size === "M", keySpecs: {}, ...extra,
+  sku: `SHIRT-${size}`,
+  options: { Size: size },
+  price: 1499,
+  mrp: 2499,
+  discountPercent: 40,
+  stock: 5,
+  isDefault: size === "M",
+  keySpecs: {},
+  ...extra,
 });
 const shirt = {
-  id: "p1", slug: "linen-shirt", title: "Linen Shirt", brand: "Brand", category: "fashion", categoryPath: ["fashion", "men", "shirts"],
-  keySpecs: { gender: "Men" }, highlights: [], specs: {}, source: { urls: ["https://example.com/shirt"], fetchedAt: "2026-10" },
+  id: "p1",
+  slug: "linen-shirt",
+  title: "Linen Shirt",
+  brand: "Brand",
+  category: "fashion",
+  categoryPath: ["fashion", "men", "shirts"],
+  keySpecs: { gender: "Men" },
+  highlights: [],
+  specs: {},
+  source: { urls: ["https://example.com/shirt"], fetchedAt: "2026-10" },
   variantOptions: [{ name: "Size", values: ["S", "M", "L"].map((value) => ({ value })) }],
-  media: { groupBy: "Size", groups: {}, common: [{ thumb: "t.webp", md: "m.webp", lg: "l.webp", alt: "shirt" }] },
-  variants: [variant("S"), variant("M"), variant("L")], priceRange: { min: 1499, max: 1499 }, inStock: true,
+  media: {
+    groupBy: "Size",
+    groups: {},
+    common: [{ thumb: "t.webp", md: "m.webp", lg: "l.webp", alt: "shirt" }],
+  },
+  variants: [variant("S"), variant("M"), variant("L")],
+  priceRange: { min: 1499, max: 1499 },
+  inStock: true,
 };
 
 function Where() {
@@ -37,13 +72,27 @@ function Where() {
 }
 
 const renderPage = (url) => {
-  const store = configureStore({ reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer, auth: authReducer } });
+  const store = configureStore({
+    reducer: { cart: cartReducer, wishlist: wishlistReducer, ui: uiReducer, auth: authReducer },
+  });
   render(
     <HelmetProvider>
-      <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
         <Provider store={store}>
           <MemoryRouter initialEntries={[url]}>
-            <Routes><Route path="/products/:slug" element={<><ProductPage /><Where /></>} /></Routes>
+            <Routes>
+              <Route
+                path="/products/:slug"
+                element={
+                  <>
+                    <ProductPage />
+                    <Where />
+                  </>
+                }
+              />
+            </Routes>
           </MemoryRouter>
         </Provider>
       </QueryClientProvider>
@@ -53,7 +102,9 @@ const renderPage = (url) => {
 };
 
 describe("ProductPage", () => {
-  beforeAll(() => { window.scrollTo = jest.fn(); });
+  beforeAll(() => {
+    window.scrollTo = jest.fn();
+  });
   beforeEach(() => {
     localStorage.clear();
     showToast.mockClear();
@@ -92,11 +143,19 @@ describe("ProductPage", () => {
   it("checks delivery for the remembered PIN code", async () => {
     localStorage.setItem("vkart:pincode", "560038");
     fetchDelivery.mockResolvedValue({
-      pincode: "560038", valid: true, serviceable: true, zone: "metro", days: { min: 1, max: 2 },
-      place: { area: "Indiranagar", district: "Bengaluru Urban", state: "Karnataka" }, cod: true, installation: false,
+      pincode: "560038",
+      valid: true,
+      serviceable: true,
+      zone: "metro",
+      days: { min: 1, max: 2 },
+      place: { area: "Indiranagar", district: "Bengaluru Urban", state: "Karnataka" },
+      cod: true,
+      installation: false,
     });
     renderPage("/products/linen-shirt");
-    expect(await screen.findByText(/Indiranagar, Bengaluru Urban, Karnataka 560038/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Indiranagar, Bengaluru Urban, Karnataka 560038/)
+    ).toBeInTheDocument();
     expect(fetchDelivery).toHaveBeenCalledWith("560038", "fashion-men");
     expect(screen.getByText("Free delivery")).toBeInTheDocument(); // ₹1,499 is over the ₹999 threshold
     expect(screen.getByText(/Tomorrow, /)).toBeInTheDocument();

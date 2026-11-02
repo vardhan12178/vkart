@@ -15,7 +15,9 @@ describe("CustomDropdown Component", () => {
   });
 
   test("shows the selected option's label", () => {
-    render(<CustomDropdown options={OPTIONS} value="price-asc" onChange={jest.fn()} label="Sort By" />);
+    render(
+      <CustomDropdown options={OPTIONS} value="price-asc" onChange={jest.fn()} label="Sort By" />
+    );
     expect(screen.getByText("Price: Low to High")).toBeInTheDocument();
   });
 

@@ -47,7 +47,15 @@ const routeMeta = {
   },
 };
 
-const noindexPatterns = [/^\/cart/, /^\/checkout/, /^\/order/, /^\/success/, /^\/404/, /^\/error/, /^\/login/];
+const noindexPatterns = [
+  /^\/cart/,
+  /^\/checkout/,
+  /^\/order/,
+  /^\/success/,
+  /^\/404/,
+  /^\/error/,
+  /^\/login/,
+];
 
 const websiteSchema = JSON.stringify({
   "@context": "https://schema.org",

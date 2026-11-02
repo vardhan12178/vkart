@@ -62,12 +62,21 @@ export default function CookieBanner() {
             <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">
               Your privacy
             </p>
-            <h2 id="cookie-consent-title" className="cookie-consent-title text-base font-bold tracking-[-0.015em]">
+            <h2
+              id="cookie-consent-title"
+              className="cookie-consent-title text-base font-bold tracking-[-0.015em]"
+            >
               A more considered experience.
             </h2>
-            <p id="cookie-consent-copy" className="mt-1.5 text-xs leading-5 text-[#6f6b62] sm:text-[13px]">
+            <p
+              id="cookie-consent-copy"
+              className="mt-1.5 text-xs leading-5 text-[#6f6b62] sm:text-[13px]"
+            >
               We use optional cookies to improve VKart. Essential cookies keep the store working.{" "}
-              <Link to="/privacy" className="font-bold text-[#75472f] underline decoration-[#75472f]/30 underline-offset-3 hover:decoration-[#75472f]">
+              <Link
+                to="/privacy"
+                className="font-bold text-[#75472f] underline decoration-[#75472f]/30 underline-offset-3 hover:decoration-[#75472f]"
+              >
                 Privacy details
               </Link>
             </p>

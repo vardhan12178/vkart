@@ -25,8 +25,12 @@ describe("Contact Component", () => {
   test("rejects an invalid email address", async () => {
     render(<Contact />);
     fireEvent.change(screen.getByPlaceholderText("John Doe"), { target: { value: "Jane" } });
-    fireEvent.change(screen.getByPlaceholderText("john@example.com"), { target: { value: "not-an-email" } });
-    fireEvent.change(screen.getByPlaceholderText(/how can we help you/i), { target: { value: "Hello there" } });
+    fireEvent.change(screen.getByPlaceholderText("john@example.com"), {
+      target: { value: "not-an-email" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/how can we help you/i), {
+      target: { value: "Hello there" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(await screen.findByText(/please provide a valid email/i)).toBeInTheDocument();
@@ -49,13 +53,19 @@ describe("Contact Component", () => {
   test("submits a valid form, shows a success toast, and resets the fields", async () => {
     render(<Contact />);
     fireEvent.change(screen.getByPlaceholderText("John Doe"), { target: { value: "Jane Doe" } });
-    fireEvent.change(screen.getByPlaceholderText("john@example.com"), { target: { value: "jane@example.com" } });
-    fireEvent.change(screen.getByPlaceholderText(/how can we help you/i), { target: { value: "Need help with an order" } });
+    fireEvent.change(screen.getByPlaceholderText("john@example.com"), {
+      target: { value: "jane@example.com" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/how can we help you/i), {
+      target: { value: "Need help with an order" },
+    });
 
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(screen.getByText(/sending/i)).toBeInTheDocument();
-    expect(await screen.findByText(/message sent successfully/i, {}, { timeout: 2000 })).toBeInTheDocument();
+    expect(
+      await screen.findByText(/message sent successfully/i, {}, { timeout: 2000 })
+    ).toBeInTheDocument();
     expect(screen.getByPlaceholderText("John Doe")).toHaveValue("");
   });
 });
