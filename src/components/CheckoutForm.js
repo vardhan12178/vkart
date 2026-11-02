@@ -25,7 +25,7 @@ import { prefillFrom, withBranding } from "../utils/razorpayBranding";
 import { qk } from "../query/queryKeys";
 import { Dots } from "./ui/Skeleton";
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -43,7 +43,7 @@ const INR = (n) =>
 const getErrorMessage = (err, fallback) =>
   err?.response?.data?.message || err?.response?.data?.errors?.[0]?.msg || fallback;
 
-/* -------- Razorpay Script Hook -------- */
+// Razorpay Script Hook
 function useRazorpayScript() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -61,7 +61,7 @@ function useRazorpayScript() {
   return loaded;
 }
 
-/* -------- Polished Input Component -------- */
+// Polished Input Component
 const InputField = React.memo(function InputField({
   label,
   name,
@@ -210,7 +210,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
 
   const walletBalance = Number(wallet?.balance) || 0;
 
-  // --- Logic ---
+  // Logic
   const setField = (name, value) => {
     setData((d) => (d[name] === value ? d : { ...d, [name]: value }));
     setErrors((e) => (e[name] ? { ...e, [name]: undefined } : e));
@@ -243,7 +243,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     }, ${p(data.city)} ${p(data.pincode)}, ${p(data.state)}. Phone: ${p(data.phone)}`;
   }, [data]);
 
-  /* --- Step 1: Validate & show review overlay --- */
+  // Step 1: Validate & show review overlay
   const onSubmit = (e) => {
     e.preventDefault();
     const v = validate();
@@ -277,7 +277,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
     }
   };
 
-  /* --- Step 2: Confirm & proceed to payment --- */
+  // Step 2: Confirm & proceed to payment
   const proceedToPayment = async () => {
     if (!rzpReady || !RZP_KEY) {
       return setStatus("Razorpay not ready. Check REACT_APP_RAZORPAY_KEY_ID.");
@@ -335,7 +335,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
         // Pre-selects the method chosen in our own in-page picker so
         // Razorpay's modal skips straight to that method's entry form
         // instead of showing its own method-selection screen first. UPI is
-        // deliberately not an option here — it isn't enabled on this
+        // deliberately not an option here: it isn't enabled on this
         // Razorpay account (Dashboard > Payment Configuration has no UPI
         // block), so offering it would just dead-end with "No appropriate
         // payment method found."
@@ -391,7 +391,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
 
   return (
     <>
-      {/* ---- ORDER REVIEW OVERLAY ---- */}
+      {/* Order review overlay */}
       {showReview && (
         <div
           className="fixed inset-0 z-[999] flex items-center justify-center bg-[#1d1c19]/50 backdrop-blur-sm p-3 sm:p-4"
@@ -531,7 +531,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
             noValidate
             className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8"
           >
-            {/* --- LEFT: Form Fields --- */}
+            {/* LEFT: Form Fields */}
             <div className="lg:col-span-7 xl:col-span-8">
               <div className="bg-white rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 shadow-sm border border-black/[0.06]">
                 <div className="flex items-center gap-3 mb-4 sm:mb-6 border-b border-black/[0.06] pb-3.5 sm:pb-5">
@@ -811,7 +811,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               </div>
             </div>
 
-            {/* --- RIGHT: Payment Summary --- */}
+            {/* RIGHT: Payment Summary */}
             <div className="lg:col-span-5 xl:col-span-4">
               <div className="sticky top-24 bg-ink text-white rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-7 shadow-xl shadow-ink/20 overflow-hidden border border-white/10">
                 {/* Decorative circles */}
@@ -1009,7 +1009,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
               </div>
             </div>
 
-            {/* --- MOBILE STICKY FOOTER --- */}
+            {/* Mobile sticky footer */}
             <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-black/10 p-3 lg:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
               <div className="flex gap-3 items-center max-w-6xl mx-auto">
                 <div className="flex-1">

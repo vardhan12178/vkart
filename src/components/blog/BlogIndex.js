@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import POSTS from "./data";
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -78,7 +78,7 @@ export default function BlogIndex() {
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none z-0" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10">
-        {/* --- PAGE TITLE (Changed to div to fix styling) --- */}
+        {/* PAGE TITLE (Changed to div to fix styling) */}
         <div className="mb-16 text-center animate-fade-up relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-orange-100 text-orange-700 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
             <BookOpen size={12} /> The Journal
@@ -92,7 +92,7 @@ export default function BlogIndex() {
           </p>
         </div>
 
-        {/* --- CONTROLS --- */}
+        {/* Controls */}
         <div
           className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12 bg-white/60 backdrop-blur-xl p-2 rounded-3xl border border-white/60 shadow-lg shadow-gray-200/50 animate-fade-up"
           style={{ animationDelay: "0.1s" }}
@@ -129,7 +129,7 @@ export default function BlogIndex() {
           </div>
         </div>
 
-        {/* --- FEATURED POST --- */}
+        {/* Featured POST */}
         {hasPosts && featured && (
           <section className="mb-20 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <Link
@@ -174,7 +174,7 @@ export default function BlogIndex() {
           </section>
         )}
 
-        {/* --- GRID POSTS --- */}
+        {/* Grid posts */}
         {hasPosts && rest.length > 0 ? (
           <section className="animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <div className="flex items-center gap-3 mb-10">
@@ -236,7 +236,7 @@ export default function BlogIndex() {
           </div>
         )}
 
-        {/* --- NEWSLETTER --- */}
+        {/* Newsletter */}
         <section className="mt-32 mb-20 animate-fade-up">
           <div className="relative overflow-hidden rounded-[3rem] bg-[#050505] px-6 py-20 sm:px-20 text-center shadow-2xl shadow-gray-900/30">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-black pointer-events-none" />

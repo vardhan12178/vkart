@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Calendar, User, Tag as TagIcon, ArrowLeft, ArrowRight, Clock, Share2 } from "lucide-react";
 import POSTS from "./data";
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -47,7 +47,7 @@ export default function PostPage() {
     <div className="premium-page premium-blog bg-[#f6f3ed] font-sans text-[#1d1c19] selection:bg-[#1d1c19] selection:text-white pb-20">
       <AnimStyles />
 
-      {/* --- IMMERSIVE HEADER --- */}
+      {/* Immersive header */}
       <header className="relative h-[60vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent z-10" />
@@ -70,7 +70,7 @@ export default function PostPage() {
         </div>
       </header>
 
-      {/* --- ARTICLE CONTENT --- */}
+      {/* Article content */}
       <article className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-32 sm:-mt-40">
         <div className="max-w-3xl mx-auto">
           {/* Title Card */}
@@ -131,7 +131,7 @@ export default function PostPage() {
             </button>
           </div>
 
-          {/* --- NAVIGATION --- */}
+          {/* Navigation */}
           <div className="mt-12 grid grid-cols-2 gap-4">
             {prev ? (
               <Link
@@ -168,7 +168,7 @@ export default function PostPage() {
         </div>
       </article>
 
-      {/* --- RELATED POSTS --- */}
+      {/* Related posts */}
       <section className="container mx-auto px-4 mt-24 max-w-6xl">
         <div className="flex items-center gap-3 mb-8">
           <div className="h-px flex-1 bg-gray-200" />

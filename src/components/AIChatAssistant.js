@@ -45,10 +45,6 @@ const AIChatAssistant = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const showDesktopLauncher = location.pathname === "/";
-
-  // ---------------------------------------------------------
-  // 🧠 STATE MANAGEMENT
-  // ---------------------------------------------------------
   const initGreeting = {
     id: createMessageId(),
     type: "bot",
@@ -82,8 +78,6 @@ const AIChatAssistant = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("");
-
-  // 🛡️ Rate Limit State
   const [cooldown, setCooldown] = useState(0);
 
   // Auto-scroll ref
@@ -92,10 +86,6 @@ const AIChatAssistant = () => {
   const botMessageRefs = useRef(new Map());
   const nextScrollRef = useRef({ type: "none", id: null });
   const wasOpenRef = useRef(false);
-
-  // ---------------------------------------------------------
-  // ⚡ EFFECTS
-  // ---------------------------------------------------------
 
   // On open: show latest message first.
   useEffect(() => {
@@ -139,10 +129,6 @@ const AIChatAssistant = () => {
       return () => clearTimeout(timer);
     }
   }, [cooldown]);
-
-  // ---------------------------------------------------------
-  // 🛠️ HANDLERS
-  // ---------------------------------------------------------
 
   const buildHistory = () => {
     // Only send last 6 exchanges to save tokens/bandwidth
@@ -277,10 +263,6 @@ const AIChatAssistant = () => {
     showToast("Added to cart", "success");
   };
 
-  // ---------------------------------------------------------
-  // 🎨 RENDER HELPERS
-  // ---------------------------------------------------------
-
   const renderBotMessage = (msg) => {
     const { structured, products } = msg;
     if (!structured) return null;
@@ -377,7 +359,6 @@ const AIChatAssistant = () => {
         {products && products.length > 0 && (
           <motion.div variants={itemVariants} className="pt-1 grid gap-2 sm:gap-2.5">
             {products.map((prod, i) => {
-              // Check if this is the "Best Match"
               const isBestMatch = recommendation?.productIndex === i + 1;
 
               return (
@@ -492,10 +473,6 @@ const AIChatAssistant = () => {
     );
   };
 
-  // ---------------------------------------------------------
-  // 🚀 MAIN RENDER
-  // ---------------------------------------------------------
-
   const hideToggle = ["/cart", "/checkout"].some((path) => location.pathname.startsWith(path));
 
   return (
@@ -559,7 +536,7 @@ const AIChatAssistant = () => {
             {/* Mobile Drag Pill */}
             <div className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-black/15 md:hidden" />
 
-            {/* --- Header --- */}
+            {/* Header */}
             <div className="premium-assistant-header bg-[#fffdf8] px-4 py-3 sm:px-5 sm:py-3.5 flex justify-between items-center shrink-0 border-b border-black/[0.08] relative z-20 text-[#1d1c19]">
               <div className="flex items-center gap-2.5 sm:gap-3">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1d1c19] flex items-center justify-center text-white shrink-0">
@@ -586,7 +563,7 @@ const AIChatAssistant = () => {
               </button>
             </div>
 
-            {/* --- Messages Area --- */}
+            {/* Messages Area */}
             <div
               ref={scrollAreaRef}
               className="premium-assistant-messages flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3.5 sm:space-y-4 bg-[#f6f3ed]"
@@ -628,7 +605,7 @@ const AIChatAssistant = () => {
               <div ref={messagesEndRef} className="h-2" />
             </div>
 
-            {/* --- Input Area --- */}
+            {/* Input Area */}
             <div className="premium-assistant-input p-3 sm:p-4 bg-[#fffdf8] border-t border-black/[0.08] relative z-20">
               <div className="relative group">
                 <input

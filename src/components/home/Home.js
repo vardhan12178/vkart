@@ -67,7 +67,7 @@ function useProducts(key, params) {
   });
 }
 
-/* ------------ Small pieces ------------ */
+// Small pieces
 function Section({ title, subtitle, to, children, className = "" }) {
   return (
     <section className={`mx-auto max-w-7xl px-3 sm:px-4 ${className}`}>
@@ -163,7 +163,7 @@ function Rail({ query }) {
   );
 }
 
-/* ------------ Personal rows ------------ */
+// Personal rows
 // "Recently viewed" comes from this device's history. "Recommended for you" is what is most similar
 // (by the catalog's embeddings) to the last two products viewed, minus anything already seen.
 function PersonalRows() {
@@ -205,7 +205,7 @@ function PersonalRows() {
   );
 }
 
-/* ------------ Hero carousel ------------ */
+// Hero carousel
 function Hero({ slides }) {
   const [idx, setIdx] = useState(0);
   const strip = useRef(null);
@@ -355,7 +355,7 @@ function Hero({ slides }) {
   );
 }
 
-/* ------------ Category card (4 thumbnails, Amazon style) ------------ */
+// Category card (4 thumbnails, Amazon style)
 function CategoryCard({ title, cat, query }) {
   const items = (query.data?.products || []).slice(0, 4);
   return (
@@ -400,7 +400,7 @@ const maxOff = (q) => Math.max(0, ...(q.data?.products || []).map((p) => p.disco
 const minPriceOf = (q) => q.data?.facets?.price?.min;
 const firstImage = (q, i = 0) => q.data?.products?.[i]?.image || q.data?.products?.[0]?.image;
 
-/* ------------ Page ------------ */
+// Page
 export default function Home() {
   const dispatch = useDispatch();
 

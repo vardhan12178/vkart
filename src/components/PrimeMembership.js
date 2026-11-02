@@ -102,7 +102,7 @@ export default function PrimeMembership() {
       const data = await purchaseMutation.mutateAsync(planId);
       if (!data?.orderId) throw new Error("No orderId returned");
 
-      // Close our own picker now — Razorpay's modal takes over from here.
+      // Close our own picker now: Razorpay's modal takes over from here.
       setSelectedPlan(null);
 
       const options = withBranding({
@@ -126,12 +126,12 @@ export default function PrimeMembership() {
           }
         },
         modal: { ondismiss: () => setPurchasing(null) },
-        // Matches the checkout flow's Razorpay look — the primary CTA color
+        // Matches the checkout flow's Razorpay look, the primary CTA color
         // rather than Prime's own amber, so the payment step itself feels
         // consistent regardless of which flow got you there.
         theme: { color: "#1D1C19" },
         // Pre-selects the method chosen in the picker below, same as
-        // checkout — skips Razorpay's own method-list screen.
+        // checkout: skips Razorpay's own method-list screen.
         method: {
           card: paymentMethod === "card",
           netbanking: paymentMethod === "netbanking",
@@ -352,7 +352,7 @@ export default function PrimeMembership() {
         </div>
       </div>
 
-      {/* Payment method picker — intentionally lightweight compared to the
+      {/* Payment method picker: intentionally lightweight compared to the
           full checkout form (no address to collect here), but the Razorpay
           look and available methods match checkout exactly. */}
       {selectedPlan && (

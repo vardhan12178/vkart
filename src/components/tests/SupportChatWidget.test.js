@@ -150,7 +150,7 @@ describe("SupportChatWidget Component", () => {
       target: { value: "I need help with a defective item" },
     });
     // The send button sits right after the input and, like the header's
-    // close button, has no accessible name — scope to its sibling instead.
+    // close button, has no accessible name: scope to its sibling instead.
     fireEvent.click(messageInput.nextElementSibling);
 
     await waitFor(() => {

@@ -7,6 +7,7 @@ import usePermission from "./usePermission";
 import { getSocketBaseUrl } from "../../utils/notificationHelpers";
 import { FaPaperPlane, FaCheck, FaUndo, FaTimes, FaChevronLeft } from "react-icons/fa";
 import { Bone, SkeletonRegion } from "../ui/Skeleton";
+import { MessageSquare, Package } from "lucide-react";
 
 const TABS = [
   {
@@ -393,7 +394,7 @@ export default function AdminSupport() {
                   {conversation.contextSummary && (
                     <div className="flex justify-center my-1">
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200/80 text-[10px] sm:text-[11px] font-semibold text-slate-600 shadow-2xs">
-                        <span>📦</span>
+                        <Package className="h-3 w-3" aria-hidden="true" />
                         <span>{conversation.contextSummary}</span>
                       </div>
                     </div>
@@ -404,7 +405,7 @@ export default function AdminSupport() {
                     <div className="flex justify-center py-10">
                       <div className="bg-white border border-slate-200/70 rounded-2xl p-4 max-w-xs text-center shadow-xs space-y-1">
                         <div className="h-9 w-9 mx-auto rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold mb-2">
-                          💬
+                          <MessageSquare className="h-4 w-4" aria-hidden="true" />
                         </div>
                         <p className="text-xs font-bold text-slate-900">Conversation Connected</p>
                         <p className="text-[11px] text-slate-500">

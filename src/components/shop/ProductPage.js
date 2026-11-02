@@ -58,7 +58,7 @@ import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
 const INK = "#1d1c19";
 const ACCENT = "#a85d37";
 
-/* ------------ Gallery ------------ */
+// Gallery
 function Gallery({ images, idx, setIdx }) {
   const [zoom, setZoom] = useState(null);
   const strip = useRef(null);
@@ -164,7 +164,7 @@ function Gallery({ images, idx, setIdx }) {
   );
 }
 
-/* ------------ Small cards ------------ */
+// Small cards
 function MiniCard({ p }) {
   const img = p.image;
   const off = p.discountPercent;
@@ -217,7 +217,7 @@ function Rail({ title, items }) {
   );
 }
 
-/* ------------ Page ------------ */
+// Page
 export default function ProductPage() {
   const { slug } = useParams();
   const [p, setP] = useState(null);

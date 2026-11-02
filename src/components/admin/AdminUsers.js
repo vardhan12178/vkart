@@ -108,7 +108,7 @@ export default function AdminUsers() {
     resetPasswordMutation.isPending ||
     deleteUserMutation.isPending;
 
-  // --- Stats Calculation ---
+  // Stats Calculation
   const stats = useMemo(() => {
     const total = users.length;
     const twoFAEnabled = users.filter((u) => u.twoFactorEnabled).length;
@@ -116,7 +116,7 @@ export default function AdminUsers() {
     return { total, twoFAEnabled, blocked };
   }, [users]);
 
-  // --- Filtering & Sorting ---
+  // Filtering & Sorting
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     let out = [...users];
@@ -168,7 +168,7 @@ export default function AdminUsers() {
     setCurrentPage(1);
   }, [search, filterTwoFA, filterBlocked]);
 
-  // --- Pagination Calculation (FIXED) ---
+  // Pagination Calculation (FIXED)
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage; // This was missing!
@@ -185,7 +185,7 @@ export default function AdminUsers() {
     }
   };
 
-  // --- Actions ---
+  // Actions
   async function handleToggleBlock(user) {
     try {
       await toggleBlockMutation.mutateAsync({ userId: user._id, blocked: !user.blocked });
@@ -738,7 +738,7 @@ export default function AdminUsers() {
   );
 }
 
-/* --- Sub Components for Cleaner Code --- */
+// Sub Components for Cleaner Code
 
 function StatCard({ label, fullLabel, value, icon: Icon, color }) {
   const colors = {

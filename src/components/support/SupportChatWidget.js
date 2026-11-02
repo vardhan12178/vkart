@@ -23,7 +23,7 @@ const INTENT_TO_CATEGORY = {
   other: "OTHER",
 };
 
-/* Live agent chat — mounted only once the customer opts in. Creates/resumes
+/* Live agent chat: mounted only once the customer opts in. Creates/resumes
    a conversation, then keeps a dedicated socket connection for the lifetime
    of this panel (rather than reusing the app-wide notification socket,
    which doesn't expose its connection to other components). */
@@ -66,7 +66,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
     socketRef.current = socket;
 
     socket.on("support:new_message", ({ conversationId, message }) => {
-      // Only agent replies arrive here — the customer's own messages are
+      // Only agent replies arrive here: the customer's own messages are
       // already shown optimistically at send time. Without this check, an
       // account that's both the customer and a support agent (e.g. the
       // store owner testing their own account) would see their own message
@@ -126,7 +126,7 @@ function LiveChatPanel({ category, orderId, contextSummary }) {
     clearTimeout(typingTimeoutRef.current);
     emitTyping(false);
 
-    // Optimistic append — the socket event for our own message won't fire
+    // Optimistic append: the socket event for our own message won't fire
     // back to us, so this is the only place it gets added for the sender.
     const optimisticMessage = {
       sender: "USER",

@@ -21,7 +21,7 @@ import {
 import { Link } from "react-router-dom";
 import { SiRedux, SiTailwindcss, SiRazorpay, SiRedis } from "react-icons/si";
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -64,7 +64,7 @@ export default function About() {
       <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-      {/* --- HERO SECTION --- */}
+      {/* Hero section */}
       <section className="relative container mx-auto px-4 pt-20 pb-24 sm:pt-32 sm:pb-32 text-center z-10">
         <div className="animate-fade-up">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-orange-100 text-orange-600 text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-sm mb-8">
@@ -83,7 +83,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- TRY IT --- */}
+      {/* Try it */}
       <section className="container mx-auto px-4 pb-16">
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
           <Link
@@ -119,7 +119,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- TECH STACK BENTO GRID --- */}
+      {/* Tech stack bento grid */}
       <section className="container mx-auto px-4 pb-24">
         <div
           className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up"
@@ -150,7 +150,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- KEY FEATURES (Cards) --- */}
+      {/* KEY FEATURES (Cards) */}
       <section className="container mx-auto px-4 pb-24">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
@@ -201,7 +201,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- ARCHITECTURE LIST --- */}
+      {/* Architecture list */}
       <section className="py-24 bg-white border-y border-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -234,7 +234,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- FAQ ACCORDION --- */}
+      {/* FAQ accordion */}
       <section className="container mx-auto px-4 py-24">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
@@ -282,7 +282,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* --- CTA / FOOTER --- */}
+      {/* Cta / footer */}
       <section className="container mx-auto px-4 pb-12">
         <div className="bg-[#0f0f0f] rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-2xl">
           {/* Decor */}

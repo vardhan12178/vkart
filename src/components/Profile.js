@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, Suspense, lazy, useCallback } from "react";
 import { createPortal } from "react-dom";
-import axios from "./axiosInstance"; // Kept as requested
+import axios from "./axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -39,7 +39,7 @@ const EMPTY_ORDERS = [];
 const EMPTY_ADDRESSES = [];
 const EMPTY_WALLET = { balance: 0, transactions: [] };
 
-// --- HELPER: Get Initials ---
+// HELPER: Get Initials
 const getInitials = (name) => {
   if (!name) return "VK";
   return name
@@ -50,7 +50,7 @@ const getInitials = (name) => {
     .toUpperCase();
 };
 
-// --- MODERN SKELETON LOADER ---
+// Modern skeleton loader
 const Skeleton = () => (
   <div className="min-h-screen bg-sand py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-5xl mx-auto space-y-6">
@@ -79,7 +79,7 @@ const Skeleton = () => (
   </div>
 );
 
-// --- PREMIUM TOAST ---
+// Premium toast
 const Toast = ({ kind = "success", message }) => {
   if (!message) return null;
   const ok = kind === "success";
@@ -99,13 +99,11 @@ const Toast = ({ kind = "success", message }) => {
   );
 };
 
-// --- MAIN COMPONENT ---
 export default function Profile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
 
-  // State
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
   const [activeTab, setActiveTab] = useState("overview");
@@ -217,7 +215,6 @@ export default function Profile() {
   const loading = profileLoading || ordersLoading;
   const error = profileIsError || ordersIsError ? "Failed to fetch profile or orders" : "";
 
-  // --- EFFECTS ---
   useEffect(() => {
     if (profileData) setUser(profileData);
   }, [profileData]);
@@ -240,7 +237,6 @@ export default function Profile() {
     };
   }, []);
 
-  // Handlers
   const handleLogout = useCallback(async () => {
     try {
       await axios.post("/api/logout", {}, { withCredentials: true });
@@ -401,7 +397,7 @@ export default function Profile() {
     }
   };
 
-  // --- ADDRESS HANDLERS ---
+  // Address handlers
   const openAddressForm = (addr = null) => {
     if (addr) {
       setEditAddr(addr);
@@ -493,7 +489,7 @@ export default function Profile() {
     <div className="premium-page premium-account min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20">
       <Toast kind={toast.kind} message={toast.message} />
 
-      {/* --- 2FA MODAL --- */}
+      {/* 2FA modal */}
       {twoFAOpen &&
         createPortal(
           <div className="profile-2fa-backdrop fixed inset-0 z-[200] flex items-center justify-center bg-[#171612]/65 backdrop-blur-md p-4 animate-fade-in">
@@ -578,11 +574,11 @@ export default function Profile() {
           document.body
         )}
 
-      {/* --- BACKGROUND DECOR --- */}
+      {/* Background decor */}
       <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-tint via-sand to-white opacity-70" />
 
       <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 sm:pt-10">
-        {/* --- HEADER CARD --- */}
+        {/* Header card */}
         <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-line/90 overflow-hidden">
           {/* Decorative Gradient Blur */}
           <div className="absolute -top-20 -right-20 w-48 h-48 sm:w-64 sm:h-64 bg-accent/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
@@ -701,7 +697,7 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* --- TABS --- */}
+        {/* Tabs */}
         <div className="mt-3.5 sm:mt-6 flex justify-center sm:justify-start mb-3 sm:mb-5">
           <div className="bg-white p-1 rounded-xl shadow-2xs border border-line inline-flex">
             {["overview", "orders"].map((tab) => (
@@ -720,7 +716,7 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* --- CONTENT AREA --- */}
+        {/* Content area */}
         <div className="animate-fade-in">
           {activeTab === "overview" ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 sm:gap-5">
@@ -1122,7 +1118,7 @@ export default function Profile() {
               </div>
             </div>
           ) : (
-            // --- ORDERS TAB ---
+            // Orders tab
             <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-sm border border-line min-h-[400px] p-4 sm:p-8">
               <div className="flex justify-between items-center mb-6 sm:mb-8 border-b border-line pb-4">
                 <div>
@@ -1169,7 +1165,7 @@ export default function Profile() {
           )}
         </div>
 
-        {/* --- BOTTOM SIGN OUT ACTION --- */}
+        {/* Bottom sign out action */}
         <div className="mt-8 pb-12 flex justify-center">
           <button
             onClick={handleLogout}
@@ -1181,7 +1177,7 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* --- AVATAR CROPPER MODAL --- */}
+      {/* Avatar cropper modal */}
       {showEditor && selectedFile && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[100] animate-fade-in">
           <div className="bg-white p-6 rounded-3xl shadow-2xl space-y-6 w-[320px]">

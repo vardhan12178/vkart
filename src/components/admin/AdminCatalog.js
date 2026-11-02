@@ -48,7 +48,7 @@ const useDebounced = (value, ms) => {
 const errorText = (err) =>
   err?.response?.data?.message || err?.response?.data?.errors?.[0]?.msg || "Something went wrong";
 
-/* ------------ Variant row (inline price / MRP / stock editor) ------------ */
+// Variant row (inline price / MRP / stock editor)
 function VariantRow({ productId, v, canWrite, onSaved }) {
   const [form, setForm] = useState({ price: v.price, mrp: v.mrp, stock: v.stock });
   useEffect(() => {
@@ -137,7 +137,7 @@ function VariantRow({ productId, v, canWrite, onSaved }) {
   );
 }
 
-/* ------------ Page ------------ */
+// Page
 export default function AdminCatalog() {
   const queryClient = useQueryClient();
   const { canWrite } = usePermission("products");

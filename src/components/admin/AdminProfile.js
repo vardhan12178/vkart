@@ -16,7 +16,7 @@ import { ROLE_LABELS, MODULES } from "../../constants/adminRoles";
 import InputGroup from "./ui/InputGroup";
 import { Dots } from "../ui/Skeleton";
 
-// Every logged-in admin — regardless of role or module permissions — can
+// Every logged-in admin, regardless of role or module permissions, can
 // reach this page and edit their own account. It's intentionally not wrapped
 // in RequireModule; the backend mirrors this (PUT /settings/profile only
 // needs a valid admin JWT, not any specific permission).
@@ -63,7 +63,7 @@ export default function AdminProfile() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      // Email is intentionally not sent — it's read-only (see backend
+      // Email is intentionally not sent: it's read-only (see backend
       // updateAdminProfile for why: it's the login identifier, and changing
       // it safely needs a verify-before-switch flow that doesn't exist yet).
       const formData = new FormData();

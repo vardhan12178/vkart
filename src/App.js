@@ -181,7 +181,7 @@ const App = () => {
 
       <div id="root">
         <RouteSeo />
-        {/* Skip to main content — accessibility */}
+        {/* Skip to main content: accessibility */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-gray-900 focus:shadow-lg focus:rounded-lg"

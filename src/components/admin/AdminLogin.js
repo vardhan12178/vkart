@@ -20,7 +20,7 @@ import DemoLogin from "../DemoLogin";
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
 
-// --- Animation Variants ---
+// Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -30,7 +30,6 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-// ----------------- Helpers -----------------
 const loadGoogleScript = () =>
   new Promise((resolve) => {
     if (document.getElementById("google-script")) return resolve();
@@ -80,8 +79,6 @@ const Toast = ({ show, kind = "error", children }) => {
   );
 };
 
-// ---------------------------------------------------
-
 export default function AdminLogin({ setIsAdmin }) {
   const navigate = useNavigate();
   const [adminId, setAdminId] = useState("");
@@ -92,7 +89,7 @@ export default function AdminLogin({ setIsAdmin }) {
   const [formError, setFormError] = useState("");
   const [errors, setErrors] = useState({ adminId: "", password: "" });
 
-  // ---------------- GOOGLE BUTTON INIT ----------------
+  // Google button init
   useEffect(() => {
     loadGoogleScript().then(() => {
       if (window.google) {
@@ -135,7 +132,7 @@ export default function AdminLogin({ setIsAdmin }) {
     });
   }, [navigate, setIsAdmin]);
 
-  // ---------------- LOGIN SUBMIT ----------------
+  // Login submit
   const onSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
@@ -164,7 +161,7 @@ export default function AdminLogin({ setIsAdmin }) {
     }
   };
 
-  // ---------------- VALIDATION ----------------
+  // Validation
   const validate = () => {
     const e = { adminId: "", password: "" };
     if (!adminId.trim()) e.adminId = "Admin ID is required.";
@@ -201,7 +198,7 @@ export default function AdminLogin({ setIsAdmin }) {
           variants={fadeInUp}
           className="premium-admin-login-shell relative w-full max-w-[1180px] min-h-[680px] lg:h-[760px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_90px_rgba(29,28,25,.15)] flex overflow-hidden border border-black/[0.07]"
         >
-          {/* --- LEFT PANEL (Visual) --- */}
+          {/* LEFT PANEL (Visual) */}
           <div className="hidden lg:flex w-1/2 relative flex-col justify-between bg-[#1d1c19] p-12 overflow-hidden text-white">
             {/* Decorative Patterns */}
             <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
@@ -247,7 +244,7 @@ export default function AdminLogin({ setIsAdmin }) {
             </div>
           </div>
 
-          {/* --- RIGHT PANEL (Form) --- */}
+          {/* RIGHT PANEL (Form) */}
           <div className="w-full lg:w-1/2 bg-[#fffdf8] flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-12 relative">
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-8">
@@ -388,7 +385,7 @@ export default function AdminLogin({ setIsAdmin }) {
                       animate={{ opacity: 1, height: "auto" }}
                       className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block"
                     >
-                      ⚠️ Caps Lock is ON
+                      Caps Lock is on
                     </motion.div>
                   )}
                   <FieldError id="password-error" message={errors.password} />

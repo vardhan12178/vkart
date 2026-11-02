@@ -30,7 +30,7 @@ import {
   Cell,
 } from "recharts";
 
-// --- CSS for Hiding Scrollbars ---
+// CSS for Hiding Scrollbars
 const noScrollbarStyle = `
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -41,7 +41,7 @@ const noScrollbarStyle = `
   }
 `;
 
-// --- Utilities ---
+// Utilities
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -110,7 +110,7 @@ export default function AdminDashboard() {
   const loading = dashboardQuery.isLoading;
   const error = dashboardQuery.isError ? "Could not sync dashboard data." : "";
 
-  // --- Filter Logic ---
+  // Filter Logic
   const filteredOrders = useMemo(() => {
     if (!orders.length) return [];
     const now = new Date();
@@ -120,7 +120,7 @@ export default function AdminDashboard() {
     return orders.filter((o) => new Date(o.createdAt) >= cutoff);
   }, [orders, timeRange]);
 
-  /* ---------------------------- Metrics Logic --------------------------- */
+  // Metrics Logic
   const stats = useMemo(() => {
     const sourceData = orders;
 
@@ -622,7 +622,7 @@ export default function AdminDashboard() {
   );
 }
 
-/* ---------------------- Components ---------------------- */
+// Components
 
 function ImageWithFallback({ src, alt, className }) {
   const [error, setError] = useState(false);

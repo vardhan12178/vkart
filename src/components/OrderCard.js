@@ -20,7 +20,7 @@ const INR = (n) =>
     maximumFractionDigits: 0,
   }).format(Math.round(Number(n) || 0));
 
-/* ---- MODERN STAGE STYLES ---- */
+// Modern stage styles
 const stageStyles = {
   PLACED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-muted", border: "border-line-strong" },
   CONFIRMED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
@@ -90,7 +90,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
           : "bg-white border-line-strong/80 shadow-2xs hover:border-line-strong hover:shadow-xs"
       }`}
     >
-      {/* --- SUMMARY HEADER --- */}
+      {/* Summary header */}
       <div className="p-3.5 sm:p-5 cursor-pointer select-none" onClick={() => setOpen(!open)}>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           {/* Left: Thumbnail + Name + Date + Status */}
@@ -214,7 +214,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
         </div>
       </div>
 
-      {/* --- EXPANDED DETAILS --- */}
+      {/* Expanded details */}
       {open && (
         <div className="border-t border-line bg-sand/60 p-3.5 sm:p-6 space-y-4 sm:space-y-6 animate-fade-in">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 sm:gap-5">

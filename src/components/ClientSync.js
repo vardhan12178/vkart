@@ -61,7 +61,7 @@ export default function ClientSync() {
           if (w) localWishlist = JSON.parse(w);
         } catch {}
 
-        // 2. Clear immediately — prevents duplication on quick refresh
+        // 2. Clear immediately: prevents duplication on quick refresh
         try {
           localStorage.removeItem("vkart_cart");
           localStorage.removeItem("vkart_wishlist");

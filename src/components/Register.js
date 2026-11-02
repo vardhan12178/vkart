@@ -21,7 +21,7 @@ import { Dots } from "./ui/Skeleton";
 const cx = (...c) => c.filter(Boolean).join(" ");
 const currentYear = new Date().getFullYear();
 
-// --- Animation Variants ---
+// Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -31,7 +31,7 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-// --- CSS for Hiding Scrollbar ---
+// CSS for Hiding Scrollbar
 const scrollbarStyles = `
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -41,8 +41,6 @@ const scrollbarStyles = `
     scrollbar-width: none;  /* Firefox */
   }
 `;
-
-// --- Helper Components ---
 
 const FieldError = ({ id, message }) =>
   !message ? null : (
@@ -257,7 +255,6 @@ export default function Register() {
     e.preventDefault();
     setToast({ show: false, kind: "error", msg: "" });
 
-    // Mark all fields as touched on submit
     setTouched({
       name: true,
       username: true,
@@ -330,7 +327,7 @@ export default function Register() {
           variants={fadeInUp}
           className="premium-auth-shell relative w-full max-w-[1180px] min-h-[720px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/[0.06]"
         >
-          {/* --- LEFT PANEL (Visual) --- */}
+          {/* LEFT PANEL (Visual) */}
           <div className="premium-auth-visual hidden lg:flex w-5/12 relative flex-col justify-between bg-[#ded2c2] p-8 xl:p-10 overflow-hidden">
             <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
 
@@ -368,7 +365,7 @@ export default function Register() {
             </motion.div>
           </div>
 
-          {/* --- RIGHT PANEL (Form) --- */}
+          {/* RIGHT PANEL (Form) */}
           <div className="premium-auth-form w-full lg:w-7/12 bg-[#fffdf8] flex flex-col relative">
             {/* Scrollable form area */}
             <div className="absolute inset-0 overflow-y-auto no-scrollbar">
