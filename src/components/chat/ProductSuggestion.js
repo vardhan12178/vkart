@@ -2,13 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ShoppingCart, Sparkles } from "lucide-react";
 import { formatINR } from "../../utils/format";
-
-// Shown when a product image fails to load (no third-party placeholder host)
-const PLACEHOLDER =
-  "data:image/svg+xml;utf8," +
-  encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150"><rect width="150" height="150" fill="#eeeae2"/></svg>'
-  );
+import { PLACEHOLDER_IMAGE } from "../../utils/placeholder";
 
 // One product the assistant suggests: tap to open it, or add it to the bag from the card.
 export default function ProductSuggestion({ product, isTopPick, onOpen, onAdd }) {
@@ -30,7 +24,7 @@ export default function ProductSuggestion({ product, isTopPick, onOpen, onAdd })
           alt={product.title}
           className="w-full h-full object-contain mix-blend-multiply"
           onError={(e) => {
-            e.target.src = PLACEHOLDER;
+            e.target.src = PLACEHOLDER_IMAGE;
           }}
         />
       </div>
