@@ -36,7 +36,9 @@ describe("withBranding", () => {
 
 describe("prefillFrom", () => {
   test("drops missing details so Razorpay asks for them", () => {
-    expect(prefillFrom({ name: "Asha Rao", email: "", contact: undefined })).toEqual({ name: "Asha Rao" });
+    expect(prefillFrom({ name: "Asha Rao", email: "", contact: undefined })).toEqual({
+      name: "Asha Rao",
+    });
     expect(prefillFrom()).toEqual({});
   });
 });

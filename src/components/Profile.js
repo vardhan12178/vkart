@@ -11,7 +11,27 @@ import imageCompression from "browser-image-compression";
 import AvatarEditor from "react-avatar-editor";
 import SupportChatWidget from "./support/SupportChatWidget";
 
-import { CameraIcon, ChevronRightIcon, CircleCheckIcon, CircleXIcon, CrownIcon, InfoIcon, LockIcon, LogOutIcon, MailIcon, MapPinIcon, PackageOpenIcon, PencilIcon, PlusIcon, QrCodeIcon, ShieldCheckIcon, ShoppingBagIcon, Trash2Icon, UserIcon, XIcon } from "./ui/icons";
+import {
+  CameraIcon,
+  ChevronRightIcon,
+  CircleCheckIcon,
+  CircleXIcon,
+  CrownIcon,
+  InfoIcon,
+  LockIcon,
+  LogOutIcon,
+  MailIcon,
+  MapPinIcon,
+  PackageOpenIcon,
+  PencilIcon,
+  PlusIcon,
+  QrCodeIcon,
+  ShieldCheckIcon,
+  ShoppingBagIcon,
+  Trash2Icon,
+  UserIcon,
+  XIcon,
+} from "./ui/icons";
 import { qk } from "../query/queryKeys";
 
 const OrderCard = lazy(() => import("./OrderCard"));
@@ -49,7 +69,10 @@ const Skeleton = () => (
       {/* Grid Skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="h-40 bg-white rounded-3xl shadow-sm border border-line animate-pulse" />
+          <div
+            key={i}
+            className="h-40 bg-white rounded-3xl shadow-sm border border-line animate-pulse"
+          />
         ))}
       </div>
     </div>
@@ -62,9 +85,12 @@ const Toast = ({ kind = "success", message }) => {
   const ok = kind === "success";
   return (
     <div className="fixed top-6 left-1/2 z-[100] -translate-x-1/2 animate-fade-in-down">
-      <div className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${ok ? "bg-ok/10 border-ok/30 text-ok" : "bg-alert/10 border-alert/30 text-alert"
-        }`}>
-        <div className={`p-1 rounded-full ${ok ? 'bg-ok/20' : 'bg-alert/20'}`}>
+      <div
+        className={`flex items-center gap-3 px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-md border ${
+          ok ? "bg-ok/10 border-ok/30 text-ok" : "bg-alert/10 border-alert/30 text-alert"
+        }`}
+      >
+        <div className={`p-1 rounded-full ${ok ? "bg-ok/20" : "bg-alert/20"}`}>
           {ok ? <CircleCheckIcon size={14} /> : <CircleXIcon size={14} />}
         </div>
         <span className="text-sm font-semibold tracking-wide">{message}</span>
@@ -112,7 +138,16 @@ export default function Profile() {
   const [addresses, setAddresses] = useState([]);
   const [addrOpen, setAddrOpen] = useState(false);
   const [editAddr, setEditAddr] = useState(null); // null = add mode, object = edit mode
-  const emptyAddr = { fullName: "", phone: "", address1: "", address2: "", city: "", state: "", pincode: "", isDefault: false };
+  const emptyAddr = {
+    fullName: "",
+    phone: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    pincode: "",
+    isDefault: false,
+  };
   const [addrForm, setAddrForm] = useState({ ...emptyAddr });
   const [addrLoading, setAddrLoading] = useState(false);
 
@@ -389,7 +424,8 @@ export default function Profile() {
 
   const handleSaveAddress = async () => {
     const { fullName, phone, address1, city, state, pincode } = addrForm;
-    if (!fullName || !phone || !address1 || !city || !state || !pincode) return showToast("error", "Please fill all required fields.");
+    if (!fullName || !phone || !address1 || !city || !state || !pincode)
+      return showToast("error", "Please fill all required fields.");
     try {
       setAddrLoading(true);
       let res;
@@ -442,7 +478,12 @@ export default function Profile() {
 
   if (loading) return <Skeleton />;
   // Only show error if truly blocking (e.g. network fail), otherwise show partial
-  if (error && !user) return <div className="min-h-screen flex items-center justify-center bg-[#f6f3ed] font-medium text-[#75483b]">{error}</div>;
+  if (error && !user)
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#f6f3ed] font-medium text-[#75483b]">
+        {error}
+      </div>
+    );
   // If somehow loaded but no user
   if (!user && !loading) return null;
 
@@ -453,69 +494,100 @@ export default function Profile() {
       <Toast kind={toast.kind} message={toast.message} />
 
       {/* --- 2FA MODAL --- */}
-      {twoFAOpen && createPortal((
-        <div className="profile-2fa-backdrop fixed inset-0 z-[200] flex items-center justify-center bg-[#171612]/65 backdrop-blur-md p-4 animate-fade-in">
-          <div className="profile-2fa-modal isolate w-full max-w-[26rem] overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#fffdf8] text-[#1d1c19] shadow-[0_30px_100px_rgba(0,0,0,.35)]">
-            <div className="flex items-center justify-between border-b border-black/[0.08] px-6 py-5">
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">Account security</p>
-                <h3 className="mt-1 text-lg font-bold text-[#1d1c19]">Set up two-factor authentication</h3>
-              </div>
-              <button onClick={() => setTwoFAOpen(false)} aria-label="Close two-factor setup" className="grid h-9 w-9 place-items-center rounded-full bg-[#eee9df] text-[#5f5b52] transition-colors hover:bg-[#1d1c19] hover:text-white"><XIcon /></button>
-            </div>
-            <div className="flex flex-col items-center px-6 pb-7 pt-6 text-center">
-              {twoFAState.qr ? (
-                <div className="mb-5 rounded-[1.25rem] border border-black/10 bg-white p-3 shadow-[0_10px_35px_rgba(29,28,25,.1)]">
-                  <img src={twoFAState.qr} alt="Scan this QR code with your authenticator application" className="profile-2fa-qr h-48 w-48 sm:h-52 sm:w-52" />
+      {twoFAOpen &&
+        createPortal(
+          <div className="profile-2fa-backdrop fixed inset-0 z-[200] flex items-center justify-center bg-[#171612]/65 backdrop-blur-md p-4 animate-fade-in">
+            <div className="profile-2fa-modal isolate w-full max-w-[26rem] overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#fffdf8] text-[#1d1c19] shadow-[0_30px_100px_rgba(0,0,0,.35)]">
+              <div className="flex items-center justify-between border-b border-black/[0.08] px-6 py-5">
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#a85d37]">
+                    Account security
+                  </p>
+                  <h3 className="mt-1 text-lg font-bold text-[#1d1c19]">
+                    Set up two-factor authentication
+                  </h3>
                 </div>
-              ) : (
-                <div className="mb-5 grid h-48 w-48 place-items-center rounded-[1.25rem] border border-black/10 bg-[#eee9df] text-xs font-semibold text-[#6f6b62]">Preparing QR code…</div>
-              )}
-              <p className="text-sm font-semibold text-[#34322d]">Scan with Google Authenticator</p>
-              <p className="mt-1 max-w-xs text-xs leading-5 text-[#777269]">Then enter the six-digit code shown in the app to finish setup.</p>
-
-              <div className="mt-5 w-full rounded-xl border border-black/[0.08] bg-[#f1ede5] px-3 py-3">
-                <p className="mb-1 text-left text-[9px] font-bold uppercase tracking-[0.16em] text-[#8b867c]">Manual setup key</p>
-                <code className="block truncate text-left font-mono text-xs font-semibold text-[#4a4740]">{twoFAState.secret}</code>
+                <button
+                  onClick={() => setTwoFAOpen(false)}
+                  aria-label="Close two-factor setup"
+                  className="grid h-9 w-9 place-items-center rounded-full bg-[#eee9df] text-[#5f5b52] transition-colors hover:bg-[#1d1c19] hover:text-white"
+                >
+                  <XIcon />
+                </button>
               </div>
+              <div className="flex flex-col items-center px-6 pb-7 pt-6 text-center">
+                {twoFAState.qr ? (
+                  <div className="mb-5 rounded-[1.25rem] border border-black/10 bg-white p-3 shadow-[0_10px_35px_rgba(29,28,25,.1)]">
+                    <img
+                      src={twoFAState.qr}
+                      alt="Scan this QR code with your authenticator application"
+                      className="profile-2fa-qr h-48 w-48 sm:h-52 sm:w-52"
+                    />
+                  </div>
+                ) : (
+                  <div className="mb-5 grid h-48 w-48 place-items-center rounded-[1.25rem] border border-black/10 bg-[#eee9df] text-xs font-semibold text-[#6f6b62]">
+                    Preparing QR code…
+                  </div>
+                )}
+                <p className="text-sm font-semibold text-[#34322d]">
+                  Scan with Google Authenticator
+                </p>
+                <p className="mt-1 max-w-xs text-xs leading-5 text-[#777269]">
+                  Then enter the six-digit code shown in the app to finish setup.
+                </p>
 
-              <label htmlFor="two-factor-code" className="mt-5 self-start text-[10px] font-bold uppercase tracking-[0.16em] text-[#6f6b62]">Verification code</label>
-              <input
-                id="two-factor-code"
-                type="text"
-                inputMode="numeric"
-                autoComplete="one-time-code"
-                placeholder="000 000"
-                className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3.5 text-center text-xl font-bold tracking-[0.35em] text-[#1d1c19] outline-none focus:border-[#a85d37] focus:ring-4 focus:ring-[#a85d37]/10"
-                maxLength={6}
-                value={twoFAState.code}
-                onChange={(e) => setTwoFAState({ ...twoFAState, code: e.target.value.replace(/\D/g, "") })}
-              />
+                <div className="mt-5 w-full rounded-xl border border-black/[0.08] bg-[#f1ede5] px-3 py-3">
+                  <p className="mb-1 text-left text-[9px] font-bold uppercase tracking-[0.16em] text-[#8b867c]">
+                    Manual setup key
+                  </p>
+                  <code className="block truncate text-left font-mono text-xs font-semibold text-[#4a4740]">
+                    {twoFAState.secret}
+                  </code>
+                </div>
 
-              <button
-                onClick={confirmTwoFAEnable}
-                disabled={twoFAState.loading || twoFAState.code.length !== 6}
-                className="mt-4 w-full rounded-xl bg-[#1d1c19] py-3.5 font-bold text-white shadow-lg transition-all hover:bg-black disabled:cursor-not-allowed disabled:bg-[#d8d3ca] disabled:text-[#716d64] disabled:shadow-none"
-              >
-                {twoFAState.loading ? "Verifying..." : "Verify & Enable"}
-              </button>
+                <label
+                  htmlFor="two-factor-code"
+                  className="mt-5 self-start text-[10px] font-bold uppercase tracking-[0.16em] text-[#6f6b62]"
+                >
+                  Verification code
+                </label>
+                <input
+                  id="two-factor-code"
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="one-time-code"
+                  placeholder="000 000"
+                  className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-3.5 text-center text-xl font-bold tracking-[0.35em] text-[#1d1c19] outline-none focus:border-[#a85d37] focus:ring-4 focus:ring-[#a85d37]/10"
+                  maxLength={6}
+                  value={twoFAState.code}
+                  onChange={(e) =>
+                    setTwoFAState({ ...twoFAState, code: e.target.value.replace(/\D/g, "") })
+                  }
+                />
+
+                <button
+                  onClick={confirmTwoFAEnable}
+                  disabled={twoFAState.loading || twoFAState.code.length !== 6}
+                  className="mt-4 w-full rounded-xl bg-[#1d1c19] py-3.5 font-bold text-white shadow-lg transition-all hover:bg-black disabled:cursor-not-allowed disabled:bg-[#d8d3ca] disabled:text-[#716d64] disabled:shadow-none"
+                >
+                  {twoFAState.loading ? "Verifying..." : "Verify & Enable"}
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-      ), document.body)}
+          </div>,
+          document.body
+        )}
 
       {/* --- BACKGROUND DECOR --- */}
       <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-tint via-sand to-white opacity-70" />
 
       <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 sm:pt-10">
-
         {/* --- HEADER CARD --- */}
         <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-line/90 overflow-hidden">
           {/* Decorative Gradient Blur */}
           <div className="absolute -top-20 -right-20 w-48 h-48 sm:w-64 sm:h-64 bg-accent/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
           <div className="relative flex flex-row items-center gap-3.5 sm:gap-6 z-10">
-
             {/* Avatar Group */}
             <div className="relative group shrink-0">
               <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full p-1 bg-white shadow-sm ring-1 ring-line overflow-hidden">
@@ -526,22 +598,35 @@ export default function Profile() {
                     referrerPolicy="no-referrer"
                     className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      const fallback = e.currentTarget.parentElement?.querySelector('.avatar-fallback');
-                      if (fallback) fallback.classList.remove('hidden');
+                      e.currentTarget.style.display = "none";
+                      const fallback =
+                        e.currentTarget.parentElement?.querySelector(".avatar-fallback");
+                      if (fallback) fallback.classList.remove("hidden");
                     }}
                   />
                 )}
-                <div className={`avatar-fallback h-full w-full rounded-full bg-gradient-to-tr from-tint to-tint flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}>
+                <div
+                  className={`avatar-fallback h-full w-full rounded-full bg-gradient-to-tr from-tint to-tint flex items-center justify-center ${user?.profileImage ? "hidden" : ""}`}
+                >
                   <span className="text-xl sm:text-3xl font-black text-accent/80 tracking-wide select-none">
                     {getInitials(user?.name)}
                   </span>
                 </div>
               </div>
 
-              <label htmlFor="file-upload" className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-ink text-white rounded-full cursor-pointer shadow-sm hover:bg-accent transition-all border-2 border-white z-10" title="Change Photo">
+              <label
+                htmlFor="file-upload"
+                className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 p-1.5 sm:p-2 bg-ink text-white rounded-full cursor-pointer shadow-sm hover:bg-accent transition-all border-2 border-white z-10"
+                title="Change Photo"
+              >
                 <CameraIcon className="text-[9px] sm:text-xs" />
-                <input id="file-upload" type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
+                <input
+                  id="file-upload"
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={handleFileChange}
+                />
               </label>
             </div>
 
@@ -558,11 +643,27 @@ export default function Profile() {
                       className="text-base sm:text-2xl font-bold text-ink tracking-tight bg-transparent border-b-2 border-accent focus:outline-none px-1"
                       autoFocus
                     />
-                    <button onClick={handleUpdateName} className="p-1 rounded-md bg-ink text-white text-xs font-bold hover:bg-black"><CircleCheckIcon size={12} /></button>
-                    <button onClick={() => setEditingName(false)} className="p-1 rounded-md text-muted-light hover:text-muted"><XIcon size={12} /></button>
+                    <button
+                      onClick={handleUpdateName}
+                      className="p-1 rounded-md bg-ink text-white text-xs font-bold hover:bg-black"
+                    >
+                      <CircleCheckIcon size={12} />
+                    </button>
+                    <button
+                      onClick={() => setEditingName(false)}
+                      className="p-1 rounded-md text-muted-light hover:text-muted"
+                    >
+                      <XIcon size={12} />
+                    </button>
                   </div>
                 ) : (
-                  <h1 className="profile-display-name text-base sm:text-2xl font-bold text-ink tracking-tight group/name cursor-pointer inline-flex items-center gap-1.5" onClick={() => { setNameInput(user?.name || ""); setEditingName(true); }}>
+                  <h1
+                    className="profile-display-name text-base sm:text-2xl font-bold text-ink tracking-tight group/name cursor-pointer inline-flex items-center gap-1.5"
+                    onClick={() => {
+                      setNameInput(user?.name || "");
+                      setEditingName(true);
+                    }}
+                  >
                     <span className="truncate">{user?.name || "Guest User"}</span>
                     <PencilIcon className="text-[10px] sm:text-xs text-muted-faint group-hover/name:text-accent transition-colors shrink-0" />
                   </h1>
@@ -582,7 +683,9 @@ export default function Profile() {
               <div className="text-muted font-medium flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-3 text-xs">
                 <span className="truncate">{user?.email}</span>
                 {user?.username && (
-                  <span className="text-muted-light text-[11px] hidden sm:inline">@{user.username}</span>
+                  <span className="text-muted-light text-[11px] hidden sm:inline">
+                    @{user.username}
+                  </span>
                 )}
               </div>
 
@@ -595,21 +698,21 @@ export default function Profile() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
         {/* --- TABS --- */}
         <div className="mt-3.5 sm:mt-6 flex justify-center sm:justify-start mb-3 sm:mb-5">
           <div className="bg-white p-1 rounded-xl shadow-2xs border border-line inline-flex">
-            {['overview', 'orders'].map(tab => (
+            {["overview", "orders"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 sm:px-6 py-1.5 rounded-lg text-xs sm:text-sm font-bold capitalize transition-all ${activeTab === tab
-                  ? "bg-ink text-white shadow-xs"
-                  : "text-muted hover:text-ink hover:bg-sand"
-                  }`}
+                className={`px-4 sm:px-6 py-1.5 rounded-lg text-xs sm:text-sm font-bold capitalize transition-all ${
+                  activeTab === tab
+                    ? "bg-ink text-white shadow-xs"
+                    : "text-muted hover:text-ink hover:bg-sand"
+                }`}
               >
                 {tab}
               </button>
@@ -621,7 +724,6 @@ export default function Profile() {
         <div className="animate-fade-in">
           {activeTab === "overview" ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 sm:gap-5">
-
               {/* Column 1: Personal Details Card */}
               <div className="bg-white rounded-2xl border border-line shadow-xs p-4 sm:p-5 space-y-3">
                 <div className="flex items-center gap-2 pb-2 border-b border-line">
@@ -630,38 +732,58 @@ export default function Profile() {
                 </div>
                 <div className="space-y-2.5">
                   <div>
-                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">Full Name</p>
-                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">{user?.name || "—"}</p>
+                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">
+                      Full Name
+                    </p>
+                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">
+                      {user?.name || "—"}
+                    </p>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">Email</p>
-                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">{user?.email || "—"}</p>
+                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">
+                      Email
+                    </p>
+                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">
+                      {user?.email || "—"}
+                    </p>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">Username</p>
-                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">{user?.username ? `@${user.username}` : "Not set"}</p>
+                    <p className="text-[10px] font-bold text-muted-light uppercase tracking-wider">
+                      Username
+                    </p>
+                    <p className="text-xs sm:text-sm font-bold text-ink truncate mt-0.5">
+                      {user?.username ? `@${user.username}` : "Not set"}
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Column 2: Security & Quick Links (Span 2 cols on desktop) */}
               <div className="lg:col-span-2 space-y-3.5 sm:space-y-5">
-
                 {/* Security Box */}
                 <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${user?.twoFactorEnabled ? 'bg-ok' : 'bg-line'}`} />
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-1 ${user?.twoFactorEnabled ? "bg-ok" : "bg-line"}`}
+                  />
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
-                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${user?.twoFactorEnabled ? 'bg-ok/10 text-ok' : 'bg-tint text-muted-light'
-                        }`}>
+                      <div
+                        className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${
+                          user?.twoFactorEnabled ? "bg-ok/10 text-ok" : "bg-tint text-muted-light"
+                        }`}
+                      >
                         <ShieldCheckIcon />
                       </div>
                       <div>
                         <h3 className="text-xs sm:text-base font-bold text-ink flex items-center gap-1.5">
                           Two-Factor Auth
-                          {user?.twoFactorEnabled && <CircleCheckIcon className="text-ok text-xs" />}
+                          {user?.twoFactorEnabled && (
+                            <CircleCheckIcon className="text-ok text-xs" />
+                          )}
                         </h3>
-                        <p className="text-muted text-[11px] sm:text-xs">Enhanced account protection</p>
+                        <p className="text-muted text-[11px] sm:text-xs">
+                          Enhanced account protection
+                        </p>
                       </div>
                     </div>
 
@@ -687,19 +809,28 @@ export default function Profile() {
 
                 {/* Password Change Box */}
                 <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs relative overflow-hidden">
-                  <div className={`absolute left-0 top-0 bottom-0 w-1 ${pwOpen ? 'bg-accent' : 'bg-line'}`} />
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-1 ${pwOpen ? "bg-accent" : "bg-line"}`}
+                  />
                   <div className="flex flex-row justify-between items-center gap-3">
                     <div className="flex gap-2.5 sm:gap-4 items-center">
-                      <div className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${pwOpen ? 'bg-accent/10 text-accent' : 'bg-tint text-muted-light'}`}>
+                      <div
+                        className={`h-9 w-9 sm:h-11 sm:w-11 rounded-xl flex items-center justify-center text-xs sm:text-lg shrink-0 ${pwOpen ? "bg-accent/10 text-accent" : "bg-tint text-muted-light"}`}
+                      >
                         <LockIcon />
                       </div>
                       <div>
                         <h3 className="text-xs sm:text-base font-bold text-ink">Password</h3>
-                        <p className="text-muted text-[11px] sm:text-xs">Update your security password</p>
+                        <p className="text-muted text-[11px] sm:text-xs">
+                          Update your security password
+                        </p>
                       </div>
                     </div>
                     <button
-                      onClick={() => { setPwOpen((o) => !o); setPw({ current: "", next: "", confirm: "", loading: false }); }}
+                      onClick={() => {
+                        setPwOpen((o) => !o);
+                        setPw({ current: "", next: "", confirm: "", loading: false });
+                      }}
                       className="px-3 py-1.5 rounded-xl border border-line-strong text-ink-soft font-bold hover:bg-sand transition text-xs flex items-center gap-1 shrink-0"
                     >
                       <PencilIcon size={10} /> {pwOpen ? "Cancel" : "Change"}
@@ -709,16 +840,43 @@ export default function Profile() {
                   {pwOpen && (
                     <div className="mt-3.5 sm:mt-5 space-y-2.5 max-w-sm">
                       <div>
-                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">Current Password</label>
-                        <input type="password" autoComplete="current-password" value={pw.current} onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all" placeholder="••••••••" />
+                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">
+                          Current Password
+                        </label>
+                        <input
+                          type="password"
+                          autoComplete="current-password"
+                          value={pw.current}
+                          onChange={(e) => setPw((s) => ({ ...s, current: e.target.value }))}
+                          className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all"
+                          placeholder="••••••••"
+                        />
                       </div>
                       <div>
-                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">New Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.next} onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all" placeholder="Min 8 characters" />
+                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">
+                          New Password
+                        </label>
+                        <input
+                          type="password"
+                          autoComplete="new-password"
+                          value={pw.next}
+                          onChange={(e) => setPw((s) => ({ ...s, next: e.target.value }))}
+                          className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all"
+                          placeholder="Min 8 characters"
+                        />
                       </div>
                       <div>
-                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">Confirm Password</label>
-                        <input type="password" autoComplete="new-password" value={pw.confirm} onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))} className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all" placeholder="Re-enter new password" />
+                        <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">
+                          Confirm Password
+                        </label>
+                        <input
+                          type="password"
+                          autoComplete="new-password"
+                          value={pw.confirm}
+                          onChange={(e) => setPw((s) => ({ ...s, confirm: e.target.value }))}
+                          className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all"
+                          placeholder="Re-enter new password"
+                        />
                       </div>
                       <button
                         onClick={handleChangePassword}
@@ -734,18 +892,46 @@ export default function Profile() {
                 {/* Quick Links Grid (3 Compact Tiles) */}
                 <div className="grid grid-cols-3 gap-2 sm:gap-3.5">
                   {[
-                    { to: "/products", icon: <PackageOpenIcon />, title: "Shop", desc: "Browse items", color: "text-accent", bg: "bg-accent/10" },
-                    { to: "/about", icon: <InfoIcon />, title: "About", desc: "Our story", color: "text-ink-soft", bg: "bg-tint" },
-                    { action: () => setShowSupportChat(true), icon: <MailIcon />, title: "Support", desc: "Live chat", color: "text-ink-soft", bg: "bg-tint" },
+                    {
+                      to: "/products",
+                      icon: <PackageOpenIcon />,
+                      title: "Shop",
+                      desc: "Browse items",
+                      color: "text-accent",
+                      bg: "bg-accent/10",
+                    },
+                    {
+                      to: "/about",
+                      icon: <InfoIcon />,
+                      title: "About",
+                      desc: "Our story",
+                      color: "text-ink-soft",
+                      bg: "bg-tint",
+                    },
+                    {
+                      action: () => setShowSupportChat(true),
+                      icon: <MailIcon />,
+                      title: "Support",
+                      desc: "Live chat",
+                      color: "text-ink-soft",
+                      bg: "bg-tint",
+                    },
                   ].map((link, i) => {
                     const cardBody = (
                       <div className="text-center sm:text-left">
-                        <div className={`p-2 rounded-xl ${link.bg} ${link.color} text-sm sm:text-base inline-flex mb-1.5`}>{link.icon}</div>
+                        <div
+                          className={`p-2 rounded-xl ${link.bg} ${link.color} text-sm sm:text-base inline-flex mb-1.5`}
+                        >
+                          {link.icon}
+                        </div>
                         <h4 className="font-bold text-ink text-xs sm:text-sm">{link.title}</h4>
-                        <p className="text-[10px] text-muted-light truncate hidden sm:block mt-0.5">{link.desc}</p>
+                        <p className="text-[10px] text-muted-light truncate hidden sm:block mt-0.5">
+                          {link.desc}
+                        </p>
                       </div>
                     );
-                    const cardClass = "group bg-white p-3 sm:p-4 rounded-2xl border border-line shadow-2xs hover:shadow-md transition-all text-left w-full";
+                    const cardClass =
+                      "group bg-white p-3 sm:p-4 rounded-2xl border border-line shadow-2xs hover:shadow-md transition-all text-left w-full";
                     return link.action ? (
                       <button key={i} type="button" onClick={link.action} className={cardClass}>
                         {cardBody}
@@ -758,13 +944,18 @@ export default function Profile() {
                   })}
                 </div>
 
-                <SupportChatWidget open={showSupportChat} onClose={() => setShowSupportChat(false)} />
+                <SupportChatWidget
+                  open={showSupportChat}
+                  onClose={() => setShowSupportChat(false)}
+                />
 
                 {/* Wallet */}
                 <div className="bg-white rounded-2xl p-4 sm:p-6 border border-line shadow-xs">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xs sm:text-base font-bold text-ink">VKart Wallet</h3>
-                    <div className="text-base sm:text-xl font-bold text-ink">₹{Math.round(wallet.balance)}</div>
+                    <div className="text-base sm:text-xl font-bold text-ink">
+                      ₹{Math.round(wallet.balance)}
+                    </div>
                   </div>
                   <div className="text-[10px] font-bold text-muted-light uppercase tracking-wider mb-2">
                     Recent Activity
@@ -774,9 +965,14 @@ export default function Profile() {
                       <div className="text-xs text-muted-light">No wallet activity yet.</div>
                     ) : (
                       wallet.transactions.slice(0, 4).map((t, i) => (
-                        <div key={i} className="flex items-center justify-between text-xs py-1 border-b border-line last:border-0">
+                        <div
+                          key={i}
+                          className="flex items-center justify-between text-xs py-1 border-b border-line last:border-0"
+                        >
                           <span className="text-muted truncate mr-2">{t.reason || t.type}</span>
-                          <span className={`font-bold shrink-0 ${t.type === "CREDIT" ? "text-ok" : "text-alert"}`}>
+                          <span
+                            className={`font-bold shrink-0 ${t.type === "CREDIT" ? "text-ok" : "text-alert"}`}
+                          >
                             {t.type === "CREDIT" ? "+" : "-"}₹{Math.round(t.amount)}
                           </span>
                         </div>
@@ -791,7 +987,10 @@ export default function Profile() {
                     <h3 className="text-xs sm:text-base font-bold text-ink flex items-center gap-1.5">
                       <MapPinIcon className="text-accent text-xs sm:text-sm" /> Saved Addresses
                     </h3>
-                    <button onClick={() => openAddressForm()} className="flex items-center gap-1 text-xs font-bold text-ink-soft hover:text-black transition px-2 py-0.5 rounded-lg hover:bg-tint">
+                    <button
+                      onClick={() => openAddressForm()}
+                      className="flex items-center gap-1 text-xs font-bold text-ink-soft hover:text-black transition px-2 py-0.5 rounded-lg hover:bg-tint"
+                    >
                       <PlusIcon size={10} /> Add
                     </button>
                   </div>
@@ -800,24 +999,57 @@ export default function Profile() {
                     <div className="text-center py-6">
                       <MapPinIcon className="mx-auto text-muted-faint mb-2" size={22} />
                       <p className="text-xs text-muted">No saved addresses yet.</p>
-                      <button onClick={() => openAddressForm()} className="mt-2 text-xs font-bold text-accent hover:underline">+ Add Address</button>
+                      <button
+                        onClick={() => openAddressForm()}
+                        className="mt-2 text-xs font-bold text-accent hover:underline"
+                      >
+                        + Add Address
+                      </button>
                     </div>
                   ) : (
                     <div className="space-y-2.5">
                       {addresses.map((addr) => (
-                        <div key={addr._id} className={`p-3 rounded-xl border ${addr.isDefault ? 'border-accent/30 bg-accent/10' : 'border-line'} flex justify-between items-start gap-2.5`}>
+                        <div
+                          key={addr._id}
+                          className={`p-3 rounded-xl border ${addr.isDefault ? "border-accent/30 bg-accent/10" : "border-line"} flex justify-between items-start gap-2.5`}
+                        >
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-1.5 mb-0.5">
-                              <span className="font-bold text-ink text-xs sm:text-sm">{addr.fullName || addr.name}</span>
-                              {addr.isDefault && <span className="text-[9px] font-bold text-accent bg-accent/10 px-1.5 py-0.2 rounded-full">Default</span>}
+                              <span className="font-bold text-ink text-xs sm:text-sm">
+                                {addr.fullName || addr.name}
+                              </span>
+                              {addr.isDefault && (
+                                <span className="text-[9px] font-bold text-accent bg-accent/10 px-1.5 py-0.2 rounded-full">
+                                  Default
+                                </span>
+                              )}
                             </div>
-                            <p className="text-[11px] text-muted">{addr.address1 || addr.line1}{addr.address2 || addr.line2 ? `, ${addr.address2 || addr.line2}` : ""}</p>
-                            <p className="text-[11px] text-muted">{addr.city}, {addr.state} {addr.pincode || addr.zip}</p>
-                            <p className="text-[10px] text-muted-light mt-0.5 font-mono">{addr.phone}</p>
+                            <p className="text-[11px] text-muted">
+                              {addr.address1 || addr.line1}
+                              {addr.address2 || addr.line2
+                                ? `, ${addr.address2 || addr.line2}`
+                                : ""}
+                            </p>
+                            <p className="text-[11px] text-muted">
+                              {addr.city}, {addr.state} {addr.pincode || addr.zip}
+                            </p>
+                            <p className="text-[10px] text-muted-light mt-0.5 font-mono">
+                              {addr.phone}
+                            </p>
                           </div>
                           <div className="flex gap-1 shrink-0">
-                            <button onClick={() => openAddressForm(addr)} className="p-1.5 rounded-lg text-muted-light hover:text-ink-soft hover:bg-tint transition"><PencilIcon size={11} /></button>
-                            <button onClick={() => handleDeleteAddress(addr._id)} className="p-1.5 rounded-lg text-muted-light hover:text-alert hover:bg-alert/10 transition"><Trash2Icon size={11} /></button>
+                            <button
+                              onClick={() => openAddressForm(addr)}
+                              className="p-1.5 rounded-lg text-muted-light hover:text-ink-soft hover:bg-tint transition"
+                            >
+                              <PencilIcon size={11} />
+                            </button>
+                            <button
+                              onClick={() => handleDeleteAddress(addr._id)}
+                              className="p-1.5 rounded-lg text-muted-light hover:text-alert hover:bg-alert/10 transition"
+                            >
+                              <Trash2Icon size={11} />
+                            </button>
                           </div>
                         </div>
                       ))}
@@ -828,8 +1060,18 @@ export default function Profile() {
                   {addrOpen && (
                     <div className="mt-4 border-t border-line pt-4">
                       <div className="flex justify-between items-center mb-3">
-                        <h4 className="font-bold text-ink text-xs sm:text-sm">{editAddr ? "Edit Address" : "New Address"}</h4>
-                        <button onClick={() => { setAddrOpen(false); setEditAddr(null); }} className="text-muted-light hover:text-muted"><XIcon size={12} /></button>
+                        <h4 className="font-bold text-ink text-xs sm:text-sm">
+                          {editAddr ? "Edit Address" : "New Address"}
+                        </h4>
+                        <button
+                          onClick={() => {
+                            setAddrOpen(false);
+                            setEditAddr(null);
+                          }}
+                          className="text-muted-light hover:text-muted"
+                        >
+                          <XIcon size={12} />
+                        </button>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {[
@@ -842,27 +1084,41 @@ export default function Profile() {
                           { key: "pincode", label: "Pincode", span: 1 },
                         ].map((f) => (
                           <div key={f.key} className={f.span === 2 ? "sm:col-span-2" : ""}>
-                            <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">{f.label}</label>
+                            <label className="text-[10px] font-bold text-muted uppercase tracking-wider mb-1 block">
+                              {f.label}
+                            </label>
                             <input
                               type="text"
                               value={addrForm[f.key]}
-                              onChange={(e) => setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))}
+                              onChange={(e) =>
+                                setAddrForm((s) => ({ ...s, [f.key]: e.target.value }))
+                              }
                               className="w-full px-3 py-2 rounded-xl border border-line-strong focus:border-accent focus:ring-1 focus:ring-accent/30 outline-none text-xs transition-all"
                             />
                           </div>
                         ))}
                       </div>
                       <label className="flex items-center gap-2 mt-2.5 text-xs text-muted cursor-pointer">
-                        <input type="checkbox" checked={addrForm.isDefault} onChange={(e) => setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))} className="rounded border-line-strong text-accent focus:ring-accent/30" />
+                        <input
+                          type="checkbox"
+                          checked={addrForm.isDefault}
+                          onChange={(e) =>
+                            setAddrForm((s) => ({ ...s, isDefault: e.target.checked }))
+                          }
+                          className="rounded border-line-strong text-accent focus:ring-accent/30"
+                        />
                         Set as default address
                       </label>
-                      <button onClick={handleSaveAddress} disabled={addrLoading} className="mt-3.5 w-full py-2.5 rounded-xl bg-ink text-white font-bold text-xs shadow-xs hover:bg-black transition-all disabled:opacity-50">
-                        {addrLoading ? "Saving..." : (editAddr ? "Update Address" : "Save Address")}
+                      <button
+                        onClick={handleSaveAddress}
+                        disabled={addrLoading}
+                        className="mt-3.5 w-full py-2.5 rounded-xl bg-ink text-white font-bold text-xs shadow-xs hover:bg-black transition-all disabled:opacity-50"
+                      >
+                        {addrLoading ? "Saving..." : editAddr ? "Update Address" : "Save Address"}
                       </button>
                     </div>
                   )}
                 </div>
-
               </div>
             </div>
           ) : (
@@ -873,13 +1129,25 @@ export default function Profile() {
                   <h2 className="text-lg sm:text-xl font-bold text-ink">Order History</h2>
                   <p className="text-muted text-xs sm:text-sm">Track your recent purchases</p>
                 </div>
-                <span className="bg-ink text-white px-2.5 py-1 sm:px-3 rounded-lg text-[10px] sm:text-xs font-bold">{ordersCount} Total</span>
+                <span className="bg-ink text-white px-2.5 py-1 sm:px-3 rounded-lg text-[10px] sm:text-xs font-bold">
+                  {ordersCount} Total
+                </span>
               </div>
 
-              <Suspense fallback={<div className="space-y-4">{[1, 2].map(i => <div key={i} className="h-24 bg-sand rounded-2xl animate-pulse" />)}</div>}>
+              <Suspense
+                fallback={
+                  <div className="space-y-4">
+                    {[1, 2].map((i) => (
+                      <div key={i} className="h-24 bg-sand rounded-2xl animate-pulse" />
+                    ))}
+                  </div>
+                }
+              >
                 {orders.length === 0 ? (
                   <div className="text-center py-12">
-                    <div className="w-20 h-20 bg-sand rounded-full flex items-center justify-center text-muted-faint mx-auto mb-4 text-3xl"><PackageOpenIcon /></div>
+                    <div className="w-20 h-20 bg-sand rounded-full flex items-center justify-center text-muted-faint mx-auto mb-4 text-3xl">
+                      <PackageOpenIcon />
+                    </div>
                     <h3 className="text-lg font-bold text-ink">No orders yet</h3>
                     <p className="text-muted text-sm mb-6">Start shopping to fill this page.</p>
                     <Link
@@ -891,7 +1159,9 @@ export default function Profile() {
                   </div>
                 ) : (
                   <div className="grid gap-4">
-                    {orders.map(o => <OrderCard key={o._id} order={o} />)}
+                    {orders.map((o) => (
+                      <OrderCard key={o._id} order={o} />
+                    ))}
                   </div>
                 )}
               </Suspense>
@@ -932,7 +1202,9 @@ export default function Profile() {
             </div>
 
             <div>
-              <label className="text-xs font-bold text-muted mb-2 block uppercase tracking-wider text-center">Zoom</label>
+              <label className="text-xs font-bold text-muted mb-2 block uppercase tracking-wider text-center">
+                Zoom
+              </label>
               <input
                 type="range"
                 min="1"
@@ -959,11 +1231,9 @@ export default function Profile() {
                 Save Photo
               </button>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }

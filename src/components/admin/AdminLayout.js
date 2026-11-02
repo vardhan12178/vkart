@@ -76,7 +76,9 @@ export default function AdminLayout({ setIsAdmin }) {
   // Don't render until auth is verified
   if (adminVerifyQuery.isLoading) {
     return (
-      <div className="premium-admin"><AdminSkeleton /></div>
+      <div className="premium-admin">
+        <AdminSkeleton />
+      </div>
     );
   }
 
@@ -91,7 +93,6 @@ export default function AdminLayout({ setIsAdmin }) {
 
   return (
     <div className="premium-admin flex h-screen bg-[#f2f0eb] overflow-hidden font-sans text-[#24231f]">
-
       {/* Sidebar */}
       <AdminSidebar
         collapsed={collapsed}
@@ -105,7 +106,6 @@ export default function AdminLayout({ setIsAdmin }) {
 
       {/* Main Content Wrapper */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden transition-all duration-300 ease-in-out relative">
-
         {/* Top Header */}
         <AdminHeader
           setMobileOpen={setMobileOpen}

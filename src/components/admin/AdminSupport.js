@@ -9,17 +9,38 @@ import { FaPaperPlane, FaCheck, FaUndo, FaTimes, FaChevronLeft } from "react-ico
 import { Bone, SkeletonRegion } from "../ui/Skeleton";
 
 const TABS = [
-  { id: "unassigned", label: "Unassigned", mobileLabel: "New", filter: { status: "AWAITING_AGENT" } },
+  {
+    id: "unassigned",
+    label: "Unassigned",
+    mobileLabel: "New",
+    filter: { status: "AWAITING_AGENT" },
+  },
   { id: "mine", label: "My Conversations", mobileLabel: "Mine", filter: { mine: "true" } },
   { id: "resolved", label: "Resolved", mobileLabel: "Resolved", filter: { status: "RESOLVED" } },
   { id: "all", label: "All", mobileLabel: "All", filter: {} },
 ];
 
 const STATUS_CONFIG = {
-  AWAITING_AGENT: { label: "Awaiting Agent", color: "bg-amber-500", text: "text-amber-700 bg-amber-50 border-amber-200/60" },
-  IN_PROGRESS: { label: "In Progress", color: "bg-blue-500", text: "text-blue-700 bg-blue-50 border-blue-200/60" },
-  RESOLVED: { label: "Resolved", color: "bg-emerald-500", text: "text-emerald-700 bg-emerald-50 border-emerald-200/60" },
-  CLOSED: { label: "Closed", color: "bg-slate-400", text: "text-slate-600 bg-slate-100 border-slate-200/60" },
+  AWAITING_AGENT: {
+    label: "Awaiting Agent",
+    color: "bg-amber-500",
+    text: "text-amber-700 bg-amber-50 border-amber-200/60",
+  },
+  IN_PROGRESS: {
+    label: "In Progress",
+    color: "bg-blue-500",
+    text: "text-blue-700 bg-blue-50 border-blue-200/60",
+  },
+  RESOLVED: {
+    label: "Resolved",
+    color: "bg-emerald-500",
+    text: "text-emerald-700 bg-emerald-50 border-emerald-200/60",
+  },
+  CLOSED: {
+    label: "Closed",
+    color: "bg-slate-400",
+    text: "text-slate-600 bg-slate-100 border-slate-200/60",
+  },
 };
 
 export default function AdminSupport() {
@@ -57,7 +78,10 @@ export default function AdminSupport() {
 
   const replyMutation = useMutation({
     mutationFn: async (text) => {
-      const res = await axiosInstance.post(`/api/admin/support/conversations/${selectedId}/messages`, { text });
+      const res = await axiosInstance.post(
+        `/api/admin/support/conversations/${selectedId}/messages`,
+        { text }
+      );
       return res.data;
     },
     onSuccess: () => {
@@ -68,7 +92,9 @@ export default function AdminSupport() {
 
   const actionMutation = useMutation({
     mutationFn: async (action) => {
-      const res = await axiosInstance.patch(`/api/admin/support/conversations/${selectedId}`, { action });
+      const res = await axiosInstance.patch(`/api/admin/support/conversations/${selectedId}`, {
+        action,
+      });
       return res.data;
     },
     onSuccess: () => {
@@ -97,12 +123,19 @@ export default function AdminSupport() {
     socket.on("support:new_message", ({ conversationId }) => {
       queryClient.invalidateQueries({ queryKey: ["admin", "support", "conversations"] });
       if (selectedIdRef.current && String(conversationId) === String(selectedIdRef.current)) {
-        queryClient.invalidateQueries({ queryKey: qk.admin.supportConversation(selectedIdRef.current) });
+        queryClient.invalidateQueries({
+          queryKey: qk.admin.supportConversation(selectedIdRef.current),
+        });
       }
     });
 
     socket.on("support:typing", ({ conversationId, isTyping, from }) => {
-      if (from !== "USER" || !selectedIdRef.current || String(conversationId) !== String(selectedIdRef.current)) return;
+      if (
+        from !== "USER" ||
+        !selectedIdRef.current ||
+        String(conversationId) !== String(selectedIdRef.current)
+      )
+        return;
       setCustomerTyping(!!isTyping);
       clearTimeout(customerTypingTimeoutRef.current);
       if (isTyping) {
@@ -159,22 +192,28 @@ export default function AdminSupport() {
   return (
     <div className="premium-admin-page min-h-screen bg-transparent p-2.5 sm:p-8 font-sans text-[#24231f]">
       <div className="max-w-7xl mx-auto space-y-3 sm:space-y-6">
-
         {/* Page Masthead (Visible when browsing list on desktop or mobile) */}
-        <div className={`flex items-center justify-between gap-3 ${selectedId ? 'hidden lg:flex' : 'flex'}`}>
+        <div
+          className={`flex items-center justify-between gap-3 ${selectedId ? "hidden lg:flex" : "flex"}`}
+        >
           <div>
             <h1 className="font-editorial text-xl sm:text-3xl font-bold text-slate-900 tracking-tight leading-tight">
               Customer Support
             </h1>
-            <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">Respond to real-time customer conversations.</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-0.5 font-medium">
+              Respond to real-time customer conversations.
+            </p>
           </div>
         </div>
 
         {/* Support Chat Master-Detail Container */}
-        <div className={`grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-4 sm:gap-6 ${selectedId ? 'h-[calc(100vh-4.5rem)] sm:h-[calc(100vh-11rem)]' : 'h-[calc(100vh-10rem)]'} min-h-[520px]`}>
-
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-4 sm:gap-6 ${selectedId ? "h-[calc(100vh-4.5rem)] sm:h-[calc(100vh-11rem)]" : "h-[calc(100vh-10rem)]"} min-h-[520px]`}
+        >
           {/* Conversation List Pane (Hidden on mobile if conversation is selected) */}
-          <div className={`bg-white rounded-2xl border border-slate-200/70 shadow-xs flex flex-col overflow-hidden ${selectedId ? 'hidden lg:flex' : 'flex'}`}>
+          <div
+            className={`bg-white rounded-2xl border border-slate-200/70 shadow-xs flex flex-col overflow-hidden ${selectedId ? "hidden lg:flex" : "flex"}`}
+          >
             {/* Tabs Header */}
             <div className="flex items-center gap-1 border-b border-slate-100 shrink-0 overflow-x-auto no-scrollbar bg-slate-50/50 p-1.5">
               {TABS.map((tab) => (
@@ -196,10 +235,22 @@ export default function AdminSupport() {
             {/* List Body */}
             <div className="flex-1 overflow-y-auto divide-y divide-slate-100">
               {listQuery.isLoading && (
-                <SkeletonRegion label="Loading conversations" className="space-y-1 p-3">{Array.from({ length: 6 }, (_, i) => <div key={i} className="flex items-center gap-3 p-2"><Bone className="h-9 w-9 shrink-0" rounded="rounded-full" /><div className="flex-1"><Bone className="h-3 w-2/3" /><Bone className="mt-2 h-3 w-1/2" /></div></div>)}</SkeletonRegion>
+                <SkeletonRegion label="Loading conversations" className="space-y-1 p-3">
+                  {Array.from({ length: 6 }, (_, i) => (
+                    <div key={i} className="flex items-center gap-3 p-2">
+                      <Bone className="h-9 w-9 shrink-0" rounded="rounded-full" />
+                      <div className="flex-1">
+                        <Bone className="h-3 w-2/3" />
+                        <Bone className="mt-2 h-3 w-1/2" />
+                      </div>
+                    </div>
+                  ))}
+                </SkeletonRegion>
               )}
               {!listQuery.isLoading && conversations.length === 0 && (
-                <div className="p-8 text-center text-xs text-slate-400">No conversations in this queue.</div>
+                <div className="p-8 text-center text-xs text-slate-400">
+                  No conversations in this queue.
+                </div>
               )}
               {conversations.map((c) => {
                 const cfg = STATUS_CONFIG[c.status] || STATUS_CONFIG.CLOSED;
@@ -219,11 +270,15 @@ export default function AdminSupport() {
                         <span className="text-xs sm:text-sm font-bold text-slate-900 truncate">
                           {c.userId?.name || "Customer"}
                         </span>
-                        <span className={`shrink-0 text-[9px] font-bold uppercase px-1.5 py-0.2 rounded-full border ${cfg.text}`}>
+                        <span
+                          className={`shrink-0 text-[9px] font-bold uppercase px-1.5 py-0.2 rounded-full border ${cfg.text}`}
+                        >
                           {c.status?.replace("_", " ")}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{lastMessagePreview(c)}</p>
+                      <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">
+                        {lastMessagePreview(c)}
+                      </p>
                       {c.contextSummary && (
                         <span className="inline-block text-[10px] text-slate-400 font-mono mt-0.5 truncate">
                           {c.contextSummary}
@@ -237,14 +292,18 @@ export default function AdminSupport() {
           </div>
 
           {/* Chat Thread Pane (Hidden on mobile if no conversation is selected) */}
-          <div className={`bg-white rounded-2xl border border-slate-200/70 shadow-xs flex flex-col overflow-hidden ${!selectedId ? 'hidden lg:flex' : 'flex'}`}>
+          <div
+            className={`bg-white rounded-2xl border border-slate-200/70 shadow-xs flex flex-col overflow-hidden ${!selectedId ? "hidden lg:flex" : "flex"}`}
+          >
             {!selectedId && (
               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-slate-400">
                 <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-2 text-slate-300">
                   <FaPaperPlane size={18} />
                 </div>
                 <p className="text-sm font-bold text-slate-700">No conversation selected</p>
-                <p className="text-xs text-slate-400 mt-0.5">Select a customer thread from the queue to start responding.</p>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Select a customer thread from the queue to start responding.
+                </p>
               </div>
             )}
 
@@ -261,7 +320,7 @@ export default function AdminSupport() {
                     >
                       <FaChevronLeft size={11} className="-ml-0.5" />
                     </button>
-                    
+
                     <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
                       {(conversation.userId?.name || "C").slice(0, 2).toUpperCase()}
                     </div>
@@ -271,7 +330,9 @@ export default function AdminSupport() {
                         <p className="text-xs sm:text-sm font-bold text-slate-900 truncate leading-tight">
                           {conversation.userId?.name || "Customer"}
                         </p>
-                        <span className={`hidden sm:inline-block text-[9px] font-bold uppercase px-1.5 py-0.2 rounded-full border ${STATUS_CONFIG[conversation.status]?.text || ""}`}>
+                        <span
+                          className={`hidden sm:inline-block text-[9px] font-bold uppercase px-1.5 py-0.2 rounded-full border ${STATUS_CONFIG[conversation.status]?.text || ""}`}
+                        >
                           {conversation.status?.replace("_", " ")}
                         </span>
                       </div>
@@ -324,7 +385,10 @@ export default function AdminSupport() {
                 </div>
 
                 {/* Messages Stream */}
-                <div ref={scrollRef} className="flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3 bg-[#fbfaf8]">
+                <div
+                  ref={scrollRef}
+                  className="flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3 bg-[#fbfaf8]"
+                >
                   {/* Centered Order Context Badge */}
                   {conversation.contextSummary && (
                     <div className="flex justify-center my-1">
@@ -343,7 +407,9 @@ export default function AdminSupport() {
                           💬
                         </div>
                         <p className="text-xs font-bold text-slate-900">Conversation Connected</p>
-                        <p className="text-[11px] text-slate-500">The customer is waiting for a reply. Send a message below to assist.</p>
+                        <p className="text-[11px] text-slate-500">
+                          The customer is waiting for a reply. Send a message below to assist.
+                        </p>
                       </div>
                     </div>
                   )}
@@ -352,7 +418,10 @@ export default function AdminSupport() {
                   {(conversation.messages || []).map((m, i) => {
                     const isAgent = m.sender === "AGENT";
                     return (
-                      <div key={m._id || i} className={`flex ${isAgent ? "justify-end" : "justify-start"}`}>
+                      <div
+                        key={m._id || i}
+                        className={`flex ${isAgent ? "justify-end" : "justify-start"}`}
+                      >
                         <div
                           className={`max-w-[85%] sm:max-w-[70%] rounded-2xl px-3.5 py-2 text-xs sm:text-sm leading-relaxed shadow-xs ${
                             isAgent
@@ -361,8 +430,15 @@ export default function AdminSupport() {
                           }`}
                         >
                           <p>{m.text}</p>
-                          <span className={`text-[9px] block mt-1 text-right ${isAgent ? "text-slate-400" : "text-slate-400"}`}>
-                            {m.createdAt ? new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}
+                          <span
+                            className={`text-[9px] block mt-1 text-right ${isAgent ? "text-slate-400" : "text-slate-400"}`}
+                          >
+                            {m.createdAt
+                              ? new Date(m.createdAt).toLocaleTimeString([], {
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                })
+                              : ""}
                           </span>
                         </div>
                       </div>
@@ -387,7 +463,9 @@ export default function AdminSupport() {
                         type="text"
                         value={replyText}
                         onChange={(e) => handleChangeReply(e.target.value)}
-                        onKeyDown={(e) => { if (e.key === "Enter") send(); }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") send();
+                        }}
                         placeholder="Type a message..."
                         className="flex-1 bg-transparent border-none text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none"
                       />

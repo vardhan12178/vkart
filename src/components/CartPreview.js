@@ -14,9 +14,18 @@ export default function CartPreview() {
       secondaryTo="/products"
       icon={ShoppingBag}
       benefits={[
-        { title: "Synced across devices", description: "Your selected pieces stay together wherever you shop." },
-        { title: "Protected checkout", description: "Saved details and payments remain securely handled." },
-        { title: "No pressure", description: "Return when you are ready and continue in a single step." },
+        {
+          title: "Synced across devices",
+          description: "Your selected pieces stay together wherever you shop.",
+        },
+        {
+          title: "Protected checkout",
+          description: "Saved details and payments remain securely handled.",
+        },
+        {
+          title: "No pressure",
+          description: "Return when you are ready and continue in a single step.",
+        },
       ]}
     />
   );

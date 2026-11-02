@@ -19,7 +19,7 @@ import {
   DuplicateIcon,
   ChevronRightIcon,
   ShieldCheckIcon,
-  ArchiveIcon
+  ArchiveIcon,
 } from "@heroicons/react/outline";
 import axiosInstance from "../axiosInstance";
 import { qk } from "../../query/queryKeys";
@@ -38,13 +38,48 @@ const STAGES = [
 ];
 
 const stageStyles = {
-  PLACED: { bg: "bg-slate-100", text: "text-slate-600", border: "border-slate-200", icon: ClipboardCheckIcon },
-  CONFIRMED: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200", icon: ShieldCheckIcon },
-  PROCESSING: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-200", icon: RefreshIcon },
-  PACKED: { bg: "bg-amber-50", text: "text-amber-600", border: "border-amber-200", icon: ArchiveIcon },
-  SHIPPED: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200", icon: TruckIcon },
-  OUT_FOR_DELIVERY: { bg: "bg-sky-50", text: "text-sky-600", border: "border-sky-200", icon: TruckIcon },
-  DELIVERED: { bg: "bg-emerald-50", text: "text-emerald-600", border: "border-emerald-200", icon: CheckCircleIcon },
+  PLACED: {
+    bg: "bg-slate-100",
+    text: "text-slate-600",
+    border: "border-slate-200",
+    icon: ClipboardCheckIcon,
+  },
+  CONFIRMED: {
+    bg: "bg-blue-50",
+    text: "text-blue-600",
+    border: "border-blue-200",
+    icon: ShieldCheckIcon,
+  },
+  PROCESSING: {
+    bg: "bg-indigo-50",
+    text: "text-indigo-600",
+    border: "border-indigo-200",
+    icon: RefreshIcon,
+  },
+  PACKED: {
+    bg: "bg-amber-50",
+    text: "text-amber-600",
+    border: "border-amber-200",
+    icon: ArchiveIcon,
+  },
+  SHIPPED: {
+    bg: "bg-purple-50",
+    text: "text-purple-600",
+    border: "border-purple-200",
+    icon: TruckIcon,
+  },
+  OUT_FOR_DELIVERY: {
+    bg: "bg-sky-50",
+    text: "text-sky-600",
+    border: "border-sky-200",
+    icon: TruckIcon,
+  },
+  DELIVERED: {
+    bg: "bg-emerald-50",
+    text: "text-emerald-600",
+    border: "border-emerald-200",
+    icon: CheckCircleIcon,
+  },
   CANCELLED: { bg: "bg-red-50", text: "text-red-600", border: "border-red-200", icon: XCircleIcon },
 };
 
@@ -52,8 +87,11 @@ function formatDateTime(isoStr) {
   if (!isoStr) return "-";
   const d = new Date(isoStr);
   return d.toLocaleString("en-IN", {
-    day: "2-digit", month: "short", year: "numeric",
-    hour: "2-digit", minute: "2-digit",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   });
 }
 
@@ -68,7 +106,7 @@ export default function AdminOrderDetails() {
     typeof window !== "undefined" &&
     (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
       ? "http://localhost:5000"
-      : (process.env.REACT_APP_API_BASE_URL || "");
+      : process.env.REACT_APP_API_BASE_URL || "";
 
   const showToast = (type, message, ms = 3000) => {
     setToast({ type, message });
@@ -105,7 +143,10 @@ export default function AdminOrderDetails() {
       return { stage, data: res.data };
     },
     onSuccess: ({ stage, data }) => {
-      queryClient.setQueryData(qk.admin.order(id), (prev) => data.order || (prev ? { ...prev, stage } : prev));
+      queryClient.setQueryData(
+        qk.admin.order(id),
+        (prev) => data.order || (prev ? { ...prev, stage } : prev)
+      );
       queryClient.invalidateQueries({ queryKey: qk.admin.orders });
       queryClient.invalidateQueries({ queryKey: qk.admin.dashboard });
       showToast("success", `Status updated to ${stage.replace(/_/g, " ")}`);
@@ -202,11 +243,13 @@ export default function AdminOrderDetails() {
     if (!order) return [];
     const history = Array.isArray(order.statusHistory) ? order.statusHistory : [];
     if (history.length === 0 && order.stage) {
-      return [{
-        stage: order.stage,
-        date: order.updatedAt || order.createdAt || new Date().toISOString(),
-        note: "Initial Status",
-      }];
+      return [
+        {
+          stage: order.stage,
+          date: order.updatedAt || order.createdAt || new Date().toISOString(),
+          note: "Initial Status",
+        },
+      ];
     }
     return history
       .filter((h) => h && h.stage)
@@ -223,7 +266,7 @@ export default function AdminOrderDetails() {
     if (!order) return null;
     const currentIndex = STAGES.indexOf(order.stage);
     if (currentIndex === -1 || currentIndex === STAGES.length - 1) return null; // End of line
-    if (order.stage === 'CANCELLED') return null;
+    if (order.stage === "CANCELLED") return null;
     return STAGES[currentIndex + 1];
   }, [order]);
 
@@ -233,7 +276,10 @@ export default function AdminOrderDetails() {
         <SkeletonRegion label="Loading order">
           <Bone className="h-8 w-64" />
           <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_20rem]">
-            <div className="space-y-5"><Bone className="h-40" rounded="rounded-2xl" /><TableSkeleton rows={3} cols={4} /></div>
+            <div className="space-y-5">
+              <Bone className="h-40" rounded="rounded-2xl" />
+              <TableSkeleton rows={3} cols={4} />
+            </div>
             <Bone className="h-72" rounded="rounded-2xl" />
           </div>
         </SkeletonRegion>
@@ -249,15 +295,26 @@ export default function AdminOrderDetails() {
     return (
       <div className="premium-admin-page min-h-screen bg-transparent flex flex-col items-center justify-center p-6 gap-4">
         {toast.message && (
-          <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
-            }`}>
-            {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <XCircleIcon className="h-5 w-5 text-red-500" />}
+          <div
+            className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${
+              toast.type === "success"
+                ? "bg-white border-emerald-100 text-emerald-800"
+                : "bg-white border-red-100 text-red-800"
+            }`}
+          >
+            {toast.type === "success" ? (
+              <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
+            ) : (
+              <XCircleIcon className="h-5 w-5 text-red-500" />
+            )}
             <span className="text-sm font-semibold">{toast.message}</span>
           </div>
         )}
         <div className="text-center">
           <h2 className="text-lg font-bold text-slate-900">Order not found</h2>
-          <p className="text-slate-500 text-sm mt-1">This order may have been removed, or the link is invalid.</p>
+          <p className="text-slate-500 text-sm mt-1">
+            This order may have been removed, or the link is invalid.
+          </p>
         </div>
         <button
           onClick={() => navigate("/admin/orders")}
@@ -276,18 +333,25 @@ export default function AdminOrderDetails() {
 
   return (
     <div className="premium-admin-page min-h-screen bg-transparent p-3.5 sm:p-8 font-sans text-[#24231f]">
-
       {/* Toast Notification */}
       {toast.message && (
-        <div className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${toast.type === "success" ? "bg-white border-emerald-100 text-emerald-800" : "bg-white border-red-100 text-red-800"
-          }`}>
-          {toast.type === "success" ? <CheckCircleIcon className="h-5 w-5 text-emerald-500" /> : <XCircleIcon className="h-5 w-5 text-red-500" />}
+        <div
+          className={`fixed top-5 right-5 z-50 px-4 py-3 rounded-xl shadow-xl border flex items-center gap-3 animate-in fade-in slide-in-from-top-2 ${
+            toast.type === "success"
+              ? "bg-white border-emerald-100 text-emerald-800"
+              : "bg-white border-red-100 text-red-800"
+          }`}
+        >
+          {toast.type === "success" ? (
+            <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
+          ) : (
+            <XCircleIcon className="h-5 w-5 text-red-500" />
+          )}
           <span className="text-sm font-semibold">{toast.message}</span>
         </div>
       )}
 
       <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
-
         {/* Top Navigation & Actions */}
         <div className="flex items-center justify-between gap-2">
           <button
@@ -316,7 +380,9 @@ export default function AdminOrderDetails() {
               onClick={() => orderQuery.refetch()}
               className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 shadow-xs hover:bg-slate-50 transition-all active:scale-95"
             >
-              <RefreshIcon className={`h-3.5 w-3.5 ${orderQuery.isFetching ? 'animate-spin' : ''}`} />
+              <RefreshIcon
+                className={`h-3.5 w-3.5 ${orderQuery.isFetching ? "animate-spin" : ""}`}
+              />
               <span>Refresh</span>
             </button>
           </div>
@@ -325,12 +391,16 @@ export default function AdminOrderDetails() {
         {/* Hero Section */}
         <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-8 relative overflow-hidden">
           {/* Background decoration */}
-          <div className={`absolute top-0 right-0 w-64 h-64 opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl ${currentStageStyle.bg.replace('bg-', 'bg-gradient-to-br from-transparent to-')}`}></div>
+          <div
+            className={`absolute top-0 right-0 w-64 h-64 opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl ${currentStageStyle.bg.replace("bg-", "bg-gradient-to-br from-transparent to-")}`}
+          ></div>
 
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-6 relative z-10">
             <div className="space-y-1 sm:space-y-1.5">
               <div className="flex items-center gap-1.5 flex-wrap">
-                <span className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider">Order</span>
+                <span className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider">
+                  Order
+                </span>
                 <span className="font-mono text-xs sm:text-sm font-bold text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg border border-slate-200/60 break-all">
                   #{order.orderId || order._id.slice(-6).toUpperCase()}
                 </span>
@@ -345,7 +415,9 @@ export default function AdminOrderDetails() {
               <div className="text-slate-500 text-[11px] sm:text-xs flex flex-wrap items-center gap-1.5 sm:gap-2">
                 <span>Placed {formatDateTime(order.createdAt)}</span>
                 <span className="text-slate-300">•</span>
-                <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border ${currentStageStyle.bg} ${currentStageStyle.text} ${currentStageStyle.border}`}>
+                <span
+                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border ${currentStageStyle.bg} ${currentStageStyle.text} ${currentStageStyle.border}`}
+                >
                   <StatusIcon className="h-3 w-3" />
                   {order.stage.replace(/_/g, " ")}
                 </span>
@@ -353,9 +425,11 @@ export default function AdminOrderDetails() {
             </div>
 
             <div className="text-left sm:text-right pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 flex sm:block items-center justify-between">
-              <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Total Amount</p>
+              <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">
+                Total Amount
+              </p>
               <p className="text-base sm:text-2xl font-black text-slate-900 tracking-tight leading-tight">
-                ₹{order.totalPrice?.toLocaleString('en-IN')}
+                ₹{order.totalPrice?.toLocaleString("en-IN")}
               </p>
             </div>
           </div>
@@ -369,9 +443,11 @@ export default function AdminOrderDetails() {
               {/* Progress Fill */}
               <div
                 className={`absolute left-0 top-1/2 transform -translate-y-1/2 h-1.5 transition-all duration-700 ease-out rounded-full shadow-xs
-                    ${order.stage === 'CANCELLED' ? 'bg-red-500' : 'bg-gradient-to-r from-orange-400 to-orange-600'}
+                    ${order.stage === "CANCELLED" ? "bg-red-500" : "bg-gradient-to-r from-orange-400 to-orange-600"}
                   `}
-                style={{ width: `${(Math.max(0, STAGES.indexOf(order.stage)) / (STAGES.length - 1)) * 100}%` }}
+                style={{
+                  width: `${(Math.max(0, STAGES.indexOf(order.stage)) / (STAGES.length - 1)) * 100}%`,
+                }}
               ></div>
 
               {STAGES.map((stage, idx) => {
@@ -386,7 +462,8 @@ export default function AdminOrderDetails() {
                   dotClass = "bg-red-500 border-red-500 text-white shadow-xs shadow-red-200";
                   textClass = "text-red-600 font-bold";
                 } else if (isCurrent) {
-                  dotClass = "bg-orange-600 border-orange-600 text-white shadow-xs shadow-orange-200 scale-110";
+                  dotClass =
+                    "bg-orange-600 border-orange-600 text-white shadow-xs shadow-orange-200 scale-110";
                   textClass = "text-orange-700 font-bold";
                 } else if (isCompleted) {
                   dotClass = "bg-orange-500 border-orange-500 text-white";
@@ -395,14 +472,22 @@ export default function AdminOrderDetails() {
 
                 return (
                   <div key={stage} className="relative z-10 flex flex-col items-center group">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${dotClass}`}>
-                      {isCompleted || isCancelled ? <CheckCircleIcon className="h-5 w-5" /> : <div className="h-2.5 w-2.5 bg-current rounded-full opacity-50" />}
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${dotClass}`}
+                    >
+                      {isCompleted || isCancelled ? (
+                        <CheckCircleIcon className="h-5 w-5" />
+                      ) : (
+                        <div className="h-2.5 w-2.5 bg-current rounded-full opacity-50" />
+                      )}
                     </div>
-                    <span className={`absolute top-10 text-[10px] uppercase tracking-wider whitespace-nowrap transition-colors ${textClass}`}>
+                    <span
+                      className={`absolute top-10 text-[10px] uppercase tracking-wider whitespace-nowrap transition-colors ${textClass}`}
+                    >
                       {stage.replace(/_/g, " ")}
                     </span>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -410,10 +495,8 @@ export default function AdminOrderDetails() {
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
-
           {/* LEFT COLUMN */}
           <div className="xl:col-span-2 space-y-4 sm:space-y-6">
-
             {/* Action Center (The Workflow Engine) */}
             <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-5 space-y-3">
               <div className="flex items-center justify-between">
@@ -423,7 +506,10 @@ export default function AdminOrderDetails() {
                 </h3>
                 {nextLogicalStage && canWrite && !terminal && (
                   <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">
-                    Next: <strong className="text-slate-700">{nextLogicalStage.replace(/_/g, " ")}</strong>
+                    Next:{" "}
+                    <strong className="text-slate-700">
+                      {nextLogicalStage.replace(/_/g, " ")}
+                    </strong>
                   </span>
                 )}
               </div>
@@ -444,7 +530,9 @@ export default function AdminOrderDetails() {
                     )}
 
                     {/* Secondary Actions: Pills Grid */}
-                    {STAGES.filter(s => s !== "CANCELLED" && s !== nextLogicalStage && s !== order.stage).map((s) => (
+                    {STAGES.filter(
+                      (s) => s !== "CANCELLED" && s !== nextLogicalStage && s !== order.stage
+                    ).map((s) => (
                       <button
                         key={s}
                         disabled={updateStageMutation.isPending}
@@ -473,7 +561,8 @@ export default function AdminOrderDetails() {
               ) : (
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
                   <p className="text-slate-500 font-medium text-xs">
-                    This order is closed ({order.stage.replace(/_/g, " ")}) and requires no further action.
+                    This order is closed ({order.stage.replace(/_/g, " ")}) and requires no further
+                    action.
                   </p>
                 </div>
               )}
@@ -497,7 +586,11 @@ export default function AdminOrderDetails() {
                   <div key={idx} className="p-3 flex items-center gap-3">
                     <div className="h-12 w-12 flex-shrink-0 bg-slate-50 rounded-xl overflow-hidden border border-slate-200 p-0.5">
                       {p.image ? (
-                        <img src={p.image} alt={p.name} className="h-full w-full object-contain mix-blend-multiply" />
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="h-full w-full object-contain mix-blend-multiply"
+                        />
                       ) : (
                         <div className="h-full w-full flex items-center justify-center text-slate-300">
                           <CubeIcon className="h-5 w-5" />
@@ -513,9 +606,13 @@ export default function AdminOrderDetails() {
                       </div>
                     </div>
                     <div className="text-right flex-shrink-0">
-                      <p className="text-xs font-black text-slate-900">₹{((p.price || 0) * (p.quantity || 0)).toLocaleString('en-IN')}</p>
+                      <p className="text-xs font-black text-slate-900">
+                        ₹{((p.price || 0) * (p.quantity || 0)).toLocaleString("en-IN")}
+                      </p>
                       {p.quantity > 1 && (
-                        <p className="text-[10px] text-slate-400">₹{p.price?.toLocaleString('en-IN')} ea</p>
+                        <p className="text-[10px] text-slate-400">
+                          ₹{p.price?.toLocaleString("en-IN")} ea
+                        </p>
                       )}
                     </div>
                   </div>
@@ -540,7 +637,11 @@ export default function AdminOrderDetails() {
                           <div className="flex items-center gap-4">
                             <div className="h-14 w-14 flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 group-hover:border-orange-200 transition-colors">
                               {p.image ? (
-                                <img src={p.image} alt={p.name} className="h-full w-full object-contain" />
+                                <img
+                                  src={p.image}
+                                  alt={p.name}
+                                  className="h-full w-full object-contain"
+                                />
                               ) : (
                                 <div className="h-full w-full flex items-center justify-center text-slate-300">
                                   <CubeIcon className="h-6 w-6" />
@@ -548,13 +649,19 @@ export default function AdminOrderDetails() {
                               )}
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-slate-900 line-clamp-1">{p.name}</p>
+                              <p className="text-sm font-medium text-slate-900 line-clamp-1">
+                                {p.name}
+                              </p>
                               <p className="text-xs text-slate-500 mt-0.5">SKU: VK-{idx + 1024}</p>
                             </div>
                           </div>
                         </td>
-                        <td className="px-6 py-4 text-center text-sm text-slate-600">₹{p.price?.toLocaleString()}</td>
-                        <td className="px-6 py-4 text-center text-sm font-medium text-slate-900">{p.quantity}</td>
+                        <td className="px-6 py-4 text-center text-sm text-slate-600">
+                          ₹{p.price?.toLocaleString()}
+                        </td>
+                        <td className="px-6 py-4 text-center text-sm font-medium text-slate-900">
+                          {p.quantity}
+                        </td>
                         <td className="px-6 py-4 text-right text-sm font-bold text-slate-800">
                           ₹{((p.price || 0) * (p.quantity || 0)).toLocaleString()}
                         </td>
@@ -576,11 +683,15 @@ export default function AdminOrderDetails() {
                   const isLatest = idx === 0;
                   return (
                     <div key={idx} className="relative pl-6 sm:pl-8 group">
-                      <span className={`absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white shadow-xs transition-all duration-300
-                          ${isLatest ? 'bg-orange-500 ring-4 ring-orange-50 scale-110' : 'bg-slate-300 group-hover:bg-slate-400'}
-                        `}></span>
+                      <span
+                        className={`absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white shadow-xs transition-all duration-300
+                          ${isLatest ? "bg-orange-500 ring-4 ring-orange-50 scale-110" : "bg-slate-300 group-hover:bg-slate-400"}
+                        `}
+                      ></span>
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5 sm:gap-1">
-                        <span className={`text-xs sm:text-sm font-bold ${isLatest ? 'text-slate-900' : 'text-slate-600'}`}>
+                        <span
+                          className={`text-xs sm:text-sm font-bold ${isLatest ? "text-slate-900" : "text-slate-600"}`}
+                        >
                           {entry.stage.replace(/_/g, " ")}
                         </span>
                         <span className="text-[10px] sm:text-xs text-slate-400 font-mono">
@@ -593,16 +704,14 @@ export default function AdminOrderDetails() {
                         </p>
                       )}
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
-
           </div>
 
           {/* RIGHT COLUMN: Info Sidebars */}
           <div className="space-y-4 sm:space-y-6">
-
             {/* Customer Card */}
             <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-6">
               <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -617,8 +726,12 @@ export default function AdminOrderDetails() {
                   {customer.name ? customer.name.charAt(0).toUpperCase() : "?"}
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm sm:text-base font-bold text-slate-900 truncate">{customer.name || "Guest"}</p>
-                  <p className="text-[10px] sm:text-xs text-slate-500 truncate">Customer since 2024</p>
+                  <p className="text-sm sm:text-base font-bold text-slate-900 truncate">
+                    {customer.name || "Guest"}
+                  </p>
+                  <p className="text-[10px] sm:text-xs text-slate-500 truncate">
+                    Customer since 2024
+                  </p>
                 </div>
               </div>
 
@@ -628,7 +741,9 @@ export default function AdminOrderDetails() {
                     <div className="bg-white p-1 rounded-lg shadow-xs text-slate-400 group-hover:text-orange-500 transition-colors">
                       <MailIcon className="h-3.5 w-3.5" />
                     </div>
-                    <span className="text-xs sm:text-sm text-slate-600 font-medium truncate">{customer.email}</span>
+                    <span className="text-xs sm:text-sm text-slate-600 font-medium truncate">
+                      {customer.email}
+                    </span>
                   </div>
                 )}
                 {customer.phone && (
@@ -636,7 +751,9 @@ export default function AdminOrderDetails() {
                     <div className="bg-white p-1 rounded-lg shadow-xs text-slate-400 group-hover:text-orange-500 transition-colors">
                       <PhoneIcon className="h-3.5 w-3.5" />
                     </div>
-                    <span className="text-xs sm:text-sm text-slate-600 font-medium">{customer.phone}</span>
+                    <span className="text-xs sm:text-sm text-slate-600 font-medium">
+                      {customer.phone}
+                    </span>
                   </div>
                 )}
               </div>
@@ -667,13 +784,19 @@ export default function AdminOrderDetails() {
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   <div className="p-2.5 sm:p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
                     <p className="text-[10px] text-slate-400 uppercase font-bold mb-0.5">Method</p>
-                    <p className="text-xs sm:text-sm font-bold text-slate-800 uppercase">{order.paymentMethod || "COD"}</p>
+                    <p className="text-xs sm:text-sm font-bold text-slate-800 uppercase">
+                      {order.paymentMethod || "COD"}
+                    </p>
                   </div>
-                  <div className={`p-2.5 sm:p-3 rounded-xl border text-center
-                      ${order.paymentStatus === 'PAID' ? 'bg-emerald-50 border-emerald-100 text-emerald-700' : 'bg-amber-50 border-amber-100 text-amber-700'}
-                   `}>
+                  <div
+                    className={`p-2.5 sm:p-3 rounded-xl border text-center
+                      ${order.paymentStatus === "PAID" ? "bg-emerald-50 border-emerald-100 text-emerald-700" : "bg-amber-50 border-amber-100 text-amber-700"}
+                   `}
+                  >
                     <p className="text-[10px] uppercase font-bold opacity-80 mb-0.5">Status</p>
-                    <p className="text-xs sm:text-sm font-bold uppercase">{order.paymentStatus || "PENDING"}</p>
+                    <p className="text-xs sm:text-sm font-bold uppercase">
+                      {order.paymentStatus || "PENDING"}
+                    </p>
                   </div>
                 </div>
 
@@ -692,104 +815,136 @@ export default function AdminOrderDetails() {
                   </div>
                   <div className="pt-2 mt-1 border-t border-slate-100 flex justify-between items-center">
                     <span className="text-xs sm:text-sm font-bold text-slate-900">Total Paid</span>
-                    <span className="text-base sm:text-xl font-black text-slate-900">₹{order.totalPrice?.toLocaleString()}</span>
+                    <span className="text-base sm:text-xl font-black text-slate-900">
+                      ₹{order.totalPrice?.toLocaleString()}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
 
         {/* Returns & Refunds */}
         <div className="bg-white rounded-2xl border border-slate-200/70 shadow-xs p-4 sm:p-8">
-          <h3 className="text-sm sm:text-lg font-bold text-slate-900 mb-3 sm:mb-4">Returns & Refunds</h3>
+          <h3 className="text-sm sm:text-lg font-bold text-slate-900 mb-3 sm:mb-4">
+            Returns & Refunds
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
             <div className="p-2.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-100">
-              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Return Status</div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-900">{order.returnStatus || "NONE"}</div>
+              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
+                Return Status
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-900">
+                {order.returnStatus || "NONE"}
+              </div>
             </div>
             <div className="p-2.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-100">
-              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Refund Status</div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-900">{order.refundStatus || "NONE"}</div>
+              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
+                Refund Status
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-900">
+                {order.refundStatus || "NONE"}
+              </div>
             </div>
             <div className="p-2.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-100">
-              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Refund Method</div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-900">{order.refundMethod || "-"}</div>
+              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
+                Refund Method
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-900">
+                {order.refundMethod || "-"}
+              </div>
             </div>
             <div className="p-2.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-100">
-              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Return Type</div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-900">{order.returnType || "-"}</div>
+              <div className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">
+                Return Type
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-900">
+                {order.returnType || "-"}
+              </div>
             </div>
           </div>
 
           {canWrite && (
-          <div className="mt-4 sm:mt-6">
-            {order.returnStatus && order.returnStatus !== "NONE" ? (
-              <div className="flex flex-wrap gap-2">
-                {["APPROVED", "PICKED", "RECEIVED", "REJECTED", "CLOSED"].map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => updateReturn(s)}
-                    disabled={updateReturnMutation.isPending}
-                    className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
-                  >
-                    Set {s}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <p className="text-xs text-slate-400 italic">No return has been requested for this order yet.</p>
-            )}
-          </div>
+            <div className="mt-4 sm:mt-6">
+              {order.returnStatus && order.returnStatus !== "NONE" ? (
+                <div className="flex flex-wrap gap-2">
+                  {["APPROVED", "PICKED", "RECEIVED", "REJECTED", "CLOSED"].map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => updateReturn(s)}
+                      disabled={updateReturnMutation.isPending}
+                      className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+                    >
+                      Set {s}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-xs text-slate-400 italic">
+                  No return has been requested for this order yet.
+                </p>
+              )}
+            </div>
           )}
 
           {canWrite && (
-          <div className="mt-3 sm:mt-4">
-            {(() => {
-              const refundEligible = order.stage === "CANCELLED" || ["APPROVED", "PICKED", "RECEIVED"].includes(order.returnStatus);
-              const refundAlreadyHandled = order.refundStatus && order.refundStatus !== "NONE" && order.refundStatus !== "FAILED";
+            <div className="mt-3 sm:mt-4">
+              {(() => {
+                const refundEligible =
+                  order.stage === "CANCELLED" ||
+                  ["APPROVED", "PICKED", "RECEIVED"].includes(order.returnStatus);
+                const refundAlreadyHandled =
+                  order.refundStatus &&
+                  order.refundStatus !== "NONE" &&
+                  order.refundStatus !== "FAILED";
 
-              if (refundAlreadyHandled) {
-                return <p className="text-xs text-slate-400 italic">A refund has already been {order.refundStatus.toLowerCase()} for this order.</p>;
-              }
-              if (!refundEligible) {
+                if (refundAlreadyHandled) {
+                  return (
+                    <p className="text-xs text-slate-400 italic">
+                      A refund has already been {order.refundStatus.toLowerCase()} for this order.
+                    </p>
+                  );
+                }
+                if (!refundEligible) {
+                  return (
+                    <p className="text-xs text-slate-400 italic">
+                      Refunds are only available for cancelled orders, or once a return has been
+                      approved.
+                    </p>
+                  );
+                }
                 return (
-                  <p className="text-xs text-slate-400 italic">
-                    Refunds are only available for cancelled orders, or once a return has been approved.
-                  </p>
-                );
-              }
-              return (
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  <button
-                    onClick={() => initiateRefund("WALLET")}
-                    disabled={refundMutation.isPending}
-                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-xs hover:bg-black disabled:opacity-60"
-                  >
-                    Refund to Wallet
-                  </button>
-                  <button
-                    onClick={() => initiateRefund("ORIGINAL")}
-                    disabled={refundMutation.isPending}
-                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
-                  >
-                    Refund to Original
-                  </button>
-                  {order.returnType === "REPLACEMENT" && order.returnStatus === "RECEIVED" && !order.replacementOrderId && (
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     <button
-                      onClick={() => replacementMutation.mutate()}
-                      disabled={replacementMutation.isPending}
-                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-700 hover:bg-emerald-50"
+                      onClick={() => initiateRefund("WALLET")}
+                      disabled={refundMutation.isPending}
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-900 text-white text-xs font-bold shadow-xs hover:bg-black disabled:opacity-60"
                     >
-                      Create Replacement Order
+                      Refund to Wallet
                     </button>
-                  )}
-                </div>
-              );
-            })()}
-          </div>
+                    <button
+                      onClick={() => initiateRefund("ORIGINAL")}
+                      disabled={refundMutation.isPending}
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-60"
+                    >
+                      Refund to Original
+                    </button>
+                    {order.returnType === "REPLACEMENT" &&
+                      order.returnStatus === "RECEIVED" &&
+                      !order.replacementOrderId && (
+                        <button
+                          onClick={() => replacementMutation.mutate()}
+                          disabled={replacementMutation.isPending}
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border border-emerald-200 text-xs font-bold text-emerald-700 hover:bg-emerald-50"
+                        >
+                          Create Replacement Order
+                        </button>
+                      )}
+                  </div>
+                );
+              })()}
+            </div>
           )}
         </div>
       </div>

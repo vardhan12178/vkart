@@ -8,17 +8,55 @@ import axios from "../axiosInstance";
 import authReducer from "../../redux/authSlice";
 import ShopperReviews from "../shop/ShopperReviews";
 
-jest.mock("../axiosInstance", () => ({ __esModule: true, default: { get: jest.fn(), post: jest.fn(), put: jest.fn(), delete: jest.fn() } }));
+jest.mock("../axiosInstance", () => ({
+  __esModule: true,
+  default: { get: jest.fn(), post: jest.fn(), put: jest.fn(), delete: jest.fn() },
+}));
 jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 
-const review = (extra = {}) => ({ id: "r1", name: "Asha R.", stars: 5, title: "Great phone", body: "Battery lasts two days easily.", variant: "Color: Black", date: "2026-10-30", helpful: 3, verified: true, mine: false, voted: false, ...extra });
-const reply = (extra = {}) => ({ data: { reviews: [review()], total: 1, page: 1, pages: 1, canReview: false, myReview: null, signedIn: false, ...extra } });
+const review = (extra = {}) => ({
+  id: "r1",
+  name: "Asha R.",
+  stars: 5,
+  title: "Great phone",
+  body: "Battery lasts two days easily.",
+  variant: "Color: Black",
+  date: "2026-10-30",
+  helpful: 3,
+  verified: true,
+  mine: false,
+  voted: false,
+  ...extra,
+});
+const reply = (extra = {}) => ({
+  data: {
+    reviews: [review()],
+    total: 1,
+    page: 1,
+    pages: 1,
+    canReview: false,
+    myReview: null,
+    signedIn: false,
+    ...extra,
+  },
+});
 
 const renderIt = (signedIn = false) => {
-  const store = configureStore({ reducer: { auth: authReducer }, preloadedState: { auth: { ...authReducer(undefined, { type: "x" }), isAuthenticated: signedIn } } });
+  const store = configureStore({
+    reducer: { auth: authReducer },
+    preloadedState: {
+      auth: { ...authReducer(undefined, { type: "x" }), isAuthenticated: signedIn },
+    },
+  });
   render(
-    <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
-      <Provider store={store}><MemoryRouter><ShopperReviews slug="phone-a" /></MemoryRouter></Provider>
+    <QueryClientProvider
+      client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+    >
+      <Provider store={store}>
+        <MemoryRouter>
+          <ShopperReviews slug="phone-a" />
+        </MemoryRouter>
+      </Provider>
     </QueryClientProvider>
   );
 };
@@ -31,7 +69,9 @@ describe("ShopperReviews", () => {
     renderIt(false);
     expect(await screen.findByText("Great phone")).toBeInTheDocument();
     expect(screen.getByText(/verified buyer$/i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /verified buyer reviews \(1\)/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /verified buyer reviews \(1\)/i })
+    ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
     expect(screen.queryByRole("button", { name: /write a review/i })).not.toBeInTheDocument();
   });
@@ -52,14 +92,28 @@ describe("ShopperReviews", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent(/pick a star rating/i);
 
     fireEvent.click(screen.getByRole("radio", { name: "4 stars" }));
-    fireEvent.change(screen.getByLabelText(/your review/i), { target: { value: "Lovely screen, average camera." } });
+    fireEvent.change(screen.getByLabelText(/your review/i), {
+      target: { value: "Lovely screen, average camera." },
+    });
     fireEvent.click(screen.getByRole("button", { name: /post review/i }));
 
-    await waitFor(() => expect(axios.post).toHaveBeenCalledWith("/api/v2/products/phone-a/reviews", { stars: 4, title: "", body: "Lovely screen, average camera." }));
+    await waitFor(() =>
+      expect(axios.post).toHaveBeenCalledWith("/api/v2/products/phone-a/reviews", {
+        stars: 4,
+        title: "",
+        body: "Lovely screen, average camera.",
+      })
+    );
   });
 
   test("voting helpful calls the API; authors see edit and delete instead", async () => {
-    axios.get.mockResolvedValue(reply({ reviews: [review(), review({ id: "r2", mine: true, title: "Mine" })], total: 2, signedIn: true }));
+    axios.get.mockResolvedValue(
+      reply({
+        reviews: [review(), review({ id: "r2", mine: true, title: "Mine" })],
+        total: 2,
+        signedIn: true,
+      })
+    );
     axios.post.mockResolvedValue({ data: { voted: true, helpful: 4 } });
     renderIt(true);
     fireEvent.click(await screen.findByRole("button", { name: /helpful \(3\)/i }));

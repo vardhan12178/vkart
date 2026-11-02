@@ -80,9 +80,7 @@ export default function ClientSync() {
 
         // 4. Merge only if guest had items (login transition);
         //    otherwise just adopt server state (normal refresh).
-        const finalCart = localCart.length
-          ? mergeCart(localCart, serverCart)
-          : serverCart;
+        const finalCart = localCart.length ? mergeCart(localCart, serverCart) : serverCart;
         const finalWishlist = localWishlist.length
           ? mergeWishlist(localWishlist, serverWishlist)
           : serverWishlist;
@@ -116,12 +114,8 @@ export default function ClientSync() {
 
     if (syncTimer.current) clearTimeout(syncTimer.current);
     syncTimer.current = setTimeout(() => {
-      axios
-        .put("/api/profile/cart", { cart })
-        .catch(() => {});
-      axios
-        .put("/api/profile/wishlist", { wishlist })
-        .catch(() => {});
+      axios.put("/api/profile/cart", { cart }).catch(() => {});
+      axios.put("/api/profile/wishlist", { wishlist }).catch(() => {});
     }, 800);
 
     return () => {

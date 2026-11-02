@@ -153,7 +153,6 @@ const App = () => {
   if (authLoading) return <RouteSkeleton />;
 
   return (
-
     <>
       <Helmet>
         <title>VKart — Curated Shopping, Fast Delivery</title>
@@ -165,19 +164,28 @@ const App = () => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="VKart" />
         <meta property="og:title" content="VKart — Curated Shopping, Fast Delivery" />
-        <meta property="og:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
+        <meta
+          property="og:description"
+          content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart."
+        />
         <meta property="og:url" content="https://vkart.balavardhan.dev/" />
         <meta property="og:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="VKart — Curated Shopping, Fast Delivery" />
-        <meta name="twitter:description" content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart." />
+        <meta
+          name="twitter:description"
+          content="Explore handpicked products, great prices, and quick delivery. Shop smarter with VKart."
+        />
         <meta name="twitter:image" content="https://vkart.balavardhan.dev/og-image.jpg" />
       </Helmet>
 
       <div id="root">
         <RouteSeo />
         {/* Skip to main content — accessibility */}
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-gray-900 focus:shadow-lg focus:rounded-lg">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-gray-900 focus:shadow-lg focus:rounded-lg"
+        >
           Skip to main content
         </a>
         <ScrollToTop />
@@ -203,67 +211,161 @@ const App = () => {
           />
           <Suspense fallback={<RouteSkeleton />}>
             <ErrorBoundary>
-            <Routes>
-              {/* Public Storefront Pages */}
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<ProductList />} />
-              <Route path="/products/:slug" element={<ProductPage />} />
-              {/* Old links: /catalog-preview and /product/:id pages now live under /products */}
-              <Route path="/catalog-preview" element={<KeepQueryRedirect to="/products" />} />
-              <Route path="/catalog-preview/:slug" element={<SlugRedirect />} />
-              <Route path="/product/:id" element={<Navigate to="/products" replace />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/compare" element={<ComparePage />} />
-              <Route path="/blog" element={<BlogIndex />} />
-              <Route path="/blog/:id" element={<PostPage />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/license" element={<License />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/reset-password" element={<ResetPassword />} />
-              <Route path="/verify-email" element={<VerifyEmail />} />
+              <Routes>
+                {/* Public Storefront Pages */}
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<ProductList />} />
+                <Route path="/products/:slug" element={<ProductPage />} />
+                {/* Old links: /catalog-preview and /product/:id pages now live under /products */}
+                <Route path="/catalog-preview" element={<KeepQueryRedirect to="/products" />} />
+                <Route path="/catalog-preview/:slug" element={<SlugRedirect />} />
+                <Route path="/product/:id" element={<Navigate to="/products" replace />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/compare" element={<ComparePage />} />
+                <Route path="/blog" element={<BlogIndex />} />
+                <Route path="/blog/:id" element={<PostPage />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/license" element={<License />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/verify-email" element={<VerifyEmail />} />
 
-              {/* User Auth Pages */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+                {/* User Auth Pages */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
 
-              {/* Protected by Component-Level Guard (CartPreview / ProfilePreview) */}
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/orders" element={<Orders />} />
-              <Route path="/orders/:orderId" element={<Orders />} />
-              <Route path="/order-success/:orderId" element={<OrderSuccess />} />
-              <Route path="/prime" element={<PrimeMembership />} />
-              <Route path="/wishlist" element={<Wishlist />} />
+                {/* Protected by Component-Level Guard (CartPreview / ProfilePreview) */}
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/orders/:orderId" element={<Orders />} />
+                <Route path="/order-success/:orderId" element={<OrderSuccess />} />
+                <Route path="/prime" element={<PrimeMembership />} />
+                <Route path="/wishlist" element={<Wishlist />} />
 
-              {/* Admin Login */}
-              <Route path="/admin/login" element={isAdmin ? <Navigate to="/admin/dashboard" /> : <AdminLogin setIsAdmin={setIsAdmin} />} />
+                {/* Admin Login */}
+                <Route
+                  path="/admin/login"
+                  element={
+                    isAdmin ? (
+                      <Navigate to="/admin/dashboard" />
+                    ) : (
+                      <AdminLogin setIsAdmin={setIsAdmin} />
+                    )
+                  }
+                />
 
-              {/* Admin Protected Routes */}
-              <Route path="/admin" element={isAdmin ? <AdminLayout setIsAdmin={setIsAdmin} /> : <Navigate to="/admin/login" />}>
-                <Route index element={<Navigate to="/admin/dashboard" replace />} />
-                <Route path="dashboard" element={<AdminDashboard />} />
-                <Route path="profile" element={<AdminProfile />} />
-                <Route path="catalog" element={<RequireModule module="products"><AdminCatalog /></RequireModule>} />
-                <Route path="products" element={<Navigate to="/admin/catalog" replace />} />
-                <Route path="orders" element={<RequireModule module="orders"><AdminOrders /></RequireModule>} />
-                <Route path="orders/:id" element={<RequireModule module="orders"><AdminOrderDetails /></RequireModule>} />
-                <Route path="users" element={<RequireModule module="users"><AdminUsers /></RequireModule>} />
-                <Route path="reviews" element={<RequireModule module="reviews"><AdminReviews /></RequireModule>} />
-                <Route path="coupons" element={<RequireModule module="coupons"><AdminCoupons /></RequireModule>} />
-                <Route path="sales" element={<RequireModule module="sales"><AdminSales /></RequireModule>} />
-                <Route path="membership" element={<RequireModule module="membership"><AdminMembership /></RequireModule>} />
-                <Route path="employees" element={<RequireModule module="employees"><AdminEmployees /></RequireModule>} />
-                <Route path="support" element={<RequireModule module="support"><AdminSupport /></RequireModule>} />
-                <Route path="settings" element={<RequireModule module="settings"><AdminSettings /></RequireModule>} />
-              </Route>
+                {/* Admin Protected Routes */}
+                <Route
+                  path="/admin"
+                  element={
+                    isAdmin ? (
+                      <AdminLayout setIsAdmin={setIsAdmin} />
+                    ) : (
+                      <Navigate to="/admin/login" />
+                    )
+                  }
+                >
+                  <Route index element={<Navigate to="/admin/dashboard" replace />} />
+                  <Route path="dashboard" element={<AdminDashboard />} />
+                  <Route path="profile" element={<AdminProfile />} />
+                  <Route
+                    path="catalog"
+                    element={
+                      <RequireModule module="products">
+                        <AdminCatalog />
+                      </RequireModule>
+                    }
+                  />
+                  <Route path="products" element={<Navigate to="/admin/catalog" replace />} />
+                  <Route
+                    path="orders"
+                    element={
+                      <RequireModule module="orders">
+                        <AdminOrders />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="orders/:id"
+                    element={
+                      <RequireModule module="orders">
+                        <AdminOrderDetails />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="users"
+                    element={
+                      <RequireModule module="users">
+                        <AdminUsers />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="reviews"
+                    element={
+                      <RequireModule module="reviews">
+                        <AdminReviews />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="coupons"
+                    element={
+                      <RequireModule module="coupons">
+                        <AdminCoupons />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="sales"
+                    element={
+                      <RequireModule module="sales">
+                        <AdminSales />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="membership"
+                    element={
+                      <RequireModule module="membership">
+                        <AdminMembership />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="employees"
+                    element={
+                      <RequireModule module="employees">
+                        <AdminEmployees />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="support"
+                    element={
+                      <RequireModule module="support">
+                        <AdminSupport />
+                      </RequireModule>
+                    }
+                  />
+                  <Route
+                    path="settings"
+                    element={
+                      <RequireModule module="settings">
+                        <AdminSettings />
+                      </RequireModule>
+                    }
+                  />
+                </Route>
 
-              {/* Error / 404 */}
-              <Route path="*" element={<Error />} />
-
-            </Routes>
+                {/* Error / 404 */}
+                <Route path="*" element={<Error />} />
+              </Routes>
             </ErrorBoundary>
           </Suspense>
           <Suspense fallback={null}>

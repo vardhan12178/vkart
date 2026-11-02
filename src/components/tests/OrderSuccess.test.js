@@ -15,13 +15,15 @@ jest.mock("react-use", () => ({
   useWindowSize: () => ({ width: 1024, height: 768 }),
 }));
 
-jest.mock("../support/SupportChatWidget", () => (props) =>
-  props.open ? (
-    <div data-testid="support-widget">
-      Support open
-      <button onClick={props.onClose}>Close support</button>
-    </div>
-  ) : null
+jest.mock(
+  "../support/SupportChatWidget",
+  () => (props) =>
+    props.open ? (
+      <div data-testid="support-widget">
+        Support open
+        <button onClick={props.onClose}>Close support</button>
+      </div>
+    ) : null
 );
 
 const ORDER = {
@@ -80,7 +82,9 @@ describe("OrderSuccess Component", () => {
 
   test("matches the order by razorpayOrderId when _id and orderId don't match the route param", async () => {
     axios.get.mockResolvedValueOnce({
-      data: [{ ...ORDER, _id: "different-id", orderId: undefined, razorpayOrderId: "order-abc123456" }],
+      data: [
+        { ...ORDER, _id: "different-id", orderId: undefined, razorpayOrderId: "order-abc123456" },
+      ],
     });
     renderWithOrderId();
     expect(await screen.findByText("Widget")).toBeInTheDocument();

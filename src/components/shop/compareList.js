@@ -6,7 +6,9 @@ export const MAX_COMPARE = 4;
 export function readCompare() {
   try {
     const list = JSON.parse(localStorage.getItem(KEY) || "[]");
-    return Array.isArray(list) ? list.filter((s) => typeof s === "string").slice(0, MAX_COMPARE) : [];
+    return Array.isArray(list)
+      ? list.filter((s) => typeof s === "string").slice(0, MAX_COMPARE)
+      : [];
   } catch {
     return [];
   }
@@ -14,10 +16,16 @@ export function readCompare() {
 
 export function writeCompare(slugs) {
   const list = [...new Set(slugs)].slice(0, MAX_COMPARE);
-  try { localStorage.setItem(KEY, JSON.stringify(list)); } catch { /* storage unavailable */ }
+  try {
+    localStorage.setItem(KEY, JSON.stringify(list));
+  } catch {
+    /* storage unavailable */
+  }
   return list;
 }
 
-export const addToCompare = (slug) => writeCompare([...readCompare().filter((s) => s !== slug), slug].slice(-MAX_COMPARE));
+export const addToCompare = (slug) =>
+  writeCompare([...readCompare().filter((s) => s !== slug), slug].slice(-MAX_COMPARE));
 export const removeFromCompare = (slug) => writeCompare(readCompare().filter((s) => s !== slug));
-export const compareUrl = (slugs) => `/compare${slugs.length ? `?p=${slugs.map(encodeURIComponent).join(",")}` : ""}`;
+export const compareUrl = (slugs) =>
+  `/compare${slugs.length ? `?p=${slugs.map(encodeURIComponent).join(",")}` : ""}`;

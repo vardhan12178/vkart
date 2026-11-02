@@ -16,7 +16,12 @@ jest.mock("framer-motion", () => {
   return {
     motion: new Proxy(
       {},
-      { get: (_t, tag) => ({ children, ...props }) => mockReact.createElement(tag, strip(props), children) }
+      {
+        get:
+          (_t, tag) =>
+          ({ children, ...props }) =>
+            mockReact.createElement(tag, strip(props), children),
+      }
     ),
     AnimatePresence: ({ children }) => <>{children}</>,
   };

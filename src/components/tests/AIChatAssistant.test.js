@@ -16,15 +16,29 @@ jest.mock("../../utils/toast", () => ({ showToast: jest.fn() }));
 jest.mock("framer-motion", () => {
   const mockReact = require("react");
   const stripMotionProps = (props) => {
-    const { initial, animate, exit, variants, transition, whileHover, whileTap, whileInView, viewport, custom, ...validProps } = props;
+    const {
+      initial,
+      animate,
+      exit,
+      variants,
+      transition,
+      whileHover,
+      whileTap,
+      whileInView,
+      viewport,
+      custom,
+      ...validProps
+    } = props;
     return validProps;
   };
   return {
     motion: new Proxy(
       {},
       {
-        get: (_target, tagName) => ({ children, ...props }) =>
-          mockReact.createElement(tagName, stripMotionProps(props), children),
+        get:
+          (_target, tagName) =>
+          ({ children, ...props }) =>
+            mockReact.createElement(tagName, stripMotionProps(props), children),
       }
     ),
     AnimatePresence: ({ children }) => <>{children}</>,
@@ -74,7 +88,9 @@ describe("AIChatAssistant Component", () => {
 
   test("renders the chat panel with an initial greeting when open", () => {
     renderAssistant();
-    expect(screen.getByRole("dialog", { name: /ask vkart product concierge/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("dialog", { name: /ask vkart product concierge/i })
+    ).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/ask anything about products/i)).toBeInTheDocument();
   });
 
@@ -132,7 +148,9 @@ describe("AIChatAssistant Component", () => {
 
     expect(await screen.findByText(/our ai is searching/i)).toBeInTheDocument();
 
-    resolveRequest({ data: { structured: { response: { summary: "done", points: [] } }, products: [] } });
+    resolveRequest({
+      data: { structured: { response: { summary: "done", points: [] } }, products: [] },
+    });
     await waitFor(() => {
       expect(screen.queryByText(/our ai is searching/i)).not.toBeInTheDocument();
     });
@@ -154,7 +172,9 @@ describe("AIChatAssistant Component", () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
-        products: [{ _id: "prod1", title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 }],
+        products: [
+          { _id: "prod1", title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 },
+        ],
       },
     });
     renderAssistant();
@@ -174,18 +194,40 @@ describe("AIChatAssistant Component", () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
-        products: [{ _id: "aaaaaaaaaaaaaaaaaaaaaaaa", catalog: "v2", slug: "yoga-mat", sku: "BFT-MAT-1", variantCount: 1, title: "Yoga Mat", price: 2499, thumbnail: "m.webp", stock: 1 }],
+        products: [
+          {
+            _id: "aaaaaaaaaaaaaaaaaaaaaaaa",
+            catalog: "v2",
+            slug: "yoga-mat",
+            sku: "BFT-MAT-1",
+            variantCount: 1,
+            title: "Yoga Mat",
+            price: 2499,
+            thumbnail: "m.webp",
+            stock: 1,
+          },
+        ],
       },
     });
     renderAssistant();
 
-    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "yoga mat" } });
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), {
+      target: { value: "yoga mat" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
     await screen.findByText("Yoga Mat");
 
-    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "yoga mat", twoPhase: true }));
+    expect(axios.post).toHaveBeenCalledWith(
+      "/api/ai/chat",
+      expect.objectContaining({ message: "yoga mat", twoPhase: true })
+    );
     fireEvent.click(screen.getByRole("button", { name: /add yoga mat to bag/i }));
-    expect(store.getState().cart[0]).toMatchObject({ catalog: "v2", productId: "aaaaaaaaaaaaaaaaaaaaaaaa", sku: "BFT-MAT-1", quantity: 1 });
+    expect(store.getState().cart[0]).toMatchObject({
+      catalog: "v2",
+      productId: "aaaaaaaaaaaaaaaaaaaaaaaa",
+      sku: "BFT-MAT-1",
+      quantity: 1,
+    });
   });
 
   test("waits for the model's picks and shows only the final answer", async () => {
@@ -194,27 +236,62 @@ describe("AIChatAssistant Component", () => {
       .mockResolvedValueOnce({
         data: {
           structured: { response: { summary: "Here are the top matches.", points: [] } },
-          products: [{ _id: "p1", catalog: "v2", slug: "phone-a", title: "Phone A", price: 30000, thumbnail: "a.webp", stock: 1 }],
+          products: [
+            {
+              _id: "p1",
+              catalog: "v2",
+              slug: "phone-a",
+              title: "Phone A",
+              price: 30000,
+              thumbnail: "a.webp",
+              stock: 1,
+            },
+          ],
           rank: { token: RANK_TOKEN },
         },
       })
-      .mockImplementationOnce(() => new Promise((resolve) => { finishRank = resolve; }));
+      .mockImplementationOnce(
+        () =>
+          new Promise((resolve) => {
+            finishRank = resolve;
+          })
+      );
     renderAssistant();
 
-    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), {
+      target: { value: "phone" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     // While the model ranks: a waiting message, and no first-pass results on screen
     expect(await screen.findByText(/our ai is picking the best matches/i)).toBeInTheDocument();
     expect(screen.queryByText("Phone A")).not.toBeInTheDocument();
-    expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ twoPhase: true }));
-    expect(axios.post).toHaveBeenLastCalledWith("/api/ai/chat/rank", { token: RANK_TOKEN }, expect.anything());
+    expect(axios.post).toHaveBeenCalledWith(
+      "/api/ai/chat",
+      expect.objectContaining({ twoPhase: true })
+    );
+    expect(axios.post).toHaveBeenLastCalledWith(
+      "/api/ai/chat/rank",
+      { token: RANK_TOKEN },
+      expect.anything()
+    );
 
     finishRank({
       data: {
         reranked: true,
         structured: { response: { summary: "Phone B has the bigger battery.", points: [] } },
-        products: [{ _id: "p2", catalog: "v2", slug: "phone-b", title: "Phone B", price: 28000, thumbnail: "b.webp", stock: 1, reason: "Biggest battery" }],
+        products: [
+          {
+            _id: "p2",
+            catalog: "v2",
+            slug: "phone-b",
+            title: "Phone B",
+            price: 28000,
+            thumbnail: "b.webp",
+            stock: 1,
+            reason: "Biggest battery",
+          },
+        ],
       },
     });
     expect(await screen.findByText("Phone B has the bigger battery.")).toBeInTheDocument();
@@ -228,14 +305,26 @@ describe("AIChatAssistant Component", () => {
       .mockResolvedValueOnce({
         data: {
           structured: { response: { summary: "Here are the top matches.", points: [] } },
-          products: [{ _id: "p1", catalog: "v2", slug: "phone-a", title: "Phone A", price: 30000, thumbnail: "a.webp", stock: 1 }],
+          products: [
+            {
+              _id: "p1",
+              catalog: "v2",
+              slug: "phone-a",
+              title: "Phone A",
+              price: 30000,
+              thumbnail: "a.webp",
+              stock: 1,
+            },
+          ],
           rank: { token: RANK_TOKEN },
         },
       })
       .mockRejectedValueOnce(new Error("busy"));
     renderAssistant();
 
-    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), {
+      target: { value: "phone" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
 
     expect(await screen.findByText("Phone A")).toBeInTheDocument();
@@ -247,12 +336,26 @@ describe("AIChatAssistant Component", () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
-        products: [{ _id: "bbbbbbbbbbbbbbbbbbbbbbbb", catalog: "v2", slug: "phone-x", sku: "PX-128", variantCount: 3, title: "Phone X", price: 20000, thumbnail: "p.webp", stock: 1 }],
+        products: [
+          {
+            _id: "bbbbbbbbbbbbbbbbbbbbbbbb",
+            catalog: "v2",
+            slug: "phone-x",
+            sku: "PX-128",
+            variantCount: 3,
+            title: "Phone X",
+            price: 20000,
+            thumbnail: "p.webp",
+            stock: 1,
+          },
+        ],
       },
     });
     renderAssistant();
 
-    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), { target: { value: "phone" } });
+    fireEvent.change(screen.getByPlaceholderText(/ask anything about products/i), {
+      target: { value: "phone" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /send message/i }));
     await screen.findByText("Phone X");
 
@@ -266,7 +369,19 @@ describe("AIChatAssistant Component", () => {
     axios.post.mockResolvedValueOnce({
       data: {
         structured: { response: { summary: "Here you go", points: [] } },
-        products: [{ _id: "cccccccccccccccccccccccc", catalog: "v2", slug: "gaming-phone-x", sku: "GPX-1", variantCount: 1, title: "Gaming Phone X", price: 25000, thumbnail: "x.png", stock: 3 }],
+        products: [
+          {
+            _id: "cccccccccccccccccccccccc",
+            catalog: "v2",
+            slug: "gaming-phone-x",
+            sku: "GPX-1",
+            variantCount: 1,
+            title: "Gaming Phone X",
+            price: 25000,
+            thumbnail: "x.png",
+            stock: 3,
+          },
+        ],
       },
     });
     renderAssistant();
@@ -286,16 +401,25 @@ describe("AIChatAssistant Component", () => {
 
   test("hides the floating launcher on the cart and checkout pages", () => {
     renderAssistant(false, "/cart");
-    expect(screen.queryByRole("button", { name: /product concierge ask vkart/i })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /product concierge ask vkart/i })
+    ).not.toBeInTheDocument();
   });
 
   test("sends a question handed over from search", async () => {
-    axios.post.mockResolvedValueOnce({ data: { structured: { response: { summary: "Here you go", points: [] } }, products: [] } });
+    axios.post.mockResolvedValueOnce({
+      data: { structured: { response: { summary: "Here you go", points: [] } }, products: [] },
+    });
     renderAssistant(false);
-    act(() => { store.dispatch(askChat("best earbuds under 5000")); });
+    act(() => {
+      store.dispatch(askChat("best earbuds under 5000"));
+    });
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith("/api/ai/chat", expect.objectContaining({ message: "best earbuds under 5000" }));
+      expect(axios.post).toHaveBeenCalledWith(
+        "/api/ai/chat",
+        expect.objectContaining({ message: "best earbuds under 5000" })
+      );
     });
     expect(store.getState().ui.isChatOpen).toBe(true);
     expect(store.getState().ui.chatPrompt).toBeNull();

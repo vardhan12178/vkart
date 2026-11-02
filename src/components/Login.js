@@ -10,7 +10,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { loginSuccess } from "../redux/authSlice";
 import { qk } from "../query/queryKeys";
 
-import { Eye as EyeIcon, EyeOff as EyeOffIcon, User as UserIcon, Lock as LockClosedIcon, CircleAlert as ExclamationCircleIcon, CircleCheck as CheckCircleIcon, ShoppingCart as ShoppingCartIcon } from "lucide-react";
+import {
+  Eye as EyeIcon,
+  EyeOff as EyeOffIcon,
+  User as UserIcon,
+  Lock as LockClosedIcon,
+  CircleAlert as ExclamationCircleIcon,
+  CircleCheck as CheckCircleIcon,
+  ShoppingCart as ShoppingCartIcon,
+} from "lucide-react";
 import { Dots } from "./ui/Skeleton";
 import DemoLogin from "./DemoLogin";
 
@@ -271,8 +279,7 @@ export default function Login() {
     }
   };
 
-  const handleGoogleError = () =>
-    setFormError("Google sign-in was cancelled or failed.");
+  const handleGoogleError = () => setFormError("Google sign-in was cancelled or failed.");
 
   return (
     <>
@@ -315,7 +322,9 @@ export default function Login() {
                 transition={{ delay: 0.2 }}
                 className="font-editorial text-4xl xl:text-5xl font-normal text-[#1d1c19] leading-[0.98] tracking-[-0.03em]"
               >
-                Welcome back to<br />better choices.
+                Welcome back to
+                <br />
+                better choices.
               </motion.h2>
             </div>
 
@@ -331,8 +340,6 @@ export default function Login() {
                 className="h-[310px] xl:h-[380px] w-full rounded-[1.25rem] object-cover object-[68%_center] shadow-2xl"
               />
             </motion.div>
-
-
           </div>
 
           {/* --- RIGHT PANEL (Form) --- */}
@@ -351,8 +358,12 @@ export default function Login() {
               className="w-full max-w-sm mx-auto"
             >
               <motion.div variants={fadeInUp} className="text-center mb-6 sm:mb-8">
-                <h1 className="font-editorial text-4xl sm:text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">Welcome back.</h1>
-                <p className="mt-3 text-sm text-[#777269]">Sign in to continue your shopping journey.</p>
+                <h1 className="font-editorial text-4xl sm:text-5xl font-normal text-[#1d1c19] tracking-[-0.035em]">
+                  Welcome back.
+                </h1>
+                <p className="mt-3 text-sm text-[#777269]">
+                  Sign in to continue your shopping journey.
+                </p>
               </motion.div>
 
               {/* Toast / Error Area */}
@@ -361,7 +372,13 @@ export default function Login() {
               </AnimatePresence>
 
               <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">
-                <DemoLogin kind="shopper" onSignedIn={(data) => { dispatch(loginSuccess(requireUserSession(data))); navigate(redirect); }} />
+                <DemoLogin
+                  kind="shopper"
+                  onSignedIn={(data) => {
+                    dispatch(loginSuccess(requireUserSession(data)));
+                    navigate(redirect);
+                  }}
+                />
               </motion.div>
 
               {/* Google Button */}
@@ -385,19 +402,33 @@ export default function Login() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="relative flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
+              <motion.div
+                variants={fadeInUp}
+                className="relative flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6"
+              >
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wider">or sign in with email</span>
+                <span className="text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  or sign in with email
+                </span>
                 <div className="h-px bg-gray-200 flex-1" />
               </motion.div>
 
               <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5" noValidate>
                 {/* Email Field */}
                 <motion.div variants={fadeInUp}>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">Email</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-1">
+                    Email
+                  </label>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                      <UserIcon className={cx("h-5 w-5 transition-colors", errors.userId && touched.userId ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <UserIcon
+                        className={cx(
+                          "h-5 w-5 transition-colors",
+                          errors.userId && touched.userId
+                            ? "text-red-400"
+                            : "text-gray-400 group-focus-within:text-orange-500"
+                        )}
+                      />
                     </div>
                     <input
                       id="userId"
@@ -408,7 +439,7 @@ export default function Login() {
                         validateField("userId", e.target.value);
                       }}
                       onBlur={() => {
-                        setTouched(prev => ({ ...prev, userId: true }));
+                        setTouched((prev) => ({ ...prev, userId: true }));
                         validateField("userId", userId);
                       }}
                       placeholder="Enter your email"
@@ -430,7 +461,14 @@ export default function Login() {
                   </div>
                   <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
-                      <LockClosedIcon className={cx("h-5 w-5 transition-colors", errors.password && touched.password ? "text-red-400" : "text-gray-400 group-focus-within:text-orange-500")} />
+                      <LockClosedIcon
+                        className={cx(
+                          "h-5 w-5 transition-colors",
+                          errors.password && touched.password
+                            ? "text-red-400"
+                            : "text-gray-400 group-focus-within:text-orange-500"
+                        )}
+                      />
                     </div>
                     <input
                       ref={passRef}
@@ -444,7 +482,7 @@ export default function Login() {
                       onKeyUp={onKeyEventCheckCaps}
                       onKeyDown={onKeyEventCheckCaps}
                       onBlur={() => {
-                        setTouched(prev => ({ ...prev, password: true }));
+                        setTouched((prev) => ({ ...prev, password: true }));
                         validateField("password", password);
                       }}
                       placeholder="••••••••"
@@ -461,12 +499,20 @@ export default function Login() {
                       className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center justify-center text-gray-400 hover:text-gray-600 focus:outline-none min-w-[44px] min-h-[44px]"
                       aria-label={showPassword ? "Hide password" : "Show password"}
                     >
-                      {showPassword ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
+                      {showPassword ? (
+                        <EyeOffIcon className="h-5 w-5" />
+                      ) : (
+                        <EyeIcon className="h-5 w-5" />
+                      )}
                     </button>
                   </div>
 
                   {capsOn && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block">
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block"
+                    >
                       ⚠️ Caps Lock is ON
                     </motion.div>
                   )}
@@ -482,7 +528,9 @@ export default function Login() {
                       onChange={(e) => setRemember(e.target.checked)}
                       className="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
                     />
-                    <span className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Remember for 30 days</span>
+                    <span className="text-xs sm:text-sm text-gray-600 group-hover:text-gray-900 transition-colors">
+                      Remember for 30 days
+                    </span>
                   </label>
                   <button
                     type="button"
@@ -559,14 +607,28 @@ export default function Login() {
                 aria-label="Close modal"
               >
                 <span className="sr-only">Close</span>
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               </button>
 
               <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="h-14 w-14 sm:h-16 sm:w-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-4 text-2xl sm:text-3xl">
                   🔐
                 </div>
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900">Two-Step Verification</h2>
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                  Two-Step Verification
+                </h2>
                 <p className="text-xs sm:text-sm text-gray-500 mt-2 px-2">
                   We sent a secure code to your authenticator app. Please enter it below.
                 </p>
@@ -587,7 +649,11 @@ export default function Login() {
                   />
 
                   {twofaError && (
-                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-3 flex items-center justify-center gap-1.5 text-xs text-red-500 font-medium">
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-3 flex items-center justify-center gap-1.5 text-xs text-red-500 font-medium"
+                    >
                       <ExclamationCircleIcon className="h-4 w-4" /> {twofaError}
                     </motion.div>
                   )}

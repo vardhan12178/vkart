@@ -4,7 +4,10 @@ import { removeFromWishlist, toggleWishlist, wishlistItemKey } from "../../redux
 // Entries carry { catalog: "v2", productId, sku, slug }; the bundled fallback has no
 // database ids, so those entries use externalId "v2:<slug>" until the API is live.
 
-export const variantLabel = (v) => Object.values(v?.options || {}).filter(Boolean).join(" · ");
+export const variantLabel = (v) =>
+  Object.values(v?.options || {})
+    .filter(Boolean)
+    .join(" · ");
 
 // p: API card ({ id, sku, image, price, ... }) or product detail (with an explicit variant)
 export function wishlistItemFrom(p, variant) {
@@ -23,7 +26,8 @@ export function wishlistItemFrom(p, variant) {
   };
 }
 
-export const findSaved = (wishlist, slug) => wishlist.find((w) => w.catalog === "v2" && w.slug === slug);
+export const findSaved = (wishlist, slug) =>
+  wishlist.find((w) => w.catalog === "v2" && w.slug === slug);
 
 /** Adds or removes; returns true when the product is now saved. */
 export function toggleSaved(dispatch, wishlist, item) {
@@ -38,7 +42,9 @@ export function toggleSaved(dispatch, wishlist, item) {
 
 // Links to the saved option when the item has one
 export const productPath = (item) =>
-  item?.catalog === "v2" ? `/products/${item.slug}${item.sku ? `?variant=${encodeURIComponent(item.sku)}` : ""}` : null;
+  item?.catalog === "v2"
+    ? `/products/${item.slug}${item.sku ? `?variant=${encodeURIComponent(item.sku)}` : ""}`
+    : null;
 
 /** Cart entry for a saved item, or null when it can't be ordered yet (bundled data, no sku). */
 export function cartItemFromSaved(item, quantity = 1) {
@@ -65,8 +71,11 @@ export const matchVariant = (p, opts) =>
 
 /** True when some variant has this value together with the other current choices. */
 export const optionExists = (p, opts, name, value) =>
-  p.variants.some((v) => v.options[name] === value &&
-    Object.entries(opts).every(([k, val]) => k === name || v.options[k] === val));
+  p.variants.some(
+    (v) =>
+      v.options[name] === value &&
+      Object.entries(opts).every(([k, val]) => k === name || v.options[k] === val)
+  );
 
 /** New choices after picking a value; jumps to a variant that has it when the combination doesn't exist. */
 export function pickOption(p, opts, name, value) {
@@ -76,9 +85,12 @@ export function pickOption(p, opts, name, value) {
 
 /** Options worth showing (hides single "Standard"/"Default" values). */
 export const visibleOptions = (p) =>
-  (p.variantOptions || []).filter((o) => o.values.length > 1 || !/^(standard|default|one size)$/i.test(o.values[0]?.value || ""));
+  (p.variantOptions || []).filter(
+    (o) => o.values.length > 1 || !/^(standard|default|one size)$/i.test(o.values[0]?.value || "")
+  );
 
-export const isAvailable = (v) => Boolean(v && v.inStock !== false && v.keySpecs?.available !== false);
+export const isAvailable = (v) =>
+  Boolean(v && v.inStock !== false && v.keySpecs?.available !== false);
 
 /** Cart line for a product detail + chosen variant. Cart and checkout re-price it from the server. */
 export function cartLineFrom(p, variant, thumbnail, quantity = 1) {

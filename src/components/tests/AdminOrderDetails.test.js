@@ -74,7 +74,9 @@ describe("AdminOrderDetails Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /mark as confirmed/i }));
 
     await waitFor(() => {
-      expect(axios.patch).toHaveBeenCalledWith("/api/admin/orders/order123456/stage", { stage: "CONFIRMED" });
+      expect(axios.patch).toHaveBeenCalledWith("/api/admin/orders/order123456/stage", {
+        stage: "CONFIRMED",
+      });
     });
     expect(await screen.findByText(/status updated to confirmed/i)).toBeInTheDocument();
   });
@@ -88,7 +90,9 @@ describe("AdminOrderDetails Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /cancel order/i }));
 
     await waitFor(() => {
-      expect(axios.patch).toHaveBeenCalledWith("/api/admin/orders/order123456/stage", { stage: "CANCELLED" });
+      expect(axios.patch).toHaveBeenCalledWith("/api/admin/orders/order123456/stage", {
+        stage: "CANCELLED",
+      });
     });
   });
 
@@ -119,21 +123,27 @@ describe("AdminOrderDetails Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /set approved/i }));
 
     await waitFor(() => {
-      expect(axios.patch).toHaveBeenCalledWith("/api/admin/orders/order123456/return", { status: "APPROVED" });
+      expect(axios.patch).toHaveBeenCalledWith("/api/admin/orders/order123456/return", {
+        status: "APPROVED",
+      });
     });
     expect(await screen.findByText(/return status: approved/i)).toBeInTheDocument();
   });
 
   test("initiates a wallet refund once the order is cancelled and refund-eligible", async () => {
     axios.get.mockResolvedValue({ data: { ...ORDER, stage: "CANCELLED" } });
-    axios.post.mockResolvedValueOnce({ data: { order: { ...ORDER, stage: "CANCELLED", refundStatus: "PROCESSED" } } });
+    axios.post.mockResolvedValueOnce({
+      data: { order: { ...ORDER, stage: "CANCELLED", refundStatus: "PROCESSED" } },
+    });
     renderDetails();
     await screen.findByText(/VK-2001/);
 
     fireEvent.click(screen.getByRole("button", { name: /refund to wallet/i }));
 
     await waitFor(() => {
-      expect(axios.post).toHaveBeenCalledWith("/api/admin/orders/order123456/refund", { method: "WALLET" });
+      expect(axios.post).toHaveBeenCalledWith("/api/admin/orders/order123456/refund", {
+        method: "WALLET",
+      });
     });
     expect(await screen.findByText(/refund wallet/i)).toBeInTheDocument();
   });

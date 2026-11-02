@@ -19,20 +19,41 @@ jest.mock("react-router-dom", () => ({
 jest.mock("framer-motion", () => {
   const mockReact = require("react");
   const strip = (props) => {
-    const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...rest } = props;
+    const { initial, animate, exit, variants, transition, whileHover, whileTap, custom, ...rest } =
+      props;
     return rest;
   };
   return {
     motion: new Proxy(
       {},
-      { get: (_t, tag) => ({ children, ...props }) => mockReact.createElement(tag, strip(props), children) }
+      {
+        get:
+          (_t, tag) =>
+          ({ children, ...props }) =>
+            mockReact.createElement(tag, strip(props), children),
+      }
     ),
     AnimatePresence: ({ children }) => <>{children}</>,
   };
 });
 
-const NOTIF_UNREAD = { _id: "n1", title: "Order Shipped!", message: "Your order is on the way", type: "order", orderId: "o1", isRead: false, createdAt: new Date().toISOString() };
-const NOTIF_READ = { _id: "n2", title: "Welcome", message: "Thanks for joining", type: "info", isRead: true, createdAt: new Date().toISOString() };
+const NOTIF_UNREAD = {
+  _id: "n1",
+  title: "Order Shipped!",
+  message: "Your order is on the way",
+  type: "order",
+  orderId: "o1",
+  isRead: false,
+  createdAt: new Date().toISOString(),
+};
+const NOTIF_READ = {
+  _id: "n2",
+  title: "Welcome",
+  message: "Thanks for joining",
+  type: "info",
+  isRead: true,
+  createdAt: new Date().toISOString(),
+};
 
 describe("NotificationBell Component", () => {
   const renderBell = ({ isAuthenticated = true } = {}) => {

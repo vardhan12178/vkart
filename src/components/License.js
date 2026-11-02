@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { 
-  FaBalanceScale, 
-  FaCode, 
-  FaCheck, 
-  FaTimes, 
-  FaCreativeCommons, 
-  FaLayerGroup, 
-  FaExclamationCircle, 
-  FaEnvelope 
+import {
+  FaBalanceScale,
+  FaCode,
+  FaCheck,
+  FaTimes,
+  FaCreativeCommons,
+  FaLayerGroup,
+  FaExclamationCircle,
+  FaEnvelope,
 } from "react-icons/fa";
 
 /* ---------- Animation Styles ---------- */
@@ -54,7 +54,7 @@ export default function License() {
   return (
     <div className="premium-page premium-legal min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden">
       <AnimStyles />
-      
+
       {/* Ambient Background */}
       <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-amber-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
@@ -69,18 +69,20 @@ export default function License() {
             License & Attribution
           </h1>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Usage guidelines for the VKart portfolio project, including permissions, restrictions, and open-source credits.
+            Usage guidelines for the VKart portfolio project, including permissions, restrictions,
+            and open-source credits.
           </p>
           <p className="mt-4 text-sm font-medium text-gray-400">Last Updated: {year}</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 relative z-10">
-        
         {/* --- SIDEBAR NAVIGATION (Desktop Sticky) --- */}
         <aside className="hidden lg:block w-64 shrink-0">
           <div className="sticky top-24 space-y-1">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 pl-4">Table of Contents</p>
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 pl-4">
+              Table of Contents
+            </p>
             {sections.map((item) => (
               <a
                 key={item.id}
@@ -91,7 +93,9 @@ export default function License() {
                     : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                 }`}
               >
-                <item.icon className={activeSection === item.id ? "text-orange-400" : "text-gray-400"} />
+                <item.icon
+                  className={activeSection === item.id ? "text-orange-400" : "text-gray-400"}
+                />
                 {item.title}
               </a>
             ))}
@@ -99,18 +103,24 @@ export default function License() {
         </aside>
 
         {/* --- CONTENT AREA --- */}
-        <div className="flex-1 max-w-3xl space-y-12 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          
+        <div
+          className="flex-1 max-w-3xl space-y-12 animate-fade-up"
+          style={{ animationDelay: "0.1s" }}
+        >
           {/* 1. Purpose */}
           <section id="purpose" className="scroll-mt-28">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">1</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                1
+              </span>
               Purpose of This Project
             </h2>
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
               <p>
-                VKart is built exclusively for <strong>learning, skill demonstration, and recruitment purposes</strong>. 
-                It acts as a proof-of-concept for full-stack e-commerce development. It is not a registered business entity and does not conduct commercial activity.
+                VKart is built exclusively for{" "}
+                <strong>learning, skill demonstration, and recruitment purposes</strong>. It acts as
+                a proof-of-concept for full-stack e-commerce development. It is not a registered
+                business entity and does not conduct commercial activity.
               </p>
             </div>
           </section>
@@ -118,20 +128,26 @@ export default function License() {
           {/* 2. License Summary */}
           <section id="license" className="scroll-mt-28">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">2</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                2
+              </span>
               License Summary
             </h2>
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                The original code, UI designs, and architecture of this demo are licensed under a custom Portfolio License:
+                The original code, UI designs, and architecture of this demo are licensed under a
+                custom Portfolio License:
               </p>
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm font-mono text-gray-700 mb-4">
-                © {year} VKart Portfolio Demo <br/>
-                <span className="text-green-600">✓ Permission:</span> Personal learning, code review, portfolio display. <br/>
-                <span className="text-red-500">✕ Restriction:</span> Do not redistribute, resell, or whitelabel as a commercial product.
+                © {year} VKart Portfolio Demo <br />
+                <span className="text-green-600">✓ Permission:</span> Personal learning, code
+                review, portfolio display. <br />
+                <span className="text-red-500">✕ Restriction:</span> Do not redistribute, resell, or
+                whitelabel as a commercial product.
               </div>
               <p>
-                You are free to fork the repository to study the code, but you may not deploy a clone of this site for commercial gain.
+                You are free to fork the repository to study the code, but you may not deploy a
+                clone of this site for commercial gain.
               </p>
             </div>
           </section>
@@ -139,16 +155,19 @@ export default function License() {
           {/* 3. Attribution */}
           <section id="attribution" className="scroll-mt-28">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">3</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                3
+              </span>
               Attribution Template
             </h2>
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                If you adapt significant portions of the UI logic or backend architecture for your own open-source learning project, please include a credit:
+                If you adapt significant portions of the UI logic or backend architecture for your
+                own open-source learning project, please include a credit:
               </p>
               <div className="bg-gray-900 rounded-xl p-4 overflow-x-auto group relative">
                 <code className="text-gray-300 text-xs sm:text-sm font-mono">
-                  // Portions of this code adapted from VKart (Portfolio) <br/>
+                  // Portions of this code adapted from VKart (Portfolio) <br />
                   // © {year} Bala Vardhan Pula.
                 </code>
               </div>
@@ -158,19 +177,24 @@ export default function License() {
           {/* 4. Third Party */}
           <section id="thirdparty" className="scroll-mt-28">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">4</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                4
+              </span>
               Third-Party Assets
             </h2>
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
-                  <span className="font-bold text-gray-900">Heroicons & React Icons:</span> MIT License
+                  <span className="font-bold text-gray-900">Heroicons & React Icons:</span> MIT
+                  License
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="font-bold text-gray-900">DummyJSON:</span> Public Demo Data Source
+                  <span className="font-bold text-gray-900">DummyJSON:</span> Public Demo Data
+                  Source
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="font-bold text-gray-900">Product Images:</span> Sourced from open demo catalogs. Not owned by VKart.
+                  <span className="font-bold text-gray-900">Product Images:</span> Sourced from open
+                  demo catalogs. Not owned by VKart.
                 </li>
               </ul>
             </div>
@@ -179,7 +203,9 @@ export default function License() {
           {/* 5. Dos and Donts */}
           <section id="permissions" className="scroll-mt-28">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">5</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                5
+              </span>
               What You Can Do
             </h2>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -209,12 +235,16 @@ export default function License() {
           {/* 6. Disclaimer */}
           <section id="disclaimer" className="scroll-mt-28">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">6</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                6
+              </span>
               Disclaimer
             </h2>
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
               <p>
-                VKart and all related names, branding, and products used here are fictional or used for demonstration. Any resemblance to actual active commercial entities is coincidental.
+                VKart and all related names, branding, and products used here are fictional or used
+                for demonstration. Any resemblance to actual active commercial entities is
+                coincidental.
               </p>
               <p className="mt-2 text-sm italic">
                 This project is provided "as-is" without warranties of any kind.
@@ -225,22 +255,24 @@ export default function License() {
           {/* 7. Contact */}
           <section id="contact" className="scroll-mt-28 mb-20">
             <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">7</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-100 text-orange-600 text-sm">
+                7
+              </span>
               Contact
             </h2>
             <div className="bg-gray-900 rounded-2xl p-8 text-white shadow-xl">
               <p className="mb-6 text-gray-300">
-                For licensing inquiries, attribution questions, or recruitment opportunities, please reach out.
+                For licensing inquiries, attribution questions, or recruitment opportunities, please
+                reach out.
               </p>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition-colors"
               >
                 <FaEnvelope /> Contact Developer
               </Link>
             </div>
           </section>
-
         </div>
       </div>
     </div>

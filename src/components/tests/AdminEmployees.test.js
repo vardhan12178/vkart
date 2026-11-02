@@ -129,7 +129,9 @@ describe("AdminEmployees Component", () => {
 
   test("shows a server error toast when adding an employee fails", async () => {
     axios.get.mockResolvedValueOnce({ data: { employees: [] } });
-    axios.post.mockRejectedValueOnce({ response: { data: { message: "Email already an employee" } } });
+    axios.post.mockRejectedValueOnce({
+      response: { data: { message: "Email already an employee" } },
+    });
     renderEmployees({ adminRole: "super_admin", permissions: {} });
 
     fireEvent.click(await screen.findByRole("button", { name: /add first employee/i }));

@@ -21,7 +21,9 @@ describe("Careers Component", () => {
 
   test("filters roles by search text", () => {
     renderCareers();
-    fireEvent.change(screen.getByPlaceholderText(/search roles/i), { target: { value: "backend" } });
+    fireEvent.change(screen.getByPlaceholderText(/search roles/i), {
+      target: { value: "backend" },
+    });
 
     expect(screen.getByText("Backend Engineer")).toBeInTheDocument();
     expect(screen.queryByText("Frontend Engineer")).not.toBeInTheDocument();
@@ -38,7 +40,9 @@ describe("Careers Component", () => {
 
   test("shows an empty state when no roles match", () => {
     renderCareers();
-    fireEvent.change(screen.getByPlaceholderText(/search roles/i), { target: { value: "nonexistent-role-xyz" } });
+    fireEvent.change(screen.getByPlaceholderText(/search roles/i), {
+      target: { value: "nonexistent-role-xyz" },
+    });
     expect(screen.getByText(/no roles match/i)).toBeInTheDocument();
   });
 
@@ -55,6 +59,8 @@ describe("Careers Component", () => {
     const applyButtons = screen.getAllByRole("button", { name: /^apply$/i });
     fireEvent.click(applyButtons[0]);
 
-    expect(await screen.findByText(/application submitted for frontend engineer/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/application submitted for frontend engineer/i)
+    ).toBeInTheDocument();
   });
 });

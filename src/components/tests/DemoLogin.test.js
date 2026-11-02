@@ -13,8 +13,17 @@ describe("DemoLogin", () => {
     const onSignedIn = jest.fn();
     render(<DemoLogin kind="shopper" onSignedIn={onSignedIn} />);
     fireEvent.click(screen.getByRole("button", { name: /try the demo shopper/i }));
-    await waitFor(() => expect(onSignedIn).toHaveBeenCalledWith({ authenticated: true, user: { name: "Demo Shopper" } }));
-    expect(axios.post).toHaveBeenCalledWith("/api/auth/demo/shopper", {}, { withCredentials: true });
+    await waitFor(() =>
+      expect(onSignedIn).toHaveBeenCalledWith({
+        authenticated: true,
+        user: { name: "Demo Shopper" },
+      })
+    );
+    expect(axios.post).toHaveBeenCalledWith(
+      "/api/auth/demo/shopper",
+      {},
+      { withCredentials: true }
+    );
   });
 
   test("admin variant uses the admin endpoint and says it is read-only", async () => {
@@ -22,7 +31,9 @@ describe("DemoLogin", () => {
     render(<DemoLogin kind="admin" onSignedIn={() => {}} />);
     expect(screen.getByText(/read-only/i)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /explore the admin demo/i }));
-    await waitFor(() => expect(axios.post).toHaveBeenCalledWith("/api/auth/demo/admin", {}, { withCredentials: true }));
+    await waitFor(() =>
+      expect(axios.post).toHaveBeenCalledWith("/api/auth/demo/admin", {}, { withCredentials: true })
+    );
   });
 
   test("shows an error and lets the visitor retry", async () => {

@@ -16,9 +16,7 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockNavigate,
 }));
 
-const VALID_CART = [
-  { productId: "p1", title: "Widget", quantity: 2, price: 100, thumbnail: "" },
-];
+const VALID_CART = [{ productId: "p1", title: "Widget", quantity: 2, price: 100, thumbnail: "" }];
 
 describe("CheckoutForm Component", () => {
   let queryClient;
@@ -90,8 +88,12 @@ describe("CheckoutForm Component", () => {
   const fillValidForm = () => {
     fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: "Jane Doe" } });
     fireEvent.change(screen.getByLabelText(/mobile number/i), { target: { value: "9876543210" } });
-    fireEvent.change(screen.getByLabelText(/^email address/i), { target: { value: "jane@example.com" } });
-    fireEvent.change(screen.getByLabelText(/address line 1/i), { target: { value: "123 Main St" } });
+    fireEvent.change(screen.getByLabelText(/^email address/i), {
+      target: { value: "jane@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText(/address line 1/i), {
+      target: { value: "123 Main St" },
+    });
     fireEvent.change(screen.getByLabelText(/^city/i), { target: { value: "Pune" } });
     fireEvent.change(screen.getByLabelText(/^state/i), { target: { value: "MH" } });
     fireEvent.change(screen.getByLabelText(/pincode/i), { target: { value: "411001" } });
@@ -170,8 +172,25 @@ describe("CheckoutForm Component", () => {
         return Promise.resolve({
           data: {
             addresses: [
-              { _id: "a1", fullName: "Person One", phone: "9111111111", city: "Pune", state: "MH", pincode: "411001", address1: "St 1", isDefault: true },
-              { _id: "a2", fullName: "Person Two", phone: "9222222222", city: "Delhi", state: "DL", pincode: "110001", address1: "St 2" },
+              {
+                _id: "a1",
+                fullName: "Person One",
+                phone: "9111111111",
+                city: "Pune",
+                state: "MH",
+                pincode: "411001",
+                address1: "St 1",
+                isDefault: true,
+              },
+              {
+                _id: "a2",
+                fullName: "Person Two",
+                phone: "9222222222",
+                city: "Delhi",
+                state: "DL",
+                pincode: "110001",
+                address1: "St 2",
+              },
             ],
           },
         });

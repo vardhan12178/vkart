@@ -5,13 +5,18 @@ import axios from "./axiosInstance";
 import { addToCart } from "../redux/cartSlice";
 import { showToast } from "../utils/toast";
 import {
-  X, Send, Sparkles, MessageCircleMore,
-  ChevronRight, Lightbulb, ArrowRight, ShoppingCart
+  X,
+  Send,
+  Sparkles,
+  MessageCircleMore,
+  ChevronRight,
+  Lightbulb,
+  ArrowRight,
+  ShoppingCart,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat, clearChatPrompt } from "../redux/uiSlice";
 import { Dots } from "./ui/Skeleton";
-
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -25,7 +30,7 @@ const DEFAULT_PROMPTS = [
   "Best gaming phone under 30k",
   "Recommend a lightweight laptop for coding",
   "Top wireless earbuds under 5k",
-  "Best running shoes for daily use"
+  "Best running shoes for daily use",
 ];
 
 const createMessageId = () =>
@@ -51,10 +56,10 @@ const AIChatAssistant = () => {
       greeting: "Hi — I’m the VKart concierge.",
       response: {
         summary: "I can help you find the best products, check prices, or compare specs.",
-        points: ["Try 'Best gaming phone under 30k'", "Or 'Running shoes for men'"]
+        points: ["Try 'Best gaming phone under 30k'", "Or 'Running shoes for men'"],
       },
-      followUp: null
-    }
+      followUp: null,
+    },
   };
 
   const [messages, setMessages] = useState(() => {
@@ -70,7 +75,9 @@ const AIChatAssistant = () => {
 
   // Persist chat to sessionStorage
   useEffect(() => {
-    try { sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages)); } catch {}
+    try {
+      sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages));
+    } catch {}
   }, [messages]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -139,11 +146,9 @@ const AIChatAssistant = () => {
 
   const buildHistory = () => {
     // Only send last 6 exchanges to save tokens/bandwidth
-    return messages.slice(-6).map(msg => ({
+    return messages.slice(-6).map((msg) => ({
       role: msg.type === "user" ? "user" : "assistant",
-      content: msg.type === "user"
-        ? msg.text
-        : msg.structured?.response?.summary || ""
+      content: msg.type === "user" ? msg.text : msg.structured?.response?.summary || "",
     }));
   };
 
@@ -165,7 +170,9 @@ const AIChatAssistant = () => {
     try {
       const { data } = await axios.post("/api/ai/chat/rank", { token }, { timeout: 30000 });
       if (data?.reranked && Array.isArray(data.products) && data.products.length) return data;
-    } catch { /* fall back to the search results */ }
+    } catch {
+      /* fall back to the search results */
+    }
     return null;
   };
 
@@ -198,7 +205,11 @@ const AIChatAssistant = () => {
       if (rank?.token) {
         setLoadingText("Our AI is picking the best matches for you…");
         const ranked = await fetchRanking(rank.token);
-        appendBotMessage(ranked ? { structured: ranked.structured, products: ranked.products } : { structured, products });
+        appendBotMessage(
+          ranked
+            ? { structured: ranked.structured, products: ranked.products }
+            : { structured, products }
+        );
       } else {
         appendBotMessage({ structured, products });
       }
@@ -207,10 +218,11 @@ const AIChatAssistant = () => {
       appendBotMessage({
         structured: {
           response: {
-            summary: "I'm having a little trouble connecting right now. Please try again in a moment.",
-            points: []
-          }
-        }
+            summary:
+              "I'm having a little trouble connecting right now. Please try again in a moment.",
+            points: [],
+          },
+        },
       });
     } finally {
       setIsLoading(false);
@@ -248,18 +260,20 @@ const AIChatAssistant = () => {
       showToast("Choose a variant to add it to your bag", "info");
       return;
     }
-    dispatch(addToCart({
-      catalog: "v2",
-      productId: prod._id,
-      sku: prod.sku,
-      slug: prod.slug,
-      title: prod.title,
-      price: prod.price,
-      thumbnail: prod.thumbnail,
-      category: prod.category,
-      discountPercentage: prod.discountPercent || 0,
-      quantity: 1,
-    }));
+    dispatch(
+      addToCart({
+        catalog: "v2",
+        productId: prod._id,
+        sku: prod.sku,
+        slug: prod.slug,
+        title: prod.title,
+        price: prod.price,
+        thumbnail: prod.thumbnail,
+        category: prod.category,
+        discountPercentage: prod.discountPercent || 0,
+        quantity: 1,
+      })
+    );
     showToast("Added to cart", "success");
   };
 
@@ -276,12 +290,12 @@ const AIChatAssistant = () => {
     // Animation variants for staggered entrance
     const containerVariants = {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+      visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
     };
 
     const itemVariants = {
       hidden: { opacity: 0, y: 10 },
-      visible: { opacity: 1, y: 0 }
+      visible: { opacity: 1, y: 0 },
     };
 
     return (
@@ -314,7 +328,8 @@ const AIChatAssistant = () => {
               {response.points && response.points.length > 0 && (
                 <ul className="mt-2.5 space-y-1.5">
                   {response.points.map((point, i) => {
-                    const isSuggestion = point.toLowerCase().includes("try '") || point.toLowerCase().includes("or '");
+                    const isSuggestion =
+                      point.toLowerCase().includes("try '") || point.toLowerCase().includes("or '");
                     const cleanPrompt = point.replace(/^(Try|Or)\s*['"](.*)['"]\s*$/i, "$2");
 
                     return (
@@ -372,9 +387,10 @@ const AIChatAssistant = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleProductClick(prod)}
                   className={`relative flex cursor-pointer gap-2.5 sm:gap-3.5 rounded-xl border bg-[#fffdf8] p-2.5 sm:p-3 transition-all
-                    ${isBestMatch
-                      ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10 shadow-sm"
-                      : "border-black/[0.06] hover:border-black/15 shadow-xs"
+                    ${
+                      isBestMatch
+                        ? "border-[#a85d37]/30 ring-1 ring-[#a85d37]/10 shadow-sm"
+                        : "border-black/[0.06] hover:border-black/15 shadow-xs"
                     }`}
                 >
                   {/* Thumbnail */}
@@ -383,14 +399,18 @@ const AIChatAssistant = () => {
                       src={prod.thumbnail}
                       alt={prod.title}
                       className="w-full h-full object-contain mix-blend-multiply"
-                      onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }}
+                      onError={(e) => {
+                        e.target.src = "https://via.placeholder.com/150";
+                      }}
                     />
                   </div>
 
                   {/* Info */}
                   <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <div className="flex justify-between items-start gap-1.5">
-                      <h4 className="line-clamp-1 text-xs sm:text-sm font-bold text-[#1d1c19]">{prod.title}</h4>
+                      <h4 className="line-clamp-1 text-xs sm:text-sm font-bold text-[#1d1c19]">
+                        {prod.title}
+                      </h4>
                       {isBestMatch && (
                         <span className="flex shrink-0 items-center gap-0.5 rounded-full bg-[#a85d37] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-white">
                           <Sparkles size={7} /> Top Pick
@@ -398,15 +418,22 @@ const AIChatAssistant = () => {
                       )}
                     </div>
                     <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wide text-[#817c73] mt-0.5">
-                      {prod.brand ? `${prod.brand} · ` : ""}{prod.category || 'VKart'}
+                      {prod.brand ? `${prod.brand} · ` : ""}
+                      {prod.category || "VKart"}
                     </p>
                     {prod.reason && !isBestMatch && (
-                      <p className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-[#5f5b52]">{prod.reason}</p>
+                      <p className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-[#5f5b52]">
+                        {prod.reason}
+                      </p>
                     )}
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-xs sm:text-sm font-bold text-[#1d1c19]">{INR(prod.price)}</span>
-                      <span className={`text-[9px] font-bold ${prod.stock > 0 ? 'text-[#5f6a52]' : 'text-[#a85d37]'}`}>
-                        {prod.stock > 0 ? 'In stock' : 'Out of stock'}
+                      <span className="text-xs sm:text-sm font-bold text-[#1d1c19]">
+                        {INR(prod.price)}
+                      </span>
+                      <span
+                        className={`text-[9px] font-bold ${prod.stock > 0 ? "text-[#5f6a52]" : "text-[#a85d37]"}`}
+                      >
+                        {prod.stock > 0 ? "In stock" : "Out of stock"}
                       </span>
                     </div>
                   </div>
@@ -432,7 +459,9 @@ const AIChatAssistant = () => {
         {/* 5. Alternatives / Suggestions */}
         {alternatives && alternatives.length > 0 && (
           <motion.div variants={itemVariants} className="flex flex-wrap gap-1.5 pt-1">
-            <span className="mb-0.5 w-full text-[9px] font-bold uppercase tracking-wider text-[#8e887e]">Also consider:</span>
+            <span className="mb-0.5 w-full text-[9px] font-bold uppercase tracking-wider text-[#8e887e]">
+              Also consider:
+            </span>
             {alternatives.map((alt, i) => (
               <button
                 key={i}
@@ -453,7 +482,10 @@ const AIChatAssistant = () => {
             className="group mt-1 flex w-full items-center justify-between rounded-full bg-[#1d1c19] px-3.5 py-2 text-xs font-medium text-white transition-colors hover:bg-black"
           >
             <span>{followUp}</span>
-            <ArrowRight size={14} className="text-[#d7d1c7] transition-transform group-hover:translate-x-1" />
+            <ArrowRight
+              size={14}
+              className="text-[#d7d1c7] transition-transform group-hover:translate-x-1"
+            />
           </motion.button>
         )}
       </motion.div>
@@ -464,11 +496,10 @@ const AIChatAssistant = () => {
   // 🚀 MAIN RENDER
   // ---------------------------------------------------------
 
-  const hideToggle = ["/cart", "/checkout"].some(path => location.pathname.startsWith(path));
+  const hideToggle = ["/cart", "/checkout"].some((path) => location.pathname.startsWith(path));
 
   return (
     <div className="premium-assistant fixed inset-0 z-[100] pointer-events-none flex items-end justify-center md:block md:pb-0">
-
       {/* 0. Mobile Backdrop */}
       <AnimatePresence>
         {isOpen && (
@@ -500,8 +531,12 @@ const AIChatAssistant = () => {
             </div>
             {showDesktopLauncher && (
               <span className="hidden flex-col items-start leading-none md:flex">
-                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">Product concierge</span>{" "}
-                <span className="mt-1.5 text-sm font-bold tracking-[-0.01em] text-[#1d1c19]">Ask VKart</span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#625c53]">
+                  Product concierge
+                </span>{" "}
+                <span className="mt-1.5 text-sm font-bold tracking-[-0.01em] text-[#1d1c19]">
+                  Ask VKart
+                </span>
               </span>
             )}
           </motion.button>
@@ -531,10 +566,14 @@ const AIChatAssistant = () => {
                   <Sparkles size={15} />
                 </div>
                 <div>
-                  <h3 className="font-editorial text-base sm:text-xl text-[#1d1c19] leading-tight font-bold tracking-tight">Ask VKart</h3>
+                  <h3 className="font-editorial text-base sm:text-xl text-[#1d1c19] leading-tight font-bold tracking-tight">
+                    Ask VKart
+                  </h3>
                   <div className="flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#59634f]" />
-                    <p className="text-[9px] text-[#625c53] font-bold uppercase tracking-[0.14em]">Product concierge</p>
+                    <p className="text-[9px] text-[#625c53] font-bold uppercase tracking-[0.14em]">
+                      Product concierge
+                    </p>
                   </div>
                 </div>
               </div>
@@ -548,7 +587,10 @@ const AIChatAssistant = () => {
             </div>
 
             {/* --- Messages Area --- */}
-            <div ref={scrollAreaRef} className="premium-assistant-messages flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3.5 sm:space-y-4 bg-[#f6f3ed]">
+            <div
+              ref={scrollAreaRef}
+              className="premium-assistant-messages flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3.5 sm:space-y-4 bg-[#f6f3ed]"
+            >
               {messages.map((msg) => (
                 <div
                   key={msg.id}
@@ -576,7 +618,9 @@ const AIChatAssistant = () => {
                   animate={{ opacity: 1 }}
                   className="flex items-center gap-2 pl-2 text-xs font-semibold text-[#8e887e]"
                 >
-                  <span className="text-[#a85d37]"><Dots /></span>
+                  <span className="text-[#a85d37]">
+                    <Dots />
+                  </span>
                   <span role="status">{loadingText || "Thinking..."}</span>
                 </motion.div>
               )}
@@ -592,7 +636,9 @@ const AIChatAssistant = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                  placeholder={cooldown > 0 ? `Wait ${cooldown}s...` : "Ask anything about products..."}
+                  placeholder={
+                    cooldown > 0 ? `Wait ${cooldown}s...` : "Ask anything about products..."
+                  }
                   className="w-full bg-[#f5f1e9] text-xs sm:text-sm h-10 sm:h-12 pl-4 pr-11 rounded-full border border-black/[0.07] focus:bg-white focus:border-[#a85d37]/40 focus:ring-2 focus:ring-[#a85d37]/10 transition-all outline-none font-medium placeholder:text-[#969086]"
                   disabled={isLoading || cooldown > 0}
                 />
@@ -601,9 +647,10 @@ const AIChatAssistant = () => {
                   onClick={handleSend}
                   disabled={isLoading || cooldown > 0 || !input.trim()}
                   className={`absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full h-7 w-7 sm:h-8 sm:w-8 flex items-center justify-center transition-all
-                    ${!input.trim() || isLoading
-                      ? "cursor-not-allowed bg-transparent text-[#c4beb4]"
-                      : "bg-[#1d1c19] text-white hover:bg-black active:scale-95"
+                    ${
+                      !input.trim() || isLoading
+                        ? "cursor-not-allowed bg-transparent text-[#c4beb4]"
+                        : "bg-[#1d1c19] text-white hover:bg-black active:scale-95"
                     }`}
                   aria-label="Send message"
                 >
@@ -611,7 +658,6 @@ const AIChatAssistant = () => {
                 </button>
               </div>
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>

@@ -42,7 +42,11 @@ describe("Profile Component", () => {
     });
   });
 
-  const mockProfileEndpoints = ({ addresses = [], wallet = { balance: 0, transactions: [] }, orders = [] } = {}) => {
+  const mockProfileEndpoints = ({
+    addresses = [],
+    wallet = { balance: 0, transactions: [] },
+    orders = [],
+  } = {}) => {
     axios.get.mockImplementation((url) => {
       if (url === "/api/profile") return Promise.resolve({ data: USER });
       if (url === "/api/profile/orders") return Promise.resolve({ data: orders });
@@ -113,7 +117,9 @@ describe("Profile Component", () => {
 
     fireEvent.change(addrLabel("Full Name").nextElementSibling, { target: { value: "Jane Doe" } });
     fireEvent.change(addrLabel("Phone").nextElementSibling, { target: { value: "9876543210" } });
-    fireEvent.change(addrLabel("Address Line 1").nextElementSibling, { target: { value: "123 Main St" } });
+    fireEvent.change(addrLabel("Address Line 1").nextElementSibling, {
+      target: { value: "123 Main St" },
+    });
     fireEvent.change(addrLabel("City").nextElementSibling, { target: { value: "Pune" } });
     fireEvent.change(addrLabel("State").nextElementSibling, { target: { value: "MH" } });
     fireEvent.change(addrLabel("Pincode").nextElementSibling, { target: { value: "411001" } });
@@ -172,14 +178,22 @@ describe("Profile Component", () => {
     expect(await screen.findByText(/all fields are required/i)).toBeInTheDocument();
 
     fireEvent.change(screen.getByPlaceholderText("••••••••"), { target: { value: "oldpass123" } });
-    fireEvent.change(screen.getByPlaceholderText(/min 8 characters/i), { target: { value: "short" } });
-    fireEvent.change(screen.getByPlaceholderText(/re-enter new password/i), { target: { value: "short" } });
+    fireEvent.change(screen.getByPlaceholderText(/min 8 characters/i), {
+      target: { value: "short" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/re-enter new password/i), {
+      target: { value: "short" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /update password/i }));
     expect(await screen.findByText(/at least 8 characters/i)).toBeInTheDocument();
 
     axios.put.mockResolvedValueOnce({ data: { ok: true } });
-    fireEvent.change(screen.getByPlaceholderText(/min 8 characters/i), { target: { value: "newpassword123" } });
-    fireEvent.change(screen.getByPlaceholderText(/re-enter new password/i), { target: { value: "newpassword123" } });
+    fireEvent.change(screen.getByPlaceholderText(/min 8 characters/i), {
+      target: { value: "newpassword123" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/re-enter new password/i), {
+      target: { value: "newpassword123" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /update password/i }));
 
     await waitFor(() => {

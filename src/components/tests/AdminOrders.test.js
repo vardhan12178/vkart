@@ -115,7 +115,9 @@ describe("AdminOrders Component", () => {
     renderOrders();
     await screen.findByRole("table");
 
-    fireEvent.change(screen.getByPlaceholderText(/search orders/i), { target: { value: "no-match-xyz" } });
+    fireEvent.change(screen.getByPlaceholderText(/search orders/i), {
+      target: { value: "no-match-xyz" },
+    });
     expect(await screen.findByText(/no orders found/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /clear filters/i }));

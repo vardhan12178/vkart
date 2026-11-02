@@ -5,9 +5,27 @@ import { Helmet } from "react-helmet-async";
 import { useDispatch } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import {
-  FiSmartphone, FiMonitor, FiTablet, FiTv, FiHeadphones, FiWatch, FiDroplet, FiUser, FiShoppingBag,
-  FiHome, FiCoffee, FiScissors, FiActivity, FiCpu, FiChevronRight, FiChevronLeft, FiTruck, FiRotateCcw,
-  FiShield, FiCheckCircle, FiZap,
+  FiSmartphone,
+  FiMonitor,
+  FiTablet,
+  FiTv,
+  FiHeadphones,
+  FiWatch,
+  FiDroplet,
+  FiUser,
+  FiShoppingBag,
+  FiHome,
+  FiCoffee,
+  FiScissors,
+  FiActivity,
+  FiCpu,
+  FiChevronRight,
+  FiChevronLeft,
+  FiTruck,
+  FiRotateCcw,
+  FiShield,
+  FiCheckCircle,
+  FiZap,
 } from "react-icons/fi";
 import { openChat } from "../../redux/uiSlice";
 import { fetchProducts, fetchSimilar, formatPrice } from "../shop/catalogApi";
@@ -23,9 +41,20 @@ const ACCENT = "#a85d37";
 // Terracotta for small text on the tinted hero slides (the brand accent is 3.8:1 there; this is 5:1)
 const ACCENT_TEXT = "#8f4c2b";
 const ICONS = {
-  mobiles: FiSmartphone, laptops: FiCpu, tablets: FiTablet, tvs: FiTv, monitors: FiMonitor, audio: FiHeadphones,
-  wearables: FiWatch, skincare: FiDroplet, "fashion-men": FiUser, "fashion-women": FiShoppingBag,
-  appliances: FiHome, "kitchen-appliances": FiCoffee, grooming: FiScissors, sports: FiActivity,
+  mobiles: FiSmartphone,
+  laptops: FiCpu,
+  tablets: FiTablet,
+  tvs: FiTv,
+  monitors: FiMonitor,
+  audio: FiHeadphones,
+  wearables: FiWatch,
+  skincare: FiDroplet,
+  "fashion-men": FiUser,
+  "fashion-women": FiShoppingBag,
+  appliances: FiHome,
+  "kitchen-appliances": FiCoffee,
+  grooming: FiScissors,
+  sports: FiActivity,
 };
 const catLink = (cat, extra = "") => `/products?cat=${cat}${extra}`;
 const productLink = (p) => `/products/${p.slug}`;
@@ -49,7 +78,10 @@ function Section({ title, subtitle, to, children, className = "" }) {
             {subtitle && <p className="text-xs text-muted-light sm:text-sm">{subtitle}</p>}
           </div>
           {to && (
-            <Link to={to} className="flex flex-none items-center gap-1 rounded-full bg-ink px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-black">
+            <Link
+              to={to}
+              className="flex flex-none items-center gap-1 rounded-full bg-ink px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-black"
+            >
               View all <FiChevronRight />
             </Link>
           )}
@@ -66,19 +98,38 @@ function Tile({ p, showOff = true }) {
     <Link to={productLink(p)} className="group flex w-36 flex-none flex-col sm:w-44">
       <div className="relative aspect-square overflow-hidden rounded-xl bg-[#f4f0e8]">
         {p.image && (
-          <img src={p.image.thumb} alt={p.image.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
-            className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.04] ${fashion ? "object-cover" : "object-contain p-3 mix-blend-multiply"}`} />
+          <img
+            src={p.image.thumb}
+            alt={p.image.alt || p.title}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.04] ${fashion ? "object-cover" : "object-contain p-3 mix-blend-multiply"}`}
+          />
         )}
         {showOff && p.discountPercent >= 5 && (
-          <span className="absolute left-2 top-2 rounded-full bg-ok px-2 py-0.5 text-[10px] font-bold text-white">{p.discountPercent}% off</span>
+          <span className="absolute left-2 top-2 rounded-full bg-ok px-2 py-0.5 text-[10px] font-bold text-white">
+            {p.discountPercent}% off
+          </span>
         )}
       </div>
-      <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-muted-light">{p.brand}</p>
-      <p className="line-clamp-2 text-xs font-medium leading-snug text-ink sm:text-sm">{p.title.replace(`${p.brand} `, "")}</p>
-      {p.rating && <div className="mt-1"><RatingChip rating={p.rating} /></div>}
+      <p className="mt-2 text-[10px] font-bold uppercase tracking-wider text-muted-light">
+        {p.brand}
+      </p>
+      <p className="line-clamp-2 text-xs font-medium leading-snug text-ink sm:text-sm">
+        {p.title.replace(`${p.brand} `, "")}
+      </p>
+      {p.rating && (
+        <div className="mt-1">
+          <RatingChip rating={p.rating} />
+        </div>
+      )}
       <p className="mt-0.5 text-sm">
         <span className="font-bold text-ink">{formatPrice(p.priceRange?.min ?? p.price)}</span>
-        {p.discountPercent > 0 && <span className="ml-1.5 text-[11px] text-muted-light line-through">{formatPrice(p.mrp)}</span>}
+        {p.discountPercent > 0 && (
+          <span className="ml-1.5 text-[11px] text-muted-light line-through">
+            {formatPrice(p.mrp)}
+          </span>
+        )}
       </p>
     </Link>
   );
@@ -99,10 +150,15 @@ function Rail({ query }) {
       </div>
     );
   }
-  if (!items.length) return <p className="py-6 text-center text-sm text-muted-light">Nothing to show here right now.</p>;
+  if (!items.length)
+    return (
+      <p className="py-6 text-center text-sm text-muted-light">Nothing to show here right now.</p>
+    );
   return (
     <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-4">
-      {items.map((p) => <Tile key={p.slug} p={p} />)}
+      {items.map((p) => (
+        <Tile key={p.slug} p={p} />
+      ))}
     </div>
   );
 }
@@ -122,7 +178,10 @@ function PersonalRows() {
       for (let i = 0; out.length < 12 && i < 8; i++) {
         for (const list of lists) {
           const p = list?.products?.[i];
-          if (p && !seen.has(p.slug)) { seen.add(p.slug); out.push(p); }
+          if (p && !seen.has(p.slug)) {
+            seen.add(p.slug);
+            out.push(p);
+          }
         }
       }
       return { products: out };
@@ -155,7 +214,9 @@ function Hero({ slides }) {
 
   useEffect(() => {
     if (slides.length < 2) return undefined;
-    const t = setInterval(() => { if (!paused.current) setIdx((i) => (i + 1) % slides.length); }, 5000);
+    const t = setInterval(() => {
+      if (!paused.current) setIdx((i) => (i + 1) % slides.length);
+    }, 5000);
     return () => clearInterval(t);
   }, [slides.length]);
 
@@ -177,33 +238,75 @@ function Hero({ slides }) {
     }, 150);
   };
 
-  if (!slides.length) return <div className="aspect-[16/9] animate-pulse rounded-2xl bg-[#ebe4d8] sm:aspect-[3/1]" />;
+  if (!slides.length)
+    return <div className="aspect-[16/9] animate-pulse rounded-2xl bg-[#ebe4d8] sm:aspect-[3/1]" />;
 
   return (
-    <div className="relative" onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }}>
-      <div ref={strip} className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        onScroll={onScroll}>
+    <div
+      className="relative"
+      onMouseEnter={() => {
+        paused.current = true;
+      }}
+      onMouseLeave={() => {
+        paused.current = false;
+      }}
+    >
+      <div
+        ref={strip}
+        className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        onScroll={onScroll}
+      >
         {slides.map((s) => (
-          <Link key={s.key} to={s.to} className={`relative grid w-full flex-none snap-center grid-cols-[1.1fr_1fr] items-center overflow-hidden sm:grid-cols-2 ${s.bg}`}>
+          <Link
+            key={s.key}
+            to={s.to}
+            className={`relative grid w-full flex-none snap-center grid-cols-[1.1fr_1fr] items-center overflow-hidden sm:grid-cols-2 ${s.bg}`}
+          >
             <div className="z-10 px-5 py-6 sm:px-12 sm:py-12">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] sm:text-xs" style={{ color: s.accent }}>{s.eyebrow}</p>
-              <h2 className="mt-2 text-xl font-bold leading-tight sm:text-4xl" style={{ color: s.ink }}>{s.title}</h2>
-              <p className="mt-1.5 text-xs sm:mt-3 sm:text-base" style={{ color: s.sub }}>{s.copy}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-bold sm:mt-6 sm:px-6 sm:py-2.5 sm:text-sm"
-                style={{ background: s.ink, color: s.bgHex }}>
+              <p
+                className="text-[10px] font-bold uppercase tracking-[0.2em] sm:text-xs"
+                style={{ color: s.accent }}
+              >
+                {s.eyebrow}
+              </p>
+              <h2
+                className="mt-2 text-xl font-bold leading-tight sm:text-4xl"
+                style={{ color: s.ink }}
+              >
+                {s.title}
+              </h2>
+              <p className="mt-1.5 text-xs sm:mt-3 sm:text-base" style={{ color: s.sub }}>
+                {s.copy}
+              </p>
+              <span
+                className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-bold sm:mt-6 sm:px-6 sm:py-2.5 sm:text-sm"
+                style={{ background: s.ink, color: s.bgHex }}
+              >
                 {s.cta} <FiChevronRight />
               </span>
             </div>
             {s.dark ? (
               // Dark banners: product on a light panel (multiply blending would turn it black)
               <div className="relative mr-4 h-36 rounded-2xl bg-[#f4f0e8] sm:mr-10 sm:h-60">
-                {s.image && <img src={s.image.md} alt={s.image.alt || s.title} referrerPolicy="no-referrer"
-                  className="absolute inset-0 h-full w-full object-contain p-3 mix-blend-multiply sm:p-5" />}
+                {s.image && (
+                  <img
+                    src={s.image.md}
+                    alt={s.image.alt || s.title}
+                    referrerPolicy="no-referrer"
+                    className="absolute inset-0 h-full w-full object-contain p-3 mix-blend-multiply sm:p-5"
+                  />
+                )}
               </div>
             ) : (
               <div className="relative h-44 sm:h-72">
-                {s.image && <img src={s.image.md} alt={s.image.alt || s.title} referrerPolicy="no-referrer"
-                  className={`absolute inset-0 h-full w-full ${s.cover ? "object-cover" : "object-contain p-4 sm:p-6 mix-blend-multiply"}`} />}
+                {s.image && (
+                  <img
+                    src={s.image.md}
+                    alt={s.image.alt || s.title}
+                    referrerPolicy="no-referrer"
+                    className={`absolute inset-0 h-full w-full ${s.cover ? "object-cover" : "object-contain p-4 sm:p-6 mix-blend-multiply"}`}
+                  />
+                )}
               </div>
             )}
           </Link>
@@ -211,16 +314,39 @@ function Hero({ slides }) {
       </div>
       {slides.length > 1 && (
         <>
-          <button type="button" aria-label="Previous slide" onClick={() => setIdx((idx - 1 + slides.length) % slides.length)}
-            className="absolute left-3 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow md:flex"><FiChevronLeft /></button>
-          <button type="button" aria-label="Next slide" onClick={() => setIdx((idx + 1) % slides.length)}
-            className="absolute right-3 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow md:flex"><FiChevronRight /></button>
+          <button
+            type="button"
+            aria-label="Previous slide"
+            onClick={() => setIdx((idx - 1 + slides.length) % slides.length)}
+            className="absolute left-3 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow md:flex"
+          >
+            <FiChevronLeft />
+          </button>
+          <button
+            type="button"
+            aria-label="Next slide"
+            onClick={() => setIdx((idx + 1) % slides.length)}
+            className="absolute right-3 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow md:flex"
+          >
+            <FiChevronRight />
+          </button>
           <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
             {slides.map((s, i) => (
-              <button key={s.key} type="button" aria-label={`Slide ${i + 1}`} onClick={() => setIdx(i)}
-                className={`h-1.5 rounded-full transition-all ${slides[idx]?.dark
-                  ? (i === idx ? "w-6 bg-white" : "w-1.5 bg-white/40")
-                  : (i === idx ? "w-6 bg-ink" : "w-1.5 bg-black/25")}`} />
+              <button
+                key={s.key}
+                type="button"
+                aria-label={`Slide ${i + 1}`}
+                onClick={() => setIdx(i)}
+                className={`h-1.5 rounded-full transition-all ${
+                  slides[idx]?.dark
+                    ? i === idx
+                      ? "w-6 bg-white"
+                      : "w-1.5 bg-white/40"
+                    : i === idx
+                      ? "w-6 bg-ink"
+                      : "w-1.5 bg-black/25"
+                }`}
+              />
             ))}
           </div>
         </>
@@ -236,19 +362,36 @@ function CategoryCard({ title, cat, query }) {
     <div className="flex min-w-0 flex-col rounded-2xl bg-paper p-3 ring-1 ring-line sm:p-4">
       <h3 className="text-sm font-bold text-ink sm:text-base">{title}</h3>
       <div className="mt-2 grid flex-1 grid-cols-2 gap-1.5 sm:mt-3 sm:gap-2.5">
-        {(items.length ? items : Array.from({ length: 4 }, () => null)).map((p, i) => (
+        {(items.length ? items : Array.from({ length: 4 }, () => null)).map((p, i) =>
           p ? (
             <Link key={p.slug} to={productLink(p)} className="group">
               <div className="aspect-square overflow-hidden rounded-lg bg-[#f4f0e8]">
-                {p.image && <img src={p.image.thumb} alt={p.image.alt || p.title} loading="lazy" referrerPolicy="no-referrer"
-                  className={`h-full w-full transition group-hover:scale-105 ${p.category === "fashion" ? "object-cover" : "object-contain p-2 mix-blend-multiply"}`} />}
+                {p.image && (
+                  <img
+                    src={p.image.thumb}
+                    alt={p.image.alt || p.title}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className={`h-full w-full transition group-hover:scale-105 ${p.category === "fashion" ? "object-cover" : "object-contain p-2 mix-blend-multiply"}`}
+                  />
+                )}
               </div>
-              <p className="mt-1 line-clamp-1 hidden text-[11px] text-[#5f5b52] sm:block">{p.title.replace(`${p.brand} `, "")}</p>
+              <p className="mt-1 line-clamp-1 hidden text-[11px] text-[#5f5b52] sm:block">
+                {p.title.replace(`${p.brand} `, "")}
+              </p>
             </Link>
-          ) : <div key={i} className="aspect-square animate-pulse rounded-lg bg-tint" />
-        ))}
+          ) : (
+            <div key={i} className="aspect-square animate-pulse rounded-lg bg-tint" />
+          )
+        )}
       </div>
-      <Link to={catLink(cat)} className="mt-2 text-[11px] font-semibold sm:mt-3 sm:text-xs" style={{ color: ACCENT }}>See more →</Link>
+      <Link
+        to={catLink(cat)}
+        className="mt-2 text-[11px] font-semibold sm:mt-3 sm:text-xs"
+        style={{ color: ACCENT }}
+      >
+        See more →
+      </Link>
     </div>
   );
 }
@@ -274,24 +417,64 @@ export default function Home() {
 
   const slides = [
     phones.data?.products?.length && {
-      key: "phones", to: catLink("mobiles"), bg: "bg-[#e9e3d8]", bgHex: "#e9e3d8", ink: "#1d1c19", sub: "#5f5b52", accent: ACCENT_TEXT,
-      eyebrow: "New season phones", title: "Flagships to everyday 5G", copy: `${phones.data.total} phones from top brands, from ${formatPrice(minPriceOf(phones))}.`,
-      cta: "Shop phones", image: firstImage(phones),
+      key: "phones",
+      to: catLink("mobiles"),
+      bg: "bg-[#e9e3d8]",
+      bgHex: "#e9e3d8",
+      ink: "#1d1c19",
+      sub: "#5f5b52",
+      accent: ACCENT_TEXT,
+      eyebrow: "New season phones",
+      title: "Flagships to everyday 5G",
+      copy: `${phones.data.total} phones from top brands, from ${formatPrice(minPriceOf(phones))}.`,
+      cta: "Shop phones",
+      image: firstImage(phones),
     },
     audio.data?.products?.length && {
-      key: "audio", to: catLink("audio", ""), dark: true, bg: "bg-ink", bgHex: "#1d1c19", ink: "#fffdf8", sub: "#cfc7b8", accent: "#e0a37f",
-      eyebrow: "Sound, upgraded", title: maxOff(audio) ? `Earbuds & headphones up to ${maxOff(audio)}% off` : "Earbuds & headphones",
-      copy: "Noise cancelling, all-day battery, studio sound.", cta: "Explore audio", image: firstImage(audio),
+      key: "audio",
+      to: catLink("audio", ""),
+      dark: true,
+      bg: "bg-ink",
+      bgHex: "#1d1c19",
+      ink: "#fffdf8",
+      sub: "#cfc7b8",
+      accent: "#e0a37f",
+      eyebrow: "Sound, upgraded",
+      title: maxOff(audio)
+        ? `Earbuds & headphones up to ${maxOff(audio)}% off`
+        : "Earbuds & headphones",
+      copy: "Noise cancelling, all-day battery, studio sound.",
+      cta: "Explore audio",
+      image: firstImage(audio),
     },
     women.data?.products?.length && {
-      key: "women", to: catLink("fashion-women"), bg: "bg-[#f1e4da]", bgHex: "#f1e4da", ink: "#3b2a22", sub: "#75483b", accent: ACCENT_TEXT,
-      eyebrow: "The festive edit", title: "Sarees, kurtas & jewellery", copy: `From ${formatPrice(minPriceOf(women))}. Handpicked from Indian labels.`,
-      cta: "Shop women", image: firstImage(women), cover: true,
+      key: "women",
+      to: catLink("fashion-women"),
+      bg: "bg-[#f1e4da]",
+      bgHex: "#f1e4da",
+      ink: "#3b2a22",
+      sub: "#75483b",
+      accent: ACCENT_TEXT,
+      eyebrow: "The festive edit",
+      title: "Sarees, kurtas & jewellery",
+      copy: `From ${formatPrice(minPriceOf(women))}. Handpicked from Indian labels.`,
+      cta: "Shop women",
+      image: firstImage(women),
+      cover: true,
     },
     laptops.data?.products?.length && {
-      key: "laptops", to: catLink("laptops"), bg: "bg-[#e4e7e1]", bgHex: "#e4e7e1", ink: "#1f2a1f", sub: "#4e5c47", accent: "#4e5c47",
-      eyebrow: "Work & play", title: "Laptops for every desk", copy: `Thin-and-light to gaming, from ${formatPrice(minPriceOf(laptops))}.`,
-      cta: "Shop laptops", image: firstImage(laptops),
+      key: "laptops",
+      to: catLink("laptops"),
+      bg: "bg-[#e4e7e1]",
+      bgHex: "#e4e7e1",
+      ink: "#1f2a1f",
+      sub: "#4e5c47",
+      accent: "#4e5c47",
+      eyebrow: "Work & play",
+      title: "Laptops for every desk",
+      copy: `Thin-and-light to gaming, from ${formatPrice(minPriceOf(laptops))}.`,
+      cta: "Shop laptops",
+      image: firstImage(laptops),
     },
   ].filter(Boolean);
 
@@ -307,7 +490,10 @@ export default function Home() {
       <h1 className="sr-only">VKart: curated shopping with fast delivery</h1>
       <Helmet>
         <title>VKart | Phones, fashion, beauty & more</title>
-        <meta name="description" content="Shop phones, laptops, audio, fashion, skincare and home appliances from top brands on VKart." />
+        <meta
+          name="description"
+          content="Shop phones, laptops, audio, fashion, skincare and home appliances from top brands on VKart."
+        />
       </Helmet>
       <TwoFactorNudge />
 
@@ -317,7 +503,11 @@ export default function Home() {
           {Object.entries(CATEGORIES).map(([k, name]) => {
             const Icon = ICONS[k] || FiShoppingBag;
             return (
-              <Link key={k} to={catLink(k)} className="group flex w-[72px] flex-none flex-col items-center gap-1.5 sm:w-[80px]">
+              <Link
+                key={k}
+                to={catLink(k)}
+                className="group flex w-[72px] flex-none flex-col items-center gap-1.5 sm:w-[80px]"
+              >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-tint text-xl text-[#5f5b52] transition group-hover:bg-ink group-hover:text-white">
                   <Icon />
                 </span>
@@ -335,7 +525,10 @@ export default function Home() {
       {/* Trust strip */}
       <div className="mx-auto mt-3 grid max-w-7xl grid-cols-2 gap-2 px-3 sm:mt-4 sm:grid-cols-4 sm:px-4">
         {trust.map(({ icon: Icon, title, text }) => (
-          <div key={title} className="flex items-center gap-3 rounded-xl bg-paper px-3 py-3 ring-1 ring-line">
+          <div
+            key={title}
+            className="flex items-center gap-3 rounded-xl bg-paper px-3 py-3 ring-1 ring-line"
+          >
             <Icon className="flex-none text-xl" style={{ color: ACCENT }} />
             <div className="min-w-0">
               <p className="text-xs font-bold text-ink sm:text-sm">{title}</p>
@@ -360,7 +553,11 @@ export default function Home() {
           <CategoryCard title="Home appliances" cat="appliances" query={home} />
         </section>
 
-        <Section title="Best of smartphones" subtitle={phones.data ? `${phones.data.total} models from top brands` : undefined} to={catLink("mobiles")}>
+        <Section
+          title="Best of smartphones"
+          subtitle={phones.data ? `${phones.data.total} models from top brands` : undefined}
+          to={catLink("mobiles")}
+        >
           <Rail query={phones} />
         </Section>
 
@@ -368,12 +565,22 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-3 sm:px-4">
           <div className="flex flex-col items-start gap-4 overflow-hidden rounded-2xl bg-ink p-5 text-white sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <div>
-              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#e0a37f]"><FiZap /> Ask VKart</p>
-              <h2 className="mt-2 text-xl font-bold sm:text-2xl">Not sure what to buy? Just ask.</h2>
-              <p className="mt-1 text-sm text-[#cfc7b8]">"Gaming phone under 40k with a big battery" · "Serum for dark spots" · "Saree for a wedding"</p>
+              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#e0a37f]">
+                <FiZap /> Ask VKart
+              </p>
+              <h2 className="mt-2 text-xl font-bold sm:text-2xl">
+                Not sure what to buy? Just ask.
+              </h2>
+              <p className="mt-1 text-sm text-[#cfc7b8]">
+                "Gaming phone under 40k with a big battery" · "Serum for dark spots" · "Saree for a
+                wedding"
+              </p>
             </div>
-            <button type="button" onClick={() => dispatch(openChat())}
-              className="flex-none rounded-full bg-paper px-6 py-3 text-sm font-bold text-ink transition hover:bg-white">
+            <button
+              type="button"
+              onClick={() => dispatch(openChat())}
+              className="flex-none rounded-full bg-paper px-6 py-3 text-sm font-bold text-ink transition hover:bg-white"
+            >
               Ask our AI
             </button>
           </div>
@@ -383,12 +590,30 @@ export default function Home() {
           <Rail query={laptops} />
         </Section>
 
-        <Section title="Audio at its best" subtitle="Earbuds, headphones & speakers" to={catLink("audio")}>
+        <Section
+          title="Audio at its best"
+          subtitle="Earbuds, headphones & speakers"
+          to={catLink("audio")}
+        >
           <Rail query={audio} />
         </Section>
 
-        <Section title="Skincare under ₹500" subtitle="Serums, moisturisers & sunscreens" to={catLink("skincare")}>
-          <Rail query={{ ...skincare, data: skincare.data && { ...skincare.data, products: skincare.data.products.filter((p) => (p.priceRange?.min ?? p.price) <= 500) } }} />
+        <Section
+          title="Skincare under ₹500"
+          subtitle="Serums, moisturisers & sunscreens"
+          to={catLink("skincare")}
+        >
+          <Rail
+            query={{
+              ...skincare,
+              data: skincare.data && {
+                ...skincare.data,
+                products: skincare.data.products.filter(
+                  (p) => (p.priceRange?.min ?? p.price) <= 500
+                ),
+              },
+            }}
+          />
         </Section>
 
         <Section title="TVs for every room" to={catLink("tvs")}>

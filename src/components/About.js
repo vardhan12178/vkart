@@ -16,7 +16,7 @@ import {
   FaCode,
   FaLayerGroup,
   FaBrain,
-  FaAws
+  FaAws,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SiRedux, SiTailwindcss, SiRazorpay, SiRedis } from "react-icons/si";
@@ -46,7 +46,7 @@ export default function About() {
       },
       {
         q: "Is there an admin panel?",
-        a: "Yes. Open the admin login and press \"Explore the admin demo\" for a read-only tour of products, orders, coupons, sales and membership. Customer data stays hidden, and nothing you click can change the store.",
+        a: 'Yes. Open the admin login and press "Explore the admin demo" for a read-only tour of products, orders, coupons, sales and membership. Customer data stays hidden, and nothing you click can change the store.',
       },
       {
         q: "Why did you build VKart?",
@@ -72,11 +72,13 @@ export default function About() {
           </span>
 
           <h1 className="font-editorial text-5xl sm:text-7xl lg:text-8xl font-normal text-[#1d1c19] tracking-[-0.045em] leading-[0.9] mb-8">
-            A real storefront,<br className="hidden sm:block" /> engineered end to end.
+            A real storefront,
+            <br className="hidden sm:block" /> engineered end to end.
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 leading-relaxed font-medium">
-            VKart is designed as a convincing consumer product and built as a complete full-stack system—with secure identity, commerce workflows, and resilient state management.
+            VKart is designed as a convincing consumer product and built as a complete full-stack
+            system—with secure identity, commerce workflows, and resilient state management.
           </p>
         </div>
       </section>
@@ -84,24 +86,45 @@ export default function About() {
       {/* --- TRY IT --- */}
       <section className="container mx-auto px-4 pb-16">
         <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
-          <Link to="/login" className="group rounded-3xl border border-black/10 bg-white/80 p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]">
-            <p className="text-xs font-bold uppercase tracking-widest text-orange-600">No sign-up</p>
+          <Link
+            to="/login"
+            className="group rounded-3xl border border-black/10 bg-white/80 p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]"
+          >
+            <p className="text-xs font-bold uppercase tracking-widest text-orange-600">
+              No sign-up
+            </p>
             <h2 className="mt-2 text-xl font-black text-gray-900">Shop as the demo shopper</h2>
-            <p className="mt-1 text-sm text-gray-500">One click on the login page. Search in plain language, compare phones, check out with Razorpay test cards.</p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900">Open login <FaArrowRight className="transition group-hover:translate-x-1" /></span>
+            <p className="mt-1 text-sm text-gray-500">
+              One click on the login page. Search in plain language, compare phones, check out with
+              Razorpay test cards.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900">
+              Open login <FaArrowRight className="transition group-hover:translate-x-1" />
+            </span>
           </Link>
-          <Link to="/admin/login" className="group rounded-3xl border border-black/10 bg-white/80 p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]">
+          <Link
+            to="/admin/login"
+            className="group rounded-3xl border border-black/10 bg-white/80 p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a85d37]"
+          >
             <p className="text-xs font-bold uppercase tracking-widest text-orange-600">Read-only</p>
             <h2 className="mt-2 text-xl font-black text-gray-900">Tour the admin panel</h2>
-            <p className="mt-1 text-sm text-gray-500">Products, orders, coupons, sales and membership. Customer data is hidden and every write is blocked.</p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900">Open admin login <FaArrowRight className="transition group-hover:translate-x-1" /></span>
+            <p className="mt-1 text-sm text-gray-500">
+              Products, orders, coupons, sales and membership. Customer data is hidden and every
+              write is blocked.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gray-900">
+              Open admin login <FaArrowRight className="transition group-hover:translate-x-1" />
+            </span>
           </Link>
         </div>
       </section>
 
       {/* --- TECH STACK BENTO GRID --- */}
       <section className="container mx-auto px-4 pb-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+        <div
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up"
+          style={{ animationDelay: "0.1s" }}
+        >
           {[
             { icon: FaReact, name: "React.js", color: "text-blue-400" },
             { icon: SiRedux, name: "Redux Toolkit", color: "text-purple-500" },
@@ -113,8 +136,14 @@ export default function About() {
             { icon: FaLock, name: "JWT Auth", color: "text-orange-500" },
             { icon: SiRazorpay, name: "Razorpay", color: "text-blue-600" },
           ].map((tech, i) => (
-            <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1">
-              <tech.icon aria-hidden="true" className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`} />
+            <div
+              key={i}
+              className="group bg-white/60 backdrop-blur-xl border border-white/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 shadow-sm hover:shadow-lg hover:bg-white transition-all duration-300 hover:-translate-y-1"
+            >
+              <tech.icon
+                aria-hidden="true"
+                className={`text-4xl ${tech.color} group-hover:scale-110 transition-transform`}
+              />
               <span className="font-bold text-gray-700 text-sm">{tech.name}</span>
             </div>
           ))}
@@ -135,37 +164,38 @@ export default function About() {
             {
               icon: <FaCogs />,
               title: "Admin Dashboard",
-              desc: "Full CRUD capabilities for products and users protected by admin middleware."
+              desc: "Full CRUD capabilities for products and users protected by admin middleware.",
             },
             {
               icon: <FaShieldAlt />,
               title: "Secure Auth",
-              desc: "JWT-based sessions with HttpOnly cookies and Google OAuth integration."
+              desc: "JWT-based sessions with HttpOnly cookies and Google OAuth integration.",
             },
             {
               icon: <FaCartPlus />,
               title: "Checkout Flow",
-              desc: "End-to-end payment processing with address management and order tracking."
+              desc: "End-to-end payment processing with address management and order tracking.",
             },
             {
               icon: <FaLayerGroup />,
               title: "State Management",
-              desc: "Centralized Redux store for cart, user session, and persistent UI states."
+              desc: "Centralized Redux store for cart, user session, and persistent UI states.",
             },
             {
               icon: <FaBrain />,
               title: "AI Intelligence",
-              desc: "RAG-powered assistant using MongoDB Vector Search for context-aware support."
+              desc: "RAG-powered assistant using MongoDB Vector Search for context-aware support.",
             },
           ].map((feature, i) => (
-            <div key={i} className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-100 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-300 group">
+            <div
+              key={i}
+              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-100 border border-gray-100 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-300 group"
+            >
               <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl text-orange-600 mb-6 group-hover:scale-110 transition-transform">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                {feature.desc}
-              </p>
+              <p className="text-sm text-gray-500 leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>
@@ -191,7 +221,10 @@ export default function About() {
                 "Skeleton loading states, reduced-motion support and keyboard-friendly menus",
                 "Installable PWA with offline page; ~415 frontend and ~370 backend tests run in CI",
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                <div
+                  key={i}
+                  className="flex items-start gap-3 p-4 rounded-2xl hover:bg-gray-50 transition-colors"
+                >
                   <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
                   <span className="font-medium text-gray-700">{item}</span>
                 </div>
@@ -205,7 +238,9 @@ export default function About() {
       <section className="container mx-auto px-4 py-24">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[#8f4a28] font-bold tracking-widest text-xs uppercase">Questions</span>
+            <span className="text-[#8f4a28] font-bold tracking-widest text-xs uppercase">
+              Questions
+            </span>
             <h2 className="text-3xl font-black text-gray-900 mt-2">Common Queries</h2>
           </div>
 
@@ -213,25 +248,31 @@ export default function About() {
             {faqs.map((f, i) => (
               <div
                 key={i}
-                className={`rounded-2xl border transition-all duration-300 ${open === i
+                className={`rounded-2xl border transition-all duration-300 ${
+                  open === i
                     ? "bg-white border-orange-200 shadow-lg shadow-orange-500/5"
                     : "bg-white/50 border-gray-200 hover:bg-white"
-                  }`}
+                }`}
               >
                 <button
                   onClick={() => setOpen(open === i ? -1 : i)}
                   className="w-full px-6 py-5 flex items-center justify-between text-left"
                 >
-                  <span className={`font-bold transition-colors ${open === i ? "text-orange-600" : "text-gray-900"}`}>
+                  <span
+                    className={`font-bold transition-colors ${open === i ? "text-orange-600" : "text-gray-900"}`}
+                  >
                     {f.q}
                   </span>
-                  <span className={`ml-4 text-xl font-light transition-transform duration-300 ${open === i ? "rotate-45 text-orange-600" : "text-gray-400"}`}>
+                  <span
+                    className={`ml-4 text-xl font-light transition-transform duration-300 ${open === i ? "rotate-45 text-orange-600" : "text-gray-400"}`}
+                  >
                     +
                   </span>
                 </button>
                 <div
-                  className={`px-6 text-gray-600 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${open === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"
-                    }`}
+                  className={`px-6 text-gray-600 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${
+                    open === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"
+                  }`}
                 >
                   {f.a}
                 </div>
@@ -252,7 +293,8 @@ export default function About() {
               Ready to see the code?
             </h2>
             <p className="text-gray-400 text-lg mb-10">
-              Dive into the repository to explore the folder structure, custom hooks, and backend logic.
+              Dive into the repository to explore the folder structure, custom hooks, and backend
+              logic.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -274,7 +316,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

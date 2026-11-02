@@ -29,10 +29,13 @@ export default function PostPage() {
 
   if (!post) {
     return (
-    <div className="premium-page premium-blog flex min-h-[80vh] items-center justify-center px-6 bg-[#f6f3ed]">
+      <div className="premium-page premium-blog flex min-h-[80vh] items-center justify-center px-6 bg-[#f6f3ed]">
         <div className="text-center">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Article Not Found</h2>
-          <Link to="/blog" className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-white font-bold shadow-lg hover:scale-105 transition-transform">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-white font-bold shadow-lg hover:scale-105 transition-transform"
+          >
             <ArrowLeft size={16} /> Back to Journal
           </Link>
         </div>
@@ -48,17 +51,20 @@ export default function PostPage() {
       <header className="relative h-[60vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent z-10" />
-        
-        <img 
-          src={post.image} 
-          alt={post.title} 
+
+        <img
+          src={post.image}
+          alt={post.title}
           className="h-full w-full object-cover object-center animate-fade-up"
-          style={{ animationDuration: '1.5s' }} 
+          style={{ animationDuration: "1.5s" }}
         />
 
         {/* Navbar Placeholder (Back Button) */}
         <div className="absolute top-8 left-4 sm:left-8 z-20">
-          <Link to="/blog" className="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-4 py-2 text-sm font-bold text-gray-900 shadow-lg hover:bg-white transition-colors">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-4 py-2 text-sm font-bold text-gray-900 shadow-lg hover:bg-white transition-colors"
+          >
             <ArrowLeft size={16} /> Back
           </Link>
         </div>
@@ -67,13 +73,14 @@ export default function PostPage() {
       {/* --- ARTICLE CONTENT --- */}
       <article className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-32 sm:-mt-40">
         <div className="max-w-3xl mx-auto">
-          
           {/* Title Card */}
           <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-12 shadow-2xl shadow-gray-200/50 border border-white/60 animate-fade-up">
             <div className="flex flex-wrap gap-2 mb-6 justify-center sm:justify-start">
-              {post.tags.map((t) => <TagPill key={t} label={t} />)}
+              {post.tags.map((t) => (
+                <TagPill key={t} label={t} />
+              ))}
             </div>
-            
+
             <h1 className="text-3xl sm:text-5xl font-black text-gray-900 leading-tight mb-6 text-center sm:text-left">
               {post.title}
             </h1>
@@ -97,9 +104,15 @@ export default function PostPage() {
           </div>
 
           {/* Body Text */}
-          <div className="mt-12 px-2 sm:px-4 prose prose-lg prose-orange max-w-none text-gray-600 leading-relaxed animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div
+            className="mt-12 px-2 sm:px-4 prose prose-lg prose-orange max-w-none text-gray-600 leading-relaxed animate-fade-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             {post.content.map((para, i) => (
-              <p key={i} className="mb-6 first:first-letter:text-5xl first:first-letter:font-black first:first-letter:text-gray-900 first:first-letter:mr-3 first:first-letter:float-left">
+              <p
+                key={i}
+                className="mb-6 first:first-letter:text-5xl first:first-letter:font-black first:first-letter:text-gray-900 first:first-letter:mr-3 first:first-letter:float-left"
+              >
                 {para}
               </p>
             ))}
@@ -107,7 +120,7 @@ export default function PostPage() {
 
           {/* Share / Actions */}
           <div className="mt-12 flex justify-center py-8 border-y border-gray-200">
-            <button 
+            <button
               onClick={() => {
                 navigator.clipboard.writeText(window.location.href);
                 alert("Link copied!");
@@ -132,8 +145,10 @@ export default function PostPage() {
                   {prev.title}
                 </span>
               </Link>
-            ) : <div />}
-            
+            ) : (
+              <div />
+            )}
+
             {next ? (
               <Link
                 to={`/blog/${next.id}`}
@@ -146,9 +161,10 @@ export default function PostPage() {
                   {next.title}
                 </span>
               </Link>
-            ) : <div />}
+            ) : (
+              <div />
+            )}
           </div>
-
         </div>
       </article>
 
@@ -156,7 +172,9 @@ export default function PostPage() {
       <section className="container mx-auto px-4 mt-24 max-w-6xl">
         <div className="flex items-center gap-3 mb-8">
           <div className="h-px flex-1 bg-gray-200" />
-          <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Keep Reading</span>
+          <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">
+            Keep Reading
+          </span>
           <div className="h-px flex-1 bg-gray-200" />
         </div>
 
@@ -178,7 +196,9 @@ export default function PostPage() {
                 </div>
                 <div className="p-5">
                   <div className="mb-2 flex gap-2">
-                    {p.tags.slice(0, 1).map(t => <TagPill key={t} label={t} />)}
+                    {p.tags.slice(0, 1).map((t) => (
+                      <TagPill key={t} label={t} />
+                    ))}
                   </div>
                   <h3 className="font-bold text-gray-900 line-clamp-2 group-hover:text-orange-600 transition-colors leading-snug">
                     {p.title}
@@ -191,7 +211,6 @@ export default function PostPage() {
             ))}
         </div>
       </section>
-
     </div>
   );
 }

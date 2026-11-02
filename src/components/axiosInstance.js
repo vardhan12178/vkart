@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const isLocalhost = typeof window !== "undefined" &&
-  ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const isLocalhost =
+  typeof window !== "undefined" && ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
-const baseURL = isLocalhost
-  ? "http://localhost:5000"
-  : "";
+const baseURL = isLocalhost ? "http://localhost:5000" : "";
 
 const instance = axios.create({
   baseURL,
@@ -51,9 +49,10 @@ instance.interceptors.response.use(
 
     if (status === 401) {
       // Don't redirect for auth-check calls (profile, admin verify, etc.) - these should fail silently
-      const isAuthCheck = cfg.url?.includes('/api/profile') ||
-        cfg.url?.includes('/api/auth/check') ||
-        cfg.url?.includes('/api/admin/verify') ||
+      const isAuthCheck =
+        cfg.url?.includes("/api/profile") ||
+        cfg.url?.includes("/api/auth/check") ||
+        cfg.url?.includes("/api/admin/verify") ||
         cfg.__skipAuthRedirect;
 
       if (!isAuthCheck && typeof window !== "undefined") {

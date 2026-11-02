@@ -1,7 +1,17 @@
 import React, { useState, useMemo, useEffect } from "react";
 import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
-import { ChevronDownIcon, CircleCheckIcon, FileDownIcon, MapPinIcon, PackageIcon, ReceiptIcon, ShoppingBagIcon, Undo2Icon, XIcon } from "./ui/icons";
+import {
+  ChevronDownIcon,
+  CircleCheckIcon,
+  FileDownIcon,
+  MapPinIcon,
+  PackageIcon,
+  ReceiptIcon,
+  ShoppingBagIcon,
+  Undo2Icon,
+  XIcon,
+} from "./ui/icons";
 
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -14,10 +24,20 @@ const INR = (n) =>
 const stageStyles = {
   PLACED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-muted", border: "border-line-strong" },
   CONFIRMED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
-  PROCESSING: { bg: "bg-accent/10", text: "text-accent", dot: "bg-accent", border: "border-accent/30" },
+  PROCESSING: {
+    bg: "bg-accent/10",
+    text: "text-accent",
+    dot: "bg-accent",
+    border: "border-accent/30",
+  },
   PACKED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
   SHIPPED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-ink", border: "border-line-strong" },
-  OUT_FOR_DELIVERY: { bg: "bg-accent/10", text: "text-accent", dot: "bg-accent", border: "border-accent/30" },
+  OUT_FOR_DELIVERY: {
+    bg: "bg-accent/10",
+    text: "text-accent",
+    dot: "bg-accent",
+    border: "border-accent/30",
+  },
   DELIVERED: { bg: "bg-ok/10", text: "text-ok", dot: "bg-ok", border: "border-ok/30" },
   CANCELLED: { bg: "bg-alert/10", text: "text-alert", dot: "bg-alert", border: "border-alert/30" },
 };
@@ -26,7 +46,7 @@ const apiBase =
   typeof window !== "undefined" &&
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
     ? "http://localhost:5000"
-    : (process.env.REACT_APP_API_BASE_URL || "");
+    : process.env.REACT_APP_API_BASE_URL || "";
 
 export default function OrderCard({ order, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
@@ -71,10 +91,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
       }`}
     >
       {/* --- SUMMARY HEADER --- */}
-      <div
-        className="p-3.5 sm:p-5 cursor-pointer select-none"
-        onClick={() => setOpen(!open)}
-      >
+      <div className="p-3.5 sm:p-5 cursor-pointer select-none" onClick={() => setOpen(!open)}>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           {/* Left: Thumbnail + Name + Date + Status */}
           <div className="flex items-center gap-3 sm:gap-4 min-w-0">
@@ -96,7 +113,10 @@ export default function OrderCard({ order, defaultOpen = false }) {
                   {(() => {
                     const products = order.products || [];
                     if (products.length === 0) return "Order";
-                    const names = products.slice(0, 2).map((p) => p.name).join(", ");
+                    const names = products
+                      .slice(0, 2)
+                      .map((p) => p.name)
+                      .join(", ");
                     const more = products.length > 2 ? ` +${products.length - 2} more` : "";
                     return names + more;
                   })()}
@@ -164,11 +184,15 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-6 border-t sm:border-t-0 border-line pt-2 sm:pt-0">
             <div className="flex items-center gap-4 sm:gap-6">
               <div>
-                <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">Total</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">
+                  Total
+                </p>
                 <p className="text-xs sm:text-sm font-bold text-ink">{INR(order.totalPrice)}</p>
               </div>
               <div>
-                <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">Items</p>
+                <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">
+                  Items
+                </p>
                 <p className="text-xs sm:text-sm font-bold text-ink flex items-center gap-1">
                   <ShoppingBagIcon size={10} className="text-accent" />
                   <span>{order.products?.length || 0}</span>
@@ -178,7 +202,9 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             <button
               className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all ${
-                open ? "bg-ink text-white rotate-180 shadow-2xs" : "bg-tint text-muted hover:bg-line"
+                open
+                  ? "bg-ink text-white rotate-180 shadow-2xs"
+                  : "bg-tint text-muted hover:bg-line"
               }`}
               title={open ? "Collapse" : "Expand"}
             >
@@ -234,7 +260,10 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 </div>
                 <div className="divide-y divide-line max-h-56 overflow-y-auto">
                   {(order.products || []).map((p, i) => (
-                    <div key={i} className="p-2.5 sm:p-3 flex items-center gap-3 hover:bg-sand/80 transition">
+                    <div
+                      key={i}
+                      className="p-2.5 sm:p-3 flex items-center gap-3 hover:bg-sand/80 transition"
+                    >
                       <div className="w-10 h-10 max-w-[40px] max-h-[40px] rounded-lg bg-sand border border-line p-1 flex items-center justify-center shrink-0 overflow-hidden">
                         {p.image || p.thumbnail ? (
                           <img
@@ -330,12 +359,17 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md shadow-2xl space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-ink">Request Return / Replacement</h3>
-              <button onClick={() => setShowReturn(false)} className="text-muted-light hover:text-muted">
+              <button
+                onClick={() => setShowReturn(false)}
+                className="text-muted-light hover:text-muted"
+              >
                 <XIcon size={14} />
               </button>
             </div>
             <div>
-              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">Reason for Return</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">
+                Reason for Return
+              </label>
               <textarea
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
@@ -345,14 +379,26 @@ export default function OrderCard({ order, defaultOpen = false }) {
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">Return Type</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">
+                Return Type
+              </label>
               <div className="flex items-center gap-4 text-xs">
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={returnType === "REFUND"} onChange={() => setReturnType("REFUND")} className="text-accent" />
+                  <input
+                    type="radio"
+                    checked={returnType === "REFUND"}
+                    onChange={() => setReturnType("REFUND")}
+                    className="text-accent"
+                  />
                   Refund
                 </label>
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={returnType === "REPLACEMENT"} onChange={() => setReturnType("REPLACEMENT")} className="text-accent" />
+                  <input
+                    type="radio"
+                    checked={returnType === "REPLACEMENT"}
+                    onChange={() => setReturnType("REPLACEMENT")}
+                    className="text-accent"
+                  />
                   Replacement
                 </label>
               </div>
@@ -360,14 +406,26 @@ export default function OrderCard({ order, defaultOpen = false }) {
 
             {returnType === "REFUND" && (
               <div>
-                <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">Refund Destination</label>
+                <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">
+                  Refund Destination
+                </label>
                 <div className="space-y-1.5 text-xs">
                   <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                    <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} className="text-accent" />
+                    <input
+                      type="radio"
+                      checked={refundMethod === "ORIGINAL"}
+                      onChange={() => setRefundMethod("ORIGINAL")}
+                      className="text-accent"
+                    />
                     Original Payment Method (5-7 business days)
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                    <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} className="text-accent" />
+                    <input
+                      type="radio"
+                      checked={refundMethod === "WALLET"}
+                      onChange={() => setRefundMethod("WALLET")}
+                      className="text-accent"
+                    />
                     VKart Wallet (Instant credit)
                   </label>
                 </div>
@@ -375,7 +433,10 @@ export default function OrderCard({ order, defaultOpen = false }) {
             )}
 
             <div className="flex justify-end gap-2 pt-2">
-              <button onClick={() => setShowReturn(false)} className="px-3.5 py-1.5 rounded-xl border border-line-strong text-xs font-bold text-ink-soft hover:bg-sand">
+              <button
+                onClick={() => setShowReturn(false)}
+                className="px-3.5 py-1.5 rounded-xl border border-line-strong text-xs font-bold text-ink-soft hover:bg-sand"
+              >
                 Cancel
               </button>
               <button
@@ -411,12 +472,17 @@ export default function OrderCard({ order, defaultOpen = false }) {
           <div className="bg-white rounded-2xl p-5 sm:p-6 w-full max-w-md shadow-2xl space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-ink">Cancel Order</h3>
-              <button onClick={() => setShowCancel(false)} className="text-muted-light hover:text-muted">
+              <button
+                onClick={() => setShowCancel(false)}
+                className="text-muted-light hover:text-muted"
+              >
                 <XIcon size={14} />
               </button>
             </div>
             <div>
-              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">Reason for Cancellation</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1">
+                Reason for Cancellation
+              </label>
               <textarea
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
@@ -426,20 +492,35 @@ export default function OrderCard({ order, defaultOpen = false }) {
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">Refund Destination</label>
+              <label className="text-[10px] font-bold text-muted uppercase tracking-wider block mb-1.5">
+                Refund Destination
+              </label>
               <div className="space-y-1.5 text-xs">
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={refundMethod === "ORIGINAL"} onChange={() => setRefundMethod("ORIGINAL")} className="text-accent" />
+                  <input
+                    type="radio"
+                    checked={refundMethod === "ORIGINAL"}
+                    onChange={() => setRefundMethod("ORIGINAL")}
+                    className="text-accent"
+                  />
                   Original Payment Method (5-7 business days)
                 </label>
                 <label className="flex items-center gap-1.5 cursor-pointer font-medium">
-                  <input type="radio" checked={refundMethod === "WALLET"} onChange={() => setRefundMethod("WALLET")} className="text-accent" />
+                  <input
+                    type="radio"
+                    checked={refundMethod === "WALLET"}
+                    onChange={() => setRefundMethod("WALLET")}
+                    className="text-accent"
+                  />
                   VKart Wallet (Instant credit)
                 </label>
               </div>
             </div>
             <div className="flex justify-end gap-2 pt-2">
-              <button onClick={() => setShowCancel(false)} className="px-3.5 py-1.5 rounded-xl border border-line-strong text-xs font-bold text-ink-soft hover:bg-sand">
+              <button
+                onClick={() => setShowCancel(false)}
+                className="px-3.5 py-1.5 rounded-xl border border-line-strong text-xs font-bold text-ink-soft hover:bg-sand"
+              >
                 Close
               </button>
               <button

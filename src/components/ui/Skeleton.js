@@ -5,7 +5,13 @@ import { useLocation } from "react-router-dom";
 export const cx = (...parts) => parts.filter(Boolean).join(" ");
 
 export function Bone({ className = "", rounded = "rounded-md", dark = false, ...rest }) {
-  return <div aria-hidden="true" className={cx("skeleton", dark && "skeleton-dark", rounded, className)} {...rest} />;
+  return (
+    <div
+      aria-hidden="true"
+      className={cx("skeleton", dark && "skeleton-dark", rounded, className)}
+      {...rest}
+    />
+  );
 }
 
 // Wrapper that tells screen readers something is loading, once, instead of announcing every block.
@@ -39,10 +45,15 @@ export function CardSkeleton({ ratio = "aspect-[4/5]" }) {
   );
 }
 
-export function GridSkeleton({ count = 8, className = "grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 xl:grid-cols-4" }) {
+export function GridSkeleton({
+  count = 8,
+  className = "grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 xl:grid-cols-4",
+}) {
   return (
     <div className={className}>
-      {Array.from({ length: count }, (_, i) => <CardSkeleton key={i} />)}
+      {Array.from({ length: count }, (_, i) => (
+        <CardSkeleton key={i} />
+      ))}
     </div>
   );
 }
@@ -63,13 +74,19 @@ export function RailSkeleton({ count = 6 }) {
 
 export function TableSkeleton({ rows = 6, cols = 5, className = "" }) {
   return (
-    <div className={cx("overflow-hidden rounded-2xl border border-slate-200/70 bg-white", className)}>
+    <div
+      className={cx("overflow-hidden rounded-2xl border border-slate-200/70 bg-white", className)}
+    >
       <div className="flex gap-4 border-b border-slate-100 p-4">
-        {Array.from({ length: cols }, (_, i) => <Bone key={i} className="h-3 flex-1" />)}
+        {Array.from({ length: cols }, (_, i) => (
+          <Bone key={i} className="h-3 flex-1" />
+        ))}
       </div>
       {Array.from({ length: rows }, (_, r) => (
         <div key={r} className="flex items-center gap-4 border-b border-slate-50 p-4 last:border-0">
-          {Array.from({ length: cols }, (_, c) => <Bone key={c} className={cx("h-4 flex-1", c === 0 && "max-w-[8rem]")} />)}
+          {Array.from({ length: cols }, (_, c) => (
+            <Bone key={c} className={cx("h-4 flex-1", c === 0 && "max-w-[8rem]")} />
+          ))}
         </div>
       ))}
     </div>
@@ -94,7 +111,9 @@ export function CardListSkeleton({ rows = 3, className = "" }) {
 }
 
 const Shell = ({ children, className = "" }) => (
-  <div className={cx("mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8", className)}>{children}</div>
+  <div className={cx("mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8", className)}>
+    {children}
+  </div>
 );
 
 export function HomeSkeleton() {
@@ -103,7 +122,9 @@ export function HomeSkeleton() {
       <Shell>
         <Bone className="h-64 w-full sm:h-80 lg:h-96" rounded="rounded-3xl" />
         <div className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-6">
-          {Array.from({ length: 6 }, (_, i) => <Bone key={i} className="aspect-square" rounded="rounded-2xl" />)}
+          {Array.from({ length: 6 }, (_, i) => (
+            <Bone key={i} className="aspect-square" rounded="rounded-2xl" />
+          ))}
         </div>
         <Bone className="mb-4 mt-12 h-6 w-48" />
         <RailSkeleton />
@@ -120,9 +141,14 @@ export function ListingSkeleton() {
         <Bone className="mt-3 h-4 w-32" />
         <div className="mt-8 flex gap-8">
           <div className="hidden w-56 shrink-0 space-y-4 lg:block">
-            {Array.from({ length: 5 }, (_, i) => <Bone key={i} className="h-24 w-full" rounded="rounded-2xl" />)}
+            {Array.from({ length: 5 }, (_, i) => (
+              <Bone key={i} className="h-24 w-full" rounded="rounded-2xl" />
+            ))}
           </div>
-          <GridSkeleton count={8} className="grid flex-1 grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3" />
+          <GridSkeleton
+            count={8}
+            className="grid flex-1 grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3"
+          />
         </div>
       </Shell>
     </SkeletonRegion>
@@ -141,7 +167,9 @@ export function ProductSkeleton() {
             <Bone className="mt-4 h-4 w-40" />
             <Bone className="mt-6 h-9 w-44" />
             <div className="mt-8 flex gap-2">
-              {Array.from({ length: 4 }, (_, i) => <Bone key={i} className="h-11 w-16" rounded="rounded-xl" />)}
+              {Array.from({ length: 4 }, (_, i) => (
+                <Bone key={i} className="h-11 w-16" rounded="rounded-xl" />
+              ))}
             </div>
             <Bone className="mt-8 h-12 w-full" rounded="rounded-full" />
             <TextLines className="mt-8" lines={4} />
@@ -172,10 +200,17 @@ export function AccountSkeleton() {
       <Shell>
         <div className="flex items-center gap-4">
           <Bone className="h-16 w-16" rounded="rounded-full" />
-          <div className="flex-1"><Bone className="h-5 w-48" /><Bone className="mt-2 h-3 w-32" /></div>
+          <div className="flex-1">
+            <Bone className="h-5 w-48" />
+            <Bone className="mt-2 h-3 w-32" />
+          </div>
         </div>
         <div className="mt-8 grid gap-8 lg:grid-cols-[14rem_1fr]">
-          <div className="hidden space-y-2 lg:block">{Array.from({ length: 5 }, (_, i) => <Bone key={i} className="h-10 w-full" rounded="rounded-xl" />)}</div>
+          <div className="hidden space-y-2 lg:block">
+            {Array.from({ length: 5 }, (_, i) => (
+              <Bone key={i} className="h-10 w-full" rounded="rounded-xl" />
+            ))}
+          </div>
           <CardListSkeleton rows={4} />
         </div>
       </Shell>
@@ -215,12 +250,16 @@ export function AdminSkeleton() {
     <SkeletonRegion label="Loading the admin panel" className="flex min-h-screen bg-[#f2f0eb]">
       <div className="hidden w-60 shrink-0 space-y-3 border-r border-slate-200/70 bg-white p-4 lg:block">
         <Bone className="h-8 w-28" />
-        {Array.from({ length: 8 }, (_, i) => <Bone key={i} className="h-9 w-full" rounded="rounded-xl" />)}
+        {Array.from({ length: 8 }, (_, i) => (
+          <Bone key={i} className="h-9 w-full" rounded="rounded-xl" />
+        ))}
       </div>
       <div className="flex-1 p-4 sm:p-8">
         <Bone className="h-8 w-56" />
         <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {Array.from({ length: 4 }, (_, i) => <Bone key={i} className="h-24" rounded="rounded-2xl" />)}
+          {Array.from({ length: 4 }, (_, i) => (
+            <Bone key={i} className="h-24" rounded="rounded-2xl" />
+          ))}
         </div>
         <TableSkeleton className="mt-6" rows={6} />
       </div>
@@ -237,7 +276,8 @@ export function RouteSkeleton() {
   if (pathname.startsWith("/products/")) return <ProductSkeleton />;
   if (pathname.startsWith("/cart") || pathname.startsWith("/wishlist")) return <CartSkeleton />;
   if (/^\/(profile|orders|prime|order-success)/.test(pathname)) return <AccountSkeleton />;
-  if (/^\/(login|register|forgot-password|reset-password|verify-email)/.test(pathname)) return <AuthSkeleton />;
+  if (/^\/(login|register|forgot-password|reset-password|verify-email)/.test(pathname))
+    return <AuthSkeleton />;
   return <ContentSkeleton />;
 }
 
@@ -245,7 +285,9 @@ export function RouteSkeleton() {
 export function Dots({ className = "" }) {
   return (
     <span aria-hidden="true" className={cx("inline-flex items-center gap-0.5", className)}>
-      <i className="dot" /><i className="dot" /><i className="dot" />
+      <i className="dot" />
+      <i className="dot" />
+      <i className="dot" />
     </span>
   );
 }

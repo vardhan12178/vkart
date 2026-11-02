@@ -107,7 +107,9 @@ describe("AdminUsers Component", () => {
     renderUsers();
     await screen.findByRole("table");
 
-    fireEvent.change(screen.getByPlaceholderText(/search by name/i), { target: { value: "nobody-matches" } });
+    fireEvent.change(screen.getByPlaceholderText(/search by name/i), {
+      target: { value: "nobody-matches" },
+    });
 
     expect(await screen.findByText(/no users found/i)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /reset filters/i }));
@@ -148,7 +150,9 @@ describe("AdminUsers Component", () => {
     fireEvent.click(screen.getByText(/block access/i));
 
     await waitFor(() => {
-      expect(axios.patch).toHaveBeenCalledWith("/api/admin/users/u1000001/block", { blocked: true });
+      expect(axios.patch).toHaveBeenCalledWith("/api/admin/users/u1000001/block", {
+        blocked: true,
+      });
     });
     expect(await screen.findByText("User blocked.")).toBeInTheDocument();
   });
@@ -253,7 +257,9 @@ describe("AdminUsers Component", () => {
 
     // The prev/next pagination buttons are the only ones with this exact
     // class combination; [0] is prev (disabled on page 1), [1] is next.
-    const paginationButtons = document.querySelectorAll(".border-slate-200.bg-white.hover\\:bg-slate-50.disabled\\:opacity-30");
+    const paginationButtons = document.querySelectorAll(
+      ".border-slate-200.bg-white.hover\\:bg-slate-50.disabled\\:opacity-30"
+    );
     expect(paginationButtons).toHaveLength(2);
     fireEvent.click(paginationButtons[1]); // next
 

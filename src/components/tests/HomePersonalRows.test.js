@@ -19,13 +19,39 @@ jest.mock("../shop/catalogApi", () => ({
   fetchSimilar: jest.fn(),
 }));
 
-const card = (slug, extra = {}) => ({ slug, title: `Brand ${slug}`, brand: "Brand", category: "mobiles", price: 1000, mrp: 1000, discountPercent: 0, priceRange: { min: 1000, max: 1000 }, image: null, ...extra });
+const card = (slug, extra = {}) => ({
+  slug,
+  title: `Brand ${slug}`,
+  brand: "Brand",
+  category: "mobiles",
+  price: 1000,
+  mrp: 1000,
+  discountPercent: 0,
+  priceRange: { min: 1000, max: 1000 },
+  image: null,
+  ...extra,
+});
 
 const renderHome = () =>
   render(
-    <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
-      <Provider store={configureStore({ reducer: { cart: cartReducer, ui: uiReducer, wishlist: wishlistReducer, auth: authReducer } })}>
-        <HelmetProvider><MemoryRouter><Home /></MemoryRouter></HelmetProvider>
+    <QueryClientProvider
+      client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+    >
+      <Provider
+        store={configureStore({
+          reducer: {
+            cart: cartReducer,
+            ui: uiReducer,
+            wishlist: wishlistReducer,
+            auth: authReducer,
+          },
+        })}
+      >
+        <HelmetProvider>
+          <MemoryRouter>
+            <Home />
+          </MemoryRouter>
+        </HelmetProvider>
       </Provider>
     </QueryClientProvider>
   );
@@ -33,7 +59,9 @@ const renderHome = () =>
 describe("Home personal rows", () => {
   beforeEach(() => {
     localStorage.clear();
-    fetchProducts.mockReset().mockResolvedValue({ products: [card("deal-1")], total: 1, facets: {} });
+    fetchProducts
+      .mockReset()
+      .mockResolvedValue({ products: [card("deal-1")], total: 1, facets: {} });
     fetchSimilar.mockReset();
   });
 
@@ -45,9 +73,15 @@ describe("Home personal rows", () => {
   });
 
   test("shows recently viewed and recommends similar products the shopper hasn't seen", async () => {
-    localStorage.setItem("vkart:recently-viewed", JSON.stringify([card("seen-a"), card("seen-b"), card("seen-c")]));
+    localStorage.setItem(
+      "vkart:recently-viewed",
+      JSON.stringify([card("seen-a"), card("seen-b"), card("seen-c")])
+    );
     fetchSimilar.mockImplementation(async (slug) => ({
-      products: slug === "seen-a" ? [card("rec-1"), card("seen-b"), card("rec-2")] : [card("rec-3"), card("rec-1")],
+      products:
+        slug === "seen-a"
+          ? [card("rec-1"), card("seen-b"), card("rec-2")]
+          : [card("rec-3"), card("rec-1")],
     }));
     renderHome();
 
@@ -56,7 +90,9 @@ describe("Home personal rows", () => {
     await waitFor(() => expect(screen.getByText("rec-3", { exact: false })).toBeInTheDocument());
     expect(fetchSimilar.mock.calls.map((c) => c[0])).toEqual(["seen-a", "seen-b"]); // only the last two viewed seed it
     // each recommendation once, nothing already viewed
-    expect(screen.getAllByText("Brand rec-1".replace("Brand ", ""), { exact: false })).toHaveLength(1);
+    expect(screen.getAllByText("Brand rec-1".replace("Brand ", ""), { exact: false })).toHaveLength(
+      1
+    );
     expect(screen.getAllByText("seen-b", { exact: false })).toHaveLength(1); // only in "Recently viewed"
   });
 });

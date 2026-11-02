@@ -34,14 +34,19 @@ describe("AdminProfile Component", () => {
     });
   });
 
-  const renderProfile = ({ adminRole = "product_manager", permissions = { products: "write" } } = {}) =>
+  const renderProfile = ({
+    adminRole = "product_manager",
+    permissions = { products: "write" },
+  } = {}) =>
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter initialEntries={["/admin/profile"]}>
           <Routes>
             <Route
               element={
-                <TestLayout context={{ identity: IDENTITY, adminRole, permissions, refreshProfile }} />
+                <TestLayout
+                  context={{ identity: IDENTITY, adminRole, permissions, refreshProfile }}
+                />
               }
             >
               <Route path="/admin/profile" element={<AdminProfile />} />
@@ -65,7 +70,10 @@ describe("AdminProfile Component", () => {
   });
 
   test("shows the specific module permissions for a non-super-admin", () => {
-    renderProfile({ adminRole: "product_manager", permissions: { products: "write", orders: "read" } });
+    renderProfile({
+      adminRole: "product_manager",
+      permissions: { products: "write", orders: "read" },
+    });
     const productsRow = screen.getByText("Products").closest("div");
     expect(productsRow).toHaveTextContent("write");
     const ordersRow = screen.getByText("Orders").closest("div");
