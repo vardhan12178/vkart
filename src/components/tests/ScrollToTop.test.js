@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 import ScrollToTop from "../ScrollToTop";
 
 // Purely an effectful utility component (no visible output) that scrolls to
-// the top on every route change — one behavioral test covers it fully.
+// the top on every route change: one behavioral test covers it fully.
 describe("ScrollToTop Component", () => {
   test("scrolls to the top whenever the route changes", () => {
     const scrollToSpy = jest.fn();

@@ -13,7 +13,7 @@ import {
 
 const MAX_MESSAGE = 800;
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -29,7 +29,7 @@ export default function Contact() {
 
   const left = useMemo(() => Math.max(0, MAX_MESSAGE - form.message.length), [form.message]);
 
-  // --- LOGIC: Validation & Submit (Kept Exact) ---
+  // LOGIC: Validation & Submit (Kept Exact)
   const validate = () => {
     const e = {};
     if (!form.name.trim()) e.name = "Please enter your name.";
@@ -60,7 +60,7 @@ export default function Contact() {
     }
   };
 
-  /* --- UI COMPONENTS --- */
+  // UI components
   const InputField = ({ label, name, type = "text", icon: Icon, placeholder }) => (
     <div className="mb-5">
       <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5 ml-1">
@@ -129,7 +129,7 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-6xl mx-auto">
-          {/* --- LEFT: Contact Form --- */}
+          {/* LEFT: Contact Form */}
           <div className="lg:col-span-7 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-10 shadow-xl shadow-gray-200/50 border border-white/60">
               <form onSubmit={handleSubmit} noValidate>
@@ -224,7 +224,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* --- RIGHT: Info & FAQ --- */}
+          {/* RIGHT: Info & FAQ */}
           <div
             className="lg:col-span-5 space-y-6 animate-fade-up"
             style={{ animationDelay: "0.2s" }}

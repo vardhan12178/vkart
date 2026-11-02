@@ -17,7 +17,7 @@ export default function AdminLayout({ setIsAdmin }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // The single source of truth for "who is this admin" — identity, role, and
+  // The single source of truth for "who is this admin", identity, role, and
   // module permissions all come from here. It's the one endpoint every admin
   // can hit regardless of their permissions, so the header/sidebar/pages never
   // need a module-gated call just to know who's logged in.
@@ -36,9 +36,7 @@ export default function AdminLayout({ setIsAdmin }) {
     await adminVerifyQuery.refetch();
   }, [adminVerifyQuery]);
 
-  /* ---------------------------------------------------
-       AUTH GUARD - Now uses cookie-based API check
-  ---------------------------------------------------- */
+  // Send visitors without a valid admin session to the login page.
   useEffect(() => {
     if (adminVerifyQuery.isLoading) return;
 
@@ -51,17 +49,12 @@ export default function AdminLayout({ setIsAdmin }) {
     navigate("/admin/login", { replace: true });
   }, [navigate, setIsAdmin, adminVerifyQuery.isLoading, adminVerifyQuery.data]);
 
-  /* ---------------------------------------------------
-       SCROLL RESET ON NAVIGATE
-  ---------------------------------------------------- */
+  // Scroll the content area back to the top on every route change.
   useEffect(() => {
     const mainContent = document.getElementById("admin-content");
     if (mainContent) mainContent.scrollTop = 0;
   }, [location.pathname]);
 
-  /* ---------------------------------------------------
-       LOGOUT HANDLER - Now uses API logout
-  ---------------------------------------------------- */
   const handleLogout = async () => {
     try {
       await axios.post("/api/admin/logout", {}, { withCredentials: true });

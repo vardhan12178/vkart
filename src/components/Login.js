@@ -25,7 +25,7 @@ import DemoLogin from "./DemoLogin";
 const currentYear = new Date().getFullYear();
 const cx = (...c) => c.filter(Boolean).join(" ");
 
-// --- Animation Variants ---
+// Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -34,8 +34,6 @@ const fadeInUp = {
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
-
-// --- Helper Components ---
 
 const FieldError = ({ id, message }) =>
   !message ? null : (
@@ -171,12 +169,11 @@ export default function Login() {
     }
   };
 
-  // ------------ base submit ------------
+  // base submit
   const onSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
 
-    // Mark all fields as touched on submit
     setTouched({ userId: true, password: true });
 
     if (!validate()) return;
@@ -217,7 +214,7 @@ export default function Login() {
     }
   };
 
-  // ------------ 2FA verify submit ------------
+  // 2FA verify submit
   const submit2FA = async () => {
     if (!pendingLogin) return;
     const code = twofaCode.trim();
@@ -303,7 +300,7 @@ export default function Login() {
           variants={fadeInUp}
           className="premium-auth-shell relative w-full max-w-[1180px] min-h-[650px] lg:min-h-[720px] bg-[#fffdf8] rounded-[1.5rem] shadow-[0_30px_80px_rgba(29,28,25,.12)] flex overflow-hidden border border-black/[0.06]"
         >
-          {/* --- LEFT PANEL (Visual) --- */}
+          {/* LEFT PANEL (Visual) */}
           <div className="premium-auth-visual hidden lg:flex w-1/2 relative flex-col justify-between bg-[#ded2c2] p-8 xl:p-12 overflow-hidden">
             {/* Decorative Patterns */}
             <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
@@ -342,7 +339,7 @@ export default function Login() {
             </motion.div>
           </div>
 
-          {/* --- RIGHT PANEL (Form) --- */}
+          {/* RIGHT PANEL (Form) */}
           <div className="premium-auth-form w-full lg:w-1/2 bg-[#fffdf8] flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12 relative">
             {/* Mobile Logo */}
             <div className="lg:hidden flex justify-center mb-6 sm:mb-8">
@@ -513,7 +510,7 @@ export default function Login() {
                       animate={{ opacity: 1, height: "auto" }}
                       className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 px-2 py-1 rounded inline-block"
                     >
-                      ⚠️ Caps Lock is ON
+                      Caps Lock is on
                     </motion.div>
                   )}
                   {touched.password && <FieldError id="password-error" message={errors.password} />}
@@ -624,7 +621,7 @@ export default function Login() {
 
               <div className="relative z-10 flex flex-col items-center text-center">
                 <div className="h-14 w-14 sm:h-16 sm:w-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-4 text-2xl sm:text-3xl">
-                  🔐
+                  <LockClosedIcon className="h-7 w-7 text-orange-600" aria-hidden="true" />
                 </div>
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900">
                   Two-Step Verification

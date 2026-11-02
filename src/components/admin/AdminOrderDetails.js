@@ -113,7 +113,6 @@ export default function AdminOrderDetails() {
     setTimeout(() => setToast({ type: "", message: "" }), ms);
   };
 
-  // --- Function to copy Order ID ---
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     showToast("success", "Order ID copied to clipboard!");
@@ -261,7 +260,7 @@ export default function AdminOrderDetails() {
       .sort((a, b) => new Date(b.date) - new Date(a.date));
   }, [order]);
 
-  // --- Logic to determine the NEXT logical step ---
+  // Logic to determine the NEXT logical step
   const nextLogicalStage = useMemo(() => {
     if (!order) return null;
     const currentIndex = STAGES.indexOf(order.stage);
@@ -288,10 +287,7 @@ export default function AdminOrderDetails() {
   }
 
   if (!order) {
-    // The fetch-error toast set above can never reach the screen without this:
-    // previously this branch was a bare `return null`, so a failed or missing
-    // order left admins staring at a blank page with no feedback at all —
-    // even though `orderQuery.isError` already set an error toast in state.
+    // Show the error instead of a blank page when the order is missing or the fetch failed.
     return (
       <div className="premium-admin-page min-h-screen bg-transparent flex flex-col items-center justify-center p-6 gap-4">
         {toast.message && (

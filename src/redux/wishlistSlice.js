@@ -30,7 +30,7 @@ const wishlistSlice = createSlice({
   reducers: {
     setWishlist: (_state, action) => {
       const items = catalogOnly(action.payload);
-      // Don't persist — server is source of truth once authenticated.
+      // Don't persist: server is source of truth once authenticated.
       return items;
     },
     toggleWishlist: (state, action) => {

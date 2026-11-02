@@ -33,7 +33,7 @@ const cartSlice = createSlice({
   reducers: {
     setCart: (_state, action) => {
       const items = catalogOnly(action.payload);
-      // Don't persist to localStorage — server is source of truth for
+      // Don't persist to localStorage: server is source of truth for
       // authenticated users.  Guest cart is persisted by addToCart / etc.
       return items;
     },

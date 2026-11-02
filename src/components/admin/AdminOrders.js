@@ -72,7 +72,7 @@ export default function AdminOrders() {
   const orders = useMemo(() => ordersQuery.data ?? [], [ordersQuery.data]);
   const loading = ordersQuery.isLoading;
 
-  // --- derived stats for the top cards ---
+  // derived stats for the top cards
   const stats = useMemo(() => {
     const totalRevenue = orders.reduce((acc, order) => acc + (order.totalPrice || 0), 0);
     const activeOrders = orders.filter((o) => !["DELIVERED", "CANCELLED"].includes(o.stage)).length;
@@ -582,7 +582,6 @@ export default function AdminOrders() {
   );
 }
 
-// Helper Component for Stats
 function StatCard({ title, value, icon: Icon, color, bg }) {
   return (
     <div className="bg-white p-2.5 sm:p-5 rounded-2xl border border-slate-200/70 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-3">

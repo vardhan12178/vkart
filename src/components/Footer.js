@@ -153,7 +153,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Footer Navigation Columns — 3 balanced columns on mobile */}
+        {/* Footer Navigation Columns: 3 balanced columns on mobile */}
         <div className="grid grid-cols-3 gap-3 sm:gap-8 py-6 sm:py-10">
           {footerGroups.map((group) => (
             <div key={group.title}>

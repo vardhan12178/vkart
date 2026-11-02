@@ -60,7 +60,7 @@ export default function AdminHeader({
   const roleLabel = ROLE_LABELS[adminRole] || "Team Member";
   const canReachSettings = canAccess(adminRole, permissions, "settings", "read");
 
-  // --- Notification Logic ---
+  // Notification Logic
 
   const notificationsQuery = useQuery({
     queryKey: qk.admin.notifications,
@@ -203,8 +203,6 @@ export default function AdminHeader({
     onLogout?.();
   };
 
-  // Helper to get icon for notification
-  // Helper to get icon for notification
   const getNotificationIcon = (type, title = "") => {
     const titleUpper = (title || "").toUpperCase();
 
@@ -224,7 +222,6 @@ export default function AdminHeader({
     return <BellIcon className="h-5 w-5 text-slate-400" />;
   };
 
-  // Helper to get friendly time (simple implementation or use library)
   const getTimeAgo = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();
@@ -256,7 +253,7 @@ export default function AdminHeader({
         `}
       >
         <div className="flex h-14 sm:h-[4.5rem] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-5 lg:px-7">
-          {/* --- LEFT: Mobile Toggle & Brand --- */}
+          {/* LEFT: Mobile Toggle & Brand */}
           <div className="flex items-center gap-1.5 sm:gap-4">
             <button
               onClick={() => setMobileOpen(true)}
@@ -276,7 +273,7 @@ export default function AdminHeader({
             </Link>
           </div>
 
-          {/* --- CENTER: Desktop Search --- */}
+          {/* CENTER: Desktop Search */}
           <div className="mr-auto hidden max-w-lg flex-1 lg:flex">
             <div className="relative w-full group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -303,7 +300,7 @@ export default function AdminHeader({
             </div>
           </div>
 
-          {/* --- RIGHT: Actions & Profile --- */}
+          {/* RIGHT: Actions & Profile */}
           <div className="flex items-center gap-1 sm:gap-3 ml-auto">
             {/* Mobile Search Button */}
             <button

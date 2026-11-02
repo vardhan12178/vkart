@@ -16,7 +16,6 @@ import {
 // exactly at every breakpoint, including inside the horizontal scroller.
 const STEP_WIDTH = 92;
 
-// Helper function to format dates
 function formatStageDate(isoStr) {
   if (!isoStr) return null;
   const d = new Date(isoStr);
@@ -28,7 +27,6 @@ function formatStageDate(isoStr) {
 }
 
 export default function OrderStages({ currentStage = "PLACED", statusHistory = [], createdAt }) {
-  // Build a map of stage -> timestamp from statusHistory
   const stageTimestampMap = useMemo(() => {
     const map = {};
     if (Array.isArray(statusHistory)) {
@@ -68,7 +66,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
     [currentStage]
   );
 
-  /* --- CANCELLED STATE --- */
+  // Cancelled state
   if (isCancelled) {
     return (
       <div className="max-w-3xl mx-auto my-4">
@@ -87,7 +85,7 @@ export default function OrderStages({ currentStage = "PLACED", statusHistory = [
 
   const progressFraction = currentIndex / (stages.length - 1);
 
-  /* --- PROGRESS TIMELINE (horizontal at every breakpoint, scrolls on narrow screens) --- */
+  // PROGRESS TIMELINE (horizontal at every breakpoint, scrolls on narrow screens)
   return (
     <div className="w-full bg-white rounded-2xl border border-line shadow-2xs p-3.5 sm:p-5 relative overflow-hidden">
       <div className="overflow-x-auto -mx-1 px-1 pt-1 pb-1">

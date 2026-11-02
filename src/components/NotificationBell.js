@@ -30,7 +30,7 @@ const NotificationBell = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   // Position the dropdown against the viewport rather than the bell button's
-  // own (narrow) relative container — the bell isn't the last header icon
+  // own (narrow) relative container: the bell isn't the last header icon
   // (a hamburger/profile cluster follows it), so a plain `right-0` anchor
   // pushes a near-full-width panel off the left edge on small screens.
   useLayoutEffect(() => {

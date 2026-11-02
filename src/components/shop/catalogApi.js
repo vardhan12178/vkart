@@ -54,7 +54,6 @@ export const fetchSimilar = (slug, limit = 12) =>
     b.getSimilar(slug, limit)
   );
 
-/* ------------ Helpers for API-shaped data ------------ */
 export const categoryName = (slug) => CATEGORIES[slug] || slug;
 export const storefrontCategory = (p) => catOf(p);
 

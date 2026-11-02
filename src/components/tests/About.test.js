@@ -4,9 +4,7 @@ import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import About from "../About";
 
-// Static/presentational page (an FAQ accordion is its only interactive bit,
-// implemented as a CSS-only collapse rather than conditional rendering) —
-// a single smoke-render test is enough per the audit scope for this tier.
+// A static page whose only interactive part is a CSS-only FAQ accordion, so a smoke test is enough.
 describe("About Component", () => {
   test("renders without crashing", () => {
     render(

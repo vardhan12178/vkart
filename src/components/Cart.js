@@ -39,7 +39,6 @@ import { cartItemFromSaved } from "./shop/shopItems";
 import { qk } from "../query/queryKeys";
 import { Bone, Dots } from "./ui/Skeleton";
 
-/* ---------- Helpers ---------- */
 const INR = (n) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -53,7 +52,7 @@ const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
 // the product's id, and a key built from it never matches, so remove and quantity did nothing.
 const keyOf = cartItemKey;
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -61,7 +60,7 @@ const AnimStyles = () => (
   `}</style>
 );
 
-/* -------------------------------------------------------------------------- */
+// -
 export default function Cart() {
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
@@ -288,7 +287,6 @@ export default function Cart() {
   // Only render "Empty State" if BOTH cart and wishlist are empty.
   const isCompletelyEmpty = !hasCartItems && !hasWishlistItems;
 
-  /* --- RENDER: COMPLETELY EMPTY STATE --- */
   if (isCompletelyEmpty) {
     return (
       <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] flex items-center justify-center p-4">
@@ -314,7 +312,6 @@ export default function Cart() {
     );
   }
 
-  /* --- RENDER: MAIN LAYOUT --- */
   return (
     <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-32 lg:pb-20 overflow-x-hidden">
       <AnimStyles />
@@ -333,7 +330,7 @@ export default function Cart() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12">
-          {/* --- LEFT COLUMN: Cart Items & Wishlist --- */}
+          {/* LEFT COLUMN: Cart Items & Wishlist */}
           <div className="lg:col-span-8 space-y-6 sm:space-y-8">
             {/* 1. Cart Items List */}
             {hasCartItems ? (
@@ -524,7 +521,7 @@ export default function Cart() {
             )}
           </div>
 
-          {/* --- RIGHT COLUMN: Summary (Only show if cart has items) --- */}
+          {/* RIGHT COLUMN: Summary (Only show if cart has items) */}
           <div className="lg:col-span-4">
             {hasCartItems ? (
               <div className="sticky top-24 space-y-4 sm:space-y-6">
@@ -717,7 +714,7 @@ export default function Cart() {
         )}
       </div>
 
-      {/* --- MOBILE STICKY FOOTER --- */}
+      {/* Mobile sticky footer */}
       {!showPaymentDetails && hasCartItems && (
         <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-black/10 p-3 lg:hidden z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex gap-3 items-center max-w-7xl mx-auto">

@@ -196,8 +196,7 @@ vkart/
 
 ## More documentation
 
-- [`docs/ADMIN_RBAC_PLAN.md`](docs/ADMIN_RBAC_PLAN.md): how admin roles and per-module permissions work.
-- Backend repo: data model and API in `docs/CATALOG_SCHEMA.md`, search design and evaluation in `docs/AI_UPGRADE_PLAN.md`.
+- Backend repo: data model and API in `docs/CATALOG_SCHEMA.md`.
 
 ## License
 

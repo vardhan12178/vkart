@@ -82,7 +82,7 @@ function priceBands(bounds) {
   return bands;
 }
 
-/* ------------ Product card ------------ */
+// Product card
 function Card({ p, onChooseOptions }) {
   const dispatch = useDispatch();
   const wishlist = useSelector((s) => s.wishlist);
@@ -229,7 +229,7 @@ function Card({ p, onChooseOptions }) {
   );
 }
 
-/* ------------ Filters ------------ */
+// Filters
 function Section({ title, children }) {
   return (
     <div className="border-b border-line py-4 last:border-0">
@@ -371,7 +371,7 @@ const listOf = (v) =>
     .map((x) => x.trim())
     .filter(Boolean);
 
-/* ------------ Page ------------ */
+// Page
 export default function ProductList() {
   const dispatch = useDispatch();
   const [params, setParams] = useSearchParams();

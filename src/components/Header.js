@@ -53,8 +53,6 @@ const Header = () => {
   const [hasActiveSale, setHasActiveSale] = useState(false);
   const categoryCounts = useCategoryCounts(isMobileMenuOpen);
 
-  // --- Effects ---
-
   // 0. Check if there's an active sale (lightweight, cached in Redis)
   useEffect(() => {
     let cancelled = false;
@@ -156,7 +154,7 @@ const Header = () => {
       >
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 md:h-[4.75rem] items-center justify-between gap-4">
-            {/* --- LEFT: BRAND & NAV --- */}
+            {/* Left: brand & nav */}
             <div className="flex items-center gap-5 xl:gap-8">
               <Link
                 to="/"
@@ -194,12 +192,12 @@ const Header = () => {
               </nav>
             </div>
 
-            {/* --- CENTER: SEARCH (Desktop) --- */}
+            {/* CENTER: SEARCH (Desktop) */}
             <div className="hidden lg:flex flex-1 max-w-md mx-2 xl:mx-4">
               <HeaderSearch variant="desktop" />
             </div>
 
-            {/* --- RIGHT: ACTIONS --- */}
+            {/* Right: actions */}
             <div className="flex items-center gap-1.5 xl:gap-3 shrink-0">
               {/* Mobile Search Toggle */}
               <button
@@ -210,7 +208,7 @@ const Header = () => {
                 <Search className="h-[1.3rem] w-[1.3rem]" strokeWidth={1.7} />
               </button>
 
-              {/* Prime Badge — membership-aware */}
+              {/* Prime Badge: membership-aware */}
               <Link
                 to="/prime"
                 className="hidden sm:flex h-9 items-center gap-1.5 rounded-full border border-[#a85d37]/15 bg-[#efe4d9] px-3 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#79462f] transition-colors hover:border-[#a85d37]/30 hover:bg-[#e9dace]"
@@ -337,7 +335,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* --- MOBILE SEARCH BAR (Expandable) --- */}
+          {/* MOBILE SEARCH BAR (Expandable) */}
           <AnimatePresence>
             {showSearch && (
               <motion.div
@@ -352,7 +350,7 @@ const Header = () => {
           </AnimatePresence>
         </div>
 
-        {/* --- MOBILE DRAWER --- */}
+        {/* Mobile drawer */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div

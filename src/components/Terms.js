@@ -10,7 +10,7 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 
-/* ---------- Animation Styles ---------- */
+// Animation Styles
 const AnimStyles = () => (
   <style>{`
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -78,7 +78,7 @@ export default function Terms() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-12 relative z-10">
-        {/* --- SIDEBAR NAVIGATION (Desktop Sticky) --- */}
+        {/* SIDEBAR NAVIGATION (Desktop Sticky) */}
         <aside className="hidden lg:block w-64 shrink-0">
           <div className="sticky top-24 space-y-1">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 pl-4">
@@ -103,7 +103,7 @@ export default function Terms() {
           </div>
         </aside>
 
-        {/* --- CONTENT AREA --- */}
+        {/* Content area */}
         <div
           className="flex-1 max-w-3xl space-y-12 animate-fade-up"
           style={{ animationDelay: "0.1s" }}

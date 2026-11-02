@@ -1,5 +1,5 @@
 // Shared client-side permission check, mirroring backend/middleware/permissions.js.
-// This is a UX convenience only (hide nav, disable buttons, block direct URLs) —
+// This is a UX convenience only (hide nav, disable buttons, block direct URLs):
 // the backend re-checks every write on every request, so this file is never
 // the actual security boundary.
 
