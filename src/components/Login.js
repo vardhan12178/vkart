@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useRef, useState, useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import axios from "./axiosInstance";
@@ -16,15 +15,14 @@ import {
   User as UserIcon,
   Lock as LockClosedIcon,
   CircleAlert as ExclamationCircleIcon,
-  CircleCheck as CheckCircleIcon,
   ShoppingCart as ShoppingCartIcon,
 } from "lucide-react";
 import { Dots } from "./ui/Skeleton";
 import DemoLogin from "./DemoLogin";
-
+import FormAlert from "./ui/FormAlert";
+import FieldError from "./ui/FieldError";
+import { cx } from "../utils/cx";
 const currentYear = new Date().getFullYear();
-const cx = (...c) => c.filter(Boolean).join(" ");
-
 // Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -33,45 +31,6 @@ const fadeInUp = {
 
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const FieldError = ({ id, message }) =>
-  !message ? null : (
-    <motion.p
-      initial={{ opacity: 0, x: -10 }}
-      animate={{ opacity: 1, x: 0 }}
-      id={id}
-      className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-red-500"
-    >
-      <ExclamationCircleIcon className="h-4 w-4 shrink-0" /> {message}
-    </motion.p>
-  );
-
-const Toast = ({ show, kind = "error", children }) => {
-  if (!show) return null;
-  const isSuccess = kind === "success";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 0, height: 0 }}
-      className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
-        isSuccess
-          ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
-          : "bg-red-50/80 border-red-100 text-red-800"
-      )}
-      role="status"
-    >
-      {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
-      ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
-      )}
-      <div className="pt-0.5 font-medium">{children}</div>
-    </motion.div>
-  );
 };
 
 export default function Login() {
@@ -365,7 +324,7 @@ export default function Login() {
 
               {/* Toast / Error Area */}
               <AnimatePresence>
-                {formError && <Toast show={!!formError}>{formError}</Toast>}
+                {formError && <FormAlert show={!!formError}>{formError}</FormAlert>}
               </AnimatePresence>
 
               <motion.div variants={fadeInUp} className="mb-5 sm:mb-6">

@@ -24,22 +24,8 @@ import { buildVerifiedPaymentMeta, extractVerificationToken } from "../utils/che
 import { prefillFrom, withBranding } from "../utils/razorpayBranding";
 import { qk } from "../query/queryKeys";
 import { Dots } from "./ui/Skeleton";
-
+import { formatINR } from "../utils/format";
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.4s ease-out forwards; }
-  `}</style>
-);
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n));
-
 const getErrorMessage = (err, fallback) =>
   err?.response?.data?.message || err?.response?.data?.errors?.[0]?.msg || fallback;
 
@@ -108,7 +94,7 @@ const InputField = React.memo(function InputField({
         />
       </div>
       {touched && error && (
-        <p className="mt-1 ml-0.5 text-[10px] sm:text-xs font-bold text-alert flex items-center gap-1 animate-fade-up">
+        <p className="mt-1 ml-0.5 text-[10px] sm:text-xs font-bold text-alert flex items-center gap-1 animate-fade-up-quick">
           <span className="inline-block w-1 h-1 rounded-full bg-alert" /> {error}
         </p>
       )}
@@ -398,7 +384,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
           onClick={() => setShowReview(false)}
         >
           <div
-            className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl sm:rounded-[1.6rem] border border-black/10 bg-[#fffdf8] p-4 sm:p-8 shadow-[0_30px_90px_rgba(29,28,25,.24)] animate-fade-up"
+            className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl sm:rounded-[1.6rem] border border-black/10 bg-[#fffdf8] p-4 sm:p-8 shadow-[0_30px_90px_rgba(29,28,25,.24)] animate-fade-up-quick"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -437,7 +423,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                       <p className="text-[11px] text-muted">Qty: {item.quantity}</p>
                     </div>
                     <span className="text-xs sm:text-sm font-bold text-ink whitespace-nowrap">
-                      {INR((item.price || 0) * (item.quantity || 1))}
+                      {formatINR((item.price || 0) * (item.quantity || 1))}
                     </span>
                   </div>
                 ))}
@@ -466,19 +452,19 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
             <div className="mb-4 sm:mb-6 space-y-1.5 sm:space-y-2">
               <div className="flex justify-between text-xs sm:text-sm text-muted">
                 <span>Order Total</span>
-                <span className="font-bold text-ink">{INR(Number(totalAmount) || 0)}</span>
+                <span className="font-bold text-ink">{formatINR(Number(totalAmount) || 0)}</span>
               </div>
               {walletAppliedPreview > 0 && (
                 <div className="flex justify-between text-xs sm:text-sm text-[#59634f]">
                   <span>Wallet Applied</span>
-                  <span className="font-bold">−{INR(walletAppliedPreview)}</span>
+                  <span className="font-bold">−{formatINR(walletAppliedPreview)}</span>
                 </div>
               )}
               <div className="h-px bg-line my-1" />
               <div className="flex justify-between text-sm sm:text-base">
                 <span className="font-bold text-ink">Payable Amount</span>
                 <span className="text-lg sm:text-xl font-black text-[#a85d37]">
-                  {INR(payablePreview)}
+                  {formatINR(payablePreview)}
                 </span>
               </div>
             </div>
@@ -504,7 +490,9 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   </>
                 ) : (
                   <>
-                    {payablePreview > 0 ? `Confirm & Pay ${INR(payablePreview)}` : "Confirm order"}{" "}
+                    {payablePreview > 0
+                      ? `Confirm & Pay ${formatINR(payablePreview)}`
+                      : "Confirm order"}{" "}
                     <ArrowRightIcon size={11} />
                   </>
                 )}
@@ -515,8 +503,6 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
       )}
 
       <div className="premium-page premium-checkout relative w-full bg-[#f6f3ed] py-4 sm:py-10 overflow-hidden pb-28 lg:pb-10">
-        <AnimStyles />
-
         {/* Ambient Background */}
         <div className="hidden" />
 
@@ -826,7 +812,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   <div className="flex justify-between text-xs sm:text-sm text-muted-ondark font-medium">
                     <span>Order Total</span>
                     <span className="text-white font-semibold">
-                      {INR(Number(totalAmount) || 0)}
+                      {formatINR(Number(totalAmount) || 0)}
                     </span>
                   </div>
 
@@ -837,7 +823,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                       Payable Amount
                     </span>
                     <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                      {INR(Number(totalAmount) || 0)}
+                      {formatINR(Number(totalAmount) || 0)}
                     </span>
                   </div>
                 </div>
@@ -918,7 +904,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   </button>
 
                   {showTestCard && paymentMethod === "netbanking" && (
-                    <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up">
+                    <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up-quick">
                       <div className="p-1.5 bg-white/10 rounded-md shrink-0">
                         <LandmarkIcon className="h-4 w-4 text-accent" />
                       </div>
@@ -931,7 +917,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   )}
 
                   {showTestCard && paymentMethod === "paylater" && (
-                    <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up">
+                    <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up-quick">
                       <div className="p-1.5 bg-white/10 rounded-md shrink-0">
                         <ClockIcon className="h-4 w-4 text-accent" />
                       </div>
@@ -946,7 +932,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                   )}
 
                   {showTestCard && paymentMethod === "card" && (
-                    <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up">
+                    <div className="px-3 pb-3 flex items-start gap-2.5 animate-fade-up-quick">
                       <div className="p-1.5 bg-white/10 rounded-md shrink-0">
                         <CreditCardIcon className="h-4 w-4 text-accent" />
                       </div>
@@ -988,7 +974,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     </>
                   ) : (
                     <>
-                      {payablePreview > 0 ? `Pay ${INR(payablePreview)}` : "Place order"}{" "}
+                      {payablePreview > 0 ? `Pay ${formatINR(payablePreview)}` : "Place order"}{" "}
                       <ArrowRightIcon size={12} />
                     </>
                   )}
@@ -1017,7 +1003,7 @@ export default function CheckoutForm({ onOrderPlaced, totalAmount }) {
                     Total Payable
                   </div>
                   <div className="text-lg font-black text-[#1d1c19] leading-none">
-                    {INR(Number(totalAmount) || 0)}
+                    {formatINR(Number(totalAmount) || 0)}
                   </div>
                 </div>
                 <button

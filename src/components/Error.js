@@ -1,26 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FaExclamationTriangle,
-  FaHome,
-  FaArrowLeft,
-  FaSearch,
-  FaEnvelope,
-  FaGhost,
-} from "react-icons/fa";
+import { FaHome, FaArrowLeft, FaSearch, FaEnvelope, FaGhost } from "react-icons/fa";
 
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.2); } 50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.4); } }
-    .animate-float { animation: float 6s ease-in-out infinite; }
-    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .animate-pulse-glow { animation: pulse-glow 3s infinite; }
-  `}</style>
-);
-
 export default function Error() {
   const handleSearch = (val) => {
     if (val.trim()) {
@@ -30,8 +12,6 @@ export default function Error() {
 
   return (
     <div className="premium-page premium-error relative min-h-screen w-full overflow-hidden bg-[#f6f3ed] font-sans text-[#1d1c19] flex items-center justify-center p-4">
-      <AnimStyles />
-
       {/* Ambient Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-orange-200/30 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-200/20 rounded-full blur-[120px] pointer-events-none" />

@@ -17,14 +17,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { closeChat, openChat, clearChatPrompt } from "../redux/uiSlice";
 import { Dots } from "./ui/Skeleton";
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n ?? 0));
-
+import { formatINR } from "../utils/format";
 const CHAT_STORAGE_KEY = "vkart_chat_history";
 const DEFAULT_PROMPTS = [
   "Best gaming phone under 30k",
@@ -409,7 +402,7 @@ const AIChatAssistant = () => {
                     )}
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs sm:text-sm font-bold text-[#1d1c19]">
-                        {INR(prod.price)}
+                        {formatINR(prod.price)}
                       </span>
                       <span
                         className={`text-[9px] font-bold ${prod.stock > 0 ? "text-[#5f6a52]" : "text-[#a85d37]"}`}

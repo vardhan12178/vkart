@@ -14,13 +14,6 @@ import {
 const MAX_MESSAGE = 800;
 
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-  `}</style>
-);
-
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", honey: "" });
   const [errors, setErrors] = useState({});
@@ -91,8 +84,6 @@ export default function Contact() {
 
   return (
     <div className="premium-page premium-contact relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
-      <AnimStyles />
-
       {/* Ambient Background Blobs */}
       <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />

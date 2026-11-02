@@ -19,14 +19,7 @@ import { qk } from "../query/queryKeys";
 import { Bone, SkeletonRegion } from "./ui/Skeleton";
 import { loadRazorpay } from "../utils/loadRazorpay";
 import { prefillFrom, withBranding } from "../utils/razorpayBranding";
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n));
-
+import { formatINR } from "../utils/format";
 export default function PrimeMembership() {
   const queryClient = useQueryClient();
   const [purchasing, setPurchasing] = useState(null);
@@ -309,10 +302,10 @@ export default function PrimeMembership() {
               <p className="text-xs text-gray-500 mb-4">{plan.durationDays} days</p>
 
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-3xl font-black text-gray-900">{INR(plan.price)}</span>
+                <span className="text-3xl font-black text-gray-900">{formatINR(plan.price)}</span>
                 {plan.originalPrice > plan.price && (
                   <span className="text-sm text-muted-light line-through">
-                    {INR(plan.originalPrice)}
+                    {formatINR(plan.originalPrice)}
                   </span>
                 )}
               </div>
@@ -366,7 +359,9 @@ export default function PrimeMembership() {
           >
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-lg font-bold text-gray-900">{selectedPlan.name}</h3>
-              <span className="text-lg font-black text-gray-900">{INR(selectedPlan.price)}</span>
+              <span className="text-lg font-black text-gray-900">
+                {formatINR(selectedPlan.price)}
+              </span>
             </div>
             <p className="text-xs text-gray-500 mb-5">
               {selectedPlan.durationDays} days of VKart Prime
@@ -407,7 +402,7 @@ export default function PrimeMembership() {
             >
               {purchasing === selectedPlan._id
                 ? "Processing..."
-                : `Confirm & Pay ${INR(selectedPlan.price)}`}
+                : `Confirm & Pay ${formatINR(selectedPlan.price)}`}
             </button>
           </div>
         </div>
