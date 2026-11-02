@@ -1,9 +1,17 @@
 {
-  "name": "vkart",
+  "name": "vkart-frontend",
   "version": "0.1.0",
+  "description": "VKart storefront and admin panel: React 18, Vite, Tailwind, Redux Toolkit, TanStack Query",
+  "author": "Bala Vardhan Pula",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://vkart.balavardhan.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vardhan12178/vkart.git"
+  },
   "private": true,
   "engines": {
-    "node": ">=24.0.0"
+    "node": "24.x"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

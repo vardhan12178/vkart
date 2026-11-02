@@ -1,5 +1,5 @@
 // src/pages/ResetPassword.jsx
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import axios from "./axiosInstance";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -103,6 +103,8 @@ const PasswordStrengthIndicator = ({ password }) => {
 
 export default function ResetPassword() {
   const navigate = useNavigate();
+  const redirectTimer = useRef(null);
+  useEffect(() => () => clearTimeout(redirectTimer.current), []);
   const { search } = useLocation();
   const token = useMemo(() => new URLSearchParams(search).get("token") || "", [search]);
 
@@ -141,7 +143,7 @@ export default function ResetPassword() {
         confirmPassword: confirm,
       });
       setOkMsg(data?.message || "Password reset successful.");
-      setTimeout(() => navigate("/login"), 2000);
+      redirectTimer.current = setTimeout(() => navigate("/login"), 2000);
     } catch (err) {
       const msg = err?.response?.data?.message || "Reset failed. Try again or request a new link.";
       setErrMsg(msg);

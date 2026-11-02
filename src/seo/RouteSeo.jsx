@@ -67,7 +67,7 @@ const orgSchema = JSON.stringify({
   "@type": "Organization",
   name: "VKart",
   url: SITE,
-  logo: `${SITE}/assets/categories/logo.png`,
+  logo: `${SITE}/icon-512.png`,
   sameAs: [],
 });
 

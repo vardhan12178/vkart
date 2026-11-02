@@ -1,0 +1,29 @@
+VKart Portfolio License
+
+Copyright (c) 2026 Bala Vardhan Pula. All rights reserved.
+
+VKart is a portfolio project. The source code, UI designs and architecture in
+this repository are made available under the following terms.
+
+You MAY:
+  - read, run and study the code for personal learning;
+  - review it for hiring or portfolio-evaluation purposes;
+  - fork the repository to study it.
+
+You MAY NOT, without written permission from the author:
+  - redistribute the code or a modified copy as your own product;
+  - resell, sublicense or white-label it as a commercial product;
+  - deploy a clone of the site for commercial gain.
+
+If you adapt significant portions of the UI logic or backend architecture for
+your own open-source learning project, please credit it:
+  // Portions of this code adapted from VKart (Portfolio)
+  // (c) 2026 Bala Vardhan Pula.
+
+Third-party libraries used by this project keep their own licenses.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE
+OF THE SOFTWARE.

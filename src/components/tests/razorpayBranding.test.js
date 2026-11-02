@@ -11,10 +11,10 @@ describe("withBranding", () => {
   });
 
   test("adds the logo on https, the brand colour, and a confirm-before-close prompt", () => {
-    setOrigin("https://vkartshop.netlify.app/checkout");
+    setOrigin("https://vkart.balavardhan.dev/checkout");
     expect(withBranding({ amount: 500 })).toEqual({
       amount: 500,
-      image: "https://vkartshop.netlify.app/icon-512.png",
+      image: "https://vkart.balavardhan.dev/icon-512.png",
       theme: { color: "#1d1c19" },
       modal: { confirm_close: true },
     });
@@ -26,7 +26,7 @@ describe("withBranding", () => {
   });
 
   test("keeps the caller's own modal handlers and lets explicit options win", () => {
-    setOrigin("https://vkartshop.netlify.app/");
+    setOrigin("https://vkart.balavardhan.dev/");
     const ondismiss = jest.fn();
     const out = withBranding({ theme: { color: "#fff" }, modal: { ondismiss } });
     expect(out.modal).toEqual({ confirm_close: true, ondismiss });
