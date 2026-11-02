@@ -1,6 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Helmet } from "react-helmet-async";
+import { FiChevronRight } from "react-icons/fi";
 import {
   findSaved,
   toggleSaved,
@@ -8,288 +10,65 @@ import {
   matchVariant,
   optionExists,
   pickOption,
-  visibleOptions,
   isAvailable,
   cartLineFrom,
 } from "./shopItems";
 import { addToCart, cartItemKey } from "../../redux/cartSlice";
 import { openMiniCart } from "../../redux/uiSlice";
 import { showToast } from "../../utils/toast";
-import { Helmet } from "react-helmet-async";
-import {
-  FiChevronRight,
-  FiChevronDown,
-  FiTruck,
-  FiRotateCcw,
-  FiShield,
-  FiLock,
-  FiCheck,
-  FiShoppingCart,
-  FiZap,
-  FiHeart,
-  FiShare2,
-  FiColumns,
-} from "react-icons/fi";
-import BrandSelect from "./BrandSelect";
-import { RatingChip, ReviewsSection } from "./Reviews";
+import { ReviewsSection } from "./Reviews";
 import ShopperReviews from "./ShopperReviews";
 import { CATEGORIES, catOf } from "./catalogData";
-import {
-  fetchProduct,
-  fetchSimilar,
-  defaultVariant,
-  imagesFor,
-  toCardFromDetail,
-  formatPrice,
-} from "./catalogApi";
+import { defaultVariant, imagesFor } from "./catalogApi";
 import DeliveryCheck from "./DeliveryCheck";
-import AlertButton from "./AlertButton";
-import { label, SpecValue } from "./specFormat";
 import { addToCompare, compareUrl } from "./compareList";
-import { readRecent, pushRecent } from "./recentlyViewed";
 import OffersEmi from "./OffersEmi";
 import { productJsonLd, breadcrumbJsonLd } from "./productJsonLd";
 import SizeGuide, { sizeGuideFor } from "./SizeGuide";
-import { FREE_SHIPPING_THRESHOLD } from "../../utils/shipping";
+import BuyBox from "./product/BuyBox";
+import Description from "./product/Description";
+import Gallery from "./product/Gallery";
+import Highlights from "./product/Highlights";
+import MobileBuyBar from "./product/MobileBuyBar";
+import OptionPicker from "./product/OptionPicker";
+import Policies from "./product/Policies";
+import PriceBlock from "./product/PriceBlock";
+import ProductHeading from "./product/ProductHeading";
+import ProductSkeleton from "./product/ProductSkeleton";
+import Rail from "./product/Rail";
+import SideColumn from "./product/SideColumn";
+import SpecsSection from "./product/SpecsSection";
+import useProduct from "./product/useProduct";
 
 // Product page. Data comes from /api/v2 through catalogApi.js,
 // which falls back to the bundled copy when the API isn't available.
 
-const INK = "#1d1c19";
-const ACCENT = "#a85d37";
-
-// Gallery
-function Gallery({ images, idx, setIdx }) {
-  const [zoom, setZoom] = useState(null);
-  const strip = useRef(null);
-  const main = images[Math.min(idx, images.length - 1)];
-
-  useEffect(() => {
-    const el = strip.current;
-    if (el && el.clientWidth) el.scrollTo({ left: idx * el.clientWidth, behavior: "smooth" });
-  }, [idx]);
-
-  if (!main) return <div className="aspect-square rounded-2xl bg-[#f4f0e8]" />;
-  return (
-    <div className="lg:sticky lg:top-24">
-      {/* Mobile: swipe */}
-      <div className="mx-auto max-w-lg lg:hidden">
-        <div
-          ref={strip}
-          tabIndex={0}
-          role="region"
-          aria-label="Product images"
-          className="flex snap-x snap-mandatory overflow-x-auto rounded-2xl bg-white [scrollbar-width:none]"
-          onScroll={(e) => {
-            const w = e.currentTarget.clientWidth;
-            const i = Math.round(e.currentTarget.scrollLeft / w);
-            if (i !== idx) setIdx(i);
-          }}
-        >
-          {images.map((im, i) => (
-            <div
-              key={`${im.md}-${i}`}
-              className="flex aspect-square w-full flex-none snap-center items-center justify-center"
-            >
-              <img
-                src={im.md}
-                alt={im.alt}
-                loading={i ? "lazy" : "eager"}
-                fetchpriority={i ? undefined : "high"}
-                referrerPolicy="no-referrer"
-                className="h-full w-full object-contain p-6"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 flex justify-center gap-1.5">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              aria-label={`Image ${i + 1}`}
-              onClick={() => setIdx(i)}
-              className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-ink" : "w-1.5 bg-gray-300"}`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Desktop: thumbs + hover zoom */}
-      <div className="hidden gap-4 lg:flex">
-        <div className="flex max-h-[560px] w-[72px] flex-none flex-col gap-2 overflow-y-auto p-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {images.map((im, i) => (
-            <button
-              key={`${im.md}-${i}`}
-              type="button"
-              onMouseEnter={() => setIdx(i)}
-              onClick={() => setIdx(i)}
-              className={`aspect-square w-full flex-none overflow-hidden rounded-lg border-2 bg-white ${i === idx ? "border-accent" : "border-transparent hover:border-gray-300"}`}
-            >
-              <img
-                src={im.thumb}
-                alt={im.alt}
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                className="h-full w-full object-contain p-1"
-              />
-            </button>
-          ))}
-        </div>
-        <div
-          className="relative flex aspect-square flex-1 cursor-zoom-in items-center justify-center overflow-hidden rounded-2xl border border-line bg-white"
-          onMouseMove={(e) => {
-            const r = e.currentTarget.getBoundingClientRect();
-            setZoom({
-              x: ((e.clientX - r.left) / r.width) * 100,
-              y: ((e.clientY - r.top) / r.height) * 100,
-            });
-          }}
-          onMouseLeave={() => setZoom(null)}
-        >
-          <img
-            src={zoom ? main.lg : main.md}
-            alt={main.alt}
-            referrerPolicy="no-referrer"
-            className="h-full w-full object-contain p-8 transition-transform duration-150"
-            style={
-              zoom
-                ? { transform: "scale(2.2)", transformOrigin: `${zoom.x}% ${zoom.y}%` }
-                : undefined
-            }
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Small cards
-function MiniCard({ p }) {
-  const img = p.image;
-  const off = p.discountPercent;
-  return (
-    <Link
-      to={`/products/${p.slug}`}
-      className="group flex w-44 flex-none flex-col rounded-xl border border-line bg-white p-3 transition hover:shadow-md sm:w-52"
-    >
-      <div className="flex aspect-square items-center justify-center overflow-hidden rounded-lg bg-[#faf8f3]">
-        {img && (
-          <img
-            src={img.thumb}
-            alt={img.alt}
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            className="h-full w-full object-contain p-2 transition group-hover:scale-105"
-          />
-        )}
-      </div>
-      <p className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-muted-light">
-        {p.brand}
-      </p>
-      <p className="line-clamp-2 text-sm font-medium text-ink">
-        {p.title.replace(`${p.brand} `, "")}
-      </p>
-      {p.rating && (
-        <div className="mt-1">
-          <RatingChip rating={p.rating} />
-        </div>
-      )}
-      <p className="mt-1 text-sm">
-        <span className="font-bold text-ink">{formatPrice(p.priceRange?.min ?? p.price)}</span>
-        {off > 0 && <span className="ml-1.5 text-xs font-semibold text-ok">{off}% off</span>}
-      </p>
-    </Link>
-  );
-}
-
-function Rail({ title, items }) {
-  if (!items.length) return null;
-  return (
-    <section className="mt-12">
-      <h2 className="text-xl font-bold text-ink">{title}</h2>
-      <div className="-mx-4 mt-4 flex gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {items.map((p) => (
-          <MiniCard key={p.slug} p={p} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-// Page
 export default function ProductPage() {
   const { slug } = useParams();
-  const [p, setP] = useState(null);
-  const [status, setStatus] = useState("loading"); // loading | ready | missing | error
-  const [similar, setSimilar] = useState([]);
-  const [opts, setOpts] = useState({});
-  const [imgIdx, setImgIdx] = useState(0);
-  const [qty, setQty] = useState(1);
-  const [notice, setNotice] = useState("");
-  const [allSpecs, setAllSpecs] = useState(false);
-  const [recent, setRecent] = useState([]);
-  const [attempt, setAttempt] = useState(0);
-  const [showSizes, setShowSizes] = useState(false);
   const [params, setParams] = useSearchParams();
   const dispatch = useDispatch();
   const wishlist = useSelector((s) => s.wishlist);
   const navigate = useNavigate();
-
-  // Load the product (and reset per-product state) whenever the slug changes
-  useEffect(() => {
-    let live = true;
-    setStatus("loading");
-    setSimilar([]);
-    window.scrollTo(0, 0);
-    fetchProduct(slug)
-      .then((prod) => {
-        if (!live) return;
-        if (!prod) {
-          setP(null);
-          setStatus("missing");
-          return;
-        }
-        setP(prod);
-        // ?variant=<sku> opens that exact option (shared links, refreshes)
-        const linked = prod.variants.find((v) => v.sku === params.get("variant"));
-        setOpts((linked || defaultVariant(prod)).options);
-        setImgIdx(0);
-        setQty(1);
-        setNotice("");
-        setAllSpecs(false);
-        setRecent(readRecent().filter((c) => c.slug !== prod.slug));
-        pushRecent(toCardFromDetail(prod));
-        setStatus("ready");
-        fetchSimilar(slug)
-          .then((res) => live && setSimilar(res?.products || []))
-          .catch(() => {});
-      })
-      .catch(() => live && setStatus("error"));
-    return () => {
-      live = false;
-    };
-  }, [slug, attempt]);
+  const [showSizes, setShowSizes] = useState(false);
+  const {
+    p,
+    status,
+    similar,
+    recent,
+    opts,
+    setOpts,
+    imgIdx,
+    setImgIdx,
+    qty,
+    setQty,
+    notice,
+    setNotice,
+    retry,
+  } = useProduct(slug, params.get("variant"));
 
   const variant = useMemo(() => matchVariant(p, opts), [p, opts]);
 
-  if (status === "loading") {
-    return (
-      <div className="bg-sand pb-12">
-        <div className="mx-auto max-w-7xl px-4 pt-14">
-          <div className="grid grid-cols-1 gap-8 rounded-3xl bg-paper p-6 shadow-sm lg:grid-cols-2 lg:p-8">
-            <div className="aspect-square animate-pulse rounded-2xl bg-tint" />
-            <div className="space-y-4">
-              <div className="h-4 w-1/4 rounded bg-tint" />
-              <div className="h-8 w-3/4 rounded bg-tint" />
-              <div className="h-10 w-1/3 rounded bg-tint" />
-              <div className="h-24 rounded-2xl bg-tint" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  if (status === "loading") return <ProductSkeleton />;
   if (status !== "ready" || !p) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
@@ -297,11 +76,7 @@ export default function ProductPage() {
           {status === "error" ? "Couldn't load this product." : "Product not found."}
         </p>
         {status === "error" && (
-          <button
-            type="button"
-            onClick={() => setAttempt(attempt + 1)}
-            className="mt-4 mr-4 underline"
-          >
+          <button type="button" onClick={retry} className="mt-4 mr-4 underline">
             Try again
           </button>
         )}
@@ -364,28 +139,10 @@ export default function ProductPage() {
     else dispatch(openMiniCart(cartItemKey(line)));
   };
 
-  const specGroups = Object.entries(p.specs || {}).filter(([, f]) => f && Object.keys(f).length);
-  // Collapsed view: first two groups, at most 12 rows in total
-  const SPEC_ROWS = 12;
-  const totalRows = specGroups.reduce((n, [, f]) => n + Object.keys(f).length, 0);
-  const shownGroups = allSpecs
-    ? specGroups
-    : specGroups.slice(0, 2).reduce((acc, [g, f]) => {
-        const left = SPEC_ROWS - acc.reduce((n, [, x]) => n + Object.keys(x).length, 0);
-        if (left > 0) acc.push([g, Object.fromEntries(Object.entries(f).slice(0, left))]);
-        return acc;
-      }, []);
-  const collapsed = !allSpecs && (specGroups.length > 2 || totalRows > SPEC_ROWS);
-  const recentItems = recent;
-  const policies = [
-    { icon: FiTruck, text: `Free delivery over ₹${FREE_SHIPPING_THRESHOLD}` },
-    { icon: FiRotateCcw, text: "7-day easy returns" },
-    {
-      icon: FiShield,
-      text: p.warranty ? p.warranty.replace(/^./, (c) => c.toUpperCase()) : "Brand warranty",
-    },
-    { icon: FiLock, text: "Secure checkout" },
-  ];
+  const toggleSave = () => {
+    const now = toggleSaved(dispatch, wishlist, wishlistItemFrom(p, variant || defaultVariant(p)));
+    showToast(now ? "Saved to wishlist" : "Removed from wishlist", "success");
+  };
 
   const origin = window.location.origin;
   const ldProduct = productJsonLd(p, variant, {
@@ -434,402 +191,67 @@ export default function ProductPage() {
 
           {/* Buy box */}
           <div>
-            <Link
-              to={`/products?cat=${cat}`}
-              className="text-sm font-semibold"
-              style={{ color: ACCENT }}
-            >
-              Visit the {p.brand} store
-            </Link>
-            <div className="mt-1 flex items-start justify-between gap-3">
-              <h1 className="min-w-0 break-words text-2xl font-bold leading-snug text-ink sm:text-3xl">
-                {p.title}
-              </h1>
-              <div className="flex flex-none gap-2">
-                <button
-                  type="button"
-                  aria-label="Share"
-                  onClick={share}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-line-strong bg-white text-ink transition hover:border-ink"
-                >
-                  <FiShare2 />
-                </button>
-                <button
-                  type="button"
-                  aria-pressed={saved}
-                  aria-label={saved ? "Remove from wishlist" : "Add to wishlist"}
-                  onClick={() => {
-                    const now = toggleSaved(
-                      dispatch,
-                      wishlist,
-                      wishlistItemFrom(p, variant || defaultVariant(p))
-                    );
-                    showToast(now ? "Saved to wishlist" : "Removed from wishlist", "success");
-                  }}
-                  className={`flex h-11 w-11 flex-none items-center justify-center rounded-full border transition ${saved ? "border-accent bg-accent/10 text-accent" : "border-line-strong bg-white text-ink hover:border-ink"}`}
-                >
-                  <FiHeart className={saved ? "fill-accent" : ""} />
-                </button>
-              </div>
-            </div>
-            {p.rating?.average ? (
-              <a
-                href="#reviews"
-                className="mt-2 inline-flex items-center gap-2 text-sm text-muted hover:underline"
-              >
-                <RatingChip rating={p.rating} size="md" showCount={false} />
-                {p.rating.count.toLocaleString("en-IN")} ratings
-                {p.reviews ? ` & ${p.reviews.reviewCount.toLocaleString("en-IN")} reviews` : ""}
-              </a>
-            ) : (
-              <p className="mt-2 text-sm text-muted-light">No ratings yet</p>
-            )}
-            <button
-              type="button"
-              onClick={() => navigate(compareUrl(addToCompare(p.slug)))}
-              className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-accent underline-offset-4 hover:underline"
-            >
-              <FiColumns /> Compare with other products
-            </button>
+            <ProductHeading
+              p={p}
+              cat={cat}
+              saved={saved}
+              onShare={share}
+              onToggleSave={toggleSave}
+              onCompare={() => navigate(compareUrl(addToCompare(p.slug)))}
+            />
 
-            <div className="mt-5 border-t border-line pt-5">
-              {variant ? (
-                <>
-                  {off > 0 && (
-                    <span className="mr-3 rounded-md bg-ok px-2 py-0.5 text-sm font-semibold text-white">
-                      {off}% off
-                    </span>
-                  )}
-                  <span className="text-3xl font-bold text-ink">{formatPrice(variant.price)}</span>
-                  {off > 0 && (
-                    <p className="mt-1 text-sm text-muted-light">
-                      M.R.P.: <span className="line-through">{formatPrice(variant.mrp)}</span>
-                    </p>
-                  )}
-                  <p className="mt-1 text-xs text-muted-light">Inclusive of all taxes</p>
-                  {p.sale && (
-                    <p className="mt-3 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent">
-                      {p.sale.name}: {p.sale.percent}% off MRP
-                      {p.sale.primePercent && (
-                        <span className="font-normal text-ink-soft">
-                          · Prime members get {p.sale.primePercent}% off at checkout
-                        </span>
-                      )}
-                    </p>
-                  )}
-                </>
-              ) : (
-                <p className="text-lg text-muted">This combination is not available</p>
-              )}
-            </div>
+            <PriceBlock p={p} variant={variant} off={off} />
 
-            {/* Options */}
-            {visibleOptions(p).map((o) => {
-              const byImage =
-                o.name === p.media.groupBy && Object.keys(p.media.groups || {}).length > 0;
-              return (
-                <div key={o.name} className="mt-6">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <p className="text-sm font-semibold text-ink">
-                      {o.name}: <span className="font-normal text-muted">{opts[o.name]}</span>
-                    </p>
-                    {o.name === "Size" && sizeGuide && (
-                      <button
-                        type="button"
-                        onClick={() => setShowSizes(true)}
-                        className="text-xs font-semibold text-accent underline underline-offset-4"
-                      >
-                        Size guide
-                      </button>
-                    )}
-                  </div>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {o.values.map((val) => {
-                      const active = opts[o.name] === val.value;
-                      const ok = exists(o.name, val.value);
-                      const thumb = byImage ? imagesFor(p, val.value)[0] : null;
-                      if (thumb) {
-                        return (
-                          <button
-                            key={val.value}
-                            type="button"
-                            title={val.value}
-                            onClick={() => pick(o.name, val.value)}
-                            className={`h-16 w-16 overflow-hidden rounded-xl border-2 bg-white p-1 ${active ? "border-accent" : "border-line hover:border-gray-400"} ${ok ? "" : "opacity-40"}`}
-                          >
-                            <img
-                              src={thumb.thumb}
-                              alt={val.value}
-                              loading="lazy"
-                              referrerPolicy="no-referrer"
-                              className="h-full w-full object-contain"
-                            />
-                          </button>
-                        );
-                      }
-                      if (o.name === "Color" && val.hex) {
-                        return (
-                          <button
-                            key={val.value}
-                            type="button"
-                            title={val.value}
-                            aria-label={val.value}
-                            onClick={() => pick(o.name, val.value)}
-                            className={`h-9 w-9 rounded-full border-2 ring-2 ring-offset-2 ${active ? "ring-accent" : "ring-transparent"} border-white ${ok ? "" : "opacity-40"}`}
-                            style={{ background: val.hex }}
-                          />
-                        );
-                      }
-                      return (
-                        <button
-                          key={val.value}
-                          type="button"
-                          onClick={() => pick(o.name, val.value)}
-                          className={`min-w-[3rem] rounded-lg border px-3 py-2 text-sm transition ${active ? "border-ink bg-ink text-white" : "border-line-strong bg-white text-ink hover:border-ink"} ${ok ? "" : "text-gray-400 line-through opacity-60"}`}
-                        >
-                          {val.value}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
+            <OptionPicker
+              p={p}
+              opts={opts}
+              exists={exists}
+              pick={pick}
+              hasSizeGuide={Boolean(sizeGuide)}
+              onSizeGuide={() => setShowSizes(true)}
+            />
 
             <DeliveryCheck category={cat} price={variant ? variant.price * qty : 0} />
 
-            {/* Stock + actions */}
-            <div className="mt-6 rounded-2xl border border-line bg-white p-4">
-              <p className={`text-sm font-semibold ${available ? "text-ok" : "text-alert"}`}>
-                {available ? "In stock" : "Currently unavailable"}
-              </p>
-              <p className="mt-1 text-sm text-muted">Sold by VKart · Ships from India</p>
-              {p.id && variant && (
-                <AlertButton productId={p.id} sku={variant.sku} outOfStock={!available} />
-              )}
-              <div className="mt-3 flex items-center gap-3">
-                <span className="text-sm text-muted">Qty</span>
-                <BrandSelect
-                  label="Quantity"
-                  value={qty}
-                  onChange={setQty}
-                  className="w-24"
-                  options={[1, 2, 3, 4, 5].map((n) => ({ value: n, label: String(n) }))}
-                />
-              </div>
-              <div className="mt-4 hidden gap-3 lg:flex">
-                <button
-                  type="button"
-                  disabled={!available}
-                  onClick={() => buy("cart")}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-ink py-3 text-sm font-bold text-ink transition hover:bg-ink hover:text-white disabled:opacity-40"
-                >
-                  <FiShoppingCart /> Add to cart
-                </button>
-                <button
-                  type="button"
-                  disabled={!available}
-                  onClick={() => buy("buy")}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-full py-3 text-sm font-bold text-white transition hover:opacity-90 disabled:opacity-40"
-                  style={{ background: ACCENT }}
-                >
-                  <FiZap /> Buy now
-                </button>
-              </div>
-              {notice && (
-                <p className="mt-3 rounded-lg bg-sand px-3 py-2 text-xs text-muted">{notice}</p>
-              )}
-            </div>
+            <BuyBox
+              p={p}
+              variant={variant}
+              available={available}
+              qty={qty}
+              setQty={setQty}
+              notice={notice}
+              buy={buy}
+            />
 
             <OffersEmi price={variant?.price} />
 
-            {/* Policies */}
-            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 [&>*]:min-w-0">
-              {policies.map(({ icon: Icon, text }) => (
-                <div
-                  key={text}
-                  className="flex flex-col items-center gap-1.5 rounded-xl bg-sand px-2 py-3 text-center text-[11px] leading-tight text-[#5f5b52]"
-                >
-                  <Icon className="text-lg" style={{ color: ACCENT }} />
-                  {text}
-                </div>
-              ))}
-            </div>
-
-            {/* Highlights */}
-            {p.highlights?.length > 0 && (
-              <div className="mt-6">
-                <h2 className="text-base font-bold text-ink">Highlights</h2>
-                <ul className="mt-2 space-y-2">
-                  {p.highlights.map((h) => (
-                    <li key={h} className="flex gap-2 text-sm text-ink-soft">
-                      <FiCheck className="mt-0.5 flex-none text-accent" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {variant && (
-              <p className="mt-6 text-xs text-muted-light">
-                SKU {variant.sku}
-                {variant.mpn ? ` · Model ${variant.mpn}` : ""}
-              </p>
-            )}
+            <Policies warranty={p.warranty} />
+            <Highlights items={p.highlights} variant={variant} />
           </div>
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_340px] [&>*]:min-w-0">
           <div className="space-y-8">
-            {/* Specifications */}
-            {specGroups.length > 0 && (
-              <section className="rounded-3xl bg-paper p-4 shadow-sm sm:p-6">
-                <h2 className="text-xl font-bold text-ink">Specifications</h2>
-                <div className="mt-4 space-y-5">
-                  {shownGroups.map(([group, fields]) => (
-                    <div key={group}>
-                      <h3 className="border-b border-line pb-2 text-sm font-semibold text-ink">
-                        {group}
-                      </h3>
-                      <dl>
-                        {Object.entries(fields).map(([k, v]) =>
-                          k === "points" ? (
-                            <ul
-                              key={k}
-                              className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft"
-                            >
-                              {[].concat(v).map((x, i) => (
-                                <li key={i}>{String(x)}</li>
-                              ))}
-                            </ul>
-                          ) : (
-                            <div
-                              key={k}
-                              className="grid grid-cols-[minmax(110px,35%)_1fr] gap-3 border-b border-tint py-2.5 text-sm last:border-0"
-                            >
-                              <dt className="text-muted-light">{label(k)}</dt>
-                              <dd className="text-ink">
-                                <SpecValue value={v} />
-                              </dd>
-                            </div>
-                          )
-                        )}
-                      </dl>
-                    </div>
-                  ))}
-                </div>
-                {(collapsed || allSpecs) && (specGroups.length > 2 || totalRows > SPEC_ROWS) && (
-                  <button
-                    type="button"
-                    onClick={() => setAllSpecs(!allSpecs)}
-                    className="mt-4 flex items-center gap-1 text-sm font-semibold"
-                    style={{ color: ACCENT }}
-                  >
-                    {allSpecs
-                      ? "Show fewer"
-                      : specGroups.length > 2
-                        ? `Show all ${specGroups.length} sections`
-                        : `Show all ${totalRows} specifications`}
-                    <FiChevronDown className={allSpecs ? "rotate-180" : ""} />
-                  </button>
-                )}
-              </section>
-            )}
-
-            {/* Description */}
-            {p.description && (
-              <section className="rounded-3xl bg-paper p-4 shadow-sm sm:p-6">
-                <h2 className="text-xl font-bold text-ink">Product description</h2>
-                {p.description.split("\n\n").map((para, i) => (
-                  <p key={i} className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {para}
-                  </p>
-                ))}
-              </section>
-            )}
+            <SpecsSection key={p.slug} specs={p.specs} />
+            <Description text={p.description} />
 
             {/* Reviews */}
             <ShopperReviews slug={p.slug} />
             <ReviewsSection data={p.reviews} />
           </div>
 
-          {/* Side column */}
-          <aside className="space-y-4">
-            {p.inTheBox?.length > 0 && (
-              <div className="rounded-3xl bg-paper p-5 shadow-sm">
-                <h2 className="text-base font-bold text-ink">What's in the box</h2>
-                <ul className="mt-2 space-y-1.5 text-sm text-ink-soft">
-                  {p.inTheBox.map((x) => (
-                    <li key={x} className="flex gap-2">
-                      <FiCheck className="mt-0.5 flex-none text-muted-light" />
-                      {x}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <div className="rounded-3xl bg-paper p-5 shadow-sm">
-              <h2 className="text-base font-bold text-ink">Warranty & returns</h2>
-              <p className="mt-2 text-sm text-ink-soft">
-                {p.warranty || "Covered by the brand's standard warranty."}
-              </p>
-              <p className="mt-1 text-sm text-ink-soft">Easy returns within 7 days of delivery.</p>
-            </div>
-            <div className="rounded-3xl bg-paper p-5 text-xs text-muted-light shadow-sm">
-              Product details from{" "}
-              {[...new Map(p.source.urls.map((u) => [new URL(u).hostname, u])).entries()].map(
-                ([host, u], i) => (
-                  <React.Fragment key={host}>
-                    {i > 0 && ", "}
-                    <a href={u} target="_blank" rel="noreferrer" className="underline">
-                      {host}
-                    </a>
-                  </React.Fragment>
-                )
-              )}
-              , collected {p.source.fetchedAt}.
-            </div>
-          </aside>
+          <SideColumn p={p} />
         </div>
 
         <Rail title={`Similar ${CATEGORIES[cat] || "products"}`} items={similar} />
-        <Rail title="Recently viewed" items={recentItems} />
+        <Rail title="Recently viewed" items={recent} />
       </div>
 
       {showSizes && sizeGuide && (
         <SizeGuide guide={sizeGuide} selected={opts.Size} onClose={() => setShowSizes(false)} />
       )}
 
-      {/* Mobile sticky actions */}
-      <div className="has-bottom-bar fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 p-3 backdrop-blur lg:hidden">
-        <div className="mx-auto flex max-w-xl items-center gap-2 pr-16 sm:gap-3">
-          <div className="min-w-0 flex-none">
-            <p className="text-lg font-bold leading-none text-ink">
-              {variant ? formatPrice(variant.price) : "–"}
-            </p>
-            {off > 0 && <p className="text-xs font-semibold text-ok">{off}% off</p>}
-          </div>
-          <button
-            type="button"
-            disabled={!available}
-            onClick={() => buy("cart")}
-            className="min-w-0 flex-1 rounded-full border-2 border-ink py-2.5 text-sm font-bold disabled:opacity-40"
-            style={{ color: INK }}
-          >
-            Add to cart
-          </button>
-          <button
-            type="button"
-            disabled={!available}
-            onClick={() => buy("buy")}
-            className="min-w-0 flex-1 rounded-full py-2.5 text-sm font-bold text-white disabled:opacity-40"
-            style={{ background: ACCENT }}
-          >
-            Buy now
-          </button>
-        </div>
-      </div>
+      <MobileBuyBar variant={variant} off={off} available={available} buy={buy} />
     </div>
   );
 }
