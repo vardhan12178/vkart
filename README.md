@@ -2,7 +2,7 @@
 
 VKart is a full-stack e-commerce portfolio project: a 264-product catalog across 14 categories, AI-assisted search, a real checkout in Razorpay test mode, Prime membership, price and stock alerts, and an admin panel with role-based access. It is built to behave like a real store, not a demo page.
 
-- **Live site:** https://vkartshop.netlify.app
+- **Live site:** https://vkart.balavardhan.dev
 - **Frontend (this repo):** https://github.com/vardhan12178/vkart
 - **Backend:** https://github.com/vardhan12178/backend
 
@@ -65,7 +65,7 @@ These are small-sample numbers: 24 queries, so one query is worth 4.2 points. On
 - **Stock is reserved atomically** per variant at checkout and restored on cancellation, which also fires back-in-stock alerts.
 - **Security:** HTTP-only cookies, CSRF tokens, rate limits, helmet, token revocation, optional 2FA, and RBAC checked against the database on every admin request.
 - **Demo accounts are safe by construction:** their passwords are random and unknown, sign-in happens only through server endpoints, and the demo admin's token is rejected on every write.
-- **Tests:** ~415 frontend tests and ~370 backend tests (Jest, Testing Library, Supertest, mongodb-memory-server) run in CI on every pull request.
+- **Tests:** 430+ frontend tests and 380+ backend tests (Jest, Testing Library, Supertest, mongodb-memory-server) run in CI on every pull request.
 
 ## Tech stack
 
@@ -74,7 +74,7 @@ These are small-sample numbers: 24 queries, so one query is worth 4.2 points. On
 | Frontend | React 18, Vite, Tailwind CSS, Redux Toolkit, TanStack Query, React Router 6, Framer Motion, lucide icons |
 | Backend | Node.js, Express, MongoDB (Atlas Search and Vector Search), Mongoose, Redis, Socket.io |
 | Services | Razorpay, Google OAuth, Gemini, AWS S3, Resend |
-| Hosting | Netlify (frontend), Render (backend), MongoDB Atlas |
+| Hosting | Netlify (frontend, served at vkart.balavardhan.dev), Render (backend), MongoDB Atlas |
 
 ## Local Setup
 
@@ -155,10 +155,10 @@ npm run preview
 ### Frontend
 
 ```bash
-npm test -- --runInBand
+CI=true npm test
 ```
 
-Current frontend coverage includes login, forgot/reset password, checkout payment, and order payload tests.
+430+ tests cover authentication, the catalog and product page, cart and checkout, orders, reviews, alerts, Compare, admin screens with role-based access, skeleton loaders and the demo logins.
 
 ### Backend
 
@@ -194,4 +194,13 @@ vkart/
 └── package.json
 ```
 
-Author: Bala Vardhan
+## More documentation
+
+- [`docs/ADMIN_RBAC_PLAN.md`](docs/ADMIN_RBAC_PLAN.md): how admin roles and per-module permissions work.
+- Backend repo: data model and API in `docs/CATALOG_SCHEMA.md`, search design and evaluation in `docs/AI_UPGRADE_PLAN.md`.
+
+## License
+
+Source-available for learning and portfolio review; see [LICENSE](LICENSE).
+
+Author: Bala Vardhan Pula
