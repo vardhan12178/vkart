@@ -12,7 +12,7 @@ import {
 import { qk } from "../../query/queryKeys";
 import usePermission from "./usePermission";
 import { SkeletonRegion, TableSkeleton } from "../ui/Skeleton";
-
+import { formatINR } from "../../utils/format";
 const emptyPlan = {
   name: "",
   slug: "",
@@ -24,13 +24,6 @@ const emptyPlan = {
   isActive: true,
   sortOrder: 0,
 };
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n));
 
 export default function AdminMembership() {
   const queryClient = useQueryClient();
@@ -263,11 +256,11 @@ export default function AdminMembership() {
                   {/* Price */}
                   <div className="flex items-baseline gap-2 py-2">
                     <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-                      {INR(plan.price)}
+                      {formatINR(plan.price)}
                     </span>
                     {plan.originalPrice > plan.price && (
                       <span className="text-xs sm:text-sm text-slate-400 line-through font-medium">
-                        {INR(plan.originalPrice)}
+                        {formatINR(plan.originalPrice)}
                       </span>
                     )}
                   </div>

@@ -29,7 +29,7 @@ import {
   Bar,
   Cell,
 } from "recharts";
-
+import { formatINR } from "../../utils/format";
 // CSS for Hiding Scrollbars
 const noScrollbarStyle = `
   .no-scrollbar::-webkit-scrollbar {
@@ -42,13 +42,6 @@ const noScrollbarStyle = `
 `;
 
 // Utilities
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(Number(n) || 0));
-
 const STAGES = [
   "PLACED",
   "CONFIRMED",
@@ -322,7 +315,7 @@ export default function AdminDashboard() {
               <div className={fadeInClass(0)}>
                 <StatCard
                   title="Total Revenue"
-                  value={INR(stats.totalRevenue)}
+                  value={formatINR(stats.totalRevenue)}
                   subtitle="Gross Income"
                   icon={<CurrencyRupeeIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#b56a3f] to-[#8f4e2f]"
@@ -344,7 +337,7 @@ export default function AdminDashboard() {
               <div className={fadeInClass(200)}>
                 <StatCard
                   title="Avg. Order"
-                  value={INR(stats.avgOrderValue)}
+                  value={formatINR(stats.avgOrderValue)}
                   subtitle="Per Order"
                   icon={<TrendingUpIcon className="h-4 w-4 sm:h-6 sm:w-6 text-white" />}
                   gradient="from-[#59634f] to-[#414a39]"
@@ -531,7 +524,7 @@ export default function AdminDashboard() {
                               #{order.orderId || order._id.slice(-6).toUpperCase()}
                             </p>
                             <p className="text-xs sm:text-sm font-black text-slate-900">
-                              {INR(order.totalPrice)}
+                              {formatINR(order.totalPrice)}
                             </p>
                           </div>
                           <div className="flex items-center justify-between">
@@ -600,7 +593,7 @@ export default function AdminDashboard() {
                         </div>
                         <div className="text-right">
                           <p className="text-xs sm:text-sm font-black text-slate-900">
-                            {INR(p.revenue)}
+                            {formatINR(p.revenue)}
                           </p>
                         </div>
                       </div>

@@ -10,16 +10,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
+import useSmoothScroll from "../utils/useSmoothScroll";
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    html { scroll-behavior: smooth; }
-  `}</style>
-);
-
 export default function Privacy() {
+  useSmoothScroll();
   const lastUpdated = new Date().toLocaleDateString(undefined, {
     year: "numeric",
     month: "long",
@@ -56,8 +50,6 @@ export default function Privacy() {
 
   return (
     <div className="premium-page premium-legal min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden">
-      <AnimStyles />
-
       {/* Ambient Background */}
       <div className="fixed top-0 right-0 w-[800px] h-[800px] bg-blue-200/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="fixed bottom-0 left-0 w-[600px] h-[600px] bg-orange-200/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />

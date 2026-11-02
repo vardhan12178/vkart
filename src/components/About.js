@@ -8,11 +8,9 @@ import {
   FaShieldAlt,
   FaRocket,
   FaCartPlus,
-  FaQuestion,
   FaCogs,
   FaGithub,
   FaArrowRight,
-  FaServer,
   FaCode,
   FaLayerGroup,
   FaBrain,
@@ -22,15 +20,6 @@ import { Link } from "react-router-dom";
 import { SiRedux, SiTailwindcss, SiRazorpay, SiRedis } from "react-icons/si";
 
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .animate-float { animation: float 6s ease-in-out infinite; }
-  `}</style>
-);
-
 export default function About() {
   const [open, setOpen] = useState(0);
 
@@ -58,8 +47,6 @@ export default function About() {
 
   return (
     <div className="premium-page premium-about relative min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] overflow-hidden selection:bg-[#1d1c19] selection:text-white">
-      <AnimStyles />
-
       {/* Ambient Background Blobs */}
       <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />

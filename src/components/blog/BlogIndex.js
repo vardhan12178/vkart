@@ -1,27 +1,9 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import {
-  Search,
-  ArrowRight,
-  Tag as TagIcon,
-  Calendar,
-  User,
-  Sparkles,
-  BookOpen,
-} from "lucide-react";
+import { Search, ArrowRight, Tag as TagIcon, User, Sparkles, BookOpen } from "lucide-react";
 import POSTS from "./data";
 
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .scrollbar-hide::-webkit-scrollbar { display: none; }
-    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-  `}</style>
-);
-
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
@@ -71,8 +53,6 @@ export default function BlogIndex() {
 
   return (
     <div className="premium-page premium-blog min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-20 relative overflow-hidden selection:bg-[#1d1c19] selection:text-white">
-      <AnimStyles />
-
       {/* Ambient Background Blobs - Fixed Z-Index to stay behind */}
       <div className="fixed top-0 left-0 w-[800px] h-[800px] bg-orange-200/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0" />
       <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none z-0" />

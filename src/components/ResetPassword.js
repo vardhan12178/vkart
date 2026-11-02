@@ -1,12 +1,9 @@
-// src/pages/ResetPassword.jsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import axios from "./axiosInstance";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  CircleAlert as ExclamationCircleIcon,
-  CircleCheck as CheckCircleIcon,
   Lock as LockClosedIcon,
   Eye as EyeIcon,
   EyeOff as EyeOffIcon,
@@ -14,8 +11,10 @@ import {
   ArrowLeft as ArrowLeftIcon,
 } from "lucide-react";
 import { Dots } from "./ui/Skeleton";
-
-const cx = (...c) => c.filter(Boolean).join(" ");
+import FormAlert from "./ui/FormAlert";
+import FieldError from "./ui/FieldError";
+import PasswordStrength from "./ui/PasswordStrength";
+import { cx } from "../utils/cx";
 const currentYear = new Date().getFullYear();
 
 const fadeInUp = {
@@ -25,92 +24,6 @@ const fadeInUp = {
 
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const FieldError = ({ id, message }) =>
-  !message ? null : (
-    <motion.p
-      initial={{ opacity: 0, x: -10 }}
-      animate={{ opacity: 1, x: 0 }}
-      id={id}
-      className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-red-500"
-    >
-      <ExclamationCircleIcon className="h-4 w-4 shrink-0" /> {message}
-    </motion.p>
-  );
-
-const Toast = ({ show, kind = "error", children }) => {
-  if (!show) return null;
-  const isSuccess = kind === "success";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 0, height: 0 }}
-      className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
-        isSuccess
-          ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
-          : "bg-red-50/80 border-red-100 text-red-800"
-      )}
-      role="status"
-    >
-      {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
-      ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
-      )}
-      <div className="pt-0.5 font-medium">{children}</div>
-    </motion.div>
-  );
-};
-
-const PasswordStrengthIndicator = ({ password }) => {
-  if (!password) return null;
-
-  const checks = [
-    { label: "8+ chars", test: password.length >= 8 },
-    { label: "Uppercase", test: /[A-Z]/.test(password) },
-    { label: "Lowercase", test: /[a-z]/.test(password) },
-    { label: "Number", test: /[0-9]/.test(password) },
-    { label: "Special", test: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password) },
-  ];
-
-  const passed = checks.filter((c) => c.test).length;
-  const strengthColor =
-    passed === 5 ? "bg-emerald-500" : passed >= 3 ? "bg-amber-500" : "bg-red-500";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      className="mt-3 space-y-2"
-    >
-      <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
-        <div
-          className={`h-full transition-all duration-500 ${strengthColor}`}
-          style={{ width: `${(passed / 5) * 100}%` }}
-        />
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {checks.map((check, i) => (
-          <div
-            key={i}
-            className={cx(
-              "flex items-center gap-1 text-[10px] font-medium border px-1.5 py-0.5 rounded",
-              check.test
-                ? "text-emerald-700 border-emerald-200 bg-emerald-50"
-                : "text-gray-400 border-gray-100 bg-gray-50"
-            )}
-          >
-            {check.test && <CheckCircleIcon className="h-3 w-3" />}
-            {check.label}
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  );
 };
 
 export default function ResetPassword() {
@@ -204,9 +117,9 @@ export default function ResetPassword() {
             {/* Notifications */}
             <AnimatePresence>
               {(okMsg || errMsg) && (
-                <Toast show={true} kind={okMsg ? "success" : "error"}>
+                <FormAlert show={true} kind={okMsg ? "success" : "error"}>
                   {okMsg || errMsg}
-                </Toast>
+                </FormAlert>
               )}
             </AnimatePresence>
 
@@ -247,7 +160,7 @@ export default function ResetPassword() {
                     {showPwd ? <EyeOffIcon className="h-5 w-5" /> : <EyeIcon className="h-5 w-5" />}
                   </button>
                 </div>
-                <PasswordStrengthIndicator password={password} />
+                <PasswordStrength password={password} />
                 <FieldError id="password-error" message={errors.password} />
               </motion.div>
 

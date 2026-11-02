@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
-  ArrowRightIcon,
   ChevronRightIcon,
   CircleCheckIcon,
   HeadsetIcon,
   MapPinIcon,
   PackageIcon,
   ReceiptIcon,
-  ShieldCheckIcon,
-  ShoppingBagIcon,
 } from "./ui/icons";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
@@ -17,14 +14,7 @@ import axios from "./axiosInstance";
 import OrderStages from "./OrderStages";
 import SupportChatWidget from "./support/SupportChatWidget";
 import { Bone, SkeletonRegion } from "./ui/Skeleton";
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(Number(n) || 0));
-
+import { formatINR } from "../utils/format";
 export default function OrderSuccess() {
   const { orderId } = useParams();
   const { width, height } = useWindowSize();
@@ -174,7 +164,7 @@ export default function OrderSuccess() {
                   <p className="text-[11px] text-muted-light">Qty: {p.quantity}</p>
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-ink shrink-0">
-                  {INR(p.lineTotal ?? p.price * p.quantity)}
+                  {formatINR(p.lineTotal ?? p.price * p.quantity)}
                 </div>
               </div>
             ))}
@@ -199,7 +189,7 @@ export default function OrderSuccess() {
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-muted">Paid Online</span>
-                <span className="font-bold text-ink text-sm">{INR(order.totalPrice)}</span>
+                <span className="font-bold text-ink text-sm">{formatINR(order.totalPrice)}</span>
               </div>
             </div>
           </div>

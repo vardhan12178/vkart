@@ -12,14 +12,7 @@ import {
   Undo2Icon,
   XIcon,
 } from "./ui/icons";
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(Number(n) || 0));
-
+import { formatINR } from "../utils/format";
 // Modern stage styles
 const stageStyles = {
   PLACED: { bg: "bg-tint", text: "text-ink-soft", dot: "bg-muted", border: "border-line-strong" },
@@ -187,7 +180,9 @@ export default function OrderCard({ order, defaultOpen = false }) {
                 <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">
                   Total
                 </p>
-                <p className="text-xs sm:text-sm font-bold text-ink">{INR(order.totalPrice)}</p>
+                <p className="text-xs sm:text-sm font-bold text-ink">
+                  {formatINR(order.totalPrice)}
+                </p>
               </div>
               <div>
                 <p className="text-[9px] sm:text-[10px] font-bold text-muted-light uppercase tracking-wider">
@@ -280,7 +275,7 @@ export default function OrderCard({ order, defaultOpen = false }) {
                         <p className="text-[11px] text-muted-light">Qty: {p.quantity}</p>
                       </div>
                       <div className="text-xs font-bold text-ink shrink-0">
-                        {INR(p.lineTotal ?? p.price * p.quantity)}
+                        {formatINR(p.lineTotal ?? p.price * p.quantity)}
                       </div>
                     </div>
                   ))}

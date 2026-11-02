@@ -13,14 +13,7 @@ import {
   Trash2Icon,
 } from "./ui/icons";
 import { showToast } from "../utils/toast";
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n));
-
+import { formatINR } from "../utils/format";
 const keyOf = (item) => item?._id || item?.productId || item?.externalId || item?.id;
 
 const productPath = (item) =>
@@ -178,11 +171,11 @@ export default function Wishlist() {
 
                         <div className="mt-1.5 sm:mt-4 flex items-baseline gap-1.5 flex-wrap">
                           <span className="text-xs sm:text-lg font-bold text-[#1d1c19]">
-                            {INR(selling)}
+                            {formatINR(selling)}
                           </span>
                           {mrp && (
                             <span className="text-[10px] sm:text-xs text-[#a5a096] line-through">
-                              {INR(mrp)}
+                              {formatINR(mrp)}
                             </span>
                           )}
                         </div>

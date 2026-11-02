@@ -38,14 +38,7 @@ import { buildSecureOrderPayload } from "../utils/orderPayload";
 import { cartItemFromSaved } from "./shop/shopItems";
 import { qk } from "../query/queryKeys";
 import { Bone, Dots } from "./ui/Skeleton";
-
-const INR = (n) =>
-  new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n));
-
+import { formatINR } from "../utils/format";
 const TAX_RATE = 0.18;
 const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
 // Must be the reducer's own key: lines loaded from the server also carry a database _id that is not
@@ -53,13 +46,6 @@ const round2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
 const keyOf = cartItemKey;
 
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.4s ease-out forwards; }
-  `}</style>
-);
-
 // -
 export default function Cart() {
   const dispatch = useDispatch();
@@ -155,7 +141,7 @@ export default function Cart() {
           discount: data.discount,
           description: data.description,
         });
-        showToast(`${data.code} applied — ${INR(data.discount)} off!`, "success");
+        showToast(`${data.code} applied — ${formatINR(data.discount)} off!`, "success");
       }
     } catch (err) {
       setPromoApplied(null);
@@ -290,8 +276,7 @@ export default function Cart() {
   if (isCompletelyEmpty) {
     return (
       <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] flex items-center justify-center p-4">
-        <AnimStyles />
-        <div className="text-center animate-fade-up max-w-md">
+        <div className="text-center animate-fade-up-quick max-w-md">
           <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
             <ShoppingCartIcon className="text-3xl text-accent" />
           </div>
@@ -314,8 +299,6 @@ export default function Cart() {
 
   return (
     <div className="premium-page premium-cart min-h-screen bg-[#f6f3ed] font-sans text-[#1d1c19] pb-32 lg:pb-20 overflow-x-hidden">
-      <AnimStyles />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-10 relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-3 sm:mb-6">
@@ -348,7 +331,7 @@ export default function Cart() {
                   return (
                     <div
                       key={k}
-                      className="group bg-white p-3.5 sm:p-5 rounded-2xl sm:rounded-[2rem] border border-black/[0.06] shadow-sm transition-all animate-fade-up"
+                      className="group bg-white p-3.5 sm:p-5 rounded-2xl sm:rounded-[2rem] border border-black/[0.06] shadow-sm transition-all animate-fade-up-quick"
                     >
                       <div className="flex gap-3 sm:gap-6">
                         {/* Image */}
@@ -409,11 +392,11 @@ export default function Cart() {
                             {/* Price */}
                             <div className="text-right">
                               <div className="text-sm sm:text-lg font-bold text-[#1d1c19]">
-                                {INR(lineSell)}
+                                {formatINR(lineSell)}
                               </div>
                               {lineMrp > lineSell && (
                                 <div className="text-[10px] sm:text-xs text-muted-light line-through font-medium">
-                                  {INR(lineMrp)}
+                                  {formatINR(lineMrp)}
                                 </div>
                               )}
                             </div>
@@ -435,7 +418,7 @@ export default function Cart() {
                         </button>
 
                         {confirming && (
-                          <div className="flex items-center gap-2 animate-fade-up ml-auto">
+                          <div className="flex items-center gap-2 animate-fade-up-quick ml-auto">
                             <span className="text-[11px] font-bold text-[#75483b]">Remove?</span>
                             <button
                               onClick={() => dispatch(removeFromCart(k))}
@@ -504,7 +487,7 @@ export default function Cart() {
                             {w.title}
                           </h4>
                           <div className="text-[11px] font-bold text-[#716c63] mt-0.5">
-                            {INR(w.price)}
+                            {formatINR(w.price)}
                           </div>
                         </div>
                       </div>
@@ -533,11 +516,13 @@ export default function Cart() {
                   <div className="space-y-3 text-xs sm:text-sm font-medium text-[#6f6b62]">
                     <div className="flex justify-between">
                       <span>Subtotal</span>
-                      <span className="text-[#1d1c19] font-semibold">{INR(calc.subtotal)}</span>
+                      <span className="text-[#1d1c19] font-semibold">
+                        {formatINR(calc.subtotal)}
+                      </span>
                     </div>
                     <div className="flex justify-between text-muted-light">
                       <span className="text-[11px]">Tax (Included 18%)</span>
-                      <span className="text-[11px]">{INR(calc.tax)}</span>
+                      <span className="text-[11px]">{formatINR(calc.tax)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Shipping</span>
@@ -546,13 +531,13 @@ export default function Cart() {
                           calc.shipping === 0 ? "text-ok font-bold" : "text-[#1d1c19] font-semibold"
                         }
                       >
-                        {calc.shipping === 0 ? "Free" : INR(calc.shipping)}
+                        {calc.shipping === 0 ? "Free" : formatINR(calc.shipping)}
                       </span>
                     </div>
                     {calc.promoOff > 0 && (
                       <div className="flex justify-between text-ok font-bold">
                         <span>Discount</span>
-                        <span>-{INR(calc.promoOff)}</span>
+                        <span>-{formatINR(calc.promoOff)}</span>
                       </div>
                     )}
 
@@ -560,7 +545,7 @@ export default function Cart() {
 
                     <div className="flex justify-between text-base sm:text-lg font-black text-[#1d1c19]">
                       <span>Total</span>
-                      <span>{INR(calc.total)}</span>
+                      <span>{formatINR(calc.total)}</span>
                     </div>
                   </div>
 
@@ -571,7 +556,9 @@ export default function Cart() {
                         <div className="flex items-center gap-2">
                           <TagIcon className="text-ok text-xs" />
                           <span className="text-xs font-bold text-ok">{promoApplied.code}</span>
-                          <span className="text-[11px] text-ok">-{INR(promoApplied.discount)}</span>
+                          <span className="text-[11px] text-ok">
+                            -{formatINR(promoApplied.discount)}
+                          </span>
                         </div>
                         <button
                           onClick={removePromo}
@@ -624,7 +611,9 @@ export default function Cart() {
                             <div className="flex items-center justify-between">
                               <span className="text-xs font-bold text-[#1d1c19]">{c.code}</span>
                               <span className="text-[11px] font-bold text-[#a85d37]">
-                                {c.type === "percent" ? `${c.value}% off` : `${INR(c.value)} off`}
+                                {c.type === "percent"
+                                  ? `${c.value}% off`
+                                  : `${formatINR(c.value)} off`}
                               </span>
                             </div>
                             {c.description && (
@@ -632,7 +621,7 @@ export default function Cart() {
                             )}
                             {c.minOrder > 0 && (
                               <p className="text-[9px] text-muted-light mt-0.5">
-                                Min order: {INR(c.minOrder)}
+                                Min order: {formatINR(c.minOrder)}
                               </p>
                             )}
                           </button>
@@ -708,7 +697,7 @@ export default function Cart() {
         )}
 
         {error && (
-          <div className="fixed bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 bg-alert/10 text-alert px-5 py-2.5 rounded-full shadow-xl font-bold flex items-center gap-2 animate-fade-up border border-alert/30 z-50 text-xs w-max">
+          <div className="fixed bottom-24 lg:bottom-10 left-1/2 -translate-x-1/2 bg-alert/10 text-alert px-5 py-2.5 rounded-full shadow-xl font-bold flex items-center gap-2 animate-fade-up-quick border border-alert/30 z-50 text-xs w-max">
             <CircleXIcon /> {error}
           </div>
         )}
@@ -723,7 +712,7 @@ export default function Cart() {
                 Total
               </div>
               <div className="text-lg font-black text-[#1d1c19] leading-none">
-                {INR(calc.total)}
+                {formatINR(calc.total)}
               </div>
             </div>
             <button

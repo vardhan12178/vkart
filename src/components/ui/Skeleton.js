@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-
+import { cx } from "../../utils/cx";
 // Loading placeholders. The shimmer lives in index.css (.skeleton); users who prefer reduced motion get a still block.
-export const cx = (...parts) => parts.filter(Boolean).join(" ");
+export { cx };
 
 export function Bone({ className = "", rounded = "rounded-md", dark = false, ...rest }) {
   return (

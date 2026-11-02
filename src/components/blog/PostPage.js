@@ -4,13 +4,6 @@ import { Calendar, User, Tag as TagIcon, ArrowLeft, ArrowRight, Clock, Share2 } 
 import POSTS from "./data";
 
 // Animation Styles
-const AnimStyles = () => (
-  <style>{`
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-  `}</style>
-);
-
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
@@ -45,8 +38,6 @@ export default function PostPage() {
 
   return (
     <div className="premium-page premium-blog bg-[#f6f3ed] font-sans text-[#1d1c19] selection:bg-[#1d1c19] selection:text-white pb-20">
-      <AnimStyles />
-
       {/* Immersive header */}
       <header className="relative h-[60vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />

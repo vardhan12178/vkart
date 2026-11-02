@@ -1,4 +1,3 @@
-// src/pages/admin/AdminOrders.jsx
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";

@@ -1,19 +1,15 @@
-// src/pages/ForgotPassword.jsx
 import React, { useState } from "react";
 import axios from "./axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  CircleAlert as ExclamationCircleIcon,
-  CircleCheck as CheckCircleIcon,
   Mail as MailIcon,
   ArrowLeft as ArrowLeftIcon,
   ShoppingCart as ShoppingCartIcon,
 } from "lucide-react";
 import { Dots } from "./ui/Skeleton";
-
-const cx = (...c) => c.filter(Boolean).join(" ");
+import FormAlert from "./ui/FormAlert";
 const currentYear = new Date().getFullYear();
 
 const fadeInUp = {
@@ -23,33 +19,6 @@ const fadeInUp = {
 
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const Toast = ({ show, kind = "error", children }) => {
-  if (!show) return null;
-  const isSuccess = kind === "success";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 0, height: 0 }}
-      className={cx(
-        "mb-6 flex items-start gap-3 rounded-2xl p-4 text-sm shadow-sm backdrop-blur-md border",
-        isSuccess
-          ? "bg-emerald-50/80 border-emerald-100 text-emerald-800"
-          : "bg-red-50/80 border-red-100 text-red-800"
-      )}
-      role="status"
-    >
-      {isSuccess ? (
-        <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-600" />
-      ) : (
-        <ExclamationCircleIcon className="h-5 w-5 shrink-0 text-red-600" />
-      )}
-      <div className="pt-0.5 font-medium">{children}</div>
-    </motion.div>
-  );
 };
 
 export default function ForgotPassword() {
@@ -124,9 +93,9 @@ export default function ForgotPassword() {
             {/* Toast Notifications */}
             <AnimatePresence>
               {(okMsg || errMsg) && (
-                <Toast show={true} kind={okMsg ? "success" : "error"}>
+                <FormAlert show={true} kind={okMsg ? "success" : "error"}>
                   {okMsg || errMsg}
-                </Toast>
+                </FormAlert>
               )}
             </AnimatePresence>
 
