@@ -15,6 +15,7 @@ import OrderStages from "./OrderStages";
 import SupportChatWidget from "./support/SupportChatWidget";
 import { Bone, SkeletonRegion } from "./ui/Skeleton";
 import { formatINR } from "../utils/format";
+import { PLACEHOLDER_IMAGE } from "../utils/placeholder";
 export default function OrderSuccess() {
   const { orderId } = useParams();
   const { width, height } = useWindowSize();
@@ -154,7 +155,7 @@ export default function OrderSuccess() {
               <div key={idx} className="py-2.5 first:pt-0 last:pb-0 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-sand border border-line p-1 flex items-center justify-center shrink-0 overflow-hidden">
                   <img
-                    src={p.image || p.thumbnail || "https://via.placeholder.com/60"}
+                    src={p.image || p.thumbnail || PLACEHOLDER_IMAGE}
                     alt={p.name}
                     className="w-full h-full object-contain mix-blend-multiply"
                   />
